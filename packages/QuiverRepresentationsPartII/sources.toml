@@ -1,0 +1,85 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "QuiverRepresentationsPartII"
+
+[[source]]
+id = "AKY"
+authors = "Hiraku Atobe, Satoshi Kondo, Seidai Yasuda"
+title = "Local newforms for the general linear groups over a non-archimedean local field"
+year = 2022
+arxiv = "2110.09070v4"
+locator_scheme = "section"
+locator = "Sections 2.1-2.5 and 3.1-3.3, pp.7-22 (arXiv v4)"
+url = "https://arxiv.org/abs/2110.09070v4"
+fetched_from = "https://arxiv.org/pdf/2110.09070v4"
+fetched_at = "2026-10-22T17:49:37Z"
+sha256 = "32326ab828c5cfb524cfb479e337fdd9834496cd9ec39409266c281c49883a6c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+doi = "10.1017/fmp.2022.17"
+version_note = "Locators use arXiv v4, 28 September 2022; published version shares this manifest entry."
+cited_for = ["Layers 0-5"]
+
+[[source]]
+id = "MW"
+authors = "Colette Mœglin; Jean-Loup Waldspurger"
+title = "Sur l’involution de Zelevinski"
+year = 1986
+doi = "10.1515/crll.1986.372.136"
+locator_scheme = "section"
+locator = "I.7.2-I.7.3; II.1-II.13, pp.147-177"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0372/PPN243919689_0372.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0372/PPN243919689_0372.pdf"
+fetched_at = "2026-10-22T17:50:03Z"
+sha256 = "49198255b00bc0c005649794a809383c15c87f9c8afbf545b4a692764f4589f0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["2.2-2.9, 5.4"]
+
+[[source]]
+id = "Z81"
+authors = "A. V. Zelevinskii"
+title = "p-adic analog of the kazhdan -Lusztig hypothesis"
+year = 1981
+venue = "Functional Analysis and Its Applications 15"
+doi = "10.1007/BF01082279"
+locator_scheme = "section"
+locator = "4.3, Proposition 4.4 and 4.5, original pp.20-21"
+url = "https://doi.org/10.1007/BF01082279"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.7, 2.9"]
+
+[[source]]
+id = "Z98"
+authors = "Andrei Zelevinsky"
+title = "Multisegment duality, canonical bases and total positivity"
+year = 1998
+locator_scheme = "section"
+locator = "2-3, pp.410-411; 5, p.412"
+url = "https://ems.press/content/book-chapter-files/27254?nt=1"
+fetched_from = "https://ems.press/content/book-chapter-files/27254?nt=1"
+fetched_at = "2026-10-22T17:50:35Z"
+sha256 = "e609bb40f4aeb41bf0c86c5902dd31a50e202d90c4b70dedcc55f5507175a015"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["2.6-2.9, 4.4-4.7, 5.4"]
+
+[[source]]
+id = "DIL"
+authors = "Michel X. Goemans; Joungkeun Lim (scribe)"
+title = "18.997 Topics in Combinatorial Optimization, Lecture 6"
+year = 2004
+locator_scheme = "page"
+locator = "6-1-6-4, Theorem 3 and split-poset construction"
+url = "https://ocw.mit.edu/courses/18-997-topics-in-combinatorial-optimization-spring-2004/72c5d7935dea64f0e2773ad376f83d5d_co_lec6.pdf"
+fetched_from = "https://ocw.mit.edu/courses/18-997-topics-in-combinatorial-optimization-spring-2004/72c5d7935dea64f0e2773ad376f83d5d_co_lec6.pdf"
+fetched_at = "2026-10-22T17:50:52Z"
+sha256 = "b8ba9e30e36dccc3cead26847ad62d56200406d0035d9374f3806f5fbf943ce3"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["4.2-4.4"]
