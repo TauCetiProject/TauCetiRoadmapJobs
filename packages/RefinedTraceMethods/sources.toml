@@ -1,0 +1,892 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "RefinedTraceMethods"
+
+[[source]]
+id = "ammn"
+authors = "Benjamin Antieau, Akhil Mathew, Matthew Morrow, Thomas Nikolaus"
+title = "On the Beilinson fiber square"
+year = 2020
+arxiv = "2003.12541v2"
+locator_scheme = "section"
+locator = "Proof of Corollary 2.9, p. 9; §3.1, p. 15, footnote 8; Proof of Proposition 3.1, p. 15; Definition 2.18 and following paragraph, p. 12; Proposition 3.2 and proof, p. 15; §3.1, pp. 15–16, the definition before Proposition 3.3 and the truncations in its proof, p. 16; Proposition 3.3 and its proof, p. 16; Introduction, p. 3 (paragraph before Theorem A; Definition 2.18, §2.3, p. 12; Proposition 2.5, p. 8; §3.1–3.3, Propositions 3.1–3.3, p. 15–16; Theorem 2.12, §2.2, p. 10, square (15; Theorem A, Introduction, p. 3, eqs. (1; §3, Corollary 3.9, p. 18, display (19; Introduction, Theorem A, p. 3, and the paragraph following it; Theorem 2.20, §2.3, p. 12; §6.3, Theorem 6.17 with display (56"
+url = "https://arxiv.org/abs/2003.12541v2"
+fetched_from = "https://arxiv.org/pdf/2003.12541v2"
+fetched_at = "2026-10-22T20:06:47Z"
+sha256 = "2a0224b2e8b7c5f19f326886b130f8be0158ba4cb602ba7eb5821990ca22b3fd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["1.6 Cyclic Morita comparison and products", "3.1 The circle-equivariant p-typical convention", "3.2 Classical and topological Cartier data", "3.5 Detecting quasi-isogenies and null Frobenius", "3.6 Positive weights and connective convergence", "9.1 Coefficient order and trivial cyclotomic integers", "9.2 Quasi-isogenies and the change of reduction", "9.3 The comparison map and spectral reduction", "9.4 The ordinary-reduction square and its fiber", "9.5 The integral comparison on graded pieces"]
+
+[[source]]
+id = "an"
+authors = "Benjamin Antieau, Thomas Nikolaus"
+title = "Cartier modules and cyclotomic spectra"
+year = 2018
+arxiv = "1809.01714v2"
+locator_scheme = "section"
+locator = "§6.1, Theorem 6.1, p. 57; §2.1 and Example 2.2, p. 8; §3.1 and footnote 5, p. 15; Definitions 3.1 and 3.6; Definition 3.20 and Proposition 3.22, p. 26; Theorem 2.1, Example 2.2 and the paragraph after Example 2.3, p. 8; Remark 2.5, pp. 8–9; Introduction to §3, p. 15; Theorem 3.21, p. 26"
+url = "https://arxiv.org/abs/1809.01714v2"
+fetched_from = "https://arxiv.org/pdf/1809.01714v2"
+fetched_at = "2026-10-22T20:06:53Z"
+sha256 = "9ca2657c1f23542b91a34b37ee9115e719f14401074e48c188cfb2be9f204d63"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["2.14 Finite-family circle spectra, genuine cyclotomic objects and TR", "3.1 The circle-equivariant p-typical convention", "3.2 Classical and topological Cartier data", "3.3 Derived Verschiebung completion", "3.4 The cyclotomic t-structure and TR", "3.5 Detecting quasi-isogenies and null Frobenius", "3.6 Positive weights and connective convergence"]
+
+[[source]]
+id = "ar"
+authors = "Benjamin Antieau, Noah Riggenbach"
+title = "Cyclotomic synthetic spectra"
+year = 2024
+arxiv = "2411.19929v1"
+locator_scheme = "section"
+locator = "Definition 2.61 and Construction 2.63, pp. 16–17; §2.3, Definition 2.55 and Construction 2.58, pp. 15–16"
+url = "https://arxiv.org/abs/2411.19929v1"
+fetched_from = "https://arxiv.org/pdf/2411.19929v1"
+fetched_at = "2026-10-22T20:07:00Z"
+sha256 = "e35d20715e547f5edd65198bb8155dc68e31a8285cdc59f97a802f88ff924d3f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["6.6 Synthetic circle and finite cyclic operations"]
+
+[[source]]
+id = "bgt"
+authors = "Andrew J. Blumberg, David Gepner, Goncalo Tabuada"
+title = "A universal characterization of higher algebraic K-theory"
+year = 2010
+venue = "Geom. Topol. 17 (2013) 733-838"
+doi = "10.2140/gt.2013.17.733"
+arxiv = "1001.2282v4"
+locator_scheme = "section"
+locator = "Definition 9.1 and Lemma 9.4, p. 57, and Definition 9.6, p. 58; Proposition 8.6 and Theorem 8.7, pp. 54–56; §7.1, Definition 7.1, Lemma 7.3 and Remark 7.4, p. 44; §9.1, Definition 9.1, Lemma 9.4 and Proposition 9.5, p. 57; §8.3, Definition 8.1, p. 52; Theorem 7.13, p. 49; §1.4, Corollary 1.13, p. 7 (proved in §10, Corollary 10.4 and Theorem 10.6; Theorem 8.7, pp. 55–56; §10.3, Proposition 10.8, p. 76"
+url = "https://arxiv.org/abs/1001.2282v4"
+fetched_from = "https://arxiv.org/pdf/1001.2282v4"
+fetched_at = "2026-10-22T20:07:06Z"
+sha256 = "08a8ae7fb5715d8269fd728c8a20d72403527aaefbeaa974b7040ec21d667a2d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v4"
+cited_for = ["4.4 Continuous Calkin categories and accessible invariants", "4.6 Relative localizing motives", "4.9 Localizing and truncating small-category invariants", "4.10 K-theory as tensor unit and the Dennis trace", "4.11 The cyclotomic trace and multiplicativity"]
+
+[[source]]
+id = "bgt-mult"
+authors = "Andrew J. Blumberg, David Gepner, Goncalo Tabuada"
+title = "Uniqueness of the multiplicative cyclotomic trace"
+year = 2011
+arxiv = "1103.3923v3"
+locator_scheme = "section"
+locator = "Lemma 5.5 and Propositions 5.6–5.7, pp. 22–23; Corollary 3.8, p. 15"
+url = "https://arxiv.org/abs/1103.3923v3"
+fetched_from = "https://arxiv.org/pdf/1103.3923v3"
+fetched_at = "2026-10-22T20:07:11Z"
+sha256 = "3bf564f86fda5425038fcea4afb681280ee75e88918585cf87daad8dcb76001a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["4.10 K-theory as tensor unit and the Dennis trace", "4.11 The cyclotomic trace and multiplicativity"]
+
+[[source]]
+id = "bm"
+authors = "Bhargav Bhatt, Akhil Mathew"
+title = "Syntomic complexes and $p$-adic étale Tate twists"
+year = 2022
+venue = "Forum of Mathematics, Pi 11 (2023), E1"
+doi = "10.1017/fmp.2022.21"
+arxiv = "2202.04818v2"
+locator_scheme = "section"
+locator = "Background, edition identified in References"
+url = "https://arxiv.org/abs/2202.04818v2"
+fetched_from = "https://arxiv.org/pdf/2202.04818v2"
+fetched_at = "2026-10-22T20:07:17Z"
+sha256 = "12eb19e417531addbcf70d85facf33b1649ba5d8845c31ade9128c6000032955"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["References"]
+
+[[source]]
+id = "bms"
+locator_scheme = "section"
+locator = "Corollary 3.4 proof, pp. 218–219; Corollary 3.4 and Remark 3.5, pp. 218–219; Lemma 5.14, p. 241; Proposition 5.15; Proposition 6.2 and diagram (1; Theorem 6.7, pp. 251–252; Construction 6.8, pp. 252–253; Corollaries 6.9–6.10, pp. 253–254; Proposition 9.10 and Remark 9.11, pp. 289–290; Corollary 9.12, pp. 290–291; Theorem 1.12(4; TC-internal part of proof of Proposition 7.16, p. 262; Construction 9.13 and Proposition 9.14, pp. 291–292; Lemma 8.19 and TC-sheaf part of Proposition 8.20, pp. 280–281"
+url = "https://www.numdam.org/item/10.1007/s10240-019-00106-9.pdf"
+fetched_from = "https://www.numdam.org/item/10.1007/s10240-019-00106-9.pdf"
+fetched_at = "2026-10-22T20:07:19Z"
+sha256 = "6b43d1ff3c3f345db85100562a30c2bcbb6fcbfc2874ce899f8b4ded23ff23dd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["1.11 Derived HKR", "1.5 Maps of mixed complexes and their totalizations", "2.7 Relative THH and linearization", "8.1 Descent and the cyclic de Rham comparison", "8.3 Deformation, antisymmetrization and cotangent filtrations", "8.4 Décalage and Segal comparisons over O_C", "8.5 Convergence and negative TC degrees", "8.6 Trace Adams operations", "8.7 Characteristic-p TC and syntomic K-sheaves"]
+arxiv = "1802.03261v2"
+doi = "10.1007/s10240-019-00106-9"
+version_note = "BMS uses published pages 199–310; BMS-arXiv uses v2 manuscript pages. Lemma 2.5 is read in arXiv v2, p. 15; Proposition 6.2 is read in the published edition, pp. 245–247."
+alternate_fetched_from = "https://arxiv.org/pdf/1802.03261v2"
+alternate_sha256 = "b2338ef19714f39aeac2aaaa4e8d6bd708020815016bbe5541a74e4db3594038"
+authors = "Bhargav Bhatt, Matthew Morrow and Peter Scholze"
+title = "Topological Hochschild homology and integral p-adic Hodge theory"
+year = 2019
+
+[[source]]
+id = "bs"
+authors = "Bhargav Bhatt, Peter Scholze"
+title = "Prisms and Prismatic Cohomology"
+year = 2019
+arxiv = "1905.08229v4"
+locator_scheme = "section"
+locator = "Lemma 16.10, pp. 110–111; proof of Theorem 16.22, p. 115; §14, Theorem 14.1 and Corollary 14.2, p. 97"
+url = "https://arxiv.org/abs/1905.08229v4"
+fetched_from = "https://arxiv.org/pdf/1905.08229v4"
+fetched_at = "2026-10-22T20:07:25Z"
+sha256 = "1d91a6eb85828feb73f84ab3b27ced17514f0855d61c3bff71ab9d8287891e4a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v4"
+cited_for = ["6.10 Arithmetic gluing, the global comparison and framed smooth algebras", "8.7 Characteristic-p TC and syntomic K-sheaves"]
+
+[[source]]
+id = "ba"
+authors = "Anne Bauval"
+title = "Théorème d'Eilenberg-Zilber en homologie cyclique entière"
+year = 2016
+arxiv = "1611.08437v1"
+locator_scheme = "section"
+locator = "§I.1, pp. 2–3"
+url = "https://arxiv.org/abs/1611.08437v1"
+fetched_from = "https://arxiv.org/pdf/1611.08437v1"
+fetched_at = "2026-10-22T20:07:29Z"
+sha256 = "2e9bc24b15dab7a6166e4a38c6ce691abc520f197563317d8b3998c98d8a781e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["1.6 Cyclic Morita comparison and products"]
+
+[[source]]
+id = "blm"
+authors = "Andrew J. Blumberg, Michael A. Mandell"
+title = "Localization theorems in topological Hochschild homology and topological cyclic homology"
+year = 2008
+venue = "Geom. Topol. 16 (2012) 1053-1120"
+doi = "10.2140/gt.2012.16.1053"
+arxiv = "0802.3938v4"
+locator_scheme = "section"
+locator = "§3, Definition 3.1, pp. 9-10; Proposition 3.5, p. 11; §9 (cyclotomic trace from non-connective K"
+url = "https://arxiv.org/abs/0802.3938v4"
+fetched_from = "https://arxiv.org/pdf/0802.3938v4"
+fetched_at = "2026-10-22T20:07:36Z"
+sha256 = "db3f296fe7e8b5e51213262d5af1b0faed2f4bfb55a2188c22db91720832381e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v4"
+cited_for = ["2.11 Spherical group rings and categorical THH", "4.10 K-theory as tensor unit and the Dennis trace"]
+
+[[source]]
+id = "cmm"
+authors = "Dustin Clausen, Akhil Mathew, Matthew Morrow"
+title = "K-theory and topological cyclic homology of henselian pairs"
+year = 2018
+arxiv = "1803.10897v2"
+locator_scheme = "section"
+locator = "Theorem 2.25, equations (10; §1.1, Theorem 1.2 and footnote 1, p. 2; §1, Definition 1.1, p. 2, Theorem 1.4 and Theorem A, p. 3; §5.2, 'Variant', p. 42; §2.1, Remark 2.8, p. 9; §1.2, Theorem F, p. 4 (= Theorem 5.5, p. 39; §1.2, Theorem F, p. 4; §4.5, Theorem 4.33, p. 35; Corollary 6.9, p. 53; §1, Theorem A, p. 3"
+url = "https://arxiv.org/abs/1803.10897v2"
+fetched_from = "https://arxiv.org/pdf/1803.10897v2"
+fetched_at = "2026-10-22T20:07:42Z"
+sha256 = "ad23c1d7b818b85e1752cdc4b01ec9442a9c62c3c8e85ebd7cf6f4584c6abd9c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["2.18 The graded de Rham–Witt comparison for TR", "4.12 Relative trace fibers", "4.17 Nilpotent invariance and the rational comparison", "4.18 Truncating excision and formal towers", "8.7 Characteristic-p TC and syntomic K-sheaves", "9.4 The ordinary-reduction square and its fiber"]
+
+[[source]]
+id = "co"
+authors = "Guillermo Cortiñas"
+title = "The obstruction to excision in K-theory and in cyclic homology"
+year = 2001
+venue = "Invent. Math. 454 (2006) 143-173"
+doi = "10.1007/s00222-005-0473-9"
+arxiv = "math/0111096v5"
+locator_scheme = "section"
+locator = "§0 Introduction, display (5; §0, Main theorem 0.1, p. 1"
+url = "https://arxiv.org/abs/math/0111096v5"
+fetched_from = "https://arxiv.org/pdf/math/0111096v5"
+fetched_at = "2026-10-22T20:07:47Z"
+sha256 = "3496320585a1415a14be05488299d4ae6158dbcfb4df723c820a4a12bd882cea"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v5"
+cited_for = ["4.17 Nilpotent invariance and the rational comparison", "4.18 Truncating excision and formal towers"]
+
+[[source]]
+id = "d-thesis"
+locator_scheme = "section"
+locator = "§6.2, Notation 6.2.8, printed p. 225 (PDF p. 234; Ch. 6, §6.4 'Application to q-de Rham cohomology', Theorem 6.4.1, printed p. 232 (PDF p. 241; Ch. 6, §6.1, Theorem 6.1.4 (Joint with A. Raksit"
+url = "https://sanathdevalapurkar.github.io/files/thesis.pdf"
+fetched_from = "https://sanathdevalapurkar.github.io/files/thesis.pdf"
+fetched_at = "2026-10-22T20:07:54Z"
+sha256 = "934a902f83a404452ecaf6f7853327128f1b9989acc6c5d7f6564a551bce1b6f"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["6.8 Image of J and the local coefficient comparisons"]
+authors = "Sanath Devalapurkar"
+title = "Spherochromatism in representation theory and arithmetic geometry (Ph.D. thesis, Harvard University, April 2025)"
+year = 2025
+
+[[source]]
+id = "dr"
+authors = "Sanath K. Devalapurkar, Arpon Raksit"
+title = "THH(Z) and the image of J"
+year = 2025
+arxiv = "2505.02218v2"
+locator_scheme = "section"
+locator = "§1.2, Proposition 1.2.5 (second part; Notation 0.1.2 and Remark 0.1.3, p. 2; §0.1, Theorem 0.1.4, p. 2"
+url = "https://arxiv.org/abs/2505.02218v2"
+fetched_from = "https://arxiv.org/pdf/2505.02218v2"
+fetched_at = "2026-10-22T20:07:58Z"
+sha256 = "9634c4c7b019b4ebcc063a63478ddbea609d83e4ff35e18f1345dcb228e28d89"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["5.3 Oriented circle and finite Tate coefficients", "6.8 Image of J and the local coefficient comparisons"]
+
+[[source]]
+id = "du"
+locator_scheme = "section"
+locator = "§0 Introduction, Theorem (unnumbered; §0, Main Theorem, journal p. 224 (PDF p. 2"
+url = "https://archive.ymsc.tsinghua.edu.cn/pacm_download/117/6553-11511_2006_Article_BF02392744.pdf"
+fetched_from = "https://archive.ymsc.tsinghua.edu.cn/pacm_download/117/6553-11511_2006_Article_BF02392744.pdf"
+fetched_at = "2026-10-22T20:08:06Z"
+sha256 = "4c40669f0a20f2f5bcb280fa31690000ded86512142b68e24a11c1253663091a"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["4.15 The two derivatives of the trace", "4.17 Nilpotent invariance and the rational comparison"]
+authors = "Bjørn Ian Dundas"
+title = "Relative K-theory and topological cyclic `homology"
+year = 1997
+
+[[source]]
+id = "e-cont"
+authors = "Alexander I. Efimov"
+title = "K-theory and localizing invariants of large categories"
+year = 2024
+arxiv = "2405.12169v4"
+locator_scheme = "section"
+locator = "Definition 2.58, pp. 50–51; Definition 8.5 and Propositions 8.6–8.8, pp. 105–106; Theorem 8.10, pp. 106–107"
+url = "https://arxiv.org/abs/2405.12169v4"
+fetched_from = "https://arxiv.org/pdf/2405.12169v4"
+fetched_at = "2026-10-22T20:08:12Z"
+sha256 = "9ba8f87032b58ae70ab8597b01d8f5fd1a8e6740a131664d21a34b6ade03fb0b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v4"
+cited_for = ["4.4 Continuous Calkin categories and accessible invariants", "4.5 Continuous extension and its uniqueness"]
+
+[[source]]
+id = "e-mot"
+authors = "Alexander I. Efimov"
+title = "Rigidity of the category of localizing motives"
+year = 2025
+arxiv = "2510.17010v1"
+locator_scheme = "section"
+locator = "§1.5, pp. 18–20; §1.2 and Proposition 1.1, pp. 15–16; §1.6 and Definition 1.2, pp. 20–21; Definition 1.2 and §1.6, pp. 20–21; Definition 3.2, pp. 29–30; Proposition 3.13 and proof, pp. 41–43; Theorem 2.1, p. 25; Theorem 3.1, p. 29; §1.5, p. 19"
+url = "https://arxiv.org/abs/2510.17010v1"
+fetched_from = "https://arxiv.org/pdf/2510.17010v1"
+fetched_at = "2026-10-22T20:08:18Z"
+sha256 = "0969afe53a4f9f3f46a369d0d533e53bd2c7cc093aabe9e76ffe6ba5a224d6d6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["4.1 Dualizable presentable categories", "4.3 Rigid categories and nuclear objects", "4.4 Continuous Calkin categories and accessible invariants", "4.6 Relative localizing motives", "4.7 Relative nuclearity and the length-one resolution", "4.8 Enriched duality and rigidity of motives", "7.3 Smooth proper normalization and base change"]
+
+[[source]]
+id = "ec2"
+locator_scheme = "section"
+locator = "§6.5, Theorem 6.5.1 and proof, pp. 273–275; Theorem 6.5.1, pp. 273–275, supplies the Snaith coefficient model"
+url = "https://www.math.ias.edu/~lurie/papers/Elliptic-II.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/Elliptic-II.pdf"
+fetched_at = "2026-10-22T20:08:22Z"
+sha256 = "741e87d7eed621a2f4c4f91ed7ba2a255b47255a16644d55e7b5f6270e22ee5d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["5.1 Snaith localization and stable operations", "5.2 Rational graded HKR and relative THH"]
+authors = "Jacob Lurie"
+title = "Elliptic Cohomology II: Orientations"
+year = 2018
+
+[[source]]
+id = "g"
+authors = "Victor Ginzburg"
+title = "Lectures on Noncommutative Geometry"
+year = 2005
+arxiv = "math/0506603v1"
+locator_scheme = "section"
+locator = "Proposition 5.2.1, p. 21; §9.2, p. 45; Theorem 9.1.3 (HKR"
+url = "https://arxiv.org/abs/math/0506603v1"
+fetched_from = "https://arxiv.org/pdf/math/0506603v1"
+fetched_at = "2026-10-22T20:08:28Z"
+sha256 = "d128d33a9cc0376f19a5b78d49989933b5fc3b02b19c87a7873d00aa1fb9d6ac"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["1.6 Cyclic Morita comparison and products", "1.9 Antisymmetrization and the smooth HKR comparison"]
+
+[[source]]
+id = "gs"
+authors = "David Gepner, Victor Snaith"
+title = "On the motivic spectra representing algebraic cobordism and algebraic K-theory"
+year = 2007
+venue = "Doc. Math. 14 (2009), 359-396"
+arxiv = "0712.2817v3"
+locator_scheme = "section"
+locator = "§1 'Introduction', §1.1 'Background and motivation', second paragraph, p. 1"
+url = "https://arxiv.org/abs/0712.2817v3"
+fetched_from = "https://arxiv.org/pdf/0712.2817v3"
+fetched_at = "2026-10-22T20:08:32Z"
+sha256 = "b80f305dcf977825ca9414bf5d000a39c7eafc971d37293e53eb1280296e5d03"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["5.1 Snaith localization and stable operations"]
+
+[[source]]
+id = "h"
+authors = "Marc Hoyois"
+title = "The homotopy fixed points of the circle action on Hochschild homology"
+year = 2015
+arxiv = "1506.07123v2"
+locator_scheme = "section"
+locator = "§2, p. 4; §2, p. 5; §2, pp. 4–5; Theorem 2.1, p. 4"
+url = "https://arxiv.org/abs/1506.07123v2"
+fetched_from = "https://arxiv.org/pdf/1506.07123v2"
+fetched_at = "2026-10-22T20:08:37Z"
+sha256 = "a51aa52ec74e195e9028e963e6b1dcd80ecc834fb7a4c712a873b786f502529d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["1.2 The Connes operator and mixed complexes", "1.3 The coherent derived mixed category", "1.4 Three totalizations and periodicity", "1.8 Scalar extension and étale comparison", "2.8 Relative THH and mixed-complex realization"]
+
+[[source]]
+id = "ha"
+locator_scheme = "section"
+locator = "Propositions 1.4.4.11(1; §7.5 'Étale Morphisms' (introduction"
+url = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_at = "2026-10-22T20:08:59Z"
+sha256 = "112b145a95a62daefb8275851cac9ab6430004cfc8f751a33a8d981fd7ad68c3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["3.4 The cyclotomic t-structure and TR", "6.14 Étale spherical lifts and number fields"]
+authors = "Jacob Lurie"
+title = "Higher Algebra"
+year = 2017
+
+[[source]]
+id = "hkr"
+locator_scheme = "section"
+locator = "Theorem 5.2, p. 395"
+url = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/HKR62.pdf"
+fetched_from = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/HKR62.pdf"
+fetched_at = "2026-10-22T20:09:03Z"
+sha256 = "ff575d981f2d5233b182aaf674f35b41c28eb8e8d8c6bf7da29ad5e8bc4760f0"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["1.9 Antisymmetrization and the smooth HKR comparison"]
+authors = "G. Hochschild, Bertram Kostant, Alex Rosenberg"
+title = "Differential forms on regular affine algebras"
+year = 1962
+
+[[source]]
+id = "h05"
+locator_scheme = "section"
+locator = "§3.2, (3.8"
+url = "https://web.math.ku.dk/~larsh/papers/s01/handbook.pdf"
+fetched_from = "https://web.math.ku.dk/~larsh/papers/s01/handbook.pdf"
+fetched_at = "2026-10-22T20:09:04Z"
+sha256 = "0f079627b73d2b13a40c2ae41478cca8156822a7082d876c64be9f5ec4562846"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["2.14 Finite-family circle spectra, genuine cyclotomic objects and TR"]
+authors = "Lars Hesselholt"
+title = "K-theory of truncated polynomial algebras"
+year = 2005
+
+[[source]]
+id = "hm97"
+locator_scheme = "section"
+locator = "§2, Theorem 2.3, p. 18"
+url = "https://www.math.nagoya-u.ac.jp/~larsh/papers/004/paper.pdf"
+fetched_from = "https://www.math.nagoya-u.ac.jp/~larsh/papers/004/paper.pdf"
+fetched_at = "2026-10-22T20:09:08Z"
+sha256 = "833d5ded2fae2819a803c4327df1967608513ef6b7a3d8f58b43cd84e8eb4c09"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["2.14 Finite-family circle spectra, genuine cyclotomic objects and TR"]
+authors = "Lars Hesselholt and Ib Madsen"
+title = "On the K-theory of finite algebras over Witt vectors of perfect fields"
+year = 1997
+
+[[source]]
+id = "hn"
+authors = "Lars Hesselholt, Thomas Nikolaus"
+title = "Topological cyclic homology"
+year = 2019
+arxiv = "1905.08984v1"
+locator_scheme = "section"
+locator = "§1.1.2, pp. 9–11; Introduction, p. 2; §1.4 'Group rings', Theorem 1.4.1, p. 34"
+url = "https://arxiv.org/abs/1905.08984v1"
+fetched_from = "https://arxiv.org/pdf/1905.08984v1"
+fetched_at = "2026-10-22T20:09:14Z"
+sha256 = "233e53dcf91c38123b1487fa53fadff7367e8658fdd197010d81855b8ff037b6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["4.11 The cyclotomic trace and multiplicativity", "4.17 Nilpotent invariance and the rational comparison", "4.19 Assembly and low-degree symbols"]
+
+[[source]]
+id = "hrw"
+authors = "Jeremy Hahn, Arpon Raksit, Dylan Wilson"
+title = "A motivic filtration on the topological cyclic homology of commutative ring spectra"
+year = 2022
+arxiv = "2206.11208v3"
+locator_scheme = "section"
+locator = "§1.1, Definition 1.1.1, p. 2 (precise version: Construction 2.1.3, pp. 11-12"
+url = "https://arxiv.org/abs/2206.11208v3"
+fetched_from = "https://arxiv.org/pdf/2206.11208v3"
+fetched_at = "2026-10-22T20:09:21Z"
+sha256 = "8c79a5fa38c2e5beb09ecdf937b8b511dd8156777f357a2102e9ba9411f1b734"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["6.5 Ordinary and solid even filtrations"]
+
+[[source]]
+id = "he"
+locator_scheme = "section"
+locator = "Theorems B–C, PDF p. 2"
+url = "https://math.mit.edu/~larsh/papers/005/acta.pdf"
+fetched_from = "https://math.mit.edu/~larsh/papers/005/acta.pdf"
+fetched_at = "2026-10-22T20:09:22Z"
+sha256 = "bb4677d93dee666e4906c574877f111d3e69ea4317f7797d09335edab2f8af81"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["2.18 The graded de Rham–Witt comparison for TR"]
+authors = "Lars Hesselholt"
+title = "On the p-typical curves in Quillen’s K-theory"
+year = 1996
+
+[[source]]
+id = "kb"
+locator_scheme = "section"
+locator = "Theorem IV.2.10, p. 283, for the statement of Gabber's theorem; Chapter III manuscript, Example 4.3.1, p. 31"
+url = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.pdf"
+fetched_from = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.pdf"
+fetched_at = "2026-10-22T20:09:42Z"
+sha256 = "a04f53c9393b20672fab2a6818279b2f9996dbc7cf74735789ed13804b058845"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["4.17 Nilpotent invariance and the rational comparison"]
+version_note = "KB uses the 2013 book's printed pagination; WeiK uses the author's separate Chapter III manuscript, Example 4.3.1, p. 31. These are versions of one book."
+alternate_fetched_from = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.III.pdf"
+alternate_sha256 = "ba1bc2d25680ab25c4baadc5ab28e39d1077dc66bb12ca4e2174b6cb55f81307"
+authors = "Charles A. Weibel"
+title = "The K-book: an introduction to algebraic K-theory"
+year = 2013
+
+[[source]]
+id = "ke"
+locator_scheme = "section"
+locator = "§2.2–2.4, pp. 6–7; §2.1–2.2, pp. 5–6; §2.1–2.4, pp. 5–7, Theorem 2.4(a; §2.2–2.3, pp. 6–7; §§2.1–2.3, pp. 5–7, supplies mixed DG formalism. The displayed graded HKR formula is the Koszul diagonal computation below"
+url = "https://webusers.imj-prg.fr/~bernhard.keller/publ/ilc.pdf"
+fetched_from = "https://webusers.imj-prg.fr/~bernhard.keller/publ/ilc.pdf"
+fetched_at = "2026-10-22T20:09:43Z"
+sha256 = "88a25d2279b6d00965fde1c29316266e0712db85d98620125045decb4ed776ce"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["1.3 The coherent derived mixed category", "1.6 Cyclic Morita comparison and products", "1.8 Scalar extension and étale comparison", "5.2 Rational graded HKR and relative THH"]
+authors = "Bernhard Keller"
+title = "Invariance and localization for cyclic homology of DG algebras"
+year = 1996
+
+[[source]]
+id = "kn"
+authors = "Achim Krause, Thomas Nikolaus"
+title = "Bökstedt periodicity and quotients of DVRs"
+year = 2019
+arxiv = "1907.03477v1"
+locator_scheme = "section"
+locator = "§1, Theorem 1.1, p. 4, deduced there from Theorem 1.2 with Proposition 1.4 and Lemma 1.6, pp. 4–6"
+url = "https://arxiv.org/abs/1907.03477v1"
+fetched_from = "https://arxiv.org/pdf/1907.03477v1"
+fetched_at = "2026-10-22T20:09:47Z"
+sha256 = "f969ef1304d4f1c722ce5a75addf2360f96f1a0d1c5d0b08872e27f296489b4f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["2.7 Absolute THH of E₁-rings"]
+
+[[source]]
+id = "l20"
+locator_scheme = "section"
+locator = "Examples 5 and 7, p. 2"
+url = "https://www.math.ias.edu/~lurie/252xnotes/Lecture20.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/252xnotes/Lecture20.pdf"
+fetched_at = "2026-10-22T20:09:47Z"
+sha256 = "b185bd7a29f7eacd8674f3810ce31b20e2a6bef95aadb7b144c256b4a38f19af"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["6.8 Image of J and the local coefficient comparisons"]
+authors = "Jacob Lurie"
+title = "Bousfield localization (Lecture 20)"
+year = 2010
+
+[[source]]
+id = "lmmt"
+authors = "Markus Land, Akhil Mathew, Lennart Meier, Georg Tamme"
+title = "Purity in chromatically localized algebraic $K$-theory"
+year = 2020
+venue = "J. Amer. Math. Soc. 37 (2024), 1011-1040"
+doi = "10.1090/jams/1043"
+arxiv = "2001.10425v5"
+locator_scheme = "section"
+locator = "Remark 3.9, pp. 15–16; §3, Remark 3.11, p. 16; §3, Remark 3.9, p. 16 (uses Corollary 4.30, p. 24"
+url = "https://arxiv.org/abs/2001.10425v5"
+fetched_from = "https://arxiv.org/pdf/2001.10425v5"
+fetched_at = "2026-10-22T20:09:53Z"
+sha256 = "9eabee34fd018d509b3cd831addefcf5fc6ea9f3a1a21e13e6f8cd58040baa2f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v5"
+cited_for = ["2.3 The finite-action Verdier quotient", "4.15 The two derivatives of the trace", "4.19 Assembly and low-degree symbols"]
+
+[[source]]
+id = "lq"
+locator_scheme = "section"
+locator = "§1, p. 567; §1 'Hochschild and cyclic homology', pp. 566-567; Definition, p. 568; Theorem 1.6 and its proof, p. 570; Corollary 1.7, p. 570; §2, antisymmetrization and differential-forms comparison, pp. 572–574; Proposition 2.2 and proof, pp. 572-573; Theorem 2.9, pp. 574-575"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN358147735_0059/LOG_0035.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN358147735_0059/LOG_0035.pdf"
+fetched_at = "2026-10-22T20:12:11Z"
+sha256 = "461c68509eaeb1f9dae59d1f30fa1cbf4246b4d7c101ed8b835e9e643e68d25c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["1.1 Cyclic objects and the cyclic bar", "1.4 Three totalizations and periodicity", "1.6 Cyclic Morita comparison and products", "1.9 Antisymmetrization and the smooth HKR comparison", "1.10 Characteristic-zero cyclic calculations"]
+authors = "Jean-Louis Loday, Daniel Quillen"
+title = "Cyclic homology and the Lie algebra homology of `matrices"
+year = 1984
+
+[[source]]
+id = "lt"
+authors = "Markus Land, Georg Tamme"
+title = "On the K-theory of pullbacks"
+year = 2018
+venue = "Ann. of Math. (2) 190 (2019), no. 3, 877-930"
+doi = "10.4007/annals.2019.190.3.4"
+arxiv = "1808.05559v3"
+locator_scheme = "section"
+locator = "§3, Definition 3.1, p. 28; §3, p. 30 (definition of KQinf; §3, proof of Corollary 3.6, p. 29; Introduction, Theorem B, p. 3 (= Theorem 3.3 + Corollary 3.5; §3, Example 3.8, p. 30"
+url = "https://arxiv.org/abs/1808.05559v3"
+fetched_from = "https://arxiv.org/pdf/1808.05559v3"
+fetched_at = "2026-10-22T20:12:15Z"
+sha256 = "59adf6a7d0a8b20d89dcb501e03ab2bd8ffdb929822c3250fbf65d1db693b4d4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["4.9 Localizing and truncating small-category invariants", "4.17 Nilpotent invariance and the rational comparison", "4.18 Truncating excision and formal towers", "4.19 Assembly and low-degree symbols"]
+
+[[source]]
+id = "mw"
+authors = "Samuel Meyer, Ferdinand Wagner"
+title = "$q$-Hodge complexes and refined $\\operatorname{TC}^-$"
+year = 2024
+arxiv = "2410.23115v4"
+locator_scheme = "section"
+locator = "Definition 2.1 and Lemma 2.2, pp. 11–12; Lemma 2.2(a; Definition 2.3, Theorem 2.4 and Remark 2.5, p. 12; Theorem 2.4 and Remark 2.5, p. 12; Construction 1.3, pp. 2–3; Constructions 2.6, 2.9 and 2.11, pp. 12–15; Lemma 2.18, p. 18; Lemmas 2.16 and 2.18, Corollary 2.19, pp. 17–19; Corollary 2.19, pp. 18–19; Theorem 2.21 and Lemmas 2.22–2.26, pp. 19–23; Lemma 3.2 and proof, pp. 29–30; Construction 1.7, p. 4; §3.1, paragraph 3.3, p. 30; Corollary 3.8, p. 32; Lemma 3.9 and proof, p. 33; Corollary 3.10 and proof, pp. 33–34; Lemma 3.11 and proof, pp. 34–35; Corollary 3.12 and proof, p. 35; Corollary 3.13 and proof, p. 36; Theorem 3.14(a; Theorem 3.14(b"
+url = "https://arxiv.org/abs/2410.23115v4"
+fetched_from = "https://arxiv.org/pdf/2410.23115v4"
+fetched_at = "2026-10-22T20:12:22Z"
+sha256 = "4479788e04da71cfb76596b4375b6b1e4c9bcd940ad92e1ab7c8ededba446dd4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v4"
+cited_for = ["4.2 Trace-class morphisms and their preduals", "4.3 Rigid categories and nuclear objects", "7.1 Rigidification and its universal factor", "7.2 Killing pro-algebras", "7.3 Smooth proper normalization and base change", "7.4 The localization cofiber", "7.5 Oriented completion and refined traces", "7.6 High-powered integers and finite coefficients", "7.7 Derived Hom, duality and completed tensor", "7.8 Pro-idempotence and trace-class transitions", "7.9 The rational ku and KU coefficient algebras"]
+
+[[source]]
+id = "may"
+locator_scheme = "section"
+locator = "Background, edition identified in References"
+url = "https://www.math.uchicago.edu/~may/CONCISE/ConciseRevised.pdf"
+fetched_from = "https://www.math.uchicago.edu/~may/CONCISE/ConciseRevised.pdf"
+fetched_at = "2026-10-22T20:12:29Z"
+sha256 = "6724f02748ed1f2f589a72b524d2e3f08758abbe8216f16e5e6ffd22ebdc8927"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["References"]
+authors = "J. P. May"
+title = "A Concise Course in Algebraic Topology"
+year = 1999
+
+[[source]]
+id = "mcc"
+locator_scheme = "section"
+locator = "Introduction, Main Theorem, journal p. 198 (PDF p. 2"
+url = "https://archive.ymsc.tsinghua.edu.cn/pacm_download/117/6552-11511_2006_Article_BF02392743.pdf"
+fetched_from = "https://archive.ymsc.tsinghua.edu.cn/pacm_download/117/6552-11511_2006_Article_BF02392743.pdf"
+fetched_at = "2026-10-22T20:12:32Z"
+sha256 = "e6389a7a3642a283cb91459db8743417d51222ce602e9d525c60a8b7e5273f66"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["4.17 Nilpotent invariance and the rational comparison"]
+authors = "Randy McCarthy"
+title = "Relative algebraic K-theory and topological cyclic `homology"
+year = 1997
+
+[[source]]
+id = "ns"
+locator_scheme = "section"
+locator = "§I.3 (Theorem I.3.3, Theorem I.3.6, Lemma I.3.8; arXiv v2 pp. 19–25); §§II.1–II.6 (in particular Proposition II.2.4, Theorem II.3.7, Theorems II.4.10–II.4.11 and II.6.3–II.6.9); §§III.1–III.6; §§IV.1–IV.4; Appendices B–C. Unless explicitly marked arXiv, locators use the Acta edition, pp. 203–409."
+url = "https://archive.intlpress.com/site/pub/files/_fulltext/journals/acta/2018/0221/0002/ACTA-2018-0221-0002-a001.pdf"
+fetched_from = "https://archive.intlpress.com/site/pub/files/_fulltext/journals/acta/2018/0221/0002/ACTA-2018-0221-0002-a001.pdf"
+fetched_at = "2026-10-22T20:12:36Z"
+sha256 = "8b1856fa8faefa3efebd64580249aa6fbc0c918f69820bba01410ab0ef1eb8ef"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["1.1 Cyclic objects and the cyclic bar", "1.8 Scalar extension and étale comparison", "1.11 Derived HKR, circle tensors and a nonflat example", "2.1 Coherent actions and their adjunctions", "2.2 Algebraic Tate cohomology of Eilenberg–Mac Lane spectra", "2.3 The finite-action Verdier quotient", "2.4 Postnikov bounds and the Tate fixpoint lemma", "2.5 Parametrized Tate constructions", "2.6 Cyclic realization and subdivision", "2.7 Absolute THH of E₁-rings", "2.8 Relative THH and mixed-complex realization", "2.9 Lax equalizers and the cyclotomic categories", "2.10 TC, its fiber formula and arithmetic completion", "2.11 Spherical group rings and categorical THH", "2.12 Orthogonal and genuine equivariant spectra", "2.13 Borel completion, isotropy and geometric localization", "2.14 Finite-family circle spectra, genuine cyclotomic objects and TR", "2.15 Coalgebras, coreflection and bounded-below equivalence", "2.16 The Bökstedt model and its comparison", "2.17 Restriction pullbacks and the genuine TC comparison"]
+arxiv = "1707.01799v2"
+doi = "10.4310/ACTA.2018.v221.n2.a1"
+version_note = "NS uses Acta pages 203–409; the explicit arXiv citations to I.3.3, I.3.6 and I.3.8 use v2 pages 19–25. Numbered results agree."
+alternate_fetched_from = "https://arxiv.org/pdf/1707.01799v2"
+alternate_sha256 = "12b6cdbd0d8ebb506284bd13f183affe80e41cc8890fef5fa21c922c2f80cec3"
+authors = "Thomas Nikolaus, Peter Scholze"
+title = "On topological cyclic `homology"
+year = 2018
+
+[[source]]
+id = "p"
+authors = "Piotr Pstrągowski"
+title = "Perfect even modules and the even filtration"
+year = 2023
+arxiv = "2304.04685v2"
+locator_scheme = "section"
+locator = "Definitions 2.2 and 2.4; Definitions 2.9 and 2.16; Proposition 4.3, pp. 30–31; Definition 6.15, Remarks 6.16–6.18 and Proposition 6.19, p. 44; §2.3, Definition 2.21, p. 12"
+url = "https://arxiv.org/abs/2304.04685v2"
+fetched_from = "https://arxiv.org/pdf/2304.04685v2"
+fetched_at = "2026-10-22T20:12:41Z"
+sha256 = "37cd80d462acf94fca5c6ffb30e4b0bc2728ba245927e30fb68d0217e4786210"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["6.3 Perfect-even sites and homological evenness", "6.4 Even flatness, faithful descent and duality", "6.5 Ordinary and solid even filtrations"]
+
+[[source]]
+id = "r-gal"
+authors = "John Rognes"
+title = "Galois extensions of structured ring spectra"
+year = 2005
+venue = "Memoirs of the American Mathematical Society, vol. 192, no. 898 (March 2008) 1-97"
+arxiv = "math/0502183v2"
+locator_scheme = "section"
+locator = "Proposition 5.3.1 and its proof, p. 23; §§5.5.1–5.5.2, pp. 32–33"
+url = "https://arxiv.org/abs/math/0502183v2"
+fetched_from = "https://arxiv.org/pdf/math/0502183v2"
+fetched_at = "2026-10-22T20:12:47Z"
+sha256 = "1fc6c3d36957639164aea220465b515b68de9fdc347edf3cbe365c76a43548f7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["6.8 Image of J and the local coefficient comparisons"]
+
+[[source]]
+id = "r"
+authors = "Sam Raskin"
+title = "On the Dundas-Goodwillie-McCarthy theorem"
+year = 2018
+arxiv = "1807.06709v1"
+locator_scheme = "section"
+locator = "§1.10–1.12, Examples 1.12.1–1.12.2, p. 4; §5.3–5.4, pp. 31–32; §2.3, Remark 2.3.1 and Variant 2.3.2, p. 6; §2.12, Theorem 2.12.1(2; §2.12, Theorem 2.12.2(3; §2.7, pp. 7–8; Definition 5.5.1, p. 32; Definitions 5.5.2 and Proposition 5.5.3, pp. 32–33; §2.11, Definition 2.11.2 and Corollary 2.11.7, pp. 10–11; §1.1, Theorem 1.1.1, p. 1"
+url = "https://arxiv.org/abs/1807.06709v1"
+fetched_from = "https://arxiv.org/pdf/1807.06709v1"
+fetched_at = "2026-10-22T20:12:52Z"
+sha256 = "3ae1b7a88baa13c939ef64015b9fd9a2b5e09a5cb6c8577e19f436f4c3c18cd1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["4.13 Bimodule THH as a categorical trace", "4.14 Square-zero extensions and linearization", "4.15 The two derivatives of the trace", "4.16 Cross-effects and the convergence hypotheses", "4.17 Nilpotent invariance and the rational comparison"]
+
+[[source]]
+id = "pri"
+authors = "J. P. Pridham"
+title = "On $q$-de Rham cohomology via $Λ$-rings"
+year = 2016
+arxiv = "1608.07142v4"
+locator_scheme = "section"
+locator = "§1.1, Remark 1.2 and Lemma 1.3, p. 3"
+url = "https://arxiv.org/abs/1608.07142v4"
+fetched_from = "https://arxiv.org/pdf/1608.07142v4"
+fetched_at = "2026-10-22T20:12:58Z"
+sha256 = "f00412c88e3713dab6089c4e470e2af42ee04cdfbf151a9ea8b800ce3cc4f62f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v4"
+cited_for = ["6.10 Arithmetic gluing, the global comparison and framed smooth algebras"]
+
+[[source]]
+id = "s-ber"
+authors = "Peter Scholze"
+title = "Berkovich Motives"
+year = 2024
+arxiv = "2412.03382v3"
+locator_scheme = "section"
+locator = "§8, almost-module paragraph before Proposition 8.7, pp. 46–47"
+url = "https://arxiv.org/abs/2412.03382v3"
+fetched_from = "https://arxiv.org/pdf/2412.03382v3"
+fetched_at = "2026-10-22T20:13:05Z"
+sha256 = "440b4a82eca992d1b7edb5c608bd7de8c336cce7f623f290aa95002cab57d484"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["4.20 Continuous K-theory of almost modules"]
+
+[[source]]
+id = "stacks"
+locator_scheme = "section"
+locator = "Example 60.19.1, Tag 07L7"
+url = "https://stacks.math.columbia.edu/tag/07L7"
+fetched_from = "https://stacks.math.columbia.edu/download/crystalline.pdf#nameddest=07L7"
+fetched_at = "2026-10-22T20:13:07Z"
+sha256 = "d1cad9f56d1e30b8311d95ea00f9b3e784341fcaf3e69083ccbc8dc786e10041"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["6.10 Arithmetic gluing, the global comparison and framed smooth algebras"]
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+
+[[source]]
+id = "w"
+authors = "Ferdinand Wagner"
+title = "$q$-de Rham cohomology and topological Hochschild homology over ku"
+year = 2025
+arxiv = "2510.06057v1"
+locator_scheme = "section"
+locator = "§§1.1–1.3; §§2.1–2.4 (solid spectra and even modules); §3 (solid THH); §§4.1–4.4 (Theorems 4.1, 4.8, 4.12, 4.14, 4.16, 4.17, 4.27 and Remark 4.28); §§5.1–5.4 (Theorems 5.51 and 5.63); §§6.1–6.3 (Theorem 6.10, Lemma 6.11, paragraphs 6.12–6.13, Remark 6.14 and Corollary 6.15). Printed manuscript pages."
+url = "https://arxiv.org/abs/2510.06057v1"
+fetched_from = "https://arxiv.org/pdf/2510.06057v1"
+fetched_at = "2026-10-22T20:13:12Z"
+sha256 = "fe9d7d71478eb546f89784f2eabdb15ec4f1e5ff8870c6c84909896c1543ea7d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["5.2 Rational graded HKR and relative THH", "5.3 Oriented circle and finite Tate coefficients", "6.1 Spherical bases and compatible global lifts", "6.2 Light solid spectra and module nuclearity", "6.3 Perfect-even sites and homological evenness", "6.4 Even flatness, faithful descent and duality", "6.5 Ordinary and solid even filtrations", "6.6 Synthetic circle and finite cyclic operations", "6.7 Filtered solid relative THH", "6.8 Image of J and the local coefficient comparisons", "6.9 The q-Hodge pullback and local comparisons", "6.10 Arithmetic gluing, the global comparison and framed smooth algebras", "6.11 Cyclonic coefficients and the Adams coherence", "6.12 Higher fixed-point invariants and filtered Bott localization", "6.13 Twisted q-Hodge and the Habiro–Hodge comparison", "6.14 Étale spherical lifts and number fields", "8.8 The coherent Habiro trace interface"]
+
+[[source]]
+id = "w-hab"
+authors = "Ferdinand Wagner"
+title = "$q$-Hodge complexes over the Habiro ring"
+year = 2025
+arxiv = "2510.04782v2"
+locator_scheme = "section"
+locator = "§3.2, Example 3.12, pp. 25–26, for the coordinate complex; §3.2, Example 3.12, pp. 25–26, and §3.1, Remark 3.6, pp. 22–23; §3.2 'The main result', Corollary 3.13, p. 27"
+url = "https://arxiv.org/abs/2510.04782v2"
+fetched_from = "https://arxiv.org/pdf/2510.04782v2"
+fetched_at = "2026-10-22T20:13:18Z"
+sha256 = "591d0bdf2c48d12f91d6c9a4beec32978bc1e9a9448b04ef0efdc4a84315373b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["6.10 Arithmetic gluing, the global comparison and framed smooth algebras", "6.14 Étale spherical lifts and number fields"]
+
+[[source]]
+id = "wg"
+locator_scheme = "section"
+locator = "Theorem 0.1, p. 368"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN358147735_0066/LOG_0026.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN358147735_0066/LOG_0026.pdf"
+fetched_at = "2026-10-22T20:15:44Z"
+sha256 = "215203519a8f2790c154aa41648af4593cb8294914076a7d547a65bf6c6f4a6d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["1.8 Scalar extension and étale comparison"]
+authors = "Charles A. Weibel, Susan C. Geller"
+title = "Étale descent for Hochschild and cyclic `homology"
+year = 1991
+
+[[source]]
+id = "ram"
+authors = "Maxime Ramzi"
+title = "Locally rigid $\\infty$-categories"
+year = 2024
+arxiv = "2410.21524v2"
+locator_scheme = "theorem"
+locator = "Construction 4.79; Theorem 4.81; pp. 43–46"
+url = "https://arxiv.org/abs/2410.21524v2"
+fetched_from = "https://arxiv.org/pdf/2410.21524v2"
+fetched_at = "2026-10-22T20:16:51Z"
+sha256 = "6c881bfa001b8103080a82f3cb880395f3737669d3abecf676c09256a6ac577a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["4.1; 7.1"]
+
+[[source]]
+id = "hatcher"
+locator_scheme = "theorem"
+locator = "Chapter 2, §2.3, Theorem 2.20, pp. 62–64"
+url = "https://pi.math.cornell.edu/~hatcher/VBKT/VB.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/VBKT/VB.pdf"
+fetched_at = "2026-10-22T20:16:57Z"
+sha256 = "04282b30dfa6305183827d399deddd0bd98240c2e6d2d0c416b06e2d4e1fa097"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["5.1"]
+authors = "Allen Hatcher"
+title = "Vector Bundles and K-Theory"
+year = 2017
+
