@@ -5459,6 +5459,54 @@
         "CountingBundlesAndHallAlgebrasOfCurves:CB.9/complex-poincare"
       ],
       "detail": "S16 pp.350–351 uses compact-cohomology constructibility, comparison and genus-wise diffeomorphism of complex coprime Higgs moduli. The generic six-operation results are requested from SF.2; the last geometric local constancy input needs its primary nonabelian-Hodge/topological proof and exact hypotheses. No fixed-fibre trace computation alone supplies it."
+    },
+    {
+      "slug": "coherent-ext-serre-duality",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "§3.3, extending §2.20",
+      "needs": "For every smooth projective geometrically connected curve and coherent U,V, provide a natural isomorphism Ext¹(U,V)* ≃ Hom(V,U⊗Ω), compatible with restriction, pushout and field extension, without requiring U locally free."
+    },
+    {
+      "slug": "degree-only-strong-generation",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "§3.3",
+      "needs": "For every coherent F on a smooth projective genus-g curve and every line L of degree −a, prove strong generation by L when μ_min(F)+a>2g−1, treating torsion sheaves and the zero sheaf separately."
+    },
+    {
+      "slug": "fixed-source-good-lines",
+      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+      "section": "§3.7",
+      "needs": "Export the good-line theorem with the kernel bound for the fixed source L₁ raised to l₁=χ(L₁,F), and identify the locally free locus of the coherent canonical Higgs carrier of §3.7 with the GL_r bundle stack and its bounded charts in every characteristic."
+    },
+    {
+      "slug": "reductive-character-git",
+      "supplier": "AlgebraicModuliForArithmeticGeometry",
+      "section": "§4.19, character-quotient continuation",
+      "needs": "Provide character-linearized reductive GIT for products of general linear groups, the Hilbert–Mumford and King invariant-subspace criteria, geometric free projective-group quotients, base change and the projective morphism from the character quotient to the affine quotient."
+    },
+    {
+      "slug": "complete-adams-series",
+      "supplier": "QSeriesPartitionsAndMockModularForms",
+      "section": "§§2.4 and 3.5, complete filtered series continuation",
+      "needs": "Provide complete filtered rational λ-rings with commuting Adams operations, coefficientwise inverse plethystic Exp and Log acting on every coefficient and grading variable, and the finite-extension Möbius identity."
+    },
+    {
+      "slug": "macdonald-admissibility",
+      "supplier": "QSeriesPartitionsAndMockModularForms",
+      "section": "§3.5, symmetric-function Part II",
+      "needs": "Provide modified Macdonald functions, the Hall S pairing, ∇ and τ, integral HLV logarithms and Mellit’s regular symmetric Laurent sequence deformation theorem over rational λ-rings with injective localization."
+    },
+    {
+      "slug": "universal-curve-weil-density",
+      "supplier": "LefschetzPencilsAndVanishingCycles",
+      "section": "§5.11, universal-family monodromy continuation",
+      "needs": "For g≥1, prove full symplectic geometric monodromy for the genus-g hyperelliptic moving-branch family over a suitable fixed odd finite field and, using DeligneWeightsAndPurity §10.5 with half-Tate normalization, deduce Zariski density of genus-g curve Weil tuples in the reciprocal torus quotient."
+    },
+    {
+      "slug": "affine-bundle-compact-shift",
+      "supplier": "EtaleDualityAndPerverseSheaves",
+      "section": "§0.7",
+      "needs": "Export the Frobenius-equivariant compact-cohomology comparison for every Zariski locally trivial rank-a affine bundle, with degree shift 2a, twist −a and compatibility with base change and the localization filtration."
     }
   ],
   "sourceIssues": [

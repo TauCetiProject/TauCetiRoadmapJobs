@@ -1,0 +1,228 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CountingBundlesAndHallAlgebrasOfCurves"
+
+[[source]]
+id = "S16"
+authors = "Olivier Schiffmann"
+title = "Indecomposable vector bundles and stable Higgs bundles over smooth projective curves"
+year = 2016
+doi = "10.4007/annals.2016.183.1.6"
+locator_scheme = "section"
+locator = "§§1–8 and Appendices A–C, pp.297–362; theorem and page locators in README; PDF page 1 is printed p.297"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v183-n1-p06-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v183-n1-p06-p.pdf"
+fetched_at = "2026-10-23T13:59:56Z"
+sha256 = "8e486963410368afe461a6f2a848eb7ddb618aa48fda7db2c0bd51710286c7a5"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "Published Annals version; section 1.4 contains the residue conventions; the constant formula uses negative differential-residue extraction, and the moment-map application distinguishes ambient submersivity from smoothness over the central line."
+cited_for = ["Layers 0–11"]
+
+[[source]]
+id = "M20"
+authors = "Anton Mellit"
+title = "Poincaré polynomials of moduli spaces of Higgs bundles and character varieties (no punctures)"
+year = 2020
+doi = "10.1007/s00222-020-00950-1"
+locator_scheme = "section"
+locator = "Theorem 1.1 pp.302–303; Proposition 3.1 pp.310–312; §4 pp.312–315; Lemma 5.1 pp.316–319; Theorem 5.2 pp.319–321"
+url = "https://link.springer.com/content/pdf/10.1007/s00222-020-00950-1.pdf"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["10.1–10.5"]
+
+[[source]]
+id = "MS14"
+authors = "Sergey Mozgovoy and Olivier Schiffmann"
+title = "Counting Higgs bundles"
+year = 2014
+arxiv = "1411.2101v1"
+locator_scheme = "section"
+locator = "arXiv v1, Theorem 1.2; §§2–4, pp.2–9"
+url = "https://arxiv.org/abs/1411.2101v1"
+fetched_from = "https://arxiv.org/pdf/1411.2101v1"
+fetched_at = "2026-10-23T14:00:00Z"
+sha256 = "7a4efa7f705b57d7e9966a58148fd47b31566b62c1931fd0b84273888679b318"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "arXiv v1"
+cited_for = ["1.9", "7.1 including the coherent derived-Hom comparison of Theorem 2.1", "8.9–8.10"]
+
+[[source]]
+id = "HN10"
+authors = "Olivier Schiffmann"
+title = "Spherical Hall algebras of curves and Harder–Narasimhan stratas"
+year = 2010
+arxiv = "1002.0987v1"
+locator_scheme = "section"
+locator = "arXiv v1, §§1.2–1.3; Theorem 3.1 and Corollary 3.5, pp.2–3,5–8"
+url = "https://arxiv.org/abs/1002.0987v1"
+fetched_from = "https://arxiv.org/pdf/1002.0987v1"
+fetched_at = "2026-10-23T14:00:06Z"
+sha256 = "735988898b476d4bbb4234eb7374aa466d2ce272269dec22d4b6f88a9ce58ffd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "arXiv v1"
+cited_for = ["3.2", "4.6–4.8"]
+
+[[source]]
+id = "SV12"
+authors = "Olivier Schiffmann and Eric Vasserot"
+title = "Hall algebras of curves, commuting varieties and Langlands duality"
+year = 2010
+arxiv = "1009.0678v1"
+locator_scheme = "section"
+locator = "arXiv v1, §1.11, pp.13–14"
+url = "https://arxiv.org/abs/1009.0678v1"
+fetched_from = "https://arxiv.org/pdf/1009.0678v1"
+fetched_at = "2026-10-23T14:00:12Z"
+sha256 = "4e929e99fc1041423016d12362008e99a52b4320a01e26958e9049f50fef29eb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "arXiv v1"
+cited_for = ["4.8"]
+
+[[source]]
+id = "M18"
+authors = "Anton Mellit"
+title = "Integrality of Hausel–Letellier–Rodriguez-Villegas kernels"
+year = 2018
+venue = "Duke Math. J. 167, no. 17 (2018), 3171-3205"
+doi = "10.1215/00127094-2018-0030"
+arxiv = "1605.01299v2"
+locator_scheme = "section"
+locator = "arXiv v2, §§5–7, pp.19–31; Theorem 7.1 and Corollary 7.2"
+url = "https://arxiv.org/abs/1605.01299v2"
+fetched_from = "https://arxiv.org/pdf/1605.01299v2"
+fetched_at = "2026-10-23T14:00:18Z"
+sha256 = "5d38ebaad1f7eeee913c9f616f4a96f35ff42ab8f55844b7c4c7be602288123b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "arXiv v2"
+cited_for = ["Macdonald supplier contract", "10.3"]
+
+[[source]]
+id = "WII"
+authors = "Pierre Deligne"
+title = "La conjecture de Weil : II"
+year = 1980
+locator_scheme = "section"
+locator = "§3.5, (3.5.1)–(3.5.3), pp.210–211"
+url = "https://www.numdam.org/item/PMIHES_1980__52__137_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1980__52__137_0.pdf"
+fetched_at = "2026-10-23T14:00:20Z"
+sha256 = "b06eea61bf9cb2b596c162f5befcf85d1be69828910a6107c8aa3a99c4afcc71"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["Equidistribution supplier contract"]
+
+[[source]]
+id = "ACK07"
+authors = "Luis Álvarez-Cónsul, Alastair King"
+title = "A functorial construction of moduli of sheaves"
+year = 2006
+doi = "10.1007/s00222-007-0042-5"
+arxiv = "math/0602032v2"
+locator_scheme = "theorem"
+locator = "arXiv v2, condition (C:4) and Lemmas 5.4–5.5, pp.23–25, ACK07 line 1088"
+url = "https://arxiv.org/abs/math/0602032v2"
+fetched_from = "https://arxiv.org/pdf/math/0602032v2"
+fetched_at = "2026-10-23T14:07:18Z"
+sha256 = "2d56ef1f2fbc669521421417b4e7758cd5405dd82aa609290449d146c305cfd6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "arXiv v2"
+cited_for = ["8.5"]
+
+[[source]]
+id = "LIN15"
+authors = "Jyun-Ao Lin"
+title = "Spherical Hall algebras of a weighted projective curve"
+year = 2014
+arxiv = "1410.0896v2"
+locator_scheme = "theorem"
+locator = "arXiv v2, §§1.2–1.3; §1.6, Corollary 1.5, equation (1.11), LIN15 line 517; Theorems 3.1, 3.16"
+url = "https://arxiv.org/abs/1410.0896v2"
+fetched_from = "https://arxiv.org/pdf/1410.0896v2"
+fetched_at = "2026-10-23T14:07:24Z"
+sha256 = "41577c40ed90da8c4ba33292f64e0a21e32350bc8d4ab393e7822c0954ffbfe1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "arXiv v2"
+cited_for = ["11.2"]
+
+[[source]]
+id = "BTL12"
+authors = "Tom Bridgeland, Valerio Toledano Laredo"
+title = "Stability conditions and Stokes factors"
+year = 2012
+arxiv = "0801.3974v5"
+locator_scheme = "theorem"
+locator = "arXiv v5, §§4.2–4.4, pp.17–19, BTL12 line 766 and BTL12 line 850"
+url = "https://arxiv.org/abs/0801.3974v5"
+fetched_from = "https://arxiv.org/pdf/0801.3974v5"
+fetched_at = "2026-10-23T14:07:30Z"
+sha256 = "79718f846a4077042801ca40e605cb94db41973e5e37baa0f0e2f48edf21c723"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "arXiv v5"
+cited_for = ["11.5"]
+
+[[source]]
+id = "FH58"
+authors = "N. J. Fine, I. N. Herstein"
+title = "The probability that a matrix be nilpotent"
+year = 1958
+doi = "10.1215/ijm/1255454112"
+locator_scheme = "theorem"
+locator = "Theorem 1, p. 499; proof pp. 499–503"
+url = "https://projecteuclid.org/journals/illinois-journal-of-mathematics/volume-2/issue-4A/The-probability-that-a-matrix-be-nilpotent/10.1215/ijm/1255454112.pdf"
+fetched_from = "https://projecteuclid.org/journals/illinois-journal-of-mathematics/volume-2/issue-4A/The-probability-that-a-matrix-be-nilpotent/10.1215/ijm/1255454112.pdf"
+fetched_at = "2026-10-23T14:31:39Z"
+sha256 = "133b82615e3a5235521a9d5e70c4baef274be8f63984310375b99e966addffc2"
+licence_class = "open-repository"
+status = "uncertified"
+accessed = "2026-10-23"
+cited_for = ["1.4"]
+version_note = "Locator-only citation: official Euclid endpoints returned access-protection HTML, not the mathematical paper; the primary proof has not been read. The recorded hash is that HTTP response, not a paper hash. S16 Corollary 2.5 independently states the count."
+
+[[source]]
+id = "SPR66"
+authors = "T. A. Springer"
+title = "Nonabelian H² in Galois cohomology"
+year = 1966
+locator_scheme = "theorem"
+locator = "Theorem 3.5, p.179, SPR66 line 6739; in the institutional proceedings scan"
+url = "https://www-fourier.univ-grenoble-alpes.fr/~panchish/ETE%20LAMA%202018-AP/Borel_Algebraic%20Groups%20and%20Discontinuous%20Subgroups.pdf"
+fetched_from = "https://www-fourier.univ-grenoble-alpes.fr/~panchish/ETE%20LAMA%202018-AP/Borel_Algebraic%20Groups%20and%20Discontinuous%20Subgroups.pdf"
+fetched_at = "2026-10-23T14:15:34Z"
+sha256 = "962203f9e47e9c3c43fc1049a38e28c751aa42beb7ee5250a095a132e215a5d4"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["1.6"]
+
+[[source]]
+id = "HES81"
+authors = "W. H. Hesselink"
+title = "Concentration under actions of algebraic groups"
+year = 1981
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0090380"
+locator_scheme = "theorem"
+locator = "Theorem 5.7, pp. 55–89"
+url = "https://doi.org/10.1007/BFb0090380"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["8.7", "9.1"]
