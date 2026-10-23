@@ -1,0 +1,2112 @@
+{
+  "roadmapId": "PadicHodgeTheoryPartII",
+  "protocol": "blueprint-v1",
+  "part": null,
+  "scope": [
+    "PadicHodgeTheoryPartII:GM0",
+    "PadicHodgeTheoryPartII:GM1",
+    "PadicHodgeTheoryPartII:GM2",
+    "PadicHodgeTheoryPartII:GM3",
+    "PadicHodgeTheoryPartII:GM4"
+  ],
+  "status": "complete",
+  "summary": "Generic crystalline derived monodromy for decent acceptable pairs, the finite-extension open-image point, central lifting, and a final component/converse consumer. The arithmetic proof uses corrected Galois-orbit minima, full monodromy before taking identity components, and compact Galois-orbit descent. Generic-filtration and ADLV supplier gaps remain explicit; this is a complete planning pass, not a closed or implemented theory.",
+  "baseline": {
+    "tauceti": "f790474821cf4256814db967cb154e7af3d0c369",
+    "mathlib": "082e2d37e8b0463410cdb532e111cd43d5a66174",
+    "declarations": [
+      {
+        "ref": "mathlib:Submodule",
+        "kind": "structure",
+        "module": "Mathlib/Algebra/Module/Submodule/Defs.lean",
+        "provides": "Actual submodules of an existing module; DegreeAt uses their membership predicate.",
+        "checked": "Declaration and actual signature read in the pinned Mathlib source, 2026-10-19.",
+        "sourceSha256": "f1735fb71af000fc2047c5e6456fa2b31d0f5443d23a169ac25a6ce388fe2b78"
+      },
+      {
+        "ref": "mathlib:WittVector.teichmuller",
+        "kind": "def",
+        "module": "Mathlib/RingTheory/WittVector/Teichmuller.lean",
+        "provides": "The multiplicative Teichmüller map into p-typical Witt vectors, used with Verschiebung and universal Witt-coordinate polynomials.",
+        "checked": "Declaration and actual signature read in the pinned Mathlib source, 2026-10-19.",
+        "sourceSha256": "d67df6e0011067d6c78f4d9e1ec9914dd7e2fc502d8e1f7f267ac0ae4f0bc957"
+      },
+      {
+        "ref": "mathlib:AlgebraicIndependent",
+        "kind": "def",
+        "module": "Mathlib/RingTheory/AlgebraicIndependent/Defs.lean",
+        "provides": "Injectivity of multivariable-polynomial evaluation for an indexed family over a specified coefficient ring.",
+        "checked": "Declaration and actual signature read in the pinned Mathlib source, 2026-10-19.",
+        "sourceSha256": "057b6f961fd870a3bb4f53f9e5449dd452dcaa80c4d7a66cef1412f54185b4c4"
+      },
+      {
+        "ref": "mathlib:WittVector.ghostComponent",
+        "kind": "def",
+        "module": "Mathlib/RingTheory/WittVector/Basic.lean",
+        "provides": "The ring homomorphism evaluating a specified p-typical Witt ghost polynomial.",
+        "checked": "Declaration and actual signature read at the pinned Mathlib commit, 2026-10-19.",
+        "sourceSha256": "dc9e2c2285cdfd4e72615841c22310a6312ac1385b0821b47dfa3acc05763045"
+      },
+      {
+        "ref": "mathlib:WittVector.verschiebung",
+        "kind": "def",
+        "module": "Mathlib/RingTheory/WittVector/Verschiebung.lean",
+        "provides": "The additive coefficient-shift map, with its universal-polynomial and ghost-component identities.",
+        "checked": "Declaration and actual signature read at the pinned Mathlib commit, 2026-10-19.",
+        "sourceSha256": "2f2cf9e6b183998acf62794164a4e9b682d5fe935f40b7357970d9875579c7c0"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "GLX26",
+      "title": "The connected components of affine Deligne–Lusztig varieties",
+      "authors": "Ian Gleason, Dong Gyu Lim and Yujie Xu",
+      "edition": "Inventiones mathematicae 243 (2026), 805–861; version of record, online 12 November 2025",
+      "url": "https://link.springer.com/content/pdf/10.1007/s00222-025-01386-1.pdf",
+      "sha256": "c40fe1fc5e0941812cf3aca5ba77c471ee49122c63ed7b0d864d322136031485",
+      "accessed": "2026-10-19",
+      "readSections": [
+        "§§2.1–2.2, pp. 817–819 (invariants and decency)",
+        "§5, pp. 835–845 (complete generic monodromy proof)",
+        "Theorems 6.1–6.2, pp. 845–846; Propositions 6.6–6.7, pp. 849–851; Lemma 6.12, pp. 855–856, with context through Lemma 6.15"
+      ]
+    },
+    {
+      "id": "Chen14",
+      "title": "Composantes connexes géométriques de la tour des espaces de modules de groupes p-divisibles",
+      "authors": "Miaofen Chen",
+      "edition": "Annales scientifiques de l’École normale supérieure (4) 47 (2014), 723–764; published text",
+      "url": "https://smf.emath.fr/system/files/2017-08/ens_ann-sc_47_723-764.pdf",
+      "sha256": "7f0a33b3659ba049aadfeb571e150ae80a95a53e9cd3731cfbc7242600619698",
+      "accessed": "2026-10-19",
+      "readSections": [
+        "§2, Proposition 2.0.3 and Lemma 2.0.4, pp. 734–737",
+        "§3.1, pp. 738–740 (slope fibre functors)",
+        "§§3.2–3.3, pp. 740–745 (monodromy, coefficient lines and comparison)",
+        "§5, Theorem 5.0.6 and proof, pp. 750–752"
+      ]
+    },
+    {
+      "id": "Stacks",
+      "title": "The Stacks Project",
+      "authors": "The Stacks Project Authors",
+      "edition": "Stable tags, accessed 19 October 2026",
+      "url": "https://stacks.math.columbia.edu",
+      "readSections": [
+        "Tag 054L, Lemma 29.37.21 (étale coordinates for smooth morphisms)",
+        "Tag 02GL, Lemma 29.37.7 (étale schemes over fields)",
+        "Tag 02GH, §29.37 (base change and openness of étale morphisms)"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "PadicHodgeTheoryPartII:GM0/filtration-degree",
+      "parentStageId": "PadicHodgeTheoryPartII:GM0",
+      "realises": [
+        "PadicHodgeTheoryPartII:GM0"
+      ],
+      "title": "The jump of a nonzero filtered vector",
+      "kind": "definition",
+      "statement": "For a field K, a K-vector space V and a decreasing, exhaustive and separated integer filtration F, DegreeAt(F,v,d) means v ∈ F^d and v ∉ F^(d+1). Every nonzero v has a unique such integer. The predicate itself is defined for any family of submodules; existence and uniqueness require the filtration hypotheses. No integer degree is assigned to zero.",
+      "hypotheses": [
+        "K is a field; V is a K-vector space. The filtration is bounded above and below for the existence assertion."
+      ],
+      "proofSteps": [
+        "Define DegreeAt by membership and nonmembership in the existing Submodule carrier.",
+        "For v ≠ 0, the set of indices containing v is a nonempty proper lower subset of the integers; its largest member is the required jump. Antitonicity proves uniqueness."
+      ],
+      "acceptance": [
+        "A rank-one filtration jumping at a gives degree a, including negative a.",
+        "Zero has no jump, even though it belongs to every submodule."
+      ],
+      "prerequisites": [
+        "mathlib:Submodule"
+      ],
+      "sources": [
+        {
+          "sourceId": "GLX26",
+          "locator": "§5.1, equation (5.2), p. 836",
+          "match": "The degree is the unique jump of a nonzero vector for a decreasing filtration."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/PadicHodge/GenericMonodromy",
+        "namespace": "TauCeti.PadicHodge.GenericMonodromy"
+      },
+      "planet": {
+        "name": "Filtration degree"
+      },
+      "proposedName": "DegreeAt",
+      "prototype": "light definition",
+      "uses": [
+        {
+          "where": "GM0/degree-sum",
+          "how": "Sum the jumps of successive Frobenius translates."
+        },
+        {
+          "where": "GM1/orbit-degree-bound",
+          "how": "Compare the actual jump with the imported generic-filtration threshold."
+        }
+      ],
+      "api": [
+        {
+          "name": "DegreeAt.mem",
+          "role": "projection",
+          "statement": "DegreeAt(F,v,d) implies v ∈ F^d."
+        },
+        {
+          "name": "DegreeAt.not_mem_succ",
+          "role": "projection",
+          "statement": "DegreeAt(F,v,d) implies v ∉ F^(d+1)."
+        },
+        {
+          "name": "DegreeAt.unique",
+          "role": "characterisation",
+          "statement": "For antitone F, DegreeAt(F,v,d) and DegreeAt(F,v,e) imply d=e."
+        },
+        {
+          "name": "DegreeAt.exists_of_nonzero",
+          "role": "constructor",
+          "statement": "For a bounded exhaustive filtration and v ≠ 0, there exists d with DegreeAt(F,v,d)."
+        },
+        {
+          "name": "DegreeAt.smul",
+          "role": "compatibility",
+          "statement": "Multiplication of v by a nonzero scalar preserves DegreeAt."
+        }
+      ],
+      "tests": [
+        {
+          "name": "degreeAt_rankOne",
+          "kind": "computation",
+          "statement": "For F^i=K when i≤a and F^i=0 otherwise, DegreeAt(F,1,a)."
+        },
+        {
+          "name": "degreeAt_zero",
+          "kind": "degenerate",
+          "statement": "DegreeAt(F,0,a) is false for every F and a."
+        },
+        {
+          "name": "degreeAt_twoJumps",
+          "kind": "computation",
+          "statement": "For K e1 ⊕ K e2 with jumps 2 and -1, e1+e2 has degree -1; e1 has degree 2."
+        },
+        {
+          "name": "degreeAt_not_grading",
+          "kind": "non-example",
+          "statement": "The preceding vector e1+e2 is not homogeneous, but still has a unique filtration degree."
+        }
+      ]
+    },
+    {
+      "id": "PadicHodgeTheoryPartII:GM0/degree-sum",
+      "parentStageId": "PadicHodgeTheoryPartII:GM0",
+      "realises": [
+        "PadicHodgeTheoryPartII:GM0"
+      ],
+      "title": "The full-period Frobenius degree sum",
+      "kind": "definition",
+      "statement": "For a set X of nonzero vectors, a degree d:X→ℤ and a self-map φ:X→X, frobeniusDegreeSum(d,φ,s,v)=Σ_{0≤i<s} d(φ^i(v)). In the crystalline application X is the nonzero subtype of V⊗F, φ=ρ(b)σ is bijective, s>0 is a decency period, and d is the μ-filtration jump over K. The summands need not be equal.",
+      "hypotheses": [
+        "s is a natural number; positivity is required only in the arithmetic application."
+      ],
+      "proofSteps": [
+        "Take the finite sum over Finset.range s, using ordinary iteration.",
+        "Instantiate the nonzero subtype using bijectivity of the isocrystal Frobenius; extend vectors to K only to evaluate the filtration."
+      ],
+      "acceptance": [
+        "For s=0 the sum is 0; no division by s occurs in this definition.",
+        "For a two-cycle with degrees 1 and -1, the full-period sum is 0."
+      ],
+      "prerequisites": [
+        "PadicHodgeTheoryPartII:GM0/filtration-degree"
+      ],
+      "sources": [
+        {
+          "sourceId": "GLX26",
+          "locator": "§5.1, equation (5.4), p. 837",
+          "match": "The sum follows the entire s-step semilinear orbit."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/PadicHodge/GenericMonodromy",
+        "namespace": "TauCeti.PadicHodge.GenericMonodromy"
+      },
+      "planet": {
+        "name": "Frobenius degree sum"
+      },
+      "proposedName": "frobeniusDegreeSum",
+      "prototype": "light definition",
+      "uses": [
+        {
+          "where": "GM0/newton-hodge-vectors",
+          "how": "Impose the Hodge equation d_s(v)=k."
+        },
+        {
+          "where": "GM1/frobenius-average-bound",
+          "how": "Turn s inertia bounds into the full Galois average."
+        }
+      ],
+      "api": [
+        {
+          "name": "frobeniusDegreeSum_zero",
+          "role": "simp",
+          "statement": "The sum for period zero equals 0."
+        },
+        {
+          "name": "frobeniusDegreeSum_one",
+          "role": "simp",
+          "statement": "The sum for period one equals d(v)."
+        },
+        {
+          "name": "frobeniusDegreeSum_succ",
+          "role": "relation",
+          "statement": "The (s+1)-sum is the s-sum plus d(φ^s(v))."
+        },
+        {
+          "name": "frobeniusDegreeSum_map",
+          "role": "functoriality",
+          "statement": "A map intertwining φ and ψ and preserving degrees preserves all full-period sums."
+        }
+      ],
+      "tests": [
+        {
+          "name": "degreeSum_zero",
+          "kind": "degenerate",
+          "statement": "A zero-length orbit has sum 0 for every degree function."
+        },
+        {
+          "name": "degreeSum_fixed",
+          "kind": "computation",
+          "statement": "For φ=id, the sum equals s·d(v)."
+        },
+        {
+          "name": "degreeSum_unequalCycle",
+          "kind": "computation",
+          "statement": "For the involution of a two-element set with degrees 1,-1, the 2-sum is 0 at either element."
+        },
+        {
+          "name": "degreeSum_not_firstJump",
+          "kind": "non-example",
+          "statement": "For that cycle starting at degree 1, the 2-sum is 0 and differs from 2 times its first jump."
+        }
+      ]
+    },
+    {
+      "id": "PadicHodgeTheoryPartII:GM0/newton-hodge-vectors",
+      "parentStageId": "PadicHodgeTheoryPartII:GM0",
+      "realises": [
+        "PadicHodgeTheoryPartII:GM0"
+      ],
+      "title": "Vectors satisfying the Newton and Hodge equations",
+      "kind": "definition",
+      "statement": "Fix an s-decent b, s>0, K/F finite, a filtration μ and a rational representation ρ:G→GL(V). For k∈ℤ let V^{s,k}_{b,μ} be the set of nonzero v∈V⊗Q_p Q_{p^s} for which ρ((sν_b)(p))v=p^k v and d_s(v)=k. This is a set, not a declared subspace. The Frobenius sum is computed in V⊗F, where F=breve Q_p.",
+      "hypotheses": [
+        "b and ν_b descend to Q_{p^s}; sν_b is integral.",
+        "All degree summands are evaluated on nonzero vectors using the μ-filtration over K."
+      ],
+      "proofSteps": [
+        "Use the imported decency identity to define the Newton operator on V⊗Q_{p^s}.",
+        "Intersect its nonzero p^k-eigenvectors with the level set k of the degree sum; do not close under addition."
+      ],
+      "acceptance": [
+        "Neither the zero vector nor a vector satisfying only the Newton equation belongs automatically."
+      ],
+      "prerequisites": [
+        "PadicHodgeTheoryPartII:GM0/degree-sum",
+        "BunGAndNewtonStrata:BG0/decent-representative"
+      ],
+      "sources": [
+        {
+          "sourceId": "GLX26",
+          "locator": "§5.1, equations (5.3)–(5.5), pp. 836–837",
+          "match": "The two equations jointly pick the coefficient lines used by the crystalline Tannakian group."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/PadicHodge/GenericMonodromy",
+        "namespace": "TauCeti.PadicHodge.GenericMonodromy"
+      },
+      "planet": {
+        "name": "Newton and Hodge equations"
+      },
+      "proposedName": "newtonHodgeVectors",
+      "prototype": "README: filtered-isocrystal carriers required",
+      "uses": [
+        {
+          "where": "GM0/invariant-line-criterion",
+          "how": "Parameterize rank-one coefficient subobjects by their fibre lines."
+        },
+        {
+          "where": "GM1/newton-lowest-weight",
+          "how": "Extract the Newton slope k/s for all occurring torus weights."
+        }
+      ],
+      "api": [
+        {
+          "name": "newtonHodgeVectors_mem",
+          "role": "characterisation",
+          "statement": "Membership is equivalent to nonzero, the Newton eigenvalue equation, and the Hodge equality."
+        },
+        {
+          "name": "newtonHodgeVectors_smul",
+          "role": "compatibility",
+          "statement": "Multiplication by Q_{p^s}^× preserves membership and the represented line."
+        },
+        {
+          "name": "newtonHodgeVectors_tensorMap",
+          "role": "functoriality",
+          "statement": "A representation morphism preserving the filtered isocrystal sends a member to a member with the same k whenever its image is nonzero."
+        }
+      ],
+      "tests": [
+        {
+          "name": "newtonHodge_rankOne",
+          "kind": "computation",
+          "statement": "For φ=p^aσ and μ of weight h, a nonzero rational vector belongs to V^{s,k} exactly when k=sa=sh."
+        },
+        {
+          "name": "newtonHodge_zeroExcluded",
+          "kind": "degenerate",
+          "statement": "For the zero representation every V^{s,k} is empty."
+        },
+        {
+          "name": "newtonHodge_wrongHodge",
+          "kind": "non-example",
+          "statement": "For φ=σ and a rank-one filtration of jump 1, every nonzero vector satisfies the k=0 Newton equation but none satisfies both equations."
+        },
+        {
+          "name": "newtonHodge_cyclicCoefficient",
+          "kind": "compatibility",
+          "statement": "For the coefficient object with jumps d_i and wrap p^k, its distinguished cyclic vector belongs exactly when Σ_i d_i=k."
+        }
+      ]
+    },
+    {
+      "id": "PadicHodgeTheoryPartII:GM0/decent-fibre-functor",
+      "parentStageId": "PadicHodgeTheoryPartII:GM0",
+      "realises": [
+        "PadicHodgeTheoryPartII:GM0"
+      ],
+      "title": "The finite decent-field crystalline fibre functor",
+      "kind": "construction",
+      "statement": "On the full tensor subcategory of isocrystals whose slopes have denominators dividing s, define ω_s(N)=⊕_λ {x∈N_λ | φ^s(x)=p^{sλ}x}, a Q_{p^s}-vector space. This is an exact faithful tensor functor, with ω_s(N)⊗_{Q_{p^s}}F≅N. Restrict it to the subcategory C_{b,μ} generated by F_{b,μ}(Rep G), closed under subquotients. If b is s-decent, its composite with F_{b,μ} identifies canonically with V↦V⊗Q_{p^s}; hence the full group H_cris,s=Aut^⊗(ω_s|C_{b,μ}) embeds in G_{Q_{p^s}}.",
+      "hypotheses": [
+        "s>0 clears the slopes of a faithful representation, and therefore all tensor constructions and subquotients.",
+        "The unfiltered ω_s is constructed without any admissibility assumption. Only its restriction to the admissible generated category and the named tensor group require an admissible pair."
+      ],
+      "proofSteps": [
+        "Apply Dieudonné–Manin to each slope summand and take its normalized φ^s-fixed vectors.",
+        "Use tensor/dual slope addition and the scalar-extension comparison to prove exactness, faithfulness and the tensor constraints.",
+        "Apply s-decency to the representations of G, then neutral Tannaka to the generated subcategory. Keep the full group; identity components are separate."
+      ],
+      "acceptance": [
+        "For the trivial object the fibre is Q_{p^s}, not F.",
+        "The standard block of slope a/h has fibre dimension h when h divides s."
+      ],
+      "prerequisites": [
+        "VectorBundlesAndIsocrystals:VB0/dieudonne-manin-isocrystals",
+        "VectorBundlesAndIsocrystals:VB0/tensor-and-dual-slopes",
+        "PadicHodgeTheory:R06.2/crystalline-g-fiber-functor",
+        "MotivesAndAlgebraicCycles:MC.6/neutral-tannaka-reconstruction"
+      ],
+      "sources": [
+        {
+          "sourceId": "Chen14",
+          "locator": "§3.1, pp. 738–740; Definition 3.3.1 and Lemma 3.3.2, p. 742",
+          "match": "Normalized Frobenius eigenspaces form the finite coefficient fibre functor and decency identifies it with the standard G-fibre."
+        },
+        {
+          "sourceId": "GLX26",
+          "locator": "§5.1 ¶14, p. 836",
+          "match": "This is the finite-decent-field crystalline realization; the group convention is corrected to the full group."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/PadicHodge/GenericMonodromy",
+        "namespace": "TauCeti.PadicHodge.GenericMonodromy"
+      },
+      "planet": {
+        "name": "Decent crystalline fibre functor"
+      },
+      "proposedName": "decentCrystallineFibreFunctor",
+      "prototype": "README: shared isocrystal and tensor-category carriers required",
+      "uses": [
+        {
+          "where": "GM0/coefficient-rank-one",
+          "how": "Describe its rank-one coefficient objects."
+        },
+        {
+          "where": "GM0/ambient-period-transfer",
+          "how": "Compare its full group with étale full monodromy."
+        }
+      ],
+      "api": [
+        {
+          "name": "decentCrystallineFibreFunctor_scalarExtension",
+          "role": "compatibility",
+          "statement": "The natural scalar extension of ω_s(N) to F is the underlying isocrystal vector space N."
+        },
+        {
+          "name": "decentCrystallineFibreFunctor_tensor",
+          "role": "structure",
+          "statement": "The canonical maps ω_s(N)⊗ω_s(M)→ω_s(N⊗M) and Q_{p^s}→ω_s(1) are isomorphisms with the tensor coherences."
+        },
+        {
+          "name": "decentCrystallineFibreFunctor_decent",
+          "role": "characterisation",
+          "statement": "For s-decent b, ω_s(F_{b,μ}(V))≅V⊗Q_{p^s}, naturally in V and respecting tensors."
+        },
+        {
+          "name": "decentCrystallineFibreFunctor_subobject",
+          "role": "functoriality",
+          "statement": "A filtered-isocrystal subobject induces the corresponding injective Q_{p^s}-linear map on fibres."
+        }
+      ],
+      "tests": [
+        {
+          "name": "decentFibre_unit",
+          "kind": "degenerate",
+          "statement": "ω_s(F,σ)=Q_{p^s}, with unit tensor constraint the identity."
+        },
+        {
+          "name": "decentFibre_slopeHalf",
+          "kind": "computation",
+          "statement": "The rank-two standard isocrystal of slope 1/2 has a two-dimensional ω_2-fibre over Q_{p^2}."
+        },
+        {
+          "name": "decentFibre_scalarRecovery",
+          "kind": "compatibility",
+          "statement": "For any standard block of slope a/h with h|s, extension of ω_s to F recovers that block, including its full rank."
+        },
+        {
+          "name": "decentFibre_not_naiveFixed",
+          "kind": "non-example",
+          "statement": "For the rank-one object φ=pσ the unnormalized φ^s-fixed space is zero, while ω_s has dimension one."
+        }
+      ]
+    },
+    {
+      "id": "PadicHodgeTheoryPartII:GM0/coefficient-rank-one",
+      "parentStageId": "PadicHodgeTheoryPartII:GM0",
+      "realises": [
+        "PadicHodgeTheoryPartII:GM0"
+      ],
+      "title": "Rank-one coefficient objects and the degree equality",
+      "kind": "theorem",
+      "statement": "A rank-one object after scalar extension of the admissible filtered-isocrystal category to Q_{p^s} is represented, up to isomorphism, by integers d_0,…,d_{s-1}, k=Σ_i d_i, an F-basis e_0,…,e_{s-1}, φ(e_i)=e_{i+1} for i<s−1 and φ(e_{s−1})=p^k e_0, with coefficient a acting on e_i by σ^i(a), and filtration jump d_i on K e_i. Conversely these objects are weakly admissible. Inside F_{b,μ}(V)⊗Q_{p^s}, their fibre lines are precisely Q_{p^s}v for v∈V^{s,k}_{b,μ}, allowing all k.",
+      "hypotheses": [
+        "K/F finite and s>0. The scalar-extension category includes the coefficient action, not just a larger ground field."
+      ],
+      "proofSteps": [
+        "Decompose the coefficient action using Q_{p^s}⊗F≅F^s. Frobenius cycles its factors; normalize the wraparound scalar by rank-one isocrystal classification.",
+        "Each one-dimensional coefficient factor has one filtration jump. Total Hodge and Newton degrees are Σd_i and k.",
+        "For the converse, the maximal destabilizing subobject is stable under the coefficient field. A proper nonzero coefficient-stable φ-subobject cannot occur because Frobenius cycles the rank-one factors; hence total degree equality implies weak admissibility.",
+        "Identify a map into F_{b,μ}(V) by its first coefficient eigenvector. Strictness of morphisms gives jumps d_i=deg_μ(φ^iv); the two equations are exactly the existence criterion."
+      ],
+      "acceptance": [
+        "For s=1 this is t_H=t_N for an ordinary crystalline line.",
+        "For s=2, jumps 1 and −1 with k=0 give a rank-one coefficient object; equality of individual jumps is not required.",
+        "The same jumps with k=1 fail total degree equality."
+      ],
+      "prerequisites": [
+        "PadicHodgeTheoryPartII:GM0/decent-fibre-functor",
+        "PadicHodgeTheoryPartII:GM0/newton-hodge-vectors",
+        "VectorBundlesAndIsocrystals:VB0/dieudonne-manin-isocrystals",
+        "PadicHodgeTheory:R06.2/plan/weakly-admissible-category-abelian",
+        "PadicHodgeTheory:R06.2/filtered-isocrystal-harder-narasimhan"
+      ],
+      "sources": [
+        {
+          "sourceId": "Chen14",
+          "locator": "§3.3, Lemma 3.3.5 and Proposition 3.3.6, pp. 744–745",
+          "match": "The cyclic coefficient objects classify rank-one subobjects, and their degree equality gives the explicit invariant-line test."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/PadicHodge/GenericMonodromy",
+        "namespace": "TauCeti.PadicHodge.GenericMonodromy"
+      }
+    },
+    {
+      "id": "PadicHodgeTheoryPartII:GM0/invariant-line-criterion",
+      "parentStageId": "PadicHodgeTheoryPartII:GM0",
+      "realises": [
+        "PadicHodgeTheoryPartII:GM0"
+      ],
+      "title": "Chen’s invariant-line criterion for full monodromy",
+      "kind": "theorem",
+      "statement": "As closed subgroup schemes of G_{Q_{p^s}}, H_cris,s is the intersection, over all rational representations V, integers k and v∈V^{s,k}_{b,μ}, of the stabilizers of the lines Q_{p^s}v. Consequently any subgroup scheme acting trivially on every such vector is contained in H_cris,s. The stabilizer condition permits nontrivial scalar action on a line.",
+      "hypotheses": [
+        "The admissible pair and finite fibre functor are those of GM0.",
+        "The category is closed under subquotients. No connectedness is assumed."
+      ],
+      "proofSteps": [
+        "Every tensor automorphism preserves all rank-one coefficient subobjects, so it lies in the stated intersection.",
+        "For the reverse containment use Chevalley’s line-stabilizer theorem for H_cris,s over Q_{p^s}. Restrict scalars on its ambient representation and retain the coefficient action to realize this line in the scalar-extended generated category.",
+        "Apply coefficient-rank-one to identify the defining line with one of the tested lines. Work functorially over value algebras, rather than equating only rational points."
+      ],
+      "acceptance": [
+        "For a torus, preserving a weight line does not require acting as the identity on it.",
+        "A finite disconnected algebraic monodromy group is not replaced by the trivial identity component in this criterion.",
+        "Use all representations; do not assume every representation embeds in a single mixed tensor power of a faithful one."
+      ],
+      "prerequisites": [
+        "PadicHodgeTheoryPartII:GM0/coefficient-rank-one",
+        "MotivesAndAlgebraicCycles:MC.6/neutral-tannaka-reconstruction",
+        "tauceti:TauCetiRoadmap/ReductiveGroups#layer-1-representations--comodules"
+      ],
+      "sources": [
+        {
+          "sourceId": "Chen14",
+          "locator": "Proposition 3.3.4(1), pp. 743–744; Proposition 3.3.6, p. 745",
+          "match": "Chevalley reduces the full tensor group to rank-one coefficient subobjects."
+        },
+        {
+          "sourceId": "GLX26",
+          "locator": "§5.1 ¶15, p. 837",
+          "match": "This is the invariant-line formulation used to prove containment of the derived group."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/PadicHodge/GenericMonodromy",
+        "namespace": "TauCeti.PadicHodge.GenericMonodromy"
+      },
+      "planet": {
+        "name": "Invariant-line criterion"
+      }
+    },
+    {
+      "id": "PadicHodgeTheoryPartII:GM0/ambient-period-transfer",
+      "parentStageId": "PadicHodgeTheoryPartII:GM0",
+      "realises": [
+        "PadicHodgeTheoryPartII:GM0"
+      ],
+      "title": "Ambient period comparison and derived containment",
+      "kind": "comparison",
+      "statement": "Let H be the full Zariski closure of ξ_{b,μ}(Γ_K), and H_cris,s the full finite-field tensor group. The period Isom^⊗ torsor identifies H⊗B_cris and H_cris,s⊗B_cris by conjugation inside G_{B_cris}, compatibly with the standard fibres. Thus G_der,Q_{p^s}⊆H_cris,s implies G_der⊆H°, the parent Mumford–Tate group. The comparison is for full groups before passing to identity components.",
+      "hypotheses": [
+        "[b]∈B(G,μ) and the bounded period-fibre torsor has the parent’s trivialization.",
+        "Both groups use the same generated tensor category under crystalline comparison."
+      ],
+      "proofSteps": [
+        "Apply the period comparison isomorphism to all tensor objects and subquotients, producing the fibre-functor torsor and the full-group conjugation.",
+        "Its compatibility with the ambient standard G-fibres is essential: G_der is normal in G, so conjugation by the period element preserves it.",
+        "Containment descends along the faithfully flat coefficient extensions; connectedness of G_der then places it in H°. An abstract inner-form isomorphism by itself is insufficient."
+      ],
+      "acceptance": [
+        "Changing a chosen G-fibre trivialization conjugates both embedded groups.",
+        "For G a torus the derived containment is vacuous; no assertion that H is connected is produced."
+      ],
+      "prerequisites": [
+        "PadicHodgeTheoryPartII:GM0/decent-fibre-functor",
+        "PadicHodgeTheory:R06.2/crystalline-monodromy-group-interface",
+        "PadicHodgeTheory:R06.2/bounded-crystalline-g-torsor-triviality",
+        "MotivesAndAlgebraicCycles:MC.6/tensor-iso-torsor"
+      ],
+      "sources": [
+        {
+          "sourceId": "Chen14",
+          "locator": "Proposition 3.3.3 and proof, pp. 742–743",
+          "match": "The two fibre functors are compared by their period tensor isomorphism."
+        },
+        {
+          "sourceId": "GLX26",
+          "locator": "§5.1 ¶14, p. 836",
+          "match": "Normality supplies the ambient derived-subgroup transfer, with the full/connected correction."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/PadicHodge/GenericMonodromy",
+        "namespace": "TauCeti.PadicHodge.GenericMonodromy"
+      }
+    },
+    {
+      "id": "PadicHodgeTheoryPartII:GM1/orbit-degree-bound",
+      "parentStageId": "PadicHodgeTheoryPartII:GM1",
+      "realises": [
+        "PadicHodgeTheoryPartII:GM1"
+      ],
+      "title": "The corrected weighted orbit bound",
+      "kind": "theorem",
+      "statement": "Let k=Q_{p^s}, G_k be quasisplit and split over a finite totally ramified extension, and μ be dominant over its finite reflex extension E/k. For a nonzero v∈V_k, let O be any Γ_k-orbit of geometric highest weights occurring in v. Partition O into its distinct Γ_E-orbits C and put q_C=|C|^−1Σ_{λ∈C}λ. For a generic flag η, deg_η(v)≤m_O:=min_C⟨w_0q_C,μ⟩≤Σ_C(|C|/|O|)⟨w_0q_C,μ⟩=⟨w_0λ,bar μ⟩ for λ∈O, where bar μ is the inertia average. The component v_O itself has degree m_O.",
+      "hypotheses": [
+        "The generic-filtration and quasisplit highest-weight contracts in gap G01 are inputs.",
+        "Every geometrically occurring highest-weight component of v in O is nonzero by Galois descent. E/k is not assumed normal."
+      ],
+      "proofSteps": [
+        "Use the supplier’s generic-filtration identity on k-rational vectors and its isotypic threshold m_O. A vector may meet several isotypic components; its degree is the minimum of their thresholds.",
+        "A minimum is at most a convex average. Weight the distinct refined orbits by their sizes; this recombines to the uniform average on O.",
+        "Pairing equivariance identifies the full highest-weight orbit average with the inertia average of μ. The splitting field is totally ramified, so the residual unramified action is kept for the next node."
+      ],
+      "acceptance": [
+        "For the nonnormal cubic reflex extension of a restriction-of-scalars torus, the refined orbit sizes are 1 and 2; the minimum sees both.",
+        "With refined pairings 0 and 3 and sizes 1 and 2, the bound is 0≤2, not an unweighted average of 3/2.",
+        "An orbit with repeated refinements is counted once in the partition, even for a Galois reflex field."
+      ],
+      "prerequisites": [
+        "PadicHodgeTheoryPartII:GM0/filtration-degree",
+        "ReductiveGroupsPartIII:RG3.0/highest-weight-character-basis",
+        "BunGAndNewtonStrata:BG1/galois-average"
+      ],
+      "sources": [
+        {
+          "sourceId": "GLX26",
+          "locator": "Proposition 5.7, pp. 840–841; equations (5.23)–(5.29), pp. 842–843",
+          "match": "The degree bound follows from lowest weights and isotypic descent, with all distinct refined orbits replacing the printed automorphism indexing."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/PadicHodge/GenericMonodromy",
+        "namespace": "TauCeti.PadicHodge.GenericMonodromy"
+      },
+      "planet": {
+        "name": "Weighted orbit bound"
+      },
+      "requiredContracts": [
+        "G01"
+      ]
+    },
+    {
+      "id": "PadicHodgeTheoryPartII:GM1/frobenius-average-bound",
+      "parentStageId": "PadicHodgeTheoryPartII:GM1",
+      "realises": [
+        "PadicHodgeTheoryPartII:GM1"
+      ],
+      "title": "The full-period Galois-average inequality",
+      "kind": "theorem",
+      "statement": "In the s-decent setup, choose s also so that G_{Q_{p^s}} is quasisplit, b and ν_b are defined there, the based root datum has σ_0^s=1, and the splitting extension is totally ramified. For generic η and every highest weight λ occurring in a nonzero v∈V⊗Q_{p^s}, d_s(v)≤s⟨w_0λ,μ^diamond⟩. Here μ^diamond=(1/s)Σ_{i=0}^{s−1}σ_0^i(bar μ), with repetitions permitted when s is enlarged.",
+      "hypotheses": [
+        "Use a common finite normal closure for all weight/reflex embeddings.",
+        "All iterates φ^iv are nonzero and their occurring highest-weight orbits are σ_0^i-translates of those of v."
+      ],
+      "proofSteps": [
+        "The factor ρ(b) preserves G-isotypic summands over Q_{p^s}; the semilinear Frobenius transports them by σ_0.",
+        "Apply orbit-degree-bound to the transported λ at each iterate and sum.",
+        "Move σ_0 across the pairing using its inverse. Only after summing the entire s-period reindex inverse powers to positive powers and identify μ^diamond. This does not assert a termwise positive-power identity."
+      ],
+      "acceptance": [
+        "For period two with unequal individual jumps, only their sum is compared with the average.",
+        "Enlarging a decency period by a positive multiple multiplies both sides by that multiple."
+      ],
+      "prerequisites": [
+        "PadicHodgeTheoryPartII:GM0/degree-sum",
+        "PadicHodgeTheoryPartII:GM1/orbit-degree-bound",
+        "BunGAndNewtonStrata:BG0/decent-representative",
+        "BunGAndNewtonStrata:BG1/galois-average"
+      ],
+      "sources": [
+        {
+          "sourceId": "GLX26",
+          "locator": "Theorem 5.8 proof, equations (5.30)–(5.36), p. 843",
+          "match": "The full Frobenius cycle turns inertia estimates into the Galois-average estimate; reindexing repairs the inverse-action justification."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/PadicHodge/GenericMonodromy",
+        "namespace": "TauCeti.PadicHodge.GenericMonodromy"
+      },
+      "planet": {
+        "name": "Frobenius average bound"
+      }
+    },
+    {
+      "id": "PadicHodgeTheoryPartII:GM1/newton-lowest-weight",
+      "parentStageId": "PadicHodgeTheoryPartII:GM1",
+      "realises": [
+        "PadicHodgeTheoryPartII:GM1"
+      ],
+      "title": "The Newton lowest-weight inequality",
+      "kind": "theorem",
+      "statement": "Suppose ν_b is dominant and v∈V^{s,k}_{b,η}. Every torus weight χ with nonzero component in v has ⟨χ,ν_b⟩=k/s. For every geometric highest weight λ occurring in v one has ⟨w_0λ,ν_b⟩≤k/s.",
+      "hypotheses": [
+        "s>0 and the Newton operator is ρ((sν_b)(p)).",
+        "The dominant representative ν_b and the highest weights use the same positive roots."
+      ],
+      "proofSteps": [
+        "Extend to a splitting field and decompose v into torus-weight spaces. The p^k-eigenvalue equation forces p^{s⟨χ,ν_b⟩}=p^k on every nonzero component, hence equality of integral exponents.",
+        "The lowest weight w_0λ is below each weight χ in its highest-weight summand; pair their positive-root difference with dominant ν_b."
+      ],
+      "acceptance": [
+        "For GL_2 with dominant ν=(a,b), a≥b, the standard lowest weight has value b; every eigenvector has slope at least b.",
+        "The zero vector would not determine any occurring weight; its exclusion is essential."
+      ],
+      "prerequisites": [
+        "PadicHodgeTheoryPartII:GM0/newton-hodge-vectors",
+        "ReductiveGroupsPartIII:RG3.0/highest-weight-character-basis",
+        "BunGAndNewtonStrata:BG1/newton-and-kottwitz-maps"
+      ],
+      "sources": [
+        {
+          "sourceId": "GLX26",
+          "locator": "Theorem 5.8 proof, equations (5.37)–(5.38), p. 844",
+          "match": "The Newton eigenvalue fixes occurring slopes and dominance bounds the lowest weight."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/PadicHodge/GenericMonodromy",
+        "namespace": "TauCeti.PadicHodge.GenericMonodromy"
+      },
+      "planet": {
+        "name": "Newton lowest-weight bound"
+      },
+      "requiredContracts": [
+        "G01"
+      ]
+    },
+    {
+      "id": "PadicHodgeTheoryPartII:GM1/strict-hn-forces-central-weight",
+      "parentStageId": "PadicHodgeTheoryPartII:GM1",
+      "realises": [
+        "PadicHodgeTheoryPartII:GM1"
+      ],
+      "title": "Strict Hodge–Newton positivity kills derived weights",
+      "kind": "theorem",
+      "statement": "Let Δ be the absolute simple roots, ν≤μ^diamond dominant, and μ^diamond−ν=Σ_{α∈Δ}c_α α∨ with every c_α>0. If λ is dominant and ⟨w_0λ,ν⟩≤q≤⟨w_0λ,μ^diamond⟩, then ⟨λ,α∨⟩=0 for every α∈Δ. Every irreducible of highest weight λ therefore factors through G/G_der. For Δ empty the conclusion about the derived group is vacuous.",
+      "hypotheses": [
+        "All pairings and coefficients are rational; no strict numerical hypothesis is dropped on a simple factor.",
+        "The highest-weight representation is over a splitting field of characteristic zero."
+      ],
+      "proofSteps": [
+        "Antidominance gives a_α:=⟨w_0λ,α∨⟩≤0. The displayed sandwich gives 0≤Σ c_α a_α≤0. Strict positivity of the coefficients forces every a_α=0.",
+        "Apply w_0 to the coroot system and use the supplier’s highest-weight criterion for a representation trivial on the derived group."
+      ],
+      "acceptance": [
+        "For SL_2, c>0 and an antidominant nonzero weight give a strict negative pairing, contradicting the sandwich.",
+        "If a simple-coroot coefficient is zero, a noncentral weight on that factor need not vanish.",
+        "The compact Lean milestone checks the finite positive-sum argument over rational numbers."
+      ],
+      "prerequisites": [
+        "ReductiveGroupsPartIII:RG3.0/highest-weight-character-basis",
+        "BunGAndNewtonStrata:BG1/admissible-pair"
+      ],
+      "sources": [
+        {
+          "sourceId": "GLX26",
+          "locator": "End of the proof of Theorem 5.8(2), p. 844",
+          "match": "Strict positivity of every simple-coroot coefficient forces the occurring irreducibles to be characters."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/PadicHodge/GenericMonodromy",
+        "namespace": "TauCeti.PadicHodge.GenericMonodromy"
+      },
+      "planet": {
+        "name": "Strict Hodge–Newton positivity"
+      },
+      "requiredContracts": [
+        "G01"
+      ],
+      "compactPrototype": {
+        "name": "positive_sum_forces_zero",
+        "scope": "Only the finite rational positivity argument; the reductive-group interpretation remains in the document."
+      }
+    },
+    {
+      "id": "PadicHodgeTheoryPartII:GM2/decent-subobject-descent",
+      "parentStageId": "PadicHodgeTheoryPartII:GM2",
+      "realises": [
+        "PadicHodgeTheoryPartII:GM2"
+      ],
+      "title": "Uniform decent-field descent of isocrystal subobjects",
+      "kind": "lemma",
+      "statement": "For s-decent b and a rational representation V, every φ-stable F-subspace D′⊆V⊗F is the scalar extension of a Q_{p^s}-subspace of ω_s(V⊗F)=V⊗Q_{p^s}. The descended subspace is stable under ρ(b)σ and under the slope decomposition. In particular every subobject used to test weak admissibility is defined over one common finite coefficient field Q_{p^s}, independent of D′.",
+      "hypotheses": [
+        "s>0 clears the slopes and b,ν_b descend to Q_{p^s}."
+      ],
+      "proofSteps": [
+        "Apply the exact finite-field fibre functor to the subisocrystal D′. Its inclusion gives a Q_{p^s}-subspace of the standard fibre.",
+        "The scalar-recovery isomorphism recovers D′. Functoriality of the slope decomposition and φ shows stability; no countable enumeration of subobjects is used."
+      ],
+      "acceptance": [
+        "For b=1, a φ-stable line is generated by a Q_p-rational vector.",
+        "For a slope a/h block with h|s, descent retains its rank and slope rather than replacing it by a rank-one space."
+      ],
+      "prerequisites": [
+        "PadicHodgeTheoryPartII:GM0/decent-fibre-functor",
+        "VectorBundlesAndIsocrystals:VB0/dieudonne-manin-isocrystals",
+        "BunGAndNewtonStrata:BG0/decent-representative"
+      ],
+      "sources": [
+        {
+          "sourceId": "Chen14",
+          "locator": "§3.1, pp. 738–740, and proof of Theorem 5.0.6(1), pp. 750–751",
+          "match": "The finite coefficient fibre functor makes subisocrystals descend uniformly, allowing generic flags to minimize every test degree."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/PadicHodge/GenericMonodromy",
+        "namespace": "TauCeti.PadicHodge.GenericMonodromy"
+      }
+    },
+    {
+      "id": "PadicHodgeTheoryPartII:GM2/hodge-degree-specialization",
+      "parentStageId": "PadicHodgeTheoryPartII:GM2",
+      "realises": [
+        "PadicHodgeTheoryPartII:GM2"
+      ],
+      "title": "Generic flags minimize subobject Hodge degree",
+      "kind": "lemma",
+      "statement": "Let E/Q_p be finite and contain Q_{p^s}, b and the reflex data. For a fixed descended subisocrystal D′, the function x↦t_H(D′_K,Fil_x∩D′_K) on the flag variety Fl_μ/E is upper semicontinuous. Thus if η maps to the generic point, its value is at most the value at any geometric flag x. The total Hodge degree of the ambient representation is constant.",
+      "hypotheses": [
+        "D′ has constant rank and is defined over E. Fil_x is the universal bounded decreasing filtration of type μ.",
+        "Hodge degree means Σ_i i·dim gr^i; Newton degree uses v_p(det φ)."
+      ],
+      "proofSteps": [
+        "Choose uniform bounds A≤i≤B for the filtration jumps. Express t_H as A·rank(D′)+Σ_{i=A+1}^B dim(D′∩Fil_x^i).",
+        "Each intersection dimension is upper semicontinuous by determinantal rank loci for the map D′⊗O→(V⊗O)/Fil^i. The finite sum is therefore upper semicontinuous.",
+        "An upper closed rank locus containing the generic point contains the integral flag variety; the value there is minimal. Fixed μ fixes the ambient graded ranks."
+      ],
+      "acceptance": [
+        "For a filtered plane with jumps 1,0, a fixed line has Hodge degree 1 on its incidence point and 0 on the generic complement.",
+        "For the whole plane the Hodge degree remains 1."
+      ],
+      "prerequisites": [
+        "PadicHodgeTheoryPartII:GM2/decent-subobject-descent",
+        "PadicHodgeTheory:R06.2/plan/weak-admissibility",
+        "SchemeAndStackFoundations:SF.0"
+      ],
+      "sources": [
+        {
+          "sourceId": "Chen14",
+          "locator": "Proof of Theorem 5.0.6(1), pp. 750–751",
+          "match": "Generic filtration minimizes Hodge degrees of descended subisocrystals."
+        },
+        {
+          "sourceId": "GLX26",
+          "locator": "Theorem 5.8(1) proof, p. 842",
+          "match": "The general reductive case uses the same specialization proof after independent nonemptiness."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/PadicHodge/GenericMonodromy",
+        "namespace": "TauCeti.PadicHodge.GenericMonodromy"
+      }
+    },
+    {
+      "id": "PadicHodgeTheoryPartII:GM2/generic-admissible",
+      "parentStageId": "PadicHodgeTheoryPartII:GM2",
+      "realises": [
+        "PadicHodgeTheoryPartII:GM2"
+      ],
+      "title": "Generic acceptable decent pairs are admissible",
+      "kind": "theorem",
+      "statement": "Let G/Q_p be connected reductive, b∈G(F) decent, [b]∈B(G,μ), K/F finite, and η:Spec K→Fl_μ map to the generic point over the finite reflex field. Then F_{b,η} takes every rational representation to a weakly admissible filtered isocrystal, and hence to an admissible one. This assertion needs no HN-irreducibility.",
+      "hypotheses": [
+        "F=breve Q_p and K contains the reflex field; use the GLX orientation κ(b)=μ^natural and ν_b≤μ^diamond.",
+        "Genericity persists under the required finite algebraic coefficient extensions."
+      ],
+      "proofSteps": [
+        "Choose a common finite E containing the decency field and reflex data. Descend all subisocrystals using decent-subobject-descent.",
+        "Import only part (b) of HS2/nonemptiness-and-period-connectedness, after changing the Berkeley sign by μ↦μ^−1. Its finite classical admissible point is obtained from bounded nonemptiness and does not use this generic-monodromy theorem. Apply HS2/classical-period-points to obtain a weakly admissible flag x.",
+        "For each representation and each φ-subobject D′, hodge-degree-specialization gives t_H,η(D′)≤t_H,x(D′)≤t_N(D′). Total equality follows from the fixed Hodge type and admissible-pair invariants. This handles all subobjects without an infinite-intersection argument.",
+        "Apply the parent’s perfect-residue-field weakly-admissible/admissible equivalence. The conclusion is the exact tensor functor, not yet a chosen trivialization of the standard-fibre torsor."
+      ],
+      "acceptance": [
+        "For a torus there are no flag-incidence variations; total degree equality controls the rank-one cases.",
+        "An unstable nongeneric filtered plane can fail weak admissibility even with the correct total degree.",
+        "The proof has no edge from the GM4 converse or from an ADLV component classification."
+      ],
+      "prerequisites": [
+        "PadicHodgeTheoryPartII:GM2/decent-subobject-descent",
+        "PadicHodgeTheoryPartII:GM2/hodge-degree-specialization",
+        "HeckeStacksAndLocalShtukas:HS2/nonemptiness-and-period-connectedness",
+        "HeckeStacksAndLocalShtukas:HS2/classical-period-points",
+        "BunGAndNewtonStrata:BG1/admissible-pair",
+        "PadicHodgeTheory:R06.2/weak-admissibility-is-admissibility",
+        "PadicHodgeTheory:R06.2/crystalline-g-fiber-functor"
+      ],
+      "sources": [
+        {
+          "sourceId": "GLX26",
+          "locator": "Theorem 5.8(1) and proof, p. 842",
+          "match": "The acceptable decent generic pair is admissible; nonemptiness is the additional general-group input."
+        },
+        {
+          "sourceId": "Chen14",
+          "locator": "Theorem 5.0.6(1), pp. 750–751",
+          "match": "Specialization proves the subobject inequalities at the generic flag."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/PadicHodge/GenericMonodromy",
+        "namespace": "TauCeti.PadicHodge.GenericMonodromy"
+      },
+      "planet": {
+        "name": "Generic admissibility"
+      }
+    },
+    {
+      "id": "PadicHodgeTheoryPartII:GM2/generic-derived-monodromy",
+      "parentStageId": "PadicHodgeTheoryPartII:GM2",
+      "realises": [
+        "PadicHodgeTheoryPartII:GM2"
+      ],
+      "title": "Generic monodromy contains the derived group",
+      "kind": "theorem",
+      "statement": "Under generic-admissible, suppose μ^diamond−ν_b has strictly positive coefficients on all absolute simple coroots. Then the connected Mumford–Tate group MT(b,η)=H° contains G_der. The theorem holds for arbitrary connected reductive G/Q_p, including ramified and nonquasisplit groups.",
+      "hypotheses": [
+        "b is decent; [b]∈B(G,μ); η is topologically generic over the reflex field.",
+        "Fix an enlarged decency period and compatible dominant Newton point as in the estimates. The missing generic-filtration supplier is G01."
+      ],
+      "proofSteps": [
+        "Use generic-admissible before constructing the coefficient-line category. Enlarge s so G_{Q_{p^s}} is quasisplit, its splitting extension is totally ramified and all slope/root periods divide s.",
+        "Arrange the dominant Newton cocharacter by conjugation defined over a finite algebraic coefficient field. This preserves genericity. Do not claim that arbitrary G(F)-translation preserves a generic flag over the original reflex field.",
+        "For every v∈V^{s,k}, frobenius-average-bound and newton-lowest-weight give the sandwich at q=k/s for each occurring λ. strict-hn-forces-central-weight makes each corresponding geometric summand trivial on G_der, so G_der fixes v.",
+        "Apply invariant-line-criterion to obtain G_der⊆H_cris,s. ambient-period-transfer gives G_der⊆H° over Q_p."
+      ],
+      "acceptance": [
+        "For G=GL_2 and a strictly interior Newton polygon, the connected group contains SL_2.",
+        "For a torus the conclusion says 1⊆MT and adds no spurious claim about central monodromy.",
+        "If the HN difference vanishes on one simple factor, this argument gives no full derived containment on that factor."
+      ],
+      "prerequisites": [
+        "PadicHodgeTheoryPartII:GM2/generic-admissible",
+        "PadicHodgeTheoryPartII:GM0/invariant-line-criterion",
+        "PadicHodgeTheoryPartII:GM0/ambient-period-transfer",
+        "PadicHodgeTheoryPartII:GM1/frobenius-average-bound",
+        "PadicHodgeTheoryPartII:GM1/newton-lowest-weight",
+        "PadicHodgeTheoryPartII:GM1/strict-hn-forces-central-weight",
+        "BunGAndNewtonStrata:BG0/existence-of-decent-representative",
+        "ReductiveGroupsPartIII:RG3.0/highest-weight-character-basis"
+      ],
+      "sources": [
+        {
+          "sourceId": "GLX26",
+          "locator": "Theorem 5.8(2) and proof, pp. 842–844",
+          "match": "The arithmetic estimates and invariant-line criterion force derived containment, without an unramifiedness assumption."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/PadicHodge/GenericMonodromy",
+        "namespace": "TauCeti.PadicHodge.GenericMonodromy"
+      },
+      "planet": {
+        "name": "Generic derived monodromy"
+      },
+      "requiredContracts": [
+        "G01"
+      ]
+    },
+    {
+      "id": "PadicHodgeTheoryPartII:GM3/witt-leading-digit",
+      "parentStageId": "PadicHodgeTheoryPartII:GM3",
+      "realises": [
+        "PadicHodgeTheoryPartII:GM3"
+      ],
+      "title": "The leading sparse Witt-coordinate term",
+      "kind": "lemma",
+      "statement": "Work in the universal p-typical Witt vectors over F_p[X_i,Y_{k,j}], with A_m=Σ_{j≥r}V^j[Y_{m,j}], A_k=Σ_{j≥0}V^j[Y_{k,j}] for k<m, and X=Σ_{i≥0}V^i[X_i]. Write Σ_{k=0}^m A_k X^k=Σ_{n≥0}V^n[P_n], with m>0. For b≤n<bm+r, deg_{X_b}P_n<m p^{n−b}; at n=bm+r its degree is m p^{n−b}, with leading coefficient Y_{m,r}^{p^{bm}}. For n<b the polynomial is independent of X_b.",
+      "hypotheses": [
+        "p is prime; r,b are natural numbers. The degree of zero is treated as minus infinity.",
+        "These are Witt coordinates, not coefficients of an ordinary power series."
+      ],
+      "proofSteps": [
+        "Lift universal Witt operations to integer polynomial coordinates and apply the n-th ghost polynomial.",
+        "Induct on n. Terms from lower Witt coordinates have strictly smaller X_b-degree; at n=bm+r only the leading coefficient of A_m and the m-th power of the b-th variable contribute to the extremal degree.",
+        "Reduce the ghost identity modulo p^{n+1}, divide its p^n term, and then reduce modulo p. Keep the factor m outside the exponent: the degree is m·p^{n−b}."
+      ],
+      "acceptance": [
+        "For b=r=0, the extremal degree is m and the leading coefficient is Y_{m,0}.",
+        "For m=1, r=0, X=V^b[u] and A_1=[a], the b-th coordinate is a^{p^b}u.",
+        "The expression m p^{n−b} must not be parsed as p^{n−bm}."
+      ],
+      "prerequisites": [
+        "mathlib:WittVector.teichmuller",
+        "mathlib:WittVector.ghostComponent",
+        "mathlib:WittVector.verschiebung"
+      ],
+      "sources": [
+        {
+          "sourceId": "Chen14",
+          "locator": "Lemma 2.0.4 and proof, pp. 735–737",
+          "match": "The universal Witt-coordinate degree estimate detects a chosen sparse residue digit in an alleged polynomial relation."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/PadicHodge/GenericMonodromy",
+        "namespace": "TauCeti.PadicHodge.GenericMonodromy"
+      }
+    },
+    {
+      "id": "PadicHodgeTheoryPartII:GM3/infinite-transcendence",
+      "parentStageId": "PadicHodgeTheoryPartII:GM3",
+      "realises": [
+        "PadicHodgeTheoryPartII:GM3"
+      ],
+      "title": "Infinite transcendence of the completed unramified field",
+      "kind": "theorem",
+      "statement": "For every prime p, F=Frac W(overline F_p)=breve Q_p has infinite transcendence degree over Q_p. Equivalently it contains an algebraically independent sequence indexed by ℕ over Q_p. For every finite E/Q_p embedded in an algebraic closure of F, the finite extension FE/F still contains arbitrarily large finite families algebraically independent over E.",
+      "hypotheses": [
+        "Use the canonical embedding Q_p→F from the complete unramified Witt construction.",
+        "The assertion concerns Q_p, not merely Q."
+      ],
+      "proofSteps": [
+        "Following Chen, choose Witt vectors x_i supported at factorial digit positions. At a supported position b, use a residue digit of finite-field degree growing like (b^{i+1})!, while previous vectors and earlier digits lie in fields of much smaller degree.",
+        "Assume a polynomial relation for x_i over Z_p[x_0,…,x_{i−1}], after clearing coefficient denominators. Let r be the first nonzero Witt digit of its leading coefficient and m its degree. Choose a supported b with no later support through n=bm+r.",
+        "Choose a common finite-field degree M for the earlier digits and all coefficient digits through n. Require the new residue degree N to exceed M·m·p^{n−b}; the factorial growth permits this stronger bound, including the factor p^r.",
+        "Apply witt-leading-digit: the n-th output digit is a nonzero polynomial of degree m p^{n−b} over F_{p^M} in an element of degree greater than that bound. This contradicts the relation.",
+        "Induct to obtain the sequence. Algebraic base extension from Q_p to E does not change transcendence degree, giving the final assertion."
+      ],
+      "acceptance": [
+        "A single vector with unbounded residue-field degrees is transcendental, but this alone does not prove a sequence is algebraically independent.",
+        "For every fixed flag dimension n, only n independent parameters are needed."
+      ],
+      "prerequisites": [
+        "PadicHodgeTheoryPartII:GM3/witt-leading-digit",
+        "mathlib:AlgebraicIndependent",
+        "PadicHodgeTheory:R06.2/period-functors-perfect-residue-base"
+      ],
+      "sources": [
+        {
+          "sourceId": "Chen14",
+          "locator": "Proposition 2.0.3 and its proof, pp. 734–735; Lemma 2.0.4, pp. 735–737",
+          "match": "Sparse Witt digits prove infinite transcendence over the p-adic coefficient field; the residue-degree choice is strengthened explicitly."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/PadicHodge/GenericMonodromy",
+        "namespace": "TauCeti.PadicHodge.GenericMonodromy"
+      },
+      "planet": {
+        "name": "Infinite transcendence degree"
+      }
+    },
+    {
+      "id": "PadicHodgeTheoryPartII:GM3/generic-classical-points",
+      "parentStageId": "PadicHodgeTheoryPartII:GM3",
+      "realises": [
+        "PadicHodgeTheoryPartII:GM3"
+      ],
+      "title": "Generic flags over finite extensions of breve Q_p",
+      "kind": "theorem",
+      "statement": "For a finite reflex field E/Q_p and its smooth geometrically integral flag variety Fl_μ/E, there is a finite extension K/F containing E and a map Spec K→Fl_μ whose underlying point is generic. More generally the same assertion holds for a nonempty smooth geometrically integral E-variety.",
+      "hypotheses": [
+        "F=breve Q_p; the embedding E→K is part of the conclusion.",
+        "Choose a nonempty affine open and a quasi-compact étale coordinate chart of relative dimension n."
+      ],
+      "proofSteps": [
+        "Pass to FE/F finite. Infinite-transcendence supplies n algebraically independent parameters over E, giving a map Spec FE→A_E^n landing at the generic point.",
+        "The image of a nonempty étale coordinate chart is open and contains that generic point. Its pullback is therefore a nonempty quasi-compact étale FE-scheme.",
+        "By the field-fibre classification it is a finite disjoint union of spectra of finite separable extensions of FE. Choose one component, with field K. An étale coordinate map preserves the required generic point.",
+        "For dimension zero the nonempty integral chart is already finite separable; the argument also covers a torus flag, which is a point."
+      ],
+      "acceptance": [
+        "A projective-line flag acquires a point with transcendental affine coordinate over E.",
+        "A zero-dimensional flag needs no transcendental parameter.",
+        "A merely dense collection of closed points would not give the topologically generic point required by GM2."
+      ],
+      "prerequisites": [
+        "PadicHodgeTheoryPartII:GM3/infinite-transcendence",
+        "SchemeAndStackFoundations:SF.0"
+      ],
+      "sources": [
+        {
+          "sourceId": "GLX26",
+          "locator": "Lemma 5.10 and proof, pp. 844–845",
+          "match": "Étale coordinates and infinite transcendence produce a genuine generic classical flag after a finite extension."
+        },
+        {
+          "sourceId": "Stacks",
+          "locator": "Tags 054L (Lemma 29.37.21), 02GL (Lemma 29.37.7), and 02GH (§29.37)",
+          "match": "Smooth varieties have étale coordinates; étale maps are open and stable under base change; quasi-compact étale schemes over a field are finite unions of finite separable spectra."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/PadicHodge/GenericMonodromy",
+        "namespace": "TauCeti.PadicHodge.GenericMonodromy"
+      },
+      "planet": {
+        "name": "Generic classical flags"
+      }
+    },
+    {
+      "id": "PadicHodgeTheoryPartII:GM3/open-derived-image",
+      "parentStageId": "PadicHodgeTheoryPartII:GM3",
+      "realises": [
+        "PadicHodgeTheoryPartII:GM3"
+      ],
+      "title": "A crystalline period point with open derived image",
+      "kind": "theorem",
+      "statement": "Let (G,b,μ) be a local shtuka datum in GLX orientation, with [b]∈B(G,μ) and μ^diamond−ν_b strictly positive on every absolute simple coroot. There are a finite extension K/F containing the reflex field and x∈Gr_μ^b(K) whose crystalline representation ξ_x:Γ_K→G(Q_p) satisfies ξ_x(Γ_K)∩G_der(Q_p) open in G_der(Q_p). No minuscule or quasisplit hypothesis is required.",
+      "hypotheses": [
+        "G is connected reductive over Q_p; F=breve Q_p.",
+        "The generic-filtration contract G01 is required by the monodromy theorem."
+      ],
+      "proofSteps": [
+        "Replace b by a σ-conjugate decent representative using BG0 and choose a common decency/coefficient field. This replacement is used to construct an open-image point, not to assert arbitrary F-translations preserve genericity.",
+        "Use generic-classical-points and generic-admissible to obtain a generic admissible filtration for the decent datum. The bounded parent torsor-triviality theorem produces ξ after choosing its standard-fibre point.",
+        "Generic-derived-monodromy gives G_der⊆MT. The parent crystalline-monodromy-group-interface supplies Serre–Sen openness in MT; intersect its open subgroup with G_der(Q_p).",
+        "Use HS2/classical-period-points, with the explicit GLX/Berkeley sign dictionary, to lift the admissible flag to the Schubert-cell period point. Transport it back along σ-conjugacy to the original b."
+      ],
+      "acceptance": [
+        "The image is compact; openness concerns its intersection with G_der, not equality with a noncompact group.",
+        "After any finite extension of K, the restricted image has finite index in the original image and its derived intersection remains open.",
+        "For a torus the derived group is trivial and the open-intersection assertion is automatic."
+      ],
+      "prerequisites": [
+        "PadicHodgeTheoryPartII:GM3/generic-classical-points",
+        "PadicHodgeTheoryPartII:GM2/generic-admissible",
+        "PadicHodgeTheoryPartII:GM2/generic-derived-monodromy",
+        "PadicHodgeTheory:R06.2/crystalline-monodromy-group-interface",
+        "PadicHodgeTheory:R06.2/bounded-crystalline-g-torsor-triviality",
+        "BunGAndNewtonStrata:BG0/existence-of-decent-representative",
+        "HeckeStacksAndLocalShtukas:HS2/classical-period-points",
+        "HeckeStacksAndLocalShtukas:HS2/admissible-period-torsor"
+      ],
+      "sources": [
+        {
+          "sourceId": "GLX26",
+          "locator": "Proposition 5.9 and proof, p. 844; Theorem 5.2, p. 836",
+          "match": "The generic flag and the parent openness theorem produce the required classical period point."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/PadicHodge/GenericMonodromy",
+        "namespace": "TauCeti.PadicHodge.GenericMonodromy"
+      },
+      "planet": {
+        "name": "Open derived crystalline image"
+      },
+      "requiredContracts": [
+        "G01"
+      ]
+    },
+    {
+      "id": "PadicHodgeTheoryPartII:GM3/z-extension-open-image",
+      "parentStageId": "PadicHodgeTheoryPartII:GM3",
+      "realises": [
+        "PadicHodgeTheoryPartII:GM3"
+      ],
+      "title": "Open derived image through a z-extension",
+      "kind": "comparison",
+      "statement": "Let f:G_tilde→G be a z-extension with central induced-torus kernel. Fix bounded lifted data [b_tilde]∈B(G_tilde,μ_tilde) mapping to [b]∈B(G,μ). Existence of a crystalline period point of this type with open intersection of its Galois image with the rational derived group is equivalent upstairs and downstairs, allowing a finite extension containing the lifted reflex field. This compares existence for the specified lifted data, not arbitrary continuous representations.",
+      "hypotheses": [
+        "Use the common admissible Grassmannian after base change of reflex fields.",
+        "The derived morphism G_tilde_der→G_der is a finite central isogeny. It is not asserted surjective on Q_p-points."
+      ],
+      "proofSteps": [
+        "The HS2 adjoint period comparison identifies the admissible loci and the extension-of-structure-group torsors. Therefore a downstairs point lifts after finite reflex-field base extension, and the corresponding crystalline representations satisfy f∘ξ_tilde=ξ|Γ_L up to conjugacy.",
+        "Let H_tilde and H be full algebraic monodromy groups. Their connected groups satisfy f(H_tilde°)=H° by density and closedness of homomorphism images. An open subgroup of a connected reductive group’s Q_p-points is Zariski dense.",
+        "If f(ξ_tilde(Γ_L)) has open derived intersection, H° contains G_der. The algebraic central-lifting contract then forces H_tilde° to contain G_tilde_der. Apply the parent Serre–Sen theorem to ξ_tilde, giving an open derived intersection upstairs.",
+        "Conversely the image of an upstairs open derived subgroup is open downstairs because a finite central isogeny in characteristic zero is étale on rational points. Restriction to a finite extension preserves openness by finite index."
+      ],
+      "acceptance": [
+        "For SL_2→PGL_2, the rational image is open of finite index; its possible properness does not obstruct openness.",
+        "For G_tilde=G×G_m, a central character can change the lift; the conclusion concerns its derived intersection rather than containment of the entire image in G_tilde_der."
+      ],
+      "prerequisites": [
+        "PadicHodgeTheory:R06.2/crystalline-monodromy-group-interface",
+        "BunGAndNewtonStrata:BG1/z-extension-bounded-lifting",
+        "HeckeStacksAndLocalShtukas:HS2/adjoint-period-and-tower-comparison",
+        "ReductiveGroupsPartII:RG2.0",
+        "tauceti:TauCetiRoadmap/ReductiveGroups#layer-7-structure-theory"
+      ],
+      "sources": [
+        {
+          "sourceId": "GLX26",
+          "locator": "Proposition 6.7, crystalline step, p. 851; Proposition 6.6(1), pp. 849–850",
+          "match": "The period-space identification gives the crystalline lift. Algebraic monodromy and Serre–Sen fill the omitted step about intersection with derived groups."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/PadicHodge/GenericMonodromy",
+        "namespace": "TauCeti.PadicHodge.GenericMonodromy"
+      }
+    },
+    {
+      "id": "PadicHodgeTheoryPartII:GM4/compact-torsor-components",
+      "parentStageId": "PadicHodgeTheoryPartII:GM4",
+      "realises": [
+        "PadicHodgeTheoryPartII:GM4"
+      ],
+      "title": "Compact crystalline-image torsor components",
+      "kind": "theorem",
+      "statement": "Let ξ:Γ_K→G(Q_p) be continuous, K/F finite, and let T_ξ→Spd K be its associated locally profinite G(Q_p)-torsor. Put C=ξ(Γ_K), a compact closed subgroup. Choose the convention in which G(Q_p) acts on the geometric fibre on the left and Γ_K acts by right multiplication through ξ. Then π_0(T_ξ)≅G(Q_p)/C equivariantly, and the component indexed by gC has stabilizer gCg^−1. This identifies actual connected components, not an unrestricted orbit quotient for an arbitrary group action.",
+      "hypotheses": [
+        "G(Q_p) has its locally compact totally disconnected point topology.",
+        "Use the étale/Galois classification over the analytic field K and its diamond."
+      ],
+      "proofSteps": [
+        "Compactness of Γ_K makes C compact and closed. Each geometric Galois orbit gC is compact and descends to a closed subdiamond T_{gC}.",
+        "Present C as an inverse limit of finite transitive Γ_K-sets C/U. Their descended finite étale K-covers are connected fields. The qcqs inverse-limit comparison and the spectral clopen criterion show T_{gC} is connected.",
+        "Use compactness of C and compact open subgroups of G(Q_p) to separate distinct cosets by C-invariant clopens. Their descended clopens separate distinct orbit subdiamonds, so every T_{gC} is a maximal connected subset.",
+        "Compute the left-action stabilizer of gC. No use is made of a universal formula π_0(X/H)=π_0(X)/H."
+      ],
+      "acceptance": [
+        "If ξ is trivial, each component is one copy of Spd K and its stabilizer is trivial.",
+        "For finite image C, each orbit descends to a finite connected étale K-cover with stabilizer C.",
+        "For an infinite compact image, approximate by finite transitive quotients; declaring geometric fibre points to be components would give an incorrect trivial stabilizer."
+      ],
+      "prerequisites": [
+        "ArithmeticGaloisRepresentations:R01.1/continuous-representation",
+        "DiamondsAndVStacks:D3/locally-profinite-torsors",
+        "DiamondsAndVStacks:D6/etale-site-comparison",
+        "DiamondsAndVStacks:D5/limits-and-finite-stage-comparisons",
+        "DiamondsAndVStacks:D0/spectral-components-profinite",
+        "DiamondsAndVStacks:D5",
+        "ReductiveGroupsPartII:RG2.0/points-topological-group"
+      ],
+      "sources": [
+        {
+          "sourceId": "GLX26",
+          "locator": "Proof of Lemma 6.12, pp. 855–856",
+          "match": "The crystalline torsor’s component stabilizer is its compact Galois image; compact-orbit separation replaces the unrestricted quotient lemma used in the printed proof."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/PadicHodge/GenericMonodromy",
+        "namespace": "TauCeti.PadicHodge.GenericMonodromy"
+      },
+      "planet": {
+        "name": "Crystalline torsor components"
+      }
+    },
+    {
+      "id": "PadicHodgeTheoryPartII:GM4/open-component-stabilizers",
+      "parentStageId": "PadicHodgeTheoryPartII:GM4",
+      "realises": [
+        "PadicHodgeTheoryPartII:GM4"
+      ],
+      "title": "Open derived stabilizers in the ambient tower",
+      "kind": "application",
+      "statement": "Let y∈Gr_μ^b(K) be an open-derived-image point, T_y its period torsor and j:T_y→Y a G(Q_p)-equivariant map to a locally spatial diamond. Every connected component of Y containing the image of a component of T_y has stabilizer whose intersection with G_der(Q_p) is open. If G(Q_p) acts transitively on π_0(Y), the assertion holds for every component.",
+      "hypotheses": [
+        "K/F finite; all groups and actions have the conventions of compact-torsor-components.",
+        "For application to the whole local-shtuka tower, transitivity is a separate geometric supplier assumption."
+      ],
+      "proofSteps": [
+        "A continuous map sends a connected component into a connected component. Equivariance includes the source component stabilizer in the target component stabilizer.",
+        "Use compact-torsor-components to identify the source stabilizer with a conjugate of ξ_y(Γ_K). Its derived intersection is open by the chosen period point and normality of G_der.",
+        "Under the stated transitivity hypothesis every component is a translate of one reached in this way; conjugate the inclusion. Do not infer transitivity merely from connectedness of a quotient."
+      ],
+      "acceptance": [
+        "The source stabilizer is equal to the compact image, while the ambient stabilizer is only asserted to contain it.",
+        "Without transitivity, the conclusion is restricted to components reached from the torsor."
+      ],
+      "prerequisites": [
+        "PadicHodgeTheoryPartII:GM3/open-derived-image",
+        "PadicHodgeTheoryPartII:GM4/compact-torsor-components",
+        "HeckeStacksAndLocalShtukas:HS2/admissible-period-torsor"
+      ],
+      "sources": [
+        {
+          "sourceId": "GLX26",
+          "locator": "Lemma 6.12 and its proof, pp. 855–856",
+          "match": "The crystalline-image subgroup embeds into an ambient component stabilizer; the global assertion additionally uses tower-component transitivity."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/PadicHodge/GenericMonodromy",
+        "namespace": "TauCeti.PadicHodge.GenericMonodromy"
+      }
+    },
+    {
+      "id": "PadicHodgeTheoryPartII:GM4/quasisplit-converse",
+      "parentStageId": "PadicHodgeTheoryPartII:GM4",
+      "realises": [
+        "PadicHodgeTheoryPartII:GM4"
+      ],
+      "title": "The quasisplit converse as a component-theorem consumer",
+      "kind": "theorem",
+      "statement": "Let G/Q_p be quasisplit, [b]∈B(G,μ), and η an admissible flag over a finite extension K/F for which the standard crystalline-fibre torsor is trivialized. If MT(b,η) contains G_der, then μ^diamond−ν_b is strictly positive on every absolute simple coroot. In particular, for a generic decent pair, derived containment is equivalent to HN-irreducibility once the reverse supplier G02 is available.",
+      "hypotheses": [
+        "The reverse implication (4)⇒(3) of GLX Theorem 6.1(a), with full hypotheses, is the missing independent component/HN-decomposition contract G02.",
+        "No quasisplit converse is claimed for arbitrary inner forms."
+      ],
+      "proofSteps": [
+        "Apply the parent’s crystalline-monodromy-group-interface to obtain an open intersection ξ(Γ_K)∩G_der(Q_p). No new genericity choice is needed for this implication.",
+        "Invoke only the reverse component/HN supplier (existence of such a crystalline representation ⇒ HN-irreducibility). Its proof may use the component argument, HN decomposition and group generation, but must not invoke this converse or the forward generic theorem as a prerequisite of the reverse implication.",
+        "Combine with generic-derived-monodromy only to state the final equivalence for generic decent pairs. The forward proof remains entirely in GM0–GM3."
+      ],
+      "acceptance": [
+        "The dependency graph has no edge from GM0–GM3 back to GM4.",
+        "For a torus the simple-root set is empty; both the derived condition and strict-coroot condition are vacuous."
+      ],
+      "prerequisites": [
+        "PadicHodgeTheory:R06.2/crystalline-monodromy-group-interface",
+        "PadicHodgeTheoryPartII:GM2/generic-derived-monodromy"
+      ],
+      "sources": [
+        {
+          "sourceId": "GLX26",
+          "locator": "Proposition 5.11, p. 845; Theorem 6.1(a), equivalence of (3) and (4), p. 845",
+          "match": "The converse is deduced from the independently proved component/HN characterization of open crystalline derived image."
+        }
+      ],
+      "implementationStatus": "unchecked",
+      "library": {
+        "module": "TauCeti/NumberTheory/PadicHodge/GenericMonodromy",
+        "namespace": "TauCeti.PadicHodge.GenericMonodromy"
+      },
+      "planet": {
+        "name": "Quasisplit monodromy converse"
+      },
+      "requiredContracts": [
+        "G02"
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "supplier": "tauceti:TauCetiRoadmap/ReductiveGroups#layer-1-representations--comodules",
+      "need": "Use the existing scheme-theoretic Chevalley line-stabilizer theorem for a finitely generated Hopf ideal over a field, together with its restriction-of-scalars/representation dictionary. Current Tau Ceti already proves TauCeti.HopfIdeal.exists_finite_subcomodule_exteriorPower_line_stabilizer in Algebra/AlgebraicGroup/Representation/ExteriorStabilizer/Character.lean at a91d3aa. Supply the adapter to the generated neutral category when that baseline is adopted; do not replan the line-stabilizer theorem.",
+      "neededBy": [
+        "PadicHodgeTheoryPartII:GM0/invariant-line-criterion"
+      ]
+    },
+    {
+      "supplier": "tauceti:TauCetiRoadmap/ReductiveGroups#layer-7-structure-theory",
+      "need": "For a central torus quotient f:G_tilde→G of connected reductive characteristic-zero groups and a closed subgroup J⊆G_tilde, prove f(J°)⊇G_der ⇒ J°⊇G_tilde_der. Reduce to the inverse image of G_der; its image is reductive, its unipotent radical maps into a torus and hence vanishes, and its derived group maps centrally isogenously to G_der. Also supply rational conjugacy of a rational Newton cocharacter into a chosen dominant chamber after a finite algebraic coefficient extension. These are structure-theory consequences, not new crystalline definitions.",
+      "neededBy": [
+        "PadicHodgeTheoryPartII:GM3/z-extension-open-image",
+        "PadicHodgeTheoryPartII:GM2/generic-derived-monodromy"
+      ]
+    },
+    {
+      "supplier": "ReductiveGroupsPartII:RG2.0",
+      "need": "For connected smooth affine groups over Q_p, a nonempty analytic open subset of rational points is Zariski dense. For a characteristic-zero finite central isogeny of semisimple groups, the map on rational points is open onto an open subgroup, with no rational surjectivity assertion. Supply these precise point-topology consequences for the algebraic-monodromy proof of central lifting.",
+      "neededBy": [
+        "PadicHodgeTheoryPartII:GM3/z-extension-open-image"
+      ]
+    },
+    {
+      "supplier": "SchemeAndStackFoundations:SF.0",
+      "need": "Universal filtrations on the integral flag variety have locally free graded pieces. Determinantal rank loci for D′→V/Fil^i are closed, so dim(D′∩Fil^i) is upper semicontinuous. Also provide nonempty quasi-compact étale coordinates for a smooth integral E-variety, openness/base change of étale maps and the finite separable field-fibre description (Stacks Tags 054L, 02GL, 02GH). Existing SF.0 etale-neighbourhood nodes concern henselization and do not supply these statements.",
+      "neededBy": [
+        "PadicHodgeTheoryPartII:GM2/hodge-degree-specialization",
+        "PadicHodgeTheoryPartII:GM3/generic-classical-points"
+      ]
+    },
+    {
+      "supplier": "DiamondsAndVStacks:D5",
+      "need": "Specialize the restricted-quotient/component API to a compact subgroup C of a locally profinite rational-point group: G/C is zero dimensional, distinct cosets admit C-invariant clopen separation, and their descended orbit subdiamonds over Spd K are separated by clopens. Combine with the qcqs inverse-limit comparison for finite transitive Galois sets. The existing D5/components-of-restricted-quotients gives only the conditional orbit-space statement; verify the compact separation hypothesis explicitly.",
+      "neededBy": [
+        "PadicHodgeTheoryPartII:GM4/compact-torsor-components"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "stageId": "PadicHodgeTheoryPartII:GM0",
+      "status": "planned",
+      "remaining": [
+        "Adopt the current Chevalley stabilizer through the requested representation/comodule adapter; the rational-period and full-monodromy contracts remain imported from the parent."
+      ]
+    },
+    {
+      "stageId": "PadicHodgeTheoryPartII:GM1",
+      "status": "planned",
+      "remaining": [
+        "Discharge G01 in the owning generic-filtration continuation, including nonnormal reflex-field descent and the full Frobenius orbit contract."
+      ]
+    },
+    {
+      "stageId": "PadicHodgeTheoryPartII:GM2",
+      "status": "planned",
+      "remaining": [
+        "Discharge G01 for derived monodromy; satisfy the SF.0 determinantal-rank request and the structure-layer algebraic-coefficient conjugacy request. Generic admissibility does not require G01."
+      ]
+    },
+    {
+      "stageId": "PadicHodgeTheoryPartII:GM3",
+      "status": "planned",
+      "remaining": [
+        "Discharge the inherited G01 contract for open-image existence; satisfy the étale-coordinate, algebraic central-lifting and rational-point openness requests."
+      ]
+    },
+    {
+      "stageId": "PadicHodgeTheoryPartII:GM4",
+      "status": "planned",
+      "remaining": [
+        "Discharge G02 independently for the converse, the D5 compact-coset separation request, and the inherited forward contracts for open stabilizers. Global transitivity is an explicit hypothesis, supplied geometrically when applying the result to every component."
+      ]
+    }
+  ],
+  "gaps": [
+    {
+      "id": "G01",
+      "title": "The generic-filtration supplier has no staged blueprint",
+      "neededBy": [
+        "PadicHodgeTheoryPartII:GM1/orbit-degree-bound",
+        "PadicHodgeTheoryPartII:GM1/frobenius-average-bound",
+        "PadicHodgeTheoryPartII:GM1/newton-lowest-weight",
+        "PadicHodgeTheoryPartII:GM1/strict-hn-forces-central-weight",
+        "PadicHodgeTheoryPartII:GM2/generic-derived-monodromy",
+        "PadicHodgeTheoryPartII:GM3/open-derived-image"
+      ],
+      "detail": "The ReductiveGroupsPartIII restructure proposes ReductiveGroupsLocalGenerationPartII, while RG3.0/highest-weight-character-basis supplies only split geometric highest weights. The required quasisplit descent and generic-filtration contract is not a theorem of RG2.1 or of RG3.0. It must be staged by the owning reductive-group direction. Required contract: for any quasisplit connected reductive k-group in characteristic zero, dominant μ over a finite possibly nonnormal reflex field E/k, the generic filtration V∩∩_{g∈G(E)}gFil_μ is a filtration by G-subrepresentations and equals V∩Fil_η at a topologically generic flag. Its threshold on the k-isotypic orbit O is min over ALL distinct Γ_E-orbits C⊆O of ⟨w_0 average(C),μ⟩. Include equality for conjugate cocharacters after transporting embeddings to a common normal closure, Galois descent of isotypic components with multiplicities, semilinear Frobenius transport, and the character criterion for highest weights annihilating all coroots. These objects stay with that supplier; this roadmap plans only their arithmetic estimates and consumers."
+    },
+    {
+      "id": "G02",
+      "title": "The reverse component/HN supplier is not the staged He21 continuation",
+      "neededBy": [
+        "PadicHodgeTheoryPartII:GM4/quasisplit-converse"
+      ],
+      "detail": "The proposed GLX continuation HeckeStacksAndLocalShtukasPartIIAffineDeligneLusztig has no staged packet. The existing HeckeStacksAndLocalShtukasPartII is the independent He21 dimension direction and cannot supply GLX Theorem 6.1. Required reverse contract: for quasisplit connected reductive G/Q_p and [b]∈B(G,μ), existence over finite K/breve Q_p of a crystalline representation of type (b,μ) with image intersecting G_der(Q_p) openly implies HN-irreducibility. Prove only the (4)⇒(3) direction using the component/HN-decomposition route, independently of its forward generic-monodromy input. The global transitivity used to apply GM4/open-component-stabilizers to every tower component belongs to that geometric direction too; the local application here states it as an explicit hypothesis."
+    }
+  ],
+  "sourceIssues": [
+    {
+      "id": "PadicHodgeTheoryPartII/E1",
+      "source": "GLX26",
+      "kind": "error",
+      "locator": "§5.1 ¶14, p. 836 (published text)",
+      "printed": "The tensor group of the generated crystalline representation category is identified with MT, although Definition 5.1 defines MT as the identity component of Zariski closure.",
+      "correction": "Use the full closure H for the neutral tensor group and its finite-field crystalline partner. Take H° only when applying the connected Mumford–Tate conclusion, or first restrict to a finite extension killing the finite component group.",
+      "reason": "The category of a finite nontrivial representation has a finite nontrivial tensor group, while its connected algebraic monodromy is trivial. Normal connected G_der can still be transferred by the ambient period comparison.",
+      "affects": "the proof",
+      "known": "Already recorded in PAPER-GLEASON-LIM-XU-26/E02 and PadicHodgeTheory/E53; checked here in the published paragraph. No published correction located in the listed search.",
+      "searched": [
+        "2026-10-19: Springer article/related notices, https://link.springer.com/article/10.1007/s00222-025-01386-1 (no correction notice located).",
+        "2026-10-19: arXiv:2208.07195 submission history, latest v3 of 10 November 2025; the read text is the published PDF, not v1/v2.",
+        "2026-10-19: Ian Gleason publication list, https://ianandreigf.github.io/Website/, and title-plus-erratum search.",
+        "Existing atlas extraction PAPER-GLEASON-LIM-XU-26.result.json sourceIssues checked; its findings are leads, not independent verification of this package."
+      ]
+    },
+    {
+      "id": "PadicHodgeTheoryPartII/E2",
+      "source": "GLX26",
+      "kind": "error",
+      "locator": "Proposition 5.7, equations (5.18)–(5.22), pp. 840–841",
+      "printed": "Refined highest-weight pieces are indexed using Gal(E/k) even when the reflex field E/k need not be normal; that notation does not enumerate all required refinements in the nonnormal case.",
+      "correction": "Partition the full Γ_k-orbit O into ALL distinct Γ_E-orbits C and take the minimum over them. Equivalently transport all embeddings through a common normal closure. Use their sizes to weight the full average.",
+      "reason": "Take k=Q_5, E=k(cube root of 5), G=Res_{E/k}G_m and V=E. The μ selecting the identity embedding has reflex field E with trivial automorphism group. The geometric weight orbit has three members, refining into orbits of sizes 1 and 2. Their μ-pairings are 1 and 0. The true generic filtration on V has jump 0; testing only the identity refinement can predict jump 1.",
+      "affects": "a stated result",
+      "known": "The nonnormal-reflex problem is already recorded in PAPER-GLEASON-LIM-XU-26/E06. This package supplies the explicit orbit partition and arithmetic consumer; no published correction located.",
+      "searched": [
+        "2026-10-19: Springer article/related notices, https://link.springer.com/article/10.1007/s00222-025-01386-1 (no correction notice located).",
+        "2026-10-19: arXiv:2208.07195 submission history, latest v3 of 10 November 2025; the read text is the published PDF, not v1/v2.",
+        "2026-10-19: Ian Gleason publication list, https://ianandreigf.github.io/Website/, and title-plus-erratum search.",
+        "Existing atlas extraction PAPER-GLEASON-LIM-XU-26.result.json sourceIssues checked; its findings are leads, not independent verification of this package."
+      ]
+    },
+    {
+      "id": "PadicHodgeTheoryPartII/E3",
+      "source": "GLX26",
+      "kind": "error",
+      "locator": "Equation (5.29), p. 843",
+      "printed": "The proof recovers an isotypic vector by summing its refined components over every reflex-field automorphism.",
+      "correction": "Sum once over distinct refined Γ_E-orbits C⊆O. In averages use the coefficient |C|/|O|.",
+      "reason": "Even if E/k is quadratic Galois, the trivial highest weight has only one refined piece. Summing it over both automorphisms gives 2v rather than v. The minimum in the degree argument is unchanged by duplicates, but the printed vector equality fails.",
+      "affects": "the proof",
+      "known": "new",
+      "searched": [
+        "2026-10-19: Springer article/related notices, https://link.springer.com/article/10.1007/s00222-025-01386-1 (no correction notice located).",
+        "2026-10-19: arXiv:2208.07195 submission history, latest v3 of 10 November 2025; the read text is the published PDF, not v1/v2.",
+        "2026-10-19: Ian Gleason publication list, https://ianandreigf.github.io/Website/, and title-plus-erratum search.",
+        "Existing atlas extraction PAPER-GLEASON-LIM-XU-26.result.json sourceIssues checked; its findings are leads, not independent verification of this package."
+      ]
+    },
+    {
+      "id": "PadicHodgeTheoryPartII/E4",
+      "source": "Chen14",
+      "kind": "error",
+      "locator": "Proof of Proposition 3.3.4(2), p. 743",
+      "printed": "The reduction to a faithful representation asserts that every representation embeds into a single mixed tensor power of that representation.",
+      "correction": "Allow finite direct sums and subquotients of mixed tensor powers, and justify how line tests transport. This package uses Proposition 3.3.4(1) with all representations, so that reduction is unnecessary.",
+      "reason": "For G=G_m with its faithful weight-one representation, every single mixed tensor power has only one weight. The representation 1⊕χ has two distinct weights and cannot embed into one such power.",
+      "affects": "the proof",
+      "known": "new",
+      "searched": [
+        "2026-10-19: published SMF PDF and Numdam bibliographic record 10.24033/asens.2225; the direct Numdam full-page fetch timed out.",
+        "2026-10-19: title-plus-erratum and author searches; no correction to the inspected 2014 passages located. The Fudan profile currently provides no publication list."
+      ]
+    },
+    {
+      "id": "PadicHodgeTheoryPartII/E5",
+      "source": "GLX26",
+      "kind": "gap",
+      "locator": "Proof of Lemma 6.12, pp. 855–856, invoking Lemma 3.2",
+      "printed": "The proof uses an unrestricted component-of-quotient formula to descend a Galois orbit as a connected component.",
+      "correction": "For this application prove compactness of the Galois image, connectedness of each descended orbit through finite transitive covers, and invariant clopen separation of different compact cosets. The general quotient formula needs a separation hypothesis.",
+      "reason": "An arbitrary orbit quotient of a disconnected space can be connected; the previously recorded failure of Lemma 3.2 cannot justify this step. The compact Galois orbit has the stronger separation property needed here.",
+      "affects": "the proof",
+      "known": "The unrestricted quotient error is already recorded in PAPER-GLEASON-LIM-XU-26/E01 and repaired conditionally in DiamondsAndVStacks:D5/components-of-restricted-quotients. The compact application is proved separately here.",
+      "searched": [
+        "2026-10-19: Springer article/related notices, https://link.springer.com/article/10.1007/s00222-025-01386-1 (no correction notice located).",
+        "2026-10-19: arXiv:2208.07195 submission history, latest v3 of 10 November 2025; the read text is the published PDF, not v1/v2.",
+        "2026-10-19: Ian Gleason publication list, https://ianandreigf.github.io/Website/, and title-plus-erratum search.",
+        "Existing atlas extraction PAPER-GLEASON-LIM-XU-26.result.json sourceIssues checked; its findings are leads, not independent verification of this package."
+      ]
+    },
+    {
+      "id": "PadicHodgeTheoryPartII/E6",
+      "source": "GLX26",
+      "kind": "gap",
+      "locator": "Proposition 6.7, crystalline step, p. 851",
+      "printed": "The openness argument treats the Galois image as a subgroup of the derived group, whereas condition (4) concerns its intersection with that group.",
+      "correction": "Compare full algebraic monodromy, use central lifting of derived containment, and apply Serre–Sen to the crystalline lift. A finite central isogeny on derived groups alone does not compare the two intersections.",
+      "reason": "The Galois image of a crystalline representation can have a nontrivial central character, so it is not in general contained in G_tilde_der. The parent openness theorem supplies the missing bridge once derived containment is proved.",
+      "affects": "the proof",
+      "known": "new",
+      "searched": [
+        "2026-10-19: Springer article/related notices, https://link.springer.com/article/10.1007/s00222-025-01386-1 (no correction notice located).",
+        "2026-10-19: arXiv:2208.07195 submission history, latest v3 of 10 November 2025; the read text is the published PDF, not v1/v2.",
+        "2026-10-19: Ian Gleason publication list, https://ianandreigf.github.io/Website/, and title-plus-erratum search.",
+        "Existing atlas extraction PAPER-GLEASON-LIM-XU-26.result.json sourceIssues checked; its findings are leads, not independent verification of this package."
+      ]
+    },
+    {
+      "id": "PadicHodgeTheoryPartII/E7",
+      "source": "GLX26",
+      "kind": "misprint",
+      "locator": "Justification of equation (5.34), p. 843",
+      "printed": "The text explains moving the Frobenius action across the pairing with the same positive exponent.",
+      "correction": "Equivariance first moves it with the inverse exponent. The displayed full-period sum remains correct by reindexing all s powers, using σ_0^s=1.",
+      "reason": "For an invariant pairing, ⟨σ^iλ,μ⟩=⟨λ,σ^(-i)μ⟩. The positive and inverse sums agree over a whole period, but the termwise justification has the wrong action direction.",
+      "affects": "the proof",
+      "known": "new",
+      "searched": [
+        "2026-10-19: Springer article/related notices, https://link.springer.com/article/10.1007/s00222-025-01386-1 (no correction notice located).",
+        "2026-10-19: arXiv:2208.07195 submission history, latest v3 of 10 November 2025; the read text is the published PDF, not v1/v2.",
+        "2026-10-19: Ian Gleason publication list, https://ianandreigf.github.io/Website/, and title-plus-erratum search.",
+        "Existing atlas extraction PAPER-GLEASON-LIM-XU-26.result.json sourceIssues checked; its findings are leads, not independent verification of this package."
+      ]
+    },
+    {
+      "id": "PadicHodgeTheoryPartII/E8",
+      "source": "GLX26",
+      "kind": "error",
+      "locator": "Theorem 5.8 proof, first paragraph, p. 842",
+      "printed": "Genericity is said to be preserved by the displayed σ-conjugacy replacement without a restriction on the translating element in G(F).",
+      "correction": "For the dominant-Newton normalization choose the translating element over a finite algebraic coefficient field, so genericity is preserved. For arbitrary F-translations transport only the constructed open-image point, without claiming its flag remains generic over the original reflex field.",
+      "reason": "On a projective-line flag, translating a generic coordinate a∈F by −a sends it to a closed coordinate. Such an F-translation need not preserve topological genericity over a finite p-adic field.",
+      "affects": "the proof",
+      "known": "new",
+      "searched": [
+        "2026-10-19: Springer article/related notices, https://link.springer.com/article/10.1007/s00222-025-01386-1 (no correction notice located).",
+        "2026-10-19: arXiv:2208.07195 submission history, latest v3 of 10 November 2025; the read text is the published PDF, not v1/v2.",
+        "2026-10-19: Ian Gleason publication list, https://ianandreigf.github.io/Website/, and title-plus-erratum search.",
+        "Existing atlas extraction PAPER-GLEASON-LIM-XU-26.result.json sourceIssues checked; its findings are leads, not independent verification of this package."
+      ]
+    },
+    {
+      "id": "PadicHodgeTheoryPartII/E9",
+      "source": "Chen14",
+      "kind": "gap",
+      "locator": "Proposition 2.0.3 proof, choice of b and last residue-degree inequality, p. 735",
+      "printed": "The explicitly imposed growth bound has factor m p^{b(m−1)}, while the degree at n=bm+r used at the end is m p^{n−b}=m p^{b(m−1)+r}.",
+      "correction": "Choose b sufficiently large for the stronger residue-degree bound N>M m p^{b(m−1)+r}. The same factorial growth limits permit this, with fixed r.",
+      "reason": "The leading-digit lemma has degree m p^{n−b}, so for r>0 the stated earlier bound lacks the factor p^r required for the final no-root argument. Strengthening the choice of b repairs the proof and leaves infinite transcendence unchanged.",
+      "affects": "the proof",
+      "known": "new",
+      "searched": [
+        "2026-10-19: published SMF PDF and Numdam bibliographic record 10.24033/asens.2225; the direct Numdam full-page fetch timed out.",
+        "2026-10-19: title-plus-erratum and author searches; no correction to the inspected 2014 passages located. The Fudan profile currently provides no publication list."
+      ]
+    }
+  ],
+  "sourceVersions": [
+    {
+      "kind": "published",
+      "url": "https://link.springer.com/content/pdf/10.1007/s00222-025-01386-1.pdf",
+      "read": "2026-10-19",
+      "sha256": "c40fe1fc5e0941812cf3aca5ba77c471ee49122c63ed7b0d864d322136031485"
+    },
+    {
+      "kind": "published",
+      "url": "https://smf.emath.fr/system/files/2017-08/ens_ann-sc_47_723-764.pdf",
+      "read": "2026-10-19",
+      "sha256": "7f0a33b3659ba049aadfeb571e150ae80a95a53e9cd3731cfbc7242600619698"
+    }
+  ],
+  "restructure": [
+    {
+      "action": "split",
+      "roadmaps": [
+        "PadicHodgeTheoryPartII",
+        "PadicHodgeTheoryPartIIPadicSimpson",
+        "PadicHodgeTheoryPartIIRelativeCrystallineLocalSystems",
+        "PadicHodgeTheoryPartIIEquivariantBundlesOnTheCurve"
+      ],
+      "detail": "The six assigned continuations form four independent theorem directions. This job follows the issue’s instruction to plan the first and preserve the rest as precise routing proposals. The parent’s rational period/admissibility/monodromy interfaces are shared inputs, not content to duplicate.",
+      "proposal": "Keep PadicHodgeTheoryPartII for GLX generic crystalline monodromy (GM0–GM4), aliasing PadicHodgeTheoryGenericMonodromyPartII. Give Heuer plus Esnault–Groechenig to PadicHodgeTheoryPartIIPadicSimpson (34 routed items); Guo–Reinecke to PadicHodgeTheoryPartIIRelativeCrystallineLocalSystems (32); Fargues–Fontaine plus Breuil–Hellmann–Schraen to PadicHodgeTheoryPartIIEquivariantBundlesOnTheCurve (122). Preserve the existing proposed ids, titles, area padic and parent PadicHodgeTheory, and the route-brief references and complete item arrays below. Their design jobs must read those primary sources and merge overlap with the parent; this package does not claim to have read or planned them.",
+      "routes": [
+        {
+          "paper": "PAPER-GLEASON-LIM-XU-26",
+          "roadmap": "PadicHodgeTheoryPartII",
+          "originalRoadmap": "PadicHodgeTheoryGenericMonodromyPartII",
+          "title": "P-adic Hodge theory and geometric comparison, Part II: generic crystalline monodromy",
+          "items": [
+            "PAPER-GLEASON-LIM-XU-26/D53",
+            "PAPER-GLEASON-LIM-XU-26/T52",
+            "PAPER-GLEASON-LIM-XU-26/D54",
+            "PAPER-GLEASON-LIM-XU-26/T53",
+            "PAPER-GLEASON-LIM-XU-26/D55",
+            "PAPER-GLEASON-LIM-XU-26/T55a",
+            "PAPER-GLEASON-LIM-XU-26/T54",
+            "PAPER-GLEASON-LIM-XU-26/T57",
+            "PAPER-GLEASON-LIM-XU-26/T58",
+            "PAPER-GLEASON-LIM-XU-26/T59",
+            "PAPER-GLEASON-LIM-XU-26/T60",
+            "PAPER-GLEASON-LIM-XU-26/T61",
+            "PAPER-GLEASON-LIM-XU-26/T62",
+            "PAPER-GLEASON-LIM-XU-26/T64",
+            "PAPER-GLEASON-LIM-XU-26/T65",
+            "PAPER-GLEASON-LIM-XU-26/T66",
+            "PAPER-GLEASON-LIM-XU-26/T77",
+            "PAPER-GLEASON-LIM-XU-26/T82"
+          ],
+          "briefSource": "research/blueprint/papers/PAPER-GLEASON-LIM-XU-26.result.json: routes entry for PadicHodgeTheoryGenericMonodromyPartII"
+        },
+        {
+          "paper": "PAPER-HEUER-25",
+          "roadmap": "PadicHodgeTheoryPartIIPadicSimpson",
+          "originalRoadmap": "PadicHodgeTheoryPartIIPadicSimpson",
+          "title": "P-adic Hodge theory and geometric comparison, Part II: the p-adic Simpson correspondence for smooth proper rigid spaces",
+          "items": [
+            "PAPER-HEUER-25/4",
+            "PAPER-HEUER-25/5",
+            "PAPER-HEUER-25/8",
+            "PAPER-HEUER-25/15",
+            "PAPER-HEUER-25/16",
+            "PAPER-HEUER-25/17",
+            "PAPER-HEUER-25/18",
+            "PAPER-HEUER-25/19",
+            "PAPER-HEUER-25/20",
+            "PAPER-HEUER-25/21",
+            "PAPER-HEUER-25/22",
+            "PAPER-HEUER-25/23",
+            "PAPER-HEUER-25/24",
+            "PAPER-HEUER-25/25",
+            "PAPER-HEUER-25/26",
+            "PAPER-HEUER-25/27",
+            "PAPER-HEUER-25/28",
+            "PAPER-HEUER-25/29",
+            "PAPER-HEUER-25/30",
+            "PAPER-HEUER-25/31",
+            "PAPER-HEUER-25/32",
+            "PAPER-HEUER-25/33",
+            "PAPER-HEUER-25/34",
+            "PAPER-HEUER-25/35",
+            "PAPER-HEUER-25/36",
+            "PAPER-HEUER-25/37",
+            "PAPER-HEUER-25/38",
+            "PAPER-HEUER-25/39",
+            "PAPER-HEUER-25/40",
+            "PAPER-HEUER-25/41",
+            "PAPER-HEUER-25/42",
+            "PAPER-HEUER-25/43",
+            "PAPER-HEUER-25/46"
+          ],
+          "briefSource": "research/blueprint/papers/PAPER-HEUER-25.result.json: routes entry for PadicHodgeTheoryPartIIPadicSimpson"
+        },
+        {
+          "paper": "PAPER-GUO-REINECKE-24",
+          "roadmap": "PadicHodgeTheoryPartIIRelativeCrystallineLocalSystems",
+          "originalRoadmap": "PadicHodgeTheoryPartIIRelativeCrystallineLocalSystems",
+          "title": "P-adic Hodge theory and geometric comparison, Part II: crystalline local systems on smooth formal schemes",
+          "items": [
+            "PAPER-GUO-REINECKE-24/056",
+            "PAPER-GUO-REINECKE-24/057",
+            "PAPER-GUO-REINECKE-24/058",
+            "PAPER-GUO-REINECKE-24/059",
+            "PAPER-GUO-REINECKE-24/060",
+            "PAPER-GUO-REINECKE-24/061",
+            "PAPER-GUO-REINECKE-24/062",
+            "PAPER-GUO-REINECKE-24/063",
+            "PAPER-GUO-REINECKE-24/064",
+            "PAPER-GUO-REINECKE-24/065",
+            "PAPER-GUO-REINECKE-24/066",
+            "PAPER-GUO-REINECKE-24/067",
+            "PAPER-GUO-REINECKE-24/068",
+            "PAPER-GUO-REINECKE-24/069",
+            "PAPER-GUO-REINECKE-24/070",
+            "PAPER-GUO-REINECKE-24/071",
+            "PAPER-GUO-REINECKE-24/072",
+            "PAPER-GUO-REINECKE-24/073",
+            "PAPER-GUO-REINECKE-24/074",
+            "PAPER-GUO-REINECKE-24/075",
+            "PAPER-GUO-REINECKE-24/076",
+            "PAPER-GUO-REINECKE-24/077",
+            "PAPER-GUO-REINECKE-24/078",
+            "PAPER-GUO-REINECKE-24/079",
+            "PAPER-GUO-REINECKE-24/080",
+            "PAPER-GUO-REINECKE-24/081",
+            "PAPER-GUO-REINECKE-24/082",
+            "PAPER-GUO-REINECKE-24/083",
+            "PAPER-GUO-REINECKE-24/084",
+            "PAPER-GUO-REINECKE-24/085",
+            "PAPER-GUO-REINECKE-24/086",
+            "PAPER-GUO-REINECKE-24/087"
+          ],
+          "briefSource": "research/blueprint/papers/PAPER-GUO-REINECKE-24.result.json: routes entry for PadicHodgeTheoryPartIIRelativeCrystallineLocalSystems"
+        },
+        {
+          "paper": "PAPER-BREUIL-HELLMANN-SCHRAEN-19",
+          "roadmap": "PadicHodgeTheoryPartIIEquivariantBundlesOnTheCurve",
+          "originalRoadmap": "PadicHodgeTheoryPartIIEquivariantBundlesOnTheCurve",
+          "title": "P-adic Hodge theory and geometric comparison, Part II: G_K-equivariant bundles on the Fargues–Fontaine curve and the curve proofs of 'weakly admissible implies admissible' and of the p-adic monodromy theorem",
+          "items": [
+            "PAPER-BREUIL-HELLMANN-SCHRAEN-19/3.1-bdr-reps",
+            "PAPER-BREUIL-HELLMANN-SCHRAEN-19/3.1-bpdr",
+            "PAPER-BREUIL-HELLMANN-SCHRAEN-19/3.1.1-equivalence",
+            "PAPER-BREUIL-HELLMANN-SCHRAEN-19/3.1.4-coefficients",
+            "PAPER-BREUIL-HELLMANN-SCHRAEN-19/3.3.5-WdR",
+            "PAPER-BREUIL-HELLMANN-SCHRAEN-19/3.5-bpairs-berger"
+          ],
+          "briefSource": "research/blueprint/papers/PAPER-BREUIL-HELLMANN-SCHRAEN-19.result.json: routes entry for PadicHodgeTheoryPartIIEquivariantBundlesOnTheCurve"
+        },
+        {
+          "paper": "PAPER-ESNAULT-GROECHENIG-20",
+          "roadmap": "PadicHodgeTheoryPartIIPadicSimpson",
+          "originalRoadmap": "PadicHodgeTheoryPartIIPadicSimpson",
+          "title": "P-adic Hodge theory and geometric comparison, Part II: the p-adic Simpson correspondence for smooth proper rigid spaces",
+          "items": [
+            "PAPER-ESNAULT-GROECHENIG-20/095"
+          ],
+          "briefSource": "research/blueprint/papers/PAPER-ESNAULT-GROECHENIG-20.result.json: routes entry for PadicHodgeTheoryPartIIPadicSimpson"
+        },
+        {
+          "paper": "PAPER-FARGUES-FONTAINE-18",
+          "roadmap": "PadicHodgeTheoryPartIIEquivariantBundlesOnTheCurve",
+          "originalRoadmap": "PadicHodgeTheoryPartIIEquivariantBundlesOnTheCurve",
+          "title": "P-adic Hodge theory and geometric comparison, Part II: G_K-equivariant bundles on the Fargues–Fontaine curve and the curve proofs of 'weakly admissible implies admissible' and of the p-adic monodromy theorem",
+          "items": [
+            "PAPER-FARGUES-FONTAINE-18/90",
+            "PAPER-FARGUES-FONTAINE-18/101",
+            "PAPER-FARGUES-FONTAINE-18/102",
+            "PAPER-FARGUES-FONTAINE-18/880",
+            "PAPER-FARGUES-FONTAINE-18/881",
+            "PAPER-FARGUES-FONTAINE-18/882",
+            "PAPER-FARGUES-FONTAINE-18/884",
+            "PAPER-FARGUES-FONTAINE-18/885",
+            "PAPER-FARGUES-FONTAINE-18/886",
+            "PAPER-FARGUES-FONTAINE-18/887",
+            "PAPER-FARGUES-FONTAINE-18/888",
+            "PAPER-FARGUES-FONTAINE-18/889",
+            "PAPER-FARGUES-FONTAINE-18/890",
+            "PAPER-FARGUES-FONTAINE-18/891",
+            "PAPER-FARGUES-FONTAINE-18/892",
+            "PAPER-FARGUES-FONTAINE-18/893",
+            "PAPER-FARGUES-FONTAINE-18/894",
+            "PAPER-FARGUES-FONTAINE-18/895",
+            "PAPER-FARGUES-FONTAINE-18/896",
+            "PAPER-FARGUES-FONTAINE-18/897",
+            "PAPER-FARGUES-FONTAINE-18/898",
+            "PAPER-FARGUES-FONTAINE-18/899",
+            "PAPER-FARGUES-FONTAINE-18/900",
+            "PAPER-FARGUES-FONTAINE-18/901",
+            "PAPER-FARGUES-FONTAINE-18/902",
+            "PAPER-FARGUES-FONTAINE-18/903",
+            "PAPER-FARGUES-FONTAINE-18/904",
+            "PAPER-FARGUES-FONTAINE-18/905",
+            "PAPER-FARGUES-FONTAINE-18/906",
+            "PAPER-FARGUES-FONTAINE-18/907",
+            "PAPER-FARGUES-FONTAINE-18/908",
+            "PAPER-FARGUES-FONTAINE-18/909",
+            "PAPER-FARGUES-FONTAINE-18/910",
+            "PAPER-FARGUES-FONTAINE-18/911",
+            "PAPER-FARGUES-FONTAINE-18/912",
+            "PAPER-FARGUES-FONTAINE-18/913",
+            "PAPER-FARGUES-FONTAINE-18/914",
+            "PAPER-FARGUES-FONTAINE-18/915",
+            "PAPER-FARGUES-FONTAINE-18/916",
+            "PAPER-FARGUES-FONTAINE-18/919",
+            "PAPER-FARGUES-FONTAINE-18/921",
+            "PAPER-FARGUES-FONTAINE-18/922",
+            "PAPER-FARGUES-FONTAINE-18/923",
+            "PAPER-FARGUES-FONTAINE-18/924",
+            "PAPER-FARGUES-FONTAINE-18/925",
+            "PAPER-FARGUES-FONTAINE-18/926",
+            "PAPER-FARGUES-FONTAINE-18/927",
+            "PAPER-FARGUES-FONTAINE-18/928",
+            "PAPER-FARGUES-FONTAINE-18/929",
+            "PAPER-FARGUES-FONTAINE-18/930",
+            "PAPER-FARGUES-FONTAINE-18/933",
+            "PAPER-FARGUES-FONTAINE-18/934",
+            "PAPER-FARGUES-FONTAINE-18/935",
+            "PAPER-FARGUES-FONTAINE-18/936",
+            "PAPER-FARGUES-FONTAINE-18/937",
+            "PAPER-FARGUES-FONTAINE-18/938",
+            "PAPER-FARGUES-FONTAINE-18/939",
+            "PAPER-FARGUES-FONTAINE-18/940",
+            "PAPER-FARGUES-FONTAINE-18/941",
+            "PAPER-FARGUES-FONTAINE-18/942",
+            "PAPER-FARGUES-FONTAINE-18/943",
+            "PAPER-FARGUES-FONTAINE-18/944",
+            "PAPER-FARGUES-FONTAINE-18/945",
+            "PAPER-FARGUES-FONTAINE-18/946",
+            "PAPER-FARGUES-FONTAINE-18/947",
+            "PAPER-FARGUES-FONTAINE-18/948",
+            "PAPER-FARGUES-FONTAINE-18/949",
+            "PAPER-FARGUES-FONTAINE-18/950",
+            "PAPER-FARGUES-FONTAINE-18/951",
+            "PAPER-FARGUES-FONTAINE-18/952",
+            "PAPER-FARGUES-FONTAINE-18/956",
+            "PAPER-FARGUES-FONTAINE-18/958",
+            "PAPER-FARGUES-FONTAINE-18/959",
+            "PAPER-FARGUES-FONTAINE-18/960",
+            "PAPER-FARGUES-FONTAINE-18/961",
+            "PAPER-FARGUES-FONTAINE-18/962",
+            "PAPER-FARGUES-FONTAINE-18/963",
+            "PAPER-FARGUES-FONTAINE-18/964",
+            "PAPER-FARGUES-FONTAINE-18/965",
+            "PAPER-FARGUES-FONTAINE-18/966",
+            "PAPER-FARGUES-FONTAINE-18/968",
+            "PAPER-FARGUES-FONTAINE-18/969",
+            "PAPER-FARGUES-FONTAINE-18/970",
+            "PAPER-FARGUES-FONTAINE-18/971",
+            "PAPER-FARGUES-FONTAINE-18/972",
+            "PAPER-FARGUES-FONTAINE-18/974",
+            "PAPER-FARGUES-FONTAINE-18/975",
+            "PAPER-FARGUES-FONTAINE-18/977",
+            "PAPER-FARGUES-FONTAINE-18/978",
+            "PAPER-FARGUES-FONTAINE-18/979",
+            "PAPER-FARGUES-FONTAINE-18/980",
+            "PAPER-FARGUES-FONTAINE-18/981",
+            "PAPER-FARGUES-FONTAINE-18/982",
+            "PAPER-FARGUES-FONTAINE-18/985",
+            "PAPER-FARGUES-FONTAINE-18/986",
+            "PAPER-FARGUES-FONTAINE-18/987",
+            "PAPER-FARGUES-FONTAINE-18/988",
+            "PAPER-FARGUES-FONTAINE-18/989",
+            "PAPER-FARGUES-FONTAINE-18/990",
+            "PAPER-FARGUES-FONTAINE-18/991",
+            "PAPER-FARGUES-FONTAINE-18/992",
+            "PAPER-FARGUES-FONTAINE-18/993",
+            "PAPER-FARGUES-FONTAINE-18/994",
+            "PAPER-FARGUES-FONTAINE-18/995",
+            "PAPER-FARGUES-FONTAINE-18/996",
+            "PAPER-FARGUES-FONTAINE-18/997",
+            "PAPER-FARGUES-FONTAINE-18/998",
+            "PAPER-FARGUES-FONTAINE-18/999",
+            "PAPER-FARGUES-FONTAINE-18/1000",
+            "PAPER-FARGUES-FONTAINE-18/1001",
+            "PAPER-FARGUES-FONTAINE-18/1002",
+            "PAPER-FARGUES-FONTAINE-18/1003",
+            "PAPER-FARGUES-FONTAINE-18/1006",
+            "PAPER-FARGUES-FONTAINE-18/1103",
+            "PAPER-FARGUES-FONTAINE-18/1104",
+            "PAPER-FARGUES-FONTAINE-18/1105"
+          ],
+          "briefSource": "research/blueprint/papers/PAPER-FARGUES-FONTAINE-18.result.json: routes entry for PadicHodgeTheoryPartIIEquivariantBundlesOnTheCurve"
+        }
+      ]
+    },
+    {
+      "action": "rescope",
+      "roadmaps": [
+        "PadicHodgeTheoryPartII",
+        "ReductiveGroupsPartIII",
+        "ReductiveGroupsLocalGenerationPartII"
+      ],
+      "detail": "The proposed local-generation continuation already owns GLX generic filtrations. RG3.0 supplies only the geometric split highest-weight starting point; its arithmetic character-basis scope is not the missing generic-filtration theorem.",
+      "proposal": "Stage ReductiveGroupsLocalGenerationPartII with the precise G01 generic-filtration and quasisplit-descent contract. Send GLX T55a to that supplier. Keep the degree/orbit inequalities and crystalline monodromy here; keep general reductive and isotropic generation there. Do not reassign the missing contract to RG2.1."
+    },
+    {
+      "action": "rescope",
+      "roadmaps": [
+        "PadicHodgeTheoryPartII",
+        "HeckeStacksAndLocalShtukasPartIIAffineDeligneLusztig"
+      ],
+      "detail": "The GLX component equivalence is distinct from the existing He21 dimension roadmap HeckeStacksAndLocalShtukasPartII.",
+      "proposal": "Stage the GLX ADLV continuation and export the exact reverse contract G02 to GM4. Import the forward open-image point from GM3, but prove the reverse component/HN implication without depending on GM4. Generic monodromy remains independent of the full component equivalence."
+    }
+  ],
+  "upstreamNotes": [
+    {
+      "roadmaps": [
+        "tauceti:TauCetiRoadmap/ReductiveGroups"
+      ],
+      "note": "The current library at a91d3aa proves the scheme-theoretic exterior-power line-stabilizer theorem, and fgPointTensorIsoEquiv already exists at the pinned baseline. Adopt those declarations when packaging the corresponding representation/comodule milestones; do not introduce duplicate Tannaka or Chevalley theory. The fixed atlas pin predates the exterior stabilizer result. This plan requests only its adapter and records that pin boundary explicitly."
+    }
+  ],
+  "baselineAudit": {
+    "date": "2026-10-19",
+    "reviewedAudit": "data/library-coverage.json: VB0, BG0 and BG1 checked; no PadicHodgeTheory entry found. The audit does not certify the new monodromy target.",
+    "pinnedChecks": [
+      "Mathlib/RingTheory/WittVector/Isocrystal.lean: isocrystal_classification concerns rank one, not the full Dieudonné–Manin classification. Import the latter from VB0.",
+      "TauCeti.Tannaka.fgPointTensorIsoEquiv at f790474 is the concrete finite-comodule Hopf-point reconstruction, not a theorem for every abstract neutral category. Use MC.6 for fibre-change formalism."
+    ],
+    "currentTauCeti": "a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039",
+    "currentRoadmapChecks": [
+      "Current ReductiveGroups, ReductiveGroupsPartII and AdicSpaces were checked against the proposed carriers. ProfiniteArithmetic concerns profinite arithmetic powers/topology, not crystalline Galois torsor components.",
+      "Current Tau Ceti was searched for crystalline/Galois monodromy, generic filtration, normalized Frobenius fibre functors, Witt completeness and line stabilizers. Existing Hopf-point Tannaka and Chevalley stabilizers are reused; no new general reconstruction or Witt completeness is planned."
+    ],
+    "limits": "This is a source audit and declaration-level plan. No node is claimed implemented. Serre–Sen, the perfect-residue-field Colmez–Fontaine equivalence and bounded standard-fibre torsor triviality are imported by exact parent node ids, not re-proved from inaccessible primary books."
+  },
+  "routeCoverage": [
+    {
+      "item": "PAPER-GLEASON-LIM-XU-26/D53",
+      "disposition": "imported",
+      "targets": [
+        "PadicHodgeTheory:R06.2/crystalline-monodromy-group-interface"
+      ]
+    },
+    {
+      "item": "PAPER-GLEASON-LIM-XU-26/T52",
+      "disposition": "imported",
+      "targets": [
+        "PadicHodgeTheory:R06.2/crystalline-monodromy-group-interface"
+      ]
+    },
+    {
+      "item": "PAPER-GLEASON-LIM-XU-26/D54",
+      "disposition": "planned",
+      "targets": [
+        "PadicHodgeTheoryPartII:GM0/decent-fibre-functor"
+      ]
+    },
+    {
+      "item": "PAPER-GLEASON-LIM-XU-26/T53",
+      "disposition": "planned",
+      "targets": [
+        "PadicHodgeTheoryPartII:GM0/ambient-period-transfer"
+      ]
+    },
+    {
+      "item": "PAPER-GLEASON-LIM-XU-26/D55",
+      "disposition": "planned",
+      "targets": [
+        "PadicHodgeTheoryPartII:GM0/filtration-degree",
+        "PadicHodgeTheoryPartII:GM0/degree-sum",
+        "PadicHodgeTheoryPartII:GM0/newton-hodge-vectors"
+      ]
+    },
+    {
+      "item": "PAPER-GLEASON-LIM-XU-26/T55a",
+      "disposition": "supplier-gap",
+      "targets": [
+        "G01: ReductiveGroupsLocalGenerationPartII supplier"
+      ]
+    },
+    {
+      "item": "PAPER-GLEASON-LIM-XU-26/T54",
+      "disposition": "planned",
+      "targets": [
+        "PadicHodgeTheoryPartII:GM0/coefficient-rank-one",
+        "PadicHodgeTheoryPartII:GM0/invariant-line-criterion"
+      ]
+    },
+    {
+      "item": "PAPER-GLEASON-LIM-XU-26/T57",
+      "disposition": "planned",
+      "targets": [
+        "PadicHodgeTheoryPartII:GM1/orbit-degree-bound"
+      ]
+    },
+    {
+      "item": "PAPER-GLEASON-LIM-XU-26/T58",
+      "disposition": "planned",
+      "targets": [
+        "PadicHodgeTheoryPartII:GM1/frobenius-average-bound"
+      ]
+    },
+    {
+      "item": "PAPER-GLEASON-LIM-XU-26/T59",
+      "disposition": "planned",
+      "targets": [
+        "PadicHodgeTheoryPartII:GM1/newton-lowest-weight"
+      ]
+    },
+    {
+      "item": "PAPER-GLEASON-LIM-XU-26/T60",
+      "disposition": "planned",
+      "targets": [
+        "PadicHodgeTheoryPartII:GM1/strict-hn-forces-central-weight"
+      ]
+    },
+    {
+      "item": "PAPER-GLEASON-LIM-XU-26/T61",
+      "disposition": "planned",
+      "targets": [
+        "PadicHodgeTheoryPartII:GM2/decent-subobject-descent",
+        "PadicHodgeTheoryPartII:GM2/hodge-degree-specialization",
+        "PadicHodgeTheoryPartII:GM2/generic-admissible"
+      ]
+    },
+    {
+      "item": "PAPER-GLEASON-LIM-XU-26/T62",
+      "disposition": "planned",
+      "targets": [
+        "PadicHodgeTheoryPartII:GM2/generic-derived-monodromy"
+      ]
+    },
+    {
+      "item": "PAPER-GLEASON-LIM-XU-26/T64",
+      "disposition": "planned",
+      "targets": [
+        "PadicHodgeTheoryPartII:GM3/witt-leading-digit",
+        "PadicHodgeTheoryPartII:GM3/infinite-transcendence",
+        "PadicHodgeTheoryPartII:GM3/generic-classical-points"
+      ]
+    },
+    {
+      "item": "PAPER-GLEASON-LIM-XU-26/T65",
+      "disposition": "planned",
+      "targets": [
+        "PadicHodgeTheoryPartII:GM3/open-derived-image"
+      ]
+    },
+    {
+      "item": "PAPER-GLEASON-LIM-XU-26/T66",
+      "disposition": "planned",
+      "targets": [
+        "PadicHodgeTheoryPartII:GM4/quasisplit-converse"
+      ]
+    },
+    {
+      "item": "PAPER-GLEASON-LIM-XU-26/T77",
+      "disposition": "planned",
+      "targets": [
+        "PadicHodgeTheoryPartII:GM3/z-extension-open-image"
+      ]
+    },
+    {
+      "item": "PAPER-GLEASON-LIM-XU-26/T82",
+      "disposition": "planned",
+      "targets": [
+        "PadicHodgeTheoryPartII:GM4/compact-torsor-components",
+        "PadicHodgeTheoryPartII:GM4/open-component-stabilizers"
+      ]
+    }
+  ],
+  "closureNotes": [
+    "The graph ends in verified pinned declarations, exact existing nodes, requested stages, and G01/G02. It is not closed.",
+    "The unfiltered part of decent-fibre-functor is used by subobject descent before admissibility; its admissible restriction is used by the invariant-line argument only after generic-admissible.",
+    "Serre–Sen and DOR standard-fibre triviality are owned by PadicHodgeTheory:R06.2. This package imports their exact node contracts, including the parent’s primary-proof requirements. It does not claim those primary proofs were reread.",
+    "Generic filtration is notation for the requested supplier’s object, not a second definition in this packet. The final converse is a leaf consumer; the missing component theorem is not an input to the forward proof."
+  ],
+  "suggestedLean": {
+    "shape": "Compact representative subset under PACKAGE_REVIEW.md, Shape of a roadmap (2026-10-12).",
+    "definitions": [
+      "DegreeAt",
+      "frobeniusDegreeSum"
+    ],
+    "milestones": [
+      "positive_sum_forces_zero"
+    ],
+    "scope": "Only the two real-bodied light definitions, their directly usable API and representative computations, plus the rational strict-positivity milestone are stated. The filtered-isocrystal category, Galois/period torsors and group-scheme monodromy carriers are README targets; no data is invented to type their theorems.",
+    "verification": {
+      "date": "2026-10-19",
+      "command": "lean-check research/blueprint/suggested/PadicHodgeTheoryPartII.lean",
+      "result": "Elaborated at the pinned Mathlib with exit status 0; only five permitted placeholder-proof warnings. Two real-bodied definitions, ten theorem signatures and six examples, 132 lines. Heavy carriers and their targets remain in the reader document."
+    }
+  }
+}
