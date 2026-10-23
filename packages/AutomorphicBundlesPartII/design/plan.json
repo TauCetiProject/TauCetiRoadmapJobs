@@ -4305,6 +4305,48 @@
         "AutomorphicBundlesPartII:relative-subcanonical-vanishing",
         "AutomorphicBundlesPartII:large-parallel-twist"
       ]
+    },
+    {
+      "slug": "integral-dual-weyl-lattices",
+      "needs": "Construct finite free integral Weyl and dual-Weyl modules for every dominant weight of a split reductive Levi over ℤ, with the fixed right-B function realization, left translation and base-change comparison to the field modules, retaining symmetric versus divided powers in residue characteristic.",
+      "supplier": "LanglandsParameterStacks",
+      "section": "LP3.0"
+    },
+    {
+      "slug": "coefficient-linear-coherent-comparison",
+      "needs": "Identify scalar-linear derived coherent cohomology over an affine coefficient base with Tau Ceti’s underlying additive scheme-module cohomology, naturally in coefficient morphisms, long exact sequences and the H⁰/global-section equivalence.",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "§§2.6, 2.18"
+    },
+    {
+      "slug": "gaga-duality-trace",
+      "needs": "Make projective/proper coherent GAGA compatible with the proper duality counit and the actual coherent trace, coefficient twists and boundary-ideal arrows in the toroidal Hecke spans.",
+      "supplier": "ComplexComparisonPartII",
+      "section": "C1.9, C3.3"
+    },
+    {
+      "slug": "boundary-spin-satake",
+      "needs": "Compute the normalized Klingen-Levi restriction of the GSp₄ spin polynomial on the boundary coefficient, specifying all q powers and the central character χ so that the full polynomial is that of ρ₂⊕(ρ₂⊗χ), with the four distinct spin monomials and the reciprocal-polynomial convention.",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.4.5"
+    },
+    {
+      "slug": "coefficient-logarithmic-splitting",
+      "needs": "Supply the coefficient logarithmic Deligne–Illusie splitting used in Lan–Suh Theorem 7.22 and Corollary 7.24 on the admitted W₂-liftable Cartier-type log-smooth PEL pairs, with the precise dimension, nilpotent-residue and p-smallness conditions.",
+      "supplier": "CrystallineCohomology",
+      "section": "CR.5.4"
+    },
+    {
+      "slug": "integral-small-weight-dual-bgg",
+      "needs": "Extend the coefficient dual BGG graded comparison to the integral p-small Lan–Suh weights, with the correct Weyl or dual-Weyl lattice, cohomological length shifts and canonical/subcanonical boundary twists, and identify its characteristic-zero specialization.",
+      "supplier": "AutomorphicBundles",
+      "section": "B3.BGG.2–B3.BGG.3"
+    },
+    {
+      "slug": "lower-rank-polynomial-realizations",
+      "needs": "Extend R34.6’s fixed-form classical and source-qualified Hilbert realizations to continuous rank-two systems for every normalized classical cusp eigenform of weight at least one and every algebraic Hilbert cusp eigenpacket with all weights at least two and their common parity, with the full normalized unramified polynomial at every coefficient prime of different residue characteristic, stable coefficient models and reduction/dual transport, without a finite discrete-series-place restriction for the Hilbert good-prime polynomial.",
+      "supplier": "WeightsInEtaleCohomology",
+      "section": "R34.6"
     }
   ],
   "coverage": [
