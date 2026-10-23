@@ -1,0 +1,34 @@
+{
+  "gaps": [
+    {
+      "slug": "function-field-arithmetic",
+      "supplier": "FunctionFieldArithmetic",
+      "section": "FA.1–FA.6",
+      "needs": "Global function-field adeles and ideles, finite-level reciprocity, differential additive characters and self-dual measures, zeta and Chebotarev theorems, constant terms and cuspidal support modulo a central lattice, with the full contracts labelled FA.1–FA.6 in this roadmap."
+    },
+    {
+      "slug": "classical-centre-restriction",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.1.3 and SR.3.2",
+      "needs": "Show that the completed central elements produced by restricted-shtuka excursions restrict to the ordinary smooth Bernstein centre over characteristic-zero coefficients, with compatible level actions; compatible completed corners alone do not supply finite support."
+    },
+    {
+      "slug": "equal-characteristic-glr-correspondence",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.5.2",
+      "needs": "Supply the local Langlands correspondence for every GL_r over a local field of characteristic p, with Frobenius-semisimplified Weil–Deligne parameters including monodromy, central characters and all local pair L and epsilon factors."
+    },
+    {
+      "slug": "elliptic-sheaf-carrier",
+      "supplier": "AlgebraicModuliForArithmeticGeometry",
+      "section": "elliptic-sheaf moduli (additional contract)",
+      "needs": "Supply rank-n elliptic sheaves on X with chosen infinity, commuting bundle and Frobenius chains, periodicity with the degree of infinity included, prescribed locally free quotients on the pole and zero graphs, degree normalization and compatible levels, for the comparison in GS.2.7."
+    },
+    {
+      "slug": "function-field-sl-volume",
+      "supplier": "AdelicAlgebraicGroups",
+      "section": "AA.2.4 and AA.3.1",
+      "needs": "For every r≥1 over F=F_q(X), prove the SL_r Tamagawa number is 1 and compare its gauge measure with product Haar measure giving every SL_r(O_v) volume 1: the quotient volume is q^((g−1)(r²−1)) times the product of Z_X(q^(−i)) for 2≤i≤r."
+    }
+  ]
+}

@@ -1,0 +1,503 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GlobalShtukasAndFunctionFieldLanglands"
+
+[[source]]
+id = "VL"
+authors = "Vincent Lafforgue"
+title = "Chtoucas pour les groupes réductifs et paramétrisation de Langlands globale"
+year = 2012
+arxiv = "1209.5352v10"
+locator_scheme = "theorem"
+locator = "arXiv v10: Theorem 1.17; Propositions 2.6, 2.8, 4.12, 4.14, 6.2, 7.1, 8.23, 8.27, 8.31, 8.32; Corollary 8.34; Propositions 9.7, 10.8, 10.10, 11.7; Theorems 11.11, 12.3, 12.16, 13.2; Proposition 15.1; Lemmas 16.2, 16.4; exact subsidiary locators in GS.0–GS.7 Source paragraphs"
+url = "https://arxiv.org/abs/1209.5352v10"
+fetched_from = "https://arxiv.org/pdf/1209.5352v10"
+fetched_at = "2026-10-22T18:19:18Z"
+sha256 = "b37715f9c42862b7560d8b71da07924376e3cbbbe862ef9e89a57d8c91a64295"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v10"
+cited_for = ["GS.0.1", "GS.0.3", "GS.0.5", "GS.0.6", "GS.0.7", "GS.0.10", "GS.0.12", "GS.0.14", "GS.1.1", "GS.1.2", "GS.1.3", "GS.1.8", "GS.1.9", "GS.1.10", "GS.1.11", "GS.1.13", "GS.1.14", "GS.2.1", "GS.2.2", "GS.2.3", "GS.2.5", "GS.2.9", "GS.2.10", "GS.2.11", "GS.3.1", "GS.3.2", "GS.3.6", "GS.3.7", "GS.3.8", "GS.4.1", "GS.4.2", "GS.4.3", "GS.4.4", "GS.4.5", "GS.4.6", "GS.4.7", "GS.4.8", "GS.4.9", "GS.4.10", "GS.4.11", "GS.5.1", "GS.5.2", "GS.5.3", "GS.5.5", "GS.5.6", "GS.5.7", "GS.5.8", "GS.5.9", "GS.5.10", "GS.5.11", "GS.5.12", "GS.5.13", "GS.6.3", "GS.7.1"]
+
+[[source]]
+id = "GeL"
+authors = "Alain Genestier, Vincent Lafforgue"
+title = "Chtoucas restreints pour les groupes réductifs et paramétrisation de Langlands locale"
+year = 2017
+arxiv = "1709.00978v3"
+locator_scheme = "theorem"
+locator = "§1, Remark 1.6, p. 8; §2, Definition 2.11, Remarks 2.12–2.14, Definition 2.15, Proposition 2.16 and Lemma 2.17, pp. 14–18 and §9, pp. 46–47; Lemma 2.20 and (2.27)–(2.28), pp. 21–22; proof of Proposition 3.2, pp. 25–31; §3, Proposition 3.2 with proof and Remark 3.12, pp. 24–31; §4, Lemmas 4.1–4.3, pp. 32–33; §1, Proposition 1.3 and Lemma 1.4, p. 7; §6, (6.1)–(6.3), Lemma 6.2 and Remark 6.3, pp. 36–40; Theorem 0.1, pp. 2–3; §1, Theorem 1.1 and the reduction to Proposition 1.3, pp. 5–9; §8, Proposition 8.1, pp. 42–43; Remark 6.3, pp. 39–40; Theorem 0.1(b), p. 2; Theorem 1.1(v), p. 6; §6, Lemma 6.2, p. 38; §9, Theorem 9.1, pp. 43–45; Remark 0.3, p. 3; §7.1–§7.3 and Remark 7.1, pp. 40–42; §9, p. 45"
+url = "https://arxiv.org/abs/1709.00978v3"
+fetched_from = "https://arxiv.org/pdf/1709.00978v3"
+fetched_at = "2026-10-22T18:31:09Z"
+sha256 = "64aae45c06801eb4fb83a9b5f61889dda668f73478ec95e6f5c913a556ca8830"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["GS.7.1", "GS.7.2", "GS.7.3", "GS.7.4", "GS.7.5", "GS.7.6", "GS.7.7", "GS.7.8", "GS.7.9", "GS.7.10"]
+
+[[source]]
+id = "Sch"
+locator_scheme = "theorem"
+locator = "§2.1, pp. 306–308; §4.2, Theorem 4.1(i)–(iii), pp. 316–317; Appendix A, p. 356"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v183-n1-p06-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v183-n1-p06-p.pdf"
+fetched_at = "2026-10-22T18:34:16Z"
+sha256 = "8e486963410368afe461a6f2a848eb7ddb618aa48fda7db2c0bd51710286c7a5"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["GS.0.5", "GS.0.13"]
+authors = "Olivier Schiffmann"
+title = "Indecomposable vector bundles and stable Higgs bundles over smooth projective curves"
+year = 2016
+
+[[source]]
+id = "LL"
+locator_scheme = "theorem"
+locator = "Theorem I.13, pp. 31–32; Chapter VI §1d, remark after Theorem VI.9, p. 158; §1e, proof of Proposition VI.11, p. 159; Chapter VII §2a, Theorem VII.6 and proof, pp. 198–200; Chapter VII §1c, Corollary VII.5, p. 197; Chapter VII §1b–§1c, Theorem VII.3, Proposition VII.4 and Corollary VII.5, pp. 195–197"
+url = "https://www.laurentlafforgue.org/math/fulltext.pdf"
+fetched_from = "https://www.laurentlafforgue.org/math/fulltext.pdf"
+fetched_at = "2026-10-22T18:31:11Z"
+sha256 = "af732dac0d2dd00056ff46075f069f09cb2239bcac5cec68b13d17faa8d2ea76"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["GS.0.15", "GS.6.2", "GS.7.9", "GS.7.11"]
+authors = "Laurent Lafforgue"
+title = "Chtoucas de Drinfeld et correspondance de Langlands"
+year = 2002
+version_note = "IHÉS author copy, including corrected Theorem I.13; printed pagination"
+
+[[source]]
+id = "Del73"
+locator_scheme = "theorem"
+locator = "§3.12, pp. 533–534, Theorem 4.1, p. 535, Lemmas 4.12–4.16, pp. 544–545, and §8.12, p. 572"
+url = "https://publications.ias.edu/node/365"
+licence_class = "none"
+status = "uncertified"
+version_note = "Printed locators in Lecture Notes in Mathematics 349 (1973), corrected printing 1986; text not certified"
+cited_for = ["GS.7.10"]
+authors = "Pierre Deligne"
+title = "Les constantes des équations fonctionnelles des fonctions L"
+year = 1973
+
+[[source]]
+id = "MV"
+authors = "I. Mirkovic, K. Vilonen"
+title = "Geometric Langlands duality and representations of algebraic groups over commutative rings"
+year = 2004
+arxiv = "math/0401222v5"
+locator_scheme = "theorem"
+locator = "§2, pp. 3–7; §3, pp. 7–13; §§4–6, pp. 13–21; §7, pp. 23–24; §6, Lemma 6.1 and Proposition 6.3, pp. 19–20; §7, Theorem 7.3, p. 23; §11, Proposition 11.1, p. 31; §12, Theorem 12.1, pp. 33–38; §4, (4.2), p. 13, and Theorem 12.1, pp. 33–37"
+url = "https://arxiv.org/abs/math/0401222v5"
+fetched_from = "https://arxiv.org/pdf/math/0401222v5"
+fetched_at = "2026-10-22T18:31:15Z"
+sha256 = "b3fa89de4f2aeefadaba248aba2e942a20fc0895b8a218dfcab93322b4140e21"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v5"
+cited_for = ["GS.1.7", "GS.1.8", "GS.1.9", "GS.1.14"]
+
+[[source]]
+id = "Ric"
+authors = "Timo Richarz"
+title = "A new approach to the geometric Satake equivalence"
+year = 2012
+arxiv = "1207.5314v2"
+locator_scheme = "theorem"
+locator = "Theorem 0.1, p. 2, and Theorem 5.1, p. 20 (geometric and arithmetic categories); Theorem 0.1, p. 2; Theorem 5.1, p. 20; Theorem 5.1, p. 20; Proposition 5.6 and Corollary 5.8, p. 22"
+url = "https://arxiv.org/abs/1207.5314v2"
+fetched_from = "https://arxiv.org/pdf/1207.5314v2"
+fetched_at = "2026-10-22T18:31:21Z"
+sha256 = "cf4f0ac8802dfaaa19d220f872e10b5a2ddde36b83b127d080b13ca6858d944f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["GS.1.7", "GS.1.9", "GS.1.13"]
+
+[[source]]
+id = "YZ"
+authors = "Zhiwei Yun, Wei Zhang"
+title = "Shtukas and the Taylor expansion of $L$-functions (II)"
+year = 2017
+venue = "Ann. of Math. (2) 189 (2019), no. 2, 393--526"
+arxiv = "1712.08026v2"
+locator_scheme = "theorem"
+locator = "arXiv v2: Propositions 3.1, 3.4, 3.9, 3.11; Lemma 3.7; sections 3.4.3–3.4.6, Definitions 3.23, 3.25, Lemmas 3.21, 3.24, 3.26, 3.28, Corollaries 3.22, 3.27, 3.29–3.31; Definition 3.32; Lemmas 3.33–3.34 and 3.36, Remark 3.35, section 3.5.4; Theorem 3.41; exact page locators in GS.0–GS.3 Source paragraphs"
+url = "https://arxiv.org/abs/1712.08026v2"
+fetched_from = "https://arxiv.org/pdf/1712.08026v2"
+fetched_at = "2026-10-22T18:31:29Z"
+sha256 = "e159d869e86a3526e95aaf9560780870ed5c7af35593eb5ebb4fe477f0adf258"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["GS.0.2", "GS.0.4", "GS.0.9", "GS.1.6", "GS.2.4", "GS.2.6", "GS.2.7", "GS.2.8", "GS.3.3", "GS.3.4", "GS.3.9", "GS.3.11", "GS.3.13"]
+
+[[source]]
+id = "Yu"
+authors = "Hongjie Yu"
+title = "Comptage des systèmes locaux $\\ell$-adiques sur une courbe"
+year = 2018
+arxiv = "1807.04659v5"
+locator_scheme = "theorem"
+locator = "§3.3.1–§3.3.2, (3.3.5), pp. 19–20; §3.3.1, Theorem 3.3.1, (3.3.1) and (3.3.6), pp. 18–19"
+url = "https://arxiv.org/abs/1807.04659v5"
+fetched_from = "https://arxiv.org/pdf/1807.04659v5"
+fetched_at = "2026-10-22T18:31:34Z"
+sha256 = "9383bcdee14777ec647ba2658da3319d7d43864f9481b07c7d9550f1a454de1c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v5"
+cited_for = ["GS.0.8", "GS.0.11"]
+
+[[source]]
+id = "Xue-I"
+authors = "Cong Xue"
+title = "Cohomology with integral coefficients of stacks of shtukas"
+year = 2020
+arxiv = "2001.05805v2"
+locator_scheme = "theorem"
+locator = "§§1.1.1–1.1.7, Theorem 1.1.5, pp. 5–6; §2.3.8, Definitions 2.3.10–2.3.12, pp. 16–17; Proposition 4.2.6, p. 25; Proposition 7.2.6, Remarks 7.2.7–7.2.12 and §§7.3–7.4, pp. 44–54; Theorem 3.2.1 and Propositions 3.2.2 and 3.2.7, pp. 18–19; Propositions 6.1.2, 6.2.12 and 6.3.3, pp. 32–37; §5, 5.0.1, Proposition 5.0.2, Theorem 5.0.4 and Corollary 5.0.5, pp. 30–31; §8.2, Lemmas 8.2.2 and 8.2.4 and Proposition 8.2.6, pp. 55–56; §8.1, Proposition 8.1.2, p. 55; §8.3, Construction 8.3.3, 8.3.4 and Lemma 8.3.5, p. 57; §8.4, Proposition 8.4.2, p. 58"
+url = "https://arxiv.org/abs/2001.05805v2"
+fetched_from = "https://arxiv.org/pdf/2001.05805v2"
+fetched_at = "2026-10-22T18:31:39Z"
+sha256 = "41feeda7f901b23244c3c001a916b5990d477955f0687458e4e5504f4b91ece8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["GS.1.14", "GS.3.5", "GS.3.7", "GS.3.10", "GS.3.12", "GS.4.12", "GS.4.13", "GS.5.4"]
+
+[[source]]
+id = "Xue-S"
+authors = "Cong Xue"
+title = "Smoothness of cohomology sheaves of stacks of shtukas"
+year = 2020
+arxiv = "2012.12833v1"
+locator_scheme = "theorem"
+locator = "Proposition 1.3.4 and Lemma 1.3.11, pp. 11–12; §6, Lemma 6.0.9 and Proposition 6.0.10, p. 35; Theorem 4.2.3, p. 32; §6, Theorem 6.0.12 and Proposition 6.0.13, p. 36"
+url = "https://arxiv.org/abs/2012.12833v1"
+fetched_from = "https://arxiv.org/pdf/2012.12833v1"
+fetched_at = "2026-10-22T18:31:45Z"
+sha256 = "1dc7b62d377e2198fb31ce761a16778d821b40bd79ab918ac4f23b4a47037333"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["GS.4.12", "GS.4.13"]
+
+[[source]]
+id = "Var"
+authors = "Yakov Varshavsky"
+title = "Moduli spaces of principal F-bundles"
+year = 2002
+venue = "Sel. Math., New ser. 10 (2004) 131-166"
+arxiv = "math/0205130v2"
+locator_scheme = "theorem"
+locator = "§2, Notation 2.1(a), p. 4; §2, Notation 2.1(b), p. 4; Lemma A.3, p. 29; §3, Lemma 3.1(a), p. 12; Appendix A, Lemma A.12, p. 35; Proposition A.13, pp. 35–36; §2, Proposition 2.16(a), pp. 7–8"
+url = "https://arxiv.org/abs/math/0205130v2"
+fetched_from = "https://arxiv.org/pdf/math/0205130v2"
+fetched_at = "2026-10-22T18:31:51Z"
+sha256 = "62d8a5be48ff094b752ae0231f29e86d9efd28e2aa3a8cc5aeb31017236550b4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["GS.0.1", "GS.0.6", "GS.1.5", "GS.2.2"]
+
+[[source]]
+id = "Hein"
+authors = "Jochen Heinloth"
+title = "Uniformization of \\mathcal{G}-bundles"
+year = 2007
+arxiv = "0711.4450v2"
+locator_scheme = "theorem"
+locator = "Proposition 1 and its proof, p. 4 (smooth affine models and their deformation theory); proof of Proposition 1, p. 4"
+url = "https://arxiv.org/abs/0711.4450v2"
+fetched_from = "https://arxiv.org/pdf/0711.4450v2"
+fetched_at = "2026-10-22T18:31:57Z"
+sha256 = "5125ebfb2640e9c0d66a4af53d32599dc1eaecf437c1691197555cd6c7787267"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["GS.0.1", "GS.0.2"]
+
+[[source]]
+id = "Schieder"
+authors = "Simon Schieder"
+title = "The Harder-Narasimhan stratification of the moduli stack of G-bundles via Drinfeld's compactifications"
+year = 2012
+arxiv = "1212.6814v2"
+locator_scheme = "theorem"
+locator = "Theorem 2.3.3 and §2.4.1, pp. 12–13, Theorem 4.5.1, pp. 39–40, and §6.3, pp. 52–54"
+url = "https://arxiv.org/abs/1212.6814v2"
+fetched_from = "https://arxiv.org/pdf/1212.6814v2"
+fetched_at = "2026-10-22T18:32:03Z"
+sha256 = "9077b2178b058fba0cc51a1799c2d296ec34d38a8b2d6fa06b0e69bacb8326ee"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["GS.0.5"]
+
+[[source]]
+id = "Chau"
+locator_scheme = "theorem"
+locator = "§4.1, Theorem 4.1.2, p. 17 (author's preprint)"
+url = "https://webusers.imj-prg.fr/~pierre-henri.chaudouard/contrib-Laumon.pdf"
+fetched_from = "https://webusers.imj-prg.fr/~pierre-henri.chaudouard/contrib-Laumon.pdf"
+fetched_at = "2026-10-22T18:32:04Z"
+sha256 = "2ae48bde8a176d908e8af2cbb0df1cd9923d8ae758cdd108f384299d43601345"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["GS.0.8"]
+authors = "Pierre-Henri Chaudouard"
+title = "Sur le comptage des fibrés de Hitchin"
+year = 2015
+
+[[source]]
+id = "Zhu"
+authors = "Xinwen Zhu"
+title = "Affine Grassmannians and the geometric Satake in mixed characteristic"
+year = 2014
+arxiv = "1407.8519v3"
+locator_scheme = "theorem"
+locator = "§0.1.4, p. 3; §0.2, pp. 4–5"
+url = "https://arxiv.org/abs/1407.8519v3"
+fetched_from = "https://arxiv.org/pdf/1407.8519v3"
+fetched_at = "2026-10-22T18:32:10Z"
+sha256 = "2c23e397d21e84812daec2c637e2a763eec54ef0d784748eb74e3b2093de1e5b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["GS.1.12"]
+
+[[source]]
+id = "LY"
+authors = "George Lusztig, Zhiwei Yun"
+title = "A $(-q)$-analogue of weight multiplicities"
+year = 2012
+arxiv = "1203.0521v1"
+locator_scheme = "theorem"
+locator = "arXiv:1203.0521v1, Lemma 3.3 and §3.4, pp. 9–11"
+url = "https://arxiv.org/abs/1203.0521v1"
+fetched_from = "https://arxiv.org/pdf/1203.0521v1"
+fetched_at = "2026-10-22T18:32:15Z"
+sha256 = "f3dfd16b135ec484ce644a10a25d0fc18d963bcbc80f297ffdef1b12d0782fe3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["GS.1.12"]
+
+[[source]]
+id = "Feng"
+authors = "Tony Feng"
+title = "Smith theory and cyclic base change functoriality"
+year = 2020
+arxiv = "2009.14236v6"
+locator_scheme = "theorem"
+locator = "§5.2.3, p. 36"
+url = "https://arxiv.org/abs/2009.14236v6"
+fetched_from = "https://arxiv.org/pdf/2009.14236v6"
+fetched_at = "2026-10-22T18:32:22Z"
+sha256 = "5ae075585bdfa3252166b12cba6d92f8e14571e110aeef02748bc8599a16f96e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v6"
+cited_for = ["GS.4.3"]
+
+[[source]]
+id = "Chin"
+arxiv = "math/0206147v3"
+locator_scheme = "theorem"
+locator = "§4.2 and Proposition 4.3, pp. 13–14; §4.6, Theorem 4.6, pp. 15–16"
+url = "https://arxiv.org/abs/math/0206147v3"
+fetched_from = "https://arxiv.org/pdf/math/0206147v3"
+fetched_at = "2026-10-22T18:32:27Z"
+sha256 = "96c81b5b0c24b0b4c4775299637f920f1cd9fe275d35616556bce3670180082f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v3"
+cited_for = ["GS.6.1", "GS.6.2"]
+authors = "Cheewhye Chin"
+title = "Independence of ℓ of monodromy groups"
+year = 2000
+
+[[source]]
+id = "KZ"
+authors = "Mark Kisin, Rong Zhou"
+title = "Independence of $\\ell$ for Frobenius conjugacy classes attached to abelian varieties"
+year = 2021
+arxiv = "2103.09945v2"
+locator_scheme = "theorem"
+locator = "§5.3.1, p. 53"
+url = "https://arxiv.org/abs/2103.09945v2"
+fetched_from = "https://arxiv.org/pdf/2103.09945v2"
+fetched_at = "2026-10-22T18:32:34Z"
+sha256 = "62d26eb931f271404c333c4b9a929e85239222788834cf16dcec1dff230c34c8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["GS.6.2"]
+
+[[source]]
+id = "Org"
+authors = "Fabrice Orgogozo"
+title = "Modifications et cycles évanescents sur une base de dimension supérieure à un"
+year = 2005
+venue = "International Mathematics Research Notices 2006 (2006) Article ID 25315, 38 pages"
+doi = "10.1155/IMRN/2006/25315"
+arxiv = "math/0507475v1"
+locator_scheme = "theorem"
+locator = "arXiv:math/0507475v1, Théorème 1.1, pp. 2–3 and Théorème 6.1, p. 16 (published as Theorems 2.1 and 8.1)"
+url = "https://arxiv.org/abs/math/0507475v1"
+fetched_from = "https://arxiv.org/pdf/math/0507475v1"
+fetched_at = "2026-10-22T18:32:39Z"
+sha256 = "10f18b77e877d376ba81a798a41465759923e10fb32b903a433961086f90903d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["GS.7.3"]
+
+[[source]]
+id = "LO-I"
+authors = "Yves Laszlo, Martin Olsson"
+title = "The six operations for sheaves on Artin stacks I: Finite Coefficients"
+year = 2005
+arxiv = "math/0512097v2"
+locator_scheme = "theorem"
+locator = "Theorem 2.3.3, p. 11; §§3.3–3.5, pp. 23–25; §4, pp. 29–37; §5, Theorem 5.5.6, p. 47, and Theorem 5.7.5, p. 61"
+url = "https://arxiv.org/abs/math/0512097v2"
+fetched_from = "https://arxiv.org/pdf/math/0512097v2"
+fetched_at = "2026-10-22T18:32:45Z"
+sha256 = "210babccdea6619e401dee18840d3697e9b325b4938982a56b9ef614488a452d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["GS.1.4"]
+
+[[source]]
+id = "LO-II"
+authors = "Yves Laszlo, Martin Olsson"
+title = "The six operations for sheaves on Artin stacks II: Adic Coefficients"
+year = 2006
+arxiv = "math/0603680v1"
+locator_scheme = "theorem"
+locator = "Theorems 7.5 and 7.7, pp. 20–23; §9, p. 25; Theorem 11.4, p. 30; Theorem 12.1, p. 31"
+url = "https://arxiv.org/abs/math/0603680v1"
+fetched_from = "https://arxiv.org/pdf/math/0603680v1"
+fetched_at = "2026-10-22T18:32:51Z"
+sha256 = "e0707f8951ad1fc3bbb789dffac89fcc487bb169fa6b13829591d069b3ddeb1b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["GS.1.4"]
+
+[[source]]
+id = "LO-P"
+authors = "Yves Laszlo, Martin Olsson"
+title = "Perverse sheaves on Artin stacks"
+year = 2006
+arxiv = "math/0606175v1"
+locator_scheme = "theorem"
+locator = "Theorem 4.2, p. 6; Theorem 5.1, p. 7; §6, p. 9; Theorem 8.2, p. 12"
+url = "https://arxiv.org/abs/math/0606175v1"
+fetched_from = "https://arxiv.org/pdf/math/0606175v1"
+fetched_at = "2026-10-22T18:32:57Z"
+sha256 = "9f3fe1f38d25746516064ac957c9e6f30c339e364396edd603d5b49383ad6738"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["GS.1.4"]
+
+[[source]]
+id = "Sun"
+authors = "Shenghao Sun"
+title = "L-series of Artin stacks over finite fields"
+year = 2010
+venue = "Algebra and Number Theory, 6:1 (2012), 47-122"
+doi = "10.2140/ant.2012.6.47"
+arxiv = "1008.3689v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1, p. 2; Theorem 4.2(ii), p. 29; §5, p. 37"
+url = "https://arxiv.org/abs/1008.3689v2"
+fetched_from = "https://arxiv.org/pdf/1008.3689v2"
+fetched_at = "2026-10-22T18:33:04Z"
+sha256 = "85947e31a4b0f65e7d1cfad998a8f28969411d2e8dca561b645ef266ae8c8d1b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["GS.1.4"]
+
+[[source]]
+id = "EX24"
+authors = "Arnaud Eteve, Cong Xue"
+title = "Nearby cycles commute with proper direct image on stacks of shtukas"
+year = 2024
+doi = "10.1016/j.aim.2025.110729"
+arxiv = "2409.16474v1"
+locator_scheme = "theorem"
+locator = "arXiv v1, Theorems A.4 and A.9, pp. 33–34"
+url = "https://arxiv.org/abs/2409.16474v1"
+fetched_from = "https://arxiv.org/pdf/2409.16474v1"
+fetched_at = "2026-10-22T18:33:27Z"
+sha256 = "26059ac6c8711c90da5795c46f8638264487a14779c5cedc0a84a91c499e39b9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v1"
+cited_for = ["GS.7.4"]
+
+[[source]]
+id = "Ric16"
+authors = "Timo Richarz"
+title = "Affine Grassmannians and Geometric Satake Equivalences"
+year = 2013
+arxiv = "1311.1008v2"
+locator_scheme = "theorem"
+locator = "arXiv v2, Theorem A, p. 2"
+url = "https://arxiv.org/abs/1311.1008v2"
+fetched_from = "https://arxiv.org/pdf/1311.1008v2"
+fetched_at = "2026-10-22T18:33:33Z"
+sha256 = "6c8412bab73481c923272d1485a0007c1f8304472b4885098897b1aca88a3e0a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v2"
+cited_for = ["GS.7.2"]
+
+[[source]]
+id = "AH19"
+authors = "Esmail M. Arasteh Rad, Urs Hartl"
+title = "Uniformizing the moduli stacks of global G-shtukas"
+year = 2019
+arxiv = "1302.6351v2"
+locator_scheme = "theorem"
+locator = "arXiv v2, Theorem 3.15, pp. 15–17"
+url = "https://arxiv.org/abs/1302.6351v2"
+fetched_from = "https://arxiv.org/pdf/1302.6351v2"
+fetched_at = "2026-10-22T18:33:40Z"
+sha256 = "6bd91191fce0c71a765130ba7a35fce461101cac1fb1915b07bdfffbce01f4a2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv:1302.6351v2; theorem numbering refers to this version"
+cited_for = ["GS.7.2"]
