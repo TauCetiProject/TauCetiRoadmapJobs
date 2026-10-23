@@ -1,0 +1,8 @@
+{
+  "review": {
+    "status": "accepted",
+    "reviewer": "independent-review-REV-PKG-ClassicalGroupsPartII",
+    "date": "2026-10-10",
+    "notes": "Independent review of all six package criteria against the accepted plan: all 26 targets, 76 planned API entries and 58 named tests; exact rank/field, algebraic-representation, central-lattice and exterior-degree conventions; prerequisite ownership and current upstream/library scope; public source locators and original mathematical prose; upstream form and 105694-byte README; single-line math.RT metadata. Added six Weyl monomial/action compatibility statements and five scalar-extension coordinate/coaction/morphism/Hom/invertibility statements, with matching README API entries; baseChangeCoordinates now specializes the generic coordinate comparison. Verified the package author's correction of the permutation-invalid signed-coefficient test to the negative sum over all pairs, and the direct native-matrix formulation replacing the unavailable arithmetic-statistics carrier. The accepted plan's scheme-level quotient/descent prototype omission remains explicit; the full mathematical statements are in the definitive README. Final lean-check exited 0 with 198 sorry warnings, no errors and no other warnings. All 22 baseline declarations were checked at the exact pins; additional finite Laurent checks passed. Acceptance is of the roadmap specification and elaborating prototypes, not completed proofs."
+  }
+}

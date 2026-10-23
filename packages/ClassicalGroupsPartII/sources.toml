@@ -1,0 +1,52 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ClassicalGroupsPartII"
+
+[[source]]
+id = "yu"
+authors = "Hongjie Yu"
+title = "Comptage des systèmes locaux ℓ-adiques sur une courbe"
+year = 2022
+arxiv = "1807.04659v5"
+locator_scheme = "section"
+locator = "v5, §7.1, equation (7.1.1), Remark 7.1.1, printed p.64"
+url = "https://arxiv.org/abs/1807.04659v5"
+fetched_from = "https://arxiv.org/pdf/1807.04659v5"
+fetched_at = "2026-10-22T19:39:37Z"
+sha256 = "9383bcdee14777ec647ba2658da3319d7d43864f9481b07c7d9550f1a454de1c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv v5"
+cited_for = ["CG.0–CG.3"]
+
+[[source]]
+id = "milne"
+authors = "J. S. Milne"
+title = "Algebraic Groups, second edition"
+year = 2022
+locator_scheme = "theorem"
+locator = "Proposition 4.32, Corollary 4.34, Exercise 4-4(a,b), pp.96–97; Theorem 22.2, Complements 22.3–22.6, 22.12, pp.464–466; Lemma 22.39, Theorem 22.42, pp.477–479; Summary 21.98, p.461; Corollary 19.18 and Example 19.19, p.401; root order before Definition 22.1, p.464"
+url = "https://www.jmilne.org/math/Books/iAG2022.pdf"
+fetched_from = "https://www.jmilne.org/math/Books/iAG2022.pdf"
+fetched_at = "2026-10-22T19:40:07Z"
+sha256 = "f2ddd8fa4d263085f173934664b246007a2c0bd539739b7c82de39bfb5d21f40"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["CG.0 central cover; CG.1 base change and highest weights; CG.2 formal characters"]
+
+[[source]]
+id = "sternberg"
+authors = "Shlomo Sternberg"
+title = "Lie Algebras"
+year = 2004
+locator_scheme = "section"
+locator = "§7.9, pp.131–133, notes dated 23 April 2004"
+url = "https://people.math.harvard.edu/~shlomo/docs/lie_algebras.pdf"
+fetched_from = "https://people.math.harvard.edu/~shlomo/docs/lie_algebras.pdf"
+fetched_at = "2026-10-22T19:40:42Z"
+sha256 = "7d81adf60297c1a756e899028ca077a0861ee21275e62992bd7dc8ec670f88bb"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["CG.1 primitives and Cartan model; CG.2 fundamental characters; CG.3 tensor occurrence"]

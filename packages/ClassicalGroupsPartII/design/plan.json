@@ -1,0 +1,22 @@
+{
+  "gaps": [
+    {
+      "slug": "generated-vector-base-change",
+      "supplier": "ReductiveGroups",
+      "section": "Layer 1",
+      "needs": "For a finite-dimensional right H-comodule M over a field F and v∈M, construct the least subcomodule containing v and prove its compatibility with every field extension K/F."
+    },
+    {
+      "slug": "central-quotient-representations",
+      "supplier": "ReductiveGroups",
+      "section": "Layer 3",
+      "needs": "For a faithfully flat quotient G→Q of affine finite-type group schemes over a field with finite central kernel N, identify finite rational Q-representations with finite rational G-representations on which N acts trivially."
+    },
+    {
+      "slug": "finite-comodule-category",
+      "supplier": "ReductiveGroups",
+      "section": "Layer 1",
+      "needs": "For a field F and commutative Hopf F-algebra H in a common universe, supply compatible essential smallness, monoidal preadditivity, F-linearity and finite-dimensional Hom spaces for the native finite-comodule category."
+    }
+  ]
+}
