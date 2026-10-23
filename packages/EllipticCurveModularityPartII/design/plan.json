@@ -1,0 +1,82 @@
+{
+  "gaps": [
+    {
+      "slug": "elliptic-modularity",
+      "needs": "Every elliptic curve E/ℚ is attached to a normalized weight-two trivial-character newform of exact arithmetic conductor, with equal traces at all good primes.",
+      "supplier": "EllipticCurveModularity",
+      "section": "rational elliptic modularity (locator unavailable)"
+    },
+    {
+      "slug": "optimized-weight-two-lift",
+      "needs": "For prime ℓ≥5 and irreducible E[ℓ] of Serre weight 2 and prime-to-ℓ Artin conductor N, supply a primitive weight-two trivial-character newform of exact level N and a prime λ above ℓ whose residual representation is E[ℓ].",
+      "supplier": "SerreWeightAndLevelOptimisation",
+      "section": "exact level and weight optimization (locator unavailable)"
+    },
+    {
+      "slug": "deletion-level-lowering",
+      "needs": "For prime ℓ≥3 and irreducible E[ℓ], supply the weight-two trivial-character lift at the deletion level M₀ of Bennett–Siksek §2, equation (3), with good-prime and removed-multiplicative-prime trace congruences of Lemma 2.1.",
+      "supplier": "SerreWeightAndLevelOptimisation",
+      "section": "elliptic deletion level (locator unavailable)"
+    },
+    {
+      "slug": "conductor-and-weight",
+      "needs": "Supply arithmetic and residual Artin conductors and Serre weight for E/ℚ, the away-from-ℓ deletion formula for ℓ≥5, and the coefficient-prime weight-two reduction alternative for irreducible E[ℓ] when ℓ≥11.",
+      "supplier": "ArithmeticGaloisRepresentations",
+      "section": "elliptic local conductors and Serre weights (locator unavailable)"
+    },
+    {
+      "slug": "oddness-and-finite-images",
+      "needs": "For odd prime ℓ, supply the determinant −1 and eigenvalues 1,−1 of complex conjugation on E[ℓ], the absolute-irreducibility consequence of irreducibility, and the subgroup classification and inertia-order bounds used in Lemos Theorem 2.3.",
+      "supplier": "ArithmeticGaloisRepresentations",
+      "section": "odd two-dimensional residual images (locator unavailable)"
+    },
+    {
+      "slug": "newform-residual-and-conductor",
+      "needs": "For primitive weight-two trivial-character newforms supply coefficient-prime residual representations and arithmetic-Frobenius polynomial T²−c_q T+q at q∤Nℓ, together with arithmetic conductor Nᵈ for its associated modular abelian variety, where d is the coefficient-field degree (in particular conductor N when d=1).",
+      "supplier": "AutomorphicGaloisRepresentations",
+      "section": "classical newform representations (locator unavailable)"
+    },
+    {
+      "slug": "coefficient-bound",
+      "needs": "For a normalized weight-two newform of level N and prime q∤N, every complex embedding of c_q has absolute value at most 2√q.",
+      "supplier": "DeligneWeightsAndPurity",
+      "section": "weight-two Hecke eigenvalue bounds (locator unavailable)"
+    },
+    {
+      "slug": "modular-curves-and-jacobians",
+      "needs": "Supply smooth projective normalizations of modular fibre products and their j maps and Jacobians, with pull-push Hecke correspondences and the quotient attached to a primitive rational weight-two newform.",
+      "supplier": "ModularCurvesPartII",
+      "section": "arithmetic modular curves and modular Jacobians (locator unavailable)"
+    },
+    {
+      "slug": "chen-isogeny",
+      "needs": "For r>0, p prime and gcd(r,p)=1, supply the prime-to-p Hecke-equivariant correspondence between the split and nonsplit mixed Jacobians, its induced isogeny between p-new quotients, and the identification of the split curve with X₀(rp²)/w at the exact divisor p².",
+      "supplier": "ModularCurvesPartII",
+      "section": "split and nonsplit Cartan correspondences (locator unavailable)"
+    },
+    {
+      "slug": "integral-winding-comparison",
+      "needs": "Supply the integral Hecke-annihilator quotient of a full-new modular Jacobian, its optimal quotient and cotangent lattice comparison on semistable integral models, with period pairing integrating ω_f=2πi f(z)dz along the oriented path 0 to i∞.",
+      "supplier": "ModularSymbolsPadicLFunctions",
+      "section": "integral winding quotients and cotangents (locator unavailable)"
+    },
+    {
+      "slug": "modular-rank-zero",
+      "needs": "For a primitive weight-two newform f with L(f,1)≠0, the associated modular abelian variety A_f over ℚ has A_f(ℚ) finite, in every coefficient-field degree.",
+      "supplier": "EulerSystemsAndKolyvaginSystems",
+      "section": "modular abelian rank zero (locator unavailable)"
+    },
+    {
+      "slug": "cyclic-isogeny-degrees",
+      "needs": "A rational cyclic isogeny on E/ℚ has degree in {1,…,19,21,25,27,37,43,67,163}; the prime-degree non-CM possibilities are {2,3,5,7,11,13,17,37}.",
+      "supplier": "EisensteinIdealAndRationalTorsion",
+      "section": "rational cyclic isogeny classification (locator unavailable)"
+    },
+    {
+      "slug": "neron-torsion-specialization",
+      "needs": "For the Néron model of an abelian variety over a complete mixed-characteristic DVR of residue characteristic q and absolute ramification index e<q−1, reduction is injective on the full torsion subgroup of rational points.",
+      "supplier": "NeronModelsAndSemistableAbelianVarieties",
+      "section": "torsion specialization (locator unavailable)"
+    }
+  ]
+}

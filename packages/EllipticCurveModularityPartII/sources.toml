@@ -1,0 +1,140 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "EllipticCurveModularityPartII"
+
+[[source]]
+id = "Kraus1997"
+doi = "10.4153/CJM-1997-056-2"
+authors = "Alain Kraus"
+title = "Majorations effectives pour l’équation de Fermat généralisée"
+year = 1997
+locator_scheme = "theorem"
+locator = "Theorems 3–4, pp. 1144–1146; Appendix II, Proposition 2 and Corollary, pp. 1158–1160"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/FEF2CCCEC964C8D0AAD3EE8F40875A4D/S0008414X00034258a.pdf/majorations-effectives-pour-l-equation-de-fermat-generalisee.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/FEF2CCCEC964C8D0AAD3EE8F40875A4D/S0008414X00034258a.pdf/majorations-effectives-pour-l-equation-de-fermat-generalisee.pdf"
+fetched_at = "2026-10-22T19:25:45Z"
+sha256 = "d235ed8bba1c21618ade20f3e4a387846c641e730c3e981936056b10cfdc4ab6"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["Layers 1, 3, 4"]
+
+[[source]]
+id = "BS2020"
+authors = "Michael A. Bennett and Samir Siksek"
+title = "A conjecture of Erdős, supersingular primes and short character sums"
+year = 2020
+locator_scheme = "theorem"
+locator = "§2, Lemmas 2.1–2.2, Theorems 3–4; §3, Lemmas 3.3, 3.5"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n2-p02-s.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n2-p02-s.pdf"
+fetched_at = "2026-10-22T19:26:27Z"
+sha256 = "3920a7524a37870942fe3591ac858db23cb604f4331bccd2a6dc5f11a1671fbf"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["Layers 2, 4, 5"]
+
+[[source]]
+id = "Mazur1978"
+authors = "Barry Mazur, with an appendix by Dorian Goldfeld"
+title = "Rational isogenies of prime degree"
+year = 1978
+locator_scheme = "theorem"
+locator = "Theorem 1, pp. 129–130; §7, pp. 153–155"
+url = "https://www.math.columbia.edu/~goldfeld/Mazur-Goldfeld1978.pdf"
+fetched_from = "https://www.math.columbia.edu/~goldfeld/Mazur-Goldfeld1978.pdf"
+fetched_at = "2026-10-22T19:26:28Z"
+sha256 = "f3da9ef0d3d184225c4799951897be7b90d8b25050c5d508b69aeff70fd2ead3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["Layer 5"]
+
+[[source]]
+id = "DarmonMerel2001"
+doi = "10.1515/crll.1997.490.81"
+version_note = "Locators use the author copy dated 5 January 2001, pp. 18–23; journal version J. reine angew. Math. 490 (1997), 81–100."
+authors = "Henri Darmon and Loïc Merel"
+title = "Winding quotients and some variants of Fermat’s Last Theorem"
+year = 2001
+locator_scheme = "theorem"
+locator = "Propositions 7.1–7.2, pp. 18–21; Lemmas 8.2–8.3, pp. 22–23, author copy"
+url = "https://perso.imj-prg.fr/loic-merel/wp-content/uploads/merel-pub/winding.pdf"
+fetched_from = "https://perso.imj-prg.fr/loic-merel/wp-content/uploads/merel-pub/winding.pdf"
+fetched_at = "2026-10-22T19:26:29Z"
+sha256 = "89c4a7a8563c35f6124279b883075c40b7aa8fcb485385098896e003d80e9aa7"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-22"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "Martin2003"
+doi = "10.1016/j.jnt.2004.10.009"
+authors = "Greg Martin"
+title = "Dimensions of the spaces of cusp forms and newforms on Γ₀(N) and Γ₁(N)"
+year = 2003
+arxiv = "math/0306128v1"
+locator_scheme = "theorem"
+locator = "Theorems 1–2; Definitions 1A–1F; §4 (v1)"
+url = "https://arxiv.org/abs/math/0306128v1"
+fetched_from = "https://arxiv.org/pdf/math/0306128v1"
+fetched_at = "2026-10-22T19:27:46Z"
+sha256 = "844017dec299d575ee49f731b7ae6ec27be03d76bf6463bc428b9e9b49c0a8d4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Locators use arXiv math/0306128v1 pagination; journal version JNT 112 (2005), 298–331."
+cited_for = ["Layers 1, 5, 6"]
+
+[[source]]
+id = "Lemos2017"
+doi = "10.1090/tran/7198"
+authors = "Pedro Lemos"
+title = "Serre’s uniformity conjecture for elliptic curves with rational cyclic isogenies"
+year = 2017
+arxiv = "1702.01985v2"
+locator_scheme = "theorem"
+locator = "Theorems 1.1, 1.4; Propositions 2.1–2.2; Theorems 2.3, 3.3–3.4; Lemma 3.2 (v2)"
+url = "https://arxiv.org/abs/1702.01985v2"
+fetched_from = "https://arxiv.org/pdf/1702.01985v2"
+fetched_at = "2026-10-22T19:28:06Z"
+sha256 = "ce889428aa4d6cbe1f30fcb504591063927fdaa96baa1bdf598596bbc02bd043"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Locators use arXiv 1702.01985v2 pagination; journal version Trans. AMS 371 (2019), 137–146."
+cited_for = ["Layers 1, 5, 6"]
+
+[[source]]
+id = "BPR2013"
+doi = "10.5802/aif.2781"
+authors = "Yuri Bilu, Pierre Parent and Marusia Rebolledo"
+title = "Rational points on X₀⁺(pʳ)"
+year = 2013
+arxiv = "1104.4641"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1104.4641"
+fetched_from = "https://arxiv.org/pdf/1104.4641"
+fetched_at = "2026-10-22T19:29:10Z"
+sha256 = "bc13ecbff16f7d61130e02deecea0adf60e5d67133a99d1f89da593563e2869c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "arXiv, latest version"
+cited_for = ["Layers 1, 5, 6"]
+
+[[source]]
+id = "Kenku1982"
+authors = "M. A. Kenku"
+title = "On the number of Q-isomorphism classes of elliptic curves in each Q-isogeny class"
+year = 1982
+doi = "10.1016/0022-314X(82)90025-7"
+locator_scheme = "page"
+locator = "pp. 199–201, determination of the integers N with Y₀(N)(ℚ) nonempty"
+url = "https://www.sciencedirect.com/science/article/pii/0022314X82900257/pdfft"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 5: composite cyclic-degree supplier contract"]
