@@ -2379,6 +2379,96 @@
       "neededBy": [
         "ArithmeticKTheoryPartII:AK2.8/characteristic-divisibility"
       ]
+    },
+    {
+      "slug": "duality-transfer",
+      "needs": "Compare integral dualization with finite-projective transfer through the trace-dual inverse different and preserve the Bott descent edges and coefficient maps at every odd prime power.",
+      "supplier": "SchemeKTheoryOperations",
+      "section": "§6.11"
+    },
+    {
+      "slug": "topological-symplectic-hodge",
+      "needs": "Provide the contractible compatible-complex-structure comparison Sp(ℝ) ← U, its ku/KU realization, tangent-normalized primitive Chern-character pairing, integral lifts for m<p and coefficient-Bockstein compatibility.",
+      "supplier": "GeneralizedCohomology",
+      "section": "G5.4–G5.6"
+    },
+    {
+      "slug": "skew-integer-splitting",
+      "needs": "Specialize the GW–L fiber sequence to integral skew forms and prove the odd-primary positive-factor splitting with unscaled hyperbolic map H, c_B H=1+ψ⁻¹, and retraction (1/2)c_B.",
+      "supplier": "GeometryOfNumbersAndQuadraticArithmetic",
+      "section": "§§6.8a, 6.10a–6.11"
+    },
+    {
+      "slug": "compatible-v1-towers",
+      "needs": "Provide compatible odd Moore v₁ self-maps and reduction maps after common iteration, telescope independence and their p-completed K(1)-local comparison, including q=3 without an associative Moore product.",
+      "supplier": "ChromaticHomotopyTheory",
+      "section": "CH.2–CH.3"
+    },
+    {
+      "slug": "cyclotomic-p-class-fields",
+      "needs": "Identify the maximal unramified abelian p-subfields of cyclotomic Hilbert fields with the native Picard p-parts, compatibly in towers, with principal-p-prime splitting and the local-p-split class-field comparison.",
+      "supplier": "ClassFieldTheory",
+      "section": "Layers 11–13"
+    },
+    {
+      "slug": "ppav-embedding-atlases",
+      "needs": "Provide the projective-embedding and Hilbert-polynomial pieces of the principally polarized stack atlas, their smooth descent and coherent product/selfadjoint-factor refinements used by the graded Čech model.",
+      "supplier": "PELModuli",
+      "section": "§§M2.4, M6.3"
+    },
+    {
+      "slug": "cm-arbitrary-automorphism",
+      "needs": "Provide the arbitrary-automorphism polarized reciprocity dictionary on isometries with conjugation-paired embedding lifts and possibly negative translating signatures, natural for positive-line Serre tensor.",
+      "supplier": "ComplexMultiplicationAndExplicitReciprocity",
+      "section": "§§1.3, 2.1–2.2"
+    },
+    {
+      "slug": "relative-homology-edges",
+      "needs": "Provide relative chain quotients and long exact sequences, the natural inverse-bar comparison and the finite and compact relative homological Hochschild–Serre edges for the arithmetic pairs used here.",
+      "supplier": "ArithmeticGaloisDuality",
+      "section": "R02.2"
+    },
+    {
+      "slug": "low-postnikov-finite-type",
+      "needs": "Provide the p-local H-space Postnikov splitting for positive integral finite-type spectra through degree 2p−3 and the free/cyclic Eilenberg–Mac Lane homology and Bockstein calculations in that range.",
+      "supplier": "StableHomotopyKTheory",
+      "section": "§§3.20, 3.34–3.37"
+    },
+    {
+      "slug": "compact-relative-cocycles",
+      "needs": "Provide completed relative bar homology and its continuous universal-cocycle property for finite-free coefficients and finite-type compact targets, with coefficient coinvariants and exact finite inverse limits.",
+      "supplier": "ArithmeticGaloisDuality",
+      "section": "R02.1 and R02.2"
+    },
+    {
+      "slug": "bernoulli-weight-nonvanishing",
+      "needs": "For every odd 1≤m<p identify nonvanishing of H²_et(ℤ[1/p],ℤ_p(m+1)) with p dividing the numerator of B_(m+1), including twist, duality, control and Euler-factor conventions.",
+      "supplier": "IntegralIwasawaTheory",
+      "section": "§12.3"
+    },
+    {
+      "slug": "sphere-unit-finite-field",
+      "needs": "Provide surjectivity of the p-adic sphere unit onto K_(4k−1)(𝔽_ℓ) at a prime ℓ topologically generating ℤ_p× and its comparison isomorphism from K_(4k−1)(ℤ;ℤ_p), with the χ^(2k) normalization.",
+      "supplier": "KTheoryFiniteLocalFields",
+      "section": "§§1.1–1.2"
+    },
+    {
+      "slug": "pontryagin-bockstein-cap",
+      "needs": "Provide finite-type integral ℤ_p and finite-coefficient Pontryagin/Künneth products, cap and fundamental classes with natural coefficient Bocksteins and mixed Tor representative β_d(xy).",
+      "supplier": "AlgebraicTopology",
+      "section": "Stage 6"
+    },
+    {
+      "slug": "graded-moore-realization",
+      "needs": "Provide a homotopy-coherent realization of the graded ppav Γ-diagrams preserving products, finite Moore smashing before completion at p=3, automorphisms, coefficient reductions and p-adic homotopy limits.",
+      "supplier": "EtaleHomotopyTypes",
+      "section": "EH.5, EH.6 and G7"
+    },
+    {
+      "slug": "lisse-integral-extension",
+      "needs": "Provide the equivalence between finite-type compact continuous ℤ_p-representations of Gal(ℚ(p)/ℚ) and lisse integral coefficient sheaves on Spec ℤ[1/p], compatible with kernels and restriction to Spec ℚ_p.",
+      "supplier": "EtaleCohomologyFoundations",
+      "section": "F.4"
     }
   ],
   "requests": [
