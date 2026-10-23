@@ -4141,158 +4141,112 @@
   ],
   "gaps": [
     {
-      "id": "G1",
-      "title": "Nash Schwartz and functional-analysis comparison",
-      "neededBy": [
-        "AutomorphicSpectralTheoryPartII:SM.1/real-schwartz-comparison",
-        "AutomorphicSpectralTheoryPartII:SM.2/slf-representations",
-        "AutomorphicSpectralTheoryPartII:SM.2/nuclear-inclusion",
-        "AutomorphicSpectralTheoryPartII:SM.2/nuclear-tensor-products",
-        "AutomorphicSpectralTheoryPartII:SM.2/tempered-measures",
-        "AutomorphicSpectralTheoryPartII:SM.2/weighted-growth"
-      ],
-      "detail": "Supply the exact Nash embedding/Schwartz and local-Sobolev comparison and the split SLF direct-sum/closed-subspace comparison, Fréchet open mapping and nuclear-map consequences. Check weighted Riesz duality with its precise dual topology, weak convolution on Radon measures and the norm-smooth-vector union after the total-variation strong-continuity assertion fails (E-T0). An F-representation theorem cannot be applied to the full measure space. These are not supplied by Mathlib SchwartzMap on Euclidean spaces alone. Use current RealAlgebraicGeometry and PDE only for the portions their read targets cover, current OperatorIdeals for Hilbert–Schmidt composition, and AS.0 for functional analysis. Check the original Aizenbud–Gourevitch product theorem and avoid treating a finite-level but unbounded-support test-function space as Fréchet."
+      "slug": "nash-schwartz-analysis",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "§§0.11–0.14",
+      "needs": "Supply the Nash Schwartz product and embedding comparisons, complete-target integration, strong duality between the continuous rapid zeroth-order space and polynomially weighted Radon measures, and the weak-convolution comparison with norm-smooth measure vectors used in §§1.1, 2.12–2.15."
     },
     {
-      "id": "G-R1",
-      "title": "Supplier contract R1",
-      "neededBy": [
-        "AutomorphicSpectralTheoryPartII:SM.1/delorme-reductive",
-        "AutomorphicSpectralTheoryPartII:SM.2/slf-representations",
-        "AutomorphicSpectralTheoryPartII:SM.2/weighted-constant-term",
-        "AutomorphicSpectralTheoryPartII:SM.3/regular-constant-term"
-      ],
-      "detail": "The supplier owns generic locally convex analysis, but has no exact vector-holomorphy node for the weighted Levi function family. Required statement: Locally convex holomorphic families on an open complex parameter domain: weak holomorphy plus local boundedness implies holomorphy in the complete nuclear Fréchet targets used here; holomorphic extension through fixed-level projective tensors. Include the locally convex direct-sum topology for countably many Fréchet isotypical pieces, closed invariant subspaces preserved by the compact averaging projections, and quotient-to-closed-image open mapping on these pieces. Include separately-to-jointly continuous bilinear facts on fixed Fréchet stages, without asserting a closed-subspace theorem for arbitrary strict LF spaces. Import generic Hilbert–Schmidt/nuclear tools from current OperatorTheory and OperatorIdeals instead of rebuilding them."
+      "slug": "vector-holomorphy-slf",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "§§0.11–0.15",
+      "needs": "Supply weak-to-strong holomorphy for locally bounded families in complete nuclear Fréchet spaces, its completed-tensor compatibility, countable compact-isotypical Fréchet direct sums with induced closed-subspace topology and quotient-to-closed-image open mapping, and separately-to-jointly continuous bilinear maps on fixed Fréchet stages."
     },
     {
-      "id": "G-R13",
-      "title": "Supplier contract R13",
-      "neededBy": [
-        "AutomorphicSpectralTheoryPartII:SM.0/root-strip-data"
-      ],
-      "detail": "Existing upstream structural targets are imported; no new reductive group structure theory is planned here. Required statement: Based root-datum/Weyl-group structures, maximal-torus character lattices and finite central/derived product coverings needed by real-form spectral lattices. Supply the identification after passing to real points, with finite components made explicit."
+      "slug": "real-point-root-data",
+      "supplier": "ReductiveGroups",
+      "section": "Layer 7",
+      "needs": "Supply the based Cartan root datum, torus character lattices and finite central/derived product covering after taking real points, with finite components explicit."
     },
     {
-      "id": "G-R14",
-      "title": "Supplier contract R14",
-      "neededBy": [
-        "AutomorphicSpectralTheoryPartII:SM.0/root-strip-data"
-      ],
-      "detail": "The current upstream real-form layer owns this structural input; its specialization and compatibility with AF.1 infinitesimal characters must be checked. Required statement: Complexification and real descent of a connected reductive real algebraic group on its abstract Cartan root datum, including the Weyl-conjugacy change of Cartan identification and the split/compact eigenspace decomposition of each maximal real torus."
+      "slug": "real-descent-cartan",
+      "supplier": "LieGroups",
+      "section": "Layer 7",
+      "needs": "Supply real descent on the abstract Cartan root datum, Weyl change of Cartan identification and the split/compact eigenspaces of each maximal real torus, compatibly with infinitesimal characters."
     },
     {
-      "id": "G-R2",
-      "title": "Supplier contract R2",
-      "neededBy": [
-        "AutomorphicSpectralTheoryPartII:SM.1/schwartz-integrated-action",
-        "AutomorphicSpectralTheoryPartII:SM.1/rapid-multiplier"
-      ],
-      "detail": "The AF.1 packet owns local real harmonic analysis but does not state this full Plancherel/character contract. Required statement: Real reductive Plancherel decomposition of L²(G(ℝ)) with the chosen Haar measure, faithful Fourier transform on S(G), and containment (not equality) of tempered infinitesimal characters in ⋃ϑ∈θG(ih*ϑ+Yϑ). Read the precise original theorem and compare disconnected real points. BPLZZ Proposition 2.24 uses this input."
+      "slug": "real-plancherel-characters",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "§§2.2–2.4, 2.7",
+      "needs": "Supply real reductive Plancherel decomposition with the chosen Haar measure, Fourier faithfulness on the Nash Schwartz algebra and containment of tempered infinitesimal characters in the realized real-torus spectral strips, retaining finite real components."
     },
     {
-      "id": "G-R3",
-      "title": "Supplier contract R3",
-      "neededBy": [
-        "AutomorphicSpectralTheoryPartII:SM.1/delorme-reductive"
-      ],
-      "detail": "The Appendix A argument was read; these original external statements have not been checked, and compact Paley–Wiener does not imply them by definition. Required statement: Delorme 1986 Theorem 1.7 in its exact semisimple rapid-symbol form C_c∞(G)_(K)→S(G)_(K), continuous for each fixed support and finite K-type stage; W-invariant rapid symbols on the full complex Cartan. Supply the split-centre Fourier–Laplace multiplier theorem (Sakellaridis, arXiv:1804.02383, Theorem 2.1.2) and the Nash Schwartz product theorem used in Appendix A. These are stronger than the compact-distribution multiplier already planned at AS.6/spectral-multiplier."
+      "slug": "rapid-semisimple-centre",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "§§6.1–6.3",
+      "needs": "Supply the semisimple rapid-symbol multiplier from compact smooth finite-K-type stages to Schwartz stages and the split-centre Fourier–Laplace multiplier, with the nuclear Nash product comparison used in BPLZZ Appendix A."
     },
     {
-      "id": "G-R4",
-      "title": "Supplier contract R4",
-      "neededBy": [
-        "AutomorphicSpectralTheoryPartII:SM.1/tensor-centralizer",
-        "AutomorphicSpectralTheoryPartII:SM.1/generic-principal-tensor",
-        "AutomorphicSpectralTheoryPartII:SM.1/rapid-multiplier",
-        "AutomorphicSpectralTheoryPartII:SM.1/finite-k-types",
-        "AutomorphicSpectralTheoryPartII:SM.3/relative-characters"
-      ],
-      "detail": "The supplier has classification, induction and discrete-series nodes, but these quantitative/tensor strengthenings are not exact existing nodes. The external compact-K-type bounds are checked at their BPCZ use, not in the original sources. Required statement: Kostant 1975 Theorems 4.8–4.9: finite freeness of (U(g)⊗End τ)^{δg} over Z(g) and its tensor-character annihilator with roots z(α+λ). Also provide generic irreducibility of minimal principal series, the subquotient theorem, and finite minimal-K-type detection for bounded discrete parameters including nondegenerate limits of discrete series. For relative-character sums include polynomial compact-K-type dimension bounds and bounds of every smooth representation seminorm by a sufficiently high compact-Casimir Sobolev norm; BPCZ invokes Wallach 1992 §10.1 and the proof of Müller 2000 Lemma 6.1. Pin all topology and finite-component hypotheses."
+      "slug": "kostant-minimal-types",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "§§2.1–2.4, 2.7",
+      "needs": "Supply finite freeness and the tensor-character annihilator for the enveloping-algebra centralizer, generic principal-series semisimplicity and finite minimal-K-type detection including limits of discrete series, together with polynomial K-type dimension and compact-Casimir seminorm bounds."
     },
     {
-      "id": "G-R5",
-      "title": "Supplier contract R5",
-      "neededBy": [
-        "AutomorphicSpectralTheoryPartII:SM.2/weights",
-        "AutomorphicSpectralTheoryPartII:SM.2/franke-weights",
-        "AutomorphicSpectralTheoryPartII:SM.2/cusp-neighborhoods",
-        "AutomorphicSpectralTheoryPartII:SM.2/quotient-xi",
-        "AutomorphicSpectralTheoryPartII:SM.2/sobolev-evaluation"
-      ],
-      "detail": "AA.3 supplies ordinary reduction theory, not the precise quotient/fiber contracts needed for all weights. The cited BPCZ statements were read, but their reduction-theory proof imports were not fully traced. Required statement: BPCZ Lemmas 2.4.3.1–2.4.3.2 and 2.4.4.1–2: proper quotient heights on [G]_P; Siegel-chart compatibility sufficient to glue exp⟨λ,H₀⟩; polynomial finite-fiber bounds in ε^{-1} for parabolic cusp covers and uniqueness in sufficiently deep compatible cusp regions; quotient-volume comparison and restriction-compatible depth functions. Use the already planned group heights, Iwasawa map and Siegel covering."
+      "slug": "quotient-height-cusps",
+      "supplier": "AdelicAlgebraicGroups",
+      "section": "§§3.1, 3.4–3.6",
+      "needs": "Supply proper intermediate-quotient heights, compatible exponential Siegel weights, polynomial cusp-cover fiber bounds, deep-cusp uniqueness, quotient-neighborhood volume comparison and restriction-compatible depth functions."
     },
     {
-      "id": "G-R6",
-      "title": "Supplier contract R6",
-      "neededBy": [
-        "AutomorphicSpectralTheoryPartII:SM.2/constant-term-extensions",
-        "AutomorphicSpectralTheoryPartII:SM.3/cuspidal-support",
-        "AutomorphicSpectralTheoryPartII:SM.5/occurrence"
-      ],
-      "detail": "AS.1/pseudo-eisenstein and cuspidal-datum-space give the central convention; the two source conventions need this explicit comparison, rather than an invented second data carrier. Required statement: Compare AS normalized cuspidal data modulo A_M∞ with BPLZZ pairs whose central characters extend ω and BPCZ X(G): identify Weyl and unramified-twist equivalence, measures and the closed span of pseudo-Eisenstein packets. Extend the already owned pseudo-Eisenstein operator to the compactly supported smooth vectors on intermediate quotients used before the SM.2 topological extensions."
+      "slug": "cuspidal-data-central-comparison",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "§§1.6–1.10, 4.1–4.4",
+      "needs": "Compare Weyl-and-twist normalized cuspidal data and pseudo-Eisenstein spans with the full split-central-character convention and intermediate compact smooth quotient data, preserving quotient measures."
     },
     {
-      "id": "G-R7",
-      "title": "Supplier contract R7",
-      "neededBy": [
-        "AutomorphicSpectralTheoryPartII:SM.4/casimir-counting"
-      ],
-      "detail": "Finite-dimensional fixed-character cusp spaces do not imply polynomial spectral counting. The original Donnelly theorem was not obtained; BPLZZ Lemma 3.12 is the checked usage. Required statement: Donnelly, On the cuspidal spectrum for finite volume symmetric spaces, JDG 17 (1982), Theorem 9.1, pp.239–253: a polynomial eigenvalue-count upper bound, with multiplicities, for each fixed finite level and finite archimedean K-type set on the derived semisimple quotient. Include finite-component and arbitrary-level reduction through finitely many conjugate levels, and relate the positive elliptic eigenvalue to the chosen Casimir sign."
+      "slug": "cuspidal-polynomial-counting",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "§4.2",
+      "needs": "Supply the fixed-level finite-K-type polynomial cuspidal elliptic eigenvalue-count bound with multiplicity on derived semisimple quotients, including arbitrary-level reduction through finitely many conjugate levels and the Casimir-sign comparison."
     },
     {
-      "id": "G-R8L",
-      "title": "Supplier contract R8L",
-      "neededBy": [
-        "AutomorphicSpectralTheoryPartII:SM.3/lapid-expansion"
-      ],
-      "detail": "The Lapid (HP) definition and the cited GL_n consequence were read. A general-group unconditional claim is excluded; the AS.2 adapter and exact constants remain open. Required statement: Lapid property (HP) (ESI 2403 §3.6): polynomial parameter/derivative bounds for intertwining operators and Eisenstein series needed for Schwartz wave packets, with (UT) and (WR) for G and every Levi. Supply it unconditionally for finite products of restrictions of scalars of GL_n, and compare the chosen normalized intertwiners."
+      "slug": "hereditary-intertwining-bounds",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "§§2.3–2.5, 3.1–3.4",
+      "needs": "Supply the normalized-intertwiner comparison and hereditary polynomial parameter and derivative estimates (HP), including (UT) and (WR) for every Levi, unconditionally for finite products of restrictions of scalars of GL_n."
     },
     {
-      "id": "G-R8D",
-      "title": "Supplier contract R8D",
-      "neededBy": [
-        "AutomorphicSpectralTheoryPartII:SM.5/langlands-refinement"
-      ],
-      "detail": "The inspected AS.4 packet has residual and L² decomposition targets but not this discrete counting bound. Müller’s original theorem was not read; the refinement remains conditional on this exact input. Required statement: For the refined target in SM.5/langlands-refinement supply the discrete-data Langlands decomposition and the fixed-level finite-K-type polynomial discrete-spectrum Casimir bound invoked by BPLZZ Remark 3.20 from Müller 1989 Theorem 0.1, Annals 130, 473–529. Keep central disintegration and residual components explicit."
+      "slug": "discrete-polynomial-counting",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "§§4.7–4.14",
+      "needs": "Supply the refined discrete-data Langlands decomposition and fixed-level finite-K-type polynomial discrete-spectrum Casimir counting bound with central disintegration and residual summands explicit."
     },
     {
-      "id": "G-R9",
-      "title": "Supplier contract R9",
-      "neededBy": [
-        "AutomorphicSpectralTheoryPartII:SM.4/typical-data",
-        "AutomorphicSpectralTheoryPartII:SM.4/finite-typical-data"
-      ],
-      "detail": "General number fields have compact central directions invisible to a_M; the exact central lattice and finite-component comparison are missing from the inspected nodes. Required statement: At fixed finite level, identify Z_M(F)\\Z_M(𝔸)^1/(K_M∩Z_M(𝔸_f)) with a compact abelian Lie quotient and describe its character-differential lattice. Compare extension of the fixed character ω on Z(𝔸) and normalization modulo the relative a_M twists: the resulting parameters in c_M,ℂ*/a_M,ℂ* must lie in a discrete affine lattice coset with complex-linearly independent generators, possibly of rank zero. Prove finiteness at each finite set of differentials including finite component characters. Compare AA.2/central-character-l2 and central-quotient-change with BPLZZ Z(𝔸)-equivariant L²; do not identify the norm-one cotangent space with the whole relative c_M*/a_M* without this comparison."
+      "slug": "central-character-affine-lattice",
+      "supplier": "AdelicAlgebraicGroups",
+      "section": "§§2.1–2.3, 4.6–4.7",
+      "needs": "Identify the fixed-level norm-one central quotient as a compact abelian Lie quotient and compare its character differentials, the fixed split-central character and normalized unramified twists with a discrete affine lattice in the remaining central parameter space having complex-linearly independent generators and finitely many component characters at each differential."
     },
     {
-      "id": "G-R10",
-      "title": "Supplier contract R10",
-      "neededBy": [
-        "AutomorphicSpectralTheoryPartII:SM.1/adelic-schwartz-adapter",
-        "AutomorphicSpectralTheoryPartII:SM.4/spectral-characters",
-        "AutomorphicSpectralTheoryPartII:SM.4/t-multipliers",
-        "AutomorphicSpectralTheoryPartII:SM.5/mixed-separation"
-      ],
-      "detail": "Use the existing spherical Hecke owner; its current packet has no finer SR.4 nodes furnishing this contract. Required statement: Normalized spherical Hecke/Satake parametrization for all unramified finite places, including normalized parabolic induction and restriction of its character to an unramified Levi. For a fixed Hecke element, its value on σ_s must be a finite exponential polynomial in s, compatible with the archimedean unramified norm twist; central convolution must preserve finite-level test Schwartz stages."
+      "slug": "satake-exponential-family",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.4.1–SR.4.2",
+      "needs": "Supply normalized spherical Hecke characters under parabolic induction and restriction to an unramified Levi, with each fixed Hecke value a finite exponential polynomial in the common complex twist parameter and central convolution preserving finite-support finite-level Schwartz stages."
     },
     {
-      "id": "G-R11",
-      "title": "Supplier contract R11",
-      "neededBy": [
-        "AutomorphicSpectralTheoryPartII:SM.3/regular-constant-term",
-        "AutomorphicSpectralTheoryPartII:SM.3/lapid-expansion"
-      ],
-      "detail": "AS.3 owns the compact-data wave-packet and inner-product formulas. Their normalizations need an explicit comparison; requesting the new regular weighted conclusion from AS.3 would duplicate the target in SM.3. Required statement: Supply the pseudo-Eisenstein inner-product and constant-term formulas for compact smooth cuspidal data, including the Weyl/intertwining sum and quotient measures, and identify the existing AS.3 wave-packet parameter axes and normalizations with those of BPCZ and Lapid. SM.3/regular-constant-term itself derives the regular-support L² boundedness and weighted C-valued holomorphy from this input; those conclusions are not requested from AS.3."
+      "slug": "compact-eisenstein-comparison",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "§§1.5–1.8, 3.1–3.4",
+      "needs": "Identify the supplied compact cuspidal pseudo-Eisenstein inner-product and Weyl/intertwining constant-term formulas and their measures with the BPCZ and Lapid parameter conventions used in §3.6."
     },
     {
-      "id": "G-R12",
-      "title": "Supplier contract R12",
-      "neededBy": [
-        "AutomorphicSpectralTheoryPartII:SM.3/arthur-factorization",
-        "AutomorphicSpectralTheoryPartII:SM.3/schwartz-kernels",
-        "AutomorphicSpectralTheoryPartII:SM.3/kernel-spectral-expansion"
-      ],
-      "detail": "AS.6 supplies compact kernels/trace distributions but not this quantitative Schwartz factorization. The BPCZ statement and proof were read; the generic factorization input needs the supplier contract. Required statement: Arthur factorization for fixed normal finite level K₀ and every integer m: choose Z∈U(g∞) invariant under K∞ conjugation, g₁∈C_c∞ and g₂∈C_c^m with the same conjugation invariance such that f=f*g₁+(f*Z)*g₂ for every bi-K₀ Schwartz f. Do not strengthen K∞-invariance to centrality of Z. Also identify the compact-test automorphic kernel spectral expansion and central disintegration with the normalizations extended in SM.3."
+      "slug": "arthur-factorization-comparison",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "§§6.3–6.4",
+      "needs": "Supply fixed-normal-level Arthur factorization for every differentiability order with K-invariant enveloping element and compact factors, and identify compact-test kernel expansion and split-central disintegration with the conventions extended in §§3.8–3.10."
+    },
+    {
+      "slug": "local-sobolev-evaluation",
+      "supplier": "PDE",
+      "section": "Lane A, Sobolev embedding and local regularity",
+      "needs": "Supply the compact-chart derivative-to-point-evaluation estimate and distributional smoothness from all local Sobolev derivatives used for weighted quotient evaluation in §2.7."
+    },
+    {
+      "slug": "hilbert-schmidt-nuclear-composition",
+      "supplier": "VonNeumannAlgebras",
+      "section": "V4.Core, Hilbert–Schmidt pairings and trace-class comparison",
+      "needs": "Supply the trace-class and Banach-nuclear factorization of a composite of two Hilbert–Schmidt maps between complete complex Hilbert spaces, with nuclear norm bounded by the product of the two Hilbert–Schmidt norms and compatibility with the locally convex nuclear-map convention."
     }
   ],
   "restructure": [

@@ -1,0 +1,70 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AutomorphicSpectralTheoryPartII"
+
+[[source]]
+id = "bplzz"
+authors = "Raphaël Beuzart-Plessis, Yifeng Liu, Wei Zhang, Xinwen Zhu"
+title = "Isolation of cuspidal spectrum, with application to the Gan--Gross--Prasad conjecture"
+year = 2019
+arxiv = "1912.07169v3"
+locator_scheme = "section"
+locator = "Sections 2–3; Appendix A"
+url = "https://arxiv.org/abs/1912.07169v3"
+fetched_from = "https://arxiv.org/pdf/1912.07169v3"
+fetched_at = "2026-10-23T21:09:36Z"
+sha256 = "f2834146d4fee02b38c4849ee9a7ef76a3dbc1131e7eef799e6f95b0f0d0ac13"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "arXiv:1912.07169v3, 19 June 2021; all numbering and pages refer to this version, not the Annals article"
+cited_for = ["Layers 0–5"]
+
+[[source]]
+id = "bpcz"
+authors = "Raphaël Beuzart-Plessis, Pierre-Henri Chaudouard, Michał Zydor"
+title = "The global Gan–Gross–Prasad conjecture for unitary groups: the endoscopic case"
+year = 2022
+doi = "10.1007/s10240-021-00129-1"
+version_note = "Published journal pagination, pp.183–336; no preprint numbering is used"
+locator_scheme = "section"
+locator = "Sections 2.4–2.5, 2.8.4–2.10.2"
+url = "https://pmihes.centre-mersenne.org/item/10.1007/s10240-021-00129-1.pdf"
+fetched_from = "https://pmihes.centre-mersenne.org/item/10.1007/s10240-021-00129-1.pdf"
+fetched_at = "2026-10-23T21:10:23Z"
+sha256 = "a07a6143d3e71f1eca31b6ba9b774bec325a7de07c7417b7796486a77df13794"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["Layers 2–3"]
+
+[[source]]
+id = "lapid"
+authors = "Erez M. Lapid"
+title = "On the Harish-Chandra Schwartz space of G(F)\\G(A)"
+year = 2013
+version_note = "ESI preprint 2403, 7 January 2013, preprint pagination"
+locator_scheme = "section"
+locator = "Section 2; Section 3.6; Theorem 4.5; Proposition 5.1; Corollaries 5.7–5.8; Section 6"
+url = "https://www.esi.ac.at/preprints/esi2403.pdf"
+fetched_from = "https://www.esi.ac.at/preprints/esi2403.pdf"
+fetched_at = "2026-10-23T21:12:02Z"
+sha256 = "ae1ab291ef50ca55c6d89334bb604c0795ce2f326ed017ad2573ec4538618390"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["Sections 2.4, 2.11, 3.7"]
+
+[[source]]
+id = "bernstein"
+authors = "Joseph N. Bernstein"
+title = "On the support of Plancherel measure"
+year = 1988
+venue = "Journal of Geometry and Physics 5"
+doi = "10.1016/0393-0440(88)90024-1"
+locator_scheme = "section"
+locator = "Sections 3.4–3.5, pp.685–689"
+url = "https://doi.org/10.1016/0393-0440(88)90024-1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Sections 2.7–2.8, 2.15"]
