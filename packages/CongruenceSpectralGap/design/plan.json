@@ -1942,70 +1942,52 @@
   ],
   "gaps": [
     {
-      "title": "G1: generic closed-form representation and orbifold realization",
-      "neededBy": [
-        "CongruenceSpectralGap:CSG.0/quotient-laplacian",
-        "CongruenceSpectralGap:CSG.0/spectral-gap",
-        "CongruenceSpectralGap:CSG.5/rayleigh-bound",
-        "CongruenceSpectralGap:CSG.5/metric-rescaling"
-      ],
-      "detail": "Current OperatorTheory supplies unbounded spectral calculus but its read targets do not supply a generic Friedrichs/closed-form representation theorem. The requested Part II supplies that theorem. This packet owns the chart descent, energy closability and constant cusp approximation; these proofs still require a full chartwise weak-derivative/core argument and an exact rescaling comparison. Current PDE energyFormH1L0 is a real Euclidean Dirichlet-boundary form, not the complex cusp-orbifold form. The AS.0 adapter must import the exact current DifferentialGeometry Layer 12 and PDE local weak-derivative targets listed in upstreamDependencies; these newer upstream targets have no stage IDs in the atlas snapshot. Specialized constant scaling is calculated from the imported definitions, rather than assumed to be an existing general scaling theorem."
+      "slug": "form-rayleigh-core",
+      "supplier": "UnboundedOperators",
+      "section": "UO-D06",
+      "needs": "For a densely defined closed nonnegative complex Hermitian form, provide the operator-domain form core and equality of the operator-domain, form-domain and spectral Rayleigh infima on a nonzero reducing orthogonal complement."
     },
     {
-      "title": "G2: all-level spectrum and classical adelization adapter",
-      "neededBy": [
-        "CongruenceSpectralGap:CSG.0/spectral-description",
-        "CongruenceSpectralGap:CSG.0/spectral-clipping",
-        "CongruenceSpectralGap:CSG.1/exceptional-dictionary"
-      ],
-      "detail": "The parent displays a level-one expansion and retains modular core/resolvent gaps. Its all-level, multi-cusp, constants-only residual realization must be established. AF.2 supplies the adelic-classical bijection, but principal-level constituent extraction, arbitrary Γ invariant descent and the SO(2)/O(2) parity comparison require the stated local adapter proof; its native global carriers remain absent."
+      "slug": "all-level-spectral-realization",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "1.16a and 4.8",
+      "needs": "Extend the modular spectral realization to every principal congruence level and every intermediate congruence subgroup, compatibly with its quotient Friedrichs operator, with one scattering channel per cusp, absolutely continuous spectrum [1/4,∞), no singular continuous spectrum, finite small spectrum and residual space exactly the constants."
     },
     {
-      "title": "G3: imported adjoint and local classification proof obligations",
-      "neededBy": [
-        "CongruenceSpectralGap:CSG.1/monomial-tempered",
-        "CongruenceSpectralGap:CSG.1/adjoint-parameters",
-        "CongruenceSpectralGap:CSG.5/archimedean-bound"
-      ],
-      "detail": "The existing R17.4/adjoint-lift now supplies the exact Gelbart–Jacquet contract, contrary to the older design brief, so no second lift is planned. It still records the highly ramified T-twist GL₃ converse and metaplectic analytic proof inputs; AL.3 G16 retains native converse carriers. AF.1 archimedean LLC and generic unitary classification retain unread original-proof gaps. These imported obligations are not discharged by the LRS scan."
+      "slug": "principal-level-classical-constituents",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "3.1",
+      "needs": "Provide the norm-compatible principal-level classical–adelic comparison and passage to invariants of each intermediate congruence subgroup, intertwining the weight-zero Casimir with the positive hyperbolic Laplacian and the cuspidal constituent extraction of ArithmeticLocallySymmetricSpaces ALS.F.6."
     },
     {
-      "title": "G4: generic self-pair positivity and twist transport",
-      "neededBy": [
-        "CongruenceSpectralGap:CSG.2/prime-twist-equation",
-        "CongruenceSpectralGap:CSG.2/trivial-zero",
-        "CongruenceSpectralGap:CSG.3/approximate-equation",
-        "CongruenceSpectralGap:CSG.4/average-asymptotic"
-      ],
-      "detail": "AL.3 generic factors, poles, equations, equal-rank strip bounds and boundary nonvanishing are imported, including their recorded proof gaps. Its exact all-ramified coefficient positivity/residue and local norm-twist/conductor transport contracts are requested. LRS §2.1 asserts the positive partial-sum input; a proof of it through all local factors and Wiener–Ikehara remains with the unique generic owners, not an assumed parameter-bound field. The finite Lχ polynomial vertical-strip estimate needed for the exact contour shifts is a separate AL.3 request; removing gamma factors from a completed bound only gives an exponential estimate without the finite-order/Phragmén–Lindelöf argument."
+      "slug": "all-prime-self-pair-positivity",
+      "supplier": "AutomorphicLFunctionsAndLocalFactors",
+      "section": "AL.3, Rankin–Selberg local factors and global poles",
+      "needs": "For unitary cuspidal GL_m over ℚ provide nonnegative full finite self-pair coefficients including ramified primes, coefficient one at n=1, a positive simple residue at s=1 and continuous pole-subtracted boundary values on Re(s)≥1."
     },
     {
-      "title": "G5: complex gamma estimates and uniform contour justification",
-      "neededBy": [
-        "CongruenceSpectralGap:CSG.3/kernel-estimates",
-        "CongruenceSpectralGap:CSG.3/approximate-equation",
-        "CongruenceSpectralGap:CSG.4/average-asymptotic"
-      ],
-      "detail": "Pinned Mellin transforms and totalized Gammaℝ do not include the full complex vertical Stirling ratio estimate needed here. AL.1 must supply it. The kernel proof must realize meromorphic orders and pole collisions and justify the contour shifts with strip bounds and dominated limits; logarithmic factors are covered by the epsilon formulation."
+      "slug": "self-pair-local-character-transport",
+      "supplier": "AutomorphicLFunctionsAndLocalFactors",
+      "section": "AL.3, local Rankin–Selberg functional equation",
+      "needs": "Provide unramified-character transport of every local self-pair L and epsilon factor including ramified representations, and at an unramified rank-m prime the primitive conductor-q twist formulas L=1 and epsilon=τ(χ)^(m²)q^(−m²s) in the stated positive Gauss convention."
     },
     {
-      "title": "G6: native global statement carriers",
-      "neededBy": [
-        "CongruenceSpectralGap:CSG.0/spectral-description",
-        "CongruenceSpectralGap:CSG.1/exceptional-dictionary",
-        "CongruenceSpectralGap:CSG.1/monomial-tempered",
-        "CongruenceSpectralGap:CSG.1/adjoint-parameters",
-        "CongruenceSpectralGap:CSG.2/prime-twist-equation",
-        "CongruenceSpectralGap:CSG.2/trivial-zero",
-        "CongruenceSpectralGap:CSG.3/kernel-estimates",
-        "CongruenceSpectralGap:CSG.3/approximate-equation",
-        "CongruenceSpectralGap:CSG.4/average-asymptotic",
-        "CongruenceSpectralGap:CSG.4/twist-nonvanishing",
-        "CongruenceSpectralGap:CSG.5/archimedean-bound",
-        "CongruenceSpectralGap:CSG.5/rayleigh-bound",
-        "CongruenceSpectralGap:CSG.5/metric-rescaling"
-      ],
-      "detail": "The named AF/AL/GL₂ and geometric signatures listed in the suggested-file omission comment need genuine native representation, completed-function, spectral, closed-form and scaled-metric carriers. The operator-domain congruence_rayleigh_bound is prototyped, while congruence_form_rayleigh_bound needs the generic closed-form carrier. Only those signatures are omitted under §13; every new definition/API/test and the native Gauss-sum, clipped-spectrum, final-gap and scalar declarations are prototyped. Comments do not count as elaborated signatures or proofs."
+      "slug": "complex-gamma-strip-estimates",
+      "supplier": "AutomorphicLFunctionsAndLocalFactors",
+      "section": "AL.1, Canonical archimedean factors",
+      "needs": "Provide zero-free meromorphic Gamma factors, their pole orders and complex Stirling estimates on finite vertical strips away from poles, including polynomial growth of the balanced ratio A(1−s)/A(s)."
+    },
+    {
+      "slug": "finite-rs-polynomial-strips",
+      "supplier": "AutomorphicLFunctionsAndLocalFactors",
+      "section": "AL.3, L-function data and derived products",
+      "needs": "For each fixed entire prime-twisted finite Rankin–Selberg function provide polynomial growth on every finite vertical strip by finite-order continuation and Phragmén–Lindelöf, with constants permitted to depend on the twist."
+    },
+    {
+      "slug": "additive-character-sheaf-weight",
+      "supplier": "DeligneWeightsAndPurity",
+      "section": "7.12",
+      "needs": "For every finite field of characteristic p and every nontrivial additive character valued in a cyclotomic coefficient field, provide the rank-one Artin–Schreier sheaf on the affine line, pure of weight zero, whose geometric-Frobenius trace on every finite extension is the character composed with field trace, with tensor products corresponding to addition of phases."
     }
   ],
   "sourceIssues": [
