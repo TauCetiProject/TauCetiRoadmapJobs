@@ -1,0 +1,141 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ClassicalAdicEtaleCohomologyPartII"
+
+[[source]]
+id = "Z"
+authors = "Bogdan Zavyalov"
+title = "Mod-p Poincaré Duality in p-adic Analytic Geometry"
+year = 2021
+arxiv = "2111.01830v3"
+locator_scheme = "theorem"
+locator = "Theorems 4.1.2, 4.4.24, 5.4.4–5.5.6; §§2–5 and Appendices C–D"
+url = "https://arxiv.org/abs/2111.01830v3"
+fetched_from = "https://arxiv.org/pdf/2111.01830v3"
+fetched_at = "2026-10-23T18:18:03Z"
+sha256 = "a984d973782649972a835b302e20ec91fc9c1abc5e5b43c7eccc5934b9c2c951"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "arXiv v3"
+cited_for = ["Layers 0–5"]
+
+[[source]]
+id = "AC"
+authors = "Bogdan Zavyalov"
+title = "Almost coherent modules and almost coherent sheaves"
+year = 2021
+arxiv = "2110.10773v3"
+locator_scheme = "section"
+locator = "§§4.5–4.9, 5.1, 5.5, 6.13"
+url = "https://arxiv.org/abs/2110.10773v3"
+fetched_from = "https://arxiv.org/pdf/2110.10773v3"
+fetched_at = "2026-10-23T18:18:43Z"
+sha256 = "4e10dd0c3692526dac796efdc1871214e7849aa9c300f82c5a9057db37e18ea0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "arXiv v3"
+cited_for = ["Layers 0–1"]
+
+[[source]]
+id = "SW"
+authors = "Peter Scholze and Jared Weinstein"
+title = "Berkeley lectures on p-adic geometry"
+year = 2020
+locator_scheme = "section"
+locator = "§10.5, pp. 82–89"
+url = "https://people.mpim-bonn.mpg.de/scholze/Berkeley.pdf"
+fetched_from = "https://people.mpim-bonn.mpg.de/scholze/Berkeley.pdf"
+fetched_at = "2026-10-23T18:18:47Z"
+sha256 = "225505171ef809aa0070c023c881ff1da844923775f2d631474c0b42eea4bffc"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "BH"
+authors = "Bhargav Bhatt, David Hansen"
+title = "The six functors for Zariski-constructible sheaves in rigid geometry"
+year = 2021
+arxiv = "2101.09759v2"
+locator_scheme = "section"
+locator = "§§2.3, 3.1–3.3, 3.5; Theorem 3.15 and Lemma 3.25"
+url = "https://arxiv.org/abs/2101.09759v2"
+fetched_from = "https://arxiv.org/pdf/2101.09759v2"
+fetched_at = "2026-10-23T18:18:51Z"
+sha256 = "2dccae2b3f1eb298ce429a5d80fd284e16ef721072dbed0a5136fbac205cc3c8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "arXiv v2"
+cited_for = ["Layer 7"]
+
+[[source]]
+id = "H"
+authors = "Ben Heuer"
+title = "A p-adic Simpson correspondence for smooth proper rigid varieties"
+year = 2025
+doi = "10.1007/s00222-025-01321-4"
+locator_scheme = "theorem"
+locator = "Proposition 2.18, p. 279"
+url = "https://link.springer.com/content/pdf/10.1007/s00222-025-01321-4.pdf"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["§7.7"]
+
+[[source]]
+id = "U"
+authors = "Bogdan Zavyalov"
+title = "Altered Local Uniformization Of Rigid-Analytic Spaces"
+year = 2021
+arxiv = "2102.04752v2"
+locator_scheme = "section"
+locator = "Theorems 1.3–1.4"
+url = "https://arxiv.org/abs/2102.04752v2"
+fetched_from = "https://arxiv.org/pdf/2102.04752v2"
+fetched_at = "2026-10-23T18:18:57Z"
+sha256 = "db8066d6bae7d044058ed9a109077b4c1ed2f89c71c33b3b39278c1598728f1c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "arXiv v2"
+cited_for = ["§4.7; Exact supplier contracts, valuation-models"]
+
+[[source]]
+id = "PS"
+authors = "Peter Scholze"
+title = "Perfectoid Spaces: A survey"
+year = 2013
+arxiv = "1303.5948v1"
+locator_scheme = "section"
+locator = "Theorem 3.17, pp. 19–20"
+url = "https://arxiv.org/abs/1303.5948v1"
+fetched_from = "https://arxiv.org/pdf/1303.5948v1"
+fetched_at = "2026-10-23T18:19:03Z"
+sha256 = "c18d6f9ff5da4a7939b85d9355230acf05a74813950eb07b06035f5787fd271d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "arXiv v1"
+cited_for = ["Scope and ownership; Layer 5 Examples"]
+
+[[source]]
+id = "Han"
+arxiv = "1708.07276v1"
+doi = "10.1112/S0010437X19007371"
+authors = "David Hansen"
+title = "Vanishing and comparison theorems in rigid analytic geometry"
+year = 2019
+locator_scheme = "theorem"
+locator = "Theorems 1.6, 1.8, 1.10(ii); Proposition 4.2 and §§4.2–4.3, February 25, 2019 preprint"
+url = "https://pure.mpg.de/rest/items/item_3214152_2/component/file_3282970/content"
+fetched_from = "https://pure.mpg.de/rest/items/item_3214152_2/component/file_3282970/content"
+fetched_at = "2026-10-23T18:22:05Z"
+sha256 = "4d208f0381d243f0fd42394164b0a22f98431fd3dfa74842f0e16d32c1819bd1"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["§7.2; Exact supplier contracts, finite-branched-covers"]
+version_note = "The cited version is the institutional February 25, 2019 preprint; its Theorems 1.6, 1.8 and 1.10(ii) match the uses in BH Proposition 3.7; arXiv v1 is the earlier Artin vanishing in rigid analytic geometry and has different numbering."

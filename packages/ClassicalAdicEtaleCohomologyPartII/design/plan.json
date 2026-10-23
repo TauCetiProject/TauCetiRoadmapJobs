@@ -4322,60 +4322,61 @@
     }
   ],
   "gaps": [
-    {
-      "id": "ClassicalAdicEtaleCohomologyPartII/G1",
-      "title": "Universally coherent valuation-base coherent duality",
-      "neededBy": [
-        "ClassicalAdicEtaleCohomologyPartII:PD.0/almost-proper-duality",
-        "ClassicalAdicEtaleCohomologyPartII:PD.1/formal-dualizing-complex",
-        "ClassicalAdicEtaleCohomologyPartII:PD.1/formal-hartogs"
-      ],
-      "detail": "The reserved coherent-duality node is Noetherian finite type. Read Z §§2.1–2.5 and AC §5.5, but did not decompose a proof of the universally coherent extension over O_K/pⁿ, including compactification, flat finite-presentation amplitude and canonical-sheaf reflexivity. Supply these in Scheme and stack foundations, Part II, then check every reduction/completion used in PD.1. Ordinary Noetherian duality cannot close this gap."
-    },
-    {
-      "id": "ClassicalAdicEtaleCohomologyPartII/G2",
-      "title": "Reduced valuation models and local altered uniformization",
-      "neededBy": [
-        "ClassicalAdicEtaleCohomologyPartII:PD.1/formal-hartogs",
-        "ClassicalAdicEtaleCohomologyPartII:PD.1/canonical-generic-identification",
-        "ClassicalAdicEtaleCohomologyPartII:PD.2/faltings-trace-compatibility",
-        "ClassicalAdicEtaleCohomologyPartII:PD.4/good-quotient",
-        "ClassicalAdicEtaleCohomologyPartII:PD.4/local-almost-duality",
-        "ClassicalAdicEtaleCohomologyPartII:PD.5/global-almost-trace",
-        "ClassicalAdicEtaleCohomologyPartII:PD.6/relative-finite-presentation"
-      ],
-      "detail": "Read Z Theorems 2.7.1 and 4.4.1, U Theorems 1.3–1.4 and SW Lemma 10.5.9. U’s proof and the full Reduced Fibre/refined Elkik chain were not independently decomposed. The required contract includes reduced cofinal models, algebraization, finite formal quotients and the exact zigzag of Zariski covers, proper rig-isomorphisms and generic finite torsors with polystable dominating models. The relative input must commute with completed power-bounded base change. Raynaud existence alone supplies none of these refinements."
-    },
-    {
-      "id": "ClassicalAdicEtaleCohomologyPartII/G3",
-      "title": "Almost coherent nearby cycles and singular proper comparison",
-      "neededBy": [
-        "ClassicalAdicEtaleCohomologyPartII:PD.0/nearby-cycle-complexes",
-        "ClassicalAdicEtaleCohomologyPartII:PD.5/proper-p-adic-perfectness",
-        "ClassicalAdicEtaleCohomologyPartII:PD.7/proper-field-extension"
-      ],
-      "detail": "P8’s existing early primitive node is smooth proper. PS Theorem 3.17 states the proper singular comparison/finiteness and gives a resolution/compactification proof; AC 6.13.5–6.13.6 gives general nearby-cycle almost coherence. Their full nonsmooth local toric calculation and the integral completed field-extension almost isomorphism in BH Lemma 3.25 need a separate proof-level supplier decomposition. Do not replace them by the smooth proper theorem or by H3’s transcendence-dimension-zero base change."
-    },
-    {
-      "id": "ClassicalAdicEtaleCohomologyPartII/G4",
-      "title": "Affinoid and nonproper constructible comparison proof inputs",
-      "neededBy": [
-        "ClassicalAdicEtaleCohomologyPartII:PD.7/affinoid-constructible-algebraization",
-        "ClassicalAdicEtaleCohomologyPartII:PD.7/constructible-locality-and-generators"
-      ],
-      "detail": "BH Proposition 3.7’s proof was read. It invokes Hansen (2020), Theorems 1.6, 1.8 and 1.10(ii), for finite branched-cover extension, nonproper finite-type direct-image comparison and full faithfulness. Those proofs were not read or decomposed in this run. PD.7 owns the new comparison target, building on H5’s proper comparison and relative rigid GAGA; no claim that H5 already provides its nonproper conclusion is made."
-    },
-    {
-      "id": "ClassicalAdicEtaleCohomologyPartII/G5",
-      "title": "Relative finiteness and generic smoothness proof closure",
-      "neededBy": [
-        "ClassicalAdicEtaleCohomologyPartII:PD.6/relative-restriction-factorization",
-        "ClassicalAdicEtaleCohomologyPartII:PD.6/relative-local-constancy-criterion",
-        "ClassicalAdicEtaleCohomologyPartII:PD.7/proper-constructible-pushforward"
-      ],
-      "detail": "SW’s full §10.5 argument and BH 2.27/2.29 were read and the key targets are nodes. Remaining proof inputs are the valuation-base finite-presentation/properness criterion in SW 10.5.8, continuity of the elementary-divisor sequence for an almost finitely presented module on a strictly disconnected base (SW 10.5.3), and BH’s weakly Shilov generic-flatness/smooth-fibre arguments proving 2.27. Record and prove these contracts in the geometric supplier extension before declaring the relative route closed. The proper generic smoothness conclusion is a dense open of the target Y."
-    }
-  ],
+  {
+    "slug": "valuation-models",
+    "needs": "Supply reduced cofinal admissible models over complete rank-one valuation rings, refined Elkik algebraization, finite formal quotients with quasiprojective residue fibre, the reduced quotient and polystable rig-isomorphism zigzag of Z Theorem 4.4.1 and U Theorem 1.4, and the reduced power-bounded base-change theorem used in SW Lemma 10.5.9.",
+    "supplier": "AdicSpacesPartIII",
+    "section": "R2.2–R2.8"
+  },
+  {
+    "slug": "finite-branched-covers",
+    "needs": "For a normal characteristic-zero rigid space and a nowhere dense Zariski closed subset, restriction identifies finite normal branched covers étale off that subset with finite étale covers of its complement, naturally under restriction.",
+    "supplier": "AdicSpacesPartIIPartII",
+    "section": "RZ.1"
+  },
+  {
+    "slug": "proper-generic-smoothness",
+    "needs": "Supply weakly Shilov generic flatness and smooth-fibre criteria yielding a dense Zariski open U of a reduced target Y over which every proper map X→Y with smooth source in characteristic zero is smooth.",
+    "supplier": "AdicSpacesPartIIPartII",
+    "section": "RZ.2 and RZ.4"
+  },
+  {
+    "slug": "valuation-coherent-duality",
+    "needs": "Extend coherent upper shriek to separated finitely presented schemes over universally coherent valuation quotients O_K/pⁿ, with finite-presentation compactification, proper adjunction, flat base change, amplitude [−d,0] for flat finitely presented maps with fibres of dimension at most d, flat canonical bottom sheaf and canonical-sheaf reflexivity for geometrically reduced residue fibre.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "2.19–2.21"
+  },
+  {
+    "slug": "valuation-properness",
+    "needs": "Supply the valuation-base finite-presentation and valuative properness criterion used to turn the strictly contained chart restriction in SW Lemma 10.5.8 into a factorization through a finitely presented module.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "0.8–0.9"
+  },
+  {
+    "slug": "proper-hyperdescent",
+    "needs": "Supply the enhanced realization and finite-degree truncation of proper cohomological hyperdescent for torsion étale complexes on rigid spaces, sufficient to compare a fixed cohomological degree with finitely many levels of a proper resolution hypercover.",
+    "supplier": "EnhancedDerivedSheaves",
+    "section": "0.3–0.4"
+  },
+  {
+    "slug": "general-nearby-coherence",
+    "needs": "Supply the general admissible-model almost coherent nearby-cycle theorem, its derived p-completeness, reduction, amplitude [0,d] and étale base change for d-dimensional generic fibre, as in AC Theorems 6.13.5–6.13.6.",
+    "supplier": "PadicHodgeTheory",
+    "section": "2.1–2.7"
+  },
+  {
+    "slug": "integral-toric-field-extension",
+    "needs": "For complete algebraically closed C′/C/ℚ_p and an affinoid perfectoid toric cover A_∞, supply the almost isomorphism from A_∞° completed-tensored over O_C with O_C′ to the power-bounded ring of its generic scalar extension, with the finite Koszul cochain comparison for arbitrary affinoid charts.",
+    "supplier": "PadicHodgeTheory",
+    "section": "2.1–2.7"
+  },
+  {
+    "slug": "quasi-excellent-direct-images",
+    "needs": "For a finite-type morphism of quasi-excellent Noetherian schemes and finite coefficients annihilated by an integer invertible on the target, derived direct image carries bounded constructible complexes to bounded constructible complexes, including nonproper morphisms.",
+    "supplier": "EtaleCohomologyFoundations",
+    "section": "F.3"
+  }
+],
   "sourceIssues": [
     {
       "id": "ClassicalAdicEtaleCohomologyPartII/E1",
