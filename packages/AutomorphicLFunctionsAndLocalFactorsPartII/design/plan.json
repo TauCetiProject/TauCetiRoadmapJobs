@@ -4972,6 +4972,84 @@
         "AutomorphicLFunctionsAndLocalFactorsPartII:D.5/generalized-datum"
       ],
       "detail": "ClassicalGroups Layer 0 concerns complex standard representations and does not supply arbitrary quadratic-étale hermitian isometry/similitude groups. Current OrthogonalSpinGroups supplies general-field SO and Spin comparisons; ReductiveGroupsPartII constructs topology and dual groups from a supplied reductive group. Before D.0 is implemented, obtain an owner-supplied hermitian carrier with U(h) and GU(h), multiplier, equal-multiplier fiber product, block isometry embedding, field/étale-split base change and reductivity; also supply GSpin as the even Clifford similitude group with its central F×, Clifford-action map and root-datum comparison. Request the missing concrete models in the ReductiveGroups direction, consuming the existing OrthogonalSpinGroups maps and Mathlib symplectic carrier. They are not replanned here or falsely attributed to complex ClassicalGroups."
+    },
+    {
+      "slug": "hermitian-gspin-carriers",
+      "needs": "For nondegenerate Hermitian forms on finite projective constant-rank modules over every characteristic-zero quadratic étale algebra, provide U and multiplier-recording GU, their base-change, reductivity and block/equal-multiplier comparisons, and provide GSpin as the even Clifford similitude group with distinguished central torus, Clifford action and pinned root-datum comparisons compatible with OrthogonalSpinGroups.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.0, RG2.4 and RG2.5"
+    },
+    {
+      "slug": "classical-support-quotient",
+      "needs": "For an irreducible classical-group constituent with supercuspidal support, realize it as a quotient of normalized induction for Weyl-conjugate support data with the central twists required by quotient multiplicativity.",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.2, SR.3.3 and SR.5.3"
+    },
+    {
+      "slug": "rectangular-orbit-support",
+      "needs": "Supply generalized nilpotent-orbit Whittaker support and its Jacquet/derivative comparison, including vanishing for larger or incomparable rectangular orbits, on admissible finite-length characteristic-zero complex representations.",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.2, SR.3.3 and SR.5.3"
+    },
+    {
+      "slug": "ramified-hecke-prescription",
+      "needs": "Given a number field, a finite ramification set and a distinguished place v₀, construct a unitary Hecke character with arbitrarily deep conductor at the other specified places and trivial component at v₀, allowing auxiliary ramification and explicitly stating the global compatibility restrictions, and in the converse application arrange η_v₁²χ_v₁ nontrivial on units at one specified finite place v₁.",
+      "supplier": "AdelicAlgebraicGroups",
+      "section": "AA.2"
+    },
+    {
+      "slug": "gamma-supercuspidal-support",
+      "needs": "For irreducible finite-place GL representations with canonical nongeneric factors, prove that equality of gamma factors against every supercuspidal GL test is equivalent to equality of supercuspidal supports, and prove gamma invariance within each support class.",
+      "supplier": "AutomorphicLFunctionsAndLocalFactors",
+      "section": "AL.3"
+    },
+    {
+      "slug": "formal-candidate-products",
+      "needs": "For an admissible adelic GL candidate with idele-class central character and absolutely convergent standard Euler product sufficiently far right, prove right convergence of its products twisted by cuspidal GL representations and independence of its global epsilon product from a rational rescaling of the additive character.",
+      "supplier": "AutomorphicLFunctionsAndLocalFactors",
+      "section": "AL.3"
+    },
+    {
+      "slug": "standard-archimedean-transfer",
+      "needs": "For the five split classical families, provide the real/complex standard transfer to GL of their local Langlands parameters with determinant and infinitesimal-character compatibility and the chosen smooth globalizations.",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "2.5–2.7 and 4.2"
+    },
+    {
+      "slug": "opposite-unipotent-estimate",
+      "needs": "For normalized classical-group Langlands induction in the positive chamber, prove the continuous-seminorm matrix-coefficient estimate giving absolute convergence of the opposite-unipotent integral used in the doubling open-chart reduction.",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "2.5–2.7 and 4.2"
+    },
+    {
+      "slug": "controlled-supercuspidal-globalization",
+      "needs": "Globalize a prescribed characteristic-zero local field and supercuspidal representation of a split classical group or GL with compatible central data, controlling the other ramified places so that every auxiliary place admits the stable-factor cancellation needed to isolate the prescribed place.",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "2.5–2.7 and 4.2"
+    },
+    {
+      "slug": "speh-pole-detection",
+      "needs": "Supply unitary-axis regularity, detection of an Eisenstein pole by its cuspidal constant terms, and the Speh/cusp rank-one normalized-intertwiner holomorphy used in the two-term doubling recursion.",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "2.1–2.6 and Layer 4"
+    },
+    {
+      "slug": "twisted-square-normalizers",
+      "needs": "For unitary cuspidal GL data with no essential twisted self-duality, prove the global twisted symmetric- and exterior-square normalizing-factor holomorphy and pole criteria needed on the closed doubling half-plane.",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "2.1–2.6 and Layer 4"
+    },
+    {
+      "slug": "hermitian-automorphic-support",
+      "needs": "Supply Hermitian cuspidal-support symmetry for square-integrable residues and the cuspidal-support theorem for every irreducible automorphic constituent, including nondiscrete constituents, with its ordered inducing exponents.",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "2.1–2.6 and Layer 4"
+    },
+    {
+      "slug": "archimedean-rectangular-support",
+      "needs": "On Casselman–Wallach GL representations, supply associated-variety and generalized-Whittaker-support comparison, its behavior under normalized induction, and the continuous rectangular-functional existence and uniqueness implications used in the all-local-field Speh adapter.",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "2.1–2.7"
     }
   ],
   "sourceIssues": [
