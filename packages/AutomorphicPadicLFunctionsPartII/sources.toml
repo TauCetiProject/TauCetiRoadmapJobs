@@ -1,0 +1,39 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AutomorphicPadicLFunctionsPartII"
+
+[[source]]
+id = "KS-v4"
+authors = "Guido Kings, Johannes Sprang"
+title = "Eisenstein-Kronecker classes, integrality of critical values of Hecke L-functions and p-adic interpolation"
+year = 2024
+venue = "Annals of Mathematics 202 (2025), 1-109"
+arxiv = "1912.03657v4"
+locator_scheme = "theorem"
+locator = "arXiv v4, Sections 1–5 and Appendix A; Theorem 5.27"
+url = "https://arxiv.org/abs/1912.03657v4"
+fetched_from = "https://arxiv.org/pdf/1912.03657v4"
+fetched_at = "2026-10-23T21:42:39Z"
+sha256 = "fab8e605123cf9c399753b7114c4fd65000e1863e3507abdd4129c8c940fbb72"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "All section, theorem and page locators use arXiv:1912.03657v4 (85 pages, 2024); journal pagination 202 (2025), 1–109 is not used."
+cited_for = ["Layers 0–8"]
+
+[[source]]
+id = "BKO-2021"
+authors = "Ashay A. Burungale, Shinichi Kobayashi, Kazuto Ota"
+title = "Rubin’s conjecture on local units in the anticyclotomic tower at inert primes"
+year = 2021
+doi = "10.4007/annals.2021.194.3.8"
+venue = "Annals of Mathematics 194 (2021), 943–966"
+locator_scheme = "section"
+locator = "Section 3, pp.950–954; Section 6, pp.961–962"
+url = "https://authors.library.caltech.edu/records/8svwt-jn031/files/annals.2021.194.3.8.pdf?download=1"
+fetched_from = "https://authors.library.caltech.edu/records/8svwt-jn031/files/annals.2021.194.3.8.pdf?download=1"
+fetched_at = "2026-10-23T21:45:50Z"
+sha256 = "77ff329057e17cbad573cc309fce3f69f4ba6b73619c4ca203a4ed79a1cb790e"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["Scope boundary: nonordinary CM special values"]

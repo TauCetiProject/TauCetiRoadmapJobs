@@ -3190,6 +3190,84 @@
         "AutomorphicPadicLFunctionsPartII:KV.7/eisenstein-measure",
         "AutomorphicPadicLFunctionsPartII:KV.8/interpolation"
       ]
+    },
+    {
+      "slug": "unit-type-classification",
+      "needs": "Classify integer embedding types trivial on a finite-index unit subgroup as norm pullbacks from the maximal CM subfield with parallel conjugate sum, or parallel norm powers when no CM subfield exists.",
+      "supplier": "GlobalNumberFields",
+      "section": "Layer 10"
+    },
+    {
+      "slug": "hecke-padic-avatar",
+      "needs": "Supply the arithmetic p-adic avatar of an algebraic ideal Hecke character on the fp∞ ray tower, with its local algebraic monomial, finite unit character and the ideal-to-idelic inverse convention.",
+      "supplier": "GlobalNumberFields",
+      "section": "Layers 9–10"
+    },
+    {
+      "slug": "equivariant-poincare-limit",
+      "needs": "Supply the inverse-limit and vanishing R¹lim comparison for finite-level equivariant completed Poincaré complexes, affine evaluation into group cohomology and the discrete-unit Borel smooth/coherent comparison.",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "§2.23"
+    },
+    {
+      "slug": "borel-bundle-currents",
+      "needs": "Extend C5.4’s supplied bundle-test/current calculus to the mixed relative bidegrees on a complex manifold times a real contractible unit cover, with the local form/current resolution natural in finite Poincaré levels and flat connections.",
+      "supplier": "ComplexComparisonPartII",
+      "section": "C1.1 and C5.4"
+    },
+    {
+      "slug": "current-residue-trace",
+      "needs": "Supply top unit-torus integration and Stokes for that current resolution, with local analytic residue and trace identified with the rigidified algebraic coherent trace.",
+      "supplier": "ComplexComparisonPartII",
+      "section": "C5.4"
+    },
+    {
+      "slug": "group-torus-comparison",
+      "needs": "Supply the native discrete group-to-singular local-coefficient comparison for finite-rank free abelian groups on their logarithmic universal covers, naturally under finite-index maps.",
+      "supplier": "AlgebraicTopology",
+      "section": "Stage 5 items 3–4 and Stage 8.8"
+    },
+    {
+      "slug": "torus-cap-projection",
+      "needs": "Supply the compatibility of the native group-cohomology comparison with the oriented local-coefficient torus cap, its top-degree coefficient-line identification and finite-cover projection formula.",
+      "supplier": "AlgebraicTopology",
+      "section": "Stage 6"
+    },
+    {
+      "slug": "ordinary-cm-pairings",
+      "needs": "Supply the ordinary CM-idempotent connected–étale decomposition and perfect Cartier/Weil pairings over the required bases, with compatibility of paired isogenies and all levels.",
+      "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheory",
+      "section": "R07.1.7, R07.1.9 and R07.1.13"
+    },
+    {
+      "slug": "integral-multivariate-amice",
+      "needs": "Supply basis-independent integral Amice for finite-free ℤ_p-modules of arbitrary rank with O_(ℂ_p) coefficients, including products, completed coefficient extension, translations and invariant differential moments.",
+      "supplier": "PadicMeasuresIwasawaAlgebras",
+      "section": "§§2.1–2.2"
+    },
+    {
+      "slug": "bounded-fraction-criterion",
+      "needs": "Supply localization of the commutative integral measure algebra on profinite abelian ray groups and a uniform Kummer-congruence or integral-divisibility criterion for bounded fractions, including torsion components and common zeros.",
+      "supplier": "PadicMeasuresIwasawaAlgebras",
+      "section": "§3.1"
+    },
+    {
+      "slug": "hecke-motive-periods",
+      "needs": "Supply rank-one Hecke motives, realizations, period lines and tensor, norm-pullback, restriction-of-scalars, finite-order and Tate-twist comparisons in the ideal infinity-type convention β−α.",
+      "supplier": "PeriodsAndSpecialValues",
+      "section": "PS.0"
+    },
+    {
+      "slug": "critical-cm-deligne-period",
+      "needs": "Supply criticality of the restricted Hecke motive and the CM expression for its nonzero Deligne c⁺ period modulo Qbar×, separately from algebraicity of the possibly zero L-value.",
+      "supplier": "PeriodsAndSpecialValues",
+      "section": "PS.1"
+    },
+    {
+      "slug": "ray-tower-tame-unit-kernel",
+      "needs": "Supply the inverse-limit fp∞ ray-class Galois comparison and exact kernel over Cl_f equal to the local p-unit group modulo the closure of O_f×, with arithmetic Artin and finite-level transition compatibility.",
+      "supplier": "ClassFieldTheory",
+      "section": "Layers 11–13"
     }
   ],
   "coverage": [
