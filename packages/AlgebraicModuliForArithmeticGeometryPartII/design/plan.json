@@ -3867,68 +3867,42 @@
  ],
  "gaps": [
   {
-   "title": "G1: All-dimensional finite-coefficient étale finiteness needs an exact registered supplier",
-   "detail": "The rank proof needs finite H²_et(X,μ_ℓ) for arbitrary proper X over an algebraically closed field and ℓ invertible, including reducible and nonreduced X. SF.2 supplies Kummer and field comparison but its audit points to the unregistered CohomologicalPointCounting family (PR #196, head 4bd72379658126cbe9be935656396f0c9dac4de0) for finite-coefficient theory. Neither a curve-only theorem nor proper base change supplies this all-dimensional finiteness statement. Read and register an exact target, or add the missing finite-coefficient finiteness target to its owner. Kleiman Remark 6.19 is a public restatement of finite generation, not a replacement proof. No unread SGA 6 proof is claimed.",
-   "neededBy": [
-    "AlgebraicModuliForArithmeticGeometryPartII:NP.1/neron-severi-rank",
-    "AlgebraicModuliForArithmeticGeometryPartII:NP.1/finite-dimensionality",
-    "AlgebraicModuliForArithmeticGeometryPartII:NP.2/num-local-system"
-   ]
+    "slug": "relative-numerical-component-reduction",
+    "needs": "For every proper morphism of Noetherian schemes, provide a finite projective Chow-cover and stratification reduction, with geometrically integral component families after finite covers, that detects the relative numerical kernel on finitely many generic fibres and the closed complement.",
+    "supplier": "AlgebraicModuliForArithmeticGeometry",
+    "section": "§1.6"
   },
   {
-   "title": "G2: Relative numerical finite-dimensionality needs componentwise reduction",
-   "detail": "Provide a finite projective Chow-cover/stratification reduction with geometrically integral component families after finite covers, proving that the relative numerical kernel is detected by finitely many generic fibre numerical kernels and the closed complement. Kleiman 6.3(g) assumes irreducibility and cannot detect the kernel on a reducible fibre by one Euler polynomial. This is a substantive proof gap, not a request for routine lemma splitting.",
-   "neededBy": [
-    "AlgebraicModuliForArithmeticGeometryPartII:NP.1/finite-dimensionality",
-    "AlgebraicModuliForArithmeticGeometryPartII:NP.1/curve-space"
-   ],
-   "addedBy": "REV-DESIGN-AlgebraicModuliForArithmeticGeometryPartII"
+    "slug": "proper-bigness-birational-comparison",
+    "needs": "Extend the section-growth and birational-system comparison for bigness to integral proper schemes over any field, including invariance under proper birational modifications and compatibility of their top Cartier intersections.",
+    "supplier": "AlgebraicModuliForArithmeticGeometry",
+    "section": "§1.6"
   },
   {
-   "title": "G3: Nef-and-big criterion on arbitrary proper schemes",
-   "detail": "SF.5/nef-big-numerical and Keel Definition–Lemma 0.0 cover reduced projective schemes. The proper integral definition is retained here, but extending the criterion beyond projective schemes requires a sourced proof of birational invariance of bigness and the Chow-modification reduction. NP.5/nef-big-specialization uses only projective fibres and is unaffected.",
-   "neededBy": [
-    "AlgebraicModuliForArithmeticGeometryPartII:NP.1/big"
-   ],
-   "addedBy": "REV-DESIGN-AlgebraicModuliForArithmeticGeometryPartII"
+    "slug": "proper-picard-nonflat-descent",
+    "needs": "Provide nilpotent dévissage and nonflat relative representability for pullback of Picard sheaves along surjective maps of proper schemes over a field, by quasi-affine maps of finite type, together with the representability descent used in Kleiman Corollary 4.18.3.",
+    "supplier": "AlgebraicModuliForArithmeticGeometry",
+    "section": "§7.3"
   },
   {
-   "title": "G4: Arbitrary proper Picard representability requires nonflat descent",
-   "detail": "Kleiman 4.18.3 and 4.18.5 state the needed theorems, but pp. 34–35 refer to Murre, Oort and Raynaud for their proofs. Read a freely available proof of arbitrary proper, possibly nonreduced Picard representability and the finite-type relative representability used for Pic^τ; add its exact target-level prerequisites or assign an extension to the parent/ComplexComparison owner. The existing projective geometrically integral and universal-functions contracts do not imply this generality.",
-   "neededBy": [
-    "AlgebraicModuliForArithmeticGeometryPartII:NP.2/picard-scheme",
-    "AlgebraicModuliForArithmeticGeometryPartII:NP.2/tau-component"
-   ],
-   "addedBy": "REV-DESIGN-AlgebraicModuliForArithmeticGeometryPartII"
+    "slug": "proper-hilbert-space-tangent",
+    "needs": "Represent the Hilbert functor of proper flat finitely presented closed subschemes of a separated finitely presented scheme by an algebraic space locally of finite presentation, with geometric tangent space Hom(I_C,O_C) at C.",
+    "supplier": "AlgebraicModuliForArithmeticGeometry",
+    "section": "§2.1"
   },
   {
-   "title": "G5: Proper Hilbert algebraic space and its tangent formula",
-   "detail": "Extend the parent R09.2/projective Hilbert-scheme contract to the proper Hilbert algebraic space locally of finite presentation (Stacks 99.9.4, 0CZX) and its tangent space Hom(I_C,O_C) (99.7.10, 0CZV). The negative-curve repair needs this precise input for smooth proper surfaces, without assuming projectivity. The formulas and resulting descent argument have been checked, but the supplier extension is not yet planned.",
-   "neededBy": [
-    "AlgebraicModuliForArithmeticGeometryPartII:NP.4/negative-curve-descent",
-    "AlgebraicModuliForArithmeticGeometryPartII:NP.4/fibre-graph-descent",
-    "AlgebraicModuliForArithmeticGeometryPartII:NP.4/reducible-fibre-residue",
-    "AlgebraicModuliForArithmeticGeometryPartII:NP.4/fibre-label-descent"
-   ],
-   "addedBy": "REV-DESIGN-AlgebraicModuliForArithmeticGeometryPartII"
+    "slug": "relative-exceptional-degree-witnesses",
+    "needs": "For a projective birational morphism from a regular variety to a normal variety over any field, provide finitely many contracted integral curves whose Cartier degrees detect every nonzero rational combination of exceptional prime divisors, with field-extension compatibility.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "§5.9"
   },
   {
-   "title": "G6: High-dimensional vertical negativity input",
-   "detail": "CT20 Lemma 2.17 proves vertical descent using a vertical negativity argument after suitable cuts; importing the surface Zariski lemma alone does not justify those cuts for arbitrary normal excellent schemes. Specify or source the relative vertical negativity statement, with the needed projectivity/local reduction, dimension and field hypotheses. The general excellent formulation remains a target, not a closed proof.",
-   "neededBy": [
-    "AlgebraicModuliForArithmeticGeometryPartII:NP.5/vertical-descent"
-   ],
-   "addedBy": "REV-DESIGN-AlgebraicModuliForArithmeticGeometryPartII"
-  },
-  {
-   "title": "G7: Relative positive-characteristic AHK rank",
-   "detail": "AHK07 works with projective complex varieties. HW23 p. 12 consumes a relative positive-characteristic version. Supply the exceptional-divisor numerical independence and resolution-comparison theorem in that setting, including the projective slicing/regularity hypotheses; do not infer it merely from the existence of regular resolutions. The currently proved scope of NP.5/ahk-rank is the complex projective theorem.",
-   "neededBy": [
-    "AlgebraicModuliForArithmeticGeometryPartII:NP.5/ahk-rank"
-   ],
-   "addedBy": "REV-DESIGN-AlgebraicModuliForArithmeticGeometryPartII"
+    "slug": "projective-nef-big-criterion",
+    "needs": "For a nef invertible sheaf on a reduced projective scheme over a field, prove bigness exactly when its top self-intersection is positive on each irreducible component, with compatibility with the supplied section-growth predicate.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "§5.3"
   }
- ],
+],
  "coverage": [
   {
    "stageId": "AlgebraicModuliForArithmeticGeometryPartII:NP.0",

@@ -1,0 +1,247 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AlgebraicModuliForArithmeticGeometryPartII"
+
+[[source]]
+id = "SCH23"
+authors = "Stefan Schröer"
+title = "There is no Enriques surface over the integers"
+year = 2023
+arxiv = "2004.07025v3"
+locator_scheme = "section"
+locator = "§1 (pp. 4–8) in full: Lemma 1.1, Proposition 1.2, Theorem 1.3, Lemma 1.4 and proofs; §2 (pp. 8–9) in full: Theorem 2.1 and proof; Proposition 5.5 and its Picard exact sequence, pp. 15–16, for the doubled-lift application"
+url = "https://arxiv.org/abs/2004.07025v3"
+fetched_from = "https://arxiv.org/pdf/2004.07025v3"
+fetched_at = "2026-10-24T03:33:34Z"
+sha256 = "ae6481f25627867473ba40db3b08e5f4b861de8aa103204eefc5ad1123a46d61"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v3"
+cited_for = ["0.4", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9", "2.10", "3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "4.1", "4.2", "4.3", "4.4", "4.8", "4.9", "4.10", "2.11"]
+
+[[source]]
+id = "KLE05"
+authors = "Steven L. Kleiman"
+title = "The Picard scheme"
+year = 2005
+arxiv = "math/0504020v1"
+locator_scheme = "section"
+locator = "Remark 4.18, Theorems 4.18.1–4.18.5, Corollary 4.18.3 (pp. 33–35); Definitions 6.1–6.2, Theorem 6.3 (pp. 52–53); Definitions 6.1–6.2 through Remark 6.22 (pp. 52–60); Theorem 2.5 and Remark 2.11 (pp. 17–21); Proposition 5.19 and proof (p. 47)"
+url = "https://arxiv.org/abs/math/0504020v1"
+fetched_from = "https://arxiv.org/pdf/math/0504020v1"
+fetched_at = "2026-10-24T03:33:41Z"
+sha256 = "cc14e62f0ebebb8617777651bbcd08bb7548cb9fe955f3a25bb6491c5f3beeaa"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Numbering is the arXiv:math/0504020v1 numbering (4.18.3, 6.3, etc.), not the published chapter-prefix 9.x numbering."
+cited_for = ["0.1", "0.3", "0.6", "1.3", "1.4", "2.1", "2.3", "2.4", "2.5", "5.3"]
+
+[[source]]
+id = "BMP23"
+authors = "Bhargav Bhatt, Linquan Ma, Zsolt Patakfalvi, Karl Schwede, Kevin Tucker, Joe Waldron, Jakub Witaszek"
+title = "Globally +-regular varieties and the minimal model program for threefolds in mixed characteristic"
+year = 2023
+arxiv = "2012.15801v3"
+locator_scheme = "section"
+locator = "§2.5 from Lemma 2.21 to Remark 2.23 (pp. 18–19); Lemma 2.47 to Lemma 2.54 (pp. 25–28); Theorem 9.15, Proposition 9.16 and proof (pp. 103–107); Lemmas 9.24–9.26 (pp. 110–112); Definition 9.30 and the following paragraph (pp. 116–117)"
+url = "https://arxiv.org/abs/2012.15801v3"
+fetched_from = "https://arxiv.org/pdf/2012.15801v3"
+fetched_at = "2026-10-24T03:34:45Z"
+sha256 = "533218825ca5045a9e8e04da1f78ef51e05c90dd83ca4ecb7cd6e8c68dff3d80"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v3"
+cited_for = ["0.1", "0.2", "0.4", "0.5", "1.1", "1.2", "1.3", "1.4", "1.5", "5.6", "5.7", "5.8"]
+
+[[source]]
+id = "HW23"
+authors = "Christopher Hacon, Jakub Witaszek"
+title = "On the relative minimal model program for fourfolds in positive and mixed characteristic"
+year = 2023
+arxiv = "2009.02631v2"
+locator_scheme = "section"
+locator = "Theorems 1.3–1.4 and the remarks after them (pp. 2–3); §3 use of the AHK Picard rank (p. 12); Lemma 6.1 to Corollary 6.5 and the proof of Theorem 1.3 (pp. 29–34)"
+url = "https://arxiv.org/abs/2009.02631v2"
+fetched_from = "https://arxiv.org/pdf/2009.02631v2"
+fetched_at = "2026-10-24T03:34:50Z"
+sha256 = "161c63089dadc8f9aecd3da1753563fe8f7f9fc2b2722952307cd19bacda7c66"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v2"
+cited_for = ["1.1", "1.2", "5.1", "5.2", "5.3", "5.4", "5.5", "5.9"]
+
+[[source]]
+id = "WIT22"
+authors = "Jakub Witaszek"
+title = "Keel's base point free theorem and quotients in mixed characteristic"
+year = 2022
+arxiv = "2002.11915v2"
+locator_scheme = "section"
+locator = "§2 definitions (p. 7); Proposition 5.3 and proof (p. 34); Proposition 6.6 and proof (p. 41); Corollary 6.7 (pp. 42–43)"
+url = "https://arxiv.org/abs/2002.11915v2"
+fetched_from = "https://arxiv.org/pdf/2002.11915v2"
+fetched_at = "2026-10-24T03:34:56Z"
+sha256 = "5ab792128995b0735311a5284620e5d14549ecc6c5be08595c5d8cdffedda842"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v2"
+cited_for = ["0.4", "1.5", "1.6", "2.12", "3.3", "5.7"]
+
+[[source]]
+id = "DW22"
+authors = "Omprokash Das, Joe Waldron"
+title = "On the log minimal model program for threefolds over imperfect fields of characteristic p > 5"
+year = 2022
+arxiv = "1911.04394v3"
+locator_scheme = "section"
+locator = "Lemma 3.6 (p. 10); Lemma 4.1 and proof (pp. 12–13)"
+url = "https://arxiv.org/abs/1911.04394v3"
+fetched_from = "https://arxiv.org/pdf/1911.04394v3"
+fetched_at = "2026-10-24T03:35:14Z"
+sha256 = "144a22baf2da7fd19d124456542857152509f68af2e4478c5e971a7bc1dda289"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v3"
+cited_for = ["0.2"]
+
+[[source]]
+id = "CT20"
+authors = "Paolo Cascini, Hiromu Tanaka"
+title = "Relative semi-ampleness in positive characteristic"
+year = 2020
+arxiv = "1706.04845v3"
+locator_scheme = "section"
+locator = "Lemma 2.17 and proof (pp. 16–18)"
+url = "https://arxiv.org/abs/1706.04845v3"
+fetched_from = "https://arxiv.org/pdf/1706.04845v3"
+fetched_at = "2026-10-24T03:35:20Z"
+sha256 = "7f2e4b8a99e68e858ab0dcf21e0daa782bb0a526a10d286b54c68372770f3e74"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v3"
+cited_for = ["5.7"]
+
+[[source]]
+id = "AHK07"
+authors = "Valery Alexeev, Christopher Hacon, Yujiro Kawamata"
+title = "Termination of (many) 4-dimensional log flips"
+year = 2007
+arxiv = "math/0605137v2"
+locator_scheme = "section"
+locator = "Example 1.4 and Lemma 1.6 with proof (pp. 3–4); Definition 2.8 context (p. 7)"
+url = "https://arxiv.org/abs/math/0605137v2"
+fetched_from = "https://arxiv.org/pdf/math/0605137v2"
+fetched_at = "2026-10-24T03:36:09Z"
+sha256 = "1d1e5642fdb7b2a2c04ccf9800de13c7b3649eed344034538142116f09c7cf28"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v2"
+cited_for = ["4.5", "5.9"]
+
+[[source]]
+id = "LIP69"
+authors = "Joseph Lipman"
+title = "Rational singularities, with applications to algebraic surfaces and unique factorization"
+year = 1969
+locator_scheme = "section"
+locator = "§13 (pp. 222–223); §14, Lemma (14.1) and its proof (p. 224)"
+url = "https://www.numdam.org/item/PMIHES_1969__36__195_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1969__36__195_0.pdf"
+fetched_at = "2026-10-24T03:36:10Z"
+sha256 = "bc5452a2d46cb81bb8c97602447fc3d821a6c33b103304ad36ac99304bd83733"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["4.5"]
+
+[[source]]
+id = "EGA-IV3"
+authors = "Alexander Grothendieck (with Jean Dieudonné)"
+title = "Éléments de géométrie algébrique IV, troisième partie"
+year = 1966
+locator_scheme = "section"
+locator = "Théorème (8.8.2) (Numdam PDF p. 27) and (8.10.5)"
+url = "https://www.numdam.org/item/PMIHES_1966__28__5_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1966__28__5_0.pdf"
+fetched_at = "2026-10-24T03:36:15Z"
+sha256 = "f365212b38f20608ba34c21ae3ee40bbae1b42d9d3dff01a85356f9cc819c23e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["3.5"]
+
+[[source]]
+id = "STACKS"
+authors = "The Stacks project authors"
+title = "The Stacks project"
+year = 2026
+locator_scheme = "tag"
+locator = "0BEL; 0BET; 0BDG; 00PH; 0C61; 0C66; 0D3A; 0D3D; 0D2P; 0D01; 0CZV; 0CZX (section only)"
+url = "https://stacks.math.columbia.edu/tag/0BEL"
+fetched_from = "https://stacks.math.columbia.edu/download/varieties.pdf#nameddest=0BEL"
+fetched_at = "2026-10-24T03:36:18Z"
+sha256 = "ed339c312c86721e3f830876da14cabe89a96e83e454a78b7cd355555f4bca45"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["0.1", "0.5", "0.6", "3.7", "3.8", "4.6", "4.7"]
+chapter_texts = [{ chapter = "Varieties", fetched_from = "https://stacks.math.columbia.edu/download/varieties.pdf", sha256 = "ed339c312c86721e3f830876da14cabe89a96e83e454a78b7cd355555f4bca45", locator = "0BEL, 0BET, 0BDG" }, { chapter = "Algebra", fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf", sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947", locator = "00PH" }, { chapter = "Semistable Reduction", fetched_from = "https://stacks.math.columbia.edu/download/models.pdf", sha256 = "4e0302b02650015a5dae9fb1abb49656feb41326a66294098daecc736ea87b0c", locator = "0C61, 0C66" }, { chapter = "Divisors on Algebraic Spaces", fetched_from = "https://stacks.math.columbia.edu/download/spaces-divisors.pdf", sha256 = "51d90e8a3058611785f756c163d700e762363e8ef69cbfc93b5aef7f9e1d0475", locator = "0D3A" }, { chapter = "Descent on Spaces", fetched_from = "https://stacks.math.columbia.edu/download/spaces-descent.pdf", sha256 = "5c8408a876c17c258f78ac2cc8241662a4b089a8d33f787eefbdf27c0d782335", locator = "0D3D" }, { chapter = "Descent", fetched_from = "https://stacks.math.columbia.edu/download/descent.pdf", sha256 = "28e718bac216bb7c4584e9edb1d25d6420ee19a6cd536742c58599242ff8cad4", locator = "0D2P" }, { chapter = "Quot and Hilbert Spaces", fetched_from = "https://stacks.math.columbia.edu/download/quot.pdf", sha256 = "12b0c4526935a1e2cfc417063416648a15cf4d84a0976b53274ae5f644487eb0", locator = "0CZX (section), 0D01 (Proposition 99.9.4), 0CZV" }]
+
+[[source]]
+id = "KEE99"
+authors = "Seán Keel"
+title = "Basepoint freeness for nef and big line bundles in positive characteristic"
+year = 1999
+arxiv = "math/9901149v1"
+locator_scheme = "section"
+locator = "Definition–Lemma 0.0 (printed p. 254, PDF p. 2); Lemma 1.7 (printed p. 262, PDF p. 10); Lemma 2.16 and proof (printed p. 270, PDF p. 18)"
+url = "https://arxiv.org/abs/math/9901149v1"
+fetched_from = "https://arxiv.org/pdf/math/9901149v1"
+fetched_at = "2026-10-24T03:36:51Z"
+sha256 = "2ec4141aea36ad77e5b504f01617ffbbe17de0af27f8b2c5f4a1f4ee6afde398"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v1"
+cited_for = ["1.6", "2.12"]
+
+[[source]]
+id = "LMFDB11"
+authors = "The LMFDB collaboration"
+title = "Elliptic curve 11.a2 (Cremona 11a1)"
+year = 2026
+locator_scheme = "section"
+locator = "Minimal equation; Mordell–Weil group; conductor"
+url = "https://www.lmfdb.org/EllipticCurve/Q/11/a/2"
+fetched_from = "https://www.lmfdb.org/EllipticCurve/Q/11/a/2"
+fetched_at = "2026-10-24T03:38:16Z"
+sha256 = "9ca7fe92104f541f5e4db3446fe69f1f29d25dc02202d837703a4b0874f1bf02"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["5.2"]
+
+[[source]]
+id = "PS12"
+authors = "Artie Prendergast-Smith"
+title = "The cone conjecture for abelian varieties"
+year = 2010
+arxiv = "1008.4509v1"
+locator_scheme = "theorem"
+locator = "Proposition 1.2, p. 3, line 98; Theorem 4.3, p. 9, line 421 (arXiv v1)"
+url = "https://arxiv.org/abs/1008.4509v1"
+fetched_from = "https://arxiv.org/pdf/1008.4509v1"
+fetched_at = "2026-10-24T04:18:11Z"
+sha256 = "0bdad4ec53d14391c49976c7622cef3334a0fec64e2750efd0c6972dbe962283"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v1"
+cited_for = ["1.2"]
