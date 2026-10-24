@@ -3290,50 +3290,54 @@
  ],
  "gaps": [
   {
-   "id": "HilbertModularVarietiesAndShimuraCurvesPartII/gap/tame-types",
-   "title": "Tame inertial types over unramified F_v: K-types, constituents and lattices",
-   "neededBy": [
-    "HilbertModularVarietiesAndShimuraCurvesPartII:GK.1/shimura-curve-patching-functor",
-    "HilbertModularVarietiesAndShimuraCurvesPartII:GK.3/weight-and-type-freeness",
-    "HilbertModularVarietiesAndShimuraCurvesPartII:GK.3/locally-algebraic-lattices",
-    "HilbertModularVarietiesAndShimuraCurvesPartII:GK.3/projective-lift-freeness",
-    "HilbertModularVarietiesAndShimuraCurvesPartII:GK.4/glued-lattices",
-    "HilbertModularVarietiesAndShimuraCurvesPartII:GK.4/adjoint-type-lattices"
-   ],
-   "detail": "Needed for K = GL₂(O_{F_v}), F_v/ℚ_p unramified, and for the places w ∈ S_p ∖ {v}: (1) the tame inertial local Langlands correspondence τ ↦ σ(τ) (Henniart's appendix to Breuil–Mézard, normalised as in BM02 §2.1.1; BHHMS §2.2), and that every irreducible tame non-Steinberg smooth K-representation lies in its image (BHHMS Remark 8.2.5, citing BM02 Theorem 2.1.1.4 and Emerton–Gee–Herzig Proposition 2.4.1); (2) the tame types τ(s, μ) and the Jordan–Hölder constituents of σ(τ) as a Diamond-box set JH(D_{μ,ε}) (BHHMS Definition 2.3.1, Proposition 2.4.3, Lemma 2.4.4; MP.3 supplies the parametrisation of weights but not σ(τ)); (3) for generic ρ̄, a type τ with JH(σ(τ)) ∩ W(ρ̄) a single weight and, for ρ̄ semisimple, the unique type τ₀ with W(ρ̄) = JH(σ(τ₀)) (EGS15 Propositions 3.5.1–3.5.2); (4) the K-stable lattices σ_J°(τ) with irreducible cosocle, the capped intervals and the ideals I_𝒥 (EGS15 §5.1, Definition 10.1.4, Proposition 10.1.11); and the identification τ₀ ↔ the label (2, …, 2) of BHHMS Lemma 4.1.2. Owner: the pending design DESIGN-LocalGaloisDeformationRingsPartII (issue #3432), whose first route LocalGaloisDeformationRingsPartIITamePotentiallyBarsottiTate lists PAPER-BREUIL-ETAL-23/tame-type-tau, jh-factors-type, serre-weights-tame, n-generic-type and n-generic-rhobar."
+    "id": "HilbertModularVarietiesAndShimuraCurvesPartII/gap/tame-types",
+    "title": "Tame inertial types over unramified F_v: K-types, constituents and lattices",
+    "neededBy": [
+      "HilbertModularVarietiesAndShimuraCurvesPartII:GK.1/shimura-curve-patching-functor",
+      "HilbertModularVarietiesAndShimuraCurvesPartII:GK.3/weight-and-type-freeness",
+      "HilbertModularVarietiesAndShimuraCurvesPartII:GK.3/locally-algebraic-lattices",
+      "HilbertModularVarietiesAndShimuraCurvesPartII:GK.3/projective-lift-freeness",
+      "HilbertModularVarietiesAndShimuraCurvesPartII:GK.4/glued-lattices",
+      "HilbertModularVarietiesAndShimuraCurvesPartII:GK.4/adjoint-type-lattices"
+    ],
+    "detail": "Needed for K = GL₂(O_{F_v}), F_v/ℚ_p unramified, and for the places w ∈ S_p ∖ {v}: (1) the tame inertial local Langlands correspondence τ ↦ σ(τ) (Henniart's appendix to Breuil–Mézard, normalised as in BM02 §2.1.1; BHHMS §2.2), and that every irreducible tame non-Steinberg smooth K-representation lies in its image (BHHMS Remark 8.2.5, citing BM02 Theorem 2.1.1.4 and Emerton–Gee–Herzig Proposition 2.4.1); (2) the tame types τ(s, μ) and the Jordan–Hölder constituents of σ(τ) as a Diamond-box set JH(D_{μ,ε}) (BHHMS Definition 2.3.1, Proposition 2.4.3, Lemma 2.4.4; MP.3 supplies the parametrisation of weights but not σ(τ)); (3) for generic ρ̄, a type τ with JH(σ(τ)) ∩ W(ρ̄) a single weight and, for ρ̄ semisimple, the unique type τ₀ with W(ρ̄) = JH(σ(τ₀)) (EGS15 Propositions 3.5.1–3.5.2); (4) the K-stable lattices σ_J°(τ) with irreducible cosocle, the capped intervals and the ideals I_𝒥 (EGS15 §5.1, Definition 10.1.4, Proposition 10.1.11); and the identification τ₀ ↔ the label (2, …, 2) of BHHMS Lemma 4.1.2. Owner: the pending design DESIGN-LocalGaloisDeformationRingsPartII (issue #3432), whose first route LocalGaloisDeformationRingsPartIITamePotentiallyBarsottiTate lists PAPER-BREUIL-ETAL-23/tame-type-tau, jh-factors-type, serre-weights-tame, n-generic-type and n-generic-rhobar.",
+    "slug": "tame-types",
+    "supplier": "LocalGaloisDeformationRingsPartII",
+    "section": "T.0 (Tame inertial types and Weights of a tame type)",
+    "needs": "For every unramified p-adic field and generic residual representation, supply the full tame K-type dictionary with weight-isolating and all-weight types, irreducible-cosocle lattices, capped intervals and their support ideals, compatible with the BDJ duality convention."
   },
   {
-   "id": "HilbertModularVarietiesAndShimuraCurvesPartII/gap/single-type-rings",
-   "title": "Tame potentially Barsotti–Tate and (2,−1)_j deformation rings of a single type",
-   "neededBy": [
-    "HilbertModularVarietiesAndShimuraCurvesPartII:GK.1/patched-deformation-ring",
-    "HilbertModularVarietiesAndShimuraCurvesPartII:GK.1/type-quotients",
-    "HilbertModularVarietiesAndShimuraCurvesPartII:GK.3/weight-and-type-freeness",
-    "HilbertModularVarietiesAndShimuraCurvesPartII:GK.3/projective-lift-freeness",
-    "HilbertModularVarietiesAndShimuraCurvesPartII:GK.4/adjoint-type-lattices",
-    "HilbertModularVarietiesAndShimuraCurvesPartII:GK.4/adjoint-lattice-freeness",
-    "HilbertModularVarietiesAndShimuraCurvesPartII:GK.4/glued-lattice-freeness"
-   ],
-   "detail": "For generic ρ̄ : G_K → GL₂(𝔽), K/ℚ_p unramified of degree f, and a tame type τ: (1) EGS15 Theorem 7.2.1: the fixed-determinant potentially Barsotti–Tate ring R^{(1,0),τ,ψ} is a power series ring over W(𝔽) in 3 + f variables when the type isolates one predicted weight (the types of (62)); it is regular when JH(σ(τ)) ∩ W(ρ̄) has at most two elements, with special fibre the reduced union of the weight loci; (2) BHHMS Proposition 4.2.1: for ρ̄ as in BHHMS §4.1 and λ_j ∈ {(1,0), (2,−1)} (after twisting, (2,1), (3,0)) the rings R^{λ,τ} are domains; (3) BHHMS Corollary 4.2.6: the special fibre of R^{(2,−1)_j,τ} is reduced. With GK14 Remark 5.2.2 for fixed versus unfixed determinants. Owner: the pending design DESIGN-LocalGaloisDeformationRingsPartII (issue #3432), route LocalGaloisDeformationRingsPartIITamePotentiallyBarsottiTate, items PAPER-BREUIL-ETAL-23/def-rings, def-ring-single, special-fibre-reduced and the Kisin-module items kisin-matrices to theta-bijection on which they rest."
+    "id": "HilbertModularVarietiesAndShimuraCurvesPartII/gap/single-type-rings",
+    "title": "Tame potentially Barsotti–Tate and (2,−1)_j deformation rings of a single type",
+    "neededBy": [
+      "HilbertModularVarietiesAndShimuraCurvesPartII:GK.1/patched-deformation-ring",
+      "HilbertModularVarietiesAndShimuraCurvesPartII:GK.1/type-quotients",
+      "HilbertModularVarietiesAndShimuraCurvesPartII:GK.3/weight-and-type-freeness",
+      "HilbertModularVarietiesAndShimuraCurvesPartII:GK.3/projective-lift-freeness",
+      "HilbertModularVarietiesAndShimuraCurvesPartII:GK.4/adjoint-type-lattices",
+      "HilbertModularVarietiesAndShimuraCurvesPartII:GK.4/adjoint-lattice-freeness",
+      "HilbertModularVarietiesAndShimuraCurvesPartII:GK.4/glued-lattice-freeness"
+    ],
+    "detail": "For generic ρ̄ : G_K → GL₂(𝔽), K/ℚ_p unramified of degree f, and a tame type τ: (1) EGS15 Theorem 7.2.1: the fixed-determinant potentially Barsotti–Tate ring R^{(1,0),τ,ψ} is a power series ring over W(𝔽) in 3 + f variables when the type isolates one predicted weight (the types of (62)); it is regular when JH(σ(τ)) ∩ W(ρ̄) has at most two elements, with special fibre the reduced union of the weight loci; (2) BHHMS Proposition 4.2.1: for ρ̄ as in BHHMS §4.1 and λ_j ∈ {(1,0), (2,−1)} (after twisting, (2,1), (3,0)) the rings R^{λ,τ} are domains; (3) BHHMS Corollary 4.2.6: the special fibre of R^{(2,−1)_j,τ} is reduced. With GK14 Remark 5.2.2 for fixed versus unfixed determinants. Owner: the pending design DESIGN-LocalGaloisDeformationRingsPartII (issue #3432), route LocalGaloisDeformationRingsPartIITamePotentiallyBarsottiTate, items PAPER-BREUIL-ETAL-23/def-rings, def-ring-single, special-fibre-reduced and the Kisin-module items kisin-matrices to theta-bijection on which they rest.",
+    "slug": "single-type-rings",
+    "supplier": "LocalGaloisDeformationRingsPartII",
+    "section": "T.6 (Single-type deformation presentation and Reduced special fibres)",
+    "needs": "For generic residual representations including the nonsplit ones at places other than v, supply the EGS potentially Barsotti–Tate ring presentations and weight loci, including the one-weight formally smooth fixed-determinant ring of relative dimension 3+f, the two-weight regular case, and compatibility with determinant twisting."
   },
   {
-   "id": "HilbertModularVarietiesAndShimuraCurvesPartII/gap/multi-type-ring",
-   "title": "The multi-type deformation ring R^{≤(3,0),σ_v} and the membership of p",
-   "neededBy": [
-    "HilbertModularVarietiesAndShimuraCurvesPartII:GK.4/glued-lattice-freeness"
-   ],
-   "detail": "For a generic residual representation ρ̄ and a modular indexing weight σ as in BHHMS §4.3: Proposition 4.3.1, pp. 34–35, gives the stabilised presentation R_{ρ̄}^{≤(3,0),σ}⟦X₁, …, X_{2f}⟧ ≅ S⟦Y₁, …, Y₄⟧, with S = (⊗̂_j S^{(j)})/J explicit. The relevant types satisfy σ ⊗ (N_{k/𝔽_p} ∘ det^{−1}) ∈ JH(σ(τ)); their labels k ∈ {1,2}^f give the prime ideals p_k^λ (with the embedding reversal of Proposition 4.3.1 included in the labelling). After the relabelling 3 → 1 used in §8.3, Lemma 4.3.2, p. 39, gives q_1^{(j),(2,1)}, q_2^{(j),(2,1)}, and Proposition 4.3.3, pp. 39–40, gives p ∈ q_1^{(j),(2,1)} ∩ q_2^{(j),(2,1)} + p_2^{(j),(3,0)}. For the patched ring, increasing q and applying Hamann cancellation gives a presentation S⟦X₁, …, X_h⟧ with h ≥ 1; no unstabilised presentation of the bare local ring is asserted. Apply the residual and weight twists as in Theorem 8.3.9, pp. 101–102. Owner: the pending design DESIGN-LocalGaloisDeformationRingsPartII (issue #3432), route LocalGaloisDeformationRingsPartIITamePotentiallyBarsottiTate, items PAPER-BREUIL-ETAL-23/def-ring-multi, q-ideals and p-membership-multi."
-  },
-  {
-   "id": "HilbertModularVarietiesAndShimuraCurvesPartII/gap/breuil-mezard-pbt",
-   "title": "Breuil–Mézard for potentially Barsotti–Tate representations (Gee–Kisin Theorem A)",
-   "neededBy": [
-    "HilbertModularVarietiesAndShimuraCurvesPartII:GK.0/bdj-weight-theorem",
-    "HilbertModularVarietiesAndShimuraCurvesPartII:GK.1/shimura-curve-patching-functor"
-   ],
-   "detail": "Gee–Kisin, Forum Math. Pi 2 (2014), Theorem A: for K/ℚ_p finite, p > 2 and r̄ : G_K → GL₂(𝔽), the Hilbert–Samuel multiplicities of the potentially Barsotti–Tate lifting rings satisfy e(R^{□,0,τ}/π) = Σ_σ n_{0,τ}(σ)μ_σ(r̄) with μ_σ(r̄) ≠ 0 exactly for the predicted weights; Corollary 5.4.5 (nonvanishing of patched weight modules exactly for the Breuil–Mézard weights) and the support of patched modules of Serre weights on the crystalline weight loci (cited by EGS15 §6.4 as Corollaries 5.6.4 and 4.5.7 of the 2012 version; arXiv v5 has §§4.5 and 5.4 for these); and the identification of W^{BT} with the Buzzard–Diamond–Jarvis set for K unramified (Gee–Liu–Savitt). No atlas roadmap plans these: PadicLocalLanglandsForGL2Qp R30.5–R30.6 own the Breuil–Mézard conjecture over ℚ_p only. A home is proposed in `restructure` (a Part II of LocalGaloisDeformationRings or a paper route for Gee–Kisin)."
+    "id": "HilbertModularVarietiesAndShimuraCurvesPartII/gap/breuil-mezard-pbt",
+    "title": "Breuil–Mézard for potentially Barsotti–Tate representations (Gee–Kisin Theorem A)",
+    "neededBy": [
+      "HilbertModularVarietiesAndShimuraCurvesPartII:GK.0/bdj-weight-theorem",
+      "HilbertModularVarietiesAndShimuraCurvesPartII:GK.1/shimura-curve-patching-functor"
+    ],
+    "detail": "Gee–Kisin, Forum Math. Pi 2 (2014), Theorem A: for K/ℚ_p finite, p > 2 and r̄ : G_K → GL₂(𝔽), the Hilbert–Samuel multiplicities of the potentially Barsotti–Tate lifting rings satisfy e(R^{□,0,τ}/π) = Σ_σ n_{0,τ}(σ)μ_σ(r̄) with μ_σ(r̄) ≠ 0 exactly for the predicted weights; Corollary 5.4.5 (nonvanishing of patched weight modules exactly for the Breuil–Mézard weights) and the support of patched modules of Serre weights on the crystalline weight loci (cited by EGS15 §6.4 as Corollaries 5.6.4 and 4.5.7 of the 2012 version; arXiv v5 has §§4.5 and 5.4 for these); and the identification of W^{BT} with the Buzzard–Diamond–Jarvis set for K unramified (Gee–Liu–Savitt). No atlas roadmap plans these: PadicLocalLanglandsForGL2Qp R30.5–R30.6 own the Breuil–Mézard conjecture over ℚ_p only. A home is proposed in `restructure` (a Part II of LocalGaloisDeformationRings or a paper route for Gee–Kisin).",
+    "slug": "breuil-mezard-pbt",
+    "supplier": "LocalGaloisDeformationRingsPartII",
+    "section": "T.6 (local potentially Barsotti–Tate input)",
+    "needs": "For every finite extension K of Q_p with p>2, supply the Gee–Kisin potentially Barsotti–Tate Breuil–Mézard identity, patched-weight nonvanishing and crystalline-support comparison, and identify its nonzero weights with BDJ weights when K is unramified."
   }
- ],
+],
  "sourceIssues": [
   {
    "id": "HilbertModularVarietiesAndShimuraCurvesPartII/E1",

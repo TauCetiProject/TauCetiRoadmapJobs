@@ -1,0 +1,225 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HilbertModularVarietiesAndShimuraCurvesPartII"
+
+[[source]]
+id = "BHHMS23"
+authors = "Christophe Breuil, Florian Herzig, Yongquan Hu, Stefano Morra, Benjamin Schraen"
+title = "Gelfand-Kirillov dimension and mod p cohomology for GL2"
+year = 2023
+venue = "Invent. Math. 234 (2023), no. 1, 1-128"
+doi = "10.1007/s00222-023-01202-8"
+arxiv = "2009.03127v7"
+locator_scheme = "theorem"
+locator = "§1.1–1.4, pp. 2–11; §2.2, p. 13; §8.1–8.5 with all statements and proofs, pp. 86–109; §2.3 fundamental-character conventions, p. 14; Proposition 4.2.1, p. 28; Corollary 4.2.6, pp. 33–34; §4.3 and Proposition 4.3.1, pp. 34–35 (gap contract statements); §4.3, Proposition 4.3.1 and proof, Lemma 4.3.2 and Proposition 4.3.3 with proofs, pp. 34–40"
+url = "https://arxiv.org/abs/2009.03127v7"
+fetched_from = "https://arxiv.org/pdf/2009.03127v7"
+fetched_at = "2026-10-24T08:26:37Z"
+sha256 = "8f06c68bbb85aa3d13420181197167b3ce9158dc117e96da6299718765f99e7a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv:2009.03127v7 internal pages; cited version, not an unverified publisher-numbering claim."
+cited_for = ["GK.0/generic-global-datum; GK.0/bdj-weight-set; GK.0/residual-eigenspaces; GK.0/non-eisenstein-freeness; GK.0/infinite-level-representation; GK.0/bdj-weight-theorem; GK.0/ihara-at-auxiliary-place; GK.1/power-series-cancellation; GK.1/patched-deformation-ring; GK.1/type-quotients; GK.1/fixed-determinant-patching-functor; GK.1/shimura-curve-patching-functor; GK.1/patched-fibre-identity; GK.1/big-patched-module; GK.2/freeness-from-extension; GK.2/fibre-product-freeness; GK.3/patched-maximal-cohen-macaulay; GK.3/weight-and-type-freeness; GK.3/locally-algebraic-lattices; GK.3/projective-lift-freeness; GK.4/glued-lattices; GK.4/loewy-length-three; GK.4/adjoint-lattice-generation; GK.4/adjoint-type-lattices; GK.4/adjoint-lattice-freeness; GK.4/comparison-lattice-truncation; GK.4/generation-transfer; GK.4/glued-lattice-freeness; GK.4/second-truncation-multiplicity; GK.5/patched-gk-dimension; GK.5/second-congruence-invariants; GK.5/patched-faithful-flatness; GK.5/banach-lifts; GK.5/shimura-curve-gk-dimension; GK.5/completed-cohomology-and-big-hecke; GK.5/big-r-equals-big-t"]
+
+[[source]]
+id = "EGS15"
+authors = "Matthew Emerton, Toby Gee, David Savitt"
+title = "Lattices in the cohomology of Shimura curves"
+year = 2015
+arxiv = "1305.1594v3"
+locator_scheme = "theorem"
+locator = "§2.1 (Definition 2.1.1, Lemmas 2.1.2–2.1.6, the description of D(ρ)), pp. 9–11; Propositions 3.5.1–3.5.2, pp. 14–15; §6.1–6.4 (Definitions 6.1.1, 6.1.3, Lemma 6.1.4, the quaternionic spaces, (6.1) and functorial patching), pp. 32–37; Theorems 7.1.1 and 7.2.1, pp. 42–43; §10.1, definitions and proof of Proposition 10.1.11, pp. 59–65"
+url = "https://arxiv.org/abs/1305.1594v3"
+fetched_from = "https://arxiv.org/pdf/1305.1594v3"
+fetched_at = "2026-10-24T08:26:42Z"
+sha256 = "5bc8520f1317af40af528efc8e7c1ab810351c5397872b7e4ee9256b2e97a1e1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv:1305.1594v3 internal pages; GK citations use the 2012 numbering and are mapped to GK14 v5 by content."
+cited_for = ["GK.0/generic-global-datum; GK.0/bdj-weight-set; GK.0/residual-eigenspaces; GK.0/non-eisenstein-freeness; GK.0/bdj-weight-theorem; GK.0/ihara-at-auxiliary-place; GK.1/patched-deformation-ring; GK.1/type-quotients; GK.1/fixed-determinant-patching-functor; GK.1/shimura-curve-patching-functor; GK.1/patched-fibre-identity; GK.3/weight-and-type-freeness; GK.4/adjoint-type-lattices"]
+
+[[source]]
+id = "GN22"
+authors = "Toby Gee, James Newton"
+title = "Patching and the completed homology of locally symmetric spaces"
+year = 2022
+venue = "J. Inst. Math. Jussieu 21 (2022) 395-458"
+doi = "10.1017/S1474748020000158"
+arxiv = "1609.06965v5"
+locator_scheme = "theorem"
+locator = "Appendix A.1 (Definitions A.2, A.5, Proposition A.4, Lemmas A.7–A.9), pp. 42–44; §§A.12–A.30 (Proposition A.13, Lemmas A.15–A.19, A.21–A.28, Corollary A.29, Proposition A.30), pp. 45–50; §4.3, Proposition 4.3.1 and proof, pp. 31–32"
+url = "https://arxiv.org/abs/1609.06965v5"
+fetched_from = "https://arxiv.org/pdf/1609.06965v5"
+fetched_at = "2026-10-24T08:26:47Z"
+sha256 = "068818a4b0e12f97184d72cd7704663f5269f9297f017ff99172325ed5f67601"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv:1609.06965v5 internal pages; miracle flatness is Proposition A.30."
+cited_for = ["GK.2/iwasawa-cohen-macaulay; GK.2/iwasawa-grade-and-power-series; GK.2/iwasawa-cohen-macaulay-transfer; GK.2/iwasawa-miracle-flatness; GK.5/patched-gk-dimension; GK.5/patched-faithful-flatness; GK.5/completed-cohomology-and-big-hecke; GK.5/big-r-equals-big-t"]
+
+[[source]]
+id = "GK14"
+authors = "Toby Gee, Mark Kisin"
+title = "The Breuil-Mézard conjecture for potentially Barsotti-Tate representations"
+year = 2014
+arxiv = "1208.3179v5"
+locator_scheme = "theorem"
+locator = "Introduction, Theorems A and B, pp. 2–4; §5.2 (Remark 5.2.2), p. 26; §5.5 (Definitions 5.5.2–5.5.3, Corollary 5.5.4 and proof), pp. 33–35; §5.4.1, the augmentation surjection and module comparison, pp. 30–31; Corollary 5.5.7 and proof, pp. 35–36"
+url = "https://arxiv.org/abs/1208.3179v5"
+fetched_from = "https://arxiv.org/pdf/1208.3179v5"
+fetched_at = "2026-10-24T08:26:53Z"
+sha256 = "65cb5797bbe10e328843b5fdc73f2623c80e19fa89ceb72ce6cd296881eb68f9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv:1208.3179v5 internal pages, including its appendix; Theorem B and Corollaries 5.5.4 and 5.5.7 are distinguished."
+cited_for = ["GK.0/bdj-weight-theorem; GK.1/patched-deformation-ring; GK.1/shimura-curve-patching-functor"]
+
+[[source]]
+id = "DL21"
+authors = "Andrea Dotto, Daniel Le"
+title = "Diagrams in the mod $p$ cohomology of Shimura curves"
+year = 2021
+venue = "Compositio Mathematica, Volume 157, Issue 8, August 2021, pp. 1653 - 1723"
+doi = "10.1112/S0010437X21007375"
+arxiv = "1909.12219v2"
+locator_scheme = "theorem"
+locator = "§6.1 (spaces of mod p automorphic forms, Remark 6.1, Theorem 6.2), pp. 53–54; §6.2.1–6.2.2, pp. 54–55"
+url = "https://arxiv.org/abs/1909.12219v2"
+fetched_from = "https://arxiv.org/pdf/1909.12219v2"
+fetched_at = "2026-10-24T08:27:00Z"
+sha256 = "8c4f82ec57c4b961bca5d9adc8a3862e5614e97fb28cfd09c2cc5e3516cfaab3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v2"
+cited_for = ["GK.0/infinite-level-representation; GK.1/big-patched-module"]
+
+[[source]]
+id = "LE19"
+authors = "Daniel Le"
+title = "Multiplicity one for wildly ramified representations"
+year = 2019
+venue = "Alg. Number Th. 13 (2019) 1807-1827"
+doi = "10.2140/ant.2019.13.1807"
+arxiv = "1708.04582v2"
+locator_scheme = "theorem"
+locator = "Lemma 4.5 and its proof, §4, p. 16"
+url = "https://arxiv.org/abs/1708.04582v2"
+fetched_from = "https://arxiv.org/pdf/1708.04582v2"
+fetched_at = "2026-10-24T08:27:05Z"
+sha256 = "8ccde4d9e336a9d637abd5a0da6a80f21de7884b9a389c93f38e3143e570a814"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v2"
+cited_for = ["GK.3/weight-and-type-freeness; GK.4/adjoint-lattice-generation"]
+
+[[source]]
+id = "LMS22"
+authors = "Daniel Le, Stefano Morra, Benjamin Schraen"
+title = "Multiplicity one at full congruence level"
+year = 2022
+doi = "10.1017/S1474748020000225"
+arxiv = "1608.07987v3"
+locator_scheme = "theorem"
+locator = "§4, Lemma 4.5 and Proposition 4.6 with their proofs, pp. 14–15"
+url = "https://arxiv.org/abs/1608.07987v3"
+fetched_from = "https://arxiv.org/pdf/1608.07987v3"
+fetched_at = "2026-10-24T08:27:11Z"
+sha256 = "28d6965b625c1706b6d81503bed27d22b9cacf675a49609547ba2819a67e771e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v3"
+cited_for = ["GK.3/projective-lift-freeness"]
+
+[[source]]
+id = "BDJ10"
+authors = "Kevin Buzzard, Fred Diamond, Frazer Jarvis"
+title = "On Serre's conjecture for mod l Galois representations over totally real fields"
+year = 2010
+venue = "Duke Math. J. 155, no. 1 (2010), 105-161"
+doi = "10.1215/00127094-2010-052"
+arxiv = "0810.2106v5"
+locator_scheme = "theorem"
+locator = "§3.1–3.2, the definition of W_p(ρ) in the irreducible case (subsets J of the 2f embeddings mapping bijectively to the f embeddings) and in the reducible case (a subset of the semisimple set cut out by the extension class); §4, statements of Lemmas 4.6, 4.10 and 4.11"
+url = "https://arxiv.org/abs/0810.2106v5"
+fetched_from = "https://arxiv.org/pdf/0810.2106v5"
+fetched_at = "2026-10-24T08:27:17Z"
+sha256 = "29515a96071cc632970d41394a6a867f938ba8b09ae39a22862073fbf3ceb237"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v5"
+cited_for = ["GK.0/bdj-weight-set"]
+
+[[source]]
+id = "CEGGPS16"
+authors = "Ana Caraiani, Matthew Emerton, Toby Gee, David Geraghty, Vytautas Paskunas, Sug Woo Shin"
+title = "Patching and the p-adic local Langlands correspondence"
+year = 2016
+arxiv = "1310.0831v5"
+locator_scheme = "theorem"
+locator = "§2.12, Proposition 2.13, Remark 2.14 and the proof, p. 34; Lemmas 4.17–4.18 and proofs, pp. 62–66"
+url = "https://arxiv.org/abs/1310.0831v5"
+fetched_from = "https://arxiv.org/pdf/1310.0831v5"
+fetched_at = "2026-10-24T08:27:24Z"
+sha256 = "32acd023be82598de73c1757aba877fbeb89e5b82c23a64bcb378cc0f83b1077"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v5"
+cited_for = ["GK.1/big-patched-module; GK.3/locally-algebraic-lattices; GK.5/banach-lifts"]
+
+[[source]]
+id = "STACKS"
+year = 2026
+title = "The Stacks project"
+authors = "The Stacks project authors"
+locator_scheme = "tag"
+locator = "05G8; 00MK; 090V"
+url = "https://stacks.math.columbia.edu/tag/090V"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=090V"
+fetched_at = "2026-10-24T08:35:02Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["GK.2/freeness-from-extension; GK.2/iwasawa-miracle-flatness", "1.4; 2.2; 2.6; 3.3"]
+
+[[source]]
+id = "BRE14"
+authors = "Christophe Breuil, with an appendix by Lassina Dembélé"
+title = "Sur un problème de compatibilité local-global modulo p pour GL₂"
+year = 2014
+locator_scheme = "theorem"
+locator = "Lemma 9.2 and its proof, pp. 54–55"
+url = "https://www.imo.universite-paris-saclay.fr/~christophe.breuil/PUBLICATIONS/compamodp.pdf"
+fetched_from = "https://www.imo.universite-paris-saclay.fr/~christophe.breuil/PUBLICATIONS/compamodp.pdf"
+fetched_at = "2026-10-24T08:27:28Z"
+sha256 = "583a4a4d069b4b069c663db9571047b7f4d02ea27e836c8df02f081809504d2a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["GK.3/projective-lift-freeness"]
+
+version_note = "Author copy internal pagination; Lemma 9.2 is pp. 54–55."
+[[source]]
+id = "HAM75"
+year = 1975
+title = "On power-invariance"
+authors = "Eloise Hamann"
+locator_scheme = "theorem"
+locator = "Theorem 4, printed p. 155"
+url = "https://msp.org/pjm/1975/61-1/pjm-v61-n1-p17-p.pdf"
+fetched_from = "https://msp.org/pjm/1975/61-1/pjm-v61-n1-p17-p.pdf"
+fetched_at = "2026-10-24T08:28:41Z"
+sha256 = "29b601cf166b3c8c9771a1e57e659b77f8b731f61fca6d484db8900cedd52931"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["1.1"]
+version_note = "Publisher-open PDF; printed p. 155 is PDF page 4."
