@@ -4864,6 +4864,36 @@
         "AdicCoefficientsAndComparisonsPartII:PA.6/char-s-desingularization-of-morphisms"
       ],
       "detail": "Universal P-resolvability is used with projective resolving alterations (ILO Exposé X §3.3.3; source issue E5). Cossart–Piltant Theorem 1.1 resolves a reduced separated noetherian quasi-excellent scheme Y of dimension at most three by a proper birational morphism that is projective only over the members of a specified finite affine cover (projective when Y = Spec of a complete local ring, Corollary 1.2). Neither Temkin §4.3.2 nor ILO X Remark 3.3.4 derives a globally projective resolution of an arbitrary (possibly non-affine, possibly non-separated) alteration Y of a qe threefold with snc preimage of a given nowhere dense Z. The embedded part is supplied by Cossart–Jannsen–Saito Corollary 0.4 (from their Theorem 0.3) in the regular (hence excellent) ambient, and the first step is projective when Y is affine (Cossart–Piltant Remark 1.4); global projectivity of the first step, and the non-separated case, are not established here. This affects the projectivity of a and b in Temkin Theorems 1.2.5 and 1.2.9 whenever the base is handled through the Cossart–Piltant input (dimension three, or dimension two and not excellent); the dimension ≤ 2 excellent and dimension ≤ 1 cases, and every statement over fields and one-dimensional bases (ILO X 2.1, 2.4, Jannsen 2.11, Dittmann–Pop 3.4), do not depend on it."
+    },
+    {
+      "slug": "finite-type-fp-factorization",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "0.9",
+      "needs": "Every finite-type quasi-separated morphism X → S with S qcqs factors as a closed immersion X → X₀ followed by a finitely presented morphism X₀ → S, with the factorization compatible with restricting the quasi-compact flat finitely presented locus needed in the flattening argument."
+    },
+    {
+      "slug": "maximal-separable-p-extension",
+      "supplier": "LocalFieldsRamificationPartII",
+      "section": "GF.0/maximal-p-extension",
+      "needs": "Every separable P-extension inside a fixed separable closure is contained in a maximal separable P-extension whose top field is separably P-closed, with every finite subextension separable of P-number degree."
+    },
+    {
+      "slug": "closed-subset-log-structure",
+      "supplier": "CrystallineCohomology",
+      "section": "CR.5:log-algebra.4",
+      "needs": "For a reduced locally noetherian X and nowhere dense closed Z with complement j : U → X, O_X ∩ j_*O_U× is a log structure, agrees with the supplied divisorial structure for regular SNC pairs, and recovers every log regular fs structure from its triviality locus, including injectivity into O_X."
+    },
+    {
+      "slug": "very-tame-local-quotient",
+      "supplier": "LefschetzPencilsAndVanishingCycles",
+      "section": "0.10",
+      "needs": "The §0.10 very tame quotient identifies the invariant log sheaf, has abelian inertia of residue-invertible order and standard Kummer étale strict-local charts, and the very tame locus in a log regular fs scheme is open, compatibly with localization of its Gabber modification."
+    },
+    {
+      "slug": "log-blowup-universal-property",
+      "supplier": "LefschetzPencilsAndVanishingCycles",
+      "section": "0.10",
+      "needs": "The log blow-up carrier of §0.10 has the universal property for making a coherent log ideal invertible, and its fs saturation supplies the saturated log blow-up on the same shared log-scheme carrier."
     }
   ],
   "sourceIssues": [
