@@ -4269,55 +4269,61 @@
     }
   ],
   "gaps": [
-    {
-      "title": "PadicHodgeTheory has no Part II for the inputs of the model-free comparison",
-      "neededBy": [
-        "GaloisSectionsPadicPeriodMaps:SPM.2/restriction-induction",
-        "GaloisSectionsPadicPeriodMaps:SPM.4/horizontal-transport-polyannulus",
-        "GaloisSectionsPadicPeriodMaps:SPM.4/period-map-controls-local-representations",
-        "GaloisSectionsPadicPeriodMaps:SPM.5/abelian-by-finite-period-diagram",
-        "GaloisSectionsPadicPeriodMaps:SPM.7/type-a-classes",
-        "GaloisSectionsPadicPeriodMaps:SPM.7/type-a-period-non-density",
-        "GaloisSectionsPadicPeriodMaps:SPM.7/type-b-period-non-density"
-      ],
-      "detail": "Three inputs routed to PadicHodgeTheory by the reviewed extraction PAPER-BETTS-STIX-25 are not planned there: Shimizu's specialisation isomorphism and D^∇_pst (Betts–Stix Definition 3.24, Lemma 3.25, Corollary 3.26), the Galois category of a spherical polyannulus (Lemma 3.27), and the full faithfulness of D_pH on de Rham representations (Theorem 2.9). PadicHodgeTheory is a TauCetiRoadmap pull request, and its Part II (DESIGN-PadicHodgeTheoryPartII) has not been designed; the needs are filed at P8 and R06.3. Re-point the requests when the Part II's stages exist."
-    },
-    {
-      "title": "MordellLawrenceVenkatesh plans only the good-reduction forms of the Lawrence–Venkatesh inputs",
-      "neededBy": [
-        "GaloisSectionsPadicPeriodMaps:SPM.1/fibre-symplectic-pair",
-        "GaloisSectionsPadicPeriodMaps:SPM.1/relative-symplectic-pair",
-        "GaloisSectionsPadicPeriodMaps:SPM.4/period-map-controls-local-representations",
-        "GaloisSectionsPadicPeriodMaps:SPM.4/period-maps-control-dpst",
-        "GaloisSectionsPadicPeriodMaps:SPM.5/abelian-by-finite-period-diagram",
-        "GaloisSectionsPadicPeriodMaps:SPM.5/lagrangian-period-modules",
-        "GaloisSectionsPadicPeriodMaps:SPM.5/p-adic-hodge-symplectic-pair",
-        "GaloisSectionsPadicPeriodMaps:SPM.6/period-domain-lv-locus",
-        "GaloisSectionsPadicPeriodMaps:SPM.6/principal-trichotomy",
-        "GaloisSectionsPadicPeriodMaps:SPM.7/type-a-classes",
-        "GaloisSectionsPadicPeriodMaps:SPM.7/type-a-classes-finite",
-        "GaloisSectionsPadicPeriodMaps:SPM.7/type-a-locus-finite",
-        "GaloisSectionsPadicPeriodMaps:SPM.7/type-b-factor-non-density",
-        "GaloisSectionsPadicPeriodMaps:SPM.7/type-b-locus-finite",
-        "GaloisSectionsPadicPeriodMaps:SPM.8/type-c-empty"
-      ],
-      "detail": "The reviewed routes 2–5 of PAPER-BETTS-STIX-25 make Betts–Stix a source of LV.1, LV.2, LV.3 and LV.7, but the accepted MordellLawrenceVenkatesh packet and package plan the residue-disk, good-model, friendly-place and r ≥ 5 forms only. The model-free statements (symplectic Faltings lemma, fibre symplectic structures over a field, model-free period maps and their complex comparison at K_v-points, the isotropic four-Lagrangian lemma, Kodaira–Parshin fibres over K_v-points) are filed as requests at LV.1, LV.2, LV.3, LV.7 and LV.8. They are needed before the targets of SPM.4–SPM.8 can be formalised."
-    },
-    {
-      "title": "Catalogue edge to the existing LocalGaloisGroups roadmap",
-      "neededBy": [
-        "GaloisSectionsPadicPeriodMaps:SPM.8/small-extension-count"
-      ],
-      "detail": "The existing TauCetiRoadmap LocalGaloisGroups README, Layer 7 (exact rank of the full absolute Galois group), and Suggested.lean, isTopologicallyFinitelyGenerated_absoluteGaloisGroup and rank_absoluteGaloisGroup, supply topological finite generation of the full G_v with [K_v:Q_p]+2 generators. These statements were read in current upstream main; no new theory is planned here. LocalGaloisGroups is one of the roadmaps absent from this atlas snapshot, so its layer id cannot yet be a validated prerequisite. Register that existing layer in the atlas catalogue and replace this recorded graph gap by its exact layer edge; the mathematical dependency is already supplied upstream."
-    },
-    {
-      "title": "Orbit-dimension input beyond the stated ReductiveGroups Layer 3",
-      "neededBy": [
-        "GaloisSectionsPadicPeriodMaps:SPM.2/orbit-lemma"
-      ],
-      "detail": "The orbit-map proof of Betts–Stix Lemma 2.15, p. 12, needs the finite-type image-dimension bound dim closure(f(X)) ≤ dim X, and hence dim closure(H·x) ≤ dim(H/Z) when a closed central scalar torus Z acts trivially. Existing ReductiveGroups Layer 3 states closed subgroups and quotients but does not state this orbit-dimension result. Import the generic geometric bound from its eventual owner, or have the ReductiveGroups request supply this consequence, before discharging this target; do not treat it as an already supplied theorem."
-    }
-  ],
+  {
+    "slug": "dpH-full-faithfulness",
+    "supplier": "PadicHodgeTheory",
+    "section": "§§3.5, 5.3",
+    "needs": "For every finite extension F/ℚₚ, the functor D_pH from de Rham ℚₚ-representations to filtered discrete (φ,N,G_F)-modules is fully faithful and symmetric monoidal, with the comparison over F̄ and compatibility with restriction and finite induction."
+  },
+  {
+    "slug": "horizontal-pst-specialisation",
+    "supplier": "PadicHodgeTheory",
+    "section": "§§7.3, 7.5",
+    "needs": "On spherical polyannuli over every finite F/ℚₚ, provide the horizontal semistable period ring, potentially horizontal semistable realisations, the relative monodromy theorem for a de Rham pair with a horizontal basis, and the φ,N,G_F-equivariant specialisation isomorphisms D_pst^∇(E) ≅ D_pst(E_y) compatible with its actual de Rham comparison."
+  },
+  {
+    "slug": "polyannulus-integral-local-systems",
+    "supplier": "PadicHodgeTheory",
+    "section": "§7.3",
+    "needs": "For F/ℚₚ finite and R=O_F⟨t₁±¹,…,tₙ±¹⟩, identify finite étale covers of Sp(R[1/p]) with the Galois category of finite étale R[1/p]-algebras and identify finite-rank integral local systems with continuous representations of its profinite fundamental group, compatibly with the map to G_F and point fibres."
+  },
+  {
+    "slug": "model-free-polarised-fibres",
+    "supplier": "MordellLawrenceVenkatesh",
+    "section": "§§2.1, 2.4, 2.9",
+    "needs": "For polarised abelian-by-finite families over characteristic-zero fields, provide the induced H⁰-linear perfect alternating H¹ pairings from half the Poincaré Chern class, their Lagrangian de Rham filtration, and horizontal transport preserving algebra, module and pairing on any trivialising closed polydisc, including the induced trivialisation of the finite étale base."
+  },
+  {
+    "slug": "model-free-period-maps",
+    "supplier": "MordellLawrenceVenkatesh",
+    "section": "§§3.12–3.19",
+    "needs": "For smooth varieties over every finite F/ℚₚ and every F-point, provide local horizontal trivialisations and the inverse-transport period map, its flag functor, comparison of its Zariski closure with complex periods at F-rational centres, density under full monodromy, and finite intersection with a proper closed subvariety on a closed curve disc."
+  },
+  {
+    "slug": "symplectic-faltings-finiteness",
+    "supplier": "MordellLawrenceVenkatesh",
+    "section": "§1.2",
+    "needs": "For every number field, prime p, finite S containing p and infinity, integers n≥0, d>0 and B≥1, provide GSp-irreducibility as absence of a nonzero stable isotropic subspace and finiteness up to symplectic isomorphism of rank-2d representations unramified and pure of weight n outside S whose Frobenius eigenvalues are algebraic integers of degree over ℚ at most B, including the integer-polynomial case B=2d."
+  },
+  {
+    "slug": "four-isotropic-lagrangians",
+    "supplier": "MordellLawrenceVenkatesh",
+    "section": "§LV.7, Lagrangians in general position",
+    "needs": "For every finite-dimensional symplectic space over a field and r≥4, prove that r-tuples admitting a nonzero isotropic subspace meeting each Lagrangian in at least half its dimension lie in a proper Zariski-closed subscheme of the r-fold Lagrangian Grassmannian."
+  },
+  {
+    "slug": "kodaira-parshin-local-fibres",
+    "supplier": "MordellLawrenceVenkatesh",
+    "section": "§§8.13–8.14",
+    "needs": "For every characteristic-zero extension F/K and y∈Y(F), describe the geometric finite-base fibre of the Kodaira–Parshin family G_F-equivariantly by conjugacy classes of punctured-curve surjections to Aff(q) nontrivial on inertia, with the equal-fibre surjection to primitive cyclic characters, including F=K_v."
+  },
+  {
+    "slug": "linnik-polynomial-least-prime",
+    "supplier": "AnalyticNumberTheoryPartI",
+    "section": "§0.32",
+    "needs": "There are absolute constants C>0 and L>0 such that every coprime residue class a modulo m≥2 contains a prime q≤C m^L, with constants independent of a and m."
+  }
+],
   "sourceIssues": [
     {
       "id": "GaloisSectionsPadicPeriodMaps/E1",
