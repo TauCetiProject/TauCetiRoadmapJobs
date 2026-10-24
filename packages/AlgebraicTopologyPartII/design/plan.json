@@ -4139,6 +4139,60 @@
       "neededBy": [
         "AlgebraicTopologyPartII:AT2.12/surface-loop-representatives"
       ]
+    },
+    {
+      "slug": "finite-cw-fixed-point-trace",
+      "needs": "For a self-map of a Hausdorff finite CW complex with no fixed point, the alternating rational homology trace is zero, naturally under finite-CW models and the singular/cellular comparison.",
+      "supplier": "AlgebraicTopology",
+      "section": "Stage 7"
+    },
+    {
+      "slug": "semialgebraic-equivariant-sites",
+      "needs": "Extend §2.23 to abelian sheaves on finite-cover semialgebraic Grothendieck sites, with derived supported sections and extension by zero, quotient and Hochschild–Serre spectral sequences with their injective acyclicity, and regular induced-coefficient comparison.",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "2.23"
+    },
+    {
+      "slug": "semialgebraic-derived-adjunction",
+      "needs": "Extend §§2.7, 2.19 and 2.23 to the generic proper-support/right-adjoint and triangle-replacement interfaces on the semialgebraic sites, including exact-adjoint criteria for finite-free coefficient tensor functors and the finite-group Borel approximation comparison.",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "2.7, 2.19, 2.23"
+    },
+    {
+      "slug": "finite-group-ext-stalk",
+      "needs": "For a finite group acting trivially on a base site with exact filtered stalks, identify the stalk of the sheaf Ext from the constant integral equivariant sheaf with group cohomology of the coefficient stalk, naturally in restrictions, using a degreewise finite-rank resolution.",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "2.23"
+    },
+    {
+      "slug": "real-closed-semialgebraic-geometry",
+      "needs": "Extend the geometry direction of Layers 3 and 6 with finite compatible semialgebraic triangulation, dimension, locally complete chart gluing and finite free quotients over arbitrary real closed fields, support cohomological dimension bounded by dimension, and natural comparison with ordinary topology over ℝ.",
+      "supplier": "RealAlgebraicGeometry",
+      "section": "Layers 3 and 6"
+    },
+    {
+      "slug": "configuration-cover-comparison",
+      "needs": "Expose §§3.5–3.8 and §6.5 on the ordered-root S_m torsor and its rational representation local systems, with finite-cover descent, geometric Frobenius, scalar extension, compact supports and Poincaré duality compatible in one comparison diagram.",
+      "supplier": "EtaleDualityAndPerverseSheaves",
+      "section": "3.5–3.8 and 6.5"
+    },
+    {
+      "slug": "configuration-carrier-generality",
+      "needs": "Extend §IG.5.1 ordered/unordered configuration carriers and their embedding functoriality to every topological space, reserving Hausdorffness for the covering theorem, and represent formal monic degree-m polynomials by coefficient tuples over every ring, including the zero ring.",
+      "supplier": "InverseGaloisAndArithmeticFundamentalGroups",
+      "section": "IG.5.1"
+    },
+    {
+      "slug": "semialgebraic-duality-coefficients",
+      "needs": "Expose §7.6b on locally complete finite-atlas semialgebraic homology manifolds with arbitrary commutative noetherian coefficient rings, the bounded locally constant orientation formula, definably proper supports and trace adjunction, and two-sided perfect duality for finite-stalk local systems.",
+      "supplier": "MotivesAndAlgebraicCycles",
+      "section": "7.6b"
+    },
+    {
+      "slug": "supported-steenrod-comparison",
+      "needs": "Expose §7.6b Steenrod squares on ordinary, relative, equivariant and supported semialgebraic cohomology with instability, Adem relations, Sq¹ as reduced integral Bockstein, finite Borel and real-closed-extension compatibility, and the Thom identity.",
+      "supplier": "MotivesAndAlgebraicCycles",
+      "section": "7.6b"
     }
   ],
   "sourceIssues": [

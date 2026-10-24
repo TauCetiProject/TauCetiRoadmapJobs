@@ -1,0 +1,183 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AlgebraicTopologyPartII"
+
+[[source]]
+id = "BS"
+authors = "Tim Browning; Will Sawin"
+title = "A geometric version of the circle method"
+year = 2020
+locator_scheme = "section"
+locator = "§1 p.894; §2 proof of Lemma 2.8, p.907; §3 Lemma 3.9, p.919; §7 Definition 7.3, Lemmas 7.4–7.6 and Corollary 7.5, pp.941–945"
+cited_for = ["Layer 1", "Layer 2", "Layer 3", "Layer 4", "Layer 5"]
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n3-p04-s.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n3-p04-s.pdf"
+fetched_at = "2026-10-24T03:00:25Z"
+sha256 = "f20c87e337c054e42134bf2daf577203ce4b391e0d22ff59b9425d1249c33c53"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+
+[[source]]
+id = "BW"
+authors = "Olivier Benoist; Olivier Wittenberg"
+title = "On the integral Hodge conjecture for real varieties, I"
+year = 2020
+doi = "10.1007/s00222-020-00965-8"
+arxiv = "1801.00872v3"
+locator_scheme = "theorem"
+locator = "Sections 1.1–1.6, internal pp.8–31; Lemma 3.5, pp.41–42; Lemma 3.15, pp.46–47; Lemma 5.9, p.62"
+cited_for = ["Layer 10", "Layer 11", "Layer 12", "Layer 13", "Layer 6", "Layer 7", "Layer 8", "Layer 9"]
+url = "https://arxiv.org/abs/1801.00872v3"
+fetched_from = "https://arxiv.org/pdf/1801.00872v3"
+fetched_at = "2026-10-24T03:01:52Z"
+sha256 = "9fb55d1d7532b003390f94424ae76ff35d6654658939256e0926ec4f7a33f65f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "The text read is arXiv:1801.00872v3 (67 pages). The cited theorem and equation numbers agree with the journal version; every README page locator uses v3 internal pagination, rather than the journal pages in the design. The journal author URLs timed out; the arXiv text was fetched through the sources service."
+
+[[source]]
+id = "B19"
+authors = "Olivier Benoist"
+title = "The period-index problem for real surfaces"
+year = 2019
+locator_scheme = "section"
+locator = "§2.1–2.3, pp.71–75; §3.2, pp.77–78; §4.2, diagrams (4.3)–(4.5), pp.82–83; Proposition 6.6 proof, pp.93–95; §7.1–7.4, pp.97–103; §8.1, pp.104–107; loop applications p.91"
+cited_for = ["Layer 12", "Layer 14", "Layer 15", "Layer 16", "Layer 7"]
+url = "https://www.numdam.org/item/10.1007/s10240-019-00108-7.pdf"
+fetched_from = "https://www.numdam.org/item/10.1007/s10240-019-00108-7.pdf"
+fetched_at = "2026-10-24T02:58:45Z"
+sha256 = "8dfc0f221ab510ba1ecfe7c5b5fde12c217019f33d704ea89ce1a0c144398d3b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+
+[[source]]
+id = "CEF"
+authors = "Thomas Church; Jordan S. Ellenberg; Benson Farb"
+title = "Representation stability in cohomology and asymptotics for families of varieties over finite fields"
+year = 2014
+locator_scheme = "section"
+locator = "Proposition 3.3, pp.19–20; Theorem 3.7, pp.21–22"
+cited_for = ["Layer 2"]
+url = "https://www.math.uchicago.edu/~farb/papers/Pn-FqT.pdf"
+fetched_from = "https://www.math.uchicago.edu/~farb/papers/Pn-FqT.pdf"
+fetched_at = "2026-10-24T02:58:48Z"
+sha256 = "efb6da223a591e8778ab26fac29aae201fdc40c9daf6471763184ef736a17227"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+
+[[source]]
+id = "HILTON"
+authors = "Peter J. Hilton"
+title = "On the homotopy groups of the union of spheres"
+year = 1955
+doi = "10.1112/jlms/s1-30.2.154"
+locator_scheme = "theorem"
+locator = "Theorem A, pp.154–155; Corollary 4.10, p.162"
+cited_for = ["Layer 4"]
+url = "https://doi.org/10.1112/jlms/s1-30.2.154"
+licence_class = "none"
+status = "uncertified"
+version_note = "Publisher locator only. The sources service reached the DOI landing page, which returned HTTP 403; no legal readable publisher text was obtained. The secondary use in BS Lemma 7.6 was read, but does not certify the Hilton text."
+
+[[source]]
+id = "SERRE"
+authors = "Jean-Pierre Serre"
+title = "Homologie singulière des espaces fibrés. Applications"
+year = 1951
+locator_scheme = "section"
+locator = "Chapter V §3 Proposition 3, pp.492–494; §6 Lemma 7 and Corollary 2, pp.497–498"
+cited_for = ["Layer 4"]
+url = "https://www.college-de-france.fr/media/jean-pierre-serre/UPL7235285843586540944_Serre_The_se.pdf"
+fetched_from = "https://www.college-de-france.fr/media/jean-pierre-serre/UPL7235285843586540944_Serre_The_se.pdf"
+fetched_at = "2026-10-24T02:59:21Z"
+sha256 = "e12bdd477d3e1ebccced80d18f8ee6d0708f4a1bc2afbeaa065da9e734ce6be8"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+
+[[source]]
+id = "SULLIVAN"
+authors = "Dennis Sullivan"
+title = "Infinitesimal computations in topology"
+year = 1977
+locator_scheme = "section"
+locator = "Introduction, pp.269–270; §11 loop models, pp.311–312"
+cited_for = ["Layer 4"]
+url = "https://www.numdam.org/item/10.1007/BF02684341.pdf"
+fetched_from = "https://www.numdam.org/item/10.1007/BF02684341.pdf"
+fetched_at = "2026-10-24T02:59:22Z"
+sha256 = "ba6e3f93cad5e39559642920223b99a5657d3afb3a26a8a9037da30482b13d93"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+
+[[source]]
+id = "PHAM"
+authors = "Frédéric Pham"
+title = "Formules de Picard-Lefschetz généralisées et ramification des intégrales"
+year = 1965
+locator_scheme = "section"
+locator = "Part I §2, Theorem 1 and deformation-retraction lemma, pp.337–338"
+cited_for = ["Layer 5"]
+url = "https://www.numdam.org/item/BSMF_1965__93__333_0.pdf"
+fetched_from = "https://www.numdam.org/item/BSMF_1965__93__333_0.pdf"
+fetched_at = "2026-10-24T02:59:23Z"
+sha256 = "a3b848f1c530ff387adbe47592954b0df09285059cc5f1214294cdf7d79eacda"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+
+[[source]]
+id = "BROUGHTON"
+authors = "S. Allen Broughton"
+title = "Milnor numbers and the topology of polynomial hypersurfaces"
+year = 1988
+locator_scheme = "section"
+locator = "Theorem 1.2, p.219; Definition 3.1 and examples, pp.225–226; §4 Proposition 4.1, Corollary 4.2, Lemma 4.3 and Theorem 1.2 proof, pp.228–232; local Milnor/Morse prerequisites remain G1"
+cited_for = ["Layer 4"]
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0092/LOG_0016.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0092/LOG_0016.pdf"
+fetched_at = "2026-10-24T03:00:37Z"
+sha256 = "afd5141b22e0b2890aa2daaaabf603aaa66945dc4992d06ff596080b9ae6f968"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Institutional scan recognised by OCR; Theorem 1.2 is on printed p.219. For a regular fibre its fibre Milnor number is zero, leaving the total Milnor number."
+
+[[source]]
+id = "EP"
+authors = "Mário J. Edmundo; Luca Prelli"
+title = "The six Grothendieck operations on o-minimal sheaves"
+year = 2014
+arxiv = "1401.0846v3"
+locator_scheme = "section"
+locator = "§2.3 definable normality, pp.10–12; §4.1 Theorems 4.1,4.7, pp.46–50; §4.2 Theorems 4.8–4.9 and Remark 4.10, pp.50–51"
+cited_for = ["Layer 8"]
+url = "https://arxiv.org/abs/1401.0846v3"
+fetched_from = "https://arxiv.org/pdf/1401.0846v3"
+fetched_at = "2026-10-24T03:00:49Z"
+sha256 = "9579d1fbdc3749e1ae960351e115362141db305ab472e687c81476294cda7435"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Use v3 internal theorem numbering: Theorems 4.1, 4.7–4.9; no assertion about published numbering."
+
+[[source]]
+id = "MATHER"
+authors = "John Mather"
+title = "Notes on Topological Stability"
+year = 1970
+locator_scheme = "section"
+locator = "Section 11 Proposition 11.1, original notes p.62, PDF p.34; control data in Sections 7 and 10"
+cited_for = ["Layer 16"]
+url = "https://web.math.princeton.edu/facultypapers/mather/notes_on_topological_stability.pdf"
+fetched_from = "https://web.math.princeton.edu/facultypapers/mather/notes_on_topological_stability.pdf"
+fetched_at = "2026-10-24T03:01:36Z"
+sha256 = "c47addfee292b21bdedd4f29eeef9a0e9d7a66b1b68f516962152ba65b6d2a5b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "The institutional author scan has two original pages on many PDF pages; the isotopy lemma is on PDF p.34, left original page 62. The cache text is OCR."
