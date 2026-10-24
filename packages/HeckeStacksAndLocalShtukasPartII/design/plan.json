@@ -3651,83 +3651,52 @@
   ],
   "gaps": [
     {
-      "title": "G1 — Generic root-data extensions",
-      "neededBy": [
-        "HeckeStacksAndLocalShtukasPartII:HSD1/minimal-reduction",
-        "HeckeStacksAndLocalShtukasPartII:HSD1/minimal-geometry",
-        "HeckeStacksAndLocalShtukasPartII:HSD5/double-flat",
-        "HeckeStacksAndLocalShtukasPartII:HSD5/factor-data",
-        "HeckeStacksAndLocalShtukasPartII:HSD7/basic-seed",
-        "HeckeStacksAndLocalShtukasPartII:HSD8/large-translation"
-      ],
-      "detail": "The current RootSystems Coxeter/chamber targets do not yet provide all of: twisted extended-affine Red-Min with straight–finite-parabolic decomposition; associative Demazure product and support union; parabolic minimal representatives in the needed directions; integral dominance subtraction in P∨ with least-element, monotonicity and associativity proofs. Propose a single generic RootSystems Part II extension, and import it. Fundamental coweights must carry their lattice map; a rational dominance truncation is not a substitute. The basic-seed route also needs the twisted-Coxeter-to-basic minimal reduction cited in He14 Proposition 11.7 as He–Yang, Elements with finite Coxeter part in an affine Weyl group, Theorem 1.1; that proof was not read here and remains a supplier audit obligation."
+      "slug": "twisted-redmin-demazure",
+      "needs": "The associative extended-affine Demazure product with support union, parabolic minimum comparisons, twisted Red-Min and strong conjugacy, and straight–finite-parabolic decomposition, including the finite-Coxeter basic-class input.",
+      "supplier": "RootSystemsPartII",
+      "section": "RS2.1 (extension of integral-order and affine combinatorics)"
     },
     {
-      "title": "G2 — Dimension on bounded and perfect geometric diagrams",
-      "neededBy": [
-        "HeckeStacksAndLocalShtukasPartII:HSD0/geometric-realization",
-        "HeckeStacksAndLocalShtukasPartII:HSD6/correspondence-dimensions"
-      ],
-      "detail": "SF.0/fibre-dimension-formula already supplies the finite-type dimension inequalities, and GS0:Witt-geometry/perfect-model-and-etale-comparison requests compatible perfect models from SF.0/SF.1. Import these promises. The remaining obligation is to produce compatible bounded models of the particular ADLV and Frobenius-chain diagrams, and pass their inequalities to the dimension supremum at a generic point of each bounded target. An entire ADLV may have infinitely many components; no global finite-component or quasi-compactness assumption is supplied."
+      "slug": "dominant-subtraction",
+      "needs": "Least dominant subtraction in the specified integral coroot coset of the full coweight lattice, with existence, monotonicity, associativity, fundamental-coweight comparisons and the original-lattice map.",
+      "supplier": "RootSystemsPartII",
+      "section": "RS2.1 (integral-order)"
     },
     {
-      "title": "G3 — Generic twisted affine-Hecke cocenter",
-      "neededBy": [
-        "HeckeStacksAndLocalShtukasPartII:HSD1/class-polynomial-dimension",
-        "HeckeStacksAndLocalShtukasPartII:HSD7/basic-seed"
-      ],
-      "detail": "SmoothRepresentationsOfLocalGroups SR.1 owns Hecke algebras, but its present promise does not include the integral twisted cocenter basis, class-polynomial positivity, reduction recursion and nonzero twisted-Coxeter coefficient. Extend that direction once; do not manufacture an opaque polynomial oracle here. HN14 Theorem 6.7 and the relevant He14 §§2,11 inputs need the full generic algebra audit."
+      "slug": "twisted-affine-cocenter",
+      "needs": "The integral twisted affine-Hecke cocenter basis, positive class polynomials with their degree recursion, and the nonzero twisted-Coxeter coefficient with corrected twisted support.",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.1.5 (presentations of the Iwahori–Hecke algebra)"
     },
     {
-      "title": "G4 — Perfect spherical proof transfers",
-      "neededBy": [
-        "HeckeStacksAndLocalShtukasPartII:HSD2/lattice-strata",
-        "HeckeStacksAndLocalShtukasPartII:HSD2/chart-dimension",
-        "HeckeStacksAndLocalShtukasPartII:HSD3/unipotent-loop-comparison",
-        "HeckeStacksAndLocalShtukasPartII:HSD3/levi-reduction",
-        "HeckeStacksAndLocalShtukasPartII:HSD3/convolution-estimate",
-        "HeckeStacksAndLocalShtukasPartII:HSD3/spherical-dimension"
-      ],
-      "detail": "Zhu invokes adaptations of equal-characteristic arguments on p-adic loop spaces. Required checks are actual Teichmüller chart morphisms and their dimension comparison; equivariant N-versus-Lie N with its precise characteristic hypotheses; admissibility and twisted Lang-map dimensions; and the perfect-space trace input to GHKR Lemma 5.4.3. Current GS0 already supplies flag incidence spaces and their fibre bounds, and GS2:correspondences/rational-special-fibre-convolution supplies the spherical semismallness bound. Import them. The ADLV application still checks nonempty top-endpoint attainment and compatible bounded pullbacks. A point bijection alone supplies none of the missing chart or Lang geometry."
+      "slug": "levi-intersection-dimension",
+      "needs": "The general-Levi bound d(μ,μ_M) ≤ 〈ρ,μ+μ_M〉 − 〈2ρ_M,μ_M〉 and equality at M-maximal positions on compatible perfect models.",
+      "supplier": "GeometricSatakeAndFusion",
+      "section": "GS1, semi-infinite-affineness"
     },
     {
-      "title": "G5 — General σ and local-field flag geometry",
-      "neededBy": [
-        "HeckeStacksAndLocalShtukasPartII:HSD0/geometric-realization",
-        "HeckeStacksAndLocalShtukasPartII:HSD1/reduction-geometry",
-        "HeckeStacksAndLocalShtukasPartII:HSD3/virtual-upper-bound",
-        "HeckeStacksAndLocalShtukasPartII:HSD4/mazur",
-        "GeometricSatakeAndFusion:GS0:Witt-geometry/flag-convolution-fibres",
-        "HeckeStacksAndLocalShtukasPartII:HSD8/main-criterion"
-      ],
-      "detail": "The read geometric endpoint source is split equal characteristic; He14 uses tame good-characteristic adjoint reduction, and its Corollary 10.4 assumes δ=id. Supply the σ-twisted, ramified and mixed-characteristic flag versions and normalized dimension comparisons before claiming the full He21 local-field scope. A spherical perfect-space construction is not the missing flag construction."
+      "slug": "unipotent-linearization",
+      "needs": "The M-equivariant F-scheme comparison of a parabolic unipotent radical with its Lie algebra at its exact characteristic hypotheses, together with a characteristic-independent replacement sufficient for the twisted Lang dimension calculation.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.3 (parahoric-subgroup and root-group structure)"
     },
     {
-      "title": "G6 — Superbasic definition and classification",
-      "neededBy": [
-        "HeckeStacksAndLocalShtukasPartII:HSD3/superbasic-factors"
-      ],
-      "detail": "The B(G) owner must provide superbasic = meeting no proper F-Levi, its equivalence to the required anisotropic-centralizer condition, and the classification of F-simple adjoint unramified superbasic factors as Res_(E/F)PGL_h, with GL_h lift and κ bookkeeping. CKV Lemma 3.1.1 cites Tits’s anisotropic classification, not established by the present reading. Record that exact residual source dependency."
+      "slug": "general-flag-geometry",
+      "needs": "The σ-twisted ramified and mixed-characteristic flag moduli and incidence comparisons, with compatible bounded perfect models and the ordinary and Demazure fibre bounds for every local-field datum used here.",
+      "supplier": "GeometricSatakeAndFusion",
+      "section": "GS0, flag-incidence-correspondences and flag-convolution-fibres"
     },
     {
-      "title": "G7 — Basic-seed proof and original-lattice descent",
-      "neededBy": [
-        "HeckeStacksAndLocalShtukasPartII:HSD3/adjoint-components",
-        "HeckeStacksAndLocalShtukasPartII:HSD6/cordial-reduction",
-        "HeckeStacksAndLocalShtukasPartII:HSD7/basic-seed",
-        "HeckeStacksAndLocalShtukasPartII:HSD7/cordial-interval",
-        "HeckeStacksAndLocalShtukasPartII:HSD8/main-criterion"
-      ],
-      "detail": "The basic seed used in He21 §6.3 need not be shrunken, so the cited He15 Theorem 2.27 does not suffice. Finish the nonzero-γ twisted cocenter proof, with the corrected choices and σ-saturated support in He14 Proposition 11.6, and the finite-quotient γ=0 case. Then transport from the verified simple-adjoint good-characteristic setting. Independently compare original-group components and integral κ when γ and λ^♭♭ lie only in P∨. GHN’s official erratum retains a characteristic condition and supplies componentwise comparison, not an unconditional global immersion."
+      "slug": "superbasic-classification",
+      "needs": "Superbasic classes as those meeting no proper F-Levi, the criterion that J_b/Z(G) is F-anisotropic and the unramified F-simple adjoint classification as restrictions of PGL_h, with a GL_h lift preserving the specified integral component.",
+      "supplier": "BunGAndNewtonStrata",
+      "section": "§1.18 (basic sigma class)"
     },
     {
-      "title": "G8 — Newton-cell purity and poset lengths",
-      "neededBy": [
-        "HeckeStacksAndLocalShtukasPartII:HSD4/generic-newton",
-        "HeckeStacksAndLocalShtukasPartII:HSD4/generic-dimension",
-        "HeckeStacksAndLocalShtukasPartII:HSD4/saturation"
-      ],
-      "detail": "MV20’s cordial saturation proof uses strong topological purity and the Newton-poset length theorem (its references [15] and [40], Theorem 3.4/Lemma 5.12). BG1’s abstract classification and partial order alone do not provide these geometric theorems. Obtain the precise equal-characteristic geometric package, including greatestness on cell closures and the cell/ADLV dimension comparison, before declaring this branch closed; general local-field transport is G5."
+      "slug": "newton-cell-purity",
+      "needs": "The Newton-poset length formula, strong topological purity on equal-characteristic Iwahori cells and their bounded completions, greatestness on cell closures, and the cell-to-ADLV dimension comparison without relying on cordial saturation.",
+      "supplier": "BunGAndNewtonStrata",
+      "section": "§1.21 (Newton partial order with Kottwitz fibre)"
     }
   ],
   "restructure": [
