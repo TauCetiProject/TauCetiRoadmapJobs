@@ -1,0 +1,126 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GSp4NonregularModularityLifting"
+
+[[source]]
+id = "CG20"
+locator_scheme = "section"
+locator = "§§1,3–9, published pp.801–880; Appendix A.3.2, pp.887–889, for the downstream comparison interface"
+url = "https://www.math.uchicago.edu/~fcale/papers/Siegel.pdf"
+fetched_from = "https://www.math.uchicago.edu/~fcale/papers/Siegel.pdf"
+fetched_at = "2026-10-24T17:18:50Z"
+sha256 = "fff305877c7e6b9d32ca9a8b4a56f7f3b343695fc737184d1a3a1b78f195cfa5"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["NR0", "NR1", "NR2", "NR3", "NR4", "NR5", "NR6", "NR7", "NR8"]
+authors = "Frank Calegari and David Geraghty"
+title = "Minimal modularity lifting for nonregular symplectic representations"
+year = 2020
+version_note = "Author-hosted published typeset text; PDF page n is published page 800+n."
+
+[[source]]
+id = "P20"
+locator_scheme = "section"
+locator = "§5.3, pp.24–27; §§6.3.2–6.4, pp.30–36; §§7.1–7.2, pp.37–40; proof of Theorem 11.2.1, p.70; Lemma 14.9.1 and §14.9.2, pp.103–104"
+url = "https://www.imo.universite-paris-saclay.fr/~pilloni/complexhidatheorygsp4.pdf"
+fetched_from = "https://www.imo.universite-paris-saclay.fr/~vincent.pilloni/complexhidatheorygsp4.pdf"
+fetched_at = "2026-10-24T17:18:53Z"
+sha256 = "4c05724efeab1dbbb108f980ec9a722127d2a8cd2abf6e8c2a6a2251cf0f9f58"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["NR0", "NR2"]
+authors = "Vincent Pilloni"
+title = "Higher coherent cohomology and p-adic modular forms of singular weights"
+year = 2020
+version_note = "17 June 2019 author version, 113 pages; numbering and pagination refer to this version."
+
+[[source]]
+id = "P12"
+locator_scheme = "section"
+locator = "Introduction, pp.2–4; §3, pp.13–19; §5.1–5.7, pp.19–24; §7.1–7.4, pp.35–38"
+url = "https://www.imo.universite-paris-saclay.fr/~vincent.pilloni/Mod.pdf"
+fetched_from = "https://www.imo.universite-paris-saclay.fr/~vincent.pilloni/Mod.pdf"
+fetched_at = "2026-10-24T17:18:54Z"
+sha256 = "dd382d42c077aac2064d145311981b0d25038dbd1d8aa639dcac36449bbd804c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["NR9"]
+authors = "Vincent Pilloni"
+title = "Modularité, formes de Siegel et surfaces abéliennes"
+year = 2012
+version_note = "September 2009 author version, 39 pages; locators refer to this version rather than the 2012 publication."
+
+[[source]]
+id = "PS16"
+locator_scheme = "section"
+locator = "Theorem 0.1 and Remarks 0.2–0.3, pp.1–2; §3, especially Theorem 3.6 and Remark 3.10, pp.16–17, and Corollary 3.14, p.19"
+url = "https://www.imo.universite-paris-saclay.fr/~pilloni/koko.pdf"
+fetched_from = "https://www.imo.universite-paris-saclay.fr/~vincent.pilloni/koko.pdf"
+fetched_at = "2026-10-24T17:18:55Z"
+sha256 = "2c9f90c39f0efacd3fa076ef189b1d552da900d1968e34c3c8b3e551dcb4e3a1"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["NR2"]
+authors = "Vincent Pilloni and Benoît Stroh"
+title = "Cohomologie cohérente et représentations galoisiennes"
+year = 2016
+version_note = "Author text, 30 pages; locators use this version."
+
+[[source]]
+id = "M14"
+authors = "Chung Pang Mok"
+title = "Galois representations attached to automorphic forms on GL_2 over CM fields"
+year = 2014
+venue = "Compositio Math. 150 (2014) 523-567"
+doi = "10.1112/S0010437X13007665"
+arxiv = "1109.5392v4"
+locator_scheme = "section"
+locator = "§4 hypotheses, pp.24–25; Theorem 4.14 and Proposition 4.16, pp.40–42"
+url = "https://arxiv.org/abs/1109.5392v4"
+fetched_from = "https://arxiv.org/pdf/1109.5392v4"
+fetched_at = "2026-10-24T17:18:59Z"
+sha256 = "6db29e74332261f70fe4a42ec47e6c4fb8e4147c8f6af49b419f9f38b25e693a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv:1109.5392v4; §4 treats GSp4; use v4 numbering."
+cited_for = ["NR2"]
+
+[[source]]
+id = "BCGP25"
+authors = "George Boxer, Frank Calegari, Toby Gee and Vincent Pilloni"
+title = "Modularity theorems for abelian surfaces"
+year = 2025
+arxiv = "2502.20645v1"
+locator_scheme = "section"
+locator = "§1.8.12–1.8.20, pp.12–14; §4.12, pp.112–114; §7.1–7.5, pp.152–179; detailed reading of §7.2 and §§7.4–7.5; Proposition 5.6.6 and Remark 5.6.7, p.129; §5.7, pp.130–135; Theorem 5.7.14, pp.134–135; Hypothesis 6.3.1 and Theorem 6.3.4, pp.146–148; Proposition 5.6.6 and Remark 5.6.7, p.129; §5.7, pp.130–135; Theorem 5.7.14, pp.134–135; Hypothesis 6.3.1 and Theorem 6.3.4, pp.146–148"
+url = "https://arxiv.org/abs/2502.20645v1"
+fetched_from = "https://arxiv.org/pdf/2502.20645v1"
+fetched_at = "2026-10-24T17:19:09Z"
+sha256 = "51d7eacca6eae394943f09ab72dfe09ee9aa6da27f563be8237c416e5da4e95c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv:2502.20645v1; all numbering and pagination refer to v1."
+cited_for = ["NR10", "NR11", "NR2"]
+
+[[source]]
+id = "BCGP21"
+authors = "George Boxer, Frank Calegari, Toby Gee and Vincent Pilloni"
+title = "Abelian surfaces over totally real fields are potentially modular"
+year = 2021
+arxiv = "1812.09269v3"
+locator_scheme = "section"
+locator = "§§7.7–7.8 setup and Proposition 7.8.11, pp.210–216; Proposition 7.9.8 and proof, pp.222–223"
+url = "https://arxiv.org/abs/1812.09269v3"
+fetched_from = "https://arxiv.org/pdf/1812.09269v3"
+fetched_at = "2026-10-24T17:19:20Z"
+sha256 = "7c8d74b0628d8b9cc841a853372ca2d0bc18c086ab46d138f75afd15f35689ed"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv:1812.09269v3; all numbering and pagination refer to v3."
+cited_for = ["NR6"]
