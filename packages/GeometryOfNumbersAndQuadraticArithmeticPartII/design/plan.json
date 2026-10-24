@@ -1852,52 +1852,16 @@
   ],
   "gaps": [
     {
-      "id": "G1",
-      "title": "Unregistered Poincaré-category supplier",
-      "detail": "HermitianKTheoryOfPoincareCategories is routed by the Calmes extraction but has no registered roadmap/stage or target packet in this checkout. Needed: Dp with coefficient duality; Qq,Qs,Q^(≥m) and sign shifts; genuine versus periodic comparisons; L spectrum and field surgery/Witt identification; Poincaré–Verdier criterion [II] 4.5.5 and localizing invariance; derived localization/completion of perfect complexes, K0-controlled subcategories and rational Tate-vanishing. Existing GN.6 exact-category GW and StableHomotopyKTheory spectra do not supply these. DA.0 comparison, DA.1 field tables and DA.2 fracture are conditional on this exact inventory. Register/plan the one shared owner; do not create parallel foundations here.",
-      "neededBy": [
-        "GeometryOfNumbersAndQuadraticArithmeticPartII:DA.0/integral-comparison",
-        "GeometryOfNumbersAndQuadraticArithmeticPartII:DA.0/field-l-adapter",
-        "GeometryOfNumbersAndQuadraticArithmeticPartII:DA.0/second-residue",
-        "GeometryOfNumbersAndQuadraticArithmeticPartII:DA.1/symmetric-dedekind",
-        "GeometryOfNumbersAndQuadraticArithmeticPartII:DA.1/characteristic-two",
-        "GeometryOfNumbersAndQuadraticArithmeticPartII:DA.1/sign-shifts",
-        "GeometryOfNumbersAndQuadraticArithmeticPartII:DA.2/arithmetic-fracture",
-        "GeometryOfNumbersAndQuadraticArithmeticPartII:DA.2/complete-rigidity"
-      ]
+      "slug": "derived-completion-poincare-criterion",
+      "supplier": "GeometryOfNumbersAndQuadraticArithmetic",
+      "section": "6.8a",
+      "needs": "the derived localization–completion square of perfect complexes for an associative ring and central positive integer with bounded power torsion, together with the coefficient-compatible Poincaré–Verdier change-of-rings criterion of Paper II Proposition 4.5.5 on the two K₀-image subcategories."
     },
     {
-      "id": "G2",
-      "title": "Global Witt residue exactness proof",
-      "detail": "DA.1/global-residue-cokernel needs full kernel exactness, not only a map onto Pic(R)/2. Calmes Corollary 2.3.2 cites Milnor–Husemoller (1973), Chapter IV §4 and Scharlau (1985), Chapter 6 §6 Theorem 6.11. Neither book is cleared in the library index. No other copy was used. The public paper’s statement and proof reduction were read; the referenced proofs were not verified. R3 requests a number-field extension of GlobalQuadraticForms layer 8. Its stated scope excludes global function fields; a separate registered supplier contract must cover those. The characteristic-two divisor argument is written explicitly and does not silently import a char≠2 field theorem.",
-      "neededBy": [
-        "GeometryOfNumbersAndQuadraticArithmeticPartII:DA.1/global-residue-cokernel"
-      ]
-    },
-    {
-      "id": "G3",
-      "title": "Degree-one quadratic rigidity relations",
-      "detail": "The public Wall (1970) Lemma 1 and Theorem 2 and their proofs were read, and justify quadratic isometry lifting. Equivalence of Lq spectra additionally needs the L1 relation/kernel comparison in Wall (1973), On the classification of hermitian forms III, Inventiones 19, 59–71, Corollary 1, Lemma 1 and Proposition 4, as cited by Calmes Proposition 2.3.7. That complete text was not obtained. Verify those precise relation and free/projective comparisons; surjectivity on isometries or GW1 alone is insufficient.",
-      "neededBy": [
-        "GeometryOfNumbersAndQuadraticArithmeticPartII:DA.2/complete-rigidity"
-      ]
-    },
-    {
-      "id": "G4",
-      "title": "Henselian approximation input",
-      "detail": "CMM arXiv:1803.10897v2 Remark 5.6 p. 39 was read and the reduction to finitely presented henselizations, Popescu ind-smoothness and Elkik splitting was checked at the argument level. The full Popescu theorem and Elkik Theorem 3.15 were not read or found in a matching supplier node. Record this general approximation contract once under the henselian/commutative algebra owner before closing DA.2. It is separate from the prime-to-p K-theory rigidity in KTheoryFiniteLocalFields L.2.",
-      "neededBy": [
-        "GeometryOfNumbersAndQuadraticArithmeticPartII:DA.2/henselian-rigidity"
-      ]
-    },
-    {
-      "id": "G5",
-      "title": "Unregistered quadratic-extension Witt exactness",
-      "neededBy": [
-        "GeometryOfNumbersAndQuadraticArithmeticPartII:DA.5/eisenstein-restriction",
-        "GeometryOfNumbersAndQuadraticArithmeticPartII:DA.5/eisenstein-table"
-      ],
-      "detail": "R4 requires the quadratic-extension Witt exact sequence (Lam, Introduction to Quadratic Forms over Fields, VII Theorem 3.5, cited in Calmes Example 2.3.14 p. 47). QFI layer 9 supplies Scharlau transfer and Frobenius reciprocity but does not state exactness of restriction, transfer and multiplication by ⟨1,−a⟩. Lam is not cleared and its proof was not read. Register this precise Part II extension under the existing field-form owner before closing DA.5; it is not an already exported result of layer 9. The independent finite Q2 calculations verify the local arithmetic conditional on this standard exactness contract, rather than verifying the unread general theorem."
+      "slug": "quadratic-extension-witt-exactness",
+      "supplier": "QuadraticFormInvariants",
+      "section": "Layer 9",
+      "needs": "for a field F with char F≠2 and a nonsquare a∈F×, restriction to E=F(√a), transfer for a nonzero F-linear functional s:E→F with s(1)=0, and multiplication by ⟨1,−a⟩ form an exact cyclic sequence, identifying the restriction kernel with that principal ideal and its cokernel with that element's annihilator."
     }
   ],
   "sourceIssues": [

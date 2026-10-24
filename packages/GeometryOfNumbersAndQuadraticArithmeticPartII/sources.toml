@@ -1,0 +1,116 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GeometryOfNumbersAndQuadraticArithmeticPartII"
+
+[[source]]
+id = "CDHHLMNNS-III-v4"
+authors = "Baptiste Calmès, Emanuele Dotto, Yonatan Harpaz, Fabian Hebestreit, Markus Land, Kristian Moi, Denis Nardin, Thomas Nikolaus, Wolfgang Steimle"
+title = "Hermitian K-theory for stable ∞-categories III: Grothendieck-Witt groups of rings"
+year = 2020
+arxiv = "2009.07225v4"
+locator_scheme = "section"
+locator = "arXiv v4, §2.2–2.3, pp. 36–48"
+url = "https://arxiv.org/abs/2009.07225v4"
+fetched_from = "https://arxiv.org/pdf/2009.07225v4"
+fetched_at = "2026-10-24T12:49:38Z"
+sha256 = "1e4b6720055ebdce0012f5780bfc7cdb5b853e32f29b17224a1be0bc676f770c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v4"
+cited_for = ["Layers 0–5"]
+
+[[source]]
+id = "Wall-1970"
+authors = "C. T. C. Wall"
+title = "On the classification of hermitian forms. I. Rings of algebraic integers"
+year = 1970
+locator_scheme = "theorem"
+locator = "Lemma 1, p. 427; Theorem 2, pp. 428–429"
+url = "https://www.numdam.org/article/CM_1970__22_4_425_0.pdf"
+fetched_from = "https://www.numdam.org/article/CM_1970__22_4_425_0.pdf"
+fetched_at = "2026-10-24T12:49:59Z"
+sha256 = "fbca6504af22e92262722d21d68729616353df4da3a5cecf83044f271ab3f5c5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["2.3"]
+
+[[source]]
+id = "CMM"
+authors = "Dustin Clausen, Akhil Mathew, Matthew Morrow"
+title = "K-theory and topological cyclic homology of henselian pairs"
+year = 2018
+arxiv = "1803.10897v2"
+locator_scheme = "theorem"
+locator = "arXiv v2, Theorem 3.15, p. 21; Remark 5.6, p. 39"
+url = "https://arxiv.org/abs/1803.10897v2"
+fetched_from = "https://arxiv.org/pdf/1803.10897v2"
+fetched_at = "2026-10-24T12:50:34Z"
+sha256 = "ad23c1d7b818b85e1752cdc4b01ec9442a9c62c3c8e85ebd7cf6f4584c6abd9c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v2"
+cited_for = ["2.5"]
+
+[[source]]
+id = "Wall-1973"
+authors = "C. T. C. Wall"
+title = "On the classification of Hermitian forms"
+year = 1973
+venue = "Inventiones Mathematicae 19"
+doi = "10.1007/BF01418851"
+locator_scheme = "theorem"
+locator = "Corollary 1, Lemma 1, Proposition 4 and Lemma 5"
+url = "https://doi.org/10.1007/BF01418851"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.4"]
+
+[[source]]
+id = "Scharlau-1985"
+authors = "Winfried Scharlau"
+title = "Quadratic and Hermitian Forms"
+year = 1985
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-3-642-69971-9"
+locator_scheme = "theorem"
+locator = "Chapter 6, §6, Theorem 6.11"
+url = "https://doi.org/10.1007/978-3-642-69971-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.2"]
+
+[[source]]
+id = "Lam-2005"
+authors = "T. Y. Lam"
+title = "Introduction to Quadratic Forms over Fields"
+year = 2005
+doi = "10.1090/gsm/067"
+locator_scheme = "theorem"
+locator = "VII, Theorem 3.5; VI, Theorem 2.29"
+url = "https://doi.org/10.1090/gsm/067"
+licence_class = "none"
+status = "uncertified"
+version_note = "AMS book; cited by locator only. Sources service reached the publisher landing page but obtained no open text; no text was read."
+cited_for = ["3.2", "5.3", "supplier quadratic-extension exactness"]
+
+[[source]]
+id = "CDHHLMNNS-II-v5"
+authors = "Baptiste Calmès, Emanuele Dotto, Yonatan Harpaz, Fabian Hebestreit, Markus Land, Kristian Moi, Denis Nardin, Thomas Nikolaus, Wolfgang Steimle"
+title = "Hermitian K-theory for stable ∞-categories II: Cobordism categories and additivity"
+year = 2020
+arxiv = "2009.07224v5"
+locator_scheme = "theorem"
+locator = "Proposition 4.5.5, arXiv v5, pp. 108–110"
+url = "https://arxiv.org/abs/2009.07224v5"
+fetched_from = "https://arxiv.org/pdf/2009.07224v5"
+fetched_at = "2026-10-24T13:19:40Z"
+sha256 = "eaa19b40046c953f6aedc5d11ed86eaee16018fcad995fcbafeb4746af6239a3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v5"
+cited_for = ["2.2; supplier derived-completion criterion"]
