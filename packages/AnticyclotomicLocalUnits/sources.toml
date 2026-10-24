@@ -1,0 +1,99 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AnticyclotomicLocalUnits"
+
+[[source]]
+id = "BKO21"
+authors = "Ashay A. Burungale, Shinichi Kobayashi and Kazuto Ota"
+title = "Rubin’s conjecture on local units in the anticyclotomic tower at inert primes"
+year = 2021
+locator_scheme = "theorem"
+locator = "§2, pp.947–949; Lemma 3.1; Proposition 3.3; Theorem 3.4; §4; Lemmas 5.1–5.2; Definition 5.4; Theorems 5.5, 5.8; Corollary 2.2; §6.0.2, pp.962–963"
+cited_for = ["Layers 0–8"]
+doi = "10.4007/annals.2021.194.3.8"
+url = "https://authors.library.caltech.edu/records/8svwt-jn031"
+fetched_from = "https://authors.library.caltech.edu/records/8svwt-jn031/files/annals.2021.194.3.8.pdf?download=1"
+fetched_at = "2026-10-23T17:44:21Z"
+sha256 = "77ff329057e17cbad573cc309fce3f69f4ba6b73619c4ca203a4ed79a1cb790e"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Published article, with one archive cover page; source-service cached copy matches the design checksum and was read directly; fetched_at retains the cache file timestamp, not a successful refetch; stable institutional origin replaces its expiring delivery URL."
+
+[[source]]
+id = "Rubin87"
+locator_scheme = "theorem"
+locator = "Proposition 1.1; Lemma 2.1; Lemmas 4.1–4.4; Proposition 4.5; Lemma 5.1; Propositions 5.2–5.6; Corollaries 5.7–5.8; Lemmas 7.1–7.3; Proposition 7.4; Lemma 10.1"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0088/LOG_0026.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0088/LOG_0026.pdf"
+fetched_at = "2026-10-24T01:51:03Z"
+sha256 = "cda9c336ba0a3eb3017e531d352b9b6d9fa73f0f995c7897ef0e4504f34d3f07"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layers 0–3, 7–8"]
+authors = "Karl Rubin"
+title = "Local units, elliptic units, Heegner points and elliptic curves"
+year = 1987
+
+[[source]]
+id = "Haz77"
+locator_scheme = "theorem"
+locator = "Theorem 1.3, pp.305–306; Lemmas 2.4, 3.5; proof §4, pp.312–314"
+url = "https://ir.cwi.nl/pub/10014/10014D.pdf"
+fetched_from = "https://ir.cwi.nl/pub/10014/10014D.pdf"
+fetched_at = "2026-10-24T01:51:50Z"
+sha256 = "5bbb94e03c8cbcb82b83bd1dbf28f6a0300a50f18b570668799190f4f268a3c8"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["2.2"]
+authors = "Michiel Hazewinkel"
+title = "On norm maps for one dimensional formal groups III"
+year = 1977
+
+[[source]]
+id = "Win80"
+locator_scheme = "section"
+locator = "§4, theorem (i),(iii), pp.91–92; §§5.2–5.5.3, pp.92–98"
+url = "https://www.numdam.org/article/CM_1980__42_1_89_0.pdf"
+fetched_from = "https://www.numdam.org/article/CM_1980__42_1_89_0.pdf"
+fetched_at = "2026-10-24T01:52:09Z"
+sha256 = "416f7390166f381296df594ed2050300aed0f3ecff6415bd8740a2bcc4b2d94f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["0.3"]
+authors = "Jean-Pierre Wintenberger"
+title = "Structure galoisienne de limites projectives d’unités locales"
+year = 1980
+version_note = "Volume catalogued 1980; article printed 1981; published numbering."
+
+[[source]]
+id = "AU96"
+locator_scheme = "theorem"
+locator = "Theorem A, p.269; Propositions 3.3–3.4, pp.276–278; Zagier’s Lemma 3.2, p.278; proof of Theorem A, p.279"
+url = "https://www.numdam.org/article/CM_1996__103_3_269_0.pdf"
+fetched_from = "https://www.numdam.org/article/CM_1996__103_3_269_0.pdf"
+fetched_at = "2026-10-24T01:52:45Z"
+sha256 = "73fd473d7822b90b4cc4bebbd2b8ca2a05547b6a13e2c3f99210ef8f2ce83cf2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["5.2"]
+authors = "Ahmed Abbes and Emmanuel Ullmo"
+title = "À propos de la conjecture de Manin pour les courbes elliptiques modulaires"
+year = 1996
+
+[[source]]
+id = "Wiles78"
+licence_class = "none"
+authors = "Andrew Wiles"
+title = "Higher explicit reciprocity laws"
+year = 1978
+locator_scheme = "page"
+locator = "235–254; height-two specialization as stated in Rubin87 Theorem 5.3, p.412"
+cited_for = ["2.5; 4.3"]
+doi = "10.2307/1971143"
+url = "https://annals.math.princeton.edu/1978/170-2/p04"
+status = "uncertified"
+version_note = "Published bibliographic locator only; original proof not read. The source-service DOI attempt reached restricted JSTOR access. The stated local trace formula is read in Rubin87 and BKO21; no theorem number from the unread original is asserted."

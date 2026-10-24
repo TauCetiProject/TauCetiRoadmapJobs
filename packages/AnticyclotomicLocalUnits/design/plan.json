@@ -3159,124 +3159,58 @@
   ],
   "gaps": [
     {
-      "id": "AnticyclotomicLocalUnits/G1",
-      "title": "Unregistered Lubin–Tate and quasi-canonical supplier",
-      "detail": "The proposed LubinTateFormalModulesAndQuasiCanonicalLifts has no registered stage or packet. Issue #3355 is the relevant restructuring lead, not a theorem supplier. Required interfaces: the actual formal O-action/logarithm with analytic inverse on deep ideals; T_π, κ and the tower/ramification conductor formulas; Honda type −εX²+p and parameter εp for the unramified quadratic lift; quasi-canonical lattices T_s=p^(−s)ℤ_p t+T, End=ℤ_p+p^sO, fields Ψ′_s with degree p^(s−1)(p+1), and their class-field orbit actions; and a number-field height-one completion realization for the pinned formalPointHomAdicCompletion. These are imported interfaces, not duplicate foundations planned here. Register the owner and exact stages before closure.",
-      "neededBy": [
-        "AnticyclotomicLocalUnits:ALU.0/conductor-parity",
-        "AnticyclotomicLocalUnits:ALU.0/inverse-tate-twist",
-        "AnticyclotomicLocalUnits:ALU.0/anticyclotomic-quotient",
-        "AnticyclotomicLocalUnits:ALU.1/lubin-tate-coleman",
-        "AnticyclotomicLocalUnits:ALU.2/finite-formal-kummer",
-        "AnticyclotomicLocalUnits:ALU.3/character-logarithm",
-        "AnticyclotomicLocalUnits:ALU.3/formal-fourier-lattices",
-        "AnticyclotomicLocalUnits:ALU.5/auxiliary-supersingular-curve",
-        "AnticyclotomicLocalUnits:ALU.5/scalar-frobenius",
-        "AnticyclotomicLocalUnits:ALU.5/primitive-formal-cm-point",
-        "AnticyclotomicLocalUnits:ALU.6/quasicanonical-modular-points",
-        "AnticyclotomicLocalUnits:ALU.6/hecke-lattice-neighbours"
-      ]
+      "slug": "quadratic-coefficient-coordinates",
+      "supplier": "PadicMeasuresIwasawaAlgebras",
+      "section": "4.5",
+      "needs": "For finite free unramified O/ℤ_p and Γ⁺≃Γ⁻≃ℤ_p, identify the native O completed algebras with O[[S,T]] and O[[T]], continuously and compatibly with coefficient extension, κ-twisting, generator change and quotient by the plus coordinate, with the needed noetherian local-domain properties."
     },
     {
-      "id": "AnticyclotomicLocalUnits/G2",
-      "title": "Unregistered early CM special-value supplier",
-      "detail": "The proposed NonordinaryCMSpecialValues has no registered stage. Issue #3350 is a restructuring lead. Supply canonical type-(1,0) Hecke characters with φ(p)=−p and root number +1, a compatible CM elliptic realization/period, early norm-compatible zeta classes with Kato explicit reciprocity, and the Finis unit-value theorem in precisely this canonical case, including the vanishing local μ and b invariants. Also supply simultaneous l splitting with p∤(l−1) and all semilocal group-ring identifications in BKO (3.5). These inputs must precede, and must not use, Rubin’s final signed p-adic L-function. BKO §3 pp.950–954 was read; the general original proofs have not been read here. Kato’s 1993 article, LNM 1553 pp.50–163, Theorem 2.1.7, is not in the cleared library; no alternative uncleared book copy was used.",
-      "neededBy": [
-        "AnticyclotomicLocalUnits:ALU.4/auxiliary-cm-field",
-        "AnticyclotomicLocalUnits:ALU.4/projected-cm-class",
-        "AnticyclotomicLocalUnits:ALU.4/wiles-dual-exponential",
-        "AnticyclotomicLocalUnits:ALU.4/cm-class-values",
-        "AnticyclotomicLocalUnits:ALU.4/optimal-unit"
-      ]
+      "slug": "compact-coefficient-duality",
+      "supplier": "PadicMeasuresIwasawaAlgebras",
+      "section": "5.2",
+      "needs": "Finite free coefficient extension must commute with these compact inverse limits, and continuous O-duality into Φ/O must identify invariants with the dual of closed coinvariants and give biduality for the compact modules used here."
     },
     {
-      "id": "AnticyclotomicLocalUnits/G3",
-      "title": "Unregistered supersingular finite-field supplier",
-      "detail": "The proposed SupersingularFiniteFields has no registered stage; #3398 is the restructuring lead. Need a trace-zero elliptic curve over 𝔽_p for each p≥5, Deuring mass p−1=12m+4d+6e, rationality of supersingular j over 𝔽_(p²), and the twist-sensitive Schoof trace-class formulas stated in ALU.5. BKO Lemma 5.2 and its proof pp.956–957 were read, but Schoof’s general proof was not. Request the general results from that owner; the scalar-Frobenius and counting applications are owned here.",
-      "neededBy": [
-        "AnticyclotomicLocalUnits:ALU.5/auxiliary-supersingular-curve",
-        "AnticyclotomicLocalUnits:ALU.5/supersingular-mass-application",
-        "AnticyclotomicLocalUnits:ALU.5/generic-supersingular-bound",
-        "AnticyclotomicLocalUnits:ALU.5/exceptional-supersingular-bounds"
-      ]
+      "slug": "general-unit-norm-control",
+      "supplier": "IntegralIwasawaTheory",
+      "section": "7.2",
+      "needs": "Supply general one-variable local-unit control for finite p-adic base fields and their ramified ℤ_p-extensions, including the torsion-corrected infinite unit module, the norm-kernel and injectivity statements used in Wintenberger §5.2 and their finite coinvariant comparison, so that the two-variable nonexceptional ω-freeness argument does not assume its own conclusion."
     },
     {
-      "id": "AnticyclotomicLocalUnits/G4",
-      "title": "Composite-level integral modular geometry",
-      "detail": "Current TauCetiRoadmap ModularCurves Layer 10 now compactifies prime levels N≥5 only. It cannot supply smooth connected proper X₀(N)/ℤ_p, the genus/index formula, mixed Γ₀(N),Γ₁(M) good models and étale local disks, or integral T_p correspondences for all p∤N, especially N=27/32. The general q-expansion/Néron differential and congruence comparison ingredients used by Abbes–Ullmo also require an owner. Extend ModularCurvesPartII in this direction, register precise stages, and retain the existing affine/coarse suppliers. AU Theorem A is read and the good-prime deduction is outlined here; this is not a claim that the required geometric infrastructure exists at the pins.",
-      "neededBy": [
-        "AnticyclotomicLocalUnits:ALU.5/manin-unit-separability",
-        "AnticyclotomicLocalUnits:ALU.5/ramification-bound",
-        "AnticyclotomicLocalUnits:ALU.5/generic-supersingular-bound",
-        "AnticyclotomicLocalUnits:ALU.5/exceptional-supersingular-bounds",
-        "AnticyclotomicLocalUnits:ALU.5/fine-level-unramified-lift",
-        "AnticyclotomicLocalUnits:ALU.5/primitive-formal-cm-point",
-        "AnticyclotomicLocalUnits:ALU.6/quasicanonical-modular-points",
-        "AnticyclotomicLocalUnits:ALU.6/optimal-trace-relations"
-      ]
+      "slug": "formal-point-completion-realization",
+      "supplier": "LubinTateFormalModulesAndQuasiCanonicalLifts",
+      "section": "LT.4",
+      "needs": "Identify the unramified quadratic local field and every finite field used for the elliptic formal-point comparison with a height-one completion of a number field, transporting integer rings, maximal ideals, the chosen elliptic model, formal logarithm, group law and the native formal-point homomorphism compatibly with the finite inclusions used here."
     },
     {
-      "id": "AnticyclotomicLocalUnits/G5",
-      "title": "General unit norm-control theorem used by Wintenberger",
-      "detail": "Wintenberger §5.2 pp.92–94 uses the general one-variable local-unit structure theorem (its reference to Iwasawa Theorem 25) to obtain norm kernel=(σ−1), injectivity of projected unit limits and the finite coinvariant calculation. The read §§5.3–5.5 then give the two-variable nonexceptional-character freeness criterion. Neither finite class field theory nor the cyclotomic-only parent alone proves the general norm-control input. Locate/read its proof and assign a general local-unit supplier before closing unit-rank-two.",
-      "neededBy": [
-        "AnticyclotomicLocalUnits:ALU.0/unit-rank-two"
-      ]
+      "slug": "supersingular-trace-classes",
+      "supplier": "EllipticCurves",
+      "section": "Layer 3",
+      "needs": "Extend Layer 3 by trace-zero existence over every 𝔽_p for p≥5, supersingular j rationality over 𝔽_(p²), the Deuring mass relation p−1=12m+4d+6e, and the twist-sensitive 𝔽_(p²)-isomorphism-class counts N(±2p)=(p+6−4(−3/p)−3(−1/p))/12, N(±p)=1−(−3/p) and N(0)=1−(−1/p), with the exceptional j criteria and scalar-Frobenius representatives."
     },
     {
-      "id": "AnticyclotomicLocalUnits/G6",
-      "title": "Height-two Coleman proof input",
-      "detail": "ALU.1 owns the height-two LT specialization. The read Rubin87 §2 pp.407–408 and BKO §2 pp.948–949 state/use interpolation, but do not provide the full construction from the parent’s cyclotomic case. Need the finite-free rank-p² determinant norm for [π]_F, convergence/contraction on principal-unit series, interpolation existence/uniqueness and topology over O. A formal substitution of p by −p in the multiplicative group does not prove this.",
-      "neededBy": [
-        "AnticyclotomicLocalUnits:ALU.1/lubin-tate-coleman"
-      ]
+      "slug": "mixed-level-disk-comparison",
+      "supplier": "ModularCurvesPartII",
+      "section": "3.9; 5.3",
+      "needs": "For arbitrary p∤NM with M≥6 and p∤φ(M), supply the mixed Γ₀(N),Γ₁(M) fine good model and the coarse-forgetful map on the chosen unramified locus, identifying completed local disks and their universal elliptic families compatibly with unramified coefficient extension and reduction, including the stabilizer-free loci at N=27,32."
     },
     {
-      "id": "AnticyclotomicLocalUnits/G7",
-      "title": "Finite formal Cartier/Kummer comparison",
-      "detail": "Finite local Tate duality is imported, but the actual finite F[π^k] Cartier dual, formal division sequence, coefficient trace and Artin convention still need comparison with the pinned elliptic formal-point realization. Establish the dual obstruction groups and their transition maps; do not identify an arbitrary height-two formal group with its Cartier dual. Rubin87 Lemma 5.1 and Propositions 5.2–5.4 pp.411–412 are read statements/proofs for the present application. This interface must be decomposed further before a closed packet.",
-      "neededBy": [
-        "AnticyclotomicLocalUnits:ALU.2/finite-formal-kummer",
-        "AnticyclotomicLocalUnits:ALU.2/formal-norm-vanishing",
-        "AnticyclotomicLocalUnits:ALU.2/two-variable-kummer-pairing",
-        "AnticyclotomicLocalUnits:ALU.2/anticyclotomic-kummer-pairing",
-        "AnticyclotomicLocalUnits:ALU.2/wiles-trace-formula"
-      ]
+      "slug": "good-model-hecke-comparison",
+      "supplier": "ModularCurvesPartII",
+      "section": "9.11; 13.2; 16.6",
+      "needs": "Identify the integral T_p correspondence on these arbitrary composite-level good models with the geometric p+1 subgroup quotient correspondence, its transported prime-to-p marking and the Hecke action on the cusp-normalized modular quotient, compatibly with the tame/relative traces of its marked CM points."
     },
     {
-      "id": "AnticyclotomicLocalUnits/G8",
-      "title": "Hazewinkel after finite ramified base change",
-      "detail": "Hazewinkel77 Theorem 1.3 pp.305–306, whose proof §§2–4 was read, assumes an unramified ground field and a totally ramified ℤ_p-extension. Universal norms require a shrinking-image estimate after every finite, generally ramified base in the actual tower, and a cofinal direction in the two-variable tower. Prove that extension or find a theorem with these hypotheses, then dualize the actual obstruction using G7. Quoting the unramified formula at a ramified base is insufficient.",
-      "neededBy": [
-        "AnticyclotomicLocalUnits:ALU.2/formal-norm-vanishing"
-      ]
+      "slug": "integral-congruence-comparison",
+      "supplier": "ModularCurvesPartII",
+      "section": "13.7",
+      "needs": "Extend §13.7 by the exact Néron-differential and q-expansion lattices, degree/congruence identity and p-unit cokernel comparison at p∤N used in AU96 Propositions 3.3–3.4 and Zagier’s Lemma 3.2, retaining optimality and integrality so that the good-prime Manin-unit theorem can be applied to every conductor N."
     },
     {
-      "id": "AnticyclotomicLocalUnits/G9",
-      "title": "Original Wiles reciprocity proof unavailable",
-      "detail": "Wiles, Higher explicit reciprocity laws, Annals of Mathematics 107 (1978), 235–254, DOI 10.2307/1971143, is not in the cleared library. Publisher/JSTOR access and author-copy searches did not yield a readable authorized full text. Its original proof has not been read. BKO §4 p.955 and the read Rubin87 Theorem 5.3 p.412 fix the trace formula interface only. Obtain and read the original proof, checking [π] versus [p], invariant derivative and reciprocity sign, before marking this blueprint closed. No inaccessible text is listed among the read sources.",
-      "neededBy": [
-        "AnticyclotomicLocalUnits:ALU.2/wiles-trace-formula",
-        "AnticyclotomicLocalUnits:ALU.4/wiles-dual-exponential"
-      ]
-    },
-    {
-      "id": "AnticyclotomicLocalUnits/G10",
-      "title": "Auxiliary-field class-number bound",
-      "detail": "BKO Lemma 3.1 pp.950–951 uses the Dirichlet class-number formula and a bound for L(1,χ_d) to obtain h(d)≤sqrt(|d|)(2+log|d|)/π_real, where π_real is the positive real circle constant, unrelated to the uniformizer π=−p. Together with |d|<8p this gives h(d)<p for p≥53; the ratio sqrt(8p)(2+log(8p))/(π_real p) decreases there. The original general analytic estimate (cited there to Cohen Lemma 8.16) was not read and has no precise supplier node here. Assign/read that general input before closure. The remaining p≤47 cases have now been checked by exact Euler criteria and reduced primitive positive-definite binary forms; their certificates are in the reader and auxiliary-field target.",
-      "neededBy": [
-        "AnticyclotomicLocalUnits:ALU.4/auxiliary-cm-field"
-      ]
-    },
-    {
-      "id": "AnticyclotomicLocalUnits/G11",
-      "title": "CM coefficients and signed-kernel descent before freeness",
-      "detail": "The reciprocity formula gives scalar δ_χ(ξ_ν)=0 in C_p, whereas finite-free basis descent needs (δ_χ⊗id_W)(ξ_ν)=0 in C_p⊗_O W. Multiplication C_p⊗_O W→C_p need not be injective. Establish this comparison for the chosen CM classes without using the later signed decomposition or plus freeness. A sufficient route is to choose a finite unramified coefficient field W[1/p]/Φ for the canonical CM and prime-to-p ν values, prove that every relevant derivative and character value lies in a finite totally ramified LT field, and use linear disjointness there. The existence and integrality of that unramified CM coefficient choice must be proved from the early G2 data (including p∤h_K), not assumed from finite freeness. Alternatively supply a tensor-valued reciprocity law with the required vanishing. BKO Proposition 3.3/Theorem 3.4 pp.953–954 state the scalar values and signed result but do not prove this replacement for their invocation of earlier signed rank-one freeness.",
-      "neededBy": [
-        "AnticyclotomicLocalUnits:ALU.1/signed-unit-modules",
-        "AnticyclotomicLocalUnits:ALU.4/cm-class-values",
-        "AnticyclotomicLocalUnits:ALU.4/optimal-unit"
-      ]
+      "slug": "quadratic-class-number-upper-bound",
+      "supplier": "ImaginaryQuadraticClassNumber",
+      "section": "H2.3",
+      "needs": "Extend H2.3 by the uniform upper estimate h(d)≤sqrt(|d|)(2+log|d|)/π_real for negative fundamental discriminants d≡1 modulo 8, with the specified real logarithm and circle constant, so that |d|<8p implies h(d)<p for every p≥53."
     }
   ],
   "sourceIssues": [
