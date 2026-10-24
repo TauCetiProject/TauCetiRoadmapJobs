@@ -1,0 +1,73 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AnalyticToricGeometryPartII"
+
+[[source]]
+id = "SCH12"
+authors = "Peter Scholze"
+title = "Perfectoid spaces"
+year = 2012
+locator_scheme = "theorem"
+locator = "Theorems 1.5, 1.13 and Lemma 1.16; Proposition 5.20; Lemma 6.5 and Remark 6.6; Definition 7.14, Proposition 7.16, Theorem 7.17, Corollaries 7.18–7.19; Definition/Proposition 8.4, Theorem 8.5, Propositions 8.6–8.7 and Corollary 8.8, pp. 247, 249–250, 280, 288–290, 302–307"
+doi = "10.1007/s10240-012-0042-x"
+arxiv = "1111.4914"
+version_note = "Published IHES pagination; the fetched published version is used throughout."
+url = "https://www.numdam.org/article/PMIHES_2012__116__245_0.pdf"
+fetched_from = "https://www.numdam.org/article/PMIHES_2012__116__245_0.pdf"
+fetched_at = "2026-10-24T02:30:30Z"
+sha256 = "7e7f7a3b6309ead9d8ee376106c92c644f25b22d75ffa6d7382508a36cf7814a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layers 0–6"]
+
+[[source]]
+id = "FS94"
+authors = "William Fulton and Bernd Sturmfels"
+title = "Intersection theory on toric varieties"
+year = 1994
+locator_scheme = "theorem"
+locator = "Propositions 1.1, 1.4, 3.1; Theorems 2.1, 3.2; Corollary 2.4"
+url = "https://arxiv.org/abs/alg-geom/9403002v1"
+fetched_from = "https://arxiv.org/pdf/alg-geom/9403002v1"
+fetched_at = "2026-10-24T02:30:59Z"
+sha256 = "24e90e348d8b9353b593b696eddf11798f64b3642cfd3472da1b4808b746f9d9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+doi = "10.1016/S0040-9383(96)00016-X"
+arxiv = "alg-geom/9403002"
+version_note = "arXiv v1, 1 March 1994, preprint pagination; theorem numbers refer to this version."
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "FS25"
+authors = "Osamu Fujino and Hiroshi Sato"
+title = "On non-projective complete toric varieties"
+year = 2025
+locator_scheme = "theorem"
+locator = "Example 4.1, pp. 7–8, author version 0.27"
+url = "https://www.math.kyoto-u.ac.jp/~fujino/toric-projectivity11.pdf"
+fetched_from = "https://www.math.kyoto-u.ac.jp/~fujino/toric-projectivity11.pdf"
+fetched_at = "2026-10-24T02:31:35Z"
+sha256 = "b5a280ea395c76ff32f7aae0a2c3857d3b73c94c61f924d2a638e05050014d4b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Author version 0.27, 12 July 2025; Example 4.1."
+cited_for = ["1.2 complete nonprojective example", "5.3 nonprojective hypersurface Check"]
+
+[[source]]
+id = "STACKS"
+authors = "The Stacks Project authors"
+title = "The Stacks Project, Varieties"
+year = 2026
+locator_scheme = "tag"
+locator = "020I; 035X; Varieties Section 33.6"
+url = "https://stacks.math.columbia.edu/download/varieties.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/varieties.pdf"
+fetched_at = "2026-10-24T02:32:16Z"
+sha256 = "ed339c312c86721e3f830876da14cabe89a96e83e454a78b7cd355555f4bca45"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["6.4 geometric reducedness"]

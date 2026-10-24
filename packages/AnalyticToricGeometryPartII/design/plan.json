@@ -2252,7 +2252,56 @@
       ]
     }
   ],
-  "gaps": [],
+  "gaps": [
+    {
+      "slug": "toric-field-fibres",
+      "supplier": "ShimuraCompactifications",
+      "section": "C0.16–C0.18",
+      "needs": "Export normal geometrically integral field fibres for arbitrary finite rational fans, their distinct codimension-one ray orbit closures, and regular-fan smoothness over every coefficient ring, compatibly with the C0.16 chart gluing and coefficient change."
+    },
+    {
+      "slug": "perfected-cone-algebras",
+      "supplier": "PerfectoidSpaces",
+      "section": "P1.30; P2.1",
+      "needs": "Extend perfected Tate algebras to coefficient-Gauss completions K⟨C∩L[1/p]⟩ for every rational polyhedral cone C in a finite-rank lattice L, including lineality, with their power-bounded plus rings, perfectoidness and monomial-compatible tilts."
+    },
+    {
+      "slug": "homogeneous-cone-approximation",
+      "supplier": "PerfectoidSpaces",
+      "section": "P2.1",
+      "needs": "Extend the homogeneous sharp estimate of P2.1 from perfected polydiscs to the perfected rational cone algebras with a linear Z[1/p]-grading and degree-zero piece K, for integral homogeneous f, rational c≥0 and ε∈Z[1/p] with 0<ε<1, preserving degree and the bound |f−g♯|≤|ϖ|^(1−ε) max(|f|,|ϖ|^c) when ϖ=(ϖ♭)♯ and ϖ^p divides p."
+    },
+    {
+      "slug": "valuation-smooth-proper",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "2.15",
+      "needs": "Export prime-to-residue-characteristic smooth proper base change between geometric generic and special fibres over any rank-one valuation ring with algebraically closed fraction field, for Z/ℓ^m with m≥1, natural for morphisms and valuation-field extension."
+    },
+    {
+      "slug": "operational-chow-finite-orbits",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "5.1–5.6",
+      "needs": "Supply integral operational Chow groups, their product and evaluation on cycles, and the Kronecker isomorphism A^j(X)≅Hom(A_j(X),Z) for complete k-schemes with a split connected solvable group action and finitely many orbits, each k-isomorphic to a product of an affine space and a split torus, compatibly with field extension and the smooth intersection product."
+    },
+    {
+      "slug": "intersection-positivity-cuts",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "5.3–5.6; 4.13",
+      "needs": "Export positive ample degree of every nonzero effective projective cycle, localized top Chern support for arbitrary sections including excess intersection, and ample hypersurface cuts over any infinite field that avoid the finitely many top-dimensional geometric components and preserve nonemptiness in positive dimension."
+    },
+    {
+      "slug": "geometric-morphism-cup-pullback",
+      "supplier": "ClassicalAdicEtaleCohomology",
+      "section": "1.1",
+      "needs": "Extend ordinary constant-torsion cohomology pullback and its coefficient-forgetting comparison to geometric morphisms of the adic étale topoi, with cup-product, identity, composition and field-base-change compatibility."
+    },
+    {
+      "slug": "split-torus-divisors",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "3.4",
+      "needs": "Export that for every field k and finite free lattice M the split-torus ring k[M] is a Laurent polynomial unique factorization domain with units exactly aχᵘ for a∈k× and u∈M, and that its native Weil divisor class group is zero, compatibly with the divisor excision and Picard interfaces."
+    }
+  ],
   "upstreamNotes": [
     {
       "roadmaps": [
