@@ -3862,60 +3862,114 @@
     }
   ],
   "gaps": [
-    {
-      "title": "G1 — genus-two reduction and local-model comparison",
-      "detail": "C14 supplies the integral models and their lci/normal properties, but not a checked theorem identifying their deformation coordinates with the spherical/paramodular rank stratification used here. The Dieudonné classification, supersingular P¹ splitting/counts, explicit local rings away from SS, and boundary-compatible finite-fiber classification are targeted by S2/S3/S7; their bridge to the existing moduli models has not been verified from a full reduction-theory source. The unpublished/proposed ShimuraVarietiesHondaTatePartII is not treated as a supplied stage. Before closure assign these exact reduction inputs to that proposed owner or prove their specializations here, with primary-source locators.",
-      "neededBy": [
-        "AlgebraicModularFormsAndSerreWeightsPartII:S2/rank-geometry",
-        "AlgebraicModularFormsAndSerreWeightsPartII:S2/hasse-simple-zero",
-        "AlgebraicModularFormsAndSerreWeightsPartII:S3/local-model-identifications",
-        "AlgebraicModularFormsAndSerreWeightsPartII:S3/global-secondary",
-        "AlgebraicModularFormsAndSerreWeightsPartII:S7/finite-rank-one-correspondence"
-      ]
-    },
-    {
-      "title": "G2 — global secondary square root and descent",
-      "detail": "Pilloni Remark 6.4.1 and CG20 Theorem 8.10 use a square root of the spherical secondary invariant. The local Koblitz computation proves the genus-two singularity and supports the local multiplicity, but does not by itself construct a global section b₀ of λ^((p²−1)/2) on S or prove its tame-level descent. A root after an arbitrary étale cover is insufficient for the stated global Cartier sequence. Verify transition functions and descent at the chosen level, or restrict the later vanishing/injectivity targets to a level where this construction is proved. No paramodular or p=2 square-root claim is made.",
-      "neededBy": [
-        "AlgebraicModularFormsAndSerreWeightsPartII:S3/secondary-square-root",
-        "AlgebraicModularFormsAndSerreWeightsPartII:S8/negative-weight-vanishing",
-        "AlgebraicModularFormsAndSerreWeightsPartII:S8/scalar-theta-injective",
-        "AlgebraicModularFormsAndSerreWeightsPartII:S8/vector-theta-injective"
-      ]
-    },
-    {
-      "title": "G3 — secondary minimal descent and comparison",
-      "detail": "Boxer Theorems 6.2.2–6.2.3 construct boundary-compatible generalized Hasse sections and descent after powers. To use exactly the two-section cover here, identify a positive power of the particular h′ of S3 with the appropriate descended section on the nonordinary minimal stratum. Equality of nonvanishing loci is not an identification of their line-bundle sections. Verify this comparison, including paramodular assertions only where needed; until then S4’s spherical two-affine cover is conditional.",
-      "neededBy": [
-        "AlgebraicModularFormsAndSerreWeightsPartII:S4/minimal-hasse-cover"
-      ]
-    },
-    {
-      "title": "G4 — explicit integral residual V₂ cosets",
-      "detail": "CG20 Lemma 8.4 asserts integrality of V₂ but does not print its complete finite-coset formula. S5 defines V₂ unambiguously over K as a residual of the rational double coset, and identifies the exact integrality target. Compute its remaining determinant-p² cosets and symmetric-power weights, showing that the rational residual is the scalar extension of a coefficient operator over O, natural in every O-module. This is needed to establish the full formal Q₂ formula independently on arbitrary formal series. The geometric torsion Q₂ map in S7 has a separate integral construction via Pilloni §7 and does not rely on lifting torsion sections.",
-      "neededBy": [
-        "AlgebraicModularFormsAndSerreWeightsPartII:S5/hecke-decomposition",
-        "AlgebraicModularFormsAndSerreWeightsPartII:S5/corrected-q2"
-      ]
-    },
-    {
-      "title": "G5 — full-frame Klingen coefficient comparison",
-      "detail": "The genus-two Igusa tower requested from T5 and its component detection are not furnished by the existing Hilbert torsor node. In addition, verify the normalized Klingen finite-coset action on its full frame functions, showing its algebraic specialization is Z₂ and identifying its scalar normalization with the downstream analytic p^(3−r)U_(Kli(p),1). A formal Z₂ operator alone does not construct the ordinary geometric correspondence. This remains an explicit comparison obligation of S9, without a cyclic import of analytic control from HigherHidaAndColemanTheory.",
-      "neededBy": [
-        "AlgebraicModularFormsAndSerreWeightsPartII:S9/padic-forms",
-        "AlgebraicModularFormsAndSerreWeightsPartII:S9/padic-q-expansion",
-        "AlgebraicModularFormsAndSerreWeightsPartII:S9/classical-padic-comparison",
-        "AlgebraicModularFormsAndSerreWeightsPartII:S9/klingen-coefficient-operator"
-      ]
-    },
-    {
-      "title": "G6 — tame-level identification of reverse neighbors",
-      "detail": "The normalized adjugate sends Γ̄ diag(p,1)Γ̄ to Γ̄ diag(1,p)Γ̄. These coincide for SL₂(Z), but need not for an arbitrary prime-to-p principal subgroup. At Γ(5), p=3, Q=x², the forward neighbor reduces to 2x² modulo 5 and a second forward neighbor to 4x²; neither Γ(5)-equivalence nor prime-to-p approximation identifies that with Q. S6 proves the correct oriented reciprocity and the self-dual specialization. Before a downstream all-tame-level binary-form vanishing proof imports symmetric reciprocity, supply its exact diamond/cusp transport identification, pass to an appropriately invariant coefficient sector, or replace that proof with one using both orientations. This is a new qualification, not a claimed repair of the downstream roadmap.",
-      "neededBy": [
-        "AlgebraicModularFormsAndSerreWeightsPartII:S6/neighbor-reciprocity"
-      ]
-    }
-  ],
+  {
+    "slug": "genus-two-reduction-local-model-comparison",
+    "title": "G1 — genus-two reduction and local-model comparison",
+    "detail": "C14 supplies the integral models and their lci/normal properties, but not a checked theorem identifying their deformation coordinates with the spherical/paramodular rank stratification used here. The Dieudonné classification, supersingular P¹ splitting/counts, explicit local rings away from SS, and boundary-compatible finite-fiber classification are targeted by S2/S3/S7; their bridge to the existing moduli models has not been verified from a full reduction-theory source. The unpublished/proposed ShimuraVarietiesHondaTatePartII is not treated as a supplied stage. Before closure assign these exact reduction inputs to that proposed owner or prove their specializations here, with primary-source locators.",
+    "neededBy": [
+      "AlgebraicModularFormsAndSerreWeightsPartII:S2/rank-geometry",
+      "AlgebraicModularFormsAndSerreWeightsPartII:S2/hasse-simple-zero",
+      "AlgebraicModularFormsAndSerreWeightsPartII:S3/local-model-identifications",
+      "AlgebraicModularFormsAndSerreWeightsPartII:S3/global-secondary",
+      "AlgebraicModularFormsAndSerreWeightsPartII:S7/finite-rank-one-correspondence"
+    ]
+  },
+  {
+    "slug": "global-secondary-square-root-descent",
+    "title": "G2 — global secondary square root and descent",
+    "detail": "Pilloni Remark 6.4.1 and CG20 Theorem 8.10 use a square root of the spherical secondary invariant. The local Koblitz computation proves the genus-two singularity and supports the local multiplicity, but does not by itself construct a global section b₀ of λ^((p²−1)/2) on S or prove its tame-level descent. A root after an arbitrary étale cover is insufficient for the stated global Cartier sequence. Verify transition functions and descent at the chosen level, or restrict the later vanishing/injectivity targets to a level where this construction is proved. No paramodular or p=2 square-root claim is made.",
+    "neededBy": [
+      "AlgebraicModularFormsAndSerreWeightsPartII:S3/secondary-square-root",
+      "AlgebraicModularFormsAndSerreWeightsPartII:S8/negative-weight-vanishing",
+      "AlgebraicModularFormsAndSerreWeightsPartII:S8/scalar-theta-injective",
+      "AlgebraicModularFormsAndSerreWeightsPartII:S8/vector-theta-injective"
+    ]
+  },
+  {
+    "slug": "secondary-minimal-descent-comparison",
+    "title": "G3 — secondary minimal descent and comparison",
+    "detail": "Boxer Theorems 6.2.2–6.2.3 construct boundary-compatible generalized Hasse sections and descent after powers. To use exactly the two-section cover here, identify a positive power of the particular h′ of S3 with the appropriate descended section on the nonordinary minimal stratum. Equality of nonvanishing loci is not an identification of their line-bundle sections. Verify this comparison, including paramodular assertions only where needed; until then S4’s spherical two-affine cover is conditional.",
+    "neededBy": [
+      "AlgebraicModularFormsAndSerreWeightsPartII:S4/minimal-hasse-cover"
+    ]
+  },
+  {
+    "slug": "integral-residual-v2-cosets",
+    "title": "G4 — explicit integral residual V₂ cosets",
+    "detail": "CG20 Lemma 8.4 asserts integrality of V₂ but does not print its complete finite-coset formula. S5 defines V₂ unambiguously over K as a residual of the rational double coset, and identifies the exact integrality target. Compute its remaining determinant-p² cosets and symmetric-power weights, showing that the rational residual is the scalar extension of a coefficient operator over O, natural in every O-module. This is needed to establish the full formal Q₂ formula independently on arbitrary formal series. The geometric torsion Q₂ map in S7 has a separate integral construction via Pilloni §7 and does not rely on lifting torsion sections.",
+    "neededBy": [
+      "AlgebraicModularFormsAndSerreWeightsPartII:S5/hecke-decomposition",
+      "AlgebraicModularFormsAndSerreWeightsPartII:S5/corrected-q2"
+    ]
+  },
+  {
+    "slug": "full-frame-klingen-coefficient-comparison",
+    "title": "G5 — full-frame Klingen coefficient comparison",
+    "detail": "The genus-two Igusa tower requested from T5 and its component detection are not furnished by the existing Hilbert torsor node. In addition, verify the normalized Klingen finite-coset action on its full frame functions, showing its algebraic specialization is Z₂ and identifying its scalar normalization with the downstream analytic p^(3−r)U_(Kli(p),1). A formal Z₂ operator alone does not construct the ordinary geometric correspondence. This remains an explicit comparison obligation of S9, without a cyclic import of analytic control from HigherHidaAndColemanTheory.",
+    "neededBy": [
+      "AlgebraicModularFormsAndSerreWeightsPartII:S9/padic-forms",
+      "AlgebraicModularFormsAndSerreWeightsPartII:S9/padic-q-expansion",
+      "AlgebraicModularFormsAndSerreWeightsPartII:S9/classical-padic-comparison",
+      "AlgebraicModularFormsAndSerreWeightsPartII:S9/klingen-coefficient-operator"
+    ]
+  },
+  {
+    "slug": "tame-reverse-neighbor-identification",
+    "title": "G6 — tame-level identification of reverse neighbors",
+    "detail": "The normalized adjugate sends Γ̄ diag(p,1)Γ̄ to Γ̄ diag(1,p)Γ̄. These coincide for SL₂(Z), but need not for an arbitrary prime-to-p principal subgroup. At Γ(5), p=3, Q=x², the forward neighbor reduces to 2x² modulo 5 and a second forward neighbor to 4x²; neither Γ(5)-equivalence nor prime-to-p approximation identifies that with Q. S6 proves the correct oriented reciprocity and the self-dual specialization. Before a downstream all-tame-level binary-form vanishing proof imports symmetric reciprocity, supply its exact diamond/cusp transport identification, pass to an appropriately invariant coefficient sector, or replace that proof with one using both orientations. This is a new qualification, not a claimed repair of the downstream roadmap.",
+    "neededBy": [
+      "AlgebraicModularFormsAndSerreWeightsPartII:S6/neighbor-reciprocity"
+    ]
+  },
+  {
+    "slug": "siegel-parahoric-models",
+    "needs": "Provide the spherical, Klingen and paramodular genus-two toroidal and minimal models of Pilloni Theorem 6.1.5.1, their flat normal local-complete-intersection properties, the universal semiabelian isogeny chains, the compactified minuscule correspondence, and coefficient-sensitive refinement and boundary comparisons for these parahoric models.",
+    "supplier": "ShimuraCompactifications",
+    "section": "C5"
+  },
+  {
+    "slug": "siegel-rank-one-deformations",
+    "needs": "Provide the polarized genus-two rank-one deformation chart with Frobenius basis and tangent constraints X=Z at principal level and Z=0 or X=0 at paramodular level, compatible with the chosen moduli-to-crystal comparison.",
+    "supplier": "AbelianSchemesAndArithmeticModuli",
+    "section": "A4.7, A4.9"
+  },
+  {
+    "slug": "siegel-isogeny-trace-ideals",
+    "needs": "Provide the integral trace ideals for the ordinary genus-two Lagrangian and degree-p³/degree-p isogeny charts, including the trace divisibilities 1,p,p³ and p²,p with their semiabelian boundary compatibility.",
+    "supplier": "AbelianSchemesAndArithmeticModuli",
+    "section": "A4.10–A4.11"
+  },
+  {
+    "slug": "siegel-logarithmic-de-rham",
+    "needs": "Provide the genus-two semiabelian logarithmic de Rham connection and polarized pairing, ordinary unit-root splitting and first-order superspecial Hasse–Witt matrix, compatible with the logarithmic Kodaira–Spencer isomorphism of ShimuraCompactifications C5.12.",
+    "supplier": "AbelianSchemesAndArithmeticModuli",
+    "section": "A4.3"
+  },
+  {
+    "slug": "open-formal-milnor",
+    "needs": "Provide the functorial Milnor short exact sequence for coherent cohomology on qcqs open formal schemes and the comparison with derived inverse limits of their nilpotent thickenings needed for H⁰ isomorphisms and H¹ injections.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "4.9"
+  },
+  {
+    "slug": "lci-fundamental-class",
+    "needs": "Provide the determinant-of-cotangent-complex identification and fundamental class for projectively embeddable proper maps between flat lci schemes of equal relative dimension, with perfect-coefficient projection formula, finite-flat trace comparison, logarithmic boundary ideal compatibility and integral derived reduction even for nonflat correspondence maps.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "2.19–2.20"
+  },
+  {
+    "slug": "reduced-section-propagation",
+    "needs": "Provide injectivity of restriction of a locally free sheaf on a reduced scheme to an open dense in every irreducible component, with componentwise propagation from neighborhoods meeting those components.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "0.6"
+  },
+  {
+    "slug": "siegel-igusa-full-frames",
+    "needs": "Provide the finite étale full ordinary genus-two Igusa GL₂(ℤ/pⁿ)-torsors over all coefficient thickenings and toroidal boundary charts, with transitions, frame actions and the component-detection or monodromy theorem required for saturated all-frame expansions.",
+    "supplier": "HodgeTateAndCanonicalSubgroups",
+    "section": "5.1–5.2"
+  }
+],
   "restructure": [
     {
       "action": "merge",
