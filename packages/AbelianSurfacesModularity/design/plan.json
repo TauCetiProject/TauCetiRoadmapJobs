@@ -3007,84 +3007,132 @@
  ],
  "gaps": [
   {
-   "title": "The lifting theorem 7.5.11 and its inputs have no planning owner yet",
-   "neededBy": [
-    "AbelianSurfacesModularity:AM.3/two-adic-modularity",
-    "AbelianSurfacesModularity:AM.7/three-adic-transfer",
-    "AbelianSurfacesModularity:AM.7/fifteen-image-modularity",
-    "AbelianSurfacesModularity:AM.7/theorem-a"
-   ],
-   "detail": "BCGP25 Proposition 7.5.10 and Theorem 7.5.11 are routed by the reviewed extraction to the new roadmap GSp4NonregularModularityLifting, whose design job is pending; the request sits at AbelianSurfacesPotentialModularity:AP.5. Through it the endpoint also rests on higher Coleman classicality (Theorem 4.12.4; the design of HigherHidaAndColemanTheory plans Boxer–Pilloni over Q and not BCGP25 §4), on the regular-weight R = T theorems 5.7.14 and 6.3.4 (routed to the undesigned OrdinaryAutomorphicFormsAndModularityLiftingPartII), and on the proof obligations the extraction records for them (PO-analytic: a false general topological-extension lemma behind Theorem 2.3.32; PO-Sen: the fibre calculation of Proposition 3.6.15; PO-patching: compatible finite open-ideal truncations and ring actions in §7.2 and the local-through-q form of the support argument on p. 178)."
+    "slug": "surface-open-image",
+    "supplier": "FaltingsFinitenessAndIsogenyTheorems",
+    "section": "R28.4",
+    "needs": "For a polarized abelian surface over a number field with geometric endomorphism ring ℤ, prove that each rational ℓ-adic Zariski closure contains Sp₄, with invariance under finite base change and isogeny, without requiring a principal polarization."
   },
   {
-   "title": "Arthur's classification for GSp₄ is a carried hypothesis",
-   "neededBy": [
-    "AbelianSurfacesModularity:AM.0/modular-of-gsp4",
-    "AbelianSurfacesModularity:AM.3/two-adic-modularity",
-    "AbelianSurfacesModularity:AM.7/three-adic-transfer",
-    "AbelianSurfacesModularity:AM.7/fifteen-image-modularity",
-    "AbelianSurfacesModularity:AM.7/theorem-a",
-    "AbelianSurfacesModularity:AM.7/theorem-b"
-   ],
-   "detail": "Every main theorem uses Arthur's classification through the GSp₄–GL₄ transfer and Theorem 7.5.11; the remaining unproved input is the twisted weighted fundamental lemma (BCGP25 §1.6; ModularityAndLanglandsExtensions:ML.0/arthur-dependency-gate). The endpoint statements are conditional on it and say so; it is not planned here."
+    "slug": "surface-residual-endomorphisms",
+    "supplier": "FaltingsFinitenessAndIsogenyTheorems",
+    "section": "R28.4",
+    "needs": "Prove that geometric End is ℤ for a characteristic-zero abelian surface with symplectically identified mod-2 image containing A₅(b), by the five-point very-simple module and the Galois-stable endomorphism algebra, and for prime-to-3-polarized surfaces with surjective mod-3 image."
   },
   {
-   "title": "Finite certificates for the computations of §§6.4, 9 and 10",
-   "neededBy": [
-    "AbelianSurfacesModularity:AM.1/outer-classes",
-    "AbelianSurfacesModularity:AM.1/regular-semisimple-classes",
-    "AbelianSurfacesModularity:AM.1/allowed-images",
-    "AbelianSurfacesModularity:AM.4/weil-quartics-at-two",
-    "AbelianSurfacesModularity:AM.4/local-two-examples",
-    "AbelianSurfacesModularity:AM.4/genus-two-curves-over-F2",
-    "AbelianSurfacesModularity:AM.4/six-g-construction",
-    "AbelianSurfacesModularity:AM.5/genus-two-curves-over-F3",
-    "AbelianSurfacesModularity:AM.8/lmfdb-applicability",
-    "AbelianSurfacesModularity:AM.8/mod-two-realization"
-   ],
-   "detail": "Table 6.4.4, Lemma 9.1.3, Lemma 9.1.4, the enumerations of Lemmas 9.1.6 and 9.3.1 (Table 9.3.3), the degree-40/27 resolvent computations, §9.2.16 and Lemma 9.2.17, the tables in the proof of Lemma 10.3.6 and the LMFDB counts of §10.1 were done in Magma by the authors and are not independently reproduced (extraction obligation PO-certificates). Each node states the computation precisely; a reproducible certificate (enumeration, class identification, conductor and resolvent checks, frozen dataset with row predicates) is part of its acceptance."
+    "slug": "near-adequacy-reasonableness",
+    "supplier": "ArithmeticGaloisRepresentations",
+    "section": "7.9",
+    "needs": "Provide BCGP25 Definition 5.3.3 near adequacy and Whitmore reasonableness as distinct predicates with the actual cohomology and cyclotomic-image conditions, and their comparison with adequacy."
   },
   {
-   "title": "The corrected local seed at 3 for the partition [2,2,2] in Lemma 10.3.6",
-   "neededBy": [
-    "AbelianSurfacesModularity:AM.8/mod-two-realization",
-    "AbelianSurfacesModularity:AM.8/mod-two-modularity"
-   ],
-   "detail": "The printed curve for [2,2,2] (conductor 7165) has Q₃ = (x² + 2x + 3)² and is not 3-distinguished (PAPER-BOXER-CALEGARI-GEE-PILLONI-25/E053). The replacement Res_{F₉/F₃}E, E : y² = x(x − 1)(x − t), t² = −1, needs the bridge to a nearby Jacobian over Q₃ with good ordinary Jacobian reduction and the same mod-2 representation: polarized lifting, Torelli and local constancy (extraction obligation PO-local-three)."
+    "slug": "integral-enormity",
+    "supplier": "ArithmeticGaloisRepresentations",
+    "section": "7.11",
+    "needs": "Provide BCGP25 Definition 7.1.1 integral enormousness and Corollary 7.1.4, including its Sp₄ and induced SL₂ × SL₂ alternatives and the residual regular-semisimple and cyclotomic restriction hypotheses."
   },
   {
-   "title": "The dyadic polarized lifting in Lemmas 10.3.1 and 10.3.6",
-   "neededBy": [
-    "AbelianSurfacesModularity:AM.8/mod-two-realization",
-    "AbelianSurfacesModularity:AM.8/mod-two-modularity"
-   ],
-   "detail": "AbelianSchemesAndArithmeticModuli:A4/ordinary-dyadic-finite-level-lifting records Lemma 10.3.1 with the corrected scope: integral H² vanishing fails (E050) and skew self-duality of a group killed by 2 does not imply alternation (E051). The polarized ordinary extension classification needed to lift with the prescribed W as a principally polarized surface remains to be proved (extraction obligation PO-dyadic-polarization)."
+    "slug": "finite-tate-lift-local-control",
+    "supplier": "ArithmeticGaloisRepresentations",
+    "section": "7.6",
+    "needs": "Construct the finite-image complex Tate lift of the projective A₅ representation with its prescribed mod-2 projectivization, and kill its finite scalar ramification above 2 after solvable totally real base change preserving A₅ image."
   },
   {
-   "title": "Undesigned or unplanned suppliers: Zarhin, Kisin, dyadic Hida theory, near adequacy, integral enormity",
-   "neededBy": [
-    "AbelianSurfacesModularity:AM.3/residual-a5-automorphy",
-    "AbelianSurfacesModularity:AM.3/two-adic-modularity",
-    "AbelianSurfacesModularity:AM.6/local-two-equivalence",
-    "AbelianSurfacesModularity:AM.6/two-three-switch",
-    "AbelianSurfacesModularity:AM.2/a5-near-adequate",
-    "AbelianSurfacesModularity:AM.7/three-adic-transfer"
-   ],
-   "detail": "Zarhin's End = Z theorem (requested at FaltingsFinitenessAndIsogenyTheorems:R28.4, owner OpenImageTheoremsForAbelianVarieties not designed), Kisin's local constancy (requested at NeronModelsAndSemistableAbelianVarieties:R11.6), 2-adic Hida families from parallel weight one (requested at OrdinaryAutomorphicFormsAndModularityLifting:R21.2), and near adequacy, reasonableness and integral enormity (requested at GlobalGaloisDeformations, whose Tau Ceti pull request does not plan them: a Part II is needed) are not yet planned by any packet. This includes the finite-image/local-scalar Tate-lift adapter, the finite-extension principal-polarization adapter for Serre open image, and the integral-neighbourhood preservation of W (which is stronger than generic-fibre constancy). Kisin’s original Theorem 5.1 has not been independently inspected in this review."
+    "slug": "dyadic-weight-one-change",
+    "supplier": "OrdinaryAutomorphicFormsAndModularityLifting",
+    "section": "2.11",
+    "needs": "Extend Hilbert ordinary weight change to a parallel-weight-one form unramified above 2, obtaining after solvable totally real base change an ordinary parallel-weight-two form of trivial central character with the prescribed residual representation."
   },
   {
-   "title": "All-local transfer, ordinary packet choices and finite-level monodromy adapters",
-   "neededBy": [
-    "AbelianSurfacesModularity:AM.0/isobaric-modularity",
-    "AbelianSurfacesModularity:AM.0/modular-of-gsp4",
-    "AbelianSurfacesModularity:AM.7/fifteen-image-modularity",
-    "AbelianSurfacesModularity:AM.8/density-of-applicability",
-    "AbelianSurfacesModularity:AM.8/mod-two-realization",
-    "AbelianSurfacesModularity:AM.8/mod-two-modularity"
-   ],
-   "detail": "AL.4/exterior-power-transfer-comparison supplies partial factors conditional on a transfer, and ET.4/gsp4-gl4-transfer is phrased in the descent direction. Their requested all-local and forward weight-2 forms remain to be supplied. AP.0 must also supply the unramified ordinary Satake and local-packet choices needed to change the attaching prime from 2 to 3 or back. A4 must supply the generic mod-3 monodromy of the coefficient and fixed-2-torsion families before IG.2 can make their nonsurjective specialization loci thin. Each contract is stated under requests; none is counted as library closure."
+    "slug": "local-neighbourhoods",
+    "supplier": "NeronModelsAndSemistableAbelianVarieties",
+    "section": "6.10–6.13",
+    "needs": "Prove local persistence in smooth polarized families of prescribed finite-level generic torsion, prime-to-p rational Weil–Deligne data, semistable ordinarity and distinguishedness, and separately openness of the prescribed integral ordinary W/ℤ₂ isomorphism class, without claiming constancy of the full p-adic representation."
+  },
+  {
+    "slug": "unramified-lift-rigidity",
+    "supplier": "LocalGaloisDeformationRings",
+    "section": "2.2",
+    "needs": "For ℓ ≠ p and unramified residual representations with no Frobenius eigenvalue ratio ℓ, prove every continuous lift to a complete local p-adic coefficient algebra is unramified, including nonreduced coefficient algebras."
+  },
+  {
+    "slug": "projective-thin-count",
+    "supplier": "InverseGaloisAndArithmeticFundamentalGroups",
+    "section": "IG.2.5",
+    "needs": "Extend the integral-box thin-set bound to rational points of projective height at most H on ℙⁿ for n ≥ 1, with bound O(H^(n+1/2) log H), and give a positive H^(n+1) lower bound in any finite collection of nonempty local open conditions."
+  },
+  {
+    "slug": "genus-two-level-three-monodromy",
+    "supplier": "AbelianSchemesAndArithmeticModuli",
+    "section": "A3.8 and A4.9",
+    "needs": "Prove geometric Sp₄(𝔽₃) level-3 monodromy for the smooth genus-two coefficient family and the universal ordered-six-branch hyperelliptic family, compatibly with characteristic-zero base change, and the resulting arithmetic GSp₄(𝔽₃) monodromy over ℚ and thin proper-image specialization loci."
+  },
+  {
+    "slug": "ordinary-spherical-attachment",
+    "supplier": "GSp4NonregularModularityLifting",
+    "section": "NR2.5–NR2.6",
+    "needs": "For a pure general-type weight-two system realized by an abelian surface with good ordinary reduction at finitely many primes, choose a global automorphic representation with its Arthur parameter, spherical and ordinarily stabilized at those primes, preserving the other prescribed local members and the archimedean weight, and identify its ordinary Galois attachment at each chosen prime."
+  },
+  {
+    "slug": "forward-singular-spin-transfer",
+    "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+    "section": "11.1",
+    "needs": "Supply the forward cuspidal spin transfer from a singular weight-two GSp₄ representation with absolutely irreducible attached Galois representation, with every-place parameters and central-character twists, as well as the classification-based exclusion of nongeneral types."
+  },
+  {
+    "slug": "all-place-exterior-transfers",
+    "supplier": "AutomorphicLFunctionsAndLocalFactors",
+    "section": "AL.4",
+    "needs": "Supply existence and equality of every finite local factor for the established small-rank exterior-power and tensor transfers of normalized H¹ constituents, including GL₂ + GL₂ and character decompositions."
+  },
+  {
+    "slug": "odd-rank-two-system-modularity",
+    "supplier": "ModularityAndLanglandsExtensions",
+    "section": "1.9",
+    "needs": "Provide weight-two newform modularity of every odd irreducible regular weakly compatible rank-two system over ℚ with Hodge–Tate weights {0,1}, with the local and normalization comparisons used in the endomorphism-type decomposition."
+  },
+  {
+    "slug": "induced-character-client",
+    "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+    "section": "13.2",
+    "needs": "Provide the rank-two potentially abelian de Rham dichotomy over a number field, finite up to character twist or automorphically induced from an algebraic Hecke character, with its cuspidality and local comparisons."
+  },
+  {
+    "slug": "dyadic-selfdual-polarized-lift",
+    "supplier": "AbelianSchemesAndArithmeticModuli",
+    "section": "A4.13",
+    "needs": "Prove that the ordinary finite flat self-dual order-16 model required here admits the skew self-duality and polarized symmetric Serre–Tate extension lift used by A4.13, distinguishing arbitrary Cartier self-duality, skew self-duality and strong alternation."
+  },
+  {
+    "slug": "three-two-two-two-seed",
+    "supplier": "AbelianSchemesAndArithmeticModuli",
+    "section": "A4.14 and A6.32",
+    "needs": "Lift and deform Res_(𝔽₉/𝔽₃) of y²=x(x−1)(x−t), t²=−1, to a nearby genus-two Jacobian over ℚ₃ with good ordinary 3-distinguished Jacobian reduction and unramified mod-2 permutation type [2,2,2], using a dense Torelli neighbourhood of the decomposable special fibre."
+  },
+  {
+    "slug": "strong-odd-symplectic-criterion",
+    "supplier": "PotentialAutomorphyInfrastructurePartII",
+    "section": "PL.4, Strong residual oddness at a real place",
+    "needs": "Provide the general-rank characteristic-two criterion of BCGP25 Lemmas 5.2.3 and 5.2.7, including the nonalternating symmetric-form condition, its nonzero-diagonal equivalent, and the involution-class count n + 1 + floor(n/2)."
+  },
+  {
+    "slug": "ordinary-polarized-three-model",
+    "supplier": "AbelianSchemesAndArithmeticModuli",
+    "section": "A4.12",
+    "needs": "For an ordinary finite-flat symplectic mod-3 representation over ℚ₃ with multiplier ε̄, construct the compatible polarized height-four level-one truncated Barsotti–Tate model and identify its special fibre with V extended by its multiplicative dual so that A4.12 applies to each seed."
+  },
+  {
+    "slug": "all-place-surface-comparison",
+    "supplier": "GSp4NonregularModularityLifting",
+    "section": "NR2.5–NR2.6",
+    "needs": "For a weight-two general-type GSp₄ representation attached at p to the pure H¹ of an abelian surface, prove the compatible-system comparison with its GL₄ transfer at every finite place including ramified places above p, and compare conductors and the archimedean factors in the stated motivic normalization."
+  },
+  {
+    "slug": "siegel-prime-to-level-monodromy",
+    "supplier": "ShimuraVarieties",
+    "section": "1.2 and 5.0",
+    "needs": "For each g ≥ 1 and a connected fixed-pairing fine Siegel chart of level N ≥ 3 in characteristic zero, prove that adjoining symplectic level ℓ with prime ℓ not dividing N gives a geometrically connected cover with group Sp_(2g)(𝔽_ℓ), compatibly with the universal family and level change."
   }
- ],
+],
  "sourceIssues": [
   {
    "id": "AbelianSurfacesModularity/E1",

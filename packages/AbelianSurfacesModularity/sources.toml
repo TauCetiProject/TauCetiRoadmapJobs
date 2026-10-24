@@ -1,0 +1,124 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AbelianSurfacesModularity"
+
+[[source]]
+id = "BCGP25"
+authors = "George Boxer, Frank Calegari, Toby Gee, Vincent Pilloni"
+title = "Modularity theorems for abelian surfaces"
+year = 2025
+arxiv = "2502.20645v1"
+locator_scheme = "theorem"
+locator = "Theorems A, B, 8.3.2, 9.2.3, 9.5.1–9.5.5, 10.2.1, 10.3.9; Sections 6.4, 8–10"
+url = "https://arxiv.org/abs/2502.20645v1"
+fetched_from = "https://arxiv.org/pdf/2502.20645v1"
+fetched_at = "2026-10-24T05:45:41Z"
+sha256 = "51d7eacca6eae394943f09ab72dfe09ee9aa6da27f563be8237c416e5da4e95c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v1"
+cited_for = ["Layers 0–8"]
+
+[[source]]
+id = "ZARHIN00"
+authors = "Yuri G. Zarhin"
+title = "Hyperelliptic jacobians without complex multiplication"
+year = 2000
+arxiv = "math/9909052v2"
+locator_scheme = "theorem"
+locator = "Theorem 4.1, page 5; Section 3 and Lemma 3.1, pages 3–4 (preprint)"
+url = "https://arxiv.org/abs/math/9909052v2"
+fetched_from = "https://arxiv.org/pdf/math/9909052v2"
+fetched_at = "2026-10-24T05:46:27Z"
+sha256 = "73c57928ed276a80852aac041357e1f19e320a2c62db9b18e12e287cf7625fe8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Published 2000; locators use arXiv math/9909052v2 (1999), pages 3–5."
+cited_for = ["Layer 3 endomorphism adapter"]
+
+[[source]]
+id = "BCGP21"
+authors = "George Boxer, Frank Calegari, Toby Gee, Vincent Pilloni"
+title = "Abelian Surfaces over totally real fields are Potentially Modular"
+year = 2021
+venue = "Publications Mathématiques de l'IHÉS 134"
+doi = "10.1007/s10240-021-00128-2"
+arxiv = "1812.09269v3"
+locator_scheme = "theorem"
+locator = "Proposition 10.2.3 and Lemma 10.2.4; Definitions 7.5.11, 9.1.8; Section 9.2; Remark 9.1.7 (arXiv v3 numbering)"
+url = "https://arxiv.org/abs/1812.09269v3"
+fetched_from = "https://arxiv.org/pdf/1812.09269v3"
+fetched_at = "2026-10-24T05:49:05Z"
+sha256 = "7c8d74b0628d8b9cc841a853372ca2d0bc18c086ab46d138f75afd15f35689ed"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Numbering and page locators use arXiv v3 (2021): Proposition 10.2.3 is equivariant rationality of the untwisted space; Lemma 10.2.4 is rationality of P(rho). The published DOI is recorded for the same work."
+cited_for = ["Layer 0 weight-two dictionary; Layer 6 odd-theta rationality; Layer 8 Galois types", "Layers 0, 6, 8"]
+
+[[source]]
+id = "KIS99"
+authors = "Mark Kisin"
+title = "Local constancy in p-adic families of Galois representations"
+year = 1999
+venue = "Mathematische Zeitschrift 230"
+doi = "10.1007/pl00004706"
+locator_scheme = "theorem"
+locator = "Theorem 5.1, pages 569–593"
+url = "https://doi.org/10.1007/pl00004706"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Local-neighbourhood supplier contract"]
+
+[[source]]
+id = "FKRS12"
+authors = "Francesc Fité; Kiran S. Kedlaya; Víctor Rotger; Andrew V. Sutherland"
+title = "Sato-Tate distributions and Galois endomorphism modules in genus 2"
+year = 2012
+arxiv = "1110.6638v2"
+locator_scheme = "theorem"
+locator = "Definition 1.3, Theorems 1.4–1.5 and 4.3; Tables 8 and 11; arXiv v2 pages 4–5 and 22"
+url = "https://arxiv.org/abs/1110.6638v2"
+fetched_from = "https://arxiv.org/pdf/1110.6638v2"
+fetched_at = "2026-10-24T05:59:28Z"
+sha256 = "d5e70f9e1e96e0c8200c36698fd3e070e634b9bd5ea6f557fddfdea02ab95862"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v2"
+cited_for = ["Section 8.9 endomorphism types"]
+
+[[source]]
+id = "THORNE17"
+authors = "Jack A. Thorne"
+title = "A 2-adic automorphy lifting theorem for unitary groups over CM fields"
+year = 2017
+venue = "Mathematische Zeitschrift 285"
+doi = "10.1007/s00209-016-1681-2"
+locator_scheme = "theorem"
+locator = "Definition 2.20"
+url = "https://doi.org/10.1007/s00209-016-1681-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Section 2.6 adequacy comparison"]
+
+[[source]]
+id = "WHITMORE22"
+authors = "Dmitri Whitmore"
+title = "The Taylor-Wiles method for reductive groups"
+year = 2022
+arxiv = "2205.05062v4"
+locator_scheme = "theorem"
+locator = "Definition 3.19, pages 23–24, lines 1011–1017; Section 4.3, pages 38–39, lines 1648–1688"
+url = "https://arxiv.org/abs/2205.05062v4"
+fetched_from = "https://arxiv.org/pdf/2205.05062v4"
+fetched_at = "2026-10-24T06:22:20Z"
+sha256 = "d336c208089c4dd7d06638597027819d5e1c8bd974276f4ea9b0611e8e42d040"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Locators use arXiv v4, March 2026; Definition 3.19 has the same number as the BCGP25 citation. The legally fetched extraction was read with OCR."
+cited_for = ["Sections 1.4 and 7.1 reasonableness supplier contract"]
