@@ -4882,6 +4882,7 @@
   ],
   "gaps": [
     {
+      "slug": "auxiliary-field-independence",
       "title": "G1 — replacement for full-family auxiliary-field independence",
       "detail": "FKP22 v5 Lemma3.7 pp.15–16 is false under its stated Assumption3.1: for F=Q, trivial SL₂ residual image and k=F_p, p≥5, M*=F_p(κ̄)³. For two basis lines, identify their scalar cocycles and put ζ_w=η_1^(w)−η_2^(w). Their equal inertia at w cancels, so ζ_w lies in the finite group H¹(Γ_{Q,T},F_p(κ̄)). Infinitely many w force ζ_w=ζ_w′ for distinct w,w′. This gives a nontrivial relation among four degree-p cocycle fields, contradicting strong disjointness. Restriction to Γ_K preserves the relation and individual nonvanishing; H¹(Gal(K/Q),F_p(κ̄))=0 as its order is p−1. C4 holds, but C1 fails. To close the main proof, establish the quantitative conditional-success/finite-quotient Chebotarev input actually needed by Proposition3.8 under C1,C3,C4, using a new construction or a proof allowing repeated constituents. Individual cyclic images or pairwise disjointness do not close it. The conditional joint-generation node is valid but its extra hypothesis is not automatic. Theorem5.2 is an intended target, not disproved by this counterexample. Independent review (REV-DESIGN-GlobalGaloisDeformationsPartII) adds that the failure also occurs under C1–C4. With k=F_p, if M* is semisimple with a simple constituent of multiplicity at least two, then for every k-basis the inertia tuple at w generates a proper F_p[Γ_F]-submodule of ∏_b M*_{e_b*}. The resulting subextension of L_w unramified at w lies in the finite maximal elementary abelian p-extension of K unramified outside T, so it repeats for two new primes. This happens for the F₄-valued examples of FKP19 Proposition 7.8 (adjoint multiplicities above one, FKP19 Remark 7.9), which satisfy C1–C4. The same diagonal-generator step recurs on p.18 of FKP22, where the fields K_{h(v)} and K_{η_b^{(v)}} are separated through ramification at t₀. So G1 is a gap in the proof of Theorem 5.2 within its hypotheses; Theorem 5.2 is not refuted, and for irreducible residual images FKP19 Theorem 6.11 has an independent proof.",
       "neededBy": [
@@ -4894,6 +4895,7 @@
       ]
     },
     {
+      "slug": "small-dimensional-finite-group-input",
       "title": "G2 — precise small-dimensional finite-group input",
       "detail": "Read Guralnick, Small representations are completely reducible, J.Algebra220(1999), DOI10.1006/jabr.1999.7963, TheoremA in an authorized primary text, and verify the exact hypotheses that supply both the H¹ claim used by FKP19 LemmaA.1 and the noninjective-projection splitting argument of FKP22 Corollary8.3. The primary Larsen–Pink normal-series theorem was read; it does not by itself supply this input. Publisher access did not provide the primary Guralnick text. Keep the requested IMAGE contract open.",
       "neededBy": [
@@ -4903,8 +4905,9 @@
       ]
     },
     {
+      "slug": "positive-characteristic-duality-contract",
       "title": "G3 — audited positive-characteristic duality contract",
-      "detail": "The present ArithmeticGaloisDuality Selmer/PT/Greenberg–Wiles nodes and D7 are stated for number fields or their completions. Read an authorized primary proof of their global/local function-field versions at p different from the characteristic and verify all finite-coefficient, Sha and cardinality comparisons in the requests. The FKP papers invoke these versions but do not prove the entire duality theory; no matching implementation was found at the pinned/current searches. The cited NSW book is not a cleared local source, so no other copy was used.",
+      "detail": "ArithmeticGaloisDuality R02.4.5 supplies prime-to-characteristic function-field Poitou–Tate and Sha duality for nonempty S; R02.1.2–R02.1.3 supplies compact coefficient comparisons; the remaining export is the function-field Greenberg–Wiles cardinality formula and nested-local-condition numerics at R02.5.1 with the same nonempty finite S and coefficient maps.",
       "neededBy": [
         "GlobalGaloisDeformationsPartII:GG2.2/sha-killing",
         "GlobalGaloisDeformationsPartII:GG2.2/one-prime-sequence",
@@ -4917,6 +4920,7 @@
       ]
     },
     {
+      "slug": "polarized-coefficient-convention",
       "title": "G4 — coefficient convention in the polarized G_n criterion",
       "detail": "The disconnected polarized group (GL_n×G_m)⋊C₂ has ker(multiplier) with Lie algebra gl_n, whereas Lie((G_n⁰)^der)=sl_n. Resolve the paper’s use of its adjoint module against the fixed-multiplier tangent convention, including the scalar direction and conjugation sign, before accepting the repaired A.10 statement from GlobalGaloisDeformations:G7. Constituentwise self-polarization is necessary, and the complex-conjugation action is x↦−A xᵗA⁻¹. This Appendix-A criterion is not used to establish Theorem5.2 in the body; its route is retained as a supplier obligation.",
       "neededBy": [
@@ -4924,6 +4928,7 @@
       ]
     },
     {
+      "slug": "all-coefficient-place-monodromy",
       "title": "G5 — all-coefficient-place monodromy",
       "detail": "The accepted supplier node ModularityAndLanglandsExtensions:ML.2/compatible-system-from-potential-automorphy asserts Zariski density of every member; its proof needs the exact reductive-subgroup classification with regular unipotent element and the primary independence-of-formal-character theorem needed in the final paragraph of Proposition9.1. BLGGT14 Lemma5.3.1 controls connected components/multiplicity and is not that theorem. Explain rank/irreducibility and the principal-GL₂ exception, and use the explicit two-Steinberg-place strengthening to cover every coefficient characteristic by an away-ℓ place. The compatible-system target is explicitly conditional on this contract; the original p-adic lift is already dense.",
       "neededBy": [
@@ -4931,6 +4936,7 @@
       ]
     },
     {
+      "slug": "large-prime-reductive-group-inputs",
       "title": "G6 — large-prime reductive-group inputs outside the upstream ReductiveGroups scope",
       "detail": "Several arguments use structure theory of a split reductive group in large characteristic that the current Tau Ceti ReductiveGroups layers 7–8 do not state (those layers own Borel and parabolic subgroups, Levi decompositions, root data, Bruhat decomposition and the classification) and that no atlas roadmap plans. (i) For p≫_G 0, a P-equivariant isomorphism of varieties exp: Lie U→U restricting to the ascending central series and inducing P-equivariant group isomorphisms on its graded pieces, together with the finite adjoint expansion of Ad(exp X) (FKP22 Lemma A.1, Remark A.2, p.44, and proof of Lemma A.18, p.51). (ii) Centralizers in good characteristic: smoothness of centralizers of Lie-algebra elements, containment of the centralizer of a nonzero nilpotent element in a proper parabolic, connectedness and reductivity of centralizers of semisimple elements when p is not a torsion prime, root-subgroup description of a centralizer containing a maximal torus, centralizers of tori being Levi subgroups, and generation of C_G(t) by T, root subgroups and Weyl representatives (FKP19 Lemmas A.2 and A.5, pp.61–63; FKP22 proof of Lemma A.11, pp.48–49). (iii) The G-semisimplification of a finite image: Levi projection from a minimal parabolic containing it, uniqueness up to G(k)-conjugacy, behaviour under residue-field extension, and the parabolic adjoint filtration with graded pieces m⊕u⊕u⁻ (FKP22 Lemma 6.1, p.28, and proof of Lemma A.11, p.48). (iv) Uniform finite-field root position: a root vector outside any proper F_p-subspace of g^der, and toral elements in general position with a prescribed root value (FKP19 Proposition 5.9, p.29, and Lemma 5.13, p.38). These need an owner: an atlas continuation of ReductiveGroups, or lemma nodes here if the maintainer so decides. A Tau Ceti roadmap is not extended from the atlas, so the former requests to its layers 7–8 for these inputs are withdrawn.",
       "neededBy": [
@@ -4949,6 +4955,108 @@
         "GlobalGaloisDeformationsPartII:GG2.7/levi-residual-lattice",
         "GlobalGaloisDeformationsPartII:GG2.7/remove-invariants"
       ]
+    },
+    {
+      "slug": "fixed-quotient-global-obstructions",
+      "needs": "The square-zero H¹ action, H² obstruction and global/local restriction diagram must apply to fixed-quotient G-valued lifts with prime-to-p components and reducible residual image, without asserting representability of the unframed functor.",
+      "supplier": "GlobalGaloisDeformations",
+      "section": "R04.3 §§3.3–3.8"
+    },
+    {
+      "slug": "polarized-tangent-convention",
+      "needs": "Its G7 polarized coefficient criterion must distinguish Lie ker(multiplier)=glₙ from Lie((G⁰)ᵈᵉʳ)=slₙ, track the scalar summand and the action X↦−AXᵗA⁻¹, and require each residual constituent to be polarized individually before exporting invariant vanishing.",
+      "supplier": "GlobalGaloisDeformations",
+      "section": "G7 §§8.1–8.4"
+    },
+    {
+      "slug": "function-field-selmer-numerics",
+      "needs": "At R02.5.1 export the Greenberg–Wiles cardinality formula and its nested-local-condition comparison over global function fields with nonempty finite S and finite coefficients of order prime to the field characteristic, with no archimedean or p-adic correction, using the coefficient and pairing maps of R02.4.5 and D7.7.",
+      "supplier": "ArithmeticGaloisDuality",
+      "section": "R02.5.1"
+    },
+    {
+      "slug": "large-prime-unipotent-exponential",
+      "needs": "For every split reductive root datum there is a prime bound for a P-equivariant variety isomorphism exp:Lie(U)→U preserving the ascending central series, inducing equivariant additive group isomorphisms on its graded pieces and satisfying the finite adjoint expansion on nilpotent elements.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.1"
+    },
+    {
+      "slug": "good-characteristic-centralizers",
+      "needs": "Supply smoothness and proper-parabolic containment for centralizers of nonzero nilpotent Lie elements, the connected reductive root description of semisimple Lie centralizers under the stated non-torsion-prime hypotheses, centralizers of tori as Levi subgroups, and the torus/root/Weyl description needed for bounded powers of semisimple group elements.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.1"
+    },
+    {
+      "slug": "finite-image-semisimplification",
+      "needs": "Supply minimal-parabolic Levi projection and uniqueness of the G-semisimplification of a finite subgroup, its residue-field-extension behaviour after choosing a minimal parabolic again, and the parabolic adjoint filtration with graded terms m, u and u⁻.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.1"
+    },
+    {
+      "slug": "uniform-finite-field-root-position",
+      "needs": "Supply a root vector outside any proper prime-field subspace of the derived Lie algebra and a toral element avoiding every root hyperplane with a prescribed nonzero root value, uniformly above a bound depending only on the root datum.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.1"
+    },
+    {
+      "slug": "small-dimensional-finite-images",
+      "needs": "At §7.7 export the precise small-dimensional complete-reducibility and character-twisted H¹ input used by FKP19 Lemma A.1 and the noninjective-Levi-projection argument, together with the Larsen–Pink normal series and its uniform bounds, retaining each prime and dimension hypothesis.",
+      "supplier": "ArithmeticGaloisRepresentations",
+      "section": "§7.7"
+    },
+    {
+      "slug": "lazard-lattice-comparison",
+      "needs": "For a sufficiently small uniform subgroup U and every finite free O-lattice V with continuous linear action, export a finite free completed-group-ring resolution computing all V/ϖʳ cohomology from one bounded finite O-complex and the rational comparison with Lie(U)-cohomology, with the action obtained by differentiation.",
+      "supplier": "NoncommutativeAndEquivariantIwasawa",
+      "section": "§§0.13 and F.2"
+    },
+    {
+      "slug": "semisimple-lie-cohomology-vanishing",
+      "needs": "On the shared absolute Chevalley–Eilenberg complex export all-degree vanishing for a semisimple characteristic-zero Lie algebra acting on a finite-dimensional module with no invariants, and Whitehead vanishing in degrees one and two for every finite-dimensional module, compatibly with scalar extension to p-adic coefficient fields.",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "Layer 1, absolute Chevalley–Eilenberg comparison"
+    },
+    {
+      "slug": "root-cocycle-lattices",
+      "needs": "At §2.28 export the fixed-quotient root lifting functors and explicit cocycle lattices of FKP19 Lemma 3.5, pp.17–18 and Lemma 6.7, pp.46–47, including divided coboundaries, coefficient short exactness, rank-one unramified quotients and stability of the nonempty higher lifting fibres.",
+      "supplier": "LocalGaloisDeformationRings",
+      "section": "§2.28"
+    },
+    {
+      "slug": "smooth-local-approximation",
+      "needs": "At §§1.22, 2.28 and 3.11 export smooth-point analytic neighborhoods, their cocycle lattices and exact tangent cardinalities, with one finite coefficient extension giving smooth points on the chosen components to every original-uniformizer accuracy.",
+      "supplier": "LocalGaloisDeformationRings",
+      "section": "§§1.22, 2.28 and 3.11"
+    },
+    {
+      "slug": "full-torus-ordinary-character",
+      "needs": "At §§6.5 and 6.17 fix the entire ordinary torus character using a basis of its character lattice, including its central part, and export the fixed-similitude regular ordinary and Steinberg conditions and the GL₂ determinant normalization used in §§8.3 and 10.1.",
+      "supplier": "LocalGaloisDeformationRings",
+      "section": "§§6.5 and 6.17"
+    },
+    {
+      "slug": "function-field-langlands-lattice-witness",
+      "needs": "At GS.6, “The global correspondence for GL_r”, export both directions between cuspidal GLₙ automorphic representations with finite-order central character and irreducible finitely ramified p-adic Galois representations with finite-order determinant, with finite coefficient fields and actual stable-lattice reductions retained.",
+      "supplier": "GlobalShtukasAndFunctionFieldLanglands",
+      "section": "GS.6"
+    },
+    {
+      "slug": "ordinary-residual-potential-automorphy",
+      "needs": "The seed of §2.28 must be explicitly ι-ordinary of weight zero, compatibly with its simultaneous finite-place Steinberg variant and the stated cyclotomic constituent conditions through the disjoint totally real extension.",
+      "supplier": "ModularityAndLanglandsExtensions",
+      "section": "§2.28"
+    },
+    {
+      "slug": "all-place-symplectic-monodromy",
+      "needs": "The all-coefficient-place density conclusion of §2.48 must include the exact reductive-subgroup classification with a regular unipotent element, the irreducibility and rank hypotheses, and independence of formal character needed to exclude the principal GL₂ alternative for n>1.",
+      "supplier": "ModularityAndLanglandsExtensions",
+      "section": "§2.48"
+    },
+    {
+      "slug": "unconditional-pan-fontaine-mazur",
+      "needs": "At §10.15 export Pan22 Theorem 1.0.2 with precisely its continuous irreducible odd finitely ramified potentially semistable GL₂ input over ℚ, distinct Hodge–Tate weights, reducible residual semisimplification and p=3 ratio exclusion, without the additional conditional arithmetic hypotheses CC1–CC5 and LC.",
+      "supplier": "GL2ModularityLifting",
+      "section": "§10.15"
     }
   ],
   "sourceIssues": [

@@ -7,9 +7,196 @@ authors = "Joël Bellaïche"
 title = "Ribet’s lemma, generalizations, and pseudocharacters"
 year = 2009
 locator_scheme = "theorem"
-locator = "§1.2, Lemmas 1.3–1.5 and Proposition 1.4, pp.6–7; §1.3, Exercises 1.5–1.9, p.8"
+locator = "§1.2, Lemmas 1.3–1.5 and Proposition 1.4, pp.6–7 (lines 221–286); §1.3, Exercises 1.5–1.9, p.8 (lines 308–338)"
 sha256 = "5e23444d4d3f4ee9fd06e9254bdee496e648ddf6b359120781d26cebf52beafe"
 licence_class = "operator-local"
 status = "certified"
 local_name = "bellaiche-2009-ribets-lemma-generalizations-pseudocharacters.pdf"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/349#issuecomment-6384433707"
+cited_for = ["8.9"]
+url = "https://people.brandeis.edu/~jbellaic/RibetHawaii3.pdf"
+
+[[source]]
+id = "FKP22"
+authors = "Najmuddin Fakhruddin, Chandrashekhar Khare, Stefan Patrikis"
+title = "Lifting and automorphy of reducible mod p Galois representations over global fields"
+year = 2022
+arxiv = "2008.12593v5"
+locator_scheme = "theorem"
+locator = "Introduction and §§2–9; Appendices A–B, read for the proof dependency graph and corrected applications."
+url = "https://arxiv.org/abs/2008.12593v5"
+fetched_from = "https://arxiv.org/pdf/2008.12593v5"
+fetched_at = "2026-10-24T13:37:36Z"
+sha256 = "6c260021acef4649492892fc266f703aa69401879bf87e1c2492bf2ef24ff1e2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Locators use the printed 1–58 pagination and theorem numbering of arXiv:2008.12593v5; no published-text collation is asserted."
+cited_for = ["GlobalGaloisDeformationsPartII"]
+doi = "10.1007/s00222-021-01085-7"
+
+[[source]]
+id = "FKP19"
+authors = "Najmuddin Fakhruddin, Chandrashekhar Khare, Stefan Patrikis"
+title = "Relative deformation theory, relative Selmer groups, and lifting irreducible Galois representations"
+year = 2021
+arxiv = "1904.02374v5"
+locator_scheme = "theorem"
+locator = "Definitions 1.2, 1.4–1.5 and Assumption 2.1; §3; Proposition 4.7 and Lemma 4.9; Notation 5.1 and Lemma 5.13; §6; Appendices A–B."
+url = "https://arxiv.org/abs/1904.02374v5"
+fetched_from = "https://arxiv.org/pdf/1904.02374v5"
+fetched_at = "2026-10-24T13:37:44Z"
+sha256 = "9ec2865cd2aad92fad7d1f14c018222a52c0d1d6f32b6c2b3c426423e2708efa"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Locators use the printed 1–66 pagination and theorem numbering of arXiv:1904.02374v5."
+cited_for = ["GlobalGaloisDeformationsPartII"]
+doi = "10.48550/arXiv.1904.02374"
+
+[[source]]
+id = "LP11"
+locator_scheme = "theorem"
+locator = "Theorem 0.2, p.1106; proof and construction of the normal series, §12, p.1156."
+url = "https://people.math.ethz.ch/~pinkri/ftp/LP5.pdf"
+fetched_from = "https://people.math.ethz.ch/~pinkri/ftp/LP5.pdf"
+fetched_at = "2026-10-24T13:37:47Z"
+sha256 = "47562746d32316b878e70a76409008b3a9061ef692c3953d921fec33ce62b967"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["GlobalGaloisDeformationsPartII"]
+authors = "Michael Larsen and Richard Pink"
+title = "Finite subgroups of algebraic groups"
+year = 2011
+
+[[source]]
+id = "Lazard65"
+locator_scheme = "theorem"
+locator = "III Proposition 3.1.3 pp.91–92 and Theorem 3.1.7.4 p.94; V §§2.2.2–2.2.3 pp.165–166; V Theorem 2.4.10 and proof setup pp.178–179."
+url = "https://www.numdam.org/item/PMIHES_1965__26__5_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1965__26__5_0.pdf"
+fetched_at = "2026-10-24T13:37:52Z"
+sha256 = "b0b50cf55528fd4abb94f9e1de10b23f0711c0dd804682a9853b70b3b378f380"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["GlobalGaloisDeformationsPartII"]
+authors = "Michel Lazard"
+title = "Groupes analytiques p-adiques"
+year = 1965
+
+[[source]]
+id = "ANT20"
+authors = "Patrick B. Allen, James Newton, Jack A. Thorne"
+title = "Automorphy lifting for residually reducible l-adic Galois representations, II"
+year = 2020
+arxiv = "1912.11269v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1 pp.1–2, all eight hypotheses; notation and ordinarity pp.3–4."
+url = "https://arxiv.org/abs/1912.11269v2"
+fetched_from = "https://arxiv.org/pdf/1912.11269v2"
+fetched_at = "2026-10-24T13:37:57Z"
+sha256 = "077a344352c80389ce75d5c61a69fba90413303aca911a616fe46dbeb8514bfa"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Locators use the printed 1–21 pagination and theorem numbering of arXiv:1912.11269v2."
+cited_for = ["GlobalGaloisDeformationsPartII"]
+doi = "10.1112/S0010437X20007484"
+
+[[source]]
+id = "BLGHT11"
+locator_scheme = "theorem"
+locator = "Lemma 5.1(2), pp.34–35 of the author preprint; its regular-unipotent and Frobenius conclusions."
+url = "https://virtualmath1.stanford.edu/~rltaylor/cy2fin.pdf"
+fetched_from = "https://virtualmath1.stanford.edu/~rltaylor/cy2fin.pdf"
+fetched_at = "2026-10-24T13:38:03Z"
+sha256 = "225cab84210837ca6130c1c76a5eababeffeaa8d1594b6267e853ce0ae8eabb3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["GlobalGaloisDeformationsPartII"]
+authors = "Thomas Barnet-Lamb, David Geraghty, Michael Harris and Richard Taylor"
+title = "A family of Calabi–Yau varieties and potential automorphy II"
+year = 2011
+
+[[source]]
+id = "Pan22"
+authors = "Lue Pan"
+title = "The Fontaine-Mazur conjecture in the residually reducible case"
+year = 2022
+arxiv = "1901.07166v2"
+locator_scheme = "theorem"
+locator = "Introduction, Theorems 1.0.2 and 1.0.4 and the following remarks, pp.2–5; table of contents for §§5–7."
+url = "https://arxiv.org/abs/1901.07166v2"
+fetched_from = "https://arxiv.org/pdf/1901.07166v2"
+fetched_at = "2026-10-24T13:38:14Z"
+sha256 = "590171129d28a65749cf92b1f6099dbacaa90cc6698828f0a4dfd3da943f4824"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Locators use arXiv:1901.07166v2, Theorem 1.0.2 on printed p.3."
+cited_for = ["GlobalGaloisDeformationsPartII"]
+doi = "10.1090/jams/991"
+
+[[source]]
+id = "Gur99"
+authors = "Robert M Guralnick"
+title = "Small Representations Are Completely Reducible"
+year = 1999
+venue = "Journal of Algebra 220"
+doi = "10.1006/jabr.1999.7963"
+locator_scheme = "theorem"
+locator = "Theorem A"
+url = "https://doi.org/10.1006/jabr.1999.7963"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Exact supplier contracts"]
+
+[[source]]
+id = "NSW08"
+authors = "Jürgen Neukirch, Alexander Schmidt, Kay Wingberg"
+title = "Cohomology of Number Fields"
+year = 2008
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-3-540-37889-1"
+locator_scheme = "theorem"
+locator = "Theorems 8.6.7, 8.6.10 and 8.7.9"
+url = "https://doi.org/10.1007/978-3-540-37889-1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Exact supplier contracts"]
+
+[[source]]
+id = "BLGGT14"
+locator_scheme = "theorem"
+locator = "Proposition 3.1.1 and Theorem 3.1.2, pp.545–549; Lemma 5.3.1, pp.580–581; Theorem 5.5.1, pp.590–593"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v179-n2-p03-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v179-n2-p03-p.pdf"
+fetched_at = "2026-10-24T13:39:01Z"
+sha256 = "c9d6c7107bcde7fb26f9388abea5209f28457076bae59d70ccb6c34bbe1d621b"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["10.2–10.3"]
+authors = "Thomas Barnet-Lamb, Toby Gee, David Geraghty and Richard Taylor"
+title = "Potential automorphy and change of weight"
+year = 2014
+
+[[source]]
+id = "BC14"
+authors = "Joël Bellaïche, Gaëtan Chenevier"
+title = "Sous-groupes de GL₂ et arbres"
+year = 2014
+venue = "Journal of Algebra 410"
+doi = "10.1016/j.jalgebra.2014.02.005"
+locator_scheme = "theorem"
+locator = "Lemma 10 and Proposition 11, pp.9–10; Definitions 29–30 and Proposition 32, pp.16–17 (author-preprint pagination, cited by locator)"
+url = "https://doi.org/10.1016/j.jalgebra.2014.02.005"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["8.9"]
