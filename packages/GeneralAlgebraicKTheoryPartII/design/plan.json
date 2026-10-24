@@ -4255,12 +4255,88 @@
   ],
   "gaps": [
     {
-      "title": "G1 — Continuous Witt action: finite-annihilator proof audit",
-      "neededBy": [
-        "GeneralAlgebraicKTheoryPartII:KII.4/nil-witt-action",
-        "GeneralAlgebraicKTheoryPartII:KII.4/nk-localization"
-      ],
-      "detail": "Weibel Theorem 3.1, p.474, gives the needed continuous action and finite annihilator but sends its construction proof to Stienstra. This run read the public Weibel scan and the NK consequences, not that cited original proof. Before marking KII.4 closed, read an authorized public construction, verify the nilpotent-endomorphism filtration argument, and check that Bass contraction extends the action and continuity to every negative degree. The target, API and test cases are specified; the proof is not claimed audited."
+      "slug": "witt-characteristic-series",
+      "needs": "Supply the natural characteristic-series identification χ:W_(ℕ>0)(R)≃1+tR[[t]], χ(a)=∏_(d≥1)(1−a_dt^d), with Witt addition given by series multiplication, Witt multiplication determined by (1−at)*(1−bt)=1−abt, zero series 1, unit series 1−t, ghost identity −tχ′/χ=∑_(n≥1)w_n(a)t^n and the finite-restriction topology.",
+      "supplier": "QWittVectors",
+      "section": "§1.3"
+    },
+    {
+      "slug": "multiplicative-postnikov",
+      "needs": "Supply coherent connective E₁-ring Postnikov sections and their derivation-classified square-zero pullbacks, with the bimodule structures and tensor-connectivity bounds used in the finite-stage truncation argument.",
+      "supplier": "EnhancedDerivedSheaves",
+      "section": "E5:abstract.2"
+    },
+    {
+      "slug": "nilpotent-kzero",
+      "needs": "Prove that quotient by any nilpotent two-sided ideal of a unital ring induces an isomorphism on projective K₀ by lifting idempotents and their stable isomorphisms.",
+      "supplier": "KTheoryLowDegrees",
+      "section": "§1.2"
+    },
+    {
+      "slug": "tc-connective-colimits",
+      "needs": "Prove that TC/p preserves small colimits of connective cyclotomic spectra and sifted colimits of connective E₁-rings, with the coherent THH cyclic-orbit comparison including infinite cyclic subgroups.",
+      "supplier": "RefinedTraceMethods",
+      "section": "§2.10"
+    },
+    {
+      "slug": "height-one-tc-values",
+      "needs": "Prove L_K(1)TC(ℤ)≠0 at every prime including 2, TC(ℤ[1/p])^∧p=0, and filtered-colimit preservation of L_K(1)TC on discrete rings.",
+      "supplier": "RefinedTraceMethods",
+      "section": "§§2.10 and 4.17"
+    },
+    {
+      "slug": "linear-additive-motives",
+      "needs": "Supply the κ-accessible A-linear weakly additive motive category, its monoidal unit, K₀-to-unit comparison and restriction/extension projection formula used by rational-transfer ε-generation.",
+      "supplier": "RefinedTraceMethods",
+      "section": "§§4.6 and 4.10"
+    },
+    {
+      "slug": "spectral-etale-k",
+      "needs": "Extend periodic étale K-descent and strict-Henselian residue detection to the even-periodic spectral rings in Yuan §4, including K(L)^∧p≃ku^∧p for every algebraically closed characteristic-zero field L.",
+      "supplier": "KTheoryFiniteLocalFields",
+      "section": "§6.5a"
+    },
+    {
+      "slug": "cdh-geometric-inputs",
+      "needs": "Supply Perf-valued Nisnevich descent, derived abstract-blowup descent, noetherian approximation and platification domination for qcqs schemes with finitely presented proper modifications and finitely presented closed centers, as used in Land–Tamme Appendix A.2.",
+      "supplier": "SchemeKTheoryOperations",
+      "section": "§§4.12 and 5.7"
+    },
+    {
+      "slug": "kh-karoubi-villamayor",
+      "needs": "Supply KH(A)=|K(A[Δ•])| for arbitrary associative rings, its polynomial simplicial structure and regular comparison, together with the convergent relative Karoubi–Villamayor comparison and its nilpotent invariance in all Bass degrees.",
+      "supplier": "SchemeKTheoryOperations",
+      "section": "§§5.2 and 5.6"
+    },
+    {
+      "slug": "stable-james-splitting",
+      "needs": "Supply a natural reduced stable equivalence Σ∞ΩΣW≃⋁_(r≥1)Σ∞W^∧r for every connected pointed CW space W, compatible with the word filtration and its smash-power quotients.",
+      "supplier": "HomotopySpheres",
+      "section": "§3B"
+    },
+    {
+      "slug": "all-height-morava-realization",
+      "needs": "Extend the marked Goerss–Hopkins–Miller realization and coherent semilinear automorphism action to every finite height h≥1 over every perfect characteristic-p field, preserving the universal formal-group map and the chosen deformation identification.",
+      "supplier": "EllipticCohomology",
+      "section": "E2 items 2–3"
+    },
+    {
+      "slug": "elliptic-spectral-affineness",
+      "needs": "Prove the symmetric monoidal equivalence QCoh(X,Otop)≃Mod_(Γ(X,Otop)) for X=M̄_ell and M_ell, including colimit preservation of global sections and compatibility with tensoring by every spectrum.",
+      "supplier": "EllipticCohomology",
+      "section": "E3"
+    },
+    {
+      "slug": "elliptic-galois-comparisons",
+      "needs": "Supply the faithful GL₂(𝔽₃)-Galois extension TMF[1/3]→TMF(3) and the equivariant K(2)-local supersingular descriptions with the full order-48 group at 2 and the semilinear order-24 group at 3.",
+      "supplier": "EllipticCohomology",
+      "section": "E2 and E6"
+    },
+    {
+      "slug": "relative-monoidal-thom",
+      "needs": "Supply GL₁R and BGL₁R as the units and trivializable R-lines for arbitrary E∞ R, the Thom object as the colimit of its actual R-line local system, and its E_n multiplicative refinement for based n-fold loop maps.",
+      "supplier": "EllipticCohomology",
+      "section": "E5"
     }
   ],
   "restructure": [

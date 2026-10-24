@@ -1,0 +1,548 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GeneralAlgebraicKTheoryPartII"
+
+[[source]]
+id = "lmmt"
+authors = "Markus Land, Akhil Mathew, Lennart Meier and Georg Tamme"
+title = "Purity in chromatically localized algebraic K-theory"
+year = 2024
+doi = "10.1090/jams/1043"
+arxiv = "2001.10425"
+locator_scheme = "theorem"
+locator = "Theorems A, B and 1.1, Purity Theorem and Redshift Theorem, pp.1013–1014; Notation, p.1015; §2, Definition 2.1, Lemmas 2.2–2.8, Propositions 2.9 and 2.11, Remark 2.12; §3, Propositions 3.1, 3.4, 3.6 and 3.12, Lemmas 3.2, 3.3 and 3.7, Corollary 3.5, Theorem 3.8, Remarks 3.9 and 3.11, pp.1021–1027; §4, Corollary 4.2 through Corollary 4.34 and Proposition 4.33, with proofs and intervening definitions, examples and remarks, pp.1028–1036"
+url = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/LMMT2a.pdf"
+fetched_from = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/LMMT2a.pdf"
+fetched_at = "2026-10-24T15:21:07Z"
+sha256 = "acb9f2cea4c2698696fd7a4170dbc0e3438725c891208e3cadb702e0b42fb03b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Published JAMS 37 (2024), pp.1011–1040; journal theorem numbering and pagination, compared with the preprint."
+cited_for = ["Exact supplier contracts", "0.1 Thomason–Neeman localization", "1.1 General linear groups of connective ring spectra", "1.2 Additive ∞-categories and group-completion K-theory", "1.3 Additive and stable Schwede–Shipley comparison", "1.4 Waldhausen A-theory", "2.1 Truncating invariants on acyclic rings", "2.3 Rational and p-adic truncation", "3.2 Stable envelopes and additive nonconnective K-theory", "3.5 Finite-limit control of the stable envelope", "3.6 Levy’s bounded-heart fiber", "4.1 Telescopes", "4.2 Periodic homotopy groups", "4.3 Telescope acyclicity criteria", "4.4 Ring-spectrum acyclicity comparison", "4.5 Finite chromatic localizations", "4.6 Finite localization kernels", "4.7 Comparison on p-local spectra", "4.8 Chromatic fracture squares", "4.9 Bottom finite-local comparison", "4.12 Detection by suspension and loops", "4.13 Postnikov and connected-cover conventions", "4.14 Fiberwise homology comparison", "4.15 Connective periodic vanishing", "4.16 Connective preservation by suspension and loops", "4.17 Ravenel’s Bousfield class formula", "4.18 Finite-height locality", "4.19 Telescopes on chromatically local spectra", "4.21 Chromatic support of BP truncations", "4.25 Finite-local Tate blueshift", "4.28 Chromatic height of a commutative ring", "4.30 Chromatic bounds for modular forms", "4.32 James-filtered Thom spectra", "4.33 Acyclicity under the James splitting", "4.35 Nonpositive nilpotent invariance", "4.38 Highly connective chromatic invariance", "4.39 Connectivity of the replacement algebra", "4.40 One finite Postnikov stage suffices", "4.41 Telescopic K is truncating on finite-acyclic rings", "4.42 Finite p-power coefficient vanishing", "4.43 Acyclic additive and stable categories", "4.44 Compact chromatic kernel for ring modules", "4.45 Mitchell vanishing and the p-inverted sphere", "4.46 Theorem A in both forms", "5.1 High-height connective-cover invariance", "5.2 The high-height cyclotomic trace", "5.3 The finite-group K-theory transfer comparison", "5.4 CMNN finite-sphere vanishing", "5.5 The chromatic purity theorem", "5.6 Connective nilpotent comparisons for K and TC", "6.1 Theorem B and vanishing for algebras", "6.4 Redshift at nonnegative height", "6.5 Both heights in purity are necessary", "6.6 Redshift in chromatic graded pieces", "7.1 Nice maps of connective E∞-rings", "7.2 K preserves nice maps", "7.3 Iterated finite p-power K-theory", "7.4 K-theory of Morava K-theory", "7.5 K-theory of truncated spheres", "7.6 Truncated Brown–Peterson localization", "7.7 Purity for suspension A-theory", "7.8 K-theory of James-filtered Thom spectra", "8.6 Purity for ko-algebras", "8.7 Purity for tmf-algebras", "8.8 Supersingular fixed-point description", "8.9 Classical regular localization checks", "9.1 Height-one truncation and p-inversion", "9.2 Nilinvariance, Milnor excision and cdh-descent", "9.3 Flat and smooth spectral affine lines", "9.4 Height-one homotopy invariance", "9.5 Comparison with homotopy K-theory", "9.6 The height-one TC obstruction", "9.7 TC does not preserve filtered category colimits", "10.1 Chromatic consequences of the bounded-heart fiber", "10.2 Sifted colimits of high-height K-theory", "10.3 Cyclic orbit diagrams and assembly", "10.4 p-adic TC assembly for cyclic subgroups", "10.5 Telescopic Farrell–Jones assembly"]
+
+[[source]]
+id = "bgt"
+authors = "Andrew J. Blumberg, David Gepner and Gonçalo Tabuada"
+title = "A universal characterization of higher algebraic K-theory"
+year = 2013
+locator_scheme = "theorem"
+locator = "§5.1–5.2, Definitions 5.8 and 5.12, pp.775–779; §9.1, pp.806–808; §4.3, Theorems 4.22–4.23, pp.770–771; §9.1, pp.806–808; §7.1, pp.788–794; Definitions 9.1 and 9.6, pp.806–808; Theorems 9.8 and 9.10 with proofs, §§9.2–9.3, pp.808–816; §5.2, Propositions 5.14–5.15, pp.777–779; Lemma 9.39 and Proposition 9.40, pp.819–820; §4.3, Theorems 4.22–4.23, pp.770–771; Theorem 9.53 and proof, pp.825–826"
+url = "https://www.math.columbia.edu/~thaddeus/blumberg/3.pdf"
+fetched_from = "https://www.math.columbia.edu/~thaddeus/blumberg/3.pdf"
+fetched_at = "2026-10-24T15:21:09Z"
+sha256 = "b1e38651486641bb5c20f00cfaa313646b30e9fcfcc2e3aaf3694fe532c28f3a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Numbering of the author-hosted published text."
+cited_for = ["Exact supplier contracts", "0.1 Thomason–Neeman localization", "1.1 General linear groups of connective ring spectra", "1.3 Additive and stable Schwede–Shipley comparison", "2.4 Nonpositive K-theory of connective rings"]
+
+[[source]]
+id = "lt"
+authors = "Markus Land and Georg Tamme"
+title = "On the K-theory of pullbacks"
+year = 2019
+arxiv = "1808.05559v3"
+locator_scheme = "theorem"
+locator = "Notation 1.1 and Definition 1.2, manuscript p.5; Lemma 1.10 and proof, manuscript p.9; Lemma 2.4 and proof, manuscript pp.16–17; Theorem 1.3 and proof, manuscript pp.6–14; Definition 3.1, manuscript p.28; Theorem 3.3 and Corollary 3.5 with proofs, manuscript pp.29–30; Theorem 3.3, p.29; Theorem A.2 and proof, manuscript pp.35–37"
+url = "https://arxiv.org/abs/1808.05559v3"
+fetched_from = "https://arxiv.org/pdf/1808.05559v3"
+fetched_at = "2026-10-24T15:21:13Z"
+sha256 = "59adf6a7d0a8b20d89dcb501e03ab2bd8ffdb929822c3250fbf65d1db693b4d4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Theorem and section numbering of arXiv:1808.05559v3."
+cited_for = ["Exact supplier contracts", "1.1 General linear groups of connective ring spectra", "2.1 Truncating invariants on acyclic rings", "2.2 Excision and nilinvariance for truncating invariants", "2.3 Rational and p-adic truncation", "9.2 Nilinvariance, Milnor excision and cdh-descent"]
+venue = "Ann. of Math. (2) 190 (2019), no. 3, 877-930"
+
+[[source]]
+id = "cmnn20"
+authors = "Dustin Clausen, Akhil Mathew, Niko Naumann and Justin Noel"
+title = "Descent in algebraic K-theory and a conjecture of Ausoni–Rognes"
+year = 2020
+locator_scheme = "theorem"
+locator = "Theorem 5.6 and proof, manuscript p.22; Theorem 5.1 pp.20–21; Proposition 2.19 pp.12–13; Remark 2.9, p.9; Theorem B.2 and Corollaries B.3–B.4, manuscript pp.37–39; Definitions 2.1–2.3, pp.7–8; Definitions 2.14–2.16, pp.11–12; Theorems 4.2–4.4 with proofs, p.19; Proposition 2.23, pp.13–14; Propositions 2.13 and 2.19, pp.11–13"
+url = "https://www.nullplug.org/publications/GeneralLemma.pdf"
+fetched_from = "https://www.nullplug.org/publications/GeneralLemma.pdf"
+fetched_at = "2026-10-24T15:21:16Z"
+sha256 = "3880928d3005d381ae8921c05386928f2fa62b6f25e2458add81528619628966"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Numbering of the author-hosted manuscript, pages 1–43."
+cited_for = ["4.34 Ordinary-homology detection of the H∞ unit", "8.1 ε-enlargement and descent towers", "8.2 Rational transfer forces periodic descent", "8.3 Telescopic K-theory Galois descent", "8.4 Even finite complexes for semilinear Morava modules", "8.5 Rational transfer for higher real K-theories"]
+
+[[source]]
+id = "cmnn24"
+authors = "Dustin Clausen, Akhil Mathew, Niko Naumann and Justin Noel"
+title = "Descent and vanishing in chromatic algebraic K-theory via group actions"
+year = 2024
+arxiv = "2011.08233v2"
+locator_scheme = "theorem"
+locator = "Theorem 4.6 and proof, manuscript pp.19–20; Theorem 4.10 with proof, §4.2, p.21"
+url = "https://arxiv.org/abs/2011.08233v2"
+fetched_from = "https://arxiv.org/pdf/2011.08233v2"
+fetched_at = "2026-10-24T15:21:20Z"
+sha256 = "84c76407088130815255e20c0cce563348a54c05ea1b51cd9571453c7e16e11a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Theorem and section numbering of arXiv:2011.08233v2."
+cited_for = ["4.25 Finite-local Tate blueshift", "4.29 Tate height converse", "5.4 CMNN finite-sphere vanishing"]
+
+[[source]]
+id = "barwick"
+authors = "Clark Barwick"
+title = "On exact infinity-categories and the theorem of the heart"
+year = 2015
+doi = "10.1112/S0010437X15007447"
+arxiv = "1212.5232v4"
+locator_scheme = "theorem"
+locator = "Theorem 6.1 and preceding conventions, manuscript pp.19–21; Theorem 6.1 and proof, manuscript pp.19–23"
+url = "https://arxiv.org/abs/1212.5232v4"
+fetched_from = "https://arxiv.org/pdf/1212.5232v4"
+fetched_at = "2026-10-24T15:21:25Z"
+sha256 = "650bdae5871cc962c4bc8ef34d4c25cab88a3b6f2e8b99557b6d3c29421d9b7c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Theorem and section numbering of arXiv:1212.5232v4."
+cited_for = ["3.1 Bounded t-structures on stable ∞-categories", "3.3 The theorem of the heart and noetherian extension"]
+venue = "Compositio Mathematica 151 (2015) 2160-2186"
+
+[[source]]
+id = "agh"
+authors = "Benjamin Antieau, David Gepner and Jeremiah Heller"
+title = "K-theoretic obstructions to bounded t-structures"
+year = 2019
+arxiv = "1610.07207v4"
+locator_scheme = "theorem"
+locator = "§§2.1–2.2, Definitions 2.1, 2.4 and 2.7, manuscript pp.5–7; Theorem 3.18 and proof, manuscript pp.27–29; §4.2 definitions and Proposition 4.4, manuscript p.34; Example 4.6, p.35"
+url = "https://arxiv.org/abs/1610.07207v4"
+fetched_from = "https://arxiv.org/pdf/1610.07207v4"
+fetched_at = "2026-10-24T15:21:32Z"
+sha256 = "ddec1b3cf72618976e89fd854ff9d4bceabdd34228e3c2bcedf834b1d6025f73"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Theorem and section numbering of arXiv:1610.07207v4."
+cited_for = ["3.1 Bounded t-structures on stable ∞-categories", "3.3 The theorem of the heart and noetherian extension", "3.4 Regular ring-spectrum devissage"]
+
+[[source]]
+id = "hs"
+authors = "Fabian Hebestreit and Wolfgang Steimle"
+title = "Stable moduli spaces of hermitian forms"
+year = 2021
+doi = "10.1017/fmp.2026.10032"
+arxiv = "2103.13911v5"
+locator_scheme = "theorem"
+locator = "Corollary 8.1.3, manuscript pp.70–71; §3.1, manuscript pp.17–19; Corollary 8.1.3, pp.70–71"
+url = "https://arxiv.org/abs/2103.13911v5"
+fetched_from = "https://arxiv.org/pdf/2103.13911v5"
+fetched_at = "2026-10-24T15:21:39Z"
+sha256 = "ebd4fd969311a1e55d94ebf8c7507fd1289488c7346aef6452e74e328a6f490d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Theorem and section numbering of arXiv:2103.13911v5."
+cited_for = ["1.2 Additive ∞-categories and group-completion K-theory", "3.2 Stable envelopes and additive nonconnective K-theory"]
+venue = "Forum of Mathematics, Pi 14 (2026) e17"
+
+[[source]]
+id = "pp"
+authors = "Irakli Patchkoria and Piotr Pstrągowski"
+title = "Adams spectral sequences and Franke’s algebraicity conjecture"
+year = 2021
+arxiv = "2110.03669v1"
+locator_scheme = "theorem"
+locator = "Lemmas 4.24–4.25 and Theorem 4.26 with proof, manuscript pp.35–36"
+url = "https://arxiv.org/abs/2110.03669v1"
+fetched_from = "https://arxiv.org/pdf/2110.03669v1"
+fetched_at = "2026-10-24T15:21:46Z"
+sha256 = "b71b5e320ecfb2056537993e4413aa5284b5a70770338c6c7f2c2acf900897b1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Theorem and section numbering of arXiv:2110.03669v1."
+cited_for = ["3.5 Finite-limit control of the stable envelope"]
+
+[[source]]
+id = "mitchell"
+authors = "Stephen A. Mitchell"
+title = "The Morava K-theory of algebraic K-theory spectra"
+year = 1990
+locator_scheme = "theorem"
+locator = "Theorems A–B, pp.607–609; Theorem 3.8 and proof, pp.621–622"
+url = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/Mitchell-KK.pdf"
+fetched_from = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/Mitchell-KK.pdf"
+fetched_at = "2026-10-24T15:21:48Z"
+sha256 = "a3772c3b06391991daa041d157724fd9a9f0d6066cf1c0103ca6d3c59c453f9c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Numbering of the author-hosted published text."
+cited_for = ["4.45 Mitchell vanishing and the p-inverted sphere"]
+
+[[source]]
+id = "yuan"
+authors = "Allen Yuan"
+title = "Examples of chromatic redshift in algebraic K-theory"
+year = 2024
+arxiv = "2111.10837v1"
+locator_scheme = "theorem"
+locator = "Theorems A and C, manuscript pp.2–3; §3 proof pp.6–7; §4, Theorem 4.2 and Lemma 4.5, pp.7–9"
+url = "https://arxiv.org/abs/2111.10837v1"
+fetched_from = "https://arxiv.org/pdf/2111.10837v1"
+fetched_at = "2026-10-24T15:21:51Z"
+sha256 = "d917014b2da52c6354b6059607a3c12312e7892e813806fccae7fb2aea8fe947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Theorem and section numbering of arXiv:2111.10837v1."
+cited_for = ["6.2 Yuan’s Lubin–Tate nonvanishing input"]
+
+[[source]]
+id = "bsy"
+authors = "Robert Burklund, Tomer M. Schlank and Allen Yuan"
+title = "The Chromatic Nullstellensatz"
+year = 2022
+arxiv = "2207.09929v1"
+locator_scheme = "theorem"
+locator = "Proposition 9.12 and proof, manuscript p.89; Corollary 5.2 (Theorem D), pp.3 and 55; Theorem 9.11 and Remark 9.13, manuscript pp.88–90"
+url = "https://arxiv.org/abs/2207.09929v1"
+fetched_from = "https://arxiv.org/pdf/2207.09929v1"
+fetched_at = "2026-10-24T15:21:59Z"
+sha256 = "3cb90fa0a6096ae43a6b0f7b6a96b33f4cc6216c32fb0df4533bea33134f82e9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Theorem and section numbering of arXiv:2207.09929v1."
+cited_for = ["6.3 The height-zero lower bound", "6.4 Redshift at nonnegative height", "6.7 Chromatic field maps", "10.5 Telescopic Farrell–Jones assembly"]
+
+[[source]]
+id = "weibel"
+authors = "Charles A. Weibel"
+title = "Mayer–Vietoris sequences and module structures on NK_*"
+year = 1981
+locator_scheme = "theorem"
+locator = "§1, pp.467–468, characteristic-series sign convention; Corollary 5.4, p.485; Theorem 2.3, p.473; Theorem 3.1 and Exercise 3.2, pp.474–475; Corollary 3.3(a),(d), p.475; Corollary 5.4, p.485 and its preceding comparison argument, pp.482–485"
+url = "https://sites.math.rutgers.edu/~weibel/archive/papers-dir/MV-NK-854.pdf"
+fetched_from = "https://sites.math.rutgers.edu/~weibel/archive/papers-dir/MV-NK-854.pdf"
+fetched_at = "2026-10-24T15:22:59Z"
+sha256 = "1409b590d09ac7e34424d24ec67515bcd814d2d637ee851625d1727a24c218d8"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Numbering of the author-hosted published text."
+cited_for = ["4.36 Continuous Witt operations on NK", "4.37 Weibel localization and p-power nilpotent invariance", "7.3 Iterated finite p-power K-theory"]
+
+[[source]]
+id = "bgt-mult"
+authors = "Andrew J. Blumberg, David Gepner and Gonçalo Tabuada"
+title = "Uniqueness of the multiplicative cyclotomic trace"
+year = 2014
+arxiv = "1103.3923v3"
+locator_scheme = "theorem"
+locator = "Theorem 5.8, Proposition 5.9 and Corollaries 5.10–5.11, manuscript p.23"
+url = "https://arxiv.org/abs/1103.3923v3"
+fetched_from = "https://arxiv.org/pdf/1103.3923v3"
+fetched_at = "2026-10-24T15:23:03Z"
+sha256 = "3bf564f86fda5425038fcea4afb681280ee75e88918585cf87daad8dcb76001a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Theorem and section numbering of arXiv:1103.3923v3."
+cited_for = ["Exact supplier contracts"]
+
+[[source]]
+id = "hopkins-smith"
+authors = "Michael J. Hopkins and Jeffrey H. Smith"
+title = "Nilpotence and stable homotopy theory II"
+year = 1998
+locator_scheme = "theorem"
+locator = "Preliminaries, p.9; Theorem 7, p.3; §1.4, p.14; proof of Theorem 7 in §2.2, p.19; Theorem 7 and nested supports, p.3; Lemma 2.1, p.15; Theorem 3, pp.2–3; its reduction in §2.1, pp.15–17; Theorem 7, p.3; proof in §2.2, pp.17–19; Theorems 9 and 11, pp.4–6; Lemmas 3.5–3.6 and Corollaries 3.7–3.8, p.21"
+url = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/HS.pdf"
+fetched_from = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/HS.pdf"
+fetched_at = "2026-10-24T15:24:54Z"
+sha256 = "529a2060ea7c0e10b696db45fed3804c0893929a4f191d8f5811e220a2b2d863"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Numbering of the author-hosted published text."
+cited_for = ["Layer 4 chromatic foundations"]
+
+[[source]]
+id = "ravenel"
+authors = "Douglas C. Ravenel"
+title = "Localization with respect to certain periodic homology theories"
+year = 1984
+locator_scheme = "theorem"
+locator = "§2, p.360; §2, p.360 and Theorem 2.1, pp.361–363; Theorem 2.1(e),(f),(h),(i) and proof, pp.361–363; Theorem 2.1(b),(d),(e),(f), pp.361–363; Theorem 2.1(d)–(f), pp.361–363"
+url = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/mypapers/loc.pdf"
+fetched_from = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/mypapers/loc.pdf"
+fetched_at = "2026-10-24T15:24:59Z"
+sha256 = "58983f599503dc9cc007452ea8f2b7ef9fb1ced4c476c771b4266537df629d21"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Numbering of the author-hosted published text."
+cited_for = ["4.17 Ravenel’s Bousfield class formula", "4.21 Chromatic support of BP truncations"]
+
+[[source]]
+id = "cdh"
+authors = "Baptiste Calmès, Emanuele Dotto, Yonatan Harpaz, Fabian Hebestreit, Markus Land, Kristian Moi, Denis Nardin, Thomas Nikolaus and Wolfgang Steimle"
+title = "Hermitian K-theory for stable infinity-categories I: Foundations"
+year = 2020
+arxiv = "2009.07223v3"
+locator_scheme = "section"
+locator = "Section 4.4, pp.84,89–90"
+url = "https://arxiv.org/abs/2009.07223v3"
+fetched_from = "https://arxiv.org/pdf/2009.07223v3"
+fetched_at = "2026-10-24T15:25:02Z"
+sha256 = "2c423b7f8fa95e1ee236c1d59a22d559de26fb8882328d9604e7680f31a7c68e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv:2009.07223v3, §4.4; compact parametrized/retractive comparison at lines 4319–4346; replaces the inaccessible author-hosted URL."
+cited_for = ["1.4 Waldhausen A-theory"]
+
+[[source]]
+id = "kuhn-guide"
+authors = "Nicholas J. Kuhn"
+title = "A guide to telescopic functors"
+year = 2008
+arxiv = "0802.0510v1"
+locator_scheme = "theorem"
+locator = "§3.1, Lemma 3.1, pp.9–11; Theorem 5.2 and Lemma 5.4, pp.15–17; Theorem 1.1, pp.3–4; Theorem 5.2, Lemmas 5.4–5.5 and Definition 5.6, pp.15–18"
+url = "https://arxiv.org/abs/0802.0510v1"
+fetched_from = "https://arxiv.org/pdf/0802.0510v1"
+fetched_at = "2026-10-24T15:25:04Z"
+sha256 = "087fc64463369a6083518aa74be39eeddef127a5def47310c26c08badc1cbacd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Theorem and section numbering of arXiv:0802.0510v1."
+cited_for = ["4.10 Finite telescopic functors", "4.11 Bousfield–Kuhn functor"]
+
+[[source]]
+id = "kuhn-tate"
+authors = "Nicholas J. Kuhn"
+title = "Tate cohomology and periodic localization of polynomial functors"
+year = 2004
+doi = "10.1007/s00222-003-0354-z"
+arxiv = "math/0307173v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.5 and Corollary 1.7, manuscript pp.4–5"
+url = "https://arxiv.org/abs/math/0307173v1"
+fetched_from = "https://arxiv.org/pdf/math/0307173v1"
+fetched_at = "2026-10-24T15:25:09Z"
+sha256 = "601098cd12ca3e6399cc0dceecc819a60f202532d09a8440ed01dd8769a399ac"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Theorem and section numbering of arXiv:math/0307173v1."
+cited_for = ["4.24 Kuhn’s telescopic Tate vanishing"]
+
+[[source]]
+id = "cm-tate"
+authors = "Dustin Clausen and Akhil Mathew"
+title = "A short proof of telescopic Tate vanishing"
+year = 2016
+arxiv = "1608.02063v2"
+locator_scheme = "theorem"
+locator = "Definition 2.2 and Proposition 2.3, pp.2–3; Lemma 2.1, Proposition 2.3, Lemma 2.4 and Theorem 2.5, pp.2–3; Theorem 2.6 and Corollary 2.7, pp.3–4; Remark 2.8, p.4"
+url = "https://arxiv.org/abs/1608.02063v2"
+fetched_from = "https://arxiv.org/pdf/1608.02063v2"
+fetched_at = "2026-10-24T15:25:15Z"
+sha256 = "423ac8d38862fc05dce47569a6abdc84a9d61fb59ce28f0653056ac6e54745cc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Theorem and section numbering of arXiv:1608.02063v2."
+cited_for = ["4.22 Localized norms and Tate spectra", "4.23 Localized transfer splitting", "4.24 Kuhn’s telescopic Tate vanishing"]
+
+[[source]]
+id = "hahn"
+authors = "Jeremy Hahn"
+title = "On the Bousfield classes of H-infinity ring spectra"
+year = 2016
+arxiv = "1612.04386v2"
+locator_scheme = "theorem"
+locator = "§2, pp.3–4; Theorem 1.6, p.2; Theorem 3.3, p.5 and proof pp.7–8; Definition 4.1, p.8; Theorems 1.1 and 1.3, p.1; §4, Propositions 4.2–4.5 and Theorem 4.6, pp.8–10; Theorem 1.1, p.1; Corollary 4.6.1 and Proposition 4.7, pp.9–10"
+url = "https://arxiv.org/abs/1612.04386v2"
+fetched_from = "https://arxiv.org/pdf/1612.04386v2"
+fetched_at = "2026-10-24T15:25:21Z"
+sha256 = "f2810b11b0011e3579e2c065d9f435eed647498fc36cac89d3b31844d19ad453"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Theorem and section numbering of arXiv:1612.04386v2."
+cited_for = ["4.26 Morava power operations", "4.27 Hahn’s acyclicity theorem", "4.28 Chromatic height of a commutative ring", "4.29 Tate height converse"]
+
+[[source]]
+id = "csy"
+authors = "Shachar Carmeli, Tomer M. Schlank and Lior Yanovski"
+title = "Ambidexterity in chromatic homotopy theory"
+year = 2022
+arxiv = "1811.02057v3"
+locator_scheme = "theorem"
+locator = "Theorem 5.4.4 and Remark 5.4.5, pp.83–84"
+url = "https://arxiv.org/abs/1811.02057v3"
+fetched_from = "https://arxiv.org/pdf/1811.02057v3"
+fetched_at = "2026-10-24T15:25:29Z"
+sha256 = "7d9568d7a61e4b8575ce40f6ba76e346a975c02f58ba7c286f371509afb04a13"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Theorem and section numbering of arXiv:1811.02057v3."
+cited_for = ["4.15 Connective periodic vanishing"]
+
+[[source]]
+id = "bhm"
+authors = "Tobias Barthel, Gijs Heuts and Lennart Meier"
+title = "A Whitehead theorem for periodic homotopy groups"
+year = 2019
+arxiv = "1811.04030v2"
+locator_scheme = "theorem"
+locator = "§3, Theorem 3.1, p.5; Lemmas 3.2–3.3, p.6"
+url = "https://arxiv.org/abs/1811.04030v2"
+fetched_from = "https://arxiv.org/pdf/1811.04030v2"
+fetched_at = "2026-10-24T15:25:33Z"
+sha256 = "410917b7970597855075834b7f405ab72ffb20bbf9913da9f44b50fa174bb3e5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Theorem and section numbering of arXiv:1811.04030v2."
+cited_for = ["4.13 Postnikov and connected-cover conventions", "4.15 Connective periodic vanishing"]
+
+[[source]]
+id = "mm"
+authors = "Akhil Mathew and Lennart Meier"
+title = "Affineness and chromatic homotopy theory"
+year = 2015
+doi = "10.1112/jtopol/jtv005"
+arxiv = "1311.0514v5"
+locator_scheme = "theorem"
+locator = "Theorems 4.6–4.7 and Corollary 4.8, pp.26–27; Theorem 7.1, p.35; Theorem 7.2, pp.35–37; Theorem 7.6, p.38"
+url = "https://arxiv.org/abs/1311.0514v5"
+fetched_from = "https://arxiv.org/pdf/1311.0514v5"
+fetched_at = "2026-10-24T15:25:40Z"
+sha256 = "adee4cf96181d47add33906f0f46f0485db95f60bf116b1888a5673b71f57819"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Theorem and section numbering of arXiv:1311.0514v5."
+cited_for = ["Layer 4 chromatic foundations"]
+venue = "J. Topol. 8 (2015), no. 2, 476--528"
+
+[[source]]
+id = "behrens"
+authors = "Mark Behrens"
+title = "Topological modular and automorphic forms"
+year = 2019
+arxiv = "1901.07990v2"
+locator_scheme = "theorem"
+locator = "Definitions 1.2.1, 1.2.6, Proposition 1.2.10, pp.4–6; §1.5, p.21; §1.6, pp.27–28; §1.2, pp.4–8; Theorem 1.7.6 and discussion, pp.33–34; §1.6, pp.27–28; §1.6, pp.27–29; Proposition 1.6.8 and the chromatic fracture square, pp.28–29; Definition 1.2.11, Remark 1.2.12 and Corollary 1.2.15, p.7; §1.3, pp.9–13; §1.6, pp.31–32; Propositions 1.6.8 and 1.6.12; chromatic fracture, pp.29–32; §1.6, Proposition 1.6.12, pp.30–31; §1.3, p.13; §1.5, Theorem 1.5.6, p.23"
+url = "https://arxiv.org/abs/1901.07990v2"
+fetched_from = "https://arxiv.org/pdf/1901.07990v2"
+fetched_at = "2026-10-24T15:25:46Z"
+sha256 = "cfb2a95050fe17b799a3f7cab84b94ae688485754f72f20c617439013c68c044"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Theorem and section numbering of arXiv:1901.07990v2."
+cited_for = ["4.18 Finite-height locality", "4.19 Telescopes on chromatically local spectra", "4.30 Chromatic bounds for modular forms"]
+
+[[source]]
+id = "goerss"
+authors = "Paul G. Goerss"
+title = "Topological modular forms [after Hopkins, Miller, and Lurie]"
+year = 2010
+locator_scheme = "theorem"
+locator = "§3.3, pp.238–239; §3.3, Theorem 3.6, pp.238–239; Theorem 3.6 and following paragraph, p.239; Theorem 1.2, pp.224–225"
+url = "https://numdam.org/item/AST_2010__332__221_0.pdf"
+fetched_from = "https://numdam.org/item/AST_2010__332__221_0.pdf"
+fetched_at = "2026-10-24T15:25:46Z"
+sha256 = "563bd14f1cdfe594a63bd820f592aacada6b435e23d4dd504e1e41f1f07b32a3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Numbering of the author-hosted published text."
+cited_for = ["Layer 4 chromatic foundations"]
+
+[[source]]
+id = "thom"
+authors = "Omar Antolín-Camarena and Tobias Barthel"
+title = "A simple universal property of Thom ring spectra"
+year = 2014
+doi = "10.1112/topo.12084"
+arxiv = "1411.7988v4"
+locator_scheme = "theorem"
+locator = "§3, Definition 3.1, Theorem 3.5 and Proposition 3.16; §5, Theorems 5.1 and 5.7 (arXiv v4)."
+url = "https://arxiv.org/abs/1411.7988v4"
+fetched_from = "https://arxiv.org/pdf/1411.7988v4"
+fetched_at = "2026-10-24T15:28:10Z"
+sha256 = "b33fe7da8b668cd0fda8154a33f49012ee8a7a15a2d780c17ecab17c86d1175b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Theorem and section numbering of arXiv:1411.7988v4."
+cited_for = ["4.31 Hopkins–Mahowald Thom theorem"]
+venue = "Journal of Topology (2019), 12: 56-78"
+
+[[source]]
+id = "akq"
+authors = "Gabriel Angelini-Knoll and J. D. Quigley"
+title = "A homological approach to chromatic complexity of algebraic K-theory"
+year = 2019
+arxiv = "1908.09164v3"
+locator_scheme = "theorem"
+locator = "§2.1, p.5; Construction 2.1 and Lemma 2.2, pp.5–6; Proposition 2.22, p.15"
+url = "https://arxiv.org/abs/1908.09164v3"
+fetched_from = "https://arxiv.org/pdf/1908.09164v3"
+fetched_at = "2026-10-24T15:28:14Z"
+sha256 = "64f23cfd0c0bcca50af7140aad247cae64d74cd6527e3f49aa7b3f6b71783511"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Theorem and section numbering of arXiv:1908.09164v3."
+cited_for = ["4.31 Hopkins–Mahowald Thom theorem", "4.32 James-filtered Thom spectra"]
+
+[[source]]
+id = "bhls"
+authors = "Robert Burklund, Jeremy Hahn, Ishan Levy and Tomer M. Schlank"
+title = "K-theoretic counterexamples to Ravenel’s telescope conjecture"
+year = 2023
+arxiv = "2310.17459v1"
+locator_scheme = "theorem"
+locator = "Introduction, Theorem A, pp.2–4"
+url = "https://arxiv.org/abs/2310.17459v1"
+fetched_from = "https://arxiv.org/pdf/2310.17459v1"
+fetched_at = "2026-10-24T15:28:22Z"
+sha256 = "9cf5e0bc33ea0912a99844a67ad305e75b88581404c2aee97d0a3b224089da1c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Theorem and section numbering of arXiv:2310.17459v1."
+cited_for = ["4.20 Separation above height one"]
+
+[[source]]
+id = "may-nilpotence"
+authors = "Akhil Mathew, Niko Naumann and Justin Noel"
+title = "On a nilpotence conjecture of J. P. May"
+year = 2015
+doi = "10.1112/jtopol/jtv021"
+arxiv = "1403.2023v3"
+locator_scheme = "theorem"
+locator = "Theorem B, p.2; Theorem 2.1 and Lemma 2.2, pp.3–4; unit-detection consequence."
+url = "https://arxiv.org/abs/1403.2023v3"
+fetched_from = "https://arxiv.org/pdf/1403.2023v3"
+fetched_at = "2026-10-24T15:37:45Z"
+sha256 = "70b86cdd4b53ee69a751a8398f8ffef2c4c7dfc8904549839a5baeed65ad7cc2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Theorem and section numbering of arXiv:1403.2023v3."
+cited_for = ["4.27 Hahn’s acyclicity theorem", "4.34 Ordinary-homology detection of the H∞ unit"]
+venue = "J. Topol. 8 (2015), no. 4, 917--932"
