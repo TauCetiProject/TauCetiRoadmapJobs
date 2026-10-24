@@ -3032,57 +3032,13 @@
     }
   ],
   "gaps": [
-    {
-      "id": "ArithmeticDynamicsPartII/G1",
-      "title": "Nonabelian-level and character dictionary supplier is not yet an atlas roadmap",
-      "proposedSupplier": "NonabelianLevelStructures, with the finite-field Fricke/SL₂ specialization",
-      "neededBy": [
-        "ArithmeticDynamicsPartII:MD.6/trace-moduli",
-        "ArithmeticDynamicsPartII:MD.6/trace-order",
-        "ArithmeticDynamicsPartII:MD.6/general-congruences",
-        "ArithmeticDynamicsPartII:MD.6/oriented-connectivity"
-      ],
-      "detail": "Supply Chen §§2–4’s finite étale component/orbit dictionary, coarse degree including centralizer and D(q) quotients, and degree congruence of Theorems 1.1.1–1.1.2 / 4.12.5–4.12.6 for the actual representation image H≤SL₂(F_q). Specialization needs the trace bijection for t≠2 (Theorem 5.2.10), exclusion of dihedral points (5.2.17–22), normalizers and element orders (5.4.1–3), and the even-characteristic full-image factor-one case. General congruence: ℓ-adic r=vℓ(ord c), vℓ(|H|)=r+s, no proper normal subgroup of H has order divisible by ℓ^{j+1}; if r≥3s+j then the coarse degree is divisible by ℓ^{ceil((r−3s−j)/2)}. The stronger finite-SL₂ special form must be exported exactly as Chen Theorem 5.4.3. Earlier moduli proof sections were not read. This supplier is a proposal, not a resolvable prerequisite ID; MD.6 remains planned and blocked on it."
-    },
-    {
-      "id": "ArithmeticDynamicsPartII/G2",
-      "title": "Primitive finite-group socles and independence certificates",
-      "proposedSupplier": "A generic finite permutation-group extension; ownership to be assigned",
-      "neededBy": [
-        "ArithmeticDynamicsPartII:MD.7/subdirect-independence",
-        "ArithmeticDynamicsPartII:MD.7/sign-lifting"
-      ],
-      "detail": "MP18 §5.3, pp. 24–27 invokes finite primitive-group structure (unique transitive socle, nonabelian simple factors in the non-affine case), quantitative bounds on simple sections (Theorem 5.12, citing Dixon–Mortimer), and a finite coincidence check below 203897. Mathlib IsPreprimitive is a carrier, not these structure theorems. The cited book is not in the cleared library; it was not read and no other copy was used. Read an authorized primary proof and assign a real supplier before treating this branch as source_decomposed. Certify the equation/case check, including 11/5."
-    },
-    {
-      "id": "ArithmeticDynamicsPartII/G3",
-      "title": "Explicit cage and endgame range",
-      "neededBy": [
-        "ArithmeticDynamicsPartII:MD.5/complement-four-p",
-        "ArithmeticDynamicsPartII:MD.5/effective-intervals",
-        "ArithmeticDynamicsPartII:MD.5/connectivity-certificate",
-        "ArithmeticDynamicsPartII:MD.5/effective-bound"
-      ],
-      "detail": "Derive a proved numerical range for connectedness of all maximal-order and parabolic slices, their sign stability, and the explicit K_p^±=8√p(p±1)τ(p±1)/φ(p±1) endgame. EFLMT Appendix §6, pp. 28–29 gives the sharp-cover route; BGS16 §§2–3 proves an eventual range only. All constants, removed points and nonsplit covers must survive Q2. An asymptotic O-term does not certify 3.489·10^392."
-    },
-    {
-      "id": "ArithmeticDynamicsPartII/G4",
-      "title": "Sharp local constants and the quoted numerical endpoint",
-      "neededBy": [
-        "ArithmeticDynamicsPartII:MD.5/effective-bound",
-        "ArithmeticDynamicsPartII:MD.5/connectivity-certificate"
-      ],
-      "detail": "Source finding E4: the four-punctured genus-one curve and degree-two coordinate maps give a safe (3/2)max((32td)^(1/3),16td/p) bound from CZ13, not the source’s (3/2)max((6td)^(1/3),4td/p). Either independently prove the sharper bound, or run and verify a complete certificate with the repaired constants. The published PLMS 2025 proof could not be retrieved (403); this finding concerns the dated author revision only. Source algorithms report 124720785 reduced-integer outputs in the search and 48066 outputs below the eventual cutoff (Remark 4.6, p. 26); none is a delivered certificate. The exact N and central coefficient were checked but cannot close the gap."
-    },
-    {
-      "id": "ArithmeticDynamicsPartII/G5",
-      "title": "Squarefree small-prime certificate",
-      "neededBy": [
-        "ArithmeticDynamicsPartII:MD.7/sign-lifting"
-      ],
-      "detail": "MP18 §5.1, pp. 19–21 relies on transitivity for the auxiliary product 2·5·7·11=770 and finite checks of sign-lifting exceptions ≤121. Deliver a finite checked orbit/certificate without enumerating the entire naive cube. This job independently checks only the prime graphs 2,3,5,7,13, not the product 770."
-    }
-  ],
+  {
+    "slug": "explicit-divisor-constants",
+    "needs": "Explicit positive rational C and a natural N such that τ(n)≤C·n^(1/16) for every integer n≥N, together with proved values and domains sufficient to bound n/φ(n)≤τ(n) and produce a finite numerical endpoint for the two repaired order intervals.",
+    "supplier": "ErdosProgressionPowers",
+    "section": "Layer 0, Explicit totient and divisor bounds"
+  }
+],
   "sourceIssues": [
     {
       "id": "ArithmeticDynamicsPartII/E1",

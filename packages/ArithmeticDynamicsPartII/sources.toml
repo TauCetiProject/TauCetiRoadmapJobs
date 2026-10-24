@@ -1,0 +1,154 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ArithmeticDynamicsPartII"
+
+[[source]]
+id = "M25"
+doi = "10.1007/s00222-025-01346-9"
+arxiv = "2502.15960v1"
+authors = "Daniel E. Martin"
+title = "A new proof of Chen’s theorem for Markoff graphs"
+year = 2025
+locator_scheme = "theorem"
+locator = "Theorem 1.4; Section 2, pp. 624–625"
+url = "https://link.springer.com/article/10.1007/s00222-025-01346-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 1; Layer 4"]
+
+[[source]]
+id = "BGS16"
+authors = "Jean Bourgain, Alexander Gamburd, Peter Sarnak"
+title = "Markoff Surfaces and Strong Approximation: 1"
+year = 2016
+arxiv = "1607.01530v1"
+locator_scheme = "theorem"
+locator = "Theorems 1, 2, 13; Propositions 6–12; pp. 1–19"
+url = "https://arxiv.org/abs/1607.01530v1"
+fetched_from = "https://arxiv.org/pdf/1607.01530v1"
+fetched_at = "2026-10-23T23:40:12Z"
+sha256 = "50f3dcde0c4a3a841f4eb3556838ecd162a7988ea3d3c1235f53c9c427b03e9e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "arXiv v1"
+cited_for = ["Layers 0, 2, 3, 4"]
+
+[[source]]
+id = "C24"
+doi = "10.4007/annals.2024.199.1.5"
+version_note = "Published author copy, printed pages 301–443; extraction PDF page N corresponds to printed page N+300"
+authors = "William Y. Chen"
+title = "Nonabelian level structures, Nielsen equivalence, and Markoff triples"
+year = 2024
+locator_scheme = "theorem"
+locator = "Theorems 5.2.10, 5.4.4, 5.5.4, 5.5.7–5.5.9; pp. 398–417"
+url = "https://static1.squarespace.com/static/60d92f4398f4bb6a7b5a99c6/t/65dcfcb3b69a510efa7037dd/1708981427968/Chen+-+Nonabelian+level+structures%2C+Nielsen+equivalence%2C+and+Markoff+triples.pdf"
+fetched_from = "https://static1.squarespace.com/static/60d92f4398f4bb6a7b5a99c6/t/65dcfcb3b69a510efa7037dd/1708981427968/Chen+-+Nonabelian+level+structures%2C+Nielsen+equivalence%2C+and+Markoff+triples.pdf"
+fetched_at = "2026-10-23T23:41:22Z"
+sha256 = "9386db34c31671966440f18bccfefe11bd806aa221010e0e3336fecf8ff920ac"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["Layers 2, 4, 6, 7"]
+
+[[source]]
+id = "MP18"
+authors = "Chen Meiri, Doron Puder, Dan Carmon"
+title = "The Markoff Group of Transformations in Prime and Composite Moduli"
+year = 2018
+venue = "Duke Math. J. 167, no. 14 (2018), 2679-2720"
+doi = "10.1215/00127094-2018-0024"
+arxiv = "1702.08358v2"
+locator_scheme = "theorem"
+locator = "Theorems 1.3, 1.4, 1.6; Sections 3–5; pp. 3–27"
+url = "https://arxiv.org/abs/1702.08358v2"
+fetched_from = "https://arxiv.org/pdf/1702.08358v2"
+fetched_at = "2026-10-23T23:41:53Z"
+sha256 = "b3e0b479344b829e83565cf05362aab6f92a7764949145702a869af06efa7461"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "arXiv v2, manuscript dated 18 April 2018; all page and theorem locators refer to this version"
+cited_for = ["Layer 7"]
+
+[[source]]
+id = "CZ13"
+authors = "Pietro Corvaja, Umberto Zannier"
+title = "Greatest common divisors of u−1, v−1 in positive characteristic and rational points on curves over finite fields"
+year = 2013
+locator_scheme = "theorem"
+locator = "Theorem 2, Corollary 2, pp. 1929–1930; Section 5, pp. 1939–1942"
+url = "https://ems.press/content/serial-article-files/31918?nt=1"
+fetched_from = "https://ems.press/content/serial-article-files/31918?nt=1"
+fetched_at = "2026-10-23T23:42:34Z"
+sha256 = "78df155f3c10d6756aed5acc91c7c8ec926c0e502f6a037c879a2ac5fe4c22b4"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["Sections 3.4 and 5.1"]
+
+[[source]]
+id = "BGS24"
+version_note = "Later IAS author manuscript; source collation only, not the BGS16 proof version"
+authors = "Jean Bourgain, Alexander Gamburd, Peter Sarnak"
+title = "Strong Approximation and Diophantine Properties of Markoff Triples"
+year = 2024
+locator_scheme = "section"
+locator = "Sections 4–5, Appendix A; pp. 18–22, 29–31"
+url = "https://publications.ias.edu/sites/default/files/MarkoffDiophantine%20.pdf"
+fetched_from = "https://publications.ias.edu/sites/default/files/MarkoffDiophantine%20.pdf"
+fetched_at = "2026-10-23T23:43:24Z"
+sha256 = "d24a021751b5d26f1b80883ea62bacff1faa80781341b7daa0e450fe0e2dd04b"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["source collation in report"]
+
+[[source]]
+id = "EFLMT24"
+arxiv = "2308.07579"
+version_note = "Author revision dated 29 July 2024, 30 pages, read via service OCR; theorem numbers refer to this revision, not arXiv v1 or the journal version"
+authors = "Jillian Eddy, Elena Fuchs, Matthew Litman, Daniel Martin, Nico Tripeny"
+title = "Connectivity of Markoff mod-p graphs and maximal divisors"
+year = 2024
+locator_scheme = "theorem"
+locator = "Definition 3.1; Theorems 3.5, 3.14, 3.21; Sections 4, 6; pp. 4–29"
+url = "https://www.math.ucdavis.edu/~efuchs/Markoffconnectivity.pdf"
+fetched_from = "https://www.math.ucdavis.edu/~efuchs/Markoffconnectivity.pdf"
+fetched_at = "2026-10-23T23:43:56Z"
+sha256 = "0795f7cd9c28c147ed642392919cd0879714a36e461ca353b379f7ea66bee8c0"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["Layer 5"]
+
+[[source]]
+id = "DM96"
+doi = "10.1007/978-1-4612-0731-3"
+authors = "John D. Dixon, Brian Mortimer"
+title = "Permutation Groups"
+year = 1996
+locator_scheme = "theorem"
+locator = "Theorems 1.6A, 4.3B, 4.7A, 5.3A, 5.5B"
+url = "https://link.springer.com/book/10.1007/978-1-4612-0731-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Section 7.5: finite primitive groups"]
+
+[[source]]
+id = "CKSZ14"
+authors = "Mei-Chu Chang, Bryce Kerr, Igor Shparlinski, Umberto Zannier"
+title = "Elements of large orders on varieties over prime finite fields"
+year = 2014
+locator_scheme = "section"
+locator = "Theorem 1.2; Section 4, pp. 586–591"
+url = "https://www.numdam.org/item/JTNB_2014__26_3_579_0/"
+fetched_from = "https://www.numdam.org/item/JTNB_2014__26_3_579_0.pdf"
+fetched_at = "2026-10-23T23:48:47Z"
+sha256 = "484d03d8d8d660755e3962aef35dfb6e048c4dea7ee50e7a6ec052f342696af7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["Section 3.0: low-order curve points"]
