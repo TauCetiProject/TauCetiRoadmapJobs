@@ -1,0 +1,121 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AdicSpacesPartIIPartII"
+
+[[source]]
+id = "HK2"
+authors = "Sean Howe, Christian Klevdal"
+title = "Admissible pairs and p-adic Hodge structures II: The bi-analytic Ax-Lindemann theorem"
+year = 2023
+arxiv = "2308.11064v2"
+locator_scheme = "section"
+locator = "arXiv v2: §§1.1, 2.2, 5.3, 9.2–9.3"
+url = "https://arxiv.org/abs/2308.11064v2"
+fetched_from = "https://arxiv.org/pdf/2308.11064v2"
+fetched_at = "2026-10-24T05:12:12Z"
+sha256 = "c133b06bec1209a04f84d1c2984b78ce2242ba85fc1b72cf5a662002685cab8a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "All numbering and page locators are those of arXiv v2, not an independently verified published numbering."
+cited_for = ["Layers 0, 3, 5, 6"]
+
+[[source]]
+id = "CONRAD99"
+authors = "Brian Conrad"
+title = "Irreducible components of rigid spaces"
+year = 1999
+locator_scheme = "theorem"
+locator = "§§1.1–2.3 and 3.3, author pp. 2–17 and 21–22"
+url = "https://virtualmath1.stanford.edu/~conrad/papers/irredpaper.pdf"
+fetched_from = "https://virtualmath1.stanford.edu/~conrad/papers/irredpaper.pdf"
+fetched_at = "2026-10-24T05:12:32Z"
+sha256 = "cff85f8e59393eedc8ebd891daa537ed62a9e9b1515f794983431da10c0252eb"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layers 0–2"]
+
+[[source]]
+id = "BH22"
+authors = "Bhargav Bhatt, David Hansen"
+title = "The six functors for Zariski-constructible sheaves in rigid geometry"
+year = 2021
+arxiv = "2101.09759v2"
+locator_scheme = "theorem"
+locator = "arXiv v2: §2.1, Propositions 2.2, 2.9 and Corollary 2.10; Lemma 2.16"
+url = "https://arxiv.org/abs/2101.09759v2"
+fetched_from = "https://arxiv.org/pdf/2101.09759v2"
+fetched_at = "2026-10-24T05:13:01Z"
+sha256 = "2dccae2b3f1eb298ce429a5d80fd284e16ef721072dbed0a5136fbac205cc3c8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "All numbering and page locators are those of arXiv v2, not an independently verified published numbering."
+cited_for = ["Layers 0, 2, 4"]
+
+[[source]]
+id = "TEMKIN12"
+authors = "Michael Temkin"
+title = "Functorial desingularization of quasi-excellent schemes in characteristic zero: the non-embedded case"
+year = 2009
+venue = "Duke Math. J. 161, no. 11 (2012), 2207-2254"
+doi = "10.1215/00127094-1699539"
+arxiv = "0904.1592v2"
+locator_scheme = "theorem"
+locator = "arXiv v2: §§1.2, 2.2–2.3, 5, Theorems 5.2.2 and 5.3.2"
+url = "https://arxiv.org/abs/0904.1592v2"
+fetched_from = "https://arxiv.org/pdf/0904.1592v2"
+fetched_at = "2026-10-24T05:13:36Z"
+sha256 = "0c5e2f27ff35a48d605ab1573b9acb027b4fd550574855417e643d24336b5cc3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "All numbering and page locators are those of arXiv v2, not an independently verified published numbering."
+cited_for = ["Layers 0, 5"]
+
+[[source]]
+id = "SCHNEIDER11"
+authors = "Peter Schneider"
+title = "p-Adic Lie Groups"
+year = 2011
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-3-642-21147-8"
+locator_scheme = "section"
+locator = "§§5–9, Corollary 5.8, Proposition 5.9, Proposition 6.4, Lemma 9.2, Proposition 9.3, Remark 9.4, pp. 33–59"
+url = "https://doi.org/10.1007/978-3-642-21147-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layers 2, 6"]
+
+[[source]]
+id = "CONRAD10"
+authors = "Brian Conrad"
+title = "Moishezon spaces in rigid geometry"
+year = 2010
+locator_scheme = "theorem"
+locator = "Theorem 2.1.1 and Lemma 2.1.3, author pp. 3–5"
+url = "https://virtualmath1.stanford.edu/~conrad/papers/moish.pdf"
+fetched_from = "https://virtualmath1.stanford.edu/~conrad/papers/moish.pdf"
+fetched_at = "2026-10-24T05:14:08Z"
+sha256 = "df2aeab82752316a4b5843c60dc7c727873bdc4bfca6d55759299e43daefec47"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layer 1"]
+
+[[source]]
+id = "POINEAU13"
+authors = "Jérôme Poineau"
+title = "Les espaces de Berkovich sont angéliques"
+year = 2013
+locator_scheme = "theorem"
+locator = "§4, Definition 4.1, Lemma 4.4, Remark 4.14, Corollaries 4.15–4.18, pp. 283–288"
+url = "https://www.numdam.org/article/BSMF_2013__141_2_267_0.pdf"
+fetched_from = "https://www.numdam.org/article/BSMF_2013__141_2_267_0.pdf"
+fetched_at = "2026-10-24T05:14:27Z"
+sha256 = "c1d3aea9ca8b8c492c6e7f8291300c54d9187d3365a55de593f60814b2d48db8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layer 4"]

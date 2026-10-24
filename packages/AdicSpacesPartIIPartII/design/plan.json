@@ -3828,39 +3828,24 @@
  ],
  "gaps": [
   {
-   "title": "G1: original proof of the arbitrary-field Riemann extension theorem",
-   "neededBy": [
-    "AdicSpacesPartIIPartII:RZ.1/riemann-extension",
-    "AdicSpacesPartIIPartII:RZ.1/dense-open-connected"
-   ],
-   "detail": "Conrad 2010 Theorem 2.1.1, p. 4 has now been read and supplies the exact statement over arbitrary K. Its original Bartenwerfer proof (§3 of the reference cited there) has not been read or decomposed. Read that proof and close this theorem node. Do not restore the invalid argument that connectedness survives completed algebraic closure."
+    "slug": "formal-affinoid-localization",
+    "needs": "For every quasi-separated quasi-paracompact rigid K-space X, every weakly Shilov affinoid neighbourhood W of x can, after shrinking W around x and admissible modification of a formal model of X, be realized as the generic fibre of a formal affine open whose special-fibre generic points identify with those of the canonical reduction of W.",
+    "supplier": "AdicSpacesPartII",
+    "section": "R1.7 (formal-model localization interface)"
   },
   {
-   "title": "G3: scheme-level functorial desingularization at target level only",
-   "neededBy": [
-    "AdicSpacesPartIIPartII:RZ.5/functorial-desingularization-varieties",
-    "AdicSpacesPartIIPartII:RZ.5/functorial-desingularization-qe"
-   ],
-   "detail": "AlgebraicModuliForArithmeticGeometry R09.7 plans Bierstone–Milman for varieties, compatible with local isomorphisms only. Compatibility with smooth and regular morphisms (Bierstone–Milman 2008, Bierstone–Milman–Temkin 2011) and Temkin's extension to quasi-excellent schemes (§§3–4, using Gabber–Ramero algebraization and Nishimura–Nishimura) are stated here as two theorem nodes with proof sketches; their decomposition belongs to a Part II of AlgebraicModuliForArithmeticGeometry (see restructure). Also check regularity of completed affinoid scalar extension for ground-field compatibility in Theorem 5.2.2; flatness alone does not suffice."
+    "slug": "generically-reduced-functorial-resolution",
+    "needs": "Extend its §§7.5–7.6 marked strong resolution functor from reduced to generically reduced noetherian quasi-excellent ℚ-schemes, preserving the entire regular locus and functoriality for all regular maps, with countable invariant values for synchronization.",
+    "supplier": "ResolutionOfSingularitiesCharacteristicZero",
+    "section": "7.5–7.6"
   },
   {
-   "title": "G4: all-characteristic affinoid excellence supplier",
-   "neededBy": [
-    "AdicSpacesPartIIPartII:RZ.0/affinoid-localization-regular",
-    "AdicSpacesPartIIPartII:RZ.1/rigid-normalization",
-    "AdicSpacesPartIIPartII:RZ.2/singular-locus"
-   ],
-   "detail": "Request Q1: the existing parent F1/dagger-algebra-excellent is characteristic zero only. Conrad 1999 §1.1 recalls the all-characteristic affinoid result, including Kiehl’s imperfect-characteristic-p theorem; the original Kiehl proof has not been read. Characteristic-zero uses already have a matching supplier."
-  },
-  {
-   "title": "G5: formal-model localization for the third weakly-Shilov characterization",
-   "neededBy": [
-    "AdicSpacesPartIIPartII:RZ.4/weakly-shilov-transcendence-criterion",
-    "AdicSpacesPartIIPartII:RZ.4/shilov-point-characterisation"
-   ],
-   "detail": "The rank-one residue-transcendence equivalence is checked against Poineau and G2 is closed. For the formal-model condition, BH22 Proposition 2.9 invokes Bosch Lectures Theorem 8.4.3 to realize a specified affinoid domain as a formal open after admissible blow-up. Raynaud equivalence by itself does not state that localization lemma; request it precisely from AdicSpacesPartII:R2 and check its proof. For the Banach Shilov-boundary comparison in BH22 Proposition 2.2, the exact statement is checked there but its invoked Berkovich Spectral theory Proposition 2.4.4 proof has not been independently read."
+    "slug": "represented-smooth-homogeneous-quotient",
+    "needs": "For a smooth finite-type affine group G over a characteristic-zero field and a closed subgroup H with represented fppf quotient G/H, provide the smooth surjective H-torsor G → G/H, Cartier smoothness of H, and the same smoothness for the orbit morphism through every rational quotient point after arbitrary field extension.",
+    "supplier": "ReductiveGroups",
+    "section": "Layer 3"
   }
- ],
+],
  "sourceIssues": [
   {
    "id": "AdicSpacesPartIIPartII/E1",
