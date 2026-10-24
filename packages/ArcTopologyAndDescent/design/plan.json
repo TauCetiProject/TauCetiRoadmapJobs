@@ -5911,14 +5911,43 @@
     }
   ],
   "gaps": [
-    {
-      "title": "Register the algebraic-space Perf-Tannaka supplier",
-      "neededBy": [
-        "ArcTopologyAndDescent:AT.7/perfect-effective-epimorphisms"
-      ],
-      "detail": "BM21 Theorem 5.17 p. 45 uses the reconstruction equivalence Hom(X,Y)≃Fun^⊗_exact(Perf(Y),Perf(X)). Independently verified BH16 Theorem 1.5 p. 2: Y is a qcqs algebraic space and X is any algebraic space, in the coherent symmetric monoidal sense of its conventions pp. 4–5. The proposed SchemeAndStackFoundationsPartIIAlgebraicSpaceTannaka has no registered stage/node in this checkout, and SF.1 does not state this result. Register an owner and the exact verified contract before closing AT.7; no invented supplier id occurs in prerequisites. This affects only the algebraic-space Hom/effective-epimorphism consumer, not formal-target representable descent in AT.12."
-    }
-  ],
+  {
+    "slug": "coherent-topos-pushouts",
+    "needs": "For coherent sites, supply the representable coherence and quasi-compact relation criteria, Deligne enough points and coherence of pushouts along coherent monomorphisms used in the bounded arc-topos argument.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "§2.3 (coherent-site extension)"
+  },
+  {
+    "slug": "algebraic-space-perf-tannaka",
+    "needs": "For every qcqs algebraic space Y and every algebraic space X, supply the natural reconstruction equivalence Hom(X,Y)≃Fun^⊗_exact(Perf(Y),Perf(X)) with coherent symmetric monoidal functors and all pullback compatibilities.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "§1.4 (algebraic-space reconstruction extension)"
+  },
+  {
+    "slug": "constructible-etale-space-descent",
+    "needs": "Over arbitrary qcqs schemes, supply effective descent of qcqs étale algebraic spaces along universally submersive qcqs maps and the equivalence of these spaces with constructible finite-set étale sheaves, retaining separated schemes as a distinguished subcategory.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "§§1.2–1.10"
+  },
+  {
+    "slug": "affine-characteristic-primary-cohomology",
+    "needs": "For every affine scheme in characteristic p>0, arbitrary p-primary torsion étale sheaves have zero cohomology above degree one, with the bound zero for zero-dimensional finite-type schemes over a separably closed field, compatibly with filtered coefficient colimits.",
+    "supplier": "EtaleCohomologyFoundations",
+    "section": "§F.3"
+  },
+  {
+    "slug": "perfectoid-tate-constant-comparison",
+    "needs": "For every p-complete integral perfectoid A and every n≥1, supply the natural constant Z/p^n cohomology comparison between Spec A[1/p] and Spa(A[1/p],A), compatible with perfectoid étale tilting and open restriction.",
+    "supplier": "ClassicalAdicEtaleCohomology",
+    "section": "§§2.5–2.6"
+  },
+  {
+    "slug": "bounded-torsion-punctured-approximation",
+    "needs": "Extend henselian finite étale approximation to a-henselian rings with bounded a-power torsion on every open containing D(a), and to complements of finitely generated ideals in noetherian henselian pairs, compatibly with restriction and finite affine-open descent.",
+    "supplier": "AdicEtaleGeometry",
+    "section": "§A1.0.5"
+  }
+],
   "sourceIssues": [
     {
       "id": "ArcTopologyAndDescent/E1",
