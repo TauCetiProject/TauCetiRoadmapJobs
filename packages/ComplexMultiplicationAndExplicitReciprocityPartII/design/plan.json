@@ -4226,199 +4226,265 @@
     }
   ],
   "gaps": [
-    {
-      "id": "G-Colmez",
-      "title": "Primary height-linearity theorem",
-      "detail": "Colmez (1993), pp. 630–632 and Theorem 0.3 have now been read at statement level. The theorem specifies the full functional by component-period values, not by total heights alone. The underlying monomial period relations and local comparison proofs remain unread. Prove the exact sign/conductor/unscaled-metric adapter and linear-relation compatibility on H_CM, with maximal-order type invariance, products and induction. Do not infer uniqueness on all CM⁰ from overlap values.",
-      "neededBy": [
-        "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.0/colmez-linearity"
-      ],
-      "resolution": "Read the stated primary proof, prove the exact comparison, and pass its discriminating checks before claiming proof closure."
-    },
-    {
-      "id": "G-AbsoluteHodge",
-      "title": "Absolute-Hodge integral tensor comparison",
-      "detail": "Blasius (1994) p-adic comparison and Kisin (2010), Corollary 1.4.3 are quoted by AGHMP pp. 426–427 but their primary proofs have not been read here. Obtain the absolute-Hodge tensor compatibility and actual T-torsor with all unramified and maximal-level hypotheses; canonical-model descent alone is insufficient.",
-      "neededBy": [
-        "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.2/integral-tensor-torsor"
-      ],
-      "resolution": "AutomorphicBundles:B1 and FiniteFlatGroupsAndIntegralPadicHodgeTheory:R07.4"
-    },
-    {
-      "id": "G-Metric",
-      "title": "Complete metrized determinant isometry",
-      "detail": "Check the determinant isometry with the repaired positive ω₀ metric and trace-normalized top period, not just the rational line identity. Verify the r=1 trace factor and base-change normalization.",
-      "neededBy": [
-        "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.3/volume-and-metric"
-      ],
-      "resolution": "Read the stated primary proof, prove the exact comparison, and pass its discriminating checks before claiming proof closure."
-    },
-    {
-      "id": "G-IntegralReflex",
-      "title": "Integral total-reflex length identification",
-      "detail": "The combinatorial conductor computation does not identify its module with the integral Hodge graded-action quotient. Supply this identification at every ramified and dyadic prime, using the actual BK lattice, before transferring the length formula.",
-      "neededBy": [
-        "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.3/local-total-reflex"
-      ],
-      "resolution": "Read the stated primary proof, prove the exact comparison, and pass its discriminating checks before claiming proof closure."
-    },
-    {
-      "id": "G-OrthogonalAdapter",
-      "title": "Repair the orthogonal filtered-line lattice comparison",
-      "detail": "AGHMP (9.5.3), p. 523 has an invalid full-lattice scaling as recorded in the paper audit. A scalar satisfying a norm equation is not enough. Prove the required integral Hodge-line degree comparison, including different ideals and all local indices; do not use the printed full-lattice equality.",
-      "neededBy": [
-        "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.4/orthogonal-line-adapter"
-      ],
-      "resolution": "Read the stated primary proof, prove the exact comparison, and pass its discriminating checks before claiming proof closure."
-    },
-    {
-      "id": "G-GSpin",
-      "title": "Big-CM orthogonal arithmetic height input",
-      "detail": "Import the exact normalized Theorems 6.4.2 (p. 474) and 8.3.4 (p. 508), with vertical error supported at the declared bad primes. Their lengthy §§4–8 proofs have not been read here. Preserve the supplier paper audit, including dyadic local intersection, tensor, Green-function and Borcherds hypotheses.",
-      "neededBy": [
-        "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.4/orthogonal-error"
-      ],
-      "resolution": "Pending GSpinSpecialDivisorHeights proposal; no accepted stage id exists. Exact interface is recorded here and in upstreamNotes."
-    },
-    {
-      "id": "G-Armitage",
-      "title": "Different-character and narrow norm calculation",
-      "detail": "Read Armitage (1967), Theorem 3 and prove the quadratic CM different-character identity used in Lemma 9.5.4, p. 525. Supply the norm image in the narrow class group, including signs at real places, to choose lattices good at an arbitrary finite prime set.",
-      "neededBy": [
-        "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.4/auxiliary-choice"
-      ],
-      "resolution": "ClassFieldTheory layer 13 and AnalyticNumberTheory:AN.4"
-    },
-    {
-      "id": "G-Borcherds",
-      "title": "Support-controlled prime elimination",
-      "detail": "For each prime p, produce a good auxiliary CM lattice, p-self-dual ambient lattice and Borcherds input with nonzero constant coefficient and negative coefficients supported only where proper intersection holds. Eliminate the p-error rather than merely finding two coprime bad-prime sets. The supporting Borcherds existence proof is not read here.",
-      "neededBy": [
-        "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.4/prime-elimination"
-      ],
-      "resolution": "GSpinSpecialDivisorHeights and MetaplecticAutomorphicForms:MP.7"
-    },
-    {
-      "id": "G-Classical",
-      "title": "Imaginary quadratic period formula",
-      "detail": "The d=1 Chowla–Selberg input is named in AGHMP p. 392; a primary period-formula proof with this exact Faltings metric remains unread. It supplies the d=1 orthogonal route, without applying its d≥2 auxiliary argument outside its domain.",
-      "neededBy": [
-        "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.4/quadratic-classical"
-      ],
-      "resolution": "Read the stated primary proof, prove the exact comparison, and pass its discriminating checks before claiming proof closure."
-    },
-    {
-      "id": "G-CMHodge",
-      "title": "Primary CM Hodge-filtration comparison",
-      "detail": "The local CM Hodge lattice theorem cited in Yuan–Zhang Theorem 2.3 must be supplied with factorwise monogenicity after unramified base extension, and compatible image/torsion-free component lines. Colmez II.1.2 is not read here; the generic supplier itself records this leaf.",
-      "neededBy": [
-        "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.5/height-decomposition"
-      ],
-      "resolution": "ArakelovGeometryAndAbelianHeights:R35.4/cm-hodge-filtration-local"
-    },
-    {
-      "id": "G-CMKisin",
-      "title": "All-prime CM Kisin classification proof",
-      "detail": "The revised author erratum pp. 3–9 is read; its underlying integral classification references are not. Obtain the actual all-prime rank-one CM BK construction, semilinear embedding permutation and reduction modulo the different. Once the integral torsion isomorphism is established, scalar units of O_E/δ_E/F extend its chosen generic isomorphism: this last unit argument is routine, not an additional source gap (rejected E22).",
-      "neededBy": [
-        "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.6/cm-kisin-torsion"
-      ],
-      "resolution": "FiniteFlatGroupsAndIntegralPadicHodgeTheory:R07.4"
-    },
-    {
-      "id": "G-RamifiedComponent",
-      "title": "Ramified relative/image determinant comparison",
-      "detail": "Erratum Proposition 6 tensors a sequence along an embedding. This need not preserve exactness or local freeness when F/Q is ramified. For F_p=Q_p(√p), the opposite-eigenvalue quotient can be O_L/(2√p). Prove a relative/image determinant comparison and Cartier-duality cancellation, and compare its height with the component convention actually used. This is an unresolved proof gate, not a proof of the unrestricted tensor argument.",
-      "neededBy": [
-        "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.6/relative-determinant-cancellation",
-        "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.6/corrected-nearby"
-      ],
-      "resolution": "ArakelovGeometryAndAbelianHeights:R35.4 with FiniteFlatGroupsAndIntegralPadicHodgeTheory:R07.4"
-    },
-    {
-      "id": "G-QuaternionOrders",
-      "title": "Integral maximal-order graph input",
-      "detail": "The author erratum cites Vignéras, Ch. II, Theorem 3.2, p. 44. That primary theorem is unread. Supply the split and division maximal-order classification with an embedded O_E, including split dyadic residue-field-F₂ cases; containment of units in a maximal compact alone does not suffice.",
-      "neededBy": [
-        "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.6/quaternion-graph"
-      ],
-      "resolution": "HilbertModularVarietiesAndShimuraCurves:R18.1"
-    },
-    {
-      "id": "G-IntegralKS",
-      "title": "Ramified integral Kodaira–Spencer comparison",
-      "detail": "Yuan–Zhang Proposition 5.4 and Corollary 5.5 use raw component quotients whose local freeness is not automatic. Establish integral Kodaira–Spencer on relative/image Hodge lattices and its exact comparison with N(A,τ), including the different twist and archimedean metric. The determinant of an O_E-linear rank-two Hom is not the rank-one O_B-linear deformation condition.",
-      "neededBy": [
-        "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.7/quaternion-hodge-comparison"
-      ],
-      "resolution": "HilbertModularVarietiesAndShimuraCurves:R18.2 and ArakelovGeometryAndAbelianHeights:R35.4"
-    },
-    {
-      "id": "G-YZKernels",
-      "title": "Noncuspidal arithmetic kernel comparison",
-      "detail": "Only the target and assembly of Theorem 9.1 have been read, not all §§6–8 local proofs. The supplier must retain degenerate terms, complementary-character pseudo-theta terms, the compensated S₂ Whittaker/intersection normalization and a nonzero (not necessarily positive) comparison constant. Carry the existing paper findings E43, E44, E51 and E52 into that verification.",
-      "neededBy": [
-        "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.8/modified-self-intersection"
-      ],
-      "resolution": "GrossZagierAndArithmeticHeights:GZ.6 and GZ.7"
-    },
-    {
-      "id": "G-Adjunction",
-      "title": "Detailed ramified arithmetic adjunction",
-      "detail": "Theorem 9.3 and the full §9.2 proof, pp. 629–635, have been read. Supply the conormal/different calculation and vertical correction on the actual integral model, using the invariant local lift in Lemmas 9.4–9.5. The level projection can ramify at an elliptic CM point: its pulled-back horizontal divisor has multiplicity e, so the sentence on p. 633 calling that projection étale cannot justify the section assertion. The existing GZ.7/colmez-modified-projection target states the needed section and multiplicity explicitly; verify its local-model proof before closure.",
-      "neededBy": [
-        "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.8/arithmetic-adjunction"
-      ],
-      "resolution": "GrossZagierAndArithmeticHeights:GZ.2 and GZ.7"
-    },
-    {
-      "id": "G-HeckeUniform",
-      "title": "Uniform quadratic Hecke analytic estimates",
-      "detail": "The quadratic Hecke L-function is entire and permits Cauchy bounds; a general Artin function is not assumed entire. Establish fixed-degree uniform lower bounds at 1 and bounds on L′(1,χ)/L(1,χ), with varying totally real base field and constants depending only on g and ε. The named primary analytic estimates are unread. The exact supplier targets quadratic-hecke-cauchy-derivative and quadratic-hecke-log-derivative-one have been checked; the gate concerns their primary analytic estimates and uniform constants, not the absence of a stated supplier interface.",
-      "neededBy": [
-        "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.10/quadratic-hecke-bound"
-      ],
-      "resolution": "AnalyticNumberTheory:AN.4"
-    },
-    {
-      "id": "G-TorusIndex",
-      "title": "Uniform compact-index local comparison",
-      "detail": "The source §7.2 is read, but the cited local torus estimates and their uniform constants remain to be established with ramification and a sufficiently deep dyadic exponential. Preserve J≤I^c(∏D_K)^d and do not remove its field factor.",
-      "neededBy": [
-        "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.12/compact-index"
-      ],
-      "resolution": "ShimuraVarieties:V4 quantitative refinement; CM-specific proof remains here"
-    },
-    {
-      "id": "G-TorusOrbit",
-      "title": "Torus orbit inequality and moduli injectivity",
-      "detail": "Supply the precise reciprocity orbit inequality with compact index and its B^(number of bad primes) loss, together with bounded-level injectivity into polarized Siegel moduli. The external orbit estimate cited in Tsimerman (2012), §7.1 is not read in its primary source. Absolute unmarked orbit, relative marked orbit and normal-closure reciprocity image must be compared with bounded fibers. For T=T_x let Cl(T)=T(Q)\\T(A_f)/T(Ẑ), I=[T(Ẑ):K_x], S={p:p|[O_x:R_x]}, and r_T:Cl(L)→Cl(T) the normal-closure reflex action. After a dimension-bounded rigid level change, require |Gal(Qbar/Q)·x|≥c_g B_g^(#S) I |im r_T| with c_g>0 and 0<B_g≤1, and compatible projections to each primitive factor. This is the inequality used in Tsimerman (2012), (4)–(5), pp. 17–18; its bad-prime loss must be absorbed, not dropped.",
-      "neededBy": [
-        "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.12/general-orbit-reduction"
-      ],
-      "resolution": "ShimuraVarieties:V4 and PELModuli:M6"
-    },
-    {
-      "id": "G-PeriodReduction",
-      "title": "Quantitative hermitian and Siegel reduction",
-      "detail": "Pila–Tsimerman §3 is read; complete the cited reduction estimates in the supplier’s own proof, in all dimensions and for arbitrary center orders. Prove a symplectic reduction matrix bound polynomial in analytic h₀, balance each isotypic hermitian lattice and convert the bound to algebraic coordinate heights. Generic IntegralLattices duality does not supply this quantitative statement.",
-      "neededBy": [
-        "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.13/cm-symplectic-reduction"
-      ],
-      "resolution": "GeometryOfNumbersAndQuadraticArithmetic:GN.1 and GN.3"
-    },
-    {
-      "id": "G-ErratumEdition",
-      "title": "Journal/author erratum collation",
-      "detail": "The revised author erratum dated 18 December 2022 (11 pages) is read in full. The Annals 198 (2023), pp. 867–878 edition has not been collated against it. Keep author-version pagination explicit and reconcile all changed statements before a source-closed package.",
-      "neededBy": [
-        "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.6/different-graph-datum",
-        "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.6/cm-kisin-torsion",
-        "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.6/relative-determinant-cancellation"
-      ],
-      "resolution": "Read the stated primary proof, prove the exact comparison, and pass its discriminating checks before claiming proof closure."
-    }
-  ],
+  {
+    "id": "G-Colmez",
+    "title": "Primary height-linearity theorem",
+    "detail": "Colmez (1993), pp. 630–632 and Theorem 0.3 have now been read at statement level. The theorem specifies the full functional by component-period values, not by total heights alone. The underlying monomial period relations and local comparison proofs remain unread. Prove the exact sign/conductor/unscaled-metric adapter and linear-relation compatibility on H_CM, with maximal-order type invariance, products and induction. Do not infer uniqueness on all CM⁰ from overlap values.",
+    "neededBy": [
+      "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.0/colmez-linearity"
+    ],
+    "resolution": "Read the stated primary proof, prove the exact comparison, and pass its discriminating checks before claiming proof closure."
+  },
+  {
+    "id": "G-AbsoluteHodge",
+    "title": "Absolute-Hodge integral tensor comparison",
+    "detail": "Blasius (1994) p-adic comparison and Kisin (2010), Corollary 1.4.3 are quoted by AGHMP pp. 426–427 but their primary proofs have not been read here. Obtain the absolute-Hodge tensor compatibility and actual T-torsor with all unramified and maximal-level hypotheses; canonical-model descent alone is insufficient.",
+    "neededBy": [
+      "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.2/integral-tensor-torsor"
+    ],
+    "resolution": "AutomorphicBundles:B1 and FiniteFlatGroupsAndIntegralPadicHodgeTheory:R07.4"
+  },
+  {
+    "id": "G-Metric",
+    "title": "Complete metrized determinant isometry",
+    "detail": "Check the determinant isometry with the repaired positive ω₀ metric and trace-normalized top period, not just the rational line identity. Verify the r=1 trace factor and base-change normalization.",
+    "neededBy": [
+      "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.3/volume-and-metric"
+    ],
+    "resolution": "Read the stated primary proof, prove the exact comparison, and pass its discriminating checks before claiming proof closure."
+  },
+  {
+    "id": "G-IntegralReflex",
+    "title": "Integral total-reflex length identification",
+    "detail": "The combinatorial conductor computation does not identify its module with the integral Hodge graded-action quotient. Supply this identification at every ramified and dyadic prime, using the actual BK lattice, before transferring the length formula.",
+    "neededBy": [
+      "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.3/local-total-reflex"
+    ],
+    "resolution": "Read the stated primary proof, prove the exact comparison, and pass its discriminating checks before claiming proof closure."
+  },
+  {
+    "id": "G-OrthogonalAdapter",
+    "title": "Repair the orthogonal filtered-line lattice comparison",
+    "detail": "AGHMP (9.5.3), p. 523 has an invalid full-lattice scaling as recorded in the paper audit. A scalar satisfying a norm equation is not enough. Prove the required integral Hodge-line degree comparison, including different ideals and all local indices; do not use the printed full-lattice equality.",
+    "neededBy": [
+      "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.4/orthogonal-line-adapter"
+    ],
+    "resolution": "Read the stated primary proof, prove the exact comparison, and pass its discriminating checks before claiming proof closure."
+  },
+  {
+    "id": "G-GSpin",
+    "title": "Big-CM orthogonal arithmetic height input",
+    "detail": "Import the exact normalized Theorems 6.4.2 (p. 474) and 8.3.4 (p. 508), with vertical error supported at the declared bad primes. Their lengthy §§4–8 proofs have not been read here. Preserve the supplier paper audit, including dyadic local intersection, tensor, Green-function and Borcherds hypotheses.",
+    "neededBy": [
+      "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.4/orthogonal-error"
+    ],
+    "resolution": "Pending GSpinSpecialDivisorHeights proposal; no accepted stage id exists. Exact interface is recorded here and in upstreamNotes."
+  },
+  {
+    "id": "G-Armitage",
+    "title": "Different-character and narrow norm calculation",
+    "detail": "Read Armitage (1967), Theorem 3 and prove the quadratic CM different-character identity used in Lemma 9.5.4, p. 525. Supply the norm image in the narrow class group, including signs at real places, to choose lattices good at an arbitrary finite prime set.",
+    "neededBy": [
+      "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.4/auxiliary-choice"
+    ],
+    "resolution": "ClassFieldTheory layer 13 and AnalyticNumberTheory:AN.4"
+  },
+  {
+    "id": "G-Borcherds",
+    "title": "Support-controlled prime elimination",
+    "detail": "For each prime p, produce a good auxiliary CM lattice, p-self-dual ambient lattice and Borcherds input with nonzero constant coefficient and negative coefficients supported only where proper intersection holds. Eliminate the p-error rather than merely finding two coprime bad-prime sets. The supporting Borcherds existence proof is not read here.",
+    "neededBy": [
+      "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.4/prime-elimination"
+    ],
+    "resolution": "GSpinSpecialDivisorHeights and MetaplecticAutomorphicForms:MP.7"
+  },
+  {
+    "id": "G-Classical",
+    "title": "Imaginary quadratic period formula",
+    "detail": "The d=1 Chowla–Selberg input is named in AGHMP p. 392; a primary period-formula proof with this exact Faltings metric remains unread. It supplies the d=1 orthogonal route, without applying its d≥2 auxiliary argument outside its domain.",
+    "neededBy": [
+      "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.4/quadratic-classical"
+    ],
+    "resolution": "Read the stated primary proof, prove the exact comparison, and pass its discriminating checks before claiming proof closure."
+  },
+  {
+    "id": "G-CMHodge",
+    "title": "Primary CM Hodge-filtration comparison",
+    "detail": "The local CM Hodge lattice theorem cited in Yuan–Zhang Theorem 2.3 must be supplied with factorwise monogenicity after unramified base extension, and compatible image/torsion-free component lines. Colmez II.1.2 is not read here; the generic supplier itself records this leaf.",
+    "neededBy": [
+      "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.5/height-decomposition"
+    ],
+    "resolution": "ArakelovGeometryAndAbelianHeights:R35.4/cm-hodge-filtration-local"
+  },
+  {
+    "id": "G-CMKisin",
+    "title": "All-prime CM Kisin classification proof",
+    "detail": "The revised author erratum pp. 3–9 is read; its underlying integral classification references are not. Obtain the actual all-prime rank-one CM BK construction, semilinear embedding permutation and reduction modulo the different. Once the integral torsion isomorphism is established, scalar units of O_E/δ_E/F extend its chosen generic isomorphism: this last unit argument is routine, not an additional source gap (rejected E22).",
+    "neededBy": [
+      "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.6/cm-kisin-torsion"
+    ],
+    "resolution": "FiniteFlatGroupsAndIntegralPadicHodgeTheory:R07.4"
+  },
+  {
+    "id": "G-RamifiedComponent",
+    "title": "Ramified relative/image determinant comparison",
+    "detail": "Erratum Proposition 6 tensors a sequence along an embedding. This need not preserve exactness or local freeness when F/Q is ramified. For F_p=Q_p(√p), the opposite-eigenvalue quotient can be O_L/(2√p). Prove a relative/image determinant comparison and Cartier-duality cancellation, and compare its height with the component convention actually used. This is an unresolved proof gate, not a proof of the unrestricted tensor argument.",
+    "neededBy": [
+      "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.6/relative-determinant-cancellation",
+      "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.6/corrected-nearby"
+    ],
+    "resolution": "ArakelovGeometryAndAbelianHeights:R35.4 with FiniteFlatGroupsAndIntegralPadicHodgeTheory:R07.4"
+  },
+  {
+    "id": "G-QuaternionOrders",
+    "title": "Integral maximal-order graph input",
+    "detail": "The author erratum cites Vignéras, Ch. II, Theorem 3.2, p. 44. That primary theorem is unread. Supply the split and division maximal-order classification with an embedded O_E, including split dyadic residue-field-F₂ cases; containment of units in a maximal compact alone does not suffice.",
+    "neededBy": [
+      "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.6/quaternion-graph"
+    ],
+    "resolution": "HilbertModularVarietiesAndShimuraCurves:R18.1"
+  },
+  {
+    "id": "G-IntegralKS",
+    "title": "Ramified integral Kodaira–Spencer comparison",
+    "detail": "Yuan–Zhang Proposition 5.4 and Corollary 5.5 use raw component quotients whose local freeness is not automatic. Establish integral Kodaira–Spencer on relative/image Hodge lattices and its exact comparison with N(A,τ), including the different twist and archimedean metric. The determinant of an O_E-linear rank-two Hom is not the rank-one O_B-linear deformation condition.",
+    "neededBy": [
+      "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.7/quaternion-hodge-comparison"
+    ],
+    "resolution": "HilbertModularVarietiesAndShimuraCurves:R18.2 and ArakelovGeometryAndAbelianHeights:R35.4"
+  },
+  {
+    "id": "G-YZKernels",
+    "title": "Noncuspidal arithmetic kernel comparison",
+    "detail": "Only the target and assembly of Theorem 9.1 have been read, not all §§6–8 local proofs. The supplier must retain degenerate terms, complementary-character pseudo-theta terms, the compensated S₂ Whittaker/intersection normalization and a nonzero (not necessarily positive) comparison constant. Carry the existing paper findings E43, E44, E51 and E52 into that verification.",
+    "neededBy": [
+      "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.8/modified-self-intersection"
+    ],
+    "resolution": "GrossZagierAndArithmeticHeights:GZ.6 and GZ.7"
+  },
+  {
+    "id": "G-Adjunction",
+    "title": "Detailed ramified arithmetic adjunction",
+    "detail": "Theorem 9.3 and the full §9.2 proof, pp. 629–635, have been read. Supply the conormal/different calculation and vertical correction on the actual integral model, using the invariant local lift in Lemmas 9.4–9.5. The level projection can ramify at an elliptic CM point: its pulled-back horizontal divisor has multiplicity e, so the sentence on p. 633 calling that projection étale cannot justify the section assertion. The existing GZ.7/colmez-modified-projection target states the needed section and multiplicity explicitly; verify its local-model proof before closure.",
+    "neededBy": [
+      "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.8/arithmetic-adjunction"
+    ],
+    "resolution": "GrossZagierAndArithmeticHeights:GZ.2 and GZ.7"
+  },
+  {
+    "id": "G-HeckeUniform",
+    "title": "Uniform quadratic Hecke analytic estimates",
+    "detail": "The quadratic Hecke L-function is entire and permits Cauchy bounds; a general Artin function is not assumed entire. Establish fixed-degree uniform lower bounds at 1 and bounds on L′(1,χ)/L(1,χ), with varying totally real base field and constants depending only on g and ε. The named primary analytic estimates are unread. The exact supplier targets quadratic-hecke-cauchy-derivative and quadratic-hecke-log-derivative-one have been checked; the gate concerns their primary analytic estimates and uniform constants, not the absence of a stated supplier interface.",
+    "neededBy": [
+      "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.10/quadratic-hecke-bound"
+    ],
+    "resolution": "AnalyticNumberTheory:AN.4"
+  },
+  {
+    "id": "G-TorusIndex",
+    "title": "Uniform compact-index local comparison",
+    "detail": "The source §7.2 is read, but the cited local torus estimates and their uniform constants remain to be established with ramification and a sufficiently deep dyadic exponential. Preserve J≤I^c(∏D_K)^d and do not remove its field factor.",
+    "neededBy": [
+      "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.12/compact-index"
+    ],
+    "resolution": "ShimuraVarieties:V4 quantitative refinement; CM-specific proof remains here"
+  },
+  {
+    "id": "G-TorusOrbit",
+    "title": "Torus orbit inequality and moduli injectivity",
+    "detail": "Supply the precise reciprocity orbit inequality with compact index and its B^(number of bad primes) loss, together with bounded-level injectivity into polarized Siegel moduli. The external orbit estimate cited in Tsimerman (2012), §7.1 is not read in its primary source. Absolute unmarked orbit, relative marked orbit and normal-closure reciprocity image must be compared with bounded fibers. For T=T_x let Cl(T)=T(Q)\\T(A_f)/T(Ẑ), I=[T(Ẑ):K_x], S={p:p|[O_x:R_x]}, and r_T:Cl(L)→Cl(T) the normal-closure reflex action. After a dimension-bounded rigid level change, require |Gal(Qbar/Q)·x|≥c_g B_g^(#S) I |im r_T| with c_g>0 and 0<B_g≤1, and compatible projections to each primitive factor. This is the inequality used in Tsimerman (2012), (4)–(5), pp. 17–18; its bad-prime loss must be absorbed, not dropped.",
+    "neededBy": [
+      "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.12/general-orbit-reduction"
+    ],
+    "resolution": "ShimuraVarieties:V4 and PELModuli:M6"
+  },
+  {
+    "id": "G-PeriodReduction",
+    "title": "Quantitative hermitian and Siegel reduction",
+    "detail": "Pila–Tsimerman §3 is read; complete the cited reduction estimates in the supplier’s own proof, in all dimensions and for arbitrary center orders. Prove a symplectic reduction matrix bound polynomial in analytic h₀, balance each isotypic hermitian lattice and convert the bound to algebraic coordinate heights. Generic IntegralLattices duality does not supply this quantitative statement.",
+    "neededBy": [
+      "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.13/cm-symplectic-reduction"
+    ],
+    "resolution": "GeometryOfNumbersAndQuadraticArithmetic:GN.1 and GN.3"
+  },
+  {
+    "id": "G-ErratumEdition",
+    "title": "Journal/author erratum collation",
+    "detail": "The revised author erratum dated 18 December 2022 (11 pages) is read in full. The Annals 198 (2023), pp. 867–878 edition has not been collated against it. Keep author-version pagination explicit and reconcile all changed statements before a source-closed package.",
+    "neededBy": [
+      "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.6/different-graph-datum",
+      "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.6/cm-kisin-torsion",
+      "ComplexMultiplicationAndExplicitReciprocityPartII:CMH.6/relative-determinant-cancellation"
+    ],
+    "resolution": "Read the stated primary proof, prove the exact comparison, and pass its discriminating checks before claiming proof closure."
+  },
+  {
+    "slug": "ramified-component-determinants",
+    "needs": "Extend §4.7 to relative/image component determinants over every mixed-characteristic DVR with ramified coefficient field, proving Cartier-dual length cancellation for a self-dual kernel with conjugation-invariant action and identifying its metrized height with §4.6.",
+    "supplier": "ArakelovGeometryAndAbelianHeights",
+    "section": "§4.7"
+  },
+  {
+    "slug": "quantitative-cm-torus-orbit",
+    "needs": "For a dimension-g CM Mumford–Tate torus T in GSp, maximal compact T(Ẑ), K=T(A_f)∩GSp(Ẑ), I=[T(Ẑ):K], bad set S={p:p divides [O_x:R_x]} and normal-closure reflex image r_T:Cl(L)→T(ℚ)\\T(A_f)/T(Ẑ), prove after a dimension-bounded rigid level change that the absolute polarized orbit is at least c_g B_g^(#S) I |im r_T| with c_g>0 and 0<B_g≤1, compatibly with all primitive-factor projections.",
+    "supplier": "ShimuraVarieties",
+    "section": "§§4.1–4.6"
+  },
+  {
+    "slug": "polarized-cm-bounded-descent",
+    "needs": "A polarized maximal-CM g-fold with coarse field F_A admits a model with all CM endomorphisms and full 3-torsion over degree at most 2·3^(4g²) above F_A, and dimension-bounded rigid level makes the torus orbit inject into polarized Siegel moduli with bounded fibers on forgetting level.",
+    "supplier": "PELModuli",
+    "section": "§§M2.1–M2.3, M6.2"
+  },
+  {
+    "slug": "class-norm-index",
+    "needs": "For every finite number-field extension L/K, prove [Cl(K):Nm_L/K Cl(L)]≤[L:K] by identifying the cokernel with the unramified class-field intersection, with norm transitivity and consequent image-size inequality for a following homomorphism.",
+    "supplier": "ClassFieldTheory",
+    "section": "Layer 13"
+  },
+  {
+    "slug": "narrow-cm-norm-different",
+    "needs": "For quadratic CM E/F, identify Nm Cl(E) in Cl⁺(F) as all of Cl⁺(F) if some finite place ramifies and as ker χ_E/F otherwise, and in the latter case prove g even and χ_E/F(d_F)=(-1)^(g/2).",
+    "supplier": "ClassFieldTheory",
+    "section": "Layer 13"
+  },
+  {
+    "slug": "etale-order-discriminant",
+    "needs": "Extend the trace-discriminant index-square formula to a full ℤ-order R in a finite product ∏K_i, giving |disc R|=[∏O_Ki:R]²∏|disc K_i| with no assumption that R decomposes as a product.",
+    "supplier": "GlobalNumberFields",
+    "section": "Layer 11"
+  },
+  {
+    "slug": "quantitative-siegel-hermitian-reduction",
+    "needs": "In each fixed rank provide hermitian lattice balancing and a symplectic integral matrix taking any Z in Siegel space to the chosen standard fundamental set with all entries polynomially bounded in max(max|z_ij|,1/det Im Z), including repeated isotypic factors and all finite-prime lattice indices.",
+    "supplier": "GeometryOfNumbersAndQuadraticArithmetic",
+    "section": "§§1.2, 1.5, 2.7"
+  },
+  {
+    "slug": "ramified-quaternionic-bridge",
+    "needs": "Extend the pointwise bridge determinant comparison of §§R18.2.17–R18.2.18 to ramified F_v/ℚ_p on relative/image Hodge lattices with the exact different twist and archimedean isometry, retaining finite-local crystalline descent and proving independence of the pro-level lift.",
+    "supplier": "HilbertModularVarietiesAndShimuraCurves",
+    "section": "§§R18.2.17–R18.2.18"
+  },
+  {
+    "slug": "embedded-quaternion-orders",
+    "needs": "Provide the local maximal-order descriptions with an embedded quadratic integer ring in split and division quaternion algebras, including dyadic residue field 𝔽₂, sufficient to identify the different-torsion projection lattices of §6.5.",
+    "supplier": "HilbertModularVarietiesAndShimuraCurves",
+    "section": "Layer R18.1"
+  },
+  {
+    "slug": "unprojected-colmez-kernels",
+    "needs": "Export the compact maximal-order CM analytic-derivative and geometric-height kernel comparison before cuspidal projection, with complementary-character pseudo-theta terms, a nonzero comparison coefficient and compensated S₂ Whittaker/intersection normalization at every finite place.",
+    "supplier": "GrossZagierAndArithmeticHeights",
+    "section": "§§6.5–6.8, 6.25"
+  },
+  {
+    "slug": "ramified-colmez-adjunction",
+    "needs": "Export the modified arithmetic projection and adjunction formulas for ramified horizontal CM closures, retaining the invariant local section, elliptic pullback multiplicity e, conormal different and vertical correction on the actual integral curve model.",
+    "supplier": "GrossZagierAndArithmeticHeights",
+    "section": "§§2.14, 7.28"
+  }
+],
   "sourceIssues": [
     {
       "id": "ComplexMultiplicationAndExplicitReciprocityPartII/E1",

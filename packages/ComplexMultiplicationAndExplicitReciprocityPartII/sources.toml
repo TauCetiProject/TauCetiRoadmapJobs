@@ -1,0 +1,160 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ComplexMultiplicationAndExplicitReciprocityPartII"
+
+[[source]]
+id = "YE"
+locator_scheme = "section"
+locator = "Erratum, §1, Theorem 1, pp. 1–2; Erratum, §2, Theorem 2 and Propositions 4–5, pp. 3–9; Erratum, §3, display (5) and proof, pp. 10–11; Author erratum, §3, Proposition 6 and proof, pp. 9–10; Erratum, Theorem 1, p. 2; §3 proof, pp. 10–11; Erratum, §1, pp. 2–3"
+url = "https://web.math.princeton.edu/~shouwu/publications/Erratum5.pdf"
+fetched_from = "https://web.math.princeton.edu/~shouwu/publications/Erratum5.pdf"
+fetched_at = "2026-10-24T07:46:15Z"
+sha256 = "18b46acd0f6be352d4bc5b4d7797650be3e228712e13de94bbb45ec25b576c91"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layer 6"]
+authors = "Xinyi Yuan; Shou-Wu Zhang"
+title = "Erratum to On the Averaged Colmez Conjecture"
+year = 2022
+version_note = "18 December 2022 author revision, 11 pages; journal numbering not collated."
+
+[[source]]
+id = "T12"
+authors = "Jacob Tsimerman"
+title = "Brauer-Siegel for Arithmetic Tori and lower bounds for Galois orbits of special points"
+year = 2011
+arxiv = "1103.5619v2"
+locator_scheme = "section"
+locator = "§7.1–7.2, preprint pp. 15–18; §7.2, preprint p. 18, with the order index distinguished from the compact index; Proof of Theorem 7.1, preprint pp. 17–18; Tsimerman (2012), Lemmas 7.2–7.5, preprint pp. 18–20; Theorem 7.1 and equations (4)–(5), preprint pp. 17–20"
+url = "https://arxiv.org/abs/1103.5619v2"
+fetched_from = "https://arxiv.org/pdf/1103.5619v2"
+fetched_at = "2026-10-24T07:46:18Z"
+sha256 = "009738151269039a3a8afc231c4af6bad3cb7e6756d8967c58c111ed191e980d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv:1103.5619v2, preprint pp. 15–20; DOI 10.1090/S0894-0347-2012-00739-5 identifies the journal version, not its numbering."
+cited_for = ["Layer 12"]
+doi = "10.1090/S0894-0347-2012-00739-5"
+
+[[source]]
+id = "PT"
+authors = "Jonathan Pila, Jacob Tsimerman"
+title = "The Andre-Oort conjecture for the moduli space of Abelian Surfaces"
+year = 2011
+venue = "Compositio Math. 149 (2013) 204-216"
+doi = "10.1112/S0010437X12000589"
+arxiv = "1106.4023v1"
+locator_scheme = "section"
+locator = "Lemma 3.2, preprint p. 4; §3, preprint pp. 3–9; Pila–Tsimerman (2013), Lemmas 3.2–3.3, preprint pp. 3–5; Pila–Tsimerman (2013), §3, Lemmas 3.4–3.7, preprint pp. 5–9; Theorem 3.1, preprint pp. 3–9"
+url = "https://arxiv.org/abs/1106.4023v1"
+fetched_from = "https://arxiv.org/pdf/1106.4023v1"
+fetched_at = "2026-10-24T07:46:24Z"
+sha256 = "c84c82b6df4b3c59b015228658005fd2fca11aac87948094ab1cc75cab0b599d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv:1106.4023v1, preprint pagination; journal numbering not collated."
+cited_for = ["Layer 12", "Layer 13"]
+
+[[source]]
+id = "T"
+locator_scheme = "section"
+locator = "§2.2, p. 382; Proposition 2.2 and preceding proof, p. 382; Corollary 3.3 proof, pp. 383–384, repaired via the quadratic average; Corollary 3.3, pp. 383–384, with its averaging proof and corrected sign convention; Lemma 4.1 and proof of Theorem 4.2, pp. 384–385, with polarized-moduli and quotient-polarization corrections; Proof of Theorem 4.2, p. 385; explicit exponent and bounded-range adapter; Theorem 1.2, p. 379 and Theorem 4.2, p. 385, interpreted through polarized coarse moduli; §5, p. 385; §5, p. 386, with relative/absolute and marked/unmarked orbit corrections; §5, p. 386; §5, pp. 385–386; Theorem 5.2, pp. 385–386; §6.2, p. 387, using the corrected splitting-field degree adapter; §6.2, p. 387"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v187-n2-p02-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v187-n2-p02-p.pdf"
+fetched_at = "2026-10-24T07:46:43Z"
+sha256 = "43259ca3cfedfb574bf1fe2f80e1023cb736ea299a76588536fd816340722abc"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layer 10", "Layer 11", "Layer 12", "Layer 13"]
+authors = "Jacob Tsimerman"
+title = "The André–Oort conjecture for A_g"
+year = 2018
+version_note = "Published pagination in the fetched legal copy."
+
+[[source]]
+id = "A"
+locator_scheme = "section"
+locator = "Theorem A, p. 392; §§3.1–3.2, pp. 415–417; Propositions 3.4.1–3.4.2, pp. 419–421; Propositions 3.5.2–3.5.6, Remark 3.5.3, Corollary 3.5.4, pp. 422–428; §3.6, Propositions 3.6.1–3.6.2, Lemma 3.6.3, pp. 428–431; §4.6, p. 452; Theorem 4.8.1, pp. 454–455; Definition 5.3.3, p. 460; (6.0.1)–(6.0.2), p. 465; Theorem 6.4.2, p. 474; Theorem 8.3.4, pp. 507–508; §§9.1–9.3, Definitions 9.1.1, 9.1.3, Theorem 9.1.5, Remark 9.1.2, Conjecture 9.1.6, Propositions 9.2.1, 9.3.1–9.3.2, Corollary 9.3.3, pp. 508–512; §9.4, Propositions 9.4.1, 9.4.5, Theorem 9.4.2, Lemmas 9.4.3–9.4.4, (9.4.3)–(9.4.13), pp. 513–522; §9.5, Propositions 9.5.1–9.5.2, Lemmas 9.5.3–9.5.4, Theorems 9.5.5–9.5.6, (9.5.1)–(9.5.3), pp. 521–526"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v187-n2-p03-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v187-n2-p03-p.pdf"
+fetched_at = "2026-10-24T07:46:50Z"
+sha256 = "e1274468312566b3b062e9612cd89818349e9c98cf9e58a728f85704b740c6bb"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layer 0", "Layer 1", "Layer 2", "Layer 3", "Layer 4", "Layer 9"]
+authors = "Fabrizio Andreatta; Eyal Z. Goren; Benjamin Howard; Keerthi Madapusi Pera"
+title = "Faltings heights of abelian varieties with complex multiplication"
+year = 2018
+version_note = "Published pagination in the fetched legal copy."
+
+[[source]]
+id = "Y"
+locator_scheme = "section"
+locator = "Theorem 2.2, pp. 544–546; Theorem 2.3, pp. 546–548; proof of Corollary 2.6, pp. 548–549; §2.2, p. 548; §1.2, p. 537; Corollary 2.6, pp. 548–549; Proposition 5.4, p. 575; §1.1–1.2, pp. 536–537; existence is implicit in the deduction of Theorem 1.1; §1.2–1.3, pp. 537–539; Theorem 4.7 for the Hodge line, pp. 566–568; Proposition 5.7, p. 577; Propositions 5.3–5.4 and Corollary 5.5, pp. 574–576; Theorem 1.6, p. 537; proof §5.3, pp. 576–577, with Erratum Theorem 1 replacing Theorem 2.7; Theorem 9.1, pp. 624–628; §1.3, pp. 539–541 explains the kernel comparison; Theorem 9.3 and §9.2, pp. 629–635; setup pp. 629–631; Theorem 1.7, p. 539; Theorems 9.1 and 9.3, pp. 624–635; Theorem 1.1, p. 535; corrected proof with Erratum Theorem 1; Theorem 1.1, p. 535"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v187-n2-p04-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v187-n2-p04-p.pdf"
+fetched_at = "2026-10-24T07:46:56Z"
+sha256 = "29dfd5f19dec401116f1eaf0305305acf5f2fc68aa3c90d4eb6e5222de50d507"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layer 5", "Layer 6", "Layer 7", "Layer 8", "Layer 9", "Layer 10"]
+authors = "Xinyi Yuan; Shou-Wu Zhang"
+title = "On the averaged Colmez conjecture"
+year = 2018
+version_note = "Published pagination in the fetched legal copy."
+
+[[source]]
+id = "PT14"
+locator_scheme = "section"
+locator = "Conjecture 7.1, p. 673; Lemma 7.4 and proof, p. 675"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v179-n2-p05-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v179-n2-p05-p.pdf"
+fetched_at = "2026-10-24T07:46:58Z"
+sha256 = "261af339f1ff909701e74bc2e28fd9c77d186fb4df9e6eeb0b2aa411718143a7"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layer 12", "Layer 13"]
+authors = "Jonathan Pila; Jacob Tsimerman"
+title = "Ax–Lindemann for A_g"
+year = 2014
+version_note = "Published pagination in the fetched legal copy."
+
+[[source]]
+id = "MZ"
+locator_scheme = "section"
+locator = "§5.4, p. 667"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n2-p07-s.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n2-p07-s.pdf"
+fetched_at = "2026-10-24T07:47:01Z"
+sha256 = "8b76bfac88374180701992e242d88f5d38fbe0b0cdb39c6c40c3c3fbbb874b60"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layer 13"]
+authors = "David Masser; Umberto Zannier"
+title = "Abelian varieties isogenous to no Jacobian"
+year = 2020
+version_note = "Published pagination in the fetched legal copy."
+
+[[source]]
+id = "C"
+locator_scheme = "section"
+locator = "Component generators, p. 630; Theorem 0.3(i)–(ii), p. 631; Theorem 0.3, p. 631; Conjecture 0.4, p. 632"
+url = "https://webusers.imj-prg.fr/~pierre.colmez/artin.pdf"
+fetched_from = "https://webusers.imj-prg.fr/~pierre.colmez/artin.pdf"
+fetched_at = "2026-10-24T07:48:56Z"
+sha256 = "58bfe161fbcdb8605c9c2fe50bbd390404376388db1133a0c5d53714e8125f01"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layer 0"]
+authors = "Pierre Colmez"
+title = "Périodes des variétés abéliennes à multiplication complexe"
+year = 1993
+version_note = "Published pagination in the fetched legal copy."
