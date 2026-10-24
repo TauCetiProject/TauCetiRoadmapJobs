@@ -1,0 +1,242 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GlobalShtukasAndFunctionFieldLanglandsPartII"
+
+[[source]]
+id = "ch26"
+authors = "Dan Ciubotaru, Michael Harris"
+title = "On the generalized Ramanujan and Arthur conjectures over function fields"
+year = 2023
+arxiv = "2311.15300v1"
+locator_scheme = "theorem"
+locator = "§1.1–§1.2, pp. 2–6; §2.3–§2.4, Definitions 2.5–2.6 and Proposition 2.7, pp. 7–8; §3, Propositions 3.1, 3.10, Lemmas 3.2, 3.5, Theorems 3.6, 3.8 and Definitions 3.7, 3.9, pp. 8–11; §4, Definition 4.1, Theorems 4.2–4.3 and Proposition 4.5, pp. 11–12; §5, Theorem 5.4, Corollary 5.7, Remark 5.8, Expectation 5.9, Sketch 5.10 and (5.1), (5.3), (5.5), pp. 12–16; §6, (6.2), (6.4)–(6.5), Lemma 6.7 and Proposition 6.31, pp. 17–24; §8.2, Theorem 8.5 and Remark 8.6, pp. 28–29; §9.1–§9.2, Conjectures 9.1, 9.5, Lemma 9.2 and Definition 9.4, pp. 30–32; §10, Proposition 10.2, Theorem 10.3, Property A and Remarks 10.7–10.8, pp. 32–35; Appendix Tables 2–3, pp. 36–37"
+url = "https://arxiv.org/abs/2311.15300v1"
+fetched_from = "https://arxiv.org/pdf/2311.15300v1"
+fetched_at = "2026-10-24T10:43:19Z"
+sha256 = "7261083b46cc8ec3fad81215250ff6bef47da05ef6054813572de21db10dc103"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v1"
+cited_for = ["RA.0, RA.1, RA.2, RA.3, RA.4, RA.5, RA.6, RA.7, RA.8"]
+
+[[source]]
+id = "ghs"
+authors = "Wee Teck Gan, Michael Harris, Will Sawin, Raphaël Beuzart-Plessis"
+title = "Local parameters of supercuspidal representations"
+year = 2024
+venue = "Forum of Mathematics, Pi 12"
+doi = "10.1017/fmp.2024.10"
+arxiv = "2109.07737v3"
+locator_scheme = "theorem"
+locator = "§2.2, Definition 2.5, pp. 7–8; §3.1, Definitions 3.1–3.3, p. 8; §3.1, Lemma 3.5 and its proof, p. 9; §3.2, Lemma 3.6 and Remark 3.7, pp. 9–10; §3.2, Lemma 3.6 with its proof and Corollary 3.8, pp. 9–10; Remark 3.13, p. 11; §2.1, Theorem 2.1 and Corollary 2.4(i), pp. 6–7; §2.1, Theorem 2.1(iii), p. 7; §2.2, Theorem 2.3(iv)–(vi) and Corollary 2.4(ii), pp. 6–7; §3.3, Proposition 3.9 and its proof, Remark 3.10, pp. 10–11; Appendix A (R. Beuzart-Plessis), Lemma A.1 and its proof with Lemma A.3, pp. 38–40; §3.3, Proposition 3.11 and its proof, p. 11; §1, Theorem 1.2 and Corollary 1.3, p. 3; §3.3, Corollary 3.12 and Remark 3.13, p. 11"
+url = "https://www.cambridge.org/core/journals/forum-of-mathematics-pi/article/local-parameters-of-supercuspidal-representations/10EEB98855332F11F5555C45665BBA5F"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/10EEB98855332F11F5555C45665BBA5F/S2050508624000106a.pdf/div-class-title-local-parameters-of-supercuspidal-representations-div.pdf"
+fetched_at = "2026-10-24T10:45:16Z"
+sha256 = "e570036504ba58ededa9f48453e517a710da0f49128fefebfa94f5ff4439bfcc"
+licence_class = "publisher-open"
+status = "certified"
+version_note = "Published e13 numbering is used throughout; arXiv v3 assumes p>3 in Theorem 1.2 and numbers published Proposition 3.11, Corollary 3.12, Remark 3.13 as 3.10, 3.11, 3.12."
+accessed = "2026-10-24"
+cited_for = ["RA.0, RA.1, RA.2, RA.3, RA.4", "RA.0, RA.3, RA.4"]
+
+[[source]]
+id = "lh"
+authors = "Siyan Daniel Li-Huerta"
+title = "Local-global compatibility over function fields"
+year = 2023
+arxiv = "2301.09711v2"
+locator_scheme = "theorem"
+locator = "§5, Propositions 5.13–5.14, Theorem 5.16 and Lemma 5.18, pp. 37–41; §§2–4, Theorem 2.12, Theorem 4.9 and Proposition 4.12, pp. 8–33; §6, Lemma 6.4 and §6.13, pp. 42–47; Introduction, Theorems A and C, pp. 2–3; §6, Theorems 6.13, 6.15 and §6.16, pp. 47–49; §7.2, p. 51; §6, Theorem 6.10, §6.11 and Theorem 6.13, pp. 46–48"
+url = "https://arxiv.org/abs/2301.09711v2"
+fetched_from = "https://arxiv.org/pdf/2301.09711v2"
+fetched_at = "2026-10-24T10:43:31Z"
+sha256 = "83c269e46bb28713f9081086c0c8f0340c41fccbe224d2ea457e5626421bed6c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v2"
+cited_for = ["RA.3, RA.7"]
+
+[[source]]
+id = "st"
+authors = "Will Sawin, Nicolas Templier"
+title = "On the Ramanujan conjecture for automorphic forms over function fields I. Geometry"
+year = 2018
+arxiv = "1805.12231v4"
+locator_scheme = "theorem"
+locator = "§11, Lemma 11.4 and its proof, p. 83; §11, Lemmas 11.4–11.5, p. 83"
+url = "https://arxiv.org/abs/1805.12231v4"
+fetched_from = "https://arxiv.org/pdf/1805.12231v4"
+fetched_at = "2026-10-24T10:43:38Z"
+sha256 = "9dddd64e480b56f3987604a8daf096fa850b74fe998ab1963f55b17f373e3e3c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v4"
+cited_for = ["RA.1, RA.6"]
+
+[[source]]
+id = "xue"
+authors = "Cong Xue"
+title = "Finiteness of cohomology groups of stacks of shtukas as modules over Hecke algebras, and applications"
+year = 2018
+venue = "Épijournal de Géométrie Algébrique, Volume 4 (June 17, 2020) epiga:5550"
+doi = "10.46298/epiga.2020.volume4.5550"
+arxiv = "1811.09513v3"
+locator_scheme = "theorem"
+locator = "Introduction, Proposition 1 and Theorem 2, pp. 2–3; §3.6, Definition 3.6.5, Lemma 3.6.6 and Theorem 3.6.7 with Remarks 3.6.3 and 3.6.8, pp. 30–31; §4.2, pp. 40–41"
+url = "https://arxiv.org/abs/1811.09513v3"
+fetched_from = "https://arxiv.org/pdf/1811.09513v3"
+fetched_at = "2026-10-24T10:43:43Z"
+sha256 = "b43e7eec00416326ab508ba6af06ec004b186a09874a6a58c1b455170e57a675"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v3"
+cited_for = ["RA.7"]
+
+[[source]]
+id = "lz"
+authors = "Vincent Lafforgue, Xinwen Zhu"
+title = "Décomposition au-dessus des paramètres de Langlands elliptiques"
+year = 2018
+arxiv = "1811.07976v2"
+locator_scheme = "theorem"
+locator = "§1, definition before Proposition 1.2, p. 3; §2, p. 4; §3, p. 5 (Lie(S_σ) = (Ad)^σ); §3, p. 5; §1, Theorem 1.1 and Proposition 1.2 with Remarks 1.3–1.5, pp. 2–3; §4, Lemma 4.1, p. 7; §2, Corollary 2.1, p.4"
+url = "https://arxiv.org/abs/1811.07976v2"
+fetched_from = "https://arxiv.org/pdf/1811.07976v2"
+fetched_at = "2026-10-24T10:43:48Z"
+sha256 = "871c208f006f5496b3776e1050a20ab85ef88ef7066e351ca188159daf56151d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v2"
+cited_for = ["RA.6"]
+
+[[source]]
+id = "sun"
+authors = "Shenghao Sun"
+title = "L-series of Artin stacks over finite fields"
+year = 2010
+venue = "Algebra and Number Theory, 6:1 (2012), 47-122"
+doi = "10.2140/ant.2012.6.47"
+arxiv = "1008.3689v2"
+locator_scheme = "theorem"
+locator = "§2, Theorem 2.11, p. 14 (arXiv v2)"
+url = "https://arxiv.org/abs/1008.3689v2"
+fetched_from = "https://arxiv.org/pdf/1008.3689v2"
+fetched_at = "2026-10-24T10:43:55Z"
+sha256 = "85947e31a4b0f65e7d1cfad998a8f28969411d2e8dca561b645ef266ae8c8d1b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v2"
+cited_for = ["RA.6"]
+
+[[source]]
+id = "glo"
+authors = "Wee Teck Gan, Luis Lomelí"
+title = "Globalization of supercuspidal representations over function fields and applications"
+year = 2015
+arxiv = "1510.00131v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1, pp. 1–2; §8, Lemma 8.1 and Proposition 8.2 with the remark after it, pp. 38–40"
+url = "https://arxiv.org/abs/1510.00131v2"
+fetched_from = "https://arxiv.org/pdf/1510.00131v2"
+fetched_at = "2026-10-24T10:44:01Z"
+sha256 = "5f4adc241b2034f97c74719a28c3c8095314fb459e297a29964c52868ecabff4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v2"
+cited_for = ["RA.4"]
+
+[[source]]
+id = "hny"
+authors = "Jochen Heinloth, Ngo Bao Chau, Zhiwei Yun"
+title = "Kloosterman sheaves for reductive groups"
+year = 2010
+arxiv = "1005.2765v1"
+locator_scheme = "theorem"
+locator = "Theorems 1–2 and Corollary 2.13, pp. 16–18 (arXiv v1)"
+url = "https://arxiv.org/abs/1005.2765v1"
+fetched_from = "https://arxiv.org/pdf/1005.2765v1"
+fetched_at = "2026-10-24T10:44:07Z"
+sha256 = "0918c93759cb2d19fe3521c332b45e9c36e4d78b87b84112d65c82761c482004"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v1"
+cited_for = ["RA.4"]
+
+[[source]]
+id = "ty"
+authors = "Richard Taylor, Teruyoshi Yoshida"
+title = "Compatibility of local and global Langlands correspondences"
+year = 2004
+arxiv = "math/0412357v2"
+locator_scheme = "theorem"
+locator = "§1, Lemma 1.4(3)–(6) and proof, pp.6–7"
+url = "https://arxiv.org/abs/math/0412357v2"
+fetched_from = "https://arxiv.org/pdf/math/0412357v2"
+fetched_at = "2026-10-24T10:44:12Z"
+sha256 = "a17d283d3a605cd3f031a1178f2914254ee9cbe430b11cfbff8c382e8cd1713b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v2"
+cited_for = ["RA.0"]
+
+[[source]]
+id = "laf02"
+authors = "Laurent Lafforgue"
+title = "Chtoucas de Drinfeld et correspondance de Langlands"
+year = 2002
+doi = "10.1007/s002220100174"
+locator_scheme = "theorem"
+locator = "Théorème VII.6, Proposition VII.7, Corollaire VII.8, pp. 198–202"
+url = "https://www.laurentlafforgue.org/math/fulltext.pdf"
+fetched_from = "https://www.laurentlafforgue.org/math/fulltext.pdf"
+fetched_at = "2026-10-24T10:44:57Z"
+sha256 = "af732dac0d2dd00056ff46075f069f09cb2239bcac5cec68b13d17faa8d2ea76"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["RA.1"]
+
+[[source]]
+id = "fs"
+authors = "Laurent Fargues, Peter Scholze"
+title = "Geometrization of the local Langlands correspondence"
+year = 2021
+arxiv = "2102.13459v4"
+locator_scheme = "theorem"
+locator = "Theorem VIII.4.1; Definition/Proposition IX.4.1; Theorem IX.5.2"
+url = "https://arxiv.org/abs/2102.13459v4"
+fetched_from = "https://arxiv.org/pdf/2102.13459v4"
+fetched_at = "2026-10-24T10:47:53Z"
+sha256 = "1f8040751d3424f59ae56651d990d7b2d5030e6b7cae58bc2fc683358dfc2027"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v4"
+cited_for = ["RA.3"]
+
+[[source]]
+id = "xz"
+authors = "Daxin Xu, Xinwen Zhu"
+title = "Bessel F-isocrystals for reductive groups"
+year = 2019
+doi = "10.1007/s00222-021-01079-5"
+arxiv = "1910.13391v2"
+locator_scheme = "theorem"
+locator = "arXiv v2: Corollaries 4.5.6–4.5.7 and Remark 4.5.8, pp. 53–54"
+url = "https://arxiv.org/abs/1910.13391v2"
+fetched_from = "https://arxiv.org/pdf/1910.13391v2"
+fetched_at = "2026-10-24T10:48:54Z"
+sha256 = "b8d153ef1822a20e8179005d4775e43fc3af7430d840d2b077b45cb8583667cd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Read arXiv v2: Corollary 4.5.6, Corollary 4.5.7 and Remark 4.5.8; these correspond to published Corollaries 4.5.7–4.5.8 and Remark 4.5.10 as cited in Gan–Harris–Sawin."
+cited_for = ["RA.4"]

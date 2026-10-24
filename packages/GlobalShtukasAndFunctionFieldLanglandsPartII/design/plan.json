@@ -3531,106 +3531,60 @@
  ],
  "gaps": [
   {
-   "title": "G1. Simple trace formula and Poincaré-series globalization over function fields have no owner",
-   "neededBy": [
-    "GlobalShtukasAndFunctionFieldLanglandsPartII:RA.4/supercuspidal-irreducible-globalization",
-    "GlobalShtukasAndFunctionFieldLanglandsPartII:RA.4/discrete-series-pseudo-globalization"
-   ],
-   "detail": "The Deligne–Kazhdan simple trace formula for general connected reductive groups over a global function field and Gan–Lomelí's Poincaré-series globalization are used as cited theorems; no atlas roadmap plans them (ES7:function-field-automorphic covers only GL_d and division algebras in a selected range). They are requested from a Part II of FunctionFieldArithmetic at FA.6."
+    "slug": "function-field-globalization",
+    "supplier": "FunctionFieldArithmetic",
+    "section": "§§6.4–6.6",
+    "needs": "The general connected-reductive function-field simple trace formula for elliptically supported test functions with a supercuspidal factor, including finiteness, and prescribed-central-character Poincaré-series globalization with tame auxiliary components."
   },
   {
-   "title": "G2. Number-field models of arbitrary discrete series",
-   "neededBy": [
-    "GlobalShtukasAndFunctionFieldLanglandsPartII:RA.4/galois-conjugation-of-discrete-series"
-   ],
-   "detail": "Ciubotaru–Harris Theorem 4.2 asserts that every complex discrete series of a semisimple group over F = k((t)) has a model over a number field; the sketch derives it from Beuzart-Plessis's lemma, which only gives a cuspidal representation with the same cuspidal support (this packet's source issue E1). The plan proves the Galois conjugation statement for representations that have a number-field model, viewed over Q̄, which covers every local component of a cuspidal representation and every supercuspidal; the model for an arbitrary discrete series (for example by finiteness of discrete series with given cuspidal support and algebraicity of the reducibility points) is not established."
+    "slug": "elliptic-pseudo-coefficients",
+    "supplier": "SmoothRepresentationsOfLocalGroups",
+    "section": "§SR.3.3",
+    "needs": "Pseudo-coefficients for discrete series over every local function field, the common-cuspidal-support implication of nonzero trace, and elliptic character orthogonality on finite-index open subgroups."
   },
   {
-   "title": "G3. Embedding independence of temperedness without geometricity (E10)",
-   "neededBy": [
-    "GlobalShtukasAndFunctionFieldLanglandsPartII:RA.4/embedding-independent-temperedness"
-   ],
-   "detail": "Ciubotaru–Harris Theorem 4.3 (an ι-tempered component of a cuspidal representation is tempered for every embedding) assumes in step (2) of its sketch that every local monodromy of L(Π, τ) is geometric, which is not known without an anchor (PAPER-CIUBOTARU-HARRIS-26/E10). The plan states the theorem under geometricity of the local parameter and proves the generic theorem for a fixed ι without it."
+    "slug": "discrete-series-number-field-model",
+    "supplier": "SmoothRepresentationsOfLocalGroups",
+    "section": "§SR.3.3",
+    "needs": "Number-field descent of an arbitrary complex discrete-series representation of a semisimple group over a local function field, independently of pseudo-globalization with only common cuspidal support."
   },
   {
-   "title": "G4. Non-central compact parts of Satake parameters (E11, E18) and the stratum step of Theorem 1.11",
-   "neededBy": [
-    "GlobalShtukasAndFunctionFieldLanglandsPartII:RA.5/generic-ramanujan",
-    "GlobalShtukasAndFunctionFieldLanglandsPartII:RA.8/complementary-series-propagation",
-    "GlobalShtukasAndFunctionFieldLanglandsPartII:RA.8/extraneous-point-elimination"
-   ],
-   "detail": "The local classifications used at v (SRU.5/generic-temperedness-test, SRU.6, SRU.7 extraneous lists) hold for Satake parameters whose compact part is central; for non-central compact parts the G₂ witness (SRU.5/g2-noncentral-witness) shows the generic test fails locally. Theorem 5.4 is therefore planned with the centrality hypothesis at v, and Theorem 1.11 with conclusions (b) and (c) under centrality; an exhaustive classification of geometric complementary-series points with arbitrary compact part (through SRU.7/noncentral-compact-reduction) and a global argument excluding them are missing. No global counterexample is known."
+    "slug": "reductive-central-reduction",
+    "supplier": "SmoothRepresentationsOfLocalGroups",
+    "section": "§SR.3.3",
+    "needs": "Reduction of reductive discrete series through unramified central twists and central isogenies or z-extensions, preserving discrete series and the fixed-embedding adjoint parameter, with unitary central part giving bounded full Weil part."
   },
   {
-   "title": "G5. Integrality of weights for direct images from algebraic stacks",
-   "neededBy": [
-    "GlobalShtukasAndFunctionFieldLanglandsPartII:RA.6/stack-purity"
-   ],
-   "detail": "Ciubotaru–Harris Sketch 5.10 requires integer weights for constant-coefficient direct images from finite-type stacks. Sun Theorem 2.11, pp.14–15, gives real ι-mixedness; Remark 2.12 also states preservation of mixedness without a fixed embedding. Neither is silently identified here with preservation of the integer-weight subclass. A closure proof with the exact integer convention, using a smooth presentation, the hypercover spectral sequence and a mixed dualizing complex, is requested at DWP.8. This alternative stack route is not needed by the anchored endpoint."
+    "slug": "spherical-adjoint-transfer",
+    "supplier": "SmoothRepresentationsOfLocalGroups",
+    "section": "§SR.4.2",
+    "needs": "Transport of spherical unitarity and genericity under central isogenies using the actual finite-index image on rational points and lifted Satake classes, together with genericity of tempered spherical representations for every unramified quasi-split group and the specified Whittaker datum."
   },
   {
-   "title": "G6. Elliptic orthogonality of discrete-series characters in positive characteristic",
-   "neededBy": [
-    "GlobalShtukasAndFunctionFieldLanglandsPartII:RA.4/discrete-series-pseudo-globalization"
-   ],
-   "detail": "Beuzart-Plessis's Lemma A.3 uses his elliptic orthogonality relations for discrete-series characters, cited in Gan–Harris–Sawin as a 2022 manuscript; no public version was located for this plan. It is requested at SRU.3 with the pseudo-coefficients it accompanies."
+    "slug": "parameter-square-root-transport",
+    "supplier": "SmoothRepresentationsOfLocalGroups",
+    "section": "§SR.4.2",
+    "needs": "Comparison of the two normalized c-group charts under every coefficient automorphism, identifying their canonical finite central unramified normalization cocycle and its compatibility with local excursion parameters."
   },
   {
-   "title": "G7. The Annals version of Ciubotaru–Harris is not collated",
-   "neededBy": [
-    "GlobalShtukasAndFunctionFieldLanglandsPartII:RA.5/generic-ramanujan",
-    "GlobalShtukasAndFunctionFieldLanglandsPartII:RA.8/complementary-series-propagation",
-    "GlobalShtukasAndFunctionFieldLanglandsPartII:RA.8/extraneous-point-elimination"
-   ],
-   "detail": "All locators are to arXiv v1; the accepted revision (8 October 2025) may already repair E10–E13 and renumber statements. Collate the locators and the corrections when a copy is available."
+    "slug": "stack-integer-weights",
+    "supplier": "DeligneWeightsAndPurity",
+    "section": "§8.5",
+    "needs": "For every finite-type morphism from a finite-type algebraic stack to a smooth finite-field curve, integer punctual weights of every lisse irreducible constituent of each constant-coefficient compact direct image, with the smooth-descent and duality hypotheses stated."
   },
   {
-   "title": "G8. Reductive central reduction and coefficient normalization",
-   "detail": "The all-embeddings arithmetic globalization chain is stated for semisimple G. Its extension to arbitrary reductive centres requires the precise SR.3 central reduction and ES6 parameter transport; fixed-ι boundedness does not prove absolute purity in an arbitrary faithful representation. ES5 must also identify the √q coefficient-automorphism law used by RA.3. These are requested supplier targets, not theorems obtained by the narrower existing nodes.",
-   "neededBy": [
-    "GlobalShtukasAndFunctionFieldLanglandsPartII:RA.3/local-parametrization",
-    "GlobalShtukasAndFunctionFieldLanglandsPartII:RA.3/geometricity-galois-conjugates",
-    "GlobalShtukasAndFunctionFieldLanglandsPartII:RA.3/geometricity-stability",
-    "GlobalShtukasAndFunctionFieldLanglandsPartII:RA.3/geometric-central-characters",
-    "GlobalShtukasAndFunctionFieldLanglandsPartII:RA.4/weil-deligne-purity-of-discrete-series",
-    "GlobalShtukasAndFunctionFieldLanglandsPartII:RA.4/geometric-discrete-series",
-    "GlobalShtukasAndFunctionFieldLanglandsPartII:RA.5/integral-weights-from-anchor"
-   ]
+    "slug": "satake-constant-realization",
+    "supplier": "DeligneWeightsAndPurity",
+    "section": "§8.5",
+    "needs": "A realization theorem expressing the lisse constituents selected from Satake intersection-cohomology coefficients, including frozen-leg factors and finite centralizer invariants, as constituents of constant-coefficient compact direct images of finite-type algebraic stacks."
   },
   {
-   "title": "G9. General adjoint transfer and spherical genericity",
-   "detail": "The non-adjoint generic-place reduction must account for the finite-index image on rational points. Nonsplit genericity propagation needs the general unramified quasi-split theorem, not merely SRU.5’s split adjoint criterion. Exact contracts are requested at SR.4; the endpoint remains conditional on those contracts.",
-   "neededBy": [
-    "GlobalShtukasAndFunctionFieldLanglandsPartII:RA.5/generic-ramanujan",
-    "GlobalShtukasAndFunctionFieldLanglandsPartII:RA.5/genericity-propagation"
-   ]
-  },
-  {
-   "title": "G10. From Satake coefficients to constant stack coefficients",
-   "detail": "Lafforgue–Zhu’s formula retains Sσ invariants and a frozen auxiliary representation. It does not identify a Satake IC coefficient complex with the constant sheaf. The precise realization bridge requested at DWP.8 is required before deducing the constant-coefficient predicate from that formula.",
-   "neededBy": [
-    "GlobalShtukasAndFunctionFieldLanglandsPartII:RA.6/lafforgue-zhu-decomposition",
-    "GlobalShtukasAndFunctionFieldLanglandsPartII:RA.6/stack-realisability",
-    "GlobalShtukasAndFunctionFieldLanglandsPartII:RA.6/stack-purity"
-   ]
-  },
-  {
-   "title": "G11. Weight patterns do not construct a global Arthur homomorphism",
-   "detail": "RA.8 determines integer weight multiplicities and normalized real Satake parts. It does not provide a commuting global SL₂ or a globally compatible bounded Weil factor whose products equal the full Satake classes. ArthurPrediction.At includes these additional conjectural requirements; no construction of ψ is claimed.",
-   "neededBy": [
-    "GlobalShtukasAndFunctionFieldLanglandsPartII:RA.7/global-arthur-parameter",
-    "GlobalShtukasAndFunctionFieldLanglandsPartII:RA.7/arthur-weight-prediction"
-   ]
-  },
-  {
-   "title": "G12. Semantic identification of exceptional-orbit profiles",
-   "detail": "N3 currently supplies E8/F4/G2 profiles with opaque identifiers. The orbit-to-SL₂-triple identifications needed here and the E7 D5(a1)+A1 profile must be supplied before the exceptional cases of RA.8/extraneous-weight-certificates are a closed proof. The Sp6 and F4 explicit numerical tests in Lean do not supply these missing identifications.",
-   "neededBy": [
-    "GlobalShtukasAndFunctionFieldLanglandsPartII:RA.8/extraneous-weight-certificates",
-    "GlobalShtukasAndFunctionFieldLanglandsPartII:RA.8/extraneous-point-elimination"
-   ]
+    "slug": "exceptional-named-orbit-profiles",
+    "supplier": "NilpotentOrbits",
+    "section": "§N2.4",
+    "needs": "Orbit-to-triple identifications and adjoint neutral-weight profiles for F4 B3 and A1 plus short A1, E7 D5(a1) plus A1, and E8 D6, A6, A4 plus A2, and A2 plus two A1, in the coordinates of Ciubotaru–Harris §6."
   }
- ],
+],
  "sourceIssues": [
   {
    "id": "GlobalShtukasAndFunctionFieldLanglandsPartII/E1",
