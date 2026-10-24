@@ -6804,44 +6804,24 @@
  ],
  "gaps": [
   {
-   "title": "G2. Bedford–Taylor products on singular complex projective varieties",
-   "neededBy": [
-    "ArakelovGeometryAndAbelianHeightsPartII:AH.0/monge-ampere-measures"
-   ],
-   "detail": "Yuan–Zhang §2.1.1 uses Bedford–Taylor/Demailly products for locally bounded plurisubharmonic potentials on possibly singular complex projective varieties and Coman–Guedj–Zeriahi regularization. The checked ComplexComparisonPartII C5 nodes supply integration over analytic cycles, curvature normalization and finite-mass current extension, but do not plan this general current/pluripotential construction. The precise request to C5 includes the current carrier, Lelong–Poincaré identity, products, regularization and monotone continuity. This remains an explicit external closure gap."
+    "slug": "singular-pluripotential-products",
+    "needs": "On possibly singular complex projective varieties, provide Bedford–Taylor products for locally bounded plurisubharmonic potentials, uniform or monotone continuity, and semipositive ample-metric regularization compatible with Chern currents and cycle integration.",
+    "supplier": "ComplexComparisonPartII",
+    "section": "C5.4"
   },
   {
-   "title": "G3. Arithmetic Noether formula",
-   "neededBy": [
-    "ArakelovGeometryAndAbelianHeightsPartII:AH.10/arithmetic-noether",
-    "ArakelovGeometryAndAbelianHeightsPartII:AH.10/noether-divisor",
-    "ArakelovGeometryAndAbelianHeightsPartII:AH.13/number-field-comparison"
-   ],
-   "detail": "Faltings, Calculus on arithmetic surfaces (Ann. of Math. 119, 1984), Theorem 6, and Moret-Bailly, La formule de Noether pour les surfaces arithmétiques (Invent. Math. 98, 1989), Théorème 2.5, were not read; the constant 4g log 2π and the normalization of δ are taken from Yuan p. 89 and are consistent with Wilms' formula. A lemma-level plan needs the Quillen-metric proof or Moret-Bailly's Deligne-pairing proof."
+    "slug": "curve-local-analytic-contract",
+    "needs": "Provide the Banach-ring and hybrid analytifications, skeleton retraction, graph Laplacian and normalized Green functions, and model-metric and Chambert-Loir measure comparisons specified in TB.0, TB.2, TB.3 and TB.6, with finite-extension and valuation-rescaling compatibility.",
+    "supplier": "TropicalAndBerkovichArithmetic",
+    "section": "TB.0, TB.2, TB.3, TB.6"
   },
   {
-   "title": "G4. Gross–Schoen height of the modified diagonal",
-   "neededBy": [
-    "ArakelovGeometryAndAbelianHeightsPartII:AH.10/gross-schoen-variation"
-   ],
-   "detail": "The unconditional height of Δ_ξ uses Gross–Schoen's regular-model construction (Gross–Schoen 1995, Ann. Inst. Fourier), recalled in Zhang 2010 §1.1 but not read in the original; no general Beilinson–Bloch pairing is assumed."
-  },
-  {
-   "title": "G5. Boundary growth of φ and δ from graph data",
-   "neededBy": [
-    "ArakelovGeometryAndAbelianHeightsPartII:AH.10/globalization-scope"
-   ],
-   "detail": "Yuan Remarks 3.11 and 4.13(2) assert, without proof, that the adelic divisors Φ̃ and Ξ̃ describe the growth of φ and of Faltings' δ at the boundary of complex moduli (compare Song 2023 and de Jong 2019). These are not targets of this roadmap."
-  },
-  {
-   "title": "G7. Genus one",
-   "neededBy": [
-    "ArakelovGeometryAndAbelianHeightsPartII:AH.7/canonical-metric-pair",
-    "ArakelovGeometryAndAbelianHeightsPartII:AH.8/canonical-admissible-bundles"
-   ],
-   "detail": "Yuan states Theorem 2.3 and Theorem A.1 for g > 0, but the normalization and nefness are proved only for g > 1 (PAPER-YUAN-26/E8, E28). The canonical curve-pair and relative admissible-bundle targets here assume g > 1; genus-one discriminant examples remain valid on their own terms."
+    "slug": "archimedean-curve-admissibility",
+    "needs": "Provide the normalized archimedean admissible Green kernel and dualizing metric, conjugation descent, and the explicit skeleton/admissible-measure compatibility of GZ.2 with zero Green mean and residue-adjunction norm one.",
+    "supplier": "GrossZagierAndArithmeticHeights",
+    "section": "GZ.2"
   }
- ],
+],
  "sourceIssues": [
   {
    "id": "ArakelovGeometryAndAbelianHeightsPartII/E1",

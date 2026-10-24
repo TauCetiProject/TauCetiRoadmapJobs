@@ -1,0 +1,362 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ArakelovGeometryAndAbelianHeightsPartII"
+
+[[source]]
+id = "yuan-2026"
+year = 2026
+title = "Arithmetic bigness and a uniform Bogomolov-type result"
+authors = "Xinyi Yuan"
+locator_scheme = "section"
+locator = "§1 (pp. 3–16, statements of Theorems 1.1–1.4 and the proof sketch of §1.4); §2.1–2.3 (pp. 18–39: adelic recollections, Lemmas 2.1–2.2, Theorem 2.3, Definition 2.5, Propositions 2.6–2.7, Theorems 2.8–2.10); §3 (pp. 40–59: Theorems 3.1–3.3, Lemma 3.4, §3.2 Lemma 3.5, §3.3 Theorems 3.6–3.7, §3.3.5, Theorem 3.8, Theorem 3.10 and proof, Remark 3.11); §4.1 (Theorem 4.1, pp. 59–63), §4.2 (Theorem 4.2 proof, Lemma 4.3, Remark 4.4, pp. 64–67), Theorem 4.5 (pp. 68–70), §4.3.1 (pp. 70–73), Lemma 4.9 (pp. 75–76), §4.4.1 (p. 78), p. 82, §4.5 (Theorems 4.11 and 4.14 with proofs, Remarks 4.12–4.13, pp. 84–96); Appendix A (pp. 101–119); Bibliography (pp. 120–126)"
+url = "http://faculty.bicmr.pku.edu.cn/~yxy/preprints/bigness_and_bogomolov.pdf"
+fetched_from = "https://faculty.bicmr.pku.edu.cn/~yxy/preprints/bigness_and_bogomolov.pdf"
+fetched_at = "2026-10-24T01:19:17Z"
+sha256 = "b36f4860cc0f098ef062523e8a5147e8172d1e4e357fc76a63cd7c0d782a813e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["README.md"]
+
+version_note = "Annals of Mathematics 203 (2026), no. 1, 15–119; read in the author manuscript dated 21 August 2024 (126 pp., the journal revision date), whose numbering and page numbers (printed = PDF) are used"
+[[source]]
+id = "yuan-zhang-2025"
+authors = "Xinyi Yuan and Shou-Wu Zhang"
+title = "Adelic line bundles on quasi-projective varieties"
+year = 2025
+arxiv = "2105.13587v9"
+locator_scheme = "section"
+locator = "§2.1 (pp. 23–28); §§2.2–2.7 statements (pp. 28–62: Lemma 2.4.1, Lemma 2.4.3, Proposition 2.5.1, Definition 2.5.2, Lemma 2.6.1, §2.7); §3.1 Lemma 3.1.1, Propositions 3.3.1 and 3.4.1, §3.4.1, §3.6 statements; §4.1–4.6 statements (Propositions 4.1.1–4.1.2, Theorem 4.1.3, Theorem 4.2.3, Theorem 4.3.1, Lemmas 4.4.1–4.4.4, Lemma 4.6.1); §5.1–5.5 statements (Lemma 5.1.2, Lemma 5.1.7, Theorems 5.2.1, 5.2.2, 5.2.9, 5.3.1, 5.3.3, 5.3.7, 5.3.8, 5.4.3, 5.5.1, §5.3.5); §6.1–6.2 statements (Theorems 6.1.1–6.1.2, 6.2.2–6.2.3), Theorem 6.5.1, Theorem 6.5.4"
+url = "https://arxiv.org/abs/2105.13587v9"
+fetched_from = "https://arxiv.org/pdf/2105.13587v9"
+fetched_at = "2026-10-24T01:19:25Z"
+sha256 = "3de89c1736979c44592447edd3bc5a14be9202fc9a07a0ea9d158e422a25145a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv:2105.13587v9, 14 June 2025; printed pages and line-numbered text are used; the cached PDF has 290 pages, with PDF pagination distinct from printed pagination; v6 Theorem 5.3.5 is v9 Theorem 5.3.7."
+cited_for = ["README.md"]
+
+[[source]]
+id = "yuan-2008"
+authors = "Xinyi Yuan"
+title = "Big line bundles over arithmetic varieties"
+year = 2008
+venue = "Invent. math. 173, no. 3, 603-649 (2008)"
+doi = "10.1007/s00222-008-0127-9"
+arxiv = "math/0612424v2"
+locator_scheme = "section"
+locator = "§2.1, Definition 2.1, Theorem 2.2, Theorem 2.3 and Corollary 2.4 (pp. 10–11)"
+url = "https://arxiv.org/abs/math/0612424v2"
+fetched_from = "https://arxiv.org/pdf/math/0612424v2"
+fetched_at = "2026-10-24T01:19:29Z"
+sha256 = "512d295e84eb99a5905243a4c7498fb5b81dd9c3de1d00c3b163e5c54b01c4bc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Inventiones mathematicae 173 (2008), 603–649; read in arXiv:math/0612424v2 (11 January 2012)"
+cited_for = ["README.md"]
+
+[[source]]
+id = "moriwaki-2000"
+authors = "Atsushi Moriwaki"
+title = "Arithmetic height functions over finitely generated fields"
+year = 2000
+arxiv = "math/9809016v2"
+locator_scheme = "section"
+locator = "§3.1–3.4 (pp. 10–16: polarizations, Definition 3.3.6, Proposition 3.3.7, Propositions 3.4.1–3.4.2); Theorem 4.3 statement (p. 20)"
+url = "https://arxiv.org/abs/math/9809016v2"
+fetched_from = "https://arxiv.org/pdf/math/9809016v2"
+fetched_at = "2026-10-24T01:19:35Z"
+sha256 = "f555bf087f409fb3587b76010685cf6330d12c59152290e4b280d5a97de68de0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Inventiones mathematicae 140 (2000), 101–142; read in arXiv:math/9809016v2 (1 June 1999)"
+cited_for = ["README.md"]
+
+[[source]]
+id = "gao-habegger-2019"
+authors = "Ziyang Gao and Philipp Habegger"
+title = "Heights in families of abelian varieties and the Geometric Bogomolov Conjecture"
+year = 2019
+arxiv = "1801.05762v3"
+locator_scheme = "section"
+locator = "Appendix A (§§A.1–A.3, pp. 54–57)"
+url = "https://arxiv.org/abs/1801.05762v3"
+fetched_from = "https://arxiv.org/pdf/1801.05762v3"
+fetched_at = "2026-10-24T01:19:47Z"
+sha256 = "ffe408dc6ba034b2a635488600decace1e89d61ad04860c391bef9409f2fd34e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Annals of Mathematics 189 (2019), no. 2, 527–604; read in arXiv:1801.05762v3 (28 January 2019)"
+cited_for = ["README.md"]
+
+[[source]]
+id = "demarco-mavraki-ye-2026"
+authors = "Laura DeMarco, Niki Myrto Mavraki and Hexi Ye"
+title = "Bounded geometry for PCF-special subvarieties"
+year = 2026
+venue = "Forum of Mathematics, Pi 14 (2026) e4"
+doi = "10.1017/fmp.2026.10024"
+arxiv = "2405.17343v3"
+locator_scheme = "section"
+locator = "§1 (pp. 1–6, statements and outline); §4 (pp. 19–21: the invariant extensions, Deligne pairings along critical graphs, non-degeneracy, height inequality and equidistribution)"
+url = "https://arxiv.org/abs/2405.17343v3"
+fetched_from = "https://arxiv.org/pdf/2405.17343v3"
+fetched_at = "2026-10-24T01:19:52Z"
+sha256 = "bb103ede86e058ca2a2601ce9f6a18bb3590f014ee186f6766c198c0eeeb4384"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Forum of Mathematics, Pi (2026); read in arXiv:2405.17343v3, whose page numbers are used"
+cited_for = ["README.md"]
+
+[[source]]
+id = "zhang-2010"
+authors = "Shou-Wu Zhang"
+title = "Gross–Schoen cycles and dualising sheaves"
+year = 2010
+arxiv = "0812.0371v1"
+locator_scheme = "section"
+locator = "§1.1 and §1.3 (Theorem 1.3.1, Corollary 1.3.3, pp. 3–8); Proposition 2.5.3 (p. 38); Lemma 3.5.4 (p. 62); §4.1 including (4.1.4) (pp. 64–66)"
+url = "https://arxiv.org/abs/0812.0371v1"
+fetched_from = "https://arxiv.org/pdf/0812.0371v1"
+fetched_at = "2026-10-24T01:19:59Z"
+sha256 = "e01d3c31193ff442141931a1c22371d4d4d6f24d4c641bcc5fdb5336d60c2c4c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Inventiones mathematicae 179 (2010), 1–73; read in arXiv:0812.0371v1"
+cited_for = ["README.md"]
+
+[[source]]
+id = "cinkir-2011"
+authors = "Zubeyir Cinkir"
+title = "Zhang's conjecture and the effective Bogomolov conjecture over function fields"
+year = 2011
+arxiv = "0901.3945v2"
+locator_scheme = "section"
+locator = "§2 (Conjectures 2.6–2.8, Theorems 2.9–2.12, pp. 4–5)"
+url = "https://arxiv.org/abs/0901.3945v2"
+fetched_from = "https://arxiv.org/pdf/0901.3945v2"
+fetched_at = "2026-10-24T01:20:05Z"
+sha256 = "378def7b7451ab30e2b6e40aa6acc2abea39c3f04fb7294a0a7ffb88492efff2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Inventiones mathematicae 183 (2011), no. 3, 517–562; read in arXiv:0901.3945v2 (3 June 2009), whose theorem numbers are used"
+cited_for = ["README.md"]
+
+[[source]]
+id = "baker-rumely-2007"
+authors = "Matthew Baker and Robert Rumely"
+title = "Harmonic analysis on metrized graphs"
+year = 2007
+arxiv = "math/0407427v2"
+locator_scheme = "section"
+locator = "§14 (Theorem 14.1 and Lemma 14.4, pp. 36–37)"
+url = "https://arxiv.org/abs/math/0407427v2"
+fetched_from = "https://arxiv.org/pdf/math/0407427v2"
+fetched_at = "2026-10-24T01:20:11Z"
+sha256 = "2f2f4cdeb472e0c6203644624a1f30c4b2ef7a0809322366d82b699a58dd0e4c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Canadian Journal of Mathematics 59 (2007), 225–275; read in arXiv:math/0407427v2"
+cited_for = ["README.md"]
+
+[[source]]
+id = "de-jong-2018"
+authors = "Robin de Jong"
+title = "Néron–Tate heights of cycles on Jacobians"
+year = 2018
+venue = "Journal of Algebraic Geometry 27 (2018), 339-381"
+doi = "10.1090/jag/700"
+arxiv = "1610.01932v2"
+locator_scheme = "section"
+locator = "Theorem 8.1 (p. 28); Propositions 9.2–9.3 and Theorem 9.4 (pp. 31–33)"
+url = "https://arxiv.org/abs/1610.01932v2"
+fetched_from = "https://arxiv.org/pdf/1610.01932v2"
+fetched_at = "2026-10-24T01:20:17Z"
+sha256 = "ff03975dc6e54a86581ff584a588d2e93f92153fb10d90f1bec8095863b23cb1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Journal of Algebraic Geometry 27 (2018), 339–381; read in arXiv:1610.01932v2"
+cited_for = ["README.md"]
+
+[[source]]
+id = "wilms-2017"
+authors = "Robert Wilms"
+title = "New explicit formulas for Faltings' delta-invariant"
+year = 2017
+doi = "10.1007/s00222-016-0713-1"
+arxiv = "1605.00847v3"
+locator_scheme = "section"
+locator = "§1.1 (Theorem 1.1, Corollary 1.2, pp. 1–2); §2.1–2.2 including (2.11) (pp. 2–10)"
+url = "https://arxiv.org/abs/1605.00847v3"
+fetched_from = "https://arxiv.org/pdf/1605.00847v3"
+fetched_at = "2026-10-24T01:20:23Z"
+sha256 = "ea66440d78954d939a1530e7df19a8dea8432c766aec76e5a3ba26f8989b3e09"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Inventiones mathematicae 209 (2017), 481–539; read in arXiv:1605.00847v3"
+cited_for = ["README.md"]
+
+[[source]]
+id = "wilms-2022"
+authors = "Robert Wilms"
+title = "On arithmetic intersection numbers on self-products of curves"
+year = 2022
+venue = "J. Algebraic Geom. 31 (2022), 397-424"
+doi = "10.1090/jag/777"
+arxiv = "1903.12159v2"
+locator_scheme = "section"
+locator = "§1 (Theorem 1.2, p. 3)"
+url = "https://arxiv.org/abs/1903.12159v2"
+fetched_from = "https://arxiv.org/pdf/1903.12159v2"
+fetched_at = "2026-10-24T01:20:28Z"
+sha256 = "279412548e62fb16d1caa1cc0c9d0cbe1aa95c5ddbccc144e82b21b6bd00b590"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Journal of Algebraic Geometry 31 (2022), 397–424; read in arXiv:1903.12159v2"
+cited_for = ["README.md"]
+
+[[source]]
+id = "looper-silverman-wilms-2021"
+authors = "Nicole Looper, Joseph Silverman and Robert Wilms"
+title = "A uniform quantitative Manin–Mumford theorem for curves over function fields"
+year = 2021
+venue = "J. Reine Angew. Math. 828 (2025), pp. 127-147"
+doi = "10.1515/crelle-2025-0055"
+arxiv = "2101.11593v3"
+locator_scheme = "section"
+locator = "Proposition 6.1 (p. 14)"
+url = "https://arxiv.org/abs/2101.11593v3"
+fetched_from = "https://arxiv.org/pdf/2101.11593v3"
+fetched_at = "2026-10-24T01:20:34Z"
+sha256 = "d62e2a0cba65103acdd92f5a48b3db0c96aac75db1b8a71fc9b965c7a93b8629"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv:2101.11593v3"
+cited_for = ["README.md"]
+
+[[source]]
+id = "stacks-pullback"
+year = 2026
+title = "The Stacks Project: universally trivial structure-sheaf pushforward"
+authors = "The Stacks Project Authors"
+locator_scheme = "section"
+locator = "Tag 0E0L, Lemma 36.32.6; stacks-pullback line 3679"
+url = "https://stacks.math.columbia.edu/tag/0E0L"
+fetched_from = "https://stacks.math.columbia.edu/download/perfect.pdf#nameddest=0E0L"
+fetched_at = "2026-10-24T01:20:39Z"
+sha256 = "f79e0ebb628734948a51efd20b75d75c8e5341e4ab493e54f7fc710ebf72fb02"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["README.md"]
+
+version_note = "Stable Tag 0E0L; Lemma 36.32.6; the cached chapter prints Lemma 32.6."
+[[source]]
+id = "wazir-2006"
+authors = "Rania Wazir"
+title = "On the specialization theorem for abelian varieties"
+year = 2006
+arxiv = "math/0306438v2"
+locator_scheme = "section"
+locator = "Polarization and height machine, pp. 2–4; Theorems 0.2–0.3 and degree-one base height, pp. 4–5"
+url = "https://arxiv.org/abs/math/0306438v2"
+fetched_from = "https://arxiv.org/pdf/math/0306438v2"
+fetched_at = "2026-10-24T01:20:44Z"
+sha256 = "648d2b745e45f470a40be3234ce2269f9331ea923611a79ad45caefe8390ad3a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv:math/0306438v2 (9 February 2004), 5 pp.; preprint of Bull. London Math. Soc. 38 (2006), 555–560; preprint numbering 0.2–0.3 differs from the published numbering cited by Gao–Habegger"
+cited_for = ["README.md"]
+
+[[source]]
+id = "cinkir-2015"
+authors = "Zubeyir Cinkir"
+title = "Admissible invariants of genus 3 curves"
+year = 2015
+arxiv = "1405.7413v1"
+locator_scheme = "section"
+locator = "Introduction item (iii), p. 1; §6, type XIV and its formulas, pp. 13–14; Concluding summary of the sharp genus-three bounds, p. 18"
+url = "https://arxiv.org/abs/1405.7413v1"
+fetched_from = "https://arxiv.org/pdf/1405.7413v1"
+fetched_at = "2026-10-24T01:20:50Z"
+sha256 = "0bd5c36bab5c714500386abdcc5ce5f6bf1bef8ad99eb47ba2bc593f0d0d7816"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv:1405.7413v1 (28 May 2014), 19 pp.; preprint of Manuscripta Math. 148 (2015), 317–339; preprint page numbers used"
+cited_for = ["README.md"]
+
+[[source]]
+id = "gaudron-remond-2014"
+authors = "Éric Gaudron and Gaël Rémond"
+title = "Théorème des périodes et degrés minimaux d’isogénies"
+year = 2014
+arxiv = "1105.1230v1"
+locator_scheme = "section"
+locator = "§2.3, Definition 2.1, pp. 6–7; Appendix Corollary 8.4, p. 37"
+url = "https://arxiv.org/abs/1105.1230v1"
+fetched_from = "https://arxiv.org/pdf/1105.1230v1"
+fetched_at = "2026-10-24T01:21:00Z"
+sha256 = "d0eefd98c2be51e655bea147341c642b7a568b0709ae801fa9ed845ddbb91ef2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv:1105.1230v1 (6 May 2011), 38 pp.; preprint of Comment. Math. Helv. 89 (2014), 343–403; preprint page numbers used"
+cited_for = ["README.md"]
+
+[[source]]
+id = "moret-bailly-1989"
+authors = "Laurent Moret-Bailly"
+title = "La formule de Noether pour les surfaces arithmétiques"
+year = 1989
+venue = "Inventiones Mathematicae 98"
+doi = "10.1007/BF01393833"
+locator_scheme = "theorem"
+locator = "Théorème 2.5, pp. 491–498"
+url = "https://doi.org/10.1007/BF01393833"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["§10.12"]
+
+[[source]]
+id = "gross-schoen-1995"
+authors = "Benedict Gross and Chad Schoen"
+title = "The modified diagonal cycle on the triple product of a pointed curve"
+year = 1995
+locator_scheme = "theorem"
+locator = "§§6–8, pp. 664–679; §§3–4 for homological triviality and hyperelliptic vanishing"
+url = "https://www.numdam.org/item/AIF_1995__45_3_649_0/"
+fetched_from = "https://www.numdam.org/item/AIF_1995__45_3_649_0.pdf"
+fetched_at = "2026-10-24T01:21:35Z"
+sha256 = "67cba80de772e8f6b679eefcbc1fab25d3a0c2733cb162d028a8c20f0149d810"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["§10.10"]
+
+[[source]]
+id = "faltings-1984"
+authors = "Gerd Faltings"
+title = "Calculus on arithmetic surfaces"
+year = 1984
+doi = "10.2307/2007043"
+url = "https://doi.org/10.2307/2007043"
+locator_scheme = "theorem"
+locator = "Theorem 6; pp. 401–402 for the delta invariant"
+cited_for = ["§10.11", "§10.12"]
+licence_class = "none"
+status = "uncertified"
+version_note = "Published locator only; sources service did not obtain a legal original text from the JSTOR or Annals landing pages; normalization is checked through Yuan and Wilms."
