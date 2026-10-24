@@ -1,0 +1,96 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AdmissiblePairsAndPadicHodgeStructures"
+
+[[source]]
+id = "HKI"
+authors = "Sean Howe, Christian Klevdal"
+title = "Admissible pairs and p-adic Hodge structures I: Transcendence of the de Rham lattice"
+year = 2023
+venue = "Alg. Number Th. 20 (2026) 971-1028"
+doi = "10.2140/ant.2026.20.971"
+arxiv = "2308.11065v2"
+locator_scheme = "theorem"
+locator = "arXiv v2: Theorem B and Corollary C, pp. 5–6; §2.2.3, pp. 14–15; §3.1, pp. 19–23 (Proposition 3.1.7, Example 3.1.10); §3.2, pp. 23–25 (Definitions 3.2.1, 3.2.5, Lemma 3.2.3, Theorem 3.2.6); Theorem 3.5.1, pp. 30–31; Definition 4.2.1, pp. 32–33; Lemmas 4.3.1–4.3.2 and Theorem 4.3.5, pp. 34–36; §4.4 and Theorem 4.4.4, pp. 36–37; Theorem 4.5.1, p. 38; Definition 5.1.1 and equations (5.1.1.1)–(5.1.1.2), pp. 39–40; Theorem 5.1.6 and proof, pp. 40–42; Theorems 5.2.4, 5.3.1, p. 43; Definition 5.4.1, Theorem 5.4.4 and Example 5.4.6, pp. 43–45; Theorem 5.5.1 and Corollary 5.5.3, pp. 45–47; §5.7 and Proposition 5.7.1, pp. 49–50; §6.2, pp. 52–54; Theorem 6.3.2, pp. 54–55"
+url = "https://arxiv.org/abs/2308.11065v2"
+fetched_from = "https://arxiv.org/pdf/2308.11065v2"
+fetched_at = "2026-10-24T04:50:27Z"
+sha256 = "26dc170df80d6955eb806029ddb80a3ffd6558744e37d7150f98c8f44389f6e4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v2, 28 February 2025; every numbered locator uses v2; no published-text collation is asserted."
+cited_for = ["Lattices and bilattices", "Good G-bilattices", "Specialization dominance", "Exactness criterion for goodness", "Recovery from a filtration", "G-isocrystals and basic classes", "Levi invariance of B(G)", "Pointwise p-adic Hodge structures", "Pointwise admissible pairs", "Pointwise Tannakian theorems", "Basic pairs and Hodge structures", "Mumford–Tate and motivic Galois groups", "Invariants and existence", "Rigidified BKF comparison", "Good reduction and analytic lattices", "Crystalline realization of good reduction", "Open Galois image", "Two-lattice CM criterion"]
+
+[[source]]
+id = "HKII"
+authors = "Sean Howe, Christian Klevdal"
+title = "Admissible pairs and p-adic Hodge structures II: The bi-analytic Ax-Lindemann theorem"
+year = 2023
+arxiv = "2308.11064v2"
+locator_scheme = "theorem"
+locator = "arXiv v2: Theorem A, p. 6; Theorem B, p. 11; Theorem 3.2.1, pp. 22–23; Theorem 3.3.1, pp. 23–25; Theorem 4.2.2, pp. 27–28; Theorem 5.0.4, pp. 31–32; Theorem 7.1.2, p. 40; Theorem 7.2.3, pp. 41–42; Theorem 8.5.1, p. 54; Theorem 9.1.3, p. 55, proof pp. 56–58; §§2.2–2.4, pp. 15–18; §§3.1–3.3, pp. 20–25; §§4.1–4.2, pp. 26–29; §§5–6, pp. 29–39; §§7.1–7.5, pp. 39–50; §§8.1–8.5, pp. 50–54; §§9.1–9.3, pp. 55–61; §§10.1–10.2, pp. 62–66"
+url = "https://arxiv.org/abs/2308.11064v2"
+fetched_from = "https://arxiv.org/pdf/2308.11064v2"
+fetched_at = "2026-10-24T04:50:37Z"
+sha256 = "c133b06bec1209a04f84d1c2984b78ce2242ba85fc1b72cf5a662002685cab8a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v2, 28 February 2025; every numbered locator uses v2, not the differently numbered published version."
+cited_for = ["G-isocrystals and basic classes", "Levi invariance of B(G)", "Sigma-centralizer and inner form", "Bundles for connected linear groups", "Basic-stratum theorem", "Basic twisting of bundle stacks", "Rigid analytic subdiamonds", "Coefficient and group local systems", "Closed integrality locus", "Relative bilattices and their type", "Relative goodness and trace exactness", "The trivial-filtration lattice functor", "Smooth rigid lattice–filtration comparison", "Non-reductive de Rham Grassmannians", "Subgroup immersion criterion", "Grassmannian geometry and Schubert loci", "Faithful-representation cutout", "Rigid sources and Griffiths transversality", "Adjoint-weight BB criterion", "Neutral admissible pairs in families", "Family Tannakian theorem", "G-families and canonical reduction", "Good type over rigid bases", "b-rigidified admissible loci", "Non-emptiness and rigid points", "Cohomologically smooth connected products", "Geometric connectedness of admissible loci", "Neutral Hodge structures in families", "Tannakian structure of Hodge families", "The Hodge period domain", "Hodge–Tate loci of lines", "Rigid closedness of Hodge–Tate loci", "Special Hodge subvarieties", "Hodge loci of sub-isocrystal lines", "Functoriality of admissible loci", "Closed subgroup admissible loci", "Special admissible subspaces", "Torus and Lubin–Tate special points", "Borel and parabolic boundary examples", "Infinite-level admissible moduli", "The two period maps", "Functoriality at infinite level", "Hodge and Hodge–Tate special subvarieties", "Comparison of the three special notions", "Basic duality", "Geometric connectedness of Hodge domains", "Hodge-exceptional and generic loci", "Countable closedness of the exceptional locus", "Dense Hodge-generic classical points", "Analytic Zariski closures", "Analytic closedness of special subvarieties", "Connected-component formula for closure", "Generic-point period submersion", "Bi-analytic Ax–Lindemann theorem", "Minuscule Ax–Lindemann theorem", "Hodge–Tate period-image density", "Nonbasic Serre–Tate boundary", "Variations of p-adic Hodge structure", "Crystalline-frame cover and period map", "Katz–Igusa obstruction", "Conditional basic Hodge-type application", "Products of Shimura curves"]
+doi = "10.1007/s00222-025-01400-6"
+
+[[source]]
+id = "Scholze"
+authors = "Peter Scholze"
+title = "p-adic Hodge theory for rigid-analytic varieties"
+year = 2012
+arxiv = "1205.3463v2"
+locator_scheme = "theorem"
+locator = "Theorem 7.6 and its proof, pp. 42–45"
+url = "https://arxiv.org/abs/1205.3463v2"
+fetched_from = "https://arxiv.org/pdf/1205.3463v2"
+fetched_at = "2026-10-24T04:50:54Z"
+sha256 = "ed9187b3269adb7e9964369470073ce8760ef56ef0c0b89538c0a1509f811959"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v2"
+cited_for = ["The trivial-filtration lattice functor"]
+
+[[source]]
+id = "LiuZhu"
+authors = "Ruochuan Liu, Xinwen Zhu"
+title = "Rigidity and a Riemann-Hilbert correspondence for p-adic local systems"
+year = 2016
+doi = "10.1007/s00222-016-0671-7"
+arxiv = "1602.06282v3"
+locator_scheme = "theorem"
+locator = "Theorem 1.3, pp. 2–3, and Theorem 3.9, pp. 24–28"
+url = "https://arxiv.org/abs/1602.06282v3"
+fetched_from = "https://arxiv.org/pdf/1602.06282v3"
+fetched_at = "2026-10-24T04:51:01Z"
+sha256 = "8b11e55bffbfb1835a6da8975272670c9465601c08640e06f3a566a459a1da79"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v3"
+cited_for = ["Good type over rigid bases"]
+
+[[source]]
+id = "BhattHansen"
+authors = "Bhargav Bhatt, David Hansen"
+title = "The six functors for Zariski-constructible sheaves in rigid geometry"
+year = 2021
+arxiv = "2101.09759v2"
+locator_scheme = "theorem"
+locator = "Definitions 2.4–2.5 and Corollary 2.10, pp. 7–8, arXiv v2"
+url = "https://arxiv.org/abs/2101.09759v2"
+fetched_from = "https://arxiv.org/pdf/2101.09759v2"
+fetched_at = "2026-10-24T04:51:13Z"
+sha256 = "2dccae2b3f1eb298ce429a5d80fd284e16ef721072dbed0a5136fbac205cc3c8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v2"
+cited_for = ["Section 10.3 weakly Shilov points"]

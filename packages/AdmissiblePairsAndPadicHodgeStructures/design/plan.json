@@ -5274,14 +5274,67 @@
     }
   ],
   "gaps": [
-    {
-      "title": "Full-rank de Rham criterion over arbitrary p-adic fields",
-      "neededBy": [
-        "AdmissiblePairsAndPadicHodgeStructures:family_type"
-      ],
-      "detail": "The source proof of HK II Theorem 7.2.3 invokes Liu–Zhu outside the finite-Q_p field hypothesis. Its replacement must establish the exact constant-flat comparison criterion requested from PadicHodgeTheory:P8:local-rational. Existing associated-bundle and fixed-Levi-type theorems do not prove this converse. AP6 and its downstream uses retain this explicit open input."
-    }
-  ],
+  {
+    "slug": "tannakian-canonical-reduction",
+    "needs": "Supply canonical reduction of a tensor-generated neutral object to its reconstructed closed subgroup, compatible with all tensor constructions, quotient tensor functors and scalar extension.",
+    "supplier": "MotivesAndAlgebraicCycles",
+    "section": "§§6.1–6.3 and 6.8"
+  },
+  {
+    "slug": "strict-field-serre-openness",
+    "needs": "Prove Serre openness for every Hodge–Tate representation over a strict p-adic field in its connected algebraic envelope, with the hypotheses of HKI Corollary 5.5.3.",
+    "supplier": "PadicHodgeTheory",
+    "section": "§5.5"
+  },
+  {
+    "slug": "countable-chevalley-lines",
+    "needs": "Supply a countable exhaustion of the regular representation by finite-dimensional subrepresentations and its exterior-power Chevalley-line criterion for every closed subgroup.",
+    "supplier": "ReductiveGroups",
+    "section": "Layer 1"
+  },
+  {
+    "slug": "adjoint-kernel-and-orbit-differential",
+    "needs": "Prove ker(Ad) = Z(G) for connected characteristic-zero linear groups and the image and kernel formulas for differentials of their flag-orbit maps.",
+    "supplier": "ReductiveGroups",
+    "section": "Layer 2"
+  },
+  {
+    "slug": "observable-subgroup-embedding",
+    "needs": "Supply Chevalley line stabilizers and the inverse-character observable embedding into GL(V) × G_m, with the quasi-affine and affine quotient hypotheses distinguished.",
+    "supplier": "ReductiveGroups",
+    "section": "Layer 3"
+  },
+  {
+    "slug": "basic-hodge-type-uniformization",
+    "needs": "Supply basic Hodge-type uniformization over the completed maximal unramified reflex field, retaining the diagonal discrete arithmetic quotient and compatibility with both local period maps.",
+    "supplier": "PerfectoidShimuraVarieties",
+    "section": "§§3.1 and 3.5"
+  },
+  {
+    "slug": "rational-rigidified-bkf-modifications",
+    "needs": "Supply the tensor equivalence between rational rigidified BKF modules and modifications (E₁,E₂,α,β) with E₁ trivial and β a slope-filtration splitting, preserving both realizations.",
+    "supplier": "AInfCohomology",
+    "section": "§§AI.2.2–AI.2.3"
+  },
+  {
+    "slug": "arbitrary-field-full-rank-de-rham",
+    "needs": "For smooth rigid X over any complete discretely valued L/Q_p with perfect residue field and a Q_p-local system T, prove that a full-rank constant flat bundle E = ν_*(T ⊗ OB_dR) with invertible horizontal comparison determines a unique exhaustive locally split Griffiths-transversal filtration whose associated lattice is T ⊗ B_dR+, compatibly with tensor operations and pullback, independently of admissible-pair type constancy.",
+    "supplier": "PadicHodgeTheory",
+    "section": "§§7.1 and 7.4"
+  },
+  {
+    "slug": "ordinary-katz-igusa-monodromy",
+    "needs": "Supply the ordinary elliptic Katz–Igusa formal tower and generic fibre, its unit-root crystalline trivialization in the matching Tate normalization, geometrically connected full finite levels, surjective Z_p× monodromy and comparison with the integral frame reduction of the rational crystalline-frame torsor.",
+    "supplier": "IgusaVarietiesAndTorsionConcentration",
+    "section": "Layer IG.1"
+  },
+  {
+    "slug": "localized-period-module-descent",
+    "needs": "For an affine perfectoid untilt with degree-one divisor, identify v-locally finite free B_D-sheaves with finite projective B_D(S)-modules, including effective descent and compatibility with B_D+ restriction and tensor operations.",
+    "supplier": "RelativeFarguesFontaine",
+    "section": "§§6.6–6.9 and 7.6"
+  }
+],
   "sourceIssues": [
     {
       "id": "AdmissiblePairsAndPadicHodgeStructures/E1",
