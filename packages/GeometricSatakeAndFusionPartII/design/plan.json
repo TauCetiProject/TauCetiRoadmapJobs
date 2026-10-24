@@ -3938,143 +3938,85 @@
     }
   ],
   "gaps": [
-    {
-      "title": "Common algebraic loop prefix",
-      "detail": "GS0 has exact diamond Grassmannian targets, but no complete arbitrary-field algebraic loop quotient, polynomial BD/coherence, big-cell or GL-chain flatness target at this level. The proposed common-prefix owner must be accepted before these consumers are dependency-closed.",
-      "neededBy": [
-        "GeometricSatakeAndFusionPartII:LM.1/polynomial-bd",
-        "GeometricSatakeAndFusionPartII:LM.1/polynomial-geometry",
-        "GeometricSatakeAndFusionPartII:LM.1/adjoint-comparison",
-        "GeometricSatakeAndFusionPartII:LM.2/weil-split-embedding",
-        "GeometricSatakeAndFusionPartII:LM.2/weyl-model-embedding",
-        "GeometricSatakeAndFusionPartII:LM.2/restriction-model-embedding",
-        "GeometricSatakeAndFusionPartII:LM.2/tame-symplectic-embedding",
-        "GeometricSatakeAndFusionPartII:LM.2/gl-chain-model",
-        "GeometricSatakeAndFusionPartII:LM.4/big-cell-tangent",
-        "GeometricSatakeAndFusionPartII:LM.4/root-curves",
-        "GeometricSatakeAndFusionPartII:LM.5/rank-one-curves",
-        "GeometricSatakeAndFusionPartII:LM.5/rank-one-flag-closed",
-        "GeometricSatakeAndFusionPartII:LM.7/admissible-s2"
-      ]
-    },
-    {
-      "title": "Integral representation continuation",
-      "detail": "Current RG2 is a building/parahoric roadmap. It does not establish the classical minuscule cover classification, integral Weyl-lattice uniqueness, R-smooth full-fixer embeddings, polynomial representation lift, or Satake symplectic structure theorem, including division-centralizer multiplicities and per-summand chain shifts. Propose a dedicated ReductiveGroupsIntegralRepresentationsPartII; do not replan those objects here.",
-      "neededBy": [
-        "GeometricSatakeAndFusionPartII:LM.1/auxiliary-hodge-cover",
-        "GeometricSatakeAndFusionPartII:LM.2/weil-split-embedding",
-        "GeometricSatakeAndFusionPartII:LM.2/weyl-model-embedding",
-        "GeometricSatakeAndFusionPartII:LM.2/power-lattice-embedding",
-        "GeometricSatakeAndFusionPartII:LM.2/tame-symplectic-embedding",
-        "GeometricSatakeAndFusionPartII:LM.3/endomorphism-cutout",
-        "GeometricSatakeAndFusionPartII:LM.7/acceptable-good-embedding"
-      ]
-    },
-    {
-      "title": "Polynomial and weak-normal algebraic models",
-      "detail": "Need the polynomial parahoric lifts, FHLR admissible deperfections, Iwahori specialization-triple comparison and finite-type weak-normalization contracts cited in the proof of AGLR7.22. Its proof is read, but these original constructions are not recursively source-closed here; the node proof lists the exact intermediate comparisons.",
-      "neededBy": [
-        "GeometricSatakeAndFusionPartII:LM.1/polynomial-bd",
-        "GeometricSatakeAndFusionPartII:LM.3/weak-normal-representative",
-        "GeometricSatakeAndFusionPartII:LM.3/local-model-kimberlite"
-      ]
-    },
-    {
-      "title": "Classical modular minuscule computations",
-      "detail": "RootSystemsPartII explicitly excludes this direction. Need dominant minuscule detection of μ−λ and the root/Cartan coefficient tests for the sets A:all fundamentals, B:ω_n, C:ω₁, D^R:two spin endpoints, D^H:ω₁ and the two spin endpoints, including the characteristic-p nonzero coefficient check. Request a RootSystems modular-minuscule continuation, not the finite folding theorem.",
-      "neededBy": [
-        "GeometricSatakeAndFusionPartII:LM.4/mod-p-abelian",
-        "GeometricSatakeAndFusionPartII:LM.4/root-upper-bound",
-        "GeometricSatakeAndFusionPartII:LM.4/cartan-equality",
-        "GeometricSatakeAndFusionPartII:LM.4/schubert-curve-spanning",
-        "GeometricSatakeAndFusionPartII:LM.4/reductive-res-special-fibre"
-      ]
-    },
-    {
-      "title": "Trait singularities and tangent functor",
-      "detail": "Need scheme-represented Grassmannians and quotient-rank dictionary, finite normalization and DVR normality criterion, derivative maps on pointed schemes using the pinned tangent carrier, Serre/depth and canonical-module theorems. SF0 currently states much less than this complete requested API.",
-      "neededBy": [
-        "GeometricSatakeAndFusionPartII:LM.0/scheme-local-model",
-        "GeometricSatakeAndFusionPartII:LM.1/polynomial-geometry",
-        "GeometricSatakeAndFusionPartII:LM.3/normalization-of-image",
-        "GeometricSatakeAndFusionPartII:LM.4/curve-span",
-        "GeometricSatakeAndFusionPartII:LM.4/tangent-cone-obstruction",
-        "GeometricSatakeAndFusionPartII:LM.3/weak-normal-representative",
-        "GeometricSatakeAndFusionPartII:LM.7/admissible-s2",
-        "GeometricSatakeAndFusionPartII:LM.7/general-normal-representative"
-      ]
-    },
-    {
-      "title": "Connected translation stabilizers",
-      "detail": "Lang itself belongs to RG2.3, but the intersection 𝒢∩Ad(t^λ)𝒢 must have smooth connected finite jets and compatible lifting. A bare assertion that both parahorics are connected does not prove this. The KZ5.2.5 proof points to the needed intersection model.",
-      "neededBy": [
-        "GeometricSatakeAndFusionPartII:LM.5/rational-orbit-lift",
-        "GeometricSatakeAndFusionPartII:LM.5/same-field-curve"
-      ]
-    },
-    {
-      "title": "RZ96 chain originals unavailable",
-      "detail": "SW21.6 cites RZ96 Theorems 3.11,3.16 for smoothness and étale local triviality of chains, extending nilpotent-p bases to general bases. That book is not cleared in the supplied library; no other copy was used. The original assertions and extension argument need a readable source or owner proof. Existing PEL M0 has global good-prime data, not this ramified local EL/PEL datum; the proposed PEL continuation must supply that exact input.",
-      "neededBy": [
-        "GeometricSatakeAndFusionPartII:LM.6/chain-torsors",
-        "GeometricSatakeAndFusionPartII:LM.6/pel-bdr-kernel"
-      ]
-    },
-    {
-      "title": "KRZ cocharacter version reconciliation",
-      "detail": "The cleared March 2020 SW copy writes signature-like pairs as if they were GL₂ cocharacters. Use the explicit0/1 signature-to-weight dictionary stated here, checked against KRZ§2.1. The final SW text was not collated and the unpublished KRZ local-model proof is not available; verify the adjoint comparison with these corrected weights.",
-      "neededBy": [
-        "GeometricSatakeAndFusionPartII:LM.6/unitary-drinfeld-comparison"
-      ]
-    },
-    {
-      "title": "General cohomology comparison before centrality",
-      "detail": "D11 has tube objects but no node with all three parts of GL4.7. Add it there before GS2 early central/Wakimoto inputs, retaining algebraicity exactly for the étale-limit/clopen extension step. This avoids a GS2→local-model-tubes→GS2 cycle.",
-      "neededBy": [
-        "GeometricSatakeAndFusionPartII:LM.7/tube-component-stalk",
-        "GeometricSatakeAndFusionPartII:LM.7/local-model-connected-tubes"
-      ]
-    },
-    {
-      "title": "Early central and Wakimoto theorem ownership",
-      "detail": "ALWY4.17 and 4.19 are readable, replacing GL’s in-preparation citation. GS2 has no exact early Wakimoto/algebraicity statement with these coefficients. Its central prefix must be separated from the completed Satake closure and fusion targets; no downstream local-model unibranchness is an input.",
-      "neededBy": [
-        "GeometricSatakeAndFusionPartII:LM.3/special-fibre-interfaces",
-        "GeometricSatakeAndFusionPartII:LM.7/wakimoto-stalk-bound",
-        "GeometricSatakeAndFusionPartII:LM.8/local-nearby-cycles",
-        "GeometricSatakeAndFusionPartII:LM.8/central-test-function"
-      ]
-    },
-    {
-      "title": "Parahoric Bernstein center",
-      "detail": "SR4 owns spherical Satake, not the parahoric Bernstein isomorphism or change-of-level compatibility. A Hecke Part II must state and prove these independently of the local-model trace formula before LM8 closes.",
-      "neededBy": [
-        "GeometricSatakeAndFusionPartII:LM.8/semisimple-trace",
-        "GeometricSatakeAndFusionPartII:LM.8/central-test-function",
-        "GeometricSatakeAndFusionPartII:LM.8/bernstein-characterization"
-      ]
-    },
-    {
-      "title": "Uncollated final versions and original coherence inputs",
-      "detail": "KZ, GLX and GL were read in the recorded author/arXiv versions, not their final PDFs. Levin’s coherence theorem and the S₂ deformation inputs are cited with exact contracts but their original deep proofs are not decomposed in this packet. Do not certify final-text errata or closed supplier proofs from this pass.",
-      "neededBy": [
-        "GeometricSatakeAndFusionPartII:LM.1/polynomial-geometry",
-        "GeometricSatakeAndFusionPartII:LM.4/reductive-res-special-fibre",
-        "GeometricSatakeAndFusionPartII:LM.5/valued-root-adapter",
-        "GeometricSatakeAndFusionPartII:LM.5/same-field-curve",
-        "GeometricSatakeAndFusionPartII:LM.7/admissible-s2",
-        "GeometricSatakeAndFusionPartII:LM.7/local-model-connected-tubes"
-      ]
-    },
-    {
-      "title": "Closedness of Weil-restriction local-model maps",
-      "detail": "KZ Lemma 3.1.10 asserts that M^loc_(𝒢,μ)→M^loc_(𝒢_(K/F),μ_(K/F))⊗O_E is a closed immersion for a possibly wild splitting field K. FHLR Lemma 5.27 gives only a finite map that is a universal homeomorphism onto its schematic image, and the closed v-sheaf map from GS0 with normal full faithfulness gives the same. Needed: a closed immersion on special fibres (the companion flag map restricted to the admissible locus) with the Nakayama argument of PZ Proposition 8.1, or normality of the Zariski closure of G/P_μ in the target Grassmannian. KPZ supplies this only in the tame range (Propositions 3.3.7 and 3.3.20).",
-      "neededBy": [
-        "GeometricSatakeAndFusionPartII:LM.7/acceptable-good-embedding",
-        "GeometricSatakeAndFusionPartII:LM.7/admissible-lattice-test"
-      ]
-    }
-  ],
+  {
+    "slug": "trait-normality-and-tangents",
+    "needs": "Give the pointed-scheme derivative and chain rule on the pinned tangent carrier, the noetherian flat-DVR normal-generic/reduced-special normality criterion, and the weak-normalization and canonical-module connectedness comparisons needed in §§3.6, 4.1 and 7.3.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "§§0.17–0.21, 1.1, 4.6–4.13"
+  },
+  {
+    "slug": "normality-descent-and-algebraization",
+    "needs": "Give faithful-flat descent of normality and the proper-scheme algebraization of the specified equivariant formal isomorphisms after finite reflex-field extension used in §§6.5–6.6 and 7.6.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "§§0.17–0.21, 1.1, 4.6–4.13"
+  },
+  {
+    "slug": "integral-minuscule-representations",
+    "needs": "Give the classical minuscule Hodge-cover classification, stable Weyl lattices up to centralizer, R-smooth full-fixer embeddings, symplectic toral factorization and descent of the polynomial integral representations, retaining division-centralizer multiplicities and each summand's building translation.",
+    "supplier": "ReductiveGroupsPartII",
+    "section": "RG2.1–RG2.3"
+  },
+  {
+    "slug": "polynomial-parahoric-lifts",
+    "needs": "Give the polynomial parahoric lifts for the Weil-restricted tame factors and their central, fixed-point and divisor-specialization comparisons used by §§1.1–2.5 and the Iwahori comparison of §3.6.",
+    "supplier": "ReductiveGroupsPartII",
+    "section": "RG2.1–RG2.3"
+  },
+  {
+    "slug": "translation-stabilizer-jets",
+    "needs": "For a rational translation at the stated very special companion level, give smooth connected finite jet quotients of the positive-loop stabilizer intersection and compatible lifting along their pro-unipotent kernels.",
+    "supplier": "ReductiveGroupsPartII",
+    "section": "RG2.1–RG2.3"
+  },
+  {
+    "slug": "classical-modular-minuscule-tests",
+    "needs": "Give dominant-coweight detection and root and Cartan coefficient tests for the minuscule sets A: all fundamental weights, B: the spin weight, C: the standard weight, Dᴿ: the two spin weights and Dᴴ: those weights together with the standard weight, over the stated characteristics and on the simply connected cover.",
+    "supplier": "RootSystemsPartII",
+    "section": "RS2.4; minuscule representation continuation"
+  },
+  {
+    "slug": "algebraic-loops-and-coherence",
+    "needs": "Give arbitrary-field fpqc algebraic Grassmannians and twisted partial flags, polynomial BD ind-projectivity for the specified parahoric lifts, negative big cells, prime-to-p central-component comparisons, Schubert normality, Demazure and coherence, and standard GL and GSp chain flatness with the neutral-closure closed-immersion criterion.",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0; GS2 early central prefix"
+  },
+  {
+    "slug": "early-central-wakimoto",
+    "needs": "Give algebraicity and perverse exactness of local-model central nearby cycles, their extremal Wakimoto filtration and constant-term multiplicities over F_ℓ for every ℓ≠p, as well as the rational central-sheaf and very-special faithful-cohomology inputs for Layer 8, using general tube cohomology before local-model tube connectedness.",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0; GS2 early central prefix"
+  },
+  {
+    "slug": "wild-admissible-closedness",
+    "needs": "For the acceptable Hodge datum with p>2, prime-to-p derived fundamental group and R-smooth centralizer in §7.7, prove schematic closedness of the companion admissible-locus map associated to its possibly wild splitting extension, sufficient with the polynomial closedness criterion to make the induced local-model scheme map a closed immersion.",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0; GS2 early central prefix"
+  },
+  {
+    "slug": "general-tube-cohomology",
+    "needs": "Give all three comparisons of GL Theorem 4.7 for spatial generic diamonds of finite cohomological dimension, perfectly finite-type reduction and ℓ-torsion coefficients, retaining algebraicity for the étale-neighbourhood limit, together with the rich-smelted connected-fibre tube-transfer criterion.",
+    "supplier": "DiamondsAndVStacksPartII",
+    "section": "D11"
+  },
+  {
+    "slug": "ramified-local-pel-data",
+    "needs": "Give the local EL/PEL order, involution, connected generic similitude group and permitted ramified lattice-chain data, including the nonsplit unitary self-dual or almost self-dual level and its inverse-different trace pairing, without a good-reduction or prime-to-discriminant restriction.",
+    "supplier": "PELModuli",
+    "section": "M0"
+  },
+  {
+    "slug": "semisimple-trace-and-comparison",
+    "needs": "Give filtration-independent semisimple inertia trace, its triangle and proper-pushforward identities, and the scheme/analytic nearby-cycle comparison used for these proper local-model schemes.",
+    "supplier": "LefschetzPencilsAndVanishingCycles",
+    "section": "LPV.0, LPV.1, LPV.6"
+  },
+  {
+    "slug": "parahoric-bernstein",
+    "needs": "Give the parahoric Bernstein-to-spherical centre isomorphism, normalized idempotent changes of level and companion-field compatibility independently of the local-model test-function identity.",
+    "supplier": "SmoothRepresentationsOfLocalGroups",
+    "section": "SR.4.1"
+  }
+],
   "sourceIssues": [
     {
       "id": "GeometricSatakeAndFusionPartII/E1",
