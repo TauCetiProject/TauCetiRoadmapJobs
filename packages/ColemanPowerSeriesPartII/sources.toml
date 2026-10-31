@@ -1,0 +1,134 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ColemanPowerSeriesPartII"
+
+[[source]]
+id = "Hazewinkel1977"
+locator_scheme = "theorem"
+locator = "Theorem 1.3, pp. 305–306; sections 3–4"
+url = "https://ir.cwi.nl/pub/10014/10014D.pdf"
+fetched_from = "https://ir.cwi.nl/pub/10014/10014D.pdf"
+fetched_at = "2026-10-23T17:40:32Z"
+sha256 = "5bbb94e03c8cbcb82b83bd1dbf28f6a0300a50f18b570668799190f4f268a3c8"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["2.2"]
+authors = "Michiel Hazewinkel"
+title = "On norm maps for one dimensional formal groups III"
+year = 1977
+
+[[source]]
+id = "Rubin1987"
+locator_scheme = "theorem"
+locator = "Proposition 1.1; sections 2, 4–5; Proposition 7.4; Theorem 8.4; Lemma 10.1"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0088/LOG_0026.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0088/LOG_0026.pdf"
+fetched_at = "2026-10-23T17:42:05Z"
+sha256 = "cda9c336ba0a3eb3017e531d352b9b6d9fa73f0f995c7897ef0e4504f34d3f07"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["Layers 0–4, 8–9"]
+authors = "Karl Rubin"
+title = "Local units, elliptic units, Heegner points and elliptic curves"
+year = 1987
+doi = "10.1007/BF01388915"
+version_note = "Published version; the line-numbered extraction was recognized by OCR."
+
+[[source]]
+id = "Wintenberger1980"
+locator_scheme = "section"
+locator = "4, theorem (i),(iii), pp. 91–92; proof 5.1–5.5.3"
+url = "https://www.numdam.org/item/CM_1980__42_1_89_0.pdf"
+fetched_from = "https://www.numdam.org/item/CM_1980__42_1_89_0.pdf"
+fetched_at = "2026-10-23T17:42:53Z"
+sha256 = "416f7390166f381296df594ed2050300aed0f3ecff6415bd8740a2bcc4b2d94f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["0.5"]
+authors = "Jean-Pierre Wintenberger"
+title = "Structure galoisienne de limites projectives d’unités locales"
+year = 1980
+version_note = "Numdam volume dated 1980; the printed article heading says 1981. Numbering is that of the archived article."
+
+[[source]]
+id = "AbbesUllmo1996"
+locator_scheme = "theorem"
+locator = "Theorem A, p. 269"
+url = "https://www.numdam.org/item/CM_1996__103_3_269_0.pdf"
+fetched_from = "https://www.numdam.org/item/CM_1996__103_3_269_0.pdf"
+fetched_at = "2026-10-23T17:42:56Z"
+sha256 = "73fd473d7822b90b4cc4bebbd2b8ca2a05547b6a13e2c3f99210ef8f2ce83cf2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["5.2"]
+authors = "Ahmed Abbes; Emmanuel Ullmo"
+title = "À propos de la conjecture de Manin pour les courbes elliptiques modulaires"
+year = 1996
+
+[[source]]
+id = "Fesenko1998"
+locator_scheme = "theorem"
+locator = "Theorem 1.1; sections 2.3, 2.5"
+url = "https://ivanfesenko.org/wp-content/uploads/2021/10/drm.pdf"
+fetched_from = "https://ivanfesenko.org/wp-content/uploads/2021/10/drm.pdf"
+fetched_at = "2026-10-23T17:42:58Z"
+sha256 = "a1dc9404c83facfa153cb725adcab586bede5ceedb91ff166c3134af2f13a8ab"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["2.2"]
+authors = "Ivan B. Fesenko"
+title = "On deeply ramified extensions"
+year = 1998
+
+[[source]]
+id = "Kato1993"
+authors = "Kazuya Kato"
+title = "Lectures on the approach to Iwasawa theory for Hasse–Weil L-functions via B_dR. I"
+year = 1993
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0084729"
+locator_scheme = "theorem"
+locator = "Chapter II, Theorem 2.1.7"
+url = "https://doi.org/10.1007/BFb0084729"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.7"]
+note = "Paywalled locator only; no claim to have read or certified the normalization proof."
+
+[[source]]
+id = "BKO2021"
+locator_scheme = "theorem"
+locator = "Theorems 2.1, 3.4, 5.5, 5.8; sections 2–5"
+url = "https://authors.library.caltech.edu/records/8svwt-jn031/files/annals.2021.194.3.8.pdf?download=1"
+fetched_from = "https://authors.library.caltech.edu/records/8svwt-jn031"
+fetched_at = "2026-10-23T17:44:22Z"
+sha256 = "77ff329057e17cbad573cc309fce3f69f4ba6b73619c4ca203a4ed79a1cb790e"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["Layers 0–9"]
+authors = "Ashay A. Burungale; Shinichi Kobayashi; Kazuto Ota"
+title = "Rubin’s conjecture on local units in the anticyclotomic tower at inert primes"
+year = 2021
+delivery_note = "The sources service fetched the institutional PDF through Caltech’s temporary object-storage delivery URL; the stable repository record is retained here."
+doi = "10.4007/annals.2021.194.3.8"
+version_note = "Published Annals version, pp.943–966; all numbering follows this PDF."
+
+[[source]]
+id = "Wiles1978"
+authors = "Andrew Wiles"
+title = "Higher explicit reciprocity laws"
+year = 1978
+doi = "10.2307/1971143"
+url = "https://annals.math.princeton.edu/1978/170-2/p04"
+locator_scheme = "page"
+locator = "235–254; explicit reciprocity law also stated in Rubin1987 Theorem 5.3, p.412"
+cited_for = ["2.6"]
+status = "uncertified"
+licence_class = "none"
+note = "Publisher bibliographic record and DOI checked; the DOI leads to a JSTOR paywall. Sources-service requests obtained no legal full text. Cited by locator only; the trace-law statement is read in BKO2021 and Rubin1987."
