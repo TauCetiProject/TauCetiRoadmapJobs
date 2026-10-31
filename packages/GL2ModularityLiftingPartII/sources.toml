@@ -1,0 +1,53 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GL2ModularityLiftingPartII"
+
+[[source]]
+id = "cg18"
+authors = "Frank Calegari and David Geraghty"
+title = "Modularity lifting beyond the Taylor–Wiles method"
+year = 2018
+version_note = "Published author PDF; theorem numbering and published pages used, not the earlier merge preprint."
+doi = "10.1007/s00222-017-0749-x"
+arxiv = "1207.4224"
+locator_scheme = "theorem"
+locator = "Corollaries 1.5–1.6; Definition 3.1; Theorem 3.11; Theorems 3.26, 3.30; Theorem 4.8; Lemma 4.14; Theorem 5.11; §§3–5"
+url = "https://www.math.uchicago.edu/~fcale/papers/CG.pdf"
+fetched_from = "https://www.math.uchicago.edu/~fcale/papers/CG.pdf"
+fetched_at = "2026-10-24T18:35:21Z"
+sha256 = "c0ba8de04d5ee92fe1a967f9487df6cb49295590dfd03762a9150a92838225c5"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layers 0–10"]
+
+[[source]]
+id = "cg20"
+authors = "Frank Calegari and David Geraghty"
+title = "Minimal modularity lifting for nonregular symplectic representations"
+year = 2020
+version_note = "Author PDF Lemma 8.14, pp. 65–66; published Lemma 8.14, pp. 865–866."
+locator_scheme = "theorem"
+locator = "Lemma 8.14, pp. 865–866"
+url = "https://www.math.uchicago.edu/~fcale/papers/Siegel.pdf"
+fetched_from = "https://www.math.uchicago.edu/~fcale/papers/Siegel.pdf"
+fetched_at = "2026-10-24T18:35:28Z"
+sha256 = "fff305877c7e6b9d32ca9a8b4a56f7f3b343695fc737184d1a3a1b78f195cfa5"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layer 2: ordinary projection injectivity"]
+
+[[source]]
+id = "cg22"
+authors = "Frank Calegari and David Geraghty"
+title = "Correction to: Modularity lifting beyond the Taylor–Wiles method"
+year = 2022
+doi = "10.1007/s00222-021-01095-5"
+venue = "Inventiones Mathematicae 227, 855–856"
+locator_scheme = "page"
+locator = "pp. 855–856"
+url = "https://doi.org/10.1007/s00222-021-01095-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "Paywalled; cited by published locator alone."
+cited_for = ["Formal power-series and q-expansion conventions"]
