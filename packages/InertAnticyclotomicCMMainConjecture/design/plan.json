@@ -2427,44 +2427,28 @@
   ],
   "gaps": [
     {
-      "id": "InertAnticyclotomicCMMainConjecture/G1",
-      "title": "Early CM construction and analytic contracts have no registered supplier stage",
-      "neededBy": [
-        "InertAnticyclotomicCMMainConjecture:IC.0/cm-datum",
-        "InertAnticyclotomicCMMainConjecture:IC.0/tower-comparison",
-        "InertAnticyclotomicCMMainConjecture:IC.2/primitive-class",
-        "InertAnticyclotomicCMMainConjecture:IC.2/sign-and-nonzero"
-      ],
-      "detail": "NonordinaryCMSpecialValues is an accepted extraction direction, not a registered roadmap/stage in this checkout. It must supply the Gross realization with the Shimura/differential conditions, the p-division/ray-class tower comparison, the primitive ν=1 class input used by ALU.4, the nontrivial root-number formula W(φχ)=(−1)^(r+1)ε, and nonvanishing for infinitely many matching finite twists. No invented stage id is a prerequisite. The late C∞ and Rubin L_p coordinate have moved here by corrected PAPER-BURUNGALE-KOBAYASHI-OTA-21 routes 5–6, avoiding a cycle through ALU."
+      "slug": "elliptic-unit-euler-system",
+      "needs": "For every finite abelian extension F of K containing H and every ideal a of O_K prime to 6pf, the norm-compatible elliptic units of auxiliary ideal a (Rubin 1991 §1), with their Euler-system norm relations over the ray class tower K(g p^∞), g prime to p, and their Kummer classes twisted by the inverse avatar to classes in lim_cor H¹(F,T′) along the two-variable tower, extending NCM.1/normalized-zeta-class beyond moduli supported on f, p and one auxiliary split prime.",
+      "supplier": "NonordinaryCMSpecialValues",
+      "section": "NCM.1"
     },
     {
-      "id": "InertAnticyclotomicCMMainConjecture/G2",
-      "title": "Inert units-form translation of Rubin's Theorem 4.1(ii) to the Gross avatar",
-      "neededBy": [
-        "InertAnticyclotomicCMMainConjecture:IC.3/global-ranks",
-        "InertAnticyclotomicCMMainConjecture:IC.3/integral-unit-comparison"
-      ],
-      "detail": "The supplier is now registered: the CMAllPrimeMainConjectures design (merged 2026-10-19, its review pending) states Rubin 1991 Theorem 4.1 as CZ.2/classical-two-variable-main-conjecture, with Rubin's modules in CZ.2/rubin-iwasawa-modules and the elliptic-unit Euler system in CZ.2/elliptic-unit-euler-system. The reviewer read Theorem 4.1 and its standing hypotheses in the GDZ scan (RUB91 pp.36–37). For p inert the input is the χ-part equality char(A_∞)^χ=char(Ē_∞/C̄_∞)^χ for χ nontrivial on the decomposition group of p; X_∞ and U_∞/C̄_∞ are not torsion there (Remark 2, p.37). What remains here: (i) the twisting dictionary of AHI Lemma 2.4.5 and Corollary 2.4.6 (pp.1028–1029), written for E/Q at an ordinary prime, redone for the Gross φ-component with coefficient ring R, identifying the strict two-variable dual with the twisted χ-part of A_∞ and S_rel/C with that of Ē_∞/C̄_∞ (at the inert prime the χ-hypothesis, not AHI's local argument, removes the contribution of the primes above p); (ii) Rubin's hypotheses for K₀=H(E[p]): p∤#μ(H), p∤[K₀:K] and nontriviality of the relevant Δ-character on the decomposition group of p; (iii) the descent from the Z_p²-tower to K_∞ with its common correction divisor (AHI Propositions 2.4.15–2.4.16). A p-inverted equality, an ordinary split-prime theorem or a downstream signed main conjecture cannot discharge this gap."
+      "slug": "inert-two-variable-main-conjecture",
+      "needs": "Rubin's two-variable theorem at a non-split prime (Rubin 1991 Theorem 4.1(ii)): for p∤#μ(H), K₀ abelian over K with H⊆K₀ and p∤[K₀:K], and the ℤ_p²-extension of K₀ abelian over K, char(A∞) divides char(Ē∞/C̄∞), with equality of χ-parts for every irreducible ℤ_p-representation χ of Gal(K₀/K) nontrivial on the decomposition group of p.",
+      "supplier": "NonordinaryCMSpecialValues",
+      "section": "NCM.1"
     },
     {
-      "id": "InertAnticyclotomicCMMainConjecture/G3",
-      "title": "Integral Gross descent, trace, period and primitive-lattice comparisons",
-      "neededBy": [
-        "InertAnticyclotomicCMMainConjecture:IC.0/local-coefficients",
-        "InertAnticyclotomicCMMainConjecture:IC.3/gross-descent",
-        "InertAnticyclotomicCMMainConjecture:IC.3/local-dictionary",
-        "InertAnticyclotomicCMMainConjecture:IC.4/primitive-lattice-comparison"
-      ],
-      "detail": "BKO Theorem 6.1 extends AH by a similar-argument assertion. The planned proof must verify integral exactness of the finite prime-to-p descent and actual finite character components, the Cartier dual/inverse different and CM-conjugation identifications, specialization correction modules, and the equality between the full localized auxiliary-family ideal and the primitive ξ coordinate ideal. In particular it must prove that period/trace comparison factors are units; interpolation alone cannot remove a p-power index. The target statements and proof obligations are explicit, but the complete integral Gross proof has not been established from a primary treatment."
+      "slug": "restriction-of-scalars-finite-extension",
+      "needs": "For a finite extension R/O of complete discrete valuation rings with finite residue fields and a finitely generated torsion R⟦T⟧-module M with char(M)=(f), the characteristic ideal of M as an O⟦T⟧-module is generated by the norm of f, extending §4.6's restriction of scalars from the base ℤ_p to an arbitrary base O.",
+      "supplier": "PadicMeasuresIwasawaAlgebras",
+      "section": "§4.6"
     },
     {
-      "id": "InertAnticyclotomicCMMainConjecture/G5",
-      "title": "Two-variable relaxed/strict comparison: Billot's theorem with R-coefficients and the involution",
-      "neededBy": [
-        "InertAnticyclotomicCMMainConjecture:IC.3/global-ranks",
-        "InertAnticyclotomicCMMainConjecture:IC.4/relaxed-dual-characteristic"
-      ],
-      "detail": "Reconstruct AHII Theorem 4.1 (p.616) for the Gross φ-component over Λ_R. Its inputs are now located. (a) BIL86 Theorem 3.24 (pp.364–365), proved under the Leopoldt hypothesis for every intermediate field of the Z_p²-extension (p.353; true here by Brumer's theorem, the fields being abelian over K) and the hypothesis that γ−1 is prime to the characteristic series of the torsion of the two-variable Selmer dual. Over the one-variable algebra with Z_p coefficients it equates the characteristic series of the strict module with that of the torsion of the Selmer dual composed with the involution T↦(1+T)⁻¹−1. (b) AH's '[1, Lemma 2.1.2]': no public version of AHI has a lemma with that number (issue E2); the input that removes Billot's involution is the complex-conjugation symmetry of AHI Lemma 1.2.1 (p.1010). Still to do: Billot's theorem with O- or R-coefficients (conjugation acts on these coefficients, so symmetry gives invariance under the involution composed with the coefficient automorphism, not under the involution alone), the coprimality hypothesis for the Gross avatar from Rubin's two-variable rank-one result, and every finite error. AHI's own ordinary analogue, Theorem 1.2.2 (p.1011), gets the equality only up to powers of p."
+      "slug": "character-prime-multiplicity",
+      "needs": "For a finite character ρ of Γ≅ℤ_p with values in a finite extension of Frac(R) and the height-one prime P_ρ=ker(R⟦Γ⟧→ρ(R⟦Γ⟧)), the coefficient of P_ρ in charDivisor(M) of a finitely generated torsion module M equals the order of vanishing at T=ρ(γ)−1 of a generator of char(M).",
+      "supplier": "PadicMeasuresIwasawaAlgebras",
+      "section": "§4.6"
     }
   ],
   "sourceIssues": [
