@@ -4602,88 +4602,40 @@
   ],
   "gaps": [
     {
-      "title": "Relative crystalline coefficient comparison",
-      "detail": "P8 does not yet state a general structural O B_cris comparison for the relative coefficient systems of LS 5.2 and arbitrary coefficient pushforward in Example 5.10. The finite-cover projector route reduces the actual application to constant proper cohomology, but its relative connection/Frobenius comparison still needs the exact P8 suffix theorem. Preserve the CP.3/CP.4 dependency direction.",
-      "neededBy": [
-        "MordellLawrenceVenkateshPartII:M2.0/hodge-deligne-system",
-        "MordellLawrenceVenkateshPartII:M2.0/geometric-cohomology-system",
-        "MordellLawrenceVenkateshPartII:M2.1/orbit-cohomology-system",
-        "MordellLawrenceVenkateshPartII:M2.0/crystalline-residue-fibres"
-      ]
+      "slug": "eulerian-log-concavity-and-variance",
+      "needs": "log-concavity of every row `q ↦ A(n, q)` on its contiguous support `0 ≤ q < n`, preservation of log-concavity on contiguous support under convolution and reflection of finite sequences, and the variance `(n + 1)/12` of the descent number of a uniformly random permutation of `Fin n` for `n ≥ 2`.",
+      "supplier": "ClassicalArithmeticCompletion",
+      "section": "§2.56"
     },
     {
-      "title": "General tensor-isomorphism torsor",
-      "detail": "MC.6 supplies neutral reconstruction, but its written tensor-isomorphism nodes concern a particular graded diagram. Add the general neutral-fibre-functor torsor and its algebraically closed trivialization, then the crystalline specialization is M2.7.",
-      "neededBy": [
-        "MordellLawrenceVenkateshPartII:M2.0/differential-monodromy",
-        "MordellLawrenceVenkateshPartII:M2.2/crystalline-inner-forms",
-        "MordellLawrenceVenkateshPartII:M2.3/period-monodromy-orbit",
-        "MordellLawrenceVenkateshPartII:M2.7/crystalline-fibre-functor-comparison"
-      ]
+      "slug": "eulerian-central-limit",
+      "needs": "the central limit theorem for descents: for a uniformly random permutation of `Fin n`, `(des − (n − 1)/2)/√n` converges in law to the centred normal law of variance `1/12` as `n → ∞`, together with the uniform bound on its second moments that gives convergence of first absolute moments.",
+      "supplier": "ClassicalArithmeticCompletion",
+      "section": "§2.18"
     },
     {
-      "title": "Disconnected complete reducibility and rational global types",
-      "detail": "The coefficient normalizer can have disconnected GO factors. Prove minimal Richardson-parabolic semisimplification with rational conjugacy/continuity, and finite rational orbit splitting for p-adic centralizers. The parent GL finiteness result and the Langlands Weil-parameter stages do not establish these statements. LS 5.49 repairs the old connected-image reduction but treats its symbol G⁰ as connected even in an even orthogonal similitude case; retain the component correction.",
-      "neededBy": [
-        "MordellLawrenceVenkateshPartII:M2.2/coefficient-semisimplification",
-        "MordellLawrenceVenkateshPartII:M2.2/finite-global-g-types",
-        "MordellLawrenceVenkateshPartII:M2.2/finite-parabolic-levi-types"
-      ]
+      "slug": "andre-monodromy-normality",
+      "needs": "for a polarized integral variation of Hodge structure on a connected smooth complex algebraic variety, the identity component of the Zariski closure of its monodromy group is a normal subgroup of the derived group of its generic Mumford–Tate group (Deligne–André).",
+      "supplier": "ShimuraData",
+      "section": "§3.4"
     },
     {
-      "title": "Pure integral period-map Ax–Schanuel supplier",
-      "detail": "The paper route proposes LogicAndDefinabilityPartII, not yet an actual roadmap or reserved stage. Route the pure polarized integral Bakker–Tsimerman theorem there, with the monodromy-orbit form used in M2.3. Hodge H.7 definability and LD.6 counting do not state this theorem. This roadmap owns only its codimension consequence and p-adic transfer.",
-      "neededBy": [
-        "MordellLawrenceVenkateshPartII:M2.3/complex-period-codimension"
-      ]
+      "slug": "period-map-ax-schanuel",
+      "needs": "the Ax–Schanuel theorem for pure polarized integral variations of Hodge structure (Bakker–Tsimerman): for such a variation on a smooth irreducible complex algebraic variety `X` with monodromy period orbit `D_mon ⊂ Ď`, every irreducible analytic component `U` of the intersection of an algebraic subvariety `W ⊂ X × Ď` with the graph of a local lift of the period map satisfies `codim_(X×Ď) U ≥ codim W + codim_(X×Ď)(graph)` unless the projection of `U` to `X` lies in a weakly special subvariety, in the monodromy-orbit form used in §3.4.",
+      "supplier": "AbelianSchemesAndArithmeticModuliPartII",
+      "section": "Layer B3"
     },
     {
-      "title": "Eulerian central limit supplier",
-      "detail": "CA.2 owns the common Eulerian sequence and exact algebraic formulas; its current stage does not state a central limit theorem. Extend that direction in ClassicalArithmeticCompletion, Part II, coordinated with its probability supplier, to provide centered ascent CLT and uniform second moments. M2.8 owns the adjoint/tail adapter, not a second general convergence-in-law development.",
-      "neededBy": [
-        "MordellLawrenceVenkateshPartII:M2.8/eulerian-normal-limit-adapter"
-      ]
+      "slug": "relative-crystalline-comparison",
+      "needs": "for a smooth projective morphism `f : 𝒴 → 𝒳` of smooth `W(k)`-schemes with `k` finite and `p` unramified, the fibrewise crystalline comparisons of §8.1 at the points of a residue disk of `𝒳` are horizontal for the Gauss–Manin connection on `R^i f_* Ω^•` and compatible with the Frobenius of the convergent F-isocrystal `R^i f_crys,*` of CrystallineCohomology §CR.7.3, so that `R^i f_*ℚ_p` and that filtered F-isocrystal are associated in the sense of Faltings.",
+      "supplier": "PadicHodgeTheory",
+      "section": "§8.1"
     },
     {
-      "title": "Katz–Messing and correspondence rationality",
-      "detail": "Supply characteristic-polynomial agreement for crystalline and auxiliary-prime étale cohomology of smooth proper finite-field varieties, compatible with primitive projectors, and the fixed-point trace formula for deck correspondences composed with Frobenius. Degree-one A4 exports do not cover primitive hypersurface middle cohomology. Route the full higher-degree input with the cohomology/weight owners.",
-      "neededBy": [
-        "MordellLawrenceVenkateshPartII:M2.7/bounded-small-frobenius-centralizer",
-        "MordellLawrenceVenkateshPartII:M2.1/rational-orbit-frobenius-polynomials"
-      ]
-    },
-    {
-      "title": "Orthogonal universal-hypersurface monodromy",
-      "detail": "LPV.5 already has open symplectic monodromy and a conditional orthogonal open-or-finite node. Reuse those nodes; the extension still needed is to exclude finite orthogonal monodromy for universal hypersurfaces and provide Beauville’s arithmetic finite-index theorem with its exceptions. Route only that extension to LefschetzPencilsAndVanishingCycles, Part II. M2.9 applies it in the safe n≥4,d≥4 range.",
-      "neededBy": [
-        "MordellLawrenceVenkateshPartII:M2.9/beauville-monodromy-adapter"
-      ]
-    },
-    {
-      "title": "Curve Shafarevich consequence",
-      "detail": "R28.5 gives polarized abelian-variety Shafarevich finiteness. To use it for curves, supply Torelli with field descent and good-reduction comparison for their canonical principally polarized Jacobians. JacobianChallenge constructs Jacobians and their universal property, not Torelli; RP.4 explicitly leaves its curve Shafarevich assumption conditional. Route this consequence with the curve/arithmetic-moduli owner, rather than import rational-point finiteness as if it were curve-isomorphism finiteness.",
-      "neededBy": [
-        "MordellLawrenceVenkateshPartII:M2.10/abelian-surface-hypersurfaces"
-      ]
-    },
-    {
-      "title": "Number-field subvarieties in the stronger finiteness clause",
-      "detail": "The original LV all-subvarieties clause needs the non-density theorem over fields of definition of closure components, or a restriction-of-scalars formulation preserving the required monodromy and numerical bound. This clause is stated with that arithmetic comparison as a hypothesis; generic monodromy alone proves only non-density.",
-      "neededBy": [
-        "MordellLawrenceVenkateshPartII:M2.7/all-subvarieties-finiteness"
-      ]
-    },
-    {
-      "title": "Further extensions of written supplier contracts",
-      "detail": "ComplexComparisonPartII C0 states Weierstrass division/preparation and Noetherianity but not the local analytic Nullstellensatz requested here. PadicHodgeTheory R06.2 supplies admissible tensor categories but not the requested tensor-compatible Sen/Wintenberger cocharacter-image theorem. AlgebraicModuliForArithmeticGeometry R09.2 supplies Hilbert/Quot representability but not the graded regular-sequence Hilbert-series calculation. These are explicit requested extensions at their owners, not consequences of the currently written supplier statements. HodgeStructuresPartII H.2/connected-semisimple does not supply André normality in the generic Mumford–Tate group. CA.2/eulerian-unimodal supplies only unimodality; exact centered variance, Eulerian log-concavity and reflection/convolution closure remain requested extensions. Keep these extensions in the corresponding precise requests.",
-      "neededBy": [
-        "MordellLawrenceVenkateshPartII:M2.3/local-analytic-nullstellensatz",
-        "MordellLawrenceVenkateshPartII:M2.7/hodge-torus-image-adapter",
-        "MordellLawrenceVenkateshPartII:M2.8/projective-jacobian-hodge-formula",
-        "MordellLawrenceVenkateshPartII:M2.3/parabolic-period-stabilizer",
-        "MordellLawrenceVenkateshPartII:M2.8/eulerian-second-moment-logconcavity",
-        "MordellLawrenceVenkateshPartII:M2.8/eulerian-normal-limit-adapter"
-      ]
+      "slug": "hodge-tate-image-cocharacter",
+      "needs": "for a crystalline representation `ρ : G_K → GL(V)` of a finite unramified `K/ℚ_p` preserving a family of tensors, the Zariski closure of `ρ(G_K)` contains a torus that is conjugate over `ℚ̄_p`, inside the group fixing those tensors, to the image of the Hodge cocharacter of `D_dR(V)` (Sen; Wintenberger's tensor-compatible splitting).",
+      "supplier": "PadicHodgeTheory",
+      "section": "§4.4"
     }
   ],
   "sourceIssues": [
