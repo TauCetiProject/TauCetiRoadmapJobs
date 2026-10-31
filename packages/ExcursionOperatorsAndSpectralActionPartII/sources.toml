@@ -1,0 +1,93 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ExcursionOperatorsAndSpectralActionPartII"
+
+[[source]]
+id = "FU25"
+authors = "Chenji Fu"
+title = "Stability of elliptic Fargues–Scholze L-packets"
+year = 2024
+arxiv = "2501.00652v1"
+locator_scheme = "section"
+locator = "§§3.1–3.3, pp. 18–21: dual-root product, finite H_g, Fourier growth; §4.2, pp. 24–25: invariant fibers, especially Lemma 4.2.7; §4.3, pp. 26–27: proof of Theorem 4.3.1 and equidistribution"
+url = "https://arxiv.org/abs/2501.00652v1"
+fetched_from = "https://arxiv.org/pdf/2501.00652v1"
+fetched_at = "2026-10-24T22:55:08Z"
+sha256 = "f77b54a8526888c95c2cf0d32e158a38040cd28c4021e9c2c7df1b9abb169524"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv:2501.00652v1, dated 31 December 2024; locators refer to this version."
+cited_for = ["Layer 2"]
+
+[[source]]
+id = "FS24"
+authors = "Laurent Fargues, Peter Scholze"
+title = "Geometrization of the local Langlands correspondence"
+year = 2021
+arxiv = "2102.13459v4"
+locator_scheme = "section"
+locator = "§I.9, pp. 34–35: Propositions I.9.1 and I.9.3, Definition I.9.2, Conjecture I.9.5 and the separate following stable-center expectation; §IX.4, Definition/Proposition IX.4.1, p. 327; §IX.5, Proposition IX.5.1 and Theorem IX.5.2, pp. 327–329; §IX.7.1, Theorem IX.7.2, pp. 334–335; §IX.7.2, Corollary IX.7.3, pp. 337–338"
+url = "https://arxiv.org/abs/2102.13459v4"
+fetched_from = "https://arxiv.org/pdf/2102.13459v4"
+fetched_at = "2026-10-24T22:55:28Z"
+sha256 = "1f8040751d3424f59ae56651d990d7b2d5030e6b7cae58bc2fc683358dfc2027"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v4"
+cited_for = ["Scope and ownership", "Layer 0.0"]
+
+[[source]]
+id = "FKS21v2"
+doi = "10.1215/00127094-2022-0080"
+authors = "Jessica Fintzen, Tasho Kaletha, Loren Spice"
+title = "A twisted Yu construction, Harish-Chandra characters, and endoscopy"
+year = 2021
+arxiv = "2106.09120v2"
+locator_scheme = "section"
+locator = "Introduction, pp. 2–4: scope and field restrictions; §4.3, pp. 19–23: especially assumptions on p and exponential convergence on p. 20; §4.4, pp. 24–26: regular packets, stable sums, Theorem 4.4.4"
+url = "https://arxiv.org/abs/2106.09120v2"
+fetched_from = "https://arxiv.org/pdf/2106.09120v2"
+fetched_at = "2026-10-24T22:55:32Z"
+sha256 = "126958839c2203b485d22ec960f8e0f6a795d00103adadb6c184aa6edb75b51a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Locators refer to arXiv:2106.09120v2 (3 September 2021), not the 2023 Duke version of record; the preprint and publication are one work and one source key."
+cited_for = ["Layer 4.3 atomic implication", "References"]
+
+[[source]]
+id = "H26"
+authors = "David Hansen"
+title = "Excursion operators and the stable Bernstein center"
+year = 2026
+doi = "10.1017/fmp.2026.10028"
+version_note = "Published version of record, Forum of Mathematics, Pi 14 (2026), e10; all page and theorem locators refer to this version."
+locator_scheme = "section"
+locator = "Entire article, pp. 1–14: definitions, Lemmas 2.1–2.6, Propositions 2.5 and 2.7, proofs of Theorems 1.1 and 1.4, and Corollaries 1.2–1.3"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/AB00A1DF177B6DAB542489D58DA1C8AD/S2050508626100286a.pdf/excursion-operators-and-the-stable-bernstein-center.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/AB00A1DF177B6DAB542489D58DA1C8AD/S2050508626100286a.pdf/excursion-operators-and-the-stable-bernstein-center.pdf"
+fetched_at = "2026-10-24T22:55:57Z"
+sha256 = "30f08ae39b020187b8368d4096411527f64555923232e6d42c3b21e314396936"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layers 0–6"]
+
+[[source]]
+id = "HKW22"
+authors = "David Hansen, Tasho Kaletha and Jared Weinstein"
+title = "On the Kottwitz conjecture for local shtuka spaces"
+year = 2022
+doi = "10.1017/fmp.2022.7"
+version_note = "Published version of record, Forum of Mathematics, Pi 10 (2022), e13; all page and theorem locators refer to this version."
+locator_scheme = "section"
+locator = "§3.1, Lemma 3.1.1 and proof, p. 13: rational torus finiteness and class topology; §3.2, pp. 14–16: inv[b], uniqueness and torus fibers; §3.4, p. 19: compatible orbital measures and the orbital-integral integrand used for inversion; §3.3, pp. 17–18: Equation (3.3.3) sign; §6.4, pp. 61–62: finite length and the stated star-extension Mant functor; §6.5, pp. 65–66: Theorem 6.5.2; Appendix C, p. 75: Theorem C.1.1 characterizing nonelliptic virtual representations as proper-parabolic induced combinations; Appendix A.2, p. 72: Lemma A.2.1 and the half-sum convention for the sign in (3.3.3)"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/33A94496879999F3D63C2997F2D50D9D/S2050508622000075a.pdf/div-class-title-on-the-kottwitz-conjecture-for-local-shtuka-spaces-div.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/33A94496879999F3D63C2997F2D50D9D/S2050508622000075a.pdf/div-class-title-on-the-kottwitz-conjecture-for-local-shtuka-spaces-div.pdf"
+fetched_at = "2026-10-24T22:55:59Z"
+sha256 = "d05a7f84ce98862d470d114946b7002e8d5ab1df3c4d77fb4851ff45f5d80049"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layers 0, 1, 2, 5, 6"]
