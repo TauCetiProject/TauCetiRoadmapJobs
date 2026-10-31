@@ -1,0 +1,397 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PotentialAutomorphyInfrastructurePartII"
+
+[[source]]
+id = "BLGGT14"
+authors = "Thomas Barnet-Lamb, Toby Gee, David Geraghty, Richard Taylor"
+title = "Potential automorphy and change of weight"
+year = 2010
+arxiv = "1010.2561v4"
+locator_scheme = "theorem"
+locator = "§1.2–1.4, §2.1–2.4, Theorem 3.1.2, Theorem 4.2.1, Appendix A"
+url = "https://arxiv.org/abs/1010.2561v4"
+fetched_from = "https://arxiv.org/pdf/1010.2561v4"
+fetched_at = "2026-10-26T12:58:47Z"
+sha256 = "c953df6229ba8d8b4ae25b1a00cf11592864c74692859d324ff10d3eef645d24"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v4"
+cited_for = ["Layer 0", "Layer 1", "Layer 5", "Layer 6"]
+
+[[source]]
+id = "Tho12"
+authors = "Jack Thorne"
+title = "On the automorphy of $l$-adic Galois representations with small residual image"
+year = 2011
+arxiv = "1107.5989v1"
+locator_scheme = "theorem"
+locator = "Definition 2.3, §§4–10, Theorems 6.8, 7.1, 8.6, 9.1, 10.1, 10.2"
+url = "https://arxiv.org/abs/1107.5989v1"
+fetched_from = "https://arxiv.org/pdf/1107.5989v1"
+fetched_at = "2026-10-26T12:58:52Z"
+sha256 = "537af0053745f4206157c0441365218285624d95a25ae408149f287372d9ba55"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["Layer 0", "Layer 3", "Layer 4", "Layer 5", "Layer 8"]
+
+[[source]]
+id = "Tho17"
+authors = "Jack A. Thorne"
+title = "A 2-adic automorphy lifting theorem for unitary groups over CM fields"
+year = 2017
+version_note = "accepted manuscript of 16 March 2016"
+locator_scheme = "theorem"
+locator = "Definition 2.20, Propositions 2.21, 7.1, Theorem 5.1"
+url = "https://api.repository.cam.ac.uk/server/api/core/bitstreams/9bca3a85-7db2-4da6-b8cb-b91c54ee9620/content"
+fetched_from = "https://api.repository.cam.ac.uk/server/api/core/bitstreams/9bca3a85-7db2-4da6-b8cb-b91c54ee9620/content"
+fetched_at = "2026-10-26T12:59:01Z"
+sha256 = "f7b706eb2eb69354f5be3ce846193dc75f73ed46a7437eb54451b8f177af74c9"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layer 3", "Layer 4", "Layer 5"]
+
+[[source]]
+id = "Tho15"
+authors = "Jack A. Thorne"
+title = "Automorphy lifting for residually reducible $l$-adic Galois representations"
+year = 2015
+version_note = "accepted manuscript of 16 April 2014"
+locator_scheme = "theorem"
+locator = "Lemma 2.3, Theorem 2.4, Definition 2.5, §§3–7, Theorems 6.1, 7.1"
+url = "https://api.repository.cam.ac.uk/server/api/core/bitstreams/5b8962a1-6a0e-4d17-b5ae-b478575e1a0c/content"
+fetched_from = "https://api.repository.cam.ac.uk/server/api/core/bitstreams/5b8962a1-6a0e-4d17-b5ae-b478575e1a0c/content"
+fetched_at = "2026-10-26T12:59:02Z"
+sha256 = "76393fcb9a31931789fa4f7c6de9a64275fb02e81e5a3b98c53b8aa1a1834928"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layer 0", "Layer 2", "Layer 3", "Layer 7", "Layer 8"]
+
+[[source]]
+id = "ANT20"
+authors = "Patrick B. Allen, James Newton, Jack A. Thorne"
+title = "Automorphy lifting for residually reducible $l$-adic Galois representations, II"
+year = 2019
+arxiv = "1912.11269v2"
+locator_scheme = "theorem"
+locator = "§§3–6, Theorems 4.1, 5.1, 6.1, 6.2"
+url = "https://arxiv.org/abs/1912.11269v2"
+fetched_from = "https://arxiv.org/pdf/1912.11269v2"
+fetched_at = "2026-10-26T12:59:17Z"
+sha256 = "077a344352c80389ce75d5c61a69fba90413303aca911a616fe46dbeb8514bfa"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["Layer 2", "Layer 3", "Layer 7", "Layer 8"]
+
+[[source]]
+id = "NT23"
+authors = "James Newton, Jack A. Thorne"
+title = "Adjoint Selmer groups of automorphic Galois representations of unitary type"
+year = 2019
+arxiv = "1912.11265v3"
+locator_scheme = "theorem"
+locator = "§§1–4, Theorem 4.28, Proposition 2.17"
+url = "https://arxiv.org/abs/1912.11265v3"
+fetched_from = "https://arxiv.org/pdf/1912.11265v3"
+fetched_at = "2026-10-26T12:59:24Z"
+sha256 = "286597946a3efcac15b1f1d610370ca0cb52619b20954f3c5bd7f224c12bcf5f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["Layer 3", "Layer 4", "Layer 9"]
+
+[[source]]
+id = "NT21"
+authors = "James Newton, Jack A. Thorne"
+title = "Symmetric power functoriality for holomorphic modular forms"
+year = 2019
+arxiv = "1912.11261v3"
+locator_scheme = "theorem"
+locator = "§1, §§5–6, Theorem 5.2, Proposition 5.6"
+url = "https://arxiv.org/abs/1912.11261v3"
+fetched_from = "https://arxiv.org/pdf/1912.11261v3"
+fetched_at = "2026-10-26T12:59:31Z"
+sha256 = "6d50b558a6182a8d1515a6715529a33079807bf405c8db775e4ed252f5a2f379"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["Layer 0", "Layer 2", "Layer 3", "Layer 6", "Layer 7", "Layer 8", "Layer 9"]
+
+[[source]]
+id = "NT21B"
+authors = "James Newton, Jack A. Thorne"
+title = "Symmetric power functoriality for holomorphic modular forms, II"
+year = 2020
+arxiv = "2009.07180v2"
+locator_scheme = "theorem"
+locator = "§2"
+url = "https://arxiv.org/abs/2009.07180v2"
+fetched_from = "https://arxiv.org/pdf/2009.07180v2"
+fetched_at = "2026-10-26T12:59:36Z"
+sha256 = "0f08214ebe03344c2e2851be76c49213dc4adf7928ff561610b674c423a2a6bf"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["Layer 1", "Layer 6", "Layer 9"]
+
+[[source]]
+id = "NT26"
+authors = "James Newton, Jack A. Thorne"
+title = "Symmetric power functoriality for Hilbert modular forms"
+year = 2022
+arxiv = "2212.03595v2"
+locator_scheme = "theorem"
+locator = "Definition 2.5, Lemma 2.6, Proposition 3.9"
+url = "https://arxiv.org/abs/2212.03595v2"
+fetched_from = "https://arxiv.org/pdf/2212.03595v2"
+fetched_at = "2026-10-26T12:59:42Z"
+sha256 = "6a156f7a5567226e0bd2209d5b237cbbc150dc10cfbd9ffd060a3245328cb82c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["Layer 0", "Layer 1", "Layer 2", "Layer 3", "Layer 7", "Layer 8", "Layer 9"]
+
+[[source]]
+id = "BCG25"
+authors = "George Boxer, Frank Calegari, Toby Gee"
+title = "Cuspidal cohomology classes for GL_n(Z)"
+year = 2023
+arxiv = "2309.15944v3"
+locator_scheme = "theorem"
+locator = "Theorems 2.1, 3.1"
+url = "https://arxiv.org/abs/2309.15944v3"
+fetched_from = "https://arxiv.org/pdf/2309.15944v3"
+fetched_at = "2026-10-26T12:59:47Z"
+sha256 = "abfa9eac9984aa5d0bd5e1700a08993bc3baa6f8435d18f5f0e37f5a84769684"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["Layer 0", "Layer 5", "Layer 6"]
+
+[[source]]
+id = "LTXZZ"
+authors = "Yifeng Liu, Yichao Tian, Liang Xiao, Wei Zhang, Xinwen Zhu"
+title = "Deformation of rigid conjugate self-dual Galois representations"
+year = 2021
+arxiv = "2108.06998v1"
+locator_scheme = "theorem"
+locator = "§§3–4, Theorems 3.6.3, 4.2.6"
+url = "https://arxiv.org/abs/2108.06998v1"
+fetched_from = "https://arxiv.org/pdf/2108.06998v1"
+fetched_at = "2026-10-26T12:59:53Z"
+sha256 = "fce1c9ae227dc1fcbc2fa712ae0034f7454b77595f63b927a7bdc7237f81292a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["Layer 5", "Layer 10"]
+
+[[source]]
+id = "LLHLM23"
+authors = "Daniel Le, Bao V. Le Hung, Brandon Levin, Stefano Morra"
+title = "Local models for Galois deformation rings and applications"
+year = 2020
+arxiv = "2007.05398v2"
+locator_scheme = "theorem"
+locator = "Theorems 7.3.2, 9.1.6, 9.2.1, Remark 9.2.2"
+url = "https://arxiv.org/abs/2007.05398v2"
+fetched_from = "https://arxiv.org/pdf/2007.05398v2"
+fetched_at = "2026-10-26T13:00:03Z"
+sha256 = "3cdae0b192d3ba8d75391fbd2bf40264e23c9d9c69d536ad30b50dddda0d61af"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["Layer 4", "Layer 10"]
+
+[[source]]
+id = "CT14"
+authors = "Laurent Clozel, Jack A. Thorne"
+title = "Level-raising and symmetric power functoriality, I"
+year = 2014
+version_note = "author manuscript"
+locator_scheme = "theorem"
+locator = "Definition 2.4, Lemmas 2.5, 2.6"
+url = "https://www.dpmms.cam.ac.uk/~jat58/lrspi.pdf"
+fetched_from = "https://www.dpmms.cam.ac.uk/~jat58/lrspi.pdf"
+fetched_at = "2026-10-26T13:00:16Z"
+sha256 = "f8609496aff7abb2858694331556a635a353a50a8280d5e05d507948d4aa24f7"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layer 0", "Layer 3", "Layer 8"]
+
+[[source]]
+id = "GK14"
+authors = "Toby Gee, Mark Kisin"
+title = "The Breuil-Mézard conjecture for potentially Barsotti-Tate representations"
+year = 2012
+arxiv = "1208.3179v5"
+locator_scheme = "theorem"
+locator = "Lemma 4.4.1"
+url = "https://arxiv.org/abs/1208.3179v5"
+fetched_from = "https://arxiv.org/pdf/1208.3179v5"
+fetched_at = "2026-10-26T13:00:20Z"
+sha256 = "65cb5797bbe10e328843b5fdc73f2623c80e19fa89ceb72ce6cd296881eb68f9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v5"
+cited_for = ["Layer 1"]
+
+[[source]]
+id = "Che14"
+authors = "Gaetan Chenevier"
+title = "The p-adic analytic space of pseudocharacters of a profinite group and pseudorepresentations over arbitrary rings"
+year = 2008
+arxiv = "0809.0415v2"
+locator_scheme = "theorem"
+locator = "§§1–2, Theorem 2.12, Example 2.32"
+url = "https://arxiv.org/abs/0809.0415v2"
+fetched_from = "https://arxiv.org/pdf/0809.0415v2"
+fetched_at = "2026-10-26T13:00:26Z"
+sha256 = "f3c0e0d86e803301c617d3023d425752e30da46673ed5af932647eb284286953"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["Layer 2", "Layer 7", "Layer 9"]
+
+[[source]]
+id = "Ger19"
+authors = "David Geraghty"
+title = "Modularity lifting theorems for ordinary Galois representations"
+year = 2019
+version_note = "author preprint of 12 March 2010"
+locator_scheme = "theorem"
+locator = "Lemmas 2.6.4, 3.3.3, 3.4.6, 5.1.1, 5.1.3, 5.2.1, 5.1.6 (preprint of 12 March 2010)"
+url = "https://web.archive.org/web/2id_/https://www2.bc.edu/david-geraghty/files/oml.pdf"
+fetched_from = "https://web.archive.org/web/20200311145253id_/https://www2.bc.edu/david-geraghty/files/oml.pdf"
+fetched_at = "2026-10-26T13:00:30Z"
+sha256 = "18c3b5081c8c8e6af6001fdaa145cd43a51763c5fd72abf6949dd431704a72f1"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layer 0", "Layer 3", "Layer 4", "Layer 5", "Layer 9"]
+
+[[source]]
+id = "BG19"
+authors = "Rebecca Bellovin, Toby Gee"
+title = "G-valued local deformation rings and global lifts"
+year = 2017
+venue = "Alg. Number Th. 13 (2019) 333-378"
+doi = "10.2140/ant.2019.13.333"
+arxiv = "1708.04885v3"
+locator_scheme = "theorem"
+locator = "Theorem 5.1.2, Corollary 5.1.3"
+url = "https://arxiv.org/abs/1708.04885v3"
+fetched_from = "https://arxiv.org/pdf/1708.04885v3"
+fetched_at = "2026-10-26T13:00:35Z"
+sha256 = "afe3ab33eedfd50c5fc943020e494b32d6515802723de982ba0da3848f00c587"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["Layer 5", "Layer 8"]
+
+[[source]]
+id = "Tho24"
+authors = "Jack A. Thorne"
+title = "A $p$-adic approach to the existence of level-raising congruences"
+year = 2022
+doi = "10.1112/plms.12584"
+arxiv = "2212.03591v2"
+locator_scheme = "theorem"
+locator = "Theorem 7.5"
+url = "https://arxiv.org/abs/2212.03591v2"
+fetched_from = "https://arxiv.org/pdf/2212.03591v2"
+fetched_at = "2026-10-26T13:00:42Z"
+sha256 = "372ed2cbe894a75e01f8292963eeb9a50ffe7236098f183e3784aa09c98343b1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["Layer 8"]
+
+[[source]]
+id = "LLHLM20"
+authors = "Daniel Le, Bao V. Le Hung, Brandon Levin, Stefano Morra"
+title = "Serre weights and Breuil's lattice conjecture in dimension three"
+year = 2016
+arxiv = "1608.06570v4"
+locator_scheme = "theorem"
+locator = "Proposition 6.0.2"
+url = "https://arxiv.org/abs/1608.06570v4"
+fetched_from = "https://arxiv.org/pdf/1608.06570v4"
+fetched_at = "2026-10-26T13:00:49Z"
+sha256 = "cceae9f59d4c8af0a265726c6a35583959b0e1cb0451043ff79170a1def432bd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v4"
+cited_for = ["Layer 4", "Layer 10"]
+
+[[source]]
+id = "Sk13"
+authors = "Daniel Skodlerack"
+title = "The centralizer of a classical group and Bruhat-Tits buildings"
+year = 2013
+version_note = "version of record"
+locator_scheme = "theorem"
+locator = "§3, Definition 3.1, Remark 3.2, Proposition 3.5, Theorem 3.6"
+url = "https://www.numdam.org/article/AIF_2013__63_2_515_0.pdf"
+fetched_from = "https://www.numdam.org/article/AIF_2013__63_2_515_0.pdf"
+fetched_at = "2026-10-26T13:00:50Z"
+sha256 = "bb279d12b17e97a5213084abab378d3786e0e234ede50342c9b84bf9b4c3132c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layer 7"]
+
+[[source]]
+id = "BLGHT11"
+authors = "Thomas Barnet-Lamb, David Geraghty, Michael Harris, Richard Taylor"
+title = "A family of Calabi-Yau varieties and potential automorphy II"
+year = 2011
+version_note = "author copy"
+locator_scheme = "theorem"
+locator = "§4, Proposition 4.2, Lemmas 5.1, 5.3, 6.1"
+url = "https://virtualmath1.stanford.edu/~rltaylor/cy2fin.pdf"
+fetched_from = "https://virtualmath1.stanford.edu/~rltaylor/cy2fin.pdf"
+fetched_at = "2026-10-26T13:06:37Z"
+sha256 = "225cab84210837ca6130c1c76a5eababeffeaa8d1594b6267e853ce0ae8eabb3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layer 1", "Layer 6"]
+
+[[source]]
+id = "LLHL19"
+authors = "Daniel Le, Bao V. Le Hung, Brandon Levin"
+title = "Weight elimination in Serre-type conjectures"
+year = 2019
+venue = "Duke Math. J. 168, no. 13 (2019), 2433-2506"
+doi = "10.1215/00127094-2019-0015"
+arxiv = "1610.04819v4"
+locator_scheme = "theorem"
+locator = "Theorem 4.3.8"
+url = "https://arxiv.org/abs/1610.04819v4"
+fetched_from = "https://arxiv.org/pdf/1610.04819v4"
+fetched_at = "2026-10-29T06:20:21Z"
+sha256 = "c976fac5c200cb175ca0462f3575d934410b6e07850e729ac97a55a06bf76e10"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-29"
+version_note = "arXiv v4; cited in its numbering"
+cited_for = ["Scope and ownership"]
