@@ -1,0 +1,299 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HeightsRationalPointsAndObstructionsPartII"
+
+[[source]]
+id = "ggk-2026"
+locator_scheme = "section"
+locator = "Theorems 1.1, 1.1′, 1.2–1.3, (1.1)–(1.4), pp. 190–192; §2, (2.5)–(2.6), Lemma 2.4, pp. 195–197; §§3.1–3.2, (3.1)–(3.9), Lemmas 3.1–3.3, 3.5, Proposition 3.4, pp. 198–203; §4, Propositions 4.1–4.4, (4.6), pp. 203–211; §5, Propositions 5.1–5.2, Steps 1–5, pp. 211–218; §6, Proposition 6.1, pp. 219–220; §§7.1–7.3, (7.1), (7.3)–(7.6), Theorem 7.1, Proposition 7.2, Lemmas 7.3–7.4, pp. 220–226; §8, pp. 225–226; Appendix A.1–A.5, Theorem A.1, Propositions A.2–A.3, Lemma A.4, (A.5)–(A.8), Steps 1–4, pp. 227–232"
+url = "https://pmihes.centre-mersenne.org/item/10.5802/pmihes.26.pdf"
+fetched_from = "https://pmihes.centre-mersenne.org/item/10.5802/pmihes.26.pdf"
+fetched_at = "2026-10-24T09:19:40Z"
+sha256 = "4ee5a38b327807289885a1d7292bddc3341b7fc3e0aa8a3682d995d13237834f"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Section 0.1", "Section 0.2", "Section 0.4", "Section 1.1", "Section 1.2", "Section 1.3", "Section 1.4", "Section 1.5", "Section 1.6", "Section 1.7", "Section 1.8", "Section 2.8", "Section 3.1", "Section 3.2", "Section 3.3", "Section 3.4", "Section 3.5", "Section 4.4", "Section 4.5", "Section 4.6", "Section 4.7", "Section 4.8", "Section 4.9", "Section 5.1", "Section 5.2", "Section 5.3", "Section 5.4", "Section 5.5", "Section 5.6", "Section 5.7", "Section 5.8", "Section 5.9", "Section 5.10", "Section 5.11", "Section 5.12", "Section 6.1", "Section 6.2", "Section 6.3", "Section 6.4", "Section 6.5", "Section 6.6", "Section 6.7"]
+authors = "Ziyang Gao, Tangli Ge, Lars Kühne"
+title = "The uniform Mordell–Lang conjecture"
+year = 2026
+version_note = "Publ. Math. IHÉS 143 (2026); published PDF (printed page = PDF page + 187)"
+
+[[source]]
+id = "yuan-2026"
+locator_scheme = "section"
+locator = "§1.1, Theorem 1.1, pp. 4–5; §2.2, Proposition 2.6, p. 31; §4.1.2, pp. 63–64; Theorem 4.2(1)–(2) and proof, pp. 64–67; Theorem 4.7, p. 70; §§4.3.1–4.3.2, Lemma 4.8, pp. 71–75; §§4.4.1–4.4.3, Theorem 4.10 and proof, pp. 76–84; Proposition 4.16, p. 97; Theorem 4.17, pp. 98–99; §4.6.3, Proposition 4.18, p. 100; Theorem 4.19, p. 101"
+url = "https://faculty.bicmr.pku.edu.cn/~yxy/preprints/bigness_and_bogomolov.pdf"
+fetched_from = "https://faculty.bicmr.pku.edu.cn/~yxy/preprints/bigness_and_bogomolov.pdf"
+fetched_at = "2026-10-24T09:19:55Z"
+sha256 = "b36f4860cc0f098ef062523e8a5147e8172d1e4e357fc76a63cd7c0d782a813e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Section 3.6", "Section 4.9", "Section 5.8", "Section 6.8", "Section 7.1", "Section 10.1", "Section 10.2", "Section 10.3", "Section 10.4", "Section 10.5", "Section 10.6", "Section 10.7", "Section 10.8", "Section 11.1", "Section 11.2", "Section 11.3", "Section 11.4", "Section 11.5", "Section 11.6", "Section 11.7"]
+authors = "Xinyi Yuan"
+title = "Arithmetic bigness and a uniform Bogomolov-type result"
+year = 2026
+version_note = "Ann. of Math. 203 (2026), no. 1; read: author manuscript of 21 August 2024 (126 pp., printed page = PDF page), arXiv 2108.05625"
+
+[[source]]
+id = "dgh-2021"
+authors = "Vesselin Dimitrov, Ziyang Gao, Philipp Habegger"
+title = "Uniformity in Mordell–Lang for curves"
+year = 2021
+arxiv = "2001.10276v3"
+locator_scheme = "section"
+locator = "Theorems 1.1–1.2, (1.1), Corollary 1.3, pp. 1–3; Theorem 1.4, p. 3; Theorem 1.6, pp. 4–5; §1.2, p. 5; Remark 3.1, p. 13; §3.2, Remark 3.3, pp. 14–15; §3.3, (3.3)–(3.5), p. 15; §§4.1–4.3, Propositions 4.1–4.3, pp. 16–22; §5, pp. 22–23; §6.1, Lemma 6.1, pp. 25–26; Lemmas 6.3–6.4, pp. 28–29; Proposition 7.1, pp. 29–31; §8, Proposition 8.1, Lemma 8.2, (8.1)–(8.2), (8.4), (8.6)–(8.7), pp. 31–36; Theorem B.1 and proof, pp. 40–47"
+url = "https://arxiv.org/abs/2001.10276v3"
+fetched_from = "https://arxiv.org/pdf/2001.10276v3"
+fetched_at = "2026-10-24T09:19:59Z"
+sha256 = "5fc8e86f53ee43e9d18e8239a8db986bff74115ddb947abef4902a72dde338a4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Ann. of Math. 194 (2021), no. 1; read: arXiv 2001.10276v3 (31 March 2021)"
+cited_for = ["Section 0.1", "Section 0.3", "Section 0.4", "Section 2.1", "Section 2.2", "Section 2.3", "Section 2.4", "Section 2.5", "Section 2.6", "Section 2.7", "Section 2.8", "Section 3.6", "Section 4.1", "Section 4.2", "Section 4.3", "Section 5.1", "Section 5.2", "Section 5.3", "Section 5.8", "Section 5.12", "Section 6.9", "Section 6.10", "Section 6.11", "Section 6.12", "Section 8.3"]
+
+[[source]]
+id = "gh-2019"
+authors = "Ziyang Gao, Philipp Habegger"
+title = "Heights in families of abelian varieties and the geometric Bogomolov conjecture"
+year = 2019
+arxiv = "1801.05762v3"
+locator_scheme = "section"
+locator = "§A.3, p. 57 (arXiv v3), citing Zhang and Gubler (2007, Corollary 4.4); Definition 1.2 and display below it, p. 3; Proposition 1.3, p. 3; proof §3.1, p. 12 (arXiv v3); Proposition B.1 and proof, p. 58; the case dim S = 1 is the claim (3.2), p. 14 (arXiv v3); Proposition 3.1 and proof, pp. 12–15 (curve base); Proposition B.3, p. 59 (any base) (arXiv v3); Theorem 1.4 and (1.1), p. 4; Theorem 1.4′, p. 5; proof §10.2, p. 52 (arXiv v3); Theorem 1.1, p. 2; proof §11, pp. 52–54 (arXiv v3); Theorem A.3 and sketch, p. 56 (arXiv v3); Appendix A, §A.3, pp. 56–57 (arXiv v3)"
+url = "https://arxiv.org/abs/1801.05762v3"
+fetched_from = "https://arxiv.org/pdf/1801.05762v3"
+fetched_at = "2026-10-24T09:20:05Z"
+sha256 = "ffe408dc6ba034b2a635488600decace1e89d61ad04860c391bef9409f2fd34e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Ann. of Math. 189 (2019), no. 2; read: arXiv 1801.05762v3 (28 January 2019)"
+cited_for = ["Section 7.2", "Section 8.1", "Section 8.2", "Section 8.3", "Section 8.4", "Section 8.5", "Section 8.6"]
+
+[[source]]
+id = "xy-2022"
+authors = "Junyi Xie, Xinyi Yuan"
+title = "Geometric Bogomolov conjecture in arbitrary characteristics"
+year = 2022
+doi = "10.1007/s00222-022-01112-1"
+arxiv = "2108.09722v1"
+locator_scheme = "section"
+locator = "§1.1, (1.1)–(1.5), Theorem 1.1, pp. 2–3; §2, Proposition 2.1, pp. 7–8; §§3.1–3.2, Propositions 3.1–3.2, 3.6, Lemmas 3.3–3.4, 3.7, Corollary 3.5, (3.3), pp. 12–19; §4.1, p. 19; Proposition 4.2 and proof, pp. 20–21; §5, conditions (d)–(e), pp. 22–25; §5.1, proof of Lemma 5.2, Lemma 5.3, pp. 23–24; §5.2, Proposition 5.4 and proof, pp. 25–26; §5.3, pp. 26–27"
+url = "https://arxiv.org/abs/2108.09722v1"
+fetched_from = "https://arxiv.org/pdf/2108.09722v1"
+fetched_at = "2026-10-24T09:20:11Z"
+sha256 = "2587e70314bddb8f2ed01768f64b4a96b5da0f32d0d5382b4336b2415211c2ab"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Invent. Math. (2022); read: arXiv 2108.09722v1"
+cited_for = ["Section 7.1", "Section 7.2", "Section 7.3", "Section 7.4", "Section 7.5", "Section 9.1", "Section 9.2", "Section 9.3", "Section 9.4", "Section 9.5", "Section 9.6", "Section 9.7", "Section 9.8", "Section 9.9", "Section 9.10", "Section 9.11", "Section 9.12", "Section 9.13", "Section 9.14", "Section 9.15", "Section 9.16", "Section 9.17", "Section 9.18", "Section 9.19"]
+
+[[source]]
+id = "kuhne-2021"
+authors = "Lars Kühne"
+title = "Equidistribution in families of abelian varieties and uniformity"
+year = 2021
+arxiv = "2101.10272v4"
+locator_scheme = "section"
+locator = "Theorem 1, p. 3; Lemmas 7–8, pp. 17–21; Lemma 25, p. 38 (arXiv v4); Theorem 1, p. 3; proof §3, pp. 28–38 (arXiv v4); Theorem 3, pp. 6–7 (arXiv v4); Theorem 2 and following remark, p. 6 (arXiv v4); Theorem 4 and following remark, p. 8 (arXiv v4)"
+url = "https://arxiv.org/abs/2101.10272v4"
+fetched_from = "https://arxiv.org/pdf/2101.10272v4"
+fetched_at = "2026-10-24T09:20:17Z"
+sha256 = "06781b5207e714338c29fce0af0117cdb989fe302a30f01d746a18871ecd7257"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv 2101.10272v4 (23 December 2024)"
+cited_for = ["Section 3.1", "Section 3.2", "Section 3.5", "Section 3.6", "Section 6.8", "Section 12.4"]
+
+[[source]]
+id = "dky-2020"
+locator_scheme = "section"
+locator = "Theorem 1.1 and Remark 1.2, p. 950; Theorem 1.10, p. 953; Sections 8.4–9.5, pp. 994–997"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n3-p05-s.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n3-p05-s.pdf"
+fetched_at = "2026-10-24T09:20:20Z"
+sha256 = "7a4bd817bc7cc561363c68c3941b449af55fbf4cb1b3481bd0d601e84b9307df"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Section 3.6", "Section 12.1", "Section 12.2", "Section 12.3", "Section 12.4"]
+authors = "Laura DeMarco, Holly Krieger, Hexi Ye"
+title = "Uniform Manin–Mumford for a family of genus 2 curves"
+year = 2020
+version_note = "Published version: Annals 191 (2020), pp. 949–1001; arXiv 1901.09945v2 uses different theorem numbers and lacks published Proposition 9.2."
+arxiv = "1901.09945v2"
+
+[[source]]
+id = "remond-2000-vojta"
+locator_scheme = "theorem"
+locator = "Théorème 1.1, p. 105, and Théorème 1.2, p. 106; setting §1, p. 104"
+url = "http://www.numdam.org/item/ASNSP_2000_4_29_1_101_0/"
+fetched_from = "https://www.numdam.org/item/ASNSP_2000_4_29_1_101_0.pdf"
+fetched_at = "2026-10-24T09:21:02Z"
+sha256 = "555cd2ad1febe811f2e337845bb7fc95cb5efefa99dba19f174be90d201eb7a5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Section 5.4"]
+authors = "Gaël Rémond"
+title = "Inégalité de Vojta en dimension supérieure"
+year = 2000
+version_note = "Ann. Scuola Norm. Sup. Pisa Cl. Sci. (4) 29 (2000), 101–151 (Numdam; printed page = PDF page + 99)"
+
+[[source]]
+id = "yamaki-2018"
+authors = "Kazuhiko Yamaki"
+title = "Trace of abelian varieties over function fields and the geometric Bogomolov conjecture"
+year = 2018
+doi = "10.1515/crelle-2015-0086"
+arxiv = "1405.0896v5"
+locator_scheme = "theorem"
+locator = "Theorem 1.5 (= Theorem 5.5), p. 5; setting §1.2, p. 5 (arXiv 1405.0896v5)"
+url = "https://arxiv.org/abs/1405.0896v5"
+fetched_from = "https://arxiv.org/pdf/1405.0896v5"
+fetched_at = "2026-10-24T09:21:05Z"
+sha256 = "0bb02ad9cff328c2121778d8271341728bbfabf383192a240d24585e943b1634"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "J. reine angew. Math. (2018); read: arXiv 1405.0896v5"
+cited_for = ["Section 9.12"]
+
+[[source]]
+id = "masser-1996"
+locator_scheme = "theorem"
+locator = "Theorem, p. 459, and abstract, p. 457"
+url = "http://www.numdam.org/item/BSMF_1996__124_3_457_0/"
+fetched_from = "https://www.numdam.org/item/BSMF_1996__124_3_457_0.pdf"
+fetched_at = "2026-10-24T09:21:07Z"
+sha256 = "3772b27fe99b31b47137ab11f9c7c0e793e190c44c49977b75b66998d0d71b64"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Section 6.2"]
+authors = "David W. Masser"
+title = "Specializations of endomorphism rings of abelian varieties"
+year = 1996
+version_note = "Bull. Soc. Math. France 124 (1996), 457–476 (Numdam)"
+
+[[source]]
+id = "dmy-2026"
+authors = "Laura DeMarco, Niki Myrto Mavraki, Hexi Ye"
+title = "Bounded geometry for PCF-special subvarieties"
+year = 2026
+venue = "Forum of Mathematics, Pi 14 (2026) e4"
+doi = "10.1017/fmp.2026.10024"
+arxiv = "2405.17343v3"
+locator_scheme = "theorem"
+locator = "§1, p. 3 and §2.5, p. 10 (arXiv v3); pp. 26–27 (arXiv v3)"
+url = "https://arxiv.org/abs/2405.17343v3"
+fetched_from = "https://arxiv.org/pdf/2405.17343v3"
+fetched_at = "2026-10-24T09:21:11Z"
+sha256 = "bb103ede86e058ca2a2601ce9f6a18bb3590f014ee186f6766c198c0eeeb4384"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Forum Math. Pi 14 (2026) e4; read: arXiv 2405.17343v3"
+cited_for = ["Section 0.2"]
+
+[[source]]
+id = "remond-2000-decompte"
+authors = "Gaël Rémond"
+title = "Décompte dans une conjecture de Lang"
+year = 2000
+venue = "Inventiones mathematicae 142"
+doi = "10.1007/s002220000095"
+locator_scheme = "theorem"
+locator = "Lemma 3.1, Propositions 3.3–3.4, Lemma 6.1; Inventiones Mathematicae 142, pp. 513–545"
+url = "https://doi.org/10.1007/s002220000095"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layers 5–6"]
+
+[[source]]
+id = "david-philippon-2002"
+locator_scheme = "theorem"
+locator = "Théorèmes 1.2–1.4, p. 641; Rémond theorem, p. 643; proof of Théorème 1.3, pp. 689–690; standing principal M¹⁶ embedding and h₀=[k:Q]max{1,h(A)}, pp. 640–641"
+url = "https://ems.press/content/serial-article-files/42941"
+fetched_from = "https://ems.press/content/serial-article-files/42941"
+fetched_at = "2026-10-24T09:31:03Z"
+sha256 = "7a3f602fa7b6c3eac612a6a9ca23032fb9b07740303a30198cd728e432b47d60"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layers 5–6"]
+authors = "Sinnou David, Patrice Philippon"
+title = "Minorations des hauteurs normalisées des sous-variétés de variétés abéliennes II"
+year = 2002
+
+[[source]]
+id = "masser-1989"
+locator_scheme = "theorem"
+locator = "Main Theorem and Scholium 1, pp. 413–424"
+url = "https://www.ams.org/journals/tran/1989-311-01/S0002-9947-1989-0974783-6/S0002-9947-1989-0974783-6.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1989-311-01/S0002-9947-1989-0974783-6/S0002-9947-1989-0974783-6.pdf"
+fetched_at = "2026-10-24T09:31:06Z"
+sha256 = "f61c4cb53abfacd36c10eaa420c319af059434a63df2177f1544c7cc08074d4a"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layers 5–6"]
+authors = "David W. Masser"
+title = "Specializations of finitely generated subgroups of abelian varieties"
+year = 1989
+
+[[source]]
+id = "david-philippon-2007"
+authors = "Sinnou David, Patrice Philippon"
+title = "Minorations des hauteurs normalisées des sous-variétés des puissances des courbes elliptiques"
+year = 2007
+doi = "10.1093/imrp/rpm006"
+url = "https://academic.oup.com/imrp/article-abstract/doi/10.1093/imrp/rpm006/840543"
+locator_scheme = "equation"
+locator = "Theorem 6.8 and equation (6.41)"
+cited_for = ["Section 5.3; controlled-polarization-embeddings supplier contract"]
+licence_class = "none"
+status = "uncertified"
+version_note = "Publisher marks full text as Get access; source-service retrieval returned HTTP 403; cited by published locator only. GGK restates the needed bounds at equation (A.1)."
+
+[[source]]
+id = "yamaki-strict-support"
+authors = "Kazuhiko Yamaki"
+title = "Strict supports of canonical measures and applications to the geometric Bogomolov conjecture"
+year = 2016
+venue = "Compositio Math. 152 (2016) 997-1040"
+doi = "10.1112/S0010437X15007721"
+arxiv = "1211.0406v6"
+locator_scheme = "theorem"
+locator = "Theorem E (= Corollary 7.22), pp. 3, 41; §§3.1–3.2, (3.0.13)–(3.0.14), pp. 12–15; §5.3, pp. 25–27; Proposition 5.12, p. 29; proof of Theorem 6.2, p. 31"
+url = "https://arxiv.org/abs/1211.0406v6"
+fetched_from = "https://arxiv.org/pdf/1211.0406v6"
+fetched_at = "2026-10-25T05:04:26Z"
+sha256 = "e572d23cf75ba8c311117d935dc4697eb27cff213f4916833946dcf78bdfa8ee"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Compositio Math. 152 (2016); read: arXiv 1211.0406v6 (19 November 2015), with manuscript page locators"
+cited_for = ["Exact supplier contracts; 9.12"]
+
+[[source]]
+id = "yuan-zhang-adelic"
+authors = "Xinyi Yuan, Shou-Wu Zhang"
+title = "Adelic line bundles on quasi-projective varieties"
+year = 2021
+arxiv = "2105.13587v9"
+locator_scheme = "theorem"
+locator = "Theorem 5.3.3, p. 158; Lemma 5.3.4, p. 159"
+url = "https://arxiv.org/abs/2105.13587v9"
+fetched_from = "https://arxiv.org/pdf/2105.13587v9"
+fetched_at = "2026-10-25T16:02:32Z"
+sha256 = "3de89c1736979c44592447edd3bc5a14be9202fc9a07a0ea9d158e422a25145a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v9"
+cited_for = ["7.2"]
