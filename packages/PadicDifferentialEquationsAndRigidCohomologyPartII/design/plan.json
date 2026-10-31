@@ -3974,28 +3974,52 @@
   ],
   "gaps": [
     {
-      "title": "G1: affine–generic dagger hull comparison",
-      "neededBy": [
-        "PadicDifferentialEquationsAndRigidCohomologyPartII:MS.5/affine-generic-hull"
-      ],
-      "detail": "DAD v4 Proposition 4.2.12, p.17, invokes compactness and a uniform p-primary torsion bound for an arbitrary injection into W⟨u⟩. In A_n, (pu^n)^j is not in pA_n but its image has norm p^(−j), so the asserted positive lower bound fails. The quotient W⟨u⟩/A_n has elements of unbounded p-power torsion. A Frobenius-specific strictness argument is needed. This is not a counterexample to the proposition. Curve MS uses Tsuzuki Proposition 6.1 and does not depend on this alternate node."
+      "slug": "extended-log-robba-growth",
+      "needs": "the logarithmic extension `R̃_log = R̃[log u]` of the extended Robba ring of §RD.0.34 with a Frobenius-equivariant injective extension of the embedding `R_log → R̃_log` of §RD.2.28, injectivity of `R̃^bd ⊗_(R^bd) R_log → R̃_log`, log-growth filtrations on `R`, `R_log`, `R̃` and `R̃_log` compatible with this embedding, and the theorem that a nonzero Frobenius eigenvector of slope `λ` in `R̃_log` has slope `λ ≥ 0` and is exactly of log-growth `λ` (Ohkubo, Lemmas 1.12–1.15, 2.10–2.14).",
+      "supplier": "PadicDifferentialEquationsAndRigidCohomology",
+      "section": "RD.0.34, RD.2.28"
     },
     {
-      "title": "G3: register the common arithmetic D-module and companion supplier contracts",
-      "neededBy": [
-        "PadicDifferentialEquationsAndRigidCohomologyPartII:MS.5/docile-lefschetz",
-        "PadicDifferentialEquationsAndRigidCohomologyPartII:MS.6/finite-field-inputs",
-        "PadicDifferentialEquationsAndRigidCohomologyPartII:MS.6/pure-hom-chebotarev"
-      ],
-      "detail": "The proposed ArithmeticDModules continuation has no registered stage. Its early common prefix must export generic mixed coefficient Chebotarev (PAPER-ABE-18/51), finite coefficient conventions and the AE localisation/vanishing argument proving Corollary 2.4 for arbitrary base tuples. Its weight and crystalline-companion inputs at AM.7 must export AE Theorem 2.7 and the irreducibility-preserving finite-set curves of Theorem 3.10 (after rank-one twist/untwist). Use the split briefs below to give these contracts one owner and stage ids. Do not import the entire DAD monodromy continuation or prove generic companion existence here."
+      "slug": "dejong-disc-robba-submodules",
+      "needs": "for a `(φ,∇)`-module `M` over `K[[t]]₀` with `k` perfect, every saturated `(φ,∇)`-submodule of `E† ⊗ M` is `E† ⊗ N` for a unique saturated `(φ,∇)`-submodule `N ⊆ M` with finite free quotient (de Jong 1998, Proposition 6.4, as used in Chiarellotto–Tsuzuki, proof of Lemma 5.7, and Ohkubo, Theorem 12.7).",
+      "supplier": "PadicDifferentialEquationsAndRigidCohomology",
+      "section": "RD.5.4"
     },
     {
-      "title": "G4: finite étale maps from curves onto the affine line",
-      "neededBy": [
-        "PadicDifferentialEquationsAndRigidCohomologyPartII:MS.5/etale-affine-line"
-      ],
-      "detail": "Kedlaya 2005, Theorem 1 (arXiv:math/0303382v3, p.1), cited in the proof of D'Addezio Theorem 4.2.13, gives for a geometrically reduced projective variety over any field of characteristic p a finite morphism to P^n, étale over A^n, sending a chosen lower-dimensional closed subscheme into the hyperplane at infinity. No atlas roadmap and neither library owns it; the review read its statement, not its proof. The node lies on the alternate D'Addezio route only: MS.5/curve-ms does not use it.",
-      "addedBy": "REV-DESIGN-PadicDifferentialEquationsAndRigidCohomologyPartII"
+      "slug": "unit-root-correspondence-perfect-base",
+      "needs": "for a perfect field `k` containing `𝔽_q`, `K` with `K^σ ⊗_(W(𝔽_q)) W(k) ≅ K` and `σ = id ⊗ Frob_q`, and a smooth connected curve `C` over `k`, an equivalence between unit-root convergent F-isocrystals on `C/K` and continuous `K^σ`-representations of `π_1(C)`, under which overconvergence corresponds to finite local monodromy at the points of `C̄ ∖ C` (Tsuzuki 1998, Theorems 4.2.6 and 7.2.3), extending §RD.3.48 beyond `ℚ_q`-coefficients and §RD.6.61 beyond finite fields.",
+      "supplier": "PadicDifferentialEquationsAndRigidCohomology",
+      "section": "RD.3.48, RD.6.61"
+    },
+    {
+      "slug": "legendre-kummer-extension",
+      "needs": "for `p ≡ 1 mod 4`, `C = P¹_(𝔽_p) ∖ {0, 1, ∞}`, `L†` the rank-two `H¹` of the Legendre family and `χ` the quadratic character of `w² = z(z − 1)`, the space `H¹_rig(C, L†(χ))` is two-dimensional with Frobenius slopes 0 and 2, its unit-root eigenvalue is `π_p²` for the unit root `π_p` of `y² = x³ − x`, and extensions of the constant line `O(π_p²)` by `L†(χ)` in F-`Isoc†(C)` are classified by the Frobenius-equivariant part of this `H¹` (Tsuzuki §3.9, pp. 21–22).",
+      "supplier": "PadicDifferentialEquationsAndRigidCohomology",
+      "section": "RD.6.47 (Layer RD.6)"
+    },
+    {
+      "slug": "irreducible-iota-purity",
+      "needs": "for every smooth connected `X` over `𝔽_q`, `K` with residue field `𝔽_q` and `σ_K = id`, and every field embedding `ι : K^alg → ℂ`, every irreducible overconvergent F-isocrystal on `X/K` is `ι`-pure of some real weight (Abe–Esnault, Theorem 2.7, restricted to F-`Isoc†`), extending §RD.6.77 beyond `ι`-real objects on curves.",
+      "supplier": "PadicDifferentialEquationsAndRigidCohomology",
+      "section": "RD.6.77"
+    },
+    {
+      "slug": "lefschetz-curves-irreducibility",
+      "needs": "for smooth connected `X` over `𝔽_q`, a finite extension `L` of `K`, an overconvergent F-isocrystal `M` on `X/K` with a `K`-algebra map `L → End(M)` that is irreducible among such objects, and a finite set `S` of closed points of `X`, there is a smooth curve `C → X` through every point of `S` (with a `k(α)`-rational point over each `α ∈ S`) on which `M|_C` is irreducible among objects with `L`-structure (Abe–Esnault, Theorem 3.10).",
+      "supplier": "PadicDifferentialEquationsAndRigidCohomology",
+      "section": "Layer RD.6"
+    },
+    {
+      "slug": "docile-curve-restriction",
+      "needs": "for a smooth connected projective `X̄` of dimension at least 2 over a perfect field `k`, a strict normal crossings divisor `Z`, `X = X̄ ∖ Z` and a smooth curve `C̄` that is a complete intersection of ample divisors in good position with respect to `Z`, restriction `H⁰(X, E) → H⁰(C̄ ∩ X, E|)` is an isomorphism for every overconvergent isocrystal `E` on `X` with unipotent monodromy along `Z` (Abe–Esnault, Corollary 2.4 with Remark 2.5).",
+      "supplier": "PadicDifferentialEquationsAndRigidCohomology",
+      "section": "RD.5.103"
+    },
+    {
+      "slug": "coefficient-linear-weil-ii",
+      "needs": "for an overconvergent F-isocrystal `E` on a separated `𝔽_q`-scheme with a `K`-algebra map `L → End(E)` (`L/K` finite), `ι`-mixed of weight `≤ w` for the `L`-linear Frobenius at every closed point, each `Hⁱ_(c,rig)(X, E)` with its `L`-linear Frobenius is `ι`-mixed of weight `≤ w + i` (the coefficient-linear form of §RD.6.85).",
+      "supplier": "PadicDifferentialEquationsAndRigidCohomology",
+      "section": "RD.6.85"
     }
   ],
   "coverage": [
