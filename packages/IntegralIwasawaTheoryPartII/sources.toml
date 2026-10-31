@@ -1,0 +1,89 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "IntegralIwasawaTheoryPartII"
+
+[[source]]
+id = "DKV16"
+authors = "Samit Dasgupta, Mahesh Kakde, Kevin Ventullo"
+title = "On the Gross-Stark Conjecture"
+year = 2016
+arxiv = "1605.08169v1"
+locator_scheme = "theorem"
+locator = "Theorem 3.2"
+url = "https://arxiv.org/abs/1605.08169v1"
+fetched_from = "https://arxiv.org/pdf/1605.08169v1"
+fetched_at = "2026-10-26T22:26:06Z"
+sha256 = "0bc900e2c7c16fa9aff1147ec138d121b4798fab3b4deb76eed415ba7f409a99"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["2.6", "Corrections to the sources"]
+
+[[source]]
+id = "DKV18"
+authors = "Samit Dasgupta, Mahesh Kakde, Kevin Ventullo"
+title = "On the Gross-Stark Conjecture"
+year = 2018
+doi = "10.4007/annals.2018.188.3.3"
+locator_scheme = "theorem"
+locator = "Theorem 1 and Conjectures 1-2, pp. 835-837; Propositions 2.1-2.2, pp. 843-845; Lemma 3.1 and Theorems 3.2, 3.3, 3.6, 3.8, pp. 848-856; Theorem 4.1 and Lemmas 4.2-4.9, pp. 857-865; §5 and Lemma 5.1, pp. 865-868"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v188-n3-p03-s.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v188-n3-p03-s.pdf"
+fetched_at = "2026-10-26T22:26:25Z"
+sha256 = "974e64272b1883923fac951f86f3491593543d050c8efaf739e53342623fb659"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["0.1", "0.2", "0.3", "0.4", "0.5", "0.7", "0.8", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8", "3.9", "3.10", "4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "4.9", "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "Corrections to the sources"]
+
+[[source]]
+id = "DDP11"
+authors = "Samit Dasgupta, Henri Darmon, Robert Pollack"
+title = "Hilbert modular forms and the Gross-Stark conjecture"
+year = 2011
+doi = "10.4007/annals.2011.174.1.12"
+locator_scheme = "theorem"
+locator = "Proposition 1.4 and Lemma 1.5, pp. 455-456; Lemma 2.9 and Corollary 2.10, pp. 469-470; Propositions 3.3-3.4 and Lemma 3.5, pp. 472-474"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v174-n1-p12-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v174-n1-p12-p.pdf"
+fetched_at = "2026-10-26T22:26:26Z"
+sha256 = "ea435711bca5526cdc06e57ae33fa485eebf486274b0899dc808b83bff567854"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["1.2", "1.7", "2.6"]
+
+[[source]]
+id = "CD14"
+authors = "Pierre Charollois, Samit Dasgupta"
+title = "Integral Eisenstein cocycles on GL_n, I: Sczech's cocycle and p-adic L-functions of totally real fields"
+year = 2014
+locator_scheme = "theorem"
+locator = "Theorems 2-4, pp. 3-6; Theorem 1.1, p. 9; Theorem 3.1, p. 22; Proposition 4.1 and Theorem 4.2, p. 23; Proposition 4.3, p. 26; (79)-(81), pp. 28-29; Theorems 5.1-5.2 and Lemma 5.3, pp. 30-31"
+version_note = "Author copy dated 4 November 2014; locators use its pagination. Published in Cambridge Journal of Mathematics 2 (2014), 49-90."
+url = "https://sites.math.duke.edu/~dasgupta/papers/Charollois-Dasgupta.pdf"
+fetched_from = "https://sites.math.duke.edu/~dasgupta/papers/Charollois-Dasgupta.pdf"
+fetched_at = "2026-10-26T22:26:29Z"
+sha256 = "251d025b3f2ead219abd22d2d686375255131f558debc9bf385e9cd2018200ef"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["0.6", "0.7", "Corrections to the sources"]
+
+[[source]]
+id = "V15"
+authors = "Kevin Ventullo"
+title = "On the rank one abelian Gross-Stark conjecture"
+year = 2013
+arxiv = "1308.2261v1"
+locator_scheme = "theorem"
+locator = "Theorem 2, p. 14; §§4.1-4.2, pp. 15-20, including Lemmas 3-4"
+url = "https://arxiv.org/abs/1308.2261v1"
+fetched_from = "https://arxiv.org/pdf/1308.2261v1"
+fetched_at = "2026-10-26T22:26:32Z"
+sha256 = "6c9ae95e464110ec7210f18941fc19d7d02b6851eaab414d3bb1c3cd9cd7647a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1; published in Commentarii Mathematici Helvetici 90 (2015), 939-963, with the same numbering of Theorem 2 and §4"
+cited_for = ["2.3", "Corrections to the sources"]
