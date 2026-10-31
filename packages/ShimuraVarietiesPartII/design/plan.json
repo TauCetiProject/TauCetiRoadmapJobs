@@ -3773,85 +3773,11 @@
   ],
   "gaps": [
     {
-      "id": "gap:ffg-very-good",
-      "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII",
-      "section": "TD.2/very-good",
-      "needs": "For a good integral Hodge embedding at a geometric local-model point in odd residue characteristic, supply tensor preservation by the canonical first-order display comparison, invariant under change of cutting tensor family.",
-      "stageId": "ShimuraVarietiesPartII",
-      "neededBy": [
-        "ShimuraVarietiesPartII:SV2.1/adapted-branch-interface",
-        "ShimuraVarietiesPartII:SV2.5/ordinary-very-good"
-      ]
-    },
-    {
-      "id": "gap:ffg-versal",
-      "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII",
-      "section": "TD.4/versal-adapted",
-      "needs": "For a marked p-divisible group over an algebraically closed field of characteristic p>2 and an embedding very good at its local-model point, supply the normal versal adapted deformation ring with its integral-point criterion and tensor-compatible universal display, including the p-adic completeness and logarithmic-tail argument.",
-      "stageId": "ShimuraVarietiesPartII",
-      "neededBy": [
-        "ShimuraVarietiesPartII:SV2.1/adapted-branch-interface"
-      ]
-    },
-    {
-      "id": "gap:ffg-integral-tensors",
-      "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII",
-      "section": "TD.4/crystalline-tensor-integrality; TD.4/integral-tensor-frame",
-      "needs": "For the prescribed smooth full-fixer tensor stabilizer and a crystalline lift over a finite totally ramified extension of Frac W(k), supply integral Dieudonné and Witt tensor frames and the cocharacter filtration, without a very-goodness hypothesis.",
-      "stageId": "ShimuraVarietiesPartII",
-      "neededBy": [
-        "ShimuraVarietiesPartII:SV2.1/integral-crystalline-frames",
-        "ShimuraVarietiesPartII:SV2.4/newton-admissibility"
-      ]
-    },
-    {
-      "id": "gap:ffg-nonexceptional",
-      "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII",
-      "section": "TD.3/nonexceptional-embedding",
-      "needs": "For a local Hodge pair with neither quaternionic D nor type A of division index divisible by p, supply the very-good symplectic integral embedding under its R-smoothness and central hypotheses.",
-      "stageId": "ShimuraVarietiesPartII",
-      "neededBy": [
-        "ShimuraVarietiesPartII:SV2.2/nonexceptional-cover",
-        "ShimuraVarietiesPartII:SV2.5/matched-integral-comparison"
-      ]
-    },
-    {
-      "id": "gap:ffg-exceptional",
-      "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII",
-      "section": "TD.3/D-central-cover; TD.3/A-central-cover",
-      "needs": "Supply the very-good central-cover constructions in types D and exceptional A at p>2, with the exact smooth-intersection and centre hypotheses and without torsion-free coinvariants in the exceptional type-A case.",
-      "stageId": "ShimuraVarietiesPartII",
-      "neededBy": [
-        "ShimuraVarietiesPartII:SV2.2/exceptional-cover"
-      ]
-    },
-    {
-      "id": "gap:ffg-polarized-chain",
-      "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII",
-      "section": "TD.3/polarized-chain",
-      "needs": "For the symplectic lattice data of the auxiliary Hodge covers, supply a self-dual periodic chain with the stated very-good tensor embedding and correct induced fixer.",
-      "stageId": "ShimuraVarietiesPartII",
-      "neededBy": [
-        "ShimuraVarietiesPartII:SV2.2/nonexceptional-cover",
-        "ShimuraVarietiesPartII:SV2.2/exceptional-cover",
-        "ShimuraVarietiesPartII:SV2.5/matched-integral-comparison"
-      ]
-    },
-    {
-      "id": "gap:ffg-ordinary-lift",
-      "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII",
-      "section": "TD.6/ordinary-adapted-lift",
-      "needs": "For an ordinary tensor p-divisible group over F̄_p, p>2, with connected fixer and a pointwise very-good embedding, supply an adapted lift over a finite extension of breve Q_p carrying the full J_b(Q_p)-action by quasi-isogenies.",
-      "stageId": "ShimuraVarietiesPartII",
-      "neededBy": [
-        "ShimuraVarietiesPartII:SV2.5/ordinary-hodge-special-lift"
-      ]
-    },
-    {
+      "slug": "local-models",
       "id": "gap:local-models",
       "supplier": "GeometricSatakeAndFusionPartII",
-      "section": "LM.3/canonical-abelian-model; LM.7/general-normal-representative",
-      "needs": "For the odd-p minuscule Hodge and abelian-type fixer data used here, supply the canonical normal flat local model, central and adjoint comparisons, reduced special fibre with normal Schubert components, integral very-special special fibre and smooth extremal orbit, including the ramified cases.",
+      "section": "LM.3/canonical-abelian-model and LM.7/general-normal-representative, very-special special fibre (new statement)",
+      "needs": "For a very special parahoric and odd p, prove that the geometric special fibre of the canonical normal local model of LM.3/canonical-abelian-model and LM.7/general-normal-representative is integral, the μ-admissible set having a unique extremal element, and that the extremal Schubert stratum lies in the smooth locus, including ramified groups (KZ Theorem 4.4.4 and its proof, p.43; §5.2.1, p.49).",
       "stageId": "ShimuraVarietiesPartII",
       "neededBy": [
         "ShimuraVarietiesPartII:SV2.1/de-rham-frame-diagram",
@@ -3867,16 +3793,7 @@
       ]
     },
     {
-      "id": "gap:same-field-schubert-curves",
-      "supplier": "GeometricSatakeAndFusionPartII",
-      "section": "LM.5/same-field-curve",
-      "needs": "At an F_q-rational point of a nonextremal Schubert stratum of the very-special local model, supply a curve over the same F_q through that point with dense open in higher strata, including the ramified rank-one cases.",
-      "stageId": "ShimuraVarietiesPartII",
-      "neededBy": [
-        "ShimuraVarietiesPartII:SV2.6/same-field-curves"
-      ]
-    },
-    {
+      "slug": "open-curve-companions",
       "id": "gap:open-curve-companions",
       "supplier": "GlobalShtukasAndFunctionFieldLanglands",
       "section": "§§6.1–6.2, Constant twists and Compatible systems on curves",
@@ -3887,6 +3804,7 @@
       ]
     },
     {
+      "slug": "integral-local-shimura",
       "id": "gap:integral-local-shimura",
       "supplier": "HeckeStacksAndLocalShtukas",
       "section": "§HS2, especially §§HS2.1, HS2.13",
@@ -3899,6 +3817,7 @@
       ]
     },
     {
+      "slug": "general-connected-reduction",
       "id": "gap:general-connected-reduction",
       "supplier": "HeckeStacksAndLocalShtukas",
       "section": "§HS2",
@@ -3909,6 +3828,7 @@
       ]
     },
     {
+      "slug": "cr-crystalline-parallel-transport",
       "id": "gap:cr-crystalline-parallel-transport",
       "supplier": "CrystallineCohomology",
       "section": "§CR.7.3, rigid-analytic transport (new target)",
@@ -3919,6 +3839,7 @@
       ]
     },
     {
+      "slug": "cr-isocrystal-tensor-descent",
       "id": "gap:cr-isocrystal-tensor-descent",
       "supplier": "CrystallineCohomology",
       "section": "§CR.7.1, log coefficients and descent (new target)",
@@ -3929,6 +3850,7 @@
       ]
     },
     {
+      "slug": "noot-coarse-comparison",
       "id": "gap:noot-coarse-comparison",
       "supplier": "ArithmeticGaloisRepresentations",
       "section": "Layer 6",
@@ -3939,6 +3861,7 @@
       ]
     },
     {
+      "slug": "finite-field-bertini",
       "id": "gap:finite-field-bertini",
       "supplier": "AlgebraicModuliForArithmeticGeometry",
       "section": "Layer 1",
@@ -3949,6 +3872,7 @@
       ]
     },
     {
+      "slug": "rational-stack-presentation",
       "id": "gap:rational-stack-presentation",
       "supplier": "AlgebraicModuliForArithmeticGeometry",
       "section": "Layer 4",
@@ -3959,6 +3883,7 @@
       ]
     },
     {
+      "slug": "component-specialization",
       "id": "gap:component-specialization",
       "supplier": "ShimuraCompactifications",
       "section": "Layer C5, Hodge-type integral extension (new section)",
@@ -3969,6 +3894,7 @@
       ]
     },
     {
+      "slug": "hodge-cover-refinement",
       "id": "gap:hodge-cover-refinement",
       "supplier": "ShimuraData",
       "section": "Layer 4",
@@ -3983,6 +3909,7 @@
       ]
     },
     {
+      "slug": "multiplier-exact-sequences",
       "id": "gap:multiplier-exact-sequences",
       "supplier": "ShimuraData",
       "section": "Layer 4, Hodge-type multiplier sequences (new target)",
@@ -3996,6 +3923,7 @@
       ]
     },
     {
+      "slug": "matched-fibre-product-centre",
       "id": "gap:matched-fibre-product-centre",
       "supplier": "ShimuraData",
       "section": "Layer 4, matched fibre products (new target)",
@@ -4008,6 +3936,7 @@
       ]
     },
     {
+      "slug": "fundamental-invariant-form",
       "id": "gap:fundamental-invariant-form",
       "supplier": "ShimuraData",
       "section": "Layer 4, fundamental Hodge embeddings (new target)",
@@ -4019,66 +3948,11 @@
       ]
     },
     {
-      "id": "gap:rg3-conjugacy-quotient",
-      "supplier": "ReductiveGroupsPartIII",
-      "section": "RG3.0/conjugacy-quotient",
-      "needs": "For a connected reductive group over a characteristic-zero field, supply the affine conjugacy quotient with field base change and geometric semisimple-class interpretation.",
-      "stageId": "ShimuraVarietiesPartII",
-      "neededBy": [
-        "ShimuraVarietiesPartII:SV2.7/frobenius-quotient-point"
-      ],
-      "availability": "board design outside the prescribed merge order"
-    },
-    {
-      "id": "gap:rg3-character-separation",
-      "supplier": "ReductiveGroupsPartIII",
-      "section": "RG3.0/character-separation",
-      "needs": "For semisimple geometric points of a connected reductive group in characteristic zero, supply separation of their quotient classes by all algebraic characters.",
-      "stageId": "ShimuraVarietiesPartII",
-      "neededBy": [
-        "ShimuraVarietiesPartII:SV2.7/algebraic-common-class"
-      ],
-      "availability": "board design outside the prescribed merge order"
-    },
-    {
-      "id": "gap:rg3-faithful-quotient-finite",
-      "supplier": "ReductiveGroupsPartIII",
-      "section": "RG3.0/faithful-quotient-finite",
-      "needs": "For a faithful finite-dimensional representation of a connected reductive group in characteristic zero, supply finiteness of its map to the general-linear conjugacy quotient.",
-      "stageId": "ShimuraVarietiesPartII",
-      "neededBy": [
-        "ShimuraVarietiesPartII:SV2.7/representationwise-independence",
-        "ShimuraVarietiesPartII:SV2.7/algebraic-common-class"
-      ],
-      "availability": "board design outside the prescribed merge order"
-    },
-    {
-      "id": "gap:rg3-degree-one-residue-descent",
-      "supplier": "ReductiveGroupsPartIII",
-      "section": "RG3.1/degree-one-residue-descent",
-      "needs": "For a number field having a degree-one place over almost every rational prime, prove it is Q and apply this to descent of an algebraic quotient point with rational local realizations.",
-      "stageId": "ShimuraVarietiesPartII",
-      "neededBy": [
-        "ShimuraVarietiesPartII:SV2.7/common-frobenius-class"
-      ],
-      "availability": "board design outside the prescribed merge order"
-    },
-    {
-      "id": "gap:rg3-elliptic-maximal-torus",
-      "supplier": "ReductiveGroupsPartIII",
-      "section": "RG3.2/elliptic-maximal-torus",
-      "needs": "For the rational-Newton special pair in the stated real-elliptic and p-adic transfer setup, supply the global maximal torus with the prescribed local transfers.",
-      "stageId": "ShimuraVarietiesPartII",
-      "neededBy": [
-        "ShimuraVarietiesPartII:SV2.4/special-reduction-nonempty"
-      ],
-      "availability": "board design outside the prescribed merge order"
-    },
-    {
+      "slug": "rg3-cyclic-torus-and-neatness",
       "id": "gap:rg3-cyclic-torus-and-neatness",
       "supplier": "ReductiveGroupsPartIII",
-      "section": "RG3.3/cyclic-torus-and-neatness",
-      "needs": "For a semisimple rational algebraic-group point, supply a sufficiently divisible power with connected cyclic Zariski closure and the stable-centralizer comparison.",
+      "section": "RG3.3/cyclic-torus-and-neatness, stable centralizers (new statement)",
+      "needs": "With the connected cyclic closure of RG3.3/cyclic-torus-and-neatness, prove that for a semisimple γ∈G(Q) the connected centralizers Z_G(γ^n)° are constant for n divisible enough and then equal the centralizer of the torus generated by γ^n, compatibly with base change to Q_ℓ and Q_p (HT §§2.1.5–2.1.7, pp.22–24).",
       "stageId": "ShimuraVarietiesPartII",
       "neededBy": [
         "ShimuraVarietiesPartII:SV2.4/isogeny-realizations"
@@ -4086,6 +3960,7 @@
       "availability": "board design outside the prescribed merge order"
     },
     {
+      "slug": "rg3-r-smooth-tori",
       "id": "gap:rg3-r-smooth-tori",
       "supplier": "ReductiveGroupsPartIII",
       "section": "RG3.2, R-smooth tori (new target)",
@@ -4101,6 +3976,7 @@
       "availability": "board design outside the prescribed merge order"
     },
     {
+      "slug": "rg3-r-smooth-abelian-type",
       "id": "gap:rg3-r-smooth-abelian-type",
       "supplier": "ReductiveGroupsPartIII",
       "section": "RG3.2, R-smooth centralizers (new target)",
@@ -4115,6 +3991,7 @@
       "availability": "board design outside the prescribed merge order"
     },
     {
+      "slug": "rg3-stabilizer-closed-immersion",
       "id": "gap:rg3-stabilizer-closed-immersion",
       "supplier": "ReductiveGroupsPartIII",
       "section": "RG3.2, stabilizer closed immersions (new target)",
@@ -4127,10 +4004,11 @@
       "availability": "board design outside the prescribed merge order"
     },
     {
+      "slug": "rg3-conj-prime-centralizer-dimension",
       "id": "gap:rg3-conj-prime-centralizer-dimension",
       "supplier": "ReductiveGroupsPartIII",
-      "section": "RG3.0, the quotient Conj′ (new target)",
-      "needs": "For a connected reductive group H over a field F of characteristic zero, with Out′(H) the finite F-group scheme acting on Conj(H) through the orthogonal outer automorphisms of the geometric simple factors isomorphic to SO(2n), n ≥ 4, and Conj′(H) the quotient by this action (HT §2.1.8, p.24; proof of Corollary 2.1.9, pp.24–25), prove that two semisimple geometric points with the same image in Conj′(H) have centralizers of the same dimension.",
+      "section": "RG3.0/orthogonal-outer-action, centralizer dimension (new statement)",
+      "needs": "With Out′(H), Conj′(H) and Aut′(H) as in RG3.0/orthogonal-outer-action, prove that two semisimple geometric points with the same image in Conj′(H) have centralizers of the same dimension (HT §2.1.8, p.24; proof of Corollary 2.1.9, pp.24–25).",
       "stageId": "ShimuraVarietiesPartII",
       "neededBy": [
         "ShimuraVarietiesPartII:SV2.4/all-prime-tate-comparison"
@@ -4138,16 +4016,18 @@
       "availability": "board design outside the prescribed merge order"
     },
     {
+      "slug": "compact-quotient-borel",
       "id": "gap:compact-quotient-borel",
       "supplier": "ReductiveGroupsPartIII",
       "section": "RG3.2, required split-group extension",
-      "needs": "For a connected split reductive group over a nonarchimedean local field and a reductive subgroup with compact homogeneous quotient, supply the Borel-containment argument used in K17 Proposition 2.1.6 and the resulting equality for a reductive centralizer.",
+      "needs": "For a connected split reductive group over a nonarchimedean local field and a reductive subgroup with compact homogeneous quotient, supply the Borel-containment argument used in K17 Corollary 2.1.7, p.31 and the resulting equality for a reductive centralizer.",
       "stageId": "ShimuraVarietiesPartII",
       "neededBy": [
         "ShimuraVarietiesPartII:SV2.4/auxiliary-prime-rank"
       ]
     },
     {
+      "slug": "arbitrary-dvr-good-reduction",
       "id": "gap:arbitrary-dvr-good-reduction",
       "supplier": "NeronModelsAndSemistableAbelianVarieties",
       "section": "§§5.1–5.2, extension beyond excellent traits",
