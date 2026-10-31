@@ -1,0 +1,278 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AutomorphicBundlesPartII"
+
+[[source]]
+id = "CG18"
+authors = "F. Calegari and D. Geraghty"
+title = "Modularity lifting beyond the Taylor–Wiles method"
+year = 2018
+locator_scheme = "section"
+locator = "§7.2, pp. 395–401 (PDF pp. 99–105)"
+cited_for = ["Layer 1", "Layer 2", "Layer 4", "Layer 5"]
+url = "https://www.math.uchicago.edu/~fcale/papers/CG.pdf"
+fetched_from = "https://www.math.uchicago.edu/~fcale/papers/CG.pdf"
+fetched_at = "2026-10-23T22:36:15Z"
+sha256 = "c0ba8de04d5ee92fe1a967f9487df6cb49295590dfd03762a9150a92838225c5"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "Invent. Math. 211 (2018), 297–433; author PDF, 137 pages"
+
+[[source]]
+id = "CG20"
+authors = "F. Calegari and D. Geraghty"
+title = "Minimal modularity lifting for non-regular symplectic representations"
+year = 2020
+locator_scheme = "section"
+locator = "§5.3, pp. 22–31; §5.5, pp. 33–34; §6.1–6.2, pp. 36, 39; §7.2, pp. 51–55; Appendix A.3.2, pp. 86–88"
+cited_for = ["Layer 1", "Layer 2", "Layer 4", "Layer 5", "Layer 6", "Layer 7", "Layer 8"]
+url = "https://www.math.uchicago.edu/~fcale/papers/Siegel.pdf"
+fetched_from = "https://www.math.uchicago.edu/~fcale/papers/Siegel.pdf"
+fetched_at = "2026-10-23T22:36:17Z"
+sha256 = "fff305877c7e6b9d32ca9a8b4a56f7f3b343695fc737184d1a3a1b78f195cfa5"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "Author manuscript served at the recorded URL, 96 pages; citations use its printed pages 22–55 and 86–88, not publication pages 822–855 and 886–888; theorem numbers used here were read in that manuscript."
+
+[[source]]
+id = "P20"
+authors = "V. Pilloni"
+title = "Higher coherent cohomology and p-adic modular forms of singular weights"
+year = 2020
+locator_scheme = "section"
+locator = "§4.3, p. 19; §5.3, pp. 24–25; §6.2.2, p. 30; §14.8–14.9, pp. 101–105; §15.2, pp. 108–110"
+cited_for = ["Layer 3", "Layer 4", "Layer 5", "Layer 6", "Layer 7", "Layer 8"]
+url = "https://www.imo.universite-paris-saclay.fr/~pilloni/complexhidatheorygsp4.pdf"
+fetched_from = "https://www.imo.universite-paris-saclay.fr/~vincent.pilloni/complexhidatheorygsp4.pdf"
+fetched_at = "2026-10-23T22:36:20Z"
+sha256 = "4c05724efeab1dbbb108f980ec9a722127d2a8cd2abf6e8c2a6a2251cf0f9f58"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "Duke Math. J. 169 (2020), 1647–1807; cleared author manuscript, 17 June 2019, 113 pages. Locators below use manuscript pagination."
+
+[[source]]
+id = "BP26"
+authors = "G. Boxer and V. Pilloni"
+title = "Higher Hida theory for Siegel modular forms"
+year = 2026
+locator_scheme = "section"
+locator = "§1.1, p. 2; §1.3.3–1.3.8, pp. 3–4; §2.1.7–2.1.22, pp. 7–9; §2.2.9 and §2.3.12, pp. 14, 17; §2.6–2.7, pp. 21–24; §2.9.1–2.9.9, pp. 27–29; §4.3.1, pp. 46–48, Propositions 4.3.9 and 4.3.11; §5.6, p. 58"
+cited_for = ["Layer 1", "Layer 2", "Layer 3"]
+url = "https://www.imo.universite-paris-saclay.fr/~pilloni/higherhidaSiegel.pdf"
+fetched_from = "https://www.imo.universite-paris-saclay.fr/~vincent.pilloni/higherhidaSiegel.pdf"
+fetched_at = "2026-10-23T22:36:22Z"
+sha256 = "af70d084612b1b75761694923ef2395752d23b41e0b8b458910d096df4c8c3c6"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "Invent. Math. 244 (2026), 45–141; author manuscript dated 5 November 2025, 65 pages; locators use manuscript pages"
+
+[[source]]
+id = "Sch15"
+authors = "P. Scholze"
+title = "On torsion in the cohomology of locally symmetric varieties"
+year = 2015
+locator_scheme = "section"
+locator = "Corollary V.1.7 and its proof, manuscript p. 83; published Corollary 5.1.7 and preceding paragraph, pp. 1035–1036"
+cited_for = ["§6.8"]
+arxiv = "1306.2070v2"
+url = "https://arxiv.org/abs/1306.2070v2"
+fetched_from = "https://arxiv.org/pdf/1306.2070v2"
+fetched_at = "2026-10-23T22:36:28Z"
+sha256 = "e15abf4e7ab3e400ecaae963e5ccd80b340919d8499ebfde5b55f2ceb83ab285"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "arXiv v2; Ann. of Math. 182 (2015), 945–1066; cleared arXiv manuscript uses chapter V and Corollary V.1.7, p. 83; published §5.1, pp. 1035–1036"
+
+[[source]]
+id = "Su24"
+authors = "J. Su"
+title = "Coherent cohomology of Shimura varieties and automorphic forms"
+year = 2024
+locator_scheme = "section"
+locator = "§1.1–1.1.2, pp. 6–10; Propositions 3.14 and 3.16, pp. 36–38; Proposition 4.1, p. 38; §5, Lemmas 5.1–5.5 and Theorem 5.7, pp. 54–55"
+cited_for = ["Layer 6"]
+doi = "10.24033/asens.2586"
+arxiv = "1810.12056v2"
+url = "https://arxiv.org/abs/1810.12056v2"
+fetched_from = "https://arxiv.org/pdf/1810.12056v2"
+fetched_at = "2026-10-23T22:36:33Z"
+sha256 = "5f115a3a9e7e6a7aa3eb2c11db584367ff37d57c3189ed764fe84bd542f162a9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "arXiv v2; Ann. Sci. ENS 57 (2024), 1039–1099; arXiv:1810.12056v2, 29 July 2024; locators use preprint pages"
+
+[[source]]
+id = "Lan17"
+authors = "K.-W. Lan"
+title = "Integral models of toroidal compactifications with projective cone decompositions"
+year = 2017
+locator_scheme = "section"
+locator = "§7, Propositions 7.5 and 7.15, manuscript pp. 28–32; Definition 8.5, Theorem 8.6 and Remarks 8.9–8.10, manuscript pp. 34–35"
+cited_for = ["Layer 5"]
+doi = "10.1093/imrn/rnw123"
+url = "https://www.kwlan.org/articles/cpt-ram-nbl.pdf"
+fetched_from = "https://www.kwlan.org/articles/cpt-ram-nbl.pdf"
+fetched_at = "2026-10-23T22:36:35Z"
+sha256 = "ff2229d32fc6dd99174d8ff392ebdf6c93c3a455118bd7d54f54a74a967d31ac"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "Int. Math. Res. Not. 2017, no. 11, 3237–3280; corrected author manuscript, 35 pages; published errata inspected"
+
+[[source]]
+id = "LanSuh"
+authors = "K.-W. Lan and J. Suh"
+title = "Vanishing theorems for torsion automorphic sheaves on general PEL-type Shimura varieties"
+year = 2013
+locator_scheme = "section"
+locator = "Theorem 3.24, pp. 20–21; §7.2–7.4, Propositions 7.16–7.21, Theorem 7.22 and Corollaries 7.23–7.25, manuscript pp. 40–44"
+cited_for = ["Layer 5"]
+doi = "10.1016/j.aim.2013.04.004"
+url = "https://www.kwlan.org/articles/van-tor-aut-gen.pdf"
+fetched_from = "https://www.kwlan.org/articles/van-tor-aut-gen.pdf"
+fetched_at = "2026-10-23T22:36:36Z"
+sha256 = "e2c8d2ef4d6eb22bc2860c02c3ca78014c29cb537c57d2dac132945d9e90614e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "Adv. Math. 242 (2013), 228–286; author manuscript, 57 pages"
+
+[[source]]
+id = "HZ01"
+authors = "M. Harris and S. Zucker"
+title = "Boundary cohomology of Shimura varieties, III: coherent cohomology on higher-rank boundary strata and applications to Hodge theory"
+year = 2001
+locator_scheme = "section"
+locator = "§3.2, equations (3.2.1)–(3.2.8) and Corollary 3.2.9, pp. 61–63"
+cited_for = ["Layer 8"]
+doi = "10.24033/msmf.398"
+url = "https://numdam.org/item/MSMF_2001_2_85__1_0/"
+fetched_from = "https://www.numdam.org/item/MSMF_2001_2_85__1_0.pdf"
+fetched_at = "2026-10-23T22:36:39Z"
+sha256 = "0f2a71eaee329f9560a69d53d817974003b94633f580decbdb5cf084c2bd1478"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "Mém. Soc. Math. France (N.S.) 85 (2001); doi:10.24033/msmf.398"
+
+[[source]]
+id = "BR16"
+authors = "R. Brasca and G. Rosso"
+title = "Eigenvarieties for non-cuspidal modular forms over certain PEL Shimura varieties"
+year = 2016
+locator_scheme = "section"
+locator = "Definition 1.9, Theorem 1.12 and Proposition 1.14, manuscript pp. 9–12"
+cited_for = ["§8.5"]
+arxiv = "1605.05065v1"
+url = "https://arxiv.org/abs/1605.05065v1"
+fetched_from = "https://arxiv.org/pdf/1605.05065v1"
+fetched_at = "2026-10-23T22:36:43Z"
+sha256 = "0ce608bb46acab36a1de3f4985a6e8f243bb9a3e56996c1d02d0ae20cc866d73"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "arXiv v1; arXiv:1605.05065v1, 17 May 2016; Proposition 1.14 is numbered 1.5.8 in the version cited by BCGP21"
+
+[[source]]
+id = "Lan17err"
+authors = "K.-W. Lan"
+title = "Errata to Integral models of toroidal compactifications with projective cone decompositions"
+year = 2017
+locator_scheme = "section"
+locator = "Items (1)–(3), p. 1"
+cited_for = ["Layer 5"]
+url = "https://www.kwlan.org/articles/cpt-ram-nbl-err.pdf"
+fetched_from = "https://www.kwlan.org/articles/cpt-ram-nbl-err.pdf"
+fetched_at = "2026-10-23T22:36:43Z"
+sha256 = "e0ecf94c74332660867965dc9877836ef97f2a03161c53b5f0ff1a1a7f616b04"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "Author’s one-page published errata, linked from the author publication list"
+
+[[source]]
+id = "LanSuhErr"
+authors = "K.-W. Lan and J. Suh"
+title = "Errata to Vanishing theorems for torsion automorphic sheaves on general PEL-type Shimura varieties"
+year = 2013
+locator_scheme = "section"
+locator = "Items (1)–(9), pp. 1–2"
+cited_for = ["Layer 5"]
+url = "https://www.kwlan.org/articles/van-tor-aut-gen-err.pdf"
+fetched_from = "https://www.kwlan.org/articles/van-tor-aut-gen-err.pdf"
+fetched_at = "2026-10-23T22:36:43Z"
+sha256 = "e18857bb4a282b2a4e51291c11cd525ded8a1b3cda7fb696b50090034780d478"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "Authors’ two-page published errata, linked from the author publication list"
+
+[[source]]
+id = "BCGP21"
+authors = "G. Boxer, F. Calegari, T. Gee and V. Pilloni"
+title = "Abelian surfaces over totally real fields are potentially modular"
+year = 2021
+locator_scheme = "section"
+locator = "Lemma 2.9.1 and Theorem 2.9.3, pp. 197–198; Sections 3.9–3.10, pp. 226–240"
+cited_for = ["Layer 3", "Layer 4", "Layer 5", "Layer 6", "Layer 8"]
+doi = "10.1007/s10240-021-00128-2"
+url = "https://pmihes.centre-mersenne.org/item/10.1007/s10240-021-00128-2.pdf"
+fetched_from = "https://pmihes.centre-mersenne.org/item/10.1007/s10240-021-00128-2.pdf"
+fetched_at = "2026-10-23T22:38:43Z"
+sha256 = "b4cc8b016615bcaf4b92bdf826ec1e285f6aca842ebd9f13712e1c498f8454af"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "Publ. Math. IHÉS 134 (2021), 153–501; publisher PDF; locators use printed pagination"
+
+[[source]]
+id = "H90"
+authors = "M. Harris"
+title = "Automorphic forms and the cohomology of vector bundles on Shimura varieties"
+year = 1990
+locator_scheme = "section"
+locator = "Proposition 2.2 and §§2.3–2.7, pp. 53–59; §§3.0–3.6, pp. 59–64"
+cited_for = ["Layer 6"]
+url = "https://www.jmilne.org/math/Books/AA1988b.pdf"
+fetched_from = "https://www.jmilne.org/math/Books/AA1988b.pdf"
+fetched_at = "2026-10-23T22:58:04Z"
+sha256 = "ead5b841dbafb65c1796f8dc7d4f331271947b63b3ef2923efa1cdadf5bff62d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+version_note = "Automorphic Forms, Shimura Varieties, and L-functions II, Perspectives in Mathematics 11 (1990), pp. 41–91; public scan hosted by J. S. Milne; printed pagination; image-only 404-page volume, recognized by source-service OCR; printed Harris pagination 41–91 is PDF pagination 53–103, and the cited Theorem 2.7 is H90 line 2242, Proposition 2.7.2 is H90 line 2268."
+
+[[source]]
+id = "GK19"
+authors = "W. Goldring and J.-S. Koskivirta"
+title = "Strata Hasse invariants, Hecke algebras and Galois representations"
+year = 2019
+locator_scheme = "section"
+locator = "Theorem 10.1.2, Remark 10.1.3 and Corollary 10.1.4, pp. 962–963"
+cited_for = ["Layer 7"]
+doi = "10.1007/s00222-019-00882-5"
+url = "https://link.springer.com/article/10.1007/s00222-019-00882-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text; Invent. Math. 217 (2019), 887–984; published open-access PDF; printed pagination"
+
+[[source]]
+id = "CS19"
+authors = "P. Scholze (joint work with D. Clausen)"
+title = "Lectures on condensed mathematics"
+year = 2019
+locator_scheme = "theorem"
+locator = "Definition 9.1, pp. 62–63; Theorem 9.8, pp. 65–70; Proposition 11.2, p. 73; Definition 11.3 and Proposition 11.4, p. 74"
+url = "https://www.math.uni-bonn.de/people/scholze/Condensed.pdf"
+fetched_from = "https://www.math.uni-bonn.de/people/scholze/Condensed.pdf"
+fetched_at = "2026-10-25T02:31:47Z"
+sha256 = "9f431c2f59b4a9764a221ba2acb30b1abeb8b589e90516ab948efc96135bc5e1"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["3.0a"]
