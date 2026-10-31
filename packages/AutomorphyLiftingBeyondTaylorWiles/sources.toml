@@ -1,0 +1,57 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AutomorphyLiftingBeyondTaylorWiles"
+
+[[source]]
+id = "CG18"
+authors = "Frank Calegari and David Geraghty"
+title = "Modularity lifting beyond the Taylor–Wiles method"
+year = 2018
+arxiv = "1207.4224"
+version_note = "Published-layout author copy; all README locators use its section and printed page numbers; the preprint numbers its final three sections of §9 differently."
+doi = "10.1007/s00222-017-0749-x"
+locator_scheme = "theorem"
+locator = "Theorems 5.16 and 9.19; Sections 6–9, published pp. 383–428"
+url = "https://www.math.uchicago.edu/~fcale/papers/CG.pdf"
+fetched_from = "https://www.math.uchicago.edu/~fcale/papers/CG.pdf"
+fetched_at = "2026-10-23T20:34:33Z"
+sha256 = "c0ba8de04d5ee92fe1a967f9487df6cb49295590dfd03762a9150a92838225c5"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["Sections 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 4.1, 4.2, 4.3, 4.4, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9, 5.10"]
+
+[[source]]
+id = "CGH20"
+authors = "Frank Calegari, David Geraghty and Michael Harris"
+title = "Bloch–Kato conjectures for automorphic motives"
+year = 2020
+arxiv = "1907.08694v1"
+version_note = "Read arXiv v1; Theorem 1.2, Lemma 3.1 and Theorem 3.2 correspond to published A.2, A.3 and A.4."
+locator_scheme = "theorem"
+locator = "Theorems 1.2 and 3.2; Lemma 3.1; Section 4, arXiv v1 pp. 2–8"
+url = "https://arxiv.org/abs/1907.08694v1"
+fetched_from = "https://arxiv.org/pdf/1907.08694v1"
+fetched_at = "2026-10-23T20:34:51Z"
+sha256 = "8389edfec6576b92aea1fd4dbf6c96ccb86b2186a6f244ab46c4abf1c02e2bed"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["Sections 0.2, 0.4, 1.1, 1.2, 2.1, 2.5, 3.6, 3.7, 5.4, 5.5, 5.6"]
+
+[[source]]
+id = "KT17"
+authors = "Chandrashekhar B. Khare and Jack A. Thorne"
+title = "Potential automorphy and the Leopoldt conjecture"
+year = 2017
+arxiv = "1409.7007v2"
+version_note = "Read arXiv v2; use its §6.6, Lemma 6.25 and Proposition 6.26 and pp. 40–43."
+locator_scheme = "theorem"
+locator = "§6.6, Lemma 6.25 and Proposition 6.26, arXiv v2 pp. 40–43"
+url = "https://arxiv.org/abs/1409.7007v2"
+fetched_from = "https://arxiv.org/pdf/1409.7007v2"
+fetched_at = "2026-10-23T20:35:26Z"
+sha256 = "f8a86b8d7dfd290b9b4199931238f21392cb9c82d609f0879060a890e58ec0b4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-23"
+cited_for = ["Sections 3.6, 3.7"]
