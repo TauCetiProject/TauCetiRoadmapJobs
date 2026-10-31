@@ -3696,131 +3696,124 @@
   ],
   "gaps": [
     {
-      "title": "Integral coherent input and moved ownership",
-      "detail": "IntegralCoherentHeckeComplexes is still a proposal without stable stages in this checkout. It owns integral coherent homology/duality, Hochschild–Serre, the Lan–Suh specialization, localized boundary vanishing and CG20 Lemma 7.10, Arthur-type exclusions and dim H¹=dim H⁰. The amended PAPER-PILLONI-20 route moved that entire group here from the original CG20 brief. Obtain exact stage/node contracts before packaging; no invented stage ids are cited.",
-      "neededBy": [
-        "GSp4NonregularModularityLifting:NR7/dual-module",
-        "GSp4NonregularModularityLifting:NR7/torsion-free",
-        "GSp4NonregularModularityLifting:NR7/whole-balance",
-        "GSp4NonregularModularityLifting:NR11/regular-multiplicity"
-      ],
-      "intendedSupplier": "IntegralCoherentHeckeComplexes"
+      "slug": "gsp4-pseudocharacter-reconstruction",
+      "needs": "Reconstruct a continuous semisimple GSp₄-valued representation with its full multiplier from a continuous GSp₄ pseudocharacter over an algebraically closed characteristic-zero field, compatibly with affinoid specialization.",
+      "supplier": "IntegralHeckeAndGaloisDeterminants",
+      "section": "§1.7, extending §0.7"
     },
     {
-      "title": "Siegel mod-ϖᵐ geometric operators",
-      "detail": "SiegelModularFormsModPn has no stable stages yet. It must construct the actual integral normalized Tp,1 and Qp,2, Hasse lifts with finite-level congruences, the secondary Hasse invariant and reduced-stratum nonzerodivisor theorem, Fourier expansions and the corrected scalar/vector theta operators with injectivity. Generic bundle/Fourier supplier stages do not prove these genus-two statements.",
-      "neededBy": [
-        "GSp4NonregularModularityLifting:NR1/hecke-images",
-        "GSp4NonregularModularityLifting:NR3/hasse-range",
-        "GSp4NonregularModularityLifting:NR4/fourier-operators",
-        "GSp4NonregularModularityLifting:NR4/theta-input",
-        "GSp4NonregularModularityLifting:NR6/hasse-descent"
-      ],
-      "intendedSupplier": "SiegelModularFormsModPn"
+      "slug": "normalized-integral-siegel-p-actions",
+      "needs": "Construct normalized integral Siegel p-operators Tp,1 and Qp,2 on RΓ(X₁(Q),ω(a,2)(−D)) in degrees zero and one for the CG weights and coefficients O/ϖᵐ, O and E/O, agreeing in degree zero with the q-expansion operators of CG20 §8.4, with commuting idempotents compatible with coefficient change, Serre duality and deck descent.",
+      "supplier": "AutomorphicBundlesPartII",
+      "section": "IC.3–IC.4"
     },
     {
-      "title": "Selected summand balance",
-      "detail": "CG20 Theorem 7.11 proves balance of the full diamond module; step (c) of Theorem 9.1 uses its eαβ part. Construct an integral p-idempotent compatible with H₀,H₁, duality and Hochschild–Serre, and prove the rank inequality on that summand. Counterexample to the abstract inference: for S=O[Cp], the residue module k has defect −1, S has defect 1, so S⊕k has defect 0 while its k-summand is unbalanced. This gate propagates through every CG minimal R=T conclusion.",
-      "neededBy": [
-        "GSp4NonregularModularityLifting:NR7/selected-balance",
-        "GSp4NonregularModularityLifting:NR8/patching-datum",
-        "GSp4NonregularModularityLifting:NR8/minimal-rt",
-        "GSp4NonregularModularityLifting:NR8/regular-a",
-        "GSp4NonregularModularityLifting:NR8/classical-cg"
-      ]
+      "slug": "p12-ordinary-horizontal-control",
+      "needs": "Supply the Borel two-weight and GL₂-parabolic one-weight ordinary Siegel Hida modules, their dual Iwasawa finiteness, arithmetic control and horizontal Λ[Δ]-freeness at the P12 tame levels and ordered flags.",
+      "supplier": "PadicFamiliesPartII",
+      "section": "F8, Borel and GL₂-parabolic specialization"
     },
     {
-      "title": "All-index contraction and scalar kernel proof",
-      "detail": "Verify the integral transvectant covariance with the precise dual binary-form action, then deduce θ₁Z=0 at every Fourier index. The source’s selected-coefficient computation does not establish an all-coefficient assertion. Independently spell out the scalar p-primitive neighbor recurrence and the weight-(p+1,p+1) theta comparison, retaining the F₀ term. Until then the two doubling injections and every dependent Galois/minimal theorem are conditional.",
-      "neededBy": [
-        "GSp4NonregularModularityLifting:NR4/contraction",
-        "GSp4NonregularModularityLifting:NR4/cuspidal-vanishing",
-        "GSp4NonregularModularityLifting:NR4/doubling-injection",
-        "GSp4NonregularModularityLifting:NR5/nonregular-representation"
-      ]
+      "slug": "p12-flag-orientation",
+      "needs": "Compare P12 automorphic and deformation ordinarity on specified ordered flags and Ext conventions, resolving both the opposite ratio directions of Definitions 3.2 and 5.3 and the exponent prescriptions iκ versus −iκ in §3.2 and Definition 5.3, including the parabolic ratio of §7.4, before transporting representability or Hida control.",
+      "supplier": "LocalGaloisDeformationRings",
+      "section": "§§6.3, 6.27"
     },
     {
-      "title": "Regular p-polynomial assertion outside the transported proof",
-      "detail": "Away-p Hecke-equivariance of Hasse multiplication does not establish the full p-Hecke characteristic-polynomial identity in Theorem 6.13(3). The roadmap retains the local ordinary characters and all good-prime identities actually needed by Theorem 6.17. Prove the additional p-polynomial equality through a separate normalized p-action comparison before exporting that stronger clause.",
-      "neededBy": [
-        "GSp4NonregularModularityLifting:NR3/regular-representation"
-      ]
+      "slug": "integral-enormity-and-oddness",
+      "needs": "Provide BCGP25 integral enormousness (Definition 7.1.1) with its exact adjoint condition, coefficient field and restriction behavior, without identifying it with CG big image or ACC enormousness.",
+      "supplier": "ArithmeticGaloisRepresentations",
+      "section": "§§7.10–7.11"
     },
     {
-      "title": "GSp₄ pseudocharacter reconstruction in characteristic zero",
-      "detail": "BCGP25 Theorem 1.8.17 interpolates GSp₄-valued pseudorepresentations in Lafforgue's sense over an ordinary affinoid and specializes them at the weight-two point. Upstream IntegralHeckeAndGaloisDeterminants plans reductive pseudocharacters and their invariant evaluations (Layer 0.7) but reconstructs representations only for GL (Layer 1.7). Supply reconstruction of a semisimple GSp₄(Q̄p)-valued representation with its multiplier from a GSp₄ pseudocharacter over an algebraically closed field of characteristic zero, or restrict NR2/weight-two to irreducible ρπ, where the ε⁻¹-line of ∧²ρπ gives the pairing. The integral dyadic descent used in NR10 is BCGP25 Lemma 7.4.8, planned here as NR10/dyadic-descent, so it is not part of this gate.",
-      "neededBy": [
-        "GSp4NonregularModularityLifting:NR2/weight-two"
-      ],
-      "intendedSupplier": "IntegralHeckeAndGaloisDeterminants, extension of current Layer 1.7"
+      "slug": "gsp4-cg-selmer-presentation",
+      "needs": "Supply the CG fixed-full-multiplier Selmer presentation with qTW≥1 and labelled Klingen Taylor–Wiles sets of cardinality qTW at every requested depth, under CG20 Assumptions 4.1–4.3.",
+      "supplier": "GlobalGaloisDeformations",
+      "section": "G7 and R04.5–R04.6"
     },
     {
-      "title": "Corrected characteristic-zero patching",
-      "detail": "Replace augmentation-only ideal powers by a genuinely cofinal system of open ideals with weight/maximal-ideal control; construct the compatible patched-ring action on the patched module; prove the characteristic-zero completed-ring lift and depth/dimension comparison. The source’s §7.2 does not supply these details. The request belongs to R03.5/R03.3; NR10 local freeness and NR11 rank one remain conditional on that corrected abstract theorem.",
-      "neededBy": [
-        "GSp4NonregularModularityLifting:NR10/local-freeness",
-        "GSp4NonregularModularityLifting:NR11/nonvanishing",
-        "GSp4NonregularModularityLifting:NR11/rank-one",
-        "GSp4NonregularModularityLifting:NR11/classicality"
-      ],
-      "intendedSupplier": "DeformationAndDerivedPatchingAlgebra:R03.5"
+      "slug": "gsp4-torus-tw-data",
+      "needs": "Supply the BCGP25 two-torus-direction Taylor–Wiles sets and uniform marked cotangent bounds under integral enormousness, with the weight algebra and marked coefficient sections retained, including p=2.",
+      "supplier": "GlobalGaloisDeformations",
+      "section": "G7 and R04.5–R04.6"
     },
     {
-      "title": "Regular ordinary support",
-      "detail": "OrdinaryAutomorphicFormsAndModularityLiftingPartII is a proposal without stable stages. Request BCGP25 Theorems 5.7.14 and 6.3.4 with their exact near-adequate/reasonable/tidy, oddness, weight and ordinary component hypotheses. The seed is not itself a proof that the target point lies in Hecke support. The solvable descent Proposition 7.5.3 is requested separately from EndoscopicTransferAndUnitaryTraceComparison ET.7, where the reviewed BCGP25 extraction routes it. The lifting roadmap owns the local-through-q deduction, not the regular automorphy theorem.",
-      "neededBy": [
-        "GSp4NonregularModularityLifting:NR11/automorphic-seed",
-        "GSp4NonregularModularityLifting:NR11/nonvanishing"
-      ],
-      "intendedSupplier": "OrdinaryAutomorphicFormsAndModularityLiftingPartII"
+      "slug": "p12-variable-weight-patching-data",
+      "needs": "Supply the P12 variable-weight ordinary minimal deformation problems with prescribed universal similitude and Taylor–Wiles presentations over the two-weight Borel and one-weight GL₂-parabolic algebras, with the specified ordered flags, tame types and augmentation maps.",
+      "supplier": "GlobalGaloisDeformations",
+      "section": "G7 and R04.5–R04.6"
     },
     {
-      "title": "Local paramodular and Klingen interfaces",
-      "detail": "GSp4LocalLanglandsAndGaloisRepresentations remains a proposal. Export the local Steinberg normalized U-eigenvalue, Genestier–Tilouine Klingen no-newforms calculation, generic paramodular newvector uniqueness at conductor, the one-dimensional regular p/r refinement blocks, and holomorphy at s=1 of the local adjoint L-factor of a generic L-packet (Gan–Takeda, main theorem part vii, used with Taylor–Yoshida Lemma 1.4 in BCGP25 Remark 1.8.20). Attach the exact sources and coefficient hypotheses; generic smooth induction/Satake stages alone do not provide these computations. The reviewed BCGP25 extraction also routes the regular-weight GSp₄ Galois representations of its Theorem 1.8.13 to this owner, so their export must be reconciled with AutomorphicGaloisRepresentationsPartII AG2.5–AG2.6.",
-      "neededBy": [
-        "GSp4NonregularModularityLifting:NR2/no-steinberg",
-        "GSp4NonregularModularityLifting:NR6/high-comparison",
-        "GSp4NonregularModularityLifting:NR11/regular-multiplicity",
-        "GSp4NonregularModularityLifting:NR2/monodromy"
-      ],
-      "intendedSupplier": "GSp4LocalLanglandsAndGaloisRepresentations"
+      "slug": "dyadic-ordinary-local-regularity",
+      "needs": "Supply the p-distinguished pure semistable weight-two symplectic ordinary point regularity, dimensions and unique-component/conductor comparisons needed by BCGP25 §7 for every p, including p=2, with the chosen stabilization retained.",
+      "supplier": "LocalGaloisDeformationRings",
+      "section": "§6.29, extending §§6.26–6.27"
     },
     {
-      "title": "Classification input",
-      "detail": "The selected source route retains Arthur's GSp₄ classification, multiplicity formula and the twisted weighted fundamental-lemma hypothesis through ML.4 (CG20 Lemma 6.9 and Theorem 7.11; BCGP25 Remark 1.8.20, Lemma 7.5.8 and Remark 4.12.6). Provide the theorem owners and proof status before removing this gate. The adjoint input of the monodromy upgrade is local and is part of the local paramodular and Klingen gate.",
-      "neededBy": [
-        "GSp4NonregularModularityLifting:NR3/central-residual",
-        "GSp4NonregularModularityLifting:NR2/monodromy",
-        "GSp4NonregularModularityLifting:NR7/whole-balance",
-        "GSp4NonregularModularityLifting:NR11/regular-multiplicity",
-        "GSp4NonregularModularityLifting:NR11/classicality"
-      ],
-      "intendedSupplier": "ModularityAndLanglandsExtensions:ML.4"
+      "slug": "gsp4-steinberg-u-eigenvalue",
+      "needs": "Compute the normalized GSp₄ Steinberg Ux,1 eigenvalue x^((j+k−6)/2) in weight (j,k), including finite unramified unit twists, in the Fourier-lattice normalization of CG20 Theorem 5.9.",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.4.5"
     },
     {
-      "title": "Pilloni flag orientation and edition comparison",
-      "detail": "The accessible September-2009 author text uses r>r′ in Definition 3.2 and r<r′ in the deformation FOR condition after Definition 5.3. These exclude inverse cyclotomic ratios and are not identical. Resolve the orientation with the chosen flag and local Ext convention. The J. reine angew. Math. 666 (2012), pp.35–82 publication has not been compared; do not claim its theorem is corrected merely from the older author text.",
-      "neededBy": [
-        "GSp4NonregularModularityLifting:NR9/admissible",
-        "GSp4NonregularModularityLifting:NR9/ordinary-family-rt",
-        "GSp4NonregularModularityLifting:NR9/p-adic-lifting",
-        "GSp4NonregularModularityLifting:NR9/parallel-family"
-      ]
+      "slug": "gsp4-klingen-level-comparison",
+      "needs": "Prove the Klingen no-newforms result and compute the spherical-to-labelled-refinement pullback/trace constant for the regular residual block in CG20 Theorem 7.3, including its congruence to 1 at x≡1 modulo p.",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.4.5"
     },
     {
-      "title": "Pilloni–Stroh integral lattice comparison",
-      "detail": "Theorem 3.6 factors the characteristic-zero action using modified integral models. Remark 3.10 distinguishes their lattice from the usual integral model. A comparison with the specific CG20 mod-ϖᵐ cuspidal lattice is needed for a unified torsion interpolation proof; the present plan uses CG20’s independent Hasse transfer and does not make that deduction.",
-      "neededBy": [
-        "GSp4NonregularModularityLifting:NR2/ps-interpolation"
-      ]
+      "slug": "gsp4-paramodular-newvector",
+      "needs": "For an irreducible admissible generic GSp₄(ℚ_ℓ)-representation over an algebraically closed characteristic-zero coefficient field with unramified central character, prove that its paramodular fixed space at the Artin conductor of its local parameter is one-dimensional and vanishes at smaller levels, with the normalization used in BCGP25 Proposition 7.5.1.",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.4.5"
     },
     {
-      "title": "Arithmetic and finite-group illustrations",
-      "detail": "OpenImageTheoremsForAbelianVarieties is a proposal without stable stages. The Weil-restriction big-image example needs the theorem for a non-CM elliptic curve not geometrically isogenous to its conjugate, not just nonisogeny over K. The separate mod-2 illustration needs an explicit supplier for the exceptional identification S₆≅Sp₄(F₂), its conjugacy-class dictionary and the invariant alternating form. These examples remain requested applications and are not used to close the lifting proof.",
-      "neededBy": [
-        "GSp4NonregularModularityLifting:NR8/examples"
-      ],
-      "intendedSupplier": "OpenImageTheoremsForAbelianVarieties"
+      "slug": "gsp4-ordinary-neat-refinement-lines",
+      "needs": "Prove one-dimensionality of the selected ordinary p-refinement and neat-prime Iwahori refinement lines under the regularity and distinct-root hypotheses in the proof of BCGP25 Lemma 7.5.8, pp.176–177, especially p.177 (BCGP25 line 8119), invoking BCGP21 Propositions 2.4.24 and 2.4.26, pp.26–27.",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.4.5"
+    },
+    {
+      "slug": "gsp4-pure-monodromy-uniqueness",
+      "needs": "Prove the local uniqueness of monodromy with the given semisimplification under purity and the adjoint holomorphy condition, in the geometric-Frobenius convention of BCGP25 Remark 1.8.20.",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.4.5"
+    },
+    {
+      "slug": "projective-finite-group-satake",
+      "needs": "Supply the regular residual GSp₄ Satake-block comparison of BCGP25 Lemmas 7.4.11–7.4.12 on projective finite-group modules, compatibly with the partial central condition and diamond augmentation, without dividing by 8.",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.4.5"
+    },
+    {
+      "slug": "weil-restriction-big-image",
+      "needs": "For an imaginary quadratic K and a non-CM elliptic curve E/K not isogenous over the algebraic closure to its conjugate, prove that the dual mod-p representations of E and its conjugate map the cyclotomic kernel onto SL₂(𝔽_p)² for all sufficiently large p, supplying the induced CG big-image example.",
+      "supplier": "ArithmeticGaloisRepresentations",
+      "section": "§6.4 and §7.11"
+    },
+    {
+      "slug": "symplectic-descent-every-residue-characteristic",
+      "needs": "Extend symplectic_coefficient_descent to every residue characteristic by removing p>2, keeping the continuous smaller-ring representation with the same nondegenerate alternating form and full multiplier and the similitude conjugator congruent to 1 modulo the larger maximal ideal (BCGP25 Lemma 7.4.8).",
+      "supplier": "IntegralHeckeAndGaloisDeterminants",
+      "section": "§1.5"
+    },
+    {
+      "slug": "selected-coherent-rank-inequality",
+      "needs": "For neat prime-to-p genus-two levels X₀(Q) over ℚ, non-Eisenstein m, a≥2 and L=ω(1,3−a), prove dim_E eαβH₁(X₀(Q),L)_(m,E)≤dim_E eαβH₀(X₀(Q),L)_(m,E), under the all-weight classification of packets and multiplicity hypotheses of IC.6–IC.8 and the normalized degree-one p-action, grouping the multiplicity-counted summands by finite part with the Serre-dual transported projector.",
+      "supplier": "AutomorphicBundlesPartII",
+      "section": "IC.8, using IC.6–IC.7 and IC.3–IC.4"
+    },
+    {
+      "slug": "dyadic-ordinary-support",
+      "supplier": "OrdinaryAutomorphicFormsAndModularityLiftingPartII",
+      "section": "§§1.3, 2.1–2.2, 3.1–3.2, 4.7–4.8",
+      "needs": "Supply §§1.3, 2.1–2.2, 3.1–3.2 and 4.7–4.8 at p=2, including near adequacy, the arbitrary-rank definite-unitary ordinary Hecke algebra with Hida theory and arithmetic control, the ordinary global problem with its dimension bound, and the finiteness and sufficiently-deep-level reduced R=T of BCGP25 Theorem 5.7.14 under all six hypotheses."
+    },
+    {
+      "slug": "symplectic-ordinary-component-support",
+      "supplier": "OrdinaryAutomorphicFormsAndModularityLiftingPartII",
+      "section": "§§5.2, 5.4–5.6, 6.3–6.4",
+      "needs": "Supply §§5.2, 5.4–5.6 and 6.3–6.4, including GSp₄-reasonableness, the ordinary seed datum, the selected ordinary deformation problem and Hida–Hecke Galois representation, and the reduced R=T and finiteness of BCGP25 Theorem 6.3.4 on the seed-selected components under Hypothesis 6.3.1, retaining q_v≡1 modulo 9 when p=3."
     }
   ],
   "sourceIssues": [
