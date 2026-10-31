@@ -19,7 +19,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "Locators are to the published version (printed pages 63-110); the arXiv preprint 1804.03642 was not collated"
-cited_for = ["PI.0", "PI.1", "PI.2", "PI.3", "PI.4", "PI.5", "PI.6", "PI.7", "PI.8", "PI.9"]
+cited_for = ["Layer 0", "Layer 1", "Layer 2", "Layer 3", "Layer 4", "Layer 5", "Layer 6", "Layer 7", "Layer 8", "Layer 9"]
 
 [[source]]
 id = "MVH98"
@@ -39,7 +39,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1"
-cited_for = ["PI.9"]
+cited_for = ["Layer 9"]
 
 [[source]]
 id = "BW20"
@@ -59,7 +59,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v3"
-cited_for = ["PI.4"]
+cited_for = ["Layer 4"]
 
 [[source]]
 id = "EKM"
@@ -67,7 +67,7 @@ authors = "Richard Elman, Nikita Karpenko, Alexander Merkurjev"
 title = "The Algebraic and Geometric Theory of Quadratic Forms"
 year = 2008
 locator_scheme = "theorem"
-locator = "Theorem 17.14; Lemmas 19.4, 19.10; Corollary 36.4; Theorem 37.4; Corollary 37.5; Proposition 37.7; Corollary 37.8; Lemma 38.1; Corollary 38.2; Theorem 97.7; Theorem 98.19; §33"
+locator = "Theorem 17.14; Lemmas 19.4, 19.10; Corollary 36.4; Theorem 37.4; Corollary 37.5; Proposition 37.7; Corollary 37.8; Lemma 38.1; Corollary 38.2; Theorem 97.2; Corollaries 97.5, 97.6; Theorem 97.7; Theorem 98.19; §33"
 url = "https://www.math.ucla.edu/~merkurev/Book/Kniga-final/Kniga.pdf"
 fetched_from = "https://www.math.ucla.edu/~merkurev/Book/Kniga-final/Kniga.pdf"
 fetched_at = "2026-10-25T20:22:26Z"
@@ -75,7 +75,7 @@ sha256 = "0b547b09ee83c370a932e2c2117fe1757bb8b342ca0af9d73526b5edffb842e6"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["PI.0"]
+cited_for = ["Layer 0"]
 
 [[source]]
 id = "BEC05"
@@ -91,7 +91,7 @@ sha256 = "c38b9a1885e64b19b2a3dd9f23fa659162224caa37e38182ae09cc380fda320e"
 licence_class = "institutional"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["PI.0"]
+cited_for = ["Layer 0"]
 
 [[source]]
 id = "CT05"
@@ -107,7 +107,7 @@ sha256 = "9a9cfbb78c158f9ef5250a760664b2d565ac15fa463c8507a57a4aef0852dd90"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["PI.0", "PI.1", "PI.2"]
+cited_for = ["Layer 0", "Layer 1", "Layer 2"]
 
 [[source]]
 id = "BEN18"
@@ -125,7 +125,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2"
-cited_for = ["PI.5", "PI.6"]
+cited_for = ["Layer 5", "Layer 6"]
 
 [[source]]
 id = "VOI06"
@@ -144,7 +144,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1"
-cited_for = ["PI.2"]
+cited_for = ["Layer 2"]
 
 [[source]]
 id = "VA13"
@@ -160,7 +160,7 @@ sha256 = "8b854b0c8a6ae4b7c26f563663cfcd79333609e91b89f96d3944e61cbb6bc982"
 licence_class = "institutional"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["PI.7"]
+cited_for = ["Layer 7"]
 
 [[source]]
 id = "BCR"
@@ -174,7 +174,7 @@ url = "https://doi.org/10.1007/978-3-662-03718-8"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["PI.0", "PI.6", "PI.9"]
+cited_for = ["Layer 0", "Layer 6", "Layer 9"]
 
 [[source]]
 id = "ARA75"
@@ -189,7 +189,7 @@ url = "https://doi.org/10.1007/BF01214778"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["PI.0"]
+cited_for = ["Layer 0"]
 
 [[source]]
 id = "SPR55"
@@ -203,7 +203,7 @@ url = "https://doi.org/10.1016/S1385-7258(55)50049-3"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["PI.0"]
+cited_for = ["Layer 0"]
 
 [[source]]
 id = "EL73"
@@ -218,7 +218,7 @@ url = "https://doi.org/10.1007/BF01174904"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["PI.0"]
+cited_for = ["Layer 0"]
 
 [[source]]
 id = "BRO80"
@@ -233,7 +233,7 @@ url = "https://doi.org/10.1007/BF01235330"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["PI.6"]
+cited_for = ["Layer 6"]
 
 [[source]]
 id = "DK96"
@@ -248,7 +248,7 @@ url = "https://doi.org/10.1007/BF02566441"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["PI.9"]
+cited_for = ["Layer 9"]
 
 [[source]]
 id = "CTP90"
@@ -263,7 +263,7 @@ url = "https://doi.org/10.1007/BF01231497"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["PI.9"]
+cited_for = ["Layer 9"]
 
 [[source]]
 id = "SER06"
@@ -278,7 +278,7 @@ url = "https://doi.org/10.1007/978-3-540-30615-3"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["PI.5"]
+cited_for = ["Layer 5"]
 
 [[source]]
 id = "SCH94"
@@ -293,7 +293,7 @@ url = "https://doi.org/10.1007/BFb0074269"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["PI.1"]
+cited_for = ["Layer 1"]
 
 [[source]]
 id = "GG73"
@@ -308,7 +308,7 @@ url = "https://doi.org/10.1007/978-1-4615-7904-5"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["PI.6"]
+cited_for = ["Layer 6"]
 
 [[source]]
 id = "BRE97"
@@ -323,7 +323,7 @@ url = "https://doi.org/10.1007/978-1-4612-0647-7"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["PI.5"]
+cited_for = ["Layer 5"]
 
 [[source]]
 id = "DIM85"
@@ -337,7 +337,7 @@ url = "https://doi.org/10.1016/0040-9383(85)90009-3"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["PI.6"]
+cited_for = ["Layer 6"]
 
 [[source]]
 id = "BW20II"
@@ -357,7 +357,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v3"
-cited_for = ["PI.7"]
+cited_for = ["Layer 7"]
 
 [[source]]
 id = "DIK00"
@@ -372,4 +372,4 @@ url = "https://doi.org/10.1007/BFb0103960"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["PI.9"]
+cited_for = ["Layer 9"]
