@@ -1,0 +1,313 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PotentialAutomorphyDworkMotivesPartII"
+
+[[source]]
+id = "QIAN23"
+authors = "Lie Qian"
+title = "Potential Automorphy for $GL_n$"
+year = 2021
+arxiv = "2104.09761v1"
+locator_scheme = "theorem"
+locator = "Lemmas 2.1, 2.3, 3.1, 3.3, 3.4, 3.6, 3.8–3.10; Propositions 3.2, 3.7, 4.2 (arXiv v1)"
+url = "https://arxiv.org/abs/2104.09761v1"
+fetched_from = "https://arxiv.org/pdf/2104.09761v1"
+fetched_at = "2026-10-26T15:33:52Z"
+sha256 = "4110023d4691d628adbc96842793696978de962b6109044e5d32779160835415"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1 numbering; published in Invent. Math. 231 (2023), 1239–1275, where v1 Lemmas 3.6, 3.8–3.10 and Proposition 3.7 become Lemmas 3.7, 3.9–3.11 and Proposition 3.8"
+doi = "10.1007/s00222-022-01161-6"
+cited_for = ["Layers 1, 2, 4, 5, 6, 7, 9"]
+
+[[source]]
+id = "QIAN21"
+authors = "Lie Qian"
+title = "Ordinarity of Local Galois Representation Arising from Dwork Motives"
+year = 2021
+arxiv = "2103.00106v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1, Remark 1.2, Theorem 1.4, Lemma 2.1, Remarks 2.2 and 2.4, Theorem 2.3, Lemmas 4.1–4.3 (arXiv v1)"
+url = "https://arxiv.org/abs/2103.00106v1"
+fetched_from = "https://arxiv.org/pdf/2103.00106v1"
+fetched_at = "2026-10-26T15:34:16Z"
+sha256 = "87c4ee8499f3a615a81307e17d38d6f00ab544da9d22384f213bbc06052722e9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["Layers 4, 8"]
+
+[[source]]
+id = "BCGNT25"
+authors = "George Boxer, Frank Calegari, Toby Gee, James Newton, Jack A. Thorne"
+title = "The Ramanujan and Sato-Tate Conjectures for Bianchi modular forms"
+year = 2023
+arxiv = "2309.15880v3"
+locator_scheme = "theorem"
+locator = "§1.6; §4 (Theorem 4.2.1, Lemma 4.2.4, Propositions 4.2.5–4.2.6, Definitions 4.3.1–4.4.1, Lemma 4.3.4, Proposition 4.4.2, Lemma 4.4.4); Lemma 5.2.3; Theorem 6.2.4 and proof (arXiv v3)"
+url = "https://arxiv.org/abs/2309.15880v3"
+fetched_from = "https://arxiv.org/pdf/2309.15880v3"
+fetched_at = "2026-10-26T15:34:23Z"
+sha256 = "0ad015dfe35d40489a2b8b462ac93d5dd715dbbae7d3fbf18377beaed654579d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3 (author pagination); published in Forum Math. Pi 13 (2025), e10"
+doi = "10.1017/fmp.2024.29"
+cited_for = ["Layers 0, 1, 2, 3, 5, 6, 7, 9"]
+
+[[source]]
+id = "BLGHT11"
+year = 2011
+title = "A family of Calabi-Yau varieties and potential automorphy II"
+authors = "Thomas Barnet-Lamb, David Geraghty, Michael Harris, Richard Taylor"
+locator_scheme = "theorem"
+locator = "§4 (Lemma 4.1, Proposition 4.2, Lemma 4.3, Corollaries 4.4–4.8), §5 (Lemmas 5.1–5.3), §6 (Lemma 6.1, Proposition 6.2)"
+url = "https://virtualmath1.stanford.edu/~rltaylor/cy2fin.pdf"
+fetched_from = "https://virtualmath1.stanford.edu/~rltaylor/cy2fin.pdf"
+fetched_at = "2026-10-26T15:34:26Z"
+sha256 = "225cab84210837ca6130c1c76a5eababeffeaa8d1594b6267e853ce0ae8eabb3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layers 0, 1, 2, 4, 5, 7, 9"]
+
+[[source]]
+id = "KATZ09"
+year = 2009
+title = "Another look at the Dwork family"
+authors = "Nicholas M. Katz"
+locator_scheme = "theorem"
+locator = "Theorem 5.3, Remark 5.4, Question 5.5; Corollary 8.7, Lemma 8.8"
+url = "https://web.math.princeton.edu/~nmk/dworkfamilyfinal.pdf"
+fetched_from = "https://web.math.princeton.edu/~nmk/dworkfamilyfinal.pdf"
+fetched_at = "2026-10-26T15:34:27Z"
+sha256 = "36180e1cf977f25fe01cf7248ff95cab00d88167c77ea3d7ee67061e3b0acbd0"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layer 3, Layer 4"]
+
+[[source]]
+id = "DK17"
+authors = "Vladimir Drinfeld, Kiran Kedlaya"
+title = "Slopes of indecomposable F-isocrystals"
+year = 2016
+arxiv = "1604.00660v11"
+locator_scheme = "theorem"
+locator = "Theorem 1.1.5, Theorem 1.3.3, §§5.1–5.3, Appendix A (§A.1.6, Proposition A.3.1, Corollary A.3.2) (arXiv v11)"
+url = "https://arxiv.org/abs/1604.00660v11"
+fetched_from = "https://arxiv.org/pdf/1604.00660v11"
+fetched_at = "2026-10-26T15:34:31Z"
+sha256 = "d4e6c409f78e2ae25e3cadd932999807b3481af1aad5b4b52d273f0accd1c37a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v11"
+cited_for = ["Layer 7"]
+
+[[source]]
+id = "BLGGT14"
+authors = "Thomas Barnet-Lamb, Toby Gee, David Geraghty, Richard Taylor"
+title = "Potential automorphy and change of weight"
+year = 2010
+arxiv = "1010.2561v4"
+locator_scheme = "theorem"
+locator = "Proposition 3.1.1, Theorem 3.1.2 and proof; §5.1 (arXiv v4)"
+url = "https://arxiv.org/abs/1010.2561v4"
+fetched_from = "https://arxiv.org/pdf/1010.2561v4"
+fetched_at = "2026-10-26T15:34:38Z"
+sha256 = "c953df6229ba8d8b4ae25b1a00cf11592864c74692859d324ff10d3eef645d24"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v4"
+cited_for = ["Layers 5, 7, 9"]
+
+[[source]]
+id = "DMOS82"
+year = 1982
+title = "Hodge cycles on abelian varieties"
+authors = "Pierre Deligne (notes by J. S. Milne)"
+locator_scheme = "theorem"
+locator = "Chapter I, §7, Propositions 7.4, 7.6, 7.10"
+url = "https://www.jmilne.org/math/Documents/Deligne82.pdf"
+fetched_from = "https://www.jmilne.org/math/Documents/Deligne82.pdf"
+fetched_at = "2026-10-26T15:34:41Z"
+sha256 = "827e3571c8049fc5d3aed8dfad912fee39a2f5dbf7341726c38235f035d32139"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layers 2, 6, 7"]
+
+[[source]]
+id = "BH89"
+year = 1989
+title = "Monodromy for the hypergeometric function nF(n-1)"
+authors = "Frits Beukers, Gert Heckman"
+locator_scheme = "theorem"
+locator = "Definition 2.9, Proposition 3.3, Theorem 3.5"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0095/LOG_0022.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0095/LOG_0022.pdf"
+fetched_at = "2026-10-26T15:37:12Z"
+sha256 = "ba23f843fcbb385703be08da7fabf1a77413f7f5bbced89a72f3f41530857e61"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layer 0"]
+
+[[source]]
+id = "BER10"
+year = 2010
+title = "Représentations modulaires de GL2(Qp) et représentations galoisiennes de dimension 2"
+authors = "Laurent Berger"
+locator_scheme = "theorem"
+locator = "§1.3; Théorème 3.2.1"
+url = "https://numdam.org/item/AST_2010__330__263_0.pdf"
+fetched_from = "https://numdam.org/item/AST_2010__330__263_0.pdf"
+fetched_at = "2026-10-26T15:37:12Z"
+sha256 = "b7c9145da30892de6bf03b3bebf4f01a0142134674ed9dfe1426d0d48105d134"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layer 9"]
+
+[[source]]
+id = "ACC23"
+year = 2023
+title = "Potential automorphy over CM fields"
+authors = "Patrick B. Allen, Frank Calegari, Ana Caraiani, Toby Gee, David Helm, Bao V. Le Hung, James Newton, Peter Scholze, Richard Taylor, Jack A. Thorne"
+locator_scheme = "theorem"
+locator = "Lemmas 7.1.7–7.1.8; Corollary 7.2.4"
+url = "https://math.uchicago.edu/~fcale/papers/Ramanujan.pdf"
+fetched_from = "https://math.uchicago.edu/~fcale/papers/Ramanujan.pdf"
+fetched_at = "2026-10-26T15:37:17Z"
+sha256 = "c5429e4f384384045dbb48502d71547bb21699783c0f77cce27b24e742467f02"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layer 9"]
+
+[[source]]
+id = "CEGS"
+year = 2022
+title = "Components of moduli stacks of two-dimensional Galois representations"
+authors = "Ana Caraiani, Matthew Emerton, Toby Gee, David Savitt"
+locator_scheme = "theorem"
+locator = "§1.4, Lemma 1.4.1"
+url = "https://www.ma.imperial.ac.uk/~tsg/Index_files/cegsC.pdf"
+fetched_from = "https://www.ma.imperial.ac.uk/~tsg/Index_files/cegsC.pdf"
+fetched_at = "2026-10-26T15:37:19Z"
+sha256 = "6742f25210f30b97bb603126cd5fac981207273dd04cc30d6e100c85ee5f9916"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layer 7 conventions"]
+
+[[source]]
+id = "ACAMPO24"
+authors = "Lambert A'Campo"
+title = "Dwork Motives, Monodromy and Potential Automorphy"
+year = 2024
+arxiv = "2407.16481v1"
+locator_scheme = "theorem"
+locator = "Definitions 2.1.1–2.1.2, Proposition 2.1.3, Lemmas 2.4.5 and 2.5.4, Proposition 2.5.7 (arXiv v1)"
+url = "https://arxiv.org/abs/2407.16481v1"
+fetched_from = "https://arxiv.org/pdf/2407.16481v1"
+fetched_at = "2026-10-26T15:37:23Z"
+sha256 = "39c42cfdc0367dab692cf11f3923c5846e42aed41f931b7d9b84fa1557bb1c63"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["Layer 8"]
+
+[[source]]
+id = "LEWIS82"
+year = 1982
+title = "The isometry classification of Hermitian forms over division algebras"
+authors = "D. W. Lewis"
+doi = "10.1016/0024-3795(82)90258-2"
+locator_scheme = "section"
+locator = "§4"
+url = "https://doi.org/10.1016/0024-3795(82)90258-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 0"]
+
+[[source]]
+id = "KM74"
+authors = "Nicholas M. Katz, William Messing"
+title = "Some consequences of the Riemann hypothesis for varieties over finite fields"
+year = 1974
+venue = "Inventiones Mathematicae 23"
+doi = "10.1007/BF01405203"
+locator_scheme = "theorem"
+locator = "Theorem 2"
+url = "https://doi.org/10.1007/BF01405203"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layers 6, 7"]
+
+[[source]]
+id = "KIS99"
+authors = "Mark Kisin"
+title = "Local constancy in p-adic families of Galois representations"
+year = 1999
+venue = "Mathematische Zeitschrift 230"
+doi = "10.1007/PL00004706"
+locator_scheme = "theorem"
+locator = "Theorem 5.1"
+url = "https://doi.org/10.1007/PL00004706"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 9"]
+
+[[source]]
+id = "KATZ90"
+authors = "Nicholas M. Katz"
+title = "Exponential Sums and Differential Equations"
+year = 1990
+venue = "Annals of Mathematics Studies 124, Princeton University Press"
+doi = "10.1515/9781400882434"
+locator_scheme = "theorem"
+locator = "Chapter 8, Theorems 8.4.2 and 8.12.2"
+url = "https://doi.org/10.1515/9781400882434"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled book; cited by its locator, with the statements as applied in BCGNT25 Theorem 4.2.1 and BLGHT11 Lemma 4.3"
+cited_for = ["Layer 3"]
+
+[[source]]
+id = "ARTIN55"
+authors = "Emil Artin"
+title = "The orders of the classical simple groups"
+year = 1955
+venue = "Communications on Pure and Applied Mathematics 8"
+doi = "10.1002/cpa.3160080403"
+locator_scheme = "theorem"
+locator = "Theorem 2"
+url = "https://doi.org/10.1002/cpa.3160080403"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator, in the restricted form applied in QIAN23 Proposition 3.7"
+cited_for = ["Layer 0"]
+
+[[source]]
+id = "ZS76"
+authors = "A. E. Zalesskii, V. N. Serezhkin"
+title = "Linear groups generated by transvections"
+year = 1976
+venue = "Math. USSR-Izvestiya 10"
+doi = "10.1070/IM1976v010n01ABEH001676"
+locator_scheme = "theorem"
+locator = "Main theorem"
+url = "https://doi.org/10.1070/IM1976v010n01ABEH001676"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled translation; cited by its locator, in the form applied in QIAN23 Lemma 3.6 and BLGHT11 Lemma 4.6"
+cited_for = ["Layer 0"]

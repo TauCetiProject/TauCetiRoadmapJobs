@@ -5834,80 +5834,28 @@
   ],
   "gaps": [
     {
-      "title": "Hypergeometric convolution rank, local monodromy and determinant",
-      "neededBy": [
-        "PotentialAutomorphyDworkMotivesPartII:DM.3/hypergeometric-sheaf-properties",
-        "PotentialAutomorphyDworkMotivesPartII:DM.3/hypergeometric-local-monodromy",
-        "PotentialAutomorphyDworkMotivesPartII:DM.4/unipotent-monodromy-at-infinity"
-      ],
-      "detail": "Katz90 Chapter 8 was not cleared or read. The exact specialized statements are checked in BCGNT §4.2, BLGHT Lemma 4.3 and Katz09 Theorem 5.3. The convolution construction is specified here, but proofs of its rank, irreducibility, purity, tame local monodromy and determinant require the Katz Chapter 8 arguments. Import the existing lower-shriek/base-change/trace contracts; do not count those imports as a proof of Katz’s theorem."
+      "slug": "tame-point-specialization",
+      "needs": "For a smooth curve over a henselian discrete valuation ring of residue characteristic p, a section ∞ with complement U, a lisse ℓ-adic sheaf on U tamely ramified along ∞ (ℓ ≠ p) with local monodromy T at ∞, and a point t of U over a finite extension F_v whose valuation relative to ∞ is −d < 0, the inertia of F_v acts on the fibre at t through the powers of T given by d times the tame character t_ℓ, so that the Weil–Deligne monodromy operator is d·log T.",
+      "supplier": "LefschetzPencilsAndVanishingCycles",
+      "section": "0.1 Local-field specialization of the tame character"
     },
     {
-      "title": "Finite classical-group classification, unitary generation and cross-characteristic orders",
-      "neededBy": [
-        "PotentialAutomorphyDworkMotivesPartII:DM.0/special-linear-unitary-simple",
-        "PotentialAutomorphyDworkMotivesPartII:DM.0/zalesskii-serezhkin-classification",
-        "PotentialAutomorphyDworkMotivesPartII:DM.0/artin-non-isomorphism",
-        "PotentialAutomorphyDworkMotivesPartII:DM.5/residual-monodromy-sp"
-      ],
-      "detail": "The odd-characteristic n>2 transvection classification and restricted order comparisons are checked in their Qian/BLGHT/BCGNT applications, not against unread ZS76 and Artin55 originals. Supply the precise classification with exceptional cases, the unitary long-root generation/perfectness proof and the rank-two Dickson input used by BLGHT. A large-order element is not a substitute for checking the exception list. Handle Sp₂(𝔽₃) by its solvable composition factors, not by claiming it perfect."
+      "slug": "curve-crystalline-companions",
+      "needs": "For a smooth curve X over a finite field of characteristic p and an irreducible lisse ℚ̄_ℓ-sheaf on X with finite-order determinant, a crystalline companion overconvergent F-isocrystal with the same Frobenius characteristic polynomials at closed points (Abe), together with full faithfulness of restriction from overconvergent to convergent F-isocrystals on smooth curves (Kedlaya), so that Drinfeld–Kedlaya's slope bounds on curves apply to companions of indecomposable lisse sheaves.",
+      "supplier": "PadicDifferentialEquationsAndRigidCohomology",
+      "section": "RD.3.34 Convergent F-isocrystals"
     },
     {
-      "title": "Twisted modular-curve rank-two construction",
-      "neededBy": [
-        "PotentialAutomorphyDworkMotivesPartII:DM.9/rank-two-auxiliary-system"
-      ],
-      "detail": "Current ModularCurves §5C supplies a fine curve over ℚ and only conditional geometric connectedness. Supply its CM-base version, the connectedness contract and universal elliptic curve with the required integral good reduction. Prove full geometric mod-p SL₂ monodromy and nonempty ordinary/supersingular component neighbourhoods after the prescribed finite local extensions. Use A[r]≅r̄_CM,r∨, equivalently H¹(A,𝔽_r)≅r̄_CM,r. Existence of a supersingular CM point alone does not establish the component comparison."
+      "slug": "equivariant-toroidal-semistable-reduction",
+      "needs": "For a log smooth (toroidal) scheme over a complete discrete valuation ring whose toroidal charts carry a finite group acting through characters on the chart coordinates, a unimodular subdivision of the conical complex gives, after a totally ramified base change of suitable degree e, an equivariant projective blowup that is strictly semistable and an isomorphism over the generic fibre (Kempf–Knudsen–Mumford–Saint-Donat).",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "4.20 Traits, S-varieties, strict semistability and the semistable alteration theorem"
     },
     {
-      "title": "General-character ordinarity remains conditional",
-      "neededBy": [
-        "PotentialAutomorphyDworkMotivesPartII:DM.8/conditional-regular-ordinarity"
-      ],
-      "detail": "Retain maximal nilpotence for every conjugate eigenspace and consecutive labelled Hodge–Tate weights as separate hypotheses. Qian21 Lemma 4.2 omits the latter (E10), and zero occurring in the exponent vector is not sufficient for maximal unipotence (E20). The selected zero-shaped data have the separate DM.4 and DM.7 proofs. No general limiting-mixed-Hodge argument supplying consecutive weights is asserted."
-    },
-    {
-      "title": "Equivariant correspondence comparison",
-      "neededBy": [
-        "PotentialAutomorphyDworkMotivesPartII:DM.6/frobenius-polynomials-independent"
-      ],
-      "detail": "KM74 Theorem 2(1)–(2), pp. 76–77, was read directly. The rational Künneth projectors and algebraic-correspondence comparison must be exposed by RD.7 for the H-character projector, rather than inferred from its untwisted Frobenius statement. This gap concerns the supplier API, not unavailability of KM74 or Deligne §7."
-    },
-    {
-      "title": "Tame specialization and curvewise crystalline companions",
-      "neededBy": [
-        "PotentialAutomorphyDworkMotivesPartII:DM.7/steinberg-monodromy-away-from-coefficient-prime",
-        "PotentialAutomorphyDworkMotivesPartII:DM.7/drinfeld-kedlaya-slope-bound"
-      ],
-      "detail": "LPV.0–LPV.1 must supply the tame specialization formula near ∞, giving the nonzero valuation multiple of N∞ when v(t)<0 and residue characteristic is prime to N. DK17 §§5.1–5.3 transfer slopes by companions on smooth curves; they do not provide arbitrary-dimensional crystalline companions. Supply Abe’s curve companion input and the required full-faithfulness/restriction arguments in RD.2–RD.3; justify the choice of a curve meeting the needed open, since an arbitrary such intersection can be empty."
-    },
-    {
-      "title": "Recognition and coefficient control of the comparison character",
-      "neededBy": [
-        "PotentialAutomorphyDworkMotivesPartII:DM.3/twisting-hecke-character"
-      ],
-      "detail": "R24.5 owns the Hecke-character converse for algebraic/de Rham characters. Show the comparison characters satisfy its algebraicity and finite-ramification hypotheses without using DM.7, or state the precise compatible-character Henniart theorem used in BCGNT §4.2. The forward AG2.0 construction and compatible rational Frobenius values by themselves are insufficient. This is a supplier-hypothesis gap, not a new Hecke-character target."
-    },
-    {
-      "title": "Fixed finite coefficient field in root extraction",
-      "neededBy": [
-        "PotentialAutomorphyDworkMotivesPartII:DM.9/switching-determinant-data"
-      ],
-      "detail": "The read R02.4 root statement permits values in an algebraic closure. Establish the stronger finite-field-valued root with the prescribed disjointness, or its primary-component variant; a root outside the chosen coefficient field does not define the required fixed-coefficient level torsor."
-    },
-    {
-      "title": "Equivariant toroidal subdivision",
-      "neededBy": [
-        "PotentialAutomorphyDworkMotivesPartII:DM.8/equivariant-semistable-model"
-      ],
-      "detail": "SF.4 supplies strictly semistable schemes and alterations, but the needed equivariant unimodular subdivision after a ramified base change is an additional contract, requested there. General alteration existence does not prove an equivariant blowup preserving this generic fibre. Retain the extension degree e, and assert semistability over the resulting F′ rather than over F."
-    },
-    {
-      "title": "Nonarchimedean local inverse for a finite étale cover",
-      "neededBy": [
-        "PotentialAutomorphyDworkMotivesPartII:DM.9/kisin-local-constancy"
-      ],
-      "detail": "The fixed finite-level proof reduces to the local analytic inverse/Hensel statement at an F_v-rational point of a finite étale cover. Record this analytic contract explicitly in the supplier interface. Kisin’s stronger theorem is not used, and Berger’s §1.3 and Theorem 3.2.1 were read directly."
+      "slug": "twisted-modular-curve-over-number-fields",
+      "needs": "For a number field F, an integer r ≥ 3 and a continuous ρ : G_F → GL₂(ℤ/r) with determinant the mod-r cyclotomic character, the twisted curve Y(ρ)/F with its universal elliptic curve, its geometric connectedness, a smooth model with good reduction of the universal curve over O_F[1/r], and for every prime p ∤ r the equality of the geometric mod-p monodromy of the universal curve with SL₂(𝔽_p).",
+      "supplier": "ModularCurvesPartII",
+      "section": "5.14 Compactified twisted curves X(ρ)"
     }
   ],
   "sourceIssues": [
