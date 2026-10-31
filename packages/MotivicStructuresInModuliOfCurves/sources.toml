@@ -1,0 +1,462 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "MotivicStructuresInModuliOfCurves"
+
+[[source]]
+id = "clp"
+authors = "Samir Canning; Hannah Larson; Sam Payne"
+title = "Extensions of tautological rings and motivic structures in the cohomology of moduli spaces of stable curves"
+year = 2024
+venue = "Forum of Mathematics, Pi 12 (2024), e23"
+doi = "10.1017/fmp.2024.24"
+locator_scheme = "theorem"
+locator = "Theorems 1.1, 1.3, 1.5–1.7, 1.9, 1.10; Corollary 1.4; Lemmas 2.1, 3.1, 3.2, 4.3, 5.1–5.17, 7.1, 7.3–7.7, 7.10, 8.1–8.3; Propositions 2.2, 2.4, 2.6, 2.8, 4.2, 4.5; Remarks 3.3, 6.1"
+url = "https://sites.lsa.umich.edu/sdpayne/wp-content/uploads/sites/1450/2025/08/TautologicalExtensions.pdf"
+fetched_from = "https://sites.lsa.umich.edu/sdpayne/wp-content/uploads/sites/1450/2025/08/TautologicalExtensions.pdf"
+fetched_at = "2026-10-26T17:01:33Z"
+sha256 = "9e2dc8b19e6bd1c56e953272b3f82a345a6a6ae914527dab0778a086f0900535"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layers 0, 2–7, 10–12"]
+
+[[source]]
+id = "bfp"
+authors = "Jonas Bergström; Carel Faber; Sam Payne"
+title = "Polynomial point counts and odd cohomology vanishing on moduli spaces of stable curves"
+year = 2024
+venue = "Annals of Mathematics 199 (2024), 1323–1365"
+doi = "10.4007/annals.2024.199.3.7"
+locator_scheme = "theorem"
+locator = "Theorems 1.1, 1.4, 1.5, 11.1, 11.5; Propositions 2.1, 3.1, 4.2, 5.1, 6.1–6.2, 8.1–8.8, 9.6, 11.2–11.4; Lemma 5.2; Corollary 3.2; Examples 7.7–7.9"
+url = "https://sites.lsa.umich.edu/sdpayne/wp-content/uploads/sites/1450/2025/08/PolynomialPointCounts.pdf"
+fetched_from = "https://sites.lsa.umich.edu/sdpayne/wp-content/uploads/sites/1450/2025/08/PolynomialPointCounts.pdf"
+fetched_at = "2026-10-26T17:01:34Z"
+sha256 = "9843c296d6f775472ca718be1520c2152d13f5a37dd6928e8e454c2b2d134bd3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layers 1, 2, 8, 9"]
+
+[[source]]
+id = "gk"
+authors = "E. Getzler, M. M. Kapranov"
+title = "Modular operads"
+year = 1994
+arxiv = "dg-ga/9408003v2"
+locator_scheme = "theorem"
+locator = "§2; Theorem 8.13"
+url = "https://arxiv.org/abs/dg-ga/9408003v2"
+fetched_from = "https://arxiv.org/pdf/dg-ga/9408003v2"
+fetched_at = "2026-10-26T17:01:45Z"
+sha256 = "1c2dbbf6093f644666fffd886daf301da0190e0742cfca87759208689c0eb765"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["1.3", "1.4"]
+
+[[source]]
+id = "gorsky"
+authors = "E. Gorsky"
+title = "The equivariant Euler characteristic of moduli spaces of curves"
+year = 2009
+venue = "Advances in Mathematics 250 (2014), 588-595"
+arxiv = "0906.0841v3"
+locator_scheme = "theorem"
+locator = "Proposition 3.1 (equation 3), Definition 3.5, Lemma 3.6 and Theorem 3.8"
+url = "https://arxiv.org/abs/0906.0841v3"
+fetched_from = "https://arxiv.org/pdf/0906.0841v3"
+fetched_at = "2026-10-26T17:01:50Z"
+sha256 = "9d8caed9f8c06b45c46742888fe13fb9604d508da953f556c8c65cd51ff2c7a4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["9.1"]
+
+[[source]]
+id = "kannan"
+authors = "Siddarth Kannan"
+title = "Euler characteristics of the universal Picard stack"
+year = 2026
+arxiv = "2602.09117v2"
+locator_scheme = "theorem"
+locator = "Remark 3.8"
+url = "https://arxiv.org/abs/2602.09117v2"
+fetched_from = "https://arxiv.org/pdf/2602.09117v2"
+fetched_at = "2026-10-26T17:01:56Z"
+sha256 = "0b080b6910e0b8ec494d18aa5b994f39d9e90ff04ad6a91c3808bf2e97cbd208"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["9.1"]
+
+[[source]]
+id = "canning-larson"
+authors = "Samir Canning; Hannah Larson"
+title = "On the Chow and cohomology rings of moduli spaces of stable curves"
+year = 2022
+arxiv = "2208.02357v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.4 and its proof; Lemmas 9.9 and 10.5"
+url = "https://arxiv.org/abs/2208.02357v2"
+fetched_from = "https://arxiv.org/pdf/2208.02357v2"
+fetched_at = "2026-10-26T17:02:12Z"
+sha256 = "f27d56e942d3e7f50b4eb43458d1c68883d4f1a6491d124769e1a808f43f2fb7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["5.4", "6.2", "6.5", "6.6"]
+
+[[source]]
+id = "clp-h11"
+authors = "Samir Canning, Hannah Larson, Sam Payne"
+title = "The eleventh cohomology group of $\\bar{\\mathcal{M}}_{g,n}$"
+year = 2022
+venue = "Forum Math. Sigma 11 (2023), Paper No. e62"
+doi = "10.1017/fms.2023.59"
+arxiv = "2209.03113v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/2209.03113v2"
+fetched_from = "https://arxiv.org/pdf/2209.03113v2"
+fetched_at = "2026-10-26T17:02:50Z"
+sha256 = "bab2893c76a04d6598d88e55a8860dd3d41dabae79a0ecb8f800e68cff9f61f1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["4.7", "12.10"]
+
+[[source]]
+id = "keel"
+authors = "Sean Keel"
+title = "Intersection theory of moduli space of stable n-pointed curves of genus zero"
+year = 1992
+venue = "Transactions of the American Mathematical Society 330 (1992), 545–574"
+doi = "10.1090/S0002-9947-1992-1034665-0"
+locator_scheme = "theorem"
+locator = "Theorem 1 and its proof (Chow ring presentation and cycle map isomorphism)"
+url = "https://www.ams.org/journals/tran/1992-330-02/S0002-9947-1992-1034665-0/S0002-9947-1992-1034665-0.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1992-330-02/S0002-9947-1992-1034665-0/S0002-9947-1992-1034665-0.pdf"
+fetched_at = "2026-10-26T17:02:52Z"
+sha256 = "bb774469ae20db1998de35301ffa45c78040102d34a6f66e10a3e4093dff7bce"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["2.6"]
+
+[[source]]
+id = "arbarello-cornalba"
+authors = "Enrico Arbarello; Maurizio Cornalba"
+title = "Calculating cohomology groups of moduli spaces of curves via algebraic geometry"
+year = 1998
+arxiv = "math/9803001v1"
+locator_scheme = "theorem"
+locator = "Theorems (2.1) and (2.2); Lemmas (2.6) and (2.9)"
+url = "https://arxiv.org/abs/math/9803001v1"
+fetched_from = "https://arxiv.org/pdf/math/9803001v1"
+fetched_at = "2026-10-26T17:02:56Z"
+sha256 = "2fe7192addec6b397b7a79469b89585924cbd0ef890c77d74b14c2cbbc67bcdd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["2.4", "2.5", "2.7", "3.4", "10.1"]
+
+[[source]]
+id = "petersen-genus-one"
+authors = "Dan Petersen"
+title = "The structure of the tautological ring in genus one"
+year = 2012
+venue = "Duke Math. J. 163, no. 4 (2014), 777-793"
+doi = "10.1215/00127094-2429916"
+arxiv = "1205.1586v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1 and Corollary 1.2"
+url = "https://arxiv.org/abs/1205.1586v2"
+fetched_from = "https://arxiv.org/pdf/1205.1586v2"
+fetched_at = "2026-10-26T17:03:13Z"
+sha256 = "2831d294562e37f6abf72b7abb2d07d828ed5e49df2699cff9ac61956c735490"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["2.7", "3.3"]
+
+[[source]]
+id = "petersen-genus-two"
+authors = "Dan Petersen"
+title = "The tautological ring of the space of pointed genus two curves of compact type"
+year = 2013
+venue = "Compositio Math. 152 (2016) 1398-1420"
+doi = "10.1112/S0010437X16007478"
+arxiv = "1310.7369v4"
+locator_scheme = "theorem"
+locator = "Theorem 2.1 and Theorem 3.8"
+url = "https://arxiv.org/abs/1310.7369v4"
+fetched_from = "https://arxiv.org/pdf/1310.7369v4"
+fetched_at = "2026-10-26T17:03:19Z"
+sha256 = "1aa08444e45505a361ae26260b3fe9cb37cc9a0ddbe4f49c38d37230c5c28f8c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v4"
+cited_for = ["4.3", "11.1"]
+
+[[source]]
+id = "petersen-abelian-surfaces"
+authors = "Dan Petersen"
+title = "Cohomology of local systems on the moduli of principally polarized abelian surfaces"
+year = 2013
+venue = "Pacific J. Math. 275 (2015) 39-61"
+doi = "10.2140/pjm.2015.275.39"
+arxiv = "1310.2508v5"
+locator_scheme = "theorem"
+locator = "Theorem 2.1"
+url = "https://arxiv.org/abs/1310.2508v5"
+fetched_from = "https://arxiv.org/pdf/1310.2508v5"
+fetched_at = "2026-10-26T17:03:25Z"
+sha256 = "a88b5f6b908fff3442a0c7164a6ab974f4b447cd461fecbcb1dbe02a55470459"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v5"
+cited_for = ["11.1"]
+
+[[source]]
+id = "cfp"
+authors = "Thomas Church, Benson Farb, Andrew Putman"
+title = "The rational cohomology of the mapping class group vanishes in its virtual cohomological dimension"
+year = 2011
+venue = "Int. Math. Res. Not. (2012), no. 21, 5025-5030"
+doi = "10.1093/imrn/rnr208"
+arxiv = "1108.0622v3"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/1108.0622v3"
+fetched_from = "https://arxiv.org/pdf/1108.0622v3"
+fetched_at = "2026-10-26T17:03:37Z"
+sha256 = "5de3493582b76945f908bd5064fd5ce99583439fc588656611da6861e3120d1d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["2.2"]
+
+[[source]]
+id = "mss"
+authors = "Shigeyuki Morita, Takuya Sakasai, Masaaki Suzuki"
+title = "Abelianizations of derivation Lie algebras of the free associative algebra and the free Lie algebra"
+year = 2011
+venue = "Duke Math. J. 162, no. 5 (2013), 965-1002"
+doi = "10.1215/00127094-2140560"
+arxiv = "1107.3686v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.4 and Theorem 6.2"
+url = "https://arxiv.org/abs/1107.3686v2"
+fetched_from = "https://arxiv.org/pdf/1107.3686v2"
+fetched_at = "2026-10-26T17:03:44Z"
+sha256 = "c929da0120daa43f80806971e2742b90b27460f1434aa45366a2e310bd5786a4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["2.2"]
+
+[[source]]
+id = "madsen-weiss"
+authors = "Ib Madsen, Michael S. Weiss"
+title = "The stable moduli space of Riemann surfaces: Mumford's conjecture"
+year = 2002
+arxiv = "math/0212321v3"
+locator_scheme = "theorem"
+locator = "Theorem 1.1.1"
+url = "https://arxiv.org/abs/math/0212321v3"
+fetched_from = "https://arxiv.org/pdf/math/0212321v3"
+fetched_at = "2026-10-26T17:03:51Z"
+sha256 = "64ead2580de0dd2605fa547f9c4debcf359de4b1c13ca6a9de46f28c19932353"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["3.4"]
+
+[[source]]
+id = "looijenga-stable"
+authors = "Eduard Looijenga"
+title = "Stable cohomology of the mapping class group with symplectic coefficients and of the universal Abel-Jacobi map"
+year = 1994
+arxiv = "alg-geom/9401005v2"
+locator_scheme = "theorem"
+locator = "Proposition (2.1)"
+url = "https://arxiv.org/abs/alg-geom/9401005v2"
+fetched_from = "https://arxiv.org/pdf/alg-geom/9401005v2"
+fetched_at = "2026-10-26T17:03:55Z"
+sha256 = "cc0d6e6576acedc7a176014aa9fd4fdd1480d58649080bf862b9c91509f55f78"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["3.4"]
+
+[[source]]
+id = "wahl"
+authors = "Nathalie Wahl"
+title = "Homological stability for mapping class groups of surfaces"
+year = 2010
+venue = "in: Handbook of Moduli, Vol. III, 547-583. Advanced Lectures in Mathematics 26 (2012)"
+arxiv = "1006.4476v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1006.4476v2"
+fetched_from = "https://arxiv.org/pdf/1006.4476v2"
+fetched_at = "2026-10-26T17:04:01Z"
+sha256 = "10e5de209a361f755a3fa8a0f921f12e77cd529df90fdd015945d6417304a083"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["3.4"]
+
+[[source]]
+id = "arsie-vistoli"
+authors = "Alessandro Arsie, Angelo Vistoli"
+title = "Stacks of cyclic covers of projective spaces"
+year = 2003
+venue = "Multiple-Valued Logic / An International Journal, Vol. 8, No. 5-6, 591-604, 2002"
+arxiv = "math/0301008v2"
+locator_scheme = "theorem"
+locator = "Corollary 4.7"
+url = "https://arxiv.org/abs/math/0301008v2"
+fetched_from = "https://arxiv.org/pdf/math/0301008v2"
+fetched_at = "2026-10-26T17:04:41Z"
+sha256 = "097ce92485887b931b957823ab6e452627c8f94503c22c85551be34862366262"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["8.1"]
+
+[[source]]
+id = "bergstrom-hyperelliptic"
+authors = "Jonas Bergström"
+title = "Equivariant counts of points of the moduli spaces of pointed hyperelliptic curves"
+year = 2006
+venue = "Documenta Mathematica 14 (2009), 259-296"
+arxiv = "math/0611813v2"
+locator_scheme = "theorem"
+locator = "Theorem 10.3; §11.2; §§5–9"
+url = "https://arxiv.org/abs/math/0611813v2"
+fetched_from = "https://arxiv.org/pdf/math/0611813v2"
+fetched_at = "2026-10-26T17:04:14Z"
+sha256 = "12457527533aa0898375b5085c29cd0dec88e77ef4612a8810baac01ba92d5cd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["1.6", "8.3", "9.2"]
+
+[[source]]
+id = "harer-vcd"
+authors = "John L. Harer"
+title = "The virtual cohomological dimension of the mapping class group of an orientable surface"
+year = 1986
+venue = "Inventiones Mathematicae 84"
+doi = "10.1007/BF01388737"
+locator_scheme = "theorem"
+locator = "main theorem (virtual cohomological dimension of the mapping class group)"
+url = "https://doi.org/10.1007/BF01388737"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.1"]
+
+[[source]]
+id = "bergstrom-genus-three"
+authors = "Jonas Bergström"
+title = "Cohomology of moduli spaces of curves of genus three via point counts"
+year = 2008
+arxiv = "math/0611815v2"
+locator_scheme = "theorem"
+locator = "Theorems 2.1–2.4"
+url = "https://arxiv.org/abs/math/0611815v2"
+fetched_from = "https://arxiv.org/pdf/math/0611815v2"
+fetched_at = "2026-10-26T17:06:11Z"
+sha256 = "e587fd77b827e4e46776f89d4b37734535ee5c30776883aea7908f81926ab9a1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["1.6"]
+
+[[source]]
+id = "getzler-semiclassical"
+authors = "Ezra Getzler"
+title = "The semi-classical approximation for modular operads"
+year = 1998
+arxiv = "alg-geom/9612005v1"
+locator_scheme = "theorem"
+locator = "genus-one equivariant Serre characteristics, including p. 491 as cited in clp Corollary 7.11"
+url = "https://arxiv.org/abs/alg-geom/9612005v1"
+fetched_from = "https://arxiv.org/pdf/alg-geom/9612005v1"
+fetched_at = "2026-10-26T17:06:17Z"
+sha256 = "9d5cabda2eff15045ab2f8c3703c3bbeb69afca5946c27e1c3b64d88f65acc6a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["1.6", "11.3", "11.4", "11.5", "12.3", "12.4"]
+
+[[source]]
+id = "mukai"
+authors = "Shigeru Mukai"
+title = "Curves and symmetric spaces, I"
+year = 1995
+venue = "American Journal of Mathematics 117 (1995), 1627–1644"
+doi = "10.2307/2375032"
+locator_scheme = "theorem"
+locator = "the genus-seven linear-section theorem (canonical pentagonal curves as linear sections of the spinor tenfold)"
+url = "https://doi.org/10.2307/2375032"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text, as recalled in clp §5.3"
+cited_for = ["7.3"]
+
+[[source]]
+id = "canning-larson-genus-seven"
+authors = "Samir Canning; Hannah Larson"
+title = "The Chow rings of the moduli spaces of curves of genus 7, 8, and 9"
+year = 2024
+arxiv = "2104.05820v2"
+locator_scheme = "section"
+locator = "§4.4 (splitting strata of the tetragonal Hurwitz stack), Lemmas 3.10, 4.2, 4.3, 4.8"
+url = "https://arxiv.org/abs/2104.05820v2"
+fetched_from = "https://arxiv.org/pdf/2104.05820v2"
+fetched_at = "2026-10-26T17:18:58Z"
+sha256 = "bd8903f7949a85f7445bef21b6bb808cbced129a5194347bd51afb21a7893dcc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["6.3", "6.4", "6.7", "6.8"]
+
+[[source]]
+id = "petersen-tavakol-yin"
+authors = "Dan Petersen; Mehdi Tavakol; Qizheng Yin"
+title = "Tautological classes with twisted coefficients"
+year = 2021
+arxiv = "1705.08875v2"
+locator_scheme = "section"
+locator = "§§3.2, 5.1, 5.2.2"
+url = "https://arxiv.org/abs/1705.08875v2"
+fetched_from = "https://arxiv.org/pdf/1705.08875v2"
+fetched_at = "2026-10-26T17:19:04Z"
+sha256 = "315617f4038591c58032ac2ebb89260f3fa75926a3737c9519e1e533a8f1d6ec"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["3.1", "4.2"]
