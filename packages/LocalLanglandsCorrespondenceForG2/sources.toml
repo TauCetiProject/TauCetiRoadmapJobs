@@ -1,0 +1,202 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LocalLanglandsCorrespondenceForG2"
+
+[[source]]
+id = "CG"
+authors = "Gaëtan Chenevier, Wee Teck Gan"
+title = "${\\rm Spin}(7)$ is unacceptable"
+year = 2023
+arxiv = "2303.15897v1"
+locator_scheme = "theorem"
+locator = "Lemma 3.10; Proposition 3.12; Example 1; Proposition 4.7; Corollary 4.8"
+url = "https://arxiv.org/abs/2303.15897v1"
+fetched_from = "https://arxiv.org/pdf/2303.15897v1"
+fetched_at = "2026-10-26T20:42:19Z"
+sha256 = "46a8d2b2e3ed070211aa2e7061cf67ce65976fd1a0f6f94ebee86e58aaafd25e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["0.7", "0.8"]
+
+[[source]]
+id = "GF"
+authors = "Wee Teck Gan, Gordan Savin"
+title = "A theory of $γ$-factors for $G_2 \\times GL_r$"
+year = 2023
+arxiv = "2308.12561v1"
+locator_scheme = "theorem"
+locator = "Definition 2.1; Proposition 2.3; Theorem 2.4"
+url = "https://arxiv.org/abs/2308.12561v1"
+fetched_from = "https://arxiv.org/pdf/2308.12561v1"
+fetched_at = "2026-10-26T20:42:24Z"
+sha256 = "ec559120d876d503184363a53bbe9d45f25f22e44d065391f2c022493bfbb4ab"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["3.10", "3.11"]
+
+[[source]]
+id = "HKT"
+authors = "Michael Harris, Chandrashekhar B. Khare, Jack A. Thorne"
+title = "A local Langlands parameterization for generic supercuspidal representations of $p$-adic $G_2$"
+year = 2019
+arxiv = "1909.05933v3"
+locator_scheme = "theorem"
+locator = "Lemma 4.6"
+url = "https://arxiv.org/abs/1909.05933v3"
+fetched_from = "https://arxiv.org/pdf/1909.05933v3"
+fetched_at = "2026-10-26T20:42:30Z"
+sha256 = "07b08d6673e3011222c1994034ee34806bf581cc2a63c889277b1dc1a65695a3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["0.5"]
+
+[[source]]
+id = "HD"
+authors = "Wee Teck Gan, Gordan Savin"
+title = "Howe duality and dichotomy for exceptional theta correspondences"
+year = 2021
+arxiv = "2102.00372v1"
+locator_scheme = "theorem"
+locator = "Theorems 8.2, 8.5, 15.1, 15.2; Lemmas 13.4, 13.8"
+url = "https://arxiv.org/abs/2102.00372v1"
+fetched_from = "https://arxiv.org/pdf/2102.00372v1"
+fetched_at = "2026-10-26T20:42:37Z"
+sha256 = "8b3b6702909a6a936e5984f46a3c2fbfe629b63db4ba0ae9bd4356286508c6e5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["3.3", "3.4", "3.5", "4.3", "4.4", "5.5"]
+
+[[source]]
+id = "GS"
+authors = "Wee Teck Gan, Gordan Savin"
+title = "The local Langlands conjecture for G2"
+year = 2023
+venue = "Forum of Mathematics, Pi 11 (2023) e28"
+doi = "10.1017/fmp.2023.27"
+locator_scheme = "theorem"
+locator = "Main Theorem; Lemma 2.4; Propositions 3.1-3.2, 4.1, 5.1-5.2, 6.1, 8.1-8.2; Lemma 8.3; Theorem 9.1; Propositions 10.5, 10.7; Lemma 10.8; Theorems 12.3, 12.6, 12.7"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/2479D805B0F248C91A33671F3A03752E/S2050508623000276a.pdf/local_langlands_conjecture_for_g2.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/2479D805B0F248C91A33671F3A03752E/S2050508623000276a.pdf/local_langlands_conjecture_for_g2.pdf"
+fetched_at = "2026-10-26T20:42:55Z"
+sha256 = "6fc3979d78510fb094e50de9bdd162dfaad43f51fe9b6b8a82ab3d84e0c93389"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layers 0-10"]
+
+[[source]]
+id = "C"
+authors = "Gaëtan Chenevier"
+title = "Subgroups of Spin(7) or SO(7) with each element conjugate to some element of G2 and applications to automorphic forms"
+year = 2019
+venue = "Documenta Mathematica 24 (2019) 95-161"
+locator_scheme = "theorem"
+locator = "Theorem E; Theorem 6.4; Corollary 6.8"
+url = "https://ems.press/content/serial-article-files/26455"
+fetched_from = "https://ems.press/content/serial-article-files/26455"
+fetched_at = "2026-10-26T20:42:57Z"
+sha256 = "f21a45314ba0331c1217e3094a5929158a8e3e04bc2bc02bff36811ac9aa7d40"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["0.9", "0.10"]
+
+[[source]]
+id = "KS"
+authors = "Arno Kret, Sug Woo Shin"
+title = "Galois representations for general symplectic groups"
+year = 2023
+venue = "Journal of the European Mathematical Society 25 (2023) 75-152"
+locator_scheme = "theorem"
+locator = "Theorem A; Proposition 13.1"
+url = "https://ems.press/content/serial-article-files/32783"
+fetched_from = "https://ems.press/content/serial-article-files/32783"
+fetched_at = "2026-10-26T20:42:59Z"
+sha256 = "9cf72b144415e3e7f13e98454912855ea9edaae41c555f25b36c5ecfe435198a"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Exact supplier contracts", "5.2", "8.2"]
+
+[[source]]
+id = "Shin"
+authors = "Sug Woo Shin"
+title = "Automorphic Plancherel density theorem"
+year = 2012
+venue = "Israel Journal of Mathematics 192 (2012) 83-120"
+locator_scheme = "theorem"
+locator = "Definition 3.5; Corollary 4.12; Theorem 5.8"
+url = "https://math.berkeley.edu/~swshin/Plancherel.pdf"
+fetched_from = "https://math.berkeley.edu/~swshin/Plancherel.pdf"
+fetched_at = "2026-10-26T20:43:01Z"
+sha256 = "8a3499195c946f8e22cb6bf8c45641cb0a3d0e6891a5536075866c0bab791ab1"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Exact supplier contracts", "1.7"]
+
+[[source]]
+id = "GS20"
+authors = "Wee Teck Gan, Gordan Savin"
+title = "An exceptional Siegel-Weil formula and poles of the Spin L-function of $PGSp_6$"
+year = 2019
+venue = "Compositio Math. 156 (2020) 1231-1261"
+doi = "10.1112/S0010437X20007186"
+arxiv = "1904.06000v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1904.06000v1"
+fetched_from = "https://arxiv.org/pdf/1904.06000v1"
+fetched_at = "2026-10-26T20:44:37Z"
+sha256 = "a056068d207a2d4eae5d2db62f02ee14fee788c206a3f0702347f194a35caef6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["Exact supplier contracts", "6.5", "Notes on the sources"]
+
+[[source]]
+id = "SV"
+authors = "Yiannis Sakellaridis, Akshay Venkatesh"
+title = "Periods and harmonic analysis on spherical varieties"
+year = 2012
+arxiv = "1203.0039v4"
+locator_scheme = "theorem"
+locator = "Theorem 16.3.2; Remark 16.4.1"
+url = "https://arxiv.org/abs/1203.0039v4"
+fetched_from = "https://arxiv.org/pdf/1203.0039v4"
+fetched_at = "2026-10-26T20:57:49Z"
+sha256 = "e6b4f15e06503137440e3f23a33ef3a1ce2cea02bc1fef75af69157d57780a78"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v4"
+cited_for = ["Exact supplier contracts", "1.3"]
+
+[[source]]
+id = "ILM"
+authors = "Atsushi Ichino, Erez Lapid, Zhengyu Mao"
+title = "On the formal degrees of square-integrable representations of odd special orthogonal and metaplectic groups"
+year = 2014
+venue = "Duke Math. J. 166, no. 7 (2017), 1301-1348"
+doi = "10.1215/00127094-0000001X"
+arxiv = "1404.2909v2"
+locator_scheme = "theorem"
+locator = "Lemma A.2; Proposition A.5"
+url = "https://arxiv.org/abs/1404.2909v2"
+fetched_from = "https://arxiv.org/pdf/1404.2909v2"
+fetched_at = "2026-10-26T20:57:53Z"
+sha256 = "1e9f6f2c3e4847df544e274d2cf8dd90944b6946624ad03bd366007a3be16dea"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["Exact supplier contracts", "1.5"]
+
