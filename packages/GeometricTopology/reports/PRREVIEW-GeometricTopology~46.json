@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-GeometricTopology~46",
+    "head": "b942b49bb4b2186df7f799fe9f4a039ba162f97f",
+    "pr": 903,
+    "folder": "GeometricTopology",
+    "date": "2026-10-31",
+    "findings": 8,
+    "blocking": 3,
+    "notes": "Full re-review of the repair commit b942b49 (README +1224/-4074, source-inputs.md and references/ deleted, no .lean file touched). Previous findings r45 R01-R06, R08, R12, R13 repaired, R09/R10 in the main, R07/R11 unrepaired, R14 was computed against the wrong Hatcher file. Gate OK (worker and my rerun of depcheck 1416 edges 0 problems, resolve empty, lake env lean 17 sorry warnings). New P1: supply cycle with DiagrammaticCoherence (PR #1710 head 1266f21 lists GeometricTopology Layers 1-4 as its supplier; sections 4.2.8, 4.2.10, 4.10.5 consume its C2/G0/C6). P2: companion Lean files (nine set_option lines, sorried def parallel in AdequacyCablingTargets.lean:71, imports, #print axioms); section 4.4.10 lost its object with the dropped course citation. P3: Hatcher 3M.pdf numbering vs 3Mfds.pdf URL, eleven residual course page numbers, 31 sections without Checks lists and 4.3.4 without locator, residual computational wording, two self-inconsistencies. Seeded sample verified: 1.4, 1.5 (Hirsch 4.5.3, 4.6.6, 8.3.1; Lee ISM 6.24), 4.2, 4.3.4, 4.3.5, 4.4.5, 4.4.10, 4.11.2 (BFKP 7.1, Hedden), 4.13 (Kondo fetched, Theorem 3 pp 558-559), 6.2.1 (Conway 2.12, Powell 1.4), 8.1, 8.3.1 (Waldhausen/Hempel uncertified), 8.5 (Hatcher), 11.1 (Hatcher AT A.1), 11.2 (Moise/Munkres uncertified). Adversarial table of 29 rows with computed values; one-tactic probe: 17 errors, no padding."
+  }
+}
