@@ -1,0 +1,112 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "NonabelianLevelStructures"
+
+[[source]]
+id = "CHEN2024"
+authors = "William Y. Chen"
+title = "Nonabelian level structures, Nielsen equivalence, and Markoff triples"
+year = 2024
+venue = "Annals of Mathematics 199"
+doi = "10.4007/annals.2024.199.1.5"
+locator_scheme = "theorem"
+locator = "Theorem 4.10.5"
+url = "https://static1.squarespace.com/static/60d92f4398f4bb6a7b5a99c6/t/65dcfcb3b69a510efa7037dd/1708981427968/Chen+-+Nonabelian+level+structures%2C+Nielsen+equivalence%2C+and+Markoff+triples.pdf"
+fetched_from = "https://static1.squarespace.com/static/60d92f4398f4bb6a7b5a99c6/t/65dcfcb3b69a510efa7037dd/1708981427968/Chen+-+Nonabelian+level+structures%2C+Nielsen+equivalence%2C+and+Markoff+triples.pdf"
+fetched_at = "2026-10-26T16:53:43Z"
+sha256 = "9386db34c31671966440f18bccfefe11bd806aa221010e0e3336fecf8ff920ac"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+arxiv = "2011.12940v2"
+version_note = "Published author copy (Annals 199, pp. 301-443); all locators use the published numbering and pagination. arXiv v2 numbering differs and is not used for locators."
+cited_for = ["Layer 0", "Layer 1", "Layer 2", "Layer 3", "Layer 4", "Layer 5", "Layer 6", "Layer 7", "Theorem 4.10.5", "Corollary 4.12.5(b)"]
+
+[[source]]
+id = "MP18"
+authors = "Chen Meiri, Doron Puder, Dan Carmon"
+title = "The Markoff Group of Transformations in Prime and Composite Moduli"
+year = 2017
+venue = "Duke Math. J. 167, no. 14 (2018), 2679-2720"
+doi = "10.1215/00127094-2018-0024"
+arxiv = "1702.08358v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.4"
+url = "https://arxiv.org/abs/1702.08358v2"
+fetched_from = "https://arxiv.org/pdf/1702.08358v2"
+fetched_at = "2026-10-26T17:09:06Z"
+sha256 = "b3e0b479344b829e83565cf05362aab6f92a7764949145702a869af06efa7461"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2; Theorems 1.3-1.4, Section 4.3 and Appendix A carry the same numbers as cited by Chen for the published version"
+cited_for = ["7.6", "ArithmeticDynamicsPartII gap markoff-alternating-three-mod-four"]
+
+[[source]]
+id = "BBCL22"
+authors = "Renee Bell, Jeremy Booher, William Y. Chen, Yuan Liu"
+title = "Tamely ramified covers of the projective line with alternating and symmetric monodromy"
+year = 2022
+venue = "Algebra & Number Theory 16"
+doi = "10.2140/ant.2022.16.393"
+arxiv = "2007.12299v2"
+locator_scheme = "theorem"
+locator = "Theorem 2.2.3"
+url = "https://arxiv.org/abs/2007.12299v2"
+fetched_from = "https://arxiv.org/pdf/2007.12299v2"
+fetched_at = "2026-10-26T17:09:12Z"
+sha256 = "b2ae033c2ac005e37eaf2db7ca751846894881b60ae7c8a6ee357606cdee767e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2; Theorem 2.2.3, Proposition 2.1.2 and Corollary 2.1.3 carry the numbers cited by Chen for the published version"
+cited_for = ["0.7", "MappingClassGroupsAndCanonicalRepresentations gap asada-cofinality"]
+
+[[source]]
+id = "CHEN2018"
+authors = "William Yun Chen"
+title = "Moduli interpretations for noncongruence modular curves"
+year = 2017
+venue = "Mathematische Annalen 371"
+doi = "10.1007/s00208-017-1575-6"
+arxiv = "1510.05687v5"
+locator_scheme = "theorem"
+locator = "Theorem 4.2.2"
+url = "https://arxiv.org/abs/1510.05687v5"
+fetched_from = "https://arxiv.org/pdf/1510.05687v5"
+fetched_at = "2026-10-26T17:09:19Z"
+sha256 = "abe9d4e68db43f534f2203c75ac89d5a3bccf4e59bb0a350c776fca34b49a13a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v5; Theorem 4.2.2 carries the number cited by Chen for the published version"
+cited_for = ["2.5"]
+
+[[source]]
+id = "ASADA2001"
+authors = "Mamoru Asada"
+title = "The faithfulness of the monodromy representations associated with certain families of algebraic curves"
+year = 2001
+venue = "Journal of Pure and Applied Algebra 159"
+doi = "10.1016/S0022-4049(00)00056-6"
+locator_scheme = "section"
+locator = "§7"
+url = "https://doi.org/10.1016/S0022-4049(00)00056-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["0.7"]
+
+[[source]]
+id = "VDOVIN1999"
+authors = "E. P. Vdovin"
+title = "Maximal orders of Abelian subgroups in finite simple groups"
+year = 1999
+venue = "Algebra and Logic 38"
+doi = "10.1007/BF02671721"
+locator_scheme = "theorem"
+locator = "Theorem A"
+url = "https://doi.org/10.1007/BF02671721"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.2"]
