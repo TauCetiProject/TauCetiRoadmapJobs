@@ -1,0 +1,94 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PerfectoidSpacesPartII"
+
+[[source]]
+id = "BHATT18"
+authors = "Bhargav Bhatt"
+title = "On the direct summand conjecture and its derived variant"
+year = 2016
+arxiv = "1608.08882v2"
+locator_scheme = "theorem"
+locator = "Theorem 4.2"
+url = "https://arxiv.org/abs/1608.08882v2"
+fetched_from = "https://arxiv.org/pdf/1608.08882v2"
+fetched_at = "2026-10-26T15:30:25Z"
+sha256 = "08578ca15b17f51ee12c398ef305af3446057063c015e2bc8beb6012bcc26430"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2, read; theorem numbers agree with Invent. Math. 212 (2018), 297–317; page numbers are the preprint's."
+cited_for = ["RA.0", "RA.1", "RA.5.7", "RA.5.8", "Corrections to the sources"]
+
+[[source]]
+id = "ANDRE18A"
+authors = "Yves André"
+title = "Le lemme d'Abhyankar perfectoïde"
+year = 2018
+doi = "10.1007/s10240-017-0096-x"
+arxiv = "1609.00320"
+version_note = "Published version (Publ. Math. IHÉS 127 (2018), 1–70) read on Numdam; page numbers are the published ones. arXiv:1609.00320 is the preprint."
+locator_scheme = "theorem"
+locator = "Théorème 0.3.1"
+url = "https://www.numdam.org/item/10.1007/s10240-017-0096-x.pdf"
+fetched_from = "https://www.numdam.org/item/10.1007/s10240-017-0096-x.pdf"
+fetched_at = "2026-10-26T15:30:26Z"
+sha256 = "087521436778eed56e5bac98f6f2b441bc2898eef35ebba9da1c1575bf00f96a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["RA.1.1", "RA.2", "RA.3", "RA.4", "RA.5.4", "RA.5.6", "RA.5.12", "Corrections to the sources"]
+
+[[source]]
+id = "ANDRE18B"
+authors = "Yves André"
+title = "La conjecture du facteur direct"
+year = 2018
+doi = "10.1007/s10240-017-0097-9"
+arxiv = "1609.00345v1"
+version_note = "Published version (Publ. Math. IHÉS 127 (2018), 71–93) read on Numdam; page numbers are the published ones. In arXiv:1609.00345v1 the published Théorème 2.5.2 is Théorème 2.5.1, Lemme 1.1.2 has a different statement, and the definition of almost purity is in §5.5, p. 14."
+locator_scheme = "theorem"
+locator = "Théorème 2.5.2"
+url = "https://www.numdam.org/item/10.1007/s10240-017-0097-9.pdf"
+fetched_from = "https://www.numdam.org/item/10.1007/s10240-017-0097-9.pdf"
+fetched_at = "2026-10-26T15:30:27Z"
+sha256 = "34da107d0b96149d9a6779ec1694a0cbb096136d021114b59427024ef3d47053"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["RA.2.1", "RA.2.5", "RA.5", "Corrections to the sources"]
+
+[[source]]
+id = "GR03"
+authors = "Ofer Gabber, Lorenzo Ramero"
+title = "Almost ring theory"
+year = 2002
+arxiv = "math/0201175v3"
+locator_scheme = "theorem"
+locator = "Lemma 2.4.2"
+url = "https://arxiv.org/abs/math/0201175v3"
+fetched_from = "https://arxiv.org/pdf/math/0201175v3"
+fetched_at = "2026-10-26T15:30:37Z"
+sha256 = "c4ab39ad5cd3f95f12a4c2f1f100f0c9f91578c6cbe2085a1962d111df8d7dc8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["RA.3.9", "RA.4.4", "RA.5.2", "RA.5.11", "Suggested.lean"]
+
+[[source]]
+id = "SCHOLZE12"
+authors = "Peter Scholze"
+title = "Perfectoid spaces"
+year = 2011
+arxiv = "1111.4914v1"
+locator_scheme = "theorem"
+locator = "Lemma 6.4"
+url = "https://arxiv.org/abs/1111.4914v1"
+fetched_from = "https://arxiv.org/pdf/1111.4914v1"
+fetched_at = "2026-10-26T15:30:48Z"
+sha256 = "065441a872c5861560014f5c7675fdd4606b5796684f6a829747f01afee18e7b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1; Lemma 6.4 and Corollary 6.7 carry the same numbers in Publ. Math. IHÉS 116 (2012), 245–313."
+cited_for = ["RA.1.1"]

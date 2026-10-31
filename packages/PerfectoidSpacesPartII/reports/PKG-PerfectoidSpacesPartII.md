@@ -1,0 +1,227 @@
+# PKG-PerfectoidSpacesPartII — package report
+
+Deliverables: `packages/PerfectoidSpacesPartII/README.md` (2 500 lines, six layers Layers 0–5 with 51
+numbered subsections), `packages/PerfectoidSpacesPartII/Suggested.lean`,
+`packages/PerfectoidSpacesPartII/metadata.toml` (`topic = "math.AG"`, as PerfectoidSpaces and
+AdicSpacesPartII on main), `packages/PerfectoidSpacesPartII/sources.toml` (five sources, all certified
+open-repository copies; `sources check`: 0 problems). `design/plan.json` is unchanged: no supplier gap
+was needed (its `gaps` list stays empty). No `needs-references.toml` was written: every cited text was
+read.
+
+The accepted review is the `review` block of `design/plan.json` (there is no separate `review.json`
+and the `reports/` folder was empty); its notes were applied as recorded in the design, and every
+correction it records is kept (section *Corrections to the sources* of the README).
+
+## Headline theorems
+
+| Headline | Status | Lean name / what is missing |
+| --- | --- | --- |
+| Bhatt's quantitative Riemann extension theorem (Bhatt Thm 4.2; README §1.2) | not statable | The annular tower `A⟨tⁿ/g⟩ = O⁺(X⟨tⁿ/g⟩)` with its restriction maps: Tau Ceti builds `O⁺` of a rational subset only per presentation (`TauCeti.Huber.PairOfDefinition.completedPlusSubring`, on a completion whose type depends on the presentation), with comparison morphisms between two presentations (`pairHomOfRationalSubsetSubset`) but no functor on rational subsets and no limit. |
+| Derived form (Bhatt Rem 4.3; §1.3) | not statable | Same tower. |
+| Form without regularity of `g` (Bhatt Rem 4.4; §1.4) | not statable | Same tower. |
+| Riemann extension after limits (Bhatt Rem 1.7; §1.5) | not statable | Same tower and its limit. |
+| André's perfectoid Riemann extension theorem (André A Thm 4.2.2, Lemme 4.2.3; §3.6) | stated, clause (2) | `riemann_extension_completeIntegralClosure`. Clause (1) `lim_j A{ϖʲ/g}° = g^{-1/p^∞}A°`, (3) and (4) need the Banach localisations `A{λ/g}` with transition maps and uniform limits, which the pins lack. |
+| Nested-systems theorem (André A Thm 4.4.2; §3.11) | not statable | Uniform limits and the 2-limit category of perfectoid algebras on the annuli. |
+| Ramified almost purity (André A Thm 5.2.1; §4.5) | not statable | Almost categories of a basic setup, almost perfectoid and almost finite étale algebras. |
+| Perfectoid Abhyankar lemma (André A Thm 0.3.1; §4.7) | not statable | Largest perfectoid subalgebra (topologies on intermediate algebras), almost finite étale algebras; the trace clause would need a trace on finite projective modules: Mathlib's `LinearMap.trace` is defined through a finite basis and is `0` otherwise (`Mathlib/LinearAlgebra/Trace.lean`, line 75–76), so stating it with Mathlib's trace would be false for non-free `B′`. |
+| André's flatness theorem (André B Thm 2.5.2; §5.8) | stated, first assertion | `kummer_almost_faithfullyFlat`. The tube clause needs Banach localisations. |
+| Purity of Kummer extensions (André B Cor 2.6.1; §5.9) | stated in full (all `j, l ∈ ℕ ∪ {∞}`) | `kummer_isPureHom`. |
+| Ramified almost flatness modulo `pᵐ` (André B Thm 3.2.1, Cor 3.2.2; §5.12) | not statable without a long ad hoc encoding | Needs the perfectoid completion `Â_∞∞` as a `K°_∞[T^{1/p^∞}]`-algebra through the roots of `g`, the integral closure of `Â°_∞∞` in `B ⊗_A Â_∞∞[1/g]` (algebra structures on `AdicCompletion` over `A`) and almost purity in a non-valuation setup; the docstring records this. |
+
+Definitions added only to make headlines statable: `IsPerfectoidTateRing` (same fields as PerfectoidSpaces
+P1.1's `Perfectoid.IsPerfectoidTateRing`, which cannot be imported); `IsAlmostZero`, `IsAlmostFlat`,
+`IsAlmostFaithfullyFlat` (PerfectoidSpaces P0.1/P0.11's notions at module level for a ring with an
+ideal); `IsPureHom`; the Kummer tower by generators and relations (`KummerVar`, `KummerBase`,
+`kummerCoord`, `kummerRelations`, `KummerQuotient`, `KummerAlgebra`, `kummerVar`, `kummerGenerators`,
+`kummerStage`, `kummerIntegralStage`, `kummerZetaSubOne`, `kummerAlmostIdeal`), with two proved helper
+theorems needed inside the statements (`kummerIntegralStage_mono` for the inclusion maps,
+`isIntegral_kummerVar_zeta` for the membership proof in `kummerZetaSubOne`). One `instance` with a real
+body (`CommRing (KummerBase p k n)` via `inferInstanceAs`). No sorry'd data, no `set_option`, imports
+`Mathlib` plus `TauCeti.RingTheory.Huber.{Basic,Bounded,PowerBounded}` only.
+
+Why the Kummer encoding is faithful: the stage subalgebra generated inside `A_∞∞` is the image of
+André's abstract `A_jl`; the transitions are localisations of finite free extensions (each new root is
+a root of a monic polynomial over the previous stage; `Φ_{p^j}` is irreducible over `W(k)[1/p]`), so
+injective. `A°_jl` is `integralClosure A A_∞∞ ⊓ stage`, which is the integral closure of `A` in
+`A_jl` (integrality is intrinsic). The ideal `kummerAlmostIdeal` is generated by the `ζ_j − 1`, and
+equals `K°°_∞·A°_∞0` because `|ζ_{p^j} − 1| → 1`.
+
+## What the README could not support
+
+Nothing of the design was dropped. Heavy constructions (annular tower, Banach localisations, uniform
+limits and colimits, root algebras, coreflection, almost perfectoid algebras, `2-lim A[j]-Perf`,
+envelopes, `S = (Â°_∞∞)_!!`) are README targets with their intended signatures in prose.
+
+## Notions moved down
+
+None: every supplier cited is on main or earlier in the merge order (PerfectoidQuotients and
+DerivedDeRhamCohomology and DeformationAndDerivedPatchingAlgebra are open pull requests earlier in the
+order; AdicSpacesPartIIPartII is a board package earlier in the order, cited only as a related
+statement).
+
+## Duplication sweep: removals, remappings and deferrals
+
+No target of the design is stated elsewhere, so no target was deleted. Searched by object (with
+`roadmaps grep` over main and all 356 open roadmap pull requests, and the board package index) for:
+almost-pro-zero towers (no match anywhere), Riemann extension / Hebbarkeitssatz (only
+PerfectoidShimuraVarieties §1.3, characteristic-`p`, arbitrary ideals; ClassicalAdicEtaleCohomologyPartII
+and AdicSpacesPartIIPartII, rigid normal spaces), perfectoid Abhyankar (no match), almost Galois (only a
+passing use of "almost Galois descent" in PrismaticCohomologyPartIII's F-crystal paragraph, not a
+definition), perfectoid coreflection (no
+perfectoid match), `p`-root closure / root saturation / complete integral closure (no roadmap; Mathlib's
+`completeIntegralClosure` is the multiplier variant), uniform colimit / Weierstrass and Laurent
+localisation (AdicSpacesPartIV overconvergent `A⟨f/g⟩†`, a different object), Kummer tower and André's
+flatness (PerfectoidSpaces P4.15.4 and PerfectoidQuotients §§1.3–1.4 are Bhatt–Scholze's/Bhatt's forms,
+different objects), pure maps (only spectral universal injectivity: Mathlib
+`AlgebraicGeometry.UniversallyInjective`, SchemeAndStackFoundations, CommRingFactorizationSystems
+F2), Krull detection (no match), Galois closures (AdicEtaleGeometry A4.2 has torsors but not the
+`S_r`-closure or rigidity). Pinned Mathlib and Tau Ceti have no perfectoid, almost, uniform-Banach,
+pure-module or Kummer-tower notion (grep of the pinned sources).
+
+Citations remapped (the design cited package node names and some sections that do not exist):
+
+- PerfectoidSpaces node names → main sections, each checked at its defining tag: P0.1, P0.2, P0.3, P0.6,
+  P0.8, P0.9, P0.11, P0.12, P0.14, P0.16 (*change-of-basic-setup*), P0.25 (*almost-faithfully-flat-descent*,
+  *lower-shriek-shriek-faithful-flatness*), P0.26 (*almost-nakayama*), P0.27
+  (*almost-zero-limits-and-colimits*), P1.1, P1.2, P1.4, P1.5 (*sharp-map*, *frobenius-surjectivity-criterion*),
+  P1.7 (*tilt-of-uniform-tate-ring*), P1.11, P1.25, P1.27, P1.29, P1.30, P2.2 (*approximation-lemma*), P2.3,
+  P2.4, P2.13, P2.16 (*completed-tensor-plus-ring-almost-formula*), P3.10–P3.13.
+- "AdicSpacesPartII R3" (uniform spectral seminorm, power-bound criterion) → AdicSpacesPartIII R3.5;
+  Gel'fand spectrum → AdicSpacesPartIII R3.9.
+- EnhancedDerivedSheaves "E1/E2" for module towers, `R lim`, Milnor sequence and derived tensor products →
+  DerivedModuleAlgebra §§1.T.1, 1.1, 0.2 (on main); EnhancedDerivedSheaves E2:towers.2 kept for `IsProZero`.
+- DerivedDeRhamCohomology "DD.1 Koszul complex" → DerivedModuleAlgebra §0.K.1 (on main);
+  "DD.1 ordinary-flatness" → DerivedDeRhamCohomology §1.10 (`ordinaryFaithfulFlatnessFromCompleteFaithfulFlatness`).
+- DeformationAndDerivedPatchingAlgebra "R03.1" (does not exist) → §1.13 (`flatCompletion_finiteComparison`,
+  André B Lemme 1.1.1, faithfulness with `I ⊆ Jac`).
+- PerfectoidQuotients "Q3" → PerfectoidQuotients §§1.3–1.4 (Bhatt's root extension and its almost faithful
+  flatness), plus PerfectoidSpaces P4.15.4 (André's cover in Bhatt–Scholze's form); §2.8 records that
+  for perfectoid `A` the root-algebra unit ball is almost PerfectoidQuotients' root extension.
+- Classical Galois extensions: §4.1's comparison for `m = V` now cites AdicEtaleGeometry A4.2
+  (`Algebra.IsFiniteEtaleTorsor`, `Algebra.galoisTensorMap`), with a convention witness for the swapped
+  tensor factors.
+- PerfectoidShimuraVarieties "S1" → §1.3.
+- Uniform colimits of perfectoid algebras = PerfectoidSpaces P1.29 (stated as the perfectoid case).
+- Laurent localisation = AdicSpaces §3.1 rational localisation of `(A, A°)`, kept for its explicit
+  quotient norm.
+
+## Corrections to the design made here
+
+- Every backticked API name of the design that is not declared in `Suggested.lean` became prose (gate
+  rule); API bullets state facts only.
+- §3.6 split into clauses (1)–(5); the README says exactly which clause the Lean states and at which
+  generality (perfectoid `A`; the almost perfectoid extension is clause (5), README only).
+- §5.11: the design attributed `(B^a)_!! = V + m·B` to PerfectoidSpaces P0.9 and GR "(2.2.26)"; P0.9 does
+  not state it and GR (2.2.26) is a remark on exactness. The README now derives it from GR's exact
+  sequence (2.2.24), Definition 2.2.25 and Remark 2.2.26 with `m` a directed union of principal ideals
+  generated by nonzerodivisors, and André B §3.1.
+- GR Definition 3.1.1 (morphisms of algebras) replaced by Definition 2.4.4(i) (modules) for almost
+  (faithful) flatness of modules; GR "2.2.24 and 2.4.35" and "3.1.3(ii), 3.4.2" replaced by verified
+  locators (§2.2 and Proposition 2.4.35; Remark 3.1.3).
+- The design's reference to a proposition of Scholze's torsion paper (a source not in the manifest) is
+  now attributed through André A §4.2.1.
+- Added §3.0 (the restated perfectoid predicate, with Checks) and the Kummer encoding paragraph of
+  §5.4.
+- New Checks (each computed; see the table): §0.4 (non-linear functor), §0.2 (`c = 0`), §1.2
+  (non-optimality of `pᵏm`), §1.4–§1.5, §2.2 (two gauge computations), §2.3 (characteristic-`p`
+  non-saturated perfectoid), §2.4 (presentation norm of `λ/T`), §2.5 (non-isometric `f`), §2.7,
+  §2.9, §3.0, §3.1, §3.2, §3.4, §3.5, §3.6 (integral vs complete integral closure),
+  §3.7–§3.11, §4.1 (convention witness), §4.2 (`ℚ(2^{1/3})`), §4.3–§4.8, §5.1–§5.12.
+
+## Adversarial pass
+
+| Statement | Instances tried | Values computed | Result | Change |
+| --- | --- | --- | --- | --- |
+| §0.1 almost-pro-zero | Bhatt tower `K°/ϖ^{1/pⁿ}`; constant `(K°, id)`; `t = 1` | image of `M_{n′} → M_n` = class of `ϖ^{1/pⁿ − 1/p^{n′}}`, killed by `ϖ^{1/p^l}` iff `l ≤ n′`; constant: image `K°` not killed; `t = 1`: equals `IsProZero` | holds; `n′` must depend on `k` | none |
+| §0.1 extension step | `0 → M′ → M → M″ → 0` | two transitions killed by `t^{1/p^{k+1}}` give `t^{2/p^{k+1}}`, divides `t^{p/p^{k+1}} = t^{1/p^k}` as `p ≥ 2` | holds | none |
+| §0.2 uniform | zero transitions, `c = 1` vs `c = 0`; Bhatt tower with `g = 1` | `c = 0`, `p = 2`, `N = K°/ϖ`: `ϖ^{1/4+1/4} = ϖ^{1/2}` does not kill `K°/ϖ`; Bhatt tower: `c`-step image `ϖ^{1/pⁿ−1/p^{n+c}}` killed by `ϖ^{1/p^l}` only for `l ≤ n+c` | holds; not uniform | Check corrected to `k = l = 2` |
+| §0.3 derived limits | Bhatt tower; `ℤ ←p ℤ` with `t = 1` | `lim = 0`, `lim¹` almost zero; `lim¹ = ℤ_p/ℤ ≠ 0` and tower not pro-zero | holds; hypothesis needed | none |
+| §0.4 linear functors | `M ↦ M ⊗_ℤ A` (not `A`-linear) on Bhatt tower | `(A/ϖ^{1/pⁿ}) ⊗_ℤ A = (A/ϖ^{1/pⁿ}) ⊗_{𝔽_p} A/p`, `x ⊗ ϖ^{1/p^k} ≠ 0` | linearity needed | first draft check (Frobenius restriction) was not discriminating; replaced |
+| §0.5 cone argument | `K = R`; cones not at chain level | returns hypothesis; `τ` undetermined without chain-level cones | holds | hypothesis "chain-level mapping cone" made explicit |
+| §1.1 annular tower | `g` unit; `g = 0`; `g = (T, 0)` on `K°⟨T^{1/p^∞}⟩ × K°` | `A⟨tⁿ/g⟩ = A`; `= 0`; `(0,1) ∈ ker f_n`, not almost zero | holds | none |
+| §1.2 Bhatt Thm 4.2 | `c = pᵏm`, `e ≥ 1/pᵏ` and `e < 1/pᵏ`; `m = 0` | `ce ≥ m`; `g^{1/p^k−e}t^{(n+c)e}` in image; term `= t^{ce+n/p^k}u_n^{e−1/p^k}` for `e ≥ 1/pᵏ` | holds; `pᵏm` not optimal | my first check claiming optimality was false; replaced |
+| §1.3 derived | `K = A/tᵐ`; Koszul of `x = (0)` | Thm 4.2; `H_1 = A/tᵐ ≠ 0` | holds | none |
+| §1.4 no regularity | `g = 0`; `g = (T, 0)` | statement empty; kernel `0 × K°` killed by `(t^{1/p^k}T^{1/p^k}, 0)` | holds | none |
+| §1.5 limit | `g` unit; `K°⟨T^{1/p^∞}⟩`, `g = T` | `A`; limit `= A` via §2.3 | holds | none |
+| §2.1 `p`-root closure | `ℤ ⊆ ℤ[i]`, `p = 3`; `ℤ ⊆ ℤ[1/2]`; `𝔽_p[T] ⊆ 𝔽_p[T^{1/p}]` | `b(3a² − b²) = 0 ⇒ b = 0`; `en ≤ m ∀n ⇒ e = 0`; closure `= S` | holds | none |
+| §2.2 dictionary | `A = K° + K°°T K°[T]`; `A = K°[T, ϖ^{−1}T²]`; `ℤ_p + pTℤ_p[T]` over `ℚ_p` | `|T|_A = 1`, unit ball `K°[T]`; `|T| = 1`, `|T²| ≤ |ϖ|`, `ϖ^{−1/2}T` integral with gauge `|ϖ|^{−1/2}`; discrete: `|T| = p`, unit ball `A`, `A_* = p^{−1}A ≠ A` | holds; both cases of (1) distinguished | two sloppy first-draft checks replaced by these |
+| §2.3 root saturation | `K⟨T^{1/p^∞}⟩`, `g = T`; `(T, 0)`; char `p` `B = K + (ΣT₁^{1/p^m}P)^−` | saturation `= K°⟨T^{1/p^∞}⟩`; kernel `(0,1)`; saturation `= P° ⊋ B°` (`T₁^{1/p^m}T₂ ∈ B`, `T₂ ∉ B`) | holds | Check added |
+| §2.4 Laurent | `K × K`, `λ = ϖ`, `g = (ϖ², 1)`, `a = (1, ϖ²)`; `λ/T` in `K⟨T⟩{λ²/T²}` | quotient norm `q²` vs `inf_m max(q^m, q^{2−m}) = q`; `Σ_{j≥1}a_{2j−1,j}λ^{2j} = λ ⇒ |a| ≥ |λ|^{−1}`, attained by `λ^{−1}TU` | holds; norm formula of André false (recorded correction) | computation written out |
+| §2.5 Weierstrass | `K⟨T⟩`, `f = T`, `λ = ϖ`; `f = ϖT`, `λ = ϖ²` | disc `K⟨U⟩`, `T = ϖU`; `ϖ(ϖU − T) = ϖ²U − ϖT`, `ϖU − T ∉ (ϖ²U − ϖT)` (domain, `1 − ϖh ≠ 0`) | isometry hypothesis needed | Check added |
+| §2.6 ulim | annuli; discs `r_i ↑ 1`; `ΣTⁿ/ϖ^{⌊√n⌋}` | `|a_{−n}||ϖ|^{−jn} ≤ C ∀j ⇒ a_{−n} = 0`; `K°⟦T⟧ ⊗ K`; unbounded | holds | none |
+| §2.7 ucolim | shrinking discs; constant; char `p` perfection | `K`; germs `≠ K`; completed perfection | holds | Check (Exemple 2.9.3(3)) restored |
+| §2.8 root algebra | `K`, `g = 1`, char 0 and char `p`; `K⟨T⟩`, `g = T` | `K[S]/(S^p − 1)` dim `p`; `K` (nilpotent `S − 1`); `K⟨T^{1/p^∞}⟩` | holds | none |
+| §2.9 tubes | `f = T`; `f = 0` | `K`; tubes `B⟨U⟩/(ϖ^iU) = B`, `(B/0)^u = B` | holds | Check added |
+| §3.0 perfectoid predicate | `ℂ_p`, `ϖ = p^{1/p}`; `ℚ_p`; `ℂ_p[ε]/ε²` | `ϖ^p = p`; no `ϖ` with `p^{−1/p} ≤ |ϖ| < 1` in `ℤ_p`; `ε/pⁿ` power-bounded ∀n | holds | sloppy first-draft `ℚ_p` check rewritten |
+| §3.1 coreflection | `K⟨T⟩` | `(1+T)^{1/p}` has unbounded `binom(1/p,n)`; `T^{1/p} ∉`; `K⟨T⟩^♮ = K` | holds | none |
+| §3.2 root algebras | `K`, `g = 1`, char 0 | completed colimit of `K[S]/(S^{p^i} − 1)`, many idempotents | holds | Check added |
+| §3.3 almost perfectoid | André's `B = K + (T₁^{1/p^∞}P)^− + (T₂P)^−` | `T₁^{1/p^k}P ⊆ B ⊆ P`; `T₂^{1/p} ∉ B` | almost perfectoid, not perfectoid | none |
+| §3.4 annular localisation | `(ϖʲ/T)^{1/p}` | power-bounded, not in quotient-norm unit ball | holds | Check added |
+| §3.5 limit lemma | `r = 0`; `T ↦ 1`; `T ↦ 0`, `r ≥ 1` | trivial; `R[j] = R`; `R[j] = k_K[U^{1/p^∞}]`, limit `k_K`, kernel `K°°/ϖ^r`, not almost zero for `ϖ^{1/p^∞}` alone (`ϖ^{1/p}·ϖ^{1/p²} ≠ 0` mod `ϖ`) | setup with roots of `T` needed | first draft claimed `R[j] = 0` (false); corrected |
+| §3.6 Riemann extension (Lean) | `R = 0`; `g = 1`; `g = ϖ`; char `p` `B`, `g = T₁` | both sides univ; `R°` both (uniformity); `(R°)_* = R°` both; `T₂` in saturation, not integral (specialise `T₁^{1/p^m} ↦ 0`) | holds; complete integral closure cannot be replaced by integral closure | Check rewritten after a muddled draft |
+| §3.6 Lean module structure | `#synth Module R° R[1/g]` | `OreLocalization.instModuleOfIsScalarTower`; `r • b = algebraMap R _ r * b` proved | natural action | none |
+| §3.7 largest subalgebra | `K⟨T^{1/p^∞}⟩`, `T`; char `p` `B` | `A`; `P ⊋ B` | holds | Checks added |
+| §3.8 ulim criterion | two-term system with iso | uniform limit `A₂`, map of (5) is the surjective reduction | holds | first draft said "identity"; corrected |
+| §3.9 `lim¹` | constant; `K°/ϖ` with `·ϖ^{1/p}`, `T = 1` | `0`; not nested (cokernel `K°/ϖ^{(i−j)/p}` not almost zero) and pro-zero (`p` steps compose to `ϖ = 0`) | hypothesis sufficient not necessary | first draft claimed nonzero `lim¹` (false); corrected |
+| §3.10 `2-lim` | `A[j][ε]/ε²`; zero system; `A[1/g]²` | base change holds, not perfectoid; terminal; `A × A` | holds | none |
+| §3.11 nested systems | constant; zero | `g^{-1/p^∞}A°[1/ϖ]`; `0` | holds | none |
+| §4.1 almost Galois | `ℤ ⊆ ℤ[i]`; swap on `A × A` | basis images `(1,1),(i,i),(i,−i),(−1,1)`, index 4, cokernel `(ℤ/2)²`; André `(1,0)⊗(0,1) ↦ ((0,0),(0,1))`, A4.2 `↦ ((0,0),(1,0))` | conventions differ by swap | witness first written with images exchanged; corrected |
+| §4.2 Galois closure | `r = 1, 2`; `ℚ(2^{1/3})`; rank 0 | `T = S`; `T = ℚ(2^{1/3}, ζ₃)` of degree 6, `S₃` simply transitive on ordered triples | holds; rank 0 excluded | Check added |
+| §4.3 annular envelope | `A[1/g]ⁿ`; `0`; `1/T` | product; `0`; norms `|ϖ|^{−j}`, in algebraic not uniform limit | holds (with the recorded correction) | none |
+| §4.4 integral almost étale | `g` unit; `B = A × A`; `B = A` | almost purity mod `pᵐ`; trivial torsor; rank 1 | holds | Checks added |
+| §4.5 ramified almost purity | `g = 1`; `0`; `Y^ℓ − T` | P3.11; `0 ↔ 0 ↔ 0`; `K⟨T^{1/ℓp^∞}⟩[1/T] = ⊕_a T^{a/ℓ}A[1/T] = B′` | holds | Check added |
+| §4.6 envelope | `B′ = A[1/T]` on the disc; char `p` `A = K + (ΣT₁^{1/p^m}P)^−` | envelope `A ⊊ B′`; envelope `P ⊋ A` | holds | none |
+| §4.7 Abhyankar | `g = 1`; `Y^ℓ − T`; `B′ = 0` | almost purity; `T^{1/(ℓpᵏ)} = (T^{1/ℓ})^aT^{b/pᵏ}`, `apᵏ + bℓ = 1`; `A → 0` not injective | holds; "structure map" not "inclusion" | none |
+| §4.8 affinoid envelopes | `B = A × A`, `g = 1` | `𝒜 = P`, `ℬ = P × P` | holds | muddled draft check replaced |
+| §5.1 purity | `·2` on `ℤ`; `ℤ → ℤ[1/2]`; node normalisation; `ℤ → ℤ[i]` | `ℤ/2 → ℤ/2` zero; `ℤ/2 → 0`; `x ∈ (x+y)S ∩ R ∖ (x+y)R`; free, split | holds | `ℤ[i]` wrongly called étale in a draft; corrected (two primes over 5) |
+| §5.2 almost purity / almost flatness | `K°° ⊆ K°`; `·p` on `ℤ_p^cycl`; `m = 0`; `m = V`, `ℚ` over `ℤ` | kernel `≅ K°/K°°`; zero map on non-almost-zero; all hold; `ℚ ⊗ ℤ/2 = 0`, `ℤ/2 ≠ 0` | holds | Lean predicates checked against these |
+| §5.3 Krull detection | `R = S = K°`, `M = K°/K°°` | hypotheses hold except Noetherian, conclusion fails | Noetherian needed | none |
+| §5.4 Kummer tower (Lean encoding) | `j = l = 0`; `n = 0`, `g = p`; `g = p²`, `p` odd; `n = 1`, `g = T₁`; `p = 2`, `g = 1`; `n = 0` ideal | `A°_{00} = A`; DVR `W(k)[p^{1/p^l}]`; `y = X^{(p+1)/2}/p`, `y^p = p`, not in naive ring; zero divisors `(X−S)·∏(X−ζS) = 0`; `ℤ₂ × ℤ₂`; `kummerAlmostIdeal = K°°_∞`, `ζ_p − 1 ∉ pK°_∞` | holds; quotient nonzero (colimit of free `A`-modules, `p` not nilpotent) | none |
+| §5.5 spectral norm | `n = 0`; `A_{11}`; idempotence of `K°°_∞` | absolute value; product of nonzero factors `0`; `x = (ζ−1)((ζ−1)u)` with `|ζ−1|² ≥ |x|` | holds | muddled draft check rewritten |
+| §5.6 tubes / perfectoidness | `g = 1`; `n = 0`, `g = p`; no coordinate roots | all branches kept; perfectoid field; Frobenius not surjective on `T₁` | holds | Checks added |
+| §5.7 Noetherian tubes | `f = T^{1/p^{k′}} − g_{k′}`; `f = 0` | tube unit ball; `ϖ_j(ϖ_j^{a−1}uU) = 0` torsion | `g_{k′}` in base needed | none |
+| §5.8 André flatness (Lean) | `n = 0`, `g = p`; `n = 0`, `g = 1` | valuation ring of perfectoid field, torsion-free over `K°_∞` hence flat, residue field nonzero; `LC(ℤ_p, K°_∞)` completed, torsion-free | holds | none |
+| §5.9 Kummer purity (Lean) | `l = 0`; `n = 0`, `g = p`, `(0,1)`; `p = 2`, `g = 1`, `(0,1)` | identity; split by coefficient of `1`; diagonal `ℤ₂ → ℤ₂²` split | holds | none |
+| §5.10 generic ff | `g = T₁`, `j = 0`; `g = 0` | `W(k)⟦T₁^{1/p^l}, …⟧` free; `A[1/p][X]/(X^{p^l})` free but nilpotent `X` | holds; `g ≠ 0` keeps stages reduced | muddled draft check replaced |
+| §5.11 `S` | `n = 0`, `g = p` | `S = Â°_∞∞` (residue field `k`, maximal ideal in `K°°_∞Â°_∞∞`) | holds | muddled draft check replaced; formula attribution corrected |
+| §5.12 ramified | `g` unit; `B = A`; `B = A × A` | almost purity; `B° ≈ Â°_∞∞` via root saturation; diagonal free | holds | Checks added |
+
+## Elaboration
+
+`lake env lean packages/PerfectoidSpacesPartII/Suggested.lean`, run from the content checkout (all
+needed `TauCeti.*` object files present): exactly **3** warnings, all `declaration uses 'sorry'`
+(`riemann_extension_completeIntegralClosure`, `kummer_isPureHom`, `kummer_almost_faithfullyFlat`); no
+other message.
+
+`#check @name` audit: one scratch file with `#check` for all 22 declarations (and the three
+constructors), elaborated once. Every elaborated type carries its binders explicitly. Changes made after
+it and earlier elaboration rounds: `[CharP k p]` and `[PerfectRing k p]` were removed from the section
+variables (the unused-variable linter showed them auto-included in helper theorems) and placed in the
+signatures of `kummer_isPureHom` and `kummer_almost_faithfullyFlat`, where the README states them;
+`KummerBase` was changed from an `abbrev` to a `def` with an explicit `CommRing` instance, because
+through the `abbrev` the `Ideal.Quotient` semiring and the localisation's `CommSemiring` failed to unify
+at instance transparency (`algebraMap` into `KummerAlgebra` was "stuck"); the module structure in
+`kummer_almost_faithfullyFlat` is given by `RingHom.toModule` of the stage inclusion, an `Algebra`
+instance there timed out in typeclass search.
+
+## Dependency check
+
+    tauceti-roadmap … gate --depcheck packages/PerfectoidSpacesPartII/README.md --name PerfectoidSpacesPartII --order merge-order/ORDER.txt --movable
+    depcheck: 56 roadmaps, 646 edges, 0 problem(s)
+
+No UPWARD, CYCLE or `moved:` line. `roadmaps resolve` on the README: no cross-roadmap citation and no
+Lean name found nowhere (library names outside TauCetiRoadmap were checked by hand at the pins: the
+Mathlib names in one `#check` file, the Tau Ceti names by grep of the pinned sources).
+
+## Ownership against open pull requests
+
+Checked with `roadmaps grep` over all open roadmap pull requests at their heads and main, by object
+(list above), and the board packages index (DirectSummandsAndBigCohenMacaulay is the consumer; its plan
+already imports §5.1–§5.3 from here). This roadmap owns pure and almost pure maps and the Krull
+detection lemma because §5.9 needs them and no roadmap earlier in the order states them (the design's
+accepted rescoping with DirectSummandsAndBigCohenMacaulay). No declaration of `Suggested.lean` has the
+fully qualified name of a declaration in a readable roadmap.
+
+## Untrusted text
+
+No fetched page, roadmap or pull request contained instructions; nothing was treated as one.
