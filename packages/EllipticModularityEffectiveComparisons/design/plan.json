@@ -4995,85 +4995,52 @@
   ],
   "gaps": [
     {
-      "title": "Native modular dimension comparison",
-      "detail": "The complete Martin §2 proof is read. Formalize the actual trivial-character finite-dimensional newspace, full Gamma0 genus formula (ModularForms Layer 10C inside indexed Layer10), old/new τ multiplicities and μ*μ inversion. Exact arithmetic tests do not prove this modular comparison.",
-      "neededBy": [
-        "EllipticModularityEffectiveComparisons:EC.0/dimension-comparison"
-      ]
+      "slug": "optimized-elliptic-weight-two",
+      "needs": "For every modular E/ℚ and prime ℓ≥5 with irreducible E[ℓ] of Serre weight two, provide a primitive trivial-character weight-two newform at the full residual conductor away from ℓ, together with its actual coefficient prime and residual isomorphism, including the finite-flat recipe comparison needed by §4.8.",
+      "supplier": "SerreWeightAndLevelOptimisation",
+      "section": "§4.8"
     },
     {
-      "title": "Integral and geometric residual interfaces",
-      "detail": "The positive native norm and Sturm interfaces are read. Formalize the actual coefficient-ring/prime-above-ell tower, exact weight-two conductor lift, all-embedding Frobenius adapter, wild residual conductor comparison and the explicit coefficient-prime finite-flat local alternative before any M0=N application. The weight-two-to-semistable reduction implication used to infer M0=N is only asserted for ell≥11; ell=5,7 require the explicit reduction hypothesis or a separate low-prime case audit. The residual-conductor endpoint itself retains ell≥5.",
-      "neededBy": [
-        "EllipticModularityEffectiveComparisons:EC.1/removed-prime-bound",
-        "EllipticModularityEffectiveComparisons:EC.3/deletion-level-exact-adapter"
-      ]
+      "slug": "weight-two-local-reduction",
+      "needs": "For ℓ≥11 identify Serre weight two for the elliptic residual representation with good reduction or multiplicative reduction whose minimal-discriminant exponent is divisible by ℓ, without using this implication at ℓ=5,7.",
+      "supplier": "SerreWeightAndLevelOptimisation",
+      "section": "§4.8"
     },
     {
-      "title": "Prime-power integral Sturm comparison",
-      "detail": "Kraus AppendixII is read through its proof. The pinned complex Sturm equality does not supply coefficient congruence modulo an arbitrary prime-power ideal. Supply the integral Γ0 comparison and dyadic lattice/traces at lcm(N,4); request a Modular forms/Algebraic modular forms Part II for this wider coefficient-ring statement.",
-      "neededBy": [
-        "EllipticModularityEffectiveComparisons:EC.3/prime-power-ideal-sturm",
-        "EllipticModularityEffectiveComparisons:EC.3/finite-four-count-witness"
-      ]
+      "slug": "mixed-cusp-charts",
+      "needs": "For coprime positive auxiliary and Cartan levels, supply smooth cusp charts on the normalized mixed curves away from 6 times the level, with their actual cusp residue fields and compatibility with the level maps.",
+      "supplier": "ModularCurvesPartII",
+      "section": "§§4.1–4.2, 4.8, 5.5, 9.6"
     },
     {
-      "title": "Mazur Eisenstein and class-number-one inputs",
-      "detail": "Mazur 1978 §§2–7 are read; its earlier Eisenstein-ideal finite quotient proof and the global Heegner–Baker–Stark class-number-one proof are not acquired. These are required for finite-eisenstein-quotient and the half-character case. Generic optimal-quotient geometry belongs to a ModularCurves Part II; the global classification extends quadratic/CM arithmetic rather than being a list check. The generic Minkowski ideal-class representative bound is already Mathlib NumberField.exists_ideal_in_class_of_norm_le. What remains for its half-character application is the exact imaginary-quadratic ring-of-integers/discriminant adapter, splitting and the global class-number-one classification. The isogeny-character decomposition also requests the global triviality of finite characters unramified at every finite prime from ClassFieldTheory Layer13; local Raynaud inertia does not supply it.",
-      "neededBy": [
-        "EllipticModularityEffectiveComparisons:EC.4/finite-eisenstein-quotient",
-        "EllipticModularityEffectiveComparisons:EC.4/isogeny-character-half-case",
-        "EllipticModularityEffectiveComparisons:EC.4/isogeny-character-exponents"
-      ]
+      "slug": "chen-winding-comparison",
+      "needs": "Supply the prime-to-p Hecke-equivariant Chen isogeny between the p-new split and nonsplit mixed Jacobians, integral Hecke-annihilator quotients with connected kernel, and their semistable cotangent comparison, without assuming genus zero of the auxiliary level.",
+      "supplier": "ModularCurvesPartII",
+      "section": "§§9.6, 13.1–13.3, 16.2–16.6"
     },
     {
-      "title": "Original Kenku and complete point tables",
-      "detail": "The inspected primary strategy identifies each original reference. Acquire Kenku 1979 X0(39),1980 X0(169),1980 X0(65),X0(91),1981 X0(125), and the exact genus-one/prime tables and extension exclusions (including26,35,50). Decompose their descent certificates. ScienceDirect Kenku 1982 text retrieval was denied; no original Kenku proof is certified by this packet.",
-      "neededBy": [
-        "EllipticModularityEffectiveComparisons:EC.4/genus-one-isogeny-points",
-        "EllipticModularityEffectiveComparisons:EC.4/composite-extension-exclusion",
-        "EllipticModularityEffectiveComparisons:EC.4/kenku-39-cusps",
-        "EllipticModularityEffectiveComparisons:EC.4/kenku-65-cusps",
-        "EllipticModularityEffectiveComparisons:EC.4/kenku-91-cusps",
-        "EllipticModularityEffectiveComparisons:EC.4/kenku-125-cusps",
-        "EllipticModularityEffectiveComparisons:EC.4/kenku-169-cusps"
-      ]
+      "slug": "positive-characteristic-support",
+      "needs": "For a weight-two differential in the mixed-level integral cotangent comparison in characteristic q>3 with q∤rp, prove that vanishing of every coefficient indexed prime to p forces descent through the p-degeneracy map to level r, with all descent and level hypotheses explicit.",
+      "supplier": "AlgebraicModularFormsAndSerreWeights",
+      "section": "R15.2"
     },
     {
-      "title": "Chen isogeny and higher-dimensional winding quotient",
-      "detail": "Read Darmon–Merel §§6–8 and Lemos full §3. Current ModularCurvesPartII newform quotients do not cover the prime-to-p Hecke-equivariant Chen isogeny, integral annihilator winding quotient and semistable cotangent injection. Current BSD.4 covers elliptic curves, not every modular abelian RM factor. Supply these Part II interfaces and the explicit winding boundary/nonvanishing calculation at r=5,7,13. The source quotient is X0(rp²)/w_(p²). Supply the nonzero order-p cuspidal boundary divisor (Darmon–Merel Proposition 6.5), the full-new projection, and the characteristic-q coefficient-support/degeneracy lemma. These are substantive inputs, not consequences of genus zero alone.",
-      "neededBy": [
-        "EllipticModularityEffectiveComparisons:EC.5/winding-class-nonzero",
-        "EllipticModularityEffectiveComparisons:EC.5/finite-winding-quotient",
-        "EllipticModularityEffectiveComparisons:EC.5/cartan-cusp-formal-immersion"
-      ]
+      "slug": "all-embedding-frobenius",
+      "needs": "Make the Tate decomposition and Frobenius polynomial comparison simultaneous for every coefficient-field embedding of a weight-two trivial-character newform and preserve the integral lattice and coefficient-prime reduction needed for the elliptic residual comparison.",
+      "supplier": "AutomorphicGaloisRepresentations",
+      "section": "§6.1"
     },
     {
-      "title": "Quantitative split Cartan bounds and finite sieve",
-      "detail": "Published Bilu–Parent–Rebolledo Theorem 4.1 and §5 proof/algorithm are read. Its precise integrality, Runge and Gaudron–Rémond inputs and the §6 class-polynomial/CRT sieve proof objects remain required. The qualitative isogeny theorem does not give its numerical constants. The source’s finite sieve has not been re-executed at 10^14 or formalized.",
-      "neededBy": [
-        "EllipticModularityEffectiveComparisons:EC.5/split-cartan-large-primes",
-        "EllipticModularityEffectiveComparisons:EC.5/heegner-gross-split-criterion",
-        "EllipticModularityEffectiveComparisons:EC.5/split-cartan-finite-sieve"
-      ]
+      "slug": "modular-rank-zero",
+      "needs": "For every primitive weight-two modular abelian factor A_f over ℚ with L(f,1)≠0, supply the analytic-rank-zero comparison to a genuine arithmetic descent system proving A_f(ℚ) finite, including coefficient-order and CM cases rather than assuming an elliptic-only theorem.",
+      "supplier": "EulerSystemsAndKolyvaginSystems",
+      "section": "§§4.7, 5.13"
     },
     {
-      "title": "Exact j-map and residual-image certificates",
-      "detail": "The five j-polynomials and signed-divisor sets are independently checked exactly. Acquire the source coordinate proofs (Birch pp.179–180, Dahmen p.54), full rational point tables and explicit non-CM curve models. Replace Lemos’s LMFDB checks by a certified bound for all exceptional primes, with local/isogeny/subgroup witnesses for every possible exception. A finite Frobenius sample cannot prove all p>37.",
-      "neededBy": [
-        "EllipticModularityEffectiveComparisons:EC.5/genus-zero-j-map",
-        "EllipticModularityEffectiveComparisons:EC.5/large-isogeny-image-certificates",
-        "EllipticModularityEffectiveComparisons:EC.5/small-isogeny-image-certificates",
-        "EllipticModularityEffectiveComparisons:EC.5/integral-j-characterisation"
-      ]
-    },
-    {
-      "title": "Published-version collation and native elaboration",
-      "detail": "Lemos v2 is fully read, but the AMS publisher PDF retrieval is denied, so preprint-specific source findings require version-of-record collation. The full suggested file cannot elaborate in the available shared build because TauCeti.Newforms.Nebentypus has no prebuilt object at the recorded pins; do not build libraries or replace actual carriers. Mathlib-only arithmetic checks are separate.",
-      "neededBy": [
-        "EllipticModularityEffectiveComparisons:EC.5/large-isogeny-j-table",
-        "EllipticModularityEffectiveComparisons:EC.0/dimension-comparison"
-      ]
+      "slug": "quantitative-abelian-periods",
+      "needs": "Supply the quantitative period inequalities for positive-dimensional polarized abelian varieties in Gaudron–Rémond Theorems 1.1–1.2 and 4.5, including the dimension-two avoidance estimate of Proposition 6.9 with its exact constants, intersection degree and Faltings-height normalization.",
+      "supplier": "ArakelovGeometryAndAbelianHeights",
+      "section": "§§4.4, 5.9"
     }
   ],
   "sourceIssues": [
