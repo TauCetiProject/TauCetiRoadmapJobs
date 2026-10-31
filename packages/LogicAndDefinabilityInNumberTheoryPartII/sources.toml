@@ -1,0 +1,268 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LogicAndDefinabilityInNumberTheoryPartII"
+
+[[source]]
+id = "dittmann_pop"
+authors = "Philip Dittmann, Florian Pop"
+title = "Characterizing finitely generated fields by a single field axiom"
+year = 2023
+venue = "Ann. of Math. (2) 198 (2023), no. 3, 1203-1227"
+doi = "10.4007/annals.2023.198.3.4"
+arxiv = "2012.01307v2"
+locator_scheme = "theorem"
+locator = "Theorems 1.1–1.3; Facts 2.1–2.3, 3.1; Propositions 3.2, 3.4, 3.8, 3.10; Definitions 3.3, 3.7; Lemmas 3.5, 3.6, 3.9; Notations/Remarks 4.1; Theorem 4.2; Recipe 4.3; Remark 4.4; Proposition 5.1; Fact 5.2; Lemma 5.3; Remark 5.4"
+url = "https://arxiv.org/abs/2012.01307v2"
+fetched_from = "https://arxiv.org/pdf/2012.01307v2"
+fetched_at = "2026-10-26T19:46:54Z"
+sha256 = "f9f26f7d8d6b5cb6bf86d04bf97f8f99069d8d676623cebe706e90ea8dcb2c1f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2, author version of 27 April 2023; page numbers are those of this version"
+cited_for = ["0.1–0.3; 0.15–0.16; 1.1–1.4; 2.1–2.8; 3.1–3.8; 4.1–4.8; 5.1–5.4; 5.7; 6.1–6.9; 7.5–7.6; 8.2–8.3; 8.5"]
+
+[[source]]
+id = "poonen_uniform"
+authors = "Bjorn Poonen"
+title = "Uniform first-order definitions in finitely generated fields"
+year = 2007
+venue = "Duke Math. J. 138 (2007), 1–21"
+arxiv = "math/0507486v1"
+locator_scheme = "theorem"
+locator = "Theorems 1.1–1.4, 2.2, 2.3; Definitions 2.1, 3.1; Lemmas 3.2–3.7, 4.1, 4.3–4.9; Proposition 4.10; Lemma 5.2; Proposition A.1, Corollary A.2, Proposition A.3, Lemmas A.4–A.5"
+url = "https://arxiv.org/abs/math/0507486v1"
+fetched_from = "https://arxiv.org/pdf/math/0507486v1"
+fetched_at = "2026-10-26T19:47:15Z"
+sha256 = "5c544de8265dc75835d52e916c2e274fc388e6efea5d5e54afe2964c348aad0f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1 (2005); numbering and pages of this version, in which the relative dependence lemma is Lemma 5.2"
+cited_for = ["0.1; 0.3; 0.5–0.15"]
+
+[[source]]
+id = "akns"
+authors = "Matthias Aschenbrenner, Anatole Khélif, Eudes Naziazeno, Thomas Scanlon"
+title = "The logical complexity of finitely generated commutative rings"
+year = 2020
+venue = "Int. Math. Res. Not. IMRN 2020, no. 1, 112–166"
+arxiv = "1610.04768v1"
+locator_scheme = "theorem"
+locator = "§2.3; Corollary 1.9; Lemmas 2.7, 2.10, 2.11, 2.26, 2.29; Corollaries 2.12, 2.14–2.16, 2.24, 3.2; Examples 2.9; Propositions 2.23, 2.28, 3.3, 3.4; Lemmas 3.6–3.8; Theorem 3.1"
+url = "https://arxiv.org/abs/1610.04768v1"
+fetched_from = "https://arxiv.org/pdf/1610.04768v1"
+fetched_at = "2026-10-26T19:47:28Z"
+sha256 = "d33ae1d712782bf0cc75f55de90f08ee807d9b8d0c08959bb3c0263658fc071b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1 (2016); numbering and pages of this version"
+cited_for = ["0.1; 0.4; 0.7; 7.1–7.5; 8.1; 8.4"]
+
+[[source]]
+id = "pop_eei2"
+authors = "Florian Pop"
+title = "Elementary equivalence versus isomorphism, II"
+year = 2017
+venue = "Algebra & Number Theory 11 (2017), no. 9, 2091–2111"
+doi = "10.2140/ant.2017.11.2091"
+locator_scheme = "theorem"
+locator = "Theorems 1.1, 1.2, 2.1; §2C; Notation/Remarks 3.1, 3.5, 4.1, 4.4; Lemmas 3.3, 3.6, 4.2, 4.3, 4.6; Key Lemma 4.7; Recipe 5.1; Conclusion 5.2"
+url = "https://msp.org/ant/2017/11-9/ant-v11-n9-p03-p.pdf"
+fetched_from = "https://msp.org/ant/2017/11-9/ant-v11-n9-p03-p.pdf"
+fetched_at = "2026-10-26T19:48:00Z"
+sha256 = "a6e0f1fe5ac572a93461f6905195fae260d8f87b6d3daa4f20a52d701c77cf68"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "published version; page numbers are the journal's"
+cited_for = ["1.5; 1.6; 5.4–5.7"]
+
+[[source]]
+id = "pop_eei"
+authors = "Florian Pop"
+title = "Elementary equivalence versus isomorphism"
+year = 2002
+venue = "Invent. Math. 150 (2002), 385–408"
+doi = "10.1007/s00222-002-0238-7"
+arxiv = "math/0109144v1"
+locator_scheme = "theorem"
+locator = "Facts 1.1–1.3; Theorem 1.4"
+url = "https://arxiv.org/abs/math/0109144v1"
+fetched_from = "https://arxiv.org/pdf/math/0109144v1"
+fetched_at = "2026-10-26T19:47:39Z"
+sha256 = "67d32c87c0267809294635b08842f19826a260a323a339716613d5551cac9660"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1 (2001); its Theorem 1.4 is the published dimension theorem cited by Poonen, Theorem 2.3; numbering differs from the published version"
+cited_for = ["0.5; 0.8"]
+
+[[source]]
+id = "rumely"
+authors = "R. S. Rumely"
+title = "Undecidability and definability for the theory of global fields"
+year = 1980
+venue = "Trans. Amer. Math. Soc. 262 (1980), no. 1, 195–217"
+doi = "10.1090/S0002-9947-1980-0583852-6"
+locator_scheme = "section"
+locator = "Introduction I–III, pp. 195–196; §2, p. 198; p. 211"
+url = "https://www.ams.org/journals/tran/1980-262-01/S0002-9947-1980-0583852-6/S0002-9947-1980-0583852-6.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1980-262-01/S0002-9947-1980-0583852-6/S0002-9947-1980-0583852-6.pdf"
+fetched_at = "2026-10-26T19:48:02Z"
+sha256 = "c8ff55295b8cb478a8727789282b78ffddcd9acfe9f799c07ef5ff093beb9807"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "published version; page numbers are the journal's"
+cited_for = ["0.7; 7.2"]
+
+[[source]]
+id = "kerz_saito"
+authors = "Moritz Kerz, Shuji Saito"
+title = "Cohomological Hasse principle and motivic cohomology for arithmetic schemes"
+year = 2012
+venue = "Publ. Math. IHÉS 115 (2012), 123–183"
+arxiv = "1010.5930v3"
+locator_scheme = "theorem"
+locator = "(0.4); Theorem 8.1"
+url = "https://arxiv.org/abs/1010.5930v3"
+fetched_from = "https://arxiv.org/pdf/1010.5930v3"
+fetched_at = "2026-10-26T19:56:21Z"
+sha256 = "8f887a2b55bc9a71eb44ae75056488aa50df7867f8202aca1ccdad239bb5a483"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3; numbering of this version"
+cited_for = ["1.1; 1.3"]
+
+[[source]]
+id = "jannsen_hasse"
+authors = "Uwe Jannsen"
+title = "Hasse principles for higher-dimensional fields"
+year = 2016
+venue = "Ann. of Math. (2) 183 (2016), 1–71"
+arxiv = "0910.2803v2"
+locator_scheme = "theorem"
+locator = "Theorem 0.4; Theorem 0.6 (Theorem 0.10 in the published version); Corollary 0.8; Definition 4.18; p. 5"
+url = "https://arxiv.org/abs/0910.2803v2"
+fetched_from = "https://arxiv.org/pdf/0910.2803v2"
+fetched_at = "2026-10-26T19:56:28Z"
+sha256 = "99ccd6b5ea5c2aef30d98c3b60e060c1169dd77e32d45542b513d4a6ca90f6f4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2; its Theorem 0.6 is Theorem 0.10 of the published version cited by Dittmann–Pop"
+cited_for = ["0.1; 1.2; 1.4"]
+
+[[source]]
+id = "kato_hasse"
+authors = "Kazuya Kato"
+title = "A Hasse principle for two dimensional global fields"
+year = 1986
+venue = "J. reine angew. Math. 366 (1986), 142–180"
+doi = "10.1515/crll.1986.366.142"
+locator_scheme = "page"
+locator = "Corollary, p. 145; p. 149"
+url = "https://doi.org/10.1515/crll.1986.366.142"
+licence_class = "none"
+status = "uncertified"
+version_note = "no legal open copy found; cited by its locator without the text; the statement used is restated in Pop 2017, Theorem 2.1"
+cited_for = ["1.1; 1.5"]
+
+[[source]]
+id = "merkurjev_suslin"
+authors = "A. S. Merkurjev, A. A. Suslin"
+title = "K-cohomology of Severi–Brauer varieties and the norm residue homomorphism"
+year = 1982
+venue = "Izv. Akad. Nauk SSSR Ser. Mat. 46 (1982); English translation Math. USSR-Izv. 21 (1983), 307–340"
+doi = "10.1070/IM1983v021n02ABEH001793"
+locator_scheme = "theorem"
+locator = "Theorem 12.2"
+url = "https://doi.org/10.1070/IM1983v021n02ABEH001793"
+licence_class = "none"
+status = "uncertified"
+version_note = "no legal open copy found; cited by its locator without the text; the prime-degree case used is restated in Pop 2017, §2C(2)"
+cited_for = ["1.6"]
+
+[[source]]
+id = "moret_bailly"
+authors = "Laurent Moret-Bailly"
+title = "Elliptic curves and Hilbert's tenth problem for algebraic function fields over real and p-adic fields"
+year = 2005
+venue = "J. reine angew. Math. 587 (2005), 77–143"
+doi = "10.1515/crll.2005.2005.587.77"
+locator_scheme = "theorem"
+locator = "Lemma 11.1(i)"
+url = "https://doi.org/10.1515/crll.2005.2005.587.77"
+licence_class = "none"
+status = "uncertified"
+version_note = "no legal open copy found; cited by its locator without the text; the statement used is restated in Poonen, Lemma 3.2"
+cited_for = ["0.9"]
+
+[[source]]
+id = "lenstra_cm"
+authors = "Hendrik W. Lenstra Jr."
+title = "Complex multiplication structure of elliptic curves"
+year = 1996
+venue = "Journal of Number Theory 56 (1996), 227–241"
+doi = "10.1006/jnth.1996.0015"
+locator_scheme = "theorem"
+locator = "Theorem 1(a)"
+url = "https://doi.org/10.1006/jnth.1996.0015"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text, as quoted in Poonen, proof of Lemma 4.3"
+cited_for = ["0.11"]
+
+[[source]]
+id = "waterhouse"
+authors = "William C. Waterhouse"
+title = "Abelian varieties over finite fields"
+year = 1969
+venue = "Annales scientifiques de l'École normale supérieure 2"
+doi = "10.24033/asens.1183"
+locator_scheme = "theorem"
+locator = "Theorem 4.1"
+url = "https://doi.org/10.24033/asens.1183"
+fetched_from = "https://www.numdam.org/item/10.24033/asens.1183.pdf"
+fetched_at = "2026-10-26T19:57:00Z"
+sha256 = "7be2bf9dde45454afa3dd9a0ea1ba05acbe952b6b573a0c37c2b1b8f0cccbb47"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["0.11"]
+
+[[source]]
+id = "stacks"
+authors = "The Stacks project authors"
+title = "The Stacks project, Commutative Algebra and Resolution of Surfaces"
+year = 2026
+locator_scheme = "tag"
+locator = "Lemma 10.157.6 (tag 031T); Theorem 10.160.8 (tag 032A); Lemma 10.160.10 (tag 0C0S); chapter Resolution of Surfaces (tag 0ADX)"
+url = "https://stacks.math.columbia.edu/tag/031T"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=031T"
+fetched_at = "2026-10-26T20:26:42Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["0.5; 1.4; 1.5; 5.4; 6.3"]
+
+[[source]]
+id = "serre_albanese"
+authors = "Jean-Pierre Serre"
+title = "Morphismes universels et variété d'Albanese"
+year = 1959
+venue = "Séminaire Claude Chevalley 4 (1958–1959), exposé 10"
+locator_scheme = "theorem"
+locator = "Théorème 5, p. 10-10"
+url = "https://www.numdam.org/item/SCC_1958-1959__4__A10_0.pdf"
+fetched_from = "https://www.numdam.org/item/SCC_1958-1959__4__A10_0.pdf"
+fetched_at = "2026-10-26T20:30:03Z"
+sha256 = "1094f117ebc6c93974614a66444a5fe9e43933ea66b9242f6301dd4cd7e26f8d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "numdam scan; page numbers are those of the exposé"
+cited_for = ["0.8a; 0.9; 0.12"]
