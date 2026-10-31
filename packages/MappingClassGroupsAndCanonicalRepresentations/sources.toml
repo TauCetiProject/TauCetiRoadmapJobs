@@ -1,0 +1,546 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "MappingClassGroupsAndCanonicalRepresentations"
+
+[[source]]
+id = "LL24"
+authors = "Aaron Landesman, Daniel Litt"
+title = "Canonical representations of surface groups"
+year = 2022
+arxiv = "2205.15352v4"
+locator_scheme = "theorem"
+locator = "Theorem 1.2.1"
+url = "https://arxiv.org/abs/2205.15352v4"
+fetched_from = "https://arxiv.org/pdf/2205.15352v4"
+fetched_at = "2026-10-26T19:36:35Z"
+sha256 = "4cb511ba40675aa6899b351f2ee27eb9487b4a21f65ec8000c1f2cc1a5107ceb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v4"
+cited_for = ["Layers 2-12"]
+
+[[source]]
+id = "LL22"
+authors = "Aaron Landesman, Daniel Litt"
+title = "Geometric local systems on very general curves and isomonodromy"
+year = 2022
+arxiv = "2202.00039v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.2.12"
+url = "https://arxiv.org/abs/2202.00039v2"
+fetched_from = "https://arxiv.org/pdf/2202.00039v2"
+fetched_at = "2026-10-26T19:36:47Z"
+sha256 = "37380b99082b5fc287c4c025247fc8926a18d9f951604bd6e27e467687ddc597"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["5.1", "5.2", "5.3", "5.11", "10.4", "11.2", "11.5"]
+
+[[source]]
+id = "KP20"
+authors = "Christian Klevdal, Stefan Patrikis"
+title = "G-rigid local systems are integral"
+year = 2020
+arxiv = "2009.07350v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.2"
+url = "https://arxiv.org/abs/2009.07350v2"
+fetched_from = "https://arxiv.org/pdf/2009.07350v2"
+fetched_at = "2026-10-26T19:36:52Z"
+sha256 = "c759728f34fa45936cabdc5a86b349c4e9bbaa3215a55f109a5ccce9b99e8858"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["5.9", "5.10"]
+
+[[source]]
+id = "CH19"
+authors = "Gaël Cousin, Viktoria Heu"
+title = "Algebraic isomonodromic deformations and the mapping class group"
+year = 2016
+arxiv = "1612.05779v4"
+locator_scheme = "theorem"
+locator = "Theorem A"
+url = "https://arxiv.org/abs/1612.05779v4"
+fetched_from = "https://arxiv.org/pdf/1612.05779v4"
+fetched_at = "2026-10-26T19:36:59Z"
+sha256 = "bd77b762b20c37576c66e39fbd10df572d4483121466ee76b72ad11037173904"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v4"
+cited_for = ["9.5", "12.5", "12.6"]
+
+[[source]]
+id = "AS16"
+authors = "Javier Aramayona, Juan Souto"
+title = "Rigidity phenomena in the mapping class group"
+year = 2016
+locator_scheme = "theorem"
+locator = "Proposition 2.4"
+url = "https://www.math.univ-toulouse.fr/~jaramayo/rigidity-survey.pdf"
+fetched_from = "https://www.math.univ-toulouse.fr/~jaramayo/rigidity-survey.pdf"
+fetched_at = "2026-10-26T19:37:00Z"
+sha256 = "85e9989eaa81b97402a7016aff4c7488d911a044d85695b04b2b327b0e640409"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["7.1"]
+
+[[source]]
+id = "LL-P04"
+authors = "Aaron Landesman, Daniel Litt"
+title = "Erratum P04 to \"Canonical representations of surface groups\""
+year = 2026
+locator_scheme = "section"
+locator = "P04, correction to page 868"
+url = "https://www.daniellitt.com/published-paper-reviews.html"
+fetched_from = "https://www.daniellitt.com/published-paper-reviews.html"
+fetched_at = "2026-10-26T19:37:01Z"
+sha256 = "c382f55815ca3e6f01a3b1abf60d8d06161f8734876e9aaf887c5dc4143a6032"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["3.4", "4.1", "4.2", "4.5", "7.2", "11.4", "11.6"]
+
+[[source]]
+id = "LLSS20"
+authors = "Wanlin Li, Daniel Litt, Nick Salter, Padmavathi Srinivasan"
+title = "Surface bundles and the section conjecture"
+year = 2020
+arxiv = "2010.07331v1"
+locator_scheme = "theorem"
+locator = "Lemma 2.1.1"
+url = "https://arxiv.org/abs/2010.07331v1"
+fetched_from = "https://arxiv.org/pdf/2010.07331v1"
+fetched_at = "2026-10-26T19:46:18Z"
+sha256 = "359f948d9b4e26b8feac48f2528faf64495778d6f499f1032595d1281af4f413"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["7.2"]
+
+[[source]]
+id = "Moc06"
+authors = "Takuro Mochizuki"
+title = "Kobayashi-Hitchin correspondence for tame harmonic bundles and an application"
+year = 2004
+arxiv = "math/0411300v3"
+locator_scheme = "theorem"
+locator = "Theorem 10.5"
+url = "https://arxiv.org/abs/math/0411300v3"
+fetched_from = "https://arxiv.org/pdf/math/0411300v3"
+fetched_at = "2026-10-26T19:46:26Z"
+sha256 = "f218e8dfaded8d71d9bbfb3278c666f95570b5f3d3cf540b590c52c2f6988266"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["5.8"]
+
+[[source]]
+id = "EG18"
+authors = "Hélène Esnault, Michael Groechenig"
+title = "Cohomologically rigid local systems and integrality"
+year = 2017
+arxiv = "1711.06436v3"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1711.06436v3"
+fetched_from = "https://arxiv.org/pdf/1711.06436v3"
+fetched_at = "2026-10-26T19:46:30Z"
+sha256 = "622fb7b327b30b522b23c6d50f23e24b5e252d44f61c3684594a78362d5a64dc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["5.10"]
+
+[[source]]
+id = "BGMW17"
+authors = "Indranil Biswas, Subhojoy Gupta, Mahan Mj, Junho Peter Whang"
+title = "Surface group representations in ${\\rm SL}_2({\\mathbb C})$ with finite mapping class orbits"
+year = 2017
+venue = "Geom. Topol. 26 (2022) 679-719"
+doi = "10.2140/gt.2022.26.679"
+arxiv = "1707.00071v4"
+locator_scheme = "theorem"
+locator = "Theorem A"
+url = "https://arxiv.org/abs/1707.00071v4"
+fetched_from = "https://arxiv.org/pdf/1707.00071v4"
+fetched_at = "2026-10-26T19:46:36Z"
+sha256 = "efec2b671b1767eca85c45d14ee29f683f673537336484e7325ca8450bd5e2c7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v4"
+cited_for = ["12.5", "12.6"]
+
+[[source]]
+id = "KS16"
+authors = "Thomas Koberda, Ramanujan Santharoubane"
+title = "Quotients of surface groups and homology of finite covers via quantum representations"
+year = 2015
+doi = "10.1007/s00222-016-0652-x"
+arxiv = "1510.00677v2"
+locator_scheme = "theorem"
+locator = "Corollary 4.4"
+url = "https://arxiv.org/abs/1510.00677v2"
+fetched_from = "https://arxiv.org/pdf/1510.00677v2"
+fetched_at = "2026-10-26T19:46:42Z"
+sha256 = "acd2bdcbea911edc463429b13761f16c49398fe4cfbbb947cc363255c4756f63"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["12.7"]
+
+[[source]]
+id = "Kor02"
+authors = "Mustafa Korkmaz"
+title = "Low-dimensional homology groups of mapping class groups: a survey"
+year = 2003
+venue = "Proceedings of 8th Gokova Geometry-Topology Conference, Turkish Journal of Mathematics 26 no. 1 (2002), 101-114"
+arxiv = "math/0307111v1"
+locator_scheme = "theorem"
+locator = "Theorem 5.1"
+url = "https://arxiv.org/abs/math/0307111v1"
+fetched_from = "https://arxiv.org/pdf/math/0307111v1"
+fetched_at = "2026-10-26T19:46:51Z"
+sha256 = "54927833ae364f8ee895d6951fd45ea8d5266af80fafaf7aebb7e3b1e749fe3b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["0.7"]
+
+[[source]]
+id = "Sch19"
+authors = "Christian Schnell"
+title = "An overview of Morihiko Saito's theory of mixed Hodge modules"
+year = 2014
+arxiv = "1405.3096v1"
+locator_scheme = "theorem"
+locator = "Theorem 21.1"
+url = "https://arxiv.org/abs/1405.3096v1"
+fetched_from = "https://arxiv.org/pdf/1405.3096v1"
+fetched_at = "2026-10-26T19:47:01Z"
+sha256 = "f6b912b7e2dbc6d361fe68dd2eb6da912ba76b34efcf0d9bed9801f1c1fa3ce3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["5.4"]
+
+[[source]]
+id = "Sik12"
+authors = "Adam S. Sikora"
+title = "Character Varieties"
+year = 2009
+venue = "Trans. of AMS 364 (2012) 5173--5208"
+arxiv = "0902.2589v3"
+locator_scheme = "theorem"
+locator = "Theorem 30"
+url = "https://arxiv.org/abs/0902.2589v3"
+fetched_from = "https://arxiv.org/pdf/0902.2589v3"
+fetched_at = "2026-10-26T19:47:07Z"
+sha256 = "db4f2de2daf6a5c6b6b0747f3e3f659870b292add5f4fa4a50ebafe172a76cc9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["1.4"]
+
+[[source]]
+id = "LL19"
+authors = "Brian Lawrence, Daniel Litt"
+title = "Representations of surface groups with universally finite mapping class group orbit"
+year = 2019
+arxiv = "1907.03941v3"
+locator_scheme = "theorem"
+locator = "Lemma 2.2.1"
+url = "https://arxiv.org/abs/1907.03941v3"
+fetched_from = "https://arxiv.org/pdf/1907.03941v3"
+fetched_at = "2026-10-26T19:47:18Z"
+sha256 = "406cc8c4d58c7b00a81418bb93052a54c3e0a5dc9f944a719eac57a364e3e908"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["3.1"]
+
+[[source]]
+id = "MS80"
+authors = "V. B. Mehta, C. S. Seshadri"
+title = "Moduli of vector bundles on curves with parabolic structures"
+year = 1980
+venue = "Mathematische Annalen 248"
+doi = "10.1007/BF01420526"
+locator_scheme = "theorem"
+locator = "Theorem 4.1"
+url = "https://doi.org/10.1007/BF01420526"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.2"]
+
+[[source]]
+id = "SZ85"
+authors = "Joseph Steenbrink, Steven Zucker"
+title = "Variation of mixed Hodge structure. I"
+year = 1985
+venue = "Inventiones Mathematicae 80"
+doi = "10.1007/BF01388729"
+locator_scheme = "theorem"
+locator = "4.19"
+url = "https://doi.org/10.1007/BF01388729"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.4"]
+
+[[source]]
+id = "Mor93"
+authors = "D. R. Heath-Brown"
+title = "The size of Selmer groups for the congruent number problem"
+year = 1993
+venue = "Inventiones Mathematicae 111"
+doi = "10.1007/BF01231285"
+locator_scheme = "theorem"
+locator = "the nonzero class in H1(Mod_g, (wedge^3 H)/H), as cited in LL24 Example 10.1.6(1)"
+url = "https://doi.org/10.1007/BF01231285"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["12.2"]
+
+[[source]]
+id = "Nie24"
+authors = "Jakob Nielsen"
+title = "Die Isomorphismengruppe der freien Gruppen"
+year = 1924
+venue = "Mathematische Annalen 91"
+doi = "10.1007/BF01556078"
+locator_scheme = "theorem"
+locator = "Theorem"
+url = "https://doi.org/10.1007/BF01556078"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["9.6"]
+
+[[source]]
+id = "Mor89"
+authors = "Shigeyuki Morita"
+title = "Families of Jacobian manifolds and characteristic classes of surface bundles I"
+year = 1989
+locator_scheme = "theorem"
+locator = "Proposition 6.4"
+url = "http://www.numdam.org/item/AIF_1989__39_3_777_0.pdf"
+fetched_from = "https://www.numdam.org/item/AIF_1989__39_3_777_0.pdf"
+fetched_at = "2026-10-26T19:48:23Z"
+sha256 = "c1623042d78afcb13c3f0765974b0d4d01eb05b3621c83d82f16a95e4d503cd7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["12.4"]
+
+[[source]]
+id = "Sim90"
+authors = "Carlos T. Simpson"
+title = "Harmonic bundles on noncompact curves"
+year = 1990
+locator_scheme = "theorem"
+locator = "Theorem 5"
+url = "https://www.ams.org/journals/jams/1990-03-03/S0894-0347-1990-1040197-8/S0894-0347-1990-1040197-8.pdf"
+fetched_from = "https://www.ams.org/journals/jams/1990-03-03/S0894-0347-1990-1040197-8/S0894-0347-1990-1040197-8.pdf"
+fetched_at = "2026-10-26T19:48:37Z"
+sha256 = "ec6a9f58caa18cfd9c548a703fe7a1fbb81a6ed6afb18f2a00b8d10450a88b25"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["5.2"]
+
+[[source]]
+id = "HS53"
+authors = "G. Hochschild, J.-P. Serre"
+title = "Cohomology of group extensions"
+year = 1953
+locator_scheme = "theorem"
+locator = "Chapter III, Theorem 2"
+url = "https://www.ams.org/journals/tran/1953-074-01/S0002-9947-1953-0052438-8/S0002-9947-1953-0052438-8.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1953-074-01/S0002-9947-1953-0052438-8/S0002-9947-1953-0052438-8.pdf"
+fetched_at = "2026-10-26T19:48:39Z"
+sha256 = "3db4d391f9f4cce39592f32077a7161a6f82c46792ffa9ff0d322cf0582a4d0c"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["1.1"]
+
+[[source]]
+id = "Hat02"
+authors = "Allen Hatcher"
+title = "Algebraic Topology"
+year = 2002
+locator_scheme = "page"
+locator = "Section 1.2, p. 51; Examples 1B.2, 1B.14"
+url = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_at = "2026-10-26T19:48:59Z"
+sha256 = "bebb3032bf9021b956da3bd070eb6c67dc662cf849be9cdf6679f677560e5618"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["0.1", "0.4"]
+
+[[source]]
+id = "Deb01"
+authors = "Olivier Debarre"
+title = "Higher-Dimensional Algebraic Geometry"
+year = 2001
+venue = "Universitext"
+doi = "10.1007/978-1-4757-5406-3"
+locator_scheme = "theorem"
+locator = "Lemma 4.19"
+url = "https://doi.org/10.1007/978-1-4757-5406-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.5"]
+
+[[source]]
+id = "PS08"
+authors = "Chris A. M. Peters, Joseph H. M. Steenbrink"
+title = "Mixed Hodge Structures"
+year = 2008
+venue = "Ergebnisse der Mathematik und ihrer Grenzgebiete. 3. Folge / A Series of Modern Surveys in Mathematics"
+doi = "10.1007/978-3-540-77017-6"
+locator_scheme = "theorem"
+locator = "Theorem 14.52"
+url = "https://doi.org/10.1007/978-3-540-77017-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.4"]
+
+[[source]]
+id = "Del70"
+authors = "Pierre Deligne"
+title = "Equations Différentielles à Points Singuliers Réguliers"
+year = 1970
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0061194"
+locator_scheme = "section"
+locator = "Remarques 5.5(i)"
+url = "https://doi.org/10.1007/BFb0061194"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.2", "5.4"]
+
+[[source]]
+id = "FM12"
+authors = "Benson Farb, Dan Margalit"
+title = "A Primer on Mapping Class Groups"
+year = 2012
+venue = "Princeton Mathematical Series 49, Princeton University Press"
+doi = "10.1515/9781400839049"
+locator_scheme = "theorem"
+locator = "Theorem 4.6"
+url = "https://doi.org/10.1515/9781400839049"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["0.2", "0.3", "0.4", "0.5", "0.6", "2.3", "12.8"]
+
+[[source]]
+id = "Tim87"
+authors = "Klaus Timmerscheidt"
+title = "Mixed Hodge theory for unitary local systems"
+year = 1987
+venue = "J. Reine Angew. Math. 379, 152-171"
+doi = "10.1515/crll.1987.379.152"
+locator_scheme = "theorem"
+locator = "Theorem 7.1"
+url = "https://doi.org/10.1515/crll.1987.379.152"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.4"]
+
+[[source]]
+id = "Wat89"
+authors = "William C. Waterhouse"
+title = "Two generators for the general linear groups over finite fields"
+year = 1989
+venue = "Linear and Multilinear Algebra 24(4), 227-230"
+doi = "10.1080/03081088908817938"
+locator_scheme = "theorem"
+locator = "Theorem"
+url = "https://doi.org/10.1080/03081088908817938"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.5", "11.4"]
+
+[[source]]
+id = "Kat96"
+authors = "Nicholas M. Katz"
+title = "Rigid Local Systems"
+year = 1996
+venue = "Annals of Mathematics Studies 139, Princeton University Press"
+doi = "10.1515/9781400882595"
+locator_scheme = "theorem"
+locator = "Theorem 8.4"
+url = "https://doi.org/10.1515/9781400882595"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["12.9"]
+
+[[source]]
+id = "CR62"
+authors = "Charles W. Curtis, Irving Reiner"
+title = "Representation Theory of Finite Groups and Associative Algebras"
+year = 1962
+venue = "Interscience; reprinted AMS Chelsea Publishing 356 (2006)"
+locator_scheme = "theorem"
+locator = "Theorem 36.13"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled book; cited by its locator without the text"
+cited_for = ["1.5", "11.2"]
+
+[[source]]
+id = "MKS04"
+authors = "Wilhelm Magnus, Abraham Karrass, Donald Solitar"
+title = "Combinatorial Group Theory"
+year = 2004
+venue = "Dover Publications, second edition"
+locator_scheme = "page"
+locator = "Theorem 3.2, p. 131"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled book; cited by its locator without the text"
+cited_for = ["9.6"]
+
+[[source]]
+id = "BKMS18"
+authors = "Indranil Biswas, Thomas Koberda, Mahan Mj, Ramanujan Santharoubane"
+title = "Representations of surface groups with finite mapping class group orbits"
+year = 2018
+arxiv = "1702.03622v1"
+locator_scheme = "theorem"
+locator = "Theorem 5.1"
+url = "https://arxiv.org/abs/1702.03622v1"
+fetched_from = "https://arxiv.org/pdf/1702.03622v1"
+fetched_at = "2026-10-26T19:51:41Z"
+sha256 = "1dd75e4eb68e73a246087ec447837da9a24b4d8b2af766f56abe93a5e78f6555"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["12.7"]
