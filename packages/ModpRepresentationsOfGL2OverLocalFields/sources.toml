@@ -1,0 +1,275 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ModpRepresentationsOfGL2OverLocalFields"
+
+[[source]]
+id = "BHHMS23"
+authors = "Christophe Breuil, Florian Herzig, Yongquan Hu, Stefano Morra, Benjamin Schraen"
+title = "Gelfand-Kirillov dimension and mod p cohomology for GL2"
+year = 2020
+venue = "Invent. Math. 234 (2023), no. 1, 1-128"
+arxiv = "2009.03127v7"
+locator_scheme = "theorem"
+locator = "§§2, 4-7: Definition 2.3.1, Proposition 2.4.2, Lemmas 2.4.4, 2.4.6, 4.1.2, 5.1.2-5.1.3, 5.3.1-5.3.2, 6.1.1-6.1.3, 6.2.1-6.2.3, 6.3.1-6.3.9, 6.4.1-6.4.4, 7.1.1, 7.1.4, 7.2.1, 7.3.2, 7.4.2; Propositions 5.3.3, 6.2.2, 6.2.4, 6.3.10, 6.4.1, 6.4.6, 7.2.2, 7.3.1, 7.4.1, 7.4.3; Theorems 5.3.4, 6.3.11, 6.4.7, 7.3.3; Corollaries 5.3.5, 6.1.4, 6.3.13, 6.3.15, 6.4.5, 7.3.4"
+url = "https://arxiv.org/abs/2009.03127v7"
+fetched_from = "https://arxiv.org/pdf/2009.03127v7"
+fetched_at = "2026-10-26T18:57:20Z"
+sha256 = "8f06c68bbb85aa3d13420181197167b3ce9158dc117e96da6299718765f99e7a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v7"
+cited_for = ["Layers 3-9"]
+
+[[source]]
+id = "BP12"
+authors = "Christophe Breuil, Vytautas Paškūnas"
+title = "Towards a modulo p Langlands correspondence for GL2"
+year = 2012
+locator_scheme = "theorem"
+locator = "Lemmas 3.4-3.5, 3.8; Corollaries 3.12, 5.6; Proposition 13.1; Corollary 13.2"
+url = "https://www.imo.universite-paris-saclay.fr/~breuil/PUBLICATIONS/supersingular.pdf"
+fetched_from = "https://www.imo.universite-paris-saclay.fr/~christophe.breuil/PUBLICATIONS/supersingular.pdf"
+fetched_at = "2026-10-26T18:58:23Z"
+sha256 = "a63c41e222e226f1019282f6b7dab7078afe61f908572f1b0f90523f7fdf2d51"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layers 3, 5"]
+
+[[source]]
+id = "EMERTON1"
+authors = "Matthew Emerton"
+title = "Ordinary parts of admissible representations of p-adic reductive groups I. Definition and first properties"
+year = 2010
+locator_scheme = "theorem"
+locator = "Definitions 3.1.3, 3.1.7-3.1.9; Lemma 2.3.4; Proposition 4.3.4; Theorem 4.4.6"
+url = "https://www.math.uchicago.edu/~emerton/pdffiles/ord-one.pdf"
+fetched_from = "https://www.math.uchicago.edu/~emerton/pdffiles/ord-one.pdf"
+fetched_at = "2026-10-26T18:58:25Z"
+sha256 = "4300be5ff118fb60556b2b478281631d7fd2eb5147c0d192a859e41ad6fb0429"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layer 2"]
+
+[[source]]
+id = "EMERTON2"
+authors = "Matthew Emerton"
+title = "Ordinary parts of admissible representations of p-adic reductive groups II. Derived functors"
+year = 2010
+locator_scheme = "theorem"
+locator = "Remark 3.7.3; Theorem 4.2.12"
+url = "https://www.math.uchicago.edu/~emerton/pdffiles/ord-two.pdf"
+fetched_from = "https://www.math.uchicago.edu/~emerton/pdffiles/ord-two.pdf"
+fetched_at = "2026-10-26T18:58:27Z"
+sha256 = "3ecb1ba39a611ad931caf29d2f5215ca7d72d3ffdf9f58a04ec4f27faa67c00a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layer 2"]
+
+[[source]]
+id = "DEG"
+authors = "Andrea Dotto, Matthew Emerton, Toby Gee"
+title = "Localization of smooth p-power torsion representations of GL2(Qp)"
+year = 2022
+locator_scheme = "theorem"
+locator = "Lemma 4.2.1"
+url = "https://math.uchicago.edu/~emerton/pdffiles/localizationGL2Qp.pdf"
+fetched_from = "https://math.uchicago.edu/~emerton/pdffiles/localizationGL2Qp.pdf"
+fetched_at = "2026-10-26T18:59:30Z"
+sha256 = "45177d930d238c3df6c0a59146454143b1782886d6d9776cc241e7f84a17d690"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layer 1"]
+
+[[source]]
+id = "HW22"
+authors = "Yongquan Hu, Haoran Wang"
+title = "On the mod $p$ cohomology for $\\mathrm{GL}_2$: the non-semisimple case"
+year = 2020
+venue = "Cambridge J. of Math., 10 (2022)"
+arxiv = "2009.09640v4"
+locator_scheme = "theorem"
+locator = "Lemma 2.10; Theorems 2.23, 2.30; Corollaries 2.25, 2.26, 2.31"
+url = "https://arxiv.org/abs/2009.09640v4"
+fetched_from = "https://arxiv.org/pdf/2009.09640v4"
+fetched_at = "2026-10-26T18:59:36Z"
+sha256 = "018c887761324a2134c614c3328d2aa4d25e9a8640c6c0e8fe704d9a99e795b1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v4"
+cited_for = ["Layer 5"]
+
+[[source]]
+id = "HU12"
+authors = "Yongquan Hu"
+title = "Diagrammes canoniques et representations modulo $p$ de $\\GL_2(F)$"
+year = 2009
+arxiv = "0904.3991v3"
+locator_scheme = "theorem"
+locator = "§3.1.1; Theorem 4.3; Proposition 4.4; Lemma 4.5; Corollary 3.31"
+url = "https://arxiv.org/abs/0904.3991v3"
+fetched_from = "https://arxiv.org/pdf/0904.3991v3"
+fetched_at = "2026-10-26T18:59:40Z"
+sha256 = "cd4bf2768c7b5cb8768b200cc2d2ef56ba49e8b0144f09af82c7b6e37e10610e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["Layers 0, 2"]
+
+[[source]]
+id = "KOHLHAASE17"
+authors = "Jan Kohlhaase"
+title = "Smooth duality in natural characteristic"
+year = 2017
+locator_scheme = "theorem"
+locator = "Proposition 3.9; Remark 3.10"
+url = "https://esaga.uni-due.de/f/jan.kohlhaase/Kohlhaase_Smooth_Duality.pdf"
+fetched_from = "https://esaga.uni-due.de/f/jan.kohlhaase/Kohlhaase_Smooth_Duality.pdf"
+fetched_at = "2026-10-26T18:59:41Z"
+sha256 = "7950a05ee57ab100abd005c300af8c02872d88cd220b4da87d1417db56ac9421"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layer 1"]
+
+[[source]]
+id = "HU10"
+authors = "Yongquan Hu"
+title = "Sur quelques représentations supersingulières de $GL_2(Q_{p^f})$"
+year = 2009
+arxiv = "0909.0527v3"
+locator_scheme = "theorem"
+locator = "Lemma 2.13(i)"
+url = "https://arxiv.org/abs/0909.0527v3"
+fetched_from = "https://arxiv.org/pdf/0909.0527v3"
+fetched_at = "2026-10-26T18:59:46Z"
+sha256 = "f6f13dac6cfd541e2a5ed371ec8da9a3c398c703f5f1a8fee0b9814be3e1bf33"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "LMS22-CORR"
+authors = "Daniel Le, Stefano Morra, Benjamin Schraen"
+title = "Corrigé for Multiplicity one at full congruence level"
+year = 2022
+locator_scheme = "theorem"
+locator = "Item (2)"
+url = "https://www.math.univ-paris13.fr/~morra/corrige.pdf"
+fetched_from = "https://www.math.univ-paris13.fr/~morra/corrige.pdf"
+fetched_at = "2026-10-26T19:00:27Z"
+sha256 = "052f77ff37581f92ebdd9a5aeb0940cac6961b1c657ebababb2ec5d13bdd7a3e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layer 5"]
+
+[[source]]
+id = "CDN23"
+authors = "Pierre Colmez, Gabriel Dospinescu, Wiesława Nizioł"
+title = "Factorisation de la cohomologie étale p-adique de la tour de Drinfeld"
+year = 2023
+locator_scheme = "theorem"
+locator = "§§1.1-1.5: Propositions 1.2-1.3, 1.17, 1.19-1.20, 1.30, 1.33; Lemmes 1.6-1.7, 1.22-1.25, 1.29, 1.31-1.32; Théorèmes 1.21, 1.24, 1.26; Corollaire 1.34; Lemme 2.9"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/79733067FC7CB7574B408744E4387F91/S205050862300015Xa.pdf/factorisation-de-la-cohomologie-etale-p-adique-de-la-tour-de-drinfeld.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/79733067FC7CB7574B408744E4387F91/S205050862300015Xa.pdf/factorisation-de-la-cohomologie-etale-p-adique-de-la-tour-de-drinfeld.pdf"
+fetched_at = "2026-10-26T19:00:49Z"
+sha256 = "b007a4e37b824ca5986ac6152ed9fabcf38dde97e16d8f5f7f60756fe77d3418"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layers 0-2"]
+
+[[source]]
+id = "LMS22"
+authors = "Daniel Le, Stefano Morra, Benjamin Schraen"
+title = "Multiplicity one at full congruence level"
+year = 2022
+locator_scheme = "theorem"
+locator = "Proposition 3.3"
+url = "https://www.math.univ-paris13.fr/~morra/MultiplicityOne.pdf"
+fetched_from = "https://www.math.univ-paris13.fr/~morra/MultiplicityOne.pdf"
+fetched_at = "2026-10-26T19:02:50Z"
+sha256 = "7a685d6e2b8ec29836970ba7dfa8b9ef6366e3e4fbb3a8dddcfd9e8452fab8bb"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layer 5"]
+
+[[source]]
+id = "SHOTTON20"
+authors = "Jack Shotton"
+title = "On the category of finitely presented mod $p$ representations of $GL_2(F)$"
+year = 2017
+venue = "Documenta Mathematica 25, 143-157 (2020)"
+doi = "10.25537/dm.2020v25.143-157"
+arxiv = "1710.06003v3"
+locator_scheme = "theorem"
+locator = "Definition 2.3; Lemmas 2.4-2.8; Propositions 3.2, 3.8, 4.1-4.3; Corollary 4.4; Theorems 4.5, 5.1; Corollary 5.2"
+url = "https://arxiv.org/abs/1710.06003v3"
+fetched_from = "https://arxiv.org/pdf/1710.06003v3"
+fetched_at = "2026-10-26T19:03:42Z"
+sha256 = "cff85f76156b00a447efc0f817ea88caffd6693580ebc8ad167e429d08cb7918"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3 (27 July 2020) of the Documenta Math. 25 (2020) article, DOI 10.4171/dm/741; numbering checked against the published theorem list cited by CDN23 (Corollary 4.4)"
+cited_for = ["Layer 0"]
+
+[[source]]
+id = "HAUSEUX"
+authors = "Julien Hauseux"
+title = "Extensions entre séries principales p-adiques et modulo p de G(F)"
+year = 2016
+arxiv = "1307.1818v3"
+locator_scheme = "theorem"
+locator = "Corollary 4.2.4"
+url = "https://arxiv.org/abs/1307.1818v3"
+fetched_from = "https://arxiv.org/pdf/1307.1818v3"
+fetched_at = "2026-10-26T19:03:49Z"
+sha256 = "9eaeab4b7ec78ffbc9922ee3be1b830c4b92c36f4a5027faa253d9557cc64387"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3; Corollaire 4.2.4 as cited by CDN23 Proposition 1.30"
+cited_for = ["Layer 2"]
+
+[[source]]
+id = "VIGNERAS11"
+authors = "Marie-France Vigneras"
+title = "De GL(2,F) a Gal_{Q_p}"
+year = 2009
+arxiv = "0909.4003v1"
+locator_scheme = "theorem"
+locator = "§5, Propositions 7-11 and Théorème 7 (arXiv numbering)"
+url = "https://arxiv.org/abs/0909.4003v1"
+fetched_from = "https://arxiv.org/pdf/0909.4003v1"
+fetched_at = "2026-10-26T19:04:09Z"
+sha256 = "e5bc8b1cf74e063d42c7dc8c33cd5e26c1247c68bf69f56a3d36b8d6f829927b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv:0909.4003v1 (De GL(2,F) à Gal_Qp); published as Le foncteur de Colmez pour GL(2,F), ALM 19 (2011), whose numbering (Propositions 5.5-5.8) differs; locators use the arXiv numbering"
+cited_for = ["Layer 2"]
+
+[[source]]
+id = "SERRE-LRFG"
+authors = "Jean-Pierre Serre"
+title = "Linear Representations of Finite Groups"
+year = 1977
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4684-9458-7"
+locator_scheme = "chapter"
+locator = "Part III, Chapters 14-15"
+url = "https://doi.org/10.1007/978-1-4684-9458-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 5"]
