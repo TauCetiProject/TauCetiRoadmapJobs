@@ -1,0 +1,508 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PurityForFlatCohomology"
+
+[[source]]
+id = "CS24"
+authors = "Kęstutis Česnavičius; Peter Scholze"
+title = "Purity for flat cohomology"
+year = 2024
+doi = "10.4007/annals.2024.199.1.2"
+arxiv = "1912.10932v3"
+locator_scheme = "theorem"
+locator = "Theorems 3.2.4, 3.3.1, 4.1.8, 4.2.10, 5.2.8, 5.3.5, 5.4.4, 5.5.1, 6.1.1, 6.1.2, 6.2.3, 6.2.4, 6.2.7, 7.1.2, 7.1.3, 7.2.1, 7.2.5, 7.2.8, 7.2.9"
+cited_for = ["Summary", "Layer 0", "Layer 1", "Layer 2", "Layer 3", "Layer 4", "Layer 5", "Layer 6", "Layer 7", "Source corrections"]
+url = "https://arxiv.org/abs/1912.10932v3"
+fetched_from = "https://arxiv.org/pdf/1912.10932v3"
+fetched_at = "2026-10-26T03:40:05Z"
+sha256 = "2f9d3ee868c244a7ddd6579a5dafed10a7ac9eb8b2ffe840db9f2bc115cd6ed4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3 (26 April 2023), the final version; page numbers and text lines refer to it. Published in Ann. of Math. 199 (2024), 51-180."
+
+[[source]]
+id = "C19"
+authors = "Kęstutis Česnavičius"
+title = "Purity for the Brauer group"
+year = 2019
+doi = "10.1215/00127094-2018-0057"
+arxiv = "1711.06456v4"
+locator_scheme = "theorem"
+locator = "Theorems 1.1-1.4, 5.3, 6.1, 6.2; Lemma 2.1; Propositions 2.2-2.3; Corollary 2.4; Remarks 6.3-6.4; Appendix A"
+cited_for = ["0.1", "Layer 8", "Source corrections"]
+url = "https://arxiv.org/abs/1711.06456v4"
+fetched_from = "https://arxiv.org/pdf/1711.06456v4"
+fetched_at = "2026-10-26T03:40:10Z"
+sha256 = "a62a12bbe26595aec89d31d24d46774a1ee3eff73c08da0febf5a2b472118709"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v4 (1 December 2018); published in Duke Math. J. 168 (2019), 1461-1486."
+
+[[source]]
+id = "SGA2"
+authors = "Alexander Grothendieck; Yves Laszlo (ed.)"
+title = "Cohomologie locale des faisceaux cohérents et théorèmes de Lefschetz locaux et globaux (SGA 2)"
+year = 2005
+arxiv = "math/0511279v1"
+locator_scheme = "section"
+locator = "Exposé XIV, Propositions 5.2-5.5, Théorème 5.6; Exposé X, Théorème 3.4; Exposé XI, Définitions 3.1-3.2, Lemme 3.6, Théorèmes 3.12-3.13, Lemmes 3.16-3.17; Exposé X, 2.1; Exposé XII, Corollaire 3.7"
+cited_for = ["1.1", "1.6", "1.8", "7.4", "7.5", "7.6", "7.9"]
+url = "https://arxiv.org/abs/math/0511279v1"
+fetched_from = "https://arxiv.org/pdf/math/0511279v1"
+fetched_at = "2026-10-26T04:14:54Z"
+sha256 = "41ad02c57321a8d2200ff32a929bc93adbc3de0d59dcd5a284d28d859fb87a90"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1, the augmented edition published as Documents Mathématiques 4 (SMF 2005)."
+
+[[source]]
+id = "SGA1"
+authors = "Alexander Grothendieck; Michèle Raynaud"
+title = "Revêtements étales et groupe fondamental (SGA 1)"
+year = 2003
+arxiv = "math/0206203v2"
+locator_scheme = "section"
+locator = "Exposé V, Proposition 6.9"
+cited_for = ["1.8"]
+url = "https://arxiv.org/abs/math/0206203v2"
+fetched_from = "https://arxiv.org/pdf/math/0206203v2"
+fetched_at = "2026-10-26T04:15:09Z"
+sha256 = "8e64218d356456c534eebf996940f0f957e43b54f1a080241debe12cbaf60d3c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2 of the retyped edition (Documents Mathématiques 3, SMF 2003)."
+
+[[source]]
+id = "BC22"
+authors = "Alexis Bouthier; Kęstutis Česnavičius"
+title = "Torsors on loop groups and the Hitchin fibration"
+year = 2022
+arxiv = "1908.07480v4"
+locator_scheme = "theorem"
+locator = "Lemma 2.3.2"
+cited_for = ["0.2"]
+url = "https://arxiv.org/abs/1908.07480v4"
+fetched_from = "https://arxiv.org/pdf/1908.07480v4"
+fetched_at = "2026-10-26T04:15:15Z"
+sha256 = "ec4b02a2b0821c28646c94699fa4b7eae24c5a07ed48ed1baecf1004934564b7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v4; published in Ann. Sci. ÉNS 55 (2022), 791-864, with the same numbering of Lemma 2.3.2 as cited by CS24."
+
+[[source]]
+id = "ILO14"
+authors = "Luc Illusie; Yves Laszlo; Fabrice Orgogozo (eds.)"
+title = "Travaux de Gabber sur l'uniformisation locale et la cohomologie étale des schémas quasi-excellents"
+year = 2014
+arxiv = "1207.3648v1"
+locator_scheme = "section"
+locator = "Exposé XV, Corollaire 1.2.4; Exposé XVI, Théorème 3.1.1; Exposé XVII, Théorème 0.2 (0.9 in arXiv v1); Exposé XVIII-A, Lemma 2.2"
+cited_for = ["1.4", "8.4"]
+url = "https://arxiv.org/abs/1207.3648v1"
+fetched_from = "https://arxiv.org/pdf/1207.3648v1"
+fetched_at = "2026-10-26T04:15:33Z"
+sha256 = "18a6193d6b71ff5ac91eae4443e1c8a54ab8f27f2173fda200d4bec547e3644a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1. Exposé XVII's main theorem is Théorème 0.9 there and Théorème 0.2 in the published Astérisque 363-364; Exposé XVIII-A Lemma 2.2 is 2.2.1 in the published version."
+
+[[source]]
+id = "ALB23"
+authors = "Johannes Anschütz; Arthur-César Le Bras"
+title = "Prismatic Dieudonné theory"
+year = 2023
+arxiv = "1907.10525v4"
+locator_scheme = "theorem"
+locator = "Theorem 5.4 (published; Theorem 5.1.4 in arXiv v4)"
+cited_for = ["From TauCetiRoadmap.PrismaticCohomologyPartII", "2.1", "5.1"]
+url = "https://arxiv.org/abs/1907.10525v4"
+fetched_from = "https://arxiv.org/pdf/1907.10525v4"
+fetched_at = "2026-10-26T04:15:40Z"
+sha256 = "6eb02c16c525360141b1c5d118ae04db070f3c0e9cb9fff0f1598fc889b50aec"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v4. CS24 cites the published numbering of Forum Math. Pi 11 (2023), e2: Theorem 5.4 is Theorem 5.1.4 of arXiv v4."
+
+[[source]]
+id = "BS22"
+authors = "Bhargav Bhatt; Peter Scholze"
+title = "Prisms and prismatic cohomology"
+year = 2022
+arxiv = "1905.08229v4"
+locator_scheme = "theorem"
+locator = "Proposition 8.10; Theorem 7.14"
+cited_for = ["From TauCetiRoadmap.PrismaticCohomology", "5.3", "6.2"]
+url = "https://arxiv.org/abs/1905.08229v4"
+fetched_from = "https://arxiv.org/pdf/1905.08229v4"
+fetched_at = "2026-10-26T04:15:47Z"
+sha256 = "1d91a6eb85828feb73f84ab3b27ced17514f0855d61c3bff71ab9d8287891e4a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v4; numbering of Proposition 8.10 and Theorem 7.14 as cited by CS24."
+
+[[source]]
+id = "EGA44"
+authors = "Alexander Grothendieck; Jean Dieudonné"
+title = "Éléments de géométrie algébrique IV, quatrième partie"
+year = 1967
+locator_scheme = "section"
+locator = "§21.13: Définition 21.13.7, Proposition 21.13.8, Exemples 21.13.9, Corollaire 21.13.6, Proposition 21.13.10"
+cited_for = ["7.5"]
+url = "http://www.numdam.org/item/PMIHES_1967__32__5_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1967__32__5_0.pdf"
+fetched_at = "2026-10-26T04:17:08Z"
+sha256 = "b4277fb99c6edf8feec5b01f54368e4b8521bcd52871316c0edf6ff4ae69389e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+
+[[source]]
+id = "Gro66"
+authors = "Alexander Grothendieck"
+title = "Le groupe de Brauer II: théorie cohomologique"
+year = 1966
+locator_scheme = "section"
+locator = "§1, Lemma 1.1, Proposition 1.4, Lemmas 1.6 and 1.9, Corollary 1.8"
+cited_for = ["7.10"]
+url = "https://www.numdam.org/item/SB_1964-1966__9__287_0/"
+fetched_from = "https://www.numdam.org/item/SB_1964-1966__9__287_0.pdf"
+fetched_at = "2026-10-26T04:17:09Z"
+sha256 = "90c128c2101bba5cf9699c92ae4da2e72fb4b1a873b1e0b992dc242eba3e4848"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "Séminaire Bourbaki exposé 297; distinct from the later Dix exposés edition."
+
+[[source]]
+id = "Poo17"
+authors = "Bjorn Poonen"
+title = "Rational points on varieties"
+year = 2017
+locator_scheme = "section"
+locator = "§6.8, Proposition 6.8.1, Warning 6.8.2, Theorem 6.8.3, Warning 6.8.4"
+cited_for = ["8.13", "8.14", "8.15", "8.16"]
+url = "https://math.mit.edu/~poonen/papers/Qpoints.pdf"
+fetched_from = "https://math.mit.edu/~poonen/papers/Qpoints.pdf"
+fetched_at = "2026-10-26T04:17:15Z"
+sha256 = "42e92ce4599420f6b72139e78cb9f5230e4bf81258c202e7cee4716887353579"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "Author's version of 18 December 2018 of GSM 186 (AMS 2017)."
+
+[[source]]
+id = "Kat73"
+authors = "Nicholas M. Katz"
+title = "p-adic properties of modular schemes and modular forms"
+year = 1973
+locator_scheme = "theorem"
+locator = "Proposition 4.1.1"
+cited_for = ["5.6"]
+url = "https://web.math.princeton.edu/~nmk/old/padicpropMFMS.pdf"
+fetched_from = "https://web.math.princeton.edu/~nmk/old/padicpropMFMS.pdf"
+fetched_at = "2026-10-26T04:17:19Z"
+sha256 = "f9c14dc0c8da65bbe355926d149141b548a03e4016b883c4b800b14150cc2b1a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+
+[[source]]
+id = "CTS87"
+authors = "Jean-Louis Colliot-Thélène; Jean-Jacques Sansuc"
+title = "Principal homogeneous spaces under flasque tori: applications"
+year = 1987
+locator_scheme = "theorem"
+locator = "§0.5; Definition 1.2; Theorem 2.2(ii); Lemma 2.4"
+cited_for = ["8.11", "8.12"]
+url = "https://www.imo.universite-paris-saclay.fr/~jean-louis.colliot-thelene/PHSflasquetori.pdf"
+fetched_from = "https://www.imo.universite-paris-saclay.fr/~jean-louis.colliot-thelene/PHSflasquetori.pdf"
+fetched_at = "2026-10-26T04:17:20Z"
+sha256 = "80032e69206caa5d86f01e14891ffc59abd629a0696314ab30d05516eac10b9b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+
+[[source]]
+id = "dJ02"
+authors = "A. J. de Jong"
+title = "A result of Gabber"
+year = 2002
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+cited_for = ["7.11"]
+url = "http://www.math.columbia.edu/~dejong/papers/2-gabber.pdf"
+fetched_from = "https://www.math.columbia.edu/~dejong/papers/2-gabber.pdf"
+fetched_at = "2026-10-26T04:17:22Z"
+sha256 = "c10a572d306d167b850f93ac6ae3024b058eac4043eba1b7c6ea4ab136d83023"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+
+[[source]]
+id = "Ces15"
+authors = "Kęstutis Česnavičius"
+title = "Topology on cohomology of local fields"
+year = 2015
+doi = "10.1017/fms.2015.18"
+arxiv = "1405.2009v3"
+locator_scheme = "theorem"
+locator = "Lemma B.14"
+cited_for = ["3.1"]
+url = "https://arxiv.org/abs/1405.2009v3"
+fetched_from = "https://arxiv.org/pdf/1405.2009v3"
+fetched_at = "2026-10-26T04:17:49Z"
+sha256 = "e54e9591b665071282c2e4579645419dff482ff8ec02f308f524d0ca3504fb5e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3 (arXiv:1405.2009); published in Forum Math. Sigma 3 (2015), e16."
+venue = "Forum of Mathematics, Sigma 3"
+
+[[source]]
+id = "Lau13"
+authors = "Eike Lau"
+title = "Smoothness of the truncated display functor"
+year = 2013
+doi = "10.1090/S0894-0347-2012-00744-9"
+arxiv = "1006.2723v1"
+locator_scheme = "theorem"
+locator = "Corollary 6.5"
+cited_for = ["2.1", "From TauCetiRoadmap.PrismaticCohomologyPartII"]
+url = "https://arxiv.org/abs/1006.2723v1"
+fetched_from = "https://arxiv.org/pdf/1006.2723v1"
+fetched_at = "2026-10-26T04:17:55Z"
+sha256 = "e3d4c594402d71f6ec9f270b76ecfbcb74524709c74aec37e64eaca125496115"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1 (arXiv:1006.2723); published in J. Amer. Math. Soc. 26 (2013), 129-165."
+venue = "Journal of the American Mathematical Society 26"
+
+[[source]]
+id = "Beg80"
+authors = "Lucile Bégueri"
+title = "Dualité sur un corps local à corps résiduel algébriquement clos"
+year = 1980
+doi = "10.24033/msmf.289"
+locator_scheme = "section"
+locator = "Proposition 2.2.1"
+cited_for = ["3.2"]
+url = "https://doi.org/10.24033/msmf.289"
+fetched_from = "https://www.numdam.org/item/10.24033/msmf.289.pdf"
+fetched_at = "2026-10-26T04:18:00Z"
+sha256 = "9199beadc0c96b5b379df09f7303f9cbc05130c2f081ac174d704aa6b839bfc1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+venue = "M&amp;#233;moires de la Soci&amp;#233;t&amp;#233; math&amp;#233;matique de France 1"
+
+[[source]]
+id = "DF84"
+authors = "Frank R. DeMeyer; Timothy J. Ford"
+title = "On the Brauer group of surfaces"
+year = 1984
+doi = "10.1016/0021-8693(84)90065-6"
+locator_scheme = "theorem"
+locator = "Remark 3"
+cited_for = ["8.18"]
+url = "https://doi.org/10.1016/0021-8693(84)90065-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "Not read; cited through C19 §1, p. 1."
+venue = "Journal of Algebra 86"
+
+[[source]]
+id = "Koh72"
+authors = "Peter Kohn"
+title = "Ideals generated by three elements"
+year = 1972
+locator_scheme = "theorem"
+locator = "Theorem A"
+cited_for = ["1.3"]
+url = "https://www.ams.org/journals/proc/1972-035-01/S0002-9939-1972-0296064-1/S0002-9939-1972-0296064-1.pdf"
+fetched_from = "https://www.ams.org/journals/proc/1972-035-01/S0002-9939-1972-0296064-1/S0002-9939-1972-0296064-1.pdf"
+fetched_at = "2026-10-26T04:18:30Z"
+sha256 = "7fb4e9cc79b9cebd0769011f4dc274262da79c87ef06a22004938e5e30dc3e47"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-26"
+
+[[source]]
+id = "Avr77"
+authors = "Luchezar L. Avramov"
+title = "Homology of local flat extensions and complete intersection defects"
+year = 1977
+doi = "10.1007/BF01360771"
+locator_scheme = "theorem"
+locator = "Proposition 3.6"
+cited_for = ["1.2", "From TauCetiRoadmap.DerivedDeRhamCohomology"]
+url = "https://doi.org/10.1007/BF01360771"
+licence_class = "none"
+status = "uncertified"
+version_note = "Not read; cited through CS24 (3.2.1.3), p. 32."
+venue = "Mathematische Annalen 228"
+
+[[source]]
+id = "EGA2"
+authors = "Alexander Grothendieck; Jean Dieudonné"
+title = "Éléments de géométrie algébrique II"
+year = 1961
+locator_scheme = "section"
+locator = "Définition 4.5.3; Proposition 7.1.7"
+cited_for = ["7.11", "8.17"]
+url = "http://www.numdam.org/item/PMIHES_1961__8__5_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1961__8__5_0.pdf"
+fetched_at = "2026-10-26T04:19:11Z"
+sha256 = "111834efffe9e90d068389d418f08925a82b4a54ae2957f080712d4180e032eb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+
+[[source]]
+id = "EGA42"
+authors = "Alexander Grothendieck; Jean Dieudonné"
+title = "Éléments de géométrie algébrique IV, seconde partie"
+year = 1965
+locator_scheme = "section"
+locator = "Théorème 5.10.5; Corollaire 6.1.2"
+cited_for = ["0.5", "1.2"]
+url = "http://www.numdam.org/item/PMIHES_1965__24__5_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1965__24__5_0.pdf"
+fetched_at = "2026-10-26T04:19:14Z"
+sha256 = "c3e960aa1c5c37046e8892d8a3cac098e2738164136b5cdaa5d5d893f89931da"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+
+[[source]]
+id = "STACKS"
+authors = "The Stacks project authors"
+title = "The Stacks project"
+year = 2026
+locator_scheme = "tag"
+locator = "07DV, 0913, 09Q1, 09Q7, 0DX9, 0DXR, 0EHC, 0EJP, 023M"
+cited_for = ["0.4", "0.5", "1.1", "1.7", "2.4", "gap:complete-intersection-presentations", "gap:flat-local-complete-intersection"]
+url = "https://stacks.math.columbia.edu"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=07DV"
+fetched_at = "2026-10-26T04:20:06Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "Tag pages read on 2026-10-26; the sha256 is that of the chapter containing 07DV."
+
+[[source]]
+id = "Aus62"
+authors = "Maurice Auslander"
+title = "On the purity of the branch locus"
+year = 1962
+doi = "10.2307/2372807"
+locator_scheme = "theorem"
+locator = "Theorem 1.3"
+cited_for = ["7.2"]
+url = "https://www.jstor.org/stable/2372807"
+licence_class = "none"
+status = "uncertified"
+version_note = "Amer. J. Math. 84 (1962), 116-125. The publisher page is paywalled; the statement used is checked through CS24, proof of Theorem 7.1.3, p. 88."
+
+[[source]]
+id = "Gro68"
+authors = "Alexander Grothendieck"
+title = "Le groupe de Brauer I-III"
+year = 1968
+locator_scheme = "section"
+locator = "Brauer III, 2.1 and 6.1 b)"
+cited_for = ["7.12", "8.15"]
+licence_class = "none"
+status = "uncertified"
+version_note = "Dix exposés sur la cohomologie des schémas, North-Holland 1968; not freely available. Cited through CS24 p. 90 and C19 pp. 2, 14."
+
+[[source]]
+id = "MB85"
+authors = "Laurent Moret-Bailly"
+title = "Un théorème de pureté pour les familles de courbes lisses"
+year = 1985
+locator_scheme = "theorem"
+locator = "Lemme 2"
+cited_for = ["7.3"]
+licence_class = "none"
+status = "uncertified"
+version_note = "C. R. Acad. Sci. Paris Sér. I 300 (1985), 489-492; not freely available. Cited through CS24 p. 87."
+
+[[source]]
+id = "Bou78"
+authors = "Jean-François Boutot"
+title = "Schéma de Picard local"
+year = 1978
+locator_scheme = "section"
+locator = "Chapitre IV, Lemme 5.1; Chapitre V, Corollaire 4.9"
+cited_for = ["7.14"]
+licence_class = "none"
+status = "uncertified"
+version_note = "Lecture Notes in Math. 632, Springer 1978; paywalled. Cited through CS24 p. 90."
+
+[[source]]
+id = "Gab04b"
+authors = "Ofer Gabber"
+title = "On purity for the Brauer group"
+year = 2004
+locator_scheme = "theorem"
+locator = "Conjectures 2 and 3"
+cited_for = ["7.7", "7.13"]
+licence_class = "none"
+status = "uncertified"
+version_note = "Arithmetic Algebraic Geometry, Oberwolfach Reports 1 (2004); cited through CS24 pp. 88, 90 for the statements of the conjectures."
+[[source]]
+id = "BH"
+authors = "Winfried Bruns; Jürgen Herzog"
+title = "Cohen-Macaulay rings"
+year = 1993
+locator_scheme = "theorem"
+locator = "Definition 2.3.1"
+cited_for = ["Conventions", "1.1"]
+licence_class = "none"
+status = "uncertified"
+version_note = "Cambridge Studies in Advanced Mathematics 39; paywalled. Standard definition of a complete intersection, also recalled in CS24 §1.4."
+
+[[source]]
+id = "SGA3"
+authors = "Michel Demazure; Alexander Grothendieck (eds.)"
+title = "Schémas en groupes (SGA 3)"
+year = 1970
+locator_scheme = "section"
+locator = "Exposé IX, 1.1 and 2.11; Exposé X, 4.5"
+cited_for = ["7.15"]
+licence_class = "none"
+status = "uncertified"
+version_note = "Lecture Notes in Math. 151-153; cited through CS24 §7.2 and C19 proof of Theorem 6.1."
+
+[[source]]
+id = "SGA4"
+authors = "Michael Artin; Alexander Grothendieck; Jean-Louis Verdier"
+title = "Théorie des topos et cohomologie étale des schémas (SGA 4)"
+year = 1972
+locator_scheme = "section"
+locator = "Exposé V, 6.4; Exposé VII, 5.7-5.9; Exposé XVIII, 3.1.8"
+cited_for = ["0.2", "0.3", "1.4"]
+licence_class = "none"
+status = "uncertified"
+version_note = "Lecture Notes in Math. 269, 270, 305; cited through CS24 Lemma 3.2.3 and C19 proof of Theorem 6.1."
+
+[[source]]
+id = "SGA5"
+authors = "Alexander Grothendieck"
+title = "Cohomologie l-adique et fonctions L (SGA 5)"
+year = 1977
+locator_scheme = "section"
+locator = "Exposé I, 1.12 and (4.2.2)"
+cited_for = ["1.4"]
+licence_class = "none"
+status = "uncertified"
+version_note = "Lecture Notes in Math. 589; cited through CS24 proof of Lemma 3.2.3, p. 33."
