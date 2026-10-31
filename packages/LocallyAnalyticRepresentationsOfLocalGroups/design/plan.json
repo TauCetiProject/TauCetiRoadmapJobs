@@ -7332,102 +7332,46 @@
  ],
  "gaps": [
   {
-   "title": "Category O, Verma layers and dualised Kostant formulas (owner LieHighestWeightPartIICompletedCategoryO, not designed)",
-   "detail": "The Orlik–Strauch layers and Ding's computations need, for g ⊗_{ℚ_p} E = ∏_σ g_σ with g split reductive: (a) the categories O and O^p_alg (finitely generated U(g ⊗ E)-modules, semisimple algebraic over l_P ⊗ E, locally finite over n_P ⊗ E; Orlik–Strauch §2.5, Breuil socle I §2 (i)–(iii)), abelian and artinian, closed under subobjects and quotients, O^q_alg ⊆ O^p_alg for q ⊇ p; (b) generalised Verma modules U(g) ⊗_{U(p)} W, their unique simple quotients, the maximal parabolic of a simple object and the classification of simple objects by highest weight (Humphreys §§9.3–9.4, Theorem 1.3); (c) for gl_n: the composition factors of the Verma module M^-(−λ), λ dominant, are the L^-(−u·λ), u ∈ W, with multiplicity one when lg(u) ≤ 1, the second radical layer is ⊕_{lg(u)=1} L^-(−u·λ), and multiplicity one of L^-(−s_{i,σ}·λ) in the parabolic Verma modules U(g) ⊗_{U(p)} (−λ) used in Ding's Lemma 3.10 (Humphreys Chapters 4–6, 8–9); (d) Kostant cohomology with the chosen positive roots, and homology obtained by H_q(n_P,W)=H^q(n_P,W∨)∨. The radical, dual and root twists must be fixed explicitly; the unadjusted cohomological w·λ formula is not a homology formula (Schraen Théorème 4.10, pp. 82–83). Upstream LieHighestWeight excludes full category O; the accepted LieHighestWeightPartII packet proposes the split-off roadmap LieHighestWeightPartIICompletedCategoryO as its owner (restructure, 'one algebraic completion owner and one category-O consumer'), which has no design job yet. Until it exists these statements are imported as this contract; no node of this roadmap plans them. Also supply the restricted BGG dual associated to a root-reversing anti-involution fixing the Cartan, with exactness, involutivity and preservation of simple highest-weight modules (BR15 pp. 14–15). This dual is distinct from the ordinary contragredient.",
-   "neededBy": [
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.5/orlik-strauch-functor",
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.5/orlik-strauch-irreducibility",
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.5/orlik-strauch-jordan-holder",
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.4/unipotent-homology",
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.5/ext-vanishing-long-weyl",
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.7/principal-series-constituents",
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.8/parabolic-constituents"
-   ]
+   "slug": "barrelled-banach-steinhaus",
+   "supplier": "LocallyAnalyticDistributions",
+   "section": "§0.0",
+   "needs": "Barrelled nonarchimedean locally convex spaces (every closed O_E-lattice open), with Banach, Fréchet, compact-type spaces and locally convex inductive limits of barrelled spaces barrelled, and the Banach–Steinhaus theorem that pointwise bounded families of continuous linear maps out of a barrelled space are equicontinuous."
   },
   {
-   "title": "Solid functional analysis (owner LocallyAnalyticDistributionsPartIIQuasiAbelianFunctionalAnalysis, not designed)",
-   "detail": "BCGP §2.2 rests on solid functional analysis recalled from Rodrigues Jacinto–Rodríguez Camargo: Banach, Smith, Fréchet, LB and LS spaces as solid E-vector spaces and their equivalence with the classical notions (BCGP Proposition 2.2.9, RJRC22 Theorem 3.40), Banach–Smith duality and Hom(W, V) = W^∨ ⊗ V for W Smith and V Banach (RJRC22 Corollary 3.17), trace-class and compact maps and compact-type objects (BCGP Definitions 2.2.10–2.2.12, Proposition 2.2.13), flatness (BCGP Lemma 2.2.14). The accepted LocallyAnalyticDistributionsPartII packet proposes the owner LocallyAnalyticDistributionsPartIIQuasiAbelianFunctionalAnalysis (its restructure entry 1), which has no design job yet. LR.3 imports these statements as this contract.",
-   "neededBy": [
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.3/banach-analytic-comparison",
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.3/solid-analytic-vectors",
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.3/solid-analytic-group-representation",
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.3/solid-group-representation"
-   ]
+   "slug": "compact-type-tensor",
+   "supplier": "LocallyAnalyticDistributions",
+   "section": "§0.0",
+   "needs": "For spaces V_1, V_2 of compact type over a finite extension of ℚ_p, the completed inductive and projective tensor products agree, are of compact type, have strong dual the completed tensor product of the nuclear Fréchet duals, and are functorial and strictly exact in each variable (Emerton's memoir, Propositions 1.1.31–1.1.32)."
   },
   {
-   "title": "Proof of Dospinescu–Le Bras, Lemme 5.10",
-   "detail": "DLB17 Lemme 5.10, p. 29, states that weakly null sequences in a Hausdorff locally convex space over a spherically complete field are null, without a proof. After passage to seminormed quotients, the missing input is the nonarchimedean Schur property for normed spaces. The existing compactoid supplier does not by itself show that the weakly compact sequence together with 0 is compactoid. Supply a complete proof or a cleared, exact published locator; the earlier suggested compactoid argument is withdrawn. No uncleared book was read.",
-   "neededBy": [
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.0/weak-sequential-convergence"
-   ]
+   "slug": "kostant-split-reductive",
+   "supplier": "ArithmeticLocallySymmetricSpaces",
+   "section": "ALS.4.5",
+   "needs": "Kostant's theorem H^q(n_P, V_λ) ≅ ⊕_{w∈W^P, ℓ(w)=q} V^M_{w·λ} for an arbitrary split connected reductive group over a field of characteristic zero and a parabolic containing a Borel, not only for base changes of Weil restrictions from number fields."
   },
   {
-   "title": "Breuil–Qian: Ext^1(C(I, s_{i,σ}), π_alg) is one-dimensional",
-   "detail": "Ding's Lemma 3.5(1) quotes from Breuil–Qian (Splitting and expliciting the de Rham complex of the Drinfeld space, arXiv 2024, Proposition 5.1.14 with Lemma 3.2.4(ii)) that Ext^1(C(I, s_{i,σ}), π_alg(φ, h)) is one-dimensional, and proves only the other direction Ext^1(π_alg, C(I, s_{i,σ})) by Schraen's spectral sequence. No target of this roadmap or of its consumers' contracts uses the first direction; the paper was not read. The direction is stated in LR.7/constituent-ext-lines as an imported statement.",
-   "neededBy": [
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.7/constituent-ext-lines"
-   ]
+   "slug": "generic-principal-series-finite-coefficients",
+   "supplier": "SmoothRepresentationsOfLocalGroups",
+   "section": "SR.3.1",
+   "needs": "Over a field E of characteristic zero, for GL_n(L) and smooth φ with φ_iφ_j⁻¹ ∉ {1, |·|_L}, the unnormalised induction from B⁻ of φη is absolutely irreducible with End = E and isomorphic to the induction of w(φ)η for every w by E-rational intertwining isomorphisms."
   },
   {
-   "title": "Derived analytic vectors: analytic-radius comparison and compact-group cohomology",
-   "detail": "Pan Theorem 2.2.3, pp. 13–14, uses the Colmez–Dospinescu C^(m) filtration and its quantitative comparison with G_n-analytic norms to make the cohomology transition maps zero. The packet supplies no source-located target for that comparison. A follow-up must state the two-sided filtration bounds, the radius shifts and their tensor compatibility for B ⊗̂ M, and prove them from the cited Colmez–Dospinescu result. Separately realise the continuous cochain/solid derived comparison of RJRC22 Theorem 1.5 and Corollary 1.6 for compact G. The source statements of the acyclicity and compact comparison targets are verified; their proof closure remains partial.",
-   "neededBy": [
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.2/admissible-la-acyclic",
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.2/derived-analytic-vectors",
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.3/solid-analytic-vectors"
-   ]
+   "slug": "principal-series-jacquet-finite-coefficients",
+   "supplier": "SmoothRepresentationsOfLocalGroups",
+   "section": "SR.2.2",
+   "needs": "Over a field E of characteristic zero and for generic φ, the unnormalised N⁻-Jacquet module of (Ind_{B⁻} φη)^∞ is ⊕_{w∈S_n} w(φ)η with pairwise distinct characters, and the upper N-Jacquet module is ⊕_w w(φ)ηδ_B."
   },
   {
-   "title": "Rigid character-space carrier comparison",
-   "detail": "The supplier LocallyAnalyticDistributions L3/mellin-adic-comparison explicitly conditions its adic realisation on a rigid/adic bridge. LR.6’s noncompact character-space construction is source-verified in EM17 Propositions 6.4.1–6.4.6, pp. 124–127, but the supplier carrier comparison must be discharged before those rigid function spaces can be identified with the adic quasi-Stein interface used in the packet. The compact character space remains owned by its supplier.",
-   "neededBy": [
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.6/character-variety",
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.6/essentially-admissible",
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.6/finite-slope-part"
-   ]
+   "slug": "finite-length-finite-coefficients",
+   "supplier": "SmoothRepresentationsOfLocalGroups",
+   "section": "SR.3.1",
+   "needs": "Over a finite extension E of ℚ_p, smooth parabolic induction of an admissible finite-length representation of a Levi has finite length, compatibly with extension of scalars to ℂ along an embedding E ↪ ℂ."
   },
   {
-   "title": "First two socle layers for the ℚ_p-analytic Orlik–Strauch functor",
-   "detail": "Ding Proposition 3.1(3), p. 34, states the second socle layer used here, but its cited OR19 Theorem 1, p. 2, is a locally L-analytic full-faithfulness theorem with trivial smooth argument. Establish the needed restricted consequence for the ℚ_p-analytic functor with generic finite-length smooth principal-series argument: the first two radical layers of M^−(−λ) give exactly soc(PS) and soc(PS/π_alg), with no additional simple subobjects. BR16 Corollary 2.5 proves the first socle; it does not by itself supply the second. This is an open proof contract, not a claimed general full-faithfulness extension.",
-   "neededBy": [
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.7/principal-series-constituents",
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.7/ps1-and-pi1",
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.7/finite-slope-amalgam"
-   ]
-  },
-  {
-   "title": "Finite-E smooth principal-series supplier refinements",
-   "detail": "The current upstream SmoothRepresentationsOfLocalGroups targets principal-series-jacquet, finite-length and generic-irreducibility were read in SR.2.2 and SR.3.1. They use ℂ; generic-irreducibility asserts an unspecified nonempty Zariski-open set. They do not state the E-valued GL_n ratio criterion, all-permutation isomorphisms or the unnormalised Jacquet decompositions needed by Ding §3.1.2. These source-verified consumer statements remain conditional on the three exact requests. They are owned by the smooth supplier, rather than re-planned in LR.7.",
-   "neededBy": [
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.7/pi-alg",
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.7/principal-series-constituents",
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.8/parabolic-constituents",
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.7/constituent-ext-lines",
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.7/ext-ps1",
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.5/orlik-strauch-jordan-holder"
-   ]
-  },
-  {
-   "title": "Split finite-E highest-weight and Harish–Chandra interfaces",
-   "detail": "Current LieHighestWeight layers 3, 4 and 7 are stated over an algebraically closed characteristic-zero field with their semisimple hypotheses. LR.1 and LR.7 use split reductive algebras ∏_σ gl_n over finite E/ℚ_p. Refine the supplier to construct E-rational highest-weight modules, their absolute irreducibility and classification, PBW/Verma interfaces and the Harish–Chandra centre with dot action, proving extension/descent from an algebraic closure and treating the reductive centre. No algebraically closed-field theorem is silently applied to finite E.",
-   "neededBy": [
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.1/locally-algebraic-representation",
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.4/principal-series",
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.7/gln-conventions",
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.7/pi-alg"
-   ]
-  },
-  {
-   "title": "Solid analytic foundational supplier contracts",
-   "detail": "SolidAnalyticRings SA.1, SA.2 and SA.4 are stage-level plans, with no target-level packet available in this checkout. The three existing requests specify the strongly-inaccessible/light-condensed conventions, solid E_■-modules, analytic affinoid base change and profinite group rings used by BCGP §§2.2.1–2.2.8. These are planned supplier contracts, not checked implementations or established target-level closure. The separate solid functional-analysis gap supplies Banach/Smith/LB compatibility and flatness.",
-   "neededBy": [
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.3/solid-analytic-group-representation",
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.3/solid-group-representation",
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.3/solid-smooth-representation",
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.3/banach-analytic-comparison",
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.3/solid-analytic-vectors",
-    "LocallyAnalyticRepresentationsOfLocalGroups:LR.3/integrable-lb-lie-representation"
-   ]
+   "slug": "ordered-character-map",
+   "supplier": "SmoothRepresentationsOfLocalGroups",
+   "section": "SR.3.2",
+   "needs": "Over a finite extension E of ℚ_p and for generic φ, the Bernstein-centre maps 𝒥_w of the block of (Ind_{B⁻} φη)^∞ satisfy 𝒥_{w_2} ∘ p_{w_2w_1⁻¹} = 𝒥_{w_1}, and their differentials identify Hom_sm(T(L), E) with first-order smooth deformations (Caraiani–Emerton–Gee–Geraghty–Paškūnas–Shin, Lemma 3.22)."
   }
  ],
  "sourceIssues": [
