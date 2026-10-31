@@ -3424,23 +3424,112 @@
   ],
   "gaps": [
     {
-      "id": "G1",
-      "title": "Exact Eulerian comparison and small-occupancy certificates",
-      "neededBy": [
-        "SheafConvolutionOnAbelianVarieties:SC.6/eulerian-comparisons",
-        "SheafConvolutionOnAbelianVarieties:SC.6/first-ratio-exclusion",
-        "SheafConvolutionOnAbelianVarieties:SC.6/second-ratio-exclusion",
-        "SheafConvolutionOnAbelianVarieties:SC.6/classical-monodromy"
-      ],
-      "detail": "Prove explicit uniform large-n cutoffs for each displayed bespoke SC.6 inequality from CA.2’s C.1–C.5 bounds, then give exact finite certificates below the cutoffs and for all B.11/B.12 parameter cases. The ancillary numerical code uses floating arrays, omits one term in one large-n test, and has the wrong n-factor in another. Finite independent exact checks are diagnostic evidence only; they do not close the universal ranges. Until these certificates are supplied the route through Appendix B is a complete target-level plan with an open proof obligation."
+      "slug": "geometric-character-comparisons",
+      "needs": "For abelian varieties A and A′ over an algebraically closed characteristic-zero field, the geometric étale fundamental group of A×A′ based at the identity is the product of those of A and A′, and it is unchanged under extension to a larger algebraically closed field.",
+      "supplier": "EtaleCohomologyFoundations",
+      "section": "F.0.2"
     },
     {
-      "id": "G3",
-      "title": "Trace-compatible stabilized period relations",
-      "neededBy": [
-        "SheafConvolutionOnAbelianVarieties:SC.9/finite-period-detection"
-      ],
-      "detail": "CDK’s finite bounded-norm theorem supplies the closed orbit-projected identity Hodge loci. Complete the remaining marked-period argument: fix the integral/rational polarizations and trace idempotents, show that a flat identity-orbit isomorphism for the m′-cover with m|m′ preserves the designated m-summand, and prove the resulting closed relations are nested. Explain how their Noetherian stabilization supplies one algebraic positive-dimensional family with finite monodromy for every torsion-character summand. An arbitrary Hodge isomorphism of total cohomology need not preserve a chosen summand, so this compatibility cannot be replaced by an unspecified period isomorphism."
+      "slug": "closed-extension-constructible-comparison",
+      "needs": "For an extension k⊂K of algebraically closed characteristic-zero fields and a variety X over k, pullback of constructible Q̄_ℓ-complexes from X to X_K is fully faithful on Hom and preserves the simple perverse constituents of tensor constructions of objects defined over k.",
+      "supplier": "EtaleCohomologyFoundations",
+      "section": "F.4.6"
+    },
+    {
+      "slug": "serre-heart-verdier-comparison",
+      "needs": "For a bounded t-structure with heart P and Serre subcategory N, the thick category of objects with every t-cohomology in N gives a t-exact Verdier localization whose heart is P/N and whose heart inclusion is fully faithful.",
+      "supplier": "EtaleDualityAndPerverseSheaves",
+      "section": "2.1–2.2"
+    },
+    {
+      "slug": "semisimple-proper-direct-image",
+      "needs": "In characteristic zero, proper direct images of arbitrary semisimple perverse Q̄_ℓ-sheaves split into shifted semisimple perverse cohomology, including semisimple local systems without a geometric-origin hypothesis.",
+      "supplier": "EtaleDualityAndPerverseSheaves",
+      "section": "5.10"
+    },
+    {
+      "slug": "tannaka-kernel-exactness",
+      "needs": "For a closed immersion L→G followed by a faithfully flat G→Q of affine group schemes, identify L with the scheme-theoretic kernel precisely when Q-representations are the L-trivial objects, maximal L-trivial subobjects descend, and every L-object embeds in a restriction of a G-object.",
+      "supplier": "MotivesAndAlgebraicCycles",
+      "section": "6.3"
+    },
+    {
+      "slug": "ample-divisor-albanese",
+      "needs": "For a smooth ample divisor H in an abelian variety A over an algebraically closed characteristic-zero field with dim A≥3, the homomorphism Alb(H)→A induced by the inclusion H↪A is an isomorphism.",
+      "supplier": "AbelianSchemesAndArithmeticModuli",
+      "section": "A2"
+    },
+    {
+      "slug": "rational-map-extension-to-abelian-varieties",
+      "needs": "For a smooth variety X over a field k and an abelian variety A over k, every rational map from X to A extends uniquely to a morphism X→A.",
+      "supplier": "AbelianSchemesAndArithmeticModuli",
+      "section": "A1.8"
+    },
+    {
+      "slug": "translation-stabilizer-family-quotient",
+      "needs": "After shrinking a characteristic-zero family of smooth ample divisors, its finite geometric generic translation stabilizer descends and the family is pulled back from a smooth ample divisor family on the quotient abelian variety with trivial generic stabilizer.",
+      "supplier": "AbelianSchemesAndArithmeticModuli",
+      "section": "A2 and A3.3"
+    },
+    {
+      "slug": "isogeny-character-trace-decomposition",
+      "needs": "For every m>0 in characteristic zero, decompose the constant-sheaf pushforward under [m] into deck-character local systems and corresponding torsion line bundles, compatibly with pullback, trace and character idempotents for m dividing m′.",
+      "supplier": "AbelianSchemesAndArithmeticModuli",
+      "section": "A3.2–A3.5"
+    },
+    {
+      "slug": "conormal-gauss-geometry",
+      "needs": "Construct conormal cycles of closed subvarieties in T*A=A×H⁰(A,Ω¹_A) with the generic degree of their projection to the cotangent fibre.",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "Layer 5"
+    },
+    {
+      "slug": "holonomic-riemann-hilbert-index",
+      "needs": "Regular-holonomic de Rham realization identifies regular holonomic D-modules with complex perverse sheaves and transports characteristic cycles compatibly with proper image, external product, isogenies and the index formula, with independence of the integral cycle under coefficient realization.",
+      "supplier": "ComplexComparisonPartII",
+      "section": "C5.6"
+    },
+    {
+      "slug": "hodge-tate-image-cocharacter",
+      "needs": "For a Hodge–Tate p-adic representation, comparison of graded and ordinary fibre functors on its tensor-generated category gives a cocharacter of the Zariski closure of its Galois image over C_p, up to conjugacy, with its native Hodge–Tate weights.",
+      "supplier": "PadicHodgeTheory",
+      "section": "3.3 and 8.1–8.2"
+    },
+    {
+      "slug": "minuscule-weight-table",
+      "needs": "Over an algebraically closed characteristic-zero field, for each simple type the nonzero minuscule dominant weights are A_r: all fundamental weights of dimensions choose(r+1,k), B_r: ω_r of dimension 2^r, C_r: ω₁ of dimension 2r, D_r: ω₁ of dimension 2r and ω_(r−1),ω_r of dimension 2^(r−1), E₆: ω₁,ω₆ of dimension 27, E₇: ω₇ of dimension 56, and none for E₈, F₄ or G₂.",
+      "supplier": "LieHighestWeightPartII",
+      "section": "N2"
+    },
+    {
+      "slug": "bounded-norm-orbit-hodge-loci",
+      "needs": "For an integral polarized weight-zero variation on a smooth complex algebraic base, integral (0,0) classes of polarization norm at most K form an algebraic space finite over the base, and the Hodge locus projected from one fixed flat-section orbit is closed algebraic, also after clearing one fixed rational denominator.",
+      "supplier": "ShimuraData",
+      "section": "3.1–3.4"
+    },
+    {
+      "slug": "polarized-integral-jacobian-comparison",
+      "needs": "For every smooth proper complex curve family, the Abel–Jacobi comparison H¹(J(C),ℤ)≅H¹(C,ℤ) is an isomorphism of polarized integral weight-one variations, identifies the canonical principal polarization with cup product, and commutes with base change and the Torelli period map.",
+      "supplier": "StableReductionPartII",
+      "section": "MC.6"
+    },
+    {
+      "slug": "relative-pointed-albanese",
+      "needs": "For a pointed smooth projective curve C of genus at least one, a reduced connected parameter scheme T and a pointed T-map C×T→A×T to a constant abelian scheme, there is a unique factorization through a homomorphism J(C)×T→A×T, compatible with base change in T.",
+      "supplier": "JacobianChallengePartII",
+      "section": "2.3"
+    },
+    {
+      "slug": "stein-perverse-artin-vanishing",
+      "needs": "For a Stein complex manifold V and a bounded complex K of sheaves of F-vector spaces on V, constructible for a locally finite complex-analytic stratification and in the perverse range pD^(≥0), the compactly supported cohomology H^i_c(V,K) vanishes for i<0.",
+      "supplier": "ComplexComparisonPartII",
+      "section": "C6.1"
+    },
+    {
+      "slug": "microdifferential-localization",
+      "needs": "For a smooth complex variety X, the sheaf of microdifferential operators on T*X and the microlocalization of coherent D_X-modules, exact and compatible with proper direct image and external product, whose support is the characteristic variety and whose generic length along each component is the multiplicity of the characteristic cycle.",
+      "supplier": "SpringerResolutionAndCharacteristicCycles",
+      "section": "D"
     }
   ],
   "sourceIssues": [
