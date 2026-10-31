@@ -2,81 +2,469 @@ schema = "tauceti-roadmap-sources/v1"
 roadmap = "SmoothRepresentationsOfLocalGroupsPartII"
 
 [[source]]
+id = "CH26"
+authors = "Dan Ciubotaru and Michael Harris"
+title = "On the generalized Ramanujan and Arthur conjectures over function fields"
+year = 2023
+arxiv = "2311.15300v1"
+locator_scheme = "section"
+locator = "§4.2, Proposition 4.5; Lemma 5.2; Corollary 5.7; §§6.1–6.12, Definition 6.3, equations (6.1)–(6.6) and (6.11)–(6.13), Lemmas 6.7–6.8, Theorems 6.9 and 6.14, Propositions 6.10 and 6.31, Corollary 6.32(1); §7, equations (7.1)–(7.3), Table 1, Theorem 7.4, Corollary 7.5, Remark 7.6; §8.1, equations (8.1)–(8.2), Theorem 8.3, Definition 8.4, Theorem 8.5(1)–(5), Remark 8.6; §8.3, equation (8.8); pp. 12, 16–30."
+url = "https://arxiv.org/abs/2311.15300v1"
+fetched_from = "https://arxiv.org/pdf/2311.15300v1"
+fetched_at = "2026-10-25T11:46:54Z"
+sha256 = "7261083b46cc8ec3fad81215250ff6bef47da05ef6054813572de21db10dc103"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "All locators refer to arXiv:2311.15300v1; no collation with a later published revision is asserted."
+cited_for = ["SRU.2", "SRU.4", "SRU.5", "SRU.6", "SRU.7"]
+
+[[source]]
+id = "Cas95"
+authors = "William Casselman"
+title = "Introduction to the theory of admissible representations of p-adic reductive groups"
+year = 1995
+locator_scheme = "section"
+locator = "§2.1, definition of P_K and the sentence after it, p. 20; extracted line 744; §2.1, Proposition 2.1.5 and the paragraph after Proposition 2.1.11, pp. 20–22; extracted line 760; §2.1, Proposition 2.1.15, p. 23; extracted line 858; §2.1, Propositions 2.1.5 and 2.1.14 with proof, pp. 20–23; extracted lines 760 and 858; §2.3, definition of the distribution character, p. 25; extracted line 964; Proposition 2.3.1, PDF p. 25; extracted line 969"
+url = "https://personal.math.ubc.ca/~cass/research/pdf/p-adic-book.pdf"
+fetched_from = "https://personal.math.ubc.ca/~cass/research/pdf/p-adic-book.pdf"
+fetched_at = "2026-10-25T11:47:58Z"
+sha256 = "78b921fc6331ad2b75389f37d15bd5ac3399e6cfc2d7555e1a4d666e0d42612a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["SRU.0", "SRU.2", "SRU.3"]
+
+[[source]]
+id = "Cas80"
+authors = "William Casselman"
+title = "The unramified principal series of p-adic groups I. The spherical function"
+year = 1980
+locator_scheme = "section"
+locator = "§3, Theorem 3.1 (p. 397) and Proposition 3.5 (p. 401); extracted line 432; Theorem 3.1 and Proposition 3.5(b), PDF p. 16; extracted line 432"
+url = "http://www.numdam.org/item/CM_1980__40_3_387_0.pdf"
+fetched_from = "https://www.numdam.org/item/CM_1980__40_3_387_0.pdf"
+fetched_at = "2026-10-25T11:47:59Z"
+sha256 = "6d6f152d691316cea9145e63d43399c3a4f95aa29f042fb002895b2ae0fc1a73"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["SRU.4", "SRU.5"]
+
+[[source]]
+id = "HO"
+authors = "Volker Heiermann and Eric Opdam"
+title = "On the tempered L-function conjecture"
+year = 2013
+arxiv = "0908.0699v4"
+locator_scheme = "section"
+locator = "§1, before Theorem 1.1, p. 2; extracted line 88; Corollary 1.2, PDF p. 3; extracted line 103"
+url = "https://arxiv.org/abs/0908.0699v4"
+fetched_from = "https://arxiv.org/pdf/0908.0699v4"
+fetched_at = "2026-10-25T11:48:03Z"
+sha256 = "90c6f9f45e4ac366ef5d49d10d59e7e883ccf93f2e9e98c60235d147d0f39779"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v4"
+cited_for = ["SRU.3"]
+
+[[source]]
+id = "BC1"
+authors = "Dan Barbasch and Dan Ciubotaru"
+title = "Whittaker unitary dual of affine graded Hecke algebras of type E"
+year = 2009
+doi = "10.1112/S0010437X09004230"
+arxiv = "0708.4036v2"
+locator_scheme = "section"
+locator = "§1.2, p. 2; extracted line 43; §1.1, p. 1; extracted line 25; §1.1–1.2, pp. 1–2; extracted line 25; §1.2, (1.2.1)–(1.2.2), p. 2; extracted line 43; §3.1, pp. 16–17; extracted line 724; §1.2, p. 2; §3.1, pp. 16–17; extracted line 43; §§1.2 and 3.1, PDF p. 2; extracted line 43; §3.1–3.2, pp. 16–17; extracted line 724; §§1.1–1.2, PDF p. 1; extracted line 24; §3.2 Theorem, §3.3 Theorem, §3.4 Proposition, pp. 17–18; extracted line 761; §1.3, (1.3.1)–(1.3.2), p. 3; extracted line 91; §1.2, reduction to real infinitesimal character, PDF p. 2; extracted line 43"
+url = "https://arxiv.org/abs/0708.4036v2"
+fetched_from = "https://arxiv.org/pdf/0708.4036v2"
+fetched_at = "2026-10-25T11:48:10Z"
+sha256 = "db79227f4a3ac16839780585fa6959458c94a097f42926c445a223d5331dbfd4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2"
+cited_for = ["SRU.3", "SRU.4", "SRU.5", "SRU.7"]
+
+[[source]]
+id = "BC3"
+authors = "Dan Barbasch and Dan Ciubotaru"
+title = "Unitary equivalences for reductive p-adic groups"
+year = 2013
+arxiv = "0909.5241v3"
+locator_scheme = "section"
+locator = "§6.2 before Corollary 6.2.6, p. 29; extracted line 1272; §1.3, p. 3; Corollary 6.2.6, p. 29; extracted line 1272; §1.3, Theorem 1.3.1; §1.4, Theorem 1.4.1, pp. 3–4; §6.2, Corollary 6.2.6 and Example 6.2.7, p. 29; extracted line 124"
+url = "https://arxiv.org/abs/0909.5241v3"
+fetched_from = "https://arxiv.org/pdf/0909.5241v3"
+fetched_at = "2026-10-25T11:48:15Z"
+sha256 = "3bb8a26762bee1fc64a0a2ac1ca64cbd46b36940fe35f8a90f84d6b4687f3205"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v3"
+cited_for = ["SRU.6"]
+
+[[source]]
+id = "Aub95"
+authors = "Anne-Marie Aubert"
+title = "Dualité dans le groupe de Grothendieck de la catégorie des représentations lisses de longueur finie d'un groupe réductif p-adique"
+year = 1995
+locator_scheme = "section"
+locator = "§1, Définition 1.5 and Théorème 1.7, p. 2181; extracted line 107; §2, Théorème 2.3, p. 2185; extracted line 265; §3, Corollaire 3.9, p. 2189"
+url = "https://www.ams.org/journals/tran/1995-347-06/S0002-9947-1995-1285969-0/S0002-9947-1995-1285969-0.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1995-347-06/S0002-9947-1995-1285969-0/S0002-9947-1995-1285969-0.pdf"
+fetched_at = "2026-10-25T11:48:16Z"
+sha256 = "57af9c46769f6edd8e142ddaf465e89acfa2f2147db222d26879a28a06df9693"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["SRU.7"]
+
+[[source]]
+id = "CCLTV"
+authors = "Raf Cluckers, Yves Cornulier, Nicolas Louvet, Romain Tessera and Alain Valette"
+title = "The Howe–Moore property for real and p-adic groups"
+year = 2011
+venue = "Math. Scand. 109(2) (2011) 201-224"
+arxiv = "1003.1484v1"
+locator_scheme = "section"
+locator = "§1, semisimple-group Howe–Moore statement, PDF p. 1; extracted line 18"
+url = "https://arxiv.org/abs/1003.1484v1"
+fetched_from = "https://arxiv.org/pdf/1003.1484v1"
+fetched_at = "2026-10-25T11:48:21Z"
+sha256 = "a52e3919f46e7ff8a853afc85ec4a1d650c477f6c04dbb709e77331154f79143"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1"
+cited_for = ["SRU.4"]
+
+[[source]]
+id = "GI18"
+authors = "Wee Teck Gan and Atsushi Ichino"
+title = "The Shimura–Waldspurger correspondence for Mp_2n"
+year = 2018
+arxiv = "1705.10106v3"
+locator_scheme = "section"
+locator = "Appendix A.1, Proposition A.2 and its proof, arXiv v3 pp. 29–31; extracted lines 1289 (statement) and 1319 (proof)"
+url = "https://arxiv.org/abs/1705.10106v3"
+fetched_from = "https://arxiv.org/pdf/1705.10106v3"
+fetched_at = "2026-10-25T11:48:27Z"
+sha256 = "5d1408c5f8bc15a5ceec04a465ceb80cb7265da218138d5a746418ee8b4b291d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v3"
+cited_for = ["SRU.1"]
+
+[[source]]
+id = "CIK71"
+authors = "Charles W. Curtis, Nagayoshi Iwahori and Robert Kilmoyer"
+title = "Hecke algebras and characters of parabolic type of finite groups with (B,N)-pairs"
+year = 1971
+locator_scheme = "section"
+locator = "Lemma 4.3 and Theorem 4.4, example (b), PDF p. 15; extracted line 502"
+url = "https://www.numdam.org/item/PMIHES_1971__40__81_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1971__40__81_0.pdf"
+fetched_at = "2026-10-25T11:48:28Z"
+sha256 = "2a3b416e895712dc0b4aadbd36875e645b512ca9dd1283f71daa3c492a12acfc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["SRU.4"]
+
+[[source]]
+id = "BCP"
+authors = "Dan Barbasch, Dan Ciubotaru and Alessandra Pantano"
+title = "Unitarizable minimal principal series of reductive groups"
+year = 2008
+arxiv = "0804.1937v1"
+locator_scheme = "section"
+locator = "§5.2, Lemma (2) and following explanation, p. 53; extracted line 2694"
+url = "https://arxiv.org/abs/0804.1937v1"
+fetched_from = "https://arxiv.org/pdf/0804.1937v1"
+fetched_at = "2026-10-25T11:48:34Z"
+sha256 = "4e62c7d152348ee008b337d6a4f0aad83751bbff5c1b462ac69c3cf3042d7338"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1"
+cited_for = ["SRU.5"]
+
+[[source]]
+id = "La24"
+authors = "Ruben La"
+title = "The Iwahori–Matsumoto dual for tempered representations of Lusztig’s geometric Hecke algebras"
+year = 2024
+arxiv = "2403.14528v2"
+locator_scheme = "section"
+locator = "Definition 4.2 and Theorem 4.3, PDF p. 18; extracted line 790"
+url = "https://arxiv.org/abs/2403.14528v2"
+fetched_from = "https://arxiv.org/pdf/2403.14528v2"
+fetched_at = "2026-10-25T11:48:39Z"
+sha256 = "a9e77a11ec63cd65178ba6a151dc5d617c72d56a26746e2d06704145a8ac2d93"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2"
+cited_for = ["SRU.7"]
+
+[[source]]
+id = "Ban02"
+authors = "Dubravka Ban"
+title = "The Aubert involution and R-groups"
+year = 2002
+locator_scheme = "section"
+locator = "§3, Theorem 3.1(1)–(6), p. 678; extracted line 246"
+url = "https://www.numdam.org/item/ASENS_2002_4_35_5_673_0.pdf"
+fetched_from = "https://www.numdam.org/item/ASENS_2002_4_35_5_673_0.pdf"
+fetched_at = "2026-10-25T11:48:40Z"
+sha256 = "48a2e8be3360d8d73b050d5a4a012303bec1f4e96e408ceb083fc17b6364b4c6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["SRU.7"]
+
+[[source]]
+id = "CiF4"
+authors = "Dan Ciubotaru"
+title = "The unitary I-spherical dual for split p-adic groups of type F4"
+year = 2005
+locator_scheme = "section"
+locator = "§3.1, Theorem 3.1, pp. 10–11 of the author version; extracted line 427; §3.2, B₃ row of the maximal-parabolic spherical unitary parameters, p. 14; extracted line 584"
+url = "https://www.math.utah.edu/~ptrapa/math-library/ciubotaru/ciubotaru_F4.pdf"
+fetched_from = "https://www.math.utah.edu/~ptrapa/math-library/ciubotaru/ciubotaru_F4.pdf"
+fetched_at = "2026-10-25T11:48:42Z"
+sha256 = "ca54d347930151085d38eb02875f0853841fdecbbf7f493a735a7f034d0475e1"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["SRU.7"]
+
+[[source]]
+id = "GS23"
+authors = "Wee Teck Gan and Gordan Savin"
+title = "The local Langlands conjecture for G_2"
+year = 2023
+doi = "10.1017/fmp.2023.27"
+arxiv = "2209.07346v2"
+locator_scheme = "section"
+locator = "§11, pp. 30–33: opening paragraph; §11.1, weak convergence, limit and cluster points, Theorem 11.1, Propositions 11.2–11.3 and their proofs, Lemma 11.4 and its preceding projector; §11.2, Definition 11.5, Proposition 11.6 and proof, Corollary 11.7; proof of Proposition 10.5, p. 28."
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/2479D805B0F248C91A33671F3A03752E/S2050508623000276a.pdf/local_langlands_conjecture_for_g2.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/2479D805B0F248C91A33671F3A03752E/S2050508623000276a.pdf/local_langlands_conjecture_for_g2.pdf"
+fetched_at = "2026-10-25T11:53:59Z"
+sha256 = "6fc3979d78510fb094e50de9bdd162dfaad43f51fe9b6b8a82ab3d84e0c93389"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Citations use the published Forum of Mathematics, Pi 11 (2023), e28 text; arXiv v2 has different Appendix B numbering."
+cited_for = ["SRU.0", "SRU.1", "SRU.2", "SRU.3", "SRU.4"]
+
+[[source]]
+id = "Aub96"
+authors = "Anne-Marie Aubert"
+title = "Erratum to Dualité dans le groupe de Grothendieck de la catégorie des représentations lisses de longueur finie d’un groupe réductif p-adique"
+year = 1996
+doi = "10.1090/S0002-9947-96-01776-X"
+locator_scheme = "section"
+locator = "corrected exact resolution theorem, pp. 4687–4690, PDF p. 1; extracted line 27"
+url = "https://www.ams.org/journals/tran/1996-348-11/S0002-9947-96-01776-X/S0002-9947-96-01776-X.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1996-348-11/S0002-9947-96-01776-X/S0002-9947-96-01776-X.pdf"
+fetched_at = "2026-10-25T11:53:24Z"
+sha256 = "d76b3ef9ea2310d1a3129da990c1abd6c304027e3e939a5a1f06c666978c145f"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["SRU.7.1"]
+
+[[source]]
+id = "BHV"
+authors = "Bachir Bekka, Pierre de la Harpe and Alain Valette"
+title = "Kazhdan's Property (T)"
+year = 2008
+doi = "10.1017/CBO9780511542749"
+locator_scheme = "section"
+locator = "Definitions A.1.1, A.1.6 (with the Hilbert direct sum before it, extracted line 11742) and A.1.7; Definition C.4.1; Propositions C.4.2–C.4.3; Theorem C.4.10; Proposition C.5.1 and Theorems C.5.2, C.5.5–C.5.6; Lemmas C.5.3–C.5.4; Definition F.1.1, Lemma F.1.3 and Proposition F.1.4; Definition F.2.1 and Propositions F.2.2, F.2.4; Exercises C.6.10 and F.6.4; extracted lines 11667, 11764, 14649, 14923, 14301, 14433, 14570, 14634, 14642, 14690, 16025, 16155, 16321, 16976"
+url = "https://archive-ouverte.unige.ch/unige:10789"
+fetched_from = "https://access.archive-ouverte.unige.ch/access/metadata/19c0d173-9917-4a95-b246-5f2eda3727b9/download"
+fetched_at = "2026-10-25T11:54:05Z"
+sha256 = "fb1aa4388935db25719b90a0913bf854c08cde7bb48602a6718cd86b77839106"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Published 2008 text, institutionally hosted; PDF page numbering and extracted line numbers are used here."
+cited_for = ["SRU.0", "SRU.1"]
+
+[[source]]
+id = "Ber92"
+authors = "Joseph Bernstein, notes by Karl E. Rumelhart"
+title = "Representations of p-adic groups (Harvard lectures, Fall 1992)"
+year = 1992
+locator_scheme = "section"
+locator = "Ch. II §2.1, Proposition 22, p. 39; extracted line 1281; Definition 27 and Proposition 40, PDF p. 83; extracted line 2853; Lemma 38, PDF p. 84; extracted line 2887; Proposition 41, PDF p. 86; extracted line 2934; Proposition 38, PDF p. 84; extracted line 2861"
+url = "https://personal.math.ubc.ca/~cass/research/pdf/bernstein.pdf"
+fetched_from = "https://personal.math.ubc.ca/~cass/research/pdf/bernstein.pdf"
+fetched_at = "2026-10-25T11:54:09Z"
+sha256 = "a594282d1ab35ad49e04eef571e59d620be535a98954c64e3a35205d206311c7"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["SRU.2", "SRU.4"]
+
+[[source]]
+id = "Kato81"
+authors = "Shin-ichi Kato"
+title = "Irreducibility of principal series representations for Hecke algebras of affine type"
+year = 1981
+doi = "10.15083/00039616"
+locator_scheme = "section"
+locator = "Theorem 2.2, p. 935, extracted line 229; Theorem 2.4 (cyclicity), p. 936, extracted line 253"
+url = "https://repository.dl.itc.u-tokyo.ac.jp/records/39625"
+fetched_from = "https://repository.dl.itc.u-tokyo.ac.jp/record/39625/files/jfs280337.pdf"
+fetched_at = "2026-10-25T11:59:17Z"
+sha256 = "7a1cfa27e2f4f6f289ae0c9e639f56ce6f30d4b177590bc93bae64fd35b3cb28"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Volume 28 (1981), distributed 20 February 1982; institutional scan recognized by OCR."
+cited_for = ["SRU.5.4"]
+
+[[source]]
+id = "BM89"
+authors = "Dan Barbasch, Allen Moy"
+title = "A unitarity criterion for p-adic groups"
+year = 1989
+venue = "Inventiones Mathematicae 98"
+doi = "10.1007/BF01388842"
+locator_scheme = "theorem"
+locator = "Theorems 1.1–1.2"
+url = "https://doi.org/10.1007/BF01388842"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.10", "7.13"]
+
+[[source]]
+id = "KL87"
+authors = "David Kazhdan, George Lusztig"
+title = "Proof of the Deligne-Langlands conjecture for Hecke algebras"
+year = 1987
+venue = "Inventiones Mathematicae 87"
+doi = "10.1007/BF01389157"
+locator_scheme = "theorem"
+locator = "Theorem 7.12"
+url = "https://doi.org/10.1007/BF01389157"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.4"]
+
+[[source]]
+id = "HM07"
+authors = "Volker Heiermann, Goran Muić"
+title = "On the standard modules conjecture"
+year = 2007
+venue = "Mathematische Zeitschrift 255 (2007), 847–853"
+locator_scheme = "theorem"
+locator = "main theorem: negative-chamber holomorphy of the Shahidi local coefficients implies the standard module conjecture"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text, as used in HO Corollary 1.2 (HO line 103)"
+cited_for = ["3.8", "Exact supplier contracts: gap:heiermann-muic-implication"]
+
+[[source]]
+id = "BM93"
+authors = "Dan Barbasch, Allen Moy"
+title = "Reduction to real infinitesimal character in affine Hecke algebras"
+year = 1993
+venue = "Journal of the American Mathematical Society 6 (1993), 611–635"
+doi = "10.1090/S0894-0347-1993-1186959-0"
+locator_scheme = "theorem"
+locator = "§8, Theorem 8.1, printed p. 634; extracted line 973"
+url = "https://www.ams.org/journals/jams/1993-06-03/S0894-0347-1993-1186959-0/S0894-0347-1993-1186959-0.pdf"
+fetched_from = "https://www.ams.org/journals/jams/1993-06-03/S0894-0347-1993-1186959-0/S0894-0347-1993-1186959-0.pdf"
+fetched_at = "2026-10-27T07:19:10Z"
+sha256 = "7aca87ff41275d6e7156f4a697921e513128806870c9e3dc3fcd9c0cce1797ab"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-27"
+cited_for = ["5.10", "7.13"]
+
+[[source]]
 id = "BM94"
-authors = "Barbasch"
+authors = "Dan Barbasch, Allen Moy"
 title = "Whittaker models with an Iwahori fixed vector"
 year = 1994
-doi = "10.1090/conm/177/01917"
 locator_scheme = "theorem"
-locator = "Whittaker and sign type"
+locator = "main theorem on Whittaker functionals of Iwahori-spherical representations through the Gelfand–Graev representation, as cited in BC1 §1.1 (BC1 line 25)"
 licence_class = "none"
 status = "waived"
-resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/1643#issuecomment-6399032036"
+cited_for = ["4.3"]
 
 [[source]]
 id = "KS71"
-authors = "Knapp"
-title = "Knapp and Stein, The existence of complementary series, 1970"
+authors = "Anthony W. Knapp, Elias M. Stein"
+title = "The existence of complementary series"
 year = 1970
 locator_scheme = "theorem"
-locator = "Theorem 3.3"
+locator = "main theorem"
 licence_class = "none"
 status = "waived"
-resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/1643#issuecomment-6399032036"
+cited_for = ["5.8"]
 
 [[source]]
 id = "Mi73"
-authors = "Milicic"
-title = "Milicic, On C*-algebras with bounded trace, 1973"
+authors = "Dragan Miličić"
+title = "On C*-algebras with bounded trace"
 year = 1973
 locator_scheme = "theorem"
 locator = "Theorem 5"
 licence_class = "none"
 status = "waived"
-resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/1643#issuecomment-6399032036"
+cited_for = ["3.3"]
 
 [[source]]
 id = "Rodier81"
-authors = "Rodier"
+authors = "François Rodier"
 title = "Decomposition of principal series for reductive p-adic groups and the Langlands classification"
 year = 1984
 locator_scheme = "theorem"
-locator = "principal series decomposition"
+locator = "main theorem on the constituents of the principal series containing the Steinberg representation"
 licence_class = "none"
 status = "waived"
-resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/1643#issuecomment-6399032036"
+cited_for = ["4.4"]
 
 [[source]]
 id = "Steinberg68"
-authors = "Steinberg"
+authors = "Robert Steinberg"
 title = "Endomorphisms of linear algebraic groups"
 year = 1968
-doi = "10.1090/memo/0080"
 locator_scheme = "theorem"
-locator = "8.1"
+locator = "§8.1"
 licence_class = "none"
 status = "waived"
-resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/1643#issuecomment-6399032036"
+cited_for = ["6.1"]
 
 [[source]]
 id = "Borel79"
-authors = "Borel"
-title = "Automorphic 𝐿-functions"
+authors = "Armand Borel"
+title = "Automorphic L-functions"
 year = 1979
-doi = "10.1090/pspum/033.2/546608"
 locator_scheme = "theorem"
-locator = "Lemma 6.4 and Proposition 6.7"
+locator = "§6, Lemma 6.4 and Proposition 6.7"
 licence_class = "none"
 status = "waived"
-resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/1643#issuecomment-6399032036"
+cited_for = ["6.1"]
 
 [[source]]
 id = "Ber74"
-authors = "Bernstein"
-title = "Bernstein, All reductive p-adic groups are tame, 1974"
+authors = "Joseph Bernstein"
+title = "All reductive p-adic groups are tame"
 year = 1974
 locator_scheme = "theorem"
-locator = "Theorem 1"
+locator = "main theorem"
 licence_class = "none"
 status = "waived"
-resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/1643#issuecomment-6399032036"
+cited_for = ["2.6"]

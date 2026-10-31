@@ -6009,109 +6009,96 @@
  ],
  "gaps": [
   {
-   "title": "Nilpotent orbits of g^∨: Jacobson–Morozov, centralisers of sl₂-triples, graded orbits and Bala–Carter tables",
-   "neededBy": [
-    "SmoothRepresentationsOfLocalGroupsPartII:SRU.7/kazhdan-lusztig-parameters",
-    "SmoothRepresentationsOfLocalGroupsPartII:SRU.7/nilpotent-partition",
-    "SmoothRepresentationsOfLocalGroupsPartII:SRU.7/centralizer-reduction",
-    "SmoothRepresentationsOfLocalGroupsPartII:SRU.7/extraneous-classical",
-    "SmoothRepresentationsOfLocalGroupsPartII:SRU.7/extraneous-exceptional"
-   ],
-   "detail": "The nilpotent partition of the spherical dual needs: existence and conjugacy of sl₂-triples through a nilpotent e (Jacobson–Morozov, Kostant); reductivity and component groups of Z_{G^∨}(e, h, f); finiteness of Z_{G^∨}(s)-orbits on the q-eigenspace g^∨_q with a unique open orbit; and, for the exceptional cases of Theorem 8.5, the list of nilpotent orbits with the types of their reductive centralisers. TauCetiRoadmap LieHighestWeight stops at sl₂ and finite-dimensional irreducibles. The owner is the pending design DESIGN-LieHighestWeightPartII (issue #3373), which receives the Ciubotaru–Harris route LieHighestWeightPartIINilpotentOrbits and the Mao–Wan–Zhang route; this roadmap imports it once planned."
+    "slug": "steinberg-equivariant-k-theory",
+    "supplier": "SpringerResolutionAndCharacteristicCycles",
+    "section": "S",
+    "needs": "Supply coherent G^∨ × ℂ^×-equivariant K-theory convolution on the Steinberg variety, its affine-Hecke-algebra identification and fixed-point standard modules with the Springer enhancement criterion used by the Kazhdan–Lusztig classification."
   },
   {
-   "title": "Kazhdan–Lusztig classification: the equivariant K-theory realisation",
-   "neededBy": [
-    "SmoothRepresentationsOfLocalGroupsPartII:SRU.7/kazhdan-lusztig-classification"
-   ],
-   "detail": "Kazhdan–Lusztig's proof realises the affine Hecke algebra in the G^∨ × ℂ^×-equivariant K-theory of the Steinberg variety and classifies simple modules through standard modules in the homology of fixed-point varieties of Springer fibres; Reeder extends it to all isogenies. No roadmap in the atlas plans this equivariant K-theory; DESIGN-SpringerResolutionAndCharacteristicCycles plans the Steinberg variety's geometry but not its K-theory. The classification is stated here as a cited theorem with its spherical, tempered and generic criteria."
+    "slug": "integrated-l1-gns",
+    "supplier": "OperatorAlgebraDynamics",
+    "section": "D1–D2",
+    "needs": "Supply the nondegenerate integrated GNS representation of a bounded positive L¹(G) functional and its comparison with strongly continuous unitary group representations, using the left-Haar modular involution."
   },
   {
-   "title": "Noncentral compact parts: classification of geometric unitary spherical parameters for arbitrary s_c",
-   "neededBy": [
-    "SmoothRepresentationsOfLocalGroupsPartII:SRU.5/generic-temperedness-test",
-    "SmoothRepresentationsOfLocalGroupsPartII:SRU.7/extraneous-exceptional",
-    "SmoothRepresentationsOfLocalGroupsPartII:SRU.7/extraneous-classical"
-   ],
-   "detail": "Corollaries 6.32 and 7.5 and Theorem 8.5 of Ciubotaru–Harris hold as stated only for real or central-compact Satake parameters (PAPER-CIUBOTARU-HARRIS-26/E11, E18); the G₂ witness shows the printed general statements fail. A general statement requires, for each compact s_c, the unitary spherical dual of the graded Hecke algebra of Z_{G^∨}(s_c) with its parameters (noncentral-compact-reduction), its geometric real parts, and the lifting of centraliser orbits. No source read for this plan proves it; the Ciubotaru–Harris route brief names it as a new exhaustive target. The global consumer (the Ramanujan–Arthur route GlobalShtukasPartIIRamanujanArthur of DESIGN-GlobalShtukasAndFunctionFieldLanglandsPartII) must keep the real/central-compact hypothesis at each place until this is supplied."
+    "slug": "pi-admissibility",
+    "supplier": "CStarAlgebras",
+    "section": "C2",
+    "needs": "Supply the polynomial-identity theorem turning a uniform bound N on irreducible dimensions of a dense star subalgebra into the same dimension bound for irreducible Hilbert representations of its C*-completion, with the Hecke-corner compression comparison."
   },
   {
-   "title": "Miličić's theorem: the C*-algebraic input",
-   "neededBy": [
-    "SmoothRepresentationsOfLocalGroupsPartII:SRU.3/milicic-limits"
-   ],
-   "detail": "Miličić's Theorem 5 is a statement about C*-algebras with bounded trace and the topology of their spectra. The group C*-algebra exists upstream (OperatorAlgebraDynamics D1–D2, TauCetiRoadmap main) and the GCR and hull-kernel comparisons are in the open NoncompactQuantumSymmetry roadmap (PR #1015), but the bounded-trace theory and Miličić's limit theorem are not planned anywhere. milicic-limits states the theorem as Gan–Savin use it; its C*-algebraic proof is this gap."
+    "slug": "bounded-trace-character-limits",
+    "supplier": "CStarAlgebras",
+    "section": "C2",
+    "needs": "Supply the bounded-trace C*-algebra limit theorem yielding finite positive-integer character multiplicities and equality of limit and cluster sets for the character-convergent irreducible sequences used in SRU.3."
   },
   {
-   "title": "Bernstein's admissibility: the polynomial-identity input",
-   "neededBy": [
-    "SmoothRepresentationsOfLocalGroupsPartII:SRU.2/unitary-irreducibles-admissible"
-   ],
-   "detail": "The passage from the uniform bound on simple H(G, K)-modules (SR.3a uniform-admissibility) to finite-dimensionality of H^K for a topologically irreducible unitary π uses polynomial identities of C*-algebras (Godement, Kaplansky), as Bernstein–Zelevinsky §4.21 indicate. No roadmap owns PI theory for C*-algebras; the step is cited."
+    "slug": "finite-product-fell-duals",
+    "supplier": "NoncompactQuantumSymmetry",
+    "section": "M0a and M2.TypeIDisintegration",
+    "needs": "Supply the tensor-product classification of irreducibles for finite products of second-countable type-I locally compact groups, the homeomorphism of their unitary dual with the product Fell topology, and the compact-factor specialization."
   },
   {
-   "title": "Godement integrated positive-type theorem",
-   "neededBy": [
-    "SmoothRepresentationsOfLocalGroupsPartII:SRU.1/positive-type-integral-form"
-   ],
-   "detail": "Supply the positive L¹-functional representation theorem, its nondegenerate integrated GNS construction and recovery of a continuous positive-type representative, including the modular-function involution for a general locally compact group. BHV Lemma C.5.3, p. 382, only cites this input. OperatorAlgebraDynamics D1–D2 supplies group C*-algebras and C*-GNS, but the L¹ comparison needed here was not located. This is a proof prerequisite, not a lemma-level refinement.",
-   "addedBy": "REV-DESIGN-SmoothRepresentationsOfLocalGroupsPartII"
+    "slug": "tempered-dual-local-topology",
+    "supplier": "SmoothRepresentationsOfLocalGroups",
+    "section": "SR.3.3",
+    "needs": "Supply the finite-level topology of the tempered dual in Harish–Chandra tempered-support coordinates and the separation of a square-integrable point from proper-Levi induction at fixed unitary central character."
   },
   {
-   "title": "Finite products and Fell topology",
-   "neededBy": [
-    "SmoothRepresentationsOfLocalGroupsPartII:SRU.1/gan-savin-isolated-summand"
-   ],
-   "detail": "The abstract relative-isolation conclusion is proved. Its advertised finite-product application additionally needs the type-I tensor-product classification for reductive p-adic groups and compatibility of the resulting product dual with Fell topology. The compact-factor argument uses the upstream M0 isotypic projectors; neither a full product-dual theorem nor its exact supplier was located in the read sources. Keep the application conditional until supplied.",
-   "addedBy": "REV-DESIGN-SmoothRepresentationsOfLocalGroupsPartII"
+    "slug": "induced-character-continuity",
+    "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+    "section": "2.16",
+    "needs": "Supply the normalized parabolic induced-character formula as a continuous linear pullback on compactly supported locally constant test functions, so weak convergence on a Levi implies weak convergence of induced characters."
   },
   {
-   "title": "Finite Steinberg and Rodier constituent combinatorics",
-   "neededBy": [
-    "SmoothRepresentationsOfLocalGroupsPartII:SRU.4/finite-steinberg",
-    "SmoothRepresentationsOfLocalGroupsPartII:SRU.4/rodier-steinberg-series"
-   ],
-   "detail": "Supply the finite Coxeter-complex/Solomon alternating-character identity identifying the finite-Hecke sign representation with the alternating parabolic sum, and Rodier’s precise multiplicity-one constituent/exponent description for the principal series containing St. CIK71 §4, pp. 94–95, verifies the finite sign character and degree; GS23 §11.1, pp. 31–32, supplies the Rodier statement secondarily. An entire Boolean product description of the submodule lattice is not implied and is not asserted.",
-   "addedBy": "REV-DESIGN-SmoothRepresentationsOfLocalGroupsPartII"
+    "slug": "semisimple-parameter-cuspidal-support",
+    "supplier": "ExcursionOperatorsAndSpectralActionPartII",
+    "section": "SC4 and SC3",
+    "needs": "Supply the semisimple local-parameter map on irreducible smooth representations over every nonarchimedean local field and its compatibility with normalized parabolic induction and cuspidal support, with the square-root and reciprocity conventions fixed."
   },
   {
-   "title": "Howe–Moore contraction lemma",
-   "neededBy": [
-    "SmoothRepresentationsOfLocalGroupsPartII:SRU.4/howe-moore"
-   ],
-   "detail": "The full contraction/Mautner propagation argument, from a weak cluster vector along an escaping Cartan sequence to G⁺-invariance, is nonroutine and is not supplied by Cartan decomposition alone. CCLTV §1, pp. 1–2, supports the all-characteristic G⁺ statement but cites the semisimple-group theorem. Locate and plan this proof without importing the characteristic-zero-only relative theorem.",
-   "addedBy": "REV-DESIGN-SmoothRepresentationsOfLocalGroupsPartII"
+    "slug": "triple-centralizers",
+    "supplier": "LieHighestWeightPartII",
+    "section": "N0",
+    "needs": "Supply reductivity of the centralizer of an algebraic sl₂-triple in a connected complex reductive group, with its identity component and its component group."
   },
   {
-   "title": "Hecke signatures, isogenies and genericity transfer",
-   "neededBy": [
-    "SmoothRepresentationsOfLocalGroupsPartII:SRU.5/unbounded-not-unitary",
-    "SmoothRepresentationsOfLocalGroupsPartII:SRU.5/generic-unitary-classification",
-    "SmoothRepresentationsOfLocalGroupsPartII:SRU.6/nonsplit-unitary-transfer",
-    "SmoothRepresentationsOfLocalGroupsPartII:SRU.6/odd-unitary-residual"
-   ],
-   "detail": "The classification uses explicit long-intertwiner signature calculations (BCP §5.2, pp. 53–54; BC1 §3) rather than decay alone. For the nonsplit transfer, use BC3 Theorems 1.3.1 and 1.4.1 plus Corollary 6.2.6, including transport of the generic/sign condition and the central-isogeny adapter Sp(2n) versus adjoint PSp(2n). The split-only Barbasch–Moy K-type theorem is not itself a nonsplit supplier. Record a characteristic-independent affine/graded-Hecke formulation before applying the characteristic-zero group statements over function fields; CH26 §7 uses this extension but does not prove these adapters.",
-   "addedBy": "REV-DESIGN-SmoothRepresentationsOfLocalGroupsPartII"
+    "slug": "graded-open-orbit",
+    "supplier": "LieHighestWeightPartII",
+    "section": "N0–N1",
+    "needs": "Supply, for a semisimple element s of a connected complex reductive group and a complex number q that is not a root of unity, finiteness of the orbits of the centralizer of s on the q-eigenspace of Ad(s) and the existence of exactly one open orbit."
   },
   {
-   "title": "Aubert corrected proof and KL arbitrary-isogeny dictionary",
-   "neededBy": [
-    "SmoothRepresentationsOfLocalGroupsPartII:SRU.7/aubert-involution",
-    "SmoothRepresentationsOfLocalGroupsPartII:SRU.7/kazhdan-lusztig-classification"
-   ],
-   "detail": "Aubert’s original §1 (pp. 2181–2183) was accessible, but the full §2–3 PDF and the 1996 erratum (Trans. AMS 348, pp. 4687–4690, DOI 10.1090/S0002-9947-96-01776-X) were not. Ban02 Theorem 3.1, p. 678, confirms the irreducibility/involution endpoint with the erratum in its bibliography, but the corrected resolution proof and the asserted extension to positive characteristic have not been independently checked. The simplified KL spherical/generic dictionary is now restricted to split adjoint groups; arbitrary isogeny needs the Reeder component-group and fixed-Whittaker refinements, including e=0 plus trivial enhancement for spherical modules.",
-   "addedBy": "REV-DESIGN-SmoothRepresentationsOfLocalGroupsPartII"
+    "slug": "orbit-tables",
+    "supplier": "LieHighestWeightPartII",
+    "section": "N3",
+    "needs": "Supply the Bala–Carter lists of nilpotent orbits of the complex groups of types F₄, E₇ and E₈ with the types of the reductive centralizers of their sl₂-triples, including the C₄ centralizer of the E₈ orbit 4A₁."
   },
   {
-   "title": "Tempered dual local topology",
-   "neededBy": [
-    "SmoothRepresentationsOfLocalGroupsPartII:SRU.3/discrete-series-isolated-tempered",
-    "SmoothRepresentationsOfLocalGroupsPartII:SRU.3/tadic-tempered-limits"
-   ],
-   "detail": "Supply the finite-level local structure of Harish–Chandra’s tempered dual and the argument excluding a discrete series from limits of proper-Levi inductions when the centre is compact. SRup SR.3.3 harish-chandra-tempered-support states decomposition and uniqueness, not the needed topology. Convergence of Bernstein parameters alone is insufficient; retain the isolation theorem as a target with this input open.",
-   "addedBy": "REV-DESIGN-SmoothRepresentationsOfLocalGroupsPartII"
+    "slug": "whittaker-multiplicity-one",
+    "supplier": "SmoothRepresentationsOfLocalGroups",
+    "section": "SR.2.3",
+    "needs": "Supply, for every quasi-split connected reductive group over a nonarchimedean local field of characteristic zero, every nondegenerate Whittaker datum (U, ψ) and every irreducible admissible complex representation V, the bound dim Hom_U(V, ψ) ≤ 1, extending the GL₂ multiplicity-one theorem of SR.2.3."
+  },
+  {
+    "slug": "sigma-finite-l1-duality",
+    "supplier": "BanachSpaceTheory",
+    "section": "B5",
+    "needs": "Supply the isometric complex-linear identification (L¹(μ))* ≃ L∞(μ) by the integral pairing for every σ-finite measure μ, with its norm equality and weak-star evaluation laws."
+  },
+  {
+    "slug": "shahidi-local-coefficient",
+    "supplier": "AutomorphicLFunctionsAndLocalFactors",
+    "section": "AL.4",
+    "needs": "Supply, for a quasi-split connected reductive group over a p-adic field of characteristic zero, a standard parabolic P = MN and an irreducible generic tempered representation τ of M with a compatible Whittaker datum, the meromorphic Shahidi local coefficient in ν ∈ a_M^* ⊗ ℂ with its normalisation, and its holomorphy on the negative chamber (HO Theorem 1.1)."
+  },
+  {
+    "slug": "heiermann-muic-implication",
+    "supplier": "AutomorphicLFunctionsAndLocalFactors",
+    "section": "AL.4",
+    "needs": "Supply the theorem that negative-chamber holomorphy of these local coefficients for all generic tempered data implies that a Langlands quotient J(τ, ν) with τ generic tempered is generic exactly when its standard module i_P(τ_ν) is irreducible (HM07, as used in HO Corollary 1.2)."
   }
- ],
+],
  "restructure": [
   {
    "action": "split",
