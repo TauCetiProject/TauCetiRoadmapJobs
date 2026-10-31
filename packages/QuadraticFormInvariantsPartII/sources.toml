@@ -1,0 +1,156 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "QuadraticFormInvariantsPartII"
+
+[[source]]
+id = "ekm"
+authors = "Richard Elman, Nikita Karpenko, Alexander Merkurjev"
+title = "The Algebraic and Geometric Theory of Quadratic Forms"
+year = 2008
+venue = "AMS Colloquium Publications 56"
+locator_scheme = "theorem"
+locator = "Theorem 23.7; Propositions 4.13, 5.3, Theorem 4.22, Examples 9.3-9.4, Corollaries 9.9-9.10, Theorems 17.3, 17.12, Corollary 18.5, Theorems 20.14, 20.16, 22.5, Fact 16.2, §97 (printed pages)"
+url = "https://www.math.ucla.edu/~merkurev/Book/Kniga-final/Kniga.pdf"
+fetched_from = "https://www.math.ucla.edu/~merkurev/Book/Kniga-final/Kniga.pdf"
+fetched_at = "2026-10-25T23:51:02Z"
+sha256 = "0b547b09ee83c370a932e2c2117fe1757bb8b342ca0af9d73526b5edffb842e6"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Conventions", "Layer 0", "Layer 1", "Layer 2", "Layer 3", "Layer 5"]
+version_note = "author copy of the final manuscript; locators use the printed page numbers (PDF page minus 8)"
+
+[[source]]
+id = "dp"
+authors = "Philip Dittmann, Florian Pop"
+title = "Characterizing finitely generated fields by a single field axiom"
+year = 2023
+venue = "Ann. of Math. (2) 198 (2023), no. 3, 1203-1227"
+doi = "10.4007/annals.2023.198.3.4"
+arxiv = "2012.01307v2"
+locator_scheme = "theorem"
+locator = "Proposition 3.2"
+url = "https://arxiv.org/abs/2012.01307v2"
+fetched_from = "https://arxiv.org/pdf/2012.01307v2"
+fetched_at = "2026-10-25T23:51:15Z"
+sha256 = "f9f26f7d8d6b5cb6bf86d04bf97f8f99069d8d676623cebe706e90ea8dcb2c1f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2, final author version; locators follow the arXiv v2 pagination; the published text was not collated"
+cited_for = ["Conventions", "Layer 4", "Layer 5", "Layer 6", "Layer 7", "Suggested.lean"]
+
+[[source]]
+id = "ovv"
+authors = "Dmitri Orlov, Alexander Vishik, Vladimir Voevodsky"
+title = "An exact sequence for K_*^M/2 with applications to quadratic forms"
+year = 2007
+venue = "Annals of Mathematics 165 (2007), 1-13"
+locator_scheme = "theorem"
+locator = "Theorem 4.1"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v165-n1-p01.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v165-n1-p01.pdf"
+fetched_at = "2026-10-25T23:56:49Z"
+sha256 = "2c36d83de9f69e94ddb6cca95926c0265549947ecba87904e8c1be99f835ce44"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layer 3"]
+
+[[source]]
+id = "kato82"
+authors = "Kazuya Kato"
+title = "Symmetric bilinear forms, quadratic forms and Milnor K-theory in characteristic two"
+year = 1982
+venue = "Inventiones Mathematicae 66 (1982), 493-510"
+doi = "10.1007/BF01389226"
+locator_scheme = "theorem"
+locator = "main theorem, cited through its statement in EKM, Facts 5.15 and 16.2"
+url = "https://doi.org/10.1007/BF01389226"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 3"]
+
+[[source]]
+id = "morel"
+authors = "Fabien Morel"
+title = "Milnor's conjecture on quadratic forms and mod 2 motivic complexes"
+year = 2005
+venue = "Rendiconti del Seminario Matematico della Universita di Padova 114 (2005), 63-101"
+locator_scheme = "theorem"
+locator = "Theorem 1.1; Theorems 1.3, 2.2, 2.3, 2.11, 2.12, 3.4, 3.10, Corollary 3.17"
+version_note = "publisher digitization, recognised by OCR; printed page = PDF page + 62"
+url = "https://www.numdam.org/item/RSMUP_2005__114__63_0.pdf"
+fetched_from = "https://www.numdam.org/item/RSMUP_2005__114__63_0.pdf"
+fetched_at = "2026-10-26T00:02:27Z"
+sha256 = "a50ae751aa760548aef4bd63c92824696cb681f0084295ecff6f9cc1f0e37d63"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layer 3"]
+
+[[source]]
+id = "jannsen16"
+authors = "Uwe Jannsen"
+title = "Hasse principles for higher-dimensional fields"
+year = 2016
+venue = "Annals of Mathematics 183 (2016), 1-71"
+doi = "10.4007/annals.2016.183.1.1"
+locator_scheme = "theorem"
+locator = "Theorem 0.4; Corollary 0.8; Theorems 2.10, 2.11"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v183-n1-p01-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v183-n1-p01-p.pdf"
+fetched_at = "2026-10-26T00:06:22Z"
+sha256 = "26dde9260f6475e4f6acbfbe651e18fac0d443a5f318fbf3974efc9f809f7d71"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "ojanguren-panin"
+authors = "Manuel Ojanguren, Ivan Panin"
+title = "A purity theorem for the Witt group"
+year = 1999
+venue = "Annales Scientifiques de l'Ecole Normale Superieure 32 (1999), 71-86"
+doi = "10.1016/s0012-9593(99)80009-3"
+locator_scheme = "theorem"
+locator = "Theorem A"
+url = "http://www.numdam.org/item/ASENS_1999_4_32_1_71_0/"
+fetched_from = "https://www.numdam.org/item/ASENS_1999_4_32_1_71_0.pdf"
+fetched_at = "2026-10-26T00:23:55Z"
+sha256 = "a194bdee0eb0d40a288dc8da29147f7b784a3793827a822002404c0f4bef6d5b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layer 3"]
+
+[[source]]
+id = "arason75"
+authors = "Jón Kristinn Arason"
+title = "Cohomologische Invarianten quadratischer Formen"
+year = 1975
+venue = "Journal of Algebra 36 (1975), 448-491"
+doi = "10.1016/0021-8693(75)90145-3"
+locator_scheme = "theorem"
+locator = "Satz 3.3, as used in Morel, proof of Theorem 2.11"
+url = "https://doi.org/10.1016/0021-8693(75)90145-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 3"]
+
+[[source]]
+id = "milnor70"
+authors = "John Milnor"
+title = "Algebraic K-theory and quadratic forms"
+year = 1970
+venue = "Inventiones Mathematicae 9 (1970), 318-344"
+doi = "10.1007/BF01425486"
+locator_scheme = "section"
+locator = "§4, Question 4.3, p. 332, as quoted by Morel, pp. 64-66"
+url = "https://doi.org/10.1007/BF01425486"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 3"]
