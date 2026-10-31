@@ -4962,7 +4962,8 @@
  ],
  "gaps": [
   {
-   "id": "VS-PII/G-enhanced-operation-map",
+   "slug": "vs-pii-enhanced-operation-map",
+   "id": "vs-pii-enhanced-operation-map",
    "title": "Enhanced operation map data",
    "supplier": "EnhancedDerivedSheaves",
    "section": "§E3.4 (extension beyond ringed diagrams)",
@@ -4973,7 +4974,8 @@
    ]
   },
   {
-   "id": "VS-PII/G-partial-adjoints",
+   "slug": "vs-pii-partial-adjoints",
+   "id": "vs-pii-partial-adjoints",
    "title": "Partial adjoints",
    "supplier": "EnhancedDerivedSheaves",
    "section": "§E3.4 (extension beyond ringed diagrams)",
@@ -4984,7 +4986,8 @@
    ]
   },
   {
-   "id": "VS-PII/G-restricted-nerves",
+   "slug": "vs-pii-restricted-nerves",
+   "id": "vs-pii-restricted-nerves",
    "title": "Gluing restricted nerves",
    "supplier": "EnhancedDerivedSheaves",
    "section": "§E3.4 (extension beyond ringed diagrams)",
@@ -4995,7 +4998,8 @@
    ]
   },
   {
-   "id": "VS-PII/G-descent",
+   "slug": "vs-pii-descent",
+   "id": "vs-pii-descent",
    "title": "DESCENT extension",
    "supplier": "EnhancedDerivedSheaves",
    "section": "§E3.4 (extension beyond ringed diagrams)",
@@ -5006,7 +5010,8 @@
    ]
   },
   {
-   "id": "VS-PII/G-scheme-correspondences",
+   "slug": "vs-pii-scheme-correspondences",
+   "id": "vs-pii-scheme-correspondences",
    "title": "Scheme cohomological correspondences for general prime-to-p torsion coefficients",
    "supplier": "EtaleDualityAndPerverseSheaves",
    "section": "§6.2 (extension of coefficient and complex range)",
@@ -5017,11 +5022,12 @@
    ]
   },
   {
-   "id": "VS-PII/G-scheme-local-terms",
+   "slug": "vs-pii-scheme-local-terms",
+   "id": "vs-pii-scheme-local-terms",
    "title": "Scheme trace classes and local terms for general prime-to-p torsion coefficients",
    "supplier": "EtaleDualityAndPerverseSheaves",
    "section": "§6.3 (extension of coefficient and complex range)",
-   "needs": "For the same Λ and k separably closed, trace classes Tr_c(u) ∈ H⁰(Fix(c), K_{Fix(c)}) and local terms of cohomological correspondences between f-ULA complexes on separated finite-type k-schemes must be defined, compatibly with base change along extensions of separably closed fields.",
+   "needs": "For every commutative ring Λ with nΛ = 0 for an integer n invertible in k and k separably closed, trace classes Tr_c(u) ∈ H⁰(Fix(c), K_{Fix(c)}) and local terms of cohomological correspondences between f-ULA complexes on separated finite-type k-schemes must be defined, compatibly with base change along extensions of separably closed fields.",
    "neededBy": [
     "VStackSheavesAndLisseCategoriesPartII:VS10/local-terms-perfect-schemes"
    ]
