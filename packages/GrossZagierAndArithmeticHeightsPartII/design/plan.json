@@ -6553,127 +6553,48 @@
   ],
   "gaps": [
     {
-      "title": "RZ/RSZ models and canonical lifts",
-      "detail": "The proposed UnitaryRapoportZinkSpacesAndRSZModels supplier is not a registered roadmap. PELModuli M6 and its good-prime deformation node do not give these ramified formal moduli spaces. The precise M6 extension request above must be accepted and source-checked, including canonical lift, Cartier Hom obstruction, regular difference divisors, Wu/Vollaard–Wedhorn stratifications and uniformization. Do not substitute an arbitrary proposition or structure for the moduli functor. The special-cycle dimension theorem (codimension two for independent labels) is part of this extension. The current R07.2/CR.7 delegation loop does not yet supply Grothendieck–Messing; the CR.7 request records the precise evaluation, nilpotent-PD hypotheses and covariant conversion needed here.",
+      "slug": "ramified-hermitian-densities",
+      "supplier": "GeometryOfNumbersAndQuadraticArithmetic",
+      "section": "§3.2",
+      "needs": "§3.2 extended to ramified quadratic F/F₀ of odd residue characteristic, namely the local density Den(M,L), its vanishing when χ(M) ≠ χ(L), its interpolation polynomials in X = q^(−s) for the trace-dual hyperbolic lattices of the exotic setting and in X = q^(−2k) for the hermitian-sharp hyperbolic plane of the Krämer setting, and their finite overlattice expansions.",
       "neededBy": [
-        "GrossZagierAndArithmeticHeightsPartII:U0/special-cycles",
-        "GrossZagierAndArithmeticHeightsPartII:U0/cartier-difference",
-        "GrossZagierAndArithmeticHeightsPartII:U1/vertices",
-        "GrossZagierAndArithmeticHeightsPartII:U5/exotic-cycles",
-        "GrossZagierAndArithmeticHeightsPartII:U5/exotic-vertices",
-        "GrossZagierAndArithmeticHeightsPartII:U7/kramer-cycles",
-        "GrossZagierAndArithmeticHeightsPartII:U10/global-uniformization",
-        "GrossZagierAndArithmeticHeightsPartII:U13/model-admissibility"
+        "6.1",
+        "6.3",
+        "8.1",
+        "8.2"
       ]
     },
     {
-      "title": "Nonaffine supported filtration and resolution property",
-      "detail": "FK.2 supplies the regular-supported comparison only with resolution property and its product theorem only for affine formal schemes. Prove a version on the actual nonaffine RZ exhaustions, or replace each use by local arguments with descent. Inverse limits of support cokernels cannot be replaced by the cokernel of inverse limits without a separate exactness proof. U2/U9’s higher local constancy route deliberately avoids the global product assumption.",
+      "slug": "nonaffine-formal-filtration-product",
+      "supplier": "SchemeKTheoryOperationsPartII",
+      "section": "FK.2",
+      "needs": "FK.2 extended so that on a regular locally noetherian formal scheme exhausted by quasi-compact opens, such as a unitary Rapoport–Zink space, the codimension filtration on supported K₀ is rationally multiplicative for the supported cup product, compatibly with the noetherian exhaustion.",
       "neededBy": [
-        "GrossZagierAndArithmeticHeightsPartII:U0/derived-cycle",
-        "GrossZagierAndArithmeticHeightsPartII:U0/basis-properness",
-        "GrossZagierAndArithmeticHeightsPartII:U1/horizontal-splitting",
-        "GrossZagierAndArithmeticHeightsPartII:U6/exotic-split",
-        "GrossZagierAndArithmeticHeightsPartII:U7/modified-horizontal"
+        "0.6",
+        "1.1",
+        "6.2",
+        "7.6"
       ]
     },
     {
-      "title": "Quasi-canonical rank-two lifting leaves",
-      "detail": "Import the marked quasi-canonical construction, quadratic level classification and degree formula from LubinTateFormalModulesAndQuasiCanonicalLifts LT.6–LT.7. That packet does not state the Gross–Keating or ramified Shi/He–Shi–Yang intersection-length formulas needed here. Request those formulas as an extension of that owner, with order/conductor, component, sign and valuation dictionaries. R07.4 supplies integral comparison, not these lengths. The LZ special-Tate-module criteria and rank-three multiplicities remain U1 targets with their stated integral-comparison leaf.",
+      "slug": "arithmetic-chow-star-products",
+      "supplier": "ArakelovGeometryAndAbelianHeights",
+      "section": "§§1.8–1.10",
+      "needs": "§§1.8–1.10 extended to Gillet–Soulé arithmetic Chow groups ĈH^p of proper regular arithmetic varieties in every codimension, with Green currents of logarithmic type, the star product for properly intersecting divisors, the arithmetic intersection product and the arithmetic degree normalized by one half of the sum over complex embeddings.",
       "neededBy": [
-        "GrossZagierAndArithmeticHeightsPartII:U1/primitive-horizontal",
-        "GrossZagierAndArithmeticHeightsPartII:U1/tate-lifting",
-        "GrossZagierAndArithmeticHeightsPartII:U1/low-rank-vertical",
-        "GrossZagierAndArithmeticHeightsPartII:U5/exotic-rank-two",
-        "GrossZagierAndArithmeticHeightsPartII:U7/kramer-horizontal",
-        "GrossZagierAndArithmeticHeightsPartII:U8/kramer-horizontal"
+        "13.6"
       ]
     },
     {
-      "title": "Specific Deligne–Lusztig cohomology leaves",
-      "detail": "LZ and LL2 state the particular type-²A and type-²D Frobenius calculations they use. The underlying Lusztig results have not been read independently: acquire exact multiplicities, degrees, twists and semisimplicity before proving the boundary-generated Tate statements. Generic weights do not provide semisimplicity or all Tate classes.",
+      "slug": "jr-afl-local-inputs",
+      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+      "section": "Layers 2 and 4",
+      "needs": "for an unramified quadratic extension of p-adic fields of odd residue characteristic, Jacquet–Rallis matching of regular semisimple orbits between S_n = {γ ∈ GL_n(F) : γγ̄ = 1} under GL_{n−1}(F₀) and U(V_n) under U(V_{n−1}), and between S_{n−1} × (F₀^{n−1} ⊕ (F₀^{n−1})*) and U(V_{n−1}) × V_{n−1}, with Zhang's transfer factors, the η-twisted orbital integrals with the variable s, smooth transfer compatible with the partial Fourier transform, and the Jacquet–Rallis fundamental lemma for the unit test functions in both versions for every residue cardinality q, including q ≤ n.",
       "neededBy": [
-        "GrossZagierAndArithmeticHeightsPartII:U2/coxeter-cohomology",
-        "GrossZagierAndArithmeticHeightsPartII:U2/tate-generation",
-        "GrossZagierAndArithmeticHeightsPartII:U5/exotic-tate"
-      ]
-    },
-    {
-      "title": "Ramified density extension",
-      "detail": "GN.3’s inspected nodes are unramified. Source-check the ramified interpolation/normal forms, the weighted extension sums and the Krämer primitive formula/vertex triangular system under the two distinct dualities. This is a GN.3 extension request, not a privately duplicated density implementation.",
-      "neededBy": [
-        "GrossZagierAndArithmeticHeightsPartII:U6/exotic-density",
-        "GrossZagierAndArithmeticHeightsPartII:U6/exotic-extension-count",
-        "GrossZagierAndArithmeticHeightsPartII:U8/modified-density",
-        "GrossZagierAndArithmeticHeightsPartII:U8/primitive-density"
-      ]
-    },
-    {
-      "title": "Krämer type-zero infinitesimal criterion",
-      "detail": "The positive-type tangent-space argument does not prove type-zero reducedness. In the use of Lemma 3.10 with m=0, the coefficient a_(m+1) is required to be both zero and a unit, so that specialization is unavailable. Give a separate no-O/π²-point proof for the type-zero moduli functor and verify the hypotheses of the cited infinitesimal thickening criterion.",
-      "neededBy": [
-        "GrossZagierAndArithmeticHeightsPartII:U7/kramer-deformation"
-      ]
-    },
-    {
-      "title": "Krämer isolated odd-top induction repair",
-      "detail": "Lemma 9.6 of the author copy has the explicit split-plane valuation counterexample in U8/kramer-main. A separate identity for this case or another well-founded invariant must close Theorem 9.7; excluding that lattice would change the theorem. The false negative-normal-norm vanishing from Theorem 8.2 is not used.",
-      "neededBy": [
-        "GrossZagierAndArithmeticHeightsPartII:U8/kramer-main",
-        "GrossZagierAndArithmeticHeightsPartII:U13/ramified-asw"
-      ]
-    },
-    {
-      "title": "Arithmetic Chow/Green foundations and modularity leaves",
-      "detail": "Read the Gillet–Soulé/Gillet arithmetic-current/DM theory used for products and the regularized-theta/Borcherds/Green-comparison modularity theorems. R35.1’s inspected divisor and one-cycle nodes are enough for their pairing but not for higher star products or general DM arithmetic Chow products. Arithmetic modularity in the AFL proof is restricted to F0=Q. The generic-fiber Chow constant term uses the unitary automorphic line, not an unproved identification with the determinant Hodge line; the precise PEL eigenspace/descent and Petersson-metric comparison is an additional requested leaf.",
-      "neededBy": [
-        "GrossZagierAndArithmeticHeightsPartII:U12/arithmetic-series",
-        "GrossZagierAndArithmeticHeightsPartII:U12/modularity",
-        "GrossZagierAndArithmeticHeightsPartII:U12/kudla-green",
-        "GrossZagierAndArithmeticHeightsPartII:U13/green-star-degree",
-        "GrossZagierAndArithmeticHeightsPartII:U12/chow-series"
-      ]
-    },
-    {
-      "title": "Siegel–Weil and archimedean normalization leaves",
-      "detail": "Read Ichino §6 and the Liu/Garcia–Sankaran archimedean coefficient theorem with their range, regularization, measures, splitting characters and current convention. Derive c_K and the factor one half at infinity, rather than choosing an unspecified measure to fit the answer. Separate AFL’s repaired 4π scaling from LZ’s ASW 2π scaling. Check explicitly the Li–Liu versus Li–Zhang Whittaker parameter conversion: LL1 uses log q for q the underlying base residue size, whereas LZ uses log(q²).",
-      "neededBy": [
-        "GrossZagierAndArithmeticHeightsPartII:U13/siegel-weil-input",
-        "GrossZagierAndArithmeticHeightsPartII:U13/archimedean-asw",
-        "GrossZagierAndArithmeticHeightsPartII:U13/semiglobal",
-        "GrossZagierAndArithmeticHeightsPartII:U4/local-consumer"
-      ]
-    },
-    {
-      "title": "Jacquet–Rallis relative comparison supplier",
-      "detail": "The proposed JacquetRallisRelativeTraceComparison supplier is not registered, and ET ordinary endoscopy does not cover it. The exact ET.0 extension request must receive an accepted owner and source decomposition, including the independent FL at q=rank, nilpotent transfer and SL2 strong approximation used by Lemma 13.6.",
-      "neededBy": [
-        "GrossZagierAndArithmeticHeightsPartII:U9/analytic-afl-interface",
-        "GrossZagierAndArithmeticHeightsPartII:U14/relative-analytic-input",
-        "GrossZagierAndArithmeticHeightsPartII:U14/fourier-vanishing"
-      ]
-    },
-    {
-      "title": "AFL maximal-order and base-case source leaves",
-      "detail": "Read Mihatsch’s maximal-order Corollary 9.9 with the artinian/FL hypotheses rather than weakening Proposition 3.9’s printed bound. Read or compute the semi-Lie dimension-one base in Zhang [46] with transfer and Haar factors. The local KR rank-one length alone does not compute the orbital integral.",
-      "neededBy": [
-        "GrossZagierAndArithmeticHeightsPartII:U9/maximal-order",
-        "GrossZagierAndArithmeticHeightsPartII:U14/strong-afl"
-      ]
-    },
-    {
-      "title": "Boundary q=rank in the reverse Cayley argument",
-      "detail": "At q=n, avoiding the n eigenvalue residues can exhaust all but the additional forbidden residue d^(-1). The group-to-semi-Lie direction survives; the reverse needs an additional argument or independently read theorem. Preserve the published p≥n final target, but mark this step open instead of silently strengthening it to p>n.",
-      "neededBy": [
-        "GrossZagierAndArithmeticHeightsPartII:U9/afl-rank-reduction",
-        "GrossZagierAndArithmeticHeightsPartII:U14/strong-afl"
-      ]
-    },
-    {
-      "title": "General-field and nonstrong AFL boundary",
-      "detail": "Conjecture 3.2 is documented, not proved by Theorem 15.1. This run uses the selected MZ passages only for normalization; it does not claim the stronger general-field results of that paper or remove strong regularity.",
-      "neededBy": [
-        "GrossZagierAndArithmeticHeightsPartII:U14/general-afl-conjecture"
+        "9.3",
+        "9.5",
+        "9.7",
+        "14.1"
       ]
     }
   ],
