@@ -3100,65 +3100,178 @@
   ],
   "gaps": [
     {
-      "id": "G1",
-      "title": "Corrected properness proof",
-      "detail": "I01 Proposition 17.1 needs its later correction in Isaksen, Strict model structures for pro-categories, Remark 4.14, published Trans. AMS 356 (2004). The public initial arXiv strict-model version inspected does not contain that correction. Read the corrected argument or a complete primary replacement and verify right properness for the homotopy-pro-group model; strict properness alone does not prove it.",
-      "neededBy": [
-        "EtaleHomotopyTypes:EH.0/properness"
-      ]
+      "slug": "pro-universe-extension",
+      "needs": "For the native category of simplicial sets in a fixed universe and diagrams small in a fixed larger universe, extend the Ind-opposite Pro carrier with a fully faithful comparison under further universe enlargement.",
+      "supplier": "AdicSpacesPartII",
+      "section": "R0.19.9"
     },
     {
-      "id": "G2",
-      "title": "Unstable totalization convergence",
-      "detail": "Theorem A.8 invokes Bousfield–Kan XI 5.2 and XI 7.1 for the homotopy-limit spectral sequence, IX 5.1 for connectivity and IX 5.4 for complete convergence, including the nonabelian/pointed-set fringe. That book is not cleared in the maintainer library and was not obtained. Supply a public primary proof or a cleared reading of these precise inputs. Lemma A.7 plus a formally collapsed E₂ page does not discharge them.",
-      "neededBy": [
-        "EtaleHomotopyTypes:EH.2/profinite-holim-groups"
-      ]
+      "slug": "pro-cofinal-invariance",
+      "needs": "For a small cofiltered diagram in the declared Pro carrier, prove that restriction along a cofinal inverse-index functor induces an isomorphism of pro-objects, naturally in the diagram.",
+      "supplier": "AdicSpacesPartII",
+      "section": "R0.19.9"
     },
     {
-      "id": "G3",
-      "title": "Arbitrary local-system étale comparison",
-      "detail": "IEt cites Friedlander Proposition 5.9 for the étale cohomology comparison. Neither that book nor Artin–Mazur is cleared in the private index. Read a public primary proof giving the full local-system coefficient range and the simplicial diagonal comparison. The finite-coefficient Artin comparison in IG.3 does not cover arbitrary constant abelian A required by Schmidt–Stix Proposition 2.3.",
-      "neededBy": [
-        "EtaleHomotopyTypes:EH.3/etale-cohomology",
-        "EtaleHomotopyTypes:EH.3/geometric-galois-cohomology"
-      ]
+      "slug": "pro-cofinite-reindexing",
+      "needs": "For every small cofiltered diagram in the declared universes, supply a cofinal presentation indexed by a cofinite directed poset.",
+      "supplier": "AdicSpacesPartII",
+      "section": "R0.19.9"
     },
     {
-      "id": "G4",
-      "title": "Geometric-unibranch profiniteness",
-      "detail": "Schmidt–Stix invokes Artin–Mazur Theorem 11.1 for profiniteness of all raw homotopy pro-groups of a noetherian geometrically unibranch scheme. The primary proof has not been read and the book is not cleared. Recover that proof and its exact hypotheses from a public primary source or cleared library; finite-étale π₁ classification alone does not give higher profiniteness.",
-      "neededBy": [
-        "EtaleHomotopyTypes:EH.3/fundamental-group-comparison"
-      ]
+      "slug": "pro-level-representations",
+      "needs": "For every finite loopless diagram (with no nonidentity endomorphisms) of pro-objects in a locally small category, supply an isomorphic diagram represented levelwise over one small cofiltered index.",
+      "supplier": "AdicSpacesPartII",
+      "section": "R0.19.9"
     },
     {
-      "id": "G5",
-      "title": "Elementary-fibration homotopy theorem",
-      "detail": "The finite-Galois-cover reduction in Schmidt–Stix Proposition 2.8 cites Friedlander Theorem 11.5 with all primes. That primary proof is unread and the book is not cleared. Verify the geometric fiber, action/trivialization and pro-system hypotheses and the low-degree exactness. A proper-smooth completed fiber theorem alone is not the required nonproper elementary-fibration theorem.",
-      "neededBy": [
-        "EtaleHomotopyTypes:EH.3/elementary-fibration-sequence"
-      ]
+      "slug": "pro-monomorphism-presentations",
+      "needs": "For a monomorphism of small pro-groups, supply an isomorphic level representation by injective group homomorphisms.",
+      "supplier": "AdicSpacesPartII",
+      "section": "R0.19.9"
     },
     {
-      "id": "G6",
-      "title": "Analytification integration identity",
-      "detail": "ComplexComparisonPartII:C0 supplies the correct planned carrier, but its claimed upstream input is an open PR, not an accepted layer in current read-only main. Reconcile that exact carrier and accepted layer when available; neither Tau Ceti at the pin nor current main was found to supply a ready-to-use analytification functor. Do not introduce an incompatible replacement carrier here.",
-      "neededBy": [
-        "EtaleHomotopyTypes:EH.5/evaluation-representability",
-        "EtaleHomotopyTypes:EH.5/betti-diagonal",
-        "EtaleHomotopyTypes:EH.5/smooth-cech-descent"
-      ]
+      "slug": "simplicial-postnikov",
+      "needs": "For a Kan simplicial set K and n≥0, supply functorial truncations K→P_n K inducing isomorphisms on π_i for i≤n and vanishing π_i for i>n, with compatible transition maps and the fundamental-groupoid model for P_1.",
+      "supplier": "AlgebraicTopology",
+      "section": "Stage 8"
     },
     {
-      "id": "G7",
-      "title": "Strict functorial models and automorphism actions",
-      "detail": "The BHH/IC construction gives a homotopy-coherent completion and materialization. FGV’s footnote about preferred inverse systems does not by itself construct a strictly functorial point-set completion on those systems, prove the necessary coherent refinement comparisons, or an honest strict Aut(C) action on a chosen SSet. Supply and verify that model-level strictification before exporting the stronger strict functor/action. The roadmap distinguishes this leaf from the coherent naturality and action it already specifies.",
-      "neededBy": [
-        "EtaleHomotopyTypes:EH.6/etale-p-realization",
-        "EtaleHomotopyTypes:EH.6/comparison-zigzag",
-        "EtaleHomotopyTypes:EH.6/automorphism-naturality"
-      ]
+      "slug": "simplicial-local-whitehead",
+      "needs": "For a map of simplicial sets inducing a bijection on components and isomorphisms on fundamental groups at every basepoint, prove that it is a weak equivalence if it induces isomorphisms in every degree for every abelian local coefficient system on the target.",
+      "supplier": "AlgebraicTopology",
+      "section": "Stage 8"
+    },
+    {
+      "slug": "simplicial-moore-postnikov",
+      "needs": "For a Kan fibration, supply its functorial Moore–Postnikov lifting tower, with each abelian-stage obstruction in the local system of the fiber homotopy group and vanishing equivalent to a lift after the specified preceding-stage adjustment.",
+      "supplier": "AlgebraicTopology",
+      "section": "Stage 8"
+    },
+    {
+      "slug": "simplicial-covering-classification",
+      "needs": "For a connected pointed simplicial set K, classify connected pointed coverings with vertex-unique lifting by subgroups of π_1(K), with pullback followed by the component of the chosen vertex corresponding to inverse image of subgroups, and identify their geometric realizations with connected pointed ordinary covering spaces.",
+      "supplier": "AlgebraicTopology",
+      "section": "Stage 8"
+    },
+    {
+      "slug": "local-coefficient-representability",
+      "needs": "For a simplicial set K, an abelian local system L and n≥1, identify H^n(K,L) with homotopy classes of sections of the associated twisted K(L,n)-fibration over K, naturally in K and L.",
+      "supplier": "AlgebraicTopology",
+      "section": "Stages 6 and 8"
+    },
+    {
+      "slug": "reedy-homotopy-limits",
+      "needs": "For a diagram of Kan simplicial sets over a small category, identify its homotopy limit, with its projection maps, with the totalization of a Reedy fibrant cosimplicial replacement.",
+      "supplier": "AlgebraicTopology",
+      "section": "Stage 8"
+    },
+    {
+      "slug": "nonabelian-lim1",
+      "needs": "For a levelwise inclusion G↪E of group diagrams over a small cofiltered category, define lim¹G as π_0(holim BG) and prove the natural pointed-set exact sequence 1→lim G→lim E→lim(E/G)→lim¹G→lim¹E.",
+      "supplier": "AlgebraicTopology",
+      "section": "Stage 8"
+    },
+    {
+      "slug": "bk-homotopy-limit-spectral-sequence",
+      "needs": "For a small cofiltered diagram of connected pointed Kan spaces, identify the E₂ˢ,ᵗ terms of the partial-totalization homotopy spectral sequence with limˢ π_t for 0≤s≤t, retaining the nonabelian group and pointed-set fringe (BK XI 5.2 and XI 7.1; cited by locator without text).",
+      "supplier": "AlgebraicTopology",
+      "section": "Stage 8"
+    },
+    {
+      "slug": "bk-tower-convergence",
+      "needs": "For the Reedy fibrant cosimplicial replacement of a small cofiltered diagram of connected pointed Kan spaces, prove that vanishing of all E₂ˢ,ᵗ for 1≤s≤t, including the nonabelian fringe, makes totalization connected and its edge maps π_n Tot→E₂⁰,ⁿ isomorphisms for n≥1 (BK XI 5.2, XI 7.1, IX 5.1 and IX 5.4; cited by locator without text).",
+      "supplier": "AlgebraicTopology",
+      "section": "Stage 8"
+    },
+    {
+      "slug": "multisimplicial-diagonal",
+      "needs": "For a map of bisimplicial sets that is a weak equivalence in every row, prove that its diagonal is a weak equivalence, naturally and iterably for finitely many simplicial directions.",
+      "supplier": "AlgebraicTopology",
+      "section": "Stage 8"
+    },
+    {
+      "slug": "kan-quillen-properness",
+      "needs": "Prove that the §G2.1 Kan–Quillen model is left and right proper, using its native weak equivalences, cofibrations and fibrations.",
+      "supplier": "GeneralizedCohomology",
+      "section": "G2.1"
+    },
+    {
+      "slug": "surjective-nerve-fibration",
+      "needs": "Supply the native Kan-fibration criterion for the nerve of a surjective group homomorphism, compatible with the translation-category quotient models of §§1.28–1.34 and their right actions.",
+      "supplier": "StableHomotopyKTheory",
+      "section": "1.28–1.34"
+    },
+    {
+      "slug": "coherent-pro-category",
+      "needs": "For an essentially small infinity-category C, construct Pro(C) as its free completion under small cofiltered limits, retaining its coherent universal property.",
+      "supplier": "EnhancedDerivedSheaves",
+      "section": "E0.2–E0.5 and E0.8"
+    },
+    {
+      "slug": "coherent-pro-mapping",
+      "needs": "For small cofiltered diagrams X:I→C and Y:J→C, prove Map_Pro(C)(X,Y)≃lim_j colim_i Map_C(X_i,Y_j), as an equivalence of spaces natural in both diagrams.",
+      "supplier": "EnhancedDerivedSheaves",
+      "section": "E0.2–E0.5 and E0.8"
+    },
+    {
+      "slug": "coherent-pro-universes",
+      "needs": "For a fully faithful universe enlargement C→C′, prove full faithfulness of the induced Pro comparison on diagrams whose indexing categories lie in the smaller specified universe.",
+      "supplier": "EnhancedDerivedSheaves",
+      "section": "E0.8"
+    },
+    {
+      "slug": "topological-hypercover-realization",
+      "needs": "For an augmented simplicial topological space U_•→T whose every matching map, including U_0→T, has local continuous sections covering its target, prove diag Sing(U_•)→Sing(T) a weak equivalence, without a finiteness assumption on the set of pieces.",
+      "supplier": "EnhancedDerivedSheaves",
+      "section": "E2.6"
+    },
+    {
+      "slug": "connected-etale-components",
+      "needs": "For a locally noetherian scheme and a separated étale neighborhood, prove that the connected component through a specified geometric point is open and remains separated étale over the base.",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "0.9–0.12"
+    },
+    {
+      "slug": "elementary-fibration-carrier",
+      "needs": "Define an elementary fibration X→Y as the complement of a finite étale relative divisor in a smooth proper geometrically connected relative curve over Y, with every complement fiber nonempty and affine; no existence theorem is requested.",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "0.9–0.12"
+    },
+    {
+      "slug": "nonabelian-proper-base-change",
+      "needs": "For a proper morphism, prove base change for the direct image of an étale sheaf of sets and for R¹ with coefficients in an ind-finite sheaf of groups (SGA 4 XII 5.1), and for the direct image of every ind-finite stack, including the direct image along a coherent morphism of the stack of torsors under a finite constant group, which is not a torsor stack (SGA1 XIII Example 1.4 and Corollary 1.8).",
+      "supplier": "EtaleCohomologyFoundations",
+      "section": "F.2.1"
+    },
+    {
+      "slug": "proper-surjective-torsor-descent",
+      "needs": "Prove that proper surjective morphisms of finite presentation are of universal effective descent for étale sheaves of sets and for their stacks of torsors under finite constant groups (SGA 4 VIII 9.4).",
+      "supplier": "EtaleCohomologyFoundations",
+      "section": "F.2.1"
+    },
+    {
+      "slug": "nonabelian-local-acyclicity",
+      "needs": "Define 0-acyclic morphisms f, those for which the unit F → f_*f^*F is bijective for every étale sheaf of sets F on the base, and locally 0-acyclic and locally 1-aspheric morphisms for a set of primes through the fibres of strict localizations, and prove that smooth morphisms are universally locally 1-aspheric for the primes invertible on the base, that flat finitely presented morphisms with geometrically reduced fibres are universally locally 0-acyclic, and that a coherent locally 0-acyclic morphism is 0-acyclic exactly when its geometric fibres are nonempty and connected (SGA 4 XV 1.11, 1.16, 2.1 and 4.1).",
+      "supplier": "EtaleCohomologyFoundations",
+      "section": "F.2.3"
+    },
+    {
+      "slug": "constructible-set-subsheaves",
+      "needs": "Prove that on a noetherian scheme every subsheaf of a constructible étale sheaf of sets is constructible (SGA 4 IX 2.9), and that a constructible étale sheaf of sets whose specialization maps are all bijective is locally constant (SGA 4 IX 2.11, as used in SGA1 XIII Corollary 1.16).",
+      "supplier": "EtaleCohomologyFoundations",
+      "section": "F.0.1"
+    },
+    {
+      "slug": "relative-etale-depth",
+      "needs": "For a flat morphism f:X→S of locally noetherian schemes with geometrically reduced fibres and a closed subset Y⊂X whose fibre Y_s is nowhere dense in X_s for every s∈f(Y), prove that restriction of finite étale covers from X to X∖Y is fully faithful when either the closure of f(Y) is nowhere dense in S or every fibre X_s is geometrically unibranch at the points of Y_s (SGA 2 XIV Corollary 1.19, étale depth at least 2 along Y).",
+      "supplier": "LocalPurity",
+      "section": "2.2"
+    },
+    {
+      "slug": "relative-homotopical-purity",
+      "needs": "For a regular morphism f:X→S of locally noetherian schemes and a closed subset Y⊂X such that every s∈f(Y) has codim(Y_s,X_s)≥2, or codim(Y_s,X_s)≥1 and étale depth of S at s at least 1, or homotopical depth of S at s at least 3, prove that restriction of finite étale covers from X to X∖Y is an equivalence of categories (SGA 2 XIV Corollary 1.20, homotopical depth at least 3 along Y).",
+      "supplier": "LocalPurity",
+      "section": "2.2"
     }
   ],
   "requests": [

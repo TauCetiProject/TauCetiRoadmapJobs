@@ -1,0 +1,279 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "EtaleHomotopyTypes"
+
+[[source]]
+id = "SS"
+authors = "Alexander Schmidt; Jakob Stix"
+title = "Anabelian geometry with étale homotopy types"
+year = 2016
+locator_scheme = "theorem"
+locator = "Proposition 2.4; Appendix A.1–A.3"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v184-n3-p05-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v184-n3-p05-p.pdf"
+fetched_at = "2026-10-24T23:39:50Z"
+sha256 = "6e9083efdb484e6f3dae456bcb55fa8369e2ab35a727da36809f8611eef70759"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layers 0–4"]
+
+[[source]]
+id = "FGV"
+authors = "Tony Feng; Søren Galatius; Akshay Venkatesh"
+title = "The Galois action on symplectic K-theory"
+year = 2022
+locator_scheme = "section"
+locator = "Appendix A.2.1–A.2.3; Example A.10"
+url = "https://link.springer.com/content/pdf/10.1007/s00222-022-01127-8.pdf"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layers 5–6"]
+
+[[source]]
+id = "I01"
+authors = "Daniel C. Isaksen"
+title = "A model structure on the category of pro-simplicial sets"
+year = 2001
+venue = "Trans. Amer. Math. Soc. 353 (2001), 2805--2841"
+arxiv = "math/0106152v1"
+locator_scheme = "section"
+locator = "Sections 4–8, 15–18"
+url = "https://arxiv.org/abs/math/0106152v1"
+fetched_from = "https://arxiv.org/pdf/math/0106152v1"
+fetched_at = "2026-10-24T23:40:13Z"
+sha256 = "69c32950e1ec896ee87b93f20e069421530b79c287e34818dffdd11d9f625907"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v1"
+cited_for = ["Layers 0–2"]
+
+[[source]]
+id = "IEt"
+authors = "Daniel C. Isaksen"
+title = "Etale realization on the A^1-homotopy theory of schemes"
+year = 2003
+arxiv = "math/0106158v2"
+locator_scheme = "section"
+locator = "Sections 2–3, 5–6"
+url = "https://arxiv.org/abs/math/0106158v2"
+fetched_from = "https://arxiv.org/pdf/math/0106158v2"
+fetched_at = "2026-10-24T23:40:19Z"
+sha256 = "d0b6a79eec8f8983115279bd41016c214aa90dcd148b5443b476593066f6fe0d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v2"
+cited_for = ["Layer 3"]
+
+[[source]]
+id = "IC"
+authors = "Daniel C. Isaksen"
+title = "Completions of pro-spaces"
+year = 2004
+arxiv = "math/0404303v1"
+locator_scheme = "section"
+locator = "Theorem 2.2; Definition 3.1; Theorem 3.3"
+url = "https://arxiv.org/abs/math/0404303v1"
+fetched_from = "https://arxiv.org/pdf/math/0404303v1"
+fetched_at = "2026-10-24T23:40:25Z"
+sha256 = "ef7fcadbdf16679d73e0107e3e3e3f43985549035874ad57179a17aef91b53d5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v1"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "BHH"
+authors = "Ilan Barnea; Yonatan Harpaz; Geoffroy Horel"
+title = "Pro-categories in homotopy theory"
+year = 2017
+locator_scheme = "section"
+locator = "Sections 7.1, 7.3"
+url = "https://www.math.univ-paris13.fr/~harpaz/pro_categories.pdf"
+fetched_from = "https://www.math.univ-paris13.fr/~harpaz/pro_categories.pdf"
+fetched_at = "2026-10-24T23:40:41Z"
+sha256 = "cf032b5690844434137945f34a7d82da0673468b83461872dda72bb4f241237b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "DAG13"
+authors = "Jacob Lurie"
+title = "Derived Algebraic Geometry XIII: Rational and p-adic Homotopy Theory"
+year = 2011
+locator_scheme = "section"
+locator = "Sections 3.3–3.4"
+url = "https://www.math.ias.edu/~lurie/papers/DAG-XIII.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/DAG-XIII.pdf"
+fetched_at = "2026-10-24T23:40:43Z"
+sha256 = "75a4d6d9e5e22c8f1261a09e499c6668ceacb90d6cfaf4a2de4a10e2fe0cd535"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layer 6"]
+
+[[source]]
+id = "IStr"
+authors = "Daniel C. Isaksen"
+title = "Strict model structures for pro-categories"
+year = 2004
+arxiv = "math/0108189v1"
+locator_scheme = "theorem"
+locator = "Theorem 4.15, proof, pp. 11–12; Remark 4.16"
+url = "https://arxiv.org/abs/math/0108189v1"
+fetched_from = "https://arxiv.org/pdf/math/0108189v1"
+fetched_at = "2026-10-24T23:40:56Z"
+sha256 = "8632ca180014fa589a5e83657c7d8387122dd69c65f8b89841e90b525bf6491d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v1: Theorem 4.15 and Remark 4.16; published correction cited in the design as Remark 4.14"
+cited_for = ["Layer 0 properness"]
+
+[[source]]
+id = "BK"
+authors = "Aldridge K. Bousfield, Daniel M. Kan"
+title = "Homotopy Limits, Completions and Localizations"
+year = 1972
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/978-3-540-38117-4"
+locator_scheme = "theorem"
+locator = "XI 5.2; XI 7.1; IX 5.1; IX 5.4"
+url = "https://doi.org/10.1007/978-3-540-38117-4"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 2 convergence"]
+
+[[source]]
+id = "AM"
+authors = "M. Artin, B. Mazur"
+title = "Etale Homotopy"
+year = 1969
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0080957"
+locator_scheme = "theorem"
+locator = "Theorems 4.3 and 11.1"
+url = "https://doi.org/10.1007/BFb0080957"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 3 geometric-unibranch profiniteness", "Layer 3 finite-effacement and profinite local-coefficient detection"]
+
+[[source]]
+id = "SGA1"
+authors = "Alexander Grothendieck, Michele Raynaud"
+title = "Revêtements étales et groupe fondamental (SGA 1)"
+year = 2002
+arxiv = "math/0206203v2"
+locator_scheme = "theorem"
+locator = "Expose I Corollary 10.10 and §11; Expose XIII Definitions 1.1, 1.3, Example 1.4, Remarks 1.5, Propositions 1.6, 1.12, 1.13, 1.14, Corollaries 1.8, 1.16, paragraph 2.1, Remarks 2.3, Theorem 2.4, Corollaries 2.7, 2.9, Theorems 3.1, 3.3, Corollaries 3.2, 3.4, Proposition 4.1, Lemma 4.2, Propositions 4.6, 5.4, 5.5, Corollary 5.6; Expose IX Theorem 6.1"
+url = "https://arxiv.org/abs/math/0206203v2"
+fetched_from = "https://arxiv.org/pdf/math/0206203v2"
+fetched_at = "2026-10-24T23:47:01Z"
+sha256 = "8e64218d356456c534eebf996940f0f957e43b54f1a080241debe12cbaf60d3c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v2"
+cited_for = ["Layers 3–4 finite etale products and arithmetic exact sequence", "3.6 unibranch components", "3.9d degree-one input of the elementary-fibration sequence", "3.8a cohomological properness, local asphericity and the homotopy exact sequence"]
+
+[[source]]
+id = "Fr"
+authors = "Eric M. Friedlander"
+title = "Etale homotopy of simplicial schemes"
+year = 1982
+venue = "Annals of Mathematics Studies 104"
+doi = "10.1515/9781400881499"
+locator_scheme = "theorem"
+locator = "Proposition 5.9; Theorem 11.5"
+url = "https://doi.org/10.1515/9781400881499"
+licence_class = "none"
+status = "uncertified"
+version_note = "Publisher book cited by locator without text; the sources service could not classify its publisher landing host and no text was fetched."
+cited_for = ["Layer 3 cohomology comparison", "Layer 3 elementary-fibration homotopy sequence"]
+
+[[source]]
+id = "SGA5"
+authors = "Alexander Grothendieck; edited by Luc Illusie"
+title = "Cohomologie l-adique et fonctions L (SGA 5)"
+year = 1977
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0096802"
+locator_scheme = "section"
+locator = "Exposé I, 3.1.5"
+url = "https://doi.org/10.1007/BFb0096802"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.8a: strong desingularizability invoked by SGA1 XIII Theorem 3.1(2) and Proposition 4.6(a)"]
+
+[[source]]
+id = "SGA4"
+authors = "M. Artin, A. Grothendieck, J.-L. Verdier"
+title = "Théorie des topos et cohomologie étale des schémas (SGA 4), Tomes 2 and 3"
+year = 1973
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/bfb0081551"
+locator_scheme = "theorem"
+locator = "Exposé VIII 9.4; Exposé IX 1.6(ii), 2.9 and 2.11; Exposé XII 5.1; Exposé XV 1.3, 1.11, 1.16, 2.1 and 4.1"
+url = "https://doi.org/10.1007/bfb0081551"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.8a: non-abelian proper base change for ind-finite stacks, proper descent, constructible subsheaves, local constancy from specialization, local 0-acyclicity, local 1-asphericity and the 0-acyclicity criterion for coherent locally 0-acyclic morphisms, requested from EtaleCohomologyFoundations", "3.8a: ind-finiteness of direct images of torsor stacks along coherent morphisms", "3.8a: passage of local 1-asphericity to cofiltered limits"]
+
+[[source]]
+id = "StacksVarieties"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, chapter Varieties"
+year = 2026
+locator_scheme = "tag"
+locator = "0385, 0363"
+url = "https://stacks.math.columbia.edu/tag/0385"
+fetched_from = "https://stacks.math.columbia.edu/download/varieties.pdf#nameddest=0385"
+fetched_at = "2026-10-25T20:05:00Z"
+sha256 = "ed339c312c86721e3f830876da14cabe89a96e83e454a78b7cd355555f4bca45"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["3.8a: connectedness of products and geometric connectedness over separably closed fields"]
+
+[[source]]
+id = "SGA2"
+authors = "Alexander Grothendieck, Michele Raynaud"
+title = "Cohomologie locale des faisceaux cohérents et théorèmes de Lefschetz locaux et globaux (SGA 2)"
+year = 2005
+arxiv = "math/0511279v1"
+locator_scheme = "theorem"
+locator = "Exposé XIV, Corollaries 1.19 and 1.20, printed pp. 176–177"
+url = "https://arxiv.org/abs/math/0511279v1"
+fetched_from = "https://arxiv.org/pdf/math/0511279v1"
+fetched_at = "2026-10-27T07:56:54Z"
+sha256 = "41ad02c57321a8d2200ff32a929bc93adbc3de0d59dcd5a284d28d859fb87a90"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-27"
+version_note = "arXiv v1"
+cited_for = ["3.8a: relative étale depth and relative homotopical purity used in the relative Abhyankar step, requested from LocalPurity §2.2"]
+
+[[source]]
+id = "StacksLimits"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, chapter Limits of Schemes"
+year = 2026
+locator_scheme = "tag"
+locator = "09MV"
+url = "https://stacks.math.columbia.edu/download/limits.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/limits.pdf"
+fetched_at = "2026-10-27T07:59:02Z"
+sha256 = "a575d9eddea143ae00b39df8e0d98a66c6c9b2adcdace9d004c0ed5bc47f9d1e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-27"
+cited_for = ["3.8a: approximation of quasi-compact quasi-separated schemes over a field by finite-type schemes"]
