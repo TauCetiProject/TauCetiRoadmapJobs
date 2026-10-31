@@ -42209,159 +42209,55 @@
     }
   ],
   "gaps": [
-    {
-      "id": "ST-LISSE",
-      "title": "Root-stack lisse categories and effective descent",
-      "detail": "Shared stack-lisse interface, consolidated as ASM-STACK-LISSE in the assembly handoff: normal DM finite-cover/monodromy comparison and atlas descent (GC3-STACK-PI1), with smooth Artin-stack lisse descent, local adic coefficients and Hom/tensor/base-change compatibility (GC4-LISSE-ADAPTER). GC.4 uses the reviewed proper-quotient/chart-gluing route, not a general nonproper Abel–Jacobi descent assertion. The proposed EtaleDualityAndPerverseSheaves stacks Part II is the intended owner; its provisional ST stage names are not registered prerequisites.",
-      "neededBy": [
-        "FunctionFieldArithmeticPartII:GC.4/weighted-simply-connected",
-        "FunctionFieldArithmeticPartII:GC.4/empty-ramification-descent",
-        "FunctionFieldArithmeticPartII:GC.4/high-degree-descent"
-      ]
-    },
-    {
-      "id": "ST-OPS",
-      "title": "Source-qualified sheaf operations for the nonrepresentable ordered map",
-      "detail": "The parent pushforward/perverse description retains a precise stack comparison frontier: GC3-STACK-PUSHFORWARD supplies proper base change for the nonrepresentable ordered map, and GC3-COARSE-STALKS supplies coarse pushforward, nilpotent invariance and Leray. Rational finite-group acyclicity is planned by the accepted GC.3 follow-up; cohomology, Künneth and duality proceed on schemes. Consumers needing only the lisse line use monodromy-symmetric-local-system. No general stack decomposition theorem is assumed.",
-      "neededBy": [
-        "FunctionFieldArithmeticPartII:GC.3/symmetric-local-system",
-        "FunctionFieldArithmeticPartII:GC.3/middle-extension"
-      ]
-    },
-    {
-      "id": "NORM-2EXACT",
-      "title": "Picard-stack consequence of the four-term exact sheaf complex",
-      "detail": "The accepted GC.6/torsor-fibre-sequences, connecting-maps, norm-descent-obstruction and invariance-versus-descent now specify the based fibres, compatible norm trivializations and primary/secondary cohomological obstructions. Their actual geometric/torsor carriers remain to be integrated. Source issue E8 remains an interpretation qualification of (A.11), not a missing statement of ordinary Picard-class exactness and not a claim to know the authors’ intended two-categorical exactness.",
-      "neededBy": [
-        "FunctionFieldArithmeticPartII:GC.6/picard-descent-obstructions"
-      ]
-    },
-    {
-      "id": "FA-APPROX",
-      "title": "Support-moving approximation with all residue-root frames",
-      "detail": "Generic finite-precision weak approximation already exists at the pins. GC.6/unit-residue-approximation, root-framed-support-moving and actual-unit-image-determination specify its application, including the empty family and the actual modified-unit image. The remaining integration is the closed-point/place/rational-line-frame dictionary requested by GC6-CURVE-DICTIONARY, not a new generic approximation theorem.",
-      "neededBy": [
-        "FunctionFieldArithmeticPartII:GC.6/away-ramification-generation",
-        "FunctionFieldArithmeticPartII:GC.6/quadratic-trace"
-      ]
-    },
-    {
-      "id": "LEAN-GEOMETRY",
-      "title": "Signatures blocked by absent geometric carriers",
-      "detail": "The aggregate Suggested file now contains only light real-bodied native definitions, milestone statements and representative examples. The complete target/API/test catalogue and geometric omission ledger are in the aggregate reader. Actual root/quotient/Picard/torsor/stack-lisse carriers and coherent native adapters remain absent at the atlas pins; elaboration of coordinate statements does not implement these geometric targets. Historical large prototype files are superseded as suggested forms.",
-      "neededBy": [
-        "FunctionFieldArithmeticPartII:key/root-stacks",
-        "FunctionFieldArithmeticPartII:RS.1/two-pullback",
-        "FunctionFieldArithmeticPartII:RS.1/base-change",
-        "FunctionFieldArithmeticPartII:RS.1/affine-chart",
-        "FunctionFieldArithmeticPartII:RS.1/closed-fibre",
-        "FunctionFieldArithmeticPartII:RS.1/coarse-space",
-        "FunctionFieldArithmeticPartII:RS.1/regular-dm",
-        "FunctionFieldArithmeticPartII:RS.2/transition",
-        "FunctionFieldArithmeticPartII:RS.2/infinite-root-stack",
-        "FunctionFieldArithmeticPartII:RS.2/infinite-base-change",
-        "FunctionFieldArithmeticPartII:RS.2/dvr-roots",
-        "FunctionFieldArithmeticPartII:RS.2/dvr-infinite-gerbe",
-        "FunctionFieldArithmeticPartII:RS.2/dvr-kummer-classes",
-        "FunctionFieldArithmeticPartII:GC.0/root-picard",
-        "FunctionFieldArithmeticPartII:GC.0/square-action-quotient",
-        "FunctionFieldArithmeticPartII:GC.0/root-picard-section",
-        "FunctionFieldArithmeticPartII:GC.1/root-symmetric-space",
-        "FunctionFieldArithmeticPartII:GC.1/evaluation-pullback",
-        "FunctionFieldArithmeticPartII:GC.1/incidence-transversality",
-        "FunctionFieldArithmeticPartII:GC.1/evaluation-smooth-criterion",
-        "FunctionFieldArithmeticPartII:GC.1/root-symmetric-smooth",
-        "FunctionFieldArithmeticPartII:GC.1/root-symmetric-coarse",
-        "FunctionFieldArithmeticPartII:GC.1/root-addition",
-        "FunctionFieldArithmeticPartII:GC.1/ordered-divisors",
-        "FunctionFieldArithmeticPartII:GC.1/ordered-proper",
-        "FunctionFieldArithmeticPartII:GC.1/root-abel-jacobi",
-        "FunctionFieldArithmeticPartII:GC.2/root-units",
-        "FunctionFieldArithmeticPartII:GC.2/adelic-root-groupoid",
-        "FunctionFieldArithmeticPartII:GC.2/root-divisor-groupoid",
-        "FunctionFieldArithmeticPartII:GC.3/tame-local-systems",
-        "FunctionFieldArithmeticPartII:GC.3/symmetric-local-system",
-        "FunctionFieldArithmeticPartII:GC.3/collision-kernel",
-        "FunctionFieldArithmeticPartII:GC.3/middle-extension",
-        "FunctionFieldArithmeticPartII:GC.3/collision-descent",
-        "FunctionFieldArithmeticPartII:GC.3/cohomology-vanishing",
-        "FunctionFieldArithmeticPartII:GC.3/koszul-exterior",
-        "FunctionFieldArithmeticPartII:GC.3/exterior-cohomology",
-        "FunctionFieldArithmeticPartII:GC.3/multiplicity-free-product",
-        "FunctionFieldArithmeticPartII:GC.3/symmetric-multiplicativity",
-        "FunctionFieldArithmeticPartII:GC.3/symmetric-associativity",
-        "FunctionFieldArithmeticPartII:GC.3/symmetric-symmetry",
-        "FunctionFieldArithmeticPartII:GC.4/evaluation-surjective",
-        "FunctionFieldArithmeticPartII:GC.4/affine-fibre-chart",
-        "FunctionFieldArithmeticPartII:GC.4/weighted-cover",
-        "FunctionFieldArithmeticPartII:GC.4/weighted-ramification",
-        "FunctionFieldArithmeticPartII:GC.4/weighted-simply-connected",
-        "FunctionFieldArithmeticPartII:GC.4/fibre-triviality",
-        "FunctionFieldArithmeticPartII:GC.4/empty-ramification-descent",
-        "FunctionFieldArithmeticPartII:GC.4/high-degree-descent",
-        "FunctionFieldArithmeticPartII:GC.5/auxiliary-divisors",
-        "FunctionFieldArithmeticPartII:GC.5/divisor-tensor-line",
-        "FunctionFieldArithmeticPartII:GC.5/translate-high-degree",
-        "FunctionFieldArithmeticPartII:GC.5/all-degree-extension",
-        "FunctionFieldArithmeticPartII:GC.5/choice-comparison",
-        "FunctionFieldArithmeticPartII:GC.5/choice-cocycle",
-        "FunctionFieldArithmeticPartII:GC.5/effective-pullback",
-        "FunctionFieldArithmeticPartII:GC.5/unit-trivialization",
-        "FunctionFieldArithmeticPartII:GC.5/high-degree-multiplication",
-        "FunctionFieldArithmeticPartII:GC.5/all-degree-multiplication",
-        "FunctionFieldArithmeticPartII:GC.5/character-associativity",
-        "FunctionFieldArithmeticPartII:GC.5/character-symmetry-unit",
-        "FunctionFieldArithmeticPartII:GC.5/hat-character-pullback",
-        "FunctionFieldArithmeticPartII:GC.6/root-multiplicative-sheaf",
-        "FunctionFieldArithmeticPartII:GC.6/norm-residue-square",
-        "FunctionFieldArithmeticPartII:GC.6/root-norm",
-        "FunctionFieldArithmeticPartII:GC.6/root-norm-surjective",
-        "FunctionFieldArithmeticPartII:GC.6/norm-kernel",
-        "FunctionFieldArithmeticPartII:GC.6/exact-sheaf-complex",
-        "FunctionFieldArithmeticPartII:GC.6/picard-descent-obstructions",
-        "FunctionFieldArithmeticPartII:GC.6/hat-root-norm",
-        "FunctionFieldArithmeticPartII:GC.6/quadratic-input",
-        "FunctionFieldArithmeticPartII:GC.6/trace-character",
-        "FunctionFieldArithmeticPartII:GC.6/closed-point-trace",
-        "FunctionFieldArithmeticPartII:GC.6/away-ramification-generation",
-        "FunctionFieldArithmeticPartII:GC.6/quadratic-trace",
-        "FunctionFieldArithmeticPartII:RS.1/root-fpqc-descent",
-        "FunctionFieldArithmeticPartII:RS.2/factorial-root-limit",
-        "FunctionFieldArithmeticPartII:RS.2/kummer-torsor-limit",
-        "FunctionFieldArithmeticPartII:RS.2/kummer-limit-iso-detection",
-        "FunctionFieldArithmeticPartII:RS.2/kummer-limit-class-lift",
-        "FunctionFieldArithmeticPartII:RS.2/infinite-affine-quotient",
-        "FunctionFieldArithmeticPartII:RS.2/kummer-tower-not-fppf"
-      ]
-    },
-    {
-      "id": "LEAN-SECTION-COMP",
-      "title": "Native root-coordinate proofs after signature completion",
-      "detail": "The previously omitted RootObject.test_trivialization now has a native suggested signature, using actual line isomorphisms, the pinned freePUnitIsoUnit coordinate map and the computed image-of-one coefficient. Six nodes expose the canonical trivial-power comparison, section-power coordinates, unit coefficient, root equation and arrow scalar laws, including the promoted section-power transport API. The generic tensorSection and coherent module pullback are imported from current upstream AlgebraicVectorBundles L0A–L0B through JAC-A/SF.3. The native invertible-sheaf coordinate adapter and root-specific power laws still need actual proofs. The complete admitted native file elaborates at the exact pins, which does not certify those proofs or close this gap.",
-      "neededBy": [
-        "FunctionFieldArithmeticPartII:RS.0/root-object",
-        "FunctionFieldArithmeticPartII:RS.0/trivial-power-isomorphism",
-        "FunctionFieldArithmeticPartII:RS.0/section-power-in-trivialization",
-        "FunctionFieldArithmeticPartII:RS.0/root-identification-unit",
-        "FunctionFieldArithmeticPartII:RS.0/root-trivialization-equation",
-        "FunctionFieldArithmeticPartII:RS.0/root-arrow-scalars",
-        "FunctionFieldArithmeticPartII:RS.0/section-power-transport"
-      ]
-    },
-    {
-      "id": "TOWER-TYPING",
-      "title": "Typed infinite fpqc comparison and root-limit coherence",
-      "detail": "Integrate the coherent root and torsor carriers, fpqc quotient and universe adapters specified by RS.2. The generic finite-flat-torsor tower theorem is owned here as RS.2/flat-torsor-tower-limit, consumed by coframe-inverse-limit/coframe-fpqc-torsor. Native algebra calculations alone do not supply the geometric comparison.",
-      "neededBy": [
-        "FunctionFieldArithmeticPartII:RS.2/factorial-root-limit",
-        "FunctionFieldArithmeticPartII:RS.2/kummer-torsor-limit",
-        "FunctionFieldArithmeticPartII:RS.2/kummer-limit-iso-detection",
-        "FunctionFieldArithmeticPartII:RS.2/kummer-limit-class-lift",
-        "FunctionFieldArithmeticPartII:RS.2/infinite-affine-quotient",
-        "FunctionFieldArithmeticPartII:RS.2/kummer-tower-not-fppf"
-      ]
-    }
-  ],
+  {
+    "slug": "finite-diagonalizable-coarse",
+    "needs": "Extend §1.23’s affine finite-group coarse quotient contract to finite locally free diagonalizable group schemes, including nonreduced ones, with invariants and arbitrary base-change compatibility.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "1.23"
+  },
+  {
+    "slug": "invertible-section-coordinates",
+    "needs": "Identify its coherent tensor-section, free-unit and pullback maps with invertible-sheaf coordinates, so that tensor sections evaluate to multiplication and the unit evaluates to one.",
+    "supplier": "AlgebraicVectorBundles",
+    "section": "L0A–L0B"
+  },
+  {
+    "slug": "completed-lattice-root-dictionary",
+    "needs": "Compare completed local lattices with rationally framed line bundles, preserving weighted degrees and the sign π_x⁻¹↦O_X(x).",
+    "supplier": "AlgebraicCurves",
+    "section": "Layer 12"
+  },
+  {
+    "slug": "quadratic-root-residue-character",
+    "needs": "For a ramified quadratic extension of local function fields in odd characteristic, identify its local Artin unit character with the quadratic character of the residue field.",
+    "supplier": "FunctionFieldArithmetic",
+    "section": "4.1–4.2; 4.5"
+  },
+  {
+    "slug": "coherent-site-universe-lifts",
+    "needs": "Provide coherent universe enlargement of the scheme site and its stack pullback, restricted to the essential image of the smaller site.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "1.18"
+  },
+  {
+    "slug": "invertible-sheaf-universe-lifts",
+    "needs": "Make coherent universe enlargement on the essential image compatible with invertible sheaves, their sections, tensor product and pullback.",
+    "supplier": "AlgebraicVectorBundles",
+    "section": "L0A–L0B"
+  },
+  {
+    "slug": "normal-proper-hyperplane-covers",
+    "needs": "For every algebraically closed field k, proper normal irreducible k-scheme X, morphism g:X→ℙʳ_k with dim g(X)≥2 and hyperplane H, prove that Y=X×_(ℙʳ)H is connected and π₁(Y)→π₁(X) is surjective, equivalently every connected finite étale cover of X pulls back to a connected cover of Y (SGA1 Exposé X, Lemme 2.10 and Corollaire 2.11).",
+    "supplier": "EtaleCohomologyFoundations",
+    "section": "F.0.2"
+  },
+  {
+    "slug": "zero-dimensional-dm-residual-gerbes",
+    "needs": "For an algebraically closed field K, the reduction of a finite-type Deligne–Mumford stack over K whose underlying space is finite and discrete is the disjoint union of its residual gerbes, and a chosen K-object of each component identifies that component with the classifying stack of its finite constant automorphism group.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "1.20"
+  }
+],
   "restructure": [
     {
       "action": "split",
