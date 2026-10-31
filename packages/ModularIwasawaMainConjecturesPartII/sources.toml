@@ -1,0 +1,151 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ModularIwasawaMainConjecturesPartII"
+
+[[source]]
+id = "BT"
+authors = "Ashay A. Burungale, Ye Tian"
+title = "A rank zero p-converse to a theorem of Gross-Zagier, Kolyvagin and Rubin"
+year = 2025
+venue = "Annals of Mathematics 203 (2026)"
+arxiv = "2506.03465v2"
+locator_scheme = "theorem"
+locator = "§2.1.1 p.3; Theorems 2.1, 2.3, 2.4, 2.6 and Remark 2.7, pp.4-5; footnotes 3-4; proof of Theorem 3.1, p.6"
+url = "https://arxiv.org/abs/2506.03465v2"
+fetched_from = "https://arxiv.org/pdf/2506.03465v2"
+fetched_at = "2026-10-26T17:58:11Z"
+sha256 = "cbb8284a13ed40bd15df9713001485724bc4d2a3b5c38d8fd83f9b6f3f3e4664"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["Summary", "Scope and ownership", "0.1", "0.2", "1.2", "1.6", "1.7", "2.6", "2.7", "3.1", "6.1", "6.2", "6.3", "7.1", "7.5", "8.3", "8.4", "8.5", "8.6", "8.7"]
+
+[[source]]
+id = "Kato"
+authors = "Kazuya Kato"
+title = "p-adic Hodge theory and values of zeta functions of modular forms"
+year = 2004
+venue = "Asterisque 295 (2004), 117-290"
+version_note = "Printed page = Numdam PDF page + 115."
+locator_scheme = "theorem"
+locator = "3.8; 8.2-8.3; Theorems 12.4-12.5; Remark 12.8; Conjecture 12.10; Lemma 14.15; 15.1-15.17"
+url = "https://www.numdam.org/item/AST_2004__295__117_0.pdf"
+fetched_from = "https://www.numdam.org/item/AST_2004__295__117_0.pdf"
+fetched_at = "2026-10-26T17:58:16Z"
+sha256 = "3c6e14b11fa60262db8aff782ce3cf4d83e9100c0be83621a7e4ce502cec605d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Conventions", "0.1", "1.1", "1.2", "1.3", "1.4", "1.6", "1.7", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "3.1", "3.2", "3.3", "4.4", "6.2", "7.1", "7.2", "7.3", "7.4", "7.5", "7.6", "7.7", "7.8", "8.1", "8.2", "8.3", "8.4", "8.5"]
+
+[[source]]
+id = "JLK"
+authors = "Jennifer Johnson-Leung, Guido Kings"
+title = "On the equivariant and the non-equivariant main conjecture for imaginary quadratic fields"
+year = 2008
+venue = "J. Reine Angew. Math., 653 2011, 75-114"
+arxiv = "0804.2828v2"
+locator_scheme = "theorem"
+locator = "§§2-7: Theorem 2.6; Definition 3.2, Proposition 3.3, Lemma 3.7, Theorem 3.9, Corollary 3.10; Lemmas 4.3, 4.6, 4.7; Theorem 5.2, Corollary 5.3, Lemma 5.8; Theorem 6.4, Corollary 6.5, Lemma 6.6; Lemmas 7.1, 7.2, 7.6, 7.7"
+url = "https://arxiv.org/abs/0804.2828v2"
+fetched_from = "https://arxiv.org/pdf/0804.2828v2"
+fetched_at = "2026-10-26T17:58:32Z"
+sha256 = "2af28fc5c53be95d3b5431c8b22f4cf53ced6381d22f7def225240ab715cf543"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["Scope and ownership", "0.1", "0.2", "1.1", "1.2", "1.3", "1.5", "1.6", "1.7", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "6.1", "6.3", "7.4"]
+
+[[source]]
+id = "HuberKings"
+venue = "Duke Math. J. 119 (2003)"
+authors = "Annette Huber, Guido Kings"
+title = "Bloch-Kato conjecture and main conjecture of Iwasawa theory for Dirichlet characters"
+year = 2003
+arxiv = "math/0101071v2"
+locator_scheme = "theorem"
+locator = "Proposition 2.3.1"
+url = "https://arxiv.org/abs/math/0101071v2"
+fetched_from = "https://arxiv.org/pdf/math/0101071v2"
+fetched_at = "2026-10-26T18:02:08Z"
+sha256 = "d2e682fd63b9d4079b19bcb2d31b9188bc72ebf35d1cbc3c77b7b1b8bd3b5f37"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["4.2"]
+
+[[source]]
+id = "Kriz"
+authors = "Daniel Kriz"
+title = "Generalized Heegner cycles at Eisenstein primes and the Katz p-adic L-function"
+year = 2015
+venue = "Algebra Number Theory 10 (2016) 309-374"
+doi = "10.2140/ant.2016.10.309"
+arxiv = "1512.05032v1"
+locator_scheme = "theorem"
+locator = "Theorem 27"
+url = "https://arxiv.org/abs/1512.05032v1"
+fetched_from = "https://arxiv.org/pdf/1512.05032v1"
+fetched_at = "2026-10-26T18:03:18Z"
+sha256 = "d2c231ad6a17cb06cb138dac076533c623b9612023514b05c6356a3ab7eb6acf"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["5.5"]
+
+[[source]]
+id = "Yager"
+authors = "Rodney Ian Yager"
+title = "On two variable p-adic L-functions"
+year = 1981
+venue = "PhD thesis, Australian National University"
+locator_scheme = "chapter"
+locator = "Chapters 3-8; Theorem 1"
+url = "https://openresearch-repository.anu.edu.au/items/7c4519f4-e0eb-49ce-a2d9-e5777fa9483d/full"
+fetched_from = "https://openresearch-repository.anu.edu.au/server/api/core/bitstreams/dc8127c5-6584-444c-a408-a6e1c0d39f12/content"
+fetched_at = "2026-10-26T18:05:11Z"
+sha256 = "fad3ee38b7f544a6cf56a6f08ba4a4bffe8349168571f44c7fb8e545b91a3993"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["5.1", "5.2"]
+
+[[source]]
+id = "Rubin91"
+authors = "Karl Rubin"
+title = "The main conjectures of Iwasawa theory for imaginary quadratic fields"
+year = 1991
+venue = "Inventiones Mathematicae 103 (1991), 25-68"
+version_note = "GDZ image scan, text recognised by OCR; journal pagination."
+locator_scheme = "theorem"
+locator = "§1 p.27; §4, Theorem 4.1 and Remarks (1)-(2), pp.36-37"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0103/LOG_0009.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0103/LOG_0009.pdf"
+fetched_at = "2026-10-26T18:06:44Z"
+sha256 = "96ca08e8ed1a7646d4bf40e2e088e0ea6e068319978ac7e5c5e3d45cc39ee23a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["4.7", "4.8", "5.1", "5.2", "5.3"]
+
+[[source]]
+id = "CGLS"
+venue = "Inventiones Mathematicae 227 (2022), 517-580"
+authors = "Francesc Castella, Giada Grossi, Jaehoon Lee, Christopher Skinner"
+title = "On the anticyclotomic Iwasawa theory of rational elliptic curves at Eisenstein primes"
+year = 2020
+arxiv = "2008.02571v2"
+locator_scheme = "theorem"
+locator = "Definition 1.2.1, Theorem 1.2.2, Remark 1.2.3; (2.11), Theorem 2.2.3"
+url = "https://arxiv.org/abs/2008.02571v2"
+fetched_from = "https://arxiv.org/pdf/2008.02571v2"
+fetched_at = "2026-10-26T18:06:49Z"
+sha256 = "7cd995e0d9ee1c931f728da8b39603c4205fa0a84c25df27d44b4451a81a2c59"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["5.4", "5.5"]
