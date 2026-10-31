@@ -1,0 +1,109 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ZagierConjecturePolylogarithms"
+
+[[source]]
+id = "GR"
+authors = "Alexander B. Goncharov, Daniil Rudenko"
+title = "Motivic correlators, cluster varieties and Zagier's conjecture on ζ_F(4)"
+year = 2018
+arxiv = "1803.08585v5"
+locator_scheme = "section"
+locator = "§§1.1–1.3, 2, 3.4, 4.3, 5–10; Theorems 1.2, 1.3, 1.13, 1.14, 1.17, 2.1, 2.4, 2.6, 4.3, 6.1, 7.1, 7.6, 8.3, 9.1, 10.9, 10.11, 10.15; Lemmas 2.7, 2.8, 5.1, 5.2, 7.7, 7.9, 9.2, 9.3, 9.6; Propositions 2.9, 4.4, 5.4, 5.5, 7.8; equations (26), (28)–(33), (38), (166)–(167), (191)–(192) (arXiv v5 pagination; PDF page equals printed page)"
+url = "https://arxiv.org/abs/1803.08585v5"
+fetched_from = "https://arxiv.org/pdf/1803.08585v5"
+fetched_at = "2026-10-26T23:03:59Z"
+sha256 = "d7694f411ff344af087768a951a871aef6ebd4bbed571af6d6c045560d6ed8df"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v5"
+cited_for = ["Summary", "Conventions", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "2.1", "2.2", "2.3", "2.4", "2.5", "3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8", "3.9", "3.11", "3.12", "3.13", "4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "5.9", "5.10", "6.1", "6.2", "6.3", "6.4", "6.5", "Worked examples"]
+
+[[source]]
+id = "G08"
+authors = "A. B. Goncharov"
+title = "Hodge correlators"
+year = 2008
+arxiv = "0803.0297v4"
+locator_scheme = "section"
+locator = "§1.3, pp. 7–8; §2.1, pp. 28–29; §3.2, pp. 34–37; §§4.1–4.3, pp. 39–52; §5, pp. 53–63; §8.2, Lemma 8.1 and Propositions 8.2–8.4, pp. 84–85; §11.1, pp. 102–104 (arXiv v4 PDF pagination)"
+url = "https://arxiv.org/abs/0803.0297v4"
+fetched_from = "https://arxiv.org/pdf/0803.0297v4"
+fetched_at = "2026-10-26T23:04:12Z"
+sha256 = "d4cc8a37d7dad80060b58450722964dd0d3285bda50a8840b1436eb6e2d79d42"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v4"
+cited_for = ["3.4", "3.5", "3.6", "3.7", "3.9", "5.1", "6.3"]
+
+[[source]]
+id = "G09"
+authors = "A. B. Goncharov"
+title = "A simple construction of Grassmannian polylogarithms"
+year = 2009
+arxiv = "0908.2238v4"
+locator_scheme = "section"
+locator = "§3.3, Theorem 3.4 and the following warning, p. 18; §4.1, Definition 4.1, p. 22; Theorems 4.2–4.3, pp. 23–24 (arXiv v4 PDF pagination)"
+url = "https://arxiv.org/abs/0908.2238v4"
+fetched_from = "https://arxiv.org/pdf/0908.2238v4"
+fetched_at = "2026-10-26T23:04:16Z"
+sha256 = "b23e3e7d8274702cc1b914281128cc10300068a0f6ce25a11ef5bafbf7a5b48b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v4"
+cited_for = ["5.7"]
+
+[[source]]
+id = "M20"
+authors = "Nikolay Malkin"
+title = "Shuffle relations for Hodge and motivic correlators"
+year = 2020
+arxiv = "2003.06521v1"
+locator_scheme = "section"
+locator = "§2.1.3, Theorem 11 and the example after (16), p. 18; §4, Lemma 29 and the closing corollary, pp. 44–45 (printed pagination of arXiv v1)"
+url = "https://arxiv.org/abs/2003.06521v1"
+fetched_from = "https://arxiv.org/pdf/2003.06521v1"
+fetched_at = "2026-10-26T23:04:28Z"
+sha256 = "6fede42fa302c1f1c7004d89013393d97ccd20e8aeb50419665e51be8615df42"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["3.9", "3.10"]
+
+[[source]]
+id = "G00"
+authors = "A. B. Goncharov"
+title = "Geometry of the trilogarithm and the motivic Lie algebra of a field"
+year = 2000
+arxiv = "math/0011168v1"
+locator_scheme = "section"
+locator = "§3, item 1, (6), PDF p. 8; §3, item 2, (7), PDF p. 9; §3, item 3 and §3.3, PDF pp. 11–12; Theorems 3.2–3.3, Proposition 3.4, Lemma 3.5, Proposition 3.6, Lemma 3.7, PDF pp. 12–16 (printed pagination of arXiv v1)"
+url = "https://arxiv.org/abs/math/0011168v1"
+fetched_from = "https://arxiv.org/pdf/math/0011168v1"
+fetched_at = "2026-10-26T23:04:34Z"
+sha256 = "2ee46a748224833684bdf9f87f75fd65390671c41853882d4477710cf7b8a637"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["5.5", "5.6"]
+
+[[source]]
+id = "G93"
+authors = "A. B. Goncharov"
+title = "Explicit construction of characteristic classes"
+year = 1993
+version_note = "Advances in Soviet Mathematics 16, part 1 (1993), pp. 169–210; image-only scan read through OCR"
+locator_scheme = "section"
+locator = "§4.3, Theorem 4.5 and (4.10)–(4.11), p. 190; §4.4, Theorem 4.6 and (4.13)–(4.14), p. 191 (printed pagination of the volume)"
+url = "https://sasha-goncharov.github.io/charclasses.pdf"
+fetched_from = "https://sasha-goncharov.github.io/charclasses.pdf"
+fetched_at = "2026-10-26T23:06:02Z"
+sha256 = "7a9eb3a64c48bcbfa42037503e4304aba3552a560f35df67206e29458e69ed5b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["5.9", "5.10"]
