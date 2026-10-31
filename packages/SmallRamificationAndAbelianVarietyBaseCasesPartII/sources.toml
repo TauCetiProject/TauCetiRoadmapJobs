@@ -1,0 +1,52 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SmallRamificationAndAbelianVarietyBaseCasesPartII"
+
+[[source]]
+id = "Schroeer23"
+authors = "Stefan Schröer"
+title = "There is no Enriques surface over the integers"
+year = 2023
+version_note = "Locators use the author revision dated 19 July 2022; Proposition 5.5 proof, printed pp. 15–16."
+locator_scheme = "theorem"
+locator = "Proposition 5.5, author revision p. 16"
+url = "https://www.math.uni-duesseldorf.de/~schroeer/publications_pdf/EnriquesOverIntegers_Juli2022.pdf"
+fetched_from = "https://www.math.uni-duesseldorf.de/~schroeer/publications_pdf/EnriquesOverIntegers_Juli2022.pdf"
+fetched_at = "2026-10-25T12:07:26Z"
+sha256 = "828efee55d68b29b5c1617872cc97955bb22374500de721cddd24a7b3c1ed191"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layer 4"]
+
+[[source]]
+id = "Fontaine93"
+authors = "Jean-Marc Fontaine"
+title = "Schémas propres et lisses sur Z"
+year = 1993
+version_note = "Locators use author preprint 91-02, printed pp. 1–13, not the proceedings pp. 43–56; OCR extraction of the author scan."
+locator_scheme = "theorem"
+locator = "Theorems 1–2 and Remark (a), author pp. 3–12"
+url = "https://www.imo.universite-paris-saclay.fr/~fontaine/Zschemas.pdf"
+fetched_from = "https://www.imo.universite-paris-saclay.fr/~fontaine/Zschemas.pdf"
+fetched_at = "2026-10-25T12:09:07Z"
+sha256 = "3a0d2b7a95db090438b43a86040d92b748e351a6461257dd083151864f33dc67"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–4"]
+
+[[source]]
+id = "LMFDB32a3"
+authors = "LMFDB Collaboration"
+title = "Elliptic curve 32.a3 (Cremona 32a2)"
+year = 2026
+locator_scheme = "section"
+locator = "Minimal Weierstrass equation; Arithmetic invariants; Local data at 2"
+url = "https://www.lmfdb.org/EllipticCurve/Q/32/a/3"
+fetched_from = "https://www.lmfdb.org/EllipticCurve/Q/32/a/3"
+fetched_at = "2026-10-25T12:10:20Z"
+sha256 = "bc6329e9e96ec79cbeda3dbe07ad71ee79e7665f03fcac284379475434e723ec"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Section 0.1 Checks"]

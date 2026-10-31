@@ -1506,28 +1506,52 @@
   ],
   "gaps": [
     {
-      "title": "Certified threshold below root discriminant seven",
-      "neededBy": [
-        "SmallRamificationAndAbelianVarietyBaseCasesPartII:LH.2/simple-objects"
-      ],
-      "detail": "The existing base certificate nodes supply the rd<19.02 and rd<12 uses, but do not explicitly export rd<7 ⇒ degree≤10. The exact sufficient restricted threshold and a certificate route are requested from R25.1. This layer is not closed until that export is certified."
+      "slug": "witt-proper-smooth-comparison",
+      "needs": "For every perfect characteristic-p field k and proper smooth W(k)-scheme, supply rational crystalline comparison for its generic fibre, compatible with completion and the proper smooth de Rham/Hodge–Tate comparison, including k=F̄ₚ.",
+      "supplier": "PadicHodgeTheory",
+      "section": "§8.1"
     },
     {
-      "title": "A_cris model and local FL calculations",
-      "neededBy": [
-        "SmallRamificationAndAbelianVarietyBaseCasesPartII:LH.1/period-truncation-comparison",
-        "SmallRamificationAndAbelianVarietyBaseCasesPartII:LH.2/trivial-extensions",
-        "SmallRamificationAndAbelianVarietyBaseCasesPartII:LH.2/extension-splitting",
-        "SmallRamificationAndAbelianVarietyBaseCasesPartII:LH.2/no-trivial-quotient"
-      ],
-      "detail": "Existing R07.3 nodes provide the category, functor, lattice and tame-inertia theory. The exact A_cris/p presentation and weight-zero/rank-one/local-Ext exports needed by the 1993 proof are specified in its request; they are not treated as already verified declarations."
+      "slug": "fl-acris-truncation",
+      "needs": "For prime p, perfect characteristic-p k, K=Frac W(k) and 0<r<p−1, supply the killed-p A_cris realization: the explicit divided-power presentation of A_cris/p over O(K̄)/p with its filtration and divided Frobenius maps φᵢ for 0≤i≤r (Fontaine93 §3.1), and its identification with the existing contravariant torsion functor Uₛ on the objects of MFₜₒᵣ[0,r] killed by p.",
+      "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheory",
+      "section": "§§R07.3.6–R07.3.7, R07.3.15"
     },
     {
-      "title": "Generic approximate-embedding ramification export",
-      "neededBy": [
-        "SmallRamificationAndAbelianVarietyBaseCasesPartII:LH.1/fontaine-torsion-bound"
-      ],
-      "detail": "Fontaine 1993 cites Fontaine 1985 Proposition 1.5 for P_m. R07.6 uses a lifting/ramification theorem but has no standalone node with the general P_m statement. Request that exact export rather than silently assuming the finite-flat bound covers higher cohomology."
+      "slug": "fl-weight-zero-unramified",
+      "needs": "For prime p, perfect characteristic-p k and K=Frac W(k), inertia in G(K) acts trivially on Uₛ(M) for every M∈MFₜₒᵣ[0,0] of arbitrary finite p-power length.",
+      "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheory",
+      "section": "§§R07.3.4–R07.3.12"
+    },
+    {
+      "slug": "fl-rank-one-inertia",
+      "needs": "For prime p, perfect characteristic-p k, K=Frac W(k), n≥1 and integers 0≤i≤r<p−1, the inertia character of Uₛ(M) is χₚⁱ modulo pⁿ for every rank-one W(k)/pⁿ object M∈MFₜₒᵣ[0,r] with unique filtration weight i; its full G(K) character may have an unramified twist.",
+      "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheory",
+      "section": "§§R07.3.4–R07.3.12"
+    },
+    {
+      "slug": "fl-oriented-mod-p-splitting",
+      "needs": "For prime p, perfect characteristic-p k, K=Frac W(k) and integers 0≤j<i≤r<p−1, every exact sequence 0→𝔽ₚ(j)→U→𝔽ₚ(i)→0 with pU=0 and U in the local Fontaine–Laffaille essential image on [0,r] splits as a G(K)-module sequence.",
+      "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheory",
+      "section": "§§R07.3.4–R07.3.12"
+    },
+    {
+      "slug": "pm-remove-inverse-e",
+      "needs": "For every finite Galois L/K over a complete mixed-characteristic DVR with perfect residue field and every real c>0, Pₘ(L/K) for all real m>c implies Fontaine’s shifted upper break u(L/K)≤c, including the refinement removing the 1/e loss in §R07.6.3.",
+      "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheory",
+      "section": "§R07.6.3"
+    },
+    {
+      "slug": "finite-torsion-kernel-dictionary",
+      "needs": "For a field K of characteristic zero and a finite abelian p-group U with continuous G(K)-action, kernel H and kernel field L=K̄^H: L/K is finite Galois and, for every algebraic E/K inside K̄, G(E) fixes U pointwise iff L⊆E; the kernel field of U⊕U′ is the compositum of the two kernel fields; and the kernel field of 𝔽₇(1) over ℚ is ℚ(ζ₇), of degree 6, with Galois group (ℤ/7)ˣ acting through χ₇ modulo 7.",
+      "supplier": "ArithmeticGaloisRepresentations",
+      "section": "§§1.1, 1.9, 2.2"
+    },
+    {
+      "slug": "completed-unramified-inertia",
+      "needs": "For each p identify the absolute Galois group of Frac W(F̄ₚ) with inertia in G_ℚₚ under the completed maximal unramified field comparison, compatibly with restriction of finite and rational étale representations.",
+      "supplier": "LocalFieldsRamification",
+      "section": "Layer 2"
     }
   ],
   "sourceIssues": [],
