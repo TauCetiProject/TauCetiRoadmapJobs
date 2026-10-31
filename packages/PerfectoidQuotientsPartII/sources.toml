@@ -1,0 +1,164 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PerfectoidQuotientsPartII"
+
+[[source]]
+id = "CS24"
+authors = "Kestutis Cesnavicius, Peter Scholze"
+title = "Purity for flat cohomology"
+year = 2019
+arxiv = "1912.10932v3"
+locator_scheme = "theorem"
+locator = "Proposition 2.1.4; Proposition 2.1.9; Proposition 2.1.12; Lemmas 2.3.1-2.3.2; Theorem 2.3.4; Corollary 2.3.7; Lemma 3.1.1"
+url = "https://arxiv.org/abs/1912.10932v3"
+fetched_from = "https://arxiv.org/pdf/1912.10932v3"
+fetched_at = "2026-10-26T15:23:02Z"
+sha256 = "2f9d3ee868c244a7ddd6579a5dafed10a7ac9eb8b2ffe840db9f2bc115cd6ed4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["Q5.1", "Q5.2", "Q5.3", "Q5.4", "Q5.5", "Q5.6", "Q5.7", "Q6.1", "Q6.2", "Q6.3", "Q6.4", "Q6.5", "Q6.6", "Q6.7", "Q6.8", "Q7.1", "Q7.2", "Q7.3", "Q7.5", "Q7.6", "Q8.1", "Q8.2", "Q8.3", "Q8.4", "Q9.1", "Q9.2", "Q9.3", "Q9.4", "Q9.5", "Q9.6", "Q10.1"]
+
+[[source]]
+id = "BS22"
+authors = "Bhargav Bhatt, Peter Scholze"
+title = "Prisms and Prismatic Cohomology"
+year = 2019
+arxiv = "1905.08229v4"
+locator_scheme = "theorem"
+locator = "Remark 3.11; Remark 10.13"
+url = "https://arxiv.org/abs/1905.08229v4"
+fetched_from = "https://arxiv.org/pdf/1905.08229v4"
+fetched_at = "2026-10-26T15:23:09Z"
+sha256 = "1d91a6eb85828feb73f84ab3b27ced17514f0855d61c3bff71ab9d8287891e4a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v4"
+cited_for = ["Q10.2", "Q10.3", "Q10.4", "Q10.5", "Q10.6"]
+
+[[source]]
+id = "BMS1"
+authors = "Bhargav Bhatt, Matthew Morrow, Peter Scholze"
+title = "Integral p-adic Hodge theory"
+year = 2016
+arxiv = "1602.03148v3"
+locator_scheme = "theorem"
+locator = "Lemma 3.2; Lemmas 3.9-3.10"
+url = "https://arxiv.org/abs/1602.03148v3"
+fetched_from = "https://arxiv.org/pdf/1602.03148v3"
+fetched_at = "2026-10-26T15:23:16Z"
+sha256 = "285f7d2088607688365ca92222dcf44c0acd6c4788dd872fe6a6191b9c4e072a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["Q5.1", "Q5.3", "Conventions"]
+
+[[source]]
+id = "Wedhorn"
+authors = "Torsten Wedhorn"
+title = "Adic Spaces"
+year = 2019
+arxiv = "1910.05934v1"
+locator_scheme = "theorem"
+locator = "Definition 7.7; Theorem 7.10; Proposition 7.18"
+url = "https://arxiv.org/abs/1910.05934v1"
+fetched_from = "https://arxiv.org/pdf/1910.05934v1"
+fetched_at = "2026-10-26T15:23:22Z"
+sha256 = "0e181a1e0fa19419de3c8dec900edcbedc006f89586aba2771a0017ea6c44512"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["Conventions", "Q8.1", "Q8.4"]
+
+[[source]]
+id = "Sch12"
+authors = "Peter Scholze"
+title = "Perfectoid spaces"
+year = 2011
+arxiv = "1111.4914v1"
+locator_scheme = "theorem"
+locator = "Theorem 3.7; Proposition 3.8; Corollary 6.7"
+url = "https://arxiv.org/abs/1111.4914v1"
+fetched_from = "https://arxiv.org/pdf/1111.4914v1"
+fetched_at = "2026-10-26T15:23:26Z"
+sha256 = "065441a872c5861560014f5c7675fdd4606b5796684f6a829747f01afee18e7b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["Q6.7", "Q8.3"]
+
+[[source]]
+id = "Ces19"
+authors = "Kestutis Cesnavicius"
+title = "Purity for the Brauer group"
+year = 2017
+venue = "Duke Math. J. 168, no. 8 (2019), 1461-1486"
+doi = "10.1215/00127094-2018-0057"
+arxiv = "1711.06456v4"
+locator_scheme = "theorem"
+locator = "Lemma 4.7; Lemmas 5.1-5.2"
+url = "https://arxiv.org/abs/1711.06456v4"
+fetched_from = "https://arxiv.org/pdf/1711.06456v4"
+fetched_at = "2026-10-26T15:23:32Z"
+sha256 = "a62a12bbe26595aec89d31d24d46774a1ee3eff73c08da0febf5a2b472118709"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v4"
+cited_for = ["Q10.1", "Q10.3", "Q10.4"]
+
+[[source]]
+id = "HM17"
+authors = "Raymond Heitmann, Linquan Ma"
+title = "Extended plus closure in complete local rings"
+year = 2017
+arxiv = "1708.05761v3"
+locator_scheme = "theorem"
+locator = "Theorem 1.3"
+url = "https://arxiv.org/abs/1708.05761v3"
+fetched_from = "https://arxiv.org/pdf/1708.05761v3"
+fetched_at = "2026-10-26T15:23:38Z"
+sha256 = "422b02f7b8819d30b0b7f3f5b404fc55af9ac7b8f9209635443102143f10b3db"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["Q10.5", "Q10.6"]
+
+[[source]]
+id = "Stacks"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "00E0, 00FK, 00HP, 00IA, 07DV, 090T, 031A, 0H7N, 07C3, 00SL, 00SO, 00SV, 00SW, 00SY, 00SZ, 0C33, 0BIQ"
+url = "https://stacks.math.columbia.edu/tag/07C3"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=07C3"
+fetched_at = "2026-10-26T15:23:58Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Q6.2", "Q7.1", "Q7.2", "Q7.3", "Q7.4", "Q7.5", "Q7.6", "Q8.4", "Q9.2", "Q9.3"]
+
+[[source]]
+id = "Bha18"
+authors = "Bhargav Bhatt"
+title = "On the direct summand conjecture and its derived variant"
+year = 2016
+arxiv = "1608.08882v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.5; Propositions 5.1-5.2"
+url = "https://arxiv.org/abs/1608.08882v2"
+fetched_from = "https://arxiv.org/pdf/1608.08882v2"
+fetched_at = "2026-10-26T15:25:51Z"
+sha256 = "08578ca15b17f51ee12c398ef305af3446057063c015e2bc8beb6012bcc26430"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["Q9.4", "Q10.2", "Exact supplier contracts"]
