@@ -1,0 +1,90 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "RelativeFarguesFontainePartII"
+
+[[source]]
+id = "FF17"
+authors = "Laurent Fargues and Jean-Marc Fontaine"
+title = "Courbes et fibrés vectoriels en théorie de Hodge p-adique"
+year = 2017
+locator_scheme = "theorem"
+locator = "Chapters 1–7; §§11.1–11.2; Préface"
+url = "https://www.imo.universite-paris-saclay.fr/~fontaine/courbe.pdf"
+fetched_from = "https://www.imo.universite-paris-saclay.fr/~fontaine/courbe.pdf"
+fetched_at = "2026-10-25T13:41:43Z"
+sha256 = "cc159f38a3801c736b71ecea363496abe7706550bfb416600718ee9933922ca3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Public author copy dated 16 April 2017, precursor to Astérisque 406 (2018); all locators use this copy, not uncollated published numbering."
+cited_for = ["Layers 0–11"]
+
+[[source]]
+id = "KT16"
+authors = "Kiran S. Kedlaya and Michael Temkin"
+title = "Endomorphisms of power series fields and residue fields of Fargues–Fontaine curves"
+year = 2016
+arxiv = "1506.00742v6"
+locator_scheme = "theorem"
+locator = "Theorems 1.2–1.3; Lemma 2.4"
+url = "https://math.huji.ac.il/~temkin/papers/Endomorphisms_of_Power_Series.pdf"
+fetched_from = "https://math.huji.ac.il/~temkin/papers/Endomorphisms_of_Power_Series.pdf"
+fetched_at = "2026-10-25T13:42:01Z"
+sha256 = "d88a1ac1756cdc2be21af6ec03d5b49b89faf84b8d04e275b144c194c89da9c4"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Author version 6 dated 29 March 2016; theorem numbering and printed pages checked in that version."
+cited_for = ["Layer 11"]
+
+[[source]]
+id = "Berger08"
+authors = "Laurent Berger"
+title = "Construction de (phi,Gamma)-modules: représentations p-adiques et B-paires"
+year = 2008
+locator_scheme = "theorem"
+locator = "Remark 1.1.3, p. 96"
+url = "https://msp.org/ant/2008/2-1/ant-v2-n1-p04-p.pdf"
+fetched_from = "https://msp.org/ant/2008/2-1/ant-v2-n1-p04-p.pdf"
+fetched_at = "2026-10-25T13:43:05Z"
+sha256 = "5716e770b65218295ada6f777789c9194336d2fdb2500b7ea451ac931738eda9"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Publisher open PDF; printed journal pages 91–120."
+cited_for = ["Layer 11 positive ideal"]
+
+[[source]]
+id = "ST02"
+authors = "Peter Schneider, Jeremy Teitelbaum"
+title = "Algebras of p-adic distributions and admissible representations"
+year = 2002
+doi = "10.1007/s00222-002-0284-1"
+arxiv = "math/0206056v1"
+locator_scheme = "section"
+locator = "§3, Theorems A and B, Corollaries 3.1–3.5, Lemma 3.6, pp. 7–11"
+url = "https://arxiv.org/abs/math/0206056v1"
+fetched_from = "https://arxiv.org/pdf/math/0206056v1"
+fetched_at = "2026-10-25T13:43:21Z"
+sha256 = "e8a60a25f246692b048789235fb8efaf6d44ae65fdbb7cc738c8caeae67efcd5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv math/0206056v1, printed pp. 7–11 for general system theory; published version is Inventiones Mathematicae 153 (2003), and its numbering is not substituted."
+cited_for = ["Layer 8 Fréchet–Stein systems"]
+
+[[source]]
+id = "Poonen93"
+authors = "Bjorn Poonen"
+title = "Maximally complete fields"
+year = 1993
+version_note = "Author copy of the article published in L'Enseignement Mathématique 39 (1993), 87–106; locators use this copy's numbering and pages."
+locator_scheme = "theorem"
+locator = "Theorem 2, p. 10; Corollaries 5–6, pp. 12–13"
+url = "https://math.mit.edu/~poonen/papers/amsval.pdf"
+fetched_from = "https://math.mit.edu/~poonen/papers/amsval.pdf"
+fetched_at = "2026-10-25T19:16:24Z"
+sha256 = "4e6c0d968c3d10fab6cdf120fb4fea1e1541734b012397af735f5eee58de369c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["11.5 valued automorphism-extension theorem"]

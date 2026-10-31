@@ -5417,62 +5417,40 @@
   ],
   "gaps": [
     {
-      "id": "G-MATRIX",
-      "title": "A quantitative proof of interval matrix gluing",
-      "detail": "The corrected local factorization theorem has a neighborhood depending on the chosen matrix Z. The source then chooses Z to approximate U without bounding that dependence. Prove a uniform bound or a different bounded-ring approximation giving exact-square module surjectivity for every gluing datum. RF4 requires this surjectivity and maximum-spectrum coverage; ring Mayer–Vietoris alone supplies neither module effectivity nor the missing bound.",
-      "neededBy": [
-        "RelativeFarguesFontainePartII:HF9/interval-gluing"
-      ]
+      "slug": "perfectoid-quantitative-cochains",
+      "supplier": "PerfectoidSpaces",
+      "section": "P3.7 and P3.11–P3.12",
+      "needs": "Provide norm-controlled continuous additive and principal-unit cochain corrections for complete perfect characteristic-p fields and every marked perfectoid untilt, including finite-dimensional semilinear residue modules, with compatible bounds under finite extension and inverse limits."
     },
     {
-      "id": "G-GENERATORS",
-      "title": "Uniform generation for interval bundles",
-      "detail": "Supply the analytic bounded-generator argument for compatible compact finite-free systems of bounded rank, producing one finite family of global sections generating every compact restriction. Generic Frechet–Stein coadmissibility does not imply finite generation. After this step, exactness on coherent Hom systems splits the finite-free presentation and proves projectivity, without claiming compact classical points exhaust the maximal spectrum. Prove the half-open freeness and closed-submodule conclusions with the same explicit compatible approximations.",
-      "neededBy": [
-        "RelativeFarguesFontainePartII:HF9/finite-projective-bundle-equivalence",
-        "RelativeFarguesFontainePartII:HF9/closed-submodules-of-half-open-free"
-      ]
+      "slug": "crystalline-pro-final-radius",
+      "supplier": "CrystallineCohomology",
+      "section": "CR.1.1",
+      "needs": "Identify the p-completed PD envelope of ker(W(O_F)→O_F/a_ρ), compatible with the base divided powers on p, as the pro-final p-adic thickening computing degree-zero crystalline sections, with the ring and affine universal-property directions specified."
     },
     {
-      "id": "G-BOUNDARY",
-      "title": "Concrete boundary-one counterexample",
-      "detail": "Write out a finite F-extension for which the endpoint-one annular claim fails, and separately a continuous G_F-representation not factoring through G_(k_F) whose associated B-Frobenius module is outside the B-plus essential image of Remark 11.1.11. Check the relevant comparison rather than using failure of a contraction estimate as a counterexample.",
-      "neededBy": [
-        "RelativeFarguesFontainePartII:HF10/endpoint-one-failure"
-      ]
+      "slug": "lubin-tate-all-local-fields",
+      "supplier": "LubinTateFormalModulesAndQuasiCanonicalLifts",
+      "section": "LT.0 analytic-log; LT.1 lt-module; LT.2 tate-module-comparison",
+      "needs": "Provide the formal-module, inverse-division Tate-module and normalized convergent logarithm interfaces over every complete discretely valued field with finite residue field, including equal characteristic and its additive coefficient action."
     },
     {
-      "id": "G-HOMOGENEITY",
-      "title": "Valued homogeneity in the maximally complete Cp-type case",
-      "detail": "Prove the automorphism extension theorem for a maximally complete algebraically closed field with the Cp-type residue field and value group, allowing positive valuation rescaling. The conditional orbit formula is established as a target; maximal completeness for an arbitrary value group is insufficient to infer the transitivity hypothesis. No available-source proof of this extension theorem has been read.",
-      "neededBy": [
-        "RelativeFarguesFontainePartII:HF11/maximal-completeness-and-orbits"
-      ]
+      "slug": "positive-degree-two-obstruction",
+      "supplier": "VectorBundlesAndIsocrystals",
+      "section": "VB3 banach-colmez-space-definition",
+      "needs": "Prove the explicit obstruction to representing the degree-two Banach–Colmez diamond B^{φ=p²} for F=ℂ_p^♭ by an analytic or perfectoid space, separately from the sufficient positive-slope representability criterion."
     },
     {
-      "id": "G-EQUALCHAR",
-      "title": "Equal-characteristic transfer of the mixed-characteristic curve proofs",
-      "detail": "Verify the equal-characteristic Lubin–Tate supplier extension R-LT and the quantitative descent arguments R-TATE in that setting. For degree-one generation and multiplication of two twisted positive lines, use a separable Eisenstein quadratic extension in characteristic 2 and show the unit twist exists over the required constants. The mixed-characteristic source argument does not by itself prove this transfer.",
-      "neededBy": [
-        "RelativeFarguesFontainePartII:HF7/degree-one-generation",
-        "RelativeFarguesFontainePartII:HF8/positive-line-proj"
-      ]
+      "slug": "closed-infimal-convolution",
+      "supplier": "OptimalTransport",
+      "section": "Layer 5(1)–(2)",
+      "needs": "Provide the closed infimal-convolution conjugacy identity for proper lower-semicontinuous extended-real convex functions whenever the closed convolution is proper, including the real one-dimensional decreasing polygons with infinite endpoint values."
     },
     {
-      "id": "G-COORDINATE",
-      "title": "Ramified cyclotomic coordinate threshold",
-      "detail": "Derive the Newton polygon of [1+t]-1 for each mixed-characteristic coefficient field, with v_pi(p) and p-power carries, then give a sufficient strict transformed radius for the cyclotomic annulus comparison. The displayed Q_p formula is established as a target; the source q-only auxiliary polygon does not justify applying it literally to arbitrary E.",
-      "neededBy": [
-        "RelativeFarguesFontainePartII:HF1/cyclotomic-annulus-model"
-      ]
-    },
-    {
-      "id": "G-RADIUS",
-      "title": "Effective descent on arbitrary compact radii",
-      "detail": "Extend the value-group-endpoint compact descent theorem to every compact J subset [0,1), including an irrational singleton and an included irrational endpoint. Prove finite-extension completed base change B_(L,K) completed_tensor_(B_(F,K)) B_(F,J) = B_(L,J) for an enclosing value-group compact K, together with the trace and small-matrix estimates in the J-norm. Objects and cocycles over J are not assumed to extend to K. Alternatively supply an explicit approximation theorem giving exactly that extension with quantitative control. Density of the value group by itself does not produce a contained cofinal compact exhaustion.",
-      "neededBy": [
-        "RelativeFarguesFontainePartII:HF10/bundle-galois-descent"
-      ]
+      "slug": "finite-group-free-scheme-quotient",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "1.23",
+      "needs": "For a finite constant group action on a scheme whose every orbit lies in an affine open, construct the scheme quotient and prove that freeness on geometric points makes the quotient map a finite étale torsor, without assuming the group order is invertible."
     }
   ],
   "sourceIssues": [
