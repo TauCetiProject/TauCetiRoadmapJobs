@@ -17,7 +17,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v1"
-cited_for = ["9.1", "9.2", "9.3", "9.4", "9.5", "9.6", "8.6", "1.5"]
+cited_for = ["1.5", "8.1", "8.2", "8.3", "8.4", "8.6", "9.1", "9.2", "9.3", "9.4", "9.5", "9.6"]
 
 [[source]]
 id = "akn-delta"
