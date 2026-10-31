@@ -5735,67 +5735,82 @@
   ],
   "gaps": [
     {
-      "title": "G1. Deligne–Lusztig theory and the modular representation theory of U_3(𝔽_q) have no owner",
-      "neededBy": [
-        "ModularityAndLanglandsExtensionsPartII:SP.4/depth-zero-cuspidals",
-        "ModularityAndLanglandsExtensionsPartII:SP.4/level-raising-types",
-        "ModularityAndLanglandsExtensionsPartII:SP.4/type-transfer"
-      ],
-      "detail": "Newton–Thorne I §1.8 uses Deligne–Lusztig induction for the anisotropic tori of U_3 and GL_3, Lusztig's cuspidal unipotent representation, Dudas–Malle's modular irreducibility, Geck's decomposition numbers and Kazhdan–Varshavsky's transfer of Deligne–Lusztig functions. No atlas roadmap plans these, and TauCetiRoadmap CharacterTheory Layer 9 treats GL_2(𝔽_q) only. The SP.4 nodes state exactly the special cases used and are cited inputs until an owner exists (request at CharacterTheory Layer 9 for a Part II)."
+      "slug": "geometric-weak-primitive-auxiliary-finiteness",
+      "needs": "the finiteness theorem \"Finiteness with an unobstructed auxiliary place\" of PL.7 in the geometric weak-primitive setting of Newton–Thorne 2026 Proposition 3.9 (nt26 pp. 20–21), applied twice (with and then without an auxiliary Steinberg place), including the comparison of the non-scalar unobstructed auxiliary local ring with the Hecke algebra at auxiliary level.",
+      "supplier": "PotentialAutomorphyInfrastructurePartII",
+      "section": "PL.7"
     },
     {
-      "title": "G2. The odd case of Newton–Thorne I Theorem 7.1 (Proposition 7.4) has a gap (E21)",
-      "neededBy": [
-        "ModularityAndLanglandsExtensionsPartII:SP.7/odd-rank-residually-cm",
-        "ModularityAndLanglandsExtensionsPartII:SP.7/residually-cm-steinberg",
-        "ModularityAndLanglandsExtensionsPartII:SP.7/weight-five-symmetric-power",
-        "ModularityAndLanglandsExtensionsPartII:SP.7/theorem-e",
-        "ModularityAndLanglandsExtensionsPartII:SP.8/n-regular-ramified-automorphy",
-        "ModularityAndLanglandsExtensionsPartII:SP.10/weight-two-case",
-        "ModularityAndLanglandsExtensionsPartII:SP.10/theorem-a-assembly"
-      ],
-      "detail": "In NTI arXiv v3 Proposition 7.4, p.87, the proposed GL₂ block fails conjugate self-duality by δ_{K/ℚ}|_{G_{F₀}}, so its use of Theorem 4.1 is unsupported (atlas PAPER-NEWTON-THORNE-21/E21, scoped here to v3). The rank-one extension repairs the GL₁ range but does not repair this GL₂ failure, even for n=3. Within the CM seed construction only the powers-of-two route is independent of it. Low-rank symmetric-power endpoint theorems for n≤5 do not provide all the residual, field and Steinberg data of Theorem 7.1. Supply a conjugate-self-dual GL₂ block with the required residual representation and types, or a different construction of that seed. The separate SP.13 method proves the endpoint without repairing this intermediate seed route."
+      "slug": "dyadic-definite-unitary-forms",
+      "needs": "the PL.2 constructions for `l = 2` used by Newton–Thorne II §2 and Newton–Thorne 2026 §4 at `p = 2`: algebraic modular forms on the definite unitary group, exactness and group-ring freeness at sufficiently small level, Taylor–Wiles level structures, and the Hecke-valued determinant of the localized Hecke algebra (the `𝒢_n`-valued lift is not needed), together with the potential diagonalizability of two-dimensional potentially Barsotti–Tate representations for `l = 2` in PL.1.",
+      "supplier": "PotentialAutomorphyInfrastructurePartII",
+      "section": "PL.2"
     },
     {
-      "title": "G3. Thorne 2024 §§3–5 (p-adic automorphic forms and the Drinfeld half-space) have no owner",
-      "neededBy": [
-        "ModularityAndLanglandsExtensionsPartII:SP.6/thorne-steinberg-level-raising"
-      ],
-      "detail": "Thorne arXiv v2 Theorem 6.11 (pp.39–41) uses Theorem 3.4 (Steinberg detection), Theorem 4.5 (even-multiplicity weights), Theorem 5.2 and Corollary 6.3/Proposition 6.5 on p-adic automorphic forms. The concentration statement is for the Hecke-localized derived tensor RΓ_c(Ω^{n−1},k) ⊗^L_{k[GL_n(F_{w₀})⁰]} A_m under residual genericity, concentrated in degree n−1. Bare compactly supported Drinfeld cohomology is not asserted to be concentrated there. These inputs still need an owner; R4 proposes the boundary."
+      "slug": "components-under-field-extension",
+      "needs": "in RZ.1, the behaviour of irreducible components of a quasi-separated rigid space over a complete field `E` under extension of the ground field to a finite extension and to `ℂ_p`: every component over `ℂ_p` lies in the base change of a component over `E`, and if there are finitely many components then after a finite extension `E′/E` all components are geometrically irreducible (Conrad, con99 Theorem 3.4.2, internal pp. 26–27).",
+      "supplier": "AdicSpacesPartIIPartII",
+      "section": "RZ.1"
     },
     {
-      "title": "G4. Mœglin's explicit description of tempered packets of p-adic unitary groups",
-      "neededBy": [
-        "ModularityAndLanglandsExtensionsPartII:SP.4/stable-base-change-packets",
-        "ModularityAndLanglandsExtensionsPartII:SP.4/ct-packet-signs"
-      ],
-      "detail": "ML.4 and ET.7a provide classification and endoscopic comparison, but not the required explicit Mœglin Jacquet/socle calculation (2007 Lemme 5.4, Théorème 5.7 and Proposition 5.5, as used by CTIII §§3.3–3.5, pp.21–27). In particular the uniqueness assertion after CTIII (3.9), p.26, cannot simply be repeated: Y is already a submodule with the same exponent. A proof must count the full socle and isolate the other constituent before assigning the Z/W sign. The packet retains that explicit calculation as a proof boundary rather than calling the repair immediate."
+      "slug": "tensor-taylor-wiles-primes",
+      "needs": "in Layer G7, the Taylor–Wiles prime selection of Newton–Thorne 2026 §4 (nt26 pp. 29–30, Propositions 4.8–4.9): from rank-two large residual image and a perfect subgroup of the rank-`2r` tensor image containing an element with `2r` distinct eigenvalues, arbitrarily deep places `q_v ≡ 1 mod p^N` at which the tensor Frobenius has `2r` distinct ordered eigenvalues and which control the rank-two dual Selmer group, for simultaneous patching; together with Newton–Thorne II Lemmas 2.7 and 2.9 (nt21b pp. 14, 18) under `p^a > max(5, 2n − 1)`, including `p = 2`.",
+      "supplier": "GlobalGaloisDeformations",
+      "section": "Layer G7"
     },
     {
-      "title": "G5. GL_2 inputs of Newton–Thorne I §7 and Clozel–Thorne III §6",
-      "neededBy": [
-        "ModularityAndLanglandsExtensionsPartII:SP.7/odd-rank-residually-cm",
-        "ModularityAndLanglandsExtensionsPartII:SP.7/weight-five-symmetric-power",
-        "ModularityAndLanglandsExtensionsPartII:SP.7/ct-symmetric-power-l-plus-one"
-      ],
-      "detail": "Diamond 1989 Corollary 6.9 (level raising) is owned by SerreWeightAndLevelOptimisation R20.2 (Diamond's level-raising criterion). Diamond–Taylor 1994 Theorem A (prescribed supercuspidal or Steinberg components at non-optimal level), Edixhoven 1992 Theorem 2.6 (ordinarity of forms with reducible residual representation in low weight) and Clozel–Thorne II (Annals 2015) Proposition 3.10 with the reductions of its §6 have no atlas owner; they are cited inputs."
+      "slug": "formal-torus-patching",
+      "needs": "in Layer 6, the formal-group contract used by Newton–Thorne II Propositions 2.8–2.9 and Newton–Thorne 2026 Proposition 4.9 (after Khare–Wintenberger, kw09 Proposition 2.5): a free action of a formal torus `Ĝ_m^γ` on `Sp R′`, an equivariant map `δ` to `Ĝ_m^γ` for the square action with fibre `Sp R = δ^{−1}(1)`, the resulting `Ĝ_m^γ[2]`-torsor `Sp R → Sp R^{inv}` on represented complete-local functors, actions on both patched modules, and transitivity of `Ĝ_m^γ[2](𝒪)` on the components containing a given point; no torsor on `Spec` is inferred from the formal statement.",
+      "supplier": "DeformationAndDerivedPatchingAlgebra",
+      "section": "Layer 6"
     },
     {
-      "title": "G7. Inherited and requested supplier extensions for finiteness and patching",
-      "neededBy": [
-        "ModularityAndLanglandsExtensionsPartII:SP.6/nt-generic-prime",
-        "ModularityAndLanglandsExtensionsPartII:SP.6/nt-steinberg-level-raising",
-        "ModularityAndLanglandsExtensionsPartII:SP.11/tensor-section-3-hypotheses",
-        "ModularityAndLanglandsExtensionsPartII:SP.11/steinberg-finiteness-and-lift",
-        "ModularityAndLanglandsExtensionsPartII:SP.11/generic-components",
-        "ModularityAndLanglandsExtensionsPartII:SP.11/scalar-generic-r-equals-t",
-        "ModularityAndLanglandsExtensionsPartII:SP.9/symmetric-power-tensor-map",
-        "ModularityAndLanglandsExtensionsPartII:SP.12/tensor-map",
-        "ModularityAndLanglandsExtensionsPartII:SP.12/tensor-taylor-wiles-data",
-        "ModularityAndLanglandsExtensionsPartII:SP.12/tensor-patching",
-        "ModularityAndLanglandsExtensionsPartII:SP.9/support-argument"
-      ],
-      "detail": "The Maire antiunit rank input is a source-check boundary in ArithmeticGaloisDuality R02.3. PL.7/auxiliary-place-ant-finiteness records a nonscalar unobstructed local-ring and Hecke-level comparison gap; NT26 needs its geometric weak-primitive variant. The exact BBM finite-flat lattice comparison, perfect-subgroup tensor Taylor–Wiles prime selection, and formal torus invariant contract are requested above, beyond what the cited R07.4, G7 residual-enormous and R03.5 statements currently provide. PL.7 sum-of-characters finiteness also inherits its separately recorded rank-one ordinary-finiteness boundary. These are imported proof obligations, not locally established results. Geometric primitivity and the initial subgroup-splitting coefficient convention discharge the separate PL.6 finite-field normalization concern for these applications; arbitrary finite-field primitivity alone would not."
+      "slug": "artinian-crystalline-quotients",
+      "needs": "in Layer R07.4, the generic-fibre comparison of Berthelot–Breen–Messing (bbm82 Théorème 3.1.1) in the form used by Newton–Thorne II Lemma 2.2 and Newton–Thorne 2026 Lemma 4.2: every finite flat Artinian rank-two point of Hodge type `{0,1}` is a quotient of a Galois-stable lattice in a crystalline representation with Hodge–Tate weights in `{0,1}`, functorially in the coefficient quotient and compatibly with tensor products and symmetric powers with fixed lattices.",
+      "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheory",
+      "section": "Layer R07.4"
+    },
+    {
+      "slug": "unobstructed-auxiliary-prime-and-slope-count",
+      "needs": "in Layer 3, the two inputs of Newton–Thorne I Proposition 8.3 and Newton–Thorne II Lemma 3.4 not covered by the template: unobstructedness of the local deformation problems at the ramified primes for all but finitely many `p` (Weston, wes04) together with an auxiliary prime `q_a > p` with formally smooth local lifting ring, giving patched modules of full support (nt21 pp. 92–95); and the dimension count of the slope-`(0,1)` part of quaternionic cohomology at level `U₀(p³)` (nt21b pp. 20–22).",
+      "supplier": "GL2ModularityLifting",
+      "section": "Layer 3"
+    },
+    {
+      "slug": "level-raising-prescribed-components",
+      "needs": "in Layer 2, level raising for `GL_2(𝔸_ℚ)` with simultaneously prescribed Steinberg components and supercuspidal components of given tame inertial type at auxiliary primes satisfying the level-raising congruences (Diamond–Taylor's non-optimal levels, as used in nt21, proof of Proposition 7.4, p. 86).",
+      "supplier": "SerreWeightAndLevelOptimisation",
+      "section": "Layer 2"
+    },
+    {
+      "slug": "explicit-tempered-unitary-packets",
+      "needs": "in §11.2, Mœglin's explicit description of tempered representations of `p`-adic unitary groups at an inert place: the extended cuspidal support and stable base change with finite fibres (moe07 §§5.4, 5.7), the twisted character identity for `θ`-discrete parameters (moe07 §5.5) and its extension to all tempered parameters, the reducibility points of depth-zero supercuspidals in odd residue characteristic (Lust–Stevens, ls20 §8), and the hereditary Jacquet-module and socle computations of the induced representations used by Clozel–Thorne III §3.5 (ct17 pp. 24–27), including the full socle multiplicity of the induction after ct17 (3.9).",
+      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+      "section": "§11.2"
+    },
+    {
+      "slug": "deligne-lusztig-transfer",
+      "needs": "in §2.11, the endoscopic transfer of inflated Deligne–Lusztig functions for unramified groups when the residue characteristic exceeds the Coxeter number (Kazhdan–Varshavsky, kv12 Theorem 2.2.5 of the arXiv version), in the form used by Newton–Thorne I Proposition 1.16 (nt21 pp. 18–19).",
+      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+      "section": "§2.11"
+    },
+    {
+      "slug": "iwahori-matsumoto-quasi-split",
+      "needs": "in SR.1.5, the Iwahori–Matsumoto presentation of the Iwahori–Hecke algebra `H(G, B)` for every group with an affine Tits system supplied by ReductiveGroupsPartII §RG2.4.2, with parameters `q_s = [BsB : B]`, in particular for the ramified quasi-split unitary groups `U_{2k+1}`: quadratic relations `(T_s − q_s)(T_s + 1) = 0` and braid relations, over `ℤ` with the positive braid monoid and over `ℤ[q_s^{−1}]` with the braid group.",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.1.5"
+    },
+    {
+      "slug": "drinfeld-steinberg-detection",
+      "needs": "in §0.7, the inputs of Thorne 2024 Theorem 6.11 from its §§3–6: Steinberg detection in `p`-adic automorphic forms on definite unitary groups (th24 Theorem 3.4, p. 16), the even-multiplicity weight theorem (Theorem 4.5, p. 20), concentration in degree `n − 1` of the Hecke-localized derived tensor product `RΓ_c(Ω^{n−1}, k) ⊗^L_{k[GL_n(F_{w₀})^0]} A_𝔪` of Drinfeld-space cohomology with the automorphic module under residual genericity (Theorem 5.2, p. 24; not a concentration statement for bare `RΓ_c(Ω^{n−1}, k)`), and the comparisons of Corollary 6.3 (p. 33) and Proposition 6.5 (p. 35).",
+      "supplier": "CompletedCohomologyAndLocalGlobalCompatibility",
+      "section": "§0.7"
+    },
+    {
+      "slug": "deligne-lusztig-finite-unitary",
+      "needs": "beyond Layer 9, the finite-group inputs of Newton–Thorne I §1.8 (nt21 pp. 15–18): Deligne–Lusztig induction `R_T^G θ` for finite reductive groups with irreducibility of `±R_T^G θ` for `θ` in general position and its transitivity, Lusztig's cuspidal unipotent representation of `U_3(𝔽_q)`, the modular irreducibility of cuspidal unipotent characters in non-defining characteristic (Dudas–Malle, dm18 Theorem 1), and the decomposition of the reduction of `R_C^{U_3}θ` modulo `p` when `q` has order 6 modulo `p` (Geck's decomposition numbers for `U_3`, as used in nt21 Proposition 1.15, pp. 17–18).",
+      "supplier": "RepresentationTheory/CharacterTheory",
+      "section": "Layer 9"
     }
   ],
   "sourceIssues": [
