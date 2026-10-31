@@ -1,0 +1,127 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "RankOneConverse"
+
+[[source]]
+id = "skinner-2020"
+version_note = "Published Annals version; all numbered locators use pp.329–354 of this version, not arXiv pagination."
+arxiv = "1405.7294"
+doi = "10.4007/annals.2020.191.2.1"
+authors = "Christopher Skinner"
+title = "A converse to a theorem of Gross, Zagier, and Kolyvagin"
+year = 2020
+locator_scheme = "section"
+locator = "Entire article, pp. 329–354; Theorems A, A′, B, C, D and E; §§2–4"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n2-p01-s.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n2-p01-s.pdf"
+fetched_at = "2026-10-25T14:32:41Z"
+sha256 = "cfdfab6e62ac507be40d1f0bc8d9cb8371d95b42c5ae259fde054c70fb20c214"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–6"]
+
+[[source]]
+id = "bsw-2026"
+authors = "Ashay Burungale, Christopher Skinner, Xin Wan"
+title = "A refined non-vanishing of the p-adic logarithm of a rational point on an abelian variety"
+year = 2026
+arxiv = "2603.20886v2"
+locator_scheme = "section"
+locator = "§§1.1–1.5, pp. 1–4; §2.1–2.2, pp. 4–5; Theorems 1.1, 2.3; §3–4.3, pp. 9–11; §5.1 only for the boundary of structural-rank conjectures"
+url = "https://arxiv.org/abs/2603.20886v2"
+fetched_from = "https://arxiv.org/pdf/2603.20886v2"
+fetched_at = "2026-10-25T14:32:44Z"
+sha256 = "f2b4a020bf5dbcd33df3a4b30cbf27230dc0d0775312f5e543b03b2486f6a994"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2"
+cited_for = ["Layers 0–6"]
+
+[[source]]
+id = "wan-2020"
+version_note = "Published ordinary version, with §7E and §2B–C replacing the earlier section locators."
+arxiv = "1408.4044"
+authors = "Xin Wan"
+title = "Iwasawa main conjecture for Rankin–Selberg p-adic L-functions"
+year = 2020
+locator_scheme = "section"
+locator = "Introduction, Theorems 1.1–1.2, pp. 384–386; §2B–C, pp. 392–394; §7E, Proposition 7.7 and equations (7-2)–(7-6), pp. 445–449; proof of Theorem 1.2, pp. 479–480"
+url = "https://msp.org/ant/2020/14-2/ant-v14-n2-p04-p.pdf"
+fetched_from = "https://msp.org/ant/2020/14-2/ant-v14-n2-p04-p.pdf"
+fetched_at = "2026-10-25T14:32:51Z"
+sha256 = "3936b305ce070959713b1331a895a9ff8877ac12666bb1ad8f4b20c09e6c870d"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–6"]
+
+[[source]]
+id = "skinner-urban-author"
+version_note = "Author-hosted 2014 copy; locators pp.19–26 are internal PDF pages, not journal pages."
+authors = "Christopher Skinner and Eric Urban"
+title = "The Iwasawa main conjectures for GL₂"
+year = 2014
+locator_scheme = "section"
+locator = "§3.1.6–3.1.8, pp. 19–21; §3.2, Proposition 3.2.8, Corollary 3.2.9, Propositions 3.2.11 and 3.2.13, pp. 23–26"
+url = "https://www.math.columbia.edu/~urban/eurp/MC.pdf"
+fetched_from = "https://www.math.columbia.edu/~urban/eurp/MC.pdf"
+fetched_at = "2026-10-25T14:33:00Z"
+sha256 = "f9faa40aa5e30eba705da88e3d68c8aa43069b5be01c1cc6ece212dd57879748"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–6"]
+
+[[source]]
+id = "poonen-stoll"
+version_note = "MIT author-hosted text, 32 PDF pages; use its Theorems 5 and 8, Corollaries 6–7 and 9 and internal pages 10–12, not journal pagination."
+arxiv = "math/9911267"
+authors = "Bjorn Poonen and Michael Stoll"
+title = "The Cassels–Tate pairing on polarized abelian varieties"
+year = 1999
+locator_scheme = "section"
+locator = "§§1–2, pp. 1–5; §6, Theorem 8 and Corollary 9, pp. 11–12"
+url = "https://math.mit.edu/~poonen/papers/sha.pdf"
+fetched_from = "https://math.mit.edu/~poonen/papers/sha.pdf"
+fetched_at = "2026-10-25T14:33:03Z"
+sha256 = "3b9a619423358bc877fd2123b73a759157a728ec11e0f7b0aa48bd0333d7149a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–6"]
+
+[[source]]
+id = "bfh-1990"
+version_note = "Scanned published version; printed pp.543–544 are PDF pages 2–3; OCR labels part (ii) as a second (i), checked visually; final proof §9 pp.614–617."
+authors = "Daniel Bump, Solomon Friedberg and Jeffrey Hoffstein"
+title = "Nonvanishing theorems for L-functions of modular forms and their derivatives"
+year = 1990
+locator_scheme = "section"
+locator = "Introduction, unnumbered Theorem (i)–(ii), pp.543–544; §9 pp.614–617; scan checked against OCR"
+url = "https://wstein.org/papers/bib/bump-friedberg-hoffstein-nonvanishing.pdf"
+fetched_from = "https://wstein.org/papers/bib/bump-friedberg-hoffstein-nonvanishing.pdf"
+fetched_at = "2026-10-25T14:45:52Z"
+sha256 = "d50ad2f11c992591de90f2cea59489ac436cce455e140e6eebf5053f49819f2c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–6"]
+
+[[source]]
+id = "brooks-2015"
+authors = "E. Hunter Brooks"
+title = "Shimura curves and special values of p-adic L-functions"
+year = 2015
+doi = "10.1093/imrn/rnu062"
+locator_scheme = "theorem"
+locator = "§2.7 p.4190; Theorem 8.11 pp.4237–4238; Propositions 8.12–8.13 and pullback identity p.4239"
+url = "https://infoscience.epfl.ch/server/api/core/bitstreams/c151dcd9-ff05-4c82-90d5-de19eec6f189/content"
+fetched_from = "https://cf002.cdn.4science.cloud/4s-assetstore-epfl-prod/87/42/20/87422022126541257393721858835452522330"
+fetched_at = "2026-10-22T18:14:10Z"
+sha256 = "90898527cf2e7e69bb6eba200dc7646e7f61837fa310299852ea2b958f925219"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-22"
+version_note = "Published IMRN version; institutional EPFL copy. The CDN fetch URL is recorded without its expiring query."
+cited_for = ["Exact supplier contracts", "Layers 0, 2–3"]
