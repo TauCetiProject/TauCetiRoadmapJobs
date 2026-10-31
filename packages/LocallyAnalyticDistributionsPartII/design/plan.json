@@ -4362,12 +4362,16 @@
  ],
  "gaps": [
   {
-   "title": "Separatedness of the weaker-norm filtration on central quotients at large radii",
-   "neededBy": [
-    "LocallyAnalyticDistributionsPartII:ND.5/radius-central-domain",
-    "LocallyAnalyticDistributionsPartII:ND.5/fu-direct-injectivity"
-   ],
-   "detail": "Fu's proof of Theorem 5.7 computes gr_{r′} of D_r/D_r(p²Δ + λ_0) for a weaker norm ‖·‖_{r′}, r′ < p^{−1/2}, and needs the induced filtration to be separated, i.e. D_r ∩ D_{r′}·(p²Δ − p²λ) = D_r·(p²Δ − p²λ) inside D_{r′}. It holds for r < p^{−1/2} (take r′ = r), and ND.5/small-radius-central gives the domain property directly for r < p^{−1/(p−1)}; at the radius r_n itself the graded ring of D^λ_{r_n} is not a domain (the symbol of p²Δ − p²λ is a p^n-th power), so the weaker norm cannot be avoided. The radii r_n = p^{−1/p^n} used in the proof of Theorem 5.1 all exceed p^{−1/2}. Density of D_r in D_{r′} and the domain property of the graded ring do not imply separatedness. The roadmap's endpoint (ND.5/central-injectivity-theorem) is proved by the Verma-module route and does not use this step; the gap concerns only Fu's direct route for induced characters."
+   "slug": "frechet-stein-general",
+   "needs": "State the Fréchet–Stein notion and the coadmissible-module theory of §0.1 for an arbitrary left and two-sided K-Fréchet–Stein algebra, not only D(H,L): Theorems A and B, the base-change isomorphism, flatness of the Banach stages, the abelian category of coadmissible modules with its closedness criterion and strictness of maps, closedness of finitely generated left ideals, Fréchet–Stein quotients by closed two-sided ideals with A/I ≅ lim A_n/A_nI, and restriction along maps of Fréchet–Stein algebras (Schneider–Teitelbaum 2003, §3, Corollaries 3.1–3.5, Lemma 3.6, Proposition 3.7, Lemma 3.8).",
+   "supplier": "PadicLocalLanglandsForGL2Qp",
+   "section": "§0.1"
+  },
+  {
+   "slug": "radius-algebras",
+   "needs": "For a compact group H with a finite-rank p-valuation and ordered basis satisfying Schneider–Teitelbaum's (HYP), construct the Banach radius algebras of §0.1 as the completions D_r(H,L) of D(H,L) for the coordinate norms ‖Σ d_α b^α‖_r = sup |d_α| r^{τ_α}, 1/p ≤ r < 1, with the unique coefficient expansion, submultiplicativity, basis independence, the c₀ description and the spaces D_{<r}, the graded-ring, multiplicativity and noetherianity theorems (Schneider–Teitelbaum 2003, §4, Lemma 4.1–Theorem 4.5, Remark 4.6), the statement that the D_r with r ∈ p^ℚ ∩ (1/p,1) are the stages of the Fréchet–Stein presentation of §0.1, and that a uniform group with the valuation ω_U of NoncommutativeAndEquivariantIwasawa §0.7 satisfies (HYP) for odd p.",
+   "supplier": "PadicLocalLanglandsForGL2Qp",
+   "section": "§0.1"
   }
  ],
  "sourceIssues": [
