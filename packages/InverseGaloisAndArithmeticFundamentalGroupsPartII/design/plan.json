@@ -3055,47 +3055,52 @@
   ],
   "gaps": [
     {
-      "id": "InverseGaloisAndArithmeticFundamentalGroupsPartII/G1",
-      "title": "Concrete noncommutative graded derived-tensor bridge",
-      "detail": "The pins supply abstract left-derived functors and categorical Tor, but no audited turnkey equivalence with ordinary noncommutative right/left internally graded modules, free resolutions, module-sided Tor and convergent change-of-rings/hyperhomology pages. DGAInfinity Layers0,1,5 own these general constructions; the precise request is open. Read the supplier zero-DG-differential specialization, retain the branch grading separately, and establish the bridges before treating HS.1 estimates as closed.",
-      "neededBy": [
-        "InverseGaloisAndArithmeticFundamentalGroupsPartII:HS.1/stability-defects",
-        "InverseGaloisAndArithmeticFundamentalGroupsPartII:HS.1/change-of-rings",
-        "InverseGaloisAndArithmeticFundamentalGroupsPartII:HS.1/higher-quotient-tor",
-        "InverseGaloisAndArithmeticFundamentalGroupsPartII:HS.1/general-tor-bound",
-        "InverseGaloisAndArithmeticFundamentalGroupsPartII:HS.1/k-universal-coefficients"
-      ]
+      "slug": "reductive-salvetti-homotopy-type",
+      "needs": "The full W-equivariant homotopy equivalence between the finite Salvetti complex and the complexified reflection-arrangement complement (not only its two-skeleton), with the quotient complex having one cell of dimension |T| for each subset T of the simple reflections.",
+      "supplier": "ReductiveGroups",
+      "section": "Layer 11B"
     },
     {
-      "id": "InverseGaloisAndArithmeticFundamentalGroupsPartII/G2",
-      "title": "Borel realization and skeletal convergence interfaces",
-      "detail": "AlgebraicTopology Stages4,5 own the relevant cellular, bundle and spectral-sequence machinery, but the audited text does not explicitly construct the semisimplicial thick-realization/Borel adapter with the finite-diagonal convergence and augmentation edge used here. Requests specify the exact objects and maps. The native SpectralSequence page carrier alone provides none of this convergence. Needed also for the induced-action and genuine-bundle comparisons.",
-      "neededBy": [
-        "InverseGaloisAndArithmeticFundamentalGroupsPartII:HS.0/gluing",
-        "InverseGaloisAndArithmeticFundamentalGroupsPartII:HS.3/borel-arc-resolution",
-        "InverseGaloisAndArithmeticFundamentalGroupsPartII:HS.3/row-identification",
-        "InverseGaloisAndArithmeticFundamentalGroupsPartII:HS.3/arc-spectral-sequence",
-        "InverseGaloisAndArithmeticFundamentalGroupsPartII:HS.3/edge-low-k"
-      ]
+      "slug": "algtop-semisimplicial-realization",
+      "needs": "The thick geometric realization of a semisimplicial space, its skeletal filtration, and the first-quadrant spectral sequence E^1_(q,p) = H_p(X_q; k) => H_(p+q)(||X||; k) with d^1 the alternating face sum, natural and convergent on finite diagonals.",
+      "supplier": "AlgebraicTopology",
+      "section": "Stage 4"
     },
     {
-      "id": "InverseGaloisAndArithmeticFundamentalGroupsPartII/G3",
-      "title": "Relative marked-disc topology and smooth adapter",
-      "detail": "The parent already identifies configuration pi1 with native B_n. The generic surface mapping-class definition is owned by LV.5 and imported by MappingClass C.0; its hyperbolic pure-surface nodes do not prove the boundary-relative marked-disc smooth comparison. The generic Diff carrier belongs to GeometricTopology Layer3. Their point-pushing/smooth-relative adapter and the simultaneous arc-fixing/isotopy-extension/cut-disc graph-retraction interface in Layer1 remain exact supplier obligations. EVW pp.759–761 is the read proof for this specialization; no inaccessible Hirsch book has been substituted for an unread theorem.",
-      "neededBy": [
-        "InverseGaloisAndArithmeticFundamentalGroupsPartII:HS.2/disc-mapping-class-adapter",
-        "InverseGaloisAndArithmeticFundamentalGroupsPartII:HS.2/geometric-arcs",
-        "InverseGaloisAndArithmeticFundamentalGroupsPartII:HS.2/arc-stabilizer"
-      ]
+      "slug": "algtop-borel-construction",
+      "needs": "The Borel construction EΓ ×_Γ X of a discrete group action, functorial along a homomorphism with an equivariant map, the induced-space equivalence EΓ ×_Γ (Γ/Λ × Y) ≃ EΛ ×_Λ Y, and the associated bundle with fibre the realization of a semisimplicial Γ-set.",
+      "supplier": "AlgebraicTopology",
+      "section": "Stage 5"
     },
     {
-      "id": "InverseGaloisAndArithmeticFundamentalGroupsPartII/G4",
-      "title": "Surgery connectivity and finite-cell comparison interfaces",
-      "detail": "Hatcher–Wahl Lemma7.1 and Proposition7.2 have been read, and their disc surgery/bad-simplex proof is assigned to HS.2. Charney–Davis Theorem1.4.1 and Corollary2.2.3 have been read and specialized explicitly to type A in HS.5. Generic relative simplicial approximation, join connectivity, equivariant nerve comparison, and face-poset CW coarsening are not supplied by a verified pin declaration or exact supplier node. AlgebraicTopology Stages4,8 must supply the requested interfaces, with boundary cases. HS.2/HS.5 own the specialized arc/poset geometry; general topology is not duplicated.",
-      "neededBy": [
-        "InverseGaloisAndArithmeticFundamentalGroupsPartII:HS.2/arc-connectivity",
-        "InverseGaloisAndArithmeticFundamentalGroupsPartII:HS.5/finite-cell-model"
-      ]
+      "slug": "algtop-join-connectivity",
+      "needs": "Connectivity of joins of simplicial complexes, conn(X * Y) ≥ conn X + conn Y + 2 with the empty and nonempty boundary cases, and the criterion that a complex is m-connected when every simplicial map from a triangulated k-sphere, k ≤ m, extends over a triangulated disc.",
+      "supplier": "AlgebraicTopology",
+      "section": "Stage 8"
+    },
+    {
+      "slug": "geomtop-arc-isotopy-extension",
+      "needs": "Smooth isotopy extension for a finite system of disjoint properly embedded arcs in a compact surface relative to a closed subset of the boundary, and cutting a surface along such a system.",
+      "supplier": "GeometricTopology",
+      "section": "Layer 1"
+    },
+    {
+      "slug": "geomtop-marked-disc-diffeomorphisms",
+      "needs": "The closed subgroup of Diff(D, ∂D) preserving a finite set of interior points setwise, and the identification of its group of components with the topological mapping class group of the marked disc relative to the boundary.",
+      "supplier": "GeometricTopology",
+      "section": "Layer 3"
+    },
+    {
+      "slug": "dga-internally-graded-modules",
+      "needs": "For a connected nonnegatively graded noncommutative algebra over a field, abelian categories of internally graded left and right modules (grading separate from the cohomological one, no Koszul signs), the balanced tensor product with its universal property, tensor evaluation on graded free modules, and the internal shift.",
+      "supplier": "DGAInfinity",
+      "section": "Layer 1"
+    },
+    {
+      "slug": "dga-graded-tor-spectral-sequences",
+      "needs": "Graded Tor of a right and a left module by graded free resolutions, with long exact sequences and comparison with Functor.leftDerived, the composite-functor spectral sequence for R -> R̄ -> k, and the hyperhomology spectral sequence of a bounded-below complex of right modules tensored with a left module, preserving the internal grading with finite-diagonal convergence.",
+      "supplier": "DGAInfinity",
+      "section": "Layer 5"
     }
   ],
   "sourceIssues": [
