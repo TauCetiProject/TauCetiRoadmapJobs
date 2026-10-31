@@ -2498,16 +2498,7 @@
       ]
     }
   ],
-  "gaps": [
-    {
-      "id": "ProbabilisticAndMetricNumberTheoryPartII/G1",
-      "title": "Post-snapshot Brouwer owner needs a stage-index bridge",
-      "detail": "Current upstream DifferentialGeometry Layer 10.5 already plans Brouwer; its README and Suggested.lean were read. It is not in the atlas stage index, and the checker interprets an unknown tauceti stage as a library declaration. upstreamDependencies records the exact owner, commit, signature and URL. The dependency is intentionally a recorded gap rather than a duplicate theorem or invented pinned declaration. Resolve it by registering/importing the existing upstream stage when packaging; no new Brouwer proof belongs here.",
-      "neededBy": [
-        "ProbabilisticAndMetricNumberTheoryPartII:TO.3/schauder"
-      ]
-    }
-  ],
+  "gaps": [],
   "coverage": [
     {
       "stageId": "ProbabilisticAndMetricNumberTheoryPartII:TO.0",
