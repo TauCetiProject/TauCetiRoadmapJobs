@@ -36,7 +36,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "authors' copy (GPW5.pdf); locators are theorem numbers and lines of this copy"
-cited_for = ["0.3", "0.4", "3.3", "4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.9", "4.10", "4.11", "4.14", "Source corrections"]
+cited_for = ["0.1", "0.2", "0.3", "0.4", "3.3", "4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "4.9", "4.10", "4.11", "4.14", "Source corrections"]
 
 [[source]]
 id = "CDN23"
@@ -93,4 +93,4 @@ sha256 = "5eb098c0b1f4ea47bb19ceb98074452a59162accfd68e228a8273bf8dd5fa729"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["7.3", "Scope and ownership"]
+cited_for = ["7.3"]
