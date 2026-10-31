@@ -4723,181 +4723,207 @@
   ],
   "gaps": [
     {
-      "id": "G1",
-      "title": "Nelson analytic-vector inputs",
-      "detail": "Supply original proofs or a verified alternate source for essential self-adjointness of the representation sum of squares and the smooth-vector domain intersection (NV p.28, [NS] and [NE Cor.9.3]). The NV text only cites them. No cleared original was available for this pass; their exact statements are planned, not proved from the baseline.",
+      "slug": "cotlar-stein-strong",
+      "supplier": "PseudodifferentialOperators",
+      "section": "P5. Sobolev, Lp and Hölder mapping estimates (almost-orthogonality lemma)",
+      "needs": "for a countable family of bounded operators `T_j : V₁ → V₂` between Hilbert spaces with `sup_j Σ_k ‖T_j* T_k‖^{1/2} ≤ C` and `sup_j Σ_k ‖T_j T_k*‖^{1/2} ≤ C`, the finite partial sums converge in the strong operator topology, in any enumeration, to an operator of norm at most C; norm convergence is not part of the conclusion.",
       "neededBy": [
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.0/nelson-laplacian"
+        "1.9"
       ]
     },
     {
-      "id": "G2",
-      "title": "Cotlar–Stein proof closure",
-      "detail": "NV Lemma 8.10 cites Hörmander Lemma 18.6.5; no cleared copy of that book is available. The corrected strong-convergence statement and projection countertest are explicit, but the full finite-family inequality and tail argument need a read primary proof or a complete new proof.",
+      "slug": "local-plancherel",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "Layers 0–2: local spectral extension (Plancherel formula for real and p-adic reductive groups)",
+      "needs": "for a reductive group over ℝ, ℂ or a nonarchimedean local field of characteristic zero with a fixed Haar measure, the Plancherel measure μ on the tempered dual with `f(1) = ∫ tr π(f) dμ(π)` for every smooth compactly supported f.",
       "neededBy": [
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.1/cotlar-stein"
+        "4.2",
+        "4.4",
+        "5.10"
       ]
     },
     {
-      "id": "G3",
-      "title": "Uniform minimal K-types and unitary exponents",
-      "detail": "AF.1 supplies Langlands classification but its current statement does not supply the uniform real-exponent bound or Vogan/Blattner quantitative minimal K-type estimate used in NV Lemmas 9.4–9.5. Request an AutomorphicFormsOnReductiveGroups, Part II extension for these exact bounds; no existing stage has that quantitative scope. Original Knapp/Vogan proofs were not read.",
+      "slug": "padic-plancherel-density",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "Layers 0–2: local spectral extension (Plancherel formula for real and p-adic reductive groups)",
+      "needs": "for a reductive group over a nonarchimedean local field of characteristic zero with a fixed Haar measure, on each component of the tempered dual induced from a square-integrable datum, the Plancherel measure of gap:local-plancherel is a bounded continuous density with respect to Haar measure on the compact torus of unitary unramified twists, divided by the finite stabilizer.",
       "neededBy": [
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.2/tempered-criterion",
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.2/spectral-laplacian"
+        "7.7"
       ]
     },
     {
-      "id": "G4",
-      "title": "Orbital character and continuity theorems",
-      "detail": "NV cites Ranga Rao for Radon finiteness, Harish-Chandra for the locally integrable character and Rossmann for the regular multiorbit character formula and full-fibre continuity (Theorem6.1, Lemma11.2). Original proofs and their group-class hypotheses need primary-source closure. The exact cited targets are local nodes; they are not treated as library facts. The uniform bound on the number of real orbits per invariant-quotient fibre also needs the Kostant/Whitney input cited on p.42.",
+      "slug": "tempered-xi-bounds",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "Layers 0–2: local estimates extension (Ξ-function, tempered coefficient bounds)",
+      "needs": "for a reductive group over ℝ, ℂ or a nonarchimedean local field of characteristic zero, with a maximal compact subgroup K (special maximal compact in the nonarchimedean case), Harish-Chandra's function Ξ and the Cowling–Haagerup–Howe bound `|⟨π(g)u, v⟩| ≤ Ξ(g) (dim K·u)^{1/2} (dim K·v)^{1/2} ‖u‖ ‖v‖` for K-finite vectors u, v of every tempered irreducible unitary π.",
       "neededBy": [
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.3/orbital-radon",
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.3/harish-chandra-character",
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.3/rossmann-character",
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.3/orbit-continuity"
+        "4.1",
+        "4.3"
       ]
     },
     {
-      "id": "G5",
-      "title": "Wavefront and genericity identification",
-      "detail": "The fixed-representation regular nilpotent orbit limit, maximal GK-dimension criterion and genericity equivalence use Barbasch–Vogan, Rossmann and Kostant original results cited in NV §11.4. Their proofs and real-form hypotheses need verification; this is separate from the elementary dyadic orbital-decay argument.",
+      "slug": "kernel-spectral-expansion",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "4.7 Compact quotient discrete spectral specialization",
+      "needs": "for the compact quotients of §4.7 at a fixed central quotient and fixed finite level, every smooth two-variable kernel on the quotient has an absolutely convergent spectral expansion over the irreducible constituents of the discrete spectrum, convergent with all derivatives.",
       "neededBy": [
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.3/orbital-decay"
+        "9.2"
       ]
     },
     {
-      "id": "G6",
-      "title": "Real Plancherel supplier definition absent",
-      "detail": "The extraction routes the real Harish-Chandra Plancherel theorem to the proposed AutomorphicSpectralTheoryPartIISchwartzMultipliers, which currently has no defined stage. Needed: the normalized real tempered Plancherel measure and identity on compact smooth tests. Do not fabricate a stage id or replan it here; the p-adic version has a local target because no existing stage owns it.",
+      "slug": "polynomial-eigenvalue-count",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "4.7 Compact quotient discrete spectral specialization",
+      "needs": "for the compact quotients of §4.7 at a fixed central quotient and fixed finite level, `#{π : |λ_π| ≤ x} ≪ (1 + x)^A` for the irreducible constituents π counted with multiplicity, A depending on the group and the level.",
       "neededBy": [
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.4/plancherel-sobolev",
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.4/extended-plancherel"
+        "9.2"
       ]
     },
     {
-      "id": "G7",
-      "title": "Cited harmonic-analysis proofs",
-      "detail": "Close the primary proofs of the Cowling–Haagerup–Howe tempered matrix-coefficient bound and the Harish-Chandra–Waldspurger p-adic Plancherel theorem (NV Appendix A). The NV argument proves the Xi-test extension from these inputs, not those inputs themselves.",
+      "slug": "orbit-restriction-sobolev",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "4.7 Compact quotient discrete spectral specialization",
+      "needs": "for the compact quotients of §4.7 and a closed subgroup H whose orbit `[H]` in the quotient is closed, the restriction of smooth automorphic functions to `[H]` is bounded from a fixed Sobolev norm on the quotient to `L²([H])`, compatibly with differentiation along H.",
       "neededBy": [
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.4/uniform-k-types",
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.4/padic-plancherel"
+        "9.2"
       ]
     },
     {
-      "id": "G8",
-      "title": "GGP supplier has no stages",
-      "detail": "GanGrossPrasadConjecturesForClassicalGroups is a proposed owner without a roadmap definition. Required contracts: precise orthogonal/unitary pairs including low rank and restriction of scalars; characteristic-polynomial/Pfaffian ev conventions; isotropic eigenvector/Hilbert–Mumford criterion; spherical moment-map dominance; local integral Xi_G|H Xi_H convergence; multiplicity one, strong multiplicity one for full square-integrable inductions, upper-semicontinuity and p-adic positivity/nonvanishing of relative characters; and the normalized global period factorization. These are imported inputs, not new local GGP proofs. Its future stages must be linked before closure.",
+      "slug": "unitary-exponent-bound",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "2.4 Temperedness, discrete series and Langlands quotients",
+      "needs": "for a real reductive group G, a bound, depending only on G, on the real parts of the Langlands exponents of all irreducible unitary representations.",
       "neededBy": [
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.5/relative-fibres",
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.5/stable-criterion",
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.5/stable-torsor",
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.5/three-volume-comparison",
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.4/relative-character",
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.7/l-components",
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.7/central-approximation",
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.9/period-functional"
+        "2.3"
       ]
     },
     {
-      "id": "G9",
-      "title": "Stable torsor scheme and Witt bridge",
-      "detail": "The pointwise cyclic-vector proof in NV §14 must be lifted to the stated algebraic principal-bundle theorem: smoothness, scheme fibre identification and descent require a precise affine reductive quotient and Witt-extension/Pfaffian-orientation interface. ReductiveGroupsPartIII:RG3.0 currently concerns group conjugacy quotients, not this Lie-algebra H-action. Propose ReductiveGroups, Part II/III extension rather than claiming that stage supplies affine GIT.",
+      "slug": "vogan-minimal-ktype",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "2.4 Temperedness, discrete series and Langlands quotients",
+      "needs": "for a real reductive group G with maximal compact K, Vogan's minimal K-type estimate: every irreducible unitary π has a K-type τ with `|τ|² ≤ C(1 + |λ_π|²)` for the Casimir norm, C depending only on G.",
       "neededBy": [
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.5/stable-torsor"
+        "2.4"
       ]
     },
     {
-      "id": "G10",
-      "title": "Normalized affine form primary proof",
-      "detail": "NV Lemma16.4 invokes Rossmann Lemma C for the exact quotient-versus-symplectic normalization. The Cartan computation is recorded, but the original global regular-form argument has not been read; supply it and the invariant top-form interface before declaring the volume comparison closed.",
+      "slug": "orthogonal-multiplicity-one",
+      "supplier": "GanGrossPrasadUnitaryGroups",
+      "section": "Scope and ownership (orthogonal endpoints of GanGrossPrasadUnitaryGroups, Part II): counterpart of §2.6",
+      "needs": "the counterpart of §2.6: over a local field of characteristic zero, for irreducible smooth representations π of G and σ of H (Casselman–Wallach at archimedean places), `dim Hom_H(π ⊗ σ̄, ℂ) ≤ 1`.",
       "neededBy": [
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.5/normalized-affine-form"
+        "9.1"
       ]
     },
     {
-      "id": "G11",
-      "title": "Real coarea and invariant forms interface",
-      "detail": "The baseline has measure integrals but the exact manifold determinant-form/coarea theorem for these algebraic quotient maps has not been matched to a pinned declaration or a precise DifferentialGeometry layer. Link the current DifferentialGeometry owner after checking its full target statement; do not replace the needed normalized Fubini theorem by an arbitrary measure disintegration.",
+      "slug": "orthogonal-xi-integrability",
+      "supplier": "GanGrossPrasadUnitaryGroups",
+      "section": "Scope and ownership (orthogonal endpoints of GanGrossPrasadUnitaryGroups, Part II): counterpart of §2.7",
+      "needs": "the counterpart of §2.7: over a local field of characteristic zero, `∫_H Ξ_G(h) Ξ_H(h) (1 + log‖h‖)^d dh < ∞` for every d ≥ 0, so that `∫_H ⟨π(h)v, v′⟩⟨σ(h)w, w′⟩ dh` converges absolutely for smooth vectors of tempered irreducible unitary π of G and σ of H.",
       "neededBy": [
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.5/fibral-forms",
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.5/stable-disintegration"
+        "4.5",
+        "6.3"
       ]
     },
     {
-      "id": "G12",
-      "title": "Complex Plancherel Tauberian step",
-      "detail": "Lemma17.4 gives a sketch, not uniform upper/lower approximations of 1_U with tail control. Complete a positive sandwich or explicit complex Plancherel-density proof with the normalized affine constant and boundary-null hypothesis. The statement is not generalized to arbitrary real groups.",
+      "slug": "orthogonal-local-period-form",
+      "supplier": "GanGrossPrasadUnitaryGroups",
+      "section": "Scope and ownership (orthogonal endpoints of GanGrossPrasadUnitaryGroups, Part II): counterpart of §3.3",
+      "needs": "the counterpart of §3.3 in codimension one: over a local field of characteristic zero, for tempered irreducible unitary π of G and σ of H, the absolutely convergent integral `∫_H ⟨π(h)v, v′⟩⟨w, σ(h)w′⟩ dh` defines a continuous Hermitian form on `π^∞ ⊗ σ̄^∞`, invariant under H in each variable, which is nonzero exactly when `Hom_H(π ⊗ σ̄, ℂ) ≠ 0`.",
       "neededBy": [
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.5/complex-plancherel-scaling"
+        "4.5"
       ]
     },
     {
-      "id": "G13",
-      "title": "Good compact-open basis",
-      "detail": "Need a neighborhood basis of good J normal in K and satisfying the simultaneous Iwahori factorizations of NV §23.2. RG2.3 plans parahoric congruence subgroups but not that exact simultaneous assertion. Propose the additional ReductiveGroupsPartII contract and verify Casselman lifting from SR.2; ordinary compact openness is insufficient.",
+      "slug": "orthogonal-period-factorization",
+      "supplier": "GanGrossPrasadUnitaryGroups",
+      "section": "Scope and ownership (orthogonal endpoints of GanGrossPrasadUnitaryGroups, Part II): counterpart of §4.2",
+      "needs": "the counterpart of §4.2: over a number field, for irreducible cuspidal automorphic representations Π of G and Σ of H with restricted tensor factorizations and nonzero period `∫_{[H]} φ ψ̄`, the period factors as a nonzero constant times a product over places of local H-invariant functionals, through multiplicity one at every place.",
       "neededBy": [
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.7/good-level-invariants"
+        "9.1"
       ]
     },
     {
-      "id": "G14",
-      "title": "General p-adic tempered and centre contracts",
-      "detail": "The SR.3 stage is an appropriate supplier direction, but its current concrete Part II centre nodes are GLn-specific. Supply the requested characteristic-zero classical-group tempered induction, finite constituent and real Bernstein-centre interfaces, plus fixed-level finiteness of l-families. Until the contract is made into exact nodes the allowability chain remains requested.",
+      "slug": "induced-multiplicity-one",
+      "supplier": "GanGrossPrasadUnitaryGroups",
+      "section": "2.6 Multiplicity one in every relevant odd codimension",
+      "needs": "for codimension-one unitary and orthogonal pairs (G, H) over a p-adic field, a tempered irreducible π of G and a square-integrable representation τ of a Levi subgroup M = M_P of H, the full normalized induction `I = Ind_P^H τ` satisfies `dim Hom_H(π ⊗ Ī, ℂ) ≤ 1`, so each fibre of the inducing-datum map contains at most one π-distinguished tempered representation.",
       "neededBy": [
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.7/l-components",
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.7/central-approximation"
+        "7.5"
       ]
     },
     {
-      "id": "G15",
-      "title": "Schwartz kernel and continuous disintegration",
-      "detail": "AS.0/vector-schwartz already records an unresolved locally convex kernel identification. Need the real Schwartz-kernel theorem on g* times the fixed-level compact quotient, positivity on all product tests, and equivariant convolution regularization of the Radon–Nikodym representatives. RMK alone supplies neither the kernel nor pointwise continuous conditional measures.",
+      "slug": "distinction-upper-semicontinuity",
+      "supplier": "GanGrossPrasadUnitaryGroups",
+      "section": "2.6 Multiplicity one in every relevant odd codimension",
+      "needs": "for codimension-one unitary and orthogonal pairs over a p-adic field and fixed tempered π of G, `σ ↦ dim Hom_H(π ⊗ σ̄, ℂ)` is upper semicontinuous on each family of tempered representations of H normally induced from unitary unramified twists of one square-integrable datum.",
       "neededBy": [
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.8/state-disintegration"
+        "7.5"
       ]
     },
     {
-      "id": "G16",
-      "title": "Regular nilpotent real criterion",
-      "detail": "LieHighestWeightPartII:N0 supplies algebraically closed adapted triples, not Kostant regular-real-nilpotent simple-root nonvanishing or the real-form descent used in NV Lemma27.5. Supply this precise primary proof and the equal-rank step of Lemma27.12; the local rigidity target is explicitly planned here.",
+      "slug": "relative-character-positivity",
+      "supplier": "GanGrossPrasadUnitaryGroups",
+      "section": "3.3 Regularized tempered Bessel forms",
+      "needs": "for codimension-one unitary and orthogonal pairs over a p-adic field and tempered irreducible unitary π of G and σ of H, the local relative character `H_σ(v₁ ⊗ v̄₂) = Σ_{u ∈ B(σ)} ∫_H ⟨π(s)v₁, v₂⟩⟨u, σ(s)u⟩ ds` (B(σ) an orthonormal basis of σ consisting of vectors fixed by compact open subgroups, inner products linear in the first variable), extended linearly to finite-rank smooth operators, is nonnegative on positive operators, and nonzero on some rank-one positive operator whenever σ is π-distinguished.",
       "neededBy": [
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.8/regular-nilpotent-rigidity"
+        "4.5",
+        "7.7"
       ]
     },
     {
-      "id": "G17",
-      "title": "Algebraic Cartan connectedness proof",
-      "detail": "The current LieGroups universal-cover layer assumes topological simple connectedness of a Lie group and does not imply connectedness of real points of an algebraically simply connected semisimple group. Supply the cited É.Cartan theorem or a verified algebraic-real-groups proof for the QO.8 target.",
+      "slug": "local-spinor-images",
+      "supplier": "OrthogonalSpinGroups",
+      "section": "Layer 2: local topology, transvections, and local spinor norms (2F, anisotropic rows extended to every finite extension of ℚ_p)",
+      "needs": "for an anisotropic nondegenerate quadratic space V over a finite extension F_v of ℚ_p (so dim V ≤ 4), the image `θ_v(SO(V)(F_v)) ⊆ F_v^×/F_v^{×2}` of the spinor norm: the image of the norm group of `F_v(√(−disc V))`, of index 2, when dim V = 2, and all square classes when dim V is 3 or 4.",
       "neededBy": [
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.8/real-algebraic-connectedness"
+        "8.7"
       ]
     },
     {
-      "id": "G18",
-      "title": "Measure-classification bridge",
-      "detail": "GN.4 supplies Ratner measure classification in a connected real lattice quotient. Need ergodic decomposition at the fixed adelic finite level, the relevant Borel-density statement for the homogeneous subgroup and the proof that its Zariski closure is reductive under global anisotropy. These extensions are not in the quoted Ratner node and must be assigned precise GN.4/AdelicAlgebraicGroups supplier nodes.",
+      "slug": "global-spinor-image",
+      "supplier": "OrthogonalSpinGroups",
+      "section": "Layer 3: localization and adelic points",
+      "needs": "for a nondegenerate quadratic space V of dimension at least 3 over a number field F, Kneser's theorem that `θ(SO(V)(F))` consists of the classes of `c ∈ F^×` with `c ∈ θ_v(SO(V)(F_v))` for every place v.",
       "neededBy": [
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.8/unipotent-invariant-measures"
+        "8.7"
       ]
     },
     {
-      "id": "G19",
-      "title": "Arithmetic component images over general number fields",
-      "detail": "Import the current OrthogonalSpinGroups Layer2F–2H tables for R and Qp without replanning them. Extend those contracts to finite extensions of Qp and complex places as needed for general F. Supply the global Kneser spinor-image equality theta(G(F))=F^times intersect theta(G(A)), its sign/weak-approximation use, and the local SU determinant-kernel argument. None follows from the pinned abstract Spin-kernel theorem or AA.4 alone. The binary norm subgroup and self-twist exclusion are retained.",
+      "slug": "unitary-xi-polynomial-tail",
+      "supplier": "GanGrossPrasadUnitaryGroups",
+      "section": "2.7 Adjacent tempered integrability: polynomially weighted form",
+      "needs": "over ℝ or ℂ, for a codimension-one unitary pair H = U(W) ⊂ G = U(V) (split or nonsplit), there is η > 0 depending only on the pair with `∫_H Ξ_G(h) Ξ_H(h) |h|^η dh < ∞`, `|h| = max(‖R(h)‖, ‖R(h^{−1})‖)` the algebraic norm of §5.8.",
       "neededBy": [
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.8/component-comparison"
+        "6.3"
       ]
     },
     {
-      "id": "G20",
-      "title": "Smooth compact-quotient spectral estimates",
-      "detail": "AS.4/compact-quotient-spectrum supplies a discrete Hilbert sum with finite multiplicities and smooth convolution kernels. Its statement does not yet give the arbitrary smooth two-variable absolute spectral expansion, polynomial elliptic eigenvalue counting and differentiated restriction estimates required in NV §29.1–§29.2 pp.189–190. The AS.4 supplier packet itself leaves compact-quotient Sobolev trace-class input open. Request these precise estimates as an AutomorphicSpectralTheory extension, with a fixed central quotient and fixed finite auxiliary level, before closing the period Parseval or truncation argument.",
+      "slug": "orthogonal-xi-polynomial-tail",
+      "supplier": "GanGrossPrasadUnitaryGroups",
+      "section": "Scope and ownership (orthogonal endpoints of GanGrossPrasadUnitaryGroups, Part II): counterpart of §2.7, polynomially weighted form",
+      "needs": "the counterpart of gap:unitary-xi-polynomial-tail: over ℝ or ℂ, for a codimension-one special orthogonal pair H ⊂ G, there is η > 0 depending only on the pair with `∫_H Ξ_G(h) Ξ_H(h) |h|^η dh < ∞`, `|h|` the algebraic norm of §5.8.",
       "neededBy": [
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.9/period-parseval",
-        "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups:QO.9/spectral-truncation"
-      ],
-      "addedBy": "REV-DESIGN-QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups"
+        "6.3"
+      ]
+    },
+    {
+      "slug": "hilbert-mumford-linear",
+      "supplier": "AlgebraicModuliForArithmeticGeometry",
+      "section": "GIT extension: reductive group quotients of affine varieties (stability, Hilbert–Mumford criterion, free stable quotients)",
+      "needs": "for a reductive group H over an algebraically closed field of characteristic zero acting linearly on a finite-dimensional vector space M, a point x ∈ M fails to be H-stable (its stabilizer is infinite or its orbit is not closed) if and only if some nontrivial cocharacter γ of H has only nonnegative weights on x, that is, `lim_{t→0} γ(t)·x` exists.",
+      "neededBy": [
+        "5.2"
+      ]
+    },
+    {
+      "slug": "free-stable-quotient-bundle",
+      "supplier": "AlgebraicModuliForArithmeticGeometry",
+      "section": "GIT extension: reductive group quotients of affine varieties (stability, Hilbert–Mumford criterion, free stable quotients)",
+      "needs": "for a reductive group H over an algebraically closed field of characteristic zero acting on an affine variety M, the invariant ring is finitely generated, the affine quotient `M → M//H` is surjective and universal for H-invariant morphisms, the H-stable locus `M^s` and its image are open, and when every point of `M^s` has trivial stabilizer the map `M^s → M^s//H` is a principal H-bundle, locally trivial in the étale topology.",
+      "neededBy": [
+        "5.3"
+      ]
     }
   ],
   "sourceIssues": [
