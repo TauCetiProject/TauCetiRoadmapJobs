@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-OperatorAlgebraDynamics~4",
+    "head": "c0af8793ac39e114e2a41fecec8d19e942dac589",
+    "pr": 1097,
+    "folder": "OperatorAlgebraDynamics",
+    "date": "2026-10-31",
+    "findings": 7,
+    "blocking": 1,
+    "notes": "Full re-review of the repaired head. Previous review's nine findings all repaired (gaps replace the two UPWARD supplier sentences; QF4 owns the Segal-field closure, agreeing with the QF4/RQFT heads; sorried-data def and padding deleted; IsKMS for all real beta; Checks on the new D5/D8 material; locators fixed). Gate at c0af879 all 0, build OK; depcheck rerun 0 problems; lake env lean gives only the four sorry warnings; all six signatures #checked, one-tactic battery fails on all four sorried theorems; uIcc/uIoo degenerate cases proved. Seeded sample of 15 locators verified in the texts (Attal fetched from the author page: Def 8.4, Prop 8.5, Cor 8.6, Def 8.20, (8.17)/(8.18), Prop 8.21, Prop 8.23; Williams 4.1, 5.9, 7.13, 7.18; Sims 4.2.3, 4.2.7, 4.3.2, 4.3.3; Takeishi 5.4; Sims-Williams 13, 17; Muhly-Williams 5.5, 7.8). Adversarial table of 30 rows: Fock Weyl operators on exponential vectors, generator, commutator phase, vacuum variance, CAR/Bogoliubov Checks, D5 Checks, KMS degenerate cases all recomputed and correct. One P2: two declared gaps are compound (von-neumann-crossed-products bundles V8/V11 crossed products for D2 with V11 Plancherel/biduality for D4; measurable-hilbert-fields bundles V4.0.Fields with V4.0.Decomposition across SA-B85); repair is to split the slugs. P3: gaps have no plan.json for the intake; Attal (8.18) is p. 19; QF4 duplicates the Fock Weyl strong-continuity target; sibling revision #1137 differs at line 12; unused hypotheses; Checks only on new material. Bratteli-Robinson and Renault paywalled, cited by locator."
+  }
+}
