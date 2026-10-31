@@ -1,0 +1,138 @@
+schema = "tauceti-roadmap-sources/v1"
+
+[[source]]
+id = "CG20"
+authors = "Frank Calegari and David Geraghty"
+title = "Minimal modularity lifting for nonregular symplectic representations"
+year = 2020
+locator_scheme = "section"
+locator = "Sections 5.2, 5.5, 6.1, 7.1, 8.1-8.5, 8.7"
+url = "https://www.math.uchicago.edu/~fcale/papers/Siegel.pdf"
+fetched_from = "https://www.math.uchicago.edu/~fcale/papers/Siegel.pdf"
+fetched_at = "2026-10-24T04:27:34Z"
+sha256 = "fff305877c7e6b9d32ca9a8b4a56f7f3b343695fc737184d1a3a1b78f195cfa5"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Duke Mathematical Journal 169 (2020), 801–896; author typeset copy, internal page N = journal page 800+N"
+cited_for = ["Layers 1-9"]
+
+[[source]]
+id = "P20"
+authors = "Vincent Pilloni"
+title = "Higher coherent cohomology and p-adic modular forms of singular weights"
+year = 2020
+locator_scheme = "section"
+locator = "§4, pp. 16–19; §5.1.3, p. 21; Theorem 6.1.5.1, pp. 29–30; §§6.2–6.4, pp. 30–37, including Lemma 6.3.1.1, p. 30, and Remark 6.4.1, p. 37; §7, pp. 38–40; §8.2, p. 53; §§10.1–10.4, pp. 57–63, including Lemmas 10.3.2–10.3.4; §11.2, pp. 69–71; §13.3.1, p. 89; §14.8, p. 101; §14.9, pp. 103–104"
+url = "https://www.imo.universite-paris-saclay.fr/~pilloni/complexhidatheorygsp4.pdf"
+fetched_from = "https://www.imo.universite-paris-saclay.fr/~vincent.pilloni/complexhidatheorygsp4.pdf"
+fetched_at = "2026-10-24T04:27:52Z"
+sha256 = "4c05724efeab1dbbb108f980ec9a722127d2a8cd2abf6e8c2a6a2251cf0f9f58"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Duke Mathematical Journal 169 (2020), 1647–1807; author version 17 June 2019, 113 pp.; journal revision not compared"
+cited_for = ["Layers 1-9"]
+
+[[source]]
+id = "Y16"
+authors = "Takuya Yamauchi"
+title = "The weight reduction of mod p Siegel modular forms for GSp4"
+year = 2016
+arxiv = "1410.7894v5"
+locator_scheme = "section"
+locator = "Equation (3.27), p. 18; Propositions 3.9, 3.11, 3.12, equation (3.35), Remark 3.13 and the Fourier computation, pp. 21–24; Theorems 4.7 and 4.9, pp. 38–39"
+url = "https://arxiv.org/abs/1410.7894v5"
+fetched_from = "https://arxiv.org/pdf/1410.7894v5"
+fetched_at = "2026-10-24T04:27:56Z"
+sha256 = "1fe3e4cf26907fae70b05a209e79cdff42aac93cff6410f98438fe7c89373c39"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv:1410.7894v5, 30 August 2016; numbering of v5; no claim about published renumbering"
+cited_for = ["Layers 1-9"]
+
+[[source]]
+id = "P12"
+authors = "Vincent Pilloni"
+title = "Sur la théorie de Hida pour le groupe GSp2g"
+year = 2012
+locator_scheme = "section"
+locator = "§1.1, p. 336, weight and unipotent conventions; §4.1.3, pp. 351–352, Definition 4.3; §4.2.1–4.2.2, pp. 353–356, frame and character comparison"
+url = "https://www.numdam.org/article/BSMF_2012__140_3_335_0.pdf"
+fetched_from = "https://www.numdam.org/article/BSMF_2012__140_3_335_0.pdf"
+fetched_at = "2026-10-24T04:27:58Z"
+sha256 = "605f046df3f91c6405fa5b18d377e0ef3eb913398220238291a76bc16ed266c2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Bulletin de la Société Mathématique de France 140 (2012), 335–400"
+cited_for = ["Layers 1-9"]
+
+[[source]]
+id = "K75"
+authors = "Neal Koblitz"
+title = "p-adic variation of the zeta-function over families of varieties defined over finite fields"
+year = 1975
+locator_scheme = "section"
+locator = "Chapter IV, Lemma 13 and its corollary, pp. 191–192, dual-basis normalization; Chapter IV, §11, p. 193, genus-two local singularities"
+url = "https://www.numdam.org/article/CM_1975__31_2_119_0.pdf"
+fetched_from = "https://www.numdam.org/article/CM_1975__31_2_119_0.pdf"
+fetched_at = "2026-10-24T04:27:59Z"
+sha256 = "da8f16af7a9ae10ea7c872e0f34d36cd265284e6de5eef08e45e8f6ba60b117f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Compositio Mathematica 31 (1975), 119–218"
+cited_for = ["Layers 1-9"]
+
+[[source]]
+id = "B15"
+authors = "George Boxer"
+title = "Torsion in the coherent cohomology of Shimura varieties and Galois representations"
+year = 2015
+locator_scheme = "section"
+locator = "Theorem 4.5.4(3), printed pp. 122–123; Theorems 6.2.2–6.2.3, printed pp. 188–190"
+url = "https://www.ma.imperial.ac.uk/~gboxer/thesis.pdf"
+fetched_from = "https://www.ma.imperial.ac.uk/~gboxer/thesis.pdf"
+fetched_at = "2026-10-24T04:28:02Z"
+sha256 = "14b7b7a72d3db86fe6586ccb2f7b538348bb3a166b49aa846a04aefef11dbe40"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Harvard PhD thesis, 2015; public author copy, printed pagination seven below PDF page"
+cited_for = ["Layers 1-9"]
+
+[[source]]
+id = "T06"
+authors = "Jacques Tilouine"
+title = "Siegel varieties and p-adic Siegel modular forms"
+year = 2006
+locator_scheme = "theorem"
+locator = "Definition 3.1, Propositions 3.2-3.3, pp. 805-810"
+url = "https://ems.press/content/book-chapter-files/27485?nt=1"
+fetched_from = "https://ems.press/content/book-chapter-files/27485?nt=1"
+fetched_at = "2026-10-24T04:28:22Z"
+sha256 = "a257a1dfd9a8d89c43ae60b10d122ae8f7189a897cda455ead514dffd16dfcd9"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Documenta Mathematica, Extra Volume Coates (2006), 781–817"
+cited_for = ["Layers 1, 4, 9"]
+
+[[source]]
+id = "Stacks"
+authors = "The Stacks project authors"
+title = "The Stacks project, Chapter Morphisms of Schemes"
+year = 2026
+version_note = "Chapter Morphisms of Schemes, version ed88ff78 compiled 14 July 2026; Tag 0CNF is Lemma 47.9 of that chapter in this version; tags are stable"
+locator_scheme = "tag"
+locator = "0CNF"
+url = "https://stacks.math.columbia.edu/tag/0CNF"
+fetched_from = "https://stacks.math.columbia.edu/download/morphisms.pdf#nameddest=0CNF"
+fetched_at = "2026-10-25T04:20:18Z"
+sha256 = "0bebe1d93baa7e4e99cb4f36fe50c7bcb6094772b8a2f760885a492892eca75f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["4.4"]
