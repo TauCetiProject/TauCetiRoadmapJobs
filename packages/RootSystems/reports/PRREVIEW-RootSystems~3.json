@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-RootSystems~3",
+    "head": "e39b394c8e1d0d20119966eaf52baab64743fbb3",
+    "pr": 1196,
+    "folder": "RepresentationTheory/RootSystems",
+    "date": "2026-11-01",
+    "findings": 11,
+    "blocking": 6,
+    "notes": "Full read-only review. Seeded Scope boundary ownership checked on main; it has no theorem/page locator. 92 adversarial rows, including an infinite crystallographic counterexample to lowering; 65 main and two companion signatures checked. Gate FAIL: eight sorry-data definitions. Main Lean elaboration passed with only 43 sorry warnings. Dependency check: 204 roadmaps, 1485 edges, zero problems. Pinned-library and cross-roadmap ownership, padding, legal SGA 3/Milne/Humphreys source texts checked; unavailable texts recorded separately."
+  }
+}
