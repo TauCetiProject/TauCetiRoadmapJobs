@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ColemanPowerSeries~1",
+    "head": "93d1d200c4980afa395c31df9f33419f35a2a425",
+    "pr": 1309,
+    "folder": "ColemanPowerSeries",
+    "date": "2026-11-01",
+    "findings": 7,
+    "blocking": 3,
+    "notes": "Reviewed all 483 numbered sections and six Lean declarations; computed adversarial rows for every numbered section and checked all 15 seeded source targets. Coleman and Coates–Sujatha remain uncertified because their texts are paywalled. Direct Lean elaboration passed with three sorry warnings; six elaborated signatures checked and three one-tactic probes performed. Dependency check: 205 roadmaps, 1476 edges, 0 problems. Supplied push gate fails residue=483 (HTML anchors); other failure counters are zero. Ownership checked against pinned libraries, main, board packages and indexed open heads. Three blocking ownership findings; PR worktree unchanged."
+  }
+}
