@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-WeilConjectures~1",
+    "head": "d90e1866ff4d5d269672cba692a004f96f1a0938",
+    "pr": 1208,
+    "folder": "WeilConjectures",
+    "date": "2026-11-01",
+    "findings": 8,
+    "blocking": 3,
+    "notes": "Full folder review with 129 computed adversarial rows. Seeded Chow presentation: Fulton–Sturmfels Proposition 1.1/equation (1.1) and Fujino–Sato Example 4.1 verified; Fulton book unavailable legally. Gate fails residue=1 (README HTML anchor); independent Lean elaboration passes with nine sorry warnings, all eleven signatures checked, nine padding probes remain unsolved. Dependency check: 205 roadmaps, 1447 edges, 0 problems. Pinned libraries, main/open-head ownership and supplier citations checked. Three P2 findings cover duplicated descent/Fatou, duplicated factor extraction, and route-specific integral toric construction. Worktree unchanged."
+  }
+}
