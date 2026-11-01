@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-VectorBundlesAndIsocrystals~1",
+    "head": "c380d7d796c85b59e8b968ee688b3f76078c34f3",
+    "pr": 1205,
+    "folder": "VectorBundlesAndIsocrystals",
+    "date": "2026-11-01",
+    "findings": 7,
+    "blocking": 2,
+    "notes": "Reviewed 136 target blocks and all 31 API blocks because the seeded sample repeats the nonunique label API fifteen times. Computed adversarial table and four elaborated signatures; original Lean elaboration passes with only sorry. One-tactic padding probes fail. Dependency check: 205 roadmaps, 1453 edges, 0 problems. Supplied gate fails residue=136 and layer-ids=2; both reported. Eleven source works/twelve texts fetched legally. False topological closed-image claim and duplicated twisted local-system ownership require changes. No worktree edits."
+  }
+}
