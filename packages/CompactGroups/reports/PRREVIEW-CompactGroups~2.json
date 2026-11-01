@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-CompactGroups~2",
+    "head": "a020ae2362b85638922f2e76044db081f727ec02",
+    "pr": 1047,
+    "folder": "RepresentationTheory/CompactGroups",
+    "date": "2026-11-01",
+    "findings": 15,
+    "blocking": 7,
+    "notes": "Full six-file review; seven seeded targets checked with explicit source-access limits; 74 named signatures elaborated, 29 admission probes, computed tables; gate fails (options, residue, identifiers, twenty linter warnings), targeted build and direct elaboration succeed; dependency checker reports 204 roadmaps/1481 edges/0 problems, manual supplier drift found."
+  }
+}
