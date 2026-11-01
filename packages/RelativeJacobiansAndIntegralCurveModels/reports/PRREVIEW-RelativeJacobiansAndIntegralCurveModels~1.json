@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-RelativeJacobiansAndIntegralCurveModels~1",
+    "head": "25f1d2dbb6379820d4626a4396ed34b4b4a78cf3",
+    "pr": 1232,
+    "folder": "RelativeJacobiansAndIntegralCurveModels",
+    "date": "2026-11-01",
+    "findings": 4,
+    "blocking": 1,
+    "notes": "Full review of 30 target subsections and seven Lean declarations; all 15 seeded source targets verified against legal text/images; 77 adversarial computation rows. Worker gate passes; independent Lean elaboration passes with six expected sorry warnings; all seven signatures checked, no dropped binders; one-tactic padding probes found none. Native two-chart cohomology signature elaborates but is absent from the acceptance test (P2). Dependency check: 205 roadmaps, 1467 edges, 0 problems. Ownership and supplier contracts checked; three P3 form/locator findings. No missing source request; one source misprint recorded. PR worktree unchanged."
+  }
+}
