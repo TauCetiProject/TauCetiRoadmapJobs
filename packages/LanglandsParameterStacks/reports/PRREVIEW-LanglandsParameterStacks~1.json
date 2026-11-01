@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-LanglandsParameterStacks~1",
+    "head": "f4a8f12fc3da7efe46ea9f2bbcc800eac4d4fd5e",
+    "pr": 1202,
+    "folder": "LanglandsParameterStacks",
+    "date": "2026-11-01",
+    "findings": 7,
+    "blocking": 3,
+    "notes": "Reviewed both files and all 82 target sections; computed adversarial table covers every target. Worker sample had no identifiers, so a reproducible 15-target replacement sample was checked against legal texts. Gate fails only target-ids=82; targeted build and independent direct Lean elaboration pass. Independent depcheck: 205 roadmaps, 1446 edges, 0 problems. Pinned declarations and main/open supplier ownership checked; unavailable primary texts listed separately. No PR files changed."
+  }
+}
