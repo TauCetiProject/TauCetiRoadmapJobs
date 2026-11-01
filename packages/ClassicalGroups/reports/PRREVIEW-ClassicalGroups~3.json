@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ClassicalGroups~3",
+    "head": "402b5cbd389416de974641ee2e77bb63d9553e6f",
+    "pr": 1192,
+    "folder": "RepresentationTheory/ClassicalGroups",
+    "date": "2026-11-01",
+    "findings": 10,
+    "blocking": 6,
+    "notes": "Full seven-file review and individual reassessment of all 14 previous findings. Worker gate passes; independent dependency check: 204 roadmaps, 1492 edges, 0 problems. Suggested elaborates with eight sorry warnings. All 43 retained declarations signature-checked; 13 admissions probed. Adversarial tables record 126 README instances and 43 Lean declarations, including 361 exact contraction tests and 25 full U(3) weight convolutions. All 15 seeded source targets examined against accessible texts; unavailable or partial sources identified. Main, supplied open-head ownership, and pinned declarations audited. PR worktree unchanged."
+  }
+}
