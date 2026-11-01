@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ArtinAlgebras~2",
+    "head": "472e13c8324cb89670efc2e87dbc4572d699065f",
+    "pr": 1397,
+    "folder": "RepresentationTheory/ArtinAlgebras",
+    "date": "2026-11-01",
+    "findings": 11,
+    "blocking": 6,
+    "notes": "Full re-review: all six prior findings reassessed; all 15 seeded targets examined; 73 adversarial value rows; 19 sources attempted (10 readable, 6 unavailable, 3 settled uncertified). Exact-head gate fails imports=1, readme-ids-missing=5, build=2. Direct Lean and targeted build exit 0, but targeted build reproduces two non-sorry module-system warnings. All 24 signatures checked; 16 admitted theorem padding probes remain admitted. Dependency check: 205 roadmaps, 1488 edges, 0 problems. Pinned-library and main/open-head/board ownership audits completed; PR files unchanged."
+  }
+}
