@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpectralManifolds~1",
+  "head": "5c086d22a0537a2db8ef2abe36dd290d542d3e64",
+  "pr": 1158,
+  "folder": "SpectralManifolds",
+  "date": "2026-11-01",
+  "findings": 5,
+  "blocking": 1,
+  "notes": "Gate passes (worker's run and my depcheck: 0 problems; OperatorKTheory #866 and IndexTheory #1077 are cited suppliers absent from ORDER.txt and main, checked by hand for a back-citation: none). 17 locators verified in connes08, dd10, cacic12, cacic11 and voiculescu79 (OCR of the JOT archive copy). Adversarial table with 40 rows of computed values: KO sign tables, all four real-product branches over 32 (n1,n2) cases, odd/odd swap phases, product-volume table, shuffle constants, smooth-measure identity, Weyl/Dixmier constants, SM6 realness; no false statement found. Supplier citations resolved at main fa41b37 and at the named heads; VonNeumannAlgebras citations resolve only at #889, not #1041. Pin checks at Mathlib 6b7abb3c / Tau Ceti a91d3aaf: no Frechet open mapping theorem, no WithSeminorms metrizability lemma, no trace class, finite-dimensional singular values only; mulVecLin_transpose, IsStarProjection, hilleYosida_generation_iff, LinearPMap.resolvent exist as cited. One-tactic probe: four of five sorried theorems close in one to three lines. P2: Suggested.lean states no headline; the Frechet open mapping theorem (SM3) is statable at the pins and absent, and every stated theorem is API padding."
+ }
+}
