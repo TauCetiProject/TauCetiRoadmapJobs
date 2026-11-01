@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-DGFloer~8",
+    "head": "738ad99c96434cb736d511418f519d30ca447b0f",
+    "pr": 963,
+    "folder": "DGFloer",
+    "date": "2026-11-01",
+    "findings": 5,
+    "blocking": 3,
+    "notes": "incremental re-review of 4 changed lines since a51bf74; all six previous findings accounted for; product ownership and FHS locator repaired; six seeded targets and unchanged adversarial rows carried from review 7; six fresh computed rows, including the missing nonzero-vector hypothesis in the dependent FHS application; gate fails with three upward edges and a cycle; targeted build, direct elaboration and all eight signature checks pass; full FHS downloads unavailable."
+  }
+}
