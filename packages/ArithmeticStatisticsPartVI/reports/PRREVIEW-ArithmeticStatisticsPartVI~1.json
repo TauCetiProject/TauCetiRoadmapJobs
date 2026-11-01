@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ArithmeticStatisticsPartVI~1",
+    "head": "88461f24dffefd56c04f5db60827b58b77ee8a1e",
+    "pr": 1176,
+    "folder": "ArithmeticStatisticsPartVI",
+    "date": "2026-11-01",
+    "findings": 7,
+    "blocking": 4,
+    "notes": "Full folder review; all 15 seeded sections compared with legal source texts; 145 adversarial rows; 24 elaborated signatures and nine padding probes; four missing-headline statability probes pass; dependency check 205 roadmaps/1460 edges/0 problems. Direct Lean elaboration passes with only sorry warnings. Worker gate fails residue=130 (HTML anchors), all other rules zero. Three primary texts remain unverified, documented in the report."
+  }
+}
