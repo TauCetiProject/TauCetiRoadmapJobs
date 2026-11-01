@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-SmoothBanachRepresentations~3",
+    "head": "02994d57e6da3d4d246972200f56402c595a6da1",
+    "pr": 1145,
+    "folder": "RepresentationTheory/SmoothBanachRepresentations",
+    "date": "2026-11-01",
+    "findings": 3,
+    "blocking": 2,
+    "notes": "Full re-review; all 12 previous findings reconciled; 15 seeded source targets checked with direct/derived support distinguished; 74 computed adversarial rows; passing worker gate; depcheck 204 roadmaps, 1485 edges, 0 problems; direct Lean elaboration and all 11 signatures checked; six one-tactic padding probes did not close; scalar-parametrix statability probe passed. Casselman read legally; primary Dixmier-Malliavin locators remain not verifiable. No PR files changed."
+  }
+}
