@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-SmoothBanachRepresentations~4",
+    "head": "22d2666b03e78425f05a9d8d6ddf47fa179874d6",
+    "pr": 1145,
+    "folder": "RepresentationTheory/SmoothBanachRepresentations",
+    "date": "2026-11-01",
+    "findings": 2,
+    "blocking": 1,
+    "notes": "incremental re-review of 40 changed lines since 02994d5; all three previous findings accounted for; scalar-parametrix repair, Casselman §§4–6, 15-target seeded sample with unchanged checks carried forward, 81 adversarial rows, pinned native distributions and cross-roadmap contracts checked. Worker gate passes; full gate rerun has only exempt NOT IN ORDER diagnostic, candidate-order depcheck has 0 problems. Targeted build, direct elaboration, all 12 signatures and 21 one-tactic probes pass. Real tensor gap remains unregistered; source manifest absent (P3)."
+  }
+}
