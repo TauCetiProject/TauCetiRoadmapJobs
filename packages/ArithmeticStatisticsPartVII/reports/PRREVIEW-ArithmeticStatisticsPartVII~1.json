@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ArithmeticStatisticsPartVII~1",
+    "head": "cbcd49ef10fc025a3219e6ba5d8505c5ac149d3d",
+    "pr": 1178,
+    "folder": "ArithmeticStatisticsPartVII",
+    "date": "2026-11-01",
+    "findings": 8,
+    "blocking": 3,
+    "notes": "Full read-only review; 15 seeded source sections compared, 128 adversarial rows, pinned declarations and supplier ownership checked. Targeted imports and direct Lean elaboration passed with eight sorry warnings; all 19 signatures checked and eight one-tactic probes failed to close. Dependency check: 205 roadmaps, 1454 edges, 0 problems. Worker gate fails residue=149. Original de Jong, van Kampen, Oesterle and Pruefer access limits recorded."
+  }
+}
