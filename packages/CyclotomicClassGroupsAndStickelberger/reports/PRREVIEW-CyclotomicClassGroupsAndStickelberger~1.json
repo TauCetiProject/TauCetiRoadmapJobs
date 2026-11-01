@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-CyclotomicClassGroupsAndStickelberger~1",
+    "head": "9c9a49ab12fca9407be4df8aaabef5cf8567d52a",
+    "pr": 1260,
+    "folder": "CyclotomicClassGroupsAndStickelberger",
+    "date": "2026-11-01",
+    "findings": 4,
+    "blocking": 2,
+    "notes": "Full read-only review; all 15 seeded targets checked against accessible texts; 147 adversarial rows (143 mathematical, four finding checks); 29 elaborated signatures and 21 padding probes. Supplied gate passed; independent targeted build and direct elaboration passed with only sorry warnings. Dependency check: 205 roadmaps, 1466 edges, 0 problems. Two supplier-identifier defects block acceptance; locator and form findings are P3. Tate and Deligne-Rapoport primary texts remain uncertified. PR worktree unchanged."
+  }
+}
