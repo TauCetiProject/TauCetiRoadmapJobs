@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-OrthogonalTamagawaAndLatticeMass~1",
+    "head": "96b7c642e9963aaef9aa7fc93a3cd7b911782556",
+    "pr": 1222,
+    "folder": "OrthogonalTamagawaAndLatticeMass",
+    "date": "2026-11-01",
+    "findings": 10,
+    "blocking": 4,
+    "notes": "Full folder review. Recorded gate passes; independent Lean elaboration passed with 15 sorry warnings, all 28 explicit signatures checked, all 15 admissions probed with simp, and four missing class-count headline signatures and a rank-eight supplier control elaborated. Dependency check: 204 roadmaps, 1448 edges, 0 problems. Computed adversarial tables cover prose targets and all declarations. Worker sample IDs were absent; a reproducible 15-target replacement sample is documented. Cho v3 and Belolipetsky–Gan v2 were read through the sources service; Conway–Sloane could not be legally retrieved and is listed under Not verifiable. Pins, main suppliers, open roadmap ownership and board packages searched. No PR files changed."
+  }
+}
