@@ -1,0 +1,245 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII"
+
+[[source]]
+id = "KP18"
+locator_scheme = "section"
+locator = "§§3.1–3.3, pp.162–182, including proofs of Lemmas3.1.9,3.1.17,3.2.6,3.2.14 and Proposition3.2.17"
+url = "https://www.numdam.org/item/10.1007/s10240-018-0100-0.pdf"
+fetched_from = "https://www.numdam.org/item/10.1007/s10240-018-0100-0.pdf"
+fetched_at = "2026-10-24T20:22:38Z"
+sha256 = "e2b4a0763f216be82da950f4c0dd2800adea8a0d911b12bfacf2b7e493b4618b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["README, Layers 1, 2, 4"]
+authors = "Mark Kisin and Georgios Pappas"
+title = "Integral models of Shimura varieties with parahoric level structure"
+year = 2018
+version_note = "Publications Mathématiques de l’IHÉS 128 (2018), pp.121–218"
+
+[[source]]
+id = "KZ25"
+authors = "Mark Kisin and Rong Zhou"
+title = "Independence of ℓ for Frobenius conjugacy classes attached to abelian varieties"
+year = 2025
+arxiv = "2103.09945v2"
+locator_scheme = "section"
+locator = "arXiv v2 §§2.1–2.3 and 3.1–3.4, pp.7–28; Proposition 2.3.3, Definition 3.2.4, Proposition 3.2.7, Lemma 3.4.3, Theorem 3.4.5"
+url = "https://arxiv.org/abs/2103.09945v2"
+fetched_from = "https://arxiv.org/pdf/2103.09945v2"
+fetched_at = "2026-10-24T20:22:43Z"
+sha256 = "62d26eb931f271404c333c4b9a929e85239222788834cf16dcec1dff230c34c8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv:2103.09945v2,7 October2024,63-page author version; published Annals202 (2025)"
+cited_for = ["README, Layers 2, 4, 5, 6"]
+
+[[source]]
+id = "Kisin17"
+locator_scheme = "section"
+locator = "§§1.1–1.2, pp.5–16; proof of Proposition1.3.9, p.21; §1.4.5–Lemma1.4.6, pp.24–25; proof of Theorem2.2.3, p.32; Errata E.1–E.4, p.96"
+url = "https://people.math.harvard.edu/~kisin/dvifiles/lr.pdf"
+fetched_from = "https://people.math.harvard.edu/~kisin/dvifiles/lr.pdf"
+fetched_at = "2026-10-24T20:22:46Z"
+sha256 = "d3c19cddc9e8b073428de559a7215aae4f793490227b6c71d87477ccdb5d994a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["README, Layers 5"]
+authors = "Mark Kisin"
+title = "Mod p points on Shimura varieties of abelian type"
+year = 2017
+version_note = "Author 99-page version dated27 August2016; JAMS30 (2017),819–914; page numbers below are author pages"
+
+[[source]]
+id = "Hoff23"
+authors = "Manuel Hoff"
+title = "On parahoric (G,μ)-displays"
+year = 2023
+arxiv = "2311.00127v1"
+locator_scheme = "section"
+locator = "§1.3–1.5, pp.13–16; §2.1, pp.16–20; §2.3, pp.24–29, particularly Assumption2.28 and Theorem2.36"
+url = "https://arxiv.org/abs/2311.00127v1"
+fetched_from = "https://arxiv.org/pdf/2311.00127v1"
+fetched_at = "2026-10-24T20:22:52Z"
+sha256 = "4ada497769174b02d9229818e1120be14ccf4d5157ab8c2c87c64dd20f74b98c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv:2311.00127v1,2023,37 pages"
+cited_for = ["README, Layers 0, 1, 2, 4"]
+
+[[source]]
+id = "Anschuetz22"
+authors = "Johannes Anschütz"
+title = "Extending torsors on the punctured Spec(A_inf)"
+year = 2022
+arxiv = "1804.06356v2"
+locator_scheme = "section"
+locator = "Proposition10.3 and proof, author p.33: extension of parahoric torsors over punctured O_E[[z]]"
+url = "https://arxiv.org/abs/1804.06356v2"
+fetched_from = "https://arxiv.org/pdf/1804.06356v2"
+fetched_at = "2026-10-24T20:22:58Z"
+sha256 = "27c2e6fef2d1fd82ad825b087dbf19b1cd496b8bfc7a60ce6bdba8deaca08354"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv:1804.06356v2,21 October2020; published J. Reine Angew. Math.783 (2022),227–268"
+cited_for = ["README, Layers 2, 4"]
+
+[[source]]
+id = "Zhou20"
+authors = "Rong Zhou"
+title = "Mod p isogeny classes on Shimura varieties with parahoric level structure"
+year = 2020
+venue = "Duke Math. J. 169, no. 15 (2020), 2937-3031"
+doi = "10.1215/00127094-2020-0021"
+arxiv = "1707.09685v2"
+locator_scheme = "section"
+locator = "arXiv v2 §4.6, proof of Proposition 4.8, pp.14–15; §5.5, pp.18–19"
+url = "https://arxiv.org/abs/1707.09685v2"
+fetched_from = "https://arxiv.org/pdf/1707.09685v2"
+fetched_at = "2026-10-24T20:23:04Z"
+sha256 = "2c42c35bc35469c33cfd8a10462b8089db681c57d39b84563bc3b119bb749722"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv:1707.09685v2,February2018 author version; published2020; use v2 numbering explicitly"
+cited_for = ["README, Layer 6 central ordinary Breuil–Kisin lift and specified Levi interface"]
+
+[[source]]
+id = "Wintenberger97"
+locator_scheme = "section"
+locator = "§4.1.2, p.1320; Corollary4.4.2 and remarks, pp.1327–1329; §4.5, pp.1329–1333, particularly Proposition4.5.3 and following unnumbered corollary"
+url = "https://aif.centre-mersenne.org/item/10.5802/aif.1600.pdf"
+fetched_from = "https://aif.centre-mersenne.org/item/10.5802/aif.1600.pdf"
+fetched_at = "2026-10-24T20:23:23Z"
+sha256 = "4049036e27703b422c1fe78465aa4c5ae4ce938b532383a5c6335016687f0c64"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["README, Layers 5"]
+authors = "Jean-Pierre Wintenberger"
+title = "Propriétés du groupe tannakien des structures de Hodge p-adiques et torseur entre cohomologies cristalline et étale"
+year = 1997
+version_note = "Annales de l’Institut Fourier47 (1997),1289–1334"
+
+[[source]]
+id = "KPZ26"
+locator_scheme = "section"
+locator = "§§3.1.5,3.1.10; §§5.1–5.3, pp.47–62; §§6.1–6.3, pp.62–71; §7.1.3–7.1.6, pp.72–74; §7.3.1(2), p.86 and §7.3.2, p.87"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/6C2640CC5856BDF975AF97EE30CA7906/S2050508626100316a.pdf/div-class-title-integral-models-of-shimura-varieties-with-parahoric-level-structure-ii-div.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/6C2640CC5856BDF975AF97EE30CA7906/S2050508626100316a.pdf/div-class-title-integral-models-of-shimura-varieties-with-parahoric-level-structure-ii-div.pdf"
+fetched_at = "2026-10-24T20:23:45Z"
+sha256 = "d0438498fbe4501e6d9c0cc7cf3ea9fc02ba5e11d326f2d77dd42715658a198b"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["README, Layers 0, 1, 2, 3, 4"]
+authors = "Mark Kisin, Georgios Pappas and Rong Zhou"
+title = "Integral models of Shimura varieties with parahoric level structure, II"
+year = 2026
+version_note = "Forum of Mathematics, Pi (2026), published 89-page PDF"
+
+[[source]]
+id = "Zhu17"
+locator_scheme = "section"
+locator = "§0.3, p.410; §3.2 and proof of Proposition3.11, pp.460–463"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v185-n2-p02-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v185-n2-p02-p.pdf"
+fetched_at = "2026-10-24T20:23:47Z"
+sha256 = "5d50b415048f3a5ad14bccf1c8da83fc5a680fcf13b60911ca269daa474431a7"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["README, Layers 0, 5"]
+authors = "Xinwen Zhu"
+title = "Affine Grassmannians and the geometric Satake in mixed characteristic"
+year = 2017
+version_note = "Annals of Mathematics185 (2017),403–492"
+
+[[source]]
+id = "vanHoften24"
+locator_scheme = "section"
+locator = "Example2.2.10, p.14; §§3.1.5–3.1.7, pp.27–28; AppendixA.4.3, pp.64–65"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/EC6F7AD8C8B489FEB8FC4D64485ABE1D/S2050508624000222a.pdf/mod_p_points_on_shimura_varieties_of_parahoric_level.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/EC6F7AD8C8B489FEB8FC4D64485ABE1D/S2050508624000222a.pdf/mod_p_points_on_shimura_varieties_of_parahoric_level.pdf"
+fetched_at = "2026-10-24T20:23:49Z"
+sha256 = "d86da9a0e35c93d22df291979be37a5acf1ddc44fbd762e11f2a5f6c92961be0"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["README, Layers 0, 5, 6"]
+authors = "Pol van Hoften"
+title = "Mod p points on Shimura varieties of parahoric level"
+year = 2024
+version_note = "Forum of Mathematics, Pi12 (2024), e20, published67-page PDF"
+
+[[source]]
+id = "Lau14"
+locator_scheme = "section"
+locator = "Lemma2.4, p.2216; Theorem5.3 and Corollaries5.5–5.6, pp.2243–2244"
+url = "https://msp.org/ant/2014/8-9/ant-v8-n9-p04-p.pdf"
+fetched_from = "https://msp.org/ant/2014/8-9/ant-v8-n9-p04-p.pdf"
+fetched_at = "2026-10-24T20:23:52Z"
+sha256 = "f650eaf6a47c7e74b3d0b1007e3dd3bd2e90c32be0d3aeb4ed57bc8a517563b8"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["README, Layers 0"]
+authors = "Eike Lau"
+title = "Relations between Dieudonné displays and crystalline Dieudonné theory"
+year = 2014
+version_note = "Algebra & Number Theory8 (2014),2201–2262"
+
+[[source]]
+id = "RZ96"
+authors = "Michael Rapoport and Thomas Zink"
+title = "Period Spaces for p-divisible Groups"
+year = 1996
+doi = "10.1515/9781400882601"
+url = "https://doi.org/10.1515/9781400882601"
+locator_scheme = "theorem"
+locator = "Proposition 1.21"
+cited_for = ["README §5.3, toral weak admissibility"]
+licence_class = "none"
+status = "uncertified"
+version_note = "Published book; locator-only citation. Primary text was not read. Kisin17 author p.32 line 1455 supplies the accessible application."
+note = "The source service resolved the DOI to the publisher and JSTOR landing pages but found no legal open text; the book is cited by its published locator alone."
+
+[[source]]
+id = "RG71"
+authors = "Michel Raynaud and Laurent Gruson"
+title = "Critères de platitude et de projectivité. Techniques de platification d’un module"
+year = 1971
+doi = "10.1007/BF01390094"
+version_note = "Inventiones Mathematicae 13 (1971), 1–89; GDZ volume scan, printed page 27 is PDF page 34."
+locator_scheme = "theorem"
+locator = "I, Théorème 4.1.2, p.27"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0013/PPN356556735_0013.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0013/PPN356556735_0013.pdf"
+fetched_at = "2026-10-25T08:17:53Z"
+sha256 = "623b5e4f7182dc04bfa537ef2f656c979fcd93f7b08b179607e3cdfaab0a2a58"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Exact supplier contracts; README §2.6 flatness criterion"]
+
+[[source]]
+id = "deJong95"
+authors = "A. Johan de Jong"
+title = "Crystalline Dieudonné module theory via formal and rigid geometry"
+year = 1995
+version_note = "Publications Mathématiques de l’IHÉS 82 (1995), 5–96; printed page 88 is PDF page 85."
+locator_scheme = "theorem"
+locator = "Proposition 7.3.6, pp.89–90; Theorem 7.4.1, pp.90–91"
+url = "https://www.numdam.org/item/PMIHES_1995__82__5_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1995__82__5_0.pdf"
+fetched_at = "2026-10-25T08:18:21Z"
+sha256 = "7295b9cb11cb2fed09c139738f71d3983199373d7bf91e21f4278e9c0954cb7d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Exact supplier contracts; README §2.6 integrality detection"]

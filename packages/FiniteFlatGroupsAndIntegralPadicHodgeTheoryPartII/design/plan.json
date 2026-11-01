@@ -5298,87 +5298,88 @@
   ],
   "gaps": [
     {
-      "id": "G1",
-      "title": "Integral local-model geometry and good-embedding existence",
-      "detail": "The briefs name GeometricSatakeLocalModelsPartII, which has no registered stages or packet in this checkout. GS0 supplies bounded/Witt Grassmannians, not the required normal flat parahoric local models, minuscule Hodge immersions, reduced fibres, generic regularity or tangent spanning by curves. Supply these with the precise KPZ26 standard assumptions and their restriction/adjoint comparisons. Until then TD.2 takes a LocalModelDatum with these named properties as input; TD.3 existence conclusions and TD.6 central-filtration specialization retain this obligation.",
-      "neededBy": [
-        "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII:TD.2/tensor-datum",
-        "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII:TD.2/orbit-deformation-ring",
-        "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII:TD.3/nonexceptional-embedding",
-        "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII:TD.3/D-PEL",
-        "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII:TD.3/A-standard",
-        "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII:TD.4/dvr-factorization",
-        "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII:TD.6/central-filtration"
-      ]
+      "slug": "perfect-residue-bt-realization",
+      "needs": "Extend §R07.4.20 from finite extensions of ℚ_p to finite extensions of W(k)[1/p] for arbitrary perfect k, including F̄_p, preserving the contravariant dual-Tate convention and realization up to isogeny.",
+      "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheory",
+      "section": "R07.4.20"
     },
     {
-      "id": "G2",
-      "title": "Parahoric purity with full-fixer component descent",
-      "detail": "Current RG2.3 owns integral stabilizers and lattice realizations, but the precise extension/vanishing theorem needed here is not a supplied node. Establish H¹(SpecO_E[[u]] minus its closed point,𝒫)=1 in the strictly local perfect-residue range for connected parahoric 𝒫, or extension plus the needed base torsor triviality; keep Anschütz22 Proposition10.3’s coefficient-ring hypotheses. Treat the generic-trivial component torsor separately for a disconnected full fixer. Also export the patching theorem used for the E-adic lattice. The obsolete routed owner ReductiveGroupsPartIIGrothendieckSerre cannot be cited as an existing supplier.",
-      "neededBy": [
-        "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII:TD.2/filtration-tensor-torsor",
-        "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII:TD.4/integral-tensor-frame",
-        "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII:TD.6/central-bk-lift"
-      ]
+      "slug": "relative-crystalline-constants",
+      "needs": "For a normal Noetherian integral p-complete p-torsion-free W(k)-algebra R with R/p≠0 and the normal geometric cover of Kisin17 §1.1.15, the relative envelope of DerivedDeRhamCohomology §PD.7, with its induced Witt Frobenius and PD filtration extended by Filʳ(A_cris(R)[1/t])=∪_{n≥0}t⁻ⁿFilʳ⁺ⁿA_cris(R), satisfies (Fil⁰ A_cris(R)[1/t])^{φ=1}=ℚ_p.",
+      "supplier": "PadicPeriodRings",
+      "section": "4.3"
     },
     {
-      "id": "G3",
-      "title": "Normal-base tensor-section and flatness descent",
-      "detail": "KP18 Corollary3.2.11 invokes de Jong7.3.6 to extend integral crystalline sections over the normal base and Raynaud–Gruson4.1.2 to establish flatness of their tensor-isomorphism scheme. Pointwise tensor integrality alone does not prove the latter. Extract the exact normality, finite-presentation, flattening and completion hypotheses and attach the two distinct supplier statements before claiming the universal tilde tensor torsor is proved.",
-      "neededBy": [
-        "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII:TD.2/tilde-tensor-torsor",
-        "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII:TD.3/neutral-closure"
-      ]
+      "slug": "tensor-isomorphism-flatness-descent",
+      "needs": "Let A be a henselian local ring, X→Spec A locally of finite presentation, x a point of its closed fibre, and ℱ an O_X-module of finite type; the functor on pointed local A-schemes requiring ℱ after base change to be flat at every closed-fibre point above x is represented by a closed subscheme of Spec A, finitely presented when ℱ is finitely presented, so local maps A→A_i with intersection of kernels zero and flat pullbacks at these points imply ℱ is A-flat at x (RG71, I, Theorem 4.1.2, p.27).",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "4.12"
     },
     {
-      "id": "G4",
-      "title": "Integral Tannakian representability on the punctured disc",
-      "detail": "The required Broshi-type theorem identifies the tensor-isomorphism functor of an exact faithful Rep(𝒢) functor on the Dedekind punctured spectrum with a 𝒢-torsor, using finite-rank stable pieces of its coordinate algebra. SF.1 supplies torsor descent and representability of a torsor already known to be a torsor, not this recognition theorem. Provide the exact base and group hypotheses; do not infer it from rational Tannaka duality.",
-      "neededBy": [
-        "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII:TD.4/integral-tensor-frame",
-        "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII:TD.5/hyperspecial-tensor-frame"
-      ]
+      "slug": "formal-dvr-point-detection",
+      "needs": "For a reduced p-torsion-free complete Noetherian local O_Ĕ-algebra R with residue k, the continuous local maps R→O_K for finite K/Ĕ are jointly injective.",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "4.7–4.8"
     },
     {
-      "id": "G5",
-      "title": "Relative crystalline period comparison and constants",
-      "detail": "CR.0/fontaine-envelope supplies the ring and CR.7 supplies evaluated coefficients. Neither supplies Faltings’ relative p-divisible comparison after t inversion nor (Fil⁰ A_cris(R)[1/t])^{φ=1}=Q_p for Kisin17 §1.1.15’s normal coefficient rings. Give a primary-source proof with its exact ring range and geometric-cover hypotheses, and a lower-owner extension. A proper smooth cohomology comparison cannot substitute for it. Parallel universal crystalline tensors must be constructed using the corrected connection before this comparison is applied.",
-      "neededBy": [
-        "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII:TD.5/relative-period-comparison",
-        "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII:TD.5/global-etale-tensors"
-      ]
+      "slug": "punctured-disc-torsor-patching",
+      "needs": "Let A=O[[u]] for a complete mixed-characteristic DVR O and let f∈A be a non-zero-divisor with (p,f) primary to the closed point; for a smooth affine A-group scheme, a torsor on D(f) and a torsor on the f-adic completion of A[1/p], with an isomorphism over its punctured f-adic completion, glue uniquely up to unique compatible isomorphism to a torsor on Spec A minus the closed point, by formal gluing on D(p) followed by Zariski descent (KP18, proof of Lemma 3.2.6, p.171; KP18 lines 2114–2122).",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "1.15"
     },
     {
-      "id": "G6",
-      "title": "Perfect-residue extension of admissible-to-Barsotti–Tate realization",
-      "detail": "The imported R07.4/crystalline-01-is-bt target is explicitly for finite K/Q_p. TD.5/isogenous-admissible-lift needs finite K/W(k)[1/p] with perfect residue k, including k=F̄_p. Extend that existing owner’s theorem to this range, or prove and record the required descent argument there, retaining the contravariant weight convention.",
-      "neededBy": [
-        "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII:TD.5/isogenous-admissible-lift"
-      ]
+      "slug": "full-fixer-cutting-tensors",
+      "needs": "For the specified smooth affine full fixer models, provide finite scheme-theoretically cutting mixed tensor families and their base-change identification, for every faithful finite-free realization of these fixers; the ordinary-Levi intersection is the separate contract below.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.3.5"
     },
     {
-      "id": "G7",
-      "title": "Toral weak admissibility in the centralizer normalization",
-      "detail": "Kisin17 p.32 cites Rapoport–Zink Proposition1.21 for the Newton-average criterion. No cleared copy of that book was available in the library index, and no uncleared copy was used. Wintenberger97 proves a torsor-class formula, which does not by itself establish all subobject inequalities in this criterion. Supply a freely readable primary proof or a cleared source and check the inverse-cocharacter convention.",
-      "neededBy": [
-        "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII:TD.5/toral-admissibility"
-      ]
+      "slug": "parahoric-disc-purity",
+      "needs": "For a complete discretely valued field E with perfect residue field k of characteristic p and a parahoric group scheme 𝒫/O_E, every 𝒫-torsor on U=Spec O_E[[z]] minus its closed point extends to Spec O_E[[z]] (Anschuetz22, Proposition 10.3, p.33; Anschuetz22 line 1388).",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.3.3"
     },
     {
-      "id": "G8",
-      "title": "Global Hodge-realization input",
-      "detail": "The six tensor routes include vanHoften24 M04 and Kisin17’s Blasius–Wintenberger comparison. These are global Hodge tensor statements, not consequences of integral displays. Existing ShimuraVarieties V6 plans canonical-model inheritance, not their integral de Rham/étale extension and comparison. Assign an integral-model continuation with the absolute-Hodge comparison and specialization theorem; this packet owns only its p-divisible comparison interface.",
-      "neededBy": [
-        "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII:TD.5/realization-tensor-interface"
-      ]
+      "slug": "full-fixer-component-reduction",
+      "needs": "For a complete DVR O with residue field k and a smooth affine O-group 𝒢 with connected reductive generic fibre and quotient sheaf 𝒢/𝒢°≅i_*Γ, where i:Spec k→Spec O and Γ/k is finite étale, a 𝒢-torsor on U=Spec O[[u]] minus its closed point whose induced Γ-torsor on Spec k((u)) is trivial reduces to a 𝒢°-torsor (KP18, (3.2.7)–(3.2.8), p.172; KP18 lines 2127–2135).",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.3.3"
     },
     {
-      "id": "G9",
-      "title": "Very-good Levi input in the nonordinary application",
-      "detail": "vanHoften24 AppendixA.4.3 invokes Zhou’s M-valued filtration and adapted lifting. The v2 §5.5 assumption was read directly; its older adapted-lift construction does not remove the infinitesimal tensor compatibility subsequently corrected by KPZ26. For that general basic-Levi application, prove the specified M-filtration and very-good compatible embedding under the application’s very-special/tame hypotheses. The explicit μ-ordinary theorem does not cover every basic Levi point.",
-      "neededBy": [
-        "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII:TD.6/levi-adapted-interface"
-      ]
+      "slug": "ordinary-levi-full-fixer",
+      "needs": "Under the ordinary σ-straight normalization and the assumption that the ambient full fixer equals its connected parahoric, prove that the Newton-Levi model satisfies 𝒨(W)=M(K₀)∩𝒢(W) and that its full fixer equals its connected parahoric.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.3.3"
+    },
+    {
+      "slug": "scheme-local-model-representative",
+      "needs": "For a local-model triple over a p-adic field F satisfying p>2, local abelian type, and essentially tame classical adjoint factors without triality, the normalized flat projective scheme Mloc of KPZ26 (3.2.13), with reduced special fibre and generic flag variety, represents the intrinsic integral v-sheaf local model; retain its functorial adjoint and restriction-of-scalars comparisons (KPZ26, Theorem 3.2.15 and §3.4.2, pp.20 and 28; KPZ26 line 895).",
+      "supplier": "GeometricSatakeAndFusion",
+      "section": "GS0, Bounded admissible affine flag loci"
+    },
+    {
+      "slug": "scheme-local-model-hodge-immersion",
+      "needs": "For a quasi-tame local-model triple with G=∏Res_{K_i/F}H_i, each H_i tamely split and classical, p odd, and a Hodge embedding ρ factoring as KPZ26 (3.3.24), some repeated sum ρ^⊕m with m≥1 admits a lattice Λ, a quasi-parahoric 𝒢′ with (𝒢′)°=𝒢°, and a closed local-model immersion into Gr(d,Λ) over the reflex integers, with the specified full-fixer cases of Remark 3.3.26 and the standard division-algebra representations in its proof (KPZ26, Theorem 3.3.25, p.26; KPZ26 lines 1125–1140 and 3100–3106).",
+      "supplier": "GeometricSatakeAndFusion",
+      "section": "GS0, Bounded admissible affine flag loci"
+    },
+    {
+      "slug": "schubert-curve-spanned-tangents",
+      "needs": "For a mod-p abelian-type pair (G,μ) over k with p∤|π₁(Gder)| and no Dᴴ factors, every tangent space of the affine Schubert variety S_μ is spanned by tangent images of smooth formal k[[t]]-curves through that point (KPZ26, Theorem 4.1.6, p.31; KPZ26 lines 1363–1365).",
+      "supplier": "GeometricSatakeAndFusion",
+      "section": "GS0, Bounded admissible affine flag loci"
+    },
+    {
+      "slug": "local-model-curve-spanned-tangents",
+      "needs": "Under the standard assumptions p>2, local abelian type and essentially tame classical adjoint factors, if 𝒢≅Res_{O_K/O_F}ℋ for ℋ/O_K reductive, the tangent spaces of the special-fibre local model are spanned by smooth formal curves at every point of the minimal stratum, and at every point when there are no Dᴴ factors (KPZ26, Theorem 4.4.3, p.47; KPZ26 lines 2049–2055).",
+      "supplier": "GeometricSatakeAndFusion",
+      "section": "GS0, Bounded admissible affine flag loci"
+    },
+    {
+      "slug": "integral-hodge-realization-extension",
+      "needs": "For a complete mixed-characteristic DVR O_K with perfect residue field and an abelian scheme A/O_K, prove that the rational étale and de Rham realizations of an absolute Hodge tensor of A_K agree under the crystalline–de Rham comparison for H¹(A_K), with mixed tensors, duals and Tate twists; neither the existence of an integral moduli model nor integral tensor extension is an input to this rational comparison.",
+      "supplier": "ShimuraVarieties",
+      "section": "7.0i"
     }
   ],
   "sourceIssues": [
