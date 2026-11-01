@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-CompactGroups~3",
+    "head": "12dc7cab7fc5d7d09dc7300b232f365958778223",
+    "pr": 1047,
+    "folder": "RepresentationTheory/CompactGroups",
+    "date": "2026-11-01",
+    "findings": 7,
+    "blocking": 4,
+    "notes": "Full review of all six assigned files and family index; all 15 prior findings reassessed. All eight seeded source targets checked: Knapp and Etingof retrieved, Conway and three other books uncertified, Folland unavailable. Supplied gate passes; manual companion checks find three forbidden options and stale imports. Dependency check: 204 roadmaps, 1489 edges, 0 problems. Direct Suggested elaboration and 28 named-signature checks pass; 23 one-tactic admission probes retain sorry; native U(2) recognition signature also elaborates. Report includes 93 computed adversarial rows, pinned API and cross-roadmap ownership evidence. PR unchanged."
+  }
+}
