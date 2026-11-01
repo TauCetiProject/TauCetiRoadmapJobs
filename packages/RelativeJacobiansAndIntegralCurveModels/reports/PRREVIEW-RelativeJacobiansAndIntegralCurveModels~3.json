@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "accepted",
+    "reviewer": "independent-review-PRREVIEW-RelativeJacobiansAndIntegralCurveModels~3",
+    "head": "3b336e523090cc9b587efc75dc8327e6de25fe21",
+    "pr": 1232,
+    "folder": "RelativeJacobiansAndIntegralCurveModels",
+    "date": "2026-11-01",
+    "findings": 0,
+    "blocking": 0,
+    "notes": "incremental re-review of 9 changed lines since e32750a; previous R01 repaired; checked changed seeded §0.5 Stacks locators, dependent §0.6 computations, pinned Mayer–Vietoris/cokernel and scalar APIs, supplier and ownership contracts; 11 fresh and 77 carried-forward adversarial rows; gate and dependency check pass, targeted build and direct elaboration pass with seven sorry warnings; all nine signatures checked; no padding found."
+  }
+}
