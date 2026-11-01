@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-GeometricQuantization~1",
+    "head": "2ed30bf39f58c923b85d4c6b4ce014c62fb47fbd",
+    "pr": 1186,
+    "folder": "GeometricQuantization",
+    "date": "2026-11-01",
+    "findings": 10,
+    "blocking": 2,
+    "notes": "Full read-only review: all eight seeded targets and the unresolved Knutson locator attempted; 65 README computation rows and 39 Lean declaration rows; 39 elaborated signatures, 11 one-tactic probes, passing original Lean elaborations. Supplied push gate FAIL (blob, tex, residue and import rules); rerun depcheck: 204 roadmaps, 1437 edges, 0 problems. One P1 supplier-contract finding and one P2 acceptance-test finding; eight P3 findings. Five sources retrieved, two uncertified, three unreadable. Worktree unchanged."
+  }
+}
