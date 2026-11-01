@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-RootSystems~5",
+    "head": "9d2d0917f9d5c66b37bd4bb7ed3bbe5a5f12292d",
+    "pr": 1196,
+    "folder": "RepresentationTheory/RootSystems",
+    "date": "2026-11-01",
+    "findings": 5,
+    "blocking": 3,
+    "notes": "Full review of all three listed files and prior R01-R11; all 12 seeded subsections examined, Milne and SGA3 read, Bourbaki and Bjorner-Brenti uncertified/paywalled. Supplied gate all counters zero/OK; independent depcheck 204 roadmaps, 1485 edges, 0 problems. Main Lean elaborates with nine sorry warnings; 12 explicit signatures checked; one-tactic probes and 81 adversarial rows recorded. Worktree unchanged. Findings: narrowed type-A scope, missing diagram-factor acceptance statement, duplicated pinned G2 recognition, obsolete companion, residual source records/locators."
+  }
+}
