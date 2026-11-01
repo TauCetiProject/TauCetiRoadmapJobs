@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-RelativeJacobiansAndIntegralCurveModels~2",
+    "head": "e32750ad948713f4bae093386d12e1d749b1ed08",
+    "pr": 1232,
+    "folder": "RelativeJacobiansAndIntegralCurveModels",
+    "date": "2026-11-01",
+    "findings": 1,
+    "blocking": 1,
+    "notes": "Full re-review: all four prior findings repaired; all 15 seeded source targets inspected; 85 computed adversarial rows; nine elaborated signatures and seven one-tactic probes; ownership and pinned-library audit. Worker gate passes; independent depcheck reports 205 roadmaps, 1470 edges, zero problems; direct Lean elaboration succeeds with seven sorry warnings only. One P1 missing pinned supplier contract remains. No PR files changed."
+  }
+}
