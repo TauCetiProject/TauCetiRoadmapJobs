@@ -4243,68 +4243,64 @@
   ],
   "gaps": [
     {
-      "id": "AutomorphicBundlesPartII/G-solid",
-      "title": "Solid/discrete six operations and filtered coherence",
-      "detail": "The proposed AnalyticStacks and SolidAnalyticRings owners are absent from the atlas, new-roadmap directory and reserved ids. Supply a stable solid O-module six-operation package, discrete embedding/upper-shriek comparison and natural filtered support functors with BC/projection-formula coherence before claiming the BP26 solid statements. Ordinary coherent proper duality is imported from SF.2 and remains the executable discrete route. No nonexistent supplier stage is cited.",
-      "neededBy": [
-        "AutomorphicBundlesPartII:coherent-correspondence",
-        "AutomorphicBundlesPartII:correspondence-composition",
-        "AutomorphicBundlesPartII:correspondence-base-change",
-        "AutomorphicBundlesPartII:filtered-correspondence-action",
-        "AutomorphicBundlesPartII:formal-completion-comparison"
-      ]
+      "slug": "integral-dual-weyl-lattices",
+      "needs": "Construct finite free integral Weyl and dual-Weyl modules for every dominant weight of a split reductive Levi over ℤ, with the fixed right-B function realization, left translation and base-change comparison to the field modules, retaining symmetric versus divided powers in residue characteristic.",
+      "supplier": "LanglandsParameterStacks",
+      "section": "LP3.0"
     },
     {
-      "id": "AutomorphicBundlesPartII/G-models",
-      "title": "Hilbert–Siegel geometry and quotient descent",
-      "detail": "There is no HilbertSiegelModularVarieties supplier in the current atlas. The genus-two Res_(F/Q)GSp₄ models, EO strata, their affine images and codimension/regular-sequence properties must be supplied, together with the G₁ quotient direct-factor statement under p∤#Δ(K^p). H1’s Hilbert modular varieties have genus one and do not supply these inputs. C13/C14 supply the stated Siegel models over Q only.",
-      "neededBy": [
-        "AutomorphicBundlesPartII:eo-cousin-computation",
-        "AutomorphicBundlesPartII:integral-hecke-relations",
-        "AutomorphicBundlesPartII:hilbert-boundary-degree-zero"
-      ]
+      "slug": "coefficient-linear-coherent-comparison",
+      "needs": "Identify Hⁱ of the scalar-linear RΓ(X,F) in D(O) of §2.18 with Tau Ceti’s base-linear scheme-module cohomology, compatibly with cohomologyMapBaseLinear, cohomologyδBaseLinear and the natural linear H⁰/global-sections equivalence.",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "§2.18"
     },
     {
-      "id": "AutomorphicBundlesPartII/G-boundary-regular",
-      "title": "Boundary regularity on EO thickenings",
-      "detail": "BCGP21 Lemma 3.9.12 uses injectivity after inverting a boundary equation. Check that each relevant EO component meets the interior and prove the boundary equation is regular on every cofinal CM regular-sequence quotient. The source proof does not spell out this geometric input; dimension alone is not a proof for an arbitrary thickening.",
-      "neededBy": [
-        "AutomorphicBundlesPartII:boundary-interior-injection",
-        "AutomorphicBundlesPartII:integral-hecke-relations"
-      ]
+      "slug": "gaga-duality-trace",
+      "needs": "Make projective/proper coherent GAGA compatible with the proper duality counit and the actual coherent trace, coefficient twists and boundary-ideal arrows in the toroidal Hecke spans.",
+      "supplier": "ComplexComparisonPartII",
+      "section": "C1.9, C3.3"
     },
     {
-      "id": "AutomorphicBundlesPartII/G-Harris",
-      "title": "Full-group coherent comparison and singular large-weight input",
-      "detail": "H90 Theorem 2.7 and Proposition 2.7.2, pp. 58–59, now verify the cusp/interior comparison directly, with the growth resolution in Theorem 2.4.4, p. 57. H90 Theorem 3.4, p. 63, does not justify arbitrary other-degree vanishing: GK19 Remark 10.1.3, p. 962, records a published correction. Use AF.4’s specified Hodge-pair and component conventions. The singular large-weight classification is the separate AF.4/bhr-large-weight contract, reported by P20 Theorem 15.2.2.1 and BCGP21 Theorem 3.10.1; its original BHR proof remains uninspected. H90 Theorem 3.6.3, p. 64, has a regular all-root bound and cannot replace that singular-wall input. Verify full-group transport before applying concentration or packet counts.",
-      "neededBy": [
-        "AutomorphicBundlesPartII:harris-cusp-interior-comparison",
-        "AutomorphicBundlesPartII:coherent-kunneth",
-        "AutomorphicBundlesPartII:large-singular-interior",
-        "AutomorphicBundlesPartII:Q-singular-cuspidal-exhaustion",
-        "AutomorphicBundlesPartII:conditional-packet-pairing",
-        "AutomorphicBundlesPartII:localized-cuspidal-decomposition",
-        "AutomorphicBundlesPartII:tempered-chamber-vanishing"
-      ]
+      "slug": "boundary-spin-satake",
+      "needs": "Prove the local normalized Klingen-Levi GL₂×GL₁ Satake identity P_spin(X)=P₂(X)(X²−uAX+u²D) over coefficient rings with q invertible, where P₂(X)=X²−AX+D has roots α,β, the four spin roots are α,β,uα,uβ, u is the unit value of the unramified GL₁ character at the uniformizer, and q³T₀=uD (equivalently q³T₀=uqS when D=qS); retain the four distinct spin monomials and use X⁴P_spin(1/X) for det(1−X·spin).",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.4.5"
     },
     {
-      "id": "AutomorphicBundlesPartII/G-Phi",
-      "title": "Vector-weight boundary Hecke normalization",
-      "detail": "P20 p. 109 cites Freitag IV Satz 4.4 for T_(ℓ,2)=2T_ℓ on the boundary. Freitag was not available for inspection, and coverage of the vector-valued coefficient and this normalization is unverified. Give a direct boundary correspondence calculation or inspect a cleared primary source; do not infer the residual contradiction by dividing this trace identity by 2. The full Satake-polynomial route is requested independently.",
-      "neededBy": [
-        "AutomorphicBundlesPartII:Q-boundary-phi-calculation",
-        "AutomorphicBundlesPartII:boundary-Satake-reducibility"
-      ]
+      "slug": "coefficient-logarithmic-splitting",
+      "needs": "Supply the relative logarithmic vanishing of Lan–Suh Theorem 3.24, pp. 20–21, as verified for PEL pairs in Proposition 7.21, pp. 41–42: a proper log-smooth log-integral morphism of relative dimension n between proper smooth SNC pairs over perfect k, with target dimension e, admits a W(k)-lifting satisfying Assumption 1.4, the coefficient has nilpotent residues and degree m<p−e (or its dual degree 2n−m<p−e with Proposition 1.7), and the line bundle satisfies ampleness condition (3.25).",
+      "supplier": "CrystallineCohomology",
+      "section": "CR.5.4"
     },
     {
-      "id": "AutomorphicBundlesPartII/G-formal-models",
-      "title": "Formal-canonical condition at quotient and bad level",
-      "detail": "Verify Lan17 Definition 8.5 chart by chart for the C14 Klingen/paramodular model and the G₁ quotient. A deck group free on the open variety need not be free on the boundary; retain the prime-to-p stabilizer condition or prove local exact descent. Lan17 Remark 8.9 allows singular fans by refinement, but does not remove these coefficient/model hypotheses.",
-      "neededBy": [
-        "AutomorphicBundlesPartII:formally-canonical-coefficients",
-        "AutomorphicBundlesPartII:relative-subcanonical-vanishing",
-        "AutomorphicBundlesPartII:large-parallel-twist"
-      ]
+      "slug": "integral-small-weight-dual-bgg",
+      "needs": "Extend the coefficient dual BGG graded comparison to the integral p-small Lan–Suh weights, with the correct Weyl or dual-Weyl lattice, cohomological length shifts and canonical/subcanonical boundary twists, and identify its characteristic-zero specialization.",
+      "supplier": "AutomorphicBundles",
+      "section": "B3.BGG.2–B3.BGG.3"
+    },
+    {
+      "slug": "classical-weight-one-realization",
+      "needs": "Supply the continuous rank-two realization of every normalized classical cuspidal weight-one Hecke eigenform, with its full unramified Hecke polynomial outside the level and coefficient characteristic, in the geometric-Frobenius normalization of §7.0.",
+      "supplier": "WeightsInEtaleCohomology",
+      "section": "R34.6"
+    },
+    {
+      "slug": "nonparallel-hilbert-realization",
+      "needs": "Extend the good-prime rank-two realization of R18.3.29 to every non-parallel algebraic Hilbert cusp eigenpacket of weights (k_v) with k_v≥2 and common parity, over every totally real field, without a finite discrete-series-place restriction on its unramified Hecke polynomial.",
+      "supplier": "HilbertModularVarietiesAndShimuraCurves",
+      "section": "R18.3.29"
+    },
+    {
+      "slug": "su-parabolic-regularization",
+      "needs": "For a Shimura datum with connected reductive G over ℚ, maximal ℚ-split central torus A_G also maximal ℝ-split in the centre, neat finite level K and finite-dimensional holomorphic P_h-coefficient V, prove that C∞_umg(G)^K→C∞_dmg(G)^K induces isomorphisms on H^i(p_o,K_o;−⊗V) for every i, naturally in V and finite Hecke maps, with G(A_f)-equivariance on the tower after the inverse central action on V_o.",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "§5.2"
+    },
+    {
+      "slug": "uniform-global-gsp4-separation",
+      "needs": "Strengthen the first global assertion of §6.6 to a root-separation constant R_sep>2 chosen before the totally real field F, so that for every F, discrete occurrence and admissible coefficient in the fixed |·|² central normalization, root separation at every real place implies essential temperedness, with R_sep independent of F, level, coefficient, occurrence and degree.",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "§6.6"
     }
   ],
   "coverage": [
