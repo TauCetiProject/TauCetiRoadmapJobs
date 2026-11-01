@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-EisensteinIdealAndRationalTorsion~1",
+    "head": "5e63f27db37e4eb69380afa616b07df53605e4b3",
+    "pr": 1264,
+    "folder": "EisensteinIdealAndRationalTorsion",
+    "date": "2026-11-01",
+    "findings": 4,
+    "blocking": 3,
+    "notes": "Reviewed all 56 numbered subsections and all 15 seeded source targets; 68 computed adversarial rows. Gate passes, including targeted build; independent Lean elaboration passes with only sorry warnings. Dependency check: 205 roadmaps, 1471 edges, 0 problems. Both native declarations checked with #check; six padding probes failed as expected. Three missing native headline signatures elaborate. Sources: eight readable, FaltingsChai1990 uncertified. Findings: unowned level-thirteen inputs, missing acceptance headlines, general cusp-torsion ownership, undeclared API and Check labels."
+  }
+}
