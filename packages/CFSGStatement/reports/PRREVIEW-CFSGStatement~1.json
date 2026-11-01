@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-CFSGStatement~1",
+    "head": "0e1627f498a81c304398444a616f6db634178ea0",
+    "pr": 1334,
+    "folder": "CFSGStatement",
+    "date": "2026-11-01",
+    "findings": 15,
+    "blocking": 8,
+    "notes": "Full folder review; four seeded targets examined, with unread legal source texts explicitly uncertified. 119 computed adversarial rows; pinned-library and main/open-roadmap ownership audit; dependency check: 204 roadmaps, 1477 edges, 0 problems. Supplied gate fails (prnum=1, sorry-data=9, imports=1, readme-ids-missing=2, build=3); original Lean elaboration fails at the forbidden roadmap import. Independent extraction printed 52 signatures; native headline and one-lemma probes elaborated. No pull-request files changed."
+  }
+}
