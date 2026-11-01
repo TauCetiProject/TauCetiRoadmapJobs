@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ArithmeticStatisticsPartI~3",
+    "head": "b60ad1c81725b9fd42292d579ac115593437d3e5",
+    "pr": 1171,
+    "folder": "ArithmeticStatisticsPartI",
+    "date": "2026-11-01",
+    "findings": 4,
+    "blocking": 4,
+    "notes": "incremental re-review of 56 changed lines since f549aa4; verified all three previous repairs; reviewed changed finite-field statements, source locators, supplier sections and ownership; carried unchanged seeded-sample evidence and 31 adversarial rows, added 13 computed rows; gate and dependency check pass, targeted build and direct Lean elaboration pass with 13 sorry warnings; all 39 signatures checked. Four new mathematical findings."
+  }
+}
