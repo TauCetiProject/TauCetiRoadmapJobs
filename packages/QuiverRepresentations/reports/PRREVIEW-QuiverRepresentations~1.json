@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-QuiverRepresentations~1",
+    "head": "ca98ae00e944bab24ce4f5a6595a175730695d18",
+    "pr": 1397,
+    "folder": "RepresentationTheory/QuiverRepresentations",
+    "date": "2026-11-01",
+    "findings": 19,
+    "blocking": 16,
+    "notes": "Full-folder review: 66 adversarial rows; 43 elaborated signatures; all 16 theorem tactic probes, four one-lemma closures; pinned-library and main/open/package ownership audits. Seeded Gabriel presentation source not certified: no exact README locator and legal text unavailable; arrow-ideal error independently witnessed by dual numbers. Worker gate FAIL (13 sorry-data declarations); independent Lean elaboration passes with sorry warnings; depcheck: 204 roadmaps, 1485 edges, 0 problems. No PR files changed."
+  }
+}
