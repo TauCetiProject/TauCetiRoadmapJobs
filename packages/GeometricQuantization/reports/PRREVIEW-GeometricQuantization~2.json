@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-GeometricQuantization~2",
+    "head": "ae3f04d0c3765dd58320ad214fbcd484e8b60035",
+    "pr": 1186,
+    "folder": "GeometricQuantization",
+    "date": "2026-11-01",
+    "findings": 7,
+    "blocking": 4,
+    "notes": "Full review of all three files; all ten previous findings reassessed. All fifteen seeded source targets audited: seven texts retrieved, two uncertified, three unavailable. 97 roadmap and 14 companion computed rows; 23 native declarations and 18 supplier/ownership groups inspected. Supplied gate passes; independent depcheck: 204 roadmaps, 1444 edges, 0 problems. Direct Suggested elaboration and all 14 companion signatures pass. No sorried theorem candidates. Worktree unchanged. Needs changes for ineligible supplier contract, duplicated flag construction, integral torus level hypothesis and underspecified equivariant RR bridge."
+  }
+}
