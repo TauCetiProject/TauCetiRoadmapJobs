@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ArithmeticStatisticsPartVIII~2",
+    "head": "7a03a23496ba9f0c3fb53aef963619c1c0e07f11",
+    "pr": 1179,
+    "folder": "ArithmeticStatisticsPartVIII",
+    "date": "2026-11-01",
+    "findings": 3,
+    "blocking": 3,
+    "notes": "Full review of both files; reconciled all six previous findings (five repaired); verified seeded subsections 5.12–5.22 against twelve legally retrieved texts, with Silverman V.1.1 not certified. Recorded 91 adversarial rows. Worker gate OK; direct Lean elaboration passed with only five sorry warnings; nine signatures and 47 Mathlib names checked; five one-tactic probes did not close. Dependency check: 205 roadmaps, 1457 edges, 0 problems. Blocking: free uniform Betti input and duplicated Hurwitz-scheme and two-column minor ownership. Worktree unchanged."
+  }
+}
