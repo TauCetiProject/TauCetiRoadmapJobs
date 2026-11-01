@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-RootSystems~4",
+    "head": "13a294c7c6f137c5ce7d494f2a5b7d2afa685d51",
+    "pr": 1278,
+    "folder": "RepresentationTheory/RootSystems",
+    "date": "2026-11-01",
+    "findings": 11,
+    "blocking": 7,
+    "notes": "Full read-only review with finding-by-finding comparison of the supplied previous report. Seeded Scope boundary resolved on main; Rank-two positivity, Sign criterion and Faithfulness checked against Humphreys section 5.4, printed pages 111-113, noting its finite-generator scope and the finite-support extension. Supplied gate FAIL: sorry-data=6, residue=1, readme-ids-missing=5 (native-name false positives documented). Dependency check: 204 roadmaps, 1485 edges, 0 problems. Main elaborates with 27 sorry warnings; scratch checks cover 38 real main declarations plus companion; nine one-tactic padding successes. 77 adversarial rows, 30 rank-two computations and a Lean proof ruling out the singleton A1 root carrier. Pinned-library and main/open ownership audit includes Enriques duplication. No source issue found after checking OCR against the page image. Unavailable references listed; PR worktree unchanged."
+  }
+}
