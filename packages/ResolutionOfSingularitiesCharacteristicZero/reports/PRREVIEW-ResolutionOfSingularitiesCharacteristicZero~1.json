@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ResolutionOfSingularitiesCharacteristicZero~1",
+    "head": "bf45c86fdfe7926d08bfb736783f5b9d17fa2d7d",
+    "pr": 1199,
+    "folder": "ResolutionOfSingularitiesCharacteristicZero",
+    "date": "2026-11-01",
+    "findings": 4,
+    "blocking": 2,
+    "notes": "All 15 seeded source targets checked; one primary Nishimura–Nishimura text is paywalled/uncertified, with Temkin restatement checked. Passing worker gate and independent direct Lean elaboration; dependency check: 205 roadmaps, 1438 edges, 0 problems. Four original signatures checked with no dropped binders; three one-tactic padding probes do not close. Report includes 130 computed adversarial rows, 18 supplier section contracts and 13 pinned-location entries. No PR files changed. Blocking findings: incorrect order-recovery admissibility criterion and omission of source-supported generically reduced inputs."
+  }
+}
