@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-CrystallineLocalGlobalCompatibilityCM~1",
+    "head": "0969db71cd2be77407986b89cd10c07abcbc405c",
+    "pr": 1182,
+    "folder": "CrystallineLocalGlobalCompatibilityCM",
+    "date": "2026-11-01",
+    "findings": 4,
+    "blocking": 3,
+    "notes": "Full-folder review: all 15 seeded source targets and all 99 numbered targets covered; 109 computed adversarial rows; 21 pinned declarations and 19 supplier resolutions recorded. Worker gate and independent Lean elaboration pass; dependency check reports 205 roadmaps, 1455 edges, 0 problems. Three blocking supplier-contract findings and one citation finding. Access limits for Jantzen, Kisin, Cab84 and Ger19 are recorded separately."
+  }
+}
