@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ClassicalGroups~2",
+    "head": "4fd9f6639c7b828068c20a9fb756020a054bbf82",
+    "pr": 1192,
+    "folder": "RepresentationTheory/ClassicalGroups",
+    "date": "2026-11-01",
+    "findings": 14,
+    "blocking": 7,
+    "notes": "Read all seven requested files and main baseline; audited pinned libraries, eligible suppliers and supplied open heads. Recorded all 15 seeded source targets, legal-text limits, and 199 adversarial rows. Suggested and companion signatures elaborate; one-tactic probes recorded. Dependency check: 204 roadmaps, 1487 edges, 0 problems. Gate fails set_option=1, blob=1, sorry-data=16; targeted build passes. No PR files changed."
+  }
+}
