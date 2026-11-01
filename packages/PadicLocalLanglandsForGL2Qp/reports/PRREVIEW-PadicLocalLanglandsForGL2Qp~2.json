@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-PadicLocalLanglandsForGL2Qp~2",
+    "head": "845e537a8488fc1a50468ed2e459200aef77799f",
+    "pr": 1312,
+    "folder": "PadicLocalLanglandsForGL2Qp",
+    "date": "2026-11-01",
+    "findings": 4,
+    "blocking": 3,
+    "notes": "Full re-review; all seven prior findings compared. All 15 seeded targets checked against legal source texts; 125 computed adversarial rows. Worker gate passes; independent Lean elaboration, four signature checks and two one-tactic probes completed. Dependency check: 205 roadmaps, 1486 edges, 0 problems. Findings: unowned global inputs, missing restriction axioms, duplicate Jacquet-Langlands ownership, residual undeclared API names. KISIN08 exact locators remain uncertified. Worktree unchanged."
+  }
+}
