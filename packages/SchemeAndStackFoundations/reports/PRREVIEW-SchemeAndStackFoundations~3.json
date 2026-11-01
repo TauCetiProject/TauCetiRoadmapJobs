@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-SchemeAndStackFoundations~3",
+    "head": "828d0b649d37bc1d1f7b9f23a9cd5ec6de7a4261",
+    "pr": 1276,
+    "folder": "SchemeAndStackFoundations",
+    "date": "2026-11-01",
+    "findings": 4,
+    "blocking": 1,
+    "notes": "Full read-only re-review; all 10 previous findings revisited; all 15 seeded sections checked against available source texts, with inaccessible locators recorded. Worker gate passes; independent direct Lean elaboration and all-declaration signature check pass with only 75 sorry warnings. Dependency check: 204 roadmaps, 1475 edges, 0 problems. Adversarial tables contain 43 source/headline/finding rows and 75 Lean-theorem rows with computed values. Padding probes did not close any of the 75 theorems. One P2 signed-intersection defect and three P3 findings; four source errata recorded."
+  }
+}
