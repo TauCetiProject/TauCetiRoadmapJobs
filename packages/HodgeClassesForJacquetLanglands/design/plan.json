@@ -3996,52 +3996,46 @@
   ],
   "gaps": [
     {
-      "title": "Quaternionic Shimura realization interface",
-      "neededBy": [
-        "HodgeClassesForJacquetLanglands:JL.0/data",
-        "HodgeClassesForJacquetLanglands:JL.0/multiplicity-realization",
-        "HodgeClassesForJacquetLanglands:JL.0/sign-lines",
-        "HodgeClassesForJacquetLanglands:JL.10/restriction-correspondence"
-      ],
-      "detail": "The proposed HilbertModularVarietiesAndShimuraCurvesPartIIQuaternionic has no registered stages or exact nodes yet. Needed: arbitrary real split subset Σ, the dual τ_k local systems and their L-models, Matsushima multiplicity realizations of degree d and rank 2^d, Poincaré pairings and compatible Betti/all-ℓ models over F_Σ. Include the finite compact Shimura-set/constant-model interpretation when Σ is empty, without imposing strict Deligne SV3 on a compact Q-adjoint group. V6/V8 provide canonical varieties/maps, not these cohomology theorems. IP23 §§2–3, pp. 14–20, and §12.2.11, p. 98 specify the consumer interface."
+      "slug": "compact-matsushima",
+      "needs": "For G anisotropic modulo its centre, prove FrankeInput(G, K, V) unconditionally, so that the automorphic comparison map gives the Hecke-equivariant Matsushima decomposition H^*(X_K, V) ≃ ⊕_π m(π) H^*(𝔪_G, K_∞; π_∞ ⊗ V) ⊗ π_f^K compatible with level maps, by the compact-quotient spectral decomposition instead of Eisenstein series (IP23, §2.2.2, p. 16).",
+      "supplier": "ArithmeticLocallySymmetricSpaces",
+      "section": "§ALS.5b.4"
     },
     {
-      "title": "Automorphic cohomology and rational coefficient descent interface",
-      "neededBy": [
-        "HodgeClassesForJacquetLanglands:JL.5/coefficient-structure",
-        "HodgeClassesForJacquetLanglands:JL.7/eta-projection",
-        "HodgeClassesForJacquetLanglands:JL.8/hecke-eigenspace",
-        "HodgeClassesForJacquetLanglands:JL.8/degree-selection",
-        "HodgeClassesForJacquetLanglands:JL.8/hodge-weight-comparison",
-        "HodgeClassesForJacquetLanglands:JL.8/pure-hodge-space",
-        "HodgeClassesForJacquetLanglands:JL.9/galois-triviality",
-        "HodgeClassesForJacquetLanglands:JL.10/restriction-correspondence"
-      ],
-      "detail": "The proposed ShimuraVarietiesPartIIAutomorphicCohomology has no registered stage/node. Needed: compact Matsushima with rational Hecke projectors including all coefficient conjugates; pullback and normalized trace to the actual image for central quotients, compatible with Hodge/étale realizations; homogeneous-variation Hodge-degree computation from Kostant weights; and the Tits/Schur rational-descent interface giving the harmonic coefficient Q(k)-form and block projection. D3/variation constructs a variation, and V8 supplies canonical-model maps, but neither supplies these cohomology comparisons. The self-dual quaternionic L-rational multiplicity model needs its own special argument rather than assuming every field of rationality is a field of definition. IP23 §4.4, pp. 24–25, §11.3, pp. 83–90, Proposition 12.2, pp. 95–96, and §12.2.5–12.2.11, pp. 96–98 are the precise required specializations."
+      "slug": "vhs-hodge-decomposition",
+      "needs": "For a compact Kähler manifold X and a polarized real variation of Hodge structure 𝕍 of weight w on X, construct the pure Hodge structure of weight k + w on H^k(X, 𝕍), functorial for morphisms of variations and holomorphic pullback and compatible with cup products and the top-degree trace (the Hodge decomposition used in IP23, §11.3, p. 85).",
+      "supplier": "ComplexKahlerGeometry",
+      "section": "§K6.1"
     },
     {
-      "title": "Quaternionic theta period and residue interface",
-      "neededBy": [
-        "HodgeClassesForJacquetLanglands:JL.6/toric-theta",
-        "HodgeClassesForJacquetLanglands:JL.6/product-theta",
-        "HodgeClassesForJacquetLanglands:JL.6/doubling-point",
-        "HodgeClassesForJacquetLanglands:JL.6/backward-lift",
-        "HodgeClassesForJacquetLanglands:JL.6/near-equivalence",
-        "HodgeClassesForJacquetLanglands:JL.7/toric-test-vector",
-        "HodgeClassesForJacquetLanglands:JL.7/auxiliary-character",
-        "HodgeClassesForJacquetLanglands:JL.7/triple-product-type"
-      ],
-      "detail": "The proposed MetaplecticAutomorphicFormsPartIIShimuraWaldspurger has no registered stage/node. MP.3 already owns quaternionic splittings, Morita comparison and unramified theta, so none is replanned. Needed in addition: the toric and quaternionic product-period nonvanishing identities of IP23 Lemmas 9.1–9.2, pp. 57–58; the normalized intertwiner image at s=3/2 and existence of holomorphic nonzero local zeta data in Lemmas 9.7–9.8, pp. 63–64; the compatible anisotropic quaternionic Siegel–Weil residue yielding backward nonvanishing in Lemma 9.6, pp. 61–64; the local test-vector statement of Lemma 10.6, pp. 76–77; the compact norm-one idele quotient character-extension statement of Lemma 10.5, p. 76, with trivial archimedean restriction and finite-order conclusion; and the tensor-product discrete-series decomposition used by Lemma 10.7, p. 77. MP.6/rallis-inner-product is a GQT positive-range value formula with first-occurrence hypotheses; it cannot silently replace this residue identity."
+      "slug": "quaternion-ramification-classification",
+      "needs": "Prove that quaternion algebras over a number field are classified by their ramification sets, that every finite set of non-complex places of even cardinality occurs, that an element of order two in Br(F) is the class of a unique quaternion algebra, and that a quadratic extension E/F embeds in B exactly when no place ramified in B splits in E (IP23, §12.2.1, p. 94).",
+      "supplier": "ClassFieldTheory",
+      "section": "Layer 10"
     },
     {
-      "title": "Compatible-realization category and Hodge–Tate tensors",
-      "neededBy": [
-        "HodgeClassesForJacquetLanglands:JL.0/multiplicity-realization",
-        "HodgeClassesForJacquetLanglands:JL.0/tensor-correspondence",
-        "HodgeClassesForJacquetLanglands:JL.10/restriction-correspondence",
-        "HodgeClassesForJacquetLanglands:JL.10/main-hodge-tate"
-      ],
-      "detail": "MC.2/classical-weil-cohomology supplies abstract Künneth and Poincaré formalism. The category M_k^L of §2.1.2, pp. 14–15, and the HT subset of §12.1, pp. 93–94, additionally needs finite-dimensional L-Betti realizations with rational Hodge structure, every ℓ-adic realization with G_k-action, comparison maps, tensor/dual/Tate operations and the simultaneous fixed-tensor subset HT. It is not a local p-adic Hodge–Tate representation condition. Extend MotivesAndAlgebraicCycles in its own direction, with the geometric comparison supplied by the Shimura cohomology extension, rather than inventing a new realization carrier here."
+      "slug": "norm-subgroup-restriction",
+      "needs": "For a quaternion algebra B over a totally real F, a CM extension E/F in B and the subgroups H_N^+ ⊂ H_∞^+ ⊂ B^×(𝔸_F), show that every irreducible unitary automorphic representation of H_N^+ with central character ξ_E is a constituent of the restriction of a cuspidal representation of B^×(𝔸_F) whose Jacquet–Langlands transfer σ has base change σ_E independent of the choice, compatibly with the archimedean discrete-series signs (IP23, §11.3, p. 86 and §12.2.4, pp. 96–97).",
+      "supplier": "GL2AutomorphicRepresentationsAndTransfer",
+      "section": "§R17.3"
+    },
+    {
+      "slug": "quaternionic-doubling-residue",
+      "needs": "Extend the anisotropic Siegel–Weil formula, the doubling Schwartz map, standard doubling factors, local doubling zeta integrals and the factorization of theta pairings to the doubled anisotropic rank-three skew-Hermitian space over a division quaternion algebra, with I_v(s) of Levi character |Nrd(a)|^{s+5/2}, the normalized intertwiner (b_v(s)/a_v(s)) M_v(s) and the residue of the doubling integral at s = 3/2 identified with a theta pairing by the second-term Siegel–Weil identity (IP23, §9.5, Lemmas 9.6–9.8, pp. 61–64).",
+      "supplier": "MetaplecticAutomorphicForms",
+      "section": "§§6.4, 6.10a–6.12"
+    },
+    {
+      "slug": "quaternionic-shimizu-lift",
+      "needs": "Prove that the global similitude theta lift from B^× to GU(B₁ ⊗_E B₂)° ≃ (B₁^× × B₂^×)/F^× of an irreducible unitary cuspidal σ̄ is π̄_{B₁} ⊠ π̄_{B₂} for the Jacquet–Langlands transfers of the transfer π of σ, and zero when either transfer is missing (IP23, proof of Lemma 9.2, p. 58).",
+      "supplier": "MetaplecticAutomorphicForms",
+      "section": "§§5.6, 6.15"
+    },
+    {
+      "slug": "derham-local-system-cohomology",
+      "needs": "Prove that for a proper smooth variety X over a finite extension K of ℚ_p and a de Rham ℚ_p-local system 𝕃 on X the G_K-representation H^i_et(X_K̄, 𝕃) is de Rham, that a ℚ_p-local system on a geometrically connected smooth K-variety which is de Rham at one classical point is de Rham, and that subquotients of de Rham representations are de Rham (IP23, Remark 11.10, p. 90).",
+      "supplier": "PadicHodgeTheory",
+      "section": "§8.1"
     }
   ],
   "coverage": [
