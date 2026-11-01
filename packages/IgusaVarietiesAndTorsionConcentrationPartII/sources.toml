@@ -1,0 +1,55 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "IgusaVarietiesAndTorsionConcentrationPartII"
+
+[[source]]
+id = "CS17"
+authors = "Ana Caraiani, Peter Scholze"
+title = "On the generic part of the cohomology of compact unitary Shimura varieties"
+year = 2017
+doi = "10.4007/annals.2017.186.3.1"
+arxiv = "1511.02418v1"
+version_note = "Published Annals pagination (journal pages 649-766) is cited; arXiv v1 is the only arXiv version and carries the same section 5.6 sentence on base change"
+locator_scheme = "theorem"
+locator = "Theorem 1.1 and Remarks 1.2-1.7.1, pp. 651-652; Definition 1.9, p. 652; Theorem 4.4.4, p. 726; sections 5.1-5.6 (Theorem 5.2.3, Remark 5.2.6, Theorem 5.3.2, Lemmas 5.4.2-5.4.3, Lemma 5.5.1, Corollaries 5.5.2 and 5.5.5, Remark 5.5.6, Theorem 5.5.7, Lemma 5.5.8, Proposition 5.6.1, Corollaries 5.6.2-5.6.3), pp. 729-750; Corollary 6.1.4, Definition 6.2.1, Lemma 6.2.2, Theorem 6.3.1, Remarks 6.3.2-6.3.3 and proof, pp. 753-760"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v186-n3-p01-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v186-n3-p01-p.pdf"
+fetched_at = "2026-10-26T22:53:32Z"
+sha256 = "4f9449e5ecfd8fb8b43a04acef73060f531be995babaa9f744f3db36aaa5e61a"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Summary", "Conventions", "IG.8.1", "IG.8.2", "IG.8.3", "IG.8.4", "IG.8.5", "IG.8.6", "IG.8.7", "IG.8.8", "IG.9.1", "IG.9.2", "IG.9.3", "IG.9.4", "IG.9.5", "IG.9.6", "IG.10.1", "IG.10.2", "IG.10.3", "IG.10.4", "IG.10.5", "IG.10.6", "IG.11.1", "IG.11.2", "IG.11.3", "IG.11.4", "IG.11.5", "IG.11.6", "IG.11.7", "IG.11.8"]
+
+[[source]]
+id = "Shin-BCU"
+authors = "Sug Woo Shin"
+title = "On the cohomological base change for unitary similitude groups (appendix to W. Goldring, Galois representations associated to holomorphic limits of discrete series, Compositio Math. 150 (2014), 191-228)"
+year = 2014
+version_note = "Author copy, 5 pages; theorem numbering as in the appendix"
+locator_scheme = "theorem"
+locator = "Setting before (1.1), p. 1; Theorem 1.1, pp. 1-2"
+url = "https://math.berkeley.edu/~swshin/BCofU.pdf"
+fetched_from = "https://math.berkeley.edu/~swshin/BCofU.pdf"
+fetched_at = "2026-10-26T22:53:34Z"
+sha256 = "6bfc5628627f6d62bd3b8403094671fdd07ce5950c1a475823d8e6e7914348ea"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["IG.10.4", "Exact supplier contracts: gap division-algebra-unitary-base-change"]
+
+[[source]]
+id = "Shin11"
+authors = "Sug Woo Shin"
+title = "Galois representations arising from some compact Shimura varieties"
+year = 2011
+doi = "10.4007/annals.2011.173.3.9"
+locator_scheme = "theorem"
+locator = "Lemma 7.1, p. 1722"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v173-n3-p09-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v173-n3-p09-p.pdf"
+fetched_at = "2026-10-26T22:53:37Z"
+sha256 = "8a0aca35f1817d60967c48a7e0070d20973b5b057d2dde945780e70ca4a09678"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Exact supplier contracts: gap auxiliary-character-finite-avoidance", "IG.11.5"]

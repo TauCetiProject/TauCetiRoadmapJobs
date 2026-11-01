@@ -1977,27 +1977,16 @@
  ],
  "gaps": [
   {
-   "title": "Base change for division-algebra unitary groups of arbitrary signature (Case 1 Galois representations)",
-   "neededBy": [
-    "IgusaVarietiesAndTorsionConcentrationPartII:IG.10/simple-base-change-galois",
-    "IgusaVarietiesAndTorsionConcentrationPartII:IG.10/simple-galois-summand",
-    "IgusaVarietiesAndTorsionConcentrationPartII:IG.10/simple-genericity-forces-mu-ordinary",
-    "IgusaVarietiesAndTorsionConcentrationPartII:IG.11/torsion-galois-representations",
-    "IgusaVarietiesAndTorsionConcentrationPartII:IG.11/middle-degree-concentration",
-    "IgusaVarietiesAndTorsionConcentrationPartII:IG.11/compact-generic-vanishing",
-    "IgusaVarietiesAndTorsionConcentrationPartII:IG.11/integral-and-twisted-coefficients"
-   ],
-   "detail": "Case 1 of Theorem 6.3.1 needs, for every π on the division-algebra unitary group G with π_∞ cohomological for the trivial representation, an isobaric base change Π to GL_1 × GL_n with compatibility at the split places where B is split, and the attached Galois representations. CS17 cites Shin's appendix to [Gol14], whose Theorem 1.1 assumes B = F (sourceIssues E1). The missing step is the passage from the inner form Res_{𝒦/ℚ}(G_𝒦) to GL_n(𝔸_F) (global Jacquet–Langlands for GL_m(D)) combined with the base change of the appendix, or an alternative published reference (Labesse's CM base change for inner forms, Kottwitz 1992 for simple Shimura varieties, neither read here). Requested from AutomorphicGaloisRepresentationsPartII AG2.2. Case 2 does not use this input. The same request includes arbitrary-rank Galois assembly and unramifiedness at all good places; the existing rank-2n assembly is only a model. The locally isomorphic PEL inner forms must be covered as well."
+   "slug": "division-algebra-unitary-base-change",
+   "needs": "For the unitary similitude groups of central division algebras of degree n over a CM field F = F⁺𝒦 with an involution of the second kind (arbitrary signature, every locally isomorphic inner form of the PEL decomposition) and automorphic π with π_∞ cohomological for the trivial representation, an isobaric conjugate self-dual base change Π to GL_1(𝔸_𝒦) × GL_n(𝔸_F) with Π_v ≅ BC_v(π_v) outside the ramification and at ramified places split in 𝒦 where B splits, and Galois representations r_{π,ℓ} of every rank n, unramified at every place of F outside the ramification and ℓ, with Satake Frobenius polynomials and local–global compatibility away from ℓ at those places.",
+   "supplier": "AutomorphicGaloisRepresentationsPartII",
+   "section": "AG2.2"
   },
   {
-   "title": "Auxiliary-character finite avoidance in the Case 2 torsion Galois construction",
-   "neededBy": [
-    "IgusaVarietiesAndTorsionConcentrationPartII:IG.11/torsion-galois-representations",
-    "IgusaVarietiesAndTorsionConcentrationPartII:IG.11/middle-degree-concentration",
-    "IgusaVarietiesAndTorsionConcentrationPartII:IG.11/compact-generic-vanishing",
-    "IgusaVarietiesAndTorsionConcentrationPartII:IG.11/integral-and-twisted-coefficients"
-   ],
-   "detail": "For any finite set D of rational primes disjoint from S, choose the auxiliary odd Hecke character ϖ of 𝒦 extending the quadratic character of 𝒦/ℚ, with the archimedean type required by ET.0, Ram(ϖ) ⊂ Spl_{F/F⁺}, and Ram(ϖ) ∩ D = ∅. In particular one must be able to avoid each q ∉ S ∪ {ℓ} while choosing an auxiliary p ≠ q. The existing ET.0/unitary-elliptic-endoscopic-data fixes the character with its quadratic restriction but does not establish this ramification control with finite avoidance. Shin11 Lemma 7.1, p. 1722, proves ramification is contained in Spl_{F/F⁺}; its statement does not impose avoidance of an arbitrary finite D. A proof of this stronger character-choice statement, or another argument removing the character ramification from the final residual representation, is required. Without this step the spectral construction yields only unramifiedness outside S ∪ {p,ℓ} ∪ Ram(ϖ). This is a closure gap in this blueprint, not a claim that the published theorem is false."
+   "slug": "auxiliary-character-finite-avoidance",
+   "needs": "For every finite set D of rational primes disjoint from S, a choice of the Hecke character ϖ of 𝒦 extending the quadratic character of 𝒦/ℚ, with the archimedean type of §1.8, Ram_ℚ(ϖ) ⊂ Spl_{F/F⁺} and Ram_ℚ(ϖ) ∩ D = ∅.",
+   "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+   "section": "§6.3"
   }
  ],
  "restructure": [
