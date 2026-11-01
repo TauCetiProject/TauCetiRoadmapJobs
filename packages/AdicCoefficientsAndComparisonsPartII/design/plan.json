@@ -4856,14 +4856,40 @@
   ],
   "gaps": [
     {
-      "id": "G1",
-      "title": "Global projectivity of the Cossart–Piltant resolution",
-      "neededBy": [
-        "AdicCoefficientsAndComparisonsPartII:PA.0/resolvability-dimension-three",
-        "AdicCoefficientsAndComparisonsPartII:PA.6/char-x-altered-desingularization",
-        "AdicCoefficientsAndComparisonsPartII:PA.6/char-s-desingularization-of-morphisms"
-      ],
-      "detail": "Universal P-resolvability is used with projective resolving alterations (ILO Exposé X §3.3.3; source issue E5). Cossart–Piltant Theorem 1.1 resolves a reduced separated noetherian quasi-excellent scheme Y of dimension at most three by a proper birational morphism that is projective only over the members of a specified finite affine cover (projective when Y = Spec of a complete local ring, Corollary 1.2). Neither Temkin §4.3.2 nor ILO X Remark 3.3.4 derives a globally projective resolution of an arbitrary (possibly non-affine, possibly non-separated) alteration Y of a qe threefold with snc preimage of a given nowhere dense Z. The embedded part is supplied by Cossart–Jannsen–Saito Corollary 0.4 (from their Theorem 0.3) in the regular (hence excellent) ambient, and the first step is projective when Y is affine (Cossart–Piltant Remark 1.4); global projectivity of the first step, and the non-separated case, are not established here. This affects the projectivity of a and b in Temkin Theorems 1.2.5 and 1.2.9 whenever the base is handled through the Cossart–Piltant input (dimension three, or dimension two and not excellent); the dimension ≤ 2 excellent and dimension ≤ 1 cases, and every statement over fields and one-dimensional bases (ILO X 2.1, 2.4, Jannsen 2.11, Dittmann–Pop 3.4), do not depend on it."
+      "slug": "finite-type-fp-factorization",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "0.9",
+      "needs": "Every finite-type quasi-separated morphism X → S with S qcqs factors as a closed immersion X → X₀ followed by a finitely presented morphism X₀ → S; if X → S is of finite presentation over a quasi-compact open U ⊆ S, then X₀ can be chosen with X ×_S U → X₀ ×_S U an isomorphism."
+    },
+    {
+      "slug": "maximal-separable-p-extension",
+      "supplier": "LocalFieldsRamificationPartII",
+      "section": "GF.0/maximal-p-extension",
+      "needs": "Every separable P-extension inside a fixed separable closure is contained in a maximal separable P-extension whose top field is separably P-closed, with every finite subextension separable of P-number degree."
+    },
+    {
+      "slug": "closed-subset-log-structure",
+      "supplier": "CrystallineCohomology",
+      "section": "CR.5:log-algebra.4",
+      "needs": "(a) For a reduced locally noetherian X and a nowhere dense closed Z with complement j : U → X, the subsheaf O_X ∩ j_*O_U^× of O_X is a log structure on the étale site of X; (b) when X is regular and Z = |D| for a strict normal crossings divisor D, it equals the divisorial log structure M_D of CR.5:log-algebra.4."
+    },
+    {
+      "slug": "very-tame-local-quotient",
+      "supplier": "LefschetzPencilsAndVanishingCycles",
+      "section": "0.10",
+      "needs": "(a) The log structure of the quotient q : X → X/G of the very tame quotient theorem of §0.10 is (q_*M_X)^G; (b) at a geometric point x of an admissible, generically free, very tame action on a log regular fs scheme, G_x is abelian of order invertible in κ(x) and the strict localization of q at x is a standard Kummer étale cover of group G_x; (c) the very tame locus of a finite group action on a log regular fs scheme is open; (d) The equivariant log resolution of §0.10 commutes with restriction to G-stable opens and with strict localization at a geometric point x for the group G_x."
+    },
+    {
+      "slug": "log-blowup-universal-property",
+      "supplier": "LefschetzPencilsAndVanishingCycles",
+      "section": "0.10",
+      "needs": "The log blow-up carrier of §0.10 has the universal property for making a coherent log ideal invertible, and its fs saturation supplies the saturated log blow-up on the same shared log-scheme carrier."
+    },
+    {
+      "slug": "normalization-finite-field-identification",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "0.20",
+      "needs": "For an integral scheme X and a finite field extension L/k(X), the native relative normalization Nor_L(X) is normal, and the canonical map Spec L → Nor_L(X) identifies L with its function field compatibly with the specified embedding of k(X)."
     }
   ],
   "sourceIssues": [
