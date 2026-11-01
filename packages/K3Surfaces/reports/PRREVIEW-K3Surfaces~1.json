@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-K3Surfaces~1",
+    "head": "43784f823cd55178e1a6ed56335f79d5d97cdb70",
+    "pr": 1285,
+    "folder": "K3Surfaces",
+    "date": "2026-11-01",
+    "findings": 8,
+    "blocking": 3,
+    "notes": "Full folder review: seeded K7.A–C source sample; four cited works fetched legally plus fixed-locus classification. 66 prose and 24 Lean adversarial rows; all 24 signatures checked; original Lean elaboration passed with ten sorry warnings; seven one-simp padding successes. Gate fails blob/import rules. Dependency check reports 0 problems, but manual audit finds K3–Enriques supply cycle. Source and analytic verification limits are explicit in Markdown."
+  }
+}
