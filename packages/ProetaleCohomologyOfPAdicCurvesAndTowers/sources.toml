@@ -27,7 +27,7 @@ year = 2018
 venue = "Invent. Math. 219 (2020), 873-985"
 arxiv = "1801.06686v2"
 locator_scheme = "theorem"
-locator = "Proposition 1.11; Example 1.9; Theorems 1.3, 4.12, 5.8, 5.10, 5.13, 6.45; Corollary 5.9; Lemma 5.11; §§5.1-5.5"
+locator = "Proposition 1.11; Example 1.9; Theorems 1.3, 4.12, 5.8, 5.10, 5.13, 6.45; Proposition 5.1; Corollaries 5.3, 5.4, 5.9; Proposition 5.6; Lemma 5.11; §§5.1-5.5"
 url = "https://arxiv.org/abs/1801.06686v2"
 fetched_from = "https://arxiv.org/pdf/1801.06686v2"
 fetched_at = "2026-10-25T23:26:45Z"
@@ -36,7 +36,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2 (January 2019); locators use the arXiv v2 numbering, not collated with the journal version"
-cited_for = ["Final targets T5-T6: semistable Stein spaces and Drinfeld half-spaces"]
+cited_for = ["Final targets T5-T6: semistable Stein spaces and Drinfeld half-spaces", "0.3-0.5: generalized Steinberg representations and the irreducibility headline of Suggested.lean"]
 
 [[source]]
 id = "CDN20"
@@ -134,7 +134,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2"
-cited_for = ["Scope: duality and compact supports for curves, proposed for a Part II"]
+cited_for = ["Scope: duality and compact supports for curves, the scope of the Part II"]
 
 [[source]]
 id = "DAT06"
