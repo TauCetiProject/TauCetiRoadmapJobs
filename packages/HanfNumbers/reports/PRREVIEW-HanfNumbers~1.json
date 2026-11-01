@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-HanfNumbers~1",
+    "head": "41959b5e33b80504c8c798672f35b025ae739241",
+    "pr": 1319,
+    "folder": "HanfNumbers",
+    "date": "2026-11-01",
+    "findings": 11,
+    "blocking": 5,
+    "notes": "Full folder reviewed; all 15 seeded targets examined, with exact-source limitations recorded. 107 adversarial rows; 57 elaborated top-level signatures; all 32 admissions tried with simp; countable-smallness one-lemma and zero-colour probes compiled. Direct elaboration passes with 32 sorry warnings; supplied gate fails set_option, tex, residue, imports, own-name claims and two build-warning entries. Dependency check: 205 roadmaps, 1477 edges, 0 problems. Pins, main, board packages and indexed open-roadmap ownership searched. No PR files changed."
+  }
+}
