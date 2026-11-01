@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-EisensteinIdealAndRationalTorsion~3",
+    "head": "b417d0fcfc6666f13a9fd22d6a38a006a9d6d265",
+    "pr": 1264,
+    "folder": "EisensteinIdealAndRationalTorsion",
+    "date": "2026-11-01",
+    "findings": 1,
+    "blocking": 1,
+    "notes": "incremental re-review of 53 changed lines since 1131560; checked all four previous findings, every changed passage and affected supplier; R02–R04 repaired, R01 duplicate Manin–Drinfeld ownership remains. Seeded sample: seven directly touched and two dependent targets checked, six unchanged targets carried forward. Gate and targeted build pass; direct elaboration and six expanded signatures pass; 18 one-tactic closure attempts fail. Dependency check: 205 roadmaps, 1487 edges, 0 problems. Adversarial table: 22 new rows and 65 carried-forward rows. No PR files changed."
+  }
+}
