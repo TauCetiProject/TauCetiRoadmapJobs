@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-CompletedCohomologyAndLocalGlobalCompatibility~1",
+    "head": "80918ded1b8d2bc26835fa790443cc010b963a11",
+    "pr": 1270,
+    "folder": "CompletedCohomologyAndLocalGlobalCompatibility",
+    "date": "2026-11-01",
+    "findings": 4,
+    "blocking": 2,
+    "notes": "Full folder review; 15 seeded source targets compared with legal texts; 87 computed adversarial rows; 37 pinned declarations inspected; ownership and supplier audit. Worker gate passes, independent dependency check reports 205 roadmaps/1485 edges/0 problems, and Suggested.lean elaborates without diagnostics. Four findings: missing ordinary Eisenstein supplier contract (P1), unspecified algebraic normalization comparison (P2), stale Serre-weight locators and undeclared API names (P3). EDIX extraction unavailable; RIBET-90 uncertified/paywalled. Zero Lean declarations, so no signature or padding probes apply."
+  }
+}
