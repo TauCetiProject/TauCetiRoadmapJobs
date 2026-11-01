@@ -1,0 +1,75 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ExponentialSumsAndCircleMethodPartII"
+
+[[source]]
+id = "BS20"
+authors = "Tim Browning and Will Sawin"
+title = "A geometric version of the circle method"
+year = 2020
+doi = "10.4007/annals.2020.191.3.4"
+locator_scheme = "section"
+locator = "Sections 1–7, pp. 893–948"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n3-p04-s.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n3-p04-s.pdf"
+fetched_at = "2026-10-24T21:46:44Z"
+sha256 = "f20c87e337c054e42134bf2daf577203ce4b391e0d22ff59b9425d1249c33c53"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["Layers 0–13"]
+
+[[source]]
+id = "BV15"
+authors = "Tim Browning, Pankaj Vishe"
+title = "Rational points on cubic hypersurfaces over F_q(t)"
+year = 2015
+arxiv = "1502.00772v2"
+locator_scheme = "theorem"
+locator = "Lemma 2.8, preprint pp. 12–13"
+url = "https://arxiv.org/abs/1502.00772v2"
+fetched_from = "https://arxiv.org/pdf/1502.00772v2"
+fetched_at = "2026-10-24T21:47:20Z"
+sha256 = "91eb60cd3ff2448581893e19824bb2f3f2e726f283d6e8335fa4821611421e3c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v2; theorem and page locators refer to this preprint, rather than journal pagination."
+cited_for = ["Layers 0–1"]
+
+[[source]]
+id = "LR14v2"
+authors = "Gilles Lachaud, Robert Rolland"
+title = "On the Number of Points of Algebraic Sets over Finite Fields"
+year = 2014
+arxiv = "1405.3027v2"
+locator_scheme = "theorem"
+locator = "Theorems 1.1 and 2.1 and Proposition 2.3, v2 pp. 2–5"
+url = "https://arxiv.org/abs/1405.3027v2"
+fetched_from = "https://arxiv.org/pdf/1405.3027v2"
+fetched_at = "2026-10-24T21:47:58Z"
+sha256 = "48b30c8820389dc4190c29e3cd9eba2121135daa57426308e78b7ece1c23e034"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v2; theorem and page locators refer to this preprint, rather than journal pagination."
+cited_for = ["Layers 0–1"]
+
+[[source]]
+id = "STACKS"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "05F9, 012K, 0BK5"
+url = "https://stacks.math.columbia.edu/tag/05F9"
+fetched_from = "https://stacks.math.columbia.edu/download/more-morphisms.pdf#nameddest=05F9"
+fetched_at = "2026-10-24T21:48:31Z"
+sha256 = "59df05f5d52f453b17677398c72a51fe156367f460f6dcfdf764d9631b7c787c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Line locators specify More on Morphisms or Homology; 012K and 0BK5 use the Homology extraction."
+cited_for = ["Layers 0 and 7"]
+additional_fetched_from = "https://stacks.math.columbia.edu/download/homology.pdf#nameddest=012K"
+additional_sha256 = "f3d73df1c27a6d88f9e4dd0f01697b3dd8553b88e3ea078539a9b512dc4d9576"
+additional_url = "https://stacks.math.columbia.edu/tag/012K"
