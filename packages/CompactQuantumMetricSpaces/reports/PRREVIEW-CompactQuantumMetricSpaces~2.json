@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-CompactQuantumMetricSpaces~2",
+    "head": "7205d1c417f9470de77a97e90bf47c7f60e2b21b",
+    "pr": 1155,
+    "folder": "CompactQuantumMetricSpaces",
+    "date": "2026-11-01",
+    "findings": 4,
+    "blocking": 1,
+    "notes": "Full review of the repaired head: all eight previous findings repaired. Gate passes (build 0, depcheck 0; depcheck rerun: 204 roadmaps, 1437 edges, 0 problems). Signatures elaborated (16 sorry warnings). Seeded sample (0.2, 0.3, 0.4, 1.1-1.4, 3.1, 3.5, 4.1, 4.3, 4.5, 5.1, 5.3, 6.1) plus headline locators verified against the arXiv texts of Rieffel 1998/1999/2000 (33 locators agree, 3 point elsewhere: P3). 15 supplier citations resolved on main or at open heads. One P2: completeness (Thm 12.11) and compactness (Thm 13.5) are statable in Cauchy-sequence form (two probes elaborated) but the docstring calls them not statable. P3s: locators (3.5 lsc is Rieffel 1999 Prop 3.7; 1.5 separability has no source; AmenableGroups Layer 6 has no boxes), bridge vocabulary vs Rieffel Def 5.1, SpectralManifolds consumer anchor dead."
+  }
+}
