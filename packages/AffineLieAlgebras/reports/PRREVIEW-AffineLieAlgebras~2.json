@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-AffineLieAlgebras~2",
+    "head": "9dfb9288681bcd97faacb3f573b43dec50e517f4",
+    "pr": 1201,
+    "folder": "AffineLieAlgebras",
+    "date": "2026-11-01",
+    "findings": 7,
+    "blocking": 5,
+    "notes": "Full review and previous R01\u2013R08 repair comparison; all nine seeded source targets (eight APIs and Whitehead); 151 computed adversarial rows; 23 elaborated signatures, zero dropped binders; eight padding probes did not close; original Lean passes with eight sorry warnings; supplied gate passes; independent depcheck: 204 roadmaps, 1448 edges, 0 problems. Two source texts not verifiable. Ownership and supplier citations checked against main, supplied open heads and pinned libraries. Worktree unchanged."
+  }
+}
