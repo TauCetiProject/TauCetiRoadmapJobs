@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GeometricTopology~50",
+  "head": "309be2f6a86977a796e05feadd8be913505b81e0",
+  "pr": 903,
+  "folder": "GeometricTopology",
+  "date": "2026-11-01",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "Full review of the repaired head: all three r49 findings repaired (80 companion .lean files deleted; sign witness det +2 and transversality Check recomputed inside the carrier). Gate OK (worker and my run), depcheck 204/1430/0 with no UPWARD/CYCLE/moved line, resolve none, lake env lean 17 sorry warnings only, one-tactic probe errors at all 17 theorems, 247 backticked library names resolve at the pins. Seeded sample (1.3, 2.3, 4.3.1, 4.3.5, 4.4.6, 4.4.7, 4.6.1, 4.6.5, 4.7.8, 4.8, 4.9.1, 4.15, 5.2, 6.2, 7.3) checked: Pyronneau, Collins, Lickorish-Millett, Ng, Menasco-Thistlethwaite 1991, Kindred, HOMFLY 1985, Armond-Lowrance, Conway survey, Boden-Chrisman-Karimi, Jones 1985, Thurston ch. 3/5/6 read at their locators; fourteen Conway polynomials, the T(2,n) presentations/Fox row/continuant/Burau corner, Kauffman F/Q of trefoil and Hopf, the HOMFLY composition identity, pretzel component counts, surgery and signature Checks recomputed. Two P3s: \u00a74.3.5 misdescribes Collins' step 4 (the source is already symmetric), seven Checks blocks written as prose paragraphs."
+ }
+}
