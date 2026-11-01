@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-K3Surfaces~3",
+    "head": "3671d62da9e6f293062e4f81b5ddfbb8dac41986",
+    "pr": 1285,
+    "folder": "K3Surfaces",
+    "date": "2026-11-01",
+    "findings": 2,
+    "blocking": 1,
+    "notes": "incremental re-review of 145 changed lines since 893e500; checked all five previous findings, all changed passages, changed portions of the 13-target seeded sample, four legally fetched source texts, supplier ownership and pinned declarations, 31 fresh and 93 carried adversarial rows; worker gate passes; independent candidate-order depcheck and targeted build/direct elaboration/signatures pass; default-order gate rerun reports only exempt NOT IN ORDER. Picard gap registration remains blocking; source manifest absent."
+  }
+}
