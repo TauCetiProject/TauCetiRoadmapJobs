@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-EulerSystemsCyclotomicMainConjecture~1",
+    "head": "804fe8a907c2b64b0312f4fc786868838f21b354",
+    "pr": 1311,
+    "folder": "EulerSystemsCyclotomicMainConjecture",
+    "date": "2026-11-01",
+    "findings": 4,
+    "blocking": 1,
+    "notes": "Reviewed the whole folder and all 15 seeded source targets; 87 numbered-target adversarial rows plus nine definition rows. One P2: missing statable pure 2-power Iwasawa–Leopoldt headline, confirmed by an elaborating scratch signature. Three P3 findings: 87 gate residue anchors, undeclared API/Check names, and supplier locator/name drift. Gate fails only residue=87; direct Lean elaboration passes with four sorry warnings. All 13 signatures checked; no one-tactic padding found. Dependency check: 205 roadmaps, 1483 edges, 0 problems. Outside-folder diff empty. Fifteen of sixteen listed references readable; Morita 1975 unavailable after institutional HTTP 503 responses and recorded under Not verifiable. No PR files changed."
+  }
+}
