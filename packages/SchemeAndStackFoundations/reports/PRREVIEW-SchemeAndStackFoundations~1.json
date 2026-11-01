@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "rejected",
+    "reviewer": "independent-review-PRREVIEW-SchemeAndStackFoundations~1",
+    "head": "0cb327bea2a04694e79a48f2ca23dbfb1b74b19c",
+    "pr": 1276,
+    "folder": "SchemeAndStackFoundations",
+    "date": "2026-11-01",
+    "findings": 10,
+    "blocking": 6,
+    "notes": "Full-folder read; all 15 seeded source sections examined through legal sources, with locator corrections. Worker gate and targeted build pass; direct Lean elaboration and 165 named signature checks pass. All 76 theorem bodies received basic one-tactic probes; one definitionally trivial theorem found. Missing coherent full-faithfulness signature elaborates at pins. Report contains 136 computed adversarial rows. Dependency tool reports 204 roadmaps, 1460 edges, 0 problems; independently resolved main-roadmap return citations reveal bidirectional JacobianChallenge supply. Rejected because polarized algebraization extends the existing base beyond its explicit scope and belongs in Part II; additional mathematical and signature defects recorded. No PR files changed."
+  }
+}
