@@ -1,0 +1,54 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LieHighestWeightPartII"
+
+[[source]]
+id = "CH"
+authors = "Dan Ciubotaru, Michael Harris"
+title = "On the generalized Ramanujan and Arthur conjectures over function fields"
+year = 2023
+arxiv = "2311.15300v1"
+locator_scheme = "section"
+locator = "§2.1 relations (2.1), p.6; §2.2 Definition 2.2 and Lemma 2.4, p.6; Definition 2.5, p.7; §6.12 Lemma 6.30, p.24; §10.1 Proposition 10.2, p.32; Appendix Lemma 10.9, p.35; Tables 2–4, pp.36–37"
+url = "https://arxiv.org/abs/2311.15300v1"
+fetched_from = "https://arxiv.org/pdf/2311.15300v1"
+fetched_at = "2026-10-26T21:13:45Z"
+sha256 = "7261083b46cc8ec3fad81215250ff6bef47da05ef6054813572de21db10dc103"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["0.1", "0.2", "1.1", "1.2", "1.3", "1.4", "2.2", "2.3", "2.4", "3.3", "3.4", "3.5", "4.1", "5.1", "5.2", "5.3", "5.4", "5.5"]
+
+[[source]]
+id = "DG"
+authors = "Willem de Graaf"
+title = "Computing with nilpotent orbits in simple Lie algebras of exceptional type"
+year = 2007
+arxiv = "math/0702193v2"
+locator_scheme = "section"
+locator = "§2, p.3; §3 Lemmas 2–3, p.4; Appendix A, Tables 2–6, pp.7–16"
+url = "https://arxiv.org/abs/math/0702193v2"
+fetched_from = "https://arxiv.org/pdf/math/0702193v2"
+fetched_at = "2026-10-26T21:13:53Z"
+sha256 = "8f78bc359826032475efa37b4c53958b25bfe136286774c8dd55bf1cdcd059e6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2; published LMS J. Comput. Math. 11 (2008), 280–297, numbering not collated"
+cited_for = ["0.3", "3.1", "3.2", "3.3", "3.5"]
+
+[[source]]
+id = "SOM"
+authors = "Eric Sommers"
+title = "Nilpotent orbits and Weyl group representations"
+year = 2009
+locator_scheme = "section"
+locator = "§3.1, pp.15–16"
+url = "https://www.math.utah.edu/~ptrapa/sommers-preliminary-notes.pdf"
+fetched_from = "https://www.math.utah.edu/~ptrapa/sommers-preliminary-notes.pdf"
+fetched_at = "2026-10-26T21:13:54Z"
+sha256 = "4efd401e9f7ed75cd1ec83d6a7f51e5be744ed15c08e72a8651462649fa54dc8"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["0.3", "3.1"]
