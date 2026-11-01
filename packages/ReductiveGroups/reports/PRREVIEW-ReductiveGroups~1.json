@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ReductiveGroups~1",
+    "head": "f536cbdd838fbcab0c7a88ba523382c56a57c397",
+    "pr": 1332,
+    "folder": "ReductiveGroups",
+    "date": "2026-11-01",
+    "findings": 11,
+    "blocking": 6,
+    "notes": "Read all ten scoped files; checked the sheaves/descent, Supplier/Lang and One constructor seeded sample against legal Milne and Conrad texts. Gate FAIL: blob=8, sorry-data=5, imports=1, mathlib-subimports=1. Suggested and all 15 actual signature checks elaborate with only sorry warnings. Dependency check: 204 roadmaps, 1478 edges, 0 mechanical problems; reciprocal supply edges found manually. 226 computed-instance rows, pinned-library and ownership audit, and 89 admitted-theorem tactic probes recorded. Inaccessible source texts and admitted constructions are explicitly not certified. No PR files changed."
+  }
+}
