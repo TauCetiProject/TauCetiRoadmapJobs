@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-LanglandsParameterStacks~2",
+    "head": "40c74a37fb3b6a1cf2596635bac6a90d311b1088",
+    "pr": 1202,
+    "folder": "LanglandsParameterStacks",
+    "date": "2026-11-01",
+    "findings": 3,
+    "blocking": 1,
+    "notes": "Full 83-target review, previous findings checked individually, all 15 seeded source targets inspected with primary-text limits recorded; worker gate passes, direct Lean elaboration passes, dependency check 205 roadmaps/1454 edges/0 problems. R01 P2: restore affine finite-type hypotheses in 4.10; R02-R03 P3: discriminating Checks and source manifest. No PR files changed."
+  }
+}
