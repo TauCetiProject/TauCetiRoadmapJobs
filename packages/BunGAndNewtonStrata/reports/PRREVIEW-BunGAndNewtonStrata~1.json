@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-BunGAndNewtonStrata~1",
+    "head": "0d1e747805d7e33a5a1cec1c24ccd16d4b047637",
+    "pr": 1241,
+    "folder": "BunGAndNewtonStrata",
+    "date": "2026-11-01",
+    "findings": 8,
+    "blocking": 3,
+    "notes": "Full-folder review: 104 numbered targets, 118 computed adversarial rows, 15 seeded source targets, 17 supplier groups, pinned-library object and ownership audits. Seven Lean signatures checked and two one-tactic padding probes attempted. Independent Lean elaboration passed with only sorry warnings; dependency check: 205 roadmaps, 1475 edges, 0 problems. Worker gate fails residue=143 and prnum=5; build, dependency and outside-folder checks pass. GLX remains uncertified; two published-version page alignments are not certified. No PR files changed."
+  }
+}
