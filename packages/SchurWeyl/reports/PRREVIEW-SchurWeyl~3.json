@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-SchurWeyl~3",
+    "head": "0f5f27e76f5f4bb1d23ffd903040b79e6dfb2194",
+    "pr": 1164,
+    "folder": "RepresentationTheory/SchurWeyl",
+    "date": "2026-11-01",
+    "findings": 12,
+    "blocking": 9,
+    "notes": "Full review of all three files and all seven previous findings. All 15 seeded source sections inspected; inaccessible books and incomplete source support recorded under Not verifiable. Gate passes; dependency check: 204 roadmaps, 1490 edges, 0 problems. Main and auxiliary Lean elaborations pass with only 17 and 1 sorry warnings; 31 declaration signatures inspected across both files. All 18 admissions received one-tactic probes. 151 adversarial computation rows; pinned-library and main/open-roadmap ownership audits completed with stated limits. Twelve findings, including absent Frobenius suppliers, false RSK reversal, B3(0) Check, internal dependency cycle and missing headline signatures. No PR files changed."
+  }
+}
