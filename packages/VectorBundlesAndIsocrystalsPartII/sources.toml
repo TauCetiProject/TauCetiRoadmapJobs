@@ -3,6 +3,10 @@ roadmap = "VectorBundlesAndIsocrystalsPartII"
 
 [[source]]
 id = "CN25"
+authors = "Pierre Colmez and Wiesława Nizioł"
+title = "On the cohomology of p-adic analytic spaces, II: The C_st-conjecture"
+year = 2025
+doi = "10.1215/00127094-2024-0074"
 locator_scheme = "section"
 locator = "§2, pp. 8–12; §3.3, pp. 19–20; Corollary 3.18, p. 18; §4, pp. 20–31; Appendix A, pp. 58–60"
 url = "https://webusers.imj-prg.fr/~wieslawa.niziol/CN5.pdf"
@@ -12,15 +16,15 @@ sha256 = "bb1628cf1f4321243e6070be2abae99f72a41e237e70a7eb1ec1fc03cc2cd52a"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["VectorBundlesAndIsocrystalsPartII:AC.0/banach-galois-exact-category", "VectorBundlesAndIsocrystalsPartII:AC.0/fontaine-full-faithfulness", "VectorBundlesAndIsocrystalsPartII:AC.0/almost-c-representations", "VectorBundlesAndIsocrystalsPartII:AC.0/almost-c-structure", "VectorBundlesAndIsocrystalsPartII:AC.0/period-almost-isomorphism", "VectorBundlesAndIsocrystalsPartII:AC.0/general-base-rigidity-inputs", "VectorBundlesAndIsocrystalsPartII:AC.0/algebraic-closure-density", "VectorBundlesAndIsocrystalsPartII:AC.0/period-hom-rigidity", "VectorBundlesAndIsocrystalsPartII:AC.1/almost-split-extensions", "VectorBundlesAndIsocrystalsPartII:AC.1/yoneda-ext-comparison", "VectorBundlesAndIsocrystalsPartII:AC.1/cyclotomic-generalized-invariants", "VectorBundlesAndIsocrystalsPartII:AC.1/generalized-invariant-complex", "VectorBundlesAndIsocrystalsPartII:AC.1/euler-poincare-duality", "VectorBundlesAndIsocrystalsPartII:AC.1/truncated-period-ext-table", "VectorBundlesAndIsocrystalsPartII:AC.1/truncation-vanishing", "VectorBundlesAndIsocrystalsPartII:TVS.0/left-heart-boundedness", "VectorBundlesAndIsocrystalsPartII:TVS.0/tvs-exact-structure", "VectorBundlesAndIsocrystalsPartII:TVS.0/topological-vector-spaces", "VectorBundlesAndIsocrystalsPartII:TVS.0/classical-bc-to-tvs", "VectorBundlesAndIsocrystalsPartII:TVS.0/period-completion", "VectorBundlesAndIsocrystalsPartII:TVS.0/period-c0-base-change", "VectorBundlesAndIsocrystalsPartII:TVS.0/period-module-realization", "VectorBundlesAndIsocrystalsPartII:TVS.0/period-pairs", "VectorBundlesAndIsocrystalsPartII:TVS.1/disc-translations", "VectorBundlesAndIsocrystalsPartII:TVS.1/perfectoid-kummer-tower", "VectorBundlesAndIsocrystalsPartII:TVS.1/two-adic-character-comparison", "VectorBundlesAndIsocrystalsPartII:TVS.1/normed-disc-descent", "VectorBundlesAndIsocrystalsPartII:TVS.1/bounded-analytic-cocycles", "VectorBundlesAndIsocrystalsPartII:TVS.1/additive-lifts-and-rank", "VectorBundlesAndIsocrystalsPartII:TVS.1/disc-ext-class", "VectorBundlesAndIsocrystalsPartII:TVS.1/translation-invariant-proetale-class", "VectorBundlesAndIsocrystalsPartII:TVS.2/reasonable-c-spaces", "VectorBundlesAndIsocrystalsPartII:TVS.2/reasonable-period-models", "VectorBundlesAndIsocrystalsPartII:TVS.2/reasonable-pairs", "VectorBundlesAndIsocrystalsPartII:TVS.2/normalized-pushout-extensions", "VectorBundlesAndIsocrystalsPartII:TVS.2/profinite-cocycle-one-step", "VectorBundlesAndIsocrystalsPartII:TVS.2/compact-type-over-c", "VectorBundlesAndIsocrystalsPartII:TVS.2/hom-ext-from-b1", "VectorBundlesAndIsocrystalsPartII:TVS.2/general-frechet-hom-ext", "VectorBundlesAndIsocrystalsPartII:TVS.2/unrestricted-period-model-comparison", "VectorBundlesAndIsocrystalsPartII:TVS.2/torsion-source-hom-ext", "VectorBundlesAndIsocrystalsPartII:TVS.2/constant-source-hom-ext", "VectorBundlesAndIsocrystalsPartII:TVS.2/pair-hom-from-torsion", "VectorBundlesAndIsocrystalsPartII:TVS.2/fundamental-source-hom-ext", "VectorBundlesAndIsocrystalsPartII:TVS.2/linear-additive-lifts", "VectorBundlesAndIsocrystalsPartII:TVS.2/module-hom-ext-comparison", "VectorBundlesAndIsocrystalsPartII:TVS.2/pair-hom-comparison", "VectorBundlesAndIsocrystalsPartII:QBC.0/filtered-quasi-banach-colmez-spaces", "VectorBundlesAndIsocrystalsPartII:QBC.0/positive-pair-orthogonality", "VectorBundlesAndIsocrystalsPartII:QBC.0/intrinsic-curvature-filtration", "VectorBundlesAndIsocrystalsPartII:QBC.0/qbc-forgetful-full-faithfulness", "VectorBundlesAndIsocrystalsPartII:QBC.0/dense-injection-extension-example", "VectorBundlesAndIsocrystalsPartII:H.0/period-valued-height-functor", "VectorBundlesAndIsocrystalsPartII:H.0/vs-sheaf-ext-comparison", "VectorBundlesAndIsocrystalsPartII:H.0/vs-inverse-limit", "VectorBundlesAndIsocrystalsPartII:H.0/vs-filtered-ext-localization", "VectorBundlesAndIsocrystalsPartII:H.0/vs-ext-and-filtered-localization", "VectorBundlesAndIsocrystalsPartII:H.0/nonpositive-period-ext-vanishing", "VectorBundlesAndIsocrystalsPartII:H.0/height-rank-formula"]
-authors = "Pierre Colmez and Wiesława Nizioł"
-title = "On the cohomology of p-adic analytic spaces, II: The C_st-conjecture"
-year = 2025
-doi = "10.1215/00127094-2024-0074"
 version_note = "Numbering and pages refer to the 61-page author copy CN5.pdf dated 24 November 2024; journal numbering is not substituted."
+cited_for = ["VectorBundlesAndIsocrystalsPartII:AC.0/banach-galois-exact-category", "VectorBundlesAndIsocrystalsPartII:AC.0/fontaine-full-faithfulness", "VectorBundlesAndIsocrystalsPartII:AC.0/almost-c-representations", "VectorBundlesAndIsocrystalsPartII:AC.0/almost-c-structure", "VectorBundlesAndIsocrystalsPartII:AC.0/period-almost-isomorphism", "VectorBundlesAndIsocrystalsPartII:AC.0/general-base-rigidity-inputs", "VectorBundlesAndIsocrystalsPartII:AC.0/algebraic-closure-density", "VectorBundlesAndIsocrystalsPartII:AC.0/period-hom-rigidity", "VectorBundlesAndIsocrystalsPartII:AC.1/almost-split-extensions", "VectorBundlesAndIsocrystalsPartII:AC.1/yoneda-ext-comparison", "VectorBundlesAndIsocrystalsPartII:AC.1/cyclotomic-generalized-invariants", "VectorBundlesAndIsocrystalsPartII:AC.1/generalized-invariant-complex", "VectorBundlesAndIsocrystalsPartII:AC.1/euler-poincare-duality", "VectorBundlesAndIsocrystalsPartII:AC.1/truncated-period-ext-table", "VectorBundlesAndIsocrystalsPartII:AC.1/truncation-vanishing", "VectorBundlesAndIsocrystalsPartII:TVS.0/left-heart-boundedness", "VectorBundlesAndIsocrystalsPartII:TVS.0/tvs-exact-structure", "VectorBundlesAndIsocrystalsPartII:TVS.0/topological-vector-spaces", "VectorBundlesAndIsocrystalsPartII:TVS.0/classical-bc-to-tvs", "VectorBundlesAndIsocrystalsPartII:TVS.0/period-completion", "VectorBundlesAndIsocrystalsPartII:TVS.0/period-c0-base-change", "VectorBundlesAndIsocrystalsPartII:TVS.0/period-module-realization", "VectorBundlesAndIsocrystalsPartII:TVS.0/period-pairs", "VectorBundlesAndIsocrystalsPartII:TVS.1/disc-translations", "VectorBundlesAndIsocrystalsPartII:TVS.1/perfectoid-kummer-tower", "VectorBundlesAndIsocrystalsPartII:TVS.1/two-adic-character-comparison", "VectorBundlesAndIsocrystalsPartII:TVS.1/normed-disc-descent", "VectorBundlesAndIsocrystalsPartII:TVS.1/bounded-analytic-cocycles", "VectorBundlesAndIsocrystalsPartII:TVS.1/additive-lifts-and-rank", "VectorBundlesAndIsocrystalsPartII:TVS.1/disc-ext-class", "VectorBundlesAndIsocrystalsPartII:TVS.1/translation-invariant-proetale-class", "VectorBundlesAndIsocrystalsPartII:TVS.2/reasonable-c-spaces", "VectorBundlesAndIsocrystalsPartII:TVS.2/reasonable-period-models", "VectorBundlesAndIsocrystalsPartII:TVS.2/reasonable-pairs", "VectorBundlesAndIsocrystalsPartII:TVS.2/normalized-pushout-extensions", "VectorBundlesAndIsocrystalsPartII:TVS.2/profinite-cocycle-one-step", "VectorBundlesAndIsocrystalsPartII:TVS.2/compact-type-over-c", "VectorBundlesAndIsocrystalsPartII:TVS.2/hom-ext-from-b1", "VectorBundlesAndIsocrystalsPartII:TVS.2/general-frechet-hom-ext", "VectorBundlesAndIsocrystalsPartII:TVS.2/unrestricted-period-model-comparison", "VectorBundlesAndIsocrystalsPartII:TVS.2/torsion-source-hom-ext", "VectorBundlesAndIsocrystalsPartII:TVS.2/constant-source-hom-ext", "VectorBundlesAndIsocrystalsPartII:TVS.2/pair-hom-from-torsion", "VectorBundlesAndIsocrystalsPartII:TVS.2/fundamental-source-hom-ext", "VectorBundlesAndIsocrystalsPartII:TVS.2/linear-additive-lifts", "VectorBundlesAndIsocrystalsPartII:TVS.2/module-hom-ext-comparison", "VectorBundlesAndIsocrystalsPartII:TVS.2/pair-hom-comparison", "VectorBundlesAndIsocrystalsPartII:QBC.0/filtered-quasi-banach-colmez-spaces", "VectorBundlesAndIsocrystalsPartII:QBC.0/positive-pair-orthogonality", "VectorBundlesAndIsocrystalsPartII:QBC.0/intrinsic-curvature-filtration", "VectorBundlesAndIsocrystalsPartII:QBC.0/qbc-forgetful-full-faithfulness", "VectorBundlesAndIsocrystalsPartII:QBC.0/dense-injection-extension-example", "VectorBundlesAndIsocrystalsPartII:H.0/period-valued-height-functor", "VectorBundlesAndIsocrystalsPartII:H.0/vs-sheaf-ext-comparison", "VectorBundlesAndIsocrystalsPartII:H.0/vs-inverse-limit", "VectorBundlesAndIsocrystalsPartII:H.0/vs-filtered-ext-localization", "VectorBundlesAndIsocrystalsPartII:H.0/vs-ext-and-filtered-localization", "VectorBundlesAndIsocrystalsPartII:H.0/nonpositive-period-ext-vanishing", "VectorBundlesAndIsocrystalsPartII:H.0/height-rank-formula"]
 
 [[source]]
 id = "FF18"
+authors = "Laurent Fargues and Jean-Marc Fontaine; preface by Pierre Colmez"
+title = "Courbes et fibrés vectoriels en théorie de Hodge p-adique"
+year = 2018
+doi = "10.24033/ast.1056"
 locator_scheme = "section"
 locator = "Preface §§2.2–2.4, printed pp. 12–23; §5.5.1, printed pp. 212–214, ownership boundary only"
 url = "https://www.imo.universite-paris-saclay.fr/~fontaine/courbe.pdf"
@@ -30,15 +34,14 @@ sha256 = "cc159f38a3801c736b71ecea363496abe7706550bfb416600718ee9933922ca3"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["VectorBundlesAndIsocrystalsPartII:AC.1/euler-poincare-duality", "VectorBundlesAndIsocrystalsPartII:AC.1/fundamental-arithmetic-surjectivity", "VectorBundlesAndIsocrystalsPartII:AC.1/equivariant-analytic-realization"]
-authors = "Laurent Fargues and Jean-Marc Fontaine; preface by Pierre Colmez"
-title = "Courbes et fibrés vectoriels en théorie de Hodge p-adique"
-year = 2018
-doi = "10.24033/ast.1056"
 version_note = "Numbering refers to courbe.pdf, author copy dated 16 April 2017; printed page equals PDF page minus 10."
+cited_for = ["VectorBundlesAndIsocrystalsPartII:AC.1/euler-poincare-duality", "VectorBundlesAndIsocrystalsPartII:AC.1/fundamental-arithmetic-surjectivity", "VectorBundlesAndIsocrystalsPartII:AC.1/equivariant-analytic-realization"]
 
 [[source]]
 id = "Colmez02"
+authors = "Pierre Colmez"
+title = "Espaces de Banach de dimension finie"
+year = 2002
 locator_scheme = "section"
 locator = "§§5.5–5.6, Propositions 5.20 and 5.23, pp. 30–32; Theorem 10.5, pp. 76–77; §10.5, pp. 82–83"
 url = "https://webusers.imj-prg.fr/~pierre.colmez/jussieucorps.pdf"
@@ -48,14 +51,15 @@ sha256 = "3675d316c726cde8f55d3d3582e270e94d2dc1d814196e7cbf7b38d42e3d0c63"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["VectorBundlesAndIsocrystalsPartII:TVS.1/disc-translations", "VectorBundlesAndIsocrystalsPartII:TVS.1/two-adic-character-comparison", "VectorBundlesAndIsocrystalsPartII:TVS.1/translation-invariant-proetale-class"]
-authors = "Pierre Colmez"
-title = "Espaces de Banach de dimension finie"
-year = 2002
 version_note = "Locators use the internal pagination of the author copy jussieucorps.pdf."
+cited_for = ["VectorBundlesAndIsocrystalsPartII:TVS.1/disc-translations", "VectorBundlesAndIsocrystalsPartII:TVS.1/two-adic-character-comparison", "VectorBundlesAndIsocrystalsPartII:TVS.1/translation-invariant-proetale-class"]
 
 [[source]]
 id = "Schneiders99"
+authors = "Jean-Pierre Schneiders"
+title = "Quasi-abelian categories and sheaves"
+year = 1999
+doi = "10.24033/msmf.389"
 locator_scheme = "section"
 locator = "Corollaries 1.2.20–1.2.22, pp. 24–25; generic theory imported from LocallyAnalyticDistributions L0"
 url = "https://www.numdam.org/item/10.24033/msmf.389.pdf"
@@ -65,15 +69,14 @@ sha256 = "47967a3f77b40eb787321878039e1ef8160d7965d7b623d1a55c54a8ad59ffea"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["VectorBundlesAndIsocrystalsPartII:TVS.0/left-heart-boundedness", "VectorBundlesAndIsocrystalsPartII:TVS.0/topological-vector-spaces"]
-authors = "Jean-Pierre Schneiders"
-title = "Quasi-abelian categories and sheaves"
-year = 1999
-doi = "10.24033/msmf.389"
 version_note = "Locators use printed pagination of the Numdam copy."
+cited_for = ["VectorBundlesAndIsocrystalsPartII:TVS.0/left-heart-boundedness", "VectorBundlesAndIsocrystalsPartII:TVS.0/topological-vector-spaces"]
 
 [[source]]
 id = "Fontaine03"
+authors = "Jean-Marc Fontaine"
+title = "Presque C_p-représentations"
+year = 2003
 locator_scheme = "section"
 locator = "§1.4, Theorems A–C, pp. 290–291; §2.1, p. 306; §4, Theorem 4.1, pp. 328–329; §§5–6"
 url = "https://ftp.gwdg.de/pub/misc/EMIS/journals/DMJDMV/vol-kato/fontaine.dm.pdf"
@@ -83,14 +86,14 @@ sha256 = "379a3c41359063b36c5ef6c5ebae8117a265536d03d583dbe0cccffc9caed44c"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["VectorBundlesAndIsocrystalsPartII:AC.0/fontaine-full-faithfulness", "VectorBundlesAndIsocrystalsPartII:AC.0/fundamental-extension-analyticity", "VectorBundlesAndIsocrystalsPartII:AC.0/almost-c-representations", "VectorBundlesAndIsocrystalsPartII:AC.0/almost-c-structure", "VectorBundlesAndIsocrystalsPartII:AC.0/period-almost-isomorphism", "VectorBundlesAndIsocrystalsPartII:AC.1/almost-split-extensions", "VectorBundlesAndIsocrystalsPartII:AC.1/yoneda-ext-comparison", "VectorBundlesAndIsocrystalsPartII:AC.1/cyclotomic-generalized-invariants", "VectorBundlesAndIsocrystalsPartII:AC.1/generalized-invariant-complex", "VectorBundlesAndIsocrystalsPartII:AC.1/euler-poincare-duality", "VectorBundlesAndIsocrystalsPartII:AC.1/fundamental-arithmetic-surjectivity", "VectorBundlesAndIsocrystalsPartII:AC.1/equivariant-analytic-realization"]
-authors = "Jean-Marc Fontaine"
-title = "Presque C_p-représentations"
-year = 2003
 version_note = "Locators use Documenta Mathematica Extra Volume Kato (2003), printed pp. 285–385."
+cited_for = ["VectorBundlesAndIsocrystalsPartII:AC.0/fontaine-full-faithfulness", "VectorBundlesAndIsocrystalsPartII:AC.0/fundamental-extension-analyticity", "VectorBundlesAndIsocrystalsPartII:AC.0/almost-c-representations", "VectorBundlesAndIsocrystalsPartII:AC.0/almost-c-structure", "VectorBundlesAndIsocrystalsPartII:AC.0/period-almost-isomorphism", "VectorBundlesAndIsocrystalsPartII:AC.1/almost-split-extensions", "VectorBundlesAndIsocrystalsPartII:AC.1/yoneda-ext-comparison", "VectorBundlesAndIsocrystalsPartII:AC.1/cyclotomic-generalized-invariants", "VectorBundlesAndIsocrystalsPartII:AC.1/generalized-invariant-complex", "VectorBundlesAndIsocrystalsPartII:AC.1/euler-poincare-duality", "VectorBundlesAndIsocrystalsPartII:AC.1/fundamental-arithmetic-surjectivity", "VectorBundlesAndIsocrystalsPartII:AC.1/equivariant-analytic-realization"]
 
 [[source]]
 id = "TVS25"
+authors = "Pierre Colmez and Wiesława Nizioł"
+title = "Topological Vector Spaces"
+year = 2025
 locator_scheme = "section"
 locator = "Introduction and Theorem 1.1, pp. 1–3; Definition 3.32 and §4.1, pp. 23–26; §4.2.3–4.2.4, Proposition 4.21 and Corollary 4.25, pp. 28–31"
 url = "https://webusers.imj-prg.fr/~wieslawa.niziol/TVS-arxiv.pdf"
@@ -100,14 +103,16 @@ sha256 = "81b8d8e8bba6bcc64180e24ae1c87ba86da5b16e8e63da3862210f0a7c35389a"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["VectorBundlesAndIsocrystalsPartII:H.0/vs-sheaf-ext-comparison", "VectorBundlesAndIsocrystalsPartII:H.0/vs-ext-and-filtered-localization"]
-authors = "Pierre Colmez and Wiesława Nizioł"
-title = "Topological Vector Spaces"
-year = 2025
 version_note = "Locators use the author copy TVS-arxiv.pdf dated 21 November 2025. Its enriched condensed category is distinct from the left-heart category used here."
+cited_for = ["VectorBundlesAndIsocrystalsPartII:H.0/vs-sheaf-ext-comparison", "VectorBundlesAndIsocrystalsPartII:H.0/vs-ext-and-filtered-localization"]
 
 [[source]]
 id = "AnschutzLeBras25"
+authors = "Johannes Anschütz and Arthur-César Le Bras"
+title = "A Fourier transform for Banach–Colmez spaces"
+year = 2025
+doi = "10.4171/JEMS/1480"
+arxiv = "2111.11116"
 locator_scheme = "section"
 locator = "§3.1, Theorems 3.1, 3.2, 3.9 and Corollary 3.11, pp. 3670–3681"
 url = "https://ems.press/content/serial-article-files/51138"
@@ -117,13 +122,8 @@ sha256 = "e248575b33e487ea9db38b91aa1997b2d49822c167f3016d2efab48b3c761ca4"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["VectorBundlesAndIsocrystalsPartII:H.0/vs-filtered-ext-localization", "VectorBundlesAndIsocrystalsPartII:H.0/vs-ext-and-filtered-localization"]
-authors = "Johannes Anschütz and Arthur-César Le Bras"
-title = "A Fourier transform for Banach–Colmez spaces"
-year = 2025
-doi = "10.4171/JEMS/1480"
-arxiv = "2111.11116"
 version_note = "Locators use the 2025 JEMS version, §3.1, printed pp. 3670–3681. The arXiv identifier names the same work; no assertion of identical preprint pagination is made."
+cited_for = ["VectorBundlesAndIsocrystalsPartII:H.0/vs-filtered-ext-localization", "VectorBundlesAndIsocrystalsPartII:H.0/vs-ext-and-filtered-localization"]
 
 [[source]]
 id = "LeBras18"
@@ -144,3 +144,37 @@ status = "certified"
 accessed = "2026-10-25"
 version_note = "Locators use arXiv v1 (2018); its hash agrees with the author-hosted copy."
 cited_for = ["VectorBundlesAndIsocrystalsPartII:H.0/vs-sheaf-ext-comparison", "VectorBundlesAndIsocrystalsPartII:H.0/vs-ext-and-filtered-localization"]
+
+[[source]]
+id = "Colmez12"
+authors = "Pierre Colmez"
+title = "Une construction de B_dR^+"
+year = 2012
+locator_scheme = "theorem"
+locator = "Théorème 3.1(ii), pp. 116–117"
+url = "http://www.numdam.org/item/RSMUP_2012__128__109_0/"
+fetched_from = "https://www.numdam.org/item/RSMUP_2012__128__109_0.pdf"
+fetched_at = "2026-10-27T00:07:10Z"
+sha256 = "8220b19474d1f4e4a02e4914019cb501c60d220525cfc4175de99377f87e3f6e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-27"
+version_note = "Rendiconti del Seminario Matematico della Università di Padova 128 (2012), 109–130; printed pagination. The Numdam text layer is recognised by OCR."
+cited_for = ["VectorBundlesAndIsocrystalsPartII:AC.0/algebraic-closure-density"]
+
+[[source]]
+id = "Fontaine04"
+authors = "Jean-Marc Fontaine"
+title = "Arithmétique des représentations galoisiennes p-adiques"
+year = 2004
+locator_scheme = "theorem"
+locator = "Proposition 6.2, p. 107; proof §6.2, p. 111"
+url = "http://www.numdam.org/item/AST_2004__295__1_0/"
+fetched_from = "https://www.numdam.org/item/AST_2004__295__1_0.pdf"
+fetched_at = "2026-10-27T00:07:13Z"
+sha256 = "a9dd9aeecf4fb0cb6f53d925096b4f30935806acdbccc54e00ae6422a408b68b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-27"
+version_note = "Astérisque 295 (2004), 1–115; printed pagination."
+cited_for = ["VectorBundlesAndIsocrystalsPartII:AC.0/general-base-rigidity-inputs"]
