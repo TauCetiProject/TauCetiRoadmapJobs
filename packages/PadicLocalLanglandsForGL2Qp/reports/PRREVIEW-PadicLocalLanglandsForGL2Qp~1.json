@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-PadicLocalLanglandsForGL2Qp~1",
+    "head": "92e93dd2e8863770a8cd4155185e8e9bab0ed620",
+    "pr": 1312,
+    "folder": "PadicLocalLanglandsForGL2Qp",
+    "date": "2026-11-01",
+    "findings": 7,
+    "blocking": 2,
+    "notes": "Full README/Lean review; 15 seeded source targets, 127 adversarial rows, pinned-library and supplier/ownership audits. Standalone Lean elaboration passed with two sorry warnings; all four signatures retained binders; simple-tactic probes did not close either headline. Dependency check: 205 roadmaps, 1483 edges, 0 problems. Head gate fails residue=114; other reported rules pass. Seven findings, two blocking: unowned global inputs and avoidable dyadic restriction. KISIN08 and MAZUR89 unreadable; raw-family specialization not certified. PR worktree unchanged."
+  }
+}
