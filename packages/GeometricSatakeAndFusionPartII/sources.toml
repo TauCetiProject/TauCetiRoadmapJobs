@@ -1,0 +1,378 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GeometricSatakeAndFusionPartII"
+
+[[source]]
+id = "KP"
+authors = "Mark Kisin and George Pappas"
+title = "Integral models of Shimura varieties with parahoric level structure"
+year = 2018
+locator_scheme = "theorem"
+locator = "§§2.1.1,2.1.4, pp. 150–152; §2.1.1, p. 150; §2.1 (flag model over the reflex field), p. 150; Theorem 2.1.2 and Corollary 2.1.3, pp. 150–151; Propositions 2.2.2,2.2.4,2.2.7, pp. 152–155; Lemma 2.3.3, Proposition 2.3.7, pp. 156–161; §2.3.4 and (2.3.9), pp. 157–159; §2.3.15 and Corollary 2.3.16, p. 162; §4.7.2 and Corollary 4.7.3, p. 212; (4.7.7) in §4.7.4 and §4.7.8, p. 213; §4.7.8, p. 213; §4.7.9 and Theorem 4.7.11, pp. 214–215"
+url = "https://www.numdam.org/item/10.1007/s10240-018-0100-0.pdf"
+fetched_from = "https://www.numdam.org/item/10.1007/s10240-018-0100-0.pdf"
+fetched_at = "2026-10-24T14:04:26Z"
+sha256 = "e2b4a0763f216be82da950f4c0dd2800adea8a0d911b12bfacf2b7e493b4618b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Publications Mathématiques de l’IHÉS 128 (2018), pp. 121–218; published numbering"
+cited_for = ["LM.1/polynomial-bd", "LM.1/schubert-closure", "LM.1/polynomial-geometry", "LM.1/adjoint-comparison", "LM.2/tame-symplectic-embedding", "LM.2/gl-chain-model", "LM.2/total-lattice-embedding", "LM.8/local-nearby-cycles", "LM.8/semisimple-trace", "LM.8/central-test-function", "LM.8/bernstein-characterization"]
+
+[[source]]
+id = "KZ"
+authors = "Mark Kisin and Rong Zhou"
+title = "Independence of ℓ for Frobenius conjugacy classes attached to abelian varieties"
+year = 2025
+locator_scheme = "theorem"
+locator = "§3.1.1, p. 18; Definition 3.1.6(1), p. 19; local Hodge embedding defined after Remark 3.1.3, p. 18; Definition 3.1.6(2), p. 19; §3.1.2, p. 18; Definition 3.1.6, p. 19; Proposition 3.1.9 and Lemma 3.1.10, pp. 19–20; Proposition 3.1.12, p. 21; §5.2.1, pp. 48–49; §5.2.1 and proof of Proposition 5.2.3, pp. 48–50; Proof of Proposition 5.2.3, Cases 1–3, pp. 50–52; Proof of Proposition 5.2.3, p. 50; Lemma 5.2.5 and proof, p. 52; Proposition 5.2.3 and proof, pp. 49–52; Proposition 3.1.14, pp. 21–22"
+url = "https://www.dpmms.cam.ac.uk/~rz240/l-indep_v2.pdf"
+fetched_from = "https://www.dpmms.cam.ac.uk/~rz240/l-indep_v2.pdf"
+fetched_at = "2026-10-24T14:04:28Z"
+sha256 = "cc6383505c39b40bd450c76de28218382b7b1216fe7999c098fc78c5a1d24d3b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Revised 63-page author version, l-indep_v2; its numbering is used throughout"
+cited_for = ["LM.0/triple", "LM.0/hodge-data", "LM.0/tameness", "LM.0/good-embedding", "LM.7/acceptable-good-embedding", "LM.2/trace-symplectic", "LM.3/special-fibre-interfaces", "LM.5/valued-root-adapter", "LM.5/rank-one-curves", "LM.5/rank-one-flag-closed", "LM.5/rational-orbit-lift", "LM.5/same-field-curve", "LM.7/admissible-lattice-test"]
+
+[[source]]
+id = "SW"
+authors = "Peter Scholze and Jared Weinstein"
+title = "Berkeley Lectures on p-adic Geometry"
+year = 2020
+locator_scheme = "theorem"
+locator = "Definition 21.6.8, pp. 200–201; Conjecture 21.4.1 and Proposition 21.4.3, p. 195; Conjecture 21.4.1 and Remark 21.4.2, p. 195; Definitions 21.6.1,21.6.8, pp. 199–201; Proposition 21.6.9 and proof of Corollary 21.6.10, pp. 201–203; Definitions 21.6.1–21.6.2, p. 199; Theorem 21.6.4, Remark 21.6.5 and Corollary 21.6.6 and Remark 21.6.7, pp. 199–200; Proposition 21.6.9 and Corollary 21.6.10, pp. 201–203; §21.7, Theorem 21.7.1, Remark 21.7.2 and proof, pp. 203–204; §21.8 and Theorem 21.8.1, pp. 204–206"
+url = "https://people.mpim-bonn.mpg.de/scholze/Berkeley.pdf"
+fetched_from = "https://people.mpim-bonn.mpg.de/scholze/Berkeley.pdf"
+fetched_at = "2026-10-24T14:04:31Z"
+sha256 = "225505171ef809aa0070c023c881ff1da844923775f2d631474c0b42eea4bffc"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Author book version dated 27 March 2020; printed page numbers"
+cited_for = ["LM.0/hodge-data", "LM.0/v-local-model", "LM.0/scheme-local-model", "LM.2/gl-chain-model", "LM.1/gl-one-lattice", "LM.6/pel-lattice-chains", "LM.6/chain-torsors", "LM.6/pel-naive-model", "LM.6/pel-bdr-kernel", "LM.6/drinfeld-comparison", "LM.6/unitary-drinfeld-comparison"]
+
+[[source]]
+id = "GLX"
+authors = "Ian Gleason, Dong Gyu Lim, Yujie Xu"
+title = "The connected components of affine Deligne--Lusztig varieties"
+year = 2022
+venue = "Inventiones mathematicae (2026)"
+doi = "10.1007/s00222-025-01386-1"
+arxiv = "2208.07195v3"
+locator_scheme = "theorem"
+locator = "§3.2, pp. 18–19 (v3); §3.2, p. 19; Theorem 3.8, p. 22 (v3); Theorem 3.8, p. 22 (arXiv v3); §3.2, p. 19 (v3)"
+url = "https://arxiv.org/abs/2208.07195v3"
+fetched_from = "https://arxiv.org/pdf/2208.07195v3"
+fetched_at = "2026-10-24T14:04:35Z"
+sha256 = "d2249ddbe1ae2f4728000d27846d396adffc97b2f8b7b1c82c5d2701153fcb12"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv:2208.07195v3, pp. 1–56; version-specific numbering"
+cited_for = ["LM.0/v-local-model", "LM.3/local-model-kimberlite", "LM.7/local-model-connected-tubes", "LM.7/general-normal-representative"]
+
+[[source]]
+id = "AGLR"
+authors = "Johannes Anschütz, Ian Gleason, João Lourenço, Timo Richarz"
+title = "On the p-adic theory of local models"
+year = 2022
+arxiv = "2201.01234v2"
+locator_scheme = "theorem"
+locator = "§1.1, pp. 2–3; Definition 4.11, Proposition 4.14 and Proposition 4.16, pp. 30–31; Theorem 7.22, pp. 49–50; Lemma 7.27, p. 51; Theorem 6.16, pp. 39–40; Proposition 4.14 and Remark 4.15, pp. 30–31; Theorem 6.16, pp. 39–40; Theorem 7.22 and proof, pp. 49–50; Theorem 1.3, pp. 3–5; Lemmas 8.1–8.2 and Theorem 8.3, pp. 52–53; Lemma 8.4, pp. 53–54; Proposition 3.7, p. 21; Lemma 3.15, p. 24, and proof of Theorem 3.16, p. 25; Definition 7.5, Lemma 7.6 and Remark 7.7, p. 43; (7.55), p. 51"
+url = "https://arxiv.org/abs/2201.01234v2"
+fetched_from = "https://arxiv.org/pdf/2201.01234v2"
+fetched_at = "2026-10-24T14:04:42Z"
+sha256 = "4fa96d9e2c774f1d943b3dcdcc548db5562ec9f56a6a2b746efadaa16ee5461e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv:2201.01234v2, dated 3 February 2026; printed pages follow the six contents pages"
+cited_for = ["LM.0/v-local-model", "LM.0/scheme-local-model", "LM.3/special-fibre-interfaces", "LM.3/local-model-kimberlite", "LM.3/weak-normal-representative", "LM.8/local-nearby-cycles", "LM.8/central-test-function", "LM.8/bernstein-characterization", "LM.7/tube-component-stalk", "LM.7/admissible-s2", "LM.7/wakimoto-stalk-bound", "3.7 smooth open of maximal orbits"]
+
+[[source]]
+id = "GL"
+authors = "Ian Gleason and João Lourenço"
+title = "Tubular neighborhoods of local models"
+year = 2024
+locator_scheme = "theorem"
+locator = "Lemma 5.1 and Theorem 4.7(1), pp. 9–10; Lemma 3.1, pp. 5–6; Lemma 3.3, Proposition 3.4 and Corollary 3.5, pp. 6–7; Theorem 5.3, Lemma 5.4 and Proposition 5.5, pp. 10–11; Theorem 1.3, p. 2; Lemma 5.2 and final proof, pp. 10–11; Lemma 1.2, Theorem 1.3 and Corollary 1.4, pp. 2–3"
+url = "https://rastrel.github.io/Lourenco/tubengbhd.pdf"
+fetched_from = "https://rastrel.github.io/Lourenco/tubengbhd.pdf"
+fetched_at = "2026-10-24T14:04:43Z"
+sha256 = "583d9548047e8fe738b74c038192639bd4698586d1ab78a547f36f619a10df24"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "13-page author version of the article in Duke Mathematical Journal 173 (2024), pp. 723–743; author-page numbering"
+cited_for = ["LM.7/tube-component-stalk", "LM.7/codimension-one-translations", "LM.7/admissible-s2", "LM.7/wakimoto-stalk-bound", "LM.7/local-model-connected-tubes", "LM.7/general-normal-representative", "3.7 smooth open of maximal orbits"]
+
+[[source]]
+id = "ALWY"
+authors = "Johannes Anschütz, João Lourenço, Zhiyou Wu, Jize Yu"
+title = "Gaitsgory's central functor and the Arkhipov-Bezrukavnikov equivalence in mixed characteristic"
+year = 2023
+arxiv = "2311.04043v5"
+locator_scheme = "theorem"
+locator = "Theorem 4.17 and Corollary 4.19, pp. 33–34"
+url = "https://arxiv.org/abs/2311.04043v5"
+fetched_from = "https://arxiv.org/pdf/2311.04043v5"
+fetched_at = "2026-10-24T14:04:48Z"
+sha256 = "3f7f1de570d7cc7366874c676747259d8b57b9c7b1f410ad34d93042da5e2f35"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv:2311.04043v5; version-specific numbering"
+cited_for = ["LM.7/wakimoto-stalk-bound"]
+
+[[source]]
+id = "PZ"
+authors = "G. Pappas, X. Zhu"
+title = "Local models of Shimura varieties and a conjecture of Kottwitz"
+year = 2011
+arxiv = "1110.5588v4"
+locator_scheme = "theorem"
+locator = "Theorem 9.9, Lemma 9.11 and Proposition 9.12, pp. 73–74 (v4); final§10; §9.d.1–9.d.2, pp. 74–75 (v4); Theorem 9.5, pp. 70–72; Theorem 9.14, p. 75 (v4); Proposition 9.15 and Theorem 9.16, pp. 75–76 (v4)"
+url = "https://arxiv.org/abs/1110.5588v4"
+fetched_from = "https://arxiv.org/pdf/1110.5588v4"
+fetched_at = "2026-10-24T14:04:55Z"
+sha256 = "cbb879126ff50a5431e06046edd55d1da3ee4d260ddd4d80202a043e21b18b27"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv:1110.5588v4; its §9 corresponds to §10 of the published article"
+cited_for = ["LM.8/local-nearby-cycles", "LM.8/semisimple-trace", "LM.8/central-test-function", "LM.8/bernstein-characterization"]
+
+[[source]]
+id = "LEV"
+authors = "Brandon Levin"
+title = "Local models for Weil-restricted groups"
+year = 2014
+venue = "Compositio Math. 152 (2016) 2563-2601"
+doi = "10.1112/S0010437X1600765X"
+arxiv = "1412.7135v2"
+locator_scheme = "theorem"
+locator = "Definition 4.1.1 and Proposition 4.1.4, p. 20; Theorem 4.2.10, p. 28 (ind-projectivity; numbered 4.2.11 in the published version that KPZ cites); Theorem 4.2.7, pp. 24–25; §4.2, pp. 22–26; Definition 4.2.1, p. 23 and Proposition 4.2.6, p. 24"
+url = "https://arxiv.org/abs/1412.7135v2"
+fetched_from = "https://arxiv.org/pdf/1412.7135v2"
+fetched_at = "2026-10-24T14:05:00Z"
+sha256 = "63bcfdd9656b0a70c36bf35982a6616451162b762678cea1ad0e162ddf995763"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv:1412.7135v2; Theorem 4.2.10 is 4.2.11 in published numbering"
+cited_for = ["LM.1/polynomial-bd", "LM.1/schubert-closure", "LM.1/polynomial-geometry", "LM.2/restriction-model-embedding", "LM.4/reductive-res-special-fibre"]
+
+[[source]]
+id = "PR"
+authors = "G. Pappas, M. Rapoport"
+title = "Twisted loop groups and their affine flag varieties"
+year = 2006
+arxiv = "math/0607130v2"
+locator_scheme = "theorem"
+locator = "§6.a.1, pp. 24–25; Theorem 8.4, p. 38"
+url = "https://arxiv.org/abs/math/0607130v2"
+fetched_from = "https://arxiv.org/pdf/math/0607130v2"
+fetched_at = "2026-10-24T14:05:06Z"
+sha256 = "6fbdb2748ef12fc788cc2241dd94046390c2f6a60ed1bee4a82b80330a9ca62d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv:math/0607130v2; version-specific numbering"
+cited_for = ["LM.5/rank-one-flag-closed", "generic-algebraic-schubert-normality supplier contract"]
+
+[[source]]
+id = "PRLSV"
+authors = "George Pappas and Michael Rapoport"
+title = "On integral local Shimura varieties"
+year = 2024
+locator_scheme = "theorem"
+locator = "Proposition 7.2.1, proof through the generic construction, pp. 53–55"
+url = "https://www.math.uni-bonn.de/people/rapoport/myalggeom/preprints/pappas-rapoport-intLSV.pdf"
+fetched_from = "https://www.math.uni-bonn.de/people/rapoport/myalggeom/preprints/pappas-rapoport-intLSV.pdf"
+fetched_at = "2026-10-24T14:05:08Z"
+sha256 = "8995be5260cef4caab4f3542fce3208d5d5e930bb18f3b94f36a8060dc2039e0"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Author preprint, Proposition 7.2.1; only the generic cover construction is used"
+cited_for = ["LM.1/auxiliary-hodge-cover"]
+
+[[source]]
+id = "FHLR"
+authors = "Najmuddin Fakhruddin, Thomas Haines, João Lourenço and Timo Richarz"
+title = "Singularities of local models"
+year = 2022
+locator_scheme = "theorem"
+locator = "Lemma 5.27, p. 34"
+url = "https://www.math.univ-paris13.fr/~lourenco/singlocmodels.pdf"
+fetched_from = "https://www.math.univ-paris13.fr/~lourenco/singlocmodels.pdf"
+fetched_at = "2026-10-24T14:05:08Z"
+sha256 = "9c714d5fbbd11ea37618e41085d22a91422eff139a6dda635dcf813ef0e27149"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Author preprint, §5.3.2, Lemma 5.27; finite universal homeomorphism onto the image"
+cited_for = ["LM.3/normalization-of-image", "LM.7/acceptable-good-embedding"]
+
+[[source]]
+id = "RZ17"
+authors = "M. Rapoport, Th. Zink"
+title = "On the Drinfeld moduli problem of p-divisible groups"
+year = 2014
+venue = "Cambridge J. Math. 5 (2017), 229-279"
+arxiv = "1408.4071v2"
+locator_scheme = "theorem"
+locator = "Definition 3.3, p. 8; Definition 3.8 and Remarks 3.9, pp. 10–11; §5, Lemma 5.1, Corollaries 5.2, 5.4 and 5.6, Lemma 5.5, Remark 5.7, pp. 18–20"
+url = "https://arxiv.org/abs/1408.4071v2"
+fetched_from = "https://arxiv.org/pdf/1408.4071v2"
+fetched_at = "2026-10-24T14:05:13Z"
+sha256 = "cd8bf04054b1afd88f70018a002e152e8c421ecb3a9c4fe9003380f378a97290"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv:1408.4071v2, §5; version-specific numbering"
+cited_for = ["LM.6/drinfeld-comparison"]
+
+[[source]]
+id = "KRZ"
+authors = "Stephen Kudla, Michael Rapoport, Thomas Zink"
+title = "On the p-adic uniformization of unitary Shimura curves"
+year = 2020
+arxiv = "2007.05211v2"
+locator_scheme = "theorem"
+locator = "§1.3, pp. 7–8; §2.1, Definition 2.1.1, p. 10"
+url = "https://arxiv.org/abs/2007.05211v2"
+fetched_from = "https://arxiv.org/pdf/2007.05211v2"
+fetched_at = "2026-10-24T14:05:22Z"
+sha256 = "c94c6cbd0a25c8e476e5535414cb54c1a5eab0cba7f5e8e6cc8305b519268cfd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv:2007.05211v2, §§1.3 and 2.1; the signature convention"
+cited_for = ["LM.6/unitary-drinfeld-comparison"]
+
+[[source]]
+id = "KPZ"
+authors = "Mark Kisin, George Pappas and Rong Zhou"
+title = "Integral models of Shimura varieties with parahoric level structure, II"
+year = 2026
+locator_scheme = "theorem"
+locator = "§2.1.4, p. 10; Proposition 2.2.2, p. 11; §3.1.7, p. 16; Lemma 2.3.1, p. 12; §§3.1.1–3.1.6, 3.1.9–3.1.10, pp. 15–17; §§3.2.2–3.2.9 (footnote 5), Proposition 3.2.11, §3.2.12, (3.2.13), Theorem 3.2.15, pp. 18–20; §§3.3.1–3.3.7, 3.3.9–3.3.14, Lemma 3.3.10, p. 22, 3.3.16, 3.3.18, Proposition 3.3.20, Theorem 3.3.25, Remark 3.3.26, pp. 20–27; §3.4.2, Definition 3.4.4 and following paragraph, Proposition 3.4.6, Remark 3.4.7, pp. 28–30; Definitions 4.1.2, 4.1.4, Remark 4.1.5, Theorem 4.1.6, §4.1.7, pp. 31–32; §4.2.1, Proposition 4.2.2, Theorem 4.2.3, Definition 4.2.6, (4.2.7), Remark 4.2.8, Propositions 4.2.10, 4.2.13, proof of Theorem 4.2.3 in §4.2.15, pp. 37–39, Remark 4.2.16, Corollary 4.2.19, pp. 32–39; §4.3.1, Theorem 4.3.2, Proposition 4.3.4, (4.3.6), Lemma 4.3.7, Propositions 4.3.9–4.3.10, §4.3.15, pp. 40–45; Lemma 4.4.2, Theorem 4.4.3, pp. 46–47; §6.1, p. 62"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/6C2640CC5856BDF975AF97EE30CA7906/S2050508626100316a.pdf/div-class-title-integral-models-of-shimura-varieties-with-parahoric-level-structure-ii-div.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/6C2640CC5856BDF975AF97EE30CA7906/S2050508626100316a.pdf/div-class-title-integral-models-of-shimura-varieties-with-parahoric-level-structure-ii-div.pdf"
+fetched_at = "2026-10-24T14:05:54Z"
+sha256 = "d0438498fbe4501e6d9c0cc7cf3ea9fc02ba5e11d326f2d77dd42715658a198b"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Forum of Mathematics, Pi 14 (2026), e14, pp. 1–89; published numbering"
+cited_for = ["LM.0/triple", "LM.0/hodge-data", "LM.0/tameness", "LM.0/good-embedding", "LM.1/polynomial-bd", "LM.1/schubert-closure", "LM.1/polynomial-geometry", "LM.1/auxiliary-hodge-cover", "LM.2/weil-split-embedding", "LM.2/weyl-model-embedding", "LM.2/restriction-model-embedding", "LM.2/power-lattice-embedding", "LM.2/total-lattice-embedding", "LM.3/endomorphism-cutout", "LM.3/canonical-abelian-model", "LM.3/normalization-of-image", "LM.4/curve-span", "LM.4/tangent-cone-obstruction", "LM.4/big-cell-tangent", "LM.4/mod-p-abelian", "LM.4/root-curves", "LM.4/fm-lattice-bound", "LM.4/root-upper-bound", "LM.4/cartan-curves", "LM.4/cartan-equality", "LM.4/schubert-curve-spanning", "LM.4/reductive-res-special-fibre"]
+
+[[source]]
+id = "HLR"
+authors = "Thomas J. Haines, João Lourenço, Timo Richarz"
+title = "On the normality of Schubert varieties: remaining cases in positive characteristic"
+year = 2024
+arxiv = "1806.11001v5"
+locator_scheme = "theorem"
+locator = "Corollary 9.2(2), pp. 37–38; Example 9.4, p. 38; Theorem 1.1, p. 2; Proposition 3.4, p. 11"
+url = "https://arxiv.org/abs/1806.11001v5"
+fetched_from = "https://arxiv.org/pdf/1806.11001v5"
+fetched_at = "2026-10-25T06:27:59Z"
+sha256 = "31f7755550455f9df42dd867ddcd271969fc4b996972276b86ee2971e210e42d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v5"
+cited_for = ["LM.3/canonical-abelian-model", "LM.7/wakimoto-stalk-bound"]
+
+[[source]]
+id = "HAI14"
+authors = "Thomas J. Haines"
+title = "The stable Bernstein center and test functions for Shimura varieties"
+year = 2014
+arxiv = "1304.6293v3"
+locator_scheme = "section"
+locator = "Theorem 11.10.1, §11.11, pp. 44–45; Proposition 11.12.6, p. 48 (arXiv v3)"
+url = "https://arxiv.org/abs/1304.6293v3"
+fetched_from = "https://arxiv.org/pdf/1304.6293v3"
+fetched_at = "2026-10-25T12:03:29Z"
+sha256 = "c4fbccee8344b5be4aebe7b0b01923a3ded63851974d405649987468202df7a8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v3"
+cited_for = ["supplier contracts; 8.4"]
+
+[[source]]
+id = "GORGL"
+authors = "U. Goertz"
+title = "On the flatness of models of certain Shimura varieties of PEL-type"
+year = 2001
+arxiv = "math/9912064v1"
+locator_scheme = "theorem"
+locator = "§4.1, p. 22; Theorem 4.5.3 and Corollary 4.5.4, p. 37; Corollary 3.4.4, p. 19 and Theorem 4.5.1, pp. 35–36 (arXiv v1)"
+url = "https://arxiv.org/abs/math/9912064v1"
+fetched_from = "https://arxiv.org/pdf/math/9912064v1"
+fetched_at = "2026-10-25T12:03:39Z"
+sha256 = "ae2cd05153d0649c1983773cdc5c6aa219871ffbf2019516f594e36f1fc18cb3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1"
+cited_for = ["2.5 GL chain flatness"]
+
+[[source]]
+id = "GORSP"
+authors = "Ulrich Goertz"
+title = "On the flatness of local models for the symplectic group"
+year = 2003
+arxiv = "math/0011202v1"
+locator_scheme = "theorem"
+locator = "§2 and Theorem 2.1, pp. 3–4; Theorem 3.3, p. 9 (arXiv v1)"
+url = "https://arxiv.org/abs/math/0011202v1"
+fetched_from = "https://arxiv.org/pdf/math/0011202v1"
+fetched_at = "2026-10-25T12:04:05Z"
+sha256 = "0a0a48719767829f04fef9363ad175e58abda7833e5885e159d0b708b0388508"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1"
+cited_for = ["2.5 GSp chain flatness"]
+
+[[source]]
+id = "HAI15"
+authors = "Thomas J. Haines"
+title = "On Satake parameters for representations with parahoric fixed vectors"
+year = 2015
+arxiv = "1402.3812v3"
+locator_scheme = "theorem"
+locator = "Theorem 1.1, p. 1; Definition 9.1, pp. 19–20 (arXiv v3)"
+url = "https://arxiv.org/abs/1402.3812v3"
+fetched_from = "https://arxiv.org/pdf/1402.3812v3"
+fetched_at = "2026-10-25T12:05:28Z"
+sha256 = "d444533990ffed13046104d447c83e1518442e80aaae64c36bb61542b9d56739"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v3"
+cited_for = ["parahoric-satake-central-functions supplier contract"]
+
+[[source]]
+id = "GLE22"
+authors = "Ian Gleason"
+title = "Specialization maps for Scholze's category of diamonds"
+year = 2020
+arxiv = "2012.05483v4"
+locator_scheme = "theorem"
+locator = "Lemma 5.26, p. 45 (arXiv v4)"
+url = "https://arxiv.org/abs/2012.05483v4"
+fetched_from = "https://arxiv.org/pdf/2012.05483v4"
+fetched_at = "2026-10-25T12:09:33Z"
+sha256 = "8d5e0e911affefd4485f8bd2e6f8d395682458a155922bec637984a428ee5b3a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v4"
+cited_for = ["connected-fibre-tube-transfer supplier contract"]

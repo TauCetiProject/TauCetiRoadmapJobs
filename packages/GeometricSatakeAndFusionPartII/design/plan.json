@@ -3938,143 +3938,271 @@
     }
   ],
   "gaps": [
-    {
-      "title": "Common algebraic loop prefix",
-      "detail": "GS0 has exact diamond Grassmannian targets, but no complete arbitrary-field algebraic loop quotient, polynomial BD/coherence, big-cell or GL-chain flatness target at this level. The proposed common-prefix owner must be accepted before these consumers are dependency-closed.",
-      "neededBy": [
-        "GeometricSatakeAndFusionPartII:LM.1/polynomial-bd",
-        "GeometricSatakeAndFusionPartII:LM.1/polynomial-geometry",
-        "GeometricSatakeAndFusionPartII:LM.1/adjoint-comparison",
-        "GeometricSatakeAndFusionPartII:LM.2/weil-split-embedding",
-        "GeometricSatakeAndFusionPartII:LM.2/weyl-model-embedding",
-        "GeometricSatakeAndFusionPartII:LM.2/restriction-model-embedding",
-        "GeometricSatakeAndFusionPartII:LM.2/tame-symplectic-embedding",
-        "GeometricSatakeAndFusionPartII:LM.2/gl-chain-model",
-        "GeometricSatakeAndFusionPartII:LM.4/big-cell-tangent",
-        "GeometricSatakeAndFusionPartII:LM.4/root-curves",
-        "GeometricSatakeAndFusionPartII:LM.5/rank-one-curves",
-        "GeometricSatakeAndFusionPartII:LM.5/rank-one-flag-closed",
-        "GeometricSatakeAndFusionPartII:LM.7/admissible-s2"
-      ]
-    },
-    {
-      "title": "Integral representation continuation",
-      "detail": "Current RG2 is a building/parahoric roadmap. It does not establish the classical minuscule cover classification, integral Weyl-lattice uniqueness, R-smooth full-fixer embeddings, polynomial representation lift, or Satake symplectic structure theorem, including division-centralizer multiplicities and per-summand chain shifts. Propose a dedicated ReductiveGroupsIntegralRepresentationsPartII; do not replan those objects here.",
-      "neededBy": [
-        "GeometricSatakeAndFusionPartII:LM.1/auxiliary-hodge-cover",
-        "GeometricSatakeAndFusionPartII:LM.2/weil-split-embedding",
-        "GeometricSatakeAndFusionPartII:LM.2/weyl-model-embedding",
-        "GeometricSatakeAndFusionPartII:LM.2/power-lattice-embedding",
-        "GeometricSatakeAndFusionPartII:LM.2/tame-symplectic-embedding",
-        "GeometricSatakeAndFusionPartII:LM.3/endomorphism-cutout",
-        "GeometricSatakeAndFusionPartII:LM.7/acceptable-good-embedding"
-      ]
-    },
-    {
-      "title": "Polynomial and weak-normal algebraic models",
-      "detail": "Need the polynomial parahoric lifts, FHLR admissible deperfections, Iwahori specialization-triple comparison and finite-type weak-normalization contracts cited in the proof of AGLR7.22. Its proof is read, but these original constructions are not recursively source-closed here; the node proof lists the exact intermediate comparisons.",
-      "neededBy": [
-        "GeometricSatakeAndFusionPartII:LM.1/polynomial-bd",
-        "GeometricSatakeAndFusionPartII:LM.3/weak-normal-representative",
-        "GeometricSatakeAndFusionPartII:LM.3/local-model-kimberlite"
-      ]
-    },
-    {
-      "title": "Classical modular minuscule computations",
-      "detail": "RootSystemsPartII explicitly excludes this direction. Need dominant minuscule detection of μ−λ and the root/Cartan coefficient tests for the sets A:all fundamentals, B:ω_n, C:ω₁, D^R:two spin endpoints, D^H:ω₁ and the two spin endpoints, including the characteristic-p nonzero coefficient check. Request a RootSystems modular-minuscule continuation, not the finite folding theorem.",
-      "neededBy": [
-        "GeometricSatakeAndFusionPartII:LM.4/mod-p-abelian",
-        "GeometricSatakeAndFusionPartII:LM.4/root-upper-bound",
-        "GeometricSatakeAndFusionPartII:LM.4/cartan-equality",
-        "GeometricSatakeAndFusionPartII:LM.4/schubert-curve-spanning",
-        "GeometricSatakeAndFusionPartII:LM.4/reductive-res-special-fibre"
-      ]
-    },
-    {
-      "title": "Trait singularities and tangent functor",
-      "detail": "Need scheme-represented Grassmannians and quotient-rank dictionary, finite normalization and DVR normality criterion, derivative maps on pointed schemes using the pinned tangent carrier, Serre/depth and canonical-module theorems. SF0 currently states much less than this complete requested API.",
-      "neededBy": [
-        "GeometricSatakeAndFusionPartII:LM.0/scheme-local-model",
-        "GeometricSatakeAndFusionPartII:LM.1/polynomial-geometry",
-        "GeometricSatakeAndFusionPartII:LM.3/normalization-of-image",
-        "GeometricSatakeAndFusionPartII:LM.4/curve-span",
-        "GeometricSatakeAndFusionPartII:LM.4/tangent-cone-obstruction",
-        "GeometricSatakeAndFusionPartII:LM.3/weak-normal-representative",
-        "GeometricSatakeAndFusionPartII:LM.7/admissible-s2",
-        "GeometricSatakeAndFusionPartII:LM.7/general-normal-representative"
-      ]
-    },
-    {
-      "title": "Connected translation stabilizers",
-      "detail": "Lang itself belongs to RG2.3, but the intersection 𝒢∩Ad(t^λ)𝒢 must have smooth connected finite jets and compatible lifting. A bare assertion that both parahorics are connected does not prove this. The KZ5.2.5 proof points to the needed intersection model.",
-      "neededBy": [
-        "GeometricSatakeAndFusionPartII:LM.5/rational-orbit-lift",
-        "GeometricSatakeAndFusionPartII:LM.5/same-field-curve"
-      ]
-    },
-    {
-      "title": "RZ96 chain originals unavailable",
-      "detail": "SW21.6 cites RZ96 Theorems 3.11,3.16 for smoothness and étale local triviality of chains, extending nilpotent-p bases to general bases. That book is not cleared in the supplied library; no other copy was used. The original assertions and extension argument need a readable source or owner proof. Existing PEL M0 has global good-prime data, not this ramified local EL/PEL datum; the proposed PEL continuation must supply that exact input.",
-      "neededBy": [
-        "GeometricSatakeAndFusionPartII:LM.6/chain-torsors",
-        "GeometricSatakeAndFusionPartII:LM.6/pel-bdr-kernel"
-      ]
-    },
-    {
-      "title": "KRZ cocharacter version reconciliation",
-      "detail": "The cleared March 2020 SW copy writes signature-like pairs as if they were GL₂ cocharacters. Use the explicit0/1 signature-to-weight dictionary stated here, checked against KRZ§2.1. The final SW text was not collated and the unpublished KRZ local-model proof is not available; verify the adjoint comparison with these corrected weights.",
-      "neededBy": [
-        "GeometricSatakeAndFusionPartII:LM.6/unitary-drinfeld-comparison"
-      ]
-    },
-    {
-      "title": "General cohomology comparison before centrality",
-      "detail": "D11 has tube objects but no node with all three parts of GL4.7. Add it there before GS2 early central/Wakimoto inputs, retaining algebraicity exactly for the étale-limit/clopen extension step. This avoids a GS2→local-model-tubes→GS2 cycle.",
-      "neededBy": [
-        "GeometricSatakeAndFusionPartII:LM.7/tube-component-stalk",
-        "GeometricSatakeAndFusionPartII:LM.7/local-model-connected-tubes"
-      ]
-    },
-    {
-      "title": "Early central and Wakimoto theorem ownership",
-      "detail": "ALWY4.17 and 4.19 are readable, replacing GL’s in-preparation citation. GS2 has no exact early Wakimoto/algebraicity statement with these coefficients. Its central prefix must be separated from the completed Satake closure and fusion targets; no downstream local-model unibranchness is an input.",
-      "neededBy": [
-        "GeometricSatakeAndFusionPartII:LM.3/special-fibre-interfaces",
-        "GeometricSatakeAndFusionPartII:LM.7/wakimoto-stalk-bound",
-        "GeometricSatakeAndFusionPartII:LM.8/local-nearby-cycles",
-        "GeometricSatakeAndFusionPartII:LM.8/central-test-function"
-      ]
-    },
-    {
-      "title": "Parahoric Bernstein center",
-      "detail": "SR4 owns spherical Satake, not the parahoric Bernstein isomorphism or change-of-level compatibility. A Hecke Part II must state and prove these independently of the local-model trace formula before LM8 closes.",
-      "neededBy": [
-        "GeometricSatakeAndFusionPartII:LM.8/semisimple-trace",
-        "GeometricSatakeAndFusionPartII:LM.8/central-test-function",
-        "GeometricSatakeAndFusionPartII:LM.8/bernstein-characterization"
-      ]
-    },
-    {
-      "title": "Uncollated final versions and original coherence inputs",
-      "detail": "KZ, GLX and GL were read in the recorded author/arXiv versions, not their final PDFs. Levin’s coherence theorem and the S₂ deformation inputs are cited with exact contracts but their original deep proofs are not decomposed in this packet. Do not certify final-text errata or closed supplier proofs from this pass.",
-      "neededBy": [
-        "GeometricSatakeAndFusionPartII:LM.1/polynomial-geometry",
-        "GeometricSatakeAndFusionPartII:LM.4/reductive-res-special-fibre",
-        "GeometricSatakeAndFusionPartII:LM.5/valued-root-adapter",
-        "GeometricSatakeAndFusionPartII:LM.5/same-field-curve",
-        "GeometricSatakeAndFusionPartII:LM.7/admissible-s2",
-        "GeometricSatakeAndFusionPartII:LM.7/local-model-connected-tubes"
-      ]
-    },
-    {
-      "title": "Closedness of Weil-restriction local-model maps",
-      "detail": "KZ Lemma 3.1.10 asserts that M^loc_(𝒢,μ)→M^loc_(𝒢_(K/F),μ_(K/F))⊗O_E is a closed immersion for a possibly wild splitting field K. FHLR Lemma 5.27 gives only a finite map that is a universal homeomorphism onto its schematic image, and the closed v-sheaf map from GS0 with normal full faithfulness gives the same. Needed: a closed immersion on special fibres (the companion flag map restricted to the admissible locus) with the Nakayama argument of PZ Proposition 8.1, or normality of the Zariski closure of G/P_μ in the target Grassmannian. KPZ supplies this only in the tame range (Propositions 3.3.7 and 3.3.20).",
-      "neededBy": [
-        "GeometricSatakeAndFusionPartII:LM.7/acceptable-good-embedding",
-        "GeometricSatakeAndFusionPartII:LM.7/admissible-lattice-test"
-      ]
-    }
-  ],
+  {
+    "slug": "algebraic-compatible-schubert-splitting",
+    "needs": "For split SL_n and Sp_(2n) over an algebraically closed field of positive characteristic, supply Frobenius splittings of finite affine Schubert bounds compatible with every Schubert subvariety, so scheme-theoretic intersections of finite Schubert unions in a common bound are reduced. This is the affine-flag extension of GS0 “Equal-characteristic Schubert models and coefficient comparison” used in §2.5 (GORGL Corollary 3.4.4, p. 19, GORGL line 643; GORSP Theorem 3.3, p. 9, GORSP line 352).",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0, Equal-characteristic Schubert models and coefficient comparison (affine-flag extension)"
+  },
+  {
+    "slug": "pointed-tangent-chain-rule",
+    "needs": "Give the derivative of pointed scheme morphisms and its chain rule on Tau Ceti’s Zariski tangent carrier, for the formal curves of §4.1.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "§4.6; pointed tangent extension"
+  },
+  {
+    "slug": "trait-normality",
+    "needs": "For a noetherian scheme flat over a DVR with normal generic fibre and geometrically reduced special fibre, give the normality criterion used in §§0.5, 1.3 and 6.5.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "§§0.8, 0.30 and 4.13"
+  },
+  {
+    "slug": "finite-weak-normalization",
+    "needs": "Give finite absolute weak normalization of the excellent flat local-model closures with characteristic-zero generic fibre used in §3.6.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "§§0.20–0.21, 0.26 and 0.30"
+  },
+  {
+    "slug": "s2ification-connectedness",
+    "needs": "In §§0.17–0.18, for a reduced equidimensional excellent weakly normal finite-type scheme X over a perfect field with geometrically unibranch irreducible components, prove that X is S₂ if and only if at every geometric point x the graph of irreducible components of the strict local scheme at x, joined when they meet in codimension one, is connected, equivalently the finite S₂-ification has singleton geometric fibres, and show compatibility with completion (GL Lemma 3.3 and Proposition 3.4, pp. 6–7; GL line 255).",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "§§0.17–0.18; S₂-ification extension"
+  },
+  {
+    "slug": "fpqc-normality-descent",
+    "needs": "In §§0.30, 1.1 and 4.13, prove that normality descends along an fpqc covering of locally noetherian schemes, as used in §7.6.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "§§0.30, 1.1 and 4.13"
+  },
+  {
+    "slug": "classical-hodge-cover-classification",
+    "needs": "Give the Galois-equivariant classical minuscule representation classification constructing the prime-to-p Hodge cover in §1.5.",
+    "supplier": "ReductiveGroupsPartII",
+    "section": "RG2.1; integral-representation extension"
+  },
+  {
+    "slug": "stable-weyl-lattices",
+    "needs": "For a split reductive Z_p-group H₀, a DVR R over Z_p with characteristic-zero fraction field L and a finite-dimensional minuscule representation V of H₀ over L, prove that any two full R-lattices in V to which the representation extends as group-scheme homomorphisms from H₀ over R are conjugate by the centralizer of the image of H₀ over L in GL(V), allowing repeated highest weights, for §§2.2 and 3.3 (KPZ Lemma 3.3.10, p. 22; KPZ line 977).",
+    "supplier": "ReductiveGroupsPartII",
+    "section": "RG2.1–RG2.3; integral-representation extension"
+  },
+  {
+    "slug": "r-smooth-full-fixer-embeddings",
+    "needs": "Give the R-smooth centralizer and integral full-fixer closed-embedding theorems with their field-extension hypotheses used in §7.7.",
+    "supplier": "ReductiveGroupsPartII",
+    "section": "Scope and ownership, excluded R-smooth direction"
+  },
+  {
+    "slug": "symplectic-toral-factorization",
+    "needs": "Give the symplectic factorization of toral building embeddings, retaining division-centralizer multiplicities and each summand’s building translation, for §2.6.",
+    "supplier": "ReductiveGroupsPartII",
+    "section": "RG2.2; integral-representation extension"
+  },
+  {
+    "slug": "polynomial-representation-descent",
+    "needs": "Give polynomial lifts of the toral integral representations with specialization to the prescribed lattice chains and equivariant descent for §§2.4, 2.6 and 3.3.",
+    "supplier": "ReductiveGroupsPartII",
+    "section": "RG2.3; integral-representation extension"
+  },
+  {
+    "slug": "polynomial-parahoric-lifts",
+    "needs": "Give the polynomial parahoric lifts for the Weil-restricted tame factors and their central, fixed-point and divisor-specialization comparisons used by §§1.1–2.4 and 2.6 and the Iwahori comparison of §3.6.",
+    "supplier": "ReductiveGroupsPartII",
+    "section": "RG2.1–RG2.3"
+  },
+  {
+    "slug": "translation-stabilizer-jets",
+    "needs": "For a rational translation at the stated very special companion level, give smooth connected finite jet quotients of the positive-loop stabilizer intersection and compatible lifting along their pro-unipotent kernels.",
+    "supplier": "ReductiveGroupsPartII",
+    "section": "RG2.1–RG2.3"
+  },
+  {
+    "slug": "minuscule-dominance-tests",
+    "needs": "Give dominance detection in the integral coroot coset by the type-dependent minuscule weight sets of §4.4, on the simply connected cover.",
+    "supplier": "RootSystemsPartII",
+    "section": "Independent continuation briefs, Minuscule weights and modular representation bounds, MB.1"
+  },
+  {
+    "slug": "minuscule-root-coefficients",
+    "needs": "Give the minuscule root-string coefficient computation identifying the FM root bound j_α with k_α in §4.7 at the stated characteristics.",
+    "supplier": "RootSystemsPartII",
+    "section": "Independent continuation briefs, Minuscule weights and modular representation bounds, MB.2–MB.3"
+  },
+  {
+    "slug": "minuscule-cartan-coefficients",
+    "needs": "Give the minuscule Cartan detecting-weight calculation of §4.9, retaining the Dᴴ endpoint and p≠2 hypotheses.",
+    "supplier": "RootSystemsPartII",
+    "section": "Independent continuation briefs, Minuscule weights and modular representation bounds, MB.2"
+  },
+  {
+    "slug": "algebraic-loop-representability",
+    "needs": "Give arbitrary-field fpqc algebraic Grassmannians and twisted partial affine flags on the shared GS0 carriers.",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0, algebraic loop prefix"
+  },
+  {
+    "slug": "polynomial-bd-projectivity",
+    "needs": "In GS0’s polynomial BD extension, define the torsor modification functor Fl^P for smooth affine O_(K₀)[u]-groups with geometrically connected fibres and monic divisor P, and prove ind-projectivity with generic Grassmannian and companion affine-flag fibres for the specified polynomial parahoric lifts and Eisenstein divisors (LEV Definition 4.1.1, Proposition 4.1.4 and Theorem 4.2.10, pp. 20, 28; LEV line 791).",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0, polynomial BD extension"
+  },
+  {
+    "slug": "negative-big-cells",
+    "needs": "Give the algebraic negative-loop big-cell chart and its root and torus coordinates used in §4.3.",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0, algebraic loop prefix"
+  },
+  {
+    "slug": "prime-to-p-central-components",
+    "needs": "Give the neutral-component comparison of algebraic affine flags under prime-to-p central covers, including the nonreduced test rings used in §§1.4 and 5.3.",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0, algebraic loop prefix"
+  },
+  {
+    "slug": "algebraic-schubert-normality",
+    "needs": "Give algebraic Schubert normality, geometric unibranchness and normal Cohen–Macaulay components in the prime-to-p companion range.",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0, algebraic Schubert prefix"
+  },
+  {
+    "slug": "algebraic-demazure-fibres",
+    "needs": "In GS0’s algebraic extension of “Relative-position flag correspondences”, prove geometric connectedness of the fibres of the Iwahori-to-parahoric projection of admissible loci, using the reduced-word resolutions from “Equal-characteristic Schubert models and coefficient comparison” (GL Lemma 5.2, p. 10; GL line 430).",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0, Relative-position flag correspondences; algebraic extension"
+  },
+  {
+    "slug": "algebraic-coherence",
+    "needs": "In GS0’s algebraic Schubert prefix, for G=∏Res_(K_i/F)H_i with each H_i tamely split, any parahoric level, any dominant geometric cocharacter class μ and p∤|π₁(G^der)|, prove that for n≫0 the dimension of global sections of the n-th power of the ample determinant line bundle on the reduced μ-admissible Schubert union in the companion affine flag over k((u)) equals that on the generic Schubert bound Gr_≤μ, so the special fibre of the polynomial closure of §1.2 is that reduced union (PZ (8.19), PZ line 2659; LEV Theorem 4.3.2, p. 29, LEV line 1243, and LEV line 1389).",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0, algebraic Schubert prefix"
+  },
+  {
+    "slug": "polynomial-closed-immersion-criterion",
+    "needs": "Give the polynomial BD closed-immersion criterion from closed generic group maps and the specified neutral schematic-closure condition on the companion fibre.",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0, polynomial BD extension"
+  },
+  {
+    "slug": "central-nearby-cycles-algebraicity",
+    "needs": "Give algebraicity and bounded constructibility of local-model central nearby cycles over F_ℓ for every ℓ≠p before local-model tube connectedness.",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0, Bounded admissible affine flag loci; GS2 early central prefix"
+  },
+  {
+    "slug": "central-nearby-cycles-perversity",
+    "needs": "Give perverse t-exactness of local-model central nearby cycles over F_ℓ for every ℓ≠p independently of local-model tube connectedness.",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS2 early central prefix"
+  },
+  {
+    "slug": "extremal-wakimoto-filtration",
+    "needs": "Give the central nearby-cycle Wakimoto filtration with its extremal weights over F_ℓ for every ℓ≠p used in §7.4.",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS2 early central prefix"
+  },
+  {
+    "slug": "wakimoto-constant-term-multiplicities",
+    "needs": "Give constant-term multiplicities of the extremal Wakimoto factors over F_ℓ for every ℓ≠p used in §7.4.",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS2 early central prefix"
+  },
+  {
+    "slug": "rational-central-nearby-cycles",
+    "needs": "In the GS2 early central prefix, give the rational central nearby-cycle convolution isomorphism on bounded integral v-local models for every reductive group and dominant μ (AGLR Proposition 6.17, pp. 40–41; AGLR line 2239).",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS2 early central prefix"
+  },
+  {
+    "slug": "very-special-faithful-cohomology",
+    "needs": "Give faithfulness of cohomology at very special level for the rational central sheaves used to control splitting-field inertia in §8.1.",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS2 early central prefix"
+  },
+  {
+    "slug": "wild-admissible-closedness",
+    "needs": "In GS0’s canonical deperfection extension, for the acceptable Hodge datum of §7.7 with p>2, p∤|π₁(G^der)| and R-smooth centralizer, prove that the special-fibre map between canonical deperfected admissible loci induced by 𝒢→Res_(O_K/O_F)𝒢₀ for the specified finite splitting extension K/F is a closed immersion.",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0, Bounded admissible affine flag loci; canonical deperfection extension"
+  },
+  {
+    "slug": "general-tube-cohomology",
+    "needs": "In D11, give the three comparisons of GL Theorem 4.7 for a prekimberlite over a rank-one valuation ring, spatial generic diamond of finite cohomological dimension, perfectly finite-type reduction and ℓ-torsion coefficients with ℓ≠p, retaining algebraicity of nearby cycles for the comparison with the étale-neighbourhood limit (GL pp. 8–9; GL line 391).",
+    "supplier": "DiamondsAndVStacksPartII",
+    "section": "D11; cohomology comparison extension"
+  },
+  {
+    "slug": "connected-fibre-tube-transfer",
+    "needs": "In D11, for a surjective morphism X→Y of rich p-adic kimberlites over Spd O_F with perfectly finite-type reductions and geometrically connected reduction fibres, prove that connected geometric tubes of X imply connected geometric tubes of Y (GLE22 Lemma 5.26, p. 45; GLE22 line 2293).",
+    "supplier": "DiamondsAndVStacksPartII",
+    "section": "D11; tube-transfer extension"
+  },
+  {
+    "slug": "ramified-local-pel-data",
+    "needs": "Give the local EL/PEL order, involution, connected generic similitude group and permitted ramified lattice-chain data, including the nonsplit unitary self-dual or almost self-dual level and its inverse-different trace pairing, without a good-reduction or prime-to-discriminant restriction.",
+    "supplier": "PELModuli",
+    "section": "M0"
+  },
+  {
+    "slug": "semisimple-proper-pushforward",
+    "needs": "In LPV.1 §1.10 and LPV.6, for a proper equivariant morphism between finite-type schemes over a finite residue field and a bounded constructible rational ℓ-adic complex with admissible inertia action, prove that the semisimple trace of proper pushforward equals the sum of semisimple stalk traces over the rational points of each fibre, with geometric Frobenius (PZ §9.d.1–§9.d.2, pp. 74–75; PZ line 3064).",
+    "supplier": "LefschetzPencilsAndVanishingCycles",
+    "section": "LPV.1 §1.10; LPV.6"
+  },
+  {
+    "slug": "parahoric-satake-central-functions",
+    "needs": "In the SR.3.2 parahoric-centre extension, for every connected reductive G, connected parahoric P, finite-dimensional algebraic L-group representation V and lift Φ of geometric Frobenius, construct the central function z_(Φ,V) characterized on irreducible P-spherical representations π by trace(s_Φ(π)|V), over algebraically closed characteristic-zero coefficients and independently of local-model traces (HAI15 Theorem 1.1 and Definition 9.1, pp. 1, 19–20; HAI15 line 24 and HAI15 line 742; AGLR (8.7), pp. 52–53; AGLR line 2953).",
+    "supplier": "SmoothRepresentationsOfLocalGroups",
+    "section": "SR.3.2; general parahoric-centre extension"
+  },
+  {
+    "slug": "centre-constant-term-injectivity",
+    "needs": "In the SR.3.2 parahoric-centre extension, for a minimal F-Levi M whose split torus apartment contains the facet of P, put P_M=P∩M(F) and prove that normalized constant term Z(H(G(F),P))→Z(H(M(F),P_M)) is injective and carries z_(Φ,V) to z_(Φ,V restricted to the L-group of M) (HAI14 §11.11, pp. 44–45; HAI14 line 1896; AGLR (8.9)–(8.10), AGLR line 2974).",
+    "supplier": "SmoothRepresentationsOfLocalGroups",
+    "section": "SR.3.2; general parahoric-centre extension"
+  },
+  {
+    "slug": "inner-form-central-support",
+    "needs": "In the SR.3.2 parahoric-centre extension, for G anisotropic modulo centre, identify normalized inner-form transfer from its quasi-split inner form on central functions with fibre sums along the Kottwitz map, with the single-support specialization used in §8.4 when V has irreducible restriction to the dual group extended by inertia (HAI14 Proposition 11.12.6, p. 48; HAI14 line 2087; AGLR (8.14), AGLR line 3006).",
+    "supplier": "SmoothRepresentationsOfLocalGroups",
+    "section": "SR.3.2; general parahoric-centre extension"
+  },
+  {
+    "slug": "parahoric-level-change",
+    "needs": "In the SR.3.2 parahoric-centre extension, for an Iwahori I contained in a connected parahoric P, prove that convolution with the normalized P-idempotent identifies their Hecke centres compatibly with Satake-parameter central functions (HAI14 Theorem 11.10.1, p. 44; HAI14 line 1888).",
+    "supplier": "SmoothRepresentationsOfLocalGroups",
+    "section": "SR.3.2; general parahoric-centre extension"
+  },
+  {
+    "slug": "unramified-bernstein-spherical",
+    "needs": "In the SR.4.1 parahoric-centre extension, for unramified G identify the parahoric centre with the hyperspecial spherical Hecke algebra through the Bernstein isomorphism and normalized level change (PZ Theorem 9.16, p. 76; PZ line 3132; HAI14 Theorem 11.10.1, p. 44; HAI14 line 1888).",
+    "supplier": "SmoothRepresentationsOfLocalGroups",
+    "section": "SR.4.1; parahoric-centre extension"
+  },
+  {
+    "slug": "companion-hecke-comparison",
+    "needs": "In the SR.4.1 companion comparison extension, for the tame Pappas–Zhu companion datum identify the parahoric Hecke algebras through their matching Iwahori–Weyl basis and parameters, compatibly with Bernstein elements and normalized parahoric idempotents (PZ §9.d.2–§9.d.3, pp. 75–76; PZ line 3091).",
+    "supplier": "SmoothRepresentationsOfLocalGroups",
+    "section": "SR.4.1; companion comparison extension"
+  },
+  {
+    "slug": "schubert-geometric-unibranchness",
+    "needs": "In GS0’s Witt affine flags, for every connected reductive G over a p-adic field, every parahoric level and every residue characteristic, prove that every Schubert perfect variety of the partial affine flag variety over the algebraically closed residue field is normal with perfectly smooth dense open orbit, so that every finite-type deperfection of it, and every irreducible component of a Bruhat-union Schubert scheme, is geometrically unibranch even when it is not normal; and deduce, through the Witt Grassmannian of the split form, that the generic Schubert bound Gr_≤μ over C has lowest IC cohomology sheaf H^(−〈2ρ,μ〉)(IC_μ)=F_ℓ (AGLR Proposition 3.7, p. 21, AGLR line 1222; GL Lemma 5.1, p. 10, GL line 420, and Lemma 5.4, pp. 10–11, GL line 459; HLR Theorem 1.1, p. 2, HLR line 69, and Proposition 3.4, p. 11, HLR line 526).",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0, Witt affine flags and components"
+  },
+  {
+    "slug": "algebraic-admissible-cohen-macaulay",
+    "needs": "In GS0’s algebraic Schubert prefix, for a split group over k((t)) with simply connected derived group, Iwahori level and any dominant μ, prove that the equal-characteristic local model is normal with Frobenius-split reduced special fibre, and that this special fibre, the μ-admissible union, is Cohen–Macaulay, hence S₂ (GL Theorem 2.1, p. 4, GL line 149; GL Corollary 3.5, p. 7, GL line 288–297).",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0, algebraic Schubert prefix"
+  },
+  {
+    "slug": "generic-algebraic-schubert-normality",
+    "needs": "In GS0’s algebraic Schubert prefix, for every connected reductive group over a characteristic-zero field and every geometric dominant bound μ defined over its reflex field, prove geometric normality of the algebraic affine Schubert bound Gr_≤μ, used as the normal generic fibre in §1.3 (PR Theorem 8.4, p. 38, PR line 1419; LEV line 1029).",
+    "supplier": "GeometricSatakeAndFusion",
+    "section": "GS0, algebraic Schubert prefix"
+  }
+],
   "sourceIssues": [
     {
       "id": "GeometricSatakeAndFusionPartII/E1",
