@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-LieHighestWeight~2",
+    "head": "f236423bfebfa3c70fab9c3b2d505ce5a53b3f19",
+    "pr": 1220,
+    "folder": "RepresentationTheory/LieHighestWeight",
+    "date": "2026-11-01",
+    "findings": 10,
+    "blocking": 6,
+    "notes": "Full re-review and twelve-item prior repair audit. All ten seeded targets assessed; unread legal texts and missing locators recorded. Supplied gate passes; targeted build and direct Suggested elaboration pass with only sorry warnings. Dependency check: 204 roadmaps, 1460 edges, 0 problems. All 121 declarations signature-checked and given computed table rows; 55 admitted theorems probed for padding. Main/supplied-head/pinned ownership audit found unresolved supplier contracts, reversed ownership, admitted companion data, native duplication, and absent statable character headline. Two source errata recorded."
+  }
+}
