@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-AffineLieAlgebras~1",
+    "head": "ddffe47fa9340697064a311923cd2a041541c8f0",
+    "pr": 1201,
+    "folder": "AffineLieAlgebras",
+    "date": "2026-11-01",
+    "findings": 8,
+    "blocking": 5,
+    "notes": "Full-folder review: all six seeded source targets checked against legally readable texts; four inaccessible or unidentified sources recorded. Worker gate passed; independent Lean elaboration passed with 28 sorry warnings; all 126 named signatures checked; all 28 admissions probed, seven one-tactic successes. Dependency check: 204 roadmaps, 1437 edges, 0 problems. Adversarial tables contain 101 README and 126 Lean rows. Pinned-library, main, board-package and supplied open-head ownership audits completed; worktree unchanged."
+  }
+}
