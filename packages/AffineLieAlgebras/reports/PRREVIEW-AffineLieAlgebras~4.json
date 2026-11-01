@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-AffineLieAlgebras~4",
+    "head": "6bd3f7b96b9765ef8719a9721c2beb006e11c1a7",
+    "pr": 1201,
+    "folder": "AffineLieAlgebras",
+    "date": "2026-11-01",
+    "findings": 3,
+    "blocking": 1,
+    "notes": "Full review; previous R01/R02 repaired and R03 partly repaired. All 13 API blocks and five named source paragraphs inspected, covering the 15-entry seed. Worker gate passed all checks; direct Lean and all 13 signature checks passed with seven sorry warnings. Dependency check: 204 roadmaps, 1460 edges, zero problems. Seven one-tactic probes did not close. 166 adversarial rows; new fixed-PBW-length nilpotence counterexample. Source manifest absent and one supplier locator typo; Kac original uncertified and Zulip message inaccessible."
+  }
+}
