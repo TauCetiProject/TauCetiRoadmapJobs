@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-VectorBundlesAndIsocrystals~2",
+    "head": "f805de8f428d12525744eb7ef2f5ec729dcb0bed",
+    "pr": 1205,
+    "folder": "VectorBundlesAndIsocrystals",
+    "date": "2026-11-01",
+    "findings": 2,
+    "blocking": 1,
+    "notes": "Full review; seven previous findings repaired. Gate passes; independent Lean and four-signature probes pass; depcheck 205 roadmaps, 1461 edges, zero problems. Ambiguous fifteen API labels interpreted as first fifteen API blocks. Eleven works/twelve texts fetched legally. 138 adversarial table rows. One remaining supplier-ownership overlap (P2), one locator label (P3); source/generalization limitations recorded."
+  }
+}
