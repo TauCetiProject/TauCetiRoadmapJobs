@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-EisensteinIdealAndRationalTorsion~4",
+    "head": "27586f62be3c4a42860c633f3ffb2329ceed9fcb",
+    "pr": 1264,
+    "folder": "EisensteinIdealAndRationalTorsion",
+    "date": "2026-11-01",
+    "findings": 1,
+    "blocking": 1,
+    "notes": "incremental re-review of 4 changed lines since b417d0f; prior R01 partly repaired: later roadmap still independently owns Manin\u2013Drinfeld. Checked both edits, affected supplier and consumer citations, legal Elkik text, all six elaborated signatures, passing scanner gate, dependency check, targeted build and direct Lean elaboration. Fifteen unchanged seeded targets retain R3 evidence; adversarial table has 2 fresh and 86 carried-forward rows."
+  }
+}
