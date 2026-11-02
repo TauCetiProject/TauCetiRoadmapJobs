@@ -1,0 +1,71 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "MotivesAndAlgebraicCyclesPartII"
+
+[[source]]
+id = "Scholze"
+authors = "Peter Scholze"
+title = "Berkovich Motives"
+year = 2024
+arxiv = "2412.03382v3"
+locator_scheme = "theorem"
+locator = "Definitions 2.7, 3.1, 3.10, 4.10, 5.2, 9.1, 10.7; Propositions 2.9, 3.11, 5.6, 5.19, 6.8, 9.3, 10.1, 10.3, 12.3, 12.4; Theorems 1.7, 1.9, 3.13, 3.14, 4.1, 4.20, 5.16, 6.1, 6.3, 7.1, 8.9, 8.13, 11.1, 11.9; Lemmas 5.3, 6.4, 6.5, 10.4; Corollaries 8.10, 10.6, 11.10; Remark 11.2 (arXiv v3 internal pagination)"
+url = "https://arxiv.org/abs/2412.03382v3"
+fetched_from = "https://arxiv.org/pdf/2412.03382v3"
+fetched_at = "2026-10-26T17:22:36Z"
+sha256 = "440b4a82eca992d1b7edb5c608bd7de8c336cce7f623f290aa95002cab57d484"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["0.1-0.7", "1.1-1.7", "2.1-2.6", "3.1-3.5", "4.1-4.10", "5.1-5.4", "6.1-6.3", "7.1-7.7", "8.1-8.5", "9.1-9.8", "10.1", "10.3", "10.5", "10.6", "11.1-11.8", "12.1-12.4", "Corrections to the source"]
+
+[[source]]
+id = "vanDerPut"
+authors = "Marius van der Put"
+title = "The class group of a one-dimensional affinoid space"
+year = 1980
+venue = "Annales de l'Institut Fourier 30 (1980), no. 4, 155-164"
+locator_scheme = "theorem"
+locator = "Theorem 1.1 (pp. 155-158); Corollary 1.3 (p. 159, proof pp. 159-161)"
+url = "https://www.numdam.org/item/AIF_1980__30_4_155_0/"
+fetched_from = "https://www.numdam.org/item/AIF_1980__30_4_155_0.pdf"
+fetched_at = "2026-10-26T17:22:43Z"
+sha256 = "583b012282ec23f8da13b9e430a088e48953983643dde6f8a23faf5f2e1b3aca"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["4.2"]
+
+[[source]]
+id = "BLR"
+authors = "Siegfried Bosch, Werner Lütkebohmert, Michel Raynaud"
+title = "Néron Models"
+year = 1990
+doi = "10.1007/978-3-642-51438-8"
+locator_scheme = "section"
+locator = "§9.2, Proposition 3 (p. 244), Example 8 (pp. 246-247), Proposition 10 (p. 249)"
+url = "https://doi.org/10.1007/978-3-642-51438-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.3"]
+
+[[source]]
+id = "CD"
+authors = "Denis-Charles Cisinski, Frédéric Déglise"
+title = "Étale motives"
+year = 2013
+venue = "Compositio Math. 152 (2016) 556-666"
+doi = "10.1112/S0010437X15007459"
+arxiv = "1305.5361v4"
+locator_scheme = "theorem"
+locator = "Theorem 4.5.2, Corollary 4.5.3 (p. 41); Theorem 5.2.2 (p. 44); Theorem 5.5.3 (p. 54); Corollaries 5.5.5, 5.5.7 (pp. 55-56) (arXiv v4 pagination)"
+url = "https://arxiv.org/abs/1305.5361v4"
+fetched_from = "https://arxiv.org/pdf/1305.5361v4"
+fetched_at = "2026-10-26T17:22:56Z"
+sha256 = "46f6f656956cb1236b295e0339ac189adf64e3e8dd15169b3d993e64b786f8f4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v4"
+cited_for = ["10.2", "10.4", "10.5", "Corrections to the source"]
