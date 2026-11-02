@@ -1,0 +1,85 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LefschetzPencilsAndVanishingCyclesPartII"
+
+[[source]]
+id = "KisinZhou2024"
+authors = "Mark Kisin, Rong Zhou"
+title = "Independence of ℓ for Frobenius conjugacy classes attached to abelian varieties"
+year = 2024
+arxiv = "2103.09945v2"
+locator_scheme = "theorem"
+locator = "Proposition 5.2.3, Remark 5.2.4 (p. 49); Corollary 5.2.7 (pp. 52-53); Proposition 5.3.5 (p. 54)"
+url = "https://arxiv.org/abs/2103.09945v2"
+fetched_from = "https://arxiv.org/pdf/2103.09945v2"
+fetched_at = "2026-10-26T21:33:40Z"
+sha256 = "62d26eb931f271404c333c4b9a929e85239222788834cf16dcec1dff230c34c8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2 (7 October 2024); published Annals of Mathematics 202 (2025), no. 3; locators refer to arXiv v2, the published text was not compared"
+doi = "10.4007/annals.2025.202.3.3"
+cited_for = ["Summary", "2.4", "Downstream consumers"]
+
+[[source]]
+id = "Poonen2004"
+authors = "Bjorn Poonen"
+title = "Bertini theorems over finite fields"
+year = 2004
+locator_scheme = "theorem"
+locator = "Theorem 3.3, Corollary 3.4 (author PDF p. 10)"
+url = "https://math.mit.edu/~poonen/papers/bertini.pdf"
+fetched_from = "https://math.mit.edu/~poonen/papers/bertini.pdf"
+fetched_at = "2026-10-26T21:33:50Z"
+sha256 = "52bbee7fc56a181b5c745d729a9125e4bfd702a5a860058043874bfba0d17e9d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Scope and ownership"]
+
+[[source]]
+id = "Stacks-Morphisms"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Chapter 29: Morphisms of Schemes"
+year = 2026
+locator_scheme = "tag"
+locator = "Lemma 29.37.21 (054L)"
+url = "https://stacks.math.columbia.edu/tag/054L"
+fetched_from = "https://stacks.math.columbia.edu/download/morphisms.pdf#nameddest=054L"
+fetched_at = "2026-10-26T21:33:54Z"
+sha256 = "0bebe1d93baa7e4e99cb4f36fe50c7bcb6094772b8a2f760885a492892eca75f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Supplier contracts", "2.4"]
+
+[[source]]
+id = "Stacks-Varieties"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Chapter 33: Varieties"
+year = 2026
+locator_scheme = "tag"
+locator = "Lemmas 33.7.14 (04KV), 33.25.4 (056T), 33.25.10 (0CDW)"
+url = "https://stacks.math.columbia.edu/tag/04KV"
+fetched_from = "https://stacks.math.columbia.edu/download/varieties.pdf#nameddest=04KV"
+fetched_at = "2026-10-26T21:33:58Z"
+sha256 = "ed339c312c86721e3f830876da14cabe89a96e83e454a78b7cd355555f4bca45"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Scope and ownership", "2.2", "2.4"]
+
+[[source]]
+id = "Stacks-Properties"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Chapter 28: Properties of Schemes"
+year = 2026
+locator_scheme = "tag"
+locator = "Lemma 28.7.7 (033N)"
+url = "https://stacks.math.columbia.edu/tag/033N"
+fetched_from = "https://stacks.math.columbia.edu/download/properties.pdf#nameddest=033N"
+fetched_at = "2026-10-26T21:34:00Z"
+sha256 = "2f5b9ba41e07dd3a888da40496e07afae6caedd550597d96313ab16db4380316"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Scope and ownership", "2.4"]
