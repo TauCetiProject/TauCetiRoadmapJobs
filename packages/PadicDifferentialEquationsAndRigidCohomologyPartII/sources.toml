@@ -1,0 +1,142 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PadicDifferentialEquationsAndRigidCohomologyPartII"
+
+[[source]]
+id = "TSU"
+authors = "Nobuo Tsuzuki"
+title = "Minimal slope conjecture of $F$-isocrystals"
+year = 2019
+arxiv = "1910.03871v3"
+locator_scheme = "theorem"
+locator = "Theorems 1.3-1.4, 2.13-2.14, 3.10-3.33, 4.2-4.11, 6.1-6.9, 7.12-7.20; Definitions 3.5, 3.16, 3.26, 4.1, 4.3, 4.8, 5.1, 7.1, 7.6, 7.14; Lemma A.1; Appendix B"
+url = "https://arxiv.org/abs/1910.03871v3"
+fetched_from = "https://arxiv.org/pdf/1910.03871v3"
+fetched_at = "2026-10-26T16:13:44Z"
+sha256 = "611090d2e371483ff7996170368255462eeae03e5277c93a2ec406ac47c18457"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["MS.0.1-MS.0.11", "MS.1.1-MS.1.9", "MS.2.1-MS.2.8", "MS.3.1-MS.3.10", "MS.4.1-MS.4.8", "MS.5.10", "MS.6.1-MS.6.14"]
+
+[[source]]
+id = "DAD"
+authors = "Marco D'Addezio"
+title = "Parabolicity conjecture of $F$-isocrystals"
+year = 2020
+venue = "Ann. Math. 198 (2023), 619-656"
+doi = "10.4007/annals.2023.198.2.3"
+arxiv = "2012.12879v4"
+locator_scheme = "theorem"
+locator = "Definitions 1.2.1, 4.1.1; Notation 4.1.2; Theorems 4.1.3, 4.2.6, 4.2.13, 4.4.2; Lemmas 4.1.4-4.1.8, 4.2.4, 4.2.7, 4.2.10-4.2.11; Construction 4.2.3; Propositions 4.2.2, 4.2.12; Section 4.2.9"
+url = "https://arxiv.org/abs/2012.12879v4"
+fetched_from = "https://arxiv.org/pdf/2012.12879v4"
+fetched_at = "2026-10-26T16:13:55Z"
+sha256 = "f92379bec97564edc2b89f86f6bfc5c271abdc31c5d17cb9ba93b58e204a07a8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v4"
+cited_for = ["MS.0.4", "MS.5.1-MS.5.11"]
+
+[[source]]
+id = "OHK"
+authors = "Shun Ohkubo"
+title = "Logarithmic growth filtrations for $(\\varphi,\\nabla)$-modules over the bounded Robba ring"
+year = 2018
+arxiv = "1809.04065v1"
+locator_scheme = "theorem"
+locator = "Lemmas 1.12-1.15, 2.6, 2.10-2.14, 5.11, 7.10, 8.2; Definitions 2.1, 2.4, 2.9, 5.10, 12.5; Corollary 2.7; Propositions 5.9, 7.7, 8.1, 10.1, 12.4; Theorems 7.6, 8.3, 12.7"
+url = "https://arxiv.org/abs/1809.04065v1"
+fetched_from = "https://arxiv.org/pdf/1809.04065v1"
+fetched_at = "2026-10-26T16:14:02Z"
+sha256 = "b5973f948d61bf9eae23c15ef069b6c1559949668b691c134c3f72613bbca8b4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["MS.0.6", "MS.0.7", "MS.0.8", "MS.0.9", "MS.0.10", "MS.1.4", "MS.1.6", "MS.1.7", "MS.1.8", "supplier request extended-log-robba-growth"]
+
+[[source]]
+id = "KED05"
+authors = "Kiran S. Kedlaya"
+title = "More etale covers of affine spaces in positive characteristic"
+year = 2003
+venue = "preprint; published version: J. Alg. Geom. 14 (2005), 187-192."
+arxiv = "math/0303382v3"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/math/0303382v3"
+fetched_from = "https://arxiv.org/pdf/math/0303382v3"
+fetched_at = "2026-10-26T16:14:06Z"
+sha256 = "23ac7240e15b87fb6a1a90f17f9539e30380c3bac3cc6c61b8440e6916399664"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["MS.5.9"]
+
+[[source]]
+id = "AE"
+venue = "Ann. Sci. Éc. Norm. Supér. 52 (2019), 1243-1264; author PDF, PDF page numbering"
+year = 2019
+title = "A Lefschetz theorem for overconvergent isocrystals with Frobenius structure"
+authors = "Tomoyuki Abe, Hélène Esnault"
+locator_scheme = "theorem"
+locator = "Corollary 2.4; Remark 2.5; Theorem 2.7; Theorem 3.10"
+url = "https://page.mi.fu-berlin.de/esnault/preprints/helene/123_abe_esn.pdf"
+fetched_from = "https://page.mi.fu-berlin.de/esnault/preprints/helene/123_abe_esn.pdf"
+fetched_at = "2026-10-26T16:14:18Z"
+sha256 = "23b7ccf32c101e0ee7a7647b5bbcd8968f0b3184172efb0c6877fb25268bde36"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["MS.5.11", "MS.6.9", "supplier requests irreducible-iota-purity, lefschetz-curves-irreducibility, docile-curve-restriction"]
+
+[[source]]
+id = "CT11"
+doi = "10.4171/dm/326"
+venue = "Documenta Mathematica 16 (2011), 33-69"
+year = 2011
+title = "Log-growth filtration and Frobenius slope filtration of F-isocrystals at the generic and special points"
+authors = "Bruno Chiarellotto, Nobuo Tsuzuki"
+locator_scheme = "theorem"
+locator = "Theorem 2.2; Theorem 4.1; Propositions 4.2-4.3; Definition 5.1; Examples 5.2, 5.11; Proposition 5.4; Corollary 5.5; Theorem 5.6; Lemma 5.7; Corollary 5.10"
+url = "https://ems.press/content/serial-article-files/26106?nt=1"
+fetched_from = "https://ems.press/content/serial-article-files/26106?nt=1"
+fetched_at = "2026-10-26T16:14:32Z"
+sha256 = "5f820a32b98e54a5f354bacbc2f88057641e17c8d7dca24e81f3125d4dba7b53"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["MS.0.5", "MS.0.6", "MS.0.7", "MS.0.9", "MS.1.1", "MS.1.5"]
+
+[[source]]
+id = "DEJONG98"
+authors = "A. J. de Jong"
+title = "Homomorphisms of Barsotti-Tate groups and crystals in positive characteristic"
+year = 1998
+venue = "Inventiones Mathematicae 134"
+doi = "10.1007/s002220050266"
+locator_scheme = "theorem"
+locator = "Proposition 6.4"
+url = "https://doi.org/10.1007/s002220050266"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["MS.1.5 (supplier request dejong-disc-robba-submodules)"]
+
+[[source]]
+id = "TSU98"
+authors = "Nobuo Tsuzuki"
+title = "Finite local monodromy of overconvergent unit-root F-isocrystals on a curve"
+year = 1998
+venue = "American Journal of Mathematics 120 (1998)"
+doi = "10.1353/ajm.1998.0052"
+locator_scheme = "theorem"
+locator = "Theorems 4.2.6 and 7.2.3"
+url = "https://doi.org/10.1353/ajm.1998.0052"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (Project MUSE); cited by its locator without the text, as quoted in TSU, proof of Lemma 3.32"
+cited_for = ["MS.2.3 (supplier request unit-root-correspondence-perfect-base)"]
