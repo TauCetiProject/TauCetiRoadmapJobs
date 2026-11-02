@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-SchurWeyl~4",
+    "head": "a205d48c214511a451ae1f2ecf16c33eb70696b0",
+    "pr": 1164,
+    "folder": "RepresentationTheory/SchurWeyl",
+    "date": "2026-11-02",
+    "findings": 4,
+    "blocking": 2,
+    "notes": "Full review; previous R01–R12 disposition; all 15 seeded targets assessed with legal-source limitations recorded; 166 computed adversarial rows. Worker gate passes, targeted build and direct elaboration pass, dependency check: 204 roadmaps, 1490 edges, 0 problems. All 36 main signatures and auxiliary signature inspected; 22 one-tactic padding probes. Missing finite Frobenius suppliers (P1), statable balanced headline omitted (P2), auxiliary Lean form/duplication and signed-action locator (P3)."
+  }
+}
