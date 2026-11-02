@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ClassicalGroups~5",
+    "head": "d7f764824063719ca5b4bf5de2dd0e35940b64dc",
+    "pr": 1192,
+    "folder": "RepresentationTheory/ClassicalGroups",
+    "date": "2026-11-02",
+    "findings": 6,
+    "blocking": 3,
+    "notes": "incremental re-review of 95 changed lines since a8f7108; all seven previous findings accounted for; changed seeded targets 0.2, 3.2, 3.4, 6.5 and all added locators/Checks verified; 21 fresh computed rows plus unchanged adversarial rows from review 4; supplier/ownership and pinned-interface audit; gate and dependency check pass; targeted build and direct elaboration pass; all 45 signatures checked. Three P2 and three P3 findings remain."
+  }
+}
