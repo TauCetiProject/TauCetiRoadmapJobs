@@ -1,0 +1,54 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ModularFormsPartII"
+
+[[source]]
+id = "CDT25"
+authors = "Frank Calegari, Vesselin Dimitrov, Yunqing Tang"
+title = "The unbounded denominators conjecture"
+year = 2025
+doi = "10.1090/jams/1053"
+arxiv = "2109.09040"
+version_note = "Locators are journal pages of the published article (J. Amer. Math. Soc. 38 (2025), 627–702), read in the author's offprint; the arXiv numbering of theorems agrees, its pages do not."
+locator_scheme = "theorem"
+locator = "Theorem 1.0.1"
+url = "https://www.math.uchicago.edu/~fcale/papers/UDC.pdf"
+fetched_from = "https://www.math.uchicago.edu/~fcale/papers/UDC.pdf"
+fetched_at = "2026-10-26T18:55:24Z"
+sha256 = "867026fbcc5592728173e5c4d6a87f58d57a55b0d0d8b0109b9774e84290ee1e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "Layer 3", "Layer 4", "Layer 5", "Layer 6", "Layer 7", "Layer 8", "Layer 9"]
+
+[[source]]
+id = "KSV10"
+authors = "Ian Kiming, Matthias Schuett, Helena Verrill"
+title = "Lifts of projective congruence groups"
+year = 2009
+doi = "10.1112/jlms/jdq062"
+arxiv = "0905.4798v4"
+locator_scheme = "theorem"
+locator = "§3, Lemma 7, Proposition 3 and its proof, equation (1), Remark 8, pp.4–6"
+url = "https://arxiv.org/abs/0905.4798v4"
+fetched_from = "https://arxiv.org/pdf/0905.4798v4"
+fetched_at = "2026-10-26T18:55:28Z"
+sha256 = "47b1b84db45e4e774a8705d75df323558352885c7a81e3f786b9cd0168d55ef6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v4"
+cited_for = ["1.8"]
+
+[[source]]
+id = "Ihara1994"
+authors = "Yasutaka Ihara"
+title = "Horizontal divisors on arithmetic surfaces associated with Belyi uniformizations"
+year = 1994
+doi = "10.1017/CBO9780511569302.011"
+locator_scheme = "theorem"
+locator = "Theorem 1, pp.248–249; §4, p.252"
+url = "https://doi.org/10.1017/CBO9780511569302.011"
+status = "uncertified"
+licence_class = "none"
+note = "In The Grothendieck Theory of Dessins d'Enfants, London Math. Soc. Lecture Note Ser. 200 (1994); publisher page only, cited by locator."
+cited_for = ["9.2"]

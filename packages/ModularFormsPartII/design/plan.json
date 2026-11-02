@@ -3439,47 +3439,22 @@
   ],
   "gaps": [
     {
-      "id": "ModularFormsPartII:gap/MODEL",
-      "title": "Rational ∞ cusp of the ℤ/m⊕μ_m model",
-      "detail": "ModularCurvesPartII (TauCetiRoadmap pull request #913, head 2f3a763) constructs the compactified twisted curve X(V) over ℚ for a rank-two V with alternating pairing to μ_m (R13.4a/twisted-coarse-curve, §5.14), its analytic comparison and geometric irreducibility (R12.4, §§6.4–6.5), the cusp fields of fixed-pairing curves (R12.3, §6.3) and descent of sections from a split K-rational cusp by q-expansion (R12.6, §8.1); these are cited as they stand. Not stated there: for V=ℤ/m⊕μ_m with its standard pairing and m≥3, the cusp ∞ of X(V) is ℚ-rational and split, with Tate parameter q^{1/m} (q=e^{2πiτ}) compatible with the analytic comparison, so that ℚ(X(V)) is exactly the field of meromorphic functions on X(m) whose q^{1/m}-expansion at ∞ is rational. W5 uses this to identify ℂM₂m with the function field of X(m); the rest of the degree comparison is formal (W5/field-base-change). Requested from a Part II of ModularCurvesPartII.",
-      "neededBy": [
-        "ModularFormsPartII:W5/field-base-change",
-        "ModularFormsPartII:W5/congruence-degree"
-      ]
+      "slug": "udc-rational-cusp-of-twisted-full-level",
+      "needs": "For V = Z/m ⊕ μ_m with its standard pairing and m ≥ 3, the cusp ∞ of the twisted curve X(V) of §5.14 is Q-rational and split with Tate parameter exp(2πiτ/m), compatibly with the analytic comparison of §6.4, so that the rational functions on X(V) are exactly the meromorphic functions on X(m) whose expansion at ∞ in exp(2πiτ/m) has rational coefficients.",
+      "supplier": "ModularCurvesPartII",
+      "section": "§5.14"
     },
     {
-      "id": "ModularFormsPartII:gap/NF",
-      "title": "Arithmetic descent of noncongruence Fourier germs",
-      "detail": "Supply a number-field model and q-germ for an arbitrary finite-index modular function with algebraic coefficients; show all coefficients lie in one number field, and coefficientwise Galois conjugation produces finite-index weak modular functions with compatible cusp parameters. Reduce arbitrary weight via the explicit congruence factor. Belyi existence alone does not identify its distinguished Fourier germ, and the congruence q-expansion comparison alone does not cover a noncongruence group. This is the precise missing bridge in the short trace proof of Remark 6.3.2.",
-      "neededBy": [
-        "ModularFormsPartII:W6/number-field-variant",
-        "ModularFormsPartII:W9/arithmetic-cover-criterion"
-      ]
+      "slug": "udc-all-prime-cuspidal-model-of-full-level",
+      "needs": "For N ≥ 1 and a number field K ⊇ Q(μ_N), a regular proper model of X(N)_K over O_K at every prime, including the primes dividing N, with the cusp ∞ extending to a section through the smooth locus, the fibre component through that section, and compatibility with finite extensions of K.",
+      "supplier": "ModularCurvesPartII",
+      "section": "Layer 11 (§11.4)"
     },
     {
-      "id": "ModularFormsPartII:gap/GLOCAL",
-      "title": "Bombieri–André and Katz for G-operators",
-      "detail": "DiophantineApproximationAndTranscendence is merged into TauCetiRoadmap main (pull request #855, head 0d1c47b). Its DT.5 G-functions (§5.2), the Galochkin condition for ℚ̄(z)-independent G-function solutions of a system (Chudnovsky, §5.3) and the regularity at 0 of the minimal operator of a G-function are cited as they stand. Not stated there: (a) the Bombieri–André theorem that Galochkin's condition implies Bombieri's condition and global nilpotence of the connection; (b) Katz's theorem that a globally nilpotent operator over ℚ̄(x) is regular singular with quasi-unipotent local monodromy at every point of ℙ¹. Requested from a Part II of DiophantineApproximationAndTranscendence in the G-function direction; the designed DiophantineApproximationAndTranscendencePartII (arithmetic algebraization, AA.0–AA.5) does not contain them.",
-      "neededBy": [
-        "ModularFormsPartII:W7/arithmetic-component"
-      ]
-    },
-    {
-      "id": "ModularFormsPartII:gap/LOCALGLOBAL",
-      "title": "Deficient-place converse needs an arithmetic witness",
-      "detail": "The unconditional ambient converse asserted on CDT25 p.695 requires (i) noncongruence to be detected by an actual arithmetic cuspidal component and (ii) a theorem converting the relevant all-place local bounds into one global common denominator. Neither follows merely from the component theorem or from noncongruence of an invisible summand. W8 proves the precise finite-denominator-support witness version. The unrestricted archimedean and finiteness questions remain questions, not roadmap theorem targets. Selberg’s asserted bound also needs its primary hypothesis/normalization check before use. The printed converse is false as stated: for ρ=1⊕σ of W7/invisible-summand-test the deficient set is empty although ker ρ is not congruence (E19).",
-      "neededBy": [
-        "ModularFormsPartII:W8/noncongruence-witness"
-      ]
-    },
-    {
-      "id": "ModularFormsPartII:gap/NERON",
-      "title": "All-prime cuspal-model cover descent",
-      "detail": "The source gives only a sketch referring to Ihara (1994), Horizontal divisors on arithmetic surfaces associated with Belyi uniformizations, Theorem 1 pp.248–249 and §4 p.252 (DOI 10.1017/CBO9780511569302.011). No lawful full text was available from the cleared library or official publisher/author endpoints checked. Supply and read that proof, fix the fibrewise connected-model convention, verify the smooth cusp section and regular-model hypotheses for every N and all bad primes, and prove the λ(τ/N)/16 formal-coordinate/level-doubling descent. The existing modular-curve and étale π₁ suppliers do not state this arithmetic criterion. ModularCurvesPartII (pull request #913) §11 (R13.5) builds regular resolutions and semistable models for Γ₀ levels at primes p>3 and for the listed mixed and Cartan levels; it is cited as it stands and does not cover X(N) at every prime, including p∣N.",
-      "neededBy": [
-        "ModularFormsPartII:W9/cuspal-model",
-        "ModularFormsPartII:W9/arithmetic-cover-criterion"
-      ]
+      "slug": "udc-bombieri-andre-katz",
+      "needs": "The Bombieri–André theorem that a differential system satisfying Galochkin's condition is globally nilpotent, and Katz's theorem that a globally nilpotent operator over Q̄(x) is regular singular with quasi-unipotent local monodromy at every point of P¹.",
+      "supplier": "DiophantineApproximationAndTranscendence",
+      "section": "§5.3"
     }
   ],
   "coverage": [
