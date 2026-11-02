@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-RootSystems~8",
+    "head": "a857ef518abee2e9b0d43a72839cbda0aa5cd643",
+    "pr": 1278,
+    "folder": "RepresentationTheory/RootSystems",
+    "date": "2026-11-02",
+    "findings": 3,
+    "blocking": 1,
+    "notes": "incremental re-review of 68 changed lines since 7c91bd8; accounted for all four previous findings; checked changed sampled passages in \u00a7\u00a71.3, 2.1, 3.1 and 3.2 and carried unchanged sample evidence; verified native Cartan/reindexing contracts, non-spanning type-A signature, legal cached Humphreys locators and ownership at supplied heads; gate, dependency check, targeted build, direct elaboration and all-declaration signature checks pass; 50 carried and 12 fresh computed adversarial rows; unresolved duplicate ownership (P2), duplicate companion and source records/locators (P3)."
+  }
+}
