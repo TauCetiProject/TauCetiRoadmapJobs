@@ -4882,73 +4882,178 @@
   ],
   "gaps": [
     {
-      "title": "G1 — replacement for full-family auxiliary-field independence",
-      "detail": "FKP22 v5 Lemma3.7 pp.15–16 is false under its stated Assumption3.1: for F=Q, trivial SL₂ residual image and k=F_p, p≥5, M*=F_p(κ̄)³. For two basis lines, identify their scalar cocycles and put ζ_w=η_1^(w)−η_2^(w). Their equal inertia at w cancels, so ζ_w lies in the finite group H¹(Γ_{Q,T},F_p(κ̄)). Infinitely many w force ζ_w=ζ_w′ for distinct w,w′. This gives a nontrivial relation among four degree-p cocycle fields, contradicting strong disjointness. Restriction to Γ_K preserves the relation and individual nonvanishing; H¹(Gal(K/Q),F_p(κ̄))=0 as its order is p−1. C4 holds, but C1 fails. To close the main proof, establish the quantitative conditional-success/finite-quotient Chebotarev input actually needed by Proposition3.8 under C1,C3,C4, using a new construction or a proof allowing repeated constituents. Individual cyclic images or pairwise disjointness do not close it. The conditional joint-generation node is valid but its extra hypothesis is not automatic. Theorem5.2 is an intended target, not disproved by this counterexample. Independent review (REV-DESIGN-GlobalGaloisDeformationsPartII) adds that the failure also occurs under C1–C4. With k=F_p, if M* is semisimple with a simple constituent of multiplicity at least two, then for every k-basis the inertia tuple at w generates a proper F_p[Γ_F]-submodule of ∏_b M*_{e_b*}. The resulting subextension of L_w unramified at w lies in the finite maximal elementary abelian p-extension of K unramified outside T, so it repeats for two new primes. This happens for the F₄-valued examples of FKP19 Proposition 7.8 (adjoint multiplicities above one, FKP19 Remark 7.9), which satisfy C1–C4. The same diagonal-generator step recurs on p.18 of FKP22, where the fields K_{h(v)} and K_{η_b^{(v)}} are separated through ramification at t₀. So G1 is a gap in the proof of Theorem 5.2 within its hypotheses; Theorem 5.2 is not refuted, and for irreducible residual images FKP19 Theorem 6.11 has an independent proof.",
-      "neededBy": [
-        "GlobalGaloisDeformationsPartII:GG2.2/dual-strong-disjointness",
-        "GlobalGaloisDeformationsPartII:GG2.3/density-selection",
-        "GlobalGaloisDeformationsPartII:GG2.3/doubling",
-        "GlobalGaloisDeformationsPartII:GG2.3/congruence-field-disjointness",
-        "GlobalGaloisDeformationsPartII:GG2.3/controlled-tower",
-        "GlobalGaloisDeformationsPartII:GG2.6/main-geometric-lift"
-      ]
+      "slug": "fixed-quotient-global-obstructions",
+      "needs": "The square-zero H¹ action, H² obstruction and global/local restriction diagram must apply to fixed-quotient G-valued lifts with prime-to-p components and reducible residual image, without asserting representability of the unframed functor.",
+      "supplier": "GlobalGaloisDeformations",
+      "section": "R04.3 §§3.3–3.8"
     },
     {
-      "title": "G2 — precise small-dimensional finite-group input",
-      "detail": "Read Guralnick, Small representations are completely reducible, J.Algebra220(1999), DOI10.1006/jabr.1999.7963, TheoremA in an authorized primary text, and verify the exact hypotheses that supply both the H¹ claim used by FKP19 LemmaA.1 and the noninjective-projection splitting argument of FKP22 Corollary8.3. The primary Larsen–Pink normal-series theorem was read; it does not by itself supply this input. Publisher access did not provide the primary Guralnick text. Keep the requested IMAGE contract open.",
-      "neededBy": [
-        "GlobalGaloisDeformationsPartII:GG2.1/irreducible-image-input",
-        "GlobalGaloisDeformationsPartII:GG2.1/cyclotomic-exclusion",
-        "GlobalGaloisDeformationsPartII:GG2.9/two-block-automorphy"
-      ]
+      "slug": "polarized-tangent-convention",
+      "needs": "Its G7 polarized coefficient criterion must distinguish Lie ker(multiplier)=glₙ from Lie((G⁰)ᵈᵉʳ)=slₙ, track the scalar summand and the action X↦−AXᵗA⁻¹, and require each residual constituent to be polarized individually before exporting invariant vanishing.",
+      "supplier": "GlobalGaloisDeformations",
+      "section": "G7 §§8.1–8.4"
     },
     {
-      "title": "G3 — audited positive-characteristic duality contract",
-      "detail": "The present ArithmeticGaloisDuality Selmer/PT/Greenberg–Wiles nodes and D7 are stated for number fields or their completions. Read an authorized primary proof of their global/local function-field versions at p different from the characteristic and verify all finite-coefficient, Sha and cardinality comparisons in the requests. The FKP papers invoke these versions but do not prove the entire duality theory; no matching implementation was found at the pinned/current searches. The cited NSW book is not a cleared local source, so no other copy was used.",
-      "neededBy": [
-        "GlobalGaloisDeformationsPartII:GG2.2/sha-killing",
-        "GlobalGaloisDeformationsPartII:GG2.2/one-prime-sequence",
-        "GlobalGaloisDeformationsPartII:GG2.4/coefficient-exactness",
-        "GlobalGaloisDeformationsPartII:GG2.4/relative-balance",
-        "GlobalGaloisDeformationsPartII:GG2.6/compatible-finite-ramification",
-        "GlobalGaloisDeformationsPartII:GG2.9/function-field-automorphy",
-        "GlobalGaloisDeformationsPartII:GG2.9/two-block-automorphy",
-        "GlobalGaloisDeformationsPartII:GG2.9/direct-sum-automorphy"
-      ]
+      "slug": "function-field-selmer-numerics",
+      "needs": "At R02.5.1 export the Greenberg–Wiles cardinality formula and its nested-local-condition comparison over global function fields with nonempty finite S and finite coefficients of order prime to the field characteristic, with no archimedean or p-adic correction, using the coefficient and pairing maps of R02.4.5 and D7.7.",
+      "supplier": "ArithmeticGaloisDuality",
+      "section": "R02.5.1"
     },
     {
-      "title": "G4 — coefficient convention in the polarized G_n criterion",
-      "detail": "The disconnected polarized group (GL_n×G_m)⋊C₂ has ker(multiplier) with Lie algebra gl_n, whereas Lie((G_n⁰)^der)=sl_n. Resolve the paper’s use of its adjoint module against the fixed-multiplier tangent convention, including the scalar direction and conjugation sign, before accepting the repaired A.10 statement from GlobalGaloisDeformations:G7. Constituentwise self-polarization is necessary, and the complex-conjugation action is x↦−A xᵗA⁻¹. This Appendix-A criterion is not used to establish Theorem5.2 in the body; its route is retained as a supplier obligation.",
-      "neededBy": [
-        "GlobalGaloisDeformationsPartII:GG2.10/automorphy-lifting-application"
-      ]
+      "slug": "large-prime-unipotent-exponential",
+      "needs": "For each split connected reductive root datum there is B such that, for every finite field k of characteristic p>B, every split connected reductive G/k of that datum and every k-parabolic P=MU with unipotent radical U, there is a P-equivariant variety isomorphism exp:Lie(U)→U preserving the ascending central series and inducing additive group isomorphisms on its graded pieces.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.1"
     },
     {
-      "title": "G5 — all-coefficient-place monodromy",
-      "detail": "The accepted supplier node ModularityAndLanglandsExtensions:ML.2/compatible-system-from-potential-automorphy asserts Zariski density of every member; its proof needs the exact reductive-subgroup classification with regular unipotent element and the primary independence-of-formal-character theorem needed in the final paragraph of Proposition9.1. BLGGT14 Lemma5.3.1 controls connected components/multiplicity and is not that theorem. Explain rank/irreducibility and the principal-GL₂ exception, and use the explicit two-Steinberg-place strengthening to cover every coefficient characteristic by an away-ℓ place. The compatible-system target is explicitly conditional on this contract; the original p-adic lift is already dense.",
-      "neededBy": [
-        "GlobalGaloisDeformationsPartII:GG2.10/symplectic-compatible-system"
-      ]
+      "slug": "finite-image-semisimplification",
+      "needs": "For a split connected reductive G over a finite field k of characteristic sufficiently large in its root datum and a finite subgroup Γ⊂G(k), projection from a minimal k-parabolic P=MU containing Γ determines a G-completely reducible homomorphism Γ→G(k), unique up to G(k)-conjugacy independently of P and M.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.1"
     },
     {
-      "title": "G6 — large-prime reductive-group inputs outside the upstream ReductiveGroups scope",
-      "detail": "Several arguments use structure theory of a split reductive group in large characteristic that the current Tau Ceti ReductiveGroups layers 7–8 do not state (those layers own Borel and parabolic subgroups, Levi decompositions, root data, Bruhat decomposition and the classification) and that no atlas roadmap plans. (i) For p≫_G 0, a P-equivariant isomorphism of varieties exp: Lie U→U restricting to the ascending central series and inducing P-equivariant group isomorphisms on its graded pieces, together with the finite adjoint expansion of Ad(exp X) (FKP22 Lemma A.1, Remark A.2, p.44, and proof of Lemma A.18, p.51). (ii) Centralizers in good characteristic: smoothness of centralizers of Lie-algebra elements, containment of the centralizer of a nonzero nilpotent element in a proper parabolic, connectedness and reductivity of centralizers of semisimple elements when p is not a torsion prime, root-subgroup description of a centralizer containing a maximal torus, centralizers of tori being Levi subgroups, and generation of C_G(t) by T, root subgroups and Weyl representatives (FKP19 Lemmas A.2 and A.5, pp.61–63; FKP22 proof of Lemma A.11, pp.48–49). (iii) The G-semisimplification of a finite image: Levi projection from a minimal parabolic containing it, uniqueness up to G(k)-conjugacy, behaviour under residue-field extension, and the parabolic adjoint filtration with graded pieces m⊕u⊕u⁻ (FKP22 Lemma 6.1, p.28, and proof of Lemma A.11, p.48). (iv) Uniform finite-field root position: a root vector outside any proper F_p-subspace of g^der, and toral elements in general position with a prescribed root value (FKP19 Proposition 5.9, p.29, and Lemma 5.13, p.38). These need an owner: an atlas continuation of ReductiveGroups, or lemma nodes here if the maintainer so decides. A Tau Ceti roadmap is not extended from the atlas, so the former requests to its layers 7–8 for these inputs are withdrawn.",
-      "neededBy": [
-        "GlobalGaloisDeformationsPartII:GG2.1/irreducible-image-input",
-        "GlobalGaloisDeformationsPartII:GG2.1/cyclic-quotient-bound",
-        "GlobalGaloisDeformationsPartII:GG2.1/central-jordan-holder",
-        "GlobalGaloisDeformationsPartII:GG2.1/cyclotomic-exclusion",
-        "GlobalGaloisDeformationsPartII:GG2.1/abelian-root-subgroup",
-        "GlobalGaloisDeformationsPartII:GG2.1/block-criteria",
-        "GlobalGaloisDeformationsPartII:GG2.1/maximal-parabolic-criteria",
-        "GlobalGaloisDeformationsPartII:GG2.1/borel-criteria",
-        "GlobalGaloisDeformationsPartII:GG2.2/spanning-classes",
-        "GlobalGaloisDeformationsPartII:GG2.2/prescribed-vector-classes",
-        "GlobalGaloisDeformationsPartII:GG2.3/controlled-tower",
-        "GlobalGaloisDeformationsPartII:GG2.5/simultaneous-root-position",
-        "GlobalGaloisDeformationsPartII:GG2.7/levi-residual-lattice",
-        "GlobalGaloisDeformationsPartII:GG2.7/remove-invariants"
-      ]
+      "slug": "uniform-finite-field-root-position",
+      "needs": "For each split connected reductive root datum there is B such that, over every finite field k of characteristic p>B, every split connected reductive G/k of that datum and every proper 𝔽_p-subspace W⊂Lie(Gᵈᵉʳ), some split maximal k-torus T⊂G, root α and vector X∈Lie(G)_α satisfy X∉W; the torus is allowed to depend on W.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.1"
+    },
+    {
+      "slug": "lazard-lattice-comparison",
+      "needs": "For a sufficiently small uniform subgroup U and every finite free O-lattice V with continuous linear action, export a finite free completed-group-ring resolution computing all V/ϖʳ cohomology from one bounded finite O-complex and the rational comparison with Lie(U)-cohomology, with the action obtained by differentiation.",
+      "supplier": "NoncommutativeAndEquivariantIwasawa",
+      "section": "§§0.13 and F.2"
+    },
+    {
+      "slug": "semisimple-lie-cohomology-vanishing",
+      "needs": "Extending the complex-simple Whitehead input of AffineLieAlgebras §A1 to the shared absolute Chevalley–Eilenberg complex of ArithmeticLocallySymmetricSpaces ALS.F.5, export all-degree vanishing for a semisimple characteristic-zero Lie algebra acting on a finite-dimensional module with no invariants, and Whitehead vanishing in degrees one and two for every finite-dimensional module, compatibly with scalar extension to p-adic coefficient fields.",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "Layer 1, absolute Chevalley–Eilenberg comparison"
+    },
+    {
+      "slug": "root-cocycle-lattices",
+      "needs": "At §2.28 export the fixed-quotient root lifting functors and explicit cocycle lattices of FKP19 Lemma 3.5, pp.17–18 and Lemma 6.7, pp.46–47, including divided coboundaries, coefficient short exactness, |Lᵅ_r|=|H⁰_w(M_r)|, rank-one unramified quotients and stability of the nonempty higher lifting fibres.",
+      "supplier": "LocalGaloisDeformationRings",
+      "section": "§2.28"
+    },
+    {
+      "slug": "smooth-local-approximation",
+      "needs": "At §§1.22, 2.28 and 3.11 export smooth-point analytic neighborhoods, their cocycle lattices and exact tangent cardinalities, with one finite coefficient extension giving smooth points on the chosen components to every original-uniformizer accuracy.",
+      "supplier": "LocalGaloisDeformationRings",
+      "section": "§§1.22, 2.28 and 3.11"
+    },
+    {
+      "slug": "function-field-langlands-lattice-witness",
+      "needs": "At §AL.3 retain a finite coefficient field and a chosen stable integral lattice, with its full residual representation and residual coefficient embedding, in each direction of that correspondence.",
+      "supplier": "AutomorphicLFunctionsAndLocalFactors",
+      "section": "§AL.3, Leveled shtukas and ramified rank induction"
+    },
+    {
+      "slug": "ordinary-residual-potential-automorphy",
+      "needs": "The seed of §2.28 must be explicitly ι-ordinary of weight zero, compatibly with its simultaneous finite-place Steinberg variant and the stated cyclotomic constituent conditions through the disjoint totally real extension.",
+      "supplier": "ModularityAndLanglandsExtensions",
+      "section": "§2.28"
+    },
+    {
+      "slug": "all-place-symplectic-monodromy",
+      "needs": "The all-coefficient-place density conclusion of §2.48 must include the exact reductive-subgroup classification with a regular unipotent element, the irreducibility and rank hypotheses, and independence of formal character needed to exclude the principal GL₂ alternative for n>1.",
+      "supplier": "ModularityAndLanglandsExtensions",
+      "section": "§2.48"
+    },
+    {
+      "slug": "unconditional-pan-fontaine-mazur",
+      "needs": "At §10.15 export Pan22 Theorem 1.0.2 with precisely its continuous irreducible odd finitely ramified potentially semistable GL₂ input over ℚ, distinct Hodge–Tate weights, reducible residual semisimplification and p=3 ratio exclusion, without the additional conditional arithmetic hypotheses CC1–CC5 and LC.",
+      "supplier": "GL2ModularityLifting",
+      "section": "§10.15"
+    },
+    {
+      "slug": "nilpotent-lie-centralizers",
+      "needs": "For a connected reductive G over an algebraically closed field of characteristic p>5, with p∤n+1 for every type Aₙ simple factor, the scheme centralizer of a nonzero nilpotent X∈Lie(G) is smooth and is contained in a proper parabolic of G.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.1"
+    },
+    {
+      "slug": "semisimple-lie-centralizers",
+      "needs": "For a connected reductive G over an algebraically closed field of characteristic p>5, with p∤n+1 for every type Aₙ simple factor, and semisimple X∈Lie(T) for a maximal torus T, C_G(X) is connected reductive and is generated by T and the root groups U_α with dα(X)=0.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.1"
+    },
+    {
+      "slug": "torus-centralizers-are-levi",
+      "needs": "For a connected reductive G over an algebraically closed field and a subtorus S⊂G, the scheme centralizer C_G(S) is a Levi subgroup of G, allowing S=1 and C_G(S)=G.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.1"
+    },
+    {
+      "slug": "semisimple-group-centralizers",
+      "needs": "For a connected reductive G over an algebraically closed field, a maximal torus T and s∈T, C_G(s) is generated by T, the root groups U_α with α(s)=1, and representatives in N_G(T) of the Weyl elements fixing s.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.1"
+    },
+    {
+      "slug": "bounded-power-levi-centralizer",
+      "needs": "For every split connected reductive root datum there is an integer n_G≥1 such that, over every finite field k, each semisimple s∈G(k) has C_G(sⁿ) a Levi subgroup for some positive n dividing n_G; the Levi may be all of G.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.1"
+    },
+    {
+      "slug": "small-dimensional-adjoint-semisimplicity",
+      "needs": "At §7.7: for finite k of characteristic p and an absolutely G-irreducible finite Γ⊂G(k), with G connected reductive and p>2(dim Lie(Gᵈᵉʳ)+1), Lie(Gᵈᵉʳ) is a semisimple k[Γ]-module and O_p(Γ)=1.",
+      "supplier": "ArithmeticGaloisRepresentations",
+      "section": "§7.7"
+    },
+    {
+      "slug": "character-twisted-adjoint-h1",
+      "needs": "At §7.7: for finite k of characteristic p and an absolutely G-irreducible finite Γ⊂G(k), with G connected reductive and p>2(dim Lie(Gᵈᵉʳ)+1), H¹(Γ,Lie(Gᵈᵉʳ)⊗χ)=0 for every character χ:Γ→k×, also after a finite splitting extension of k.",
+      "supplier": "ArithmeticGaloisRepresentations",
+      "section": "§7.7"
+    },
+    {
+      "slug": "levi-restricted-adjoint-h1",
+      "needs": "At §7.7: For each split connected reductive root datum there is B, depending only on it, such that for finite k of characteristic p>B, a Levi subgroup L of a parabolic of G over k and a finite Γ⊂L(k)×k× whose projection to L(k) is absolutely L-irreducible, H¹(Γ,W∨⊗χ)=0 for every absolutely irreducible k[Γ]-subquotient W of Lie(Gᵈᵉʳ)⊗k restricted to Γ through the first projection, χ being the second projection; hence H¹ of Γ vanishes with coefficients in the dual of the semisimplification of that restriction, twisted by χ.",
+      "supplier": "ArithmeticGaloisRepresentations",
+      "section": "§7.7"
+    },
+    {
+      "slug": "small-dimensional-extension-splitting",
+      "needs": "At §7.7: for each n≥2 there is B(n) such that, for finite k of characteristic p>B(n), every Γ⊂P(k) for the (n₁,n₂) block parabolic of GLₙ, n₁,n₂>0 and n₁+n₂=n, with absolutely irreducible diagonal block modules and injective projection to its Levi image, has a Γ-stable complement to the first block in kⁿ.",
+      "supplier": "ArithmeticGaloisRepresentations",
+      "section": "§7.7"
+    },
+    {
+      "slug": "larsen-pink-normal-series",
+      "needs": "At §7.7: for every n≥1 there is J(n) such that every finite Γ⊂GLₙ(k), over a field of positive characteristic p, has Γ₃⊲Γ₂⊲Γ₁⊲Γ, each Γᵢ normal in Γ, with [Γ:Γ₁]≤J(n), Γ₃ a p-group, Γ₂/Γ₃ abelian of order prime to p and Γ₁/Γ₂ a product of finite simple groups of Lie type in characteristic p; if O_p(Γ)=1, Γ₃=1, Γ₂ is central in Γ₁ and |[Γ₁,Γ₁]∩Γ₂| has a bound depending only on n.",
+      "supplier": "ArithmeticGaloisRepresentations",
+      "section": "§7.7"
+    },
+    {
+      "slug": "gl2-local-determinant-normalization",
+      "needs": "At §§2.14, 8.5 and 8.10, for p odd, r≥2 and an odd residual extension of 1 by χ̄≠κ̄⁻¹, export the ordinary potentially crystalline local lift over ℚ_p with unramified quotient and determinant μω₀, where μ=κʳ⁻¹[χ̄κ̄¹⁻ʳ] and ω₀ is finite p-power order, residually trivial and trivial on Art_ℚp(p); at the extension-sensitive Serre weight export the compatible crystalline choice used in §8.3.",
+      "supplier": "LocalGaloisDeformationRings",
+      "section": "§§2.14, 8.5, 8.10"
+    },
+    {
+      "slug": "finite-image-semisimplification-scalar-extension",
+      "needs": "For a split connected reductive G over finite k of characteristic sufficiently large in its root datum, a finite Γ⊂G(k) and a finite extension k′/k, the G(k′)-conjugacy class obtained by semisimplifying the scalar-extended Levi projection equals the class obtained by semisimplifying Γ over k′, with a minimal k′-parabolic chosen anew.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.1"
+    },
+    {
+      "slug": "parabolic-adjoint-filtration",
+      "needs": "For a split connected reductive G over finite k of sufficiently large characteristic, a k-parabolic P=MU and a finite Γ⊂P(k), the Γ-module Lie(Gᵈᵉʳ) has the P-stable filtration Lie(U)⊂Lie(P)∩Lie(Gᵈᵉʳ)⊂Lie(Gᵈᵉʳ), whose graded modules are Lie(U), Lie(M)∩Lie(Gᵈᵉʳ) and Lie(G)/Lie(P), the last identified with Lie(U⁻) as an M-module.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.1"
+    },
+    {
+      "slug": "prescribed-root-regular-toral-element",
+      "needs": "For each split connected reductive root datum there is B such that, over every finite field k of characteristic p>B, every split connected reductive G/k of that datum, every split maximal k-torus T, root α and a∈k×, there is H∈Lie(T∩Gᵈᵉʳ) with dα(H)=a and dβ(H)≠0 for every root β.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.1"
+    },
+    {
+      "slug": "unipotent-adjoint-expansion",
+      "needs": "For each split connected reductive root datum there is B such that, over every finite field k of characteristic p>B, every split connected reductive G/k of that datum, every k-parabolic P=MU with unipotent radical U and X∈Lie(U), the exponential of gap:large-prime-unipotent-exponential satisfies Ad(exp X)(Y)=Σ_j (ad X)^j(Y)/j! for all Y∈Lie(G), with j below the uniform nilpotence bound and j! invertible in k.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.1"
     }
   ],
   "sourceIssues": [
