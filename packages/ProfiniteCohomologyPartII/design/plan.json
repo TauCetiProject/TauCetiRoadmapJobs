@@ -4873,7 +4873,20 @@
       "remaining": []
     }
   ],
-  "gaps": [],
+  "gaps": [
+    {
+      "slug": "char-p-galois-h2-vanishing",
+      "needs": "For every field K of characteristic p, the second continuous cohomology H²(Γ_K, ℤ/p) of the trivial module vanishes, so that cd_p(Γ_K) ≤ 1, from the Artin–Schreier sequence and the vanishing of H^q(Γ_K, Kˢ) for q ≥ 1.",
+      "supplier": "ProfiniteCohomology",
+      "section": "Layer 9: the Galois interface: Hilbert 90 and Kummer theory"
+    },
+    {
+      "slug": "integral-gauge-massey-independence",
+      "needs": "For a unital DG algebra or DG category over any commutative ring, the set of values of a degree-one matric Massey product depends only on the cohomology classes of its adjacent inputs, proved by the finite unipotent gauge transformation A ↦ G⁻¹AG + G⁻¹dG with G = 1 + U and no rational coefficients.",
+      "supplier": "DGAInfinity",
+      "section": "Layer 8: Hochschild cochains, deformations, Massey products, and formality"
+    }
+  ],
   "restructure": [
     {
       "type": "split-independent-continuation",
