@@ -1,0 +1,60 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "InverseGaloisAndArithmeticFundamentalGroupsPartII"
+
+[[source]]
+id = "EVW16"
+authors = "Jordan S. Ellenberg, Akshay Venkatesh, Craig Westerland"
+title = "Homological stability for Hurwitz spaces and the Cohen-Lenstra conjecture over function fields"
+year = 2016
+venue = "Ann. of Math. (2) 183, no. 3 (2016), 729-786"
+doi = "10.4007/annals.2016.183.3.1"
+arxiv = "0912.0325v4"
+locator_scheme = "theorem"
+locator = "Theorem 6.1; Corollary 6.2; Lemma 3.5; Theorem 4.2; Propositions 2.5, 5.1, 5.6, 7.8"
+url = "https://arxiv.org/abs/0912.0325v4"
+fetched_from = "https://arxiv.org/pdf/0912.0325v4"
+fetched_at = "2026-10-26T22:22:02Z"
+sha256 = "4adef21f11f95d2de29e98ddeb4368d1350f92328ea5b5869f8c212f499a771c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "Read in arXiv v4 (2015). Theorem, lemma and equation numbers agree with the published article; page and line locators refer to arXiv v4."
+cited_for = ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "1.1-1.19", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "3.1-3.5", "4.1-4.5", "5.1", "5.2", "5.3", "Notes on the sources"]
+
+[[source]]
+id = "CD95"
+authors = "Ruth Charney, Michael W. Davis"
+title = "Finite K(pi,1)s for Artin groups"
+year = 1995
+venue = "Prospects in Topology, Ann. of Math. Stud. 138 (1995), 110-124"
+locator_scheme = "theorem"
+locator = "Theorem 1.4.1; Lemma 2.2.1; Corollary 2.2.3"
+url = "https://people.math.osu.edu/davis.12/finitekpi1.pdf"
+fetched_from = "https://people.math.osu.edu/davis.12/finitekpi1.pdf"
+fetched_at = "2026-10-26T22:24:37Z"
+sha256 = "2d218f5a52c323b7d5ff93326ef9517710d31e1183574f8474ef89760a7cabf2"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "Author's manuscript; manuscript pagination; image-only pages read through OCR."
+cited_for = ["5.1"]
+
+[[source]]
+id = "HW10"
+authors = "Allen Hatcher, Nathalie Wahl"
+title = "Stabilization for mapping class groups of 3-manifolds"
+year = 2007
+venue = "Duke Math. J. 155, no. 2 (2010), 205-269"
+doi = "10.1215/00127094-2010-055"
+arxiv = "0709.2173v4"
+locator_scheme = "theorem"
+locator = "Lemma 7.1; Proposition 7.2; Definition 3.4"
+url = "https://arxiv.org/abs/0709.2173v4"
+fetched_from = "https://arxiv.org/pdf/0709.2173v4"
+fetched_at = "2026-10-26T22:25:11Z"
+sha256 = "b56bbabf4d4d7f3328e7bac953f0bbe3369897a3b191db619bbc5cd8f55352ff"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "Read in arXiv v4 (2009); cited by statement number and arXiv page."
+cited_for = ["2.2", "2.6"]
