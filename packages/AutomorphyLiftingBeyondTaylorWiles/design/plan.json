@@ -3252,14 +3252,73 @@
   }
  ],
  "gaps": [
-  {
-   "title": "Distinct-eigenvalue comparison for the Res_{F/ℚ}PGL_n quotients",
-   "neededBy": [
-    "AutomorphyLiftingBeyondTaylorWiles:BT.3/distinct-eigenvalue-comparison"
-   ],
-   "detail": "PAPER-CALEGARI-GERAGHTY-20 routes to this roadmap the comparison H^i(Y_0(Q), k)_{m_α} ≅ H^i(Y, k)_m for the Res_{F/ℚ}PGL_n quotients of CG18 §9, at sets Q of primes with N(x) ≡ 1 mod p and distinct eigenvalues of r̄(Frob_x) (CGH20 Theorem 3.2 = A.4, proof). CG18 §9.4 proves the analogue for GL_n arithmetic quotients under local–global compatibility at x (BT.3/distinct-eigenvalue-comparison) and only says that the PGL_n case should follow; Khare–Thorne Lemma 6.25(4), which CGH20 also cites, concerns GL_n over CM fields at Iwahori level and ordinary completed cohomology (sourceIssues E4). Two routes are open: rerun §9.4 for smooth PGL_n(F_x)-modules (GL_n(F_x)-modules with trivial central character) with the block theory of SmoothRepresentationsOfLocalGroups SR.5 and the derived comparison for the images of GL_n(O_x) and U_0(x) in PGL_n(F_x); or compare the GL_n and PGL_n cohomologies through the central torus fibrations (E194 of PAPER-CALEGARI-GERAGHTY-18) by a Leray argument after localization at a non-Eisenstein m. Neither is in the sources. The end theorems of this roadmap do not use it, because B^tw is a hypothesis of Theorem 9.19; its consumer is AdjointSelmerGroupsFromModularityLifting (CGH20 Theorem A.4)."
-  }
- ],
+ {
+  "slug": "localized-orbifold-range-duality",
+  "needs": "For Res PGLₙ arithmetic groupoid quotients Y(K), including levels with p-torsion stabilizers, and a non-Eisenstein maximal ideal m of Galois type with big residual image, prove H^i(Y(K), O/ϖᵃ)_m = 0 for i outside 0 ≤ i ≤ dim Y and every a ≥ 1, and finite-level Poincaré duality localized at m with the adjoint Hecke action, without assuming vanishing outside [q₀, q₀+ℓ₀].",
+  "supplier": "ArithmeticLocallySymmetricSpaces",
+  "section": "ALS.5a.6"
+ },
+ {
+  "slug": "localized-orbifold-perfect-models",
+  "needs": "For a Galois cover of Res PGLₙ arithmetic groupoid quotients with finite abelian p-group Δ, including levels with p-torsion stabilizers, given vanishing of the m-localized cohomology with every O/ϖᵃ coefficient outside [q₀, q₀+ℓ₀] and of the m-localized boundary cohomology on every intermediate cover, prove that the m-localized Betti complex of the top cover is a perfect O[Δ]-complex whose base change along O[Δ] → O[Δ′]/ϖᵃ computes the localized cohomology and homology of the intermediate cover with group Δ′, compatibly with coefficient change and Hecke action.",
+  "supplier": "ArithmeticLocallySymmetricSpaces",
+  "section": "ALS.1.6"
+ },
+ {
+  "slug": "congruence-character-localized-h1",
+  "needs": "Using the character-factorization theorem of KTheoryLowDegrees §11.6, prove H⁰(Y(K),k)_m=H¹(Y(K),k)_m=0 for PGL₃/ℚ and PGL₂ over CM quartic fields at every level, for p>n unramified in F and a non-Eisenstein ideal of Galois type, retaining compatibility with the dual ideal and Hecke action.",
+  "supplier": "ArithmeticLocallySymmetricSpaces",
+  "section": "ALS.4.9–ALS.4.12"
+ },
+ {
+  "slug": "simultaneous-orbifold-hecke-finiteness",
+  "needs": "Prove finite O-generation of the commutative image of the specified unnormalized operators on every degree and every O/ϖᵃ coefficient of the finite family of intermediate arithmetic groupoid levels, including stabilizer cohomology, and prove that this image acts compatibly on cohomology with every finite O-module coefficient.",
+  "supplier": "IntegralHeckeAndGaloisDeterminants",
+  "section": "2.1"
+ },
+ {
+  "slug": "big-image-rank-n-taylor-wiles",
+  "needs": "For the standing rank-n datum with big cyclotomic residual image and ζₚ outside the adjoint fixed field, every q at least the relative dual-Selmer dimension and every N≥1 admit exactly q auxiliary places outside any fixed finite avoidance set with norms 1 modulo pᴺ, a chosen simple Frobenius line, and zero new relative dual Selmer group.",
+  "supplier": "GlobalGaloisDeformations",
+  "section": "5.6–5.8"
+ },
+ {
+  "slug": "cht-big-image",
+  "needs": "Define the big-subgroup condition for finite H⊂GLₙ(k) by absence of p-power quotients, vanishing H⁰(H,ad⁰)=H¹(H,ad⁰)=0 and the nonzero simple-eigenprojector trace detector on every irreducible submodule of End(kⁿ), and prove coefficient-extension invariance and existence of a simple eigenvalue.",
+  "supplier": "ArithmeticGaloisRepresentations",
+  "section": "7.7–7.12"
+ },
+ {
+  "slug": "character-ring-completed-products",
+  "needs": "For the literal local character-polynomial quotients of LocalGaloisDeformationRings §2.15 and the smooth factors used here, prove the completed-product equidimensionality and characteristic-zero-minimal-prime dimension formula and preservation of a unique generic component under each special component after geometric splitting of components.",
+  "supplier": "DeformationAndDerivedPatchingAlgebra",
+  "section": "4.6 and 6.7–6.8"
+ },
+ {
+  "slug": "paired-cohomology-action-patching",
+  "needs": "Extend §8.6 to two finite-cutoff cohomology-action data with identified residual rings and top cohomology at every coefficient and framing quotient, all action and augmentation diagrams commuting, to obtain simultaneously patched top modules whose reductions modulo ϖ are linear over the common residual deformation and scalar actions and agree after augmentation.",
+  "supplier": "DeformationAndDerivedPatchingAlgebra",
+  "section": "8.6"
+ },
+ {
+  "slug": "proper-support-boundary-or-residual",
+  "needs": "For Res PGLₙ over a number field with algebraic complex coefficients, prove that an ordinary-cohomology Hecke eigensystem in proper cuspidal support either occurs on Borel–Serre boundary cohomology or is the eigensystem of a residual discrete automorphic representation, with the same central and unramified Hecke conventions.",
+  "supplier": "AutomorphicSpectralTheory",
+  "section": "5.12–5.14"
+ },
+ {
+  "slug": "nonsemisimple-two-scalar-taylor-wiles",
+  "needs": "For ℓ≠p, p>n≥2, residue norm q≡1 modulo p, an arbitrary unramified rank-n residual representation with a specified simple generalized Frobenius eigenline and its complementary generalized eigenspaces, and an unramified determinant ξ lifting the residual determinant, extend the two-scalar condition of §2.16 without semisimplicity: construct its framed representing quotient and coefficient-natural block projectors, scalar inertia characters θ on the line and η on the complement with θηⁿ⁻¹=1 and θ^(q−1)=η^(q−1)=1, prove dim L−h⁰(ad⁰r̄)=1, and identify augmentation of its inertia group-algebra map with the fixed-determinant unramified local problem.",
+  "supplier": "LocalGaloisDeformationRings",
+  "section": "2.16"
+ },
+ {
+  "slug": "tame-place-fixed-exponent-descent",
+  "needs": "Extend fixed-exponent descent of §6.2 to x∤p for GLₙ and PGLₙ arithmetic groupoid level systems with fixed level and local system away from x: for each b≥1 construct the discrete smooth pullback colimit Mʲ_b=colim_t Hʲ(Z(xᵗ),O(ψ)⊗O/ϖᵇ), using principal x-levels cofinal inside each hyperspecial or line-parahoric U, and convergent first-quadrant spectral sequences Hⁱ_cts(U,Mʲ_b)⇒Hⁱ⁺ʲ(Z(U),O(ψ)⊗O/ϖᵇ), natural for the hyperspecial-to-parahoric comparison, coefficient maps, away-from-x Hecke operators and localization; prove the required regular-cover or groupoid descent comparisons retaining all arithmetic stabilizers rather than assuming faithful deck quotients.",
+  "supplier": "CompletedCohomologyPartII",
+  "section": "6.2"
+ }
+],
  "sourceIssues": [
   {
    "id": "AutomorphyLiftingBeyondTaylorWiles/E1",
