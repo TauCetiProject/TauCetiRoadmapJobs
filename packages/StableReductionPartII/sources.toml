@@ -1,0 +1,880 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "StableReductionPartII"
+
+[[source]]
+id = "mumford1977"
+authors = "David Mumford"
+title = "Stability of projective varieties"
+year = 1977
+locator_scheme = "section"
+locator = "Theorem5.10 calculation,pp.100–102; Lemma5.14 proof,pp.103–105; paragraph after Lemma5.14,pp.102–103"
+url = "https://www.dam.brown.edu/people/mumford/alg_geom/papers/1977a--StabilityLecturesIHES-Swiss.pdf"
+fetched_from = "https://www.dam.brown.edu/people/mumford/alg_geom/papers/1977a--StabilityLecturesIHES-Swiss.pdf"
+fetched_at = "2026-10-25T10:50:44Z"
+sha256 = "558c5e1a56a522c7d6815b4def3e6410690e8e8d28642f49df6887b57905bd80"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["MC.5"]
+
+[[source]]
+id = "milne"
+authors = "J. S. Milne"
+title = "Jacobian Varieties"
+year = 2021
+locator_scheme = "section"
+locator = "Theorem 12.1(a)–(b), printed/PDF p.38; uniqueness/sign proof pp.38–39; proof of (a) §13, pp.40–45"
+url = "https://www.jmilne.org/math/xnotes/JVs.pdf"
+fetched_from = "https://www.jmilne.org/math/xnotes/JVs.pdf"
+fetched_at = "2026-10-25T10:50:46Z"
+sha256 = "36c3f09c7462dbbd4ae1f8b81a02bd9ff84f03c5a346351d7d5d78fc3f173486"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["MC.6"]
+
+[[source]]
+id = "dm"
+authors = "Pierre Deligne; David Mumford"
+title = "The irreducibility of the space of curves of given genus"
+year = 1969
+locator_scheme = "section"
+locator = "Theorem 1.2 and its corollary, printed pp.77–78 (PDF4–5); Printed p.78 (PDF5), displayed isomorphism of the H_g functor; Proposition 5.1 proof p.104 (PDF31); Proposition5.1 proof,p.104; Proposition 5.1 and its proof, printed p.104 (PDF31); framed functor p.78 (PDF5); Definition 1.10 and following paragraph, printed p.84 (PDF11); Theorem 1.11 proof p.84 (PDF11), using Lemma 1.4 pp.80–81 (PDF7–8); Theorem 1.11 proof p.84 (PDF11), Lemma 1.12 pp.84–85 (PDF11–12); Theorem 1.11 p.84 (PDF11); Theorem 4.21 and Proposition 5.1 p.104 (PDF31); Lemma 1.3 p.79 (PDF6), and Proposition 1.5 with proof pp.81–82 (PDF8–9); Proposition 1.5 pp.81–82 (PDF8–9), following universal formal deformation and framed com"
+url = "https://www.dam.brown.edu/people/mumford/alg_geom/papers/1969c--IrredModCurves-Deligne-Numdam.pdf"
+fetched_from = "https://www.dam.brown.edu/people/mumford/alg_geom/papers/1969c--IrredModCurves-Deligne-Numdam.pdf"
+fetched_at = "2026-10-25T10:50:49Z"
+sha256 = "d779973708ecef9a098db863df766f173740d75302f15655e4bbc9dd7df739e7"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["MC.1", "MC.4"]
+
+[[source]]
+id = "knudsen2012"
+authors = "Finn F. Knudsen"
+title = "A closer look at the stacks of stable pointed curves"
+year = 2012
+arxiv = "1106.1588v2"
+locator_scheme = "section"
+locator = "Introduction,printedpp.1–2,cartesian universal-curve diagram; Definition1.1,pp.4–5; Lemma2.6 and proof,pp.8–9; Proposition2.1 and Lemmas2.5,2.7–2.9,pp.6–10; §3,pp.11–12; Proposition3.1 and proof,pp.11–12; §3, printed pp.11–12: monic division, κ/λ comparisons and proof of Proposition3.1; Proposition3.1,Corollary3.2 and §4,pp.12–13; Introduction equation (1) and quotient sheaves, PDF pp.2–3; Theorems 5.1–5.2, pp.13–16; Theorem 5.1 proof, equations (4)–(5) and formal comparison, PDF pp.14–16; Theorem 5.1, PDF pp.13–16, especially the geometric-fibre and smooth-marking calculations on pp.15–16; §3, printed pp.11–12, monic division and the dual residue calculation preceding Proposition3.1; §3 Key; Corollary 3.2 statement and complete proof, pp.12–13 (knudsen2012 lines 509–524)"
+url = "https://arxiv.org/abs/1106.1588v2"
+fetched_from = "https://arxiv.org/pdf/1106.1588v2"
+fetched_at = "2026-10-25T10:50:56Z"
+sha256 = "de9f73f25a4fbe03dbe2865ebc5932412b5bf3aa7f02734c04de05013da44d36"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators refer to arXiv:1106.1588v2 (2012); journal numbering and DOI are not used."
+cited_for = ["MC.0", "MC.2"]
+
+[[source]]
+id = "ile"
+authors = "Runar Ile"
+title = "Stably reflexive modules and a lemma of Knudsen"
+year = 2013
+arxiv = "1110.3909v3"
+locator_scheme = "section"
+locator = "arXiv1110.3909v3 §3 Definition3.1 and Remark3.6, PDF6–8"
+url = "https://arxiv.org/abs/1110.3909v3"
+fetched_from = "https://arxiv.org/pdf/1110.3909v3"
+fetched_at = "2026-10-25T10:51:03Z"
+sha256 = "41e6a87de44074fdc24770e0f842c6e8846347c3b77483d17371d40c97793743"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators refer to the fetched arXiv version 1110.3909v3; no identification with journal numbering is assumed."
+cited_for = ["MC.2"]
+
+[[source]]
+id = "clm"
+authors = "Raymond Cheng; Carl Lian; Takumi Murayama; in collaboration with Yordanka Kovacheva and Monica Marinescu"
+title = "Projectivity of the moduli of curves"
+year = 2021
+locator_scheme = "section"
+locator = "Lemma1.3,p.3; Propositions6.3,6.7,6.9;Theorem6.10,pp.23–29; Lemma 7.1 proof,pp.29–30; Proposition5.5,pp.21–22;Lemma7.1,pp.29–30; Theorem7.2,pp.30–31; Proposition6.3 and Lemmas6.4–6.5,pp.23–26; Corollary 6.6, printed/PDF p.25 (statement and proof); Proposition 6.7, printed/PDF pp.25–27, statement p.25 and three genus cases pp.26–27; Lemma 6.8, printed/PDF pp.27–28; Proposition 6.9, p.28, exact sequences"
+url = "https://chngr.github.io/assets/mgbar.pdf"
+fetched_from = "https://chngr.github.io/assets/mgbar.pdf"
+fetched_at = "2026-10-25T10:51:04Z"
+sha256 = "5314dd91d8957fc775ea40e30d9a9cc12159fd5b61a5f0d2640c41b18f19a829"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["MC.4"]
+
+[[source]]
+id = "yuan-author-http"
+authors = "Xinyi Yuan"
+title = "Arithmetic bigness and a uniform Bogomolov-type result"
+year = 2024
+locator_scheme = "section"
+locator = "§3.1.4,p.45; §3.1.1, printed/PDF p.41: Hodge determinant and vector-bundle distinction; §3.1.1,p.41; §3.1.1–3.1.2,pp.41–43; Theorem3.3 and §3.1.2,p.42; §3.1.2,p.42; §3.1.2,pp.42–43; §3.1.2,p.43; Introduction,p.2;§3.4,p.56; §3.1.4,p.45, final paragraph (corrected graph closure); §3.1.4,pp.45–46; §3.1.4,p.46; Lemma3.4 and proof,pp.43–44; §3.4, printed/PDF p.56, compactified Torelli/Hodge paragraph; §3.4,pp.55–56; §4.3.2, printed/PDF pp.73–75; representability and geometric triples, pp.74–75; §4.3.2, printed/PDF p.75, first two paragraphs"
+url = "https://faculty.bicmr.pku.edu.cn/~yxy/preprints/bigness_and_bogomolov.pdf"
+fetched_from = "https://faculty.bicmr.pku.edu.cn/~yxy/preprints/bigness_and_bogomolov.pdf"
+fetched_at = "2026-10-25T10:51:09Z"
+sha256 = "b36f4860cc0f098ef062523e8a5147e8172d1e4e357fc76a63cd7c0d782a813e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["MC.4", "MC.5", "MC.6", "MC.7"]
+
+[[source]]
+id = "dgh"
+authors = "Vesselin Dimitrov, Ziyang Gao, Philipp Habegger"
+title = "Uniformity in Mordell-Lang for curves"
+year = 2020
+arxiv = "2001.10276v3"
+locator_scheme = "section"
+locator = "§6.1, printed/PDF p.23, first two moduli paragraphs; §6.1,pp.23–24; §6.1, printed/PDF p.24, paragraph following diagram (6.1)"
+url = "https://arxiv.org/abs/2001.10276v3"
+fetched_from = "https://arxiv.org/pdf/2001.10276v3"
+fetched_at = "2026-10-25T10:51:14Z"
+sha256 = "5fc8e86f53ee43e9d18e8239a8db986bff74115ddb947abef4902a72dde338a4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators refer to the fetched arXiv version 2001.10276v3; no identification with journal numbering is assumed."
+cited_for = ["MC.4", "MC.6"]
+
+[[source]]
+id = "stacks-hom-flat"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project: More on Algebra"
+year = 2026
+locator_scheme = "section"
+locator = "Stacks tag087R, Lemma15.67.4(1), together with the proof at087Q"
+url = "https://stacks.math.columbia.edu/tag/087Q"
+fetched_from = "https://stacks.math.columbia.edu/download/more-algebra.pdf#nameddest=087Q"
+fetched_at = "2026-10-25T10:51:25Z"
+sha256 = "ab69179738e642603ddbde651f2838e1cb5d8711e8bcd7c447cbf02a8bb6a5d2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["MC.2"]
+
+[[source]]
+id = "stacks-completion"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project: Algebra"
+year = 2026
+locator_scheme = "section"
+locator = "Stacks §10.97, Lemmas10.97.1(3),10.97.2(1),10.97.3; Stacks §10.39 Definition10.39.1 and Lemma10.39.14, statements and proof; Lemma 10.99.7, tag 00MK: local Tor criterion; Lemma 10.99.11, tag 0523: flatness from all infinitesimal thickenings.; Lemma 10.97.3: faithful flatness for an ideal in the Jacobson radical; its proof and flatness input."
+url = "https://stacks.math.columbia.edu/tag/0BNH"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=0BNH"
+fetched_at = "2026-10-25T10:51:36Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["MC.2", "Layers 0–7"]
+
+[[source]]
+id = "stacks-projective-bundles-review"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project: Constructions"
+year = 2026
+locator_scheme = "section"
+locator = "Definition27.21.1 and rank-one quotient representing property"
+url = "https://stacks.math.columbia.edu/tag/01OA"
+fetched_from = "https://stacks.math.columbia.edu/download/constructions.pdf#nameddest=01OA"
+fetched_at = "2026-10-25T10:51:50Z"
+sha256 = "8f70bb66f5bec27649fd70e68e60266fa97e7b56d043410c0c8fbc35c1f2ff4d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["MC.1"]
+
+[[source]]
+id = "stacks-projective-picard-review"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project: Divisors"
+year = 2026
+locator_scheme = "section"
+locator = "Lemma31.29.5, complete statement and proof; Lemma31.29.3, complete statement and proof"
+url = "https://stacks.math.columbia.edu/tag/0BXJ"
+fetched_from = "https://stacks.math.columbia.edu/download/divisors.pdf#nameddest=0BXJ"
+fetched_at = "2026-10-25T10:51:53Z"
+sha256 = "0527740ac9877baff00aaad784e66aae83ff541dad40d4939028059f9f28a493"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["MC.1"]
+
+[[source]]
+id = "clp-normalized-boundary-review"
+authors = "Samir Canning, Hannah Larson, Sam Payne"
+title = "Extensions of tautological rings and motivic structures in the cohomology of $\\overline{\\mathcal{M}}_{g,n}$"
+year = 2024
+venue = "Forum Math. Pi 12 (2024) Paper No. e23"
+doi = "10.1017/fmp.2024.24"
+arxiv = "2307.08830v3"
+locator_scheme = "section"
+locator = "§2.1 opening and Lemma 2.1 proof, PDF pp.4–5"
+url = "https://arxiv.org/abs/2307.08830v3"
+fetched_from = "https://arxiv.org/pdf/2307.08830v3"
+fetched_at = "2026-10-25T10:52:02Z"
+sha256 = "fa320b35fc8b063ac09335da85ed133329dfbef1357b78f22d0a8d58ad5107a1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators refer to the fetched arXiv version 2307.08830v3; no identification with journal numbering is assumed."
+cited_for = ["MC.3"]
+
+[[source]]
+id = "stacks-noetherian-valuative-KKjBS6"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project: Limits of Schemes"
+year = 2026
+locator_scheme = "section"
+locator = "Tag 0208, Lemma 32.15.3(4) and proof of (4)⇒(1); 32.4.15, p. 9; 32.10.1–32.10.2, pp. 25–28."
+url = "https://stacks.math.columbia.edu/tag/0208"
+fetched_from = "https://stacks.math.columbia.edu/download/limits.pdf#nameddest=0208"
+fetched_at = "2026-10-25T10:52:04Z"
+sha256 = "a575d9eddea143ae00b39df8e0d98a66c6c9b2adcdace9d004c0ed5bc47f9d1e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["MC.1", "Layers 0–7"]
+
+[[source]]
+id = "blr-relative-picard-LwkQQl"
+authors = "Siegfried Bosch; Werner Lütkebohmert; Michel Raynaud"
+title = "Néron Models"
+year = 1990
+locator_scheme = "section"
+locator = "§9.4 Proposition4, statement p.260 and section-translation descent proof pp.260–261; §9.3 Theorem1 and proof p.252; §8.1 Leray discussion p.203 and Proposition4 pp.204–205"
+url = "https://link.springer.com/book/10.1007/978-3-642-51438-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["MC.4", "MC.7"]
+
+[[source]]
+id = "av-moduli-consumer-LwkQQl"
+authors = "Amina Abdurrahman, Akshay Venkatesh"
+title = "Symplectic L-functions and symplectic Reidemeister torsion (mod squares)"
+year = 2023
+arxiv = "2303.13436v1"
+locator_scheme = "section"
+locator = "§5 opening and §5.1–5.2, PDF/printed pp.39–41; Hurwitz groupoid, Examples5.1–5.2, twisted stack and universal curve. Source mathematics beyond the moduli interface is owned by the consumer."
+url = "https://arxiv.org/abs/2303.13436v1"
+fetched_from = "https://arxiv.org/pdf/2303.13436v1"
+fetched_at = "2026-10-25T10:52:09Z"
+sha256 = "3e2736beea70ba3467ad30a24b518d82cf589d9ddd4a06f6b0684c7bfd7d6306"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators refer to the fetched arXiv version 2303.13436v1; no identification with journal numbering is assumed."
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "chen-moduli-consumer-LwkQQl"
+authors = "William Chen"
+title = "Nonabelian level structures, Nielsen equivalence, and Markoff triples"
+year = 2021
+arxiv = "2011.12940v2"
+locator_scheme = "section"
+locator = "Introduction pp.2–3 only: smooth pointed stack, Hurwitz covers and specialization to M_{1,1}, explicitly distinguished from its coarse scheme."
+url = "https://arxiv.org/abs/2011.12940v2"
+fetched_from = "https://arxiv.org/pdf/2011.12940v2"
+fetched_at = "2026-10-25T10:52:17Z"
+sha256 = "f60283b0b406554c064e3135b18d4446617aed05eb74f7b8d7b66a2f453980cc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators refer to the fetched arXiv version 2011.12940v2; no identification with journal numbering is assumed."
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "ll-moduli-consumer-LwkQQl"
+authors = "Aaron Landesman, Daniel Litt"
+title = "Canonical representations of surface groups"
+year = 2023
+arxiv = "2205.15352v4"
+locator_scheme = "section"
+locator = "§1.10 Notation1.10.1–1.10.3, PDF/printed pp.10–11: stable range, complex marked families, dominant étale versal maps, punctures and analytic stack fundamental group."
+url = "https://arxiv.org/abs/2205.15352v4"
+fetched_from = "https://arxiv.org/pdf/2205.15352v4"
+fetched_at = "2026-10-25T10:52:21Z"
+sha256 = "4cb511ba40675aa6899b351f2ee27eb9487b4a21f65ec8000c1f2cc1a5107ceb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators refer to the fetched arXiv version 2205.15352v4; no identification with journal numbering is assumed."
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "mc0-stacks-curves"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project: Algebraic Curves"
+year = 2026
+locator_scheme = "section"
+locator = "53.20.1–53.20.12, pp. 49–53.; Lemma 53.20.1: the Fitting singular scheme of a nodal family is unramified.; Lemma53.21.1, full statement and its first proof; the second proof is a sketch. Arbitrary base schemes are allowed. The approximation and Artin approximation facts cited there remain foundational imports.."
+url = "https://stacks.math.columbia.edu/download/curves.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/curves.pdf"
+fetched_at = "2026-10-25T10:52:25Z"
+sha256 = "c4e3d4c0fc533a3d46ce07c1bd6ec49f03e02c131da30ed275ada4bc9f82c030"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "mc0-stacks-moduli"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project: Moduli of Curves"
+year = 2026
+locator_scheme = "section"
+locator = "109.3–109.4, pp. 2–4; 109.9, pp. 10–11; 109.16.1, p. 16; 109.19–109.20, pp. 19–22."
+url = "https://stacks.math.columbia.edu/download/moduli-curves.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/moduli-curves.pdf"
+fetched_at = "2026-10-25T10:52:26Z"
+sha256 = "8d47dce5cba7d820384aa749f2c3bd44ca8100ea97ae7c7f40eef0dfbae15947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "mc0-stacks-duality"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project: Duality for Schemes"
+year = 2026
+locator_scheme = "section"
+locator = "48.12.4–48.12.5, pp. 29–30; 48.28, pp. 72–75; Lemma 48.28.10 (0E30), proof, p. 76."
+url = "https://stacks.math.columbia.edu/download/duality.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/duality.pdf"
+fetched_at = "2026-10-25T10:52:29Z"
+sha256 = "ab59074f91c60e44908903b839e709857dda0daf36c030e898b5bf55cdcda304"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "mc0-stacks-perfect"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project: Derived Categories of Schemes"
+year = 2026
+locator_scheme = "section"
+locator = "36.30.4, p. 74; 36.32.3–36.32.5, pp. 79–80."
+url = "https://stacks.math.columbia.edu/download/perfect.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/perfect.pdf"
+fetched_at = "2026-10-25T10:52:32Z"
+sha256 = "f79e0ebb628734948a51efd20b75d75c8e5341e4ab493e54f7fc710ebf72fb02"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "mc0-stacks-descent"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project: Descent and Algebraic Spaces"
+year = 2026
+locator_scheme = "section"
+locator = "74.13.1, pp. 21–22."
+url = "https://stacks.math.columbia.edu/download/spaces-descent.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/spaces-descent.pdf"
+fetched_at = "2026-10-25T10:52:33Z"
+sha256 = "5c8408a876c17c258f78ac2cc8241662a4b089a8d33f787eefbdf27c0d782335"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "mc0-stacks-quot"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project: Quot and Hilbert Spaces"
+year = 2026
+locator_scheme = "section"
+locator = "99.14.1–99.14.3, pp. 37–39; 99.14.8, p. 40; 99.15.1, p. 44."
+url = "https://stacks.math.columbia.edu/download/quot.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/quot.pdf"
+fetched_at = "2026-10-25T10:52:35Z"
+sha256 = "12b0c4526935a1e2cfc417063416648a15cf4d84a0976b53274ae5f644487eb0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "mc1-perf"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project: Derived Categories of Spaces"
+year = 2026
+locator_scheme = "section"
+locator = "§75.25, Lemmas 75.25.1 and 75.25.4(1), pp. 60–62; §75.26, Lemmas 75.26.4–75.26.8, pp. 64–66."
+url = "https://stacks.math.columbia.edu/download/spaces-perfect.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/spaces-perfect.pdf"
+fetched_at = "2026-10-25T10:52:37Z"
+sha256 = "99304b1a36799044a20cb7c74ad12e1a73e06ca2cd3b132b6c37a9b869a41a29"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "mc1-def"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project: Deformation Problems"
+year = 2026
+locator_scheme = "section"
+locator = "§93.15, Lemma 93.15.1, p. 27; §93.16, Lemmas 93.16.2–93.16.4, pp. 28–29."
+url = "https://stacks.math.columbia.edu/download/examples-defos.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/examples-defos.pdf"
+fetched_at = "2026-10-25T10:52:39Z"
+sha256 = "6628c6bb54013573e46922057a717a8d53c3ac9e126f0dba87290ffe8e3ad3d8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "mc1-etale"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project: Étale Morphisms of Schemes"
+year = 2026
+locator_scheme = "section"
+locator = "§41.17, Lemmas 41.17.1–41.17.3, pp. 19–20; §41.21, Definitions 41.21.1/4 and Lemmas 41.21.2–3/5–7, pp. 26–29.; Lemma41.21.6, statement and étale-local normalization argument. Local regular branches and their rank-one conormals are the input used here.."
+url = "https://stacks.math.columbia.edu/download/etale.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/etale.pdf"
+fetched_at = "2026-10-25T10:52:40Z"
+sha256 = "cfe0581a0bfe38522726f6a233ab4cd30d5f283bef86c4f136fc2ee34c8ecc99"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "mc1-stackdim"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project: The Geometry of Algebraic Stacks"
+year = 2026
+locator_scheme = "section"
+locator = "§107.5, Definitions 107.5.2/7 and Lemmas 107.5.4–107.5.11 with proofs, pp. 10–13."
+url = "https://stacks.math.columbia.edu/download/stacks-geometry.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/stacks-geometry.pdf"
+fetched_at = "2026-10-25T10:52:41Z"
+sha256 = "e050cfe7852eee1c3cec2df32a54971203bcc94bdf88a954cfd62bb02f317091"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "mc1-stackval"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project: More on Morphisms of Stacks"
+year = 2026
+locator_scheme = "section"
+locator = "§106.11, Lemmas 106.11.1–106.11.3 and proofs, pp. 27–30."
+url = "https://stacks.math.columbia.edu/download/stacks-more-morphisms.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/stacks-more-morphisms.pdf"
+fetched_at = "2026-10-25T10:52:43Z"
+sha256 = "d2f054f8b2f6c3a58f6c9154cc5536c05778b32960aa5afa7ba57d69c725aafa"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "mc2-stacks-unramified-diagonal"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project: Morphisms of Schemes"
+year = 2026
+locator_scheme = "section"
+locator = "Lemma 29.36.13: the diagonal of an unramified morphism is open; §29.38, relatively ample sheaves (tag 01VG), p. 83."
+url = "https://stacks.math.columbia.edu/tag/02GE"
+fetched_from = "https://stacks.math.columbia.edu/download/morphisms.pdf#nameddest=02GE"
+fetched_at = "2026-10-25T10:53:11Z"
+sha256 = "0bebe1d93baa7e4e99cb4f36fe50c7bcb6094772b8a2f760885a492892eca75f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "mc3-polishchuk"
+authors = "Alexander Polishchuk"
+title = "Extended clutching construction for the moduli of stable curves"
+year = 2024
+arxiv = "2110.04682v3"
+locator_scheme = "section"
+locator = "Introduction and Theorems1.1–1.2, pp.1–3; §2.1–2.2 through the start of Lemma2.3, pp.3–5; §3.3 Proposition3.5, p.11; §4.3 Lemma4.6 and proof of Theorem1.1, pp.15–16. These are selected passages, not a full-paper read.."
+url = "https://arxiv.org/abs/2110.04682v3"
+fetched_from = "https://arxiv.org/pdf/2110.04682v3"
+fetched_at = "2026-10-25T10:53:15Z"
+sha256 = "8562d1591749bf8c0ebb2409ef758cf1d800783c9eef8178df64dafeb066c591"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators refer to the fetched arXiv version 2110.04682v3; no identification with journal numbering is assumed."
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "mc3-stacks-norm"
+authors = "The Stacks Project Authors"
+title = "Normalization of algebraic stacks"
+year = 2026
+locator_scheme = "section"
+locator = "§101.46 Lemmas101.46.1–101.46.2 and Definition101.46.3, statements and groupoid construction. This is matched to the already accepted R09.5 supplier.."
+url = "https://stacks.math.columbia.edu/tag/0GMH"
+fetched_from = "https://stacks.math.columbia.edu/download/stacks-morphisms.pdf#nameddest=0GMH"
+fetched_at = "2026-10-25T10:53:20Z"
+sha256 = "ba3fb2d5c613e4fee0fdc5ee640581d9bf3bf9241760f9f502efab7dca3a8865"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "mc4-serre"
+authors = "Jean-Pierre Serre, appendix to Alexandre Grothendieck, expose 17"
+title = "Rigidite du foncteur de Jacobi d echelon n >= 3"
+year = 1961
+locator_scheme = "section"
+locator = "Appendix pp.17-18–17-20, including scheme-theoretic divisibility, finite-order theorem and root-of-unity lemma.."
+url = "https://www.numdam.org/item/SHC_1960-1961__13_2_A4_0.pdf"
+fetched_from = "https://www.numdam.org/item/SHC_1960-1961__13_2_A4_0.pdf"
+fetched_at = "2026-10-25T10:53:22Z"
+sha256 = "5c993695a16086ff090c51d0f486f39bf0bb035ad4edde4e7c75abe64f5d39f7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "mc4-ehkv"
+authors = "D. Edidin, B. Hassett, A. Kresch, A. Vistoli"
+title = "Brauer groups and quotient stacks"
+year = 2001
+arxiv = "math/9905049v3"
+locator_scheme = "section"
+locator = "Theorem 2.7 and Remark 2.8 p.5; §4.1, Lemma 4.1 and proof of Theorem 2.7 pp.12–13.."
+url = "https://arxiv.org/abs/math/9905049v3"
+fetched_from = "https://arxiv.org/pdf/math/9905049v3"
+fetched_at = "2026-10-25T10:53:26Z"
+sha256 = "b335dd5d040ed8d994a04c2c12e1fb6c87ea7ed328fa3df6b3d95811afe1bdb0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators refer to the fetched arXiv version math/9905049v3; no identification with journal numbering is assumed."
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "mc4-ekedahl"
+authors = "Torsten Ekedahl"
+title = "Canonical models of surfaces of general type in positive characteristic"
+year = 1988
+locator_scheme = "section"
+locator = "Introduction and main theorem pp.97–100; Part II Theorem 1.7 and its proof pp.126–127. Other results of the paper have not been independently decomposed here.."
+url = "https://www.numdam.org/item/PMIHES_1988__67__97_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1988__67__97_0.pdf"
+fetched_at = "2026-10-25T10:53:27Z"
+sha256 = "0e53d89911bd563cdc5e8a38abc47dc4e990a75e77cbd05055812f6d63b30776"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "mc4-chen-zhang"
+authors = "Yifei Chen, Lei Zhang"
+title = "The subadditivity of the Kodaira Dimension for Fibrations of Relative Dimension One in Positive Characteristics"
+year = 2013
+arxiv = "1305.6024v1"
+locator_scheme = "section"
+locator = "Theorem 1.3 p.2; §4, Theorem 4.3 and proof of Theorem 1.3 pp.10–11.."
+url = "https://arxiv.org/abs/1305.6024v1"
+fetched_from = "https://arxiv.org/pdf/1305.6024v1"
+fetched_at = "2026-10-25T10:53:32Z"
+sha256 = "1812166bab9e188b085c164c1814aa618fb74fb36e00a8a7f6f00d57ec0f3c31"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators refer to the fetched arXiv version 1305.6024v1; no identification with journal numbering is assumed."
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "mc4-stacks"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project: Cohomology of Schemes"
+year = 2026
+locator_scheme = "section"
+locator = "Tags 02O1 (Lemma 30.16.2), 0D2M (Lemma 30.21.3), 0D2N (Lemma 30.21.4), statements and proofs."
+url = "https://stacks.math.columbia.edu/download/coherent.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/coherent.pdf"
+fetched_at = "2026-10-25T10:53:34Z"
+sha256 = "b4980a08a8cce98fed6a420364b18c119364a9436577031b28a16863bcbdbfb8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "mc5-deligne1987"
+authors = "Pierre Deligne"
+title = "Le déterminant de la cohomologie"
+year = 1987
+locator_scheme = "section"
+locator = "§§6.1–6.4, printed pp. 141–143; Construction 7.2 and (7.2.1), printed pp. 147–149; §7.4 and Construction 7.5, printed pp. 150–151."
+url = "https://publications.ias.edu/sites/default/files/Number58.pdf"
+fetched_from = "https://publications.ias.edu/sites/default/files/Number58.pdf"
+fetched_at = "2026-10-25T10:58:19Z"
+sha256 = "12f7e48f416557500ac897b834d8eb7f79d4f31cb42ca150d366f005125b1b69"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "mc5-knudsenmumford1976"
+authors = "Finn Faye Knudsen; David Mumford"
+title = "The projectivity of the moduli space of stable curves I: Preliminaries on det and Div"
+year = 1976
+locator_scheme = "section"
+locator = "§1, graded invertible sheaves and Proposition 1, printed pp. 20–21; Lemma 2, printed p. 28, and determinant of a bounded complex, printed pp. 30–32."
+url = "https://www.dam.brown.edu/people/mumford/alg_geom/papers/1976b--DetDiv%2BKnudsenSequel-GT.pdf"
+fetched_from = "https://www.dam.brown.edu/people/mumford/alg_geom/papers/1976b--DetDiv%2BKnudsenSequel-GT.pdf"
+fetched_at = "2026-10-25T11:02:20Z"
+sha256 = "56bb67830d2d16a1c3c6e6b9ccd35e406d374f2e36669b938c10f78d45b0b0f2"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "mc5-edidingraham1997"
+authors = "Dan Edidin, William Graham"
+title = "Equivariant intersection theory"
+year = 1997
+arxiv = "alg-geom/9609018v3"
+locator_scheme = "section"
+locator = "Theorem 1 and Lemma 2, pp. 7–8; Corollary 1, p. 9; §§5.2–5.3, Propositions 14–19, pp. 28–29."
+url = "https://arxiv.org/abs/alg-geom/9609018v3"
+fetched_from = "https://arxiv.org/pdf/alg-geom/9609018v3"
+fetched_at = "2026-10-25T11:02:26Z"
+sha256 = "9a7b60f5b4584c3dc44d759bc10d3a0915280edc5f3cc5377477d9a4baed3df8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators refer to the fetched arXiv version alg-geom/9609018v3; no identification with journal numbering is assumed."
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "mc5-edidingraham1999"
+authors = "Dan Edidin, William Graham"
+title = "Riemann-Roch for equivariant Chow groups"
+year = 1999
+arxiv = "math/9905081v2"
+locator_scheme = "section"
+locator = "§1.2, conventions, p. 3; Theorem 3.1 and proof, pp. 13–14."
+url = "https://arxiv.org/abs/math/9905081v2"
+fetched_from = "https://arxiv.org/pdf/math/9905081v2"
+fetched_at = "2026-10-25T11:02:32Z"
+sha256 = "6dfbf33d1ed9ccc4debe50e0ebd03fc92c82f469b7af2225b3e9c7fe4ae31ca1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators refer to the fetched arXiv version math/9905081v2; no identification with journal numbering is assumed."
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "mc5-luo1998"
+authors = "Feng Luo"
+title = "A Presentation of the Mapping Class Groups"
+year = 1998
+venue = "Mathematical Research Letters, Vol. 4, 1997, 735-739."
+arxiv = "math/9801025v1"
+locator_scheme = "section"
+locator = "§1, Gervais presentation theorem, p. 1; main unnumbered theorem, p. 2; §2, presentation proof, pp. 3–4."
+url = "https://arxiv.org/abs/math/9801025v1"
+fetched_from = "https://arxiv.org/pdf/math/9801025v1"
+fetched_at = "2026-10-25T11:02:37Z"
+sha256 = "28069e3bcc4021f84ad322df787feacec27ed3d403516bdbc94a4be734641d2a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators refer to the fetched arXiv version math/9801025v1; no identification with journal numbering is assumed."
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "mc5-hall2011"
+authors = "Jack Hall"
+title = "Generalizing the GAGA Principle"
+year = 2011
+doi = "10.1112/jlms/jdu012"
+arxiv = "1101.5123v2"
+locator_scheme = "section"
+locator = "Theorem 1, p. 1; Appendix A, Theorem A.1 and Corollaries A.2–A.3, p. 17; proof, p. 18."
+url = "https://arxiv.org/abs/1101.5123v2"
+fetched_from = "https://arxiv.org/pdf/1101.5123v2"
+fetched_at = "2026-10-25T11:02:43Z"
+sha256 = "dcd5ef36ccf0f0b9cc138873cbfce8ed97d6d77f72705d30008bec861ebbf651"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators refer to the fetched arXiv version 1101.5123v2; no identification with journal numbering is assumed."
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "mc5-fredianineumann2004"
+authors = "Paola Frediani, Frank Neumann"
+title = "Etale homotopy types of moduli stacks of algebraic curves with symmetries"
+year = 2004
+venue = "K-Theory 30: 315-340, 2003"
+arxiv = "math/0404387v1"
+locator_scheme = "section"
+locator = "Theorem 1.5, p. 9; Theorem 2.5 and Proposition 2.6, p. 11; §2.3, quotient-groupoid calculation, pp. 17–18; Proposition 2.14 and proof, p. 19."
+url = "https://arxiv.org/abs/math/0404387v1"
+fetched_from = "https://arxiv.org/pdf/math/0404387v1"
+fetched_at = "2026-10-25T11:02:50Z"
+sha256 = "216063b03ac0f16f72ad482ec417ce6622513392ad8fed6b3a8806f476440e33"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators refer to the fetched arXiv version math/0404387v1; no identification with journal numbering is assumed."
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "mc6-fc1990"
+authors = "Gerd Faltings, Ching-Li Chai"
+title = "Degeneration of Abelian Varieties"
+year = 1990
+doi = "10.1007/978-3-662-02632-8"
+locator_scheme = "section"
+locator = "IV Proposition5.1 and Remark5.3, pp.113–114 (PDF125–126); IV Theorem5.7, pp.116–117 (PDF128–129); IV5.13, p.119; V Theorems2.3 and2.5, pp.150–153 (PDF162–165); V§6, pp.180–185, particularly Theorem6.7 for its characteristic-zero restriction.."
+url = "https://doi.org/10.1007/978-3-662-02632-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "mc6-stacksregular"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project: Properties of Schemes"
+year = 2026
+locator_scheme = "section"
+locator = "Section28.7, Lemmas28.7.5–6 (normal components); Section28.9, Lemma28.9.4 (regular implies normal), tag02IR. Exact generic targets are imported from SF.0.."
+url = "https://stacks.math.columbia.edu/tag/033H"
+fetched_from = "https://stacks.math.columbia.edu/download/properties.pdf#nameddest=033H"
+fetched_at = "2026-10-25T11:02:55Z"
+sha256 = "2f5b9ba41e07dd3a888da40496e07afae6caedd550597d96313ab16db4380316"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "knudsen2"
+authors = "Finn Faye Knudsen"
+title = "The projectivity of the moduli space of stable curves, II: The stacks M_{g,n}"
+year = 1983
+locator_scheme = "section"
+locator = "Definitions1.1–1.2,printedpp.162–164 (PDF2–4); groupoid statement p.164; Definition1.2,printedp.164 (PDF4),condition(ii); Definition 1.2, printed p.164 (PDF4), groupoid-fibred stack assertion; Appendix Definition1, Theorem2, Propositions4–7, printed191–195 (PDF31–35); Definition 2.3 and Theorem 2.4, printed pp.176–177 (PDF16–17); Theorem 2.4 Case II, printed p.177 (PDF17); Theorem 2.4 Case II and Figure 3, printed p.177 (PDF17); Proposition 2.1, printed p.174 (PDF14), including its final stack-morphism paragraph; Lemma 2.5 and Corollary 2.6, printed pp.178–179 (PDF18–19); Theorem 2.7 proof, printed p.179 (PDF19), initial g=0,n=3 case; Theorem 2.7 proof, printed p.179 (PDF19), boundary-union "
+url = "https://journals.msp.org/mscand/article/download/1622/1621/1653"
+fetched_from = "https://journals.msp.org/mscand/article/download/1622/1621/1653"
+fetched_at = "2026-10-25T11:06:09Z"
+sha256 = "18e04bbf5c24a460ff10e965ebf665ea0229378c6a9521bd279909476012e230"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["MC.0", "MC.2", "MC.3", "key"]
+
+[[source]]
+id = "knudsen3"
+authors = "Finn Faye Knudsen"
+title = "The projectivity of the moduli space of stable curves, III: The line bundles on M_{g,n}, and a proof of the projectivity of M̄_{g,n} in characteristic 0"
+year = 1983
+locator_scheme = "section"
+locator = "§4 definition (d), printed p.201 (PDF2), with sheaf descent preceding it on pp.200–201; Theorem 4.1(c), printed p.202 (PDF3); proof’s transverse-section exact sequence, p.203 (PDF4); §4, printed p.201 (PDF p.2): descent cocycle and definition (b); Theorem4.1(a),p.202; Theorem 4.2(a), printed p.203 (PDF p.4), and normalization exact-sequence proof; §6, printed pp.210–211 (PDF pp.11–12), characteristic-zero Satake map and properties (1)–(2) on p.211"
+url = "https://journals.msp.org/mscand/article/download/1623/1622/1654"
+fetched_from = "https://journals.msp.org/mscand/article/download/1623/1622/1654"
+fetched_at = "2026-10-25T11:06:52Z"
+sha256 = "97c2d29246b5aeff4820b4f7e74aaf8ad2e32eb72c25d05acfb7b2cbd8f017f2"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["MC.3", "MC.5", "MC.6"]
+
+[[source]]
+id = "hacking-boundary-review"
+authors = "Paul Hacking"
+title = "The moduli space of curves is rigid"
+year = 2008
+locator_scheme = "section"
+locator = "§4 normalization discussion, printed p.813 (PDF6), with §2 characteristic-zero hypotheses on p.810 (PDF3); Lemma 4.2, printed p.814 (PDF7); branch/Ext description on p.811 (PDF4); characteristic-zero scope on p.810"
+url = "https://msp.org/ant/2008/2-7/ant-v2-n7-p03-s.pdf"
+fetched_from = "https://msp.org/ant/2008/2-7/ant-v2-n7-p03-s.pdf"
+fetched_at = "2026-10-25T11:06:54Z"
+sha256 = "0a3fcd9f580248481aceea54333ffa0fe2829603a98a0d449e6e72d9fdc6cea6"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["MC.3"]
+
+[[source]]
+id = "mc3-edidin-fulghesu"
+authors = "Dan Edidin; Damiano Fulghesu"
+title = "Normalization of the 1-stratum of the moduli space of stable curves"
+year = 2012
+locator_scheme = "section"
+locator = "§2.1 opening noetherian-base convention, pp.168–169; Proposition3.7 and §4 Definitions4.1, Propositions4.4–4.6, Theorem4.7 and Remarks4.8–4.9, pp.175–180. Marked and arbitrary-ring comparison is supplied by the explicit deductions here, not by removing hypotheses from this source.."
+url = "https://ems.press/content/serial-article-files/44698?nt=1"
+fetched_from = "https://ems.press/content/serial-article-files/44698?nt=1"
+fetched_at = "2026-10-25T11:06:55Z"
+sha256 = "1f266ac735b8408f25f0250b084a82a8be1e4926948253340105bd1769fa9d6b"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "mc5-erikssonfreixas2024"
+authors = "Dennis Eriksson; Gerard Freixas i Montplet"
+title = "Deligne–Riemann–Roch and intersection bundles"
+year = 2024
+locator_scheme = "section"
+locator = "Definition 1.1, printed p. 258; Propositions 4.14–4.15 and Definition 4.16, printed pp. 286–287; §6.1.1, (6.3), Proposition 6.1 and Remark 6.2, printed pp. 310–312; §6.1.4, Proposition 6.8 and Corollary 6.9, printed pp. 316–318; Proposition 6.8 proof, printed p. 317, projection-formula display."
+url = "https://jep.centre-mersenne.org/item/10.5802/jep.254.pdf"
+fetched_from = "https://jep.centre-mersenne.org/item/10.5802/jep.254.pdf"
+fetched_at = "2026-10-25T11:06:57Z"
+sha256 = "b1bd3f2acebd7d8c9802bab4a44a251887748e569654e0dbc72a7fd64871c6f2"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–7"]
+
+[[source]]
+id = "stacks-moduli-stacks"
+locator_scheme = "tag"
+locator = "Moduli Stacks, Lemma 9.1 (tag 0DME), statement and proof."
+url = "https://stacks.math.columbia.edu/download/moduli.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/moduli.pdf"
+fetched_at = "2026-10-25T21:40:36Z"
+sha256 = "0d0e7ceba8b729155aba23756c211601f5ec2004dfb8b911ebd4e6cdb810a656"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["7.4", "7.5", "7.7"]
+authors = "The Stacks Project Authors"
+title = "The Stacks Project: Moduli Stacks"
+year = 2026
+
+[[source]]
+id = "stacks-spaces-cohomology"
+locator_scheme = "tag"
+locator = "Cohomology of Algebraic Spaces, Lemma 21.2 (tag 0GFB), statement and proof."
+url = "https://stacks.math.columbia.edu/download/spaces-cohomology.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/spaces-cohomology.pdf"
+fetched_at = "2026-10-25T21:42:04Z"
+sha256 = "2527d16049bf6782594126a5ddd44bb43ac65736e8e411d7375765d65bc6e91b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["4.16"]
+authors = "The Stacks Project Authors"
+title = "The Stacks Project: Cohomology of Algebraic Spaces"
+year = 2026
