@@ -21,6 +21,9 @@ cited_for = ["ArithmeticLocallySymmetricSpacesPartII:WM.0/proper-face-majorant (
 
 [[source]]
 id = "aw14"
+authors = "Konstantin Ardakov and Simon Wadsley"
+title = "Verma modules for Iwasawa algebras are faithful"
+year = 2014
 locator_scheme = "theorem"
 locator = "Theorems 4.6 and 5.4, pp. 11, 16"
 url = "https://www.dpmms.cam.ac.uk/~sjw47/VermaIwasawa.pdf"
@@ -30,14 +33,14 @@ sha256 = "0d774ffa62a1429d4677253de4fcf0787fef7ba399945c6913686f0e82b8e850"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["ArithmeticLocallySymmetricSpacesPartII:WM.1/cyclic-torsion-bound (§1.2)", "gap:integral-central-faithfulness", "Source corrections E2–E3, E5"]
-authors = "Konstantin Ardakov and Simon Wadsley"
-title = "Verma modules for Iwasawa algebras are faithful"
-year = 2014
 version_note = "Author PDF, pp. 1–19; Theorems in §§4.6 and 5.4. Published Münster J. Math. 7 (2014), 5–26; locators use the author PDF."
+cited_for = ["ArithmeticLocallySymmetricSpacesPartII:WM.1/cyclic-torsion-bound (§1.2)", "gap:integral-central-faithfulness", "Source corrections E2–E3, E5"]
 
 [[source]]
 id = "aw13"
+authors = "Konstantin Ardakov and Simon Wadsley"
+title = "On irreducible representations of compact p-adic analytic groups"
+year = 2013
 locator_scheme = "section"
 locator = "Sections 10.2–10.4; Sections 10.12–10.13, pp. 77–78"
 url = "https://people.maths.ox.ac.uk/ardakov/Smith.pdf"
@@ -47,11 +50,8 @@ sha256 = "597f490e9c8521fdc8d740b32375c4d005531ada0be65a29cec0fc0eb811158d"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["ArithmeticLocallySymmetricSpacesPartII:WM.2/canonical-dimension-zero (§2.7)", "gap:flat-microlocalisation", "gap:canonical-dimension-zero"]
-authors = "Konstantin Ardakov and Simon Wadsley"
-title = "On irreducible representations of compact p-adic analytic groups"
-year = 2013
 version_note = "Author preprint; all §10 locators use its pp. 70–78, including Lemma 10.13 on p. 77, rather than journal pagination."
+cited_for = ["ArithmeticLocallySymmetricSpacesPartII:WM.2/canonical-dimension-zero (§2.7)", "gap:flat-microlocalisation", "gap:canonical-dimension-zero"]
 
 [[source]]
 id = "marshall12"
@@ -87,4 +87,21 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv:0808.1204v1 (2008); locators use this version, not the published Experimental Mathematics 19 (2010), 29–63 pagination."
-cited_for = ["ArithmeticLocallySymmetricSpacesPartII:WM.5/cusp-torus-koszul (§5.1)", "ArithmeticLocallySymmetricSpacesPartII:WM.5/bianchi-boundary (§5.2)", "ArithmeticLocallySymmetricSpacesPartII:WM.5/finite-type-dimension (§5.3)", "ArithmeticLocallySymmetricSpacesPartII:WM.5/ramified-finite-types (§5.4)", "ArithmeticLocallySymmetricSpacesPartII:WM.5/sl2-base-change-count (§5.5)", "ArithmeticLocallySymmetricSpacesPartII:WM.5/base-change-linear-count (§5.6)", "ArithmeticLocallySymmetricSpacesPartII:WM.5/bianchi-lower (§5.7)", "Source corrections E1, E10"]
+cited_for = ["ArithmeticLocallySymmetricSpacesPartII:WM.5/cusp-torus-koszul (§5.1)", "ArithmeticLocallySymmetricSpacesPartII:WM.5/bianchi-boundary (§5.2)", "ArithmeticLocallySymmetricSpacesPartII:WM.5/finite-type-dimension (§5.3)", "ArithmeticLocallySymmetricSpacesPartII:WM.5/ramified-finite-types (§5.4)", "ArithmeticLocallySymmetricSpacesPartII:WM.5/sl2-base-change-count (§5.5)", "ArithmeticLocallySymmetricSpacesPartII:WM.5/base-change-linear-count (§5.6)", "ArithmeticLocallySymmetricSpacesPartII:WM.5/bianchi-lower (§5.7)", "ArithmeticLocallySymmetricSpacesPartII:WM.5/bianchi-two-sided (§5.8)", "ArithmeticLocallySymmetricSpacesPartII:WM.4/sharp-global-bound (§4.2, restriction and corestriction, §3.2)", "Source corrections E1, E10"]
+
+[[source]]
+id = "serre77"
+authors = "Jean-Pierre Serre (rédigé avec Hyman Bass)"
+title = "Arbres, amalgames, SL₂"
+year = 1977
+version_note = "Astérisque 46 (1977), Numdam scan; page numbers are the printed pages of that volume."
+locator_scheme = "section"
+locator = "I §1.5.3, p. 20; I §4.2 Example (c), p. 52; II §2.8, p. 169"
+url = "https://www.numdam.org/item/AST_1983__46__1_0.pdf"
+fetched_from = "https://www.numdam.org/item/AST_1983__46__1_0.pdf"
+fetched_at = "2026-10-26T23:49:58Z"
+sha256 = "7f048d9e38961ee8a082d6c5fc994e61112f809d9b1ade5d6c33d3c79cc8e947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["ArithmeticLocallySymmetricSpacesPartII:WM.5/finite-type-dimension (§5.3): the amalgam SL₂(ℤ)≅ℤ/4∗_{ℤ/2}ℤ/6 and the cohomology exact sequence of an amalgam"]
