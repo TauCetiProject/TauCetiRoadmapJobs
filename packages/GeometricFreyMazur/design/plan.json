@@ -5388,7 +5388,74 @@
       ]
     }
   ],
-  "gaps": [],
+  "gaps": [
+    {
+      "slug": "finite-group-quotient-analytification",
+      "needs": "For a finite group G acting on a projective complex scheme X with finite scheme quotient q:X→Y supplied by SchemeAndStackFoundations §1.17, identify q^an with the finite categorical analytic quotient, with O_(Y^an)=((q^an)_*O_(X^an))^G, orbit fibres and local stabilizer-invariant rings, retaining nilpotents and compatibly with equivariant morphisms.",
+      "supplier": "ComplexComparisonPartII",
+      "section": "C−1.3"
+    },
+    {
+      "slug": "analytic-cycle-current-transport",
+      "needs": "For locally finite effective analytic one-cycles in finite-dimensional Hausdorff second-countable complex manifolds, provide proper normalization with branch weights, integration of pulled-back forms and weighted pushforward under finite holomorphic maps of curves, local-multiplicity transport, Green and Stokes identities on relatively compact sublevels, and the zero-atom integrable extension of cusp densities, compatible with K6.1’s compact analytic integration.",
+      "supplier": "ComplexKahlerGeometry",
+      "section": "K3 and K6.1"
+    },
+    {
+      "slug": "hyperbolic-cycle-volume-comparisons",
+      "needs": "For curvature −1 disc products with maximum distance and sum area, provide the point bound V(r)≥4π sinh²(r/2) mult, the ordinary-diagonal bound V(r)≥8π sinh²(r/2)(C·Δ), the analogous double-diagonal point-multiplicity bound, and monotonicity of ordinary tube volume divided by cosh r and conjugate-diagonal tube volume divided by sinh r for 0<r<ρ/2, with no ordinary diagonal component and with all effective cycle weights retained.",
+      "supplier": "ComplexKahlerGeometry",
+      "section": "K6.1"
+    },
+    {
+      "slug": "relative-point-ball-volume",
+      "needs": "For every n≥1 and every closed effective analytic one-cycle in the unit polydisc, prove V(r)≤C_n(1+r)exp(r−R)V(R) for maximum-product balls centred at zero and 1≤r≤R−2, with sum curvature −1 area, C_n depending only on n, no incidence assumption on the centre, and transport to compact quotients for R<ρ.",
+      "supplier": "ComplexKahlerGeometry",
+      "section": "K6.1"
+    },
+    {
+      "slug": "hyperbolic-trigonometry",
+      "needs": "Provide the marked curvature −1 disc/half-plane comparisons, the hyperbolic second cosine law, translation length 2 arcosh(|tr|/2) for |tr|>2, the rotation identity sinh(D/2)=sinh(d)|sin(θ/2)|, and the midpoint lens bound B(a,D+R)∩B(b,D+R)⊆B(midpoint,R+C) when d(a,b)=2D and R≥1.",
+      "supplier": "FuchsianOrbifolds",
+      "section": "Layer 2"
+    },
+    {
+      "slug": "gonality-norm-and-base-change",
+      "needs": "On smooth proper geometrically connected curves over algebraically closed fields, provide gonality as the minimum positive degree of a finite map to the projective line, comparison with the minimum finite degree [K:k(f)] over transcendental f in the function field K, realization by a base-point-free pencil, invariance under algebraically closed extension, gon(D)≤gon(B) under a nonconstant finite map B→D, gon≤g+1, and gonality 1 and 2 in genera zero and one.",
+      "supplier": "AlgebraicCurves",
+      "section": "Layer 12, with Layers 3–5"
+    },
+    {
+      "slug": "singular-metric-li-yau",
+      "needs": "For a compact Riemann surface with a finite-area conformal metric smooth off finitely many cone points and cusps, prove λ_* Area≤8π gonality, where λ_* is the infimum of the nonconstant mean-zero Friedrichs energy quotient, using conformal balancing and degree-d maps to the round sphere of area 4π, including cutoff approximation at every singular point.",
+      "supplier": "RiemannianGeometry",
+      "section": "R7.0 and R8"
+    },
+    {
+      "slug": "free-locus-and-relative-cycle",
+      "needs": "For a finite group acting on a projective characteristic-zero scheme, prove that its finite quotient is étale over the image of the free locus, and construct the base-change-compatible norm cycle morphism of a finite flat degree-n family to the permutation quotient SymⁿZ with every fibre length retained.",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "§1.17"
+    },
+    {
+      "slug": "curve-extension-and-normalization",
+      "needs": "For a smooth connected curve over an algebraically closed characteristic-zero field and a proper separated finite-type target, extend a morphism uniquely to its smooth proper model, factor the resulting nonconstant map through the finite normalization of its reduced integral image supplied by SchemeAndStackFoundations §4.13, and prove that birational integral curves have equal normalization genus.",
+      "supplier": "AlgebraicCurves",
+      "section": "Layer 12"
+    },
+    {
+      "slug": "cyclic-surface-resolution-and-contraction",
+      "needs": "Over algebraically closed characteristic-zero fields: for a normal projective surface whose singular points are isolated cyclic quotient charts 1/n(1,a) with n≥2, 1≤a<n and gcd(a,n)=1, provide the Hirzebruch–Jung resolution with exceptional chains of smooth rational curves; for a smooth connected projective surface, extend §4.13 `bertini_smoothness` so that a general member of the complete linear system of a sufficiently ample line bundle is a smooth connected curve meeting each of finitely many given reduced curves only at their smooth points and transversely, and avoiding a given finite set; for a smooth projective surface, provide Castelnuovo contraction of a smooth rational curve of self-intersection −1 with smooth projective target, and termination of successive contractions by strict decrease of the Picard number.",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "§§4.11–4.13"
+    },
+    {
+      "slug": "surface-contraction-intersections",
+      "needs": "Provide the negative continued-fraction intersection matrix for a cyclic-quotient resolution and the intersection update C_new²=C_old²+(C_old·E)² when a smooth rational (−1)-curve E on a smooth projective characteristic-zero surface is contracted.",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "§§5.9–5.10"
+    }
+  ],
   "restructure": [
     {
       "proposal": "Scheme and stack foundations, Part II: complex surface contractions",
