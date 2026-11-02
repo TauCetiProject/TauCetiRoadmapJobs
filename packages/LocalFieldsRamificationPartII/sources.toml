@@ -1,0 +1,158 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LocalFieldsRamificationPartII"
+
+[[source]]
+id = "temkin17"
+authors = "Michael Temkin"
+title = "Tame distillation and desingularization by p-alterations"
+year = 2017
+venue = "Annals of Mathematics 186 (2017), 97–126"
+locator_scheme = "theorem"
+locator = "§§2.1–2.6, pp. 103–112 (Lemmas 2.3.2, 2.3.4, 2.3.8, 2.3.11, 2.4.2, 2.4.4, 2.5.2, 2.6.3; Theorems 2.4.9, 2.5.5, 2.6.6; Corollaries 2.5.3, 2.5.6, 2.6.4); §3.2.4 and Lemma 3.2.5, p. 116"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v186-n1-p03-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v186-n1-p03-p.pdf"
+fetched_at = "2026-10-26T21:08:01Z"
+sha256 = "1f4ac06f2f31430abdd984d8e635a324defb6de340f6a599f708c04996fbfba4"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layers 0-6"]
+
+[[source]]
+id = "kpr86"
+authors = "Franz-Viktor Kuhlmann, Matthias Pank, Peter Roquette"
+title = "Immediate and purely wild extensions of valued fields"
+year = 1986
+venue = "Manuscripta Mathematica 55 (1986), 39–67"
+locator_scheme = "theorem"
+locator = "Theorems 2.1–2.2, Proposition 2.4, Corollary 2.5 and proof of Theorem 2.2, pp. 42–44"
+url = "https://www.fvkuhlmann.de/KPR.pdf"
+fetched_from = "https://www.fvkuhlmann.de/KPR.pdf"
+fetched_at = "2026-10-26T21:07:38Z"
+sha256 = "858039a257c7e1f876a4e1dedd84a2b44bdc0bb90bc15b58b87421f772c35e66"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "author-hosted scan of the published article; text recognised by OCR"
+cited_for = ["2.2", "3.1", "3.2", "3.6"]
+
+[[source]]
+id = "temkin10"
+authors = "Michael Temkin"
+title = "Stable modification of relative curves"
+year = 2010
+venue = "Journal of Algebraic Geometry 19 (2010), 603–677"
+locator_scheme = "theorem"
+locator = "Proposition 2.2.2, author pp. 11–12"
+url = "https://math.huji.ac.il/~temkin/papers/Stable_Modification.pdf"
+fetched_from = "https://math.huji.ac.il/~temkin/papers/Stable_Modification.pdf"
+fetched_at = "2026-10-26T21:07:40Z"
+sha256 = "be5332912dc4b6839c7a6df971dc19155796ab25d14b8bb9b504a6357a878bd9"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "author preprint; page numbers are the preprint's"
+cited_for = ["5.4"]
+
+[[source]]
+id = "kkv16"
+authors = "Franz-Viktor Kuhlmann, Katarzyna Kuhlmann, Claudiu Vişan"
+title = "Valuations on rational function fields that are invariant under permutation of the variables"
+year = 2016
+venue = "Journal of Algebra 464 (2016), 279–296"
+locator_scheme = "theorem"
+locator = "Lemma 2.1, author p. 6; inequality (12), author p. 8"
+url = "https://www.fvkuhlmann.de/symmval.pdf"
+fetched_from = "https://www.fvkuhlmann.de/symmval.pdf"
+fetched_at = "2026-10-26T21:07:41Z"
+sha256 = "876c51125fe8501cab0a048adc3b680f6d1c30ac009513634024b591fd34eb79"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "author preprint; page numbers are the preprint's"
+cited_for = ["5.3"]
+
+[[source]]
+id = "cks23"
+authors = "Hanna Ćmiel, Franz-Viktor Kuhlmann, Piotr Szewczyk"
+title = "Continuity of roots for polynomials over valued fields"
+year = 2023
+venue = "Communications in Algebra 51 (2023), 1383–1412"
+locator_scheme = "theorem"
+locator = "Theorems 14 and 16, Example 15, author pp. 12–15"
+url = "https://www.fvkuhlmann.de/CoRfinal.pdf"
+fetched_from = "https://www.fvkuhlmann.de/CoRfinal.pdf"
+fetched_at = "2026-10-26T21:07:42Z"
+sha256 = "6589f1bf4d0692b44236c11b6eb05982f9414eba229c3581c66f1639fa7c464a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "author final version; page numbers are the author copy's"
+cited_for = ["4.1"]
+
+[[source]]
+id = "aid25"
+authors = "Cédric Aïd"
+title = "A Choice-free look at algebraic extensions of valuations"
+year = 2025
+arxiv = "2511.07177v1"
+locator_scheme = "theorem"
+locator = "Propositions 3.3, 3.6, Theorem 3.7, pp. 5–9; Proposition 4.1, Theorem 4.4, pp. 10–13"
+url = "https://arxiv.org/abs/2511.07177v1"
+fetched_from = "https://arxiv.org/pdf/2511.07177v1"
+fetched_at = "2026-10-26T21:07:45Z"
+sha256 = "bd591da23737028e98d46e4ad44578eb2c1addf8fca658fa6d0aef51ae2d946c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["1.1"]
+
+[[source]]
+id = "stacks-more-algebra"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Chapter 15: More on Algebra"
+year = 2026
+locator_scheme = "tag"
+locator = "Lemmas 15.12.5–15.12.8 (tags 0A04, 0F0L, 0DYE, 0H7Q); Lemma 15.26.6 (tag 053E); Lemmas 15.125.5–15.125.6 (tags 0ASJ, 0ASK)"
+url = "https://stacks.math.columbia.edu/tag/05E3"
+fetched_from = "https://stacks.math.columbia.edu/download/more-algebra.pdf#nameddest=0ASF"
+fetched_at = "2026-10-26T21:08:11Z"
+sha256 = "ab69179738e642603ddbde651f2838e1cb5d8711e8bcd7c447cbf02a8bb6a5d2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "chapter PDF, numbering at the access date"
+cited_for = ["1.2", "1.4", "1.5", "2.1"]
+
+[[source]]
+id = "ega4"
+authors = "Alexander Grothendieck, Jean Dieudonné"
+title = "Éléments de géométrie algébrique IV. Étude locale des schémas et des morphismes de schémas, quatrième partie"
+year = 1967
+venue = "Publications Mathématiques de l'IHÉS 32 (1967)"
+locator_scheme = "theorem"
+locator = "Lemma 17.7.5, pp. 73–74; Proposition 17.7.7, pp. 74–75; Proposition 18.6.8, p. 139; Proposition 18.6.14, p. 141"
+url = "https://www.numdam.org/item/PMIHES_1967__32__5_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1967__32__5_0.pdf"
+fetched_at = "2026-10-26T21:08:29Z"
+sha256 = "b4277fb99c6edf8feec5b01f54368e4b8521bcd52871316c0edf6ff4ae69389e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["1.4", "2.1", "2.6", "supplier gap source-side-fpqc-descent"]
+
+[[source]]
+id = "serre-cg"
+authors = "Jean-Pierre Serre"
+title = "Galois Cohomology"
+year = 1997
+venue = "Springer Monographs in Mathematics"
+doi = "10.1007/978-3-642-59141-9"
+locator_scheme = "section"
+locator = "Ch. I §3.4 Prop. 16; Ch. II §2.2 Prop. 3 and Cor. 1"
+url = "https://doi.org/10.1007/978-3-642-59141-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text; section numbering as in Cohomologie galoisienne, whose pages I-24, I-25 and II-5 Kuhlmann–Pank–Roquette cite for these results (kpr86 lines 228–234)"
+cited_for = ["3.1", "3.2"]

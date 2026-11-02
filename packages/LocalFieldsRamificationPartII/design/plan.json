@@ -3233,20 +3233,10 @@
   ],
   "gaps": [
     {
-      "id": "LocalFieldsRamificationPartII/G1",
-      "title": "Characteristic-p absolute Galois cohomological bound",
-      "neededBy": [
-        "LocalFieldsRamificationPartII:GF.3/henselian-pank"
-      ],
-      "detail": "Need cd_p(G_F)≤1 for every field F of characteristic p, not only local fields, finite F, trivial coefficients or pro-p total groups. Kuhlmann–Pank–Roquette p. 44 uses this input; the audited ProfiniteCohomology Layer 9 does not plan it. Proposed ProfiniteCohomology Part II supplier: Artin–Schreier 0→F_p→F^sep→F^sep→0, additive normal-basis acyclicity over finite Galois subextensions, filtered passage and dévissage to all p-primary discrete modules. The full primary proof and exact supplier interface remain to be verified. This is a proof-closure gap, not a claim that the mathematical theorem is unknown."
-    },
-    {
-      "id": "LocalFieldsRamificationPartII/G2",
-      "title": "Sections through arbitrary profinite pro-p kernels",
-      "neededBy": [
-        "LocalFieldsRamificationPartII:GF.3/henselian-pank"
-      ],
-      "detail": "Need: if cd_p(G)≤1 and E→G is a continuous surjection of profinite groups with pro-p kernel, there is a continuous homomorphic section. E and G are arbitrary profinite groups; the needed relative form applies also after restricting E to a closed subgroup that still surjects onto G. Kuhlmann–Pank–Roquette p. 44 invokes this theorem. ProfiniteProPGroups Layer 5 gives finite p-kernel embedding problems for arbitrary G, but its existing projectivity / inverse-limit theorem restricts the total group to pro-p. Proposed ProfiniteCohomology Part II must bridge finite p-kernel solutions to this section theorem by compatible inverse limits (or an equivalent relative projectivity theorem), checking the compatibility argument for infinite rank. No extension of an existing stage scope is silently assumed."
+      "slug": "source-side-fpqc-descent",
+      "needs": "Descent from the source of a faithfully flat morphism: for f : X → Y faithfully flat and locally of finite presentation and g : Y → Z with g ∘ f of finite presentation, g is of finite presentation when f is quasi-compact or g quasi-separated (EGA IV, Lemma 17.7.5(iv)), and for S-morphisms g : X → Y of schemes locally of finite presentation over S that are flat at x, étaleness of X → S at x implies étaleness of Y → S at g(x) (EGA IV, Proposition 17.7.7).",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "Layer 1, §1.1 (descent)"
     }
   ],
   "restructure": [
