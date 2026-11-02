@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "EffectiveBoundsCompactModels"
+
+[[source]]
+id = "COUVEIGNES20"
+authors = "Jean-Marc Couveignes"
+title = "Enumerating number fields"
+year = 2020
+doi = "10.4007/annals.2020.192.2.4"
+version_note = "Published Annals version; Theorem 1 p. 487, Theorem 2 p. 488, Propositions 1–2 pp. 490 and 495."
+locator_scheme = "theorem"
+locator = "Propositions 1–2; Theorems 1–2; Sections 2–4, pp. 487–496"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v192-n2-p04-s.pdf"
+fetched_at = "2026-10-25T04:19:31Z"
+sha256 = "8d63bd3a14f0d61f421695f1d93559d18fb674240c6dee872c23bf5902e1a104"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–5"]
