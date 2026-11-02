@@ -3651,83 +3651,82 @@
   ],
   "gaps": [
     {
-      "title": "G1 — Generic root-data extensions",
-      "neededBy": [
-        "HeckeStacksAndLocalShtukasPartII:HSD1/minimal-reduction",
-        "HeckeStacksAndLocalShtukasPartII:HSD1/minimal-geometry",
-        "HeckeStacksAndLocalShtukasPartII:HSD5/double-flat",
-        "HeckeStacksAndLocalShtukasPartII:HSD5/factor-data",
-        "HeckeStacksAndLocalShtukasPartII:HSD7/basic-seed",
-        "HeckeStacksAndLocalShtukasPartII:HSD8/large-translation"
-      ],
-      "detail": "The current RootSystems Coxeter/chamber targets do not yet provide all of: twisted extended-affine Red-Min with straight–finite-parabolic decomposition; associative Demazure product and support union; parabolic minimal representatives in the needed directions; integral dominance subtraction in P∨ with least-element, monotonicity and associativity proofs. Propose a single generic RootSystems Part II extension, and import it. Fundamental coweights must carry their lattice map; a rational dominance truncation is not a substitute. The basic-seed route also needs the twisted-Coxeter-to-basic minimal reduction cited in He14 Proposition 11.7 as He–Yang, Elements with finite Coxeter part in an affine Weyl group, Theorem 1.1; that proof was not read here and remains a supplier audit obligation."
+      "slug": "unipotent-linearization",
+      "needs": "For a reductive O_F-model and an O_F-parabolic P=MN, a finite decreasing M-stable normal filtration N=N[1]⊃⋯⊃N[r+1]=1 by smooth subgroup schemes, compatible with unramified base change and σ, whose quotients N[i]/N[i+1] are M-equivariantly the additive groups of Lie N[i]/Lie N[i+1], in every residue characteristic.",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.3 (required parabolic unipotent filtration)"
     },
     {
-      "title": "G2 — Dimension on bounded and perfect geometric diagrams",
-      "neededBy": [
-        "HeckeStacksAndLocalShtukasPartII:HSD0/geometric-realization",
-        "HeckeStacksAndLocalShtukasPartII:HSD6/correspondence-dimensions"
-      ],
-      "detail": "SF.0/fibre-dimension-formula already supplies the finite-type dimension inequalities, and GS0:Witt-geometry/perfect-model-and-etale-comparison requests compatible perfect models from SF.0/SF.1. Import these promises. The remaining obligation is to produce compatible bounded models of the particular ADLV and Frobenius-chain diagrams, and pass their inequalities to the dimension supremum at a generic point of each bounded target. An entire ADLV may have infinitely many components; no global finite-component or quasi-compactness assumption is supplied."
+      "slug": "demazure-product",
+      "needs": "For an affine Coxeter system (W_a,S_aff) with length-zero automorphisms Ω and based σ preserving S_aff, the associative Bruhat-monotone product on W̃⋊〈σ〉 defined by the greatest product of Bruhat-lower factors, with unit and ℓ(u*v)=ℓu+ℓ(u⁻¹(u*v)).",
+      "supplier": "RootSystemsPartII",
+      "section": "RS2.1 (required affine-combinatorics extension)"
     },
     {
-      "title": "G3 — Generic twisted affine-Hecke cocenter",
-      "neededBy": [
-        "HeckeStacksAndLocalShtukasPartII:HSD1/class-polynomial-dimension",
-        "HeckeStacksAndLocalShtukasPartII:HSD7/basic-seed"
-      ],
-      "detail": "SmoothRepresentationsOfLocalGroups SR.1 owns Hecke algebras, but its present promise does not include the integral twisted cocenter basis, class-polynomial positivity, reduction recursion and nonzero twisted-Coxeter coefficient. Extend that direction once; do not manufacture an opaque polynomial oracle here. HN14 Theorem 6.7 and the relevant He14 §§2,11 inputs need the full generic algebra audit."
+      "slug": "twisted-redmin",
+      "needs": "For an extended affine Weyl group and σ permuting the affine simple reflections, every element reaches a minimum of its σ-conjugacy class by length-nonincreasing simple σ-conjugations, and any two minima in that class are connected by strong σ-conjugacy (hn14, Theorem 2.9 and Corollary 2.10, PDF pp. 10–11; he14, Theorem 2.1, p. 374).",
+      "supplier": "RootSystemsPartII",
+      "section": "RS2.1 (required affine-combinatorics extension)"
     },
     {
-      "title": "G4 — Perfect spherical proof transfers",
-      "neededBy": [
-        "HeckeStacksAndLocalShtukasPartII:HSD2/lattice-strata",
-        "HeckeStacksAndLocalShtukasPartII:HSD2/chart-dimension",
-        "HeckeStacksAndLocalShtukasPartII:HSD3/unipotent-loop-comparison",
-        "HeckeStacksAndLocalShtukasPartII:HSD3/levi-reduction",
-        "HeckeStacksAndLocalShtukasPartII:HSD3/convolution-estimate",
-        "HeckeStacksAndLocalShtukasPartII:HSD3/spherical-dimension"
-      ],
-      "detail": "Zhu invokes adaptations of equal-characteristic arguments on p-adic loop spaces. Required checks are actual Teichmüller chart morphisms and their dimension comparison; equivariant N-versus-Lie N with its precise characteristic hypotheses; admissibility and twisted Lang-map dimensions; and the perfect-space trace input to GHKR Lemma 5.4.3. Current GS0 already supplies flag incidence spaces and their fibre bounds, and GS2:correspondences/rational-special-fibre-convolution supplies the spherical semismallness bound. Import them. The ADLV application still checks nonempty top-endpoint attainment and compatible bounded pullbacks. A point bijection alone supplies none of the missing chart or Lang geometry."
+      "slug": "straight-finite-parabolic",
+      "needs": "For every such σ-class, reduction reaches a minimal ux with J⊂S_aff, W_J finite, u∈W_J, x σ-straight, x minimal on both sides modulo W_J and W_(σJ), and xσ(J)x⁻¹=J, preserving the class’s Newton and Kottwitz invariants (he14, Theorem 2.3, p. 376; hn14, Proposition 2.7, PDF p. 10).",
+      "supplier": "RootSystemsPartII",
+      "section": "RS2.1 (required affine-combinatorics extension)"
     },
     {
-      "title": "G5 — General σ and local-field flag geometry",
-      "neededBy": [
-        "HeckeStacksAndLocalShtukasPartII:HSD0/geometric-realization",
-        "HeckeStacksAndLocalShtukasPartII:HSD1/reduction-geometry",
-        "HeckeStacksAndLocalShtukasPartII:HSD3/virtual-upper-bound",
-        "HeckeStacksAndLocalShtukasPartII:HSD4/mazur",
-        "GeometricSatakeAndFusion:GS0:Witt-geometry/flag-convolution-fibres",
-        "HeckeStacksAndLocalShtukasPartII:HSD8/main-criterion"
-      ],
-      "detail": "The read geometric endpoint source is split equal characteristic; He14 uses tame good-characteristic adjoint reduction, and its Corollary 10.4 assumes δ=id. Supply the σ-twisted, ramified and mixed-characteristic flag versions and normalized dimension comparisons before claiming the full He21 local-field scope. A spherical perfect-space construction is not the missing flag construction."
+      "slug": "finite-coxeter-basic-class",
+      "needs": "For a semisimple extended affine root datum whose irreducible components are permuted transitively by the based σ (the datum of an F-simple adjoint quasi-split group), τ∈Ω, a σ-Coxeter element w∈W₀ and μ∈P∨ with κ(t^μ)=κ(τ), reduction of t^μw reaches a minimal cτ with J a maximal proper Ad(τ)σ-stable affine-simple subset, W_J finite and c∈W_J an Ad(τ)σ-twisted Coxeter element, where (J,c) may depend on (μ,w); this includes the reduction from a transitive σ-orbit of d irreducible components to one component with σ^d (he14, Proposition 11.7, pp. 400–401, stated for simple G).",
+      "supplier": "RootSystemsPartII",
+      "section": "RS2.1 (required affine-combinatorics extension)"
     },
     {
-      "title": "G6 — Superbasic definition and classification",
-      "neededBy": [
-        "HeckeStacksAndLocalShtukasPartII:HSD3/superbasic-factors"
-      ],
-      "detail": "The B(G) owner must provide superbasic = meeting no proper F-Levi, its equivalence to the required anisotropic-centralizer condition, and the classification of F-simple adjoint unramified superbasic factors as Res_(E/F)PGL_h, with GL_h lift and κ bookkeeping. CKV Lemma 3.1.1 cites Tits’s anisotropic classification, not established by the present reading. Record that exact residual source dependency."
+      "slug": "parabolic-root-length",
+      "needs": "For a reduced crystallographic RootPairing P with finite root index type over a characteristic-zero integral domain and a chosen base, on its pinned RootPairing.weylGroup with ℓ the inversion count viewed in ℤ, if wα is negative for every positive α with y⁻¹α negative, then ℓ(wy)=ℓw−ℓy (gh10, Lemma 2.6.1, PDF p. 10).",
+      "supplier": "RootSystemsPartII",
+      "section": "RS2.1 (required root-sign length comparison)"
     },
     {
-      "title": "G7 — Basic-seed proof and original-lattice descent",
-      "neededBy": [
-        "HeckeStacksAndLocalShtukasPartII:HSD3/adjoint-components",
-        "HeckeStacksAndLocalShtukasPartII:HSD6/cordial-reduction",
-        "HeckeStacksAndLocalShtukasPartII:HSD7/basic-seed",
-        "HeckeStacksAndLocalShtukasPartII:HSD7/cordial-interval",
-        "HeckeStacksAndLocalShtukasPartII:HSD8/main-criterion"
-      ],
-      "detail": "The basic seed used in He21 §6.3 need not be shrunken, so the cited He15 Theorem 2.27 does not suffice. Finish the nonzero-γ twisted cocenter proof, with the corrected choices and σ-saturated support in He14 Proposition 11.6, and the finite-quotient γ=0 case. Then transport from the verified simple-adjoint good-characteristic setting. Independently compare original-group components and integral κ when γ and λ^♭♭ lie only in P∨. GHN’s official erratum retains a characteristic condition and supplies componentwise comparison, not an unconditional global immersion."
+      "slug": "dominant-subtraction",
+      "needs": "For dominant λ,μ in the full coweight lattice P∨, the least dominant ν with ν+μ≥_ℤλ, denoted λ−_domμ, agreeing with λ−μ when that is dominant, satisfying iterated subtraction, and bounded above by dom(λ−uμ′) for u∈W₀ and dominant μ≥_ℤμ′, with the image of the original lattice Y tracked separately (he21, Proposition 5.1 and Corollaries 5.3–5.4, pp. 8–9).",
+      "supplier": "RootSystemsPartII",
+      "section": "RS2.1 (required dominant-subtraction extension)"
     },
     {
-      "title": "G8 — Newton-cell purity and poset lengths",
-      "neededBy": [
-        "HeckeStacksAndLocalShtukasPartII:HSD4/generic-newton",
-        "HeckeStacksAndLocalShtukasPartII:HSD4/generic-dimension",
-        "HeckeStacksAndLocalShtukasPartII:HSD4/saturation"
-      ],
-      "detail": "MV20’s cordial saturation proof uses strong topological purity and the Newton-poset length theorem (its references [15] and [40], Theorem 3.4/Lemma 5.12). BG1’s abstract classification and partial order alone do not provide these geometric theorems. Obtain the precise equal-characteristic geometric package, including greatestness on cell closures and the cell/ADLV dimension comparison, before declaring this branch closed; general local-field transport is G5."
+      "slug": "superbasic-classification",
+      "needs": "Superbasic classes as those meeting no proper F-Levi, the criterion that J_b/Z(G) is F-anisotropic and the unramified F-simple adjoint classification as restrictions of PGL_h, with a GL_h lift preserving the specified integral component.",
+      "supplier": "BunGAndNewtonStrata",
+      "section": "§1.18 (basic sigma class; required superbasic extension)"
+    },
+    {
+      "slug": "newton-poset-length",
+      "needs": "For [b]≤[b′] in one integral κ-fibre of B(G), every maximal chain between them has length (〈2ρ,ν_b′−ν_b〉+def(b)−def(b′))/2 (mv20, proof of Theorem 3.16, arXiv v3, PDF p. 9).",
+      "supplier": "BunGAndNewtonStrata",
+      "section": "§1.21 (required Newton chain-length extension)"
+    },
+    {
+      "slug": "newton-cell-strong-purity",
+      "needs": "For quasi-split G over 𝔽_q((t)), the Newton stratification on Noetherian bounded Iwahori-cell models and their completions has topological strong purity: for each [c], each maximal [c′]<[c] in its κ-fibre, and each irreducible component Z of the ≤[c] locus, Z∩(≤[c′]) is empty or pure of codimension at most one in Z (mv20, proof of Theorem 3.16, arXiv v3, PDF p. 9; ham17, Definition 2.1(3), arXiv v3, PDF p. 4, for this notion).",
+      "supplier": "BunGAndNewtonStrata",
+      "section": "§1.21 (required equal-characteristic cell purity)"
+    },
+    {
+      "slug": "newton-cell-greatest",
+      "needs": "For quasi-split G over 𝔽_q((t)) and an Iwahori double coset IẇI, the locally closed admissible Newton stratification on bounded cell models and their completions, compatible with congruence truncation, whose dense open stratum has a greatest B(G)-class that remains greatest on the Bruhat closure ⋃_(v≤w)IṽI (mv20, Definition 3.1 and §3.1, Definitions 3.3 and 3.7, Corollary 3.6, arXiv v3, PDF pp. 5–7; he21, proof of Theorem 4.2, p. 7; vie14, Proposition 5.5 and Corollary 5.6, pp. 1026–1028, for the reductive O_F-model case).",
+      "supplier": "BunGAndNewtonStrata",
+      "section": "§1.21 (required equal-characteristic cell-closure comparison)"
+    },
+    {
+      "slug": "levi-intersection-dimension",
+      "needs": "For an unramified reductive O_F-model, a standard Levi M, dominant μ and μ_M∈S_M(μ), put Σ(μ)={λ∈X_*(T): dom_G(λ)≤_ℤμ} and let Σ(μ)^(M-max) be the set of maximal elements of Σ(μ)∩X_*(T)^(M-dom) for the integral M-coroot order ≤_M; then d(μ,μ_M) ≤ 〈ρ,μ+μ_M〉 − 〈2ρ_M,μ_M〉, with equality when μ_M∈Σ(μ)^(M-max), on compatible classical and perfect models (ham15, Definition 2.5(3), Lemmas 2.6 and 2.8, arXiv v2, PDF pp. 4–5).",
+      "supplier": "GeometricSatakeAndFusion",
+      "section": "GS1, semi-infinite-affineness"
+    },
+    {
+      "slug": "twisted-affine-cocenter",
+      "needs": "For the equal-parameter extended-affine datum with based σ, the cocenter over ℤ[v,v⁻¹] in the normalized basis T_w=v^(−ℓw)U_w, q=v² and T_s²=(v−v⁻¹)T_s+1, its minimal-σ-class basis, class polynomials in ℕ[z] with z=v−v⁻¹ and degree in z, and their degree recursion.",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "SR.1.5 (required normalized twisted-cocenter extension)"
     }
   ],
   "restructure": [

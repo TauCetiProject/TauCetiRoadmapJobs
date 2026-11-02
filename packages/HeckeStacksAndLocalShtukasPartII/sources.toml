@@ -1,0 +1,269 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HeckeStacksAndLocalShtukasPartII"
+
+[[source]]
+id = "he15"
+authors = "Xuhua He"
+title = "Hecke algebras and p-adic groups"
+year = 2015
+arxiv = "1511.01386v3"
+locator_scheme = "section"
+locator = "Theorem 2.23, PDF p. 34; §2.9.4 and Theorem 2.27, pp. 36–37; Theorem 2.30, p. 38; Theorem 2.31, PDF p. 39."
+url = "https://arxiv.org/abs/1511.01386v3"
+fetched_from = "https://arxiv.org/pdf/1511.01386v3"
+fetched_at = "2026-10-24T09:55:25Z"
+sha256 = "f6170c52ce24599a5b1b6d7991ae9c9b98a8be8e5cf8753b9a335e74d3fe3cdc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v3"
+cited_for = ["§0.3", "§1.3", "§3.9", "§4.3", "§4.6", "§7.4", "§8.3"]
+
+[[source]]
+id = "gh10"
+authors = "Ulrich Goertz, Xuhua He"
+title = "Dimensions of affine Deligne-Lusztig varieties in affine flag varieties"
+year = 2010
+arxiv = "1006.2291v1"
+locator_scheme = "section"
+locator = "§§2.4–2.5, PDF pp. 6–10; Lemma 2.5.1, Proposition 2.5.2 and Corollary 2.5.3; Lemma 2.6.1, PDF p. 10."
+url = "https://arxiv.org/abs/1006.2291v1"
+fetched_from = "https://arxiv.org/pdf/1006.2291v1"
+fetched_at = "2026-10-24T09:55:31Z"
+sha256 = "8b1261cfaf3e37dc4b10ee643ad2836c741daf5cef0347b0268a9d7ee17883c8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v1"
+cited_for = ["§1.2", "§6.1", "gap:demazure-product", "gap:parabolic-root-length"]
+
+[[source]]
+id = "ghn15"
+authors = "Ulrich Goertz, Xuhua He, Sian Nie"
+title = "P-alcoves and nonemptiness of affine Deligne-Lusztig varieties"
+year = 2012
+arxiv = "1211.3784v1"
+locator_scheme = "section"
+locator = "Theorems A and B, PDF p. 3; Corollary 2.2.2, PDF p. 7; §3.3 and Theorem 3.3.1, pp. 10–11; §§3.5–3.6, pp. 13–15."
+url = "https://arxiv.org/abs/1211.3784v1"
+fetched_from = "https://arxiv.org/pdf/1211.3784v1"
+fetched_at = "2026-10-24T09:56:34Z"
+sha256 = "c2293924bff455023796da17c56de70dea547d0e1b6dc41f06ab4216aca135f0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v1"
+cited_for = ["§3.2", "§7.1", "§7.2", "§7.3", "§7.5", "§8.3"]
+
+[[source]]
+id = "ghnerr"
+locator_scheme = "section"
+locator = "Entire erratum, pp. 1–3; Propositions 0.0.1 and 0.0.2."
+url = "https://www.esaga.uni-due.de/f/ulrich.goertz/pdf/Erratum-GHN.pdf"
+fetched_from = "https://www.esaga.uni-due.de/f/ulrich.goertz/pdf/Erratum-GHN.pdf"
+fetched_at = "2026-10-24T09:56:35Z"
+sha256 = "cf7efbf887e8202c7efd7590e2eebd85c93c89bea81c26fa39a80af8082399c0"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["§3.2", "§7.2"]
+authors = "Ulrich Görtz, Xuhua He and Sian Nie"
+title = "Erratum to P-alcoves and nonemptiness of affine Deligne–Lusztig varieties"
+year = "undated"
+
+[[source]]
+id = "ghkr06"
+authors = "Ulrich Goertz, Thomas J. Haines, Robert E. Kottwitz, Daniel C. Reuman"
+title = "Dimensions of some affine Deligne-Lusztig varieties"
+year = 2005
+arxiv = "math/0504443v1"
+locator_scheme = "section"
+locator = "Propositions 5.3.1–5.3.2 and proof, equation (5.3.4), PDF pp. 19–21; Lemma 5.4.3, pp. 27–28; Corollary 5.4.4, Proposition 5.6.1 and Theorem 5.8.1 with proofs, pp. 29–32."
+url = "https://arxiv.org/abs/math/0504443v1"
+fetched_from = "https://arxiv.org/pdf/math/0504443v1"
+fetched_at = "2026-10-24T09:56:41Z"
+sha256 = "bd8387fb533dd8340921e6e89b4004c86ce255b06bdcfa865a35addada7e6943"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v1"
+cited_for = ["§3.1", "§3.4", "gap:unipotent-linearization"]
+
+[[source]]
+id = "vie06"
+authors = "Eva Viehmann"
+title = "The dimension of some affine Deligne-Lusztig varieties"
+year = 2006
+arxiv = "math/0510385v2"
+locator_scheme = "section"
+locator = "§§1–5, PDF pp. 1–12; definitions, lattice chart proof, Proposition 5.2 and entire proof of Theorem 5.3."
+url = "https://arxiv.org/abs/math/0510385v2"
+fetched_from = "https://arxiv.org/pdf/math/0510385v2"
+fetched_at = "2026-10-24T09:56:46Z"
+sha256 = "73de6d27413fbf83a908583306470166594d96753e9362a3c4fa3e47c8ea911c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Read arXiv:math/0510385v2; PDF pagination is used, independently of the published 2006 pagination."
+cited_for = ["§2.1", "§2.2", "§2.3", "§2.4", "§2.5"]
+
+[[source]]
+id = "ckv15"
+authors = "Miaofen Chen, Mark Kisin, Eva Viehmann"
+title = "Connected components of affine Deligne-Lusztig varieties in mixed characteristic"
+year = 2013
+venue = "Compositio Mathematica 151 (2015) 1697-1762"
+doi = "10.1112/S0010437X15007253"
+arxiv = "1307.3845v2"
+locator_scheme = "section"
+locator = "Lemma 3.1.1 and proof, PDF pp. 20–21; Proposition 3.3.1, PDF p. 24, for the boundary audit only."
+url = "https://arxiv.org/abs/1307.3845v2"
+fetched_from = "https://arxiv.org/pdf/1307.3845v2"
+fetched_at = "2026-10-24T09:57:51Z"
+sha256 = "715c628980850c698445eb7a472ab7aa7b933d61e9ba4ddddf76b82eddd79cfd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "arXiv v2"
+cited_for = ["§3.3"]
+
+[[source]]
+id = "hn14"
+locator_scheme = "section"
+locator = "Proposition 2.7, PDF p. 10; Theorem 2.9 and Corollary 2.10, PDF pp. 10–11; class-polynomial Theorem 5.3, PDF pp. 25–26; cocenter basis Theorem 6.7, PDF p. 29"
+url = "https://archive.ymsc.tsinghua.edu.cn/pacm_download/315/8989-affmin-2.pdf"
+fetched_from = "https://archive.ymsc.tsinghua.edu.cn/pacm_download/315/8989-affmin-2.pdf"
+fetched_at = "2026-10-24T09:58:00Z"
+sha256 = "370abc45c00d91279f69d115ba10da758a23dfe3b56d1245d0a5370372807e09"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["gap:twisted-redmin", "gap:straight-finite-parabolic", "gap:twisted-affine-cocenter"]
+authors = "Xuhua He and Sian Nie"
+title = "Minimal length elements of extended affine Weyl groups"
+year = 2014
+
+[[source]]
+id = "he21"
+locator_scheme = "section"
+locator = "§§1–6, pp. 1–14; closure notation on p. 7 checked on the page image."
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/5A27DBF48CAEF6DA56A313061848574C/S205050862100010Xa.pdf/cordial-elements-and-dimensions-of-affine-deligne-lusztig-varieties.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/5A27DBF48CAEF6DA56A313061848574C/S205050862100010Xa.pdf/cordial-elements-and-dimensions-of-affine-deligne-lusztig-varieties.pdf"
+fetched_at = "2026-10-24T09:59:47Z"
+sha256 = "d53843f0c8875cf1e14173ad271e025bd30f177fe319a7d83926629d454683dd"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["gap:dominant-subtraction", "gap:newton-cell-greatest", "§0.1", "§0.2", "§0.3", "§0.4", "§0.5", "§0.6", "§1.1", "§1.2", "§1.4", "§3.9", "§4.1", "§4.2", "§4.3", "§4.4", "§4.5", "§4.6", "§4.7", "§5.1", "§5.2", "§6.1", "§6.2", "§6.3", "§6.4", "§7.1", "§7.2", "§7.3", "§7.4", "§7.5", "§7.6", "§8.1", "§8.2", "§8.3", "§8.4"]
+authors = "Xuhua He"
+title = "Cordial elements and dimensions of affine Deligne–Lusztig varieties"
+year = 2021
+doi = "10.1017/fmp.2021.10"
+
+[[source]]
+id = "zhu17"
+locator_scheme = "section"
+locator = "§3.1, pp. 455–460; Lemma 1.22 and Proposition 1.23, p. 428; Proposition 2.3, p. 432; Definition A.13, Proposition A.15 and Corollary A.16, pp. 471–472.; Proposition A.17 and proof, pp. 472–473; Appendix A.3.4, pp. 480–481, trace input and its hypotheses."
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v185-n2-p02-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v185-n2-p02-p.pdf"
+fetched_at = "2026-10-24T09:59:49Z"
+sha256 = "5d50b415048f3a5ad14bccf1c8da83fc5a680fcf13b60911ca269daa474431a7"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["§0.4", "§0.5", "§2.3", "§2.4", "§2.5", "§3.1", "§3.2", "§3.3", "§3.4", "§3.5", "§3.6", "§3.7", "§3.8"]
+authors = "Xinwen Zhu"
+title = "Affine Grassmannians and the geometric Satake in mixed characteristic"
+year = 2017
+doi = "10.4007/annals.2017.185.2.2"
+
+[[source]]
+id = "he14"
+locator_scheme = "section"
+locator = "§§1–2, pp. 371–376; Theorem 4.8 and proof, pp. 382–383; §6, pp. 387–388; Theorem 7.1 and proof, pp. 389–390; §§10–12, pp. 395–402."
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v179-n1-p06-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v179-n1-p06-p.pdf"
+fetched_at = "2026-10-24T09:59:50Z"
+sha256 = "372c913d305f2b9d5f285cfe830d00f5ad3fd98242e31a54991fbf2474b72cbf"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["§0.1", "§0.4", "§0.5", "§0.6", "§1.1", "§1.3", "§3.9", "§4.1", "§7.4", "§8.3", "gap:twisted-redmin", "gap:straight-finite-parabolic", "gap:finite-coxeter-basic-class", "gap:twisted-affine-cocenter"]
+authors = "Xuhua He"
+title = "Geometric and homological properties of affine Deligne–Lusztig varieties"
+year = 2014
+doi = "10.4007/annals.2014.179.1.6"
+
+[[source]]
+id = "mv20"
+authors = "Elizabeth Milićević, Eva Viehmann"
+title = "Generic Newton points and the Newton poset in Iwahori double cosets"
+year = 2019
+arxiv = "1902.02415v3"
+locator_scheme = "section"
+locator = "Remark 1.3, PDF p. 3; Definition 3.1 and Lemma 3.2, PDF p. 5; Definitions 3.3 and 3.7 and Corollary 3.6, PDF p. 6; Theorem 3.10 and Corollary 3.11, PDF p. 7; Corollary 3.12 and Definition 3.14, PDF p. 8; Theorem 3.16 and Corollary 3.17 with proof, PDF pp. 8–9"
+url = "https://arxiv.org/abs/1902.02415v3"
+fetched_from = "https://arxiv.org/pdf/1902.02415v3"
+fetched_at = "2026-10-24T09:59:54Z"
+sha256 = "cac23ba66e8eddd933a6bb8e41da965cfbed8a554ab4c866f6d0847de41bc97b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Read arXiv:1902.02415v3; Definition 3.14 is on PDF p. 8 and Theorem 3.16/Corollary 3.17 on PDF pp. 8–9; published in 2020 under the same theorem numbers."
+cited_for = ["§1.3", "§4.2", "§4.3", "§4.4", "§4.6", "gap:newton-poset-length", "gap:newton-cell-strong-purity", "gap:newton-cell-greatest"]
+doi = "10.1017/fms.2020.46"
+
+[[source]]
+id = "vie14"
+locator_scheme = "section"
+locator = "Introduction and conventions, pp. 1009–1011; Proposition 5.5 and Corollary 5.6 with proof, pp. 1026–1028."
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v179-n3-p03-p.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v179-n3-p03-p.pdf"
+fetched_at = "2026-10-24T10:00:57Z"
+sha256 = "453cba0430ce4b94d51ea1e7eb3cf74ba11102d7f624b2fa739cc681b4709bf1"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-24"
+cited_for = ["§4.2", "gap:newton-cell-greatest"]
+authors = "Eva Viehmann"
+title = "Truncations of level 1 of elements in the loop group of a reductive group"
+year = 2014
+doi = "10.4007/annals.2014.179.3.3"
+
+[[source]]
+id = "ham15"
+authors = "Paul Hamacher"
+title = "The dimension of affine Deligne-Lusztig varieties in the affine Grassmannian of unramified groups"
+year = 2013
+venue = "Int. Math. Res. Not. IMRN 2015 , no. 23, 12804-12839"
+doi = "10.1093/imrn/rnv081"
+arxiv = "1312.0486v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1, PDF p. 2; Definitions 2.5 and 2.7, Lemmas 2.6 and 2.8 and Proposition 2.9, PDF pp. 4–6; reduction after Proposition 2.10, PDF pp. 6–7"
+url = "https://arxiv.org/abs/1312.0486v2"
+fetched_from = "https://arxiv.org/pdf/1312.0486v2"
+fetched_at = "2026-10-24T10:02:17Z"
+sha256 = "5146e6e678e857b96f2eff49057564c3f76e62d7259a7cda85465c1b5bd26f4c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-24"
+version_note = "Read arXiv:1312.0486v2, PDF pp. 1–7 for the cited results; published DOI 10.1093/imrn/rnv081 has a shortened title and different page numbers; published pagination is not used for the extracted text."
+cited_for = ["§3.2", "§3.4", "§3.8"]
+
+[[source]]
+id = "ham17"
+authors = "Paul Hamacher"
+title = "The almost product structure of Newton strata in the deformation space of a Barsotti-Tate group with crystalline Tate tensors"
+year = 2017
+arxiv = "1601.03131v3"
+locator_scheme = "section"
+locator = "Definition 2.1(3), arXiv v3, PDF p. 4; Corollary 2.7, PDF p. 6"
+url = "https://arxiv.org/abs/1601.03131v3"
+fetched_from = "https://arxiv.org/pdf/1601.03131v3"
+fetched_at = "2026-10-25T05:28:19Z"
+sha256 = "99d284f9aa1bbd361ab150bb647d8f9d69097d1198792565c0c0aff2e3e3a102"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Read arXiv:1601.03131v3, Definition 2.1(3) and Corollary 2.7; these version locators replace the differently numbered Proposition 1 cited by mv20."
+cited_for = ["gap:newton-cell-strong-purity"]
