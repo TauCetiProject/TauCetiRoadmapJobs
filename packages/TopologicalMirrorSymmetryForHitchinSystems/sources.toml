@@ -1,0 +1,71 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "TopologicalMirrorSymmetryForHitchinSystems"
+
+[[source]]
+id = "GWZ20"
+authors = "Michael Groechenig, Dimitri Wyss, Paul Ziegler"
+title = "Mirror symmetry for moduli spaces of Higgs bundles via p-adic integration"
+year = 2020
+doi = "10.1007/s00222-020-00957-8"
+locator_scheme = "theorem"
+locator = "Definitions 2.2–2.16; Theorems 2.15, 2.18–2.19; Corollary 5.29; Sections 6–7, pp.565–594"
+url = "https://link.springer.com/content/pdf/10.1007/s00222-020-00957-8.pdf"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layers 0–5"]
+
+[[source]]
+id = "HT03"
+authors = "Tamas Hausel, Michael Thaddeus"
+title = "Mirror symmetry, Langlands duality, and the Hitchin system"
+year = 2002
+doi = "10.1007/s00222-003-0286-7"
+arxiv = "math/0205236v1"
+locator_scheme = "theorem"
+locator = "Section 3, Propositions 3.2, 3.6; preprint numbered pp.8–13"
+url = "https://arxiv.org/abs/math/0205236v1"
+fetched_from = "https://arxiv.org/pdf/math/0205236v1"
+fetched_at = "2026-10-25T09:58:49Z"
+sha256 = "aac3a1aad8513b1fc867b2d2619263e06cbfce3505b1418cc8f3c2283cb42d69"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators use arXiv v1 and numbered preprint pages, not journal page numbers."
+cited_for = ["Layers 1, 4, 5"]
+
+[[source]]
+id = "ITO04"
+authors = "Tetsushi Ito"
+title = "Stringy Hodge numbers and p-adic Hodge theory"
+year = 2002
+arxiv = "math/0211378v3"
+locator_scheme = "theorem"
+locator = "Lemma 4.3; Proposition 5.1; Definitions 5.2–5.3; preprint pp.12–16"
+url = "https://arxiv.org/abs/math/0211378v3"
+fetched_from = "https://arxiv.org/pdf/math/0211378v3"
+fetched_at = "2026-10-25T09:59:18Z"
+sha256 = "a6c29d80b7d7321f8baa49298ff30c496a86661ac84e64fff735c683336a3a0b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators use arXiv v3 and numbered preprint pages, not journal page numbers."
+cited_for = ["Layer 0"]
+
+[[source]]
+id = "BITTNER04"
+authors = "Franziska Bittner"
+title = "The universal Euler characteristic for varieties of characteristic zero"
+year = 2001
+arxiv = "math/0111062v1"
+locator_scheme = "theorem"
+locator = "Section 7, Lemma 7.1; preprint numbered p.18"
+url = "https://arxiv.org/abs/math/0111062v1"
+fetched_from = "https://arxiv.org/pdf/math/0111062v1"
+fetched_at = "2026-10-25T09:59:40Z"
+sha256 = "484d2c3586977503dc6f1b43fca158af059cd0f9c5322731d0ebae6d643e160c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Locators use arXiv v1 and numbered preprint pages, not journal page numbers."
+cited_for = ["Layer 0"]

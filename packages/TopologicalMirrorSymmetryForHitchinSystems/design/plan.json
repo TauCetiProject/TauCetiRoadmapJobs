@@ -3759,193 +3759,82 @@
   ],
   "gaps": [
     {
-      "id": "G-ETII",
-      "title": "Generic integration supplier and two proof repairs",
-      "neededBy": [
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.0/character-realizations",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.0/stringy-invariants",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.0/twisted-stringy-invariants",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.0/stringy-comparison",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.2/abstract-hitchin-system",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.2/dual-hitchin-pair",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.2/compatible-gauge-forms",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.2/twisted-integral",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.2/local-mirror-integral",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.2/arithmetic-mirror",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.2/abstract-mirror",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.4/hausel-thaddeus-gerbes",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.4/sl-pgl-dual-pair",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.5/main-mirror",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.5/fibre-virtual-characters",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.5/sector-variation",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.5/isotypic-mirror"
-      ],
-      "detail": "Register the coalesced ET Part II contract SC-ETII and discharge its generic integration/transgression exports. In particular compare generic splitting cocycles with special-fibre inertia (inherited E15) and prove the μr version with the admissibility bound μ_(r|Γ|), not the stronger μ_(e²) used in the cited proof (E16). Keep action-groupoid descent, tame-generator orientation, unramified enlargement, weighted stack counts and the corrected μr Kummer term throughout. These generic targets are imported here, not replanned.",
-      "status": "open",
-      "closure": "Not claimed; exact supplier or proof obligation remains."
+      "slug": "geometric-compact-mhs",
+      "needs": "Provide functorial compact-support geometric mixed Hodge structures for separated complex varieties and finite-monodromy local systems, strict localization and Künneth, finite-group projectors, SNC descent and comparison with the abstract mixed-Hodge carrier.",
+      "supplier": "HodgeStructures",
+      "section": "Core definitions; Layers L2–L3"
     },
     {
-      "id": "G-MHS",
-      "title": "Geometric mixed Hodge structures and local systems",
-      "neededBy": [
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.0/character-realizations",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.0/equivariant-katz",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.0/fractional-katz",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.0/stringy-invariants",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.0/twisted-stringy-invariants",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.0/stringy-comparison",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.2/abstract-mirror",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.4/hodge-degree-independence",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.5/main-mirror",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.5/canonical-hodge-numbers"
-      ],
-      "detail": "Register SC-MHS in the separate HodgeStructures Part III direction and construct geometric compact-support MHS with finite-group projectors, strictness, Künneth and SNC localization. The pinned abstract MHS carrier does not supply geometric cohomology. Finite-monodromy local-system MHS must descend from its torsor cover.",
-      "status": "open",
-      "closure": "Not claimed; exact supplier or proof obligation remains."
+      "slug": "unitary-splitting-families",
+      "needs": "Provide the rank-one flat-unitary-line/Pic0 equivalence in smooth projective complex families and its coherent action on the common finite splitting torsor.",
+      "supplier": "HodgeStructures",
+      "section": "Relation to sibling roadmaps; weight-one instances"
     },
     {
-      "id": "G-Groth",
-      "title": "Equivariant blow-up presentation",
-      "neededBy": [
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.0/fractional-lefschetz",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.0/equivariant-katz",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.0/fractional-katz",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.0/stringy-comparison",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.2/abstract-mirror",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.5/main-mirror"
-      ],
-      "detail": "LD.3 must supply Bittner’s characteristic-zero equivariant presentation, using actual equivariant resolution/compactification and weak factorization. Specify good finite-group actions; distinguish the scissor Grothendieck ring from its further representation quotient. The fixed χ E-map is additive, with character convolution for products, so no false ring realization closes this input.",
-      "status": "open",
-      "closure": "Not claimed; exact supplier or proof obligation remains."
+      "slug": "generic-orbifold-transgression",
+      "needs": "Extend AlgebraicModuliForArithmeticGeometry §4.5 quotient inertia and coherent gerbe transgression, using the finite-quotient stack trace contract, by tangent age and normalized orbifold integration, the μ_(r|Γ|) Hasse and band-change comparison, integral-to-special-fibre cocycle compatibility, and arithmetic descent with Frobenius sector permutation for nonsplit finite étale commutative acting group schemes.",
+      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+      "section": "3.10, 3.16"
     },
     {
-      "id": "G-HT",
-      "title": "Equivariant and fractional Hodge–Tate realization",
-      "neededBy": [
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.0/equivariant-katz",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.0/finite-tate-roots",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.0/fractional-katz",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.0/stringy-comparison",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.2/abstract-mirror",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.5/main-mirror"
-      ],
-      "detail": "Extend CP.3 as requested, including finite-group χ-projectors, number-field specialization in the chosen complex connected component, and Ito’s generalized fractional Hodge–Tate multiplicities. Finite-denominator Tate roots use ℓ prime to the common denominator on R′[1/ℓ]. Weight overlaps justify a virtual equality and additive period calculation, not a claimed actual graded isomorphism.",
-      "status": "open",
-      "closure": "Not claimed; exact supplier or proof obligation remains."
+      "slug": "equivariant-grothendieck",
+      "needs": "Provide the good-finite-group equivariant scissor ring and characteristic-zero equivariant Bittner presentation from equivariant compactification and weak factorization, distinguishing its further representation quotient and additive character realizations.",
+      "supplier": "LogicAndDefinabilityInNumberTheory",
+      "section": "Layer 3 (motivic functions, integration and transfer)"
     },
     {
-      "id": "G-unitary",
-      "title": "Family comparison with unitary principal splittings",
-      "neededBy": [
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.1/unitary-splitting-comparison"
-      ],
-      "detail": "Extend HodgeStructuresPartII:H.1 to the rank-one arbitrary-degree-zero and family-coherent comparison required by Remark6.6. A fibrewise correspondence on isomorphism classes alone does not identify the splitting torsor and its Picτ action in families.",
-      "status": "open",
-      "closure": "Not claimed; exact supplier or proof obligation remains."
+      "slug": "fractional-equivariant-hodge-tate",
+      "needs": "Provide finite-group-equivariant smooth-proper number-field Hodge–Tate comparison, constancy of character Hodge numbers on a smooth connected complex base and Ito additive rational-period multiplicities for finite sets of fractional twists.",
+      "supplier": "CohomologyComparisons",
+      "section": "2.15"
     },
     {
-      "id": "G-local",
-      "title": "Equal-characteristic local Tate duality",
-      "neededBy": [
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.2/equal-fibre-volumes",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.2/local-mirror-integral",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.2/arithmetic-mirror",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.2/abstract-mirror",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.5/main-mirror",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.5/fibre-virtual-characters",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.5/sector-variation",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.5/isotypic-mirror"
-      ],
-      "detail": "The checked R02.4 abelian local-duality and isogeny-index node statements are characteristic zero. The finite-field arithmetic proof spreads to k[[t]] and therefore needs their prime-to-p equal-characteristic extensions, including μr-gerbe/torsor characters. Retain this missing export instead of quietly invoking a p-adic-only theorem.",
-      "status": "open",
-      "closure": "Not claimed; exact supplier or proof obligation remains."
+      "slug": "equal-characteristic-abelian-duality",
+      "needs": "Extend the normalized abelian local Tate pairing, gerbe evaluation, isogeny connecting-map adjunction and self-dual prime-to-p index formula to equal-characteristic local fields k((t)).",
+      "supplier": "ArithmeticGaloisDuality",
+      "section": "D7.6"
     },
     {
-      "id": "G-moduli",
-      "title": "Relative Higgs geometry and abstract-system certificate",
-      "neededBy": [
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.3/stable-fixed-determinant",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.3/smooth-stable-moduli",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.3/proper-hitchin",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.3/spectral-norm-fibre",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.3/pgl-prym",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.3/regular-hitchin-certificate",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.4/gl-degree-independence",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.4/sl-degree-independence"
-      ],
-      "detail": "Extend the ET.2b/CB.7 carriers to the stated relative general-D stable chosen-determinant families and prove relative properness by the actual Higgs-moduli existence/properness input. Mapping-stack algebraicity and finite quotient geometry alone do not prove it. Represent the spectral norm/Prym families and verify connectedness, generic freeness and the codimension-two locus; preserve the conditions after every used base change. Nitsure/Faltings proofs have not been checked directly in this run.",
-      "status": "open",
-      "closure": "Not claimed; exact supplier or proof obligation remains."
+      "slug": "relative-picard-norm-duality",
+      "needs": "Provide the Pic0 identification of relative Picτ with the dual abelian scheme on abelian-scheme torsors, norm-pullback Poincaré duality and represented spectral norm kernels and finite quotients with the required smoothness and base change.",
+      "supplier": "AbelianSchemesAndArithmeticModuli",
+      "section": "A2.2–A2.3; A3.3–A3.7"
     },
     {
-      "id": "G-lowgenus",
-      "title": "Full genus range of the published main theorem",
-      "neededBy": [
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.3/spectral-norm-fibre",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.3/pgl-prym",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.3/prym-duality",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.3/regular-hitchin-certificate",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.3/spectral-torsor-calculus",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.4/gl-degree-independence",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.4/sl-degree-independence",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.4/hodge-degree-independence",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.4/ht-splitting-duality",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.4/local-brauer-splitting",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.4/sl-pgl-dual-pair",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.5/main-mirror",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.5/canonical-hodge-numbers",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.5/fibre-virtual-characters",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.5/sector-variation",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.5/isotypic-mirror"
-      ],
-      "detail": "For genus one with D=ω and n>1, distinct constant generic Higgs eigenvalues force a decomposition and prevent stability, so the blanket generic smooth-spectral stable-torsor and generic-free certificates cannot be assumed. Supply separate low-genus invariant calculations, or a corrected abstract-system certificate for the actual nonempty locus, as well as the genus-zero empty cases. This gate preserves the full published target; it does not assert that mirror symmetry fails.",
-      "status": "open",
-      "closure": "Not claimed; exact supplier or proof obligation remains."
+      "slug": "relative-higgs-git-properness",
+      "needs": "Provide relative stable general-D Higgs parameter spaces and GIT coarse moduli for projective smooth curve families, with separatedness, quasiprojectivity, semistable Hitchin properness, relative deformation theory and liftability of curves and chosen line bundles.",
+      "supplier": "AlgebraicModuliForArithmeticGeometry",
+      "section": "2.1–2.2; 7.3; 8.2"
     },
     {
-      "id": "G-HT-descent",
-      "title": "Arithmetic descent of Hausel–Thaddeus gerbes",
-      "neededBy": [
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.4/hausel-thaddeus-gerbes",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.4/ht-splitting-duality",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.4/local-brauer-splitting",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.4/sl-pgl-dual-pair",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.5/main-mirror"
-      ],
-      "detail": "HT03 Propositions3.2/3.6 prove the complex torsor comparison. Construct the algebraic μn-gerbes and their coherent Γ-action/descent over the chosen arithmetic model, and prove the tensor-power/determinant dependence L′=L^a, ad≡e mod n. Check arithmetic μn-neutrality and both opposite principal-splitting torsors with the normalized Poincaré pairing. Mutatis mutandis is not used as a formal proof.",
-      "status": "open",
-      "closure": "Not claimed; exact supplier or proof obligation remains."
+      "slug": "smooth-stack-hartogs",
+      "needs": "Extend an invertible-sheaf trivialization uniquely across a complement of codimension at least two on a smooth normal locally noetherian algebraic stack, compatibly with restriction to smooth charts.",
+      "supplier": "AlgebraicModuliForArithmeticGeometry",
+      "section": "7.3 (stack descent of SchemeAndStackFoundations §0.6 Hartogs)"
     },
     {
-      "id": "G-Kummer",
-      "title": "Literal μn-neutrality stronger than the supplied Brauer proof",
-      "neededBy": [
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.2/dual-hitchin-pair"
-      ],
-      "detail": "The published Definition6.9(d)/Lemma7.19 are worded for splitting μn-gerbes, whereas Lemma6.5 and the displayed argument establish only triviality of their Gm images. A Pic/r obstruction can remain. The sufficient local-Brauer dual-pair definition in this packet proves the invariant comparison without that stronger assertion; any claim of the literal original condition needs a separate Kummer/Picard argument.",
-      "status": "open",
-      "closure": "Not claimed; exact supplier or proof obligation remains."
+      "slug": "relative-hitchin-picard",
+      "needs": "Extend Higgs stacks, spectral module equivalence, regular centralizers, relative Picard actions and codimension estimates to the noetherian smooth-curve general-D stable fixed-determinant families and singular spectral fibres used here.",
+      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+      "section": "3.6–3.14"
     },
     {
-      "id": "G-Higgs-purity",
-      "title": "Higgs and twisted-sector purity with Hodge realization",
-      "neededBy": [
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.4/hodge-degree-independence",
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.5/canonical-hodge-numbers"
-      ],
-      "detail": "CB.9 must extend canonical GL purity to fixed determinant, to the stated general-D semiprojective families for degree independence, and to finite-order canonical fixed loci and their finite torsor covers. Prove compatibility with compact-support MHS and character projectors. For the canonical corollary also verify the Γ-invariant symplectic structure and integral age codim/2 so the alternating sign survives its even degree shift.",
-      "status": "open",
-      "closure": "Not claimed; exact supplier or proof obligation remains."
+      "slug": "higgs-sector-purity",
+      "needs": "Extend canonical GL Higgs purity to complex general-D semiprojective fixed-determinant spaces and canonical finite-order fixed loci with their finite splitting-torsor covers, compatibly with geometric mixed Hodge structures and character projectors.",
+      "supplier": "CountingBundlesAndHallAlgebrasOfCurves",
+      "section": "9.1"
     },
     {
-      "id": "G-Galois",
-      "title": "Actual cohomological Galois isomorphism",
-      "neededBy": [
-        "TopologicalMirrorSymmetryForHitchinSystems:TMS.5/strong-fibre-isomorphism"
-      ],
-      "detail": "Theorem7.23’s stated abstract representation isomorphism needs arithmetic semisimplicity and a valid separation of cohomological degrees, or a geometric comparison. All Frobenius power traces prove only virtual-character equality. Pure complexes need not have pure ordinary-degree stalks, and I₂ versus a nontrivial unipotent Jordan block are equal-trace pure weight-zero continuous representations with different fixed-space dimensions. This is a proof gap, not a counterexample to these particular fibres.",
-      "status": "open",
-      "closure": "Not claimed; exact supplier or proof obligation remains."
+      "slug": "finite-quotient-stack-trace",
+      "needs": "Provide bounded compact cohomology with characteristic-zero ℓ-adic coefficients, ℓ invertible, proper base change and geometric-Frobenius trace for finite-monodromy sheaves on quotients of separated finite-type schemes by finite étale group schemes, including stabilizer orders divisible by the residue characteristic, with every rational torsor class weighted by its reciprocal automorphism order.",
+      "supplier": "EtaleDualityAndPerverseSheaves",
+      "section": "3.7; 6.3–6.4"
+    },
+    {
+      "slug": "relative-gerbe-splitting-representability",
+      "needs": "Provide algebraic relative stacks of Gₘ- and μr-neutralizations for arithmetic gerbes on proper geometrically connected degree-zero-cohomologically-flat families in the Picard representability domain, with r invertible for μr, the Picard-stack or μr-torsor-stack action, algebraic-space representability of rigidified Pic[r]-torsors and base change, using the existing gerbe and rigidification APIs.",
+      "supplier": "AlgebraicModuliForArithmeticGeometry",
+      "section": "4.1–4.3; 5.1; 7.3; 7.6.1"
     }
   ],
   "sourceIssues": [
