@@ -5824,20 +5824,66 @@
  ],
  "gaps": [
   {
-   "title": "Completed residue fields of a general universal homeomorphism",
-   "neededBy": [
-    "DiamondsAndVStacksPartII:D7/universal-homeomorphism-invariance"
-   ],
-   "detail": "Scholze–Weinstein (§10.2, p. 77) assert without proof that in characteristic 0 a universal homeomorphism of analytic adic spaces induces isomorphisms of completed residue fields. This packet proves it for finite morphisms of adic spaces locally of finite type over a nonarchimedean field (D7/residue-fields-of-finite-universal-homeomorphisms), which covers seminormalization and cuspidal normalization (general normalizations need not be universal homeomorphisms), and states SW20 Proposition 10.2.1 under the residue-field hypothesis. The general assertion for arbitrary analytic pre-adic spaces over Spa Q_p needs an argument that a nontrivial extension of complete nonarchimedean fields K(x)/K(x') produces several points after base change to a completed algebraic closure; no source proof was found."
+    "slug": "completed-etale-lifts",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "§0.14 / §0.23a",
+    "needs": "For an integral perfectoid ring R⁺ and pseudouniformizer ϖ, supply effective and unique completed formally étale lifts of quasicompact separated étale reduction data, compatibly with nil-ideal invariance, perfection, localization and gluing."
   },
   {
-   "title": "Closed specializations in the unrestricted component criterion",
-   "neededBy": [
-    "DiamondsAndVStacksPartII:D11/connected-components-theorem"
-   ],
-   "detail": "The passage to a common closed specialization in Gleason Lemma 4.55, p. 38, is not justified by Definition 4.52, which only requires the underlying reduction space to be locally noetherian. A perfect scheme can have locally noetherian topology without closed points: remove the closed point from the spectrum of a perfect valuation ring whose prime ideals form an infinite ascending chain with a maximal limit. Its remaining points have finite-chain open neighborhoods. This is a counterexample to the topological inference, not a constructed counterexample to the kimberlite theorem. The packet proves the theorem with an explicit closed-specialization condition. Derive that condition from the other kimberlite axioms, or supply a proof in their absence, before asserting the printed generality."
+    "slug": "mixed-characteristic-weak-normality",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "§0.26",
+    "needs": "For a reduced excellent ring A flat over a mixed-characteristic complete DVR, prove that weak normality excludes every proper finite birational universal homeomorphism from a reduced scheme, compatibly with localization and completion at closed points."
+  },
+  {
+    "slug": "finite-geometric-fibre-radiciality",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "§0.26",
+    "needs": "For a finite surjection Y → X of finite-type schemes over an algebraically closed field k, prove that singleton geometric fibres over all closed points imply universal injectivity, hence a universal homeomorphism."
+  },
+  {
+    "slug": "absolute-weak-normality-formal",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "§0.26",
+    "needs": "Define absolute weak normality of rings and schemes (AGLR Definition 2.12) and supply scheme absolute weak normalization with its universal property, finiteness for excellent rings with characteristic-zero generic fields, and preservation and descent under regular completion and formal localization maps."
+  },
+  {
+    "slug": "completed-residue-fields-general-universal-homeomorphisms",
+    "supplier": "AdicSpacesPartII",
+    "section": "R0.18",
+    "needs": "For arbitrary analytic pre-adic spaces over Spa(ℚ_p,ℤ_p), prove that a universal homeomorphism identifies completed residue fields and their chosen valuation subrings; for every proper extension of complete valued fields K ⊂ L of characteristic zero, its separation input must produce a complete algebraically closed valued extension C/K for which Spa(L,L⁺) ×_(Spa(K,K⁺)) Spa(C,C⁺) has at least two points, with compatible extending valuation subrings, without assuming L/K finite."
+  },
+  {
+    "slug": "finite-residue-and-integral-stalks",
+    "supplier": "AdicSpacesPartII",
+    "section": "R0.13",
+    "needs": "For a finite morphism of analytic adic spaces locally of finite type over a complete nonarchimedean field K, with no residue-characteristic restriction, prove finiteness of completed residue extensions and identify the source valuation subring with the localization of the target valuation subring’s integral closure at the prime selected by the source point; for a unique prolongation this is the integral closure itself."
+  },
+  {
+    "slug": "analytic-integral-stalks-mod-p",
+    "supplier": "AdicSpacesPartII",
+    "section": "R0.18",
+    "needs": "For any analytic pre-adic space X over Spa(ℚ_p,ℤ_p), any point x and integer n ≥ 1, identify the integral stalk O⁺_(X,x)/pⁿ with K(x)⁺/pⁿ naturally in X, using the chosen valuation subring; no finite-type or finite-map assumption is imposed."
+  },
+  {
+    "slug": "pseudorigid-jacobson-flatness",
+    "supplier": "AdicSpacesPartII",
+    "section": "R0.9 / R0.18",
+    "needs": "For a complete Tate O-algebra A admitting a noetherian ring of definition formally of finite type over the complete DVR O, prove that A is Jacobson–Tate and admits an excellent ring of definition, with maximal-support rank-one valuations dense and rational localizations again pseudoaffinoid (LOU17 Propositions 3.3, 4.6)."
+  },
+  {
+    "slug": "noetherian-definition-rational-flatness",
+    "supplier": "AdicSpacesPartII",
+    "section": "R0.18",
+    "needs": "For a complete separated Huber ring A admitting a noetherian ring of definition, prove flatness of the completed rational localization A → A⟨f₁/g,…,fₙ/g⟩ when (g,f₁,…,fₙ) generates an open ideal, including the Tate analytic charts of a non-Tate noetherian adic ring; use the pinned flat_toCompletionLoc for strongly noetherian complete Tate sources, and supply only the missing noetherian-ring-of-definition case."
+  },
+  {
+    "slug": "finite-ideal-formal-schemes",
+    "supplier": "AdicSpacesPartIII",
+    "section": "F0.3 / R2.3",
+    "needs": "Using F0.3's FormalScheme, for formal schemes over ℤ_p locally represented by complete separated I-adic rings A with finitely generated I containing p, without noetherian hypotheses, construct the reduction locally Spec((A/I)_red), independently of I and compatibly with open gluing, and extend R2.3's fully faithful comparison to pre-adic spaces with affine formula Spf A ↦ Spa(A,A), compatibly with open gluing and with R2.3 on locally noetherian objects (GLE Convention 1 and Proposition 4.16; SW13 Proposition 2.2.1)."
   }
- ],
+],
  "sourceIssues": [
   {
    "id": "DiamondsAndVStacksPartII/E1",
