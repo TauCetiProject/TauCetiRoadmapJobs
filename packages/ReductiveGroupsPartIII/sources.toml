@@ -12,6 +12,7 @@ locator = "§1.5; Theorem 2.4; Lemmas 2.5–2.6; §3 p.68"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/464#issuecomment-6399305038"
+cited_for = ["§0.7", "§4.5"]
 
 [[source]]
 id = "Kottwitz82"
@@ -24,3 +25,155 @@ locator = "Corollary 2.2"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/464#issuecomment-6399305038"
+cited_for = ["§4.3"]
+
+[[source]]
+id = "KZ25"
+authors = "Mark Kisin, Rong Zhou"
+title = "Independence of ℓ for Frobenius conjugacy classes attached to abelian varieties"
+year = 2021
+arxiv = "2103.09945v2"
+locator_scheme = "theorem"
+locator = "§5.1.3; Theorem 5.1.4; §5.3.2; Proposition 5.3.5; §5.3.6; §6.1, Lemma 6.1.4; Proposition 6.2.4; §6.2.5; Lemma 6.2.6; Theorem 6.2.7; Remark 6.2.8; §6.3.2; Lemma 6.3.3; Corollary 6.3.4; Remarks 6.3.5"
+url = "https://arxiv.org/abs/2103.09945v2"
+fetched_from = "https://arxiv.org/pdf/2103.09945v2"
+fetched_at = "2026-10-25T23:17:00Z"
+sha256 = "62d26eb931f271404c333c4b9a929e85239222788834cf16dcec1dff230c34c8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2 pagination; published Ann. of Math. 202 (2025)"
+cited_for = ["§0.1", "§0.2", "§0.4", "§0.5", "§0.6", "§1.1", "§1.2", "§1.3", "§1.4", "§1.5", "§1.6", "§4.4", "§5.1", "§5.2", "§5.3", "§5.4", "§5.5", "§5.6", "§5.7", "§5.8", "§5.9"]
+
+[[source]]
+id = "KMPS22"
+authors = "Mark Kisin, Keerthi Madapusi Pera, Sug Woo Shin"
+title = "Honda–Tate theory for Shimura varieties"
+year = 2022
+locator_scheme = "theorem"
+locator = "Lemma 1.2.1; Lemma 1.2.2; Proposition 1.2.5; §2.1.3; §2.1.8; Corollary 2.1.9; §§2.2.1–2.2.3; Lemma 2.2.4; Lemma 2.2.10; Lemma 2.2.11; §2.2.12; Proposition 2.2.13; Corollary 2.2.14; Remarks 2.3.16"
+url = "https://math.berkeley.edu/~swshin/HT.pdf"
+fetched_from = "https://math.berkeley.edu/~swshin/HT.pdf"
+fetched_at = "2026-10-25T23:17:02Z"
+sha256 = "fd22990bc3eff8a726375cf8f0c9015828c39f1c32b0717347a9ef23ce9b52db"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "author PDF of 27 January 2021; published Duke Math. J. 171 (2022)"
+cited_for = ["§0.1", "§0.7", "§2.1", "§2.2", "§2.3", "§2.4", "§2.5", "§3.1", "§3.2", "§3.3", "§3.4", "§3.5", "§3.6", "§3.7", "§3.8", "§4.1", "§4.2", "§4.3", "§4.4", "§4.5", "§4.6"]
+
+[[source]]
+id = "Steinberg65"
+authors = "Robert Steinberg"
+title = "Regular elements of semisimple algebraic groups"
+year = 1965
+locator_scheme = "theorem"
+locator = "§6: Theorem 6.1, Lemmas 6.2–6.3, Corollaries 6.4–6.6, Theorem 6.11"
+url = "https://www.numdam.org/item/PMIHES_1965__25__49_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1965__25__49_0.pdf"
+fetched_at = "2026-10-25T23:17:12Z"
+sha256 = "bda20c4a4b3cf4a7e9e5b17a4eacd0147d0c9370063ab3a3778114a53c8349b9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["§0.2", "§0.3", "§0.4", "§0.5"]
+
+[[source]]
+id = "Kottwitz86"
+authors = "Robert E. Kottwitz"
+title = "Stable trace formula: elliptic singular terms"
+year = 1986
+locator_scheme = "theorem"
+locator = "Proposition 2.6; Theorem 6.6; §§6.7–6.8"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN235181684_0275/LOG_0056.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN235181684_0275/LOG_0056.pdf"
+fetched_at = "2026-10-25T23:19:01Z"
+sha256 = "25b42a3552624b8115f32ea661545842a5271635f48814fe5b07c5baa8ee32fd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["§2.1", "§5.8"]
+
+[[source]]
+id = "Kottwitz90"
+authors = "Robert E. Kottwitz"
+title = "Shimura varieties and λ-adic representations"
+year = 1990
+locator_scheme = "page"
+locator = "§7, p.188"
+url = "https://www.jmilne.org/math/Books/AA1988a.pdf"
+fetched_from = "https://www.jmilne.org/math/Books/AA1988a.pdf"
+fetched_at = "2026-10-26T00:12:57Z"
+sha256 = "ed6ec30fc1f53f7c8ac4276ef449e1cad3ab42457bf5b7ee90a33413345ff96c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["§5.8"]
+
+[[source]]
+id = "LR87"
+authors = "Robert P. Langlands, Michael Rapoport"
+title = "Shimuravarietäten und Gerben"
+year = 1987
+locator_scheme = "theorem"
+locator = "Lemma 5.6"
+url = "https://publications.ias.edu/sites/default/files/shimuravarietaeten-und-gerben_rpl_0.pdf"
+fetched_from = "https://publications.ias.edu/sites/default/files/shimuravarietaeten-und-gerben_rpl_0.pdf"
+fetched_at = "2026-10-25T23:39:00Z"
+sha256 = "ebc39ec814c00aaead16e987750b83c1abb950a8abb36328f65aec178ba30cb8"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "author-hosted retyped text, internal pagination"
+cited_for = ["§4.4"]
+
+[[source]]
+id = "Borovoi98"
+authors = "Mikhail Borovoi"
+title = "Abelian Galois cohomology of reductive groups"
+year = 1998
+locator_scheme = "theorem"
+locator = "Lemma 5.6.3"
+url = "https://www.tau.ac.il/~borovoi/papers/galofile.pdf"
+fetched_from = "https://www.tau.ac.il/~borovoi/papers/galofile.pdf"
+fetched_at = "2026-10-25T23:39:02Z"
+sha256 = "1126d04cc4bf666d49079b841703a6a8cdc010298e547b1d16b7e7c325ae3d96"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "author text of Mem. Amer. Math. Soc. 132 (1998), no. 626"
+cited_for = ["§2.2"]
+
+[[source]]
+id = "Shin11"
+authors = "Sug Woo Shin"
+title = "Galois representations arising from some compact Shimura varieties"
+year = 2011
+locator_scheme = "theorem"
+locator = "§3.1; Lemma 3.1; Remark 3.2"
+url = "https://math.berkeley.edu/~swshin/StableGal.pdf"
+fetched_from = "https://math.berkeley.edu/~swshin/StableGal.pdf"
+fetched_at = "2026-10-25T23:39:05Z"
+sha256 = "93f4fe322200a646f337ae8d4aa9a036a866df1bb59ad5fe7bf09373324da75b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "author version; Lemma 3.1 is the published Lemma 3.1.1"
+cited_for = ["§4.6"]
+
+[[source]]
+id = "Deligne82"
+authors = "Pierre Deligne"
+title = "Hodge cycles on abelian varieties"
+year = 1982
+locator_scheme = "theorem"
+locator = "Main Theorem 2.11; §§3.4–3.6; Theorem 3.8; Lemma 3.9"
+url = "https://www.jmilne.org/math/Documents/Deligne82.pdf"
+fetched_from = "https://www.jmilne.org/math/Documents/Deligne82.pdf"
+fetched_at = "2026-10-25T23:39:07Z"
+sha256 = "827e3571c8049fc5d3aed8dfad912fee39a2f5dbf7341726c38235f035d32139"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "notes by J. S. Milne, revised retypeset text"
+cited_for = ["§5.1", "§5.2", "§5.3"]

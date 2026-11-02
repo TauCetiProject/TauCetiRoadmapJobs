@@ -2505,55 +2505,34 @@
   ],
   "gaps": [
     {
-      "title": "Geometric Frobenius and auxiliary integral-model supplier",
-      "detail": "The existing ShimuraVarieties V6 canonical-model plan does not supply Kisin–Zhou Theorem 5.1.4, its companions/curve specialization argument, or the strongly acceptable Hodge-type integral-model bridge of Proposition 6.2.4 and Lemma 6.2.6(1). A geometry continuation must provide the exact common rational Conj(H₁) point for a good-reduction point at p>2, with all l≠p local classes, and the residue-field-preserving realization of A. Route this to the candidate ShimuraVarietiesHondaTatePartII; that is a proposal, not an existing prerequisite id. RG3.0–RG3.1 supply its quotient/descent lemmas, so split this supplier below the final RG3.5 application to avoid a cycle.",
-      "neededBy": [
-        "ReductiveGroupsPartIII:RG3.5/auxiliary-hodge-embedding",
-        "ReductiveGroupsPartIII:RG3.5/common-frobenius-class",
-        "ReductiveGroupsPartIII:RG3.5/rational-frobenius-representative"
-      ]
+      "slug": "quasi-split-torus-embedding-class",
+      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+      "section": "1.6",
+      "needs": "For a torus T and a quasi-split connected reductive G* over a field of characteristic zero, every Galois-stable geometric conjugacy class of embeddings of T as a maximal torus of G* contains an embedding defined over the field (Kottwitz 1982, Corollary 2.2)."
     },
     {
-      "title": "Isogeny-group realization and Noot comparison input",
-      "detail": "To specialize RG3.4 to KMPS isogeny groups I_s₀, the geometry owner must provide: I_s₀, the central neat Frobenius power δ; isomorphisms I_s₀⊗K_l≅Z_G(i_l(δ))°; compactness of its real multiplier-one kernel; and KMPS Proposition 2.2.2 common rational Conj′ values for every neat Weil point. The proof there uses Noot 2009 Theorem 2.4, Lemmas 2.5–2.6 and §3 (p.68), as cited in KMPS §2.2.7. The Noot original at DOI 10.1112/jlms/jdn049 was not obtained from its author/publisher links. Do not treat a definition of I_s₀ or characteristic-polynomial independence as these missing theorems.",
-      "neededBy": [
-        "ReductiveGroupsPartIII:RG3.4/common-realization-torus"
-      ]
+      "slug": "relative-global-obstruction",
+      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+      "section": "1.15",
+      "needs": "Kottwitz's obstruction and rational-realization criterion (Kottwitz 1986, Theorem 6.6, with the Hasse principle for G_sc in its full form in place of Kottwitz's no-E8 hypothesis) for an adelic tuple in an inner form G of a quasi-split G* with simply connected derived group, with the base point in G*(F) transported by the inner twist, together with the formula for the change of the obstruction when one local component is replaced."
     },
     {
-      "title": "Original torus-embedding obstruction proof",
-      "detail": "LR87 Lemma 5.6 was read in the German text and supplies the application, but its obstruction description cites Langlands, Les débuts d’une formule des traces stable, Lemma 7.15, whose original proof was not read. Acquire that exact lemma and check the obstruction quotient, local-to-global maps and simply connected Hasse hypothesis. The target states every local transfer and anisotropy at one place explicitly.",
-      "neededBy": [
-        "ReductiveGroupsPartIII:RG3.4/global-torus-transfer"
-      ]
+      "slug": "torus-localization-sequence",
+      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+      "section": "1.2",
+      "needs": "For a torus T over a number field F, exactness at the middle of H¹(F,T)→⊕_v H¹(F_v,T)→(X_*(T)_Γ)_tors, the second map being the sum of the local Tate–Nakayama isomorphisms followed by the projections from local to global coinvariants (Kottwitz 1986, Proposition 2.6)."
     },
     {
-      "title": "Original quasi-split embedding theorem",
-      "detail": "Kottwitz 1982, Rational conjugacy classes in reductive groups, Corollary 2.2, Duke Math. J. 49, pp.785–806, was not obtained. KMPS Corollary 2.2.14 supplies the exact maximal-torus use; ET.0 must expose this statement, distinct from its existing semisimple-element rationality theorem.",
-      "neededBy": [
-        "ReductiveGroupsPartIII:RG3.4/rational-torus-embedding"
-      ]
+      "slug": "regular-centralizer-openness",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.0.2",
+      "needs": "For a connected reductive group G over a characteristic-zero local field F and a maximal F-torus T, the set of regular semisimple elements of Lie(G)(F) whose centralizer is G(F)-conjugate to T is open."
     },
     {
-      "title": "Original maximal-torus approximation citation",
-      "detail": "Harder 1966, Über die Galoiskohomologie halbeinfacher Matrizengruppen II, Lemma 5.5.3, Math. Z. 92, pp.396–415, was not obtained. KMPS Lemma 1.2.2 and Borovoi Lemma 5.6.3 were read. A proof route through regular Lie centralizers is specified, with the exact local openness request to RG2.0; verify that input before calling the dependency closed.",
-      "neededBy": [
-        "ReductiveGroupsPartIII:RG3.2/maximal-torus-approximation"
-      ]
-    },
-    {
-      "title": "Original orthogonal outer-action citation",
-      "detail": "KMPS §2.1.8 was read and the descent construction is detailed here. Noot 2009 §1.5 is its original citation and was not obtained; collate the actual SO-factor convention and the descent action against that text. The plan does not expand Out′ to Spin factors or triality.",
-      "neededBy": [
-        "ReductiveGroupsPartIII:RG3.0/orthogonal-outer-action"
-      ]
-    },
-    {
-      "title": "Odd unitary Hasse principle for general CM fields",
-      "detail": "KMPS Remark 2.3.16 states ker¹(ℚ,G)=1 for the odd-dimensional common-multiplier unitary group of any CM quadratic F/F⁺ with [F⁺:ℚ] odd. The read Shin §3.1 proof assumes F=F⁺E for an imaginary quadratic E/ℚ. The full general-CM theorem is the target RG3.4/odd-unitary-hasse, but its signed-permutation dual-centre local-global calculation is not established here; prove it without adding the subfield assumption. The special-case parity computation alone is insufficient.",
-      "neededBy": [
-        "ReductiveGroupsPartIII:RG3.4/odd-unitary-hasse"
-      ]
+      "slug": "parahoric-intersection-same-derived",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "RG2.3.4",
+      "needs": "For a closed immersion H→H′ of connected reductive groups over a characteristic-zero nonarchimedean local field K that identifies the derived groups, and a point x of the building of H with image x′ in the building of H′, the fixer of x in H(K) is H(K)∩(fixer of x′ in H′(K)), and x is very special if and only if x′ is."
     }
   ],
   "restructure": [
