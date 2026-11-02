@@ -4581,148 +4581,97 @@
   ],
   "gaps": [
     {
-      "title": "Exceptional theta and parameter supplier has no addressable stages",
-      "detail": "ExceptionalThetaCorrespondencesForG2 is a routed candidate, but no roadmap, packet or reserved stage is present in this checkout. Import its intended ownership of admissible exceptional parameters, irreducible smooth representation loci ♠/♥/♣/♦, exceptional Howe duality/dichotomy, explicit induction formulas, local quaternion-period lemmas 10.1–10.4, global theta kernels and local–global matching, auxiliary depth-zero examples, and GS20 Theorem 1.1 (spin pole ⇒ nonzero global theta to some G₂ form) with its exact hypotheses. These are not new definitions of this roadmap. No fictitious candidate stage is used as a prerequisite. The exceptional supplier must expose contracts and proof closure before these targets are closed.",
+      "slug": "spin-pole-global-converse",
+      "supplier": "ExceptionalThetaCorrespondencesForG2",
+      "section": "Layer 10 (global exceptional lifts)",
+      "needs": "For every totally real number field k, a cuspidal representation of PGSp6 over k whose partial spin L-function has a pole at s = 1 has nonzero global exceptional theta lift to Aut(O) for some octonion algebra O over k, compatible with the local theta correspondences (GS20 Theorem 1.1 states it only over Q).",
       "neededBy": [
-        "LocalLanglandsCorrespondenceForG2:LG.0/dual-diagram",
-        "LocalLanglandsCorrespondenceForG2:LG.0/a2-parameters",
-        "LocalLanglandsCorrespondenceForG2:LG.1/relative-globalization",
-        "LocalLanglandsCorrespondenceForG2:LG.1/cuspidal-exceptional-theta",
-        "LocalLanglandsCorrespondenceForG2:LG.1/g2-isolation",
-        "LocalLanglandsCorrespondenceForG2:LG.3/standard-containment",
-        "LocalLanglandsCorrespondenceForG2:LG.3/llc-map",
-        "LocalLanglandsCorrespondenceForG2:LG.3/alternative-map",
-        "LocalLanglandsCorrespondenceForG2:LG.3/map-agreement",
-        "LocalLanglandsCorrespondenceForG2:LG.3/discrete",
-        "LocalLanglandsCorrespondenceForG2:LG.4/nonselfdual-packet",
-        "LocalLanglandsCorrespondenceForG2:LG.4/selfdual-packet",
-        "LocalLanglandsCorrespondenceForG2:LG.5/club-spin-bridge",
-        "LocalLanglandsCorrespondenceForG2:LG.6/diamond-surjectivity",
-        "LocalLanglandsCorrespondenceForG2:LG.6/two-place-globalization",
-        "LocalLanglandsCorrespondenceForG2:LG.6/one-in-all-in"
+        "LocalLanglandsCorrespondenceForG2:6.5"
       ]
     },
     {
-      "title": "Exceptional conjugacy and component-group comparison",
-      "detail": "The source cites Griess and Gross–Savin for injectivity, normalizers, invariant-spinor detection and Sφ≅S_{iφ}/image μ₂. The cited primary proofs were not audited here in full; the targets state their exact required conclusions. A proof owner must supply the complex admissible-WD versions, the nonisotropic-spinor argument, and the special centralizer computations, using the current group models. Reading a compact-group statement or counting eigenvalues is not a proof of these parameter theorems.",
+      "slug": "gln-generic-local-converse",
+      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+      "section": "Layer 10 (trace parameters and classical comparison)",
+      "needs": "For generic irreducible representations of GL_n(F), equality of the gamma factors of all twists by irreducible representations of GL_r(F), r ≤ n, implies isomorphism, so a bounded Weil–Deligne representation is determined with its monodromy by these gamma factors.",
       "neededBy": [
-        "LocalLanglandsCorrespondenceForG2:LG.0/dual-diagram",
-        "LocalLanglandsCorrespondenceForG2:LG.0/a2-parameters",
-        "LocalLanglandsCorrespondenceForG2:LG.0/spin-parameters",
-        "LocalLanglandsCorrespondenceForG2:LG.0/standard-injectivity"
+        "LocalLanglandsCorrespondenceForG2:3.13",
+        "LocalLanglandsCorrespondenceForG2:2.5"
       ]
     },
     {
-      "title": "Current-library group-model comparison",
-      "detail": "Current Tau Ceti contains the integral D₄ triality automorphism and explicit G₂ short-root carriers. These are absent or less complete at the formal baseline. Import the current declarations when available at the consuming pin, and prove their comparison with octonion G₂, the simply connected D₄ model and the central quotients used here. Do not redevelop triality, spin groups or general reductive group schemes.",
+      "slug": "pgsp6-similitude-theta-tables",
+      "supplier": "MetaplecticAutomorphicForms",
+      "section": "Layer 3, §§3.41–3.42",
+      "needs": "For the similitude pairs PGSp6 × PGSO8, PGSp6 × PGO6 and PGSp6 × PGO(5,1), give the parameters of the lifts of representations induced from every proper Levi of PGSp6 (with the lower-tower Jacquet–Langlands identification), the quadratic-twist rule along each lift, the lift of each generic constituent of a Siegel-induced I3(τ) with τ discrete, and the Adams–Barbasch matching at complex places.",
       "neededBy": [
-        "LocalLanglandsCorrespondenceForG2:LG.0/dual-diagram",
-        "LocalLanglandsCorrespondenceForG2:LG.2/triality-descent"
+        "LocalLanglandsCorrespondenceForG2:2.3",
+        "LocalLanglandsCorrespondenceForG2:2.5",
+        "LocalLanglandsCorrespondenceForG2:5.5",
+        "LocalLanglandsCorrespondenceForG2:9.1",
+        "LocalLanglandsCorrespondenceForG2:9.2",
+        "LocalLanglandsCorrespondenceForG2:9.3",
+        "LocalLanglandsCorrespondenceForG2:10.3",
+        "LocalLanglandsCorrespondenceForG2:10.4",
+        "LocalLanglandsCorrespondenceForG2:10.7"
       ]
     },
     {
-      "title": "Chenevier source-gated descent theorems",
-      "detail": "LG.0/chenevier-local and LG.0/chenevier-galois record Theorem E and Theorem 6.4 with the published hypotheses, checked in the primary source. Their proofs and the W×SU₂-to-W×SL₂ convention bridge have no exact supplier node. Designate an owner for these descent results and discharge their Galois/group-theoretic dependencies; no G₂-valued global representation is inferred merely from a characteristic polynomial identity.",
+      "slug": "pgsp6-similitude-rallis",
+      "supplier": "MetaplecticAutomorphicForms",
+      "section": "Layer 6, §§6.13–6.14",
+      "needs": "For a cuspidal representation of PGSp6 with generic global Arthur parameter and nonzero local similitude lifts to split PGSO8 everywhere, the global similitude lift to PGSO8 is nonzero when L^S(s, std) is nonzero at s = 1, and cuspidal when the lift to PGO6 vanishes.",
       "neededBy": [
-        "LocalLanglandsCorrespondenceForG2:LG.0/chenevier-local",
-        "LocalLanglandsCorrespondenceForG2:LG.0/chenevier-galois"
+        "LocalLanglandsCorrespondenceForG2:8.1"
       ]
     },
     {
-      "title": "Kret–Shin source gate and isobaric local comparison",
-      "detail": "The exact (St), (L-coh) theorem and Proposition 13.1 spin irreducibility under the additional (spin-REG) hypothesis are checked in the primary source. Their proofs are not supplied by the existing AG2 endpoints. An owner must establish the GSpin-valued theorem, central-trivial specialization, local WD lift, and local–global comparison for every regular algebraic isobaric GL₈ summand with its shift. Irreducibility under the full hypotheses supports the cuspidality deduction after that comparison; regularity by itself does not.",
+      "slug": "pgsp6-shahidi-spin-factor",
+      "supplier": "AutomorphicLFunctionsAndLocalFactors",
+      "section": "Layer AL.4",
+      "needs": "Langlands–Shahidi gamma, L- and epsilon factors of generic representations of PGSp6(F) for the eight-dimensional spin representation of Spin7, with quadratic-twist behaviour, holomorphy in Re s > 0 for tempered representations, and the global functional equation for globally generic cuspidal representations.",
       "neededBy": [
-        "LocalLanglandsCorrespondenceForG2:LG.5/kret-shin-input",
-        "LocalLanglandsCorrespondenceForG2:LG.5/ks-existence",
-        "LocalLanglandsCorrespondenceForG2:LG.8/heart-ds-parameters",
-        "LocalLanglandsCorrespondenceForG2:LG.5/ks-spin-irreducibility"
+        "LocalLanglandsCorrespondenceForG2:2.4",
+        "LocalLanglandsCorrespondenceForG2:6.1"
       ]
     },
     {
-      "title": "Independent analytic gamma-factor source gate",
-      "detail": "GF Theorem 2.4 is recorded with its restricted global family and all four multiplicativity formulas. Its analytic existence/uniqueness proof still needs an owner and the exceptional globalization contracts; it is not assumed as an unrestricted global functional equation or a consequence of defining an arbitrary family from a proposed LLC.",
+      "slug": "relative-generic-isolation",
+      "supplier": "SmoothRepresentationsOfLocalGroupsPartII",
+      "section": "Layer SRU.3",
+      "needs": "For split PGSp6 and SO_N, a generic discrete series is isolated among the local components at one place of the globally generic cuspidal spectrum with a fixed supercuspidal component at a second place (Ichino–Lapid–Mao, Lemma A.2 and Proposition A.5).",
       "neededBy": [
-        "LocalLanglandsCorrespondenceForG2:LG.3/gamma-input",
-        "LocalLanglandsCorrespondenceForG2:LG.3/gamma-uniqueness"
+        "LocalLanglandsCorrespondenceForG2:1.5",
+        "LocalLanglandsCorrespondenceForG2:1.6"
       ]
     },
     {
-      "title": "Selfdual S₃ enhancement argument",
-      "detail": "The projective μ₃-centralizer construction in GS Proposition 3.2 does not apply when the normalizer enlarges the component group to S₃. Prove the separate split ± extension and division-lift argument in LG.4/selfdual-packet, with the 2-dimensional restriction χ⊕χ⁻¹, including p=2. Its expected result is a target, not a claimed repair already proved by the μ₃ argument.",
+      "slug": "poincare-weak-containment",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "Layer 4",
+      "needs": "The Sakellaridis–Venkatesh Poincaré-series weak containment (Theorem 16.3.2, Remark 16.4.1) for quaternion pointwise stabilizers in Aut(O) and for generic Whittaker characters, with hyperspecial vectors outside the prescribed set and at most one further place, and the real statement that a unitary representation with discrete-series infinitesimal character far enough from the walls is a discrete series, with an explicit bound.",
       "neededBy": [
-        "LocalLanglandsCorrespondenceForG2:LG.4/selfdual-packet",
-        "LocalLanglandsCorrespondenceForG2:LG.4/subregular-packet",
-        "LocalLanglandsCorrespondenceForG2:LG.4/enhanced-a2-theta"
+        "LocalLanglandsCorrespondenceForG2:1.3",
+        "LocalLanglandsCorrespondenceForG2:1.6"
       ]
     },
     {
-      "title": "Club spin bridge through explicit Siegel constituents",
-      "detail": "For a generic discrete G₂ club member, compute the full WD parameter of the classical theta/triality lift of I₃(τ) or I₃(τ)_gen and obtain φτ⊕φτ∨⊕1⊕1. Proposition 5.2 assumes a discrete PGSp₆ partner and cannot prove this. The explicit MP.3 extension request records the required input, and LG.5/club-spin-bridge records the exceptional comparison.",
+      "slug": "automorphic-plancherel-density",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "Layer 6",
+      "needs": "Shin's automorphic Plancherel density theorem (Theorem 5.8) with its standing hypotheses and the density limit along weight sequences satisfying Shin's Definition 3.5 (Corollary 4.12).",
       "neededBy": [
-        "LocalLanglandsCorrespondenceForG2:LG.5/club-spin-bridge",
-        "LocalLanglandsCorrespondenceForG2:LG.5/full-spin"
+        "LocalLanglandsCorrespondenceForG2:1.7"
       ]
     },
     {
-      "title": "Functional-equation globalization at the extra place",
-      "detail": "GS Proposition 10.7 permits one further finite place where sphericity is not controlled, whereas the proof of Proposition 4.1 cancels every finite place except its stated Steinberg, supercuspidal and repeated σ places. Prove a stronger globalization, show that the remaining place contributes a known matching factor, or modify the comparison argument to eliminate it. Until this is done the cancellation argument is not closed.",
+      "slug": "kret-shin-gspin-galois",
+      "supplier": "AutomorphicGaloisRepresentationsPartII",
+      "section": "Layer AG2.2",
+      "needs": "The Kret–Shin GSpin(2n+1)-valued Galois representations of cuspidal representations of GSp(2n) over totally real fields with a Steinberg place and cohomological infinity type (Theorem A), and irreducibility of the spin representation for n = 3 under spin-regularity (Proposition 13.1(4)).",
       "neededBy": [
-        "LocalLanglandsCorrespondenceForG2:LG.2/spin-gamma",
-        "LocalLanglandsCorrespondenceForG2:LG.2/spin-twist"
-      ]
-    },
-    {
-      "title": "Rallis and lower-tower supplier is pending",
-      "detail": "The proposed MetaplecticAutomorphicFormsPartIIShimuraWaldspurger has no addressable stages here. The heart-global-theta proof needs the second-term-range Rallis inner product formula (GQT Theorem 1.4(ii)), all-place nonvanishing and the tower cuspidality implication with PGSp₆–PGSO₈ similitude normalizations. These are imported classical-theta results, not planned again as exceptional results.",
-      "neededBy": [
-        "LocalLanglandsCorrespondenceForG2:LG.8/heart-global-theta",
-        "LocalLanglandsCorrespondenceForG2:LG.5/ks-existence",
-        "LocalLanglandsCorrespondenceForG2:LG.8/heart-ds-parameters"
-      ]
-    },
-    {
-      "title": "Shin density proof and packet-substitution source gate",
-      "detail": "Theorem 5.8 itself concludes only discrete series at infinity. The explicit λ_t=t(8,4,2) argument in shin-input supplies the extra spin-regular weight selection through Definition 3.5 and Corollary 4.12. The density theorem still needs a proof owner; verify both finite Plancherel atoms, the packet substitution and the global quadratic correction. The weight-cone calculation itself is no longer an unfilled obligation.",
-      "neededBy": [
-        "LocalLanglandsCorrespondenceForG2:LG.8/shin-input",
-        "LocalLanglandsCorrespondenceForG2:LG.8/pgsp-globalization"
-      ]
-    },
-    {
-      "title": "Appendix C omitted proper-Levi and lower-tower cases",
-      "detail": "Fill the exact tables/proofs in LG.9/heart-levi-parameters, the split/quaternionic twisting calculation in LG.10/lower-tower-twist, the lower-tower packet comparison in LG.10/lower-tower-fibres and the normalized induction/Langlands quotient reduction in LG.10/levi-fibres. Imported Howe duality alone does not prove these LLC, twist or Xu-packet identities.",
-      "neededBy": [
-        "LocalLanglandsCorrespondenceForG2:LG.9/heart-levi-parameters",
-        "LocalLanglandsCorrespondenceForG2:LG.10/lower-tower-twist",
-        "LocalLanglandsCorrespondenceForG2:LG.10/lower-tower-fibres",
-        "LocalLanglandsCorrespondenceForG2:LG.10/levi-fibres"
-      ]
-    },
-    {
-      "title": "Weak spectral predicates require proof",
-      "detail": "Theorem 12.6 uses boundedness and discreteness on weak classes. Faithfulness of spin detects boundedness, but discreteness requires showing that joint standard/spin equivalence preserves the relevant centralizer/Levi condition for Spin₇ WD parameters. Supply this comparison explicitly before descending discreteness to Φw.",
-      "neededBy": [
-        "LocalLanglandsCorrespondenceForG2:LG.10/spectral-properties"
-      ]
-    },
-    {
-      "title": "Classical classification proof gates propagate",
-      "detail": "The imported ML.4 trace-formula-inputs-register explicitly retains the twisted weighted fundamental lemma and stabilization proof boundaries. Its local/global Arthur and Xu statements are therefore used with those supplier gates, not represented as independently proved by this roadmap. The global transfers, packet substitutions and enhanced endpoints inherit that status.",
-      "neededBy": [
-        "LocalLanglandsCorrespondenceForG2:LG.2/local-spin-lift",
-        "LocalLanglandsCorrespondenceForG2:LG.2/global-spin-lift",
-        "LocalLanglandsCorrespondenceForG2:LG.3/standard-containment",
-        "LocalLanglandsCorrespondenceForG2:LG.6/one-in-all-in",
-        "LocalLanglandsCorrespondenceForG2:LG.6/diamond-enhancements",
-        "LocalLanglandsCorrespondenceForG2:LG.8/pgsp-globalization",
-        "LocalLanglandsCorrespondenceForG2:LG.10/discrete-diamond-fibres"
-      ]
-    },
-    {
-      "title": "Full-WD elementwise-conjugacy extension",
-      "detail": "CG Lemma 3.10 is a compact-group conjugacy criterion. The full GS Lemma 12.2 target tests every element of W_F×SL₂, including unipotents. A proof must control the joint semisimple/unipotent conjugacy data; density gives equality of characters but not by itself pointwise conjugacy on these elements. Supply this extension before treating the full-WD target as established.",
-      "neededBy": [
-        "LocalLanglandsCorrespondenceForG2:LG.0/elementwise-conjugacy"
+        "LocalLanglandsCorrespondenceForG2:5.2",
+        "LocalLanglandsCorrespondenceForG2:8.2"
       ]
     }
   ],
