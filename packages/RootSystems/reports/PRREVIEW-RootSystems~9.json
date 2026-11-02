@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-RootSystems~9",
+    "head": "f33895a5b297f27ff165d0ed2da8c7cea5c3145c",
+    "pr": 1278,
+    "folder": "RepresentationTheory/RootSystems",
+    "date": "2026-11-02",
+    "findings": 3,
+    "blocking": 1,
+    "notes": "incremental re-review of 22 changed lines since a857ef5; all three prior findings accounted for; changed Humphreys locators for sampled 3.1/3.2 verified and unchanged sample carried from r8; 57 carried and 6 recomputed adversarial rows; seven cross-roadmap references and native classification dependencies resolved; gate, dependency check, targeted build, direct elaboration, eleven signatures and padding probes pass; duplicate ownership remains blocking, companion and absent source records remain P3."
+  }
+}
