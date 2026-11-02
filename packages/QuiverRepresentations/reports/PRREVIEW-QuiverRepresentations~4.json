@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-QuiverRepresentations~4",
+    "head": "f45244675c1ccbbcb449cc2e811ee29cff6eab05",
+    "pr": 1397,
+    "folder": "RepresentationTheory/QuiverRepresentations",
+    "date": "2026-11-02",
+    "findings": 20,
+    "blocking": 17,
+    "notes": "incremental re-review of 0 changed lines since 472e13c; all 20 previous findings checked and retained; changed ArtinAlgebras field/radical interfaces and cross-roadmap citations resolved; Gabriel presentation sample remains uncertified with unchanged arrow-ideal counterexample; gate fails on 13 admitted data declarations and module-system build warning; direct Lean and 43 signature checks pass; depcheck: 204 roadmaps, 1492 edges, 0 problems; adversarial rows carried with one corrected radical-square computation and five new interface rows."
+  }
+}
