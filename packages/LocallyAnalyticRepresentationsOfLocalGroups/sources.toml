@@ -1,0 +1,503 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LocallyAnalyticRepresentationsOfLocalGroups"
+
+[[source]]
+id = "ST02"
+authors = "Peter Schneider, Jeremy Teitelbaum"
+title = "Locally analytic distributions and p-adic representation theory, with applications to GL_2"
+year = 1999
+arxiv = "math/9912073v1"
+locator_scheme = "theorem"
+locator = "Proposition 2.3; Lemma 3.1; Proposition 3.2; Corollary 3.3"
+url = "https://arxiv.org/abs/math/9912073v1"
+fetched_from = "https://arxiv.org/pdf/math/9912073v1"
+fetched_at = "2026-10-26T20:26:09Z"
+sha256 = "d6be98b86167e6bc9374892d0a688e141ad599601c64b8113ea003e7f60e5ead"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["0.2", "0.3", "0.4", "0.5", "0.6"]
+
+[[source]]
+id = "ST03"
+authors = "Peter Schneider, Jeremy Teitelbaum"
+title = "Algebras of p-adic distributions and admissible representations"
+year = 2002
+doi = "10.1007/s00222-002-0284-1"
+arxiv = "math/0206056v1"
+locator_scheme = "theorem"
+locator = "Lemma 3.6; Lemma 3.8; Lemma 6.1; Theorem 6.3; Proposition 6.4; Theorem 6.6; Theorem 7.1"
+url = "https://arxiv.org/abs/math/0206056v1"
+fetched_from = "https://arxiv.org/pdf/math/0206056v1"
+fetched_at = "2026-10-26T20:26:52Z"
+sha256 = "e8a60a25f246692b048789235fb8efaf6d44ae65fdbb7cc738c8caeae67efcd5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["1.1", "1.2", "1.3", "1.4", "1.6", "2.1"]
+
+[[source]]
+id = "ST02B"
+authors = "Peter Schneider, Jeremy Teitelbaum"
+title = "Banach space representations and Iwasawa theory"
+year = 2000
+arxiv = "math/0005066v1"
+locator_scheme = "theorem"
+locator = "Lemma 3.4"
+url = "https://arxiv.org/abs/math/0005066v1"
+fetched_from = "https://arxiv.org/pdf/math/0005066v1"
+fetched_at = "2026-10-26T20:26:57Z"
+sha256 = "28dfe78dc1fcbe908641523a17ee1fdec5f330494dfdd5e4a48ac7b181c78747"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["2.1"]
+
+[[source]]
+id = "ST01"
+authors = "Peter Schneider, Jeremy Teitelbaum"
+title = "U(g)-finite locally analytic representations"
+year = 2000
+arxiv = "math/0005072v1"
+locator_scheme = "theorem"
+locator = "Proposition 3.4; Corollary 3.5"
+url = "https://arxiv.org/abs/math/0005072v1"
+fetched_from = "https://arxiv.org/pdf/math/0005072v1"
+fetched_at = "2026-10-26T20:27:06Z"
+sha256 = "c8ee052cccf69e902b0412a946446d18a3d4c43fe49a3d452596456a3f294278"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["1.6"]
+
+[[source]]
+id = "EM17"
+authors = "Matthew Emerton"
+title = "Locally analytic vectors in representations of locally p-adic analytic groups"
+year = 2017
+locator_scheme = "theorem"
+locator = "Propositions 1.1.31-1.1.32; Definition 3.6.9; Propositions 6.1.5, 6.2.4, 6.3.2, 6.3.10, 6.5.9"
+url = "http://www.math.uchicago.edu/~emerton/pdffiles/analytic.pdf"
+fetched_from = "http://www.math.uchicago.edu/~emerton/pdffiles/analytic.pdf"
+fetched_at = "2026-10-26T20:27:11Z"
+sha256 = "e123a87644ef29d96db71525903344307ac2d70f46dba3b82fd87100a49e3b79"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["0.2", "0.9", "1.2", "1.5", "1.6", "2.1", "2.2"]
+
+[[source]]
+id = "EMJ1"
+authors = "Matthew Emerton"
+title = "Jacquet modules of locally analytic representations of p-adic reductive groups I. Construction and first properties"
+year = 2006
+locator_scheme = "theorem"
+locator = "Theorem 0.6; Theorem 3.5.6"
+url = "https://www.numdam.org/item/10.1016/j.ansens.2006.08.001.pdf"
+fetched_from = "https://www.numdam.org/item/10.1016/j.ansens.2006.08.001.pdf"
+fetched_at = "2026-10-26T20:27:12Z"
+sha256 = "c7d6eceaab1b49357851c0431838ad5ef2595b7db68d85d1d719fd2a7319206e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["7.1", "7.2"]
+
+[[source]]
+id = "EMJ2"
+authors = "Matthew Emerton"
+title = "Jacquet modules of locally analytic representations of p-adic reductive groups II. The relation to parabolic induction"
+year = 2007
+locator_scheme = "theorem"
+locator = "Lemma 0.3; Definitions 0.8, 0.11, 0.12; Theorem 0.13; Corollaries 0.14-0.15; Proposition 2.1.2; Lemma 2.8.3; Corollary 4.3.3; Corollary 5.1.4"
+url = "http://www.math.uchicago.edu/~emerton/pdffiles/jacquet-two.pdf"
+fetched_from = "http://www.math.uchicago.edu/~emerton/pdffiles/jacquet-two.pdf"
+fetched_at = "2026-10-26T20:27:15Z"
+sha256 = "f17efed38ae1d3bb695ba1602736cea18f665ed9428de3077c82e61e647691ed"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["5.1", "7.2", "7.3", "7.4", "7.5"]
+
+[[source]]
+id = "OS15"
+authors = "Sascha Orlik, Matthias Strauch"
+title = "On Jordan-Hölder series of some locally analytic representations"
+year = 2010
+arxiv = "1001.0323v4"
+locator_scheme = "theorem"
+locator = "Propositions 4.8-4.9; Theorem 5.8; (6.2.1)"
+url = "https://arxiv.org/abs/1001.0323v4"
+fetched_from = "https://arxiv.org/pdf/1001.0323v4"
+fetched_at = "2026-10-26T20:27:19Z"
+sha256 = "9373956e4f416fd3d7b21b7a4b4a2e6d40b3ead21f9ec726d632c10d7a4bea1b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v4"
+cited_for = ["4.2", "4.3", "4.5", "6.1", "6.2", "6.3", "6.4", "6.5"]
+
+[[source]]
+id = "OS10"
+authors = "S. Orlik, M. Strauch"
+title = "On the irreducibility of locally analytic principal series representations"
+year = 2006
+venue = "Representation Theory, Volume 14, pp. 713--746 (2010)"
+doi = "10.1090/S1088-4165-2010-00387-8"
+arxiv = "math/0612809v3"
+locator_scheme = "theorem"
+locator = "Theorem 3.1.3"
+url = "https://arxiv.org/abs/math/0612809v3"
+fetched_from = "https://arxiv.org/pdf/math/0612809v3"
+fetched_at = "2026-10-26T20:27:25Z"
+sha256 = "cd170a97e2e874822080873b54673bd7a34673632a53aafdd9570d75fb791b57"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["5.2"]
+
+[[source]]
+id = "OR19"
+authors = "Sascha Orlik"
+title = "On some properties of the functors ${\\mathcal F}^G_P$ from Lie algebra to locally analytic representations"
+year = 2018
+arxiv = "1802.07514v2"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/1802.07514v2"
+fetched_from = "https://arxiv.org/pdf/1802.07514v2"
+fetched_at = "2026-10-26T20:27:31Z"
+sha256 = "3d26a7806ddddbc2356683ef4c21c6ed2e2d02b95708c7154c9bbc6d6937421b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["6.5"]
+
+[[source]]
+id = "BR16"
+authors = "Christophe Breuil"
+title = "Vers le socle localement analytique pour GL_n I"
+year = 2016
+locator_scheme = "theorem"
+locator = "Lemmas 2.1-2.2; Theorem 2.3; Proposition 2.4; Corollaries 2.5, 2.7"
+url = "https://www.imo.universite-paris-saclay.fr/~christophe.breuil/PUBLICATIONS/socleI.pdf"
+fetched_from = "https://www.imo.universite-paris-saclay.fr/~christophe.breuil/PUBLICATIONS/socleI.pdf"
+fetched_at = "2026-10-26T20:27:32Z"
+sha256 = "255c1a768ef63646d5b1467cdf6d2df4756ce807d073e322916b1d526f071666"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["0.1", "0.3", "0.4", "5.1", "5.2", "6.1", "6.2", "6.3", "6.4", "6.5"]
+
+[[source]]
+id = "BR15"
+authors = "Christophe Breuil"
+title = "Vers le socle localement analytique pour GL_n II"
+year = 2015
+locator_scheme = "theorem"
+locator = "Proposition 4.2; Theoreme 4.3; Remarque 4.4"
+url = "https://www.imo.universite-paris-saclay.fr/~christophe.breuil/PUBLICATIONS/socleII.pdf"
+fetched_from = "https://www.imo.universite-paris-saclay.fr/~christophe.breuil/PUBLICATIONS/socleII.pdf"
+fetched_at = "2026-10-26T20:27:33Z"
+sha256 = "9f6e82d57999cb9a44e8a54ad723d4016f225957536c1e637a0e76cd8d584eb7"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["4.4", "7.6"]
+
+[[source]]
+id = "BR19"
+authors = "Christophe Breuil"
+title = "Ext^1 localement analytique et compatibilité local-global"
+year = 2019
+locator_scheme = "theorem"
+locator = "Lemme 2.1.1"
+url = "https://www.imo.universite-paris-saclay.fr/~christophe.breuil/PUBLICATIONS/Ext1.pdf"
+fetched_from = "https://www.imo.universite-paris-saclay.fr/~christophe.breuil/PUBLICATIONS/Ext1.pdf"
+fetched_at = "2026-10-26T20:27:34Z"
+sha256 = "3baab4747227c9c19c7c09364732c5e75f6447bd911bb15bc82abbb7614e6540"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["1.8", "10.1"]
+
+[[source]]
+id = "SCH11"
+authors = "Benjamin Schraen"
+title = "Représentations localement analytiques de GL_3(Q_p)"
+year = 2011
+locator_scheme = "theorem"
+locator = "Definition 3.1; Proposition 4.7; Corollaire 4.9; Theoreme 4.10"
+url = "https://www.numdam.org/item/10.24033/asens.2140.pdf"
+fetched_from = "https://www.numdam.org/item/10.24033/asens.2140.pdf"
+fetched_at = "2026-10-26T20:27:37Z"
+sha256 = "3235365c6eb96f815ee1da703ff0c5fc23a151159f57c6ef8b209a035f796aab"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["1.7", "1.10", "4.6", "5.4", "5.5"]
+
+[[source]]
+id = "DING19"
+authors = "Yiwen Ding"
+title = "Simple $\\mathcal{L}$-invariants for $\\mathrm{GL}_n$"
+year = 2018
+arxiv = "1807.10862v2"
+locator_scheme = "theorem"
+locator = "Lemma 2.26; Proposition 2.27"
+url = "https://arxiv.org/abs/1807.10862v2"
+fetched_from = "https://arxiv.org/pdf/1807.10862v2"
+fetched_at = "2026-10-26T20:27:42Z"
+sha256 = "37f5eaa15e8aa225da9a5f2617af74148558e8408452d4739da4d2599a7097ff"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["6.7"]
+
+[[source]]
+id = "BH20"
+authors = "Christophe Breuil, Florian Herzig"
+title = "Towards the finite slope part for $\\mathrm{GL}_n$"
+year = 2018
+venue = "Int. Math. Res. Not. IMRN 2020, no. 24, 7504-7550"
+arxiv = "1806.02695v3"
+locator_scheme = "theorem"
+locator = "Definition 5.7; Proposition 5.9"
+url = "https://arxiv.org/abs/1806.02695v3"
+fetched_from = "https://arxiv.org/pdf/1806.02695v3"
+fetched_at = "2026-10-26T20:27:52Z"
+sha256 = "ed91e02dc623e0432ec684d7756c47740a9f1adfd0a91ae4befed5ffcccf8d04"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["8.7", "8.13"]
+
+[[source]]
+id = "BHS19"
+authors = "Christophe Breuil, Eugen Hellmann, Benjamin Schraen"
+title = "A local model for the trianguline variety and applications"
+year = 2019
+locator_scheme = "theorem"
+locator = "Remark 5.1.2; Lemma 5.2.1"
+url = "https://www.numdam.org/item/10.1007/s10240-019-00111-y.pdf"
+fetched_from = "https://www.numdam.org/item/10.1007/s10240-019-00111-y.pdf"
+fetched_at = "2026-10-26T20:27:54Z"
+sha256 = "34ffd69795468054b4caab7847d5ae90393826c889b187397dbe53e16993967a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["0.9", "1.5", "6.6", "7.6"]
+
+[[source]]
+id = "DLB17"
+authors = "Gabriel Dospinescu, Arthur-César Le Bras"
+title = "Revêtements du demi-plan de Drinfeld et correspondance de Langlands p-adique"
+year = 2015
+arxiv = "1509.00606v2"
+locator_scheme = "theorem"
+locator = "Lemmes 5.9-5.10"
+url = "https://arxiv.org/abs/1509.00606v2"
+fetched_from = "https://arxiv.org/pdf/1509.00606v2"
+fetched_at = "2026-10-26T20:28:04Z"
+sha256 = "bdf8f14fb4bfb4fe43980fdbff088b33469a16a9c0260616a0630de48de8cd68"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["0.5", "0.7", "0.8", "1.4"]
+
+[[source]]
+id = "BCGP25"
+authors = "George Boxer, Frank Calegari, Toby Gee, Vincent Pilloni"
+title = "Modularity theorems for abelian surfaces"
+year = 2025
+arxiv = "2502.20645v1"
+locator_scheme = "theorem"
+locator = "Definition 2.2.17; Remark 2.2.19; Definition 2.2.21; Lemmas 2.2.24-2.2.25; Definition 2.2.26; Definition 3.4.2"
+url = "https://arxiv.org/abs/2502.20645v1"
+fetched_from = "https://arxiv.org/pdf/2502.20645v1"
+fetched_at = "2026-10-26T20:28:14Z"
+sha256 = "51d7eacca6eae394943f09ab72dfe09ee9aa6da27f563be8237c416e5da4e95c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8", "3.10"]
+
+[[source]]
+id = "RJRC22"
+authors = "Joaquín Rodrigues Jacinto, Juan Esteban Rodríguez Camargo"
+title = "Solid locally analytic representations of $p$-adic Lie groups"
+year = 2021
+arxiv = "2110.11916v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.5; Corollary 1.6; Corollary 3.17; Theorem 3.40; Definition 4.40"
+url = "https://arxiv.org/abs/2110.11916v2"
+fetched_from = "https://arxiv.org/pdf/2110.11916v2"
+fetched_at = "2026-10-26T20:28:19Z"
+sha256 = "bd6ea052ed81c0702eacf40ba2c675d2a008d65ac67e25fe18d86b85d5cbc847"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["3.1", "3.8", "3.9"]
+
+[[source]]
+id = "PAN22"
+authors = "Lue Pan"
+title = "On locally analytic vectors of the completed cohomology of modular curves"
+year = 2020
+arxiv = "2008.07099v3"
+locator_scheme = "theorem"
+locator = "Definition 2.2.1; Lemma 2.2.2; Theorem 2.2.3; Corollary 2.2.4"
+url = "https://arxiv.org/abs/2008.07099v3"
+fetched_from = "https://arxiv.org/pdf/2008.07099v3"
+fetched_at = "2026-10-26T20:28:25Z"
+sha256 = "c2fed4f1b9ae3c44b26cce3ee32b564afcdf430dde05163a233b1fe0b269b659"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["2.3", "2.4", "2.5"]
+
+[[source]]
+id = "CEGGPS"
+authors = "Ana Caraiani, Matthew Emerton, Toby Gee, David Geraghty, Vytautas Paskunas, Sug Woo Shin"
+title = "Patching and the p-adic local Langlands correspondence"
+year = 2013
+arxiv = "1310.0831v5"
+locator_scheme = "theorem"
+locator = "Lemma 3.22"
+url = "https://arxiv.org/abs/1310.0831v5"
+fetched_from = "https://arxiv.org/pdf/1310.0831v5"
+fetched_at = "2026-10-26T20:28:31Z"
+sha256 = "32acd023be82598de73c1757aba877fbeb89e5b82c23a64bcb378cc0f83b1077"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v5"
+cited_for = ["8.8", "Exact supplier contracts"]
+
+[[source]]
+id = "DING25"
+authors = "Yiwen Ding"
+title = "$p$-adic Hodge parameters in the crystabelline representations of $\\mathrm{GL}_n$"
+year = 2024
+arxiv = "2407.21237v2"
+locator_scheme = "theorem"
+locator = "Propositions 3.1, 3.3, 3.6, 3.8, 3.11-3.13, 3.16, 3.18-3.20; Lemmas 3.2, 3.5, 3.10, 3.15"
+url = "https://arxiv.org/abs/2407.21237v2"
+fetched_from = "https://arxiv.org/pdf/2407.21237v2"
+fetched_at = "2026-10-26T20:29:06Z"
+sha256 = "a78c956df48fcc0757d4612d825118723367ee2d64abc30f77c607de7b2c39e8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["Layer 8", "Layer 9", "Layer 10", "0.9", "1.5", "1.7", "1.8", "1.9", "1.10", "5.2", "5.3", "6.7", "7.3"]
+
+[[source]]
+id = "CD14"
+authors = "Pierre Colmez, Gabriel Dospinescu"
+title = "Complétés universels de représentations de GL_2(Q_p)"
+year = 2013
+venue = "Algebra Number Theory 8 (2014) 1447-1519"
+doi = "10.2140/ant.2014.8.1447"
+arxiv = "1301.7647v1"
+locator_scheme = "theorem"
+locator = "Corollaire IV.14"
+url = "https://arxiv.org/abs/1301.7647v1"
+fetched_from = "https://arxiv.org/pdf/1301.7647v1"
+fetched_at = "2026-10-26T20:32:03Z"
+sha256 = "77894b68a0f006b0355d9c0ca3a8391bd6199aad88f3685ce2e616f2ba231dd3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["2.5"]
+
+[[source]]
+id = "SCHN11"
+authors = "Peter Schneider"
+title = "p-Adic Lie Groups"
+year = 2011
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-3-642-21147-8"
+locator_scheme = "section"
+locator = "§4, Corollary 4.5, p. 24; §6, Proposition 6.4, pp. 42–43; §13, Corollary 13.3, p. 90"
+url = "https://doi.org/10.1007/978-3-642-21147-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["0.1"]
+
+[[source]]
+id = "BZ77"
+authors = "Bernstein"
+title = "Induced representations of reductive ${\\germ p}$-adic groups. I"
+year = 1977
+venue = "Annales scientifiques de l'École normale supérieure 10"
+doi = "10.24033/asens.1333"
+locator_scheme = "theorem"
+locator = "§§2–4 (induction and Jacquet modules of GL_n)"
+url = "https://doi.org/10.24033/asens.1333"
+fetched_from = "https://www.numdam.org/item/10.24033/asens.1333.pdf"
+fetched_at = "2026-10-26T20:55:42Z"
+sha256 = "8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Exact supplier contracts"]
+
+[[source]]
+id = "STACKS"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Tag 079H"
+year = 2024
+locator_scheme = "tag"
+locator = "079H"
+url = "https://stacks.math.columbia.edu/tag/079H"
+fetched_from = "https://stacks.math.columbia.edu/download/injectives.pdf#nameddest=079H"
+fetched_at = "2026-10-26T20:55:44Z"
+sha256 = "8042e6000eb43f51ebc8858b43dee9c60e8f3b1653a6cb007aabdce78a365acd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["3.7"]
+
+[[source]]
+id = "NFA02"
+authors = "Peter Schneider"
+title = "Nonarchimedean Functional Analysis"
+year = 2002
+venue = "Springer Monographs in Mathematics"
+doi = "10.1007/978-3-662-04728-6"
+locator_scheme = "section"
+locator = "§6"
+url = "https://doi.org/10.1007/978-3-662-04728-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Exact supplier contracts"]
+[[source]]
+id = "HUM08"
+authors = "James E. Humphreys"
+title = "Representations of Semisimple Lie Algebras in the BGG Category O"
+year = 2008
+venue = "Graduate Studies in Mathematics 94, American Mathematical Society"
+doi = "10.1090/gsm/094"
+locator_scheme = "theorem"
+locator = "§3.2, Theorem 3.3; Theorems 4.6 and 5.1; §§9.3–9.4, Proposition 9.3"
+url = "https://doi.org/10.1090/gsm/094"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.3", "4.4", "4.5"]
+
