@@ -5778,175 +5778,107 @@
   ],
   "gaps": [
     {
-      "id": "MotivicStructuresInModuliOfCurves/G-stack-duality",
-      "title": "Duality and comparison for the actual moduli stacks",
-      "detail": "Prove rational Betti and Q_l compact-support/Verdier duality for the imported smooth DM stacks, including H_k=H^(2d−k)(d), H_k^BM=H_c^k dual, finite quotient invariants, Kunneth and normalized-boundary functoriality. EtaleDualityAndPerverseSheavesPartIIStacks is the routed owner but has no established stage/node contract here. The EDC scheme results are insufficient.",
+      "slug": "stack-rational-chow",
+      "needs": "Rational Chow groups of finite-type algebraic stacks stratified by quotient stacks over a field, with proper (not necessarily representable) pushforward, flat and lci pullback, exterior products natural under product with every such stack, localization, affine-bundle homotopy invariance, projective- and Grassmann-bundle formulas, Chern classes, intersection products on smooth DM stacks with projection and excess formulas, and Grothendieck–Riemann–Roch for the universal curve over M̄_{g,n}.",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "Layer 5 (§§5.1–5.8)",
       "neededBy": [
-        "MotivicStructuresInModuliOfCurves:TC.0/boundary-exactness",
-        "MotivicStructuresInModuliOfCurves:TC.1/compact-support-vanishing",
-        "MotivicStructuresInModuliOfCurves:TC.1/normalized-boundary-injection",
-        "MotivicStructuresInModuliOfCurves:TC.8/curve-marking-twists"
+        "MotivicStructuresInModuliOfCurves §0.1",
+        "MotivicStructuresInModuliOfCurves §0.2",
+        "MotivicStructuresInModuliOfCurves §5.1",
+        "MotivicStructuresInModuliOfCurves §5.2",
+        "MotivicStructuresInModuliOfCurves §5.3",
+        "MotivicStructuresInModuliOfCurves §6.5",
+        "MotivicStructuresInModuliOfCurves §7.1",
+        "MotivicStructuresInModuliOfCurves §7.2",
+        "MotivicStructuresInModuliOfCurves §7.4",
+        "MotivicStructuresInModuliOfCurves §7.6"
       ]
     },
     {
-      "id": "MotivicStructuresInModuliOfCurves/G-stack-comparisons",
-      "title": "Geometric weight, Hodge and count comparisons",
-      "detail": "Construct the geometric rational MHS of these DM stacks, its strict functorial maps and Betti/etale comparisons; prove smooth proper all-Z stack trace, fibrewise constancy and p-adic comparison hypotheses required by WC.4/WC.5. Establish an S_n-compatible finite smooth cover if the BFP presentation argument is used, or prove the stack theorem directly. Proper rigid-analytic Hodge–Tate degeneration alone is not this theorem. Actual global Tate splitting needs the everywhere-good-reduction/unramified-extension argument of the WC.5 exact all-Z theorem, not just Frobenius eigenvalues.",
+      "slug": "pointed-coarse-projectivity",
+      "needs": "For every stable pair (g,n), projectivity over ℤ of the coarse space of M̄_{g,n} together with a rational combination of tautological divisor classes that is the pullback of an ample class on the coarse space.",
+      "supplier": "StableReductionPartII",
+      "section": "MC.4",
       "neededBy": [
-        "MotivicStructuresInModuliOfCurves:TC.0/cusp-moduli-identification",
-        "MotivicStructuresInModuliOfCurves:TC.4/pure-algebraicity",
-        "MotivicStructuresInModuliOfCurves:TC.8/curve-marking-twists",
-        "MotivicStructuresInModuliOfCurves:TC.8/weight-euler-characteristic",
-        "MotivicStructuresInModuliOfCurves:TC.8/polynomial-induction",
-        "MotivicStructuresInModuliOfCurves:TC.9/genus-four-cutoff",
-        "MotivicStructuresInModuliOfCurves:TC.9/genus-four-tate",
-        "MotivicStructuresInModuliOfCurves:TC.9/genus-four-equivariant-counts",
-        "MotivicStructuresInModuliOfCurves:TC.12/genus-one-fifteen-split",
-        "MotivicStructuresInModuliOfCurves:TC.12/realization-classification"
+        "MotivicStructuresInModuliOfCurves §4.12",
+        "MotivicStructuresInModuliOfCurves §12.1",
+        "MotivicStructuresInModuliOfCurves §12.2",
+        "MotivicStructuresInModuliOfCurves §12.10"
       ]
     },
     {
-      "id": "MotivicStructuresInModuliOfCurves/G-stack-cycle",
-      "title": "Stack cycle and intersection extension",
-      "detail": "The two precise SF.5 and MC.2 requests above remain open. In particular scheme-only exterior products cannot state CKgP for arbitrary test stacks, and projective smooth-variety GRR does not apply to a nodal universal stack family. Verify support/properness and codimension/Tate conventions for all curve operations.",
+      "slug": "open-dm-stack-duality",
+      "needs": "For a smooth separated finite-type Deligne–Mumford stack U of pure dimension d, not necessarily proper, over an algebraically closed or finite field with ℓ invertible, the Frobenius- and Galois-equivariant perfect pairing H^k(U) ⊗ H_c^{2d−k}(U) → ℚ_ℓ(−d), compatible with finite group actions, Künneth, open restriction and proper pushforward.",
+      "supplier": "WeilConjectures",
+      "section": "WC.1 (stack points, compact supports and duality)",
       "neededBy": [
-        "MotivicStructuresInModuliOfCurves:TC.0/tautological-rings",
-        "MotivicStructuresInModuliOfCurves:TC.0/kappa-classes",
-        "MotivicStructuresInModuliOfCurves:TC.4/chow-kunneth-generation",
-        "MotivicStructuresInModuliOfCurves:TC.4/ckgp-permanence",
-        "MotivicStructuresInModuliOfCurves:TC.4/pure-algebraicity",
-        "MotivicStructuresInModuliOfCurves:TC.5/ce-pushforward",
-        "MotivicStructuresInModuliOfCurves:TC.6/spinor-tautological-bundles"
+        "MotivicStructuresInModuliOfCurves §0.4",
+        "MotivicStructuresInModuliOfCurves §2.3",
+        "MotivicStructuresInModuliOfCurves §5.4"
       ]
     },
     {
-      "id": "MotivicStructuresInModuliOfCurves/G-projectivity-lefschetz",
-      "title": "Pointed projectivity, tautological ample classes and stack Lefschetz",
-      "detail": "Prove projectivity of the coarse compactification for every stable pointed pair, exhibit an ample rational tautological divisor, and transfer hard Lefschetz to rational Hodge and etale cohomology of the smooth proper DM stack, with the correct twist. StableReductionPartII MC.4 proper coarse space is not all-pointed projectivity; DWP.9/hard-lefschetz-4-1-1 is scheme-only. Extend the respective owners as PartII rather than asserting their existing statements cover this. CLP Introduction p.3 also asserts full paritywise unimodality of an STE. TC.3/top-heavy establishes only opposite-degree injectivity and growth below the middle; a separate argument is needed for decrease above the middle. No perfect pairing on the STE is assumed.",
+      "slug": "dm-stack-hard-lefschetz",
+      "needs": "ℓ-adic hard Lefschetz for a smooth proper Deligne–Mumford stack of pure dimension d with projective coarse space: cup product with a^{d−k}, a the pullback of an ample class, is an isomorphism H^k → H^{2d−k}(d−k) for 0 ≤ k ≤ d.",
+      "supplier": "DeligneWeightsAndPurity",
+      "section": "§9.6",
       "neededBy": [
-        "MotivicStructuresInModuliOfCurves:TC.3/top-heavy",
-        "MotivicStructuresInModuliOfCurves:TC.12/homology-thirteen",
-        "MotivicStructuresInModuliOfCurves:TC.12/homology-fifteen",
-        "MotivicStructuresInModuliOfCurves:TC.12/genus-two-cohomology-fifteen",
-        "MotivicStructuresInModuliOfCurves:TC.12/genus-three-cohomology"
+        "MotivicStructuresInModuliOfCurves §4.12",
+        "MotivicStructuresInModuliOfCurves §12.1",
+        "MotivicStructuresInModuliOfCurves §12.2",
+        "MotivicStructuresInModuliOfCurves §12.10"
       ]
     },
     {
-      "id": "MotivicStructuresInModuliOfCurves/G-mapping-class-inputs",
-      "title": "Primary dimension and stability proofs",
-      "detail": "Collate the actual Harer vcd theorem (g≥2 unmarked, g≥1 marked), Church–Farb–Putman and Morita–Sakasai–Suzuki top-degree rational vanishing, Harer/Wahl stability with k≤(2g−2)/3, and the stable kappa/psi cohomology theorem. Both papers quote these as inputs; their primary proofs and Teichmuller-to-stack comparison have not been read in this job.",
+      "slug": "dm-stack-mixed-hodge",
+      "needs": "For separated finite-type Deligne–Mumford stacks over ℂ, functorial graded-polarizable mixed Hodge structures on H^* and H_c^* with Künneth, finite-quotient invariants, Poincaré duality for smooth stacks, purity for smooth proper stacks, the weight spectral sequence of a normal crossings compactification with orientation characters, and hard Lefschetz for smooth proper stacks with projective coarse space.",
+      "supplier": "MixedHodgeModulesAndIrregularHodgeTheory",
+      "section": "H.1/operations and H.0/projective-direct-image",
       "neededBy": [
-        "MotivicStructuresInModuliOfCurves:TC.1/vcd",
-        "MotivicStructuresInModuliOfCurves:TC.1/top-vcd-vanishing",
-        "MotivicStructuresInModuliOfCurves:TC.2/stable-tautological-range"
+        "MotivicStructuresInModuliOfCurves §0.4",
+        "MotivicStructuresInModuliOfCurves §0.5",
+        "MotivicStructuresInModuliOfCurves §1.2",
+        "MotivicStructuresInModuliOfCurves §2.3",
+        "MotivicStructuresInModuliOfCurves §2.4",
+        "MotivicStructuresInModuliOfCurves §3.1",
+        "MotivicStructuresInModuliOfCurves §4.2",
+        "MotivicStructuresInModuliOfCurves §4.12",
+        "MotivicStructuresInModuliOfCurves §9.7",
+        "MotivicStructuresInModuliOfCurves §12.1",
+        "MotivicStructuresInModuliOfCurves §12.4",
+        "MotivicStructuresInModuliOfCurves §12.6"
       ]
     },
     {
-      "id": "MotivicStructuresInModuliOfCurves/G-source-inputs",
-      "title": "Primary finite-base and genus-one cohomology inputs",
-      "detail": "Read Keel’s Chow/cohomology presentation, Arbarello–Cornalba’s finite bases and divisor theorem, Petersen’s genus-one even-cohomology theorem, Getzler’s genus-one configuration/cusp computation and the earlier CLP all-genus H11 generation theorem at their original theorem/page locators. The present statements have been checked in CLP/BFP but their quoted primary proofs have not. None is promoted to a baseline declaration.",
+      "slug": "dm-stack-cycle-class",
+      "needs": "For smooth separated finite-type Deligne–Mumford stacks over ℂ and over finitely generated fields of characteristic zero, the cycle class map A^c(X) → W_{2c}H^{2c}(X)(c) in rational Betti and ℚ_ℓ-étale cohomology, compatible with exterior products, proper pushforward, Gysin maps, pullback and the Betti–étale comparison.",
+      "supplier": "MotivesAndAlgebraicCycles",
+      "section": "Layer 2 (MC.2), §§2.4–2.7",
       "neededBy": [
-        "MotivicStructuresInModuliOfCurves:TC.1/genus-zero-cohomology",
-        "MotivicStructuresInModuliOfCurves:TC.1/odd-135",
-        "MotivicStructuresInModuliOfCurves:TC.2/genus-one-pure",
-        "MotivicStructuresInModuliOfCurves:TC.2/genus-one-even",
-        "MotivicStructuresInModuliOfCurves:TC.3/cusp-ste-operations",
-        "MotivicStructuresInModuliOfCurves:TC.10/low-cohomology",
-        "MotivicStructuresInModuliOfCurves:TC.0/cusp-moduli-identification"
+        "MotivicStructuresInModuliOfCurves §0.1",
+        "MotivicStructuresInModuliOfCurves §5.3",
+        "MotivicStructuresInModuliOfCurves §10.5",
+        "MotivicStructuresInModuliOfCurves §12.9"
       ]
     },
     {
-      "id": "MotivicStructuresInModuliOfCurves/G-genus-two-inputs",
-      "title": "Primary compact-type and local-system inputs in genus two",
-      "detail": "Read Petersen’s compact-type direct-image decomposition and local-system cohomology classification that supply CLP Propositions2.6 and2.8. Check all weights/Tate shifts and the hyperelliptic-involution parity. Verify the earlier CLP H11 theorem and degree-two tautological base independently. The Galois classification cannot be inferred merely from the present paper’s numerical graph computation.",
+      "slug": "completed-symmetric-functions",
+      "needs": "The completed ring of symmetric functions over ℚ in the power sums p_i and a variable h, filtered by deg p_i = i and deg h = 2, as a complete filtered special λ-algebra with Adams operations ψ_r(p_i) = p_{ri}, ψ_r(h) = h^r, together with the Frobenius characteristic of stable S-modules and convergence of the ordinary exponential of the Getzler–Kapranov operator Δ.",
+      "supplier": "SchurWeyl",
+      "section": "Layer 7",
       "neededBy": [
-        "MotivicStructuresInModuliOfCurves:TC.3/genus-two-even",
-        "MotivicStructuresInModuliOfCurves:TC.11/genus-two-odd-galois"
+        "MotivicStructuresInModuliOfCurves §1.4"
       ]
     },
     {
-      "id": "MotivicStructuresInModuliOfCurves/G-local-system-descent",
-      "title": "Geometric configuration and harmonic-tensor comparison",
-      "detail": "Construct the symplectic monodromy torsor/local systems over the smooth curve stack; prove relative Kunneth, Leray degeneration and configuration diagonal restrictions, with harmonic contractions and the transposed Specht action. The imported Brauer algebra only supplies representation algebra, not these geometric maps.",
+      "slug": "complete-adams-series",
+      "needs": "The plethystic exponential and logarithm, as inverse bijections, over augmentation-complete series in a complete filtered rational special λ-algebra with continuous Adams operations on every coefficient and grading variable, extending the calculus of §5.1.",
+      "supplier": "HabiroNahmSeries",
+      "section": "§5.1",
       "neededBy": [
-        "MotivicStructuresInModuliOfCurves:TC.2/symplectic-local-systems",
-        "MotivicStructuresInModuliOfCurves:TC.3/local-system-quotient",
-        "MotivicStructuresInModuliOfCurves:TC.9/genus-four-local-system-traces"
+        "MotivicStructuresInModuliOfCurves §1.4"
       ]
-    },
-    {
-      "id": "MotivicStructuresInModuliOfCurves/G-known-chow",
-      "title": "Earlier low-gonality and Chow–Kunneth ranges",
-      "detail": "Read Canning–Larson’s primary marked Hurwitz/tautological-Chow results: CKgP and A*=R* in the finite ranges c(1)=c(2)=10,c(3)=c(4)=11,c(5)=7,c(6)=5; hyperelliptic/trigonal strata through14 marks; the tetragonal filling criterion, splitting-stratum presentation and surjectivity. CLP’s recalled §5 arguments do not themselves reproduce all those earlier proofs. For the Hurwitz presentation, distinguish the intrinsic PGL2 target from an SL2 lift on which O(1), E and F exist. Prove gerbe/central descent and product-natural rational Chow transfer for the z_i and Chern generators; do not assume a universal O(1) descends to the intrinsic quotient.",
-      "neededBy": [
-        "MotivicStructuresInModuliOfCurves:TC.4/known-ckgp-ranges",
-        "MotivicStructuresInModuliOfCurves:TC.5/low-gonality-input",
-        "MotivicStructuresInModuliOfCurves:TC.5/sigma-chow",
-        "MotivicStructuresInModuliOfCurves:TC.5/tetragonal-global-chow"
-      ]
-    },
-    {
-      "id": "MotivicStructuresInModuliOfCurves/G-orthogonal",
-      "title": "The valid orthogonal relative Chow theorem",
-      "detail": "Prove the rational relative orthogonal Grassmannian Chow/CKgP theorem for the actual iterated universal oriented quadratic bundles, with a selected maximal-isotropic component, or a valid flag-bundle/splitting-principle descent argument. CLP Lemma5.10’s passage from a trivial underlying vector bundle to a split quadratic form requires justification; use no arbitrary quadratic bundle assertion without it. The parabolic universal exact sequence0→U→V→U dual→0 need not be equivariantly split.",
-      "neededBy": [
-        "MotivicStructuresInModuliOfCurves:TC.6/orthogonal-universal-chow",
-        "MotivicStructuresInModuliOfCurves:TC.6/orthogonal-fibre-powers"
-      ]
-    },
-    {
-      "id": "MotivicStructuresInModuliOfCurves/G-mukai",
-      "title": "Central rigidification and bundle/Chow descent gates",
-      "detail": "Prove TC.6/mukai-lift-gate and mukai-descent-gate, including family-level Mukai comparison, actual stabilizers, mu4 weights/cancelling twists and rational Chow transfer natural after every product. Existing Spin primitives and generic rigidification supply neither gate. Until then genus-seven CKgP and every endpoint using it have an explicit open proof dependency.",
-      "neededBy": [
-        "MotivicStructuresInModuliOfCurves:TC.6/mukai-lift-gate",
-        "MotivicStructuresInModuliOfCurves:TC.6/mukai-descent-gate"
-      ]
-    },
-    {
-      "id": "MotivicStructuresInModuliOfCurves/G-finite-field-geometry",
-      "title": "Primary hyperelliptic and quadric geometry",
-      "detail": "Read Arsie–Vistoli’s exact change-of-variables quotient (including parity), Bergstrom’s characteristic-two low-marking hyperelliptic counts and equivariant extension, canonical genus-four complete-intersection geometry and all-characteristic finite-field quadric classification/stabilizers. GN.2 local-global arithmetic is not a verified characteristic-two quadric-surface supplier. The FF.1/FF.3 finite-field polynomial inputs are exact imports but do not supply these geometric results.",
-      "neededBy": [
-        "MotivicStructuresInModuliOfCurves:TC.7/hyperelliptic-quotient",
-        "MotivicStructuresInModuliOfCurves:TC.7/hyperelliptic-marked-counts",
-        "MotivicStructuresInModuliOfCurves:TC.7/quadric-incidence",
-        "MotivicStructuresInModuliOfCurves:TC.7/quadric-orbit-count",
-        "MotivicStructuresInModuliOfCurves:TC.8/hyperelliptic-equivariant"
-      ]
-    },
-    {
-      "id": "MotivicStructuresInModuliOfCurves/G-symmetric-functions",
-      "title": "Completed lambda-ring and modular characteristic calculus",
-      "detail": "Obtain completed symmetric functions in p_i,h with deg p_i=i, deg h=2, stable support2g−2+n>0, Adams psi_r(h)=h^r, psi_r(q)=q^r, plethystic Exp/Log and continuous ordinary exp(Delta). Prove coefficientwise finiteness and distinguish ordinary/plethystic exponentials. This is routed to SchurWeylSymmetricFunctionsPartII; current SchurWeyl Layer7 is fixed-degree and QSeriesAndPadicModularForms QM.0 scalar formal series does not cover it.",
-      "neededBy": [
-        "MotivicStructuresInModuliOfCurves:TC.8/getzler-kapranov",
-        "MotivicStructuresInModuliOfCurves:TC.8/stable-graph-transform"
-      ]
-    },
-    {
-      "id": "MotivicStructuresInModuliOfCurves/G-computations",
-      "title": "Finite exact certificates for graph and Euler calculations",
-      "detail": "Supply reproducible rational/integer finite certificates for BFP boundary coefficients (ordinary and equivariant); lower-genus equivariant coefficients; formal certification and published collation of Gorsky’s formula; Getzler multiplicities429,6006,186263; genus-two multiplicities264,836; the complete891 decorated graphs, all restriction entries,825 pivots,66 kernel vectors and one nonzero M_ij pairing. Specify retained flag sets and graph automorphism/excess signs. CLP’s cited software and BFP’s Maple/SF calculations are not reproduced by transcribing their outputs. The independent review reproduces Gorsky’s genus-four degree-three arithmetic by a 25-term exact enumeration, recording its coefficients and algorithm in the review report. It yields ordinary−10 and Schur2s3−6s21; the geometric orbit formula, Harer–Zagier input and published collation are not thereby formalized. Polynomial consistency checks do not generate the boundary tables or the graph matrices. These remaining tasks keep this gap open.",
-      "neededBy": [
-        "MotivicStructuresInModuliOfCurves:TC.1/lower-polynomial-counts",
-        "MotivicStructuresInModuliOfCurves:TC.8/genus-four-euler",
-        "MotivicStructuresInModuliOfCurves:TC.9/genus-four-boundary-counts",
-        "MotivicStructuresInModuliOfCurves:TC.9/genus-four-equivariant-counts",
-        "MotivicStructuresInModuliOfCurves:TC.11/basis-1-13",
-        "MotivicStructuresInModuliOfCurves:TC.11/basis-1-14",
-        "MotivicStructuresInModuliOfCurves:TC.11/basis-2-12",
-        "MotivicStructuresInModuliOfCurves:TC.11/graph-restriction-rank",
-        "MotivicStructuresInModuliOfCurves:TC.11/genus-two-fifteen-base",
-        "MotivicStructuresInModuliOfCurves:TC.12/genus-one-fifteen-split",
-        "MotivicStructuresInModuliOfCurves:TC.12/high-odd-realizations"
-      ]
-    },
-    {
-      "id": "MotivicStructuresInModuliOfCurves/G-graph-presentations",
-      "title": "Unpublished complete cusp-graph relations",
-      "detail": "CLP Remark7.8 announces a complete graphical presentation in forthcoming work. The existence of a spanning graphical family follows from STE generation, but no complete relation theorem is proved in the paper. Do not turn that announcement or Conjecture7.12 into a proved endpoint. This announced result is not needed by the planned endpoints and has no target consumer. The alternative self-pairing computation of Remark7.9 is instead a finite certificate covered by G-computations.",
-      "neededBy": []
     }
   ],
   "sourceIssues": [
