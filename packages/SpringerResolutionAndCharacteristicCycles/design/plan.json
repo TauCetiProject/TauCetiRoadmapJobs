@@ -5139,131 +5139,28 @@
   ],
   "gaps": [
     {
-      "id": "AG-geometry",
-      "title": "Native finite-type scheme geometry and completion comparisons",
-      "detail": "Supply native dimension, regular-sequence and fibre criteria, the open CM locus, generic reducedness of CM schemes, finite birational maps to normal schemes, excellent finite-type field schemes and reduced/equidimensional completed prime quotients. Also supply Serre vanishing and extension of coherent generating subsheaves on the projective flag schemes. General foundations belong to SchemeAndStackFoundations:SF.0; these exact statements have not all been found as nodes, so no closure is claimed.",
-      "neededBy": [
-        "SpringerResolutionAndCharacteristicCycles:F/flag-geometry",
-        "SpringerResolutionAndCharacteristicCycles:F/constant-rank-intersection",
-        "SpringerResolutionAndCharacteristicCycles:G/resolution-properties",
-        "SpringerResolutionAndCharacteristicCycles:I/local-complete-intersection",
-        "SpringerResolutionAndCharacteristicCycles:I/reduced-incidence",
-        "SpringerResolutionAndCharacteristicCycles:I/birational-projections",
-        "SpringerResolutionAndCharacteristicCycles:C/cartan-fibre-dimensions",
-        "SpringerResolutionAndCharacteristicCycles:C/cartan-flatness",
-        "SpringerResolutionAndCharacteristicCycles:S/cotangent-identification",
-        "SpringerResolutionAndCharacteristicCycles:D/differential-operators",
-        "SpringerResolutionAndCharacteristicCycles:D/filtration-existence-comparison",
-        "SpringerResolutionAndCharacteristicCycles:L/flag-d-affinity",
-        "SpringerResolutionAndCharacteristicCycles:T/cartan-graph-components",
-        "SpringerResolutionAndCharacteristicCycles:T/formal-component-detection",
-        "SpringerResolutionAndCharacteristicCycles:T/smoothness-criterion",
-        "SpringerResolutionAndCharacteristicCycles:E/completion-cycle-map",
-        "SpringerResolutionAndCharacteristicCycles:E/module-completion-formula"
-      ]
+      "slug": "lie-invariants",
+      "needs": "For split connected reductive G over a field of characteristic zero or p>h, supply the arbitrary-field Lie Jordan and centralizer-dimension comparisons needed in §§2.2–2.3, the regular-semisimple Borel W-torsor and quasi-finiteness of the regular-Borel morphism; supply invariant symmetric forms and Lie/flag comparisons under central isogenies of invertible degree, the rank-one centralizer/root-vector regularity on a single root wall used in §5.3 in the same characteristic range.",
+      "supplier": "ReductiveGroups",
+      "section": "Layers 2, 3, 7–9 (Part II extension)"
     },
     {
-      "id": "VB-upstream",
-      "title": "Register and import the current vector-bundle roadmap",
-      "detail": "AlgebraicVectorBundles on current TauCetiRoadmap main already owns sheaf symmetric algebras, relative Spec, duality and total spaces: L0B–L0C, L1A–L1B, L2A–L2B. Import totalSpace(E)=Spec Sym(E∨) and pullback; do not rebuild those carriers here. The current upstream statements do not give the required associated-bundle descent theorem: supply that precise extension and its integral-model base-change comparison. It is absent from this atlas snapshot, so supply the registration and check the precise descent theorem. Current Tau Ceti already has finite locally free sheaves and relative differentials, but not every geometric total-space construction.",
-      "neededBy": [
-        "SpringerResolutionAndCharacteristicCycles:F/constant-rank-intersection",
-        "SpringerResolutionAndCharacteristicCycles:G/simultaneous-resolution",
-        "SpringerResolutionAndCharacteristicCycles:S/springer-resolution",
-        "SpringerResolutionAndCharacteristicCycles:S/cotangent-identification",
-        "SpringerResolutionAndCharacteristicCycles:D/differential-operators",
-        "SpringerResolutionAndCharacteristicCycles:D/filtered-pbw",
-        "SpringerResolutionAndCharacteristicCycles:H/transfer-and-duality"
-      ]
+      "slug": "associated-bundle-descent",
+      "needs": "For a flat affine group scheme H over S₀, a representable fpqc H-torsor P→S and a finite locally free H-representation V over S₀, compare the total space of its descended module with the geometric contracted product P×ᴴTot(V) supplied by SchemeAndStackFoundations §1.16, preserving the inverse-action descent datum, linear maps, tensor and dual structure and arbitrary base change; compare invariant locally direct summands and their incidence embeddings, including integral Chevalley Borel Lie bundles, using the descent equivalence of §1.1.",
+      "supplier": "AlgebraicVectorBundles",
+      "section": "L0B–L2B"
     },
     {
-      "id": "Lie-invariants",
-      "title": "Reductive Lie-algebra structure inputs",
-      "detail": "Check and supply the char(k)=0 or p>h Jordan and centralizer theory: regular-element Borels are finite, regular semisimple Borels form an étale W-torsor, the rank-one root-wall calculation, and invariant forms in this range. In characteristic zero also supply Chevalley restriction, polynomial Weyl invariants, reduced nilpotent quotient fibre, unique flags over regular nilpotents and the adjoint/cotangent comparison. ReductiveGroups Layers 2, 7 and 8 supply the underlying Lie, roots and isogenies, but not an audited theorem with all these conclusions; additions in that direction require a ReductiveGroups Part II extension. Also supply the precise Bruhat closure-order theorem beyond the current Layer 7 decomposition statement, and the invertibility bound for the central-isogeny differential and induced flag comparison used in C/cm-reductive-and-zero; an isogeny by itself supplies neither conclusion.",
-      "neededBy": [
-        "SpringerResolutionAndCharacteristicCycles:G/regular-loci",
-        "SpringerResolutionAndCharacteristicCycles:G/resolution-properties",
-        "SpringerResolutionAndCharacteristicCycles:N/regular-root-wall",
-        "SpringerResolutionAndCharacteristicCycles:S/chevalley-restriction",
-        "SpringerResolutionAndCharacteristicCycles:S/springer-resolution",
-        "SpringerResolutionAndCharacteristicCycles:F/orbit-geometry",
-        "SpringerResolutionAndCharacteristicCycles:C/cm-reductive-and-zero"
-      ]
+      "slug": "local-geometric-comparisons",
+      "needs": "For a reduced pure d-dimensional finite-type k-scheme Y, a closed point x and each irreducible component C through x, prove that the completion of O_(C,x) is equidimensional of dimension d, and compare the generic-length cycles of the component quotient and its completed branches with the scheme cycles; use excellence for reducedness of the completed quotient, and retain the specified component ideals and maps in the scheme-to-affine and completed-local cycle comparisons.",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "§§0.7, 0.16–0.21, 5.1"
     },
     {
-      "id": "BR-input",
-      "title": "Convolution inputs behind the BR theorems",
-      "detail": "BR Theorem 2.2.1 is read, including its §2.10 proof structure, and Proposition 2.14.2 is read. Their positive-characteristic localisation, kernel concentration, global generation, convolution geometry and top Borel–Moore component-class comparison and the arbitrary-characteristic-zero base-field descent of the cycle equality are not back-chained here to established native nodes. A proof pass must supply these inputs, or register the exact published CM/base-change and Verma-cycle statements as imported theorem boundaries; merely citing BR is not closure.",
-      "neededBy": [
-        "SpringerResolutionAndCharacteristicCycles:C/bezrukavnikov-riche-input",
-        "SpringerResolutionAndCharacteristicCycles:C/cm-reductive-and-zero",
-        "SpringerResolutionAndCharacteristicCycles:K/verma-cycle"
-      ]
-    },
-    {
-      "id": "CM-spreading",
-      "title": "Cohen–Macaulay spreading through the special fibre",
-      "detail": "Verify the detailed scaling/DVR argument in C/cm-reductive-and-zero and its hypotheses on the integral closure model. In particular prove the model is preserved by scaling, its scheme special fibre is BR’s component, the CM locus is open, and the scaled finite-extension generic point extends to the special fibre. Flatness plus one CM special fibre alone does not imply every generic point is CM without this additional argument.",
-      "neededBy": [
-        "SpringerResolutionAndCharacteristicCycles:C/cm-reductive-and-zero"
-      ]
-    },
-    {
-      "id": "Steinberg-reduced",
-      "title": "Reducedness of the raw Springer fibre product",
-      "detail": "The main cycle construction uses (𝒩̃×_𝒩𝒩̃)_red. To replace this by the raw scheme fibre product as suggested by the variety-level BHS display, prove its incidence ideal radical in characteristic zero, or identify the source’s display as a reduced-variety convention and restrict the comparison accordingly. This gap affects only S/raw-fibre-product-comparison, not the downstream cycle identities.",
-      "neededBy": [
-        "SpringerResolutionAndCharacteristicCycles:S/raw-fibre-product-comparison"
-      ]
-    },
-    {
-      "id": "D-homological",
-      "title": "Derived sheaf operations and filtered homological inputs",
-      "detail": "The native DerivedCategory carrier does not supply derived sheaf tensor/Hom/pushforward, transfer compatibility, holonomic duality or the Sato–Kashiwara filtration. Supply these exact key inputs for H/transfer-and-duality, Kashiwara and Bernstein. Mustață’s explicit transfer and inequality arguments were read; the full homological proof and functor stability through b-functions have not been audited. The not-cleared HTT book has not been used as a read source.",
-      "neededBy": [
-        "SpringerResolutionAndCharacteristicCycles:H/transfer-and-duality",
-        "SpringerResolutionAndCharacteristicCycles:H/kashiwara-equivalence",
-        "SpringerResolutionAndCharacteristicCycles:H/bernstein-inequality",
-        "SpringerResolutionAndCharacteristicCycles:H/intermediate-extension"
-      ]
-    },
-    {
-      "id": "D-regular",
-      "title": "Regularity, equivariant descent and field comparison",
-      "detail": "Supply stability of regular holonomic modules under the smooth pullbacks and intermediate extensions actually used, the finite-orbit equivariant classification and the regularity restriction of BB. Mustață Theorem 7.33 states stability over C but sends its proof to HTT; the available BB scan lacks p. 18. Establish the characteristic-zero geometric regularity/base-field descent comparison separately. No Riemann–Hilbert theorem is assumed as a black-box definition.",
-      "neededBy": [
-        "SpringerResolutionAndCharacteristicCycles:H/regular-holonomic",
-        "SpringerResolutionAndCharacteristicCycles:H/moment-support-and-induction",
-        "SpringerResolutionAndCharacteristicCycles:L/principal-o-and-induction",
-        "SpringerResolutionAndCharacteristicCycles:L/equivariant-induction"
-      ]
-    },
-    {
-      "id": "BB-sections",
-      "title": "Global differential operators at the trivial central character",
-      "detail": "Finish the filtered-section computation Γ(D_F)=U(g)/ker χ₀, including the Harish–Chandra kernel and rho shift, in native sheaf terms. The BB pp. 16–17 theorem and proof were read, but the geometric section calculation used there is not currently a confirmed library theorem or requested node. Also supply integration of the finite-dimensional highest-weight modules selected by G-characters in the projection argument; do not infer integration for all integral Lie weights from LieHighestWeight Layer 4.",
-      "neededBy": [
-        "SpringerResolutionAndCharacteristicCycles:L/flag-d-affinity"
-      ]
-    },
-    {
-      "id": "CategoryO-elementary",
-      "title": "Register the elementary principal category O supplier",
-      "detail": "The existing paper route assigns algebraic category O, its strict central-reduced block, finite-length highest-weight classification, algebraic B-action and Levi integrability to LieHighestWeightPartIICompletedCategoryO. That proposed roadmap is not registered in this checkout, so there is no valid stage id to cite. Register its elementary layer before L/principal-o-and-induction and P/dominant-parabolic; it must not depend on this roadmap’s KL layer. Include the split reductive extension of the semisimple Verma and Harish–Chandra interfaces by a fixed central scalar character; the current upstream Layers 3 and 7 do not state this extension.",
-      "neededBy": [
-        "SpringerResolutionAndCharacteristicCycles:L/principal-o-and-induction",
-        "SpringerResolutionAndCharacteristicCycles:P/dominant-parabolic",
-        "SpringerResolutionAndCharacteristicCycles:L/flag-d-affinity",
-        "SpringerResolutionAndCharacteristicCycles:L/localisation-equivalence"
-      ]
-    },
-    {
-      "id": "CategoryO-KL",
-      "title": "Register the KL multiplicity supplier after localisation",
-      "detail": "LieHighestWeightPartIICompletedCategoryO must provide Weyl KL polynomials and [M(ww₀·0):L(vw₀·0)]=P_(w₀w,w₀v)(1) with the stated Bruhat order. Its KL theorem may consume this roadmap’s D/H/L layers, but its elementary O layer may not. Registration and a theorem-level dependency split are needed to avoid a cycle. No new KL polynomial definition is planned here.",
-      "neededBy": [
-        "SpringerResolutionAndCharacteristicCycles:K/kl-transition"
-      ]
+      "slug": "derived-bimodule-sheaves",
+      "needs": "Supply associative-ring sheaf bimodule derived tensor, internal Hom and pushforward with their actions, associativity, adjunction, restriction and affine comparisons compatible with additive K-injective models and bounded coherent D-module transfer.",
+      "supplier": "EnhancedDerivedSheaves",
+      "section": "§§0.1–0.4, E1.3–E1.4"
     }
   ],
   "sourceIssues": [

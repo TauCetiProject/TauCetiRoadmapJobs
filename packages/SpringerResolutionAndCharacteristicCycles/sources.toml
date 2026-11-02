@@ -1,0 +1,99 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SpringerResolutionAndCharacteristicCycles"
+
+[[source]]
+id = "BHS19"
+authors = "Christophe Breuil, Eugen Hellmann and Benjamin Schraen"
+title = "A local model for the trianguline variety and applications"
+year = 2019
+locator_scheme = "section"
+locator = "2.1–2.5, pp. 309–328"
+url = "https://numdam.org/item/10.1007/s10240-019-00111-y.pdf"
+fetched_from = "https://numdam.org/item/10.1007/s10240-019-00111-y.pdf"
+fetched_at = "2026-10-25T11:36:23Z"
+sha256 = "34ffd69795468054b4caab7847d5ae90393826c889b187397dbe53e16993967a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 1–7, 10–14"]
+
+[[source]]
+id = "BR12"
+authors = "Roman Bezrukavnikov and Simon Riche"
+title = "Affine braid group actions on derived categories of Springer resolutions"
+year = 2012
+locator_scheme = "theorem"
+locator = "Theorem 2.2.1; Remark 2.2.2; Propositions 2.6.7 and 2.8.1, pp. 565–568; §2.10, p. 571; Proposition 2.14.2"
+url = "https://www.numdam.org/item/10.24033/asens.2173.pdf"
+fetched_from = "https://www.numdam.org/item/10.24033/asens.2173.pdf"
+fetched_at = "2026-10-25T11:36:51Z"
+sha256 = "4f9f6472693dc11198a009fb0fabd13c29cb1af0d186f3765df58e8b3c5826b0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["4.2; 4.3; 11.1"]
+
+[[source]]
+id = "M23"
+authors = "Mircea Mustață"
+title = "D-modules and singularities"
+year = 2023
+locator_scheme = "section"
+locator = "2–3; 5.1; 6.1–6.8; 7.4.3"
+url = "https://websites.umich.edu/~mmustata/DmodulesNotes.pdf"
+fetched_from = "https://websites.umich.edu/~mmustata/DmodulesNotes.pdf"
+fetched_at = "2026-10-25T11:37:31Z"
+sha256 = "bf4103231ac100f06416c7552d566bfc7472f4f6d0d49679015abc7acd3aec2a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 8–9"]
+
+[[source]]
+id = "G98"
+authors = "Victor Ginzburg, with Vladimir Baranovsky and Sam Evens"
+title = "Lectures on D-modules"
+year = 1998
+locator_scheme = "section"
+locator = "1.1, pp. 4–6; 2.1, pp. 23–24; 4.1, pp. 60–61"
+url = "https://math.berkeley.edu/~nadler/ginzburg.dmodules.pdf"
+fetched_from = "https://math.berkeley.edu/~nadler/ginzburg.dmodules.pdf"
+fetched_at = "2026-10-25T11:38:15Z"
+sha256 = "7534f51335536c322c9c6d25dad991d7cabdb35029b010cf1a2fb179f7ae7aaa"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 8–9"]
+
+[[source]]
+id = "ElliottBB"
+authors = "Aron Heleodoro"
+title = "Notes on Localisation of g-modules"
+year = 2014
+locator_scheme = "theorem"
+locator = "Theorems 1–3, §§3–4, pp. 5–10"
+url = "https://www.ihes.fr/~celliott/Beilinson_Bernstein_talk.pdf"
+fetched_from = "https://www.ihes.fr/~celliott/Beilinson_Bernstein_talk.pdf"
+fetched_at = "2026-10-25T11:58:54Z"
+sha256 = "6ed2f33cb1463a109dc7f7f8b969561c38d370731e3e2b16a7642e42a55acd73"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Title page: Aron Heleodoro, January 12, 2014; hosted on Chris Elliott’s institutional page. Only Theorems 1–2 and the sections/global-generation route are used; parameter conventions are fixed independently."
+cited_for = ["10.1–10.4"]
+
+[[source]]
+id = "EH18"
+authors = "Karim El Haloui"
+title = "Smooth Projective Stacks: Ample bundles and D-affinity"
+year = 2018
+locator_scheme = "section"
+locator = "4.3.1, p. 63, Definition 4.10 and preceding paragraph"
+url = "https://wrap.warwick.ac.uk/108879/1/WRAP_Theses_El_Haloui_2018.pdf"
+fetched_from = "https://wrap.warwick.ac.uk/id/eprint/108879/1/WRAP_Theses_El_Haloui_2018.pdf"
+fetched_at = "2026-10-25T16:40:05Z"
+sha256 = "67826b3db45c31a9b9502261b6ef0b13a5391bb5fed3ab83ca2ea86486f15750"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["9.8"]
