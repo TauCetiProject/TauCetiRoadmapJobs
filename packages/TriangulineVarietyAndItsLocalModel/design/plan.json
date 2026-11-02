@@ -6415,30 +6415,79 @@
     }
   ],
   "gaps": [
-    {
-      "id": "TriangulineVarietyAndItsLocalModel/G1",
-      "title": "Assign the almost de Rham Artinian period extension to a precise supplier node",
-      "neededBy": [
-        "TriangulineVarietyAndItsLocalModel:A/period-deformation",
-        "TriangulineVarietyAndItsLocalModel:L/lattice-filtration",
-        "TriangulineVarietyAndItsLocalModel:T/parameter-weight",
-        "TriangulineVarietyAndItsLocalModel:C/cohomology-comparison"
-      ],
-      "detail": "R1 and R2 state verified source contracts. The accepted PHT field/coefficient-category nodes stop short of the full Artinian Fontaine and B-pair equivalences. No exact reserved Part II node exists in this checkout. Obtain that ownership/acceptance before packaging; do not regard a field classification as this stronger input. This is a supplier-closure gap, not an assertion that BHS proves no such theorem."
-    },
-    {
-      "id": "TriangulineVarietyAndItsLocalModel/G2",
-      "title": "Locally analytic constituent supplier has no reserved stage",
-      "neededBy": [
-        "TriangulineVarietyAndItsLocalModel:Y/multiplicity-problem",
-        "TriangulineVarietyAndItsLocalModel:Y/conditional-uniqueness",
-        "TriangulineVarietyAndItsLocalModel:Y/constituent-invariance",
-        "TriangulineVarietyAndItsLocalModel:Y/crystalline-multiplicity",
-        "TriangulineVarietyAndItsLocalModel:Y/rank-two-fibres"
-      ],
-      "detail": "The pending LocallyAnalyticRepresentationsOfLocalGroups direction must supply the actual locally analytic principal series I_δ, Orlik–Strauch constituents Π_w, finite Jordan–Hölder multiplicities, strong-linkage unitriangularity and the constituent isomorphism criterion under dominant parabolic permutations. No suitable existing or reserved node was found. This packet records the exact contract in pendingSuppliers instead of inventing a supplier stage or replacing representations by labels. The general multiplicity assertion remains a conjecture even after that supplier exists. The all-parameter signed-cycle uniqueness proof also needs this full unitriangular vanishing input; see E16. No effectivity restriction is silently added to the conjecture."
-    }
-  ],
+  {
+    "slug": "artinian-almost-de-rham",
+    "supplier": "PadicHodgeTheory",
+    "section": "§4.5",
+    "needs": "For every local Artinian E-algebra with residue E, provide the exact tensor Fontaine equivalence between almost de Rham coefficient B_dR representations and finite free A⊗K modules with nilpotent operator, including H⁰=ker ν, H¹=coker ν, finite-coefficient tensor compatibility and stable free positive lattices."
+  },
+  {
+    "slug": "artinian-b-pairs",
+    "supplier": "PadicHodgeTheory",
+    "section": "§4.5",
+    "needs": "Extend the coefficient B-pair/Robba equivalence to local Artinian E-algebras, preserving exact sequences, ranks and finite coefficient tensors and proving freeness from a free localized realization and a free positive period lattice."
+  },
+  {
+    "slug": "partial-de-rham-cohomology",
+    "supplier": "PadicHodgeTheory",
+    "section": "§4.5",
+    "needs": "Provide the J-de Rham B-pair dimension formula dim H¹_g,J=d rk W+dim H⁰(W)+dim H²_J(W)−dim H⁰(W_dR,J⁺), with H²_J defined by a positive J-algebraic twist killing positive invariants, its specialization when H²_J=H², and the six-term exact sequence for J-de Rham short exact sequences with H²_J(W₁)=0."
+  },
+  {
+    "slug": "dominant-trianguline-semistability",
+    "supplier": "PadicHodgeTheory",
+    "section": "§§5.2, 6.3",
+    "needs": "For every finite K/ℚₚ and every continuous r:G_K→GLₙ(E) whose Robba module has a saturated triangulation with parameters δ₁,…,δₙ such that δ_i(u)=∏_τ τ(u)^(k_(τ,i)) for every u∈O_K× with integers k_(τ,1)>⋯>k_(τ,n) at every τ, prove that r is semistable and δ_i=z^(k_i)unr(φ_i) with φ₁,…,φₙ the eigenvalues of the linearized Frobenius φ^f on D_st(r) in triangulation order, and that if moreover δ∈T_regⁿ then the monodromy vanishes, r is crystalline and this refinement is noncritical."
+  },
+  {
+    "slug": "selective-modification",
+    "supplier": "PadicHodgeTheory",
+    "section": "§5.2",
+    "needs": "Construct the unique embedding-selective period modification D⊂D_σ of a generic all-refinement noncritical crystabelline module, retaining its localization and σ-filtration, replacing every off-σ weight by the ambient minimum and identifying the potentially semistable period modules."
+  },
+  {
+    "slug": "general-character-spaces",
+    "supplier": "PhiGammaModulesAndIwasawaCohomology",
+    "section": "§§4.0, 7.3",
+    "needs": "For every finite K/ℚₚ, (a) prove that the weight morphism wt=(wt_τ)_τ:W_E→(𝔸¹)^Σ, the logarithmic derivative on a sufficiently small unit subgroup extending §7.3's weights from Artinian to affinoid points, is étale, with fibre over 0 the finite-order characters and over an integral k the characters z^k·χ with χ of finite order; (b) prove that for every n≥1, every integral k∈(ℤ^Σ)ⁿ and every C>0, the point δ_k has a basis of affinoid neighbourhoods in Wⁿ_E on each of which the algebraic points δ_(k′) with k′_(τ,i)−k′_(τ,i+1)>C for every τ and 1≤i<n are Zariski dense."
+  },
+  {
+    "slug": "completed-normalization-injectivity",
+    "supplier": "RigidAnalyticGeometry",
+    "section": "§§1.2, 8.1",
+    "needs": "For a reduced rigid space Z over E, a classical point z, the normalization Z̃→Z with its finitely many points z̃₁,…,z̃_m above z, and a composite Z′=Z_s→⋯→Z₁=Z̃ of proper birational morphisms of normal rigid spaces, each locally on the target the relative analytification of a projective birational morphism of schemes over an affinoid algebra, prove that Ô_(Z,z)→∏_j Ô_(Z̃,z̃_j) is the normalization of Ô_(Z,z) and that Ô_(Z,z)→∏_j Ô_(Z′,z′_j) is injective for any closed points z′_j∈Z′ above the z̃_j."
+  },
+  {
+    "slug": "rigid-normal-cm-openness",
+    "supplier": "RigidAnalyticGeometry",
+    "section": "§§1.2, 8.1",
+    "needs": "For a rigid space X locally of finite type over E, prove that the points x at which O_(X,x) is normal, respectively Cohen–Macaulay, form Zariski-open subsets of X; on an affinoid Sp A they are the traces on Max A of the corresponding open loci of the excellent ring A."
+  },
+  {
+    "slug": "rigid-flat-openness",
+    "supplier": "RigidAnalyticGeometry",
+    "section": "§§7.3, 8.1",
+    "needs": "For a morphism f:X→Y of rigid spaces locally of finite type over E and a point x at which O_(Y,f(x))→O_(X,x) is flat, prove that f is flat at every point of some affinoid neighbourhood U of x and that f(U) is an admissible open subset of Y."
+  },
+  {
+    "slug": "all-constituent-triangularity",
+    "supplier": "LocallyAnalyticRepresentationsOfLocalGroups",
+    "section": "LR.4/principal-series; LR.5/orlik-strauch-jordan-holder",
+    "needs": "Provide a separating unitriangular system of Jordan–Hölder multiplicity equations for all locally analytic principal-series constituent families, including non-locally-algebraic and nongeneric inducing data, sufficient to recover signed constituent cycles from all parameter-fibre cycles."
+  },
+  {
+    "slug": "constituent-conventions",
+    "supplier": "LocallyAnalyticRepresentationsOfLocalGroups",
+    "section": "LR.4/principal-series; LR.5/orlik-strauch-irreducibility; LR.5/orlik-strauch-jordan-holder",
+    "needs": "Identify the lower-Borel induction I_δ with twists δ_i ε^(i−1), its genuine Orlik–Strauch constituents, their finite Jordan–Hölder multiplicities and the dominant-parabolic criterion for isomorphic presentations in the BHS weight convention."
+  },
+  {
+    "slug": "unrestricted-trianguline-variety",
+    "supplier": "CompletedCohomologyAndLocalGlobalCompatibility",
+    "section": "§5.2a",
+    "needs": "For every finite K/ℚₚ, every n≥1 and every continuous r̄:G_K→GLₙ(k_E), with none of §5.1's global hypotheses, provide X_tri(r̄) as the reduced Zariski closure in X_r̄^□×Tⁿ of the locus U_tri(r̄) of points (r,δ) with δ∈T_regⁿ the parameter of a saturated triangulation of the Robba module of r, equidimensional of dimension n²+dn(n+1)/2, with U_tri(r̄) Zariski open and dense in X_tri(r̄), smooth over E, and with the full-character projection smooth on U_tri(r̄) of relative dimension n²+dn(n−1)/2−n."
+  }
+],
   "pendingSuppliers": [
     {
       "proposedOwner": "LocallyAnalyticRepresentationsOfLocalGroups",

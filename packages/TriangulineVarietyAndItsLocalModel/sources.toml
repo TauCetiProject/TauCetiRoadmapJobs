@@ -1,0 +1,127 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "TriangulineVarietyAndItsLocalModel"
+
+[[source]]
+id = "BHS19"
+doi = "10.1007/s10240-019-00111-y"
+year = 2019
+title = "A local model for the trianguline variety and applications"
+authors = "Christophe Breuil, Eugen Hellmann and Benjamin Schraen"
+locator_scheme = "section"
+locator = "Sections 3.1–4.3, pp. 330–385"
+url = "https://www.numdam.org/item/10.1007/s10240-019-00111-y.pdf"
+fetched_from = "https://www.numdam.org/item/10.1007/s10240-019-00111-y.pdf"
+fetched_at = "2026-10-25T09:15:43Z"
+sha256 = "34ffd69795468054b4caab7847d5ae90393826c889b187397dbe53e16993967a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 1–9", "supplier contracts (gap:general-character-spaces, gap:completed-normalization-injectivity, gap:rigid-normal-cm-openness, gap:rigid-flat-openness)"]
+version_note = "Read the published open PDF linked here; theorem numbering and printed pages refer to that version."
+
+[[source]]
+id = "Colmez08"
+year = 2008
+title = "Représentations triangulines de dimension 2"
+authors = "Pierre Colmez"
+locator_scheme = "section"
+locator = "Definition 4.1 and Proposition 4.3, pp. 237–238, including proofs"
+url = "https://www.numdam.org/item/AST_2008__319__213_0.pdf"
+fetched_from = "https://www.numdam.org/item/AST_2008__319__213_0.pdf"
+fetched_at = "2026-10-25T09:16:26Z"
+sha256 = "eab0e8f383307b5d63960ea24cf4d86fb9aab215ae2e8155d7bf57efdf105ed6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["§4.5"]
+version_note = "Read the published open PDF linked here; theorem numbering and printed pages refer to that version."
+
+[[source]]
+id = "BHS17"
+year = 2017
+title = "Une interprétation modulaire de la variété trianguline"
+authors = "Christophe Breuil, Eugen Hellmann and Benjamin Schraen"
+locator_scheme = "section"
+locator = "§2.2, author PDF pp. 7–8; Theorem 2.6 and its complete proof, author PDF pp. 8–12"
+url = "https://www.imo.universite-paris-saclay.fr/~christophe.breuil/PUBLICATIONS/eigenvariete.pdf"
+fetched_from = "https://www.imo.universite-paris-saclay.fr/~christophe.breuil/PUBLICATIONS/eigenvariete.pdf"
+fetched_at = "2026-10-25T09:16:32Z"
+sha256 = "e382a23bbf0cc63b386549a05337a5502c1b8e6430c95d23619fb58054688cf0"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["README references and targets", "supplier contract gap:unrestricted-trianguline-variety"]
+version_note = "Read the author final copy linked here; theorem numbering and PDF page locators use that copy."
+
+[[source]]
+id = "BHSsmooth17"
+year = 2017
+title = "Smoothness and classicality on eigenvarieties"
+authors = "Christophe Breuil, Eugen Hellmann and Benjamin Schraen"
+locator_scheme = "section"
+locator = "Lemma 2.4, author PDF pp. 10–12; Lemma 2.10 and proof, pp. 15–16; local density part of Proposition 2.12, pp. 16–17"
+url = "https://www.imo.universite-paris-saclay.fr/~christophe.breuil/PUBLICATIONS/classicite.pdf"
+fetched_from = "https://www.imo.universite-paris-saclay.fr/~christophe.breuil/PUBLICATIONS/classicite.pdf"
+fetched_at = "2026-10-25T09:16:33Z"
+sha256 = "26651229c1f8aedf1011c275e9f8160a4669166f5e277d638815257a8ae5fea1"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["README references and targets"]
+version_note = "Read the author final copy linked here; Lemma 2.10 is Lemma 3.12 in arXiv:1510.01222v1; locators use the author final copy."
+
+[[source]]
+id = "Ding19"
+doi = "10.1007/s11856-019-1845-y"
+authors = "Yiwen Ding"
+title = "Companion points and locally analytic socle for GL₂(L)"
+year = 2019
+arxiv = "1602.08859v2"
+locator_scheme = "section"
+locator = "Appendix A, author preprint pp. 44–47, including proofs of Propositions A.3, A.5 and Corollary A.4"
+url = "https://arxiv.org/abs/1602.08859v2"
+fetched_from = "https://arxiv.org/pdf/1602.08859v2"
+fetched_at = "2026-10-25T09:16:38Z"
+sha256 = "168be9c2ff7980d285a81dc940da6c0ecb79c8fe136f90786a5a90a7bbb9e4c7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Read arXiv:1602.08859v2, 2019; Appendix A locators use preprint printed pages 44–47; PDF page markers are one greater there."
+cited_for = ["README references and targets"]
+
+[[source]]
+id = "Ding25"
+doi = "10.1007/s10240-025-00156-2"
+year = 2025
+title = "p-Adic Hodge parameters in the crystabelline representations of GL_n"
+authors = "Yiwen Ding"
+locator_scheme = "section"
+locator = "§§2.1–2.4, printed pp. 9–32, including proofs; introduction pp. 1–9; Lemma 4.1, pp. 59–60, for the noncritical companion convention audit"
+url = "https://pmihes.centre-mersenne.org/item/10.1007/s10240-025-00156-2.pdf"
+fetched_from = "https://pmihes.centre-mersenne.org/item/10.1007/s10240-025-00156-2.pdf"
+fetched_at = "2026-10-25T09:17:01Z"
+sha256 = "741a49c0677a77b22c9759a016e215882b70dc760eb9e41fd2fe45cc633d05ba"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 9–13"]
+version_note = "Read the published open PDF linked here; theorem numbering and printed pages refer to that version."
+
+[[source]]
+id = "NT21"
+doi = "10.1007/s10240-021-00127-3"
+year = 2021
+title = "Symmetric power functoriality for holomorphic modular forms"
+authors = "James Newton and Jack A. Thorne"
+locator_scheme = "section"
+locator = "§2.3.1, pp. 28–33; Proposition 2.15 and Remark 2.16, pp. 36–38, including proofs"
+url = "https://pmihes.centre-mersenne.org/item/10.1007/s10240-021-00127-3.pdf"
+fetched_from = "https://pmihes.centre-mersenne.org/item/10.1007/s10240-021-00127-3.pdf"
+fetched_at = "2026-10-25T09:17:03Z"
+sha256 = "ef76912a84fdf3d0630fe3aaa83548110f9aca9fc50a421401ba5462512dce37"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layer 4", "supplier contract gap:completed-normalization-injectivity"]
+version_note = "Read the published open PDF linked here; theorem numbering and printed pages refer to that version."
+
