@@ -2798,6 +2798,7 @@
   "requests": [],
   "gaps": [
     {
+      "slug": "jr-local-comparison",
       "id": "jr-local-comparison",
       "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
       "section": "Part II relative comparison continuation (local Jacquet–Rallis theory)",
@@ -2815,6 +2816,7 @@
       ]
     },
     {
+      "slug": "jr-weil-descent",
       "id": "jr-weil-descent",
       "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
       "section": "Part II relative comparison continuation (Weil descent)",
@@ -2825,6 +2827,7 @@
       ]
     },
     {
+      "slug": "jr-product-base-change",
       "id": "jr-product-base-change",
       "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
       "section": "Part II relative comparison continuation (product-group spherical comparison)",
@@ -2835,6 +2838,7 @@
       ]
     },
     {
+      "slug": "unitary-factor-all-quadratic",
       "id": "unitary-factor-all-quadratic",
       "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
       "section": "§2.12 (extension of its ordinary unitary factor formula)",
@@ -2848,6 +2852,7 @@
       ]
     },
     {
+      "slug": "hermitian-field-classification",
       "id": "hermitian-field-classification",
       "supplier": "GeometryOfNumbersAndQuadraticArithmetic",
       "section": "§2.9 (local classification beyond odd residue characteristic)",
@@ -2860,6 +2865,7 @@
       ]
     },
     {
+      "slug": "unramified-hermitian-lattice-orbits",
       "id": "unramified-hermitian-lattice-orbits",
       "supplier": "GeometryOfNumbersAndQuadraticArithmetic",
       "section": "§2.7 (unramified integral Hermitian isometry classes)",
@@ -2872,6 +2878,7 @@
       ]
     },
     {
+      "slug": "unramified-unit-vector-transitivity",
       "id": "unramified-unit-vector-transitivity",
       "supplier": "GeometryOfNumbersAndQuadraticArithmetic",
       "section": "§2.7 (unit vectors in unramified self-dual lattices)",
