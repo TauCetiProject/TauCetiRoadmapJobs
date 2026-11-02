@@ -1,0 +1,19 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "EllipticCurvesPartII"
+
+[[source]]
+id = "BS20"
+authors = "Michael A. Bennett and Samir Siksek"
+title = "A conjecture of Erdős, supersingular primes and short character sums"
+year = 2020
+doi = "10.4007/annals.2020.191.2.2"
+locator_scheme = "theorem"
+locator = "§5 proof of Lemma 5.2, pp. 365–366; §6 equation (17), Lemmas 6.2, 6.3, 6.5 and proof of Lemma 6.6, pp. 367–371"
+url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n2-p02-s.pdf"
+fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v191-n2-p02-s.pdf"
+fetched_at = "2026-10-25T02:58:17Z"
+sha256 = "3920a7524a37870942fe3591ac858db23cb604f4331bccd2a6dc5f11a1671fbf"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-25"
+cited_for = ["Layers 0–5: imported Legendre interfaces"]
