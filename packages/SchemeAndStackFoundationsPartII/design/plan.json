@@ -3284,7 +3284,7 @@
       "slug": "finite-group-ext",
       "supplier": "SchemeAndStackFoundations",
       "section": "Layer 2 §2.4",
-      "needs": "For every commutative finite locally free group X over any scheme, the fppf sheafification of T↦Ext¹_(T_fppf)(X_T,G_m), with Ext classifying commutative group extensions, vanishes.",
+      "needs": "For every commutative finite locally free group X over any scheme, the fppf sheafification of T↦Ext¹_(T_fppf)(X_T,𝔾_m), with Ext classifying commutative group extensions, vanishes.",
       "nodes": [
         "gap:begueri-resolution"
       ],
@@ -3319,11 +3319,11 @@
       "slug": "cauchy-algebraization",
       "supplier": "SchemeAndStackFoundations",
       "section": "Layer 4",
-      "needs": "For a topological ring B with an open nonunital henselian subring B′ and a zero-neighborhood basis of B′-ideals, every set-valued functor F on B-algebras commuting with filtered colimits and invariant under henselian pairs satisfies F(B)≃F(B̂), via the Cauchy-net quotient description of the separated completion, with no first-countability or Noetherian hypothesis.",
+      "needs": "For a topological ring B with an open nonunital henselian subring B′ and a zero-neighbourhood basis of B′-ideals, every set-valued functor F on B-algebras commuting with filtered colimits and invariant under henselian pairs satisfies F(B)≃F(B̂), via the Cauchy-net quotient description of the separated completion, with no first-countability or Noetherian hypothesis.",
       "nodes": [
         "SchemeAndStackFoundationsPartII:FC.9/topological-algebraization"
       ],
-      "source": "Bouthier–Česnavičius §2.1.12–2.1.15, pp.11–13"
+      "source": "BC22 §§2.1.12–2.1.15, pp.11–13"
     },
     {
       "slug": "punctured-h2-injectivity",
@@ -3333,7 +3333,7 @@
       "nodes": [
         "SchemeAndStackFoundationsPartII:FC.9/noetherian-open-comparison"
       ],
-      "source": "Bouthier–Česnavičius Corollary 2.3.5(c), pp.30–31; CS24 Corollary 5.6.13, p.77"
+      "source": "BC22 Corollary 2.3.5(c), pp.30–31; CS24 Corollary 5.6.13, p.77"
     },
     {
       "slug": "adic-flat-module-limits",
@@ -3343,17 +3343,17 @@
       "nodes": [
         "SchemeAndStackFoundationsPartII:FC.10/perfectoid-flat-discreteness"
       ],
-      "source": "Yekutieli arXiv:1606.01832v3 Theorems 1.8,4.3,5.9, pp.5–6,14,16–17 (published numbering cited by CS24: 2.8,4.3,6.9)"
+      "source": "Y18 Theorems 1.8, 4.3 and 5.9, pp.5–6, 14, 16–17; published numbering cited by CS24: 2.8, 4.3, 6.9"
     },
     {
       "slug": "char-p-etale-dimension",
       "supplier": "SchemeAndStackFoundations",
       "section": "Layer 2",
-      "needs": "For every affine scheme in characteristic p and every p-primary torsion abelian étale sheaf F, H^i_et(X,F)=0 for i≥2.",
+      "needs": "For every affine scheme X in characteristic p and every p-primary torsion abelian étale sheaf F on X, H^i_et(X,F)=0 for i≥2; this extends the constant-coefficient vanishing stated with §2.11 `artinSchreier_sequence` to the non-constant sheaves R^jε_*G used in §5.4.",
       "nodes": [
         "SchemeAndStackFoundationsPartII:FC.5/p-henselian-dimension"
       ],
-      "source": "CS24 Corollary 5.3.7, p.61"
+      "source": "CS24 Corollary 5.3.7 and its proof, p.61"
     },
     {
       "slug": "flat-cohomology-continuity",
@@ -3370,7 +3370,7 @@
         "SchemeAndStackFoundationsPartII:FC.10/adic-support-hyperdescent",
         "SchemeAndStackFoundationsPartII:FC.1/ample-twisted-generation"
       ],
-      "source": "CS24 Lemma 5.3.1, Claim 5.3.5.3 and Corollary 5.2.10, pp.57–60; de Jong §3.1, p.4"
+      "source": "CS24 Lemma 5.3.1, Claim 5.3.5.3 and Corollary 5.2.10, pp.57–60; DJ §3.1, p.4"
     },
     {
       "slug": "torsor-limit-descent",
@@ -3386,7 +3386,7 @@
         "SchemeAndStackFoundationsPartII:FC.9/topological-algebraization",
         "SchemeAndStackFoundationsPartII:FC.10/adic-support-hyperdescent"
       ],
-      "source": "CS24 Lemma 5.3.1, Claim 5.3.5.3 and Corollary 5.2.10, pp.57–60; de Jong §3.1, p.4"
+      "source": "CS24 Lemma 5.3.1, Claim 5.3.5.3 and Corollary 5.2.10, pp.57–60; DJ §3.1, p.4"
     },
     {
       "slug": "complete-torsor-effectivity",
@@ -3407,7 +3407,7 @@
         "SchemeAndStackFoundationsPartII:FC.10/perfectoid-flat-discreteness",
         "SchemeAndStackFoundationsPartII:FC.10/adic-support-hyperdescent"
       ],
-      "source": "CS24 proof of Lemma 5.7.1 and square-zero step of Theorem 5.7.2, pp.78,80"
+      "source": "CS24 proof of Lemma 5.7.1 and square-zero step of Theorem 5.7.2, pp.78, 80"
     },
     {
       "slug": "koszul-geometric-support",
@@ -3420,25 +3420,15 @@
       "source": "SP Tag 0A6R, Lemma 47.9.1; CS24 proof of Theorem 5.7.2, p.81"
     },
     {
-      "slug": "syntomic-presentations",
-      "supplier": "SchemeAndStackFoundations",
-      "section": "Layer 0 §0.8",
-      "needs": "For ordinary ring maps and scheme morphisms, define syntomic to mean locally standard syntomic using TauCeti.Algebra.IsStandardSyntomicOfRelativeDimension, and prove composition and finite-presentation limit descent.",
-      "nodes": [
-        "SchemeAndStackFoundationsPartII:FC.0/ind-syntomic"
-      ],
-      "source": "CS24 §2.3.3 and footnote 11, p.24"
-    },
-    {
       "slug": "classical-affine-group-adapter",
       "supplier": "SchemeAndStackFoundations",
       "section": "Layer 1 §1.15",
-      "needs": "For ordinary rings, connect the native affine Hopf-algebra group-point functors and finite locally free Cartier duality with the smooth affine commutative group-scheme category, including smoothness of Res_(X/S)G_m for finite locally free X/S.",
+      "needs": "For ordinary rings, connect the native affine Hopf-algebra group-point functors and finite locally free Cartier duality with the smooth affine commutative group-scheme category, including smoothness of Res_(X/S)𝔾_m for finite locally free X/S.",
       "nodes": [
         "SchemeAndStackFoundationsPartII:FC.2/animated-group-points",
         "gap:begueri-resolution"
       ],
-      "source": "Bégueri §§2.1–2.2, pp.22–27; CS24 §§1.4,5.1.11, pp.8,52"
+      "source": "BG80 §§2.1–2.2, pp.22–27; CS24 §1.4, p.8 and §5.1.11, p.52"
     },
     {
       "slug": "flat-group-cotangent-amplitude",
@@ -3458,7 +3448,7 @@
       "nodes": [
         "SchemeAndStackFoundationsPartII:FC.1/ample-twisted-generation"
       ],
-      "source": "de Jong §§3.2–3.7, pp.4–6"
+      "source": "DJ §§3.2–3.7, pp.4–5"
     },
     {
       "slug": "noetherian-completion-flat",
@@ -3468,13 +3458,13 @@
       "nodes": [
         "SchemeAndStackFoundationsPartII:FC.6/noetherian-local-completion"
       ],
-      "source": "CS24 Corollary 5.4.5, p.68; standard Noetherian completion theorem"
+      "source": "CS24 Corollary 5.4.5, p.68"
     },
     {
       "slug": "begueri-resolution",
       "supplier": "PrismaticCohomologyPartIII",
       "section": "§6.0",
-      "needs": "For every commutative finite locally free G/S, supply a functorial, arbitrary-base-change-compatible fppf-exact sequence 0→G→H→Q→0 with H=Res_(G*/S)G_m, Q the affine symmetric multiplicative two-cocycle group on G*, coboundary H→Q faithfully flat and finitely presented, and H,Q smooth affine commutative S-groups.",
+      "needs": "For every commutative finite locally free G/S, supply a functorial, arbitrary-base-change-compatible fppf-exact sequence 0→G→H→Q→0 with H=Res_(G*/S)𝔾_m, Q the affine symmetric multiplicative two-cocycle group on G*, coboundary H→Q faithfully flat and finitely presented, and H,Q smooth affine commutative S-groups.",
       "nodes": [
         "SchemeAndStackFoundationsPartII:FC.3/fppf-postnikov-hyperdescent",
         "SchemeAndStackFoundationsPartII:FC.5/p-henselian-dimension",
@@ -3492,7 +3482,7 @@
       "slug": "animated-flat-cohomology",
       "supplier": "PrismaticCohomologyPartIII",
       "section": "§6.0",
-      "needs": "For ordinary R and an affine commutative R-group G smooth or finite locally free, supply the D(ℤ)-valued fppf and étale sheafifications RΓ(A,G) of the animated point functor, the identity τ≤0RΓ(A,G)≃G(A), evaluation on opens by the fppf slice-site limit with pullback transition maps, and the ordinary-algebra comparison with TauCeti.HopfAlgebra.pointsFppfSheaf and classical sheaf cohomology.",
+      "needs": "For ordinary R and an affine commutative R-group G smooth or finite locally free, supply the D(ℤ)-valued fppf and étale sheafifications RΓ(A,G) of the animated point functor, the identity τ≤0RΓ(A,G)≃G(A), evaluation on opens by the fppf slice-site limit with pullback transition maps, and the ordinary-algebra comparison with `TauCeti.HopfAlgebra.pointsFppfSheaf` and classical sheaf cohomology.",
       "nodes": [
         "SchemeAndStackFoundationsPartII:FC.3/animated-supports",
         "SchemeAndStackFoundationsPartII:FC.3/fppf-postnikov-hyperdescent",
@@ -3519,7 +3509,7 @@
       "slug": "perfection-covers",
       "supplier": "PrismaticCohomologyPartIII",
       "section": "§6.0",
-      "needs": "For morphisms of F_p-algebras, perfection preserves faithful flatness and ind-fppf maps, so perfecting a pro-fppf cover over a perfect base again gives a cover.",
+      "needs": "For morphisms of 𝔽_p-algebras, perfection preserves faithful flatness and ind-fppf maps, so perfecting a pro-fppf cover over a perfect base again gives a cover.",
       "nodes": [
         "SchemeAndStackFoundationsPartII:FC.6/semiperfect-perfection-excision",
         "SchemeAndStackFoundationsPartII:FC.7/fpqc-hyperdescent",
@@ -3574,7 +3564,7 @@
       "slug": "integral-perfectoid-hyperdescent",
       "supplier": "ArcTopologyAndDescent",
       "section": "Layer 12 §12.7",
-      "needs": "For a p-complete arc-hypercover of integral perfectoid Z_p-algebras with all terms integral perfectoid, the structural rings, tilts and A_inf rings are derived hyperdescent objects.",
+      "needs": "For a p-complete arc-hypercover of integral perfectoid ℤ_p-algebras with all terms integral perfectoid, the structural rings, tilts and A_inf rings are derived hyperdescent objects.",
       "nodes": [
         "SchemeAndStackFoundationsPartII:FC.10/perfectoid-flat-discreteness"
       ],
@@ -3584,17 +3574,17 @@
       "slug": "brauer-class-injective",
       "supplier": "SchemeAndStackFoundations",
       "section": "§2.22",
-      "needs": "For every scheme X, an Azumaya algebra whose class in H²_et(X,G_m) is zero is End(E) for an everywhere positive-rank finite locally free E, so SchemeBrauerGroup.toH2 is injective; this is also a prerequisite of HeightsRationalPointsAndObstructions §2.6c.",
+      "needs": "For every scheme X, an Azumaya algebra whose class in H²_et(X,𝔾_m) is zero is End(E) for an everywhere positive-rank finite locally free E, so `SchemeBrauerGroup.toH2` is injective; this is also a prerequisite of HeightsRationalPointsAndObstructions §2.6c.",
       "nodes": [
         "SchemeAndStackFoundationsPartII:FC.1/gabber-ample-brauer"
       ],
-      "source": "DJ §§2.13–2.14 and §3.1, pp.3–4"
+      "source": "DJ §§2.13–2.14, pp.3–4, and §3.1, p.4"
     },
     {
       "slug": "henselized-formal-fibres",
       "supplier": "SchemeAndStackFoundations",
       "section": "§0.21",
-      "needs": "For the henselization A of a finite-type Z-algebra along a finite ideal I, A is Noetherian and A→lim_n A/I^n has geometrically regular fibres.",
+      "needs": "For the henselization A of a finite-type ℤ-algebra along a finite ideal I, the map A→lim_n A/I^n is regular, that is, has geometrically regular fibres. Noetherianity of A and faithful flatness of A→Â are already §0.13 `henselization_noetherian`.",
       "nodes": [
         "SchemeAndStackFoundationsPartII:FC.9/henselian-invariance"
       ],

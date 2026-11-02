@@ -8,7 +8,7 @@ title = "Purity for flat cohomology"
 year = 2023
 arxiv = "1912.10932v3"
 locator_scheme = "section"
-locator = "§1.4, p.8; §2.3.3 and footnotes 11–13, p.24; §§4.1.5–4.1.6 and Corollary 4.1.9, pp.37–38; §§5.1.5–5.7.2, pp.49–81, including equation (5.2.5.1), p.55, and Claim 5.3.5.3 with footnote 24, p.59"
+locator = "§1.4, p.8; §4.1.2, p.36; §§4.1.5–4.1.6 and Corollary 4.1.9, pp.37–38; §§5.1.5–5.7.2, pp.49–81, including equation (5.2.5.1), p.55, and Claim 5.3.5.3 with footnote 24, p.59"
 url = "https://arxiv.org/abs/1912.10932v3"
 fetched_from = "https://arxiv.org/pdf/1912.10932v3"
 fetched_at = "2026-10-25T17:16:01Z"
@@ -17,12 +17,12 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "Locators use arXiv 1912.10932v3 (26 April 2023), with printed preprint pages, rather than the 2024 published pagination."
-cited_for = ["SchemeAndStackFoundationsPartII:FC.0/ind-fppf", "SchemeAndStackFoundationsPartII:FC.0/ind-syntomic", "SchemeAndStackFoundationsPartII:FC.0/pro-fppf-site", "SchemeAndStackFoundationsPartII:FC.2/animated-group-points", "SchemeAndStackFoundationsPartII:FC.2/group-linearized-cotangent", "SchemeAndStackFoundationsPartII:FC.2/group-cotangent-amplitude", "SchemeAndStackFoundationsPartII:FC.2/points-deformation", "SchemeAndStackFoundationsPartII:FC.3/animated-flatness", "SchemeAndStackFoundationsPartII:FC.3/flat-tensor-base-change", "SchemeAndStackFoundationsPartII:FC.3/nilpotent-flatness-test", "SchemeAndStackFoundationsPartII:FC.3/animated-sites", "SchemeAndStackFoundationsPartII:FC.3/animated-etale-equivalence", "SchemeAndStackFoundationsPartII:FC.3/animated-henselization", "SchemeAndStackFoundationsPartII:FC.3/animated-supports", "SchemeAndStackFoundationsPartII:FC.3/fppf-postnikov-hyperdescent", "SchemeAndStackFoundationsPartII:FC.3/approximation-tower", "SchemeAndStackFoundationsPartII:FC.3/pi-zero-comparison", "SchemeAndStackFoundationsPartII:FC.3/nil-invariance", "SchemeAndStackFoundationsPartII:FC.3/classical-neighborhood-excision", "SchemeAndStackFoundationsPartII:FC.4/perfect-affine-vanishing", "SchemeAndStackFoundationsPartII:FC.5/split-cover-refinement", "SchemeAndStackFoundationsPartII:FC.5/derived-beauville-laszlo", "SchemeAndStackFoundationsPartII:FC.5/pi-zero-derived-completion", "SchemeAndStackFoundationsPartII:FC.5/p-henselian-dimension", "SchemeAndStackFoundationsPartII:FC.5/p-complete-comparison", "SchemeAndStackFoundationsPartII:FC.6/semiperfect-perfection-excision", "SchemeAndStackFoundationsPartII:FC.6/derived-excision-condition", "SchemeAndStackFoundationsPartII:FC.6/finite-ideal-excision", "SchemeAndStackFoundationsPartII:FC.6/noetherian-local-completion", "SchemeAndStackFoundationsPartII:FC.7/fpqc-hyperdescent", "SchemeAndStackFoundationsPartII:FC.7/p-completely-flat-descent", "SchemeAndStackFoundationsPartII:FC.8/complete-implies-henselian", "SchemeAndStackFoundationsPartII:FC.8/henselian-h2", "SchemeAndStackFoundationsPartII:FC.8/restricted-complete-continuity", "SchemeAndStackFoundationsPartII:FC.8/complete-principal-descent", "SchemeAndStackFoundationsPartII:FC.8/derived-complete-continuity", "SchemeAndStackFoundationsPartII:FC.8/ordinary-complete-comparison", "SchemeAndStackFoundationsPartII:FC.8/henselian-noncomplete-counterexample", "SchemeAndStackFoundationsPartII:FC.9/henselian-invariance", "SchemeAndStackFoundationsPartII:FC.9/topological-algebraization", "SchemeAndStackFoundationsPartII:FC.9/laurent-algebraization", "SchemeAndStackFoundationsPartII:FC.9/punctured-animated-comparison", "SchemeAndStackFoundationsPartII:FC.9/noetherian-open-comparison", "SchemeAndStackFoundationsPartII:FC.10/perfectoid-flat-discreteness", "SchemeAndStackFoundationsPartII:FC.10/adic-support-hyperdescent", "gap:animation-composition", "gap:general-square-zero", "gap:punctured-h2-injectivity", "gap:adic-flat-module-limits", "gap:char-p-etale-dimension", "gap:flat-cohomology-continuity", "gap:torsor-limit-descent", "gap:complete-torsor-effectivity", "gap:complete-module-hyperdescent", "gap:koszul-geometric-support", "gap:syntomic-presentations", "gap:classical-affine-group-adapter", "gap:flat-group-cotangent-amplitude", "gap:noetherian-completion-flat", "gap:animated-flat-cohomology", "gap:cohomology-deformation", "gap:perfection-covers", "gap:henselized-formal-fibres"]
+cited_for = ["SchemeAndStackFoundationsPartII:FC.0/pro-fppf-site", "Conventions: covariant Dieudonné normalization", "Layer 9 §9.0 flat cohomology of ordinary algebras", "SchemeAndStackFoundationsPartII:FC.2/animated-group-points", "SchemeAndStackFoundationsPartII:FC.2/group-linearized-cotangent", "SchemeAndStackFoundationsPartII:FC.2/group-cotangent-amplitude", "SchemeAndStackFoundationsPartII:FC.2/points-deformation", "SchemeAndStackFoundationsPartII:FC.3/animated-flatness", "SchemeAndStackFoundationsPartII:FC.3/flat-tensor-base-change", "SchemeAndStackFoundationsPartII:FC.3/nilpotent-flatness-test", "SchemeAndStackFoundationsPartII:FC.3/animated-sites", "SchemeAndStackFoundationsPartII:FC.3/animated-etale-equivalence", "SchemeAndStackFoundationsPartII:FC.3/animated-henselization", "SchemeAndStackFoundationsPartII:FC.3/animated-supports", "SchemeAndStackFoundationsPartII:FC.3/fppf-postnikov-hyperdescent", "SchemeAndStackFoundationsPartII:FC.3/approximation-tower", "SchemeAndStackFoundationsPartII:FC.3/pi-zero-comparison", "SchemeAndStackFoundationsPartII:FC.3/nil-invariance", "SchemeAndStackFoundationsPartII:FC.3/classical-neighborhood-excision", "SchemeAndStackFoundationsPartII:FC.4/perfect-affine-vanishing", "SchemeAndStackFoundationsPartII:FC.5/split-cover-refinement", "SchemeAndStackFoundationsPartII:FC.5/derived-beauville-laszlo", "SchemeAndStackFoundationsPartII:FC.5/pi-zero-derived-completion", "SchemeAndStackFoundationsPartII:FC.5/p-henselian-dimension", "SchemeAndStackFoundationsPartII:FC.5/p-complete-comparison", "SchemeAndStackFoundationsPartII:FC.6/semiperfect-perfection-excision", "SchemeAndStackFoundationsPartII:FC.6/derived-excision-condition", "SchemeAndStackFoundationsPartII:FC.6/finite-ideal-excision", "SchemeAndStackFoundationsPartII:FC.6/noetherian-local-completion", "SchemeAndStackFoundationsPartII:FC.7/fpqc-hyperdescent", "SchemeAndStackFoundationsPartII:FC.7/p-completely-flat-descent", "SchemeAndStackFoundationsPartII:FC.8/complete-implies-henselian", "SchemeAndStackFoundationsPartII:FC.8/henselian-h2", "SchemeAndStackFoundationsPartII:FC.8/restricted-complete-continuity", "SchemeAndStackFoundationsPartII:FC.8/complete-principal-descent", "SchemeAndStackFoundationsPartII:FC.8/derived-complete-continuity", "SchemeAndStackFoundationsPartII:FC.8/ordinary-complete-comparison", "SchemeAndStackFoundationsPartII:FC.8/henselian-noncomplete-counterexample", "SchemeAndStackFoundationsPartII:FC.9/henselian-invariance", "SchemeAndStackFoundationsPartII:FC.9/topological-algebraization", "SchemeAndStackFoundationsPartII:FC.9/laurent-algebraization", "SchemeAndStackFoundationsPartII:FC.9/punctured-animated-comparison", "SchemeAndStackFoundationsPartII:FC.9/noetherian-open-comparison", "SchemeAndStackFoundationsPartII:FC.10/perfectoid-flat-discreteness", "SchemeAndStackFoundationsPartII:FC.10/adic-support-hyperdescent", "gap:animation-composition", "gap:general-square-zero", "gap:punctured-h2-injectivity", "gap:adic-flat-module-limits", "gap:char-p-etale-dimension", "gap:flat-cohomology-continuity", "gap:torsor-limit-descent", "gap:complete-torsor-effectivity", "gap:complete-module-hyperdescent", "gap:koszul-geometric-support", "gap:classical-affine-group-adapter", "gap:flat-group-cotangent-amplitude", "gap:noetherian-completion-flat", "gap:animated-flat-cohomology", "gap:cohomology-deformation", "gap:perfection-covers", "gap:henselized-formal-fibres"]
 
 [[source]]
 id = "BG80"
 locator_scheme = "section"
-locator = "BG80 Proposition 2.2.1, pp.25–27; R70 Lemma 6.2.2, p.51; Bégueri §§2.1–2.2, pp.22–27; CS24 §§1.4,5.1.11, pp.8,52; BG80 Proposition 2.2.1 and proof, pp.25–27"
+locator = "Proposition 2.2.1 and proof, pp.25–27; §§2.1–2.2, pp.22–27"
 url = "https://www.numdam.org/item/MSMF_1980_2_4__1_0.pdf"
 fetched_from = "https://www.numdam.org/item/MSMF_1980_2_4__1_0.pdf"
 fetched_at = "2026-10-25T17:16:02Z"
@@ -38,7 +38,7 @@ year = 1980
 [[source]]
 id = "DJ"
 locator_scheme = "section"
-locator = "§3.1–3.22, pp.4–9; Theorem 1.1, p.1; proof §§2–3, pp.1–9; CS24 Lemma 5.3.1, Claim 5.3.5.3 and Corollary 5.2.10, pp.57–60; de Jong §3.1, p.4; de Jong §§3.2–3.7, pp.4–6; DJ §§2.13–2.14 and §3.1, pp.3–4"
+locator = "Theorem 1.1, p.1; §§2.13–2.14, pp.3–4; §§3.1–3.22, pp.4–9"
 url = "https://www.math.columbia.edu/~dejong/papers/2-gabber.pdf"
 fetched_from = "https://www.math.columbia.edu/~dejong/papers/2-gabber.pdf"
 fetched_at = "2026-10-25T17:16:03Z"
@@ -60,7 +60,7 @@ venue = "Compos. Math. 144 (2008), no. 1, 1-31"
 doi = "10.1112/S0010437X07003144"
 arxiv = "math/0511244v4"
 locator_scheme = "section"
-locator = "§§3.1.1–3.1.3, pp.6–11; Theorem 3.1.4.1, Corollary 3.1.4.2, Lemma 3.1.4.3, Corollary 3.1.4.4 and Proposition 3.1.4.5, pp.11–14"
+locator = "§3.1.1, pp.6–8"
 url = "https://arxiv.org/abs/math/0511244v4"
 fetched_from = "https://arxiv.org/pdf/math/0511244v4"
 fetched_at = "2026-10-25T17:16:07Z"
@@ -69,7 +69,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "Locators use arXiv math/0511244v4 (25 May 2007), not the pagination of the 2008 published article; DOI identifies the same work."
-cited_for = ["Scope and ownership: HeightsRationalPointsAndObstructions §§2.6a–2.6c", "Layer 1 arithmetic ample extension"]
+cited_for = ["Conventions: weights of sheaves on gerbes"]
 
 [[source]]
 id = "BC22"
@@ -78,7 +78,7 @@ title = "Torsors on loop groups and the Hitchin fibration"
 year = 2022
 arxiv = "1908.07480v4"
 locator_scheme = "section"
-locator = "Lemma 2.1.3, pp.6–7; BC22 Proposition 2.1.4, pp.7–8; BC22 Theorem 2.1.6, pp.7–8; Bouthier–Česnavičius §2.1.12–2.1.15, pp.11–13; Bouthier–Česnavičius Corollary 2.3.5(c), pp.30–31; CS24 Corollary 5.6.13, p.77"
+locator = "§2.1.1, p.5; Lemma 2.1.3, pp.6–7; Proposition 2.1.4 and Theorem 2.1.6, pp.7–8; §§2.1.12–2.1.15, pp.11–13; Corollary 2.3.5(c), pp.30–31"
 url = "https://arxiv.org/abs/1908.07480v4"
 fetched_from = "https://arxiv.org/pdf/1908.07480v4"
 fetched_at = "2026-10-25T17:16:14Z"
@@ -87,7 +87,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "Locators use arXiv 1908.07480v4 and its printed preprint pages."
-cited_for = ["SchemeAndStackFoundationsPartII:FC.9/henselian-completion-comparison", "gap:henselian-stack-lifting", "gap:henselian-torsor-cohomology", "gap:cauchy-algebraization", "gap:punctured-h2-injectivity"]
+cited_for = ["Conventions: henselian nonunital subrings", "Layer 9 §9.0 flat cohomology of ordinary algebras", "SchemeAndStackFoundationsPartII:FC.9/henselian-completion-comparison", "gap:henselian-stack-lifting", "gap:henselian-torsor-cohomology", "gap:cauchy-algebraization", "gap:punctured-h2-injectivity"]
 
 [[source]]
 id = "Y18"
@@ -110,7 +110,7 @@ cited_for = ["gap:adic-flat-module-limits"]
 [[source]]
 id = "SP"
 locator_scheme = "tag"
-locator = "Tag 0A6R (Lemma 47.9.1), 0954 (Lemma 47.8.2), and §47.10; online, no page numbers; SP Tag 0A6R, Lemma 47.9.1; CS24 proof of Theorem 5.7.2, p.81; CS24 proof of Corollary 5.6.9, p.76; SP Tags 0AH2, 0AH3; 0954 (Lemma 47.8.2); 0A6R (Lemma 47.9.1); 0952 (Section 47.9); Section 47.10; 0AH2; 0AH3"
+locator = "Tags 0954 (Lemma 47.8.2), 0A6R (Lemma 47.9.1), 0952 (Section 47.9), Section 47.10, 0AH2, 0AH3 and 09XI (Lemma 15.11.6); online, no page numbers"
 url = "https://stacks.math.columbia.edu/tag/0AH2"
 fetched_from = "https://stacks.math.columbia.edu/download/more-algebra.pdf#nameddest=0AH2"
 fetched_at = "2026-10-25T17:23:12Z"
@@ -118,7 +118,7 @@ sha256 = "ab69179738e642603ddbde651f2838e1cb5d8711e8bcd7c447cbf02a8bb6a5d2"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["SchemeAndStackFoundationsPartII:FC.10/adic-support-hyperdescent", "gap:koszul-geometric-support", "gap:henselized-formal-fibres"]
+cited_for = ["Conventions: henselian nonunital subrings", "Layer 9 §9.0 flat cohomology of ordinary algebras", "SchemeAndStackFoundationsPartII:FC.10/adic-support-hyperdescent", "gap:koszul-geometric-support", "gap:henselized-formal-fibres"]
 authors = "The Stacks Project Authors"
 title = "The Stacks Project"
 year = 2026
@@ -133,7 +133,7 @@ venue = "Duke Math. J. 168, no. 8 (2019), 1461-1486"
 doi = "10.1215/00127094-2018-0057"
 arxiv = "1711.06456v4"
 locator_scheme = "section"
-locator = "§1.5, p.3; Lemma 3.1, p.6 (henselian Laurent comparison, not affine Gabber)"
+locator = "§1.5, p.3"
 url = "https://arxiv.org/abs/1711.06456v4"
 fetched_from = "https://arxiv.org/pdf/1711.06456v4"
 fetched_at = "2026-10-25T17:16:24Z"
@@ -142,7 +142,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v4"
-cited_for = ["Brauer conventions and scope"]
+cited_for = ["Conventions: the three Brauer objects"]
 
 [[source]]
 id = "R70"
