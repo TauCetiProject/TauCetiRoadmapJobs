@@ -7,7 +7,7 @@ authors = "Johannes Anschütz, Arthur-César Le Bras, Juan Esteban Rodríguez Ca
 title = "Rational analytic prismatization"
 year = 2026
 locator_scheme = "theorem"
-locator = "Definition 4.1.1; Propositions 3.4.12, 3.5.3, 3.6.3, 3.7.4, 4.3.1–4.3.2, 4.4.3–4.4.4, 4.5.2, 4.8.1, 6.6.7, 6.7.1–6.7.7; Corollaries 4.6.10–4.6.12, 6.5.11; Theorems 4.7.1–4.7.2, 4.10.6, 4.10.13, 5.1.1, 5.6.10, 5.7.4, 5.7.19, 6.1.1, 6.1.3, 6.2.1–6.2.2, 6.3.1–6.3.2, 6.4.1, 6.5.4, 6.5.8"
+locator = "§§2–6 and Appendix A. Principal statements: Definitions 2.6.4, 3.4.2, 4.1.1, 5.2.23, 5.4.2, 5.6.8, 6.4.4, 6.5.1–6.5.2; Propositions 3.4.12, 3.5.3, 3.6.3, 3.7.4, 4.3.1–4.3.2, 4.4.3–4.4.4, 4.5.2, 4.8.1, 5.3.2, 5.5.6, 5.7.3, 5.8.9–5.8.10, 6.4.10, 6.4.12, 6.5.3, 6.5.10, 6.6.7, 6.7.1–6.7.7, A.3.5; Corollaries 4.6.10–4.6.12, 5.7.18, 6.5.11; Theorems 4.7.1–4.7.2, 4.10.6, 4.10.13, 5.1.1, 5.2.14, 5.6.10, 5.7.4, 5.7.19, 6.1.1, 6.1.3, 6.2.1–6.2.2, 6.3.1–6.3.2, 6.4.1, 6.5.4, 6.5.8; Remarks 2.1.1, 5.1.4, 6.5.5–6.5.6; equation (1.2.2)"
 url = "https://people.mpim-bonn.mpg.de/scholze/analytic_prismatization.pdf"
 fetched_from = "https://people.mpim-bonn.mpg.de/scholze/analytic_prismatization.pdf"
 fetched_at = "2026-10-25T21:10:15Z"
@@ -15,8 +15,8 @@ sha256 = "ddd5d34768ef1edd5c9e67271ed5c0191c8c937d1e49c68bcc1f1b88527c0367"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-version_note = "Preprint read from the author's page (193 pages, pdftotext). Not refereed; numbering is that of the file with the recorded sha256. The introduction and the body differ in wording for Theorem 1.19 versus Theorem 5.1.1(1) (prim with trivial codualizing complex versus 0-proper); the body statement is the locator."
-cited_for = ["Scope", "Final targets T1–T14", "Risks"]
+version_note = "Preprint read from the author's page (193 pages, pdftotext). Not refereed; numbering is that of the file with the recorded sha256, and the design cites each statement by number, page and line of this file. The introduction and the body differ in wording for Theorem 1.19 versus Theorem 5.1.1(1) (prim with trivial codualizing complex versus 0-proper); the body statement is the locator. Collations of its outgoing citations: RC26a 3.2.27 is cited as a Theorem but is a Proposition in RC26a v3; Lazard's Chapitre III, (1.3.9) is cited as Corollary I.3.9; Remark 5.4.4 cites ABLB v2 Definition 3.2.8 as Lemma 3.2.8."
+cited_for = ["Scope", "Final targets T1–T14", "Risks", "Design: Layers 1–12"]
 
 [[source]]
 id = "ABLB"
@@ -25,7 +25,7 @@ title = "Analytic de Rham stacks of Fargues-Fontaine curves"
 year = 2025
 arxiv = "2510.15196v2"
 locator_scheme = "theorem"
-locator = "Definitions 2.1.1, 2.2.8, 2.2.19, 2.3.1, 3.1.1, 4.1.8, 4.2.6, 4.2.14, 4.3.1, 4.3.6, 6.1.2; Lemma 4.2.11; Proposition 4.6.4; Theorems 4.8.7, 5.1.7, 5.6.6, 6.3.1"
+locator = "Definitions 2.1.1, 2.2.3, 2.2.8, 2.2.19, 2.3.1, 3.1.1, 3.1.5, 3.1.15, 3.2.8, 3.3.1, 4.1.8, 4.1.11, 4.2.1, 4.2.6, 4.2.14, 4.3.1, 4.3.6, 4.7.2, 6.1.1, 6.1.2, 6.2.4; Lemmas 2.1.2, 3.1.8, 3.1.12, 3.1.17, 4.2.11, 6.2.9; Propositions 3.1.9, 3.2.10, 3.2.11, 4.4.7, 4.6.4, 5.1.4, 5.7.1; Corollary 4.4.10; Remark 6.1.3; Theorems 4.8.7, 5.1.7, 5.6.6, 6.3.1, 7.1.1; Appendix A"
 url = "https://arxiv.org/abs/2510.15196v2"
 fetched_from = "https://arxiv.org/pdf/2510.15196v2"
 fetched_at = "2026-10-25T21:21:16Z"
@@ -33,8 +33,8 @@ sha256 = "863a6d227a9e9dcac5849b591894e52aac87587b95f664d40e4f81df539e8caf"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-version_note = "arXiv v2 (3 March 2026). ALRS cites an earlier numbering of this paper (for example it calls the Gelfand-ring definition Definition 3.3.1, which is Definition 3.1.1 in v2); locators here are v2 and must be collated with every ALRS citation of ABLB."
-cited_for = ["Scope", "Final targets T1–T2", "Risks"]
+version_note = "arXiv v2 (3 March 2026); locators are v2. ALRS cites an earlier numbering, collated in the design: the ALRS citations Definition 3.3.1, Definition 2.3.1, Lemma 3.6.2, Proposition 2.4.9 and Corollary 3.4.10 are v2 Definition 3.1.1, Definition 3.1.5, Lemma 3.1.17, Proposition 3.1.9 and Corollary 4.4.10, and the ALRS citation Lemma 3.2.8 is v2 Definition 3.2.8 (with Proposition 3.2.11)."
+cited_for = ["Scope", "Final targets T1–T2", "Risks", "Design: Layers 1–8, 10 and 12"]
 
 [[source]]
 id = "RCSolid"
@@ -43,7 +43,7 @@ title = "Notes on Solid Geometry"
 year = 2026
 arxiv = "2603.03012v1"
 locator_scheme = "theorem"
-locator = "§4 (analytic rings); Definition 6.1.4; Theorem 6.2.11; Definition 6.2.14; Corollary 6.3.4; Definition 6.3.13; Corollary 6.3.15; §6.5 (Betti stacks); §7.4 (cotangent complex of analytic rings)"
+locator = "§§3–4 (analytic rings); Definition 6.1.4; Theorem 6.2.11; Definition 6.2.14; Corollary 6.3.4; Lemma 6.3.5; Definition 6.3.13; Corollary 6.3.15; §6.4 and Remark 6.4.1; §6.5 (Betti stacks); Definition 7.4.1; Lemma 7.4.3; Theorems 7.7.1 and 7.7.21; Remark 7.7.17"
 url = "https://arxiv.org/abs/2603.03012v1"
 fetched_from = "https://arxiv.org/pdf/2603.03012v1"
 fetched_at = "2026-10-25T21:24:12Z"
@@ -52,7 +52,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1. Expanded seminar notes on the Clausen–Scholze analytic stacks course; used as the citable account of the unowned analytic-stack prerequisite."
-cited_for = ["Scope", "Suppliers: unowned analytic-stack prerequisite", "Risks"]
+cited_for = ["Scope", "Suppliers: unowned analytic-stack prerequisite", "Risks", "Design: required contracts light-solid-analytic-rings, analytic-stack-topos, qcoh-six-functors, betti-realization, solid-cotangent-complex, algebraic-stacks-condensed, formal-cone-adic-filtration, regular-immersion-suave, solid-smooth-duality; 12.1"]
 
 [[source]]
 id = "HM"
@@ -61,7 +61,7 @@ title = "6-Functor Formalisms and Smooth Representations"
 year = 2024
 arxiv = "2410.13038v1"
 locator_scheme = "theorem"
-locator = "Theorem 3.4.11"
+locator = "Proposition 3.3.3; Theorem 3.4.11; Definitions 4.4.1, 4.5.1 and 4.6.1; Lemmas 4.4.5–4.4.6, 4.4.8–4.4.10, 4.5.7–4.5.8, 4.6.3 and 4.6.4; Remarks 4.4.11; Corollary 4.5.18; Example 5.3.21"
 url = "https://arxiv.org/abs/2410.13038v1"
 fetched_from = "https://arxiv.org/pdf/2410.13038v1"
 fetched_at = "2026-10-25T21:22:52Z"
@@ -70,7 +70,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1"
-cited_for = ["Suppliers: unowned analytic-stack prerequisite", "Final targets T12"]
+cited_for = ["Suppliers: unowned analytic-stack prerequisite", "Final targets T12", "Design: 2.2, 3.3, 12.2–12.4; required contracts qcoh-six-functors, suave-prim-calculus, classifying-stack-dualizing"]
 
 [[source]]
 id = "SixFF"
@@ -88,7 +88,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2 (22 January 2026)"
-cited_for = ["Suppliers: unowned analytic-stack prerequisite"]
+cited_for = ["Suppliers: unowned analytic-stack prerequisite", "Design: required contract qcoh-six-functors"]
 
 [[source]]
 id = "Gest"
@@ -96,7 +96,7 @@ authors = "Peter Scholze"
 title = "Geometry and higher category theory"
 year = 2026
 locator_scheme = "theorem"
-locator = "Definitions 6.5 and 6.12; Proposition 6.13; Proposition 9.5; Corollary 9.8"
+locator = "Definitions 6.5, 6.9 and 6.12; Propositions 6.6, 6.10, 6.13, 7.9 and 9.5; Corollary 9.8"
 url = "https://people.mpim-bonn.mpg.de/scholze/Gestalten.pdf"
 fetched_from = "https://people.mpim-bonn.mpg.de/scholze/Gestalten.pdf"
 fetched_at = "2026-10-25T21:24:43Z"
@@ -105,7 +105,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "Author-page lecture notes (121 pages); the numbering cited by ALRS Construction 2.1.2 agrees with this file."
-cited_for = ["Scope", "Risks"]
+cited_for = ["Scope", "Risks", "Design: Scope and ownership; 2.2, 2.7, 10.3, 12.1, 12.2; required contracts gestalten-affine-proper, gestalten-transmutation"]
 
 [[source]]
 id = "ALBM"
@@ -114,7 +114,7 @@ title = "A 6-functor formalism for solid quasi-coherent sheaves on the Fargues-F
 year = 2024
 arxiv = "2412.20968v2"
 locator_scheme = "theorem"
-locator = "Theorems 4.4.4 and 4.4.6"
+locator = "Theorems 4.4.4, 4.4.6 and 4.5.1; Corollary 4.5.2"
 url = "https://arxiv.org/abs/2412.20968v2"
 fetched_from = "https://arxiv.org/pdf/2412.20968v2"
 fetched_at = "2026-10-25T21:23:03Z"
@@ -123,7 +123,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2. ALRS uses the light Gelfand-stack variant of this formalism (ALRS footnote 57)."
-cited_for = ["Final targets T2, T12"]
+cited_for = ["Final targets T2, T12", "Design: 6.2, 6.4"]
 
 [[source]]
 id = "RC24"
@@ -132,7 +132,7 @@ title = "The analytic de Rham stack in rigid geometry"
 year = 2024
 arxiv = "2401.07738v1"
 locator_scheme = "theorem"
-locator = "§5.2–§5.4; Theorem 5.2.10; Theorem 5.3.7"
+locator = "§5.2–§5.4; Lemma 2.6.13; Proposition 3.7.5; Theorems 5.2.10, 5.3.7 and 5.4.1"
 url = "https://arxiv.org/abs/2401.07738v1"
 fetched_from = "https://arxiv.org/pdf/2401.07738v1"
 fetched_at = "2026-10-25T21:23:53Z"
@@ -141,7 +141,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1. Earlier construction of the analytic de Rham stack, superseded in ABLB §4; used for comparison and for the cotangent-complex conventions of ALRS Appendix A."
-cited_for = ["Final targets T1"]
+cited_for = ["Final targets T1", "Design: 1.3, 3.1, 4.2"]
 
 [[source]]
 id = "FS"
@@ -150,7 +150,7 @@ title = "Geometrization of the local Langlands correspondence"
 year = 2021
 arxiv = "2102.13459v4"
 locator_scheme = "theorem"
-locator = "Propositions II.1.18, II.1.21 and II.2.2"
+locator = "Propositions II.1.18, II.1.21, II.2.2 and II.2.5"
 url = "https://arxiv.org/abs/2102.13459v4"
 fetched_from = "https://arxiv.org/pdf/2102.13459v4"
 fetched_at = "2026-10-25T21:23:46Z"
@@ -159,7 +159,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v4. ALRS cites the Astérisque edition as [FS26]; the Chapter II proposition numbers cited by ALRS agree with v4 at the three locators checked."
-cited_for = ["Final targets T3–T4"]
+cited_for = ["Final targets T3–T4", "Design: 7.6, 8.1, 12.2"]
 
 [[source]]
 id = "RJRC22"
@@ -168,7 +168,7 @@ title = "Solid locally analytic representations of p-adic Lie groups"
 year = 2022
 arxiv = "2110.11916v2"
 locator_scheme = "theorem"
-locator = "Theorems 4.36, 5.3 and 5.5"
+locator = "Lemma 3.21; Theorems 4.36, 5.3, 5.5 and 5.7"
 url = "https://arxiv.org/abs/2110.11916v2"
 fetched_from = "https://arxiv.org/pdf/2110.11916v2"
 fetched_at = "2026-10-25T21:23:23Z"
@@ -177,7 +177,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2; published in Represent. Theory 26 (2022). Locators are the arXiv numbering as announced in its introduction (Theorems 1.3, 1.5, 1.7); journal collation not checked."
-cited_for = ["Final targets T8"]
+cited_for = ["Final targets T8", "Design: 10.2–10.4, 11.10"]
 
 [[source]]
 id = "RJRC"
@@ -186,7 +186,7 @@ title = "Solid locally analytic representations"
 year = 2023
 arxiv = "2305.03162v5"
 locator_scheme = "theorem"
-locator = "Definition 3.3.1; Theorem 4.1.5"
+locator = "Remark 2.1.5; Definition 3.3.1; Theorem 4.1.5; Propositions 4.4.8 and 6.1.5"
 url = "https://arxiv.org/abs/2305.03162v5"
 fetched_from = "https://arxiv.org/pdf/2305.03162v5"
 fetched_at = "2026-10-25T21:23:29Z"
@@ -195,15 +195,15 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v5"
-cited_for = ["Final targets T8"]
+cited_for = ["Final targets T8", "Design: 5.3, 5.4, 10.3"]
 
 [[source]]
 id = "BC16"
 authors = "Laurent Berger, Pierre Colmez"
 title = "Théorie de Sen et vecteurs localement analytiques"
 year = 2016
-arxiv = "1405.5430v1"
 doi = "10.24033/asens.2300"
+arxiv = "1405.5430v1"
 locator_scheme = "theorem"
 locator = "Théorèmes 3.2 and 3.4"
 url = "https://arxiv.org/abs/1405.5430v1"
@@ -214,7 +214,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1 (2014); published Ann. Sci. Éc. Norm. Supér. 49 (2016) 947–970. Locators use the arXiv numbering (announced in the introduction as Théorèmes 1.6–1.7); journal numbering not collated."
-cited_for = ["Final targets T8 (Checks)"]
+cited_for = ["Final targets T8 (Checks)", "Design: 10.7, 10.9, 10.10 (Checks)"]
 
 [[source]]
 id = "RCSen"
@@ -223,7 +223,7 @@ title = "Geometric Sen theory over rigid analytic spaces"
 year = 2022
 arxiv = "2205.02016v4"
 locator_scheme = "theorem"
-locator = "Theorems 1.0.3 and 1.0.4"
+locator = "Theorems 1.0.3 and 1.0.4; §3.2"
 url = "https://arxiv.org/abs/2205.02016v4"
 fetched_from = "https://arxiv.org/pdf/2205.02016v4"
 fetched_at = "2026-10-25T21:23:08Z"
@@ -232,7 +232,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v4; ALRS cites the J. Eur. Math. Soc. edition as [RC26b] with the same theorem numbers 1.0.3–1.0.4."
-cited_for = ["Final targets T10"]
+cited_for = ["Final targets T10", "Design: 11.5, 11.10"]
 
 [[source]]
 id = "Sch13"
@@ -250,7 +250,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2; published Forum Math. Pi 1 (2013). ALRS cites Theorem 7.6 for the Riemann–Hilbert functor, matching v2."
-cited_for = ["Final targets T5, T14"]
+cited_for = ["Final targets T5, T14", "Design: 9.5, 12.6"]
 
 [[source]]
 id = "AHLB"
@@ -268,7 +268,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v3. Integral Hodge–Tate stack description of semilinear C-representations; comparison context for ALRS Proposition 4.8.1."
-cited_for = ["Final targets T7 (Checks)"]
+cited_for = ["Final targets T7 (Checks)", "Design: 9.7 (Check)"]
 
 [[source]]
 id = "Pan22"
@@ -286,7 +286,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v3; published Forum Math. Pi 10 (2022). Background for geometric Sen operators and for future consumers; no target of this roadmap rests on it."
-cited_for = ["Consumers"]
+cited_for = ["Consumers", "Design: Downstream consumers"]
 
 [[source]]
 id = "Hauck"
@@ -304,4 +304,129 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2. Defines the rational analytic syntomification on top of the Gelfand-stack framework; the natural Part II consumer, out of scope here."
-cited_for = ["Scope (out of scope)", "Consumers"]
+cited_for = ["Scope (out of scope)", "Consumers", "Design: Downstream consumers"]
+
+[[source]]
+id = "RC26a"
+authors = "Juan Esteban Rodríguez Camargo"
+title = "Cartier duality for gerbes of vector bundles"
+year = 2025
+arxiv = "2512.24967v3"
+locator_scheme = "theorem"
+locator = "Propositions 3.2.27 and 3.2.32; Example 3.2.36; Theorem 3.2.37"
+url = "https://arxiv.org/abs/2512.24967v3"
+fetched_from = "https://arxiv.org/pdf/2512.24967v3"
+fetched_at = "2026-10-25T22:03:36Z"
+sha256 = "00791e2e90fb283efcfe99fa4c7c6c25cd05d9ebb2e4bb117f29533a59eb543c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v3. ALRS cites the first statement as Theorem 3.2.27; it is Proposition 3.2.27 in v3."
+cited_for = ["Design: required contracts vector-group-cartier-duality, stacky-cartier-duality; 5.3"]
+
+[[source]]
+id = "Zav"
+authors = "Bogdan Zavyalov"
+title = "Poincaré Duality in abstract 6-functor formalisms"
+year = 2023
+arxiv = "2301.03821v3"
+locator_scheme = "theorem"
+locator = "Definitions 5.2.4 and 5.2.8; Theorem 5.7.7"
+url = "https://arxiv.org/abs/2301.03821v3"
+fetched_from = "https://arxiv.org/pdf/2301.03821v3"
+fetched_at = "2026-10-25T22:03:50Z"
+sha256 = "b157f562e87cbd9d7b4b1c0896defae7a4f08e01a758061b05760882e83c2a8a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v3; ALRS cites it as [Zav26]. The cited definitions and theorem carry the same numbers in v3."
+cited_for = ["Design: 6.3, 12.5 (theories of first Chern classes)"]
+
+[[source]]
+id = "AM24"
+authors = "Johannes Anschütz, Lucas Mann"
+title = "Descent for solid quasi-coherent sheaves on perfectoid spaces"
+year = 2024
+arxiv = "2403.01951v2"
+locator_scheme = "theorem"
+locator = "Lemma 3.29"
+url = "https://arxiv.org/abs/2403.01951v2"
+fetched_from = "https://arxiv.org/pdf/2403.01951v2"
+fetched_at = "2026-10-25T22:03:56Z"
+sha256 = "fc8c18ea88717e06a89b44f1d54b010cca85b249488f8cb0bab3c348934e63b7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v2"
+cited_for = ["Design: required contract nuclear-modules; 10.2"]
+
+[[source]]
+id = "Man26"
+authors = "Lucas Mann"
+title = "The 6-Functor Formalism for ℤ_ℓ- and ℚ_ℓ-Sheaves on Diamonds"
+year = 2022
+arxiv = "2209.08135v1"
+locator_scheme = "theorem"
+locator = "Lemmas 10.3 and 10.5"
+url = "https://arxiv.org/abs/2209.08135v1"
+fetched_from = "https://arxiv.org/pdf/2209.08135v1"
+fetched_at = "2026-10-25T22:04:02Z"
+sha256 = "600882b492c013ab2947d13c66d85900dd38969f1372672df7388849ba3e90a4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "arXiv v1 (2022), published in Res. Math. Sci. 13 (2026) and cited by ALRS as [Man26]; Lemmas 10.3 and 10.5 of v1 are the statements ALRS cites. Journal numbering not collated."
+cited_for = ["Design: 10.2"]
+
+[[source]]
+id = "Sch24"
+authors = "Peter Scholze"
+title = "Geometrization of the real local Langlands correspondence"
+year = 2024
+locator_scheme = "theorem"
+locator = "Propositions VI.1.2, VI.1.5 and VI.1.7; Corollaries VI.1.3 and VI.1.4"
+url = "https://people.mpim-bonn.mpg.de/scholze/RealLocalLanglands.pdf"
+fetched_from = "https://people.mpim-bonn.mpg.de/scholze/RealLocalLanglands.pdf"
+fetched_at = "2026-10-25T22:04:22Z"
+sha256 = "c41417ee57c69ad8916b6d24dfa01e5b675f630e049587214d3ba3f95333e2a8"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Draft from the author's page (91 pages), prepared for a seminar; numbering is that of the file with the recorded sha256."
+cited_for = ["Design: 1.7, 2.3, 3.5; required contract fredholm-criteria (Fredholm property, !-descent of perfect amplitude)"]
+
+[[source]]
+id = "Laz65"
+authors = "Michel Lazard"
+title = "Groupes analytiques p-adiques"
+year = 1965
+venue = "Publications Mathématiques de l'IHÉS 26"
+locator_scheme = "theorem"
+locator = "Chapitre III, (1.3.9) Corollaire"
+url = "http://www.numdam.org/item/PMIHES_1965__26__5_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1965__26__5_0.pdf"
+fetched_at = "2026-10-25T22:04:53Z"
+sha256 = "b0b50cf55528fd4abb94f9e1de10b23f0711c0dd804682a9853b70b3b378f380"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-25"
+version_note = "Numdam scan (216 pages, OCR text), pp. 5–219 of the journal. ALRS Theorem 5.2.14 cites this statement as Corollary I.3.9."
+cited_for = ["Design: 10.4"]
+
+[[source]]
+id = "And21"
+authors = "Grigory Andreychev"
+title = "Pseudocoherent and Perfect Complexes and Vector Bundles on Analytic Adic Spaces"
+year = 2021
+arxiv = "2105.12591v1"
+locator_scheme = "theorem"
+locator = "Theorem 5.50"
+url = "https://arxiv.org/abs/2105.12591v1"
+fetched_from = "https://arxiv.org/pdf/2105.12591v1"
+fetched_at = "2026-10-26T04:36:06Z"
+sha256 = "9ba7858be358a67c6e8d7670e0986a2e99db27931b181dceb8cf9def26b2c7e5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["Design: 1.7"]
