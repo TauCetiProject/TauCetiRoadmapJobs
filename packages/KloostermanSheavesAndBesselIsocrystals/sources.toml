@@ -1,0 +1,408 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "KloostermanSheavesAndBesselIsocrystals"
+
+[[source]]
+id = "XZ"
+authors = "Daxin Xu, Xinwen Zhu"
+title = "Bessel F-isocrystals for reductive groups"
+year = 2022
+venue = "Inventiones Mathematicae 227 (2022), 997–1092"
+doi = "10.1007/s00222-021-01079-5"
+arxiv = "1910.13391v2"
+locator_scheme = "theorem"
+locator = "arXiv v2: §1.1.1, pp. 2–3; Theorems 1.1.4, 1.2.4, 1.2.7, 1.2.8, §1.2.9, pp. 3–7; §§2.3–2.10, pp. 13–26; Proposition 3.1.2, Theorems 3.5.1, 3.5.3, 3.6.7, Lemma 3.6.10, pp. 26–37; §4.1 (Lemma 4.1.4, Theorem 4.1.5, §§4.1.8–4.1.13), pp. 37–42; Theorem 4.2.1, Lemmas 4.2.3, 4.2.6, pp. 42–46; Theorem 4.3.3, §§4.3.5–4.3.6, pp. 47–49; §4.4, Theorem 4.4.4, Proposition 4.4.5, pp. 49–50; Theorem 4.5.2, Lemmas 4.5.3, 4.5.5, Corollaries 4.5.6–4.5.7, Remark 4.5.8, pp. 51–54; Lemma 5.1.1, Proposition 5.1.3, Theorem 5.1.4, pp. 55–56; Theorem 5.2.2, §5.2.3, pp. 56–57; §§5.3.1–5.3.11, pp. 57–61; Theorem 5.4.2, Lemma 5.4.3, pp. 62–63; Appendix A.1–A.13, pp. 63–69"
+url = "https://arxiv.org/abs/1910.13391v2"
+fetched_from = "https://arxiv.org/pdf/1910.13391v2"
+fetched_at = "2026-10-26T21:37:44Z"
+sha256 = "b8d153ef1822a20e8179005d4775e43fc3af7430d840d2b077b45cb8583667cd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2 (19 Dec 2019); all locators use the 71-page preprint pagination, not the journal pagination"
+cited_for = ["0.1", "0.3", "0.4", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "2.1", "2.2", "2.3", "2.5", "2.6", "2.7", "2.8", "3.1", "3.2", "3.3", "3.4", "3.5", "4.1", "4.2", "4.3", "4.4", "4.5", "5.1", "5.2", "5.3", "6.1", "6.2", "6.3", "6.4", "6.6", "7.1", "7.2", "7.3", "7.4", "7.5", "7.6", "8.1", "8.2", "8.3", "8.4", "8.5", "8.6", "9.1", "9.2", "9.3", "9.4", "10.1", "10.2", "10.3", "10.4", "10.5", "10.6", "11.1", "11.2", "11.3", "11.4", "11.5"]
+
+[[source]]
+id = "HNY"
+authors = "Jochen Heinloth, Bao Châu Ngô, Zhiwei Yun"
+title = "Kloosterman sheaves for reductive groups"
+year = 2013
+venue = "Annals of Mathematics 177 (2013), 241–310"
+locator_scheme = "theorem"
+locator = "§§1.2–1.3, pp. 250–252; Proposition 1.1, Corollaries 1.2–1.3, pp. 253–255; Lemma 2.1, Remark 2.2, pp. 255–256; Lemma 2.3, Definition 2.4, Remark 2.5, Definition 2.6, pp. 256–257; Definition 2.11, p. 260; Theorem 1, p. 261; Corollary 2.15, p. 262; §2.6"
+url = "https://math.mit.edu/~zyun/Kloosterman_published.pdf"
+fetched_from = "https://math.mit.edu/~zyun/Kloosterman_published.pdf"
+fetched_at = "2026-10-26T21:38:09Z"
+sha256 = "a821a39d6463a8e2d3c206710f2d2b717cd36db5fbee6a8659aa66f763880c7f"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "author-hosted published version; printed page numbers"
+cited_for = ["0.3", "0.4", "1.4", "1.6", "1.7", "5.2", "6.6"]
+
+[[source]]
+id = "FG"
+authors = "Edward Frenkel, Benedict Gross"
+title = "A rigid irregular connection on the projective line"
+year = 2009
+venue = "Annals of Mathematics 170 (2009), 1469–1512"
+arxiv = "0901.2163v3"
+locator_scheme = "theorem"
+locator = "arXiv v3: §§5–6, pp. 8–14; Theorem 1, p. 16; Proposition 8 and Corollaries 9–10, pp. 27–29; Proposition 11 and (14.1), p. 29"
+url = "https://arxiv.org/abs/0901.2163v3"
+fetched_from = "https://arxiv.org/pdf/0901.2163v3"
+fetched_at = "2026-10-26T21:37:48Z"
+sha256 = "e190b78bbcfb28c7b9830fd23e3e789c46e0782439d27ffb01e2eb3d070e6b5f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3 (29 June 2009), 38-page preprint pagination; the misindexed row of Corollary 10 and the repeated I₀ of (14.1) refer to this version"
+cited_for = ["2.1", "2.8", "6.6"]
+
+[[source]]
+id = "Zhu"
+authors = "Xinwen Zhu"
+title = "Frenkel–Gross' irregular connection and Heinloth–Ngô–Yun's are the same"
+year = 2016
+venue = "Selecta Mathematica 23 (2017)"
+arxiv = "1603.05796v2"
+locator_scheme = "theorem"
+locator = "arXiv v2: Theorem 8 and Corollary 9, pp. 8–10; Lemmas 18–21, pp. 20–23; §5, p. 23"
+url = "https://arxiv.org/abs/1603.05796v2"
+fetched_from = "https://arxiv.org/pdf/1603.05796v2"
+fetched_at = "2026-10-26T21:37:54Z"
+sha256 = "c9afc9e4216198e73ec5f2fb26c3480aa525a22dd4ca57b951b88622de8143e7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2 (4 Apr 2016), preprint pagination"
+cited_for = ["2.3", "2.4", "2.5", "2.7"]
+
+[[source]]
+id = "BD"
+authors = "Alexander Beilinson, Vladimir Drinfeld"
+title = "Quantization of Hitchin's integrable system and Hecke eigensheaves"
+year = 1991
+locator_scheme = "section"
+locator = "§5.3 (the Satake equivalence), §§5.5 and 7.8"
+url = "https://www.math.uchicago.edu/~drinfeld/langlands/QuantizationHitchin.pdf"
+fetched_from = "https://www.math.uchicago.edu/~drinfeld/langlands/QuantizationHitchin.pdf"
+fetched_at = "2026-10-26T22:10:25Z"
+sha256 = "34395d70aa49460e8d98e99190d5aad789ae6a6e0044dcf73ce0cb15176bff90"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "author-hosted preprint; its section numbers"
+cited_for = ["1.3", "2.4"]
+
+[[source]]
+id = "Miy"
+authors = "Kazuaki Miyatani"
+title = "p-adic Generalized Hypergeometric Equations from the Viewpoint of Arithmetic D-modules"
+year = 2016
+venue = "American Journal of Mathematics 142 (2020)"
+doi = "10.1353/ajm.2020.0030"
+arxiv = "1607.04852v2"
+locator_scheme = "theorem"
+locator = "arXiv v2: Main theorem, pp. 2–3; Theorem 3.2.5, p. 23; Proposition 3.3.3, p. 26; Theorem 4.1.3, pp. 27–28"
+url = "https://arxiv.org/abs/1607.04852v2"
+fetched_from = "https://arxiv.org/pdf/1607.04852v2"
+fetched_at = "2026-10-26T21:38:00Z"
+sha256 = "ffc708fbfdc2ff0c68158dbf9151141e3cfe9d88d35f93bfcf66dfc4921f6038"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2, preprint pagination"
+cited_for = ["9.1", "9.4"]
+
+[[source]]
+id = "GR"
+authors = "Benedict H. Gross, Mark Reeder"
+title = "Arithmetic invariants of discrete Langlands parameters"
+year = 2010
+venue = "Duke Mathematical Journal 154 (2010)"
+locator_scheme = "theorem"
+locator = "§5, Proposition 5.6, p. 34; §6, definition of simple wild parameters, p. 35"
+url = "https://people.math.harvard.edu/~gross/preprints/AdjointGamma5.pdf"
+fetched_from = "https://people.math.harvard.edu/~gross/preprints/AdjointGamma5.pdf"
+fetched_at = "2026-10-26T21:38:12Z"
+sha256 = "f3a74e45c72ea6b1c59d176097055bf637dffdc0aa471c1e57dbf3ccbd739af1"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "author preprint dated 1 March 2010; its pagination"
+cited_for = ["6.5", "6.6"]
+
+[[source]]
+id = "LT"
+authors = "Thomas Lam, Nicolas Templier"
+title = "The mirror conjecture for minuscule flag varieties"
+year = 2017
+arxiv = "1705.00758v4"
+locator_scheme = "theorem"
+locator = "arXiv v4: Theorem 1.8 (= Theorem 7.10), p. 6"
+url = "https://arxiv.org/abs/1705.00758v4"
+fetched_from = "https://arxiv.org/pdf/1705.00758v4"
+fetched_at = "2026-10-26T21:38:38Z"
+sha256 = "910443d9cb951ce4cabafcecee3441ed92281299d9ce80083a90ad2872d5e148"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v4 (20 Feb 2023); theorem numbers of this version"
+cited_for = ["8.4"]
+
+[[source]]
+id = "PRW"
+authors = "C. Pech, K. Rietsch, L. Williams"
+title = "On Landau-Ginzburg models for quadrics and flat sections of Dubrovin connections"
+year = 2014
+arxiv = "1404.4844v2"
+locator_scheme = "section"
+locator = "arXiv v2: §3.3 and Theorem 3.2, pp. 12–13"
+url = "https://arxiv.org/abs/1404.4844v2"
+fetched_from = "https://arxiv.org/pdf/1404.4844v2"
+fetched_at = "2026-10-26T22:08:46Z"
+sha256 = "9d706030802996361bd24813586b7d6b8ca818454863a18db6d084dc8b31817a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv:1404.4844v2"
+cited_for = ["8.4"]
+
+[[source]]
+id = "Car"
+authors = "L. Carlitz"
+title = "A note on exponential sums"
+year = 1969
+venue = "Pacific Journal of Mathematics 30 (1969), 35–37"
+locator_scheme = "page"
+locator = "identity (4), p. 35"
+url = "https://msp.org/pjm/1969/30-1/p03.xhtml"
+fetched_from = "https://msp.org/pjm/1969/30-1/pjm-v30-n1-p03-s.pdf"
+fetched_at = "2026-10-26T22:09:31Z"
+sha256 = "885a297360c3fc56060f92f6cf0477d11596840a2eb218d3cc1bdf84e28d810f"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["11.1"]
+
+[[source]]
+id = "Dw69"
+authors = "Bernard Dwork"
+title = "p-adic cycles"
+year = 1969
+venue = "Publications Mathématiques de l'IHÉS 37 (1969), 27–115"
+locator_scheme = "theorem"
+locator = "Theorem 2 and Theorem 3"
+url = "http://www.numdam.org/item/PMIHES_1969__37__27_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1969__37__27_0.pdf"
+fetched_at = "2026-10-26T22:09:55Z"
+sha256 = "c75451f40cd81de6d9c30571f6332b57d9ccb4267fe993fa25a2c4662ee0622e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["10.2"]
+
+[[source]]
+id = "Spe80"
+authors = "Steven Sperber"
+title = "Congruence properties of the hyper-Kloosterman sum"
+year = 1980
+venue = "Compositio Mathematica 40 (1980), 3–33"
+locator_scheme = "theorem"
+locator = "Theorem (2.35), for p > n + 3"
+url = "http://www.numdam.org/item/CM_1980__40_1_3_0/"
+fetched_from = "https://www.numdam.org/item/CM_1980__40_1_3_0.pdf"
+fetched_at = "2026-10-26T22:09:02Z"
+sha256 = "3e8e6ed2d5d093d188702db92d7f070a78aef618e8f64cffe6f46e68f1bb67e9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["11.3"]
+
+[[source]]
+id = "AS89"
+authors = "Alan Adolphson, Steven Sperber"
+title = "Exponential sums and Newton polyhedra: cohomology and estimates"
+year = 1989
+venue = "Annals of Mathematics 130 (1989), 367–406"
+doi = "10.2307/1971424"
+locator_scheme = "theorem"
+locator = "Corollary 3.11 (Newton polygon lies above the Hodge polygon; degree of the L-function)"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled or not openly available; cited by its locator without the text"
+cited_for = ["11.2"]
+
+[[source]]
+id = "Wan93"
+authors = "Daqing Wan"
+title = "Newton polygons of zeta functions and L functions"
+year = 1993
+venue = "Annals of Mathematics 137 (1993), 247–293"
+doi = "10.2307/2946539"
+locator_scheme = "theorem"
+locator = "the boundary decomposition theorem and the diagonal ordinarity criterion"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled or not openly available; cited by its locator without the text"
+cited_for = ["11.2", "11.3"]
+
+[[source]]
+id = "Wan04"
+authors = "Daqing Wan"
+title = "Variation of p-adic Newton polygons for L-functions of exponential sums"
+year = 2004
+venue = "Asian Journal of Mathematics 8 (2004), no. 3"
+locator_scheme = "theorem"
+locator = "Corollary 2.6 and Theorem 3.1 (as cited in Xu–Zhu Lemma 5.4.3)"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled or not openly available; cited by its locator without the text"
+cited_for = ["11.2"]
+
+[[source]]
+id = "VL-est"
+authors = "Vincent Lafforgue"
+title = "Estimées pour les valuations p-adiques des valeurs propres des opérateurs de Hecke"
+year = 2011
+venue = "Bulletin de la Société Mathématique de France 139 (2011), 455–477"
+doi = "10.24033/bsmf.2614"
+locator_scheme = "theorem"
+locator = "Introduction, p. 456; Proposition 2.1"
+url = "https://doi.org/10.24033/bsmf.2614"
+fetched_from = "https://www.numdam.org/item/10.24033/bsmf.2614.pdf"
+fetched_at = "2026-10-26T21:52:16Z"
+sha256 = "0770521f5a7f62fa8363cf2f057c54a8b157281af2fe561c511c372535c41496"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["5.2"]
+
+[[source]]
+id = "DAd"
+authors = "Marco D'Addezio"
+title = "The monodromy groups of lisse sheaves and overconvergent $F$-isocrystals"
+year = 2017
+venue = "Selecta Mathematica 26 (2020)"
+doi = "10.1007/s00029-020-00569-3"
+arxiv = "1711.06669v6"
+locator_scheme = "theorem"
+locator = "arXiv v6: Theorem 1.2.1 (= Theorem 4.3.2), p. 2; §4.3"
+url = "https://arxiv.org/abs/1711.06669v6"
+fetched_from = "https://arxiv.org/pdf/1711.06669v6"
+fetched_at = "2026-10-26T21:52:03Z"
+sha256 = "a5dd5f330a8fd68d569efe11851876c83d580fe7ce0b0211bce0d4821ea2b090"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v6 (27 May 2020)"
+cited_for = ["7.6", "11.5"]
+
+[[source]]
+id = "Tsu"
+authors = "Nobuo Tsuzuki"
+title = "Minimal slope conjecture of $F$-isocrystals"
+year = 2019
+arxiv = "1910.03871v3"
+locator_scheme = "theorem"
+locator = "arXiv v3: Theorem 1.3"
+url = "https://arxiv.org/abs/1910.03871v3"
+fetched_from = "https://arxiv.org/pdf/1910.03871v3"
+fetched_at = "2026-10-26T21:52:34Z"
+sha256 = "611090d2e371483ff7996170368255462eeae03e5277c93a2ec406ac47c18457"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3 (19 Oct 2021); Xu–Zhu cite it as Theorem 1.3"
+cited_for = ["10.6"]
+
+[[source]]
+id = "Abe"
+authors = "Tomoyuki Abe"
+title = "Langlands correspondence for isocrystals and the existence of crystalline companions for curves"
+year = 2013
+venue = "Journal of the American Mathematical Society 31 (2018)"
+arxiv = "1310.0528v3"
+locator_scheme = "theorem"
+locator = "arXiv v3: §§1–2 (cohomological operations and trace formula); Theorem 4.2.2; Theorem 4.4.5 (crystalline companions)"
+url = "https://arxiv.org/abs/1310.0528v3"
+fetched_from = "https://arxiv.org/pdf/1310.0528v3"
+fetched_at = "2026-10-26T21:52:23Z"
+sha256 = "b890ef139fd51ce395bf1e373cdeaa1312dbcb95f76d56eff495f96df8c8dd29"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["1.1", "1.8"]
+
+[[source]]
+id = "AC"
+authors = "Tomoyuki Abe, Daniel Caro"
+title = "Theory of weights in p-adic cohomology"
+year = 2013
+venue = "American Journal of Mathematics 140 (2018)"
+arxiv = "1303.0662v4"
+locator_scheme = "theorem"
+locator = "arXiv v4: Main Theorem, p. 2 (Theorem 4.1.3, Corollary 4.2.4); Theorem 1.4.9"
+url = "https://arxiv.org/abs/1303.0662v4"
+fetched_from = "https://arxiv.org/pdf/1303.0662v4"
+fetched_at = "2026-10-26T21:52:28Z"
+sha256 = "208d757863b33943e2ea98c0bee2bc0b847f5f6f4d14fd3b14f1df3355c87ecc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v4"
+cited_for = ["1.1"]
+
+[[source]]
+id = "Bal82"
+authors = "Francesco Baldassarri"
+title = "Differential modules and singular points of p-adic differential equations"
+year = 1982
+venue = "Advances in Mathematics 44 (1982), 155–179"
+locator_scheme = "theorem"
+locator = "comparison of p-adic and formal slopes, as cited in Xu–Zhu §1.3.2, p. 7"
+licence_class = "none"
+status = "uncertified"
+version_note = "publisher page only; cited by its locator without the text"
+cited_for = ["6.3"]
+
+[[source]]
+id = "DH35"
+authors = "Harold Davenport, Helmut Hasse"
+title = "Die Nullstellen der Kongruenzzetafunktionen in gewissen zyklischen Fällen"
+year = 1935
+venue = "Journal für die reine und angewandte Mathematik 172 (1935), 151–182"
+doi = "10.1515/crll.1935.172.151"
+locator_scheme = "theorem"
+locator = "the lifting relation for Gauss sums, pp. 151–182"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled or not openly available; cited by its locator without the text"
+cited_for = ["0.2"]
+
+[[source]]
+id = "ESDE"
+authors = "Nicholas M. Katz"
+title = "Exponential sums and differential equations"
+year = 1990
+venue = "Annals of Mathematics Studies 124, Princeton University Press (1990)"
+locator_scheme = "theorem"
+locator = "7.0.7 (Frobenius on the inertia invariants at 0 of hypergeometric sheaves), as cited in Xu–Zhu §5.2.3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled or not openly available; cited by its locator without the text"
+cited_for = ["9.1"]
+
+[[source]]
+id = "KatzCC"
+authors = "Nicholas M. Katz"
+title = "From Clausen to Carlitz: low-dimensional spin groups and identities among character sums"
+year = 2009
+venue = "Moscow Mathematical Journal 9 (2009)"
+locator_scheme = "theorem"
+locator = "2.6.1 (the Gauss-sum monomial α), as cited in Xu–Zhu §5.2.3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled or not openly available; cited by its locator without the text"
+cited_for = ["9.1"]
