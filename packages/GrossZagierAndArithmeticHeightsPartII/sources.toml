@@ -1,0 +1,168 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GrossZagierAndArithmeticHeightsPartII"
+
+[[source]]
+id = "LZ"
+venue = "Journal of the American Mathematical Society 35 (2022)"
+authors = "Chao Li, Wei Zhang"
+title = "Kudla--Rapoport cycles and derivatives of local densities"
+year = 2019
+arxiv = "1908.01701v3"
+locator_scheme = "theorem"
+locator = "Theorem 3.4.1; Theorems 10.3.1, 10.5.1, 13.6.1, 15.5.1"
+url = "https://arxiv.org/abs/1908.01701v3"
+fetched_from = "https://arxiv.org/pdf/1908.01701v3"
+fetched_at = "2026-10-26T23:03:34Z"
+sha256 = "7db1843f90c3e79741f8d58d92b6bb42b0a3b7ae001c8f9419f43b08c2119d49"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["0.1-0.9", "1.1-1.4", "2.1-2.7", "3.1-3.5", "4.1, 4.3-4.6", "10.1-10.4", "13.1-13.8"]
+
+[[source]]
+id = "Z"
+doi = "10.4007/annals.2021.193.3.5"
+venue = "Annals of Mathematics 193 (2021)"
+authors = "Wei Zhang"
+title = "Weil representation and Arithmetic Fundamental Lemma"
+year = 2019
+arxiv = "1909.02697v3"
+locator_scheme = "theorem"
+locator = "Theorem 15.1; Conjectures 3.2, 3.8; Theorem 14.6; Lemma 13.6"
+url = "https://arxiv.org/abs/1909.02697v3"
+fetched_from = "https://arxiv.org/pdf/1909.02697v3"
+fetched_at = "2026-10-26T23:03:44Z"
+sha256 = "f58b275c97b2675123f44994c91fde9406d6928f6d659b7b8a0f196112d3f61c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3; section, theorem and equation numbers agree with the published version"
+cited_for = ["9.1-9.7", "10.1", "11.1-11.5", "12.1-12.9", "14.1-14.7"]
+
+[[source]]
+id = "LRZ"
+authors = "Chao Li, Michael Rapoport, Wei Zhang"
+title = "Quasi-canonical AFL and Arithmetic Transfer conjectures at parahoric levels"
+year = 2024
+arxiv = "2404.02214v2"
+locator_scheme = "theorem"
+locator = "Theorem 14.6.2; Corollary 16.1.5; Proposition 16.4.1"
+url = "https://arxiv.org/abs/2404.02214v2"
+fetched_from = "https://arxiv.org/pdf/2404.02214v2"
+fetched_at = "2026-10-26T23:03:49Z"
+sha256 = "4e687dfc505fb8555f0155c486ec849508f7c1af384446ed155c506a894a1bba"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2; printed page numbers of that version"
+cited_for = ["4.2"]
+
+[[source]]
+id = "K"
+venue = "Inventiones Mathematicae 234 (2023)"
+authors = "Qiao He, Chao Li, Yousheng Shi, Tonghai Yang"
+title = "A proof of the Kudla-Rapoport conjecture for Krämer models"
+year = 2022
+arxiv = "2208.07988v2"
+locator_scheme = "theorem"
+locator = "Theorems 1.3, 7.1, 8.2, 9.7, 10.1-10.2; Lemma 9.6; Proposition 2.12"
+url = "https://arxiv.org/abs/2208.07988v2"
+fetched_from = "https://arxiv.org/pdf/2208.07988v2"
+fetched_at = "2026-10-26T23:04:01Z"
+sha256 = "00e096d6e9b511934382db1e41dc4cf22419a021df06af58d2689dfb60b98b17"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2, 82 pages; locators use its pagination"
+cited_for = ["7.1-7.8", "8.1-8.7", "13.3", "13.9-13.10"]
+
+[[source]]
+id = "LL1"
+version_note = "author copy; page locators are those of the author copy"
+venue = "Annals of Mathematics 194 (2021)"
+year = 2021
+title = "Chow groups and L-derivatives of automorphic motives for unitary groups"
+authors = "Chao Li, Yifeng Liu"
+locator_scheme = "section"
+locator = "Notation 2.1 (F1), (F4); Lemma 5.2, Definition 5.3, Lemma 5.4; Section 8 (8.3); Section 9"
+url = "https://www.math.columbia.edu/~chaoli/AIPF.pdf"
+fetched_from = "https://www.math.columbia.edu/~chaoli/AIPF.pdf"
+fetched_at = "2026-10-26T23:04:10Z"
+sha256 = "6ef2d63ea2cf55d8a2648f71ed7ac84e4d32f77e9e7eaeb62b47e584e4e5e566"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["4.6", "10.1-10.3"]
+
+[[source]]
+id = "LL2"
+version_note = "author copy, 72 pages; the published version has different pagination"
+venue = "Forum of Mathematics, Pi 10 (2022)"
+year = 2022
+title = "Chow groups and L-derivatives of automorphic motives for unitary groups, II"
+authors = "Chao Li, Yifeng Liu"
+locator_scheme = "section"
+locator = "Theorem 2.7; Proposition 2.44; Lemmas 2.24, 2.55, 2.57-2.58; Corollaries 2.65-2.66"
+url = "https://www.math.columbia.edu/~chaoli/AIPF2.pdf"
+fetched_from = "https://www.math.columbia.edu/~chaoli/AIPF2.pdf"
+fetched_at = "2026-10-26T23:04:12Z"
+sha256 = "ebc12f4ddc2dc8b998f91bbfa3329364b075240c4ee53be1bf409a4361be7d88"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["5.1-5.6", "6.1-6.9"]
+
+[[source]]
+id = "MZ"
+authors = "A. Mihatsch, W. Zhang"
+title = "On the arithmetic fundamental lemma conjecture over a general p-adic field"
+year = 2023
+venue = "Journal of the European Mathematical Society 26"
+doi = "10.4171/JEMS/1375"
+arxiv = "2104.02779v4"
+locator_scheme = "section"
+locator = "Section 3.6 (3.15) and footnote 3; Theorem 3.13; Sections 7.1-7.3 and footnote 5"
+url = "https://arxiv.org/abs/2104.02779v4"
+fetched_from = "https://arxiv.org/pdf/2104.02779v4"
+fetched_at = "2026-10-26T23:04:25Z"
+sha256 = "789b4cf14d9912f8722b294877b6216ea6e5cbc01cc0b8dd745969c0c97edc2f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v4; the published numbering may differ, locators use arXiv v4"
+cited_for = ["12.3", "12.9", "14.1"]
+
+[[source]]
+id = "Lusztig76"
+authors = "G. Lusztig"
+title = "Coxeter orbits and eigenspaces of Frobenius"
+year = 1976
+venue = "Inventiones Mathematicae 38"
+doi = "10.1007/bf01408569"
+locator_scheme = "section"
+locator = "1.18, 6.1 and 7.3 (case 2A_2n)"
+url = "https://doi.org/10.1007/bf01408569"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.1", "5.4"]
+
+[[source]]
+id = "Howard19"
+venue = "Forum Mathematicum 31 (2019)"
+authors = "Benjamin Howard"
+title = "Linear invariance of intersections on unitary Rapoport-Zink spaces"
+year = 2019
+arxiv = "1811.01482v2"
+locator_scheme = "theorem"
+locator = "Corollary D"
+url = "https://arxiv.org/abs/1811.01482v2"
+fetched_from = "https://arxiv.org/pdf/1811.01482v2"
+fetched_at = "2026-10-26T23:08:50Z"
+sha256 = "2364b23e456a8a6cad4ad5ffc7971e24e20619953cff342d8d24274f24938742"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["5.3", "7.1", "7.8"]
