@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "accepted",
+    "reviewer": "independent-review-PRREVIEW-SchurWeyl~6",
+    "head": "84ed5e99a0a4cfece59eb2c7f65c14ba90070821",
+    "pr": 1164,
+    "folder": "RepresentationTheory/SchurWeyl",
+    "date": "2026-11-02",
+    "findings": 1,
+    "blocking": 0,
+    "notes": "incremental re-review of 146 changed lines since ef74fd4; both previous findings accounted for; three finite Frobenius signatures, coefficient generality, Etingof v5 locators and affected consumers verified; all 15 seeded targets accounted for with inherited source limitations; 30 fresh and 176 inherited computed rows; gate and targeted build pass; dependency check 204 roadmaps, 1498 edges, 0 problems; all 41 main signatures and auxiliary elaborated; three new theorem padding probes; one nonblocking auxiliary Newton duplication/form finding."
+  }
+}
