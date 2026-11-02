@@ -3469,7 +3469,26 @@
       ]
     }
   ],
-  "gaps": [],
+  "gaps": [
+    {
+      "slug": "dyadic-hilbert-coefficient-families",
+      "needs": "The §F.5 Hilbert coefficient families, ordinary projector, ordinary control, Hecke images and fractional ordinary Eisenstein families E(1,χ) and E(χ,1) also for p = 2, with Λ = O[[T]], u = 5, ν_k(T) = u^(k−1) − 1, the character χω^(1−k) for ω valued in {±1}, and the dyadic level and standard-constant conventions of Dasgupta–Kakde–Ventullo §3.1.",
+      "supplier": "NoncommutativeAndEquivariantIwasawa",
+      "section": "§F.5"
+    },
+    {
+      "slug": "dyadic-hilbert-hida-localization",
+      "needs": "The statements of §§5.10–5.13 (Fourier injectivity on S°(𝔫,χ)_(1), reducedness of T_(𝔪) at minimal tame level, and the total quotient ring as a product of eigenfamily fields with the congruences to E_1(1,χ_S)) also for p = 2, on the dyadic families of NoncommutativeAndEquivariantIwasawa §F.5.",
+      "supplier": "PadicFamilies",
+      "section": "§§5.10–5.13"
+    },
+    {
+      "slug": "hida-family-representations-all-degrees",
+      "needs": "For every totally real F of any degree and every prime p including 2, and every cuspidal eigenfamily H of PadicFamilies §5.13, a continuous irreducible ρ_H : G_F → GL_2 over an algebraic closure of its coefficient field L_H (Λ-adic topology), unramified outside 𝔫p, with Frobenius characteristic polynomial X² − c(𝔩,H)X + χε(𝔩) for 𝔩 ∤ 𝔫p and, at each 𝔮 | p, the ordinary shape with unramified quotient η_{𝔮,H} satisfying η_{𝔮,H}(rec(ϖ⁻¹)) = c(𝔮,H) (Dasgupta–Kakde–Ventullo Theorem 4.1).",
+      "supplier": "OrdinaryAutomorphicFormsAndModularityLifting",
+      "section": "§3.14"
+    }
+  ],
   "restructure": [],
   "conventions": [
     "Characters have finite order and are totally odd. H is their faithful cyclic CM extension. All isotypic modules are χ^{-1}-components after scalar extension to the characteristic-zero field E.",
