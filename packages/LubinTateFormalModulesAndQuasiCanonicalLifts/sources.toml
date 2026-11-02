@@ -1,0 +1,131 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LubinTateFormalModulesAndQuasiCanonicalLifts"
+
+[[source]]
+id = "LT66"
+authors = "Jonathan Lubin and John Tate"
+title = "Formal moduli for one-parameter formal Lie groups"
+year = 1966
+doi = "10.24033/bsmf.1633"
+locator_scheme = "theorem"
+locator = "§2, Propositions 2.4–2.6, pp.52–55; Theorem 3.1, pp.56–57; Proposition 3.3, pp.57–58; §3.5, pp.58–59"
+url = "https://www.numdam.org/item/10.24033/bsmf.1633.pdf"
+fetched_from = "https://www.numdam.org/item/10.24033/bsmf.1633.pdf"
+fetched_at = "2026-10-26T19:43:28Z"
+sha256 = "11100d728ec6757e3ec44ed32962bbde9abf046462e20680df7c2cd5b987b453"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["3.1", "3.3", "3.4", "3.5", "3.6", "3.7"]
+
+[[source]]
+id = "H70"
+authors = "Taira Honda"
+title = "On the theory of commutative formal groups"
+year = 1970
+locator_scheme = "theorem"
+locator = "§1, pp.216–219; §2, condition (F) and Lemmas 2.3–2.4, Theorems 2–3, pp.220–225; Proposition 3.3, Theorem 4, Proposition 3.5, pp.226–230; Lemma 4.2, p.231; Theorem 9, pp.240–241"
+url = "https://www.jstage.jst.go.jp/article/jmath1948/22/2/22_2_213/_pdf"
+fetched_from = "https://www.jstage.jst.go.jp/article/jmath1948/22/2/22_2_213/_pdf"
+fetched_at = "2026-10-26T19:43:58Z"
+sha256 = "62c9e9f8ea6c946904554b2ee54fdb7a1e0f0ec45ffb186ce128100fc89251b0"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["0.3", "4.1", "4.2", "4.3", "4.4"]
+
+[[source]]
+id = "H68"
+authors = "Taira Honda"
+title = "Formal groups and zeta-functions"
+year = 1968
+locator_scheme = "theorem"
+locator = "Theorem 2, pp.204–205; Corollary 4, p.212"
+url = "https://ir.library.osaka-u.ac.jp/repo/ouka/all/8997/ojm05_02_05.pdf"
+fetched_from = "https://ir.library.osaka-u.ac.jp/repo/ouka/all/8997/ojm05_02_05.pdf"
+fetched_at = "2026-10-26T19:44:07Z"
+sha256 = "5fb06187e58bd794ad4144c814a262167695d0da8d272f2e898a1cc886cdd55c"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["4.3", "4.4"]
+
+[[source]]
+id = "G86"
+authors = "Benedict H. Gross"
+title = "On canonical and quasi-canonical liftings"
+year = 1986
+locator_scheme = "theorem"
+locator = "Proposition 2.1, p.322; §5 and Proposition 5.3, pp.324–326"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0084/LOG_0018.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0084/LOG_0018.pdf"
+fetched_at = "2026-10-26T19:44:39Z"
+sha256 = "ada502a679de3e4e7138d29cf31d623a48dbd57cfbe646d4a68d0d87545e5a9e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["5.1", "5.2", "5.4", "6.1", "6.2", "6.4", "6.5", "6.6", "7.1", "7.2", "7.3", "7.5", "7.6"]
+
+[[source]]
+id = "Y95"
+authors = "Jiu-Kang Yu"
+title = "On the moduli of quasi-canonical liftings"
+year = 1995
+locator_scheme = "theorem"
+locator = "§§2–4, pp.294–298, Propositions 1–2 and Theorem 1, p.297; §5, Proposition 4, p.300; Theorem 2′, pp.301–302; §§9–10, pp.305–309"
+url = "https://www.numdam.org/article/CM_1995__96_3_293_0.pdf"
+fetched_from = "https://www.numdam.org/article/CM_1995__96_3_293_0.pdf"
+fetched_at = "2026-10-26T19:44:39Z"
+sha256 = "ea4ddcfbbff20730a30d2db6e9d048713a0121ca959308c7d2b9c48291f6a663"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["2.1", "2.2", "3.1", "3.6", "5.1", "5.2", "5.3", "5.4", "6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "7.1", "7.2", "7.3", "7.5", "8.4"]
+
+[[source]]
+id = "VZ07"
+authors = "Eva Viehmann and Konstantin Ziegler"
+title = "Formal moduli of formal O_K-modules"
+year = 2007
+locator_scheme = "theorem"
+locator = "Definition 1.1, pp.57–58; Theorem 1.4, pp.58–59; Lemma 2.1, Definition 2.2, Lemma 2.6, pp.59–61; §3, equations (3.1)–(3.7), Proposition 3.2, Lemma 3.3, Corollary 3.4, Lemma 3.5, Proposition 3.6, Theorem 3.8, pp.62–65"
+url = "https://www.numdam.org/item/AST_2007__312__R1_0.pdf"
+fetched_from = "https://www.numdam.org/item/AST_2007__312__R1_0.pdf"
+fetched_at = "2026-10-26T19:44:47Z"
+sha256 = "7f332f4976266b6d0828820eec3759481e1eba83651d9c912803cf2c01bb1a85"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["0.1", "2.1", "3.2", "3.3", "3.4", "3.5", "3.6"]
+
+[[source]]
+id = "BKO21"
+authors = "Ashay A. Burungale, Shinichi Kobayashi and Kazuto Ota"
+title = "Rubin's conjecture on local units in the anticyclotomic tower at inert primes"
+year = 2021
+doi = "10.4007/annals.2021.194.3.8"
+locator_scheme = "section"
+locator = "§2, pp.947–948, footnote 2; §4, pp.954–955; Lemma 5.1, pp.955–957; §§5.0.1–5.0.2, pp.957–959"
+url = "https://authors.library.caltech.edu/records/8svwt-jn031"
+fetched_from = "https://authors.library.caltech.edu/records/8svwt-jn031/files/annals.2021.194.3.8.pdf?download=1"
+fetched_at = "2026-10-23T17:44:21Z"
+sha256 = "77ff329057e17cbad573cc309fce3f69f4ba6b73619c4ca203a4ed79a1cb790e"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "Published article deposited in the CaltechAUTHORS institutional repository; the copy read is the source-service cached file with this checksum, fetched from the record delivery URL (which redirects to an expiring storage link); the stable record URL is given as url."
+cited_for = ["4.3", "4.4", "5.5", "7.3", "7.4", "7.6", "8.1", "8.2", "8.3", "8.4", "8.5", "9.1", "9.2", "9.3"]
+
+[[source]]
+id = "LT65"
+authors = "Jonathan Lubin and John Tate"
+title = "Formal complex multiplication in local fields"
+year = 1965
+doi = "10.2307/1970622"
+locator_scheme = "theorem"
+locator = "§1, condition (1), p.380; Lemma 1, pp.381–382; Theorem 1, equations (8)–(13), pp.382–383; Theorem 2, pp.383–384; §2, Lemma 2, Theorem 3 and corollary, pp.385–387"
+url = "https://doi.org/10.2307/1970622"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (JSTOR); cited by its locator without the text"
+cited_for = ["0.2", "0.3", "1.1", "1.2", "1.3", "1.4", "2.2", "2.3", "2.4", "2.5", "2.6", "8.1", "8.2", "9.1"]
