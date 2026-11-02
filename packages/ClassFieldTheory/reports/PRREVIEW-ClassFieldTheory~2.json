@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ClassFieldTheory~2",
+    "head": "90bf034d3c9c9c51546f2891fd7b31f9fa8950ca",
+    "pr": 1411,
+    "folder": "ClassFieldTheory",
+    "date": "2026-11-02",
+    "findings": 11,
+    "blocking": 7,
+    "notes": "Full README and Lean review; all 15 seeded targets considered, readable source texts checked and unavailable originals recorded. 150-row computed adversarial table covers the sample, headline families and findings. Dependency check: 204 roadmaps, 1489 edges, 0 problems; semantic absolute-filtration supplier drift and equal-characteristic ownership overlap found. Direct elaboration and 457 signature checks succeeded. 205 one-tactic probes found four immediate proofs. Targeted build succeeded with 62 non-sorry dependency warnings; supplied gate build=41 and static gate still FAIL (55 admitted data, forbidden imports, residue and long fence; two tex false positives)."
+  }
+}
