@@ -2080,54 +2080,6 @@
    "neededBy": [
     "PadicLocalLanglandsForGL2QpPartII:GR.3/general-central-character"
    ]
-  },
-  {
-   "slug": "derived-lie-action",
-   "id": "PadicLocalLanglandsForGL2QpPartII/gap/derived-lie-action",
-   "supplier": "LocallyAnalyticRepresentationsOfLocalGroups",
-   "section": "Layer LR.0, The derived action of the Lie algebra",
-   "title": "derived lie action",
-   "needs": "Layer LR.0, *The derived action of the Lie algebra*. For a locally ℚ_p-analytic representation V of G on a barrelled L-space, it must give the continuous action X·v = d/ds exp(sX)v at s = 0 of gl₂(L) on V, with its brackets, and its compatibility with continuous equivariant maps and with the D(H,L)-module structure of the base roadmap §0.1.",
-   "detail": "Layer LR.0, *The derived action of the Lie algebra*. For a locally ℚ_p-analytic representation V of G on a barrelled L-space, it must give the continuous action X·v = d/ds exp(sX)v at s = 0 of gl₂(L) on V, with its brackets, and its compatibility with continuous equivariant maps and with the D(H,L)-module structure of the base roadmap §0.1.",
-   "neededBy": [
-    "PadicLocalLanglandsForGL2QpPartII:GR.1/kirillov-model",
-    "PadicLocalLanglandsForGL2QpPartII:GR.1/kirillov-duality",
-    "PadicLocalLanglandsForGL2QpPartII:GR.2/homography",
-    "PadicLocalLanglandsForGL2QpPartII:GR.2/weight-change"
-   ]
-  },
-  {
-   "slug": "modp-drinfeld-finite-length",
-   "id": "PadicLocalLanglandsForGL2QpPartII/gap/modp-drinfeld-finite-length",
-   "supplier": "ScholzeFunctorAndModpCohomologyOfTheLubinTateTower",
-   "section": "Layer 5, Finite length of the mod p cohomology of the Drinfeld tower (CDN Theorem 4.1)",
-   "title": "modp drinfeld finite length",
-   "needs": "Layer 5, *Finite length of the mod p cohomology of the Drinfeld tower (CDN Theorem 4.1)*. For p > 2, n ≥ 0, K/ℚ_p finite and k ≥ 1, it must show that H¹_ét(M^p_{n,K}, O_L/ϖ^k)^∨ is a smooth admissible G′-representation of finite length. It must also show that Hom^cont_{k_L[G′]}(π^∨, H¹_ét(M^p_{n,ℂ_p}, k_L)) is finite-dimensional for every smooth admissible k_L[G′]-module π with a central character.",
-   "detail": "Layer 5, *Finite length of the mod p cohomology of the Drinfeld tower (CDN Theorem 4.1)*. For p > 2, n ≥ 0, K/ℚ_p finite and k ≥ 1, it must show that H¹_ét(M^p_{n,K}, O_L/ϖ^k)^∨ is a smooth admissible G′-representation of finite length. It must also show that Hom^cont_{k_L[G′]}(π^∨, H¹_ét(M^p_{n,ℂ_p}, k_L)) is finite-dimensional for every smooth admissible k_L[G′]-module π with a central character.",
-   "neededBy": [
-    "PadicLocalLanglandsForGL2QpPartII:GR.4/galois-socle",
-    "PadicLocalLanglandsForGL2QpPartII:GR.5/integral-reduction",
-    "PadicLocalLanglandsForGL2QpPartII:GR.5/finite-dual-multiplicity"
-   ]
-  },
-  {
-   "slug": "drinfeld-components",
-   "id": "PadicLocalLanglandsForGL2QpPartII/gap/drinfeld-components",
-   "supplier": "ScholzeFunctorAndModpCohomologyOfTheLubinTateTower",
-   "section": "Layer 0, Connected components of the Lubin–Tate and Drinfeld towers (Strauch)",
-   "title": "drinfeld components",
-   "needs": "Layer 0, *Connected components of the Lubin–Tate and Drinfeld towers (Strauch)*. The geometric connected components of M^p_{n,ℂ_p} must be shown finite in number, and G×Ǧ×W_ℚ_p must be shown to act on them through det, Nrd and the reciprocity character.",
-   "detail": "Layer 0, *Connected components of the Lubin–Tate and Drinfeld towers (Strauch)*. The geometric connected components of M^p_{n,ℂ_p} must be shown finite in number, and G×Ǧ×W_ℚ_p must be shown to act on them through det, Nrd and the reciprocity character.",
-   "neededBy": [
-    "PadicLocalLanglandsForGL2QpPartII:GR.3/global-nonzero-map",
-    "PadicLocalLanglandsForGL2QpPartII:GR.3/general-central-character",
-    "PadicLocalLanglandsForGL2QpPartII:GR.3/semistable-models-hyodo-kato",
-    "PadicLocalLanglandsForGL2QpPartII:GR.3/stein-proetale-cohomology",
-    "PadicLocalLanglandsForGL2QpPartII:GR.4/fundamental-diagram",
-    "PadicLocalLanglandsForGL2QpPartII:GR.4/etale-bounded",
-    "PadicLocalLanglandsForGL2QpPartII:GR.5/arithmetic-completion",
-    "PadicLocalLanglandsForGL2QpPartII:GR.7/infinite-primitives"
-   ]
   }
  ],
  "requests": [],
