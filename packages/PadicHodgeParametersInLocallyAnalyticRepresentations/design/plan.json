@@ -2323,78 +2323,22 @@
   ],
   "gaps": [
     {
-      "id": "G-LA",
-      "title": "The intended locally analytic representation supplier is not designed",
-      "detail": "LocallyAnalyticRepresentationsOfLocalGroups (design #3411) has no roadmap definition, stage or reserved node yet. Its foundations are consumed where they are already planned: distribution algebras of compact open subgroups and coadmissible modules (LocallyAnalyticDistributionsPartII ND.1–ND.2), and the completed principal-series Bernstein centre with its maps 𝒥_w (SmoothRepresentationsOfLocalGroups SR.3). What no roadmap plans is the rest of LA1–LA6: the admissible locally analytic category of GL_n(K) with its Ext calculus, the principal series PS, PS_1, π_1, π and their constituents C(I,s_{i,σ}), the maps ζ_w, the parabolic and σ-analytic Ext images and Emerton's induction functor. Every target using these carriers remains conditional on them.",
-      "neededBy": [
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.0/comparison-presentation",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.1/endpoint-gluing",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.1/all-refinements",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.1/comparison-map",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.1/kernel-dimension",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.1/refinement-transversality",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.2/minimal-extensions",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.2/ext-pushforward",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.2/ext-refinement-isomorphisms",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.2/intrinsic-characterisation",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.2/central-character",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.2/scalar-characters",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.3/parabolic-comparison",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.3/parabolic-minimal-extension",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.3/sigma-comparison",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.3/sigma-minimal-extension",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.3/sigma-kernel-splitting",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.3/modified-comparison",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.3/modified-ext-comparison",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.4/recovery-relation",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.4/recovery",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.5/first-order-algebras",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.5/universal-extensions",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.5/induction-universal-extension",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.5/universal-artinian-action",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.5/annihilator-realisation"
-      ]
+      "slug": "embedding-selective-modification",
+      "needs": "For a de Rham (φ,Γ)-module D over R_{K,E} with labelled Hodge–Tate weights h and σ∈Σ_K, the module D_σ attached to the B-pair (W_e(D),Λ) with Λ_σ=W⁺_dR(D)_σ and Λ_τ=(t^{h_{n,τ}}B⁺_dR⊗_{K,τ}E)^{⊕n} for τ≠σ, characterised as the unique module with D⊂D_σ, D_σ[1/t]=D[1/t] and weights 𝔗_σ(h), with the induced D_pst(D)≅D_pst(D_σ) identifying σ-components of D_dR as filtered spaces (Ding, Proposition 2.5).",
+      "supplier": "PadicHodgeTheory",
+      "section": "Layer 4, §4.5 B-pairs, cohomology and general de Rham blocks"
     },
     {
-      "id": "G-TR",
-      "title": "The intended trianguline and Hodge supplier is not designed",
-      "detail": "TriangulineVarietyAndItsLocalModel (design #3412) has no roadmap definition, stage or reserved node yet. Its carriers are consumed where they are already planned: Robba ring, rank-one modules and Herr Ext (PhiGammaModulesAndIwasawaCohomology PG.1, PG.3, PG.7), labelled de Rham realizations and the modified object D_σ (PadicHodgeTheory P7), the (φ,Γ)-module deformation rings with the square (3.55) (LocalGaloisDeformationRings R08.1), and the étale equivalence (PG.2). What no roadmap plans is the class ΦΓ_nc(φ,h) with its refinement dictionary, Lemma 2.11, Ext¹_0 and the quotient spaces Q_*, Proposition 2.12, the paraboline and σ-de Rham deformation theory, the deformation-level modification 𝔗_σ, and the higher-intertwining relation with Corollary 2.38(1) (TR1–TR5). This packet owns only the comparison and the uses of the imported objects.",
-      "neededBy": [
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.0/comparison-presentation",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.1/endpoint-gluing",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.1/all-refinements",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.1/comparison-map",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.1/kernel-dimension",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.1/refinement-transversality",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.2/minimal-extensions",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.2/ext-pushforward",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.2/ext-refinement-isomorphisms",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.2/intrinsic-characterisation",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.2/central-character",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.2/scalar-characters",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.3/parabolic-comparison",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.3/parabolic-minimal-extension",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.3/sigma-comparison",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.3/sigma-minimal-extension",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.3/sigma-kernel-splitting",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.3/modified-comparison",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.3/modified-ext-comparison",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.4/recovery-relation",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.4/recovery",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.5/first-order-algebras",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.5/universal-extensions",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.5/induction-universal-extension",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.5/universal-artinian-action",
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.5/annihilator-realisation"
-      ]
+      "slug": "principal-series-bernstein-completion",
+      "needs": "Over a finite E/ℚ_p, the Bernstein centre ℋ of the principal-series block of π_sm(φ), its completion Ĥ_φ at π_sm(φ), and for generic φ and each w∈S_n the isomorphism 𝒥_w:Ĥ_φ≅R_{w(φ),g} onto the completed local ring of ∏_i Spec ℋ_{w⁻¹(i)} at w(φ), with tangent maps compatible under reordering (CEGGPS Lemma 3.22; Ding §3.2.2).",
+      "supplier": "SmoothRepresentationsOfLocalGroups",
+      "section": "Layer SR.3, §SR.3.2 The Bernstein decomposition and centre"
     },
     {
-      "id": "G-HC",
-      "title": "Finite-coefficient reductive Harish–Chandra bridge needs a supplier statement",
-      "detail": "LieHighestWeight Layers 7 and 9 own Harish–Chandra and split gl_n representation theory; current Tau Ceti implements the central projection and one dot-invariant inclusion, not the full isomorphism used here. Their finite-E gl_n/Σ_K normalization and any descent from algebraic closure must be supplied explicitly (contract HC). The nonzero Vandermonde argument is comparison-specific work in PH.2, not a replacement for this isomorphism.",
-      "neededBy": [
-        "PadicHodgeParametersInLocallyAnalyticRepresentations:PH.2/scalar-characters"
-      ]
+      "slug": "split-gln-harish-chandra",
+      "needs": "The Harish-Chandra isomorphism Z(U(gl_{n,Σ_K}))≅U(t_{Σ_K})^{S_n^{Σ_K}} (dot action) for the split reductive ∏_σ gl_n over a finite, not algebraically closed, extension E/ℚ_p, normalised so that weight μ corresponds to the infinitesimal character of L(μ−θ), with the centre acting on Verma modules and on each L(μ) by its infinitesimal character.",
+      "supplier": "LieHighestWeight",
+      "section": "Layer 9: reductive Lie algebras and gl_n"
     }
   ],
   "coverage": [
