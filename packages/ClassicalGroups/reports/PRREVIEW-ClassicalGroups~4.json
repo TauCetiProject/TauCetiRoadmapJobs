@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ClassicalGroups~4",
+    "head": "a8f7108d896521aaf2922917ee634d551647b916",
+    "pr": 1192,
+    "folder": "RepresentationTheory/ClassicalGroups",
+    "date": "2026-11-02",
+    "findings": 7,
+    "blocking": 3,
+    "notes": "Full review of README and all six Lean files; all ten previous findings revisited; all 15 seeded source targets checked or explicitly marked not verifiable. Worker gate OK; independent dependency check: 204 roadmaps, 1493 edges, 0 problems. Suggested elaborates with ten sorry warnings only; 45 declaration signatures checked; 15 one-tactic admission probes; all five companion form-repair copies elaborate. Computed adversarial tables include 1725 mixed monomials and 25 full U3 character products. Three P2 ownership/scope/registration findings remain."
+  }
+}
