@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "rejected",
+    "reviewer": "independent-review-PRREVIEW-LocalFieldsRamification~4",
+    "head": "4cf8151ed6d00ec73fd97daf3c8b6ecdc1bd5a1b",
+    "pr": 1410,
+    "folder": "LocalFieldsRamification",
+    "date": "2026-11-02",
+    "findings": 8,
+    "blocking": 3,
+    "notes": "Full read-only review; all seven seeded targets checked, with inaccessible book locators recorded as uncertified. 168 computed adversarial rows; 88 elaborated signatures; all 13 admitted statements probed. Direct Lean elaboration passes with only sorry warnings. Required gate remains FAIL (tex=3, residue=5, worker build=41); targeted build exits 0 but has 63 non-sorry diagnostics. Dependency check: 205 roadmaps, 1505 edges, 0 problems. Rejected for extending/replanning the completed base in this folder; preserve new mathematics in a continuation. Three printed source misprints recorded."
+  }
+}
