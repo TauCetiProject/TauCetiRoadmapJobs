@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-CompactGroups~7",
+    "head": "7c7d91c6e8dab6324b44e3939c7b0df56bd0db42",
+    "pr": 1047,
+    "folder": "RepresentationTheory/CompactGroups",
+    "date": "2026-11-02",
+    "findings": 2,
+    "blocking": 1,
+    "notes": "incremental re-review of 11 changed lines since fd5840e; checked both previous findings, all added Knapp locators and dependent seeded targets, Conway uncertified label, current supplier citations and focused ownership, 90 carried and 10 fresh computed adversarial rows; gate and dependency check pass, targeted build and direct Lean elaboration pass, all 19 signatures checked. Base-roadmap replacement remains P2; missing sources inventory remains P3."
+  }
+}
