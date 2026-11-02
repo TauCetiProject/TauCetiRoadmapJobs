@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-SchurWeyl~5",
+    "head": "ef74fd4290448e13b57405553da6d95a58d45e82",
+    "pr": 1164,
+    "folder": "RepresentationTheory/SchurWeyl",
+    "date": "2026-11-02",
+    "findings": 2,
+    "blocking": 1,
+    "notes": "incremental re-review of 80 changed lines since a205d48; all four previous findings accounted for; balanced-tensor definition/signature/API/Checks and DDH v2 signed-action locator checked; 15 seeded targets accounted for with untouched evidence carried from r4; 18 fresh and 161 inherited computed rows; pin and ownership/citation audit; gate and dependency check pass, targeted build succeeds, direct elaboration has 23 sorry warnings only; 38 main signatures and auxiliary checked. R01 missing finite Frobenius suppliers remains blocking; auxiliary Newton duplicate/form remains P3. Source limitations recorded."
+  }
+}
