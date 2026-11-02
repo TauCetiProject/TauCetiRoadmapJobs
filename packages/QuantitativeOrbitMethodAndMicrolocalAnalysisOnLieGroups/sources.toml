@@ -1,0 +1,115 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups"
+
+[[source]]
+id = "nv21"
+authors = "Paul D. Nelson, Akshay Venkatesh"
+title = "The orbit method and analysis of automorphic forms"
+year = 2021
+venue = "Acta Mathematica 226"
+doi = "10.4310/ACTA.2021.v226.n1.a1"
+arxiv = "1805.07750"
+version_note = "All theorem, lemma, equation and page locators in this roadmap refer to the published Acta Mathematica version (printed pages). The arXiv versions are not used for locators: their theorem and lemma numbering differs, and they must not be substituted without a locator map."
+locator_scheme = "section"
+locator = "Sections 2-30 and Appendix A, printed pp. 23-200; theorem, lemma and equation numbers as cited at each target"
+url = "https://intlpress.com/site/pub/files/_fulltext/journals/acta/2021/0226/0001/ACTA-2021-0226-0001-a001.pdf"
+fetched_from = "https://intlpress.com/site/pub/files/_fulltext/journals/acta/2021/0226/0001/ACTA-2021-0226-0001-a001.pdf"
+fetched_at = "2026-10-26T03:15:43Z"
+sha256 = "85e14654d2b367f4b0d4a21c9555576f6def6649c8b6707afc78e1dfbdaea76e"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "1.10", "1.11", "1.12", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8", "3.9", "4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "5.9", "5.10", "6.1", "6.2", "6.3", "6.4", "7.1", "7.2", "7.3", "7.4", "7.5", "7.6", "7.7", "7.8", "8.1", "8.2", "8.3", "8.4", "8.5", "8.6", "8.7", "8.8", "9.1", "9.2", "9.3", "9.4", "9.5"]
+
+[[source]]
+id = "rallis-schiffmann"
+authors = "Steve Rallis, Gérard Schiffmann"
+title = "Multiplicity one Conjectures"
+year = 2007
+arxiv = "0705.2168v1"
+locator_scheme = "theorem"
+locator = "Theorems 6.1 and 17.1"
+url = "https://arxiv.org/abs/0705.2168v1"
+fetched_from = "https://arxiv.org/pdf/0705.2168v1"
+fetched_at = "2026-10-26T03:57:21Z"
+sha256 = "029cf877804fda8c8d377f41e4f708b856afda25d605e13129779121901c49e9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["5.2"]
+
+[[source]]
+id = "rossmann78"
+authors = "Wulf Rossmann"
+title = "Kirillov's character formula for reductive Lie groups"
+year = 1978
+venue = "Inventiones mathematicae 48"
+doi = "10.1007/bf01390244"
+locator_scheme = "theorem"
+locator = "Main theorem; Lemma C"
+url = "https://doi.org/10.1007/bf01390244"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.3", "5.5"]
+
+[[source]]
+id = "kostant78"
+authors = "Bertram Kostant"
+title = "On Whittaker vectors and representation theory"
+year = 1978
+venue = "Inventiones Mathematicae 48"
+doi = "10.1007/bf01390249"
+locator_scheme = "theorem"
+locator = "Theorem 6.7.2"
+url = "https://doi.org/10.1007/bf01390249"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.6"]
+
+[[source]]
+id = "barbasch-vogan80"
+authors = "Dan Barbasch, David A Vogan"
+title = "The local structure of characters"
+year = 1980
+venue = "Journal of Functional Analysis 37"
+doi = "10.1016/0022-1236(80)90026-9"
+locator_scheme = "theorem"
+locator = "Asymptotic expansion of characters near the identity; wavefront and Gelfand-Kirillov dimension"
+url = "https://doi.org/10.1016/0022-1236(80)90026-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.6"]
+
+[[source]]
+id = "rangarao72"
+authors = "R. Ranga Rao"
+title = "Orbital integrals in reductive groups"
+year = 1972
+venue = "Annals of Mathematics 96"
+doi = "10.2307/1970822"
+locator_scheme = "theorem"
+locator = "Main theorem (local integrability of orbital measures), as cited in nv21 Section 6.1, p. 42"
+url = "https://doi.org/10.2307/1970822"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (JSTOR); cited by its locator without the text"
+cited_for = ["3.2"]
+
+[[source]]
+id = "kostant63"
+authors = "Bertram Kostant"
+title = "Lie group representations on polynomial rings"
+year = 1963
+venue = "American Journal of Mathematics 85"
+doi = "10.2307/2373130"
+locator_scheme = "theorem"
+locator = "Theorem 5.3, as cited in nv21 Lemma 27.5, p. 183"
+url = "https://doi.org/10.2307/2373130"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (JSTOR); cited by its locator without the text"
+cited_for = ["8.4"]
