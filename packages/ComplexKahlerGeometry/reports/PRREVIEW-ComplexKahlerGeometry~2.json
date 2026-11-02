@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-ComplexKahlerGeometry~2",
+    "head": "b8db421b802f6b2d2e6be3b083dd315c5d2b32ec",
+    "pr": 1398,
+    "folder": "ComplexKahlerGeometry",
+    "date": "2026-11-01",
+    "findings": 15,
+    "blocking": 8,
+    "notes": "Full folder reviewed. All 15 seeded targets audited with source limits recorded; 246 adversarial rows, 77 signatures, 20 one-tactic probes, and a native full parameter-solver signature checked. Gate FAIL: blob=29, sorry-data=20, residue=1, imports=1, mathlib-subimports=5, no-import-mathlib=1; all failures reported. Both original Lean files elaborate with only admission warnings. Depcheck reports 204 roadmaps, 1486 edges, 0 problems; manual audit finds two reciprocal supplier cycles. Legal texts read: Demailly, Sakane, Angella; unavailable/paywalled texts listed in report. No PR files changed."
+  }
+}
