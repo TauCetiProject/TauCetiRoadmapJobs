@@ -3202,20 +3202,16 @@
   ],
   "gaps": [
     {
-      "title": "Primary proof audit for Kato’s quadratic comparison",
-      "neededBy": [
-        "QuadraticFormInvariantsPartII:Q2.3/kato-graded-comparison"
-      ],
-      "detail": "EKM Fact16.2 states the exact comparison and cites Kato, Inventiones66 (1982), 493–510, DOI10.1007/BF01389226. The publisher page was accessible but the full proof was not served; no copy was in the cleared source index. Read an authorized/public primary proof, audit the differential presentation and kernel=I_q^(n+1) in every n, and refine this target. The BGK coefficient theorem does not discharge this gap."
+      "slug": "rost-cycle-modules",
+      "supplier": "MotivesAndAlgebraicCycles",
+      "section": "0.5b",
+      "needs": "Rost's cycle modules over a perfect field: the cycle complexes with coefficients and their Zariski sheaves on smooth schemes, with Rost's Gersten resolution, homotopy invariance and contraction M ↦ M₋₁, and the identification of the unramified mod-two Milnor K-theory sheaf as the sheaf of the cycle module K_*ᴹ/2."
     },
     {
-      "title": "External proof leaves in Morel’s all-odd-characteristic argument",
-      "neededBy": [
-        "QuadraticFormInvariantsPartII:Q2.3/unramified-witt-sheaves",
-        "QuadraticFormInvariantsPartII:Q2.3/milnor-kernel-ext",
-        "QuadraticFormInvariantsPartII:Q2.3/odd-graded-comparison"
-      ],
-      "detail": "Morel’s construction and induction have been read. The unaudited external proof leaves are: Ojanguren–Panin Witt purity (Morel2.2, pp.70–71); Arason Satz3.3, used in Morel2.11 (pp.76–78) for transfer preservation of I^n and independence of the functional on the associated graded; quadratic-extension generation of Milnor K-theory cited there as [5, Corollary5.3, p.29]; generic Rost cycle-module residue/transfer axioms, Gersten resolutions and homotopy invariance; and the prime-field computations cited on p.66. Audit their primary proofs, assign generic infrastructure once after cross-roadmap search, and record the resulting declarations or requests. The elementary transfer target does not discharge Arason’s filtration theorem. The local Witt presentation and extension-lifting argument are specified here, with no implicit purity or prime-field-Milnor assumption."
+      "slug": "real-closure-uniqueness",
+      "supplier": "RealAlgebraicGeometry",
+      "section": "Layer 1",
+      "needs": "For an ordered field (k, ≤) and an ordered algebraic extension (k″, ≤″), every real closed field algebraic over k whose ordering restricts to ≤ receives a unique order-preserving k-embedding of k″; in particular any two real closures of (k, ≤) are uniquely k-isomorphic."
     }
   ],
   "sourceVersions": [
