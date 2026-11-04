@@ -80,3 +80,18 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (Springer); cited by its locator without the text"
 cited_for = ["R8.3 convention bridge (isotropic basis, torus, roots, dominant weights of so_N)"]
+
+[[source]]
+id = "lee-irm"
+authors = "John M. Lee"
+title = "Introduction to Riemannian Manifolds"
+year = 2018
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-3-319-91755-9"
+locator_scheme = "chapter"
+locator = "Chapter 12"
+url = "https://doi.org/10.1007/978-3-319-91755-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["R4.6 Synge's theorem; R4.1, R4.4, R4.5, R4.7 comparison and space forms"]
