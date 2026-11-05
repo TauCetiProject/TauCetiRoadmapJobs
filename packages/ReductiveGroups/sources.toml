@@ -93,3 +93,227 @@ status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v2"
 cited_for = ["10D"]
+
+[[source]]
+id = "frenkel-kac"
+authors = "Igor B. Frenkel, Victor G. Kac"
+title = "Basic representations of affine Lie algebras and dual resonance models"
+year = 1980
+locator_scheme = "section"
+locator = "§2.3, Prop. 2.2"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0062/LOG_0009.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0062/LOG_0009.pdf"
+fetched_at = "2026-11-05T21:08:46Z"
+sha256 = "85e7b8b90ae7cb5ed4fd16f20e5a7bef9637be01e13e4b0043436411ca2c6986"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["9A"]
+
+[[source]]
+id = "brieskorn"
+authors = "Egbert Brieskorn"
+title = "Sur les groupes de tresses (d'après V. I. Arnol'd)"
+year = 1973
+locator_scheme = "theorem"
+locator = "Proposition 1"
+url = "https://www.numdam.org/item/SB_1971-1972__14__21_0.pdf"
+fetched_from = "https://www.numdam.org/item/SB_1971-1972__14__21_0.pdf"
+fetched_at = "2026-11-05T21:08:47Z"
+sha256 = "86d112a42a5946b5ea126aaf423c5c35063a8a7075263e89fb41c5d9db63e2b2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["11B"]
+
+[[source]]
+id = "salvetti"
+authors = "Mario Salvetti"
+title = "Topology of the complement of real hyperplanes in C^N"
+year = 1987
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0088/LOG_0035.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0088/LOG_0035.pdf"
+fetched_at = "2026-11-05T21:09:28Z"
+sha256 = "5e606c92a968cfcea978cd5e1370da860d3c22e38048c421488fe7967f95cb39"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["11B"]
+
+[[source]]
+id = "callegaro"
+authors = "Filippo Callegaro"
+title = "Salvetti complex, spectral sequences and cohomology of Artin groups"
+year = 2014
+locator_scheme = "theorem"
+locator = "Theorems 2.4–2.5"
+url = "https://www.numdam.org/item/AFST_2014_6_23_2_267_0.pdf"
+fetched_from = "https://www.numdam.org/item/AFST_2014_6_23_2_267_0.pdf"
+fetched_at = "2026-11-05T21:09:29Z"
+sha256 = "b9e25425cf77998ae525ba4241a3d743661295e40613cc894d84e00786252864"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["11B"]
+
+[[source]]
+id = "birman-brendle"
+authors = "Joan S. Birman, Tara E. Brendle"
+title = "Braids: A Survey"
+year = 2004
+arxiv = "math/0409205v2"
+locator_scheme = "section"
+locator = "§§1.1–1.2"
+url = "https://arxiv.org/abs/math/0409205v2"
+fetched_from = "https://arxiv.org/pdf/math/0409205v2"
+fetched_at = "2026-11-05T21:10:17Z"
+sha256 = "a2e02e79beda1d087d12134780c99c4894a2628cc0f8f9a66940945cd9e6155c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2"
+cited_for = ["11A"]
+
+[[source]]
+id = "sga1"
+authors = "Alexander Grothendieck, Michele Raynaud"
+title = "Revêtements étales et groupe fondamental (SGA 1)"
+year = 2002
+arxiv = "math/0206203v2"
+locator_scheme = "section"
+locator = "Exposé XII, §§1–3"
+url = "https://arxiv.org/abs/math/0206203v2"
+fetched_from = "https://arxiv.org/pdf/math/0206203v2"
+fetched_at = "2026-11-05T21:11:09Z"
+sha256 = "8e64218d356456c534eebf996940f0f957e43b54f1a080241debe12cbaf60d3c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2"
+cited_for = ["3A.5"]
+
+[[source]]
+id = "riche"
+authors = "Simon Riche"
+title = "Lectures on modular representation theory of reductive algebraic groups"
+year = 2025
+locator_scheme = "section"
+locator = "Ch. 1, §2.9.1"
+url = "https://riche.perso.math.cnrs.fr/curso-riche-total.pdf"
+fetched_from = "https://riche.perso.math.cnrs.fr/curso-riche-total.pdf"
+fetched_at = "2026-11-05T21:11:15Z"
+sha256 = "9af167a871287e1d72758f6affd10de77994df947ca87622b23109cebbfe13b4"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["10B"]
+
+[[source]]
+id = "jantzen-1985"
+authors = "Jens Carsten Jantzen"
+title = "Representations of Algebraic Groups I (SFB/MPI preprint 85-9)"
+year = 1985
+locator_scheme = "section"
+locator = "§§3.3–3.9, 4.2–4.16"
+url = "https://archive.mpim-bonn.mpg.de/id/eprint/607/1/preprint_1985_9.pdf"
+fetched_from = "https://archive.mpim-bonn.mpg.de/id/eprint/607/1/preprint_1985_9.pdf"
+fetched_at = "2026-11-05T21:11:41Z"
+sha256 = "e56685b081b68ac5f2fe3578ffaaf8b093891b92f4708ef8d7d7f4b035822df4"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["1.1"]
+
+[[source]]
+id = "conrad-rgs"
+authors = "Brian Conrad"
+title = "Reductive group schemes (notes for the SGA3 summer school, Luminy)"
+year = 2014
+locator_scheme = "theorem"
+locator = "Theorems 5.1.13, 6.1.16–6.1.17"
+url = "https://math.stanford.edu/~conrad/papers/luminysga3.pdf"
+fetched_from = "https://math.stanford.edu/~conrad/papers/luminysga3.pdf"
+fetched_at = "2026-11-05T21:11:54Z"
+sha256 = "1a63a17e4ccb7e23263d65f05d93a6651262861e978e9eb0c1c53a01fd59140a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["9D"]
+
+[[source]]
+id = "waterhouse"
+authors = "William C. Waterhouse"
+title = "Introduction to Affine Group Schemes"
+year = 1979
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-6217-6"
+locator_scheme = "chapter"
+locator = "Chs. 1–4, 8"
+url = "https://doi.org/10.1007/978-1-4612-6217-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["0"]
+
+[[source]]
+id = "borel"
+authors = "Armand Borel"
+title = "Linear Algebraic Groups"
+year = 1991
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-0941-6"
+locator_scheme = "chapter"
+locator = "Chs. II–IV"
+url = "https://doi.org/10.1007/978-1-4612-0941-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7"]
+
+[[source]]
+id = "springer"
+authors = "T. A. Springer"
+title = "Linear Algebraic Groups"
+year = 1998
+doi = "10.1007/978-0-8176-4840-4"
+locator_scheme = "chapter"
+locator = "Chs. 6–8"
+url = "https://doi.org/10.1007/978-0-8176-4840-4"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7"]
+
+[[source]]
+id = "fox-neuwirth"
+authors = "Ralph H. Fox, Lee Neuwirth"
+title = "The braid groups"
+year = 1962
+locator_scheme = "section"
+locator = "§7"
+url = "https://journals.msp.org/mscand/article/view/2675"
+fetched_from = "https://journals.msp.org/mscand/article/download/2675/2674"
+fetched_at = "2026-11-05T21:16:23Z"
+sha256 = "0a40a1b264481cad7c97ad2a0f7eb971ea9430d26de9faf38469acb37150aeb6"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["11A"]
+
+[[source]]
+id = "fadell-neuwirth"
+authors = "Edward Fadell, Lee Neuwirth"
+title = "Configuration spaces"
+year = 1962
+locator_scheme = "section"
+locator = "§II"
+url = "https://journals.msp.org/mscand/article/view/2674"
+fetched_from = "https://journals.msp.org/mscand/article/download/2674/2673"
+fetched_at = "2026-11-05T21:16:42Z"
+sha256 = "ae27d6eb1cc845776a5ff111f885e059757787709d0d59a9ce160490d7cef789"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["11A"]
