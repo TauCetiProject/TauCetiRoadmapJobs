@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-EquivariantIntersectionTheory~7",
+            "head": "03f0a9313f537721a4f7288ce4d99cecd5e60515", "pr": 1685, "folder": "EquivariantIntersectionTheory", "date": "2026-11-07",
+            "findings": 2, "blocking": 0,
+            "notes": "incremental re-review of 19 changed lines since 1650b0a: gate with build OK (every check 0, depcheck 240 roadmaps 2370 edges 0 problems); lake env lean nine sorry warnings only; 15 signatures re-elaborated, Suggested.lean unchanged; the Borel fixed-point counterexample recomputed against Romagny 2005 Proposition 2.5 (author-page copy fetched); Edidin-Hu Theorem 1.3 and the 3.4 opening checked; Edidin-Graham sections 2.3-2.6 read for the 2.2 locator (R01, P3: propositions lie in four sections); 3.4 'agrees with 3.2 for n = 4' names unequal groups (R02, P3); previous R01 partly repaired, R02 repaired."}}
