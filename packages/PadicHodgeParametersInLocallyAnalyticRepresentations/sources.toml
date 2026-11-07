@@ -1,0 +1,38 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PadicHodgeParametersInLocallyAnalyticRepresentations"
+
+[[source]]
+id = "DING25"
+authors = "Yiwen Ding"
+title = "p-Adic Hodge parameters in the crystabelline representations of GL_n"
+year = 2025
+venue = "Publications Mathématiques de l'IHÉS 142"
+doi = "10.1007/s10240-025-00156-2"
+locator_scheme = "theorem"
+locator = "Theorem 3.21"
+url = "https://pmihes.centre-mersenne.org/item/10.1007/s10240-025-00156-2.pdf"
+fetched_from = "https://pmihes.centre-mersenne.org/item/10.1007/s10240-025-00156-2.pdf"
+fetched_at = "2026-10-26T16:00:30Z"
+sha256 = "741a49c0677a77b22c9759a016e215882b70dc760eb9e41fd2fe45cc633d05ba"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layers 0-5: Theorem 3.21, Remark 3.22, Lemma 3.23, Corollaries 3.24-3.25, Proposition 3.26, Proposition 3.27, Remark 3.28, Corollaries 3.29-3.33, Theorem 3.34, Lemma 3.35, Theorem 3.36, Corollary 3.37; §§2.1-2.4 and §3.1 for supplier statements"]
+
+[[source]]
+id = "CEGGPS16"
+authors = "Ana Caraiani, Matthew Emerton, Toby Gee, David Geraghty, Vytautas Paskunas, Sug Woo Shin"
+title = "Patching and the p-adic local Langlands correspondence"
+year = 2013
+arxiv = "1310.0831v5"
+locator_scheme = "theorem"
+locator = "Lemma 3.22"
+url = "https://arxiv.org/abs/1310.0831v5"
+fetched_from = "https://arxiv.org/pdf/1310.0831v5"
+fetched_at = "2026-10-26T16:05:26Z"
+sha256 = "32acd023be82598de73c1757aba877fbeb89e5b82c23a64bcb378cc0f83b1077"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v5; published in Cambridge Journal of Mathematics 4 (2016); cited by the arXiv v5 numbering, p. 47"
+cited_for = ["5.1 and the SmoothRepresentationsOfLocalGroups supplier contract: Lemma 3.22, the E-rational Bernstein centre of a component as Weyl invariants"]
