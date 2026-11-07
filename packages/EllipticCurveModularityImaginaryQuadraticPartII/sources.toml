@@ -1,0 +1,149 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "EllipticCurveModularityImaginaryQuadraticPartII"
+
+[[source]]
+id = "LeHung26"
+authors = "Bao V. Le Hung"
+title = "A geometric prime switch for elliptic curves over totally real and CM fields (discussion draft)"
+year = 2026
+venue = "Hexagon preprint hexagon:2610.00156v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1 p.2; Section 4.1 p.7; Geometric input 4.1 p.7; Sections 4.3-4.6 pp.7-9; Remark 4.2 p.9; Lemma 5.1 p.9"
+url = "https://hexagonmath.org/pdf/2610.00156v1"
+fetched_from = "https://hexagonmath.org/pdf/2610.00156v1"
+fetched_at = "2026-11-06T17:36:14Z"
+sha256 = "a4235c74b05d21ae022d415b54c8bbc66a05d1fd3c7719589fc58c3f5a9f8e58"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "v1. The PDF is dated 7 October 2026 and titled as above; the Hexagon landing page (posted 8 October 2026, licence CC BY 4.0, provenance marked mixed human/AI) lists the title 'Modularity of elliptic curves over totally real field and CM fields not containing zeta_5'. Unrefereed."
+cited_for = ["1.2", "1.3", "2.1", "2.2", "2.4", "2.5", "8.1", "Scope and ownership"]
+
+[[source]]
+id = "CaptainSude26"
+authors = "CaptainSude (pseudonymous)"
+title = "Every elliptic curve over a CM number field is modular"
+year = 2026
+venue = "Manuscript, GitHub release v1.0.0 of CaptainSude/elliptic-curves-cm-modularity"
+locator_scheme = "theorem"
+locator = "Theorem 1.1 p.1; Proposition 2.3 p.3; Lemmas 3.1-3.4 pp.4-6; Lemma 4.1 p.6; Theorem 4.2 p.9; Lemma 5.1 p.10; Proposition 5.2 p.11; Corollary 5.3 p.12; Proposition 6.2 p.13"
+url = "https://raw.githubusercontent.com/CaptainSude/elliptic-curves-cm-modularity/v1.0.0/elliptic-curves-cm-modularity.pdf"
+fetched_from = "https://raw.githubusercontent.com/CaptainSude/elliptic-curves-cm-modularity/v1.0.0/elliptic-curves-cm-modularity.pdf"
+fetched_at = "2026-11-06T17:36:57Z"
+sha256 = "0e531e0b550a76614e92cc2e334e33547d6eb72ebfd6467561c4f38d91900893"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "Tag v1.0.0, dated 7 October 2026, 15 pages (the filing says 6). A later tag v1.0.1 is described as an attribution revision only. The repository has no licence file: cite with provenance only, no passages. The README describes an AI-assisted internal audit and says it is not independent peer review. LeHung26 Remark 1.3.1 (line 125) cites this v1.0.0 as its reference [13] for the removal of the zeta_5 hypothesis."
+cited_for = ["2.2", "2.4", "3.1", "3.2", "3.3", "3.4", "3.5", "4.1", "4.2", "4.3", "5.1", "5.2", "5.3", "5.4", "6.1", "6.2", "7.1", "7.2", "7.3", "7.4", "7.5", "8.1"]
+
+[[source]]
+id = "OpenAI26"
+authors = "OpenAI"
+title = "Modularity of elliptic curves over imaginary quadratic fields"
+year = 2026
+venue = "Preprint, openai/math repository, revision adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+locator_scheme = "theorem"
+locator = "Theorem 1.1 p.1; Lemma 3.5 p.7; Propositions 7.3 and 7.5, Corollary 7.6 pp.17-20; Lemma 8.3 and Proposition 8.4 pp.23-25; Lemmas 9.1-9.4 pp.25-27"
+url = "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Modularity-of-elliptic-curves-over-imaginary-quadratic-fields-October-4-2026/paper.pdf"
+fetched_from = "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Modularity-of-elliptic-curves-over-imaginary-quadratic-fields-October-4-2026/paper.pdf"
+fetched_at = "2026-11-06T17:39:46Z"
+sha256 = "c74cc37755f500be0c22ccb4d08ce81df309404a7175a7fb6cf7321330b5187c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "Dated 4 October 2026; the same revision and SHA-256 as EllipticCurveModularityImaginaryQuadratic cites. Unrefereed."
+cited_for = ["2.2", "2.3", "2.4"]
+
+[[source]]
+id = "CN23"
+authors = "Ana Caraiani, James Newton"
+title = "On the modularity of elliptic curves over imaginary quadratic fields"
+year = 2023
+arxiv = "2301.10509v3"
+locator_scheme = "theorem"
+locator = "Theorem 4.2.15; Theorem 5.2 pp.73-74; Propositions 5.3.2, 5.4.2, 5.5.3, 5.6.1, 5.6.2, 5.6.3; Lemmas 5.3.3-5.3.4, 5.6.4; Theorem 6.1 p.87; Lemmas 6.1.3-6.1.4 p.88; Proposition 6.1.5 pp.88-89; Lemma 6.1.7 p.90"
+url = "https://arxiv.org/abs/2301.10509v3"
+fetched_from = "https://arxiv.org/pdf/2301.10509v3"
+fetched_at = "2026-11-06T17:39:52Z"
+sha256 = "57abc79ad46875b0ea432ce1193f517b8dbb0ad0448cb51942bc20ed95ffd0c3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v3, 27 March 2025. All theorem numbers and printed pages refer to v3, the version EllipticCurveModularityImaginaryQuadratic and CrystallineLocalGlobalCompatibilityCM cite."
+cited_for = ["2.1", "2.3", "5.1", "5.2", "5.3", "5.4", "6.1", "6.2", "7.4", "Exact supplier contracts"]
+
+[[source]]
+id = "AKT23"
+authors = "Patrick B. Allen, Chandrashekhar Khare, Jack A. Thorne"
+title = "Modularity of GL_2(F_p)-representations over CM fields"
+year = 2023
+venue = "Cambridge Journal of Mathematics 11 (2023), 1-158"
+doi = "10.4310/CJM.2023.v11.n1.a1"
+arxiv = "1910.12986v2"
+locator_scheme = "theorem"
+locator = "Corollary 5.5; Theorem 5.11; Lemma A.2; Proposition A.4; Lemma A.5; Proposition A.6"
+url = "https://arxiv.org/abs/1910.12986v2"
+fetched_from = "https://arxiv.org/pdf/1910.12986v2"
+fetched_at = "2026-11-06T17:39:59Z"
+sha256 = "230de16e9688931b1d4a8ea4ba765f1f5f262d32e94ccf92083062fd1d9b4d44"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v2, 2 September 2022. Numbering is that of the preprint, as in CrystallineLocalGlobalCompatibilityCM; no identification with the journal numbering is asserted."
+cited_for = ["4.2"]
+
+[[source]]
+id = "ACC23"
+authors = "Patrick B. Allen, Frank Calegari, Ana Caraiani, Toby Gee, David Helm, Bao V. Le Hung, James Newton, Peter Scholze, Richard Taylor, Jack A. Thorne"
+title = "Potential automorphy over CM fields"
+year = 2023
+venue = "Annals of Mathematics 197 (2023), 897-1113"
+doi = "10.4007/annals.2023.197.3.2"
+arxiv = "1812.09999v2"
+locator_scheme = "theorem"
+locator = "Lemma 2.2.3; Theorem 3.1.1; Lemma 6.2.4; Section 6.4; Section 6.5.12; Proposition 6.5.13"
+url = "https://arxiv.org/abs/1812.09999v2"
+fetched_from = "https://arxiv.org/pdf/1812.09999v2"
+fetched_at = "2026-11-06T17:40:14Z"
+sha256 = "7c882c4dc7208e08a0b1f4b3ce6e5c5234c9815f139a4c3a372898378a24d08c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v2, 16 June 2022; theorem and section numbers are those of v2. Section 6.5.12 (the end of the Fontaine-Laffaille proof, the soluble base-change reduction) constructs the auxiliary imaginary quadratic fields that CaptainSude26 cites it for (ACC23 line 7163)."
+cited_for = ["5.3", "6.1", "Supplier obligations"]
+
+[[source]]
+id = "CHT08"
+authors = "Laurent Clozel, Michael Harris, Richard Taylor"
+title = "Automorphy for some l-adic lifts of automorphic mod l Galois representations"
+year = 2008
+venue = "Publications Mathématiques de l'IHÉS 108 (2008), 1-181"
+doi = "10.1007/s10240-008-0016-1"
+locator_scheme = "theorem"
+locator = "Lemma 4.1.2"
+url = "https://www.numdam.org/item/PMIHES_2008__108__1_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_2008__108__1_0.pdf"
+fetched_at = "2026-11-06T17:40:59Z"
+sha256 = "9d3b7079440d8cd3167812bb11c25ae4b51ada973b2e98f0928624254a60156c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["7.4"]
+
+[[source]]
+id = "MilneCM"
+authors = "J. S. Milne"
+title = "Complex Multiplication"
+year = 2020
+venue = "Course notes, version 0.10 of 14 July 2020, author's page"
+locator_scheme = "section"
+locator = "Chapter I, Proposition 1.4(b) with the uniqueness of complex conjugation noted after it, and Corollary 1.5, p. 10"
+url = "https://www.jmilne.org/math/CourseNotes/CM.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/CM.pdf"
+fetched_at = "2026-11-07T03:23:23Z"
+sha256 = "0ac337a885d72f6938f15724b897f568fe350d0d754d0b52370b8f3a01d2e2b5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["1.1"]
