@@ -1,0 +1,52 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CharacterSumsOverFiniteFields"
+
+[[source]]
+id = "schmidt1976"
+authors = "W. M. Schmidt"
+title = "Equations over Finite Fields An Elementary Approach"
+year = 1976
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/bfb0080437"
+locator_scheme = "chapter"
+locator = "Ch. I"
+url = "https://doi.org/10.1007/bfb0080437"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.2"]
+
+[[source]]
+id = "jacobsthal1907"
+authors = "E. Jacobsthal"
+title = "Über die Darstellung der Primzahlen der Form 4n + 1 als Summe zweier Quadrate"
+year = 1907
+venue = "Journal für die reine und angewandte Mathematik 132, 238-245"
+locator_scheme = "page"
+locator = "pp. 240-241, §2 formulas 2), 3), 5)"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0132/LOG_0017.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0132/LOG_0017.pdf"
+fetched_at = "2026-11-07T12:30:29Z"
+sha256 = "2b83a2fa7eaf39e2f50eee28c5ca9ab309cca8527d30017ccf4f2abe5ceac261"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["2.5"]
+
+[[source]]
+id = "schmidt1973"
+authors = "W. M. Schmidt"
+title = "Zur Methode von Stepanov"
+year = 1973
+venue = "Acta Arithmetica 24 (4), 347-367"
+doi = "10.4064/aa-24-4-347-367"
+locator_scheme = "theorem"
+locator = "Satz, p. 347"
+url = "https://matwbn.icm.edu.pl/ksiazki/aa/aa24/aa2442.pdf"
+fetched_from = "https://matwbn.icm.edu.pl/ksiazki/aa/aa24/aa2442.pdf"
+fetched_at = "2026-11-07T12:31:56Z"
+sha256 = "a46364b77f152a1656fa6d60181492cfb868803eae767a2145be38fd20bbdd4d"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["4.2", "4.3"]
