@@ -1,0 +1,181 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AbelianVarietiesOverFiniteFields"
+
+[[source]]
+id = "waterhouse1969"
+locator_scheme = "theorem"
+locator = "Theorem 4.1"
+url = "https://www.numdam.org/item/ASENS_1969_4_2_4_521_0.pdf"
+fetched_from = "https://www.numdam.org/item/ASENS_1969_4_2_4_521_0.pdf"
+fetched_at = "2026-11-07T11:47:34Z"
+sha256 = "7be2bf9dde45454afa3dd9a0ea1ba05acbe952b6b573a0c37c2b1b8f0cccbb47"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["4.6"]
+
+[[source]]
+id = "marseglia-icm"
+authors = "Stefano Marseglia"
+title = "Computing the ideal class monoid of an order"
+year = 2018
+venue = "J. Lond. Math. Soc. (2) 101 (2020), no. 3, 984-1007"
+doi = "10.1112/jlms.12294"
+arxiv = "1805.09671v3"
+locator_scheme = "theorem"
+locator = "Proposition 2.11"
+url = "https://arxiv.org/abs/1805.09671v3"
+fetched_from = "https://arxiv.org/pdf/1805.09671v3"
+fetched_at = "2026-11-07T11:47:38Z"
+sha256 = "98814edebadbb69ae46ebf2f93a4cfd362affaf861da6c6204def398ab4173ff"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v3"
+cited_for = ["8.4"]
+
+[[source]]
+id = "marseglia-sqfree"
+authors = "Stefano Marseglia"
+title = "Computing square-free polarized abelian varieties over finite fields"
+year = 2018
+venue = "Mathematics of Computation 90 (2021), no. 328, 953-971"
+doi = "10.1090/mcom/3594"
+arxiv = "1805.10223v3"
+locator_scheme = "theorem"
+locator = "Theorem 4.3"
+url = "https://arxiv.org/abs/1805.10223v3"
+fetched_from = "https://arxiv.org/pdf/1805.10223v3"
+fetched_at = "2026-11-07T11:47:44Z"
+sha256 = "efc1b4d0d718892f054df027f28d59abb809cff6d890f239a3e2e896e16d0338"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v3"
+cited_for = ["9.1"]
+
+[[source]]
+id = "centeleghe-stix"
+authors = "Tommaso Giorgio Centeleghe, Jakob Stix"
+title = "Categories of abelian varieties over finite fields I. Abelian varieties over $\\mathbb{F}_p$"
+year = 2015
+arxiv = "1501.02446v1"
+locator_scheme = "theorem"
+locator = "Theorem 11"
+url = "https://arxiv.org/abs/1501.02446v1"
+fetched_from = "https://arxiv.org/pdf/1501.02446v1"
+fetched_at = "2026-11-07T11:47:51Z"
+sha256 = "698eb615951cff80dfea9794717181042ecce17d525a94da25900f07838c6735"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["8.4"]
+
+[[source]]
+id = "hnr2009"
+authors = "Everett W. Howe, Enric Nart, Christophe Ritzenthaler"
+title = "Jacobians in isogeny classes of abelian surfaces over finite fields"
+year = 2006
+venue = "Ann. Inst. Fourier (Grenoble) 59 (2009) 239-289"
+arxiv = "math/0607515v3"
+locator_scheme = "theorem"
+locator = "Theorem 1.2"
+url = "https://arxiv.org/abs/math/0607515v3"
+fetched_from = "https://arxiv.org/pdf/math/0607515v3"
+fetched_at = "2026-11-07T11:48:00Z"
+sha256 = "f6ff813db47ca2feadee52008a7bc43c166c291c2d45a31a2fa76e9c4b492f91"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v3"
+cited_for = ["10.4"]
+
+[[source]]
+id = "milne-av"
+locator_scheme = "section"
+locator = "II §1"
+url = "https://www.jmilne.org/math/CourseNotes/AV.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/AV.pdf"
+fetched_at = "2026-11-07T11:48:54Z"
+sha256 = "f5ca4e63e5092a4b102daad1470e4cbed5fe8f82115e3a28c8881e3f67f6aaef"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["1.4"]
+
+[[source]]
+id = "howe1995"
+locator_scheme = "section"
+locator = "§4"
+url = "https://www.ams.org/journals/tran/1995-347-07/S0002-9947-1995-1297531-4/S0002-9947-1995-1297531-4.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1995-347-07/S0002-9947-1995-1297531-4/S0002-9947-1995-1297531-4.pdf"
+fetched_at = "2026-11-07T11:48:58Z"
+sha256 = "02bfcdee5846189e0f1ff39b351fa56b3f9660078b790eb1c6fb5c15ef15bc90"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["9.1"]
+
+[[source]]
+id = "deligne1969"
+locator_scheme = "theorem"
+locator = "Theorem 7"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0008/LOG_0027.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0008/LOG_0027.pdf"
+fetched_at = "2026-11-07T11:49:24Z"
+sha256 = "b4c9490f2b57e6ad7f2e63382bc054ad8147d55a179bf099aeef4754082b7559"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["9.1"]
+
+[[source]]
+id = "howe-char3"
+authors = "Everett W. Howe"
+title = "Supersingular genus-two curves over fields of characteristic three"
+year = 2006
+venue = "pp. 49-69 in: Computational Arithmetic Geometry (K. E. Lauter and K. A. Ribet, eds.), Contemporary Mathematics 463, American Mathematical Society, Providence, RI, 2008"
+arxiv = "math/0604413v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/math/0604413v1"
+fetched_from = "https://arxiv.org/pdf/math/0604413v1"
+fetched_at = "2026-11-07T11:49:28Z"
+sha256 = "f75cc6d32963d9ef2e375aa6e4aa6d4b1089d9076ada9fa59bb28a91e425a5d5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["10.4"]
+
+[[source]]
+id = "maisner-nart"
+authors = "Daniel Maisner, Enric Nart"
+title = "Zeta functions of supersingular curves of genus 2"
+year = 2004
+arxiv = "math/0408383v1"
+locator_scheme = "section"
+locator = "§5"
+url = "https://arxiv.org/abs/math/0408383v1"
+fetched_from = "https://arxiv.org/pdf/math/0408383v1"
+fetched_at = "2026-11-07T11:49:34Z"
+sha256 = "29369e05c83ffe1e5c188249944904356a9474f2f422729a2371d63c096f65a2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["10.4"]
+
+[[source]]
+id = "deligne1969b"
+locator_scheme = "theorem"
+locator = "Theorem 7"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0008/LOG_0024.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0008/LOG_0024.pdf"
+fetched_at = "2026-11-07T11:58:01Z"
+sha256 = "cfc8cd72caf8904ffac8ae790b3fd10ca2c436b7df8d5606eede5c7e9fe7d417"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["9.1"]
