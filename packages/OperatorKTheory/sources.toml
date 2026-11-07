@@ -1,0 +1,203 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "OperatorKTheory"
+
+[[source]]
+id = "Blackadar1998"
+authors = "Bruce Blackadar"
+title = "K-Theory for Operator Algebras, second edition"
+year = 1998
+locator_scheme = "theorem"
+locator = "Theorem 9.3.1"
+url = "https://www.bruceblackadar.com/Mathematics/book6.pdf"
+fetched_from = "https://www.bruceblackadar.com/Mathematics/book6.pdf"
+fetched_at = "2026-11-07T11:55:41Z"
+sha256 = "a20e676e9d400ebcd0cd07c13fbdbe1fac759a30c739fab23d6161ecfb1a23fb"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["K1", "K3"]
+
+[[source]]
+id = "Roe2017"
+authors = "John Roe"
+title = "Lectures on K-Theory and Operator Algebras"
+year = 2017
+locator_scheme = "theorem"
+locator = "Lemma 19.1"
+url = "https://bpb-us-e1.wpmucdn.com/sites.psu.edu/dist/1/4020/files/2017/12/KTheoryNotes-1uvuwyz.pdf"
+fetched_from = "https://bpb-us-e1.wpmucdn.com/sites.psu.edu/dist/1/4020/files/2017/12/KTheoryNotes-1uvuwyz.pdf"
+fetched_at = "2026-11-07T11:59:34Z"
+sha256 = "82deb304bd1e5600579e73f36ab31a87dbfc2ccd8c6e695cb6034d3668f2d97f"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["7.7", "K2"]
+
+[[source]]
+id = "Messerschmidt2016"
+authors = "Miek Messerschmidt"
+title = "A Pointwise Lipschitz Selection Theorem"
+year = 2016
+arxiv = "1611.08435v2"
+locator_scheme = "theorem"
+locator = "Theorem 5.1"
+url = "https://arxiv.org/abs/1611.08435v2"
+fetched_from = "https://arxiv.org/pdf/1611.08435v2"
+fetched_at = "2026-11-07T12:12:52Z"
+sha256 = "8f72337f827567049195dedc91911b5269efd2a9c7a9446cae51e05f9e27070b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2"
+cited_for = ["9.2"]
+
+[[source]]
+id = "Zois2010"
+authors = "Ioannis P. Zois"
+title = "18 Lectures on K-Theory"
+year = 2010
+arxiv = "1008.1346v1"
+locator_scheme = "theorem"
+locator = "Analytic K-theory, Lecture 1, Theorem 1"
+url = "https://arxiv.org/abs/1008.1346v1"
+fetched_from = "https://arxiv.org/pdf/1008.1346v1"
+fetched_at = "2026-11-07T12:13:00Z"
+sha256 = "7263920307bcf0e2e21a8f86bb7ffcccd8afb879cb3295e02d209ad0a9339c41"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["4.1"]
+
+[[source]]
+id = "ManuilovThomsen2005"
+authors = "Vladimir Manuilov, Klaus Thomsen"
+title = "The group of unital $C^*$-extensions"
+year = 2005
+arxiv = "math/0501472v1"
+locator_scheme = "theorem"
+locator = "Theorem 3"
+url = "https://arxiv.org/abs/math/0501472v1"
+fetched_from = "https://arxiv.org/pdf/math/0501472v1"
+fetched_at = "2026-11-07T12:13:04Z"
+sha256 = "ef2224bc29caaa568d54e86e5bfc237e4582956715052f0f3539159a8c37b70d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["6.5"]
+
+[[source]]
+id = "Phillips2006"
+authors = "N. Christopher Phillips"
+title = "Every simple higher dimensional noncommutative torus is an AT algebra"
+year = 2006
+arxiv = "math/0609783v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.9"
+url = "https://arxiv.org/abs/math/0609783v1"
+fetched_from = "https://arxiv.org/pdf/math/0609783v1"
+fetched_at = "2026-11-07T12:13:17Z"
+sha256 = "cd06df58a00228bd284b67220317affb2afed026ebdcc39bb71cce62d201517f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["7.5"]
+
+[[source]]
+id = "Julg2013"
+authors = "Pierre Julg"
+title = "A new look at the Julg-Valette homotopy for groups acting on trees"
+year = 2013
+arxiv = "1310.6941v2"
+locator_scheme = "section"
+locator = "Sections 1-5"
+url = "https://arxiv.org/abs/1310.6941v2"
+fetched_from = "https://arxiv.org/pdf/1310.6941v2"
+fetched_at = "2026-11-07T12:13:22Z"
+sha256 = "b9a9298f1702618958c59b8175df9a5bb44e52a554776b03828edce4a384351b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2"
+cited_for = ["7.3"]
+
+[[source]]
+id = "StacksProject"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "00LO, 00LT, 00LY, 00LZ, 00M3"
+url = "https://stacks.math.columbia.edu/tag/00LY"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=00LY"
+fetched_at = "2026-11-07T12:14:03Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["8.2"]
+
+[[source]]
+id = "Cuntz1981"
+authors = "Joachim Cuntz"
+title = "K-theory for certain C*-algebras. II"
+year = 1981
+locator_scheme = "theorem"
+locator = "Theorem 1.5"
+url = "https://www.theta.ro/jot/archive/1981-005-001/1981-005-001-009.pdf"
+fetched_from = "https://www.theta.ro/jot/archive/1981-005-001/1981-005-001-009.pdf"
+fetched_at = "2026-11-07T12:14:59Z"
+sha256 = "ffbb2d68480cfe7073ef346a6a1a6b7c365cc7165dd56bc1462cd8f88215f8e1"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["7.6"]
+
+[[source]]
+id = "PimsnerVoiculescu1982"
+authors = "Mihai Pimsner and Dan Voiculescu"
+title = "K-groups of reduced crossed products by free groups"
+year = 1982
+locator_scheme = "theorem"
+locator = "Theorem 3.1"
+url = "https://www.theta.ro/jot/archive/1982-008-001/1982-008-001-006.pdf"
+fetched_from = "https://www.theta.ro/jot/archive/1982-008-001/1982-008-001-006.pdf"
+fetched_at = "2026-11-07T12:16:27Z"
+sha256 = "f4565d17e7628f667232a0099e13d922e019d2a8920fd8b265933367157b693b"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["7.3"]
+
+[[source]]
+id = "Schochet1984"
+authors = "Claude Schochet"
+title = "Topological methods for C*-algebras III: axiomatic homology"
+year = 1984
+locator_scheme = "section"
+locator = "4.5"
+url = "https://msp.org/pjm/1984/114-2/pjm-v114-n2-p11-s.pdf"
+fetched_from = "https://msp.org/pjm/1984/114-2/pjm-v114-n2-p11-s.pdf"
+fetched_at = "2026-11-07T12:17:11Z"
+sha256 = "c57506a2fded82107fc4e6a4ed6d14ee722983f9153e41d5fe9463e36b3c2ce6"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["3.3"]
+
+[[source]]
+id = "Slawny1972"
+authors = "J. Slawny"
+title = "On factor representations and the C*-algebra of canonical commutation relations"
+year = 1972
+venue = "Communications in Mathematical Physics 24"
+doi = "10.1007/bf01878451"
+locator_scheme = "theorem"
+locator = "Theorem 3.7"
+url = "https://doi.org/10.1007/bf01878451"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.5"]
