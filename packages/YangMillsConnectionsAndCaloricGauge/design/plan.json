@@ -1,0 +1,2262 @@
+{
+  "roadmap": "YangMillsConnectionsAndCaloricGauge",
+  "title": "Yang–Mills connections on Euclidean space and the caloric gauge",
+  "parent": null,
+  "summary": "Critical-regularity gauge theory on ℝ^d for a compact matrix group G: G-valued Sobolev maps at the critical exponent and their homotopy classes; rough connections with L^{d/2} curvature, d ≥ 3, and gauge invariance of finite energy; Uhlenbeck's lemma on balls and punctured balls for every compact G; the good global gauge theorem and topological classes; characteristic numbers by transgression, the Bogomol'nyi bound and the SU(2) instanton number; harmonic Yang–Mills connections on ℝ⁴ with regularity, decay, the Gursky–Kelleher–Streets energy gap and the ground state energy E_GS = 16π²/γ₀²; covariant elliptic and parabolic theory in homogeneous spaces; the Yang–Mills heat flow in the local caloric gauge with local well-posedness, convergence to flat limits and the Dichotomy and Threshold Theorems; the caloric gauge, the C¹ caloric manifold in ℋ, its tangent spaces and the nonlinear div–curl decomposition.",
+  "baseline": {
+    "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+    "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
+  },
+  "layers": [
+    {
+      "key": "1",
+      "title": "Structure groups and pointwise gauge algebra",
+      "targets": [
+        {
+          "id": "1.1",
+          "kind": "definition",
+          "name": "YangMills.StructureGroup",
+          "statement": "A compact matrix structure group is (N, G, <,>) with G a closed subgroup of Matrix.unitaryGroup (Fin N) ℂ, its Lie algebra 𝔤 = {X ∈ 𝔲(N) : exp(tX) ∈ G ∀ t}, and an Ad(G)-invariant inner product on 𝔤.",
+          "hypotheses": [
+            "N ≥ 1",
+            "G closed in U(N), not assumed connected",
+            "inner product Ad(G)-invariant"
+          ],
+          "locator": {
+            "source": "OhTataru-YMHF",
+            "where": "lines 92–102; OhTataru-TopClass lines 121–127, 976–979"
+          },
+          "prerequisites": [
+            "mathlib:Matrix.unitaryGroup",
+            "mathlib:NormedSpace.exp",
+            "mathlib:Matrix.isUnit_exp",
+            "roadmap:LieGroups Layer 0",
+            "roadmap:LieGroups Layer 1",
+            "roadmap:LieGroups Layer 2"
+          ],
+          "api": [
+            {
+              "name": "lieSubalgebra",
+              "role": "structure",
+              "statement": "𝔤 is a real Lie subalgebra of the skew-Hermitian matrices, exp(𝔤) ⊆ G, Ad(g)𝔤 = 𝔤, and T_gG = g𝔤 = 𝔤g"
+            },
+            {
+              "name": "ad_skew",
+              "role": "structure",
+              "statement": "Ad(g) is an isometry and ad(X) is skew-adjoint"
+            },
+            {
+              "name": "traceForm",
+              "role": "constructor",
+              "statement": "−Re tr(XY) is a positive definite Ad(U(N))-invariant inner product, so admissible inner products exist"
+            },
+            {
+              "name": "idealDecomposition",
+              "role": "structure",
+              "statement": "𝔤 is the orthogonal direct sum of its centre and simple ideals"
+            },
+            {
+              "name": "restrict_prod",
+              "role": "functoriality",
+              "statement": "closed subgroups and block-diagonal products are structure groups"
+            }
+          ],
+          "tests": [
+            {
+              "name": "u1",
+              "kind": "computation",
+              "statement": "G = U(1): 𝔤 = iℝ, Ad trivial, F = dA"
+            },
+            {
+              "name": "su2_brackets",
+              "kind": "computation",
+              "statement": "SU(2) with −tr: |i|²=|j|²=|k|²=2, [i,j]=2k, [j,k]=2i, [k,i]=2j"
+            },
+            {
+              "name": "finite",
+              "kind": "degenerate",
+              "statement": "G = {±1}: 𝔤 = 0, every connection is 0"
+            },
+            {
+              "name": "adNotAd",
+              "kind": "non-example",
+              "statement": "T²⋊ℤ/2 ⊂ U(2) with |e1|²=1, |e2|²=2 is ad-invariant but not Ad(G)-invariant"
+            }
+          ]
+        },
+        {
+          "id": "1.2",
+          "kind": "construction",
+          "name": "YangMills.nearestPointRetraction",
+          "statement": "There are an open neighbourhood 𝒰 of G in M_N(ℂ) and a smooth π_G : 𝒰 → G with π_G|G = id, π_G(M) the unique nearest point of G, and dπ_G(g) the orthogonal projection onto g𝔤.",
+          "hypotheses": [
+            "G as in 1.1"
+          ],
+          "locator": {
+            "source": "OhTataru-TopClass",
+            "where": "lines 1057–1058 (proof of Lemma 3.2)"
+          },
+          "prerequisites": [
+            "tauceti:TauCeti.exists_isOpenEmbedding_normalTube",
+            "tauceti:TauCeti.exists_contMDiffOn_normalRetraction",
+            "roadmap:LieGroups Layer 2",
+            "target:1.1"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "circleRetraction",
+              "kind": "computation",
+              "statement": "G = U(1) ⊂ ℂ with ⟨z, w⟩ = Re(z w̄): on 𝒰, π_G(r e^{iθ}) = e^{iθ} for r > 0, so π_G(1 + i) = (1 + i)/√2 when 1 + i ∈ 𝒰, and dπ_G(1)(a + ib) = ib, the orthogonal projection onto 𝔤 = iℝ; a retraction with π_G(1 + h) = 1 + h − Re h fails π_G(𝒰) ⊆ G"
+            },
+            {
+              "name": "polarFactor",
+              "kind": "compatibility",
+              "statement": "G = U(N): for M ∈ 𝒰, π_G(M) = M(M*M)^{−1/2}, the unitary polar factor, and dπ_G(1)(H) = (H − H*)/2; for M_t = [[1, t], [0, 1]] ∈ 𝒰 with t ≠ 0, π_G(M_t) = (4 + t²)^{−1/2}[[2, t], [−t, 2]] at squared distance 4 + t² − 2√(4 + t²) < t² = |M_t − 1|², so the Gram–Schmidt (QR) retraction, which sends M_t to 1, is not the nearest-point map (t = 1: 5 − 2√5 ≈ 0.528 < 1)"
+            },
+            {
+              "name": "finiteGroup",
+              "kind": "degenerate",
+              "statement": "G = {±1} ⊂ U(1): 𝔤 = 0, π_G(z) = 1 for z ∈ 𝒰 with Re z > 0 and −1 for Re z < 0, so π_G is locally constant and dπ_G(±1) = 0, the orthogonal projection onto the zero space; the points with Re z = 0 are equidistant from ±1 and lie outside 𝒰"
+            },
+            {
+              "name": "noGlobalRetraction",
+              "kind": "non-example",
+              "statement": "G = U(N): |0 − g|² = tr(g*g) = N for every g ∈ U(N), so 0 has no unique nearest point of G and 0 ∉ 𝒰; no 𝒰 equal to the whole matrix space satisfies the statement, and every M ∈ 𝒰 is invertible"
+            }
+          ]
+        },
+        {
+          "id": "1.3",
+          "kind": "theorem",
+          "name": "YangMills.gauge_identities",
+          "statement": "For smooth A, O, O', B on open X ⊆ ℝ^d: O·A = Ad(O)A − O;x is 𝔤-valued, O·(O'·A) = (OO')·A, F[O·A] = Ad(O)F[A], [D_j,D_k] = ad F_jk, Bianchi, (OO');x = O;x + Ad(O)O';x, ∂_j(Ad(O)B) = Ad(O)∂_jB + [O;j, Ad(O)B]; and these are the SmoothBundlesConnections local formulas on X × G.",
+          "hypotheses": [
+            "X ⊆ ℝ^d open",
+            "A, O, O', B smooth"
+          ],
+          "locator": {
+            "source": "OhTataru-YMHF",
+            "where": "lines 103–118; OhTataru-TopClass lines 165–183, 1128–1130 (Leibniz rule corrected)"
+          },
+          "prerequisites": [
+            "roadmap:SmoothBundlesConnections B3.1",
+            "roadmap:SmoothBundlesConnections B4.1",
+            "roadmap:SmoothBundlesConnections B4.2",
+            "target:1.1"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "leibnizTypo",
+              "kind": "non-example",
+              "statement": "O = g exp(x1 i), g = exp(πk/4), B = j in SU(2): correct value 2k, the source's Ad(O)[O;1,B] gives 0"
+            },
+            {
+              "name": "u1Gauge",
+              "kind": "computation",
+              "statement": "U(1), A = i x1 dx2, O = exp(iφ): F12 = i, O·A = A − i dφ"
+            }
+          ]
+        },
+        {
+          "id": "1.4",
+          "kind": "theorem",
+          "name": "YangMills.transgression",
+          "statement": "For f Ad(G)-invariant symmetric k-linear on 𝔤: f(F∧…∧F) is Ad-invariant and bounded by C_f|F|^k; for smooth A on open X, f(F∧…∧F) = d T_f(A), T_f(A) = k∫₀¹ f(A∧F_t∧…∧F_t)dt, F_t = t dA + ½t²[A∧A]; T_f(−O;x) = O*ω_f for a closed bi-invariant (2k−1)-form ω_f on G; for SU(2), f = tr: T_f = tr(A∧dA + ⅔A³), ω_f = ⅓tr((dg g⁻¹)³), ∫_{S³}Φ*ω_f = −8π².",
+          "hypotheses": [
+            "f Ad(G)-invariant symmetric k-linear",
+            "A smooth on open X ⊆ ℝ^d",
+            "O smooth G-valued"
+          ],
+          "locator": {
+            "source": "OhTataru-TopClass",
+            "where": "lines 236–255; OhTataru-YMHF Lemma 6.7, lines 2860–2883"
+          },
+          "prerequisites": [
+            "roadmap:CharacteristicClasses C4",
+            "roadmap:DifferentialGeometry Layer 0",
+            "roadmap:DifferentialGeometry Layer 1",
+            "roadmap:DifferentialGeometry 5.4",
+            "target:1.3"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "pureGaugeCS",
+              "kind": "computation",
+              "statement": "A = −R, R = dOO⁻¹: dA = −R∧R, A∧A = R∧R, F = 0, T_f = ⅓tr(R³)"
+            },
+            {
+              "name": "sphereIntegral",
+              "kind": "computation",
+              "statement": "dΦ maps (e2,e3,e4) at e1 to (k,i,j); tr((dg g⁻¹)³)(k,i,j) = −12; ∫_{S³}Φ*tr((dgg⁻¹)³) = −24π²"
+            }
+          ]
+        },
+        {
+          "id": "1.5",
+          "kind": "theorem",
+          "name": "YangMills.bogomolnyi_pointwise",
+          "statement": "For a 𝔤-valued 2-form F on an oriented 4-dimensional inner product space, F± = ½(F ± ⋆F): F = F⁺ + F⁻ orthogonally, ⋆⟨F∧F⟩ = |F⁺|² − |F⁻|², |F|² ≥ |⋆⟨F∧F⟩| with equality iff F⁺ = 0 or F⁻ = 0.",
+          "hypotheses": [
+            "|F|² = Σ_{j<k}⟨F_jk,F_jk⟩",
+            "coefficient of ⟨F∧F⟩ is 2(⟨F12,F34⟩ − ⟨F13,F24⟩ + ⟨F14,F23⟩)"
+          ],
+          "locator": {
+            "source": "OhTataru-TopClass",
+            "where": "Lemma 1.31, lines 901–906; lines 860–866; OhTataru-YMHF Lemma 6.9, lines 2892–2902"
+          },
+          "prerequisites": [
+            "tauceti:Orientation.formHodgeStar",
+            "tauceti:Orientation.wedge_formHodgeStar_apply",
+            "tauceti:Orientation.formHodgeStar_formHodgeStar_of_even",
+            "target:1.1"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "selfDual",
+              "kind": "computation",
+              "statement": "F = X(dx12+dx34): |F|² = 2|X|² = ⋆⟨F∧F⟩"
+            },
+            {
+              "name": "mixed",
+              "kind": "computation",
+              "statement": "F = X dx12: |F|² = |X|², ⋆⟨F∧F⟩ = 0"
+            },
+            {
+              "name": "normalisation",
+              "kind": "non-example",
+              "statement": "with the all-index coefficient 8(…) the first check gives 8|X|² > 2|X|²"
+            }
+          ]
+        },
+        {
+          "id": "1.6",
+          "kind": "definition",
+          "name": "YangMills.structureConstant",
+          "statement": "γ₀(𝔤,⟨⟩) = sup |[X,Y]|/(|X||Y|); with 𝔉_F(ω)_ij = Σ_l([F_il,ω_lj] − [F_jl,ω_li]), 𝔉_F(ω) = 𝔉_{F⁺}(ω) for self-dual ω and |⟨ω,𝔉_ω(ω)⟩| ≤ (2√6/3)γ₀|ω|³ for self-dual ω.",
+          "hypotheses": [
+            "𝔤 with Ad-invariant inner product",
+            "⟨ω,η⟩ = Σ_{i<j}⟨ω_ij,η_ij⟩"
+          ],
+          "locator": {
+            "source": "GurskyKelleherStreets-GapTheorem",
+            "where": "Definition 2.3 and Lemma 2.6, lines 164–222; OhTataru-TopClass Lemma 6.4, lines 2381–2404"
+          },
+          "prerequisites": [
+            "target:1.1",
+            "target:1.5"
+          ],
+          "api": [
+            {
+              "name": "attained_scaling",
+              "role": "structure",
+              "statement": "γ₀ is attained, γ₀(c⟨⟩) = c^{−1/2}γ₀(⟨⟩), and γ₀ is the maximum over simple ideals"
+            },
+            {
+              "name": "cubic_formula",
+              "role": "evaluation",
+              "statement": "in an orthonormal self-dual basis ⟨ω,𝔉_ω(ω)⟩ = ±6√2⟨ω¹,[ω²,ω³]⟩"
+            },
+            {
+              "name": "commutative",
+              "role": "degenerate",
+              "statement": "γ₀ = 0 iff 𝔤 is commutative"
+            }
+          ],
+          "tests": [
+            {
+              "name": "su2",
+              "kind": "computation",
+              "statement": "su(2), −tr: X = diag(i,−i), Y = [[0,1],[−1,0]] give |[X,Y]|² = 8, |X|²=|Y|²=2, γ₀ = √2"
+            },
+            {
+              "name": "bpstEquality",
+              "kind": "computation",
+              "statement": "ω^a = λ(i,j,k): |ω|² = 6λ², 6√2·4λ³ = 24√2λ³ = (2√6/3)√2(6λ²)^{3/2}"
+            },
+            {
+              "name": "abelian",
+              "kind": "degenerate",
+              "statement": "commutative 𝔤: both sides vanish"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "2",
+      "title": "Critical Sobolev maps into G",
+      "targets": [
+        {
+          "id": "2.1",
+          "kind": "definition",
+          "name": "YangMills.GkpLoc",
+          "statement": "W^{k,p}(X;V): u ∈ L^p whose weak derivatives of order ≤ k lie in L^p; W^{k,p}_loc(X;V) by balls with closure in X; G^{k,p}_loc(X) = {O ∈ W^{k,p}_loc(X;M_N(ℂ)) : O(x) ∈ G a.e.}.",
+          "hypotheses": [
+            "d ≥ 3",
+            "k ≥ 1",
+            "X ⊆ ℝ^d open",
+            "V finite-dimensional"
+          ],
+          "locator": {
+            "source": "OhTataru-TopClass",
+            "where": "(1.5), lines 283–285; lines 964–968, 982–989"
+          },
+          "prerequisites": [
+            "tauceti:TauCeti.HasWeakFDerivOn",
+            "tauceti:TauCeti.Wkp",
+            "mathlib:MeasureTheory.Lp",
+            "target:1.1"
+          ],
+          "api": [
+            {
+              "name": "componentwise",
+              "role": "compatibility",
+              "statement": "u ∈ W^{k,p}(X;V) iff every coordinate lies in TauCeti.Wkp; basis independent"
+            },
+            {
+              "name": "bounded",
+              "role": "structure",
+              "statement": "|O(x)| = √N a.e., so G^{k,p} ⊆ L^∞"
+            },
+            {
+              "name": "local",
+              "role": "structure",
+              "statement": "restriction, constants, smooth G-valued maps; membership is local"
+            },
+            {
+              "name": "component",
+              "role": "structure",
+              "statement": "on connected X an O ∈ G^{1,1}_loc takes values a.e. in one component of G"
+            }
+          ],
+          "tests": [
+            {
+              "name": "discontinuous",
+              "kind": "computation",
+              "statement": "d = 4, O = exp(log log(1/|x|) X) ∈ G^{2,2}(B_{1/e}) has no continuous representative"
+            },
+            {
+              "name": "finiteG",
+              "kind": "degenerate",
+              "statement": "finite G: G^{k,p}_loc = locally constant maps"
+            },
+            {
+              "name": "vortex",
+              "kind": "non-example",
+              "statement": "d = 3, U(1), O = exp(iθ): ∫ρ^{−3} = ∞, so O ∉ G^{1,3}, ∉ G^{2,3/2}"
+            }
+          ]
+        },
+        {
+          "id": "2.2",
+          "kind": "theorem",
+          "name": "YangMills.GkpLoc.exists_smooth_approx",
+          "statement": "For O ∈ G^{k,d/k}_loc(X), U with compact closure in X, V, W ⊆ U open with disjoint closures, ε > 0: there is O' ∈ G^{k,d/k}_loc(X) equal to O a.e. on V and off U, smooth G-valued on W, with ‖O' − O‖_{W^{k,d/k}(U)} < ε.",
+          "hypotheses": [
+            "d ≥ 3",
+            "k ≥ 1",
+            "closures of V and W disjoint"
+          ],
+          "locator": {
+            "source": "OhTataru-TopClass",
+            "where": "Lemma 3.2, lines 1038–1072"
+          },
+          "prerequisites": [
+            "roadmap:PDE §1.2",
+            "roadmap:PDE §1.4",
+            "roadmap:PDE §1.5",
+            "target:1.2",
+            "target:2.1"
+          ],
+          "api": [],
+          "tests": []
+        },
+        {
+          "id": "2.3",
+          "kind": "theorem",
+          "name": "YangMills.GkpLoc.mul_inv_continuous",
+          "statement": "Pointwise product G^{k,d/k}_loc × G^{k,d/k}_loc → G^{k,d/k}_loc and inversion are continuous, ∂_j(O⁻¹) = −O⁻¹(∂_jO)O⁻¹, also on bounded Lipschitz domains, with ‖O1O2‖ ≲ ‖O1‖_∞‖O2‖ + ‖O1‖‖O2‖_∞.",
+          "hypotheses": [
+            "d ≥ 3",
+            "k ≥ 1"
+          ],
+          "locator": {
+            "source": "OhTataru-TopClass",
+            "where": "Lemmas 3.1 and 3.3, lines 1000–1102"
+          },
+          "prerequisites": [
+            "roadmap:PDE §1.4",
+            "target:2.1",
+            "target:2.2"
+          ],
+          "api": [],
+          "tests": []
+        },
+        {
+          "id": "2.4",
+          "kind": "theorem",
+          "name": "YangMills.GkpLoc.maurerCartan_continuous",
+          "statement": "O ↦ O;x and O ↦ O⁻¹∂O are continuous G^{k,d/k}_loc → W^{k−1,d/k}_loc(X;𝔤); (O,B) ↦ Ad(O)B is continuous for 0 ≤ k' ≤ k; the Leibniz rules of 1.3 hold a.e.",
+          "hypotheses": [
+            "d ≥ 3",
+            "k ≥ 1",
+            "0 ≤ k' ≤ k"
+          ],
+          "locator": {
+            "source": "OhTataru-TopClass",
+            "where": "Lemma 3.4, lines 1109–1135"
+          },
+          "prerequisites": [
+            "target:1.3",
+            "target:2.2",
+            "target:2.3"
+          ],
+          "api": [],
+          "tests": []
+        },
+        {
+          "id": "2.5",
+          "kind": "theorem",
+          "name": "YangMills.GkpLoc.homotopyClass",
+          "statement": "For O ∈ G^{2,d/2}(A) on an annulus: a.e. sphere restriction is continuous and these are homotopic, defining [O] ∈ [S^{d−1},G]; [O] is locally constant and multiplicative; O extends to G^{2,d/2}(B_{R2}) iff [O] is a constant class; on exterior domains [O] is a constant class.",
+          "hypotheses": [
+            "d ≥ 3",
+            "A = {R1 < |x| < R2}"
+          ],
+          "locator": {
+            "source": "OhTataru-TopClass",
+            "where": "Lemmas 3.20–3.22, lines 1623–1665 ('[id]' read as a constant class)"
+          },
+          "prerequisites": [
+            "mathlib:ContinuousMap.Homotopic",
+            "mathlib:MeasureTheory.Measure.toSphere",
+            "mathlib:homeomorphUnitSphereProd",
+            "roadmap:PDE §1.4",
+            "target:1.2",
+            "target:2.2",
+            "target:2.3"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "phiClass",
+              "kind": "computation",
+              "statement": "d = 4, O = Φ(x/|x|) on an annulus has class of degree 1, not constant, so no G^{2,2} extension"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "3",
+      "title": "Rough connections and gauge invariance",
+      "targets": [
+        {
+          "id": "3.1",
+          "kind": "definition",
+          "name": "YangMills.RoughConnection",
+          "statement": "G^{2,d/2}_loc bundles on X: covers with cocycles O_(αβ) ∈ G^{2,d/2}_loc a.e., equivalence by refinement; W^{1,d/2}_loc connections: local potentials with A_(α) = O_(αβ)·A_(β); curvature F_(α) = dA_(α) + ½[A_(α)∧A_(α)]; A^{1,d/2}_loc(X) the class of all of them.",
+          "hypotheses": [
+            "d ≥ 3",
+            "X ⊆ ℝ^d open"
+          ],
+          "locator": {
+            "source": "OhTataru-TopClass",
+            "where": "lines 289–335"
+          },
+          "prerequisites": [
+            "roadmap:PDE §1.4",
+            "target:2.1",
+            "target:2.3",
+            "target:2.4"
+          ],
+          "api": [
+            {
+              "name": "curvature_wellDefined",
+              "role": "structure",
+              "statement": "F_(α) ∈ L^{d/2}_loc and F_(α) = Ad(O_(αβ))F_(β), so |F| ∈ L^{d/2}_loc(X) is well defined"
+            },
+            {
+              "name": "equivalence",
+              "role": "structure",
+              "statement": "bundle equivalence is an equivalence relation compatible with restriction and refinement"
+            },
+            {
+              "name": "dilation",
+              "role": "functoriality",
+              "statement": "translations and A_λ(x) = λA(λx) act, F[A_λ](x) = λ²F[A](λx)"
+            },
+            {
+              "name": "smooth",
+              "role": "compatibility",
+              "statement": "smooth connections give elements of A^{1,d/2}_loc"
+            }
+          ],
+          "tests": [
+            {
+              "name": "scaling",
+              "kind": "computation",
+              "statement": "‖F[A_λ]‖_{L^{d/2}} = ‖F[A]‖_{L^{d/2}}; in d = 3 the L² norm scales by λ^{1/2}"
+            },
+            {
+              "name": "angular",
+              "kind": "non-example",
+              "statement": "d = 3, U(1), A = i dθ: F = 0 off the axis but A ∉ W^{1,3/2}_loc"
+            },
+            {
+              "name": "finite",
+              "kind": "degenerate",
+              "statement": "finite G: all potentials and curvatures vanish"
+            }
+          ]
+        },
+        {
+          "id": "3.2",
+          "kind": "theorem",
+          "name": "YangMills.gaugeInvariance_finiteEnergy",
+          "statement": "For A ∈ W^{1,d/2}_loc(X) and O ∈ G^{2,d/2}_loc(X): O·A ∈ W^{1,d/2}_loc(X), F[O·A] = Ad(O)F[A] a.e., ‖F[O·A]‖_{L^{d/2}(X)} = ‖F[A]‖_{L^{d/2}(X)}, and ℰ_e(O·A) = ℰ_e(A) for d = 4.",
+          "hypotheses": [
+            "d ≥ 3",
+            "X ⊆ ℝ^d open"
+          ],
+          "locator": {
+            "source": "OhTataru-TopClass",
+            "where": "lines 283–292; OhTataru-YMHF lines 103–118, 124–130"
+          },
+          "prerequisites": [
+            "target:1.3",
+            "target:2.4",
+            "target:3.1"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "u1",
+              "kind": "computation",
+              "statement": "O = exp(iφ): O·A = A − i dφ, F unchanged"
+            },
+            {
+              "name": "pureGauge",
+              "kind": "computation",
+              "statement": "O = Φ(x/|x|), A = 0 on ℝ⁴∖{0}: F[O·A] = 0 although |O;x| ≈ 1/|x|"
+            }
+          ]
+        },
+        {
+          "id": "3.3",
+          "kind": "theorem",
+          "name": "YangMills.exists_globalGauge",
+          "statement": "Every G^{2,d/2}_loc bundle on B_R or ℝ^d admits a global gauge and every connection a global potential in W^{1,d/2}_loc; on B_R with a uniformly separated unit-ball cover and bounds M, ‖A‖_{W^{1,d/2}(B_R)} ≲_{R,M} 1.",
+          "hypotheses": [
+            "d ≥ 3",
+            "X = B_R or ℝ^d"
+          ],
+          "locator": {
+            "source": "OhTataru-TopClass",
+            "where": "Propositions 3.9–3.10, Scenarios (1)–(3), lines 1165–1347"
+          },
+          "prerequisites": [
+            "target:2.2",
+            "target:2.3",
+            "target:2.4",
+            "target:2.5",
+            "target:3.1"
+          ],
+          "api": [],
+          "tests": []
+        },
+        {
+          "id": "3.4",
+          "kind": "definition",
+          "name": "YangMills.concentrationRadius",
+          "statement": "Inner radius r_c^ε[D] = sup{r : ‖F‖_{L^{d/2}(B_r(x)∩X)} ≤ ε ∀x}; outer radius R_c^ε[D] = inf{r : ‖F‖_{L^{d/2}(ℝ^d∖B_r(x))} ≤ ε for some x}.",
+          "hypotheses": [
+            "d ≥ 3",
+            "D ∈ A^{1,d/2}_loc(X)",
+            "ε > 0"
+          ],
+          "locator": {
+            "source": "OhTataru-TopClass",
+            "where": "lines 337–341, 361–365"
+          },
+          "prerequisites": [
+            "target:3.1"
+          ],
+          "api": [
+            {
+              "name": "positive",
+              "role": "structure",
+              "statement": "F ∈ L^{d/2}(X) ⇒ r_c > 0; X = ℝ^d ⇒ R_c < ∞"
+            },
+            {
+              "name": "invariance",
+              "role": "structure",
+              "statement": "gauge invariant; r_c[D_λ] = λ^{−1}r_c[D], R_c[D_λ] = λ^{−1}R_c[D]; monotone in ε"
+            }
+          ],
+          "tests": [
+            {
+              "name": "flat",
+              "kind": "degenerate",
+              "statement": "F = 0: r_c = ∞, R_c = 0"
+            },
+            {
+              "name": "small",
+              "kind": "degenerate",
+              "statement": "‖F‖_{L^{d/2}(X)} ≤ ε ⇒ r_c = ∞"
+            },
+            {
+              "name": "bpst",
+              "kind": "computation",
+              "statement": "BPST: ‖F‖²_{L²(B_r)} = 8π² r⁴(r²+3)/(r²+1)³, r_c^ε ≈ (ε²/24π²)^{1/4} as ε → 0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "4",
+      "title": "Uhlenbeck's lemmas and the good gauge on a ball",
+      "targets": [
+        {
+          "id": "4.1",
+          "kind": "theorem",
+          "name": "YangMills.uhlenbeck_ball",
+          "statement": "There are ε₀, C₀ with: for A ∈ W^{1,d/2}(B₁) and ‖F[A]‖_{L^{d/2}(B₁)} < ε₀ there is O ∈ G^{2,d/2}(B₁) with Ã = O·A, ∂^ℓÃ_ℓ = 0, x^ℓÃ_ℓ = 0 on ∂B₁, ‖Ã‖_{W^{1,d/2}} ≤ C₀‖F‖; any other such gauge is cO, c ∈ G constant; and A_n → A gives, after a subsequence and constants, Ã_n → Ã in W^{1,d/2}, O_n → O in W^{2,d/2}.",
+          "hypotheses": [
+            "d ≥ 3",
+            "G compact as in 1.1"
+          ],
+          "locator": {
+            "source": "OhTataru-TopClass",
+            "where": "Theorem 3.11, lines 1358–1395; Uhlenbeck-LpCurvature Theorem 1.3"
+          },
+          "prerequisites": [
+            "gap:lp-neumann-ball",
+            "gap:lp-divcurl-normal-ball",
+            "roadmap:PDE §1.4",
+            "roadmap:PDE §1.6",
+            "target:2.3",
+            "target:2.4",
+            "target:3.1",
+            "target:4.3"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "u1",
+              "kind": "computation",
+              "statement": "U(1): Ã = A − i dφ with the Neumann problem for φ; unique up to the constant in φ"
+            },
+            {
+              "name": "zero",
+              "kind": "degenerate",
+              "statement": "A = 0: the gauges are the constants"
+            },
+            {
+              "name": "fourManifolds",
+              "kind": "compatibility",
+              "statement": "G = SU(2), d = 4 gives FourManifolds §5.3's unit 4-ball lemma"
+            }
+          ]
+        },
+        {
+          "id": "4.2",
+          "kind": "theorem",
+          "name": "YangMills.uhlenbeck_puncturedBall",
+          "statement": "There is ε'₀ with: if D ∈ A^{1,d/2}_loc(B'_{1+δ}) has a global potential A with ‖F‖_{L^{d/2}(B'₁)} ≤ ε'₀, there is O ∈ G^{2,d/2}_loc(B'₁) with ∂^ℓ(O·A)_ℓ = 0 and ‖O·A‖_{W^{1,d/2}(B'₁)} ≲ ‖F‖; O·A extends to W^{1,d/2}(B₁) and D extends to A^{1,d/2}_loc(B_{1+δ}).",
+          "hypotheses": [
+            "d ≥ 3",
+            "δ > 0"
+          ],
+          "locator": {
+            "source": "OhTataru-TopClass",
+            "where": "Theorem 3.12, lines 1398–1412; Uhlenbeck-RemovableSingularities Theorem 4.1"
+          },
+          "prerequisites": [
+            "target:2.5",
+            "target:3.3",
+            "target:4.1"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "pureGauge",
+              "kind": "computation",
+              "statement": "d = 4, A = −O;x, O = Φ(x/|x|): A ∉ W^{1,2}(B'₁) but O⁻¹·A = 0 extends"
+            },
+            {
+              "name": "absCont",
+              "kind": "degenerate",
+              "statement": "every F ∈ L^{d/2}(B'₁) is small on small punctured balls, so every such connection extends"
+            }
+          ]
+        },
+        {
+          "id": "4.3",
+          "kind": "theorem",
+          "name": "YangMills.divCurl_regularity",
+          "statement": "If A ∈ W^{1,d/2}(B) solves dA = F − ½[A∧A], ∂^ℓA_ℓ = 0 and D^{(m)}F ∈ L^{d/(m+2)}(B), d/(m+2) > 1, then ∂^{(m+1)}A ∈ L^{d/(m+2)}(λB) for λ < 1 with bounds; angular version; strong convergence along sequences; O continuous when O;x ∈ ℓ¹W^{1,d/2}(B).",
+          "hypotheses": [
+            "d ≥ 3",
+            "B a unit ball"
+          ],
+          "locator": {
+            "source": "OhTataru-TopClass",
+            "where": "Lemmas 3.13–3.17 and Remark 3.15, lines 1418–1496"
+          },
+          "prerequisites": [
+            "roadmap:PDE §2.3",
+            "roadmap:PDE §1.4",
+            "roadmap:PDE §7.1",
+            "target:2.4"
+          ],
+          "api": [],
+          "tests": []
+        },
+        {
+          "id": "4.4",
+          "kind": "theorem",
+          "name": "YangMills.goodGauge_ball",
+          "statement": "For D ∈ A^{1,d/2}_loc(B_R) with F ∈ L^{d/2}(B_R) and r_c^{ε_*}[D] ≥ r there is a global gauge with ‖A‖_{Ẇ^{1,d/2}(B_R)} ≲_{ε_*,R/r} 1; if D^{(n)}F ∈ L^p(B_R), p ∈ (1,∞), p ≥ d/(n+2), then A ∈ W^{n+1,p}(B_R).",
+          "hypotheses": [
+            "d ≥ 3",
+            "0 < r"
+          ],
+          "locator": {
+            "source": "OhTataru-TopClass",
+            "where": "Theorem 1.4, lines 342–353; Lemma 3.18, Proposition 3.19, lines 1497–1561"
+          },
+          "prerequisites": [
+            "target:3.3",
+            "target:3.4",
+            "target:4.1",
+            "target:4.3"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "small",
+              "kind": "degenerate",
+              "statement": "‖F‖ < ε₀: 4.1 rescaled with a bound independent of R/r"
+            },
+            {
+              "name": "scaling",
+              "kind": "computation",
+              "statement": "the bound depends on R/r only"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "5",
+      "title": "The good global gauge and the topological class",
+      "targets": [
+        {
+          "id": "5.1",
+          "kind": "definition",
+          "name": "YangMills.GoodRepresentative",
+          "statement": "For A ∈ W^{1,d/2}_loc(ℝ^d), a good representative is (O_∞, B) with O_∞ : ℝ^d∖{0} → G smooth and homogeneous of degree 0, B ∈ Ẇ^{1,d/2}(ℝ^d), and A = −η'O_∞;x + B for a smooth η' vanishing near 0 and equal to 1 outside a compact set; O_∞ is a gauge at infinity.",
+          "hypotheses": [
+            "d ≥ 3",
+            "η' = 0 near 0 (added to the source's 1 − η ∈ C_c^∞)"
+          ],
+          "locator": {
+            "source": "OhTataru-TopClass",
+            "where": "lines 382–390; Theorem 1.3, lines 226–235"
+          },
+          "prerequisites": [
+            "roadmap:PDE §1.4",
+            "target:1.3",
+            "target:2.4"
+          ],
+          "api": [
+            {
+              "name": "decay",
+              "role": "structure",
+              "statement": "|O_∞;x| ≲ |x|^{−1}, |∂(O_∞;x)| ≲ |x|^{−2}, η'O_∞;x ∈ W^{1,d/2}_loc"
+            },
+            {
+              "name": "invariances",
+              "role": "structure",
+              "statement": "changing η' changes B by a C_c^∞ form; O_∞h has the same O_∞;x; constant gauge c sends (O_∞,B) to (cO_∞, Ad(c)B)"
+            },
+            {
+              "name": "restriction",
+              "role": "evaluation",
+              "statement": "O_∞ is determined by its restriction in C(S^{d−1},G)"
+            }
+          ],
+          "tests": [
+            {
+              "name": "cutoffNeeded",
+              "kind": "non-example",
+              "statement": "d = 4, O = Φ(x/|x|), η' ≡ 1: A = −O;x ∉ W^{1,2}_loc since ∫_{B₁}|x|^{−4} = ∞"
+            },
+            {
+              "name": "disconnected",
+              "kind": "degenerate",
+              "statement": "G = {±1}, A = 0: both constants are gauges at infinity"
+            },
+            {
+              "name": "bpst",
+              "kind": "computation",
+              "statement": "BPST: (Φ(x̄/|x|), B) with B = −Im(x̄dx)/(|x|²(1+|x|²)) off B₂, B ∈ Ḣ¹"
+            }
+          ]
+        },
+        {
+          "id": "5.2",
+          "kind": "theorem",
+          "name": "YangMills.goodGlobalGauge",
+          "statement": "There is ε_* with: for D ∈ A^{1,d/2}_loc(ℝ^d), F ∈ L^{d/2}, r_c^{ε_*} ≥ r, R_c^{ε_*} ≤ R, there is a global gauge with A = −η(·/R)O_∞;x + B, O_∞ smooth homogeneous of degree 0, ‖B‖_{Ẇ^{1,d/2}} ≲_{ε_*,R/r} 1, ‖O_∞‖_{C^n(S^{d−1})} ≲_{ε_*,R/r,n} 1; D^{(n)}F ∈ L^p(ℝ^d), p ∈ (1,∞), p ≥ d/(n+2) ⇒ B ∈ Ẇ^{n+1,p}; for d = 4 every finite-energy connection is gauge equivalent to −ηO_∞;x + b, b ∈ Ḣ¹.",
+          "hypotheses": [
+            "d ≥ 3",
+            "0 < r ≤ R",
+            "η = 0 on B₁, η = 1 off B₂"
+          ],
+          "locator": {
+            "source": "OhTataru-TopClass",
+            "where": "Theorem 1.5, lines 361–375, proof lines 1562–1617; OhTataru-Threshold Theorem 2.17, lines 1069–1075"
+          },
+          "prerequisites": [
+            "gap:hardy-inequality",
+            "target:2.2",
+            "target:2.5",
+            "target:3.3",
+            "target:3.4",
+            "target:4.2",
+            "target:4.4",
+            "target:5.1"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "flat",
+              "kind": "degenerate",
+              "statement": "F = 0: O_∞ constant, B = 0"
+            },
+            {
+              "name": "scaling",
+              "kind": "computation",
+              "statement": "dilation replaces (r,R) by (r/λ,R/λ), R/r unchanged"
+            }
+          ]
+        },
+        {
+          "id": "5.3",
+          "kind": "theorem",
+          "name": "YangMills.gaugeAtInfinity_unique",
+          "statement": "If A' = P·A with P ∈ G^{2,d/2}_loc(ℝ^d) and (O_∞,B), (O'_∞,B') are good representatives, then O'_∞|S^{d−1} ≃ c·O_∞|S^{d−1}·c' for constants c, c' ∈ G (O'_∞ ≃ O_∞ for connected G); every smooth homogeneous map homotopic to O_∞ is a gauge at infinity of A; independent of the cut-off.",
+          "hypotheses": [
+            "d ≥ 3"
+          ],
+          "locator": {
+            "source": "OhTataru-TopClass",
+            "where": "Proposition 1.6 and Remark 1.7, lines 397–405, proof lines 1666–1686 (constants added for disconnected G)"
+          },
+          "prerequisites": [
+            "gap:hardy-inequality",
+            "target:2.2",
+            "target:2.4",
+            "target:2.5",
+            "target:5.1"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "routeIdentityDirection",
+              "kind": "computation",
+              "statement": "U(1), O_∞ = e^{iθ}, O'_∞ = e^{iθ'}, P = e^{iψ}, B = B' = 0 outside B_ρ: A' = P·A gives dθ' = dθ + dψ and (O'_∞⁻¹PO_∞);x = i(−dθ' + dψ + dθ) = 0 = Ad(O'_∞⁻¹P)B − Ad(O'_∞⁻¹)B'; the identity with O_∞ and O'_∞ exchanged gives 2i dψ ≠ 0 unless ψ is locally constant"
+            }
+          ]
+        },
+        {
+          "id": "5.4",
+          "kind": "definition",
+          "name": "YangMills.topologicalClass",
+          "statement": "Top(d,G) = [S^{d−1},G] modulo (c,c')·[O] = [cOc'⁻¹]; the class [A] of a connection with L^{d/2} curvature is the image of the restriction of a gauge at infinity. It is well defined and gauge invariant, [A+b] = [A] for b ∈ Ẇ^{1,d/2}, classes are path-connected modulo gauge, and locality holds: ‖A−A'‖_{L^d(B_{5R})} ≤ ε_* and small exterior curvature imply [A] = [A'].",
+          "hypotheses": [
+            "d ≥ 3"
+          ],
+          "locator": {
+            "source": "OhTataru-TopClass",
+            "where": "Definition 1.8, lines 407–429; proof of Proposition 1.9, lines 1688–1705"
+          },
+          "prerequisites": [
+            "roadmap:PDE §1.4",
+            "target:2.5",
+            "target:3.2",
+            "target:5.2",
+            "target:5.3"
+          ],
+          "api": [
+            {
+              "name": "wellDefined",
+              "role": "characterisation",
+              "statement": "well defined and invariant under G^{2,d/2}_loc gauge transformations"
+            },
+            {
+              "name": "addBounded",
+              "role": "structure",
+              "statement": "[A + b] = [A] for b ∈ Ẇ^{1,d/2}; smooth compactly curved approximants exist in each class"
+            },
+            {
+              "name": "pathConnected",
+              "role": "structure",
+              "statement": "each class is path-connected for ‖A − A'‖_{Ẇ^{1,d/2}} modulo gauge"
+            },
+            {
+              "name": "locality",
+              "role": "characterisation",
+              "statement": "Proposition 1.9"
+            },
+            {
+              "name": "connected",
+              "role": "compatibility",
+              "statement": "for connected G, [S^{d−1},G] → Top(d,G) is a bijection"
+            }
+          ],
+          "tests": [
+            {
+              "name": "finite",
+              "kind": "degenerate",
+              "statement": "G = {±1}: Top(d,G) is a point"
+            },
+            {
+              "name": "o4",
+              "kind": "non-example",
+              "statement": "G = O(4), d = 4: conjugation by q ↦ q̄ swaps the summands of π₃(SO(4)), so the quotient is needed for gauge invariance"
+            },
+            {
+              "name": "u1",
+              "kind": "computation",
+              "statement": "G = U(1), d ≥ 3: [S^{d−1},U(1)] is a point"
+            }
+          ]
+        },
+        {
+          "id": "5.5",
+          "kind": "theorem",
+          "name": "YangMills.trivialClass_iff",
+          "statement": "A connection with L^{d/2} curvature is in the class of 0 iff it is gauge equivalent by some P ∈ G^{2,d/2}_loc(ℝ^d) to a potential in Ẇ^{1,d/2}(ℝ^d); for d = 4 iff gauge equivalent to an Ḣ¹ potential; no norm bound is asserted.",
+          "hypotheses": [
+            "d ≥ 3"
+          ],
+          "locator": {
+            "source": "OhTataru-TopClass",
+            "where": "Corollary 1.11 and Remark 1.12, lines 451–466; OhTataru-Threshold Theorem 2.16, lines 1066–1067"
+          },
+          "prerequisites": [
+            "target:2.5",
+            "target:5.2",
+            "target:5.3",
+            "target:5.4"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "nonTrivial",
+              "kind": "non-example",
+              "statement": "−ηO;x with O = Φ(x/|x|) has χ = −8π² ≠ 0, so it is gauge equivalent to no Ḣ¹ potential"
+            }
+          ]
+        },
+        {
+          "id": "5.6",
+          "kind": "theorem",
+          "name": "YangMills.topClass_four_eq_pi3",
+          "statement": "For connected G the forgetful map from based classes of pointed maps (S³,e₁) → (G,1) to [S³,G] is a bijection, so Top(4,G) ≅ π₃(G).",
+          "hypotheses": [
+            "G connected"
+          ],
+          "locator": {
+            "source": "OhTataru-Threshold",
+            "where": "line 1074; OhTataru-TopClass line 53"
+          },
+          "prerequisites": [
+            "mathlib:HomotopyGroup",
+            "mathlib:ContinuousMap.Homotopic",
+            "roadmap:AlgebraicTopology Stage 8",
+            "target:5.4"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "su2",
+              "kind": "computation",
+              "statement": "Top(4,SU(2)) ≅ ℤ via c₂ (6.4)"
+            },
+            {
+              "name": "u1",
+              "kind": "degenerate",
+              "statement": "π₃(U(1)) = 0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "6",
+      "title": "Characteristic numbers and the instanton number",
+      "targets": [
+        {
+          "id": "6.1",
+          "kind": "definition",
+          "name": "YangMills.charNumber",
+          "statement": "For d = 2k ≥ 4 and f Ad(G)-invariant symmetric k-linear, χ_f(A) = ∫_{ℝ^d} f(F∧…∧F) for F ∈ L^{d/2}.",
+          "hypotheses": [
+            "d = 2k ≥ 4"
+          ],
+          "locator": {
+            "source": "OhTataru-TopClass",
+            "where": "(1.4), lines 238–255, 430–445"
+          },
+          "prerequisites": [
+            "gap:hardy-inequality",
+            "target:1.4",
+            "target:3.2",
+            "target:5.1"
+          ],
+          "api": [
+            {
+              "name": "bound",
+              "role": "structure",
+              "statement": "absolute convergence, |χ_f| ≤ C_f‖F‖^k, gauge and dilation invariance"
+            },
+            {
+              "name": "lipschitz",
+              "role": "structure",
+              "statement": "|χ_f(A) − χ_f(A')| ≤ C_f(‖F‖+‖F'‖)^{k−1}‖F − F'‖ and ‖F[A+b] − F[A]‖ ≲ ‖b‖(1 + ‖B‖ + ‖O_∞‖_{C¹} + ‖b‖)"
+            },
+            {
+              "name": "chi",
+              "role": "compatibility",
+              "statement": "d = 4, f = −⟨,⟩ gives χ"
+            }
+          ],
+          "tests": [
+            {
+              "name": "u1",
+              "kind": "degenerate",
+              "statement": "U(1), d = 4: χ_f = ∫dα∧dα = 0 for finite energy"
+            },
+            {
+              "name": "su2",
+              "kind": "computation",
+              "statement": "SU(2), f = tr: χ_f = 8π²c₂"
+            },
+            {
+              "name": "dilation",
+              "kind": "computation",
+              "statement": "f(F[A_λ]∧F[A_λ])(x) = λ⁴f(F∧F)(λx), so χ_f(A_λ) = χ_f(A)"
+            }
+          ]
+        },
+        {
+          "id": "6.2",
+          "kind": "theorem",
+          "name": "YangMills.charNumber_topological",
+          "statement": "For d = 2k ≥ 4, χ_f(A) = ∫_{S^{d−1}} O_∞*ω_f; hence χ_f depends only on [A], vanishes on the trivial class, and is the limit along smooth compactly curved approximants.",
+          "hypotheses": [
+            "d = 2k ≥ 4"
+          ],
+          "locator": {
+            "source": "OhTataru-TopClass",
+            "where": "Corollary 1.10, lines 445–448; lines 460–462"
+          },
+          "prerequisites": [
+            "roadmap:DifferentialGeometry 5.3",
+            "roadmap:DifferentialGeometry 5.4",
+            "target:1.4",
+            "target:5.4",
+            "target:6.1"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "phi",
+              "kind": "computation",
+              "statement": "SU(2), f = tr, A = −ηO;x, O = Φ(x/|x|): χ_f = −8π²"
+            },
+            {
+              "name": "trivial",
+              "kind": "degenerate",
+              "statement": "constant O_∞: χ_f = 0"
+            }
+          ]
+        },
+        {
+          "id": "6.3",
+          "kind": "theorem",
+          "name": "YangMills.bogomolnyi",
+          "statement": "For d = 4 and finite energy: ℰ_e − χ = 2∫|F⁺|², ℰ_e + χ = 2∫|F⁻|², so ℰ_e ≥ |χ| with equality iff F⁺ = 0 a.e. or F⁻ = 0 a.e.; χ(a) = 0 for a ∈ Ḣ¹.",
+          "hypotheses": [
+            "d = 4",
+            "F ∈ L²"
+          ],
+          "locator": {
+            "source": "OhTataru-TopClass",
+            "where": "lines 860–868; Lemma 1.31, lines 901–906; OhTataru-Threshold lines 237–246; OhTataru-YMHF Lemma 6.7, lines 2860–2883"
+          },
+          "prerequisites": [
+            "target:1.5",
+            "target:6.1",
+            "target:6.2",
+            "target:5.5"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "fourManifolds",
+              "kind": "compatibility",
+              "statement": "SU(2): ℰ_e = 8π²c₂ + 2‖F⁺‖² (FourManifolds Layer 5 normalisation)"
+            },
+            {
+              "name": "regions",
+              "kind": "non-example",
+              "statement": "SD on one region and ASD on another: |χ| < ℰ_e"
+            },
+            {
+              "name": "bpst",
+              "kind": "computation",
+              "statement": "BPST: ℰ_e = χ = 8π²"
+            }
+          ]
+        },
+        {
+          "id": "6.4",
+          "kind": "definition",
+          "name": "YangMills.instantonNumber",
+          "statement": "For G = SU(2), ⟨X,Y⟩ = −tr(XY): c₂(a) = (8π²)⁻¹∫tr(F∧F); c₂(a) = −deg(Φ⁻¹∘O_∞|S³) ∈ ℤ; [a] ↦ c₂(a) is a bijection Top(4,SU(2)) → ℤ, π₃(SU(2)) ≅ ℤ.",
+          "hypotheses": [
+            "G = SU(2)",
+            "S³ boundary-oriented",
+            "Φ the quaternion identification"
+          ],
+          "locator": {
+            "source": "OhTataru-TopClass",
+            "where": "lines 256–264, 852–860; OhTataru-YMHF lines 327–335, 2913–2915"
+          },
+          "prerequisites": [
+            "roadmap:AlgebraicTopology Stage 6",
+            "roadmap:AlgebraicTopology Stage 8",
+            "roadmap:DifferentialGeometry Layer 10",
+            "target:1.4",
+            "target:5.6",
+            "target:6.2"
+          ],
+          "api": [
+            {
+              "name": "integral",
+              "role": "structure",
+              "statement": "c₂ ∈ ℤ"
+            },
+            {
+              "name": "classification",
+              "role": "characterisation",
+              "statement": "bijection onto ℤ; the class of −n is that of Φ(x/|x|)^n"
+            }
+          ],
+          "tests": [
+            {
+              "name": "phi",
+              "kind": "computation",
+              "statement": "O = Φ(x/|x|): c₂ = −1"
+            },
+            {
+              "name": "bpst",
+              "kind": "computation",
+              "statement": "BPST: O_∞ = Φ(x̄/|x|) of degree −1, c₂ = 1"
+            },
+            {
+              "name": "trivial",
+              "kind": "degenerate",
+              "statement": "trivial connection: c₂ = 0; reversing the orientation of S³ flips all signs"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "7",
+      "title": "Harmonic Yang–Mills connections and the ground state",
+      "targets": [
+        {
+          "id": "7.1",
+          "kind": "definition",
+          "name": "YangMills.IsHarmonic",
+          "statement": "A ∈ W^{1,2}_loc(X) is a harmonic Yang–Mills connection if ∫_X Σ⟨F_ℓj, D_ℓφ_j⟩ = 0 for all smooth compactly supported 𝔤-valued 1-forms φ; nontrivial if F ≢ 0.",
+          "hypotheses": [
+            "d = 4",
+            "X ⊆ ℝ⁴ open"
+          ],
+          "locator": {
+            "source": "OhTataru-YMHF",
+            "where": "(1.1)–(1.2), lines 124–128; OhTataru-TopClass lines 829–834; OhTataru-Threshold lines 253–266"
+          },
+          "prerequisites": [
+            "target:1.3",
+            "target:1.5",
+            "target:3.1"
+          ],
+          "api": [
+            {
+              "name": "variational",
+              "role": "characterisation",
+              "statement": "vanishing first variation of ∫_K|F|²"
+            },
+            {
+              "name": "symmetries",
+              "role": "structure",
+              "statement": "invariant under gauge, translations, dilations and the inversion x ↦ x/|x|²"
+            },
+            {
+              "name": "instantons",
+              "role": "structure",
+              "statement": "SD and ASD connections are harmonic"
+            },
+            {
+              "name": "abelian",
+              "role": "structure",
+              "statement": "commutative G: finite-energy harmonic connections are flat"
+            }
+          ],
+          "tests": [
+            {
+              "name": "flat",
+              "kind": "degenerate",
+              "statement": "flat connections are harmonic and trivial"
+            },
+            {
+              "name": "u1",
+              "kind": "non-example",
+              "statement": "U(1): F = i dx12 constant is harmonic of infinite energy; F = iψ(x1)dx12 with ψ' ≠ 0 is not harmonic"
+            },
+            {
+              "name": "bpst",
+              "kind": "computation",
+              "statement": "BPST is ASD, harmonic, ℰ_e = 8π²"
+            }
+          ]
+        },
+        {
+          "id": "7.2",
+          "kind": "theorem",
+          "name": "YangMills.IsHarmonic.regularity",
+          "statement": "Harmonic Yang–Mills connections on balls or ℝ⁴ are smooth after a G^{2,2}_loc gauge transformation (locally on general open sets); ε-regularity, proved here from 4.1 and 4.3: a harmonic Yang–Mills connection on B₁ with ‖F‖_{L²(B₁)} ≤ ε has ‖D^{(n)}F‖_{L^∞(B_{1/2})} ≲_n ‖F‖_{L²(B₁)}.",
+          "hypotheses": [
+            "d = 4"
+          ],
+          "locator": {
+            "source": "OhTataru-YMHF",
+            "where": "Theorem 2.1, lines 275–276; OhTataru-Threshold Theorem 1.5, lines 269–274 (qualitative smoothness); the quantitative ε-regularity is not stated there and is proved here from targets 4.1 and 4.3"
+          },
+          "prerequisites": [
+            "roadmap:PDE §2.3",
+            "roadmap:PDE §1.4",
+            "target:3.3",
+            "target:4.1",
+            "target:4.3"
+          ],
+          "api": [],
+          "tests": []
+        },
+        {
+          "id": "7.3",
+          "kind": "theorem",
+          "name": "YangMills.IsHarmonic.removable_decay",
+          "statement": "A harmonic connection on B'₁ with finite energy extends after a gauge transformation to a smooth harmonic connection on B_{1/2}; a finite-energy harmonic connection on ℝ⁴ satisfies |D^{(n)}F(x)| ≤ C_n(a)(1+|x|)^{−4−n}.",
+          "hypotheses": [
+            "d = 4"
+          ],
+          "locator": {
+            "source": "OhTataru-YMHF",
+            "where": "lines 315–320; Uhlenbeck-RemovableSingularities Theorem 4.1; OhTataru-TopClass Theorem 3.12"
+          },
+          "prerequisites": [
+            "target:4.2",
+            "target:7.1",
+            "target:7.2"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "bpst",
+              "kind": "computation",
+              "statement": "BPST: |F| = √48(1+|x|²)^{−2} ≈ √48|x|^{−4}"
+            }
+          ]
+        },
+        {
+          "id": "7.4",
+          "kind": "theorem",
+          "name": "YangMills.IsHarmonic.weitzenbock_kato",
+          "statement": "For smooth harmonic A on open X ⊆ ℝ⁴: d_AF⁺ = 0 = d_A*F⁺, ½Δ|F⁺|² = |∇_AF⁺|² + ⟨F⁺,𝔉_{F⁺}(F⁺)⟩; |∇_Aω|² ≥ (3/2)|∇|ω||² for d_A-harmonic ω; hence Δ|F⁺|^{1/2} ≥ −(√6/3)γ₀|F⁺||F⁺|^{1/2} distributionally; same for F⁻.",
+          "hypotheses": [
+            "d = 4",
+            "A smooth harmonic"
+          ],
+          "locator": {
+            "source": "GurskyKelleherStreets-GapTheorem",
+            "where": "Lemma 2.1, lines 139–153; Proposition 2.8, lines 242–286; (3.1)–(3.4), lines 293–308"
+          },
+          "prerequisites": [
+            "target:1.5",
+            "target:1.6",
+            "target:7.2"
+          ],
+          "api": [],
+          "tests": []
+        },
+        {
+          "id": "7.5",
+          "kind": "theorem",
+          "name": "YangMills.IsHarmonic.energyGap",
+          "statement": "For noncommutative G and finite-energy harmonic connections on ℝ⁴: F⁺ ≢ 0 ⇒ ∫|F⁺|² ≥ 16π²/γ₀² (same for F⁻); F neither SD nor ASD ⇒ ℰ_e ≥ |χ| + 32π²/γ₀²; every nontrivial one has ℰ_e ≥ 16π²/γ₀².",
+          "hypotheses": [
+            "d = 4",
+            "G noncommutative"
+          ],
+          "locator": {
+            "source": "GurskyKelleherStreets-GapTheorem",
+            "where": "Theorem 1.1, Corollary 1.2(1), lines 36–41, 88–100; OhTataru-TopClass Theorem 1.30, Claim 6.3, footnote 6, lines 877–878, 894–896, 2373–2407; OhTataru-YMHF Theorem 2.5, lines 348–352"
+          },
+          "prerequisites": [
+            "roadmap:Yamabe Y2",
+            "target:6.3",
+            "target:7.3",
+            "target:7.4"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "su2",
+              "kind": "computation",
+              "statement": "SU(2): non-instantons have ℰ_e ≥ 8π²|c₂| + 16π²; SD BPST has ∫|F⁺|² = 8π² = 16π²/γ₀²"
+            },
+            {
+              "name": "pair",
+              "kind": "computation",
+              "statement": "su(2)⊕su(2): opposite instantons give ℰ_e = 16π² = |χ| + 32π²/γ₀²"
+            },
+            {
+              "name": "abelian",
+              "kind": "degenerate",
+              "statement": "commutative G: F = 0 by 7.1"
+            }
+          ]
+        },
+        {
+          "id": "7.6",
+          "kind": "definition",
+          "name": "YangMills.bpst",
+          "statement": "For SU(2) with −tr, A_BPST = Φ(Im(x̄dx))/(1+|x|²); F = Φ(dx̄∧dx)/(1+|x|²)² is ASD; A_BPST is smooth harmonic with ℰ_e = χ = 8π², c₂ = 1, O_∞ = Φ(x̄/|x|); translates, dilates and composites φ∘A_BPST with ⟨φX,φY⟩ = −c tr(XY) have ℰ_e = 8π²c.",
+          "hypotheses": [
+            "G = SU(2) or a Lie algebra homomorphism φ : su(2) → 𝔤"
+          ],
+          "locator": {
+            "source": "OhTataru-TopClass",
+            "where": "Theorem 1.29, lines 871–872; GurskyKelleherStreets-GapTheorem Remark 2.7, lines 223–232; FreedUhlenbeck-Instantons Ch. 3"
+          },
+          "prerequisites": [
+            "target:1.1",
+            "target:1.5",
+            "target:6.3",
+            "target:6.4",
+            "target:7.1"
+          ],
+          "api": [
+            {
+              "name": "asd",
+              "role": "structure",
+              "statement": "F[A_BPST] = Φ(dx̄∧dx)/(1+|x|²)², anti-self-dual"
+            },
+            {
+              "name": "family",
+              "role": "functoriality",
+              "statement": "translations, dilations and x ↦ x̄ (SD, c₂ = −1)"
+            },
+            {
+              "name": "embed",
+              "role": "constructor",
+              "statement": "φ∘A_BPST is harmonic with ℰ_e = 8π²c"
+            }
+          ],
+          "tests": [
+            {
+              "name": "origin",
+              "kind": "computation",
+              "statement": "at 0, F = Φ(dx̄∧dx) with Φ(i)-component 2(dx12 − dx34)"
+            },
+            {
+              "name": "energy",
+              "kind": "computation",
+              "statement": "|F|² = 48(1+|x|²)^{−4}, ℰ_e = 96π²·(1/12) = 8π²"
+            },
+            {
+              "name": "charge",
+              "kind": "compatibility",
+              "statement": "A_BPST − Φ(Im(x̄dx))/|x|² = O(|x|^{−3}); O = Φ(x̄/|x|) has degree −1, c₂ = 1"
+            }
+          ]
+        },
+        {
+          "id": "7.7",
+          "kind": "definition",
+          "name": "YangMills.groundStateEnergy",
+          "statement": "E_GS = inf{ℰ_e(a) : a nontrivial finite-energy harmonic on ℝ⁴} (+∞ if empty); for noncommutative G, E_GS = 16π²/γ₀², attained by φ∘A_BPST for an embedding onto a subalgebra 𝔰 with γ₀(𝔰) = γ₀(𝔤); every nontrivial harmonic a has ℰ_e ≥ 2E_GS or |χ| = ℰ_e ≥ E_GS; E_GS(SU(2)) = 8π².",
+          "hypotheses": [
+            "d = 4",
+            "G noncommutative for the theorem"
+          ],
+          "locator": {
+            "source": "OhTataru-TopClass",
+            "where": "Theorem 1.32, lines 910–918, proof lines 2268–2451; OhTataru-YMHF Theorem 6.10, lines 2905–2918; OhTataru-Threshold Theorem 1.6, lines 277–283"
+          },
+          "prerequisites": [
+            "gap:compact-su2-subalgebra",
+            "target:1.6",
+            "target:7.5",
+            "target:7.6"
+          ],
+          "api": [
+            {
+              "name": "value",
+              "role": "evaluation",
+              "statement": "E_GS = 16π²/γ₀²"
+            },
+            {
+              "name": "dichotomy",
+              "role": "characterisation",
+              "statement": "ℰ_e ≥ 2E_GS or |χ| = ℰ_e ≥ E_GS"
+            }
+          ],
+          "tests": [
+            {
+              "name": "su2",
+              "kind": "computation",
+              "statement": "SU(2): 16π²/2 = 8π², threshold 2E_GS = 16π²"
+            },
+            {
+              "name": "scaling",
+              "kind": "computation",
+              "statement": "inner product scaled by c multiplies E_GS by c"
+            },
+            {
+              "name": "abelian",
+              "kind": "degenerate",
+              "statement": "commutative G: E_GS = +∞"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "8",
+      "title": "Homogeneous spaces and linear covariant flows on ℝ⁴",
+      "targets": [
+        {
+          "id": "8.1",
+          "kind": "definition",
+          "name": "YangMills.FrequencyEnvelope",
+          "statement": "On ℝ⁴: Ḣ¹ = {u ∈ L⁴ : ∇u ∈ L²}, Ḣ^σ = Ḃ^σ_{2,2}, ℓ¹L² = Ḃ⁰_{2,1}, ℓ¹Ḣ^σ = Ḃ^σ_{2,1}, ℋ = {a ∈ Ḣ¹ : ∂^ℓa_ℓ ∈ ℓ¹L²}; a frequency envelope for u in X is (c_k) with ‖P_ku‖_X ≤ c_k and 2^{−δ(j−k)} ≲ c_k/c_j ≲ 2^{δ(j−k)}; (−σ1,σ2)-admissible and σ-compatible envelopes as in OhTataru-YMHF Definitions 3.3–3.4.",
+          "hypotheses": [
+            "d = 4",
+            "δ > 0 small universal",
+            "0 < ε ≪ 1"
+          ],
+          "locator": {
+            "source": "OhTataru-YMHF",
+            "where": "Definitions 3.2–3.4, Lemma 3.5, lines 884–954; lines 849–862"
+          },
+          "prerequisites": [
+            "roadmap:PDE §7.1",
+            "roadmap:PDE §7.2",
+            "mathlib:MeasureTheory.eLpNorm_le_eLpNorm_fderiv_of_eq"
+          ],
+          "api": [
+            {
+              "name": "hdot_banach",
+              "role": "structure",
+              "statement": "Ḣ¹ is a Banach space with C_c^∞ dense, equal to PDE's realised Ḃ¹_{2,2}; ℋ is a Banach space"
+            },
+            {
+              "name": "exists_envelope",
+              "role": "constructor",
+              "statement": "every u ∈ Ḣ^σ has an admissible envelope with ‖c‖_{ℓ²} ≲ ‖u‖"
+            },
+            {
+              "name": "compatibility",
+              "role": "constructor",
+              "statement": "OhTataru-YMHF Lemma 3.5"
+            }
+          ],
+          "tests": [
+            {
+              "name": "singleBlock",
+              "kind": "computation",
+              "statement": "c_k = 2^{−δ|k−k0|}‖P_{k0}u‖ is an envelope for a single block"
+            },
+            {
+              "name": "notAdmissible",
+              "kind": "non-example",
+              "statement": "c_k = 2^k (k ≤ 0), 1 (k > 0) is not (−1,S)-admissible"
+            },
+            {
+              "name": "hStrict",
+              "kind": "non-example",
+              "statement": "a = ∇φ with ‖P_k ∂·a‖ = 1/k is in Ḣ¹ but not ℋ; divergence-free a has ‖a‖_ℋ = ‖a‖_{Ḣ¹}; ‖λa(λ·)‖_ℋ = ‖a‖_ℋ for λ = 2^m"
+            }
+          ]
+        },
+        {
+          "id": "8.2",
+          "kind": "theorem",
+          "name": "YangMills.covariantLaplacian_solvable",
+          "statement": "For A ∈ Ḣ¹, 0 < σ < 2, F ∈ Ḣ^{σ−2}: unique B ∈ Ḣ^σ with Δ_AB = F, ‖B‖_{Ḣ^σ} ≲_{‖A‖} ‖F‖_{Ḣ^{σ−2}}; if ∂^jA_j ∈ ℓ¹L², ‖B‖_{ℓ¹Ḣ²} ≲ ‖F‖_{ℓ¹L²}; envelope version ‖P_kB‖_{Ḣ¹} ≲ d_k.",
+          "hypotheses": [
+            "d = 4",
+            "A ∈ Ḣ¹"
+          ],
+          "locator": {
+            "source": "OhTataru-YMHF",
+            "where": "Theorems 4.1–4.2, lines 955–1175"
+          },
+          "prerequisites": [
+            "roadmap:PDE §7.1",
+            "roadmap:PDE §7.2",
+            "roadmap:PDE §7.3",
+            "target:8.1"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "zero",
+              "kind": "computation",
+              "statement": "A = 0: B = Δ⁻¹F with multiplier −(4π²|ξ|²)⁻¹"
+            },
+            {
+              "name": "pureGauge",
+              "kind": "computation",
+              "statement": "A = −O;x: Δ_A(Ad(O)B) = Ad(O)ΔB"
+            },
+            {
+              "name": "diamagnetic",
+              "kind": "computation",
+              "statement": "∂_j|B| = ⟨B,D_jB⟩/|B| since ⟨B,[A_j,B]⟩ = 0"
+            }
+          ]
+        },
+        {
+          "id": "8.3",
+          "kind": "theorem",
+          "name": "YangMills.covariantHeat_L2",
+          "statement": "For A ∈ L^∞Ḣ¹ with F ∈ L²Ḣ¹, ∂_sA ∈ L²L², the problem ∂_sB − Δ_AB − 2ad(F)B = G + DH is well posed in Ḣ^σ, −2 < σ < 2, with ‖B‖_{L^∞Ḣ^σ} + ‖DB‖_{L²Ḣ^σ} ≲ ‖B(0)‖ + ‖G‖_{L¹Ḣ^σ} + ‖H‖_{L²Ḣ^σ}; envelope bounds; and ‖DB‖_{L¹Ḣ^σ} ≲ ‖B(0)‖_{Ḣ^{σ−1}} + ‖G‖_{L¹Ḣ^{σ−1}} for H = 0, −1 < σ < 1.",
+          "hypotheses": [
+            "d = 4",
+            "J an interval"
+          ],
+          "locator": {
+            "source": "OhTataru-YMHF",
+            "where": "(4.9), Theorems 4.3, 4.5, 4.6, Corollary 4.4, lines 1176–1345"
+          },
+          "prerequisites": [
+            "roadmap:PDE §6.1",
+            "roadmap:PDE §6.3",
+            "roadmap:PDE §7.1",
+            "target:8.1",
+            "target:8.2"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "heat",
+              "kind": "computation",
+              "statement": "A = 0, σ = 0: ‖B(s)‖² + 2∫‖∇B‖² = ‖B(0)‖²"
+            },
+            {
+              "name": "scaling",
+              "kind": "computation",
+              "statement": "invariance under A ↦ λA(λ²s,λx), B ↦ λ²B, G ↦ λ⁴G, H ↦ λ³H"
+            }
+          ]
+        },
+        {
+          "id": "8.4",
+          "kind": "theorem",
+          "name": "YangMills.covariantHeat_Lp",
+          "statement": "Under ‖P_kA(s)‖_{Ḣ¹} ≲ c_k(1+2^{2k}s)^{−N}, c ∈ ℓ², N > 2, with c_k a (−δ,S) envelope: for −2 < σ < 4/p, 2 ≤ p ≤ ∞, 0 < δ ≤ min(4/p−σ, 2+σ), and d^{σ,p}_k a (−δ,S) envelope for b in Ẇ^{σ,p} that is δ-compatible with c_k, the homogeneous problem has a unique solution in C([0,∞);Ẇ^{σ,p}) with ‖P_kB(s)‖ ≲ d^{σ,p}_k(1+2^{2k}s)^{−N}; for such d^{σ,p}_k, the inhomogeneous problem with ‖P_kG‖ ≲ 2^{2k}(2^{2k}s)^{−β}d^{σ,p}_k(1+2^{2k}s)^{−N}, 0 ≤ β < 1, has ‖P_kB‖ ≲ (2^{2k}s)^{1−β}d^{σ,p}_k(1+2^{2k}s)^{−N}.",
+          "hypotheses": [
+            "d = 4",
+            "d^{σ,p}_k δ-compatible with c_k (OhTataru-YMHF lines 1355 and 1518–1519)",
+            "exponent 1 − β (source prints 1 − α/2)"
+          ],
+          "locator": {
+            "source": "OhTataru-YMHF",
+            "where": "Theorems 4.7–4.8, lines 1346–1530"
+          },
+          "prerequisites": [
+            "roadmap:PDE §6.3",
+            "roadmap:PDE §7.1",
+            "target:8.1",
+            "target:8.3"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "free",
+              "kind": "computation",
+              "statement": "A = 0: ‖e^{sΔ}P_kb‖ ≲ exp(−c4^ks)‖P_kb‖"
+            },
+            {
+              "name": "duhamel",
+              "kind": "computation",
+              "statement": "β = 0, A = 0, constant G = P_kG: ‖B‖ ≈ s‖G‖ for s ≲ 2^{−2k}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "9",
+      "title": "The Yang–Mills heat flow on ℝ⁴",
+      "targets": [
+        {
+          "id": "9.1",
+          "kind": "definition",
+          "name": "YangMills.HeatFlow",
+          "statement": "A covariant Yang–Mills heat flow solves F_sj = D^ℓF_ℓj on ℝ⁴×J; a dynamic flow solves F_sα = D^ℓF_ℓα; the linearised flow is D_sB_i − D_iB_s = D^ℓ(D_ℓB_i − D_iB_ℓ) + [B^ℓ,F_ℓi]; in the local caloric gauge A_s = 0 the flow is ∂_sA_i = D^ℓD_ℓA_i − D^ℓ∂_iA_ℓ.",
+          "hypotheses": [
+            "d = 4",
+            "regular solutions"
+          ],
+          "locator": {
+            "source": "OhTataru-YMHF",
+            "where": "Definitions 5.1, 5.3, (5.4), lines 1541–1607; (5.19)–(5.28), lines 1805–1848"
+          },
+          "prerequisites": [
+            "roadmap:PDE §6.3",
+            "target:1.3"
+          ],
+          "api": [
+            {
+              "name": "covariance",
+              "role": "structure",
+              "statement": "gauge covariance and linearised gauge invariance B ↦ B − DA₀"
+            },
+            {
+              "name": "curvatureEq",
+              "role": "evaluation",
+              "statement": "D_sF_ij − D^ℓD_ℓF_ij = −2[F^ℓ_i,F_jℓ], D_sF_si − D^ℓD_ℓF_si = −2[F^ℓ_s,F_iℓ] and dynamic versions"
+            },
+            {
+              "name": "energyIdentity",
+              "role": "evaluation",
+              "statement": "∫|F|²(s1) + 2∫∫Σ_j|D^ℓF_ℓj|² = ∫|F|²(s0)"
+            },
+            {
+              "name": "gauges",
+              "role": "evaluation",
+              "statement": "(5.21), (5.22), (5.23), (5.26)–(5.28) and the de Turck gauge (1.7)–(1.8)"
+            },
+            {
+              "name": "toCaloric",
+              "role": "constructor",
+              "statement": "∂_sO = OA_s, O(0) = 1 brings any regular flow to A_s = 0"
+            }
+          ],
+          "tests": [
+            {
+              "name": "energyFactor",
+              "kind": "computation",
+              "statement": "U(1), one Fourier mode: dissipation factor 2 (the source prints 1)"
+            },
+            {
+              "name": "flat",
+              "kind": "degenerate",
+              "statement": "flat connections are stationary"
+            },
+            {
+              "name": "scaling",
+              "kind": "computation",
+              "statement": "A ↦ λA(λx,λ²s), A_s ↦ λ²A_s(λx,λ²s) preserves solutions"
+            }
+          ]
+        },
+        {
+          "id": "9.2",
+          "kind": "theorem",
+          "name": "YangMills.HeatFlow.covariantBounds",
+          "statement": "For a regular flow on [0,s1) with ‖F‖_{L³L³} ≤ Q: weighted bounds on s^{n/2}D^{(n)}F in L^∞(ds/s;L²) and s^{(n+1)/2}D^{(n+1)}F in L²(ds/s;L²) by Q_n(‖F(0)‖,Q), likewise for F_{0j}; L^pL^q bounds; in caloric gauge ‖A‖_{L^∞Ḣ¹} ≲_{Q,E} 1 + inf‖A(s)‖_{Ḣ¹}.",
+          "hypotheses": [
+            "d = 4"
+          ],
+          "locator": {
+            "source": "OhTataru-YMHF",
+            "where": "Proposition 5.7, Corollary 5.8, Lemma 5.17, lines 1628–1801, 1986–2000"
+          },
+          "prerequisites": [
+            "target:8.1",
+            "target:9.1"
+          ],
+          "api": [],
+          "tests": []
+        },
+        {
+          "id": "9.3",
+          "kind": "theorem",
+          "name": "YangMills.HeatFlow.localWellPosed",
+          "statement": "Ḣ¹ solutions (limits of regular solutions): every a ∈ Ḣ¹ has a unique maximal Ḣ¹ solution on [0,s₀(a)); for s1 < s₀(a) nearby data have s₀ > s1 and Lipschitz dependence in C([0,s1];Ḣ¹); same in ℋ and Ḣ¹∩Ḣ^σ, σ ≥ 1.",
+          "hypotheses": [
+            "d = 4"
+          ],
+          "locator": {
+            "source": "OhTataru-YMHF",
+            "where": "Theorem 5.9, lines 1873–1875; Lemmas 5.16, 5.26, lines 1963–1980, 2336–2340"
+          },
+          "prerequisites": [
+            "target:8.1",
+            "target:8.2",
+            "target:8.3",
+            "target:8.4",
+            "target:9.1",
+            "target:9.2"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "dilation",
+              "kind": "computation",
+              "statement": "s₀(λa(λ·)) = λ^{−2}s₀(a)"
+            },
+            {
+              "name": "flat",
+              "kind": "degenerate",
+              "statement": "flat a: A(s) = a, s₀ = ∞"
+            },
+            {
+              "name": "u1",
+              "kind": "computation",
+              "statement": "U(1): A(s) = ∇φ + e^{sΔ}a^{df}"
+            }
+          ]
+        },
+        {
+          "id": "9.4",
+          "kind": "definition",
+          "name": "YangMills.caloricSize",
+          "statement": "Q(a) = ‖F‖_{L³([0,∞);L³)} if s₀(a) = ∞, else ∞. Under ‖F‖_{L³(J;L³)} ≤ Q: the bounds of Theorem 5.10–5.11; limits at s₀ and stability; continuation (s₀ = ∞ or ‖F‖_{L³L³} = ∞); small energy ⇒ global with Q(a)² ≲ ℰ_e(a).",
+          "hypotheses": [
+            "d = 4"
+          ],
+          "locator": {
+            "source": "OhTataru-YMHF",
+            "where": "(2.5), (5.40); Theorems 5.10–5.11, Corollaries 5.12–5.14, lines 1878–1948"
+          },
+          "prerequisites": [
+            "target:8.3",
+            "target:9.1",
+            "target:9.2",
+            "target:9.3"
+          ],
+          "api": [
+            {
+              "name": "bounds",
+              "role": "structure",
+              "statement": "Theorem 5.10 (1)–(3), envelope bounds of Theorem 5.11"
+            },
+            {
+              "name": "continuation",
+              "role": "characterisation",
+              "statement": "maximal solutions blow up the L³L³ norm"
+            },
+            {
+              "name": "smallEnergy",
+              "role": "structure",
+              "statement": "ℰ_e ≤ ε ⇒ s₀ = ∞, Q² ≲ ℰ_e"
+            }
+          ],
+          "tests": [
+            {
+              "name": "dilation",
+              "kind": "computation",
+              "statement": "Q(a_λ) = Q(a) by the scaling of L³_sL³_x"
+            },
+            {
+              "name": "flat",
+              "kind": "degenerate",
+              "statement": "flat a ∈ Ḣ¹: Q = 0"
+            },
+            {
+              "name": "bpst",
+              "kind": "non-example",
+              "statement": "BPST ∉ Ḣ¹ and as a static flow has infinite L³L³ norm"
+            }
+          ]
+        },
+        {
+          "id": "9.5",
+          "kind": "theorem",
+          "name": "YangMills.HeatFlow.flatLimit",
+          "statement": "For a global Ḣ¹ solution with Q(a) ≤ Q < ∞, A_∞ = lim A(s) exists in Ḣ¹ (ℋ) and is flat; for data b ∈ Ḣ^σ, 0 ≤ σ ≤ 1 (resp. ℋ), the linearised limit B_∞ exists in Ḣ^σ (resp. ℋ), and is D(A_∞)-curl-free; a ↦ A_∞ is Lipschitz on bounded convex sets with uniform Q and C¹ along C¹ curves with uniform Q, with derivative B_∞.",
+          "hypotheses": [
+            "d = 4"
+          ],
+          "locator": {
+            "source": "OhTataru-YMHF",
+            "where": "Corollary 5.15, Lemma 5.33, lines 1952–1957, 2509–2520 (σ-range 0 ≤ σ ≤ 1 of Lemma 5.33(2); Corollary 5.15 states −1 < σ < 2)"
+          },
+          "prerequisites": [
+            "target:9.2",
+            "target:9.3",
+            "target:9.4"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "u1",
+              "kind": "computation",
+              "statement": "U(1): A_∞ = ∇φ, the Helmholtz gradient part"
+            },
+            {
+              "name": "pureGauge",
+              "kind": "degenerate",
+              "statement": "a = −O;x: A_∞ = a"
+            }
+          ]
+        },
+        {
+          "id": "9.6",
+          "kind": "theorem",
+          "name": "YangMills.HeatFlow.dichotomy",
+          "statement": "For a ∈ Ḣ¹ either s₀ = ∞ and Q(a) < ∞, or there are s_n ↗ s₀, x_n, r_n with r_n² ≤ s_n (r_n → 0 if s₀ < ∞), s-independent gauges O_n ∈ G^{2,2}_loc and a nontrivial finite-energy harmonic Q with O_n·(r_nA)(x_n + r_nx, s_n + r_n²s) → Q and Ad(O_n)(r_n²F)(…) → F[Q] in L²_loc(ℝ⁴×[−1,0]).",
+          "hypotheses": [
+            "d = 4",
+            "the clause x_n → x₀ of the source is omitted"
+          ],
+          "locator": {
+            "source": "OhTataru-YMHF",
+            "where": "Theorem 6.1, lines 2562–2589; Lemmas 6.2–6.5, lines 2605–2786"
+          },
+          "prerequisites": [
+            "target:4.1",
+            "target:7.1",
+            "target:7.2",
+            "target:9.1",
+            "target:9.2",
+            "target:9.3",
+            "target:9.4"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "smallEnergy",
+              "kind": "degenerate",
+              "statement": "ℰ_e ≤ ε: first alternative"
+            },
+            {
+              "name": "bubbleEnergy",
+              "kind": "computation",
+              "statement": "ℰ_e(Q) ≤ ℰ_e(a)"
+            }
+          ]
+        },
+        {
+          "id": "9.7",
+          "kind": "theorem",
+          "name": "YangMills.HeatFlow.threshold",
+          "statement": "For noncommutative G and E < 2E_GS there is Q_E < ∞ such that every a ∈ Ḣ¹ with ℰ_e(a) ≤ E has s₀ = ∞ and Q(a) ≤ Q_E.",
+          "hypotheses": [
+            "d = 4",
+            "G noncommutative"
+          ],
+          "locator": {
+            "source": "OhTataru-YMHF",
+            "where": "Theorem 6.6, lines 2833–2837, proof lines 2852–2990"
+          },
+          "prerequisites": [
+            "target:6.3",
+            "target:7.7",
+            "target:9.4",
+            "target:9.6"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "su2",
+              "kind": "computation",
+              "statement": "SU(2): threshold 16π²"
+            },
+            {
+              "name": "bpstNeedsH1",
+              "kind": "non-example",
+              "statement": "BPST: ℰ_e = 8π² < 2E_GS, static with infinite caloric size, not in Ḣ¹"
+            },
+            {
+              "name": "abelian",
+              "kind": "degenerate",
+              "statement": "commutative G excluded; all a ∈ Ḣ¹ flow globally there"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "10",
+      "title": "The caloric gauge and the caloric manifold",
+      "targets": [
+        {
+          "id": "10.1",
+          "kind": "theorem",
+          "name": "YangMills.flat_pureGauge",
+          "statement": "For flat a ∈ Ḣ¹(ℝ⁴) there is O ∈ G^{2,2}_loc with O·a = 0, O;x = Ad(O)a ∈ Ḣ¹, unique up to left constants; for a ∈ ℋ, O is continuous with a limit at infinity, normalised to 1; the dyadic bounds of OhTataru-YMHF Lemma 7.3 for c^p_{jk} = ‖P_jAd(O)P_k‖.",
+          "hypotheses": [
+            "d = 4"
+          ],
+          "locator": {
+            "source": "OhTataru-YMHF",
+            "where": "lines 552–560, 584–592; Lemma 7.3, lines 3163–3211; OhTataru-TopClass Lemma 3.17, lines 1487–1496"
+          },
+          "prerequisites": [
+            "target:4.3",
+            "target:5.2",
+            "target:8.1"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "u1",
+              "kind": "computation",
+              "statement": "U(1), a = i∇φ: O = exp(iφ)"
+            },
+            {
+              "name": "zero",
+              "kind": "degenerate",
+              "statement": "a = 0: O constant"
+            }
+          ]
+        },
+        {
+          "id": "10.2",
+          "kind": "definition",
+          "name": "YangMills.IsCaloric",
+          "statement": "a ∈ Ḣ¹ is caloric if Q(a) < ∞ and A_∞ = 0; 𝒞, 𝒞_Q; d(a1,a2) = inf_c‖Ad(c)a1 − a2‖_{Ḣ¹}; Cal(ã) = O·ã with O from 10.1 for ã_∞. Existence and uniqueness up to constants, continuity for d, C¹ in ℋ and ℋ∩Ḣ^σ along families with uniform Q, existence below 2E_GS, envelope preservation.",
+          "hypotheses": [
+            "d = 4"
+          ],
+          "locator": {
+            "source": "OhTataru-YMHF",
+            "where": "Definitions 2.17, 7.1, lines 564–574, 3000–3001; Proposition 7.2, lines 3003–3008; Theorem 2.18; Proposition 7.4, Corollary 7.6, lines 3213–3278; Theorem 2.20, lines 591–592"
+          },
+          "prerequisites": [
+            "target:7.7",
+            "target:9.4",
+            "target:9.5",
+            "target:9.7",
+            "target:10.1"
+          ],
+          "api": [
+            {
+              "name": "existsUnique",
+              "role": "characterisation",
+              "statement": "Cal(ã) exists, unique up to constants; Q and ℰ_e unchanged"
+            },
+            {
+              "name": "continuity",
+              "role": "structure",
+              "statement": "continuous to (Ḣ¹/Ad(G), d); C¹ in ℋ with O(∞) = 1; ã ↦ O C¹ from ℋ"
+            },
+            {
+              "name": "subthreshold",
+              "role": "structure",
+              "statement": "ℰ_e < 2E_GS ⇒ Cal defined"
+            },
+            {
+              "name": "envelope",
+              "role": "structure",
+              "statement": "‖P_jCal(ã)‖_{Ḣ¹} ≲ c_j"
+            }
+          ],
+          "tests": [
+            {
+              "name": "u1",
+              "kind": "computation",
+              "statement": "U(1): caloric iff ∂^ℓa_ℓ = 0; Cal(ã) = ã − ∇φ"
+            },
+            {
+              "name": "pureGauge",
+              "kind": "degenerate",
+              "statement": "Cal(−O;x) = 0"
+            },
+            {
+              "name": "constants",
+              "kind": "non-example",
+              "statement": "d(Ad(c)a, a) = 0: Cal is only defined modulo Ad(G) before normalising"
+            }
+          ]
+        },
+        {
+          "id": "10.3",
+          "kind": "theorem",
+          "name": "YangMills.caloric_mem_H",
+          "statement": "For a ∈ 𝒞_Q with ℰ_e ≤ E, its heat flow satisfies ‖A‖_{Ḣ¹} + ‖∂^ℓA_ℓ‖_{ℓ¹L²∩W^{1,4/3}} ≲_{Q,E} 1; 𝒞 ⊆ ℋ.",
+          "hypotheses": [
+            "d = 4"
+          ],
+          "locator": {
+            "source": "OhTataru-YMHF",
+            "where": "Proposition 7.7, lines 3286–3290; OhTataru-Threshold Theorem 2.8, lines 912–917"
+          },
+          "prerequisites": [
+            "target:9.2",
+            "target:9.4",
+            "target:9.5",
+            "target:10.2"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "u1",
+              "kind": "computation",
+              "statement": "U(1): ∂·a = 0 and ℰ_e = ‖∇α‖² for a = iα"
+            }
+          ]
+        },
+        {
+          "id": "10.4",
+          "kind": "theorem",
+          "name": "YangMills.caloric_isSubmanifold",
+          "statement": "A C¹ split submanifold of a Banach space has local C¹ charts from open subsets of closed complemented subspaces that are homeomorphisms onto the set with injective derivative of closed complemented range; 𝒞 is a C¹ split submanifold of ℋ, with chart a + b ↦ Cal(a + b) on the slice {D(a)^ℓb_ℓ = 0}.",
+          "hypotheses": [
+            "d = 4",
+            "only C¹ asserted"
+          ],
+          "locator": {
+            "source": "OhTataru-YMHF",
+            "where": "Theorem 7.8, lines 3294–3346"
+          },
+          "prerequisites": [
+            "mathlib:Submodule.ClosedComplemented",
+            "mathlib:ContDiff",
+            "target:8.2",
+            "target:10.2",
+            "target:10.3"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "u1",
+              "kind": "computation",
+              "statement": "U(1): 𝒞 = divergence-free Ḣ¹ fields, complemented by gradients"
+            },
+            {
+              "name": "sphere",
+              "kind": "compatibility",
+              "statement": "a sphere in a Hilbert space is a C¹ split submanifold"
+            },
+            {
+              "name": "cone",
+              "kind": "non-example",
+              "statement": "{x1² = x2²} ⊂ ℝ² has no chart at 0"
+            }
+          ]
+        },
+        {
+          "id": "10.5",
+          "kind": "definition",
+          "name": "YangMills.caloricTangent",
+          "statement": "T_a𝒞 = {b ∈ ℋ : B(∞) = 0}, T^{L²}_a𝒞 = {b ∈ L² : B(∞) = 0} (its L² closure), T^{L²}_a𝒞 ∩ D(a)Ḣ¹ = 0; every w ∈ L² is uniquely b − D(a)c with the bounds of Proposition 7.9 and c = −Δ⁻¹∇·w + L(a,w); Π_aw = b; T^{L²}𝒞 = {(a,b) : a ∈ 𝒞, b ∈ T^{L²}_a𝒞}.",
+          "hypotheses": [
+            "d = 4",
+            "a ∈ 𝒞_Q, ℰ_e ≤ E"
+          ],
+          "locator": {
+            "source": "OhTataru-YMHF",
+            "where": "Definition 2.21, lines 604–610; lines 3347–3361; Proposition 7.9, lines 3363–3385; Theorem 2.22, lines 613–619; OhTataru-Threshold lines 920–925"
+          },
+          "prerequisites": [
+            "target:8.2",
+            "target:9.5",
+            "target:10.2",
+            "target:10.3",
+            "target:10.4"
+          ],
+          "api": [
+            {
+              "name": "tangent",
+              "role": "characterisation",
+              "statement": "T_a𝒞 is the geometric tangent space of 10.4"
+            },
+            {
+              "name": "decomposition",
+              "role": "structure",
+              "statement": "w = b − D(a)c with ‖b‖_{Ḣ^σ} + ‖c‖_{Ḣ^{σ+1}} ≲ ‖w‖_{Ḣ^σ} (−1<σ<1) and the ℋ bound"
+            },
+            {
+              "name": "projection",
+              "role": "structure",
+              "statement": "Π_a bounded on L², range T^{L²}_a𝒞, kernel D(a)Ḣ¹"
+            },
+            {
+              "name": "bundle",
+              "role": "constructor",
+              "statement": "T^{L²}𝒞 = {(a,Π_aw)}"
+            }
+          ],
+          "tests": [
+            {
+              "name": "u1",
+              "kind": "computation",
+              "statement": "U(1): Π_a is the Leray projection, c = −Δ⁻¹∇·w, L = 0"
+            },
+            {
+              "name": "gauge",
+              "kind": "computation",
+              "statement": "w = D(a)c₀ gives b = 0, c = −c₀"
+            },
+            {
+              "name": "tangentFixed",
+              "kind": "degenerate",
+              "statement": "w ∈ T^{L²}_a𝒞 gives c = 0, Π_aw = w"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "suppliers": [
+    {
+      "roadmap": "PDE",
+      "sections": [
+        "§1.2",
+        "§1.4",
+        "§1.5",
+        "§1.6",
+        "§2.2",
+        "§2.3",
+        "§6.1",
+        "§6.3",
+        "§7.1",
+        "§7.2",
+        "§7.3"
+      ],
+      "what": "Euclidean Sobolev density, embeddings, Poincaré inequalities, trace and extension; Calderón–Zygmund and multipliers; Bochner spaces; the heat semigroup; dyadic blocks, Besov spaces and paraproducts"
+    },
+    {
+      "roadmap": "SmoothBundlesConnections",
+      "sections": [
+        "B3.1",
+        "B4.1",
+        "B4.2"
+      ],
+      "what": "principal connections, curvature and the gauge-group action, for the comparison of conventions on X × G"
+    },
+    {
+      "roadmap": "CharacteristicClasses",
+      "sections": [
+        "C4"
+      ],
+      "what": "Ad-invariant symmetric polynomial forms on the Lie algebra with polarisation (C4 item 1)"
+    },
+    {
+      "roadmap": "DifferentialGeometry",
+      "sections": [
+        "Layer 0",
+        "Layer 1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "Layer 10"
+      ],
+      "what": "forms, exterior derivative, Stokes, homotopy operator, Brouwer degree with its integral formula (Layer 10, items 10.3–10.5)"
+    },
+    {
+      "roadmap": "AlgebraicTopology",
+      "sections": [
+        "Stage 6",
+        "Stage 8"
+      ],
+      "what": "comparison of the homological degree with DifferentialGeometry's smooth degree (Stage 6 item 5); absolute Hurewicz theorem and cube–sphere comparison (Stage 8 item 3)"
+    },
+    {
+      "roadmap": "LieGroups",
+      "sections": [
+        "Layer 0",
+        "Layer 1",
+        "Layer 2"
+      ],
+      "what": "exponential, Ad and ad, closed-subgroup theorem"
+    },
+    {
+      "roadmap": "Yamabe",
+      "sections": [
+        "Y2"
+      ],
+      "what": "sharp Euclidean Sobolev inequality with constant Y(Sⁿ) (item 1)"
+    }
+  ],
+  "consumers": [
+    {
+      "roadmap": "hyperbolic Yang–Mills equation on ℝ^{1+4} (not yet written)",
+      "what": "finite-energy and caloric data sets, instanton number, ground state, heat and dynamic flows, the caloric manifold and Π_a; it owns the generalised Coulomb condition and linearised caloric bounds (OhTataru-YMHF §§7.3–7.5)"
+    },
+    {
+      "roadmap": "Yang–Mills heat flow on closed manifolds (not yet written)",
+      "what": "covariant flows, energy identity, energy gap"
+    }
+  ],
+  "gaps": [
+    {
+      "slug": "lp-neumann-ball",
+      "title": "L^p Neumann problem on the unit ball",
+      "neededBy": [
+        "4.1"
+      ],
+      "detail": "For 1 < p < ∞, d ≥ 2, f ∈ L^p(B₁) and V ∈ W^{1,p}(B₁;ℝ^d) with ∫_{B₁} f = ∫_{∂B₁} ν·V: Δu = f in B₁, ∂_νu = ν·V on ∂B₁ has a solution u ∈ W^{2,p}(B₁), unique up to constants, with ‖∇u‖_{W^{1,p}} ≤ C(d,p)(‖f‖_{L^p} + ‖V‖_{W^{1,p}}).",
+      "needs": "PDE states elliptic boundary regularity only for the Dirichlet problem, and the method of continuity for Uhlenbeck's Coulomb gauge needs the W^{2,p} Neumann problem on the ball with inhomogeneous data.",
+      "supplier": "PDE",
+      "section": "Layer 5 (a new section on the L^p Neumann problem)"
+    },
+    {
+      "slug": "lp-divcurl-normal-ball",
+      "title": "L^p div–curl estimate with vanishing normal component on the unit ball",
+      "neededBy": [
+        "4.1"
+      ],
+      "detail": "For 1 < p < ∞, d ≥ 2 and every 1-form a ∈ W^{1,p}(B₁;ℝ^d) with x^ℓa_ℓ = 0 on ∂B₁: ‖a‖_{W^{1,p}(B₁)} ≤ C(d,p)(‖da‖_{L^p} + ‖∂^ℓa_ℓ‖_{L^p}).",
+      "needs": "PDE has no Gaffney-type estimate for the absolute boundary condition, and the a priori bound and uniqueness of Uhlenbeck's Coulomb gauge need it; it does not follow from the scalar Neumann problem alone.",
+      "supplier": "PDE",
+      "section": "Layer 5 (the same new section, as its second theorem)"
+    },
+    {
+      "slug": "hardy-inequality",
+      "title": "Hardy's inequality on ℝ^d",
+      "neededBy": [
+        "5.2",
+        "5.3",
+        "6.1"
+      ],
+      "detail": "For d ≥ 2, 1 ≤ p < d, u ∈ C_c^∞(ℝ^d): ‖u/|x|‖_{L^p} ≤ (p/(d−p))‖∇u‖_{L^p}, extended to Ẇ^{1,p}.",
+      "needs": "Hardy's inequality is at neither pin and in no roadmap section, and the terms [O_∞;x, b] with |O_∞;x| ≈ 1/|x| need it.",
+      "supplier": "PDE",
+      "section": "§1.4 (a new item)"
+    },
+    {
+      "slug": "compact-su2-subalgebra",
+      "title": "su(2) subalgebras realising γ₀ in compact Lie algebras",
+      "neededBy": [
+        "7.7"
+      ],
+      "detail": "Every noncommutative compact Lie algebra 𝔤 ⊆ 𝔲(N) with an ad-invariant inner product contains a Lie subalgebra 𝔰 ≅ su(2) with sup_{𝔰}|[X,Y]|/(|X||Y|) = sup_{𝔤}|[X,Y]|/(|X||Y|), through a highest root of a maximal abelian subalgebra and the sl₂-triple of the complexification (OhTataru-TopClass Lemma 6.4, lines 2381–2401).",
+      "needs": "LieGroups Layer 6 states maximal tori but no root su(2) subalgebras, and the ground state energy needs one on which the bracket constant is attained.",
+      "supplier": "LieGroups",
+      "section": "Layer 6 (a new item on root su(2) subalgebras)"
+    }
+  ]
+}

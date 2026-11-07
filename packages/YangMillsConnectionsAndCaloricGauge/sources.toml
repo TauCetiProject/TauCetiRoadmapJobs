@@ -8,7 +8,7 @@ title = "The Yang--Mills heat flow and the caloric gauge"
 year = 2017
 arxiv = "1709.08599v2"
 locator_scheme = "section"
-locator = "§§1–2, §7"
+locator = "§1 (lines 92–261), §2 (Theorems 2.1–2.23), §3 (Definitions 3.2–3.4, Lemma 3.5), §4 (Theorems 4.1–4.8), §5 (Definitions 5.1, 5.3, Proposition 5.6–5.7, Theorems 5.9–5.11, Corollaries 5.12–5.15, Lemmas 5.16–5.33), §6 (Theorems 6.1, 6.6, 6.10, Lemma 6.7, 6.9), §7.1–7.2 (Definition 7.1, Propositions 7.2–7.9, Theorem 7.8)"
 url = "https://arxiv.org/abs/1709.08599v2"
 fetched_from = "https://arxiv.org/pdf/1709.08599v2"
 fetched_at = "2026-11-05T21:14:40Z"
@@ -17,7 +17,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v2"
-cited_for = ["Scope, Final targets", "Scope", "Final targets"]
+cited_for = ["Conventions", "1.3", "1.4", "1.5", "3.2", "6.3", "6.4", "7.1", "7.2", "7.3", "7.5", "7.7", "8.1", "8.2", "8.3", "8.4", "9.1", "9.2", "9.3", "9.4", "9.5", "9.6", "9.7", "10.1", "10.2", "10.3", "10.4", "10.5"]
 
 [[source]]
 id = "OhTataru-TopClass"
@@ -27,7 +27,7 @@ year = 2017
 doi = "10.1007/s00220-018-3205-x"
 arxiv = "1709.08604v2"
 locator_scheme = "section"
-locator = "§2"
+locator = "§1.1–1.4 (Theorems 1.3–1.5, Proposition 1.6, Definition 1.8, Proposition 1.9, Corollaries 1.10–1.11), §1.8 (Lemma 1.31, Theorems 1.29–1.32), §2 (notation), §3.1–3.6 (Lemmas 3.1–3.5, Propositions 3.9–3.10, Theorems 3.11–3.12, Lemmas 3.13–3.22), §6 (Lemma 6.4, Claims 6.2–6.3)"
 url = "https://arxiv.org/abs/1709.08604v2"
 fetched_from = "https://arxiv.org/pdf/1709.08604v2"
 fetched_at = "2026-11-05T21:15:34Z"
@@ -36,7 +36,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v2"
-cited_for = ["Final targets (topological class)", "Final targets"]
+cited_for = ["Conventions", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "2.1", "2.2", "2.3", "2.4", "2.5", "3.1", "3.2", "3.3", "3.4", "4.1", "4.2", "4.3", "4.4", "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "6.1", "6.2", "6.3", "6.4", "7.1", "7.3", "7.5", "7.6", "7.7", "10.1"]
 
 [[source]]
 id = "OhTataru-Threshold"
@@ -45,7 +45,7 @@ title = "The threshold conjecture for the energy critical hyperbolic Yang--Mills
 year = 2017
 arxiv = "1709.08606v2"
 locator_scheme = "section"
-locator = "§1.1.7, §2.3"
+locator = "§1.1.7–1.1.8 (lines 227–292: χ, Bogomol'nyi bound, Theorems 1.5–1.6), §2.1 (Theorem 2.8, lines 905–930), §2.3 (Theorems 2.16–2.17, lines 1060–1075)"
 url = "https://arxiv.org/abs/1709.08606v2"
 fetched_from = "https://arxiv.org/pdf/1709.08606v2"
 fetched_at = "2026-11-05T21:16:25Z"
@@ -54,7 +54,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v2"
-cited_for = ["Consumers, Final targets", "Consumers"]
+cited_for = ["Conventions", "5.2", "5.5", "5.6", "6.3", "7.1", "7.2", "7.7", "10.3", "10.5", "Downstream consumers"]
 
 [[source]]
 id = "OhTataru-CaloricLWP"
@@ -65,7 +65,7 @@ venue = "Pure Appl. Analysis 2 (2020) 233-384"
 doi = "10.2140/paa.2020.2.233"
 arxiv = "1709.09332v2"
 locator_scheme = "section"
-locator = "§1"
+locator = "§1 (the caloric-gauge hyperbolic theory that consumes this roadmap)"
 url = "https://arxiv.org/abs/1709.09332v2"
 fetched_from = "https://arxiv.org/pdf/1709.09332v2"
 fetched_at = "2026-11-05T21:17:20Z"
@@ -74,7 +74,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v2"
-cited_for = ["Consumers"]
+cited_for = ["Scope and ownership", "Downstream consumers"]
 
 [[source]]
 id = "Uhlenbeck-RemovableSingularities"
@@ -84,12 +84,12 @@ year = 1982
 venue = "Communications in Mathematical Physics 83 (1982), 11–29"
 doi = "10.1007/BF01947068"
 locator_scheme = "theorem"
-locator = "Theorem 4.1 (removable point singularities of finite-energy Yang–Mills fields in dimension four)"
+locator = "Theorem 4.1 (removable point singularities); restated as OhTataru-TopClass Theorem 3.12"
 url = "https://projecteuclid.org/journals/communications-in-mathematical-physics/volume-83/issue-1/Removable-singularities-in-Yang-Mills-fields/cmp/1103920742.full"
 licence_class = "none"
 status = "uncertified"
 version_note = "open access on Project Euclid, but every fetch by the sources service was answered by the site's bot wall (Incapsula 'Request unsuccessful' / HTTP 403), so no text was read; cited by its locator. The statement used (removal of a point singularity in the critical L^{d/2} class) is restated as OhTataru-TopClass Theorem 3.12, which is certified."
-cited_for = ["Scope", "Final targets", "Risks"]
+cited_for = ["4.2", "7.3"]
 
 [[source]]
 id = "Uhlenbeck-LpCurvature"
@@ -99,12 +99,12 @@ year = 1982
 venue = "Communications in Mathematical Physics 83 (1982), 31–42"
 doi = "10.1007/BF01947069"
 locator_scheme = "theorem"
-locator = "Theorem 1.3 (Coulomb gauge on the ball under a small L^{d/2} curvature bound), Theorem 1.5 (weak compactness)"
+locator = "Theorem 1.3 (Coulomb gauge on the ball under small L^{d/2} curvature); restated as OhTataru-TopClass Theorem 3.11"
 url = "https://projecteuclid.org/journals/communications-in-mathematical-physics/volume-83/issue-1/Connections-with-L-p-bounds-on-curvature/cmp/1103920743.full"
 licence_class = "none"
 status = "uncertified"
 version_note = "open access on Project Euclid, but every fetch by the sources service was answered by the site's bot wall (Incapsula 'Request unsuccessful' / HTTP 403), so no text was read; cited by its locator. The statement used (Uhlenbeck's lemma on the unit ball for a general compact G) is restated as OhTataru-TopClass Theorem 3.11, which is certified."
-cited_for = ["Scope", "Final targets", "Risks"]
+cited_for = ["4.1"]
 
 [[source]]
 id = "FreedUhlenbeck-Instantons"
@@ -114,12 +114,12 @@ year = 1991
 venue = "Mathematical Sciences Research Institute Publications"
 doi = "10.1007/978-1-4613-9703-8"
 locator_scheme = "chapter"
-locator = "Ch. 1–3"
+locator = "Ch. 1–3 (connections, Chern–Weil, the BPST instanton)"
 url = "https://doi.org/10.1007/978-1-4613-9703-8"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Scope, Final targets", "Scope"]
+cited_for = ["7.6", "References"]
 
 [[source]]
 id = "Rade-YMHeat"
@@ -137,7 +137,7 @@ sha256 = "13e25c1426af8208fb216ecc0ee65bc0e2a6abca3c99d451c6d3fd4b12691f90"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["Final targets"]
+cited_for = ["Scope and ownership", "Downstream consumers"]
 
 [[source]]
 id = "DonaldsonKronheimer"
@@ -147,12 +147,12 @@ year = 1990
 venue = "Oxford Mathematical Monographs, Oxford University Press"
 doi = "10.1093/oso/9780198535539.001.0001"
 locator_scheme = "chapter"
-locator = "Ch. 2 (connections, curvature, Chern–Weil, instanton number), Ch. 4 (Uhlenbeck's theorems)"
+locator = "Ch. 2–4 (connections and curvature, instantons on S⁴ and ℝ⁴, Uhlenbeck's theorems)"
 url = "https://doi.org/10.1093/oso/9780198535539.001.0001"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (OUP, HTTP 403 at the DOI landing page); cited by its locator without the text"
-cited_for = ["Scope", "Sources"]
+cited_for = ["7.6", "References"]
 
 [[source]]
 id = "Bogomolnyi-Stability"
@@ -165,7 +165,7 @@ locator = "pp. 449–454"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled print journal with no open copy found; cited by its locator without the text. The pointwise bound is reproved in OhTataru-TopClass Lemma 1.31, which is the certified source used."
-cited_for = ["Final targets"]
+cited_for = ["1.5", "6.3"]
 
 [[source]]
 id = "MimuraToda-TopologyLieGroups"
@@ -175,12 +175,12 @@ year = 1991
 venue = "Translations of Mathematical Monographs 91, American Mathematical Society"
 doi = "10.1090/mmono/091"
 locator_scheme = "chapter"
-locator = "Ch. IV–V (homotopy groups of the classical groups, π₃ of compact connected Lie groups)"
+locator = "Ch. IV–V (homotopy groups of compact Lie groups)"
 url = "https://doi.org/10.1090/mmono/091"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (AMS); cited by its locator without the text"
-cited_for = ["Final targets", "Risks"]
+cited_for = ["Scope and ownership"]
 
 [[source]]
 id = "GurskyKelleherStreets-GapTheorem"
@@ -190,7 +190,7 @@ year = 2017
 doi = "10.1007/s00220-017-3070-z"
 arxiv = "1708.01157v3"
 locator_scheme = "theorem"
-locator = "Corollary 1.2, Corollary 1.3"
+locator = "Theorem 1.1, Corollaries 1.2–1.3, Definition 2.3, Lemmas 2.1 and 2.6, Remark 2.7, Proposition 2.8, (3.1)–(3.4)"
 url = "https://arxiv.org/abs/1708.01157v3"
 fetched_from = "https://arxiv.org/pdf/1708.01157v3"
 fetched_at = "2026-11-05T21:33:47Z"
@@ -199,4 +199,4 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v3"
-cited_for = ["Final targets"]
+cited_for = ["1.6", "7.4", "7.5", "7.6", "Downstream consumers"]
