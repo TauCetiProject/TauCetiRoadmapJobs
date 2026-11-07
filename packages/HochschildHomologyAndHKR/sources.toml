@@ -8,7 +8,7 @@ title = "A remark on the Hochschild-Kostant-Rosenberg theorem in characteristic 
 year = 2017
 arxiv = "1710.06039v1"
 locator_scheme = "theorem"
-locator = "Theorem 1.1"
+locator = "Proposition 1.2"
 url = "https://arxiv.org/abs/1710.06039v1"
 fetched_from = "https://arxiv.org/pdf/1710.06039v1"
 fetched_at = "2026-11-04T21:42:02Z"
@@ -17,7 +17,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v1"
-cited_for = ["Final targets"]
+cited_for = ["§6.4", "§7.2", "§7.5", "§7.6"]
 
 [[source]]
 id = "Loday98"
@@ -26,13 +26,13 @@ title = "Cyclic Homology"
 year = 1998
 venue = "Grundlehren der mathematischen Wissenschaften"
 doi = "10.1007/978-3-662-11389-9"
-locator_scheme = "theorem"
-locator = "Theorem 3.4.4"
+locator_scheme = "section"
+locator = "§§1.1, 1.3, 1.5, 3.2, 3.4 (Theorem 3.4.4)"
 url = "https://doi.org/10.1007/978-3-662-11389-9"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Final targets"]
+cited_for = ["§1.1", "§1.2", "§1.3", "§2.1", "§2.2", "§3.1", "§3.2", "§3.4", "§4.2", "§4.5", "§5.1", "§5.2", "§6.2", "§6.3", "§6.4", "§7.6", "§8.4"]
 
 [[source]]
 id = "Ginz05"
@@ -41,7 +41,7 @@ title = "Lectures on Noncommutative Geometry"
 year = 2005
 arxiv = "math/0506603v1"
 locator_scheme = "section"
-locator = "§9"
+locator = "§§3.1, 4.2–4.5, 5.1–5.7, 6.1, 6.6, 8.1, 9.1–9.3"
 url = "https://arxiv.org/abs/math/0506603v1"
 fetched_from = "https://arxiv.org/pdf/math/0506603v1"
 fetched_at = "2026-11-04T21:43:49Z"
@@ -50,7 +50,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v1"
-cited_for = ["Final targets"]
+cited_for = ["Conventions", "§1.1", "§1.2", "§1.5", "§2.1", "§2.2", "§3.1", "§3.2", "§3.3", "§3.4", "§3.5", "§3.6", "§4.1", "§4.2", "§4.3", "§4.4", "§4.5", "§5.1", "§5.2", "§5.4", "§6.1", "§6.2", "§6.3", "§6.4", "§7.4", "§7.5", "§7.6", "§8.1", "§8.2", "§8.3", "§8.4", "§8.5"]
 
 [[source]]
 id = "StacksSmooth"
@@ -66,7 +66,7 @@ sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
-cited_for = ["Scope"]
+cited_for = ["Conventions"]
 
 [[source]]
 id = "HKR62"
@@ -76,7 +76,7 @@ year = 1962
 venue = "Transactions of the American Mathematical Society 102 (1962), 383–408"
 doi = "10.1090/S0002-9947-1962-0142598-8"
 locator_scheme = "theorem"
-locator = "Theorem 3.1"
+locator = "Theorem 5.1"
 url = "https://www.ams.org/journals/tran/1962-102-03/S0002-9947-1962-0142598-8/S0002-9947-1962-0142598-8.pdf"
 fetched_from = "https://www.ams.org/journals/tran/1962-102-03/S0002-9947-1962-0142598-8/S0002-9947-1962-0142598-8.pdf"
 fetched_at = "2026-11-04T21:46:54Z"
@@ -84,7 +84,7 @@ sha256 = "ff575d981f2d5233b182aaf674f35b41c28eb8e8d8c6bf7da29ad5e8bc4760f0"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-04"
-cited_for = ["Final targets"]
+cited_for = ["Scope and ownership", "§4.2", "§4.3", "§4.4", "§5.1", "§5.3", "§5.4", "§7.1", "§7.2", "§7.3", "§7.4", "§7.5", "§7.6", "§8.1", "§8.2", "§8.3", "§8.4", "§8.5"]
 
 [[source]]
 id = "Ger63"
@@ -99,22 +99,7 @@ url = "https://doi.org/10.2307/1970343"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (JSTOR); cited by its locator without the text"
-cited_for = ["Final targets"]
-
-[[source]]
-id = "Ger64"
-authors = "Murray Gerstenhaber"
-title = "On the deformation of rings and algebras"
-year = 1964
-venue = "Annals of Mathematics 79 (1964), 59–103"
-doi = "10.2307/1970484"
-locator_scheme = "section"
-locator = "§2"
-url = "https://doi.org/10.2307/1970484"
-licence_class = "none"
-status = "uncertified"
-version_note = "paywalled (JSTOR); cited by its locator without the text"
-cited_for = ["Consumers"]
+cited_for = ["§5.1", "§5.2", "§6.1", "§6.2"]
 
 [[source]]
 id = "Weibel94"
@@ -123,13 +108,13 @@ title = "An Introduction to Homological Algebra"
 year = 1994
 venue = "Cambridge Studies in Advanced Mathematics 38, Cambridge University Press"
 doi = "10.1017/CBO9781139644136"
-locator_scheme = "theorem"
-locator = "Theorem 9.4.7"
+locator_scheme = "section"
+locator = "§§9.1–9.4 (Theorem 9.4.7)"
 url = "https://doi.org/10.1017/CBO9781139644136"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text (§§9.1, 9.3, 9.4)"
-cited_for = ["Final targets"]
+cited_for = ["§1.1", "§1.2", "§1.3", "§1.4", "§3.3", "§3.5", "§3.6", "§4.2", "§4.4", "§4.5", "§6.4", "§7.6", "§8.4"]
 
 [[source]]
 id = "CE56"
@@ -138,11 +123,11 @@ title = "Homological Algebra"
 year = 1956
 venue = "Princeton Mathematical Series 19, Princeton University Press"
 locator_scheme = "chapter"
-locator = "Chapter IX"
+locator = "Chapters IX and XI"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Scope", "Final targets"]
+cited_for = ["§1.1", "§1.2", "§1.4", "§3.3", "§4.4", "§5.3", "§5.4"]
 
 [[source]]
 id = "Mat86"
@@ -152,9 +137,9 @@ year = 1986
 venue = "Cambridge Studies in Advanced Mathematics 8, Cambridge University Press"
 doi = "10.1017/CBO9781139171762"
 locator_scheme = "section"
-locator = "§§25–30"
+locator = "§25"
 url = "https://doi.org/10.1017/CBO9781139171762"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Suppliers"]
+cited_for = ["§7.4"]

@@ -1,0 +1,1873 @@
+{
+ "roadmap": "HochschildHomologyAndHKR",
+ "title": "Hochschild homology and the Hochschild–Kostant–Rosenberg theorem",
+ "parent": null,
+ "summary": "Classical ungraded Hochschild homology and cohomology of an associative algebra over a commutative ring with bimodule coefficients, on Mathlib's homological-complex carriers: simplicial construction, normalisation over every k, low degrees and square-zero extensions, the bar resolution with Ext and Tor over the enveloping algebra, the cup product and its Yoneda comparison, an explicit sign dictionary with DGAInfinity Layer 8 giving Gerstenhaber's homotopy formula and graded commutativity, the antisymmetrisation of RefinedTraceMethods §1.9 on the classical complex, and the cohomological HKR theorem for smooth k-projective algebras over any commutative ring (canonical isomorphism T^• ≅ HH^• of graded algebras, determinant cocycle = n! times it), with the polynomial case computed unconditionally from the Koszul resolution.",
+ "baseline": {
+  "mathlib": "f6090c7095e1e56b3464c1daba5f24631f1290d2",
+  "tauceti": "358314d4ab97483df4fc4cb8adcc02e74a8d9f5a"
+ },
+ "layers": [
+  {
+   "key": "1",
+   "title": "Hochschild complexes with bimodule coefficients",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "definition",
+     "name": "HochschildHKR.chainComplex",
+     "statement": "The Hochschild simplicial k-module X(A,M), X_n = M ⊗[k] A^{⊗n}, faces d₀(m⊗a₁⊗…⊗a_n)=m a₁⊗a₂⊗…, d_i multiplying a_i a_{i+1} (1≤i≤n−1), d_n(m⊗a₁⊗…⊗a_n)=a_n m⊗a₁⊗…⊗a_{n−1}, degeneracies inserting 1; the Hochschild chain complex C_•(A,M) is its alternating face complex, with differential b(m⊗a₁⊗…⊗a_n)=m a₁⊗…+Σ_{i=1}^{n−1}(−1)^i m⊗…⊗a_i a_{i+1}⊗…+(−1)^n a_n m⊗a₁⊗…⊗a_{n−1}; HH_n(A,M) is its homology.",
+     "hypotheses": [
+      "k a commutative ring",
+      "A a ring with Algebra k A",
+      "M an A-bimodule: Module A M, Module Aᵐᵒᵖ M, SMulCommClass A Aᵐᵒᵖ M, IsScalarTower k A M, IsScalarTower k Aᵐᵒᵖ M",
+      "k, A, M in one universe u"
+     ],
+     "locator": {
+      "source": "Ginz05",
+      "where": "§5.1, lines 973–976"
+     },
+     "prerequisites": [
+      "mathlib:CategoryTheory.SimplicialObject",
+      "mathlib:AlgebraicTopology.alternatingFaceMapComplex",
+      "mathlib:HomologicalComplex.homology",
+      "mathlib:PiTensorProduct",
+      "mathlib:TensorPower.mulEquiv"
+     ],
+     "api": [
+      {
+       "name": "HochschildHKR.simplicialModule",
+       "role": "constructor",
+       "statement": "X(A,M) is a simplicial object of ModuleCat k: the simplicial identities hold for the displayed faces and degeneracies."
+      },
+      {
+       "name": "HochschildHKR.chainComplex_X",
+       "role": "evaluation",
+       "statement": "The degree-n term of C_•(A,M) is M ⊗[k] A^{⊗n}; C₀(A,M)=M."
+      },
+      {
+       "name": "HochschildHKR.chainComplex_d_tmul",
+       "role": "evaluation",
+       "statement": "The differential on a pure tensor is b as displayed; in degree one b(m⊗a)=m a − a m."
+      },
+      {
+       "name": "HochschildHKR.chainComplex_d_comp_d",
+       "role": "structure",
+       "statement": "b∘b=0."
+      },
+      {
+       "name": "HochschildHKR.homology",
+       "role": "definition",
+       "statement": "HH_n(A,M) is the homology of C_•(A,M) in degree n; every class is the class of a cycle, and two cycles have equal classes iff their difference is a boundary."
+      }
+     ],
+     "tests": [
+      {
+       "name": "chains_k_k",
+       "kind": "computation",
+       "statement": "For A=M=k, b_n is multiplication by Σ_{i=0}^n(−1)^i, so HH₀(k,k)=k and HH_n(k,k)=0 for n≥1; omitting the last face makes b₁ the identity and HH₀(k,k)=0."
+      },
+      {
+       "name": "chains_matrix_degree_one",
+       "kind": "non-example",
+       "statement": "For A=M=Mat₂(k), b(E₁₂⊗E₂₁)=E₁₁−E₂₂≠0; using m a_n in the last face gives zero and HH₀(Mat₂(k))=Mat₂(k)."
+      },
+      {
+       "name": "chains_commutative_degree_one",
+       "kind": "degenerate",
+       "statement": "For commutative A=M the degree-one boundary vanishes; for A=k[x], 1⊗x is a cycle that is not a boundary."
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "definition",
+     "name": "HochschildHKR.cochainComplex",
+     "statement": "The Hochschild cosimplicial k-module Y(A,M), Y^n = MultilinearMap k (fun _ : Fin n ↦ A) M, cofaces δ⁰f=a₁ f(a₂,…), δ^i f=f(…,a_i a_{i+1},…), δ^{n+1}f=f(a₁,…,a_n) a_{n+1}, codegeneracies inserting 1; the Hochschild cochain complex C^•(A,M) is its alternating coface complex with δf(a₁,…,a_{n+1})=a₁f(a₂,…)+Σ_{i=1}^n(−1)^i f(…,a_i a_{i+1},…)+(−1)^{n+1}f(a₁,…,a_n)a_{n+1}; HH^n(A,M) is its cohomology.",
+     "hypotheses": [
+      "k a commutative ring",
+      "A a ring with Algebra k A",
+      "M an A-bimodule: Module A M, Module Aᵐᵒᵖ M, SMulCommClass A Aᵐᵒᵖ M, IsScalarTower k A M, IsScalarTower k Aᵐᵒᵖ M",
+      "k, A, M in one universe u"
+     ],
+     "locator": {
+      "source": "Ginz05",
+      "where": "§5.2, lines 1055–1062"
+     },
+     "prerequisites": [
+      "mathlib:CategoryTheory.CosimplicialObject",
+      "mathlib:AlgebraicTopology.alternatingCofaceMapComplex",
+      "mathlib:MultilinearMap",
+      "mathlib:PiTensorProduct.lift"
+     ],
+     "api": [
+      {
+       "name": "HochschildHKR.cosimplicialModule",
+       "role": "constructor",
+       "statement": "Y(A,M) is a cosimplicial object of ModuleCat k."
+      },
+      {
+       "name": "HochschildHKR.cochainComplex_X",
+       "role": "evaluation",
+       "statement": "C⁰(A,M)=M and C^n(A,M) ≅ (A^{⊗n} →ₗ[k] M) via PiTensorProduct.lift, compatibly with differentials."
+      },
+      {
+       "name": "HochschildHKR.cochainComplex_d_apply",
+       "role": "evaluation",
+       "statement": "δm(a)=a m − m a on C⁰; δf(a,b)=a f(b) − f(ab) + f(a) b on C¹; δ in general as displayed."
+      },
+      {
+       "name": "HochschildHKR.cochainComplex_d_comp_d",
+       "role": "structure",
+       "statement": "δ∘δ=0."
+      },
+      {
+       "name": "HochschildHKR.cohomology",
+       "role": "definition",
+       "statement": "HH^n(A,M)=Z^n/B^n with B⁰=0."
+      }
+     ],
+     "tests": [
+      {
+       "name": "cochains_k_k",
+       "kind": "computation",
+       "statement": "For A=M=k, δ:C^n→C^{n+1} is multiplication by Σ_{i=0}^{n+1}(−1)^i, so HH⁰(k,k)=k and HH^n(k,k)=0 for n≥1."
+      },
+      {
+       "name": "cochains_square_zero_sign",
+       "kind": "non-example",
+       "statement": "δδm(a,b)=0, while the variant with last sign − in degree one gives 2(mab−amb)=2E₁₂≠0 for A=M=Mat₂(ℤ), m=E₁₁, a=E₁₂, b=E₂₂."
+      },
+      {
+       "name": "cochains_matrix_degree_zero",
+       "kind": "compatibility",
+       "statement": "For A=M=Mat₂(k), Z⁰ is the scalar matrices; dropping δ⁰ would make every m a cocycle."
+      }
+     ]
+    },
+    {
+     "id": "1.3",
+     "kind": "theorem",
+     "name": "HochschildHKR.cochainComplex_map",
+     "statement": "C_•(A,−), C^•(A,−), HH_n(A,−), HH^n(A,−) are k-linear functors on bimodule maps; an algebra map φ:A→B and a B-bimodule N give a chain map C_•(A,φ*N)→C_•(B,N), n⊗a↦n⊗φ(a), and a cochain map C^•(B,N)→C^•(A,φ*N), f↦f∘(φ×…×φ), with identity and composition laws, commuting with the functoriality in the coefficients.",
+     "hypotheses": [
+      "k a commutative ring",
+      "A a ring with Algebra k A",
+      "M an A-bimodule: Module A M, Module Aᵐᵒᵖ M, SMulCommClass A Aᵐᵒᵖ M, IsScalarTower k A M, IsScalarTower k Aᵐᵒᵖ M",
+      "k, A, M in one universe u",
+      "φ : A →ₐ[k] B a k-algebra homomorphism",
+      "N a B-bimodule"
+     ],
+     "locator": {
+      "source": "Loday98",
+      "where": "§1.1"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.2",
+      "mathlib:HomologicalComplex.homologyMap"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "1.4",
+     "kind": "theorem",
+     "name": "HochschildHKR.cohomology_exact",
+     "statement": "For a short exact sequence 0→M'→M→M''→0 of A-bimodules: if A is k-flat or the sequence is k-split, the chains form a short exact sequence of complexes and there is a natural long exact sequence …→HH_n(A,M')→HH_n(A,M)→HH_n(A,M'')→HH_{n−1}(A,M')→…; if A is k-projective or the sequence is k-split, the same holds for cochains with connecting maps HH^n(A,M'')→HH^{n+1}(A,M').",
+     "hypotheses": [
+      "k a commutative ring",
+      "A a ring with Algebra k A",
+      "M an A-bimodule: Module A M, Module Aᵐᵒᵖ M, SMulCommClass A Aᵐᵒᵖ M, IsScalarTower k A M, IsScalarTower k Aᵐᵒᵖ M",
+      "k, A, M in one universe u",
+      "0→M'→M→M''→0 short exact in bimodules",
+      "for homology: Module.Flat k A or a k-linear splitting",
+      "for cohomology: Module.Projective k A or a k-linear splitting"
+     ],
+     "locator": {
+      "source": "Weibel94",
+      "where": "§9.1"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "mathlib:CategoryTheory.ShortComplex.ShortExact.δ",
+      "mathlib:CategoryTheory.ShortComplex.ShortExact.homology_exact₁",
+      "mathlib:CategoryTheory.ShortComplex.ShortExact.homology_exact₂",
+      "mathlib:CategoryTheory.ShortComplex.ShortExact.homology_exact₃",
+      "mathlib:Module.Flat",
+      "mathlib:Module.Projective"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "1.5",
+     "kind": "construction",
+     "name": "HochschildHKR.chainComplexOfComm",
+     "statement": "For a commutative k-algebra R and an R-bimodule M, C_•(R,M) is a complex of R-modules through r·(m⊗a)=(r m)⊗a and C^•(R,M) through (r·f)(a)=r f(a); b and δ are R-linear, HH_n(R,M), HH^n(R,M) are R-modules, and restriction of scalars along k→R recovers 1.1–1.2.",
+     "hypotheses": [
+      "k a commutative ring",
+      "R a commutative ring with Algebra k R",
+      "M an R-bimodule"
+     ],
+     "locator": {
+      "source": "Ginz05",
+      "where": "lines 2161–2166"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.2",
+      "target:1.3",
+      "mathlib:ModuleCat.restrictScalars"
+     ],
+     "api": [
+      {
+       "name": "HochschildHKR.chainComplexOfComm_d",
+       "role": "structure",
+       "statement": "b is R-linear: (r m)a₁ = r(m a₁) and a_n(r m)=r(a_n m) using commutativity."
+      },
+      {
+       "name": "HochschildHKR.cochainComplexOfComm_derivation",
+       "role": "compatibility",
+       "statement": "On HH¹(R,M) for symmetric M the R-structure is that of Mathlib's Derivation k R M."
+      },
+      {
+       "name": "HochschildHKR.chainComplexOfComm_restrict",
+       "role": "compatibility",
+       "statement": "Restricting scalars along k→R gives the complexes of 1.1–1.2; the structures are natural in M."
+      }
+     ],
+     "tests": [
+      {
+       "name": "comm_kx_degree_one",
+       "kind": "computation",
+       "statement": "For R=k[x], x·[1⊗x]=[x⊗x]≠0 in HH₁(R,R); the action through the first algebra factor is incompatible with b: b(1⊗x⊗1)=x⊗1 versus 1⊗x."
+      },
+      {
+       "name": "comm_k",
+       "kind": "degenerate",
+       "statement": "For R=k the R-structure is the k-structure."
+      },
+      {
+       "name": "comm_matrix_nonexample",
+       "kind": "non-example",
+       "statement": "For A=Mat₂(k), left multiplication by E₁₁ does not commute with b: b(E₁₁E₁₂⊗E₂₁)=E₁₁−E₂₂ versus E₁₁ b(E₁₂⊗E₂₁)=E₁₁."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "Normalisation",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "definition",
+     "name": "HochschildHKR.normalizedChainComplex",
+     "statement": "The normalised chain complex N_•(A,M)=C_•(A,M)/D_•, D_n the sum of the images of the degeneracies; N_n(A,M) ≅ M ⊗[k] Ā^{⊗n} with Ā = A ⧸ k·1, and the quotient map C_•(A,M)→N_•(A,M) is a homotopy equivalence of complexes of k-modules, for every commutative k.",
+     "hypotheses": [
+      "k a commutative ring",
+      "A a ring with Algebra k A",
+      "M an A-bimodule: Module A M, Module Aᵐᵒᵖ M, SMulCommClass A Aᵐᵒᵖ M, IsScalarTower k A M, IsScalarTower k Aᵐᵒᵖ M",
+      "k, A, M in one universe u"
+     ],
+     "locator": {
+      "source": "Ginz05",
+      "where": "§4.5, lines 894–931 (reduced bar complex, over a field); Loday98 §1.1 for general k"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "mathlib:AlgebraicTopology.DoldKan.PInfty",
+      "mathlib:AlgebraicTopology.DoldKan.QInfty",
+      "mathlib:AlgebraicTopology.DoldKan.degeneraciesVanish_iff_QInfty_f_comp",
+      "mathlib:AlgebraicTopology.DoldKan.homotopyEquivNormalizedMooreComplexAlternatingFaceMapComplex",
+      "mathlib:HomotopyEquiv"
+     ],
+     "api": [
+      {
+       "name": "HochschildHKR.normalizedChainComplex_X",
+       "role": "evaluation",
+       "statement": "N₀=M and N_n ≅ M ⊗ Ā^{⊗n}; D_n is the kernel of M⊗A^{⊗n}→M⊗Ā^{⊗n} (right exactness, no flatness)."
+      },
+      {
+       "name": "HochschildHKR.normalizedChainComplex_homotopyEquiv",
+       "role": "structure",
+       "statement": "The quotient map is a homotopy equivalence, natural in M and A; hence HH_n(A,M) ≅ H_n(N_•(A,M))."
+      },
+      {
+       "name": "HochschildHKR.normalizedChainComplex_mk_eq_zero",
+       "role": "evaluation",
+       "statement": "The class of m⊗a₁⊗…⊗a_n vanishes when some a_i ∈ k·1."
+      }
+     ],
+     "tests": [
+      {
+       "name": "normalized_degree_one",
+       "kind": "computation",
+       "statement": "b(m⊗1⊗1)=m⊗1, so degenerate chains of degree one are boundaries."
+      },
+      {
+       "name": "normalized_k",
+       "kind": "degenerate",
+       "statement": "For A=M=k, Ā=0, N_n=0 for n≥1 and N₀=k."
+      },
+      {
+       "name": "normalized_nonunit",
+       "kind": "non-example",
+       "statement": "The span of tensors with a₁ ∈ k·x in C₂(k[x],k[x]) is not a subcomplex: b(1⊗x⊗x)=2x⊗x−1⊗x²."
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "definition",
+     "name": "HochschildHKR.normalizedCochainComplex",
+     "statement": "The normalised cochain complex N^•(A,M) ⊆ C^•(A,M) of cochains vanishing whenever some argument equals 1; N^n(A,M) ≅ MultilinearMap k (fun _ ↦ Ā) M, and the inclusion is a homotopy equivalence for every commutative k.",
+     "hypotheses": [
+      "k a commutative ring",
+      "A a ring with Algebra k A",
+      "M an A-bimodule: Module A M, Module Aᵐᵒᵖ M, SMulCommClass A Aᵐᵒᵖ M, IsScalarTower k A M, IsScalarTower k Aᵐᵒᵖ M",
+      "k, A, M in one universe u"
+     ],
+     "locator": {
+      "source": "Ginz05",
+      "where": "§5.7, lines 1120–1128 (over a field); Loday98 §1.5 for general k"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:2.1",
+      "mathlib:AlgebraicTopology.DoldKan.homotopyEquivNormalizedMooreComplexAlternatingFaceMapComplex",
+      "mathlib:AlgebraicTopology.DoldKan.degeneraciesVanish_iff_QInfty_f_comp"
+     ],
+     "api": [
+      {
+       "name": "HochschildHKR.normalizedCochainComplex_mem",
+       "role": "characterisation",
+       "statement": "f ∈ N^n iff f(a₁,…,a_n)=0 whenever some a_i=1; N⁰=M; a 1-cochain is normalised iff f(1)=0."
+      },
+      {
+       "name": "HochschildHKR.normalizedCochainComplex_homotopyEquiv",
+       "role": "structure",
+       "statement": "The inclusion is a homotopy equivalence; H^n(N^•) ≅ HH^n(A,M) naturally in M."
+      },
+      {
+       "name": "HochschildHKR.exists_normalized_representative",
+       "role": "characterisation",
+       "statement": "Every class of HH^n(A,M) has a normalised cocycle representative."
+      }
+     ],
+     "tests": [
+      {
+       "name": "normalized_derivation",
+       "kind": "computation",
+       "statement": "Every derivation is normalised (D(1)=2D(1)), and δm(1)=m−m=0."
+      },
+      {
+       "name": "normalized_nonnormalized_coboundary",
+       "kind": "non-example",
+       "statement": "For g∈C¹(k[x],k[x]) with g(1)=1, g(x^j)=0 (j≥1), δg(1,1)=1: a cocycle not in N² whose class is that of 0."
+      },
+      {
+       "name": "normalized_cochains_k",
+       "kind": "degenerate",
+       "statement": "For A=k, N^n=0 for n≥1 and N⁰=M."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "Low degrees and square-zero extensions",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "theorem",
+     "name": "HochschildHKR.homologyZeroIso",
+     "statement": "HH₀(A,M) ≅ M/[A,M], [A,M] the k-span of the elements a m − m a, naturally in M.",
+     "hypotheses": [
+      "k a commutative ring",
+      "A a ring with Algebra k A",
+      "M an A-bimodule: Module A M, Module Aᵐᵒᵖ M, SMulCommClass A Aᵐᵒᵖ M, IsScalarTower k A M, IsScalarTower k Aᵐᵒᵖ M",
+      "k, A, M in one universe u"
+     ],
+     "locator": {
+      "source": "Ginz05",
+      "where": "§5.1, lines 941–953"
+     },
+     "prerequisites": [
+      "target:1.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "hh0_matrix",
+       "kind": "computation",
+       "statement": "HH₀(Mat₂(k)) ≅ k through the trace: E_{ij}=[E_{ij},E_{jj}] (i≠j) and E_{ii}−E_{jj} span the trace-zero matrices over every k (Ginz05 lines 1001–1030)."
+      },
+      {
+       "name": "hh0_commutative",
+       "kind": "degenerate",
+       "statement": "For commutative A and symmetric M, HH₀(A,M)=M."
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "theorem",
+     "name": "HochschildHKR.cohomologyZeroIso",
+     "statement": "HH⁰(A,M) ≅ M^A = {m | a m = m a ∀a}, naturally in M; for M=A this is Subalgebra.center k A as a k-module.",
+     "hypotheses": [
+      "k a commutative ring",
+      "A a ring with Algebra k A",
+      "M an A-bimodule: Module A M, Module Aᵐᵒᵖ M, SMulCommClass A Aᵐᵒᵖ M, IsScalarTower k A M, IsScalarTower k Aᵐᵒᵖ M",
+      "k, A, M in one universe u"
+     ],
+     "locator": {
+      "source": "Ginz05",
+      "where": "§5.3, lines 1066–1069"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "mathlib:Subalgebra.center"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "hh0coh_matrix",
+       "kind": "computation",
+       "statement": "For A=M=Mat₂(k), HH⁰ is k·1; E₁₂ is not central since E₁₁E₁₂−E₁₂E₁₁=E₁₂."
+      },
+      {
+       "name": "hh0coh_commutative",
+       "kind": "degenerate",
+       "statement": "For commutative A, HH⁰(A,A)=A."
+      }
+     ]
+    },
+    {
+     "id": "3.3",
+     "kind": "definition",
+     "name": "HochschildHKR.bimodDerivations",
+     "statement": "The k-submodule Der_k(A,M) ⊆ (A →ₗ[k] M) of maps with D(ab)=a D(b)+D(a) b and the submodule Inn(A,M) of inner derivations a ↦ a m − m a; Der_k(A,M)=Z¹(A,M), Inn(A,M)=B¹(A,M), HH¹(A,M) ≅ Der_k(A,M)/Inn(A,M), and 0→HH⁰(A,M)→M→Der_k(A,M)→HH¹(A,M)→0 is exact with M→Der given by m↦δm.",
+     "hypotheses": [
+      "k a commutative ring",
+      "A a ring with Algebra k A",
+      "M an A-bimodule: Module A M, Module Aᵐᵒᵖ M, SMulCommClass A Aᵐᵒᵖ M, IsScalarTower k A M, IsScalarTower k Aᵐᵒᵖ M",
+      "k, A, M in one universe u"
+     ],
+     "locator": {
+      "source": "Ginz05",
+      "where": "§3.1, lines 398–411; §5.4, lines 1075–1085"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:3.2",
+      "mathlib:Derivation",
+      "mathlib:TrivSqZeroExt",
+      "mathlib:TrivSqZeroExt.fstHom",
+      "tauceti:TauCeti.derivationLieAlgebra",
+      "tauceti:TauCeti.innerDerivation",
+      "tauceti:TauCeti.derivationEquivDerivationLieAlgebra"
+     ],
+     "api": [
+      {
+       "name": "HochschildHKR.mem_bimodDerivations_iff_section",
+       "role": "characterisation",
+       "statement": "D is a derivation iff a↦(a,D a) is a k-algebra homomorphism A→TrivSqZeroExt A M over TrivSqZeroExt.fstHom; every such section arises from a unique derivation."
+      },
+      {
+       "name": "HochschildHKR.bimodDerivations_eq_derivation",
+       "role": "compatibility",
+       "statement": "For commutative R and an R-module M, Der_k(R,M) is the image of Mathlib's Derivation k R M, as k- and R-modules."
+      },
+      {
+       "name": "HochschildHKR.bimodDerivations_self",
+       "role": "compatibility",
+       "statement": "For M=A, Der_k(A,A) is the submodule underlying TauCeti.derivationLieAlgebra k A, and TauCeti.innerDerivation z = −δz."
+      },
+      {
+       "name": "HochschildHKR.cohomologyOneIso",
+       "role": "structure",
+       "statement": "HH¹(A,M) ≅ Der_k(A,M)/Inn(A,M), with the exact sequence through HH⁰."
+      }
+     ],
+     "tests": [
+      {
+       "name": "der_kx",
+       "kind": "computation",
+       "statement": "For A=M=k[x], D↦D(x) identifies Der with k[x], Inn=0, HH¹ ≅ k[x] on ∂_x."
+      },
+      {
+       "name": "der_matrix",
+       "kind": "non-example",
+       "statement": "For A=M=Mat₂(k) every derivation is inner and HH¹=0; δE₁₁ sends E₁₂ to −E₁₂; the identity of k[x] is not a derivation (it sends 1 to 1)."
+      },
+      {
+       "name": "der_sign_tauceti",
+       "kind": "compatibility",
+       "statement": "TauCeti.innerDerivation E₁₁ sends E₁₂ to E₁₂ = −(δE₁₁)(E₁₂), pinning the sign between the conventions."
+      }
+     ]
+    },
+    {
+     "id": "3.4",
+     "kind": "theorem",
+     "name": "HochschildHKR.homologyOneIsoKaehler",
+     "statement": "For every commutative k-algebra R (no flatness), [r₀⊗r₁]↦r₀ dr₁ is a well-defined R-linear isomorphism HH₁(R,R) ≅ Ω[R⁄k] with inverse r dr' ↦ [r⊗r'].",
+     "hypotheses": [
+      "k a commutative ring",
+      "R a commutative ring with Algebra k R"
+     ],
+     "locator": {
+      "source": "Ginz05",
+      "where": "§8.1, lines 1914–1926"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.5",
+      "mathlib:KaehlerDifferential",
+      "mathlib:KaehlerDifferential.D",
+      "mathlib:KaehlerDifferential.linearMapEquivDerivation",
+      "mathlib:KaehlerDifferential.span_range_derivation"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "hh1_dual_numbers",
+       "kind": "computation",
+       "statement": "For R=k[x]/(x²), Ω¹=R dx/(2x dx) has dimension 2 over 𝔽₂ and 1 over ℚ; HH₁ has the same dimensions."
+      },
+      {
+       "name": "hh1_Fp_over_Z",
+       "kind": "non-example",
+       "statement": "For k=ℤ, R=𝔽_p, Ω¹=0 and the classical HH₁ vanishes (b₂ surjective onto C₁=𝔽_p)."
+      },
+      {
+       "name": "hh1_k",
+       "kind": "degenerate",
+       "statement": "For R=k both sides vanish."
+      }
+     ]
+    },
+    {
+     "id": "3.5",
+     "kind": "definition",
+     "name": "HochschildHKR.TwistedSqZeroExt",
+     "statement": "For f ∈ C²(A,M), the k-module A × M with (a,m)(a',m')=(aa', a m' + m a' + f(a,a')); associative iff δf=0; for a cocycle, a unital k-algebra with unit (1,−f(1,1)), first projection a surjective algebra map with square-zero kernel 0×M inducing the given bimodule structure and k-linear section a↦(a,0); f=0 gives TrivSqZeroExt A M; for g ∈ C¹, (a,m)↦(a,m+g(a)) is an isomorphism A⊕_f M ≅ A⊕_{f−δg} M over A and under M.",
+     "hypotheses": [
+      "k a commutative ring",
+      "A a ring with Algebra k A",
+      "M an A-bimodule: Module A M, Module Aᵐᵒᵖ M, SMulCommClass A Aᵐᵒᵖ M, IsScalarTower k A M, IsScalarTower k Aᵐᵒᵖ M",
+      "k, A, M in one universe u",
+      "f ∈ C²(A,M)"
+     ],
+     "locator": {
+      "source": "Ginz05",
+      "where": "§5.5, lines 1088–1106"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:2.2",
+      "target:3.3",
+      "mathlib:TrivSqZeroExt",
+      "mathlib:TrivSqZeroExt.algebra'",
+      "mathlib:TrivSqZeroExt.fstHom",
+      "mathlib:TrivSqZeroExt.inr"
+     ],
+     "api": [
+      {
+       "name": "HochschildHKR.TwistedSqZeroExt.mul_assoc_iff",
+       "role": "characterisation",
+       "statement": "The product is associative iff δf=0."
+      },
+      {
+       "name": "HochschildHKR.TwistedSqZeroExt.one_def",
+       "role": "evaluation",
+       "statement": "For a cocycle, f(1,a)=f(1,1)a and f(a,1)=a f(1,1), so (1,−f(1,1)) is the unit; for normalised f it is (1,0)."
+      },
+      {
+       "name": "HochschildHKR.TwistedSqZeroExt.equivOfCoboundary",
+       "role": "structure",
+       "statement": "(a,m)↦(a,m+g(a)) is a k-algebra isomorphism A⊕_f M ≅ A⊕_{f−δg} M compatible with projection and inclusion."
+      },
+      {
+       "name": "HochschildHKR.TwistedSqZeroExt.equivTrivSqZeroExt",
+       "role": "compatibility",
+       "statement": "A⊕₀M is TrivSqZeroExt A M as a k-algebra over A."
+      }
+     ],
+     "tests": [
+      {
+       "name": "twisted_zero",
+       "kind": "degenerate",
+       "statement": "For f=0 the product is that of TrivSqZeroExt A M."
+      },
+      {
+       "name": "twisted_dual_numbers",
+       "kind": "computation",
+       "statement": "For A=k[x]/(x²), M=k with x acting by 0, f(x,x)=1: t=(x,0) has t²=(0,1)≠0, t³=0, A⊕_f M ≅ k[t]/(t³), and no algebra section exists."
+      },
+      {
+       "name": "twisted_nonassociative",
+       "kind": "non-example",
+       "statement": "For A=k[x], M=k with x acting by 0, f(x,x²)=1 and 0 otherwise: δf(x,x,x)=1, and ((x,0)(x,0))(x,0)=(x³,0) while (x,0)((x,0)(x,0))=(x³,1)."
+      },
+      {
+       "name": "twisted_unit",
+       "kind": "non-example",
+       "statement": "For f=δg with g(1)=1, g(x^j)=0 on k[x], f(1,1)=1 and (1,0)(x,0)=(x,x), so (1,0) is not the unit."
+      }
+     ]
+    },
+    {
+     "id": "3.6",
+     "kind": "theorem",
+     "name": "HochschildHKR.cohomologyTwoClassification",
+     "statement": "A k-split square-zero extension of A by M (k-algebra E, surjective algebra map p:E→A, injective k-linear i:M→E with range ker p, i(m)i(m')=0, e·i(m)=i(p(e)m), i(m)·e=i(m p(e)), admitting a k-linear section) is isomorphic over A and under M to A⊕_{f_s}M with f_s(a,a')=i⁻¹(s(a)s(a')−s(aa')) a cocycle; changing s changes f_s by a coboundary; A⊕_f M ≅ A⊕_{f'} M compatibly iff f−f' ∈ B²; the projection of A⊕_f M has an algebra section iff [f]=0. Hence HH²(A,M) is in bijection with isomorphism classes of k-split square-zero extensions inducing the given bimodule structure, 0 ↔ TrivSqZeroExt A M.",
+     "hypotheses": [
+      "k a commutative ring",
+      "A a ring with Algebra k A",
+      "M an A-bimodule: Module A M, Module Aᵐᵒᵖ M, SMulCommClass A Aᵐᵒᵖ M, IsScalarTower k A M, IsScalarTower k Aᵐᵒᵖ M",
+      "k, A, M in one universe u"
+     ],
+     "locator": {
+      "source": "Ginz05",
+      "where": "§5.5, lines 1088–1111 and Remark 5.5.1"
+     },
+     "prerequisites": [
+      "target:3.5",
+      "mathlib:TrivSqZeroExt",
+      "mathlib:TrivSqZeroExt.fstHom"
+     ],
+     "api": [
+      {
+       "name": "HochschildHKR.SplitSqZeroExtension",
+       "role": "definition",
+       "statement": "The structure of a k-split square-zero extension of A by M, with morphisms commuting with p and i."
+      }
+     ],
+     "tests": [
+      {
+       "name": "hh2_Z4",
+       "kind": "non-example",
+       "statement": "For k=ℤ, A=M=𝔽₂: every C^n=𝔽₂ and δ:C¹→C² is the identity, so HH²=0, yet ℤ/4→𝔽₂ is a non-split square-zero extension; it is not ℤ-split."
+      },
+      {
+       "name": "hh2_k",
+       "kind": "degenerate",
+       "statement": "HH²(k,M)=0 and k[ε]/ε²→k splits."
+      },
+      {
+       "name": "hh2_dual_numbers",
+       "kind": "computation",
+       "statement": "k[t]/(t³)→k[x]/(x²) is k-split and non-split, so its class in HH²(k[x]/(x²),k) is nonzero."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "The bar resolution, Ext and Tor",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "construction",
+     "name": "HochschildHKR.envModule",
+     "statement": "With Aᵉ = A ⊗[k] Aᵐᵒᵖ, bimodules are left Aᵉ-modules via TensorProduct.Algebra.module, (a⊗op b)·m = a m b, giving a k-linear equivalence with ModuleCat Aᵉ; A is an object of ModuleCat Aᵉ; a bimodule is a right Aᵉ-module by m·(a⊗op b)=b m a.",
+     "hypotheses": [
+      "k a commutative ring",
+      "A a ring with Algebra k A"
+     ],
+     "locator": {
+      "source": "Ginz05",
+      "where": "§4.2, lines 751–752; §5.1, lines 934–947"
+     },
+     "prerequisites": [
+      "mathlib:Algebra.TensorProduct",
+      "mathlib:MulOpposite",
+      "mathlib:TensorProduct.Algebra.module",
+      "mathlib:ModuleCat",
+      "tauceti:TauCeti.BalancedTensorProduct"
+     ],
+     "api": [
+      {
+       "name": "HochschildHKR.envModule_smul",
+       "role": "evaluation",
+       "statement": "(a⊗op b)·m = a m b; bimodule maps are exactly Aᵉ-linear maps."
+      },
+      {
+       "name": "HochschildHKR.envModule_rightAction",
+       "role": "constructor",
+       "statement": "m·(a⊗op b) = b m a defines Module (Aᵉ)ᵐᵒᵖ M commuting with the k-action."
+      },
+      {
+       "name": "HochschildHKR.balancedTensor_self",
+       "role": "evaluation",
+       "statement": "M ⊗_{Aᵉ} A ≅ M/[A,M] through m⊗a ↦ [m a]."
+      }
+     ],
+     "tests": [
+      {
+       "name": "env_matrix",
+       "kind": "computation",
+       "statement": "For A=M=Mat₂(k), (E₁₂⊗op E₂₁)·E₂₂ = E₁₁, while b m a would give 0."
+      },
+      {
+       "name": "env_commutative",
+       "kind": "compatibility",
+       "statement": "For commutative R, Rᵉ=R⊗R and multiplication R⊗R→R is Rᵉ-linear."
+      },
+      {
+       "name": "env_k",
+       "kind": "degenerate",
+       "statement": "For A=k, Aᵉ=k and bimodules are k-modules with equal actions."
+      }
+     ]
+    },
+    {
+     "id": "4.2",
+     "kind": "definition",
+     "name": "HochschildHKR.barResolution",
+     "statement": "The bar complex B_n(A)=A⊗A^{⊗n}⊗A with outer Aᵉ-action and b'(a₀⊗…⊗a_{n+1})=Σ_{i=0}^n(−1)^i a₀⊗…⊗a_i a_{i+1}⊗…⊗a_{n+1}, augmented by multiplication; contractible over k by h(a₀⊗…)=1⊗a₀⊗…, so a quasi-isomorphism onto A over every k; B_n(A) ≅ Aᵉ⊗[k]A^{⊗n}; if A is k-projective, a projective resolution of A in ModuleCat Aᵉ.",
+     "hypotheses": [
+      "k a commutative ring",
+      "A a ring with Algebra k A",
+      "Module.Projective k A for the projective-resolution statement"
+     ],
+     "locator": {
+      "source": "Ginz05",
+      "where": "§4.2, lines 747–782; HKR62 lines 414–447"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "mathlib:CategoryTheory.SimplicialObject.Augmented.ExtraDegeneracy",
+      "mathlib:CategoryTheory.ProjectiveResolution",
+      "mathlib:Module.Projective.tensorProduct",
+      "mathlib:TensorPower.mulEquiv"
+     ],
+     "api": [
+      {
+       "name": "HochschildHKR.tensorPower_projective",
+       "role": "structure",
+       "statement": "A^{⊗n} is k-projective (resp. flat) when A is."
+      },
+      {
+       "name": "HochschildHKR.barResolution_homotopy",
+       "role": "structure",
+       "statement": "b'∘h + h∘b' = id in positive degrees and μ∘h=id in degree zero; h is right A-linear."
+      },
+      {
+       "name": "HochschildHKR.barResolution_projective",
+       "role": "constructor",
+       "statement": "For k-projective A, (B_•(A), μ) is a ProjectiveResolution of A; natural in algebra maps."
+      }
+     ],
+     "tests": [
+      {
+       "name": "bar_degree_two",
+       "kind": "computation",
+       "statement": "(h b'+b' h)(a₁⊗a₂)=1⊗a₁a₂+a₁⊗a₂−1⊗a₁a₂=a₁⊗a₂ (Ginz05 lines 774–782)."
+      },
+      {
+       "name": "bar_k",
+       "kind": "degenerate",
+       "statement": "For A=k, B_n=k, b'_n is multiplication by Σ_{i=0}^n(−1)^i, and the augmented complex is exact."
+      },
+      {
+       "name": "bar_homotopy_not_bilinear",
+       "kind": "non-example",
+       "statement": "For A=k[x], h(x·(1⊗1))=1⊗x⊗1 but x·h(1⊗1)=x⊗1⊗1: contractible over k, not over Aᵉ."
+      }
+     ]
+    },
+    {
+     "id": "4.3",
+     "kind": "theorem",
+     "name": "HochschildHKR.homBarIsoCochains",
+     "statement": "φ ↦ ((a₁,…,a_n) ↦ φ(1⊗a₁⊗…⊗a_n⊗1)) is an isomorphism of cochain complexes Hom_{Aᵉ}(B_•(A),M) ≅ C^•(A,M), over every k, natural in M, with no sign.",
+     "hypotheses": [
+      "k a commutative ring",
+      "A a ring with Algebra k A",
+      "M an A-bimodule: Module A M, Module Aᵐᵒᵖ M, SMulCommClass A Aᵐᵒᵖ M, IsScalarTower k A M, IsScalarTower k Aᵐᵒᵖ M",
+      "k, A, M in one universe u"
+     ],
+     "locator": {
+      "source": "Ginz05",
+      "where": "§5.2, lines 1033–1062"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:4.2",
+      "mathlib:ChainComplex.linearYonedaObj"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "4.4",
+     "kind": "theorem",
+     "name": "HochschildHKR.cohomologyIsoExt",
+     "statement": "For A projective over k, HH^n(A,M) ≅ Abelian.Ext (A : ModuleCat Aᵉ) M n as k-modules, naturally in M, sending the class of a cocycle to ProjectiveResolution.extMk of the corresponding homomorphism B_n(A)→M; in degree one a derivation D goes to the class of a₀⊗a₁⊗a₂ ↦ a₀ D(a₁) a₂.",
+     "hypotheses": [
+      "k a commutative ring",
+      "A a ring with Algebra k A",
+      "M an A-bimodule: Module A M, Module Aᵐᵒᵖ M, SMulCommClass A Aᵐᵒᵖ M, IsScalarTower k A M, IsScalarTower k Aᵐᵒᵖ M",
+      "k, A, M in one universe u",
+      "Module.Projective k A"
+     ],
+     "locator": {
+      "source": "Ginz05",
+      "where": "§5.2, lines 984–988; HKR62 lines 337–351"
+     },
+     "prerequisites": [
+      "target:4.2",
+      "target:4.3",
+      "mathlib:CategoryTheory.Abelian.Ext",
+      "mathlib:CategoryTheory.ProjectiveResolution.extMk",
+      "mathlib:CategoryTheory.ProjectiveResolution.extMk_surjective",
+      "mathlib:CategoryTheory.ProjectiveResolution.extMk_eq_zero_iff",
+      "mathlib:ModuleCat.Algebra.instLinear",
+      "tauceti:CategoryTheory.ProjectiveResolution.extLinearEquiv"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "4.5",
+     "kind": "definition",
+     "name": "HochschildHKR.tor",
+     "statement": "For a bimodule M, the functor M ⊗_{Aᵉ} − : ModuleCat Aᵉ ⥤ ModuleCat k, N ↦ TauCeti.BalancedTensorProduct k Aᵉ M N (right structure of 4.1), and Tor_n^{Aᵉ}(M,−) its left derived functors; M ⊗_{Aᵉ} B_n(A) ≅ M⊗A^{⊗n} via m⊗(a₀⊗a₁⊗…⊗a_n⊗a_{n+1}) ↦ a_{n+1} m a₀ ⊗ a₁⊗…⊗a_n compatibly with b; for k-projective A, HH_n(A,M) ≅ Tor_n^{Aᵉ}(M,A) naturally in M.",
+     "hypotheses": [
+      "k a commutative ring",
+      "A a ring with Algebra k A",
+      "M an A-bimodule: Module A M, Module Aᵐᵒᵖ M, SMulCommClass A Aᵐᵒᵖ M, IsScalarTower k A M, IsScalarTower k Aᵐᵒᵖ M",
+      "k, A, M in one universe u",
+      "Module.Projective k A for the comparison with HH_n"
+     ],
+     "locator": {
+      "source": "Ginz05",
+      "where": "§5.1, lines 944–976"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:4.1",
+      "target:4.2",
+      "mathlib:CategoryTheory.Functor.leftDerived",
+      "mathlib:CategoryTheory.ProjectiveResolution.isoLeftDerivedObj",
+      "tauceti:TauCeti.BalancedTensorProduct",
+      "tauceti:TauCeti.BalancedTensorProduct.outerFactors",
+      "tauceti:TauCeti.BalancedTensorProduct.rid"
+     ],
+     "api": [
+      {
+       "name": "HochschildHKR.torZeroIso",
+       "role": "evaluation",
+       "statement": "Tor_0^{Aᵉ}(M,N) ≅ M ⊗_{Aᵉ} N naturally in N."
+      },
+      {
+       "name": "HochschildHKR.tor_projective",
+       "role": "structure",
+       "statement": "Tor_n^{Aᵉ}(M,P)=0 for projective P and n≥1; Tor is computed by any projective resolution and is functorial in M."
+      },
+      {
+       "name": "HochschildHKR.homologyIsoTor",
+       "role": "compatibility",
+       "statement": "HH_n(A,M) ≅ Tor_n^{Aᵉ}(M,A) for k-projective A."
+      }
+     ],
+     "tests": [
+      {
+       "name": "tor_zero",
+       "kind": "computation",
+       "statement": "Tor_0^{Aᵉ}(M,A) ≅ M/[A,M]; for A=M=Mat₂(k) it is k."
+      },
+      {
+       "name": "tor_k",
+       "kind": "degenerate",
+       "statement": "For A=k, Tor_0(M,k)=M and Tor_n(M,k)=0 for n≥1."
+      },
+      {
+       "name": "tor_free",
+       "kind": "compatibility",
+       "statement": "Tor_n^{Aᵉ}(M,Aᵉ)=0 for n≥1 and Tor_0 ≅ M."
+      },
+      {
+       "name": "tor_wrong_side",
+       "kind": "non-example",
+       "statement": "m·(a⊗op b)=a m b is not a right Aᵉ-action: for Mat₂(k), applying E₁₂⊗1 then E₂₁⊗1 to 1 gives E₂₂, while the product E₁₁⊗1 gives E₁₁."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "The cup product",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "definition",
+     "name": "HochschildHKR.cup",
+     "statement": "The k-bilinear cup product C^p(A,A) × C^q(A,A) → C^{p+q}(A,A), (f∪g)(a₁,…,a_{p+q}) = f(a₁,…,a_p) g(a_{p+1},…,a_{p+q}).",
+     "hypotheses": [
+      "k a commutative ring",
+      "A a ring with Algebra k A"
+     ],
+     "locator": {
+      "source": "Ginz05",
+      "where": "§6.6, lines 1335–1341; HKR62 lines 479–484"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "mathlib:MultilinearMap"
+     ],
+     "api": [
+      {
+       "name": "HochschildHKR.cup_assoc",
+       "role": "structure",
+       "statement": "∪ is associative with unit 1 ∈ C⁰(A,A)=A."
+      },
+      {
+       "name": "HochschildHKR.cup_zero_left",
+       "role": "evaluation",
+       "statement": "x∪g = (a↦x g(a)), f∪y=(a↦f(a)y); in degree (0,0) it is the multiplication of A."
+      },
+      {
+       "name": "HochschildHKR.cup_normalized",
+       "role": "structure",
+       "statement": "Normalised cochains are closed under ∪; for commutative R, ∪ is R-bilinear and x∪g is the R-structure of 1.5."
+      }
+     ],
+     "tests": [
+      {
+       "name": "cup_noncommutative",
+       "kind": "computation",
+       "statement": "On k[x,y], (∂_x∪∂_y)(x,y)=1 and (∂_y∪∂_x)(x,y)=0."
+      },
+      {
+       "name": "cup_unit",
+       "kind": "degenerate",
+       "statement": "1∪f=f=f∪1; the reversed-order product g(…)f(…) is associative (cup product of Aᵒᵖ) but breaks the Leibniz rule: for Mat₂(k), x=E₁₁, g=id, the defect at (E₂₁,E₁₂) is E₁₁−E₂₂."
+      },
+      {
+       "name": "cup_square",
+       "kind": "non-example",
+       "statement": "For ∂ on k[x], (∂∪∂)(x,x)=1: a nonzero cochain whose class vanishes (6.2)."
+      }
+     ]
+    },
+    {
+     "id": "5.2",
+     "kind": "theorem",
+     "name": "HochschildHKR.cup_leibniz",
+     "statement": "δ(f∪g)=δf∪g+(−1)^p f∪δg for f∈C^p(A,A); hence HH^•(A,A)=⊕_n HH^n(A,A) is an associative unital graded k-algebra with degree-zero part Z(A), and a graded R-algebra for commutative R.",
+     "hypotheses": [
+      "k a commutative ring",
+      "A a ring with Algebra k A"
+     ],
+     "locator": {
+      "source": "Ginz05",
+      "where": "§6.6, lines 1342–1350"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:3.2",
+      "target:5.1",
+      "mathlib:GradedMonoid.GMonoid",
+      "mathlib:DirectSum"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "5.3",
+     "kind": "theorem",
+     "name": "HochschildHKR.extMk_comp_extMk",
+     "statement": "In an abelian category with enough projectives and HasExt, for projective resolutions P of X and Q of Y, cocycles f:P_p→Y and g:Q_q→Z, and a family f̃_i:P_{i+p}→Q_i with ε_Q∘f̃₀=f and d∘f̃_{i+1}=f̃_i∘d, Abelian.Ext.comp (P.extMk f) (Q.extMk g) = s(p,q)·P.extMk (f̃_q ≫ g) for a sign s(p,q)∈{±1} depending only on p and q, with s(p,0)=1.",
+     "hypotheses": [
+      "C an abelian category with EnoughProjectives and HasExt",
+      "P a projective resolution of X, Q of Y",
+      "f, g cocycles of degrees p, q",
+      "f̃ a strictly commuting lift of f"
+     ],
+     "locator": {
+      "source": "CE56",
+      "where": "Chapter XI; HKR62 lines 425–431"
+     },
+     "prerequisites": [
+      "mathlib:CategoryTheory.Abelian.Ext.comp",
+      "mathlib:CategoryTheory.ProjectiveResolution.extMk",
+      "mathlib:CategoryTheory.ProjectiveResolution.extMk_comp_mk₀",
+      "tauceti:CategoryTheory.ProjectiveResolution.isoExt_hom_comp_homologyMap"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "5.4",
+     "kind": "theorem",
+     "name": "HochschildHKR.cohomologyIsoExt_cup",
+     "statement": "For A projective over k and cocycles f∈Z^p(A,A), g∈Z^q(A,A), θ_{p+q}[f∪g] = (−1)^{pq} s(p,q)·Abelian.Ext.comp (θ_p[f]) (θ_q[g]) with θ of 4.4 and s of 5.3; the strictly commuting lift f̃_i(a₀⊗a₁⊗…⊗a_{p+i+1}) = (−1)^{pi} a₀ f(a₁,…,a_p)⊗a_{p+1}⊗…⊗a_{p+i+1} composed with g is (−1)^{pq} f∪g.",
+     "hypotheses": [
+      "k a commutative ring",
+      "A a ring with Algebra k A",
+      "Module.Projective k A"
+     ],
+     "locator": {
+      "source": "Ginz05",
+      "where": "lines 1348–1350"
+     },
+     "prerequisites": [
+      "target:4.4",
+      "target:5.2",
+      "target:5.3"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  },
+  {
+   "key": "6",
+   "title": "Comparison with the graded and derived carriers",
+   "targets": [
+    {
+     "id": "6.1",
+     "kind": "theorem",
+     "name": "HochschildHKR.suspendCochain_coboundary",
+     "statement": "For A in degree zero, 𝒜 = TauCeti.IsNonUnitalDGAlgebra.toAInfinityAlgebra of the trivially graded A with zero differential: for n ≥ 1, Θ: C^n(A,A) → TauCeti.AInfinityAlgebra.PositiveHochschild.cochains 𝒜 (n−1), Θf∘s^{⊗n}=s∘f, is a k-linear isomorphism (degree n−1 cochains are exactly the arity-n ones), with, for p,q ≥ 1, Θ(δf)=(−1)^{p+1}·TauCeti.AInfinityAlgebra.hochschildDifferential 𝒜 (p−1) (Θf), Θ(f∘g)=TauCeti.ReducedTensorWords.brace (Θf) (Θg) (q−1) for the Gerstenhaber composition (f∘g)(a)=Σ_{i=1}^p(−1)^{(i−1)(q−1)} f(…,g(a_i,…,a_{i+q−1}),…), and Θ{f,g}=TauCeti.ReducedTensorWords.gerstenhaberBracket (p−1) (q−1) (Θf) (Θg) with {f,g}=f∘g−(−1)^{(p−1)(q−1)}g∘f; against DGAInfinity Layer 8 (arity zero, multiple brace): Θ(δx)=−[m,Θx] for x∈C⁰, Θ(f∘y)=Θf{Θy}, Θ{f,y}=[Θf,Θy] for y∈C⁰, and Θ(f∪g)=(−1)^{p(q−1)} m{Θf,Θg} for all p,q ≥ 0. Hence HH^n(A,A) = TauCeti.AInfinityAlgebra.PositiveHochschild.Cohomology 𝒜 (n−1) for n ≥ 2 with cohomologyBracket transported for p,q ≥ 2 (degree 0 of the pinned complex is Der_k(A), not HH¹), and HH^n(A,A) is Layer 8's Hochschild cohomology in Gerstenhaber degree n−1 for every n ≥ 0 with Layer 8's bracket transported to HH^•(A,A).",
+     "hypotheses": [
+      "k a commutative ring",
+      "A a ring with Algebra k A",
+      "f ∈ C^p(A,A), g ∈ C^q(A,A)"
+     ],
+     "locator": {
+      "source": "Ginz05",
+      "where": "§6.6, lines 1351–1375"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:5.1",
+      "tauceti:TauCeti.AInfinity.IsSuspension",
+      "tauceti:TauCeti.IsDGAlgebra",
+      "tauceti:TauCeti.IsNonUnitalDGAlgebra.toAInfinityAlgebra",
+      "tauceti:TauCeti.ReducedTensorWords.brace",
+      "tauceti:TauCeti.ReducedTensorWords.gerstenhaberBracket",
+      "tauceti:TauCeti.AInfinityAlgebra.hochschildDifferential",
+      "tauceti:TauCeti.AInfinityAlgebra.hochschildDifferential_eq_brace_sub",
+      "tauceti:TauCeti.AInfinityAlgebra.PositiveHochschild.cochains",
+      "tauceti:TauCeti.AInfinityAlgebra.PositiveHochschild.complex",
+      "tauceti:TauCeti.AInfinityAlgebra.PositiveHochschild.Cohomology",
+      "tauceti:TauCeti.AInfinityAlgebra.PositiveHochschild.cohomologyBracket",
+      "roadmap:DGAInfinity Layer 0",
+      "roadmap:DGAInfinity Layer 1",
+      "roadmap:DGAInfinity Layer 8"
+     ],
+     "api": [
+      {
+       "name": "HochschildHKR.suspendCochain_apply",
+       "role": "evaluation",
+       "statement": "Θf(sa₁⊗…⊗sa_n)=s f(a₁,…,a_n) on degree-zero inputs; Θf is f on the length-n summand of TauCeti.ReducedTensorWords k A and 0 elsewhere."
+      },
+      {
+       "name": "HochschildHKR.bracket_one",
+       "role": "compatibility",
+       "statement": "On C¹, {f,g}=f∘g−g∘f; on HH¹(A,A) the transported bracket is that of Der/Inn from TauCeti.derivationLieAlgebra; on the pinned complex it is the bracket of PositiveHochschild.Cohomology 𝒜 0 = Der_k(A) before the quotient by inner derivations."
+      },
+      {
+       "name": "HochschildHKR.suspendCochain_degree",
+       "role": "evaluation",
+       "statement": "Layer 8's Hochschild cohomology of A sits in Gerstenhaber degrees ≥ −1, the degree −1 part being Z(A); the pinned positive-arity complex sees degrees ≥ 0, its degree-0 cohomology is Der_k(A) (no arity-zero cochains) and its degree-(n−1) cohomology is HH^n(A,A) for n ≥ 2."
+      }
+     ],
+     "tests": [
+      {
+       "name": "susp_n0",
+       "kind": "computation",
+       "statement": "Arity zero (DGAInfinity Layer 8 only): for x∈C⁰, [m,Θx](sa)=s(xa−ax) while Θ(δx)(sa)=s(ax−xa): sign −1."
+      },
+      {
+       "name": "susp_n1",
+       "kind": "computation",
+       "statement": "At the pin (hochschildDifferential_eq_brace_sub, q=0): m{Θf}=s(f(a)b+af(b)), Θf{m}=sf(ab), so [m,Θf](sa⊗sb)=s(f(a)b+af(b)−f(ab))=Θ(δf)(sa⊗sb): sign +1; a uniform sign fails one of n=0, n=1."
+      },
+      {
+       "name": "susp_n2",
+       "kind": "computation",
+       "statement": "At the pin (q=1): m{Θf}(sa⊗sb⊗sc)=s(f(a,b)c−af(b,c)), Θf{m}=s(f(ab,c)−f(a,bc)), [m,Θf]=m{Θf}+Θf{m}=−Θ(δf): sign −1; the model m{F}−F{m} without (−1)^q gives s(a+ac−2ab) for f(a,b)=a on k[x] against δf=a−ac, equal to +Θ(δf) at (x,x,x) and −Θ(δf) at (x,1,x), so not ±Θ(δf) when 2≠0."
+      },
+      {
+       "name": "susp_cup_10",
+       "kind": "computation",
+       "statement": "Arity zero (Layer 8 only): for f∈C¹, y∈C⁰, m{Θf,Θy}(sa)=−s(f(a)y), so Θ(f∪y)=−m{Θf,Θy}; at (1,1) the sign is +1."
+      }
+     ]
+    },
+    {
+     "id": "6.2",
+     "kind": "theorem",
+     "name": "HochschildHKR.cup_comm_homotopy",
+     "statement": "For f∈C^p(A,A), g∈C^q(A,A): g∪f − (−1)^{pq} f∪g = δf∘g + (−1)^q(δ(f∘g) − f∘δg); hence [g]∪[f]=(−1)^{pq}[f]∪[g] on HH^•(A,A).",
+     "hypotheses": [
+      "k a commutative ring",
+      "A a ring with Algebra k A"
+     ],
+     "locator": {
+      "source": "Ginz05",
+      "where": "Proposition 6.6.4, line 1379 (the identity (6.6.3), line 1368, is used with corrected signs); Ger63 §7"
+     },
+     "prerequisites": [
+      "target:5.2",
+      "target:6.1",
+      "roadmap:DGAInfinity Layer 0",
+      "roadmap:DGAInfinity Layer 8",
+      "tauceti:TauCeti.AInfinityAlgebra.hochschildDifferential_eq_brace_sub",
+      "tauceti:TauCeti.AInfinityAlgebra.hochschildDifferential_gerstenhaberBracket",
+      "tauceti:TauCeti.ReducedTensorWords.brace_brace_sub_smul_brace_brace"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "homotopy_11",
+       "kind": "computation",
+       "statement": "At (1,1): f∘δg+δf∘g−δ(f∘g)=f∪g+g∪f; for f=g=∂ on k[x], 2(∂∪∂)=−δ(∂²), whereas Ginz05 (6.6.3) would give δ(∂²)=−2∂a∂b."
+      },
+      {
+       "name": "homotopy_10_01_20",
+       "kind": "computation",
+       "statement": "At (1,0), (0,1) and (2,0) both sides are a↦yf(a)−f(a)y, a↦xg(a)−g(a)x and (a,b)↦yf(a,b)−f(a,b)y."
+      },
+      {
+       "name": "homotopy_kxy",
+       "kind": "compatibility",
+       "statement": "On k[x,y], ∂_x∪∂_y+∂_y∪∂_x=−δ(∂_x∂_y); on k[x], ∂∪∂=−δ(∂^{[2]}) with ∂^{[2]}(x^j)=C(j,2)x^{j−2}."
+      },
+      {
+       "name": "homotopy_leibniz",
+       "kind": "compatibility",
+       "statement": "Adding (−1)^{pq} times the identity with f,g exchanged cancels the cup products and gives δ{f,g}={f,δg}−(−1)^q{δf,g} (using (−1)^{pq+p+q}=−(−1)^{(p−1)(q−1)}), which under 6.1 is the pinned Leibniz rule [m,[F,G]]=[[m,F],G]+(−1)^{|F|}[F,[m,G]] at |F|=p−1, |G|=q−1."
+      }
+     ]
+    },
+    {
+     "id": "6.3",
+     "kind": "theorem",
+     "name": "HochschildHKR.chainComparison",
+     "statement": "There are signs ν_n∈{±1}, ν₀=1, such that a₀⊗a₁⊗…⊗a_n ↦ ν_n a₀⊗sa₁⊗…⊗sa_n is an isomorphism of complexes from C_•(A,A) (degree n in cohomological degree −n, via ComplexShape.embeddingDownNat) to the Hochschild chains of DGAInfinity Layer 8 of A in degree zero; for k-flat A, RefinedTraceMethods §1.1 identifies the homology of the cyclic bar complex with the derived HH_n(A/k) of KTheoryFiniteLocalFields §4.0, so HH_n(A,A) ≅ HH_n(A/k) naturally in A.",
+     "hypotheses": [
+      "k a commutative ring",
+      "A a ring with Algebra k A",
+      "Module.Flat k A for the identification with KTheoryFiniteLocalFields §4.0 through RefinedTraceMethods §1.1"
+     ],
+     "locator": {
+      "source": "Ginz05",
+      "where": "§5.1, lines 963–976; Loday98 §1.1"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "roadmap:DGAInfinity Layer 8",
+      "roadmap:KTheoryFiniteLocalFields §4.0",
+      "roadmap:RefinedTraceMethods §1.1",
+      "mathlib:ComplexShape.embeddingDownNat",
+      "mathlib:HomologicalComplex.extend"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "chaincomp_k",
+       "kind": "degenerate",
+       "statement": "For A=k both complexes have k in each degree with differentials alternating 0 and an isomorphism."
+      },
+      {
+       "name": "chaincomp_Fp_Z",
+       "kind": "non-example",
+       "statement": "For k=ℤ, A=𝔽_p (not flat): classical HH₂=0 while derived HH₂(𝔽_p/ℤ)=𝔽_p (RefinedTraceMethods §§1.1, 1.10)."
+      },
+      {
+       "name": "chaincomp_matrix",
+       "kind": "computation",
+       "statement": "For Mat₂(k), b(E₁₂⊗E₂₁)=E₁₁−E₂₂ corresponds to ν₀(E₁₁−E₂₂), fixing ν₁ as the sign of Layer 8's degree-one differential."
+      }
+     ]
+    },
+    {
+     "id": "6.4",
+     "kind": "theorem",
+     "name": "HochschildHKR.antisymmetrization",
+     "statement": "For commutative R over k: the classical antisymmetrisation ε^cl_n: Ω^n_{R/k}→HH_n(R,R), r₀dr₁∧…∧dr_n ↦ [Σ_σ sgn(σ) r₀⊗r_{σ(1)}⊗…⊗r_{σ(n)}], is a well-defined natural R-linear map and, if R is flat over k, is carried by 6.3 to ν_n ε_n of RefinedTraceMethods §1.9; the classical projection π^cl_n:[r₀⊗…⊗r_n]↦r₀dr₁∧…∧dr_n is well defined and, if R is flat over k, corresponds to ν_n π_n; π^cl_n∘ε^cl_n=n!; ε^cl₁ is the inverse of 3.4; if R is smooth over k, ε^cl_n is an isomorphism for every n. The cycle and π∘b=0 computations hold for every commutative R; flatness enters only the comparison with the derived chains.",
+     "hypotheses": [
+      "k a commutative ring",
+      "R a commutative ring with Algebra k R",
+      "Module.Flat k R for the comparison clauses with RefinedTraceMethods §1.9 in (a) and (b)",
+      "Algebra.Smooth k R for the last assertion (d)"
+     ],
+     "locator": {
+      "source": "Ginz05",
+      "where": "§9.2, lines 2142–2156; AV20 lines 237–243; Loday98 §3.4, Theorem 3.4.4"
+     },
+     "prerequisites": [
+      "target:1.5",
+      "target:3.4",
+      "target:6.3",
+      "roadmap:RefinedTraceMethods §1.9",
+      "gap:smooth-hkr-antisymmetrisation",
+      "mathlib:Algebra.Smooth.flat"
+     ],
+     "api": [
+      {
+       "name": "HochschildHKR.antisymmetrization",
+       "role": "definition",
+       "statement": "ε^cl_n as above, R-linear and natural in k→R."
+      },
+      {
+       "name": "HochschildHKR.projection",
+       "role": "definition",
+       "statement": "π^cl_n as above, well defined on homology because π∘b=0."
+      },
+      {
+       "name": "HochschildHKR.projection_comp_antisymmetrization",
+       "role": "evaluation",
+       "statement": "π^cl_n∘ε^cl_n = n!·id."
+      }
+     ],
+     "tests": [
+      {
+       "name": "antisym_kxy",
+       "kind": "computation",
+       "statement": "For k[x,y], ε^cl₂(dx∧dy)=[1⊗x⊗y−1⊗y⊗x] and π^cl₂ε^cl₂(dx∧dy)=2dx∧dy; over 𝔽₂ the composite is 0 while ε^cl₂(dx∧dy)≠0."
+      },
+      {
+       "name": "antisym_dual_numbers",
+       "kind": "non-example",
+       "statement": "For R=k[x]/(x²), flat not smooth, Ω²=0 while HH₂(R,R)≠0: ε^cl₂ not surjective."
+      },
+      {
+       "name": "antisym_zero",
+       "kind": "degenerate",
+       "statement": "ε^cl₀ is the identity of R=HH₀(R,R)."
+      },
+      {
+       "name": "antisym_Fp_Z",
+       "kind": "non-example",
+       "statement": "For k=ℤ, R=𝔽_p (not flat): Ω^n_{𝔽_p/ℤ}=0 for n≥1 and HH_n(𝔽_p,𝔽_p)=0 for n≥1 (b_n=1 for even n≥2, 0 for odd n), so (a)–(c) hold with both sides zero while derived HH₂(𝔽_p/ℤ)=𝔽_p: only the comparison clauses need flatness."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "7",
+   "title": "Polyvector fields and the cohomological HKR theorem",
+   "targets": [
+    {
+     "id": "7.1",
+     "kind": "construction",
+     "name": "HochschildHKR.evalPairing",
+     "statement": "For commutative R and an R-module M (symmetric bimodule), f ↦ (r₀⊗r₁⊗…⊗r_n ↦ r₀ f(r₁,…,r_n)) is an isomorphism of cochain complexes of R-modules C^•(R,M) ≅ Hom_R(C_•(R,R),M) (ChainComplex.linearYonedaObj), natural in M; the evaluation pairing h_n: HH^n(R,M)→Hom_R(HH_n(R,R),M) is this isomorphism followed by the Kronecker map.",
+     "hypotheses": [
+      "k a commutative ring",
+      "R a commutative ring with Algebra k R",
+      "M an R-module, viewed as a symmetric bimodule"
+     ],
+     "locator": {
+      "source": "HKR62",
+      "where": "§4, lines 284–298 and 352–364"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.2",
+      "target:1.5",
+      "mathlib:ChainComplex.linearYonedaObj",
+      "tauceti:TauCeti.ChainComplex.kronecker",
+      "tauceti:TauCeti.ChainComplex.kronecker_homologyπ",
+      "tauceti:TauCeti.ChainComplex.kronecker_naturality"
+     ],
+     "api": [
+      {
+       "name": "HochschildHKR.evalPairing_apply",
+       "role": "evaluation",
+       "statement": "h_n[f]([Σ r₀⊗r₁⊗…⊗r_n]) = Σ r₀ f(r₁,…,r_n)."
+      },
+      {
+       "name": "HochschildHKR.evalPairing_one",
+       "role": "compatibility",
+       "statement": "h₀ is the identity of M=Hom_R(R,M); under 3.3–3.4, h₁(D)(r₀dr₁)=r₀D(r₁), i.e. KaehlerDifferential.linearMapEquivDerivation."
+      },
+      {
+       "name": "HochschildHKR.evalPairing_natural",
+       "role": "structure",
+       "statement": "h_n is R-linear and natural in M."
+      }
+     ],
+     "tests": [
+      {
+       "name": "eval_symmetric_needed",
+       "kind": "non-example",
+       "statement": "For R=k[x] and the bimodule k with x acting by 1 on the left and 0 on the right, δm(x)=m≠0 while the transpose of b kills r↦r·m, so the chain-level identification needs symmetric M."
+      },
+      {
+       "name": "eval_kx",
+       "kind": "computation",
+       "statement": "For R=k[x], M=R: h₁(∂_x)([1⊗x])=1."
+      },
+      {
+       "name": "eval_k",
+       "kind": "degenerate",
+       "statement": "For R=k both sides vanish in positive degrees and h₀ is the identity."
+      }
+     ]
+    },
+    {
+     "id": "7.2",
+     "kind": "theorem",
+     "name": "HochschildHKR.kronecker_bijective_of_projective_homology",
+     "statement": "For a chain complex X of projective R-modules indexed by ℕ and n with H_i(X) projective for all i<n, the Kronecker map H^i(Hom_R(X,M))→Hom_R(H_i(X),M) is bijective for every R-module M and every i≤n.",
+     "hypotheses": [
+      "R a commutative ring",
+      "X : ChainComplex (ModuleCat R) ℕ with every X_i projective",
+      "H_i(X) projective for i < n",
+      "i ≤ n"
+     ],
+     "locator": {
+      "source": "HKR62",
+      "where": "Lemma 4.1, lines 301–330; AV20 Proposition 1.2, lines 70–74"
+     },
+     "prerequisites": [
+      "tauceti:TauCeti.ChainComplex.kronecker",
+      "tauceti:TauCeti.ChainComplex.kronecker_surjective_of_isSplitMono",
+      "tauceti:TauCeti.ChainComplex.extToHomology",
+      "tauceti:TauCeti.ChainComplex.exact_extToHomology_kronecker",
+      "mathlib:CategoryTheory.Abelian.Ext.eq_zero_of_projective",
+      "mathlib:Module.Projective"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "kronecker_Z2",
+       "kind": "non-example",
+       "statement": "Over ℤ, X = (ℤ --2--> ℤ): H₀=ℤ/2, H¹(Hom(X,ℤ))=ℤ/2 but Hom(H₁,ℤ)=0, so degree one fails without projective H₀."
+      },
+      {
+       "name": "kronecker_deg0",
+       "kind": "degenerate",
+       "statement": "In degree 0 the map is always bijective: H⁰(Hom(X,M))=Hom(X₀/B₀,M)."
+      },
+      {
+       "name": "kronecker_acyclic",
+       "kind": "computation",
+       "statement": "For R --id--> R both sides vanish."
+      }
+     ]
+    },
+    {
+     "id": "7.3",
+     "kind": "theorem",
+     "name": "HochschildHKR.bijective_pairingDual_of_projective",
+     "statement": "For a finite projective R-module P and every n, ⋀[R]^n P is finite projective and exteriorPower.pairingDual R P n is bijective.",
+     "hypotheses": [
+      "R a commutative ring",
+      "P an R-module with Module.Finite R P and Module.Projective R P"
+     ],
+     "locator": {
+      "source": "HKR62",
+      "where": "lines 531–535"
+     },
+     "prerequisites": [
+      "mathlib:exteriorPower.map",
+      "mathlib:exteriorPower.instFinite",
+      "mathlib:exteriorPower.instFree",
+      "mathlib:exteriorPower.pairingDual",
+      "mathlib:exteriorPower.pairingDual_ιMulti_ιMulti",
+      "mathlib:exteriorPower.bijective_pairingDual",
+      "mathlib:Module.Projective",
+      "mathlib:Module.Finite"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "pairing_R2",
+       "kind": "computation",
+       "statement": "(e₁*∧e₂*)(e₁∧e₂)=1 for P=R²."
+      },
+      {
+       "name": "pairing_zero",
+       "kind": "degenerate",
+       "statement": "For P=0, ⋀⁰=R with identity pairing and ⋀^n=0 for n≥1."
+      },
+      {
+       "name": "pairing_infinite",
+       "kind": "non-example",
+       "statement": "For P=R^{(ℕ)} over a field, the alternating form with value 1 on every e_{2i}∧e_{2i+1} has infinite rank and is not in the image: finiteness is needed."
+      }
+     ]
+    },
+    {
+     "id": "7.4",
+     "kind": "definition",
+     "name": "HochschildHKR.PolyvectorFields",
+     "statement": "T^n_{R/k} = ⋀[R]^n (Derivation k R R), T^• the exterior algebra of Der_k(R) over R; τ_n: T^n_{R/k}→Hom_R(Ω^n_{R/k},R), D₁∧…∧D_n ↦ (r₀dr₁∧…∧dr_n ↦ r₀det(D_j(r_i))), is pairingDual composed with ⋀^n of the inverse of KaehlerDifferential.linearMapEquivDerivation; τ_n is bijective when Ω¹ is finite projective, in particular for smooth R.",
+     "hypotheses": [
+      "k a commutative ring",
+      "R a commutative ring with Algebra k R"
+     ],
+     "locator": {
+      "source": "Ginz05",
+      "where": "§6.1, lines 1130–1140; HKR62 Theorem 5.2, line 548"
+     },
+     "prerequisites": [
+      "mathlib:ExteriorAlgebra.exteriorPower",
+      "mathlib:Derivation",
+      "mathlib:Derivation.instModule",
+      "mathlib:exteriorPower.zeroEquiv",
+      "mathlib:exteriorPower.oneEquiv",
+      "mathlib:exteriorPower.pairingDual",
+      "mathlib:KaehlerDifferential.linearMapEquivDerivation",
+      "mathlib:exteriorPower.subsingleton_of_span_eq_top_of_card_lt",
+      "mathlib:Module.FinitePresentation",
+      "mathlib:Algebra.FormallySmooth.projective_kaehlerDifferential",
+      "target:7.3"
+     ],
+     "api": [
+      {
+       "name": "HochschildHKR.polyvectorFields_zero_one",
+       "role": "evaluation",
+       "statement": "T⁰ ≅ R and T¹ ≅ Der_k(R); the wedge product is graded commutative and strictly alternating."
+      },
+      {
+       "name": "HochschildHKR.polyvectorPairing",
+       "role": "definition",
+       "statement": "τ_n as above; τ₀ is the identity of R and τ₁ is the inverse of linearMapEquivDerivation."
+      },
+      {
+       "name": "HochschildHKR.polyvectorPairing_bijective",
+       "role": "structure",
+       "statement": "τ_n is bijective when Ω¹_{R/k} is finite projective, in particular when Algebra.Smooth k R."
+      },
+      {
+       "name": "HochschildHKR.homKaehler_eq_zero",
+       "role": "structure",
+       "statement": "If Ω¹_{R/k} is generated by d elements, Hom_R(Ω^n_{R/k},M)=0 for n>d."
+      }
+     ],
+     "tests": [
+      {
+       "name": "poly_kxy",
+       "kind": "computation",
+       "statement": "For R=k[x,y], T² is free of rank one on ∂_x∧∂_y and τ₂(∂_x∧∂_y)(dx∧dy)=1."
+      },
+      {
+       "name": "poly_char2",
+       "kind": "non-example",
+       "statement": "Over 𝔽₂[x], ∂_x∧∂_x=0 in T²; a signed-coinvariant model would leave a nonzero element of order two."
+      },
+      {
+       "name": "poly_inseparable",
+       "kind": "degenerate",
+       "statement": "For K=𝔽₂(u), R=K[a]/(a²−u), Der_K(R)=R·∂ with ∂a=1 and T²=0."
+      }
+     ]
+    },
+    {
+     "id": "7.5",
+     "kind": "definition",
+     "name": "HochschildHKR.detCocycle",
+     "statement": "For D₁,…,D_n ∈ Der_k(R), ⟨D₁,…,D_n⟩ ∈ C^n(R,R), (r₁,…,r_n) ↦ det(D_j(r_i)); R-multilinear and alternating in the D_j (the unnormalised HKR map T^n→C^n(R,R)), a derivation in each r_i, a normalised cocycle, ⟨D⟩=D for n=1, ⟨⟩=1 for n=0, ⟨D₁,…,D_n⟩=Σ_σ sgn(σ) D_{σ(1)}∪…∪D_{σ(n)}, injective on cochains when Ω¹ is finite projective; Φ^n_HKR=(1/n!)⟨…⟩ when n! is invertible in k.",
+     "hypotheses": [
+      "k a commutative ring",
+      "R a commutative ring with Algebra k R",
+      "n! invertible in k for Φ^n_HKR"
+     ],
+     "locator": {
+      "source": "Ginz05",
+      "where": "§9.2, lines 2101–2156; HKR62 lines 509–521"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:2.2",
+      "target:5.1",
+      "target:6.2",
+      "target:7.4",
+      "mathlib:Matrix.det",
+      "mathlib:Derivation"
+     ],
+     "api": [
+      {
+       "name": "HochschildHKR.hkrMap",
+       "role": "definition",
+       "statement": "The unnormalised HKR map T^n_{R/k}→Z^n(R,R) induced by ⟨…⟩, and Φ^n_HKR=(1/n!)⟨…⟩ when n! is a unit."
+      },
+      {
+       "name": "HochschildHKR.detCocycle_eval",
+       "role": "evaluation",
+       "statement": "For flat R, h_n[⟨D₁,…,D_n⟩](ε^cl_n(r₀dr₁∧…∧dr_n)) = n! r₀ det(D_j(r_i)) and h_n[D₁∪…∪D_n](ε^cl_n(…)) = r₀ det(D_j(r_i))."
+      },
+      {
+       "name": "HochschildHKR.detCocycle_mem_cocycles",
+       "role": "structure",
+       "statement": "A cochain that is a derivation in each argument is a normalised Hochschild cocycle for commutative R."
+      },
+      {
+       "name": "HochschildHKR.detCocycle_class",
+       "role": "evaluation",
+       "statement": "For every commutative R, [⟨D₁,…,D_n⟩] = n!·[D₁∪…∪D_n] in HH^n(R,R), by graded commutativity (6.2)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "det_kxy",
+       "kind": "computation",
+       "statement": "⟨∂_x,∂_y⟩(x,y)=1, ⟨∂_x,∂_y⟩(y,x)=−1; the product cochain gives 1 and 0 and is not alternating: (∂_x∪∂_x)(x,x)=1 while ⟨∂_x,∂_x⟩=0."
+      },
+      {
+       "name": "det_char2",
+       "kind": "non-example",
+       "statement": "On 𝔽₂[x,y], ⟨∂_x,∂_y⟩=δ(∂_x∂_y) since δ(D₁D₂)(a,b)=−(D₁aD₂b+D₂aD₁b): a nonzero cocycle with zero class."
+      },
+      {
+       "name": "det_n1",
+       "kind": "degenerate",
+       "statement": "For n=1 the map is D↦D."
+      }
+     ]
+    },
+    {
+     "id": "7.6",
+     "kind": "theorem",
+     "name": "HochschildHKR.cohomological_hkr",
+     "statement": "For Algebra.Smooth k R and Module.Projective k R: (1) h_n is an isomorphism and HH^n(R,M) ≅ Hom_R(Ω^n_{R/k},M) naturally in every R-module M; (2) Ψ_n: T^n_{R/k}→HH^n(R,R), D₁∧…∧D_n ↦ [D₁∪…∪D_n], is a well-defined R-linear isomorphism equal to τ_n followed by the inverse of (1), and ⊕Ψ_n:(T^•,∧)≅(HH^•(R,R),∪) is an isomorphism of graded R-algebras; (3) [⟨D₁,…,D_n⟩]=n!·Ψ_n(D₁∧…∧D_n); (4) if n! is invertible in k, [Φ^n_HKR(ξ)]=Ψ_n(ξ), and for ℚ⊆k the maps Φ_HKR give the algebra isomorphism; (5) if Ω¹ is generated by d elements, HH^n(R,M)=0 for n>d.",
+     "hypotheses": [
+      "k a commutative ring",
+      "R a commutative ring with Algebra k R",
+      "Algebra.Smooth k R",
+      "Module.Projective k R",
+      "M an R-module"
+     ],
+     "locator": {
+      "source": "HKR62",
+      "where": "Theorem 5.1, line 522; Lemma 4.1, line 301; line 495; lines 528–546; Theorem 5.2, line 548"
+     },
+     "prerequisites": [
+      "target:1.5",
+      "target:4.2",
+      "target:5.2",
+      "target:6.4",
+      "target:7.1",
+      "target:7.2",
+      "target:7.3",
+      "target:7.4",
+      "target:7.5",
+      "gap:smooth-hkr-antisymmetrisation",
+      "mathlib:Algebra.Smooth",
+      "mathlib:Algebra.Smooth.flat",
+      "mathlib:Module.Projective.tensorProduct",
+      "mathlib:Module.FinitePresentation",
+      "mathlib:Algebra.FormallySmooth.projective_kaehlerDifferential"
+     ],
+     "api": [
+      {
+       "name": "HochschildHKR.hkrCanonical",
+       "role": "definition",
+       "statement": "Ψ_n as in (2), well defined because [D₁∪…∪D_n] vanishes when two D's coincide (by (1) and the evaluation formula)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "hkr_field",
+       "kind": "compatibility",
+       "statement": "For k a field and R smooth of finite type, k-projectivity is automatic: Ginz05 Theorem 9.1.3, and HKR62 Theorem 5.2 for k perfect."
+      },
+      {
+       "name": "hkr_F2xy",
+       "kind": "computation",
+       "statement": "For 𝔽₂[x,y], Ψ₂(∂_x∧∂_y)=[∂_x∪∂_y]≠0 (pairs to 1 with ε^cl₂(dx∧dy)), while [⟨∂_x,∂_y⟩]=0."
+      },
+      {
+       "name": "hkr_Z_half",
+       "kind": "non-example",
+       "statement": "ℤ→ℤ[1/2] is étale but ℤ[1/2] is not ℤ-projective: smoothness does not imply k-projectivity; the conclusion holds here (HH^n=0, Der=0)."
+      },
+      {
+       "name": "hkr_inseparable",
+       "kind": "non-example",
+       "statement": "For R=𝔽₂(u)[a]/(a²−u), not smooth, T²=0 but HH²(R,R) ≅ R/(2a)=R≠0 (two-periodic resolution); HKR62 lines 569–582."
+      },
+      {
+       "name": "hkr_kx",
+       "kind": "degenerate",
+       "statement": "For R=k[x], HH¹≅R·∂, HH²=0 and [∂∪∂]=0."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "8",
+   "title": "Polynomial algebras through the Koszul resolution",
+   "targets": [
+    {
+     "id": "8.1",
+     "kind": "theorem",
+     "name": "HochschildHKR.diagonal_isWeaklyRegular",
+     "statement": "For R=MvPolynomial (Fin m) k, the elements t_i = X_i⊗1−1⊗X_i of Rᵉ=R⊗[k]R form a weakly regular sequence and generate the kernel of multiplication Rᵉ→R.",
+     "hypotheses": [
+      "k a commutative ring",
+      "m : ℕ"
+     ],
+     "locator": {
+      "source": "HKR62",
+      "where": "lines 268–279; Ginz05 Lemma 9.3.1, line 2187"
+     },
+     "prerequisites": [
+      "mathlib:MvPolynomial",
+      "mathlib:Algebra.TensorProduct",
+      "mathlib:RingTheory.Sequence.IsWeaklyRegular"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "diag_m0",
+       "kind": "degenerate",
+       "statement": "m=0: empty sequence, Rᵉ=k, kernel 0."
+      },
+      {
+       "name": "diag_m1",
+       "kind": "computation",
+       "statement": "m=1: X⊗1−1⊗X is a nonzerodivisor in k[X,Y] for nonzero k."
+      },
+      {
+       "name": "diag_dual_numbers",
+       "kind": "non-example",
+       "statement": "For k[x]/(x²), (x⊗1−1⊗x)(x⊗1+1⊗x)=0 with x⊗1+1⊗x≠0."
+      }
+     ]
+    },
+    {
+     "id": "8.2",
+     "kind": "construction",
+     "name": "HochschildHKR.koszulBimoduleResolution",
+     "statement": "The Koszul complex (DerivedModuleAlgebra §0.K.1) of (t₁,…,t_m) in Rᵉ, augmented by multiplication, is a projective resolution of R=MvPolynomial (Fin m) k in ModuleCat Rᵉ of length m with K_j=⋀^j (Rᵉ)^m free of rank C(m,j), for every k; R⊗_{Rᵉ}K and Hom_{Rᵉ}(K,R) have zero differential.",
+     "hypotheses": [
+      "k a commutative ring",
+      "m : ℕ"
+     ],
+     "locator": {
+      "source": "HKR62",
+      "where": "lines 268–279; Ginz05 §9.3, lines 2187–2197"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "target:8.1",
+      "roadmap:DerivedModuleAlgebra §0.K.1",
+      "mathlib:CategoryTheory.ProjectiveResolution"
+     ],
+     "api": [
+      {
+       "name": "HochschildHKR.koszul_d",
+       "role": "evaluation",
+       "statement": "d(e_i)=t_i and d(e_i∧e_j)=t_i e_j − t_j e_i."
+      },
+      {
+       "name": "HochschildHKR.koszul_tor_ext",
+       "role": "structure",
+       "statement": "Tor_j^{Rᵉ}(R,R) ≅ ⋀^j R^m and Ext^j_{Rᵉ}(R,R) ≅ ⋀^j(R^m)^*."
+      },
+      {
+       "name": "HochschildHKR.koszul_natural",
+       "role": "structure",
+       "statement": "Natural in the ground ring k."
+      }
+     ],
+     "tests": [
+      {
+       "name": "koszul_m1",
+       "kind": "computation",
+       "statement": "m=1: 0→Rᵉ --t--> Rᵉ→R→0 is exact."
+      },
+      {
+       "name": "koszul_m0",
+       "kind": "degenerate",
+       "statement": "m=0: K=k in degree zero."
+      },
+      {
+       "name": "koszul_dual_numbers",
+       "kind": "non-example",
+       "statement": "The same complex for k[x]/(x²) is not exact in degree one."
+      }
+     ]
+    },
+    {
+     "id": "8.3",
+     "kind": "construction",
+     "name": "HochschildHKR.koszulToBar",
+     "statement": "ι: K(R)→B_•(R), ι_j(e_{i₁}∧…∧e_{i_j}) = Σ_σ sgn(σ) 1⊗X_{i_{σ(1)}}⊗…⊗X_{i_{σ(j)}}⊗1, is a chain map over id_R and a homotopy equivalence of projective resolutions.",
+     "hypotheses": [
+      "k a commutative ring",
+      "m : ℕ"
+     ],
+     "locator": {
+      "source": "Ginz05",
+      "where": "§9.2, lines 2142–2150; HKR62 lines 448–466"
+     },
+     "prerequisites": [
+      "target:4.2",
+      "target:8.2",
+      "mathlib:CategoryTheory.ProjectiveResolution",
+      "tauceti:CategoryTheory.ProjectiveResolution.isoExt_hom_comp_homologyMap"
+     ],
+     "api": [
+      {
+       "name": "HochschildHKR.koszulToBar_comm",
+       "role": "structure",
+       "statement": "ι commutes with augmentations and differentials; R⊗_{Rᵉ}ι sends e_I to the antisymmetrised chain."
+      },
+      {
+       "name": "HochschildHKR.barToKoszul",
+       "role": "constructor",
+       "statement": "A homotopy inverse ρ:B_•(R)→K(R) over the identity exists, unique up to homotopy."
+      },
+      {
+       "name": "HochschildHKR.koszulToBar_natural",
+       "role": "structure",
+       "statement": "ι is natural in the ground ring."
+      }
+     ],
+     "tests": [
+      {
+       "name": "koszulToBar_j1",
+       "kind": "computation",
+       "statement": "b'(1⊗X_i⊗1)=X_i⊗1−1⊗X_i=ι(d e_i)."
+      },
+      {
+       "name": "koszulToBar_j2",
+       "kind": "non-example",
+       "statement": "b'(ι(e₁∧e₂))=t₁·(1⊗X₂⊗1)−t₂·(1⊗X₁⊗1)=ι(d(e₁∧e₂)); without sgn(σ) the map is not a chain map."
+      },
+      {
+       "name": "koszulToBar_m0",
+       "kind": "degenerate",
+       "statement": "m=0: ι is the identity of k."
+      }
+     ]
+    },
+    {
+     "id": "8.4",
+     "kind": "theorem",
+     "name": "HochschildHKR.polynomial_cohomology_basis",
+     "statement": "For R=MvPolynomial (Fin m) k over any commutative k: HH_n(R,R) is free with basis the classes ε^cl_n(dX_I), HH^n(R,R) is free with basis [∂_{i₁}∪…∪∂_{i_n}] (∂_i=MvPolynomial.pderiv i), the bases are dual under h_n, and HH_n=HH^n=0 for n>m; hence ε^cl_n is an isomorphism and D₁∧…∧D_n ↦ [D₁∪…∪D_n] is a well-defined isomorphism T^n_{R/k} ≅ HH^n(R,R) for polynomial algebras, without the smooth HKR input.",
+     "hypotheses": [
+      "k a commutative ring",
+      "m : ℕ"
+     ],
+     "locator": {
+      "source": "HKR62",
+      "where": "lines 268–279 (the Koszul-resolution computation inside the proof of Theorem 3.1; Theorem 3.1 itself, line 210, assumes Noetherian regular rings); Ginz05 Lemma 9.3.1, line 2187; Loday98 §3.2; Weibel94 §9.4"
+     },
+     "prerequisites": [
+      "target:4.4",
+      "target:4.5",
+      "target:6.2",
+      "target:6.4",
+      "target:7.1",
+      "target:7.4",
+      "target:7.5",
+      "target:8.2",
+      "target:8.3",
+      "mathlib:MvPolynomial.pderiv",
+      "mathlib:CategoryTheory.ProjectiveResolution.isoLeftDerivedObj",
+      "tauceti:CategoryTheory.ProjectiveResolution.isoExt_hom_comp_homologyMap"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "8.5",
+     "kind": "theorem",
+     "name": "HochschildHKR.polynomial_top_degree",
+     "statement": "For R=MvPolynomial (Fin m) k, g∈R: ⟨g∂₁,∂₂,…,∂_m⟩(r₁,…,r_m)=g·det(∂_j r_i), its class is m!·g·[∂₁∪…∪∂_m], HH^m(R,R) is free of rank one on [∂₁∪…∪∂_m], and for m! invertible Φ^m_HKR(g∂₁∧…∧∂_m)(r)=(g/m!)det(∂_j r_i) with class g·[∂₁∪…∪∂_m].",
+     "hypotheses": [
+      "k a commutative ring",
+      "m : ℕ",
+      "m! invertible in k for the normalised statement"
+     ],
+     "locator": {
+      "source": "Ginz05",
+      "where": "§9.2, lines 2142–2156; HKR62 line 495 (the product formula) with the class identity of 7.5; HKR62 Theorem 5.2, line 548, is the perfect-field case"
+     },
+     "prerequisites": [
+      "target:7.5",
+      "target:8.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "top_m2",
+       "kind": "computation",
+       "statement": "m=2, r₁=X₁², r₂=X₂: det=2X₁, normalised value gX₁ when 2 is invertible."
+      },
+      {
+       "name": "top_m1",
+       "kind": "degenerate",
+       "statement": "m=1: ⟨g∂⟩=g∂ with class g[∂]."
+      },
+      {
+       "name": "top_char2",
+       "kind": "non-example",
+       "statement": "Over 𝔽₂, ⟨∂₁,∂₂⟩=δ(∂₁∂₂) is a nonzero coboundary while [∂₁∪∂₂] generates HH²."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "DGAInfinity",
+   "sections": [
+    "Layer 0",
+    "Layer 1",
+    "Layer 8"
+   ],
+   "what": "Suspension and Koszul sign conventions, the multiple brace and the brace relation (Layer 0; the single brace and the Gerstenhaber bracket are the pinned TauCeti.ReducedTensorWords.brace and gerstenhaberBracket); an algebra as a DG algebra in degree zero (Layer 1); Hochschild cochains in all arities including arity zero, the cup product as the multiple brace m{F,G}, the bracket and [m,−] on the full complex, and Hochschild chains of DG algebras (Layer 8; in positive arities these are the pinned TauCeti.AInfinityAlgebra.PositiveHochschild.cochains with TauCeti.AInfinityAlgebra.hochschildDifferential)."
+  },
+  {
+   "roadmap": "DerivedModuleAlgebra",
+   "sections": [
+    "§0.K.1"
+   ],
+   "what": "Koszul complex of a finite sequence in a commutative ring and its acyclicity for weakly regular sequences."
+  },
+  {
+   "roadmap": "KTheoryFiniteLocalFields",
+   "sections": [
+    "§4.0"
+   ],
+   "what": "Derived Hochschild chains HH_n(A/k) of ordinary algebras built on DGAInfinity Layer 8 and the smooth HKR comparison in homology (Cyclic homology foundations)."
+  },
+  {
+   "roadmap": "RefinedTraceMethods",
+   "sections": [
+    "§1.1",
+    "§1.9"
+   ],
+   "what": "For k-flat A, the derived Hochschild homology HH_n(A/k) of KTheoryFiniteLocalFields §4.0 is the homology of the cyclic bar complex (C_•(A/k), b) (§1.1); the antisymmetrisation ε_n, projection π_n, π_n ε_n = n!, multiplicativity of ε and the isomorphism ε₁ on derived Hochschild chains (§1.9)."
+  }
+ ],
+ "consumers": [],
+ "gaps": [
+  {
+   "slug": "smooth-hkr-antisymmetrisation",
+   "title": "The smooth HKR isomorphism is the antisymmetrisation map",
+   "neededBy": [
+    "6.4",
+    "7.6"
+   ],
+   "detail": "RefinedTraceMethods §1.9 names ε_n and proves π_n ε_n = n! and that ε₁ is an isomorphism; KTheoryFiniteLocalFields §4.0 asserts HH_n(A/k) ≅ Ω^n_{A/k} for smooth A without naming the map. The cohomological HKR theorem needs ε_n itself to be an isomorphism over every commutative base, which in characteristic p ≤ n does not follow from π_n ε_n = n!.",
+   "needs": "A statement that ε_n : Ω^n_{A/k} → HH_n(A/k) is an isomorphism for every n, every commutative ring k and every smooth commutative k-algebra A, identified with the smooth HKR comparison of KTheoryFiniteLocalFields §4.0.",
+   "supplier": "RefinedTraceMethods",
+   "section": "§1.9"
+  }
+ ]
+}
