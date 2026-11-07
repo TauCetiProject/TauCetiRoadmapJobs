@@ -17,7 +17,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v3; locators use its printed pagination"
-cited_for = ["U0", "U1", "U2", "U6", "U7", "U8", "U9"]
+cited_for = ["§0.2", "§0.7", "§1.1", "§1.2", "§1.3", "§1.4", "§1.5", "§2.1", "§2.2", "§2.3", "§2.4", "§2.5", "§6.1", "§6.7", "§7.3", "§7.5", "§7.8", "§7.9", "§7.10", "§8.6", "§9.4", "§9.7", "§9.10"]
 
 [[source]]
 id = "Zhang21"
@@ -35,7 +35,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v3 read and checked for the section, equation, footnote and lemma numbers cited; the page numbers cited are those of the published version, Annals of Mathematics 193 (2021), 863–978"
-cited_for = ["U0", "U1", "U6", "U7", "U9"]
+cited_for = ["§0.7", "§1.1", "§1.4", "§1.6", "§6.1", "§6.5", "§7.1", "§7.2", "§9.3", "§9.7", "§9.8"]
 
 [[source]]
 id = "LL22"
@@ -53,7 +53,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "author copy dated 16 January 2022 (published in Forum of Mathematics, Pi 10 (2022), e5); locators use its numbering and pagination. arXiv:2101.09485v2 numbers differently: its Lemma 2.6 is Lemma 2.4 here and it assumes representability as Hypothesis 2.4"
-cited_for = ["U3", "U4", "U6", "U7", "U9"]
+cited_for = ["§0.3", "§3.1", "§3.2", "§3.3", "§3.4", "§3.5", "§3.6", "§3.7", "§4.1", "§4.2", "§4.3", "§4.4", "§4.5", "§4.6", "§6.2", "§6.4", "§6.6", "§7.4", "§7.7", "§8.5", "§9.6", "§9.8"]
 
 [[source]]
 id = "LL21"
@@ -71,7 +71,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "author final copy (published in Annals of Mathematics 194 (2021)); locators use its pagination"
-cited_for = ["U6", "U9"]
+cited_for = ["§6.2", "§6.3", "§6.4", "§9.8"]
 
 [[source]]
 id = "HLSY23"
@@ -89,7 +89,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2; locators are for this version"
-cited_for = ["U5", "U7", "U9"]
+cited_for = ["§5.1", "§5.2", "§5.3", "§5.4", "§5.5", "§5.7", "§5.8", "§5.9", "§7.8", "§7.10", "§9.9"]
 
 [[source]]
 id = "LTXZZ22"
@@ -107,7 +107,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v3, whose theorem and definition numbering agrees with the published version (Inventiones Mathematicae 228 (2022), 107–375) for the items cited; the page numbers cited are those of the published version"
-cited_for = ["U6", "U8"]
+cited_for = ["§8.1", "§8.2", "§8.3", "§8.4", "§8.5", "§8.7"]
 
 [[source]]
 id = "RSZ20"
@@ -125,7 +125,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v6; locators use its printed pages"
-cited_for = ["U6", "U7", "U9"]
+cited_for = ["§6.5", "§6.8", "§7.3", "§7.7", "§9.4"]
 
 [[source]]
 id = "RSZ21"
@@ -143,7 +143,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "author copy dated 16 April 2020 (published in Pure and Applied Mathematics Quarterly 17 (2021)); locators use its pagination"
-cited_for = ["U6", "U7", "U9"]
+cited_for = ["§5.5", "§5.7", "§6.5", "§6.6", "§6.7", "§7.3", "§7.4", "§7.5", "§7.6", "§7.7", "§7.8", "§7.10", "§9.9"]
 
 [[source]]
 id = "Mih19"
@@ -161,7 +161,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2"
-cited_for = ["U0", "U6"]
+cited_for = ["§0.1", "§0.3", "§0.4", "§0.5", "§0.6", "§6.5"]
 
 [[source]]
 id = "Cho18"
@@ -179,7 +179,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1"
-cited_for = ["U2", "U7", "U9"]
+cited_for = ["§2.1", "§2.2", "§9.7"]
 
 [[source]]
 id = "Howard19"
@@ -197,7 +197,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2 (published in Forum Mathematicum 31 (2019))"
-cited_for = ["U5"]
+cited_for = ["§5.2", "§5.3", "§5.7"]
 
 [[source]]
 id = "Wu16"
@@ -215,7 +215,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2; ground field ℚ_p"
-cited_for = ["U3"]
+cited_for = ["§3.7"]
 
 [[source]]
 id = "Kraemer03"
@@ -234,7 +234,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1; Theorem 4.5 assumes n≥3"
-cited_for = ["U5"]
+cited_for = ["§5.6"]
 
 [[source]]
 id = "LRZ26"
@@ -252,7 +252,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2"
-cited_for = ["U2", "U9"]
+cited_for = ["§2.5", "§9.10"]
 
 [[source]]
 id = "RZ17"
@@ -271,7 +271,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2; locators use its pagination"
-cited_for = ["U6", "U7"]
+cited_for = ["§6.5", "§7.9"]
 
 [[source]]
 id = "RZ96"
@@ -289,7 +289,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "author-hosted scan of the Princeton book; locators use the printed page numbers"
-cited_for = ["U0", "U7", "U8", "U9"]
+cited_for = ["§0.2", "§1.2", "§7.2", "§7.7", "§8.3", "§9.1", "§9.2", "§9.3", "§9.5", "§9.6", "§9.9"]
 
 [[source]]
 id = "Stacks"
@@ -305,4 +305,4 @@ sha256 = "0bebe1d93baa7e4e99cb4f36fe50c7bcb6094772b8a2f760885a492892eca75f"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["U7/localized-smoothness", "U7/exotic-global-smoothness", "U8/smooth-geometry-tangent", "U8/asd-completed-local-rings"]
+cited_for = ["§7.2", "§7.7", "§8.3", "§8.7"]
