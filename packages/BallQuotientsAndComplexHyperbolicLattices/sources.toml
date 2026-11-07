@@ -5,10 +5,10 @@ roadmap = "BallQuotientsAndComplexHyperbolicLattices"
 id = "BaldiUllmo2023"
 authors = "Gregorio Baldi, Emmanuel Ullmo"
 title = "Special subvarieties of non-arithmetic ball quotients and Hodge Theory"
-year = 2020
+year = 2023
 arxiv = "2005.03524v4"
 locator_scheme = "theorem"
-locator = "Theorem 1.2.1, Theorem 1.2.2, Definition 3.1.12"
+locator = "Theorems 1.2.1, 1.2.2, 1.3.2; Definitions 3.1.3-3.1.14; Theorem 3.1.12; §§3.2-3.4 (Definition 3.3.4, Theorem 3.3.5, Theorem 3.4.3, Corollary 3.4.6); Corollary 5.5.2"
 url = "https://arxiv.org/abs/2005.03524v4"
 fetched_from = "https://arxiv.org/pdf/2005.03524v4"
 fetched_at = "2026-11-04T13:57:26Z"
@@ -16,19 +16,19 @@ sha256 = "f98c3143a77ed8ddc074b8045defc72c201c0892c10c00b4d33fe5c7f45fdfaf"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
-version_note = "arXiv v4"
-cited_for = ["Final targets: ball quotient, totally geodesic subvarieties"]
+version_note = "arXiv v4 (22 September 2023), the text read and the numbering cited; its Appendix A is an erratum on the published version, whose year the key records; the first arXiv version is of 2020."
+cited_for = ["1.1", "1.2", "1.3", "1.5", "2.2", "3.1", "3.3", "4.2", "4.4", "5.1", "5.3", "6.1", "6.4", "7.1", "8.1", "8.2", "8.3", "8.5", "9.5", "10.4", "10.5", "10.6", "11.1", "11.2", "11.3", "11.4", "11.5", "12.1", "12.2", "12.3", "12.4", "Downstream consumers"]
 
 [[source]]
 id = "Deng2020"
 authors = "Ya Deng"
 title = "Big Picard theorems and algebraic hyperbolicity for varieties admitting a variation of Hodge structures"
 year = 2020
-venue = "Ãpijournal de GÃ©omÃ©trie AlgÃ©brique, Volume 7 (April 24, 2023) epiga:8393"
+venue = "Épijournal de Géométrie Algébrique, Volume 7 (2023), epiga:8393"
 doi = "10.46298/epiga.2023.volume7.8393"
 arxiv = "2001.04426v5"
 locator_scheme = "theorem"
-locator = "Theorem A"
+locator = "Theorem A; Corollary 1.2; Corollary C"
 url = "https://arxiv.org/abs/2001.04426v5"
 fetched_from = "https://arxiv.org/pdf/2001.04426v5"
 fetched_at = "2026-11-04T13:57:31Z"
@@ -36,8 +36,8 @@ sha256 = "585514f346e0a150d07ca8b97fb83a2e7a759a8910061382341cdf1d6d75f2f9"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
-version_note = "arXiv v5"
-cited_for = ["Uniqueness of the quasi-projective model in the non-arithmetic case"]
+version_note = "arXiv v5 (20 April 2023), the final version of the Épijournal article, the text read and the numbering cited; the first arXiv version is of 2020, the year the key records."
+cited_for = ["10.1", "10.3", "Downstream consumers"]
 
 [[source]]
 id = "DeligneMostow1986"
@@ -47,7 +47,7 @@ year = 1986
 venue = "Publications Mathématiques de l'IHÉS 63"
 doi = "10.1007/BF02831622"
 locator_scheme = "section"
-locator = "§§1-3, §10-§11 (non-arithmetic lattices)"
+locator = "Introduction (pp. 7-8: Theorems (11.4), (12.11) and the lists of §14)"
 url = "http://www.numdam.org/item/PMIHES_1986__63__5_0/"
 fetched_from = "https://www.numdam.org/item/PMIHES_1986__63__5_0.pdf"
 fetched_at = "2026-11-04T13:58:01Z"
@@ -55,7 +55,7 @@ sha256 = "d9850f70ab2fecbd5f7294497ccaeb89c8f1dfe641be8ed762a2c2118ceadd3b"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
-cited_for = ["Existence of non-arithmetic lattices in PU(1,n), n=2,3"]
+cited_for = ["Layer 5 Examples", "11.1", "11.4"]
 
 [[source]]
 id = "Borel1972"
@@ -71,15 +71,15 @@ licence_class = "open-repository"
 status = "uncertified"
 accessed = "2026-11-04"
 version_note = "Project Euclid open content; the automated fetch received a bot-protection page instead of the PDF, so the text was not read. Cited by locator; the statement is also quoted in MilneSVI, Theorem 3.14 and Lemma 3.15."
-cited_for = ["Borel extension theorem, arithmetic case of uniqueness"]
+cited_for = ["10.2"]
+
 [[source]]
 id = "MilneSVI"
 authors = "James S. Milne"
 title = "Introduction to Shimura Varieties"
 year = 2017
-version_note = "Author's revised version of September 16, 2017 (original 2004); numbering unchanged from the published version."
 locator_scheme = "theorem"
-locator = "Theorem 3.12, Theorem 3.14, Lemma 3.15, Corollary 3.16"
+locator = "Theorem 3.12, Remark 3.13, Theorem 3.14, Lemma 3.15, Corollary 3.16 (pp. 38-40)"
 url = "https://jmilne.org/math/xnotes/svi.pdf"
 fetched_from = "https://jmilne.org/math/xnotes/svi.pdf"
 fetched_at = "2026-11-04T13:58:36Z"
@@ -87,22 +87,23 @@ sha256 = "f637e61735ff9cf9730c43d978d8f05185685a37d5e1920fc3347061c83d7c7e"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
-cited_for = ["Statements of Baily-Borel and Borel's extension theorem in the arithmetic case"]
+version_note = "Author's revised version of September 16, 2017 (original 2004); numbering unchanged from the published version."
+cited_for = ["Exact supplier contracts (gap:normality-analytification)", "9.3", "9.5", "9.6", "10.2", "10.3", "10.4", "10.5", "11.3", "11.4"]
 
 [[source]]
 id = "Raghunathan1972"
 authors = "M. S. Raghunathan"
 title = "Discrete Subgroups of Lie Groups"
 year = 1972
+venue = "Ergebnisse der Mathematik und ihrer Grenzgebiete 68, Springer"
 doi = "10.1007/978-3-642-86426-1"
 locator_scheme = "chapter"
-locator = "Ch. I-II (lattices, finite generation), Ch. VI Theorem 6.15"
+locator = "Ch. VIII (Zassenhaus neighbourhoods, Auslander's theorem); Ch. XIII (fundamental domains for lattices in real rank one)"
 url = "https://doi.org/10.1007/978-3-642-86426-1"
-venue = "Ergebnisse der Mathematik und ihrer Grenzgebiete 68, Springer"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Definition of lattices, finite generation"]
+cited_for = ["4.4", "4.5", "6.1", "6.2"]
 
 [[source]]
 id = "Mostow1980"
@@ -112,7 +113,7 @@ year = 1980
 venue = "Pacific Journal of Mathematics 86 (1980), no. 1, 171-276"
 doi = "10.2140/pjm.1980.86.171"
 locator_scheme = "section"
-locator = "§§1-2, §§17-18 (non-arithmetic lattices in PU(2,1))"
+locator = "Theorem A (§17.3), Theorem 17.3"
 url = "https://msp.org/pjm/1980/86-1/pjm-v86-n1-p11-s.pdf"
 fetched_from = "https://msp.org/pjm/1980/86-1/pjm-v86-n1-p11-s.pdf"
 fetched_at = "2026-11-04T13:59:25Z"
@@ -120,7 +121,7 @@ sha256 = "d67d4ee4224f822dea7b52e52d727e0b8b21bd65d3d38d5b5756c33c608e9582"
 licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-04"
-cited_for = ["Existence of non-arithmetic lattices in PU(1,2)"]
+cited_for = ["Layer 5 Examples", "11.1"]
 
 [[source]]
 id = "Mok2012"
@@ -129,9 +130,8 @@ title = "Projective algebraicity of minimal compactifications of complex-hyperbo
 year = 2012
 venue = "Perspectives in Analysis, Geometry, and Topology, Progress in Mathematics 296, Birkhäuser, 331-354"
 doi = "10.1007/978-0-8176-8277-4_14"
-version_note = "Read in the HKU IMR preprint IMR2009-4 from the author's page; theorem numbers are those of the preprint."
 locator_scheme = "theorem"
-locator = "Main Theorem (projective algebraicity of the minimal compactification)"
+locator = "§§1.1-1.3, Proposition 1, Theorem 1, Theorem 2, Main Theorem"
 url = "http://hkumath.hku.hk/~imr/IMRPreprintSeries/2009/IMR2009-4.pdf"
 fetched_from = "https://hkumath.hku.hk/~imr/IMRPreprintSeries/2009/IMR2009-4.pdf"
 fetched_at = "2026-11-04T13:59:42Z"
@@ -139,7 +139,21 @@ sha256 = "b58f532608a5b69c47a683cdf1b0b4e7bcf154757c92b98d457a57063fa2ff4a"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-04"
-cited_for = ["Algebraicity of finite-volume ball quotients, general (non-arithmetic) case"]
+version_note = "Read in the HKU IMR preprint IMR2009-4 from the author's page; theorem numbers are those of the preprint."
+cited_for = ["1.3", "1.5", "1.6", "2.2", "2.3", "4.1", "4.2", "4.3", "4.4", "4.5", "6.1", "7.2", "7.4", "8.1", "8.2", "8.3", "8.4", "8.5", "9.1", "9.2", "9.3", "9.4", "9.5", "11.4", "Downstream consumers"]
+
+[[source]]
+id = "Borel1969"
+authors = "Armand Borel"
+title = "Introduction aux groupes arithmétiques"
+year = 1969
+venue = "Publications de l'Institut de Mathématique de l'Université de Strasbourg XV, Actualités Scientifiques et Industrielles 1341, Hermann, Paris"
+locator_scheme = "section"
+locator = "§17, Corollary 17.7 (p. 119): finitely generated linear groups in characteristic 0 have finite-index subgroups whose elements have no nontrivial root of unity among their eigenvalues"
+licence_class = "none"
+status = "uncertified"
+version_note = "Printed book, not available in an open repository; cited by its locator without the text, as WitteMorris2015 line 3445 cites it for the eigenvalue form of Theorem 4.8.4 (Remark 4.8.5(2,3)); the text was not requested."
+cited_for = ["6.3"]
 
 [[source]]
 id = "Alperin1987"
@@ -155,15 +169,16 @@ licence_class = "institutional"
 status = "uncertified"
 accessed = "2026-11-04"
 version_note = "e-periodica (institutional repository); the automated fetch received a bot-verification page instead of the article, so the text was not read. Cited by locator; Selberg's lemma is read in WitteMorris2015, Theorem 4.8.2."
-cited_for = ["Selberg's lemma"]
+cited_for = ["6.3"]
+
 [[source]]
 id = "WitteMorris2015"
 authors = "Dave Witte Morris"
 title = "Introduction to Arithmetic Groups"
-year = 2001
+year = 2015
 arxiv = "math/0106063v6"
 locator_scheme = "section"
-locator = "§4.1 (lattices), §4.7 (finite generation), §4.8 (Selberg's lemma), §5.1 (arithmetic subgroups), §5.2 (Margulis arithmeticity)"
+locator = "Definitions 4.1.9, 4.1.16; Proposition 4.1.11; Propositions 4.7.4, 4.7.7; Corollary 4.7.5; Theorem 4.7.10; Remark 4.7.11; Theorems 4.8.2, 4.8.4; Remark 4.8.5; Definition 5.1.19"
 url = "https://arxiv.org/abs/math/0106063v6"
 fetched_from = "https://arxiv.org/pdf/math/0106063v6"
 fetched_at = "2026-11-04T14:00:32Z"
@@ -171,8 +186,8 @@ sha256 = "4c0936b5321dc09338730b411ef62e6fffc9060d0146f30a24e65a5ada47df77"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
-version_note = "arXiv v6"
-cited_for = ["Lattices, finite generation, Selberg's lemma, arithmetic lattices"]
+version_note = "arXiv v6 (7 May 2015, Arxiv Version 1.0 of April 2015 of the book published by Deductive Press, 2015), the text read and the numbering cited; the first arXiv version is of 2001."
+cited_for = ["Conventions", "1.2", "5.1", "5.2", "5.3", "6.2", "6.3", "6.4", "11.1", "11.2"]
 
 [[source]]
 id = "BailyBorel1966"
@@ -187,7 +202,7 @@ url = "https://doi.org/10.2307/1970457"
 licence_class = "none"
 status = "uncertified"
 accessed = "2026-11-04"
-cited_for = ["Baily-Borel compactification in the arithmetic case"]
+cited_for = ["11.4"]
 
 [[source]]
 id = "SiuYau1982"
@@ -202,7 +217,7 @@ url = "https://doi.org/10.1515/9781400881918-021"
 licence_class = "none"
 status = "uncertified"
 accessed = "2026-11-04"
-cited_for = ["Compactification of finite-volume ball quotients, torsion-free case"]
+cited_for = ["6.1"]
 
 [[source]]
 id = "Cartan1957"
@@ -217,7 +232,7 @@ url = "https://doi.org/10.1515/9781400879915-007"
 licence_class = "none"
 status = "uncertified"
 accessed = "2026-11-04"
-cited_for = ["Quotient of a normal complex space by a properly discontinuous group"]
+cited_for = ["7.1", "7.3"]
 
 [[source]]
 id = "Goldman1999"
@@ -232,4 +247,22 @@ url = "https://doi.org/10.1093/oso/9780198537939.001.0001"
 licence_class = "none"
 status = "uncertified"
 accessed = "2026-11-04"
-cited_for = ["Complex hyperbolic geometry of the ball"]
+cited_for = ["1.4", "2.1", "2.3", "2.4", "2.5", "3.2", "3.3", "3.4"]
+
+[[source]]
+id = "Kiernan1972"
+authors = "Peter Kiernan"
+title = "Extensions of holomorphic maps"
+year = 1972
+venue = "Transactions of the American Mathematical Society 172 (1972), 347-355"
+doi = "10.1090/S0002-9947-1972-0318519-8"
+locator_scheme = "theorem"
+locator = "§2 (properties of the Kobayashi distance, hyperbolic imbedding); Theorems 1-2"
+url = "https://www.ams.org/journals/tran/1972-172-00/S0002-9947-1972-0318519-8/S0002-9947-1972-0318519-8.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1972-172-00/S0002-9947-1972-0318519-8/S0002-9947-1972-0318519-8.pdf"
+fetched_at = "2026-11-05T10:21:44Z"
+sha256 = "70bd622a7a7c9574a5cdd5e50490b9562b1073a7ae6576e908bc34a4d263bf79"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["2.5", "10.1", "10.2"]

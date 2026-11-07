@@ -1,0 +1,2719 @@
+{
+  "roadmap": "BallQuotientsAndComplexHyperbolicLattices",
+  "title": "Ball quotients and complex hyperbolic lattices",
+  "parent": null,
+  "summary": "Complex hyperbolic n-space and PU(1,n) for every n ≥ 1, lattices of every kind with cusps, finite generation and Selberg's lemma, the analytic quotient, Mok's toroidal and projective minimal compactification, a big Picard extension theorem with Borel algebraicity and uniqueness of the algebraic model, the arithmetic bridge to Shimura data and Baily–Borel, and totally geodesic subvarieties and algebraic subvarieties of the ball times S_Γ, so that Baldi–Ullmo's theorems become library statements.",
+  "baseline": {
+    "mathlib": "f6090c7095e1e56b3464c1daba5f24631f1290d2",
+    "tauceti": "358314d4ab97483df4fc4cb8adcc02e74a8d9f5a"
+  },
+  "layers": [
+    {
+      "key": "1",
+      "title": "The group PU(1,n) and the ball",
+      "targets": [
+        {
+          "id": "1.1",
+          "kind": "definition",
+          "name": "BallQuotient.indefiniteUnitaryGroup",
+          "statement": "For n ≥ 1, the Hermitian form ⟨z,w⟩ = zᴴJw on V = ℂ^(Fin 1 ⊕ Fin n), J = Matrix.indefiniteDiagonal (Fin 1) (Fin n) ℂ, and U(1,n) = {g invertible : gᴴJg = J}, SU(1,n) its determinant-one subgroup.",
+          "hypotheses": [
+            "n ≥ 1",
+            "form conjugate-linear in the first slot"
+          ],
+          "locator": {
+            "source": "BaldiUllmo2023",
+            "where": "line 486 to line 496"
+          },
+          "prerequisites": [
+            "mathlib:Matrix.indefiniteDiagonal",
+            "mathlib:Matrix.unitaryGroup",
+            "tauceti:TauCeti.Matrix.isCompact_unitaryGroup"
+          ],
+          "api": [
+            {
+              "name": "mem_iff_form",
+              "role": "characterisation",
+              "statement": "g ∈ U(1,n) ↔ ⟨gz,gw⟩ = ⟨z,w⟩ for all z,w ↔ ⟨gz,gz⟩ = ⟨z,z⟩ for all z."
+            },
+            {
+              "name": "inv_eq",
+              "role": "evaluation",
+              "statement": "g⁻¹ = J gᴴ J; gᴴ ∈ U(1,n) iff g ∈ U(1,n); |det g| = 1."
+            },
+            {
+              "name": "isClosed",
+              "role": "structure",
+              "statement": "U(1,n) is closed in the matrix space, so a locally compact second-countable group."
+            },
+            {
+              "name": "blockDiag",
+              "role": "constructor",
+              "statement": "(a,D) ↦ diag(a,D) embeds U(1) × U(n) as the stabiliser of ℂe₀, with compact image."
+            },
+            {
+              "name": "center_eq",
+              "role": "structure",
+              "statement": "The centre is the unit scalars."
+            }
+          ],
+          "tests": [
+            {
+              "name": "h_t_mem",
+              "kind": "computation",
+              "statement": "h_t = [[cosh t, i sinh t],[−i sinh t, cosh t]] ∈ SU(1,1); diag(1,−1) ∈ U(1,1) ∖ SU(1,1)."
+            },
+            {
+              "name": "two_not_mem",
+              "kind": "non-example",
+              "statement": "2·1 preserves the positive cone but (2·1)ᴴJ(2·1) = 4J, so 2·1 ∉ U(1,n)."
+            },
+            {
+              "name": "swap_not_mem",
+              "kind": "non-example",
+              "statement": "The swap S has SᴴJS = −J and is not in U(1,1); diag(λ,μ) ∈ U(1,1) iff |λ| = |μ| = 1."
+            }
+          ]
+        },
+        {
+          "id": "1.2",
+          "kind": "definition",
+          "name": "BallQuotient.PU",
+          "statement": "G = PU(1,n) = U(1,n)/centre with the quotient topology, and Ad: G → GL(M_{n+1}(ℂ)), [g] ↦ (X ↦ gXg⁻¹). G is a Hausdorff locally compact second-countable connected unimodular topological group with trivial centre; SU(1,n) → G is surjective with kernel μ_{n+1}; Ad is continuous, injective, with closed image and eigenvalues λᵢ/λⱼ; G = K·{g_t}·K.",
+          "hypotheses": [
+            "n ≥ 1"
+          ],
+          "locator": {
+            "source": "BaldiUllmo2023",
+            "where": "line 492 to line 496; WitteMorris2015 line 1940 to line 1944"
+          },
+          "prerequisites": [
+            "target:1.1",
+            "target:1.4"
+          ],
+          "api": [
+            {
+              "name": "ad_injective",
+              "role": "structure",
+              "statement": "Ad is a continuous injective homomorphism with closed image."
+            },
+            {
+              "name": "ad_eigenvalues",
+              "role": "evaluation",
+              "statement": "The eigenvalues of Ad([g]) are the ratios of eigenvalues of g."
+            },
+            {
+              "name": "cartan_decomposition",
+              "role": "structure",
+              "statement": "G = K·{g_t}·K for g_t = h_t ⊕ 1."
+            },
+            {
+              "name": "unimodular",
+              "role": "structure",
+              "statement": "The modular function of G is trivial."
+            },
+            {
+              "name": "su_surjective",
+              "role": "constructor",
+              "statement": "SU(1,n) → G is surjective with kernel the scalars μ_{n+1}·1."
+            }
+          ],
+          "tests": [
+            {
+              "name": "kernel_order",
+              "kind": "computation",
+              "statement": "For n = 1 the kernel of SU(1,1) → G is {±1}; for n = 2 the cube roots of unity."
+            },
+            {
+              "name": "ad_rotation",
+              "kind": "computation",
+              "statement": "Ad([diag(1,e^{iθ},1)]) (n = 2) has eigenvalues 1 (five times), e^{±iθ} (twice each); for θ = 2π/3 the element is not neat."
+            },
+            {
+              "name": "scalar_trivial",
+              "kind": "degenerate",
+              "statement": "The image of i·1 in G is trivial although i·1 ≠ 1 in U(1,n)."
+            }
+          ]
+        },
+        {
+          "id": "1.3",
+          "kind": "definition",
+          "name": "BallQuotient.ball",
+          "statement": "The bounded model B = open unit ball of ℂⁿ, the projective description ι(w) = [1 : w] onto {[z] : ⟨z,z⟩ > 0}, the Siegel model 𝔖 = {ρ = Im v − |u|² > 0}, and the Cayley transform C(w′,wₙ) = (w′/(1−wₙ), i(1+wₙ)/(1−wₙ)), a biholomorphism B ≅ 𝔖 with inverse (2iu/(v+i), (v−i)/(v+i)), ρ∘C = (1−|w|²)/|1−wₙ|², extending to closures with b₀ ↦ ∞.",
+          "hypotheses": [
+            "n ≥ 1; for n = 1 the u-coordinate is absent"
+          ],
+          "locator": {
+            "source": "Mok2012",
+            "where": "line 131 to line 137; BaldiUllmo2023 line 559 to line 565"
+          },
+          "prerequisites": [
+            "mathlib:Projectivization",
+            "mathlib:Metric.ball",
+            "roadmap:ComplexKahlerGeometry K1"
+          ],
+          "api": [
+            {
+              "name": "iota_bijective",
+              "role": "characterisation",
+              "statement": "ι is a bijection onto positive lines and extends to the closed ball onto nonnegative lines."
+            },
+            {
+              "name": "cayley_inverse",
+              "role": "evaluation",
+              "statement": "C⁻¹(u,v) = (2iu/(v+i), (v−i)/(v+i))."
+            },
+            {
+              "name": "rho_cayley",
+              "role": "evaluation",
+              "statement": "ρ(C(w)) = (1−|w|²)/|1−wₙ|²."
+            },
+            {
+              "name": "borel_chart",
+              "role": "compatibility",
+              "statement": "ι is the restriction of the affine chart z₀ ≠ 0 of ℙⁿ."
+            }
+          ],
+          "tests": [
+            {
+              "name": "cayley_n1",
+              "kind": "computation",
+              "statement": "For n = 1, C sends 0, −1, 1 to i, 0, ∞."
+            },
+            {
+              "name": "cayley_value",
+              "kind": "computation",
+              "statement": "C(0,1/2) = (0,3i) with ρ = 3 = (1−1/4)/(1/4)."
+            },
+            {
+              "name": "outside_point",
+              "kind": "non-example",
+              "statement": "C(0,2) = (0,−3i) has ρ = −3 < 0."
+            }
+          ]
+        },
+        {
+          "id": "1.4",
+          "kind": "theorem",
+          "name": "BallQuotient.action_faithful_transitive",
+          "statement": "g·w = (c + Dw)/(a + bᵀw) defines a continuous action of U(1,n) on B, corresponding to [z] ↦ [gz], factoring through a faithful transitive action of G by biholomorphisms; K = Stab(0) is the image of U(1) × U(n), compact, ≅ U(n) via [diag(a,D)] ↦ a⁻¹D; the orbit map G/K → B is a G-equivariant homeomorphism, with continuous section w ↦ g_w.",
+          "hypotheses": [
+            "n ≥ 1"
+          ],
+          "locator": {
+            "source": "BaldiUllmo2023",
+            "where": "line 486 to line 496; Goldman1999 Ch. 3"
+          },
+          "prerequisites": [
+            "target:1.1",
+            "target:1.2",
+            "target:1.3",
+            "tauceti:TauCeti.Matrix.isCompact_unitaryGroup",
+            "mathlib:MulAction.stabilizer"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "rotation_stabiliser",
+              "kind": "computation",
+              "statement": "[diag(e^{iθ},1,…,1)] acts by w ↦ e^{−iθ}w, fixing 0."
+            },
+            {
+              "name": "section_value",
+              "kind": "computation",
+              "statement": "For w = (1/2,0,…,0), γ = 2/√3 and g_w·0 = w."
+            },
+            {
+              "name": "U_not_faithful",
+              "kind": "non-example",
+              "statement": "i·1 ∈ U(1,n) acts trivially; its image in G is 1."
+            }
+          ],
+          "proofSketch": "Denominator nonvanishing from |a|² − |b|² = 1; explicit section g_w; tangent action of K is the standard representation."
+        },
+        {
+          "id": "1.5",
+          "kind": "definition",
+          "name": "BallQuotient.heisenberg",
+          "statement": "For b ∈ ∂B the stabiliser P_b; at ∞ ∈ ∂𝔖 the Heisenberg group N = ℂ^{n−1} × ℝ acting by n_{(a,t)}(u,v) = (u+a, v + 2i⟨a,u⟩ + i|a|² + t) with law (a,t)(a′,t′) = (a+a′, t+t′−2Im⟨a,a′⟩), centre Z(N) of vertical translations, A = {a_s}, M = U(n−1), horoballs H(N) = {ρ > N}; P_∞ = M·A·N; G is transitive on ∂B; for n = 2, N ≅ TauCeti.HeisenbergGroup ℝ via (p+iq,t) ↦ (p,q,−t/4+pq/2).",
+          "hypotheses": [
+            "n ≥ 1; for n = 1, N = Z(N) = ℝ"
+          ],
+          "locator": {
+            "source": "BaldiUllmo2023",
+            "where": "line 517 to line 519 and line 559 to line 571; Mok2012 line 138 to line 154"
+          },
+          "prerequisites": [
+            "target:1.3",
+            "target:1.4",
+            "tauceti:TauCeti.HeisenbergGroup"
+          ],
+          "api": [
+            {
+              "name": "langlands_decomposition",
+              "role": "structure",
+              "statement": "Every p ∈ P_∞ is uniquely m·a·n."
+            },
+            {
+              "name": "rho_invariance",
+              "role": "evaluation",
+              "statement": "ρ∘n = ρ, ρ∘m = ρ, ρ∘a_s = s²ρ."
+            },
+            {
+              "name": "center_eq_commutator",
+              "role": "structure",
+              "statement": "Z(N) is the centre and, for n ≥ 2, the commutator subgroup."
+            },
+            {
+              "name": "simply_transitive_horosphere",
+              "role": "structure",
+              "statement": "N acts simply transitively on each horosphere."
+            },
+            {
+              "name": "heisenberg_iso",
+              "role": "compatibility",
+              "statement": "For n = 2, N is isomorphic to TauCeti.HeisenbergGroup ℝ."
+            }
+          ],
+          "tests": [
+            {
+              "name": "commutator_value",
+              "kind": "computation",
+              "statement": "n_{(1,0)} and n_{(i,0)} (n = 2) have commutator T_{−4}."
+            },
+            {
+              "name": "a_conjugates_T",
+              "kind": "computation",
+              "statement": "a_{1/2} T_1 a_{1/2}⁻¹ = T_{1/4}, and a_{1/2} multiplies ρ by 1/4."
+            },
+            {
+              "name": "n1_degenerate",
+              "kind": "degenerate",
+              "statement": "For n = 1, N = Z(N) = ℝ acting by translations and M is trivial."
+            }
+          ]
+        },
+        {
+          "id": "1.6",
+          "kind": "theorem",
+          "name": "BallQuotient.pu11_equiv_psl2",
+          "statement": "Conjugation by the Cayley transform is an isomorphism of topological groups PU(1,1) ≅ PSL(2,ℝ) intertwining the actions on B¹ and UpperHalfPlane; ω corresponds to (dx²+dy²)/(2y²), so ω-areas are half the hyperbolic areas of FuchsianOrbifolds Layer 2.",
+          "hypotheses": [
+            "n = 1"
+          ],
+          "locator": {
+            "source": "Mok2012",
+            "where": "line 19 to line 26"
+          },
+          "prerequisites": [
+            "target:1.2",
+            "target:1.4",
+            "target:2.2",
+            "roadmap:FuchsianOrbifolds Layer 0"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "stabiliser_matches",
+              "kind": "compatibility",
+              "statement": "K corresponds to PSO(2), the stabiliser of i."
+            },
+            {
+              "name": "modular_volume",
+              "kind": "computation",
+              "statement": "The ω-volume of the modular surface is π/6."
+            },
+            {
+              "name": "parabolic_matches",
+              "kind": "compatibility",
+              "statement": "N at b₀ corresponds to z ↦ z + t and A to z ↦ s²z."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "2",
+      "title": "Biholomorphisms and the invariant Kähler metric",
+      "targets": [
+        {
+          "id": "2.1",
+          "kind": "theorem",
+          "name": "BallQuotient.biholomorphism_eq_action",
+          "statement": "Cartan: a holomorphic self-map of a bounded domain fixing p with derivative id at p is id. Hence a biholomorphism of B fixing 0 is unitary linear, and every biholomorphism of B is the action of a unique element of G (G ≅ Aut(B)).",
+          "hypotheses": [
+            "Ω ⊂ ℂⁿ bounded domain (uniqueness theorem)",
+            "n ≥ 1"
+          ],
+          "locator": {
+            "source": "Goldman1999",
+            "where": "Ch. 3; BaldiUllmo2023 line 35 to line 36"
+          },
+          "prerequisites": [
+            "tauceti:DifferentiableOn.analyticOnNhd_of_finiteDimensional",
+            "target:1.4"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "disc_case",
+              "kind": "compatibility",
+              "statement": "For n = 1 this is the disc automorphism classification (Completed/ConformalMapping Layer 2)."
+            },
+            {
+              "name": "derivative_hyp",
+              "kind": "non-example",
+              "statement": "w ↦ w/2 fixes 0 with derivative 1/2: invertibility of Df(p) is not enough."
+            },
+            {
+              "name": "bounded_hyp",
+              "kind": "non-example",
+              "statement": "z ↦ z + z² on ℂ fixes 0 with derivative 1: boundedness is needed."
+            }
+          ],
+          "proofSketch": "Iterate and apply Cauchy estimates to the first nonlinear homogeneous term; commute with rotations; linear maps preserving B are unitary."
+        },
+        {
+          "id": "2.2",
+          "kind": "definition",
+          "name": "BallQuotient.kahlerForm",
+          "statement": "ω = −i∂∂̄ log(1 − |w|²) on B: coefficients δ_{jk}/(1−|w|²) + w̄ⱼw_k/(1−|w|²)², det = (1−|w|²)^{−(n+1)}; closed, positive (Kähler), G-invariant via 1 − |g·w|² = (1 − |w|²)/|a + bᵀw|²; C pulls back i∂∂̄(−log ρ) to ω; ω^n/n! = 2^n(1−|w|²)^{−(n+1)} dLeb; ω restricts to sub-balls as their form.",
+          "hypotheses": [
+            "n ≥ 1"
+          ],
+          "locator": {
+            "source": "Mok2012",
+            "where": "line 249 to line 254; BaldiUllmo2023 line 586 to line 597"
+          },
+          "prerequisites": [
+            "roadmap:ComplexKahlerGeometry K1",
+            "roadmap:ComplexKahlerGeometry K2",
+            "roadmap:ComplexKahlerGeometry K6.0",
+            "target:1.3",
+            "target:1.4"
+          ],
+          "api": [
+            {
+              "name": "invariant",
+              "role": "structure",
+              "statement": "g*ω = ω for g ∈ G, from the transformation law of 1 − |w|²."
+            },
+            {
+              "name": "siegel_form",
+              "role": "compatibility",
+              "statement": "C*(i∂∂̄(−log ρ)) = ω, invariant under N, M, A."
+            },
+            {
+              "name": "volume_density",
+              "role": "evaluation",
+              "statement": "ω^n/n! = 2^n(1−|w|²)^{−(n+1)} Lebesgue; in Siegel coordinates proportional to ρ^{−(n+1)}."
+            },
+            {
+              "name": "restrict_subball",
+              "role": "compatibility",
+              "statement": "ω|_{𝔹ᵐ} is the form of 𝔹ᵐ."
+            }
+          ],
+          "tests": [
+            {
+              "name": "n1_density",
+              "kind": "computation",
+              "statement": "For n = 1, ω = 2dx∧dy/(1−|w|²)²."
+            },
+            {
+              "name": "transformation_value",
+              "kind": "computation",
+              "statement": "For h_t at 0: 1 − tanh²t = 1/cosh²t."
+            },
+            {
+              "name": "euclidean_not_invariant",
+              "kind": "non-example",
+              "statement": "The Euclidean form and log(1+|w|²) are not invariant under h_t."
+            }
+          ]
+        },
+        {
+          "id": "2.3",
+          "kind": "theorem",
+          "name": "BallQuotient.invariantKahler_unique",
+          "statement": "Every G-invariant Kähler form on B is cω with c > 0; Ric(ω) = −(n+1)ω; holomorphic sectional curvature ≡ −2 and sectional curvatures in [−2, −1/2].",
+          "hypotheses": [
+            "n ≥ 1"
+          ],
+          "locator": {
+            "source": "Goldman1999",
+            "where": "Ch. 3; Mok2012 line 515 to line 516"
+          },
+          "prerequisites": [
+            "target:1.4",
+            "target:2.2",
+            "roadmap:ComplexKahlerGeometry K4",
+            "roadmap:ComplexKahlerGeometry K6.0"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "n1_curvature",
+              "kind": "computation",
+              "statement": "For n = 1, Gaussian curvature −2 and Ric = −2ω."
+            },
+            {
+              "name": "scaling",
+              "kind": "degenerate",
+              "statement": "−2 log(1−|w|²) gives 2ω, also invariant: c is not determined."
+            },
+            {
+              "name": "non_invariant_form",
+              "kind": "non-example",
+              "statement": "i dw₁∧dw̄₁ + 2i dw₂∧dw̄₂ at 0 is not K-invariant."
+            }
+          ],
+          "proofSketch": "Determined by the K-invariant value at 0; Schur for the standard representation of U(n); Ric = −i∂∂̄ log det h."
+        },
+        {
+          "id": "2.4",
+          "kind": "theorem",
+          "name": "BallQuotient.dist_formula",
+          "statement": "cosh²(d([z],[w])/√2) = |⟨z,w⟩|²/(⟨z,z⟩⟨w,w⟩); unit-speed geodesics through 0 are s ↦ tanh(s/√2)v; (B,d) complete; holomorphic isometries are exactly G.",
+          "hypotheses": [
+            "n ≥ 1"
+          ],
+          "locator": {
+            "source": "Goldman1999",
+            "where": "Ch. 3"
+          },
+          "prerequisites": [
+            "target:2.1",
+            "target:2.2",
+            "tauceti:TauCeti.completeSpace_ofRiemannianMetric_of_isPretransitive_isom",
+            "roadmap:RiemannianGeometry R4.7"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "dist_value",
+              "kind": "computation",
+              "statement": "d(0, tanh t·e₁) = √2|t|."
+            },
+            {
+              "name": "invariance",
+              "kind": "characterisation",
+              "statement": "The formula is invariant under U(1,n)."
+            },
+            {
+              "name": "boundary_infinite",
+              "kind": "degenerate",
+              "statement": "d(0,w) → ∞ as |w| → 1."
+            }
+          ]
+        },
+        {
+          "id": "2.5",
+          "kind": "theorem",
+          "name": "BallQuotient.schwarzPick_ball",
+          "statement": "For m, n ≥ 1, every holomorphic f: Bᵐ → Bⁿ satisfies f*g ≤ g and d(f(x),f(y)) ≤ d(x,y).",
+          "hypotheses": [
+            "m, n ≥ 1",
+            "f holomorphic"
+          ],
+          "locator": {
+            "source": "Kiernan1972",
+            "where": "line 64 to line 65; Goldman1999 Ch. 3"
+          },
+          "prerequisites": [
+            "target:1.4",
+            "target:2.2",
+            "mathlib:Complex.dist_le_div_mul_dist_of_mapsTo_ball",
+            "roadmap:ConformalMapping Layer 2"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "isometric_embeddings",
+              "kind": "computation",
+              "statement": "(ζ,0) and (ζ,ζ)/√2 are isometric at 0."
+            },
+            {
+              "name": "strict",
+              "kind": "computation",
+              "statement": "(ζ/2,ζ/2) has |Df(0)| = 1/√2 < 1."
+            },
+            {
+              "name": "not_into_ball",
+              "kind": "non-example",
+              "statement": "ζ ↦ 2ζ does not map into the ball."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "3",
+      "title": "Sub-balls and totally geodesic subvarieties of the ball",
+      "targets": [
+        {
+          "id": "3.1",
+          "kind": "definition",
+          "name": "BallQuotient.subBall",
+          "statement": "For W ⊂ V of dimension m+1 with signature (1,m), the sub-ball 𝔹(W) and stabiliser H_W = image of U(W) × U(W^⊥); W ↦ 𝔹(W) bijective onto sub-balls (= nonempty intersections of B with affine complex subspaces); G transitive on sub-balls of each dimension; r_W: H_W → Aut(𝔹(W)) ≅ PU(1,m) continuous surjective with compact kernel; 𝔹(W) closed complex submanifold with ω restricting to its form.",
+          "hypotheses": [
+            "0 ≤ m ≤ n",
+            "W of signature (1,m)"
+          ],
+          "locator": {
+            "source": "BaldiUllmo2023",
+            "where": "line 496 to line 506"
+          },
+          "prerequisites": [
+            "target:1.1",
+            "target:1.4",
+            "target:2.1",
+            "target:2.2"
+          ],
+          "api": [
+            {
+              "name": "bijection",
+              "role": "characterisation",
+              "statement": "Signature-(1,m) subspaces ↔ sub-balls of dimension m."
+            },
+            {
+              "name": "stabiliser",
+              "role": "structure",
+              "statement": "H_W is the image of U(W) × U(W^⊥)."
+            },
+            {
+              "name": "restriction",
+              "role": "constructor",
+              "statement": "r_W is continuous, surjective, with compact kernel, compatible with conjugation."
+            },
+            {
+              "name": "intersection",
+              "role": "structure",
+              "statement": "𝔹(W) ∩ 𝔹(W′) = 𝔹(W∩W′) or empty."
+            }
+          ],
+          "tests": [
+            {
+              "name": "dim_zero",
+              "kind": "degenerate",
+              "statement": "m = 0: a point with H_W a conjugate of K."
+            },
+            {
+              "name": "affine_subball",
+              "kind": "computation",
+              "statement": "{w₁ = 1/2} ∩ B (n = 2) is the sub-ball of {z₁ = z₀/2}, form (3/4)|z₀|² − |z₂|²."
+            },
+            {
+              "name": "wrong_signature",
+              "kind": "non-example",
+              "statement": "Negative definite or degenerate W meet 𝔹ⁿ in the empty set."
+            }
+          ]
+        },
+        {
+          "id": "3.2",
+          "kind": "theorem",
+          "name": "BallQuotient.totallyGeodesic_subset_subBall",
+          "statement": "Sub-balls are totally geodesic; a connected totally geodesic complex submanifold M ∋ p is contained in the sub-ball through p tangent to T_pM.",
+          "hypotheses": [
+            "M connected complex submanifold with vanishing second fundamental form"
+          ],
+          "locator": {
+            "source": "Goldman1999",
+            "where": "Ch. 3"
+          },
+          "prerequisites": [
+            "target:3.1",
+            "roadmap:RiemannianGeometry R5a",
+            "roadmap:RiemannianGeometry R4.7"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "complex_line",
+              "kind": "computation",
+              "statement": "ℂv ∩ B is the sub-ball of span(e₀,(0,v))."
+            },
+            {
+              "name": "parabola",
+              "kind": "non-example",
+              "statement": "{w₂ = w₁²} ∩ B is tangent to {w₂ = 0} at 0 but not contained in it."
+            },
+            {
+              "name": "real_plane",
+              "kind": "non-example",
+              "statement": "The real plane {Im w₁ = Im w₂ = 0} is totally geodesic but not complex."
+            }
+          ]
+        },
+        {
+          "id": "3.3",
+          "kind": "theorem",
+          "name": "BallQuotient.totallyGeodesic_eq_subBall",
+          "statement": "A complete connected totally geodesic complex submanifold of dimension m is a sub-ball g𝔹ᵐ with stabiliser H_W and PU(1,m) its biholomorphism group via r_W; an irreducible closed analytic Y ⊂ B of dimension m ≥ 1 with totally geodesic regular locus is a sub-ball.",
+          "hypotheses": [
+            "1 ≤ m ≤ n",
+            "Y irreducible closed analytic"
+          ],
+          "locator": {
+            "source": "BaldiUllmo2023",
+            "where": "line 496 to line 506; Goldman1999 Ch. 3"
+          },
+          "prerequisites": [
+            "target:3.1",
+            "target:3.2",
+            "target:2.1",
+            "roadmap:ComplexKahlerGeometry K3"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "n1",
+              "kind": "degenerate",
+              "statement": "For n = 1 the only such Y is B."
+            },
+            {
+              "name": "reducible",
+              "kind": "non-example",
+              "statement": "{w₁ = 0} ∪ {w₂ = 0} has totally geodesic regular locus but is reducible."
+            },
+            {
+              "name": "geodesic",
+              "kind": "non-example",
+              "statement": "A real geodesic is totally geodesic but not complex analytic."
+            }
+          ]
+        },
+        {
+          "id": "3.4",
+          "kind": "theorem",
+          "name": "BallQuotient.fixedSet_elliptic_eq_subBall",
+          "statement": "Distinct sub-balls of equal dimension meet in a smaller sub-ball or not at all; the fixed set in B of an elliptic element is a single nonempty sub-ball.",
+          "hypotheses": [
+            "g ∈ G elliptic"
+          ],
+          "locator": {
+            "source": "Goldman1999",
+            "where": "Ch. 3"
+          },
+          "prerequisites": [
+            "target:3.1",
+            "target:4.1"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "rotation_fixed",
+              "kind": "computation",
+              "statement": "[diag(1,e^{iθ},1)] fixes {w₁ = 0}; [diag(1,ζ,ζ)] fixes only 0."
+            },
+            {
+              "name": "reflection_fixed",
+              "kind": "computation",
+              "statement": "[diag(1,1,−1)] fixes the divisor {w₂ = 0}."
+            },
+            {
+              "name": "intersection_point",
+              "kind": "computation",
+              "statement": "{w₁ = 0} ∩ {w₂ = 0} = {0} in B²."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "4",
+      "title": "Isometries, horoballs and the Margulis lemma",
+      "targets": [
+        {
+          "id": "4.1",
+          "kind": "theorem",
+          "name": "BallQuotient.trichotomy",
+          "statement": "Every g ∈ G ∖ {1} is exactly one of elliptic, parabolic, loxodromic; ℓ(g) = 0 attained / 0 not attained / > 0 attained; ℓ(a_s) = √2|log s|; elliptic elements of discrete subgroups have finite order.",
+          "hypotheses": [
+            "g ≠ 1"
+          ],
+          "locator": {
+            "source": "Mok2012",
+            "where": "line 325 to line 335"
+          },
+          "prerequisites": [
+            "target:1.4",
+            "target:1.5",
+            "target:2.4"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "loxodromic_a",
+              "kind": "computation",
+              "statement": "a_s has fixed points (0,0), ∞ and ℓ = √2|log s|."
+            },
+            {
+              "name": "parabolic_T",
+              "kind": "computation",
+              "statement": "T_t has displacement √2 arcsinh(|t|/(2ρ)) > 0 tending to 0."
+            },
+            {
+              "name": "screw_parabolic",
+              "kind": "non-example",
+              "statement": "m·T_t is parabolic but not unipotent."
+            }
+          ],
+          "proofSketch": "Every lift has an eigenvector in the closed positive cone (eigenvalue modulus, orthogonality of unit eigenspaces, Jordan blocks)."
+        },
+        {
+          "id": "4.2",
+          "kind": "theorem",
+          "name": "BallQuotient.displacement_horoball",
+          "statement": "For parabolic g fixing ∞ and every N there is ε with {d(x,gx) < ε} ⊂ H(N); vertical translations have displacement √2 arcsinh(|t|/(2ρ)); horospheres ρ = N₁, N₂ are at distance (1/√2)|log(N₂/N₁)|.",
+          "hypotheses": [
+            "g parabolic fixing ∞"
+          ],
+          "locator": {
+            "source": "Mok2012",
+            "where": "line 383 to line 403; BaldiUllmo2023 line 566 to line 581"
+          },
+          "prerequisites": [
+            "target:1.5",
+            "target:2.2",
+            "target:2.4",
+            "target:4.1"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "vertical_value",
+              "kind": "computation",
+              "statement": "At ρ = |t|/2 the displacement of T_t is √2 arcsinh(1)."
+            },
+            {
+              "name": "horizontal",
+              "kind": "computation",
+              "statement": "n_{(a,0)} has displacement of order |a|/√y at (0,iy)."
+            },
+            {
+              "name": "loxodromic_bound",
+              "kind": "non-example",
+              "statement": "a_s has displacement ≥ √2|log s| everywhere."
+            }
+          ]
+        },
+        {
+          "id": "4.3",
+          "kind": "theorem",
+          "name": "BallQuotient.parabolic_loxodromic_disjoint",
+          "statement": "In a discrete Δ ⊂ G a parabolic and a loxodromic element share no fixed point; stabilisers of parabolic fixed points lie in M·N.",
+          "hypotheses": [
+            "Δ discrete"
+          ],
+          "locator": {
+            "source": "Mok2012",
+            "where": "line 338 to line 342"
+          },
+          "prerequisites": [
+            "target:1.5",
+            "target:4.1"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "not_discrete",
+              "kind": "computation",
+              "statement": "⟨a_{1/2}, T_1⟩ contains T_{4^{−k}} → 1."
+            },
+            {
+              "name": "each_discrete",
+              "kind": "degenerate",
+              "statement": "⟨T_1⟩ and ⟨a_2⟩ are each discrete."
+            },
+            {
+              "name": "finite_rotations",
+              "kind": "compatibility",
+              "statement": "Finite rotations with ⟨T_1⟩ give a discrete group fixing ∞ without loxodromics."
+            }
+          ]
+        },
+        {
+          "id": "4.4",
+          "kind": "theorem",
+          "name": "BallQuotient.margulis_lemma",
+          "statement": "Zassenhaus: a closed L ⊂ GL_N(ℂ) has a neighbourhood U of 1 with ⟨Δ ∩ U⟩ nilpotent for every discrete Δ ⊂ L. Margulis: there are ε_n, m_n with ⟨γ ∈ Δ : d(x,γx) < ε_n⟩ having a nilpotent subgroup of index ≤ m_n for every discrete Δ ⊂ G and x ∈ B.",
+          "hypotheses": [
+            "Δ discrete"
+          ],
+          "locator": {
+            "source": "Raghunathan1972",
+            "where": "Ch. VIII; Mok2012 line 342 to line 349; BaldiUllmo2023 line 573 to line 575"
+          },
+          "prerequisites": [
+            "target:1.2",
+            "target:1.4",
+            "target:2.4"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "cyclic_parabolic",
+              "kind": "computation",
+              "statement": "Δ = ⟨T_1⟩ high in a horoball: Δ ≅ ℤ nilpotent."
+            },
+            {
+              "name": "finite_group",
+              "kind": "degenerate",
+              "statement": "A finite subgroup of K at 0: all displacements 0, finite group."
+            },
+            {
+              "name": "dense_free",
+              "kind": "non-example",
+              "statement": "A dense free subgroup of K (n ≥ 2) is not virtually nilpotent: discreteness needed."
+            }
+          ]
+        },
+        {
+          "id": "4.5",
+          "kind": "theorem",
+          "name": "BallQuotient.boundaryStabiliser_structure",
+          "statement": "If Δ ⊂ M·N is discrete and cocompact on a horosphere at ∞, then Δ ∩ N is a lattice of finite index in Δ, its image Λ in ℂ^{n−1} is a lattice of rank 2n−2, and for n ≥ 2, Δ ∩ Z(N) = ⟨T_τ⟩ with τ > 0.",
+          "hypotheses": [
+            "Δ ⊂ M·N discrete",
+            "Δ acts cocompactly on a horosphere"
+          ],
+          "locator": {
+            "source": "Mok2012",
+            "where": "line 373 to line 472; Raghunathan1972 Ch. VIII"
+          },
+          "prerequisites": [
+            "target:1.5",
+            "target:4.3",
+            "target:4.4"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "gaussian",
+              "kind": "computation",
+              "statement": "⟨n_{(1,0)}, n_{(i,0)}⟩ (n = 2): T_4 ∈ Δ, Λ = ℤ[i]."
+            },
+            {
+              "name": "abelian_rank1",
+              "kind": "non-example",
+              "statement": "{n_{(a,0)} : a ∈ ℤ} has Λ of rank 1 and is not cocompact."
+            },
+            {
+              "name": "n1",
+              "kind": "degenerate",
+              "statement": "For n = 1, Δ = ⟨T_τ⟩ and Λ = 0."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "5",
+      "title": "Lattices in PU(1,n)",
+      "targets": [
+        {
+          "id": "5.1",
+          "kind": "definition",
+          "name": "BallQuotient.IsLattice",
+          "statement": "A lattice in G is a discrete subgroup of finite covolume (VonNeumannAlgebras Layer 9 applied to G), cocompact when G/Γ is compact; commensurability is Mathlib's Subgroup.Commensurable.",
+          "hypotheses": [
+            "G unimodular second-countable locally compact (1.2)"
+          ],
+          "locator": {
+            "source": "WitteMorris2015",
+            "where": "line 1893 and line 1940; BaldiUllmo2023 line 355 to line 357"
+          },
+          "prerequisites": [
+            "roadmap:VonNeumannAlgebras Layer 9",
+            "mathlib:MeasureTheory.covolume",
+            "mathlib:MeasureTheory.IsFundamentalDomain",
+            "mathlib:Subgroup.Commensurable",
+            "target:1.2"
+          ],
+          "api": [
+            {
+              "name": "finite_index",
+              "role": "structure",
+              "statement": "Finite-index subgroups and finite-index overgroups of lattices are lattices; covolume scales by the index."
+            },
+            {
+              "name": "conj",
+              "role": "structure",
+              "statement": "gΓg⁻¹ is a lattice of the same covolume."
+            },
+            {
+              "name": "cocompact_iff",
+              "role": "characterisation",
+              "statement": "Γ cocompact iff Γ\\B compact (5.3)."
+            }
+          ],
+          "tests": [
+            {
+              "name": "trivial_not",
+              "kind": "degenerate",
+              "statement": "The trivial subgroup is not a lattice."
+            },
+            {
+              "name": "modular",
+              "kind": "computation",
+              "statement": "PSL(2,ℤ) has ω-covolume π/6 and Γ(2)/{±1} covolume π."
+            },
+            {
+              "name": "cyclic_parabolic_not",
+              "kind": "non-example",
+              "statement": "⟨T_1⟩ is discrete and not a lattice."
+            }
+          ]
+        },
+        {
+          "id": "5.2",
+          "kind": "theorem",
+          "name": "BallQuotient.properlyDiscontinuous_iff_discrete",
+          "statement": "G acts properly on B; Γ ⊂ G acts properly discontinuously iff discrete; stabilisers finite; precisely invariant neighbourhoods U_x; the free locus is open, invariant, dense.",
+          "hypotheses": [
+            "Γ ⊂ G subgroup"
+          ],
+          "locator": {
+            "source": "WitteMorris2015",
+            "where": "line 2726"
+          },
+          "prerequisites": [
+            "target:1.4",
+            "target:3.4",
+            "target:4.1",
+            "mathlib:ProperlyDiscontinuousSMul",
+            "mathlib:Subgroup.properlyDiscontinuousSMul_iff",
+            "tauceti:TauCeti.Matrix.isCompact_unitaryGroup"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "irrational_rotation",
+              "kind": "non-example",
+              "statement": "An irrational rotation group is not discrete and has infinite stabiliser."
+            },
+            {
+              "name": "free",
+              "kind": "computation",
+              "statement": "⟨T_1⟩ acts freely."
+            },
+            {
+              "name": "finite_cyclic",
+              "kind": "degenerate",
+              "statement": "A finite rotation group about 0 has Γ_0 = Γ."
+            }
+          ]
+        },
+        {
+          "id": "5.3",
+          "kind": "theorem",
+          "name": "BallQuotient.isLattice_iff_finiteVolume",
+          "statement": "With Haar normalised by μ_G(p⁻¹A) = vol_ω(A): a discrete Γ (countable, G being second countable) has a measurable fundamental domain F ⊂ B with pairwise disjoint translates (Tau Ceti exists_isFundamentalDomain_of_properlyDiscontinuousSMul, applied to the action of §5.2 and vol_ω, under which the non-free locus is null), and for every such F, covol(Γ) = vol_ω(F); Γ is a lattice iff vol_ω(Γ\\B) < ∞; cocompact iff Γ\\B compact.",
+          "hypotheses": [
+            "Γ discrete"
+          ],
+          "locator": {
+            "source": "WitteMorris2015",
+            "where": "line 1899 to line 1921; BaldiUllmo2023 line 338 to line 339"
+          },
+          "prerequisites": [
+            "target:2.2",
+            "target:5.1",
+            "target:5.2",
+            "mathlib:MeasureTheory.Measure.isMulLeftInvariant_eq_smul_of_innerRegular",
+            "mathlib:MeasureTheory.IsFundamentalDomain.covolume_eq_volume",
+            "tauceti:MeasureTheory.Measure.exists_isFundamentalDomain_of_properlyDiscontinuousSMul",
+            "tauceti:TauCeti.freeLocus",
+            "tauceti:TauCeti.riemannianVolume"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "modular_volume",
+              "kind": "computation",
+              "statement": "PSL(2,ℤ): vol_ω = π/6."
+            },
+            {
+              "name": "horoball_finite",
+              "kind": "computation",
+              "statement": "∫_N^∞ ρ^{−(n+1)}dρ < ∞ while the strip near ρ = 0 has infinite volume."
+            },
+            {
+              "name": "index_two",
+              "kind": "characterisation",
+              "statement": "An index-two subgroup doubles the volume."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "6",
+      "title": "Cusps, finite generation and Selberg's lemma",
+      "targets": [
+        {
+          "id": "6.1",
+          "kind": "theorem",
+          "name": "BallQuotient.cusp_structure",
+          "statement": "For a lattice Γ: finitely many cusp classes; Γ_b ⊂ M_b·N_b acts cocompactly on horospheres, Γ_b ∩ N_b a finite-index lattice in N_b, Γ ∩ Z(N_b) ≅ ℤ for n ≥ 2; equivariant pairwise disjoint precisely invariant horoballs H_b (and all smaller ones); the image of B ∖ ⋃H_b in Γ\\B compact; Γ cocompact iff no cusp points.",
+          "hypotheses": [
+            "Γ lattice"
+          ],
+          "locator": {
+            "source": "BaldiUllmo2023",
+            "where": "Theorem 3.4.3, line 649 to line 661; Mok2012 line 309 to line 475; Raghunathan1972 Ch. XIII; SiuYau1982 pp. 363–380"
+          },
+          "prerequisites": [
+            "target:4.1",
+            "target:4.2",
+            "target:4.3",
+            "target:4.4",
+            "target:4.5",
+            "target:5.2",
+            "target:5.3"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "modular",
+              "kind": "computation",
+              "statement": "PSL(2,ℤ): one cusp class, Γ_∞ = {z ↦ z+k}, horoball {Im z > 1}."
+            },
+            {
+              "name": "cocompact",
+              "kind": "degenerate",
+              "statement": "A cocompact lattice has no cusp points."
+            },
+            {
+              "name": "not_lattice",
+              "kind": "non-example",
+              "statement": "⟨T_1⟩ (n ≥ 2) has cusp ∞ but Γ_∞ is not cocompact on horospheres."
+            }
+          ],
+          "proofSketch": "Margulis lemma; compact thick part by finite volume; thin components are tubes or cusp regions; 4.5 on cusp groups."
+        },
+        {
+          "id": "6.2",
+          "kind": "theorem",
+          "name": "BallQuotient.lattice_finitelyGenerated",
+          "statement": "Every lattice in G is finitely generated, indeed finitely presented.",
+          "hypotheses": [
+            "Γ lattice"
+          ],
+          "locator": {
+            "source": "WitteMorris2015",
+            "where": "Corollary 4.7.5 line 2722; Theorem 4.7.10 line 2809; Remark 4.7.11 line 2821; Raghunathan1972 Ch. XIII"
+          },
+          "prerequisites": [
+            "target:5.2",
+            "target:6.1"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "modular_generators",
+              "kind": "computation",
+              "statement": "PSL(2,ℤ) is generated by z ↦ −1/z and z ↦ z+1."
+            },
+            {
+              "name": "cocompact_F",
+              "kind": "degenerate",
+              "statement": "For cocompact Γ the coarse fundamental domain can be relatively compact."
+            },
+            {
+              "name": "infinite_covolume",
+              "kind": "non-example",
+              "statement": "An infinite-index normal subgroup of a free Fuchsian group is infinitely generated."
+            }
+          ],
+          "proofSketch": "Coarse fundamental domain from compact core and finitely many horoball pieces; WitteMorris2015 Propositions 4.7.4 and 4.7.7."
+        },
+        {
+          "id": "6.3",
+          "kind": "theorem",
+          "name": "BallQuotient.selberg_eigenvalue",
+          "statement": "For F of characteristic 0 and finitely generated Λ ⊂ GL_N(F) there is a normal finite-index Λ′ ⊂ Λ such that no eigenvalue of any element of Λ′ is a nontrivial root of unity; Λ′ is torsion-free.",
+          "hypotheses": [
+            "char F = 0",
+            "Λ finitely generated"
+          ],
+          "locator": {
+            "source": "WitteMorris2015",
+            "where": "Theorem 4.8.4 line 2972 (proved there for SL(ℓ,ℤ), line 2974 to line 2988); Theorem 4.8.2 line 2910 and Remark 4.8.5(3) line 3008 (torsion-free form over any field of characteristic 0); Borel1969 §17, Corollary 17.7 (uncertified, cited at WitteMorris2015 line 3445 for the eigenvalue form of finitely generated linear groups); Alperin1987 pp. 269–273; the general statement with normal Λ′ is this roadmap's, by the Jacobson-ring route"
+          },
+          "prerequisites": [
+            "mathlib:IsJacobsonRing",
+            "mathlib:isJacobsonRing_of_finiteType",
+            "mathlib:finite_of_finite_type_of_isJacobsonRing"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "gamma3",
+              "kind": "computation",
+              "statement": "Γ(3) ⊂ SL(2,ℤ) has the property; Γ(2) contains −1."
+            },
+            {
+              "name": "finite_group",
+              "kind": "degenerate",
+              "statement": "Λ = {±1} gives Λ′ = {1}."
+            },
+            {
+              "name": "not_fg",
+              "kind": "non-example",
+              "statement": "All roots of unity in GL_1(ℚ̄): not finitely generated, every finite-index subgroup has torsion."
+            }
+          ]
+        },
+        {
+          "id": "6.4",
+          "kind": "definition",
+          "name": "BallQuotient.IsNeat",
+          "statement": "Γ ⊂ G is neat if no eigenvalue of Ad(γ), γ ∈ Γ, is a nontrivial root of unity. Every lattice has a normal neat finite-index subgroup; neat ⇒ torsion-free; neat lattices have Γ_b ⊂ N_b, Γ ∩ Z(N_b) = ⟨T_τ⟩ (n ≥ 2), Γ_b/⟨T_τ⟩ ≅ Λ_b a lattice in ℂ^{n−1}.",
+          "hypotheses": [
+            "Γ lattice for the structural statements"
+          ],
+          "locator": {
+            "source": "WitteMorris2015",
+            "where": "line 2969 to line 2973; BaldiUllmo2023 line 523 to line 524 and Proposition 3.3.3 line 530"
+          },
+          "prerequisites": [
+            "target:1.2",
+            "target:6.1",
+            "target:6.2",
+            "target:6.3"
+          ],
+          "api": [
+            {
+              "name": "exists_normal_neat",
+              "role": "constructor",
+              "statement": "Every lattice has a normal neat subgroup of finite index."
+            },
+            {
+              "name": "torsionFree",
+              "role": "structure",
+              "statement": "Neat subgroups are torsion-free."
+            },
+            {
+              "name": "subgroup_conj",
+              "role": "structure",
+              "statement": "Subgroups and conjugates of neat subgroups are neat."
+            },
+            {
+              "name": "cusp_unipotent",
+              "role": "structure",
+              "statement": "For neat lattices, Γ_b ⊂ N_b and Γ_b/⟨T_τ⟩ ≅ Λ_b."
+            }
+          ],
+          "tests": [
+            {
+              "name": "gamma3_neat",
+              "kind": "computation",
+              "statement": "The image of Γ(3) in PU(1,1) is neat; an order-3 elliptic element is not."
+            },
+            {
+              "name": "screw_not_neat",
+              "kind": "non-example",
+              "statement": "⟨m·T_t⟩ with m of order 4 is torsion-free but not neat (eigenvalue i)."
+            },
+            {
+              "name": "n1",
+              "kind": "degenerate",
+              "statement": "For n = 1 and neat Γ, every Γ_b = ⟨T_τ⟩ and Λ_b = 0."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "7",
+      "title": "The analytic quotient",
+      "targets": [
+        {
+          "id": "7.1",
+          "kind": "construction",
+          "name": "BallQuotient.analyticQuotient",
+          "statement": "For discrete Γ, X_Γ = MulAction.orbitRel.Quotient Γ B with Γ-invariant holomorphic functions is a Hausdorff second-countable normal complex analytic space of pure dimension n, locally U_x/Γ_x; π holomorphic open; invariant holomorphic maps factor uniquely.",
+          "hypotheses": [
+            "Γ ⊂ G discrete"
+          ],
+          "locator": {
+            "source": "Cartan1957",
+            "where": "pp. 90–102; BaldiUllmo2023 line 431 to line 434"
+          },
+          "prerequisites": [
+            "target:5.2",
+            "roadmap:ShimuraVarieties §P.6",
+            "roadmap:ComplexComparisonPartII §C−1.1",
+            "mathlib:MulAction.orbitRel.Quotient"
+          ],
+          "api": [
+            {
+              "name": "local_model",
+              "role": "structure",
+              "statement": "Near π(x), X_Γ ≅ U_x/Γ_x."
+            },
+            {
+              "name": "universal_property",
+              "role": "characterisation",
+              "statement": "Γ-invariant holomorphic maps from B factor uniquely through π."
+            },
+            {
+              "name": "compact_iff",
+              "role": "characterisation",
+              "statement": "X_Γ compact iff Γ cocompact."
+            }
+          ],
+          "tests": [
+            {
+              "name": "trivial_group",
+              "kind": "degenerate",
+              "statement": "Γ trivial gives B."
+            },
+            {
+              "name": "minus_one",
+              "kind": "computation",
+              "statement": "w ↦ −w: normal, singular at 0 for n ≥ 2, smooth with coordinate w² for n = 1."
+            },
+            {
+              "name": "reflection_smooth",
+              "kind": "non-example",
+              "statement": "The reflection [diag(1,1,−1)] gives a smooth quotient despite torsion."
+            }
+          ]
+        },
+        {
+          "id": "7.2",
+          "kind": "theorem",
+          "name": "BallQuotient.torsionFree_manifold",
+          "statement": "For torsion-free discrete Γ: free action, X_Γ complex manifold, π holomorphic covering, π₁(X_Γ) ≅ Γ, ω descends to a complete Kähler metric with Ricci form −(n+1)ω_Γ.",
+          "hypotheses": [
+            "Γ discrete torsion-free"
+          ],
+          "locator": {
+            "source": "Mok2012",
+            "where": "line 309 to line 311"
+          },
+          "prerequisites": [
+            "target:2.2",
+            "target:2.3",
+            "target:2.4",
+            "target:5.2",
+            "target:7.1",
+            "roadmap:ComplexManifolds Milestone 4",
+            "tauceti:TauCeti.isLocalDiffeomorph_quotientMk",
+            "roadmap:RiemannianGeometry R4.7"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "gamma3_sphere",
+              "kind": "computation",
+              "statement": "Γ(3) image: sphere with four punctures."
+            },
+            {
+              "name": "cocompact_kahler",
+              "kind": "compatibility",
+              "statement": "Torsion-free cocompact Γ: compact Kähler manifold with negative Ricci form."
+            },
+            {
+              "name": "modular_not_cover",
+              "kind": "non-example",
+              "statement": "PSL(2,ℤ): π has local degree 2 at i, not a covering."
+            }
+          ]
+        },
+        {
+          "id": "7.3",
+          "kind": "theorem",
+          "name": "BallQuotient.finiteQuotient",
+          "statement": "For discrete Γ′ ◁ Γ of finite index, X_{Γ′}/(Γ/Γ′) ≅ X_Γ as complex analytic spaces, compatibly with towers.",
+          "hypotheses": [
+            "Γ′ ◁ Γ finite index"
+          ],
+          "locator": {
+            "source": "Cartan1957",
+            "where": "pp. 90–102"
+          },
+          "prerequisites": [
+            "target:7.1",
+            "roadmap:ShimuraVarieties §P.6"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "trivial_cases",
+              "kind": "degenerate",
+              "statement": "Γ′ = Γ gives trivial F; Γ′ trivial, Γ finite gives B/Γ."
+            },
+            {
+              "name": "s3",
+              "kind": "computation",
+              "statement": "PSL(2,ℤ) ⊃ Γ(2)/{±1}: S₃ on the thrice-punctured sphere with quotient ℂ."
+            },
+            {
+              "name": "normal_core",
+              "kind": "non-example",
+              "statement": "A non-normal finite-index subgroup is replaced by its normal core."
+            }
+          ]
+        },
+        {
+          "id": "7.4",
+          "kind": "theorem",
+          "name": "BallQuotient.analyticQuotient_n1",
+          "statement": "For n = 1, X_Γ is FuchsianOrbifolds Layer 1's coarse quotient Riemann surface of the corresponding Fuchsian group.",
+          "hypotheses": [
+            "n = 1",
+            "Γ discrete"
+          ],
+          "locator": {
+            "source": "Mok2012",
+            "where": "line 19 to line 26"
+          },
+          "prerequisites": [
+            "target:1.6",
+            "target:7.1",
+            "roadmap:FuchsianOrbifolds Layer 1"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "modular",
+              "kind": "computation",
+              "statement": "PSL(2,ℤ): both give ℂ."
+            },
+            {
+              "name": "free_locus",
+              "kind": "compatibility",
+              "statement": "On the free locus both are ComplexManifolds Milestone 4's quotient."
+            },
+            {
+              "name": "elliptic_chart",
+              "kind": "computation",
+              "statement": "At an elliptic point of order m both have coordinate w^m."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "8",
+      "title": "The toroidal compactification of a neat ball quotient",
+      "targets": [
+        {
+          "id": "8.1",
+          "kind": "construction",
+          "name": "BallQuotient.cuspChart",
+          "statement": "For neat Γ and a cusp b (conjugated to ∞): Ψ_b(u,v) = (u, e^{2πiv/τ}), Ĝ_b, the action of Λ_b ≅ Γ_b/⟨T_τ⟩ by (u,q) ↦ (u+a, χ(a)e^{−(4π/τ)⟨a,u⟩−(2π/τ)|a|²}q), where χ(a) = e^{2πit_a/τ} for n_{(a,t_a)} ∈ Γ_b is a unitary semi-character (|χ(a)| = 1, χ(a+a′) = χ(a)χ(a′)e^{−4πi Im⟨a,a′⟩/τ} with the last factor ±1 since 4 Im⟨a,a′⟩ ∈ τℤ; a character exactly when [Γ_b,Γ_b] ⊆ ⟨T_{2τ}⟩), the line bundle L_b over T_b = ℂ^{n−1}/Λ_b with metric μ = e^{(4π/τ)|u|²}|q|² of negative curvature, Ω_b(N) = {μ < e^{−4πN/τ}}; for N large Ω_b(N) ∖ T_b ≅ H(N)/Γ_b embeds openly in X_Γ with disjoint images.",
+          "hypotheses": [
+            "Γ neat lattice",
+            "N large"
+          ],
+          "locator": {
+            "source": "Mok2012",
+            "where": "line 152 to line 239, equations (5)–(6) line 170 to line 175; BaldiUllmo2023 line 559 to line 571"
+          },
+          "prerequisites": [
+            "target:1.5",
+            "target:6.1",
+            "target:6.4",
+            "roadmap:ComplexManifolds Milestone 7",
+            "roadmap:ComplexKahlerGeometry K4"
+          ],
+          "api": [
+            {
+              "name": "automorphy_factor",
+              "role": "structure",
+              "statement": "The multipliers e_a(u) = χ(a)e^{−(4π/τ)⟨a,u⟩−(2π/τ)|a|²} form a holomorphic factor of automorphy, e_{a+a′}(u) = e_a(u+a′)e_{a′}(u), the sign of the semi-character being cancelled by e^{(4π/τ)i Im⟨a,a′⟩}; it is the action of Γ_b descended through Ψ_b."
+            },
+            {
+              "name": "metric_invariant",
+              "role": "evaluation",
+              "statement": "μ is invariant and has curvature −(4π/τ)i∂∂̄|u|²."
+            },
+            {
+              "name": "open_embedding",
+              "role": "structure",
+              "statement": "Ω_b(N) ∖ T_b embeds openly in X for N large, disjointly over cusp classes."
+            },
+            {
+              "name": "n1_qcoordinate",
+              "role": "compatibility",
+              "statement": "For n = 1, q is FuchsianOrbifolds Layer 3's cusp coordinate of width τ."
+            }
+          ],
+          "tests": [
+            {
+              "name": "mu_invariance",
+              "kind": "computation",
+              "statement": "e^{(4π/τ)|u+a|²}e^{−(8π/τ)Re⟨a,u⟩−(4π/τ)|a|²} = e^{(4π/τ)|u|²}."
+            },
+            {
+              "name": "conjugate_convention",
+              "kind": "non-example",
+              "statement": "With ⟨u,a⟩ instead of ⟨a,u⟩ the multiplier is not holomorphic."
+            },
+            {
+              "name": "gamma3_width",
+              "kind": "computation",
+              "statement": "Γ(3) at ∞: τ = 3, q = e^{2πiv/3}, the semi-character χ trivial since Λ_b = 0."
+            },
+            {
+              "name": "semi_character_sign",
+              "kind": "non-example",
+              "statement": "n = 2, Γ_b = ⟨n_{(λ,0)}, n_{(iλ,0)}⟩, λ > 0: Γ_b ∩ Z(N) = ⟨T_{4λ²}⟩, τ = 4λ², Λ_b = ℤ[i]λ; the element over (1+i)λ is n_{((1+i)λ, −2λ²)}, so χ(λ) = χ(iλ) = 1 and χ((1+i)λ) = −1: χ is not a character; a definition assuming it multiplicative glues with the wrong sign over (1+i)λ, while the cocycle identity holds since e^{(4π/τ)i Im⟨λ,iλ⟩} = −1."
+            }
+          ]
+        },
+        {
+          "id": "8.2",
+          "kind": "construction",
+          "name": "BallQuotient.toroidalCompactification",
+          "statement": "X^M = X ∪ ⋃_b Ω_b(N) glued along H(N)/Γ_b: a compact connected complex manifold of dimension n, independent of N; D = X^M ∖ X a smooth divisor with components T_b (complex tori of dimension n−1, one per cusp class) and normal bundles L_b; D = ∅ iff Γ cocompact.",
+          "hypotheses": [
+            "Γ neat lattice"
+          ],
+          "locator": {
+            "source": "Mok2012",
+            "where": "Theorem 1 line 476 to line 484; BaldiUllmo2023 line 510 to line 557"
+          },
+          "prerequisites": [
+            "target:6.1",
+            "target:8.1",
+            "roadmap:ComplexManifolds Milestone 5",
+            "roadmap:ComplexManifolds Milestone 6"
+          ],
+          "api": [
+            {
+              "name": "compact_manifold",
+              "role": "structure",
+              "statement": "X^M is a compact connected complex manifold."
+            },
+            {
+              "name": "boundary_components",
+              "role": "structure",
+              "statement": "D = ⊔ T_b, one component per cusp class, with normal bundle L_b."
+            },
+            {
+              "name": "independent_N",
+              "role": "characterisation",
+              "statement": "Independent of N up to unique biholomorphism restricting to id_X."
+            }
+          ],
+          "tests": [
+            {
+              "name": "n1",
+              "kind": "compatibility",
+              "statement": "n = 1: FuchsianOrbifolds Layer 4's compactified quotient."
+            },
+            {
+              "name": "cocompact",
+              "kind": "degenerate",
+              "statement": "Cocompact neat Γ: X^M = X, D = ∅."
+            },
+            {
+              "name": "n2_elliptic",
+              "kind": "computation",
+              "statement": "n = 2: each T_b is an elliptic curve ℂ/Λ_b."
+            }
+          ]
+        },
+        {
+          "id": "8.3",
+          "kind": "theorem",
+          "name": "BallQuotient.poincareGrowth",
+          "statement": "On Ω_b ∖ T_b, ω = i∂∂̄(−log(−log‖v‖)); ω has Poincaré growth along D; ω^n/n! ≍ δ^{−2}(−log δ)^{−(n+1)} dV near D.",
+          "hypotheses": [
+            "Γ neat lattice"
+          ],
+          "locator": {
+            "source": "Mok2012",
+            "where": "line 240 to line 304, Proposition 1 line 295; BaldiUllmo2023 Definition 3.3.4 and Theorem 3.3.5 line 586 to line 601"
+          },
+          "prerequisites": [
+            "target:2.2",
+            "target:8.1",
+            "target:8.2"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "n1_formula",
+              "kind": "computation",
+              "statement": "n = 1: ω = i dq∧dq̄/(4|q|²(log|q|)²)."
+            },
+            {
+              "name": "n1_area",
+              "kind": "computation",
+              "statement": "|q|^{−2}(log|q|)^{−2} is integrable near 0."
+            },
+            {
+              "name": "cylinder",
+              "kind": "non-example",
+              "statement": "|dq|²/|q|² lacks Poincaré growth and has infinite area."
+            }
+          ]
+        },
+        {
+          "id": "8.4",
+          "kind": "theorem",
+          "name": "BallQuotient.logCanonical_trivial_near_boundary",
+          "statement": "E = K_{X^M} ⊗ O(D) is trivial near D with frame ν = dw′∧dq/q; |ν^ℓ|² ≍ (−log|q|)^{ℓ(n+1)}; f ν^ℓ (f holomorphic on Ω_b) is L² near T_b iff f|_{T_b} = 0.",
+          "hypotheses": [
+            "Γ neat lattice",
+            "ℓ ≥ 1"
+          ],
+          "locator": {
+            "source": "Mok2012",
+            "where": "line 568 to line 626"
+          },
+          "prerequisites": [
+            "target:8.2",
+            "target:8.3",
+            "roadmap:ComplexKahlerGeometry K4",
+            "roadmap:ComplexManifolds Milestone 7"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "n1_weight2",
+              "kind": "computation",
+              "statement": "n = 1, ℓ = 1: f ν is L² iff f(0) = 0 (weight-2 cusp forms)."
+            },
+            {
+              "name": "pole_order",
+              "kind": "computation",
+              "statement": "f = q^k: integrand |q|^{2k−2}(−log|q|)^{(ℓ−1)(n+1)}, integrable iff k ≥ 1."
+            },
+            {
+              "name": "K_alone",
+              "kind": "non-example",
+              "statement": "K_{X^M}|_{T_b} = L_b^{−1}, nontrivial for n ≥ 2."
+            }
+          ]
+        },
+        {
+          "id": "8.5",
+          "kind": "theorem",
+          "name": "BallQuotient.finiteVolume_subvariety",
+          "statement": "For an irreducible compact analytic Y ⊂ X^M of dimension k ≥ 1 not contained in D, ∫_{Y^reg ∖ D} ω^k < ∞.",
+          "hypotheses": [
+            "Γ neat lattice",
+            "Y ⊄ D"
+          ],
+          "locator": {
+            "source": "BaldiUllmo2023",
+            "where": "line 586 to line 601; Mok2012 Proposition 1 line 295"
+          },
+          "prerequisites": [
+            "target:8.3",
+            "roadmap:ComplexKahlerGeometry K3"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "whole",
+              "kind": "degenerate",
+              "statement": "Y = X^M gives vol(X) < ∞."
+            },
+            {
+              "name": "n1_cusp",
+              "kind": "computation",
+              "statement": "n = 1: ∫_0^δ dr/(r log² r) < ∞."
+            },
+            {
+              "name": "flat_diverges",
+              "kind": "non-example",
+              "statement": "For |dq|²/|q|² the integral diverges."
+            }
+          ],
+          "proofSketch": "Split the Poincaré bound into Euclidean and ν parts (ν∧ν = 0) and use finite coordinate projections."
+        }
+      ]
+    },
+    {
+      "key": "9",
+      "title": "Projective algebraicity of the minimal compactification",
+      "targets": [
+        {
+          "id": "9.1",
+          "kind": "theorem",
+          "name": "BallQuotient.L2_sections_jets",
+          "statement": "For neat Γ and finite P ⊂ X there is ℓ₀ with: for ℓ ≥ ℓ₀ every assignment of 1-jets at P is realised by a holomorphic L² section of K_X^ℓ; for compact Q ⊂ X there is ℓ₀ with L² sections nonvanishing at each x ∈ Q for ℓ ≥ ℓ₀.",
+          "hypotheses": [
+            "Γ neat lattice",
+            "P finite, Q compact"
+          ],
+          "locator": {
+            "source": "Mok2012",
+            "where": "Theorem 2 line 495 to line 514; line 681 to line 772; line 817 to line 901"
+          },
+          "prerequisites": [
+            "target:2.3",
+            "target:7.2",
+            "roadmap:ComplexComparisonPartII §C1.4",
+            "roadmap:ComplexComparisonPartII §C1.6",
+            "roadmap:ComplexKahlerGeometry K6.0"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "genus_g",
+              "kind": "compatibility",
+              "statement": "n = 1 cocompact genus g ≥ 2: deg K^ℓ = ℓ(2g−2) ≥ 2g+1 for ℓ ≥ 3, and for ℓ = 2 when g ≥ 3; for g = 2, ℓ = 2, deg K² = 4 < 5 and the bicanonical map factors through the hyperelliptic involution: ℓ₀ depends on Γ."
+            },
+            {
+              "name": "nonintegrable",
+              "kind": "computation",
+              "statement": "∫_{|z|<1}|z|^{−2n}dV diverges; weight (n−1/2)log|z|² is integrable."
+            },
+            {
+              "name": "incomplete",
+              "kind": "non-example",
+              "statement": "An incomplete metric does not satisfy the hypothesis of §C1.4."
+            }
+          ],
+          "proofSketch": "Smooth weights (n+1)χ log(|z|²+ε), uniform L² bounds, Montel limit."
+        },
+        {
+          "id": "9.2",
+          "kind": "theorem",
+          "name": "BallQuotient.L2_extends_meromorphically",
+          "statement": "Holomorphic L² sections of K_X^ℓ are exactly restrictions of sections of E^ℓ on X^M vanishing on D; these spaces are finite-dimensional; for ℓ ≥ 2 and each T_b there is a section of E^ℓ nowhere zero on T_b and zero on the other components.",
+          "hypotheses": [
+            "Γ neat lattice",
+            "ℓ ≥ 2 for the last statement"
+          ],
+          "locator": {
+            "source": "Mok2012",
+            "where": "Main Theorem line 546 to line 553; line 591 to line 678"
+          },
+          "prerequisites": [
+            "target:8.2",
+            "target:8.3",
+            "target:8.4",
+            "target:9.1",
+            "roadmap:ComplexKahlerGeometry K3",
+            "roadmap:ComplexComparisonPartII §C1.4",
+            "roadmap:ComplexComparisonPartII §C1.6"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "gamma2_dims",
+              "kind": "computation",
+              "statement": "Γ(2)/{±1}: E = O(1) on ℙ¹, dim H⁰(E^ℓ) = ℓ+1, vanishing on D: ℓ−2."
+            },
+            {
+              "name": "l_equals_1",
+              "kind": "non-example",
+              "statement": "ν itself is not L²: ℓ ≥ 2 is used via (ℓ−1)(n+1)ω > 0."
+            },
+            {
+              "name": "cocompact",
+              "kind": "degenerate",
+              "statement": "Cocompact: D = ∅, E = K_X."
+            }
+          ]
+        },
+        {
+          "id": "9.3",
+          "kind": "theorem",
+          "name": "BallQuotient.mok_projective_embedding",
+          "statement": "For neat Γ there is ℓ with E^ℓ base point free, Φ_ℓ: X^M → ℙ^{N_ℓ} constant on each T_b with distinct values ζ_b ∉ Φ_ℓ(X), Φ_ℓ|_X an injective immersion; Z = Φ_ℓ(X^M) is projective algebraic with Z ∖ {ζ_b} smooth.",
+          "hypotheses": [
+            "Γ neat lattice"
+          ],
+          "locator": {
+            "source": "Mok2012",
+            "where": "Main Theorem line 546 to line 562; line 681 to line 930"
+          },
+          "prerequisites": [
+            "target:9.1",
+            "target:9.2",
+            "roadmap:ComplexComparisonPartII §C4.1",
+            "roadmap:ComplexComparisonPartII §C4.2",
+            "roadmap:ComplexKahlerGeometry K3"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "gamma2_veronese",
+              "kind": "computation",
+              "statement": "Γ(2)/{±1}: Φ_ℓ is a Veronese embedding of ℙ¹."
+            },
+            {
+              "name": "cocompact_kodaira",
+              "kind": "compatibility",
+              "statement": "Cocompact: the pluricanonical embedding (MilneSVI line 1734)."
+            },
+            {
+              "name": "no_twist",
+              "kind": "non-example",
+              "statement": "K_{ℙ¹} = O(−2) has no sections: the twist by O(D) is needed."
+            }
+          ]
+        },
+        {
+          "id": "9.4",
+          "kind": "construction",
+          "name": "BallQuotient.minimalCompactification_neat",
+          "statement": "S*_Γ = normalization of Z, ∂ = preimage of {ζ_b}, S_Γ = S*_Γ ∖ ∂: normal projective, ∂ finite with one point per cusp class, S_Γ smooth quasi-projective with φ_Γ: S_Γ^an ≅ X_Γ; X^M → S*_Γ^an contracts each T_b; horoball images form neighbourhood bases of ∂; independent of ℓ.",
+          "hypotheses": [
+            "Γ neat lattice"
+          ],
+          "locator": {
+            "source": "Mok2012",
+            "where": "Main Theorem line 559 to line 562; Theorem 1 line 479 to line 482"
+          },
+          "prerequisites": [
+            "target:8.2",
+            "target:9.3",
+            "mathlib:AlgebraicGeometry.Scheme.Hom.normalization",
+            "roadmap:AlgebraicModuliForArithmeticGeometry §5.4",
+            "roadmap:ComplexComparisonPartII §C4.4",
+            "gap:normality-analytification",
+            "gap:normal-riemann-extension"
+          ],
+          "api": [
+            {
+              "name": "normal_projective",
+              "role": "structure",
+              "statement": "S*_Γ is a normal projective variety."
+            },
+            {
+              "name": "boundary_points",
+              "role": "structure",
+              "statement": "∂ is finite, one point per cusp class."
+            },
+            {
+              "name": "uniformisation",
+              "role": "constructor",
+              "statement": "φ_Γ: S_Γ^an ≅ X_Γ."
+            },
+            {
+              "name": "nbhd_basis",
+              "role": "structure",
+              "statement": "Images of H_b(N)/Γ_b with the boundary point form a neighbourhood basis."
+            },
+            {
+              "name": "contraction",
+              "role": "constructor",
+              "statement": "X^M → (S*_Γ)^an is the identity on X and contracts each T_b."
+            }
+          ],
+          "tests": [
+            {
+              "name": "n1",
+              "kind": "compatibility",
+              "statement": "n = 1: the smooth projective compactification."
+            },
+            {
+              "name": "cocompact",
+              "kind": "degenerate",
+              "statement": "Cocompact: ∂ = ∅, S* = S."
+            },
+            {
+              "name": "per_class",
+              "kind": "non-example",
+              "statement": "∂ has one point per cusp class, not per cusp point (infinitely many)."
+            }
+          ]
+        },
+        {
+          "id": "9.5",
+          "kind": "theorem",
+          "name": "BallQuotient.minimalCompactification",
+          "statement": "For every lattice Γ and normal neat Γ′ ◁ Γ of finite index, F = Γ/Γ′ acts algebraically on S*_{Γ′}; S*_Γ := S*_{Γ′}/F is normal projective, ∂_Γ finite ↔ cusp classes, empty iff cocompact, S_Γ normal quasi-projective with φ_Γ: S_Γ^an ≅ X_Γ, smooth for torsion-free Γ; independent of Γ′.",
+          "hypotheses": [
+            "Γ lattice"
+          ],
+          "locator": {
+            "source": "Mok2012",
+            "where": "Main Theorem; MilneSVI Remark 3.13(a) line 1722 to line 1724; BaldiUllmo2023 Theorem 3.1.12 line 455 to line 462"
+          },
+          "prerequisites": [
+            "target:6.4",
+            "target:7.3",
+            "target:9.4",
+            "roadmap:SchemeAndStackFoundations §1.17",
+            "roadmap:ShimuraVarieties §P.6",
+            "roadmap:ComplexComparisonPartII §C4.4",
+            "gap:normal-riemann-extension",
+            "gap:normality-analytification"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "modular",
+              "kind": "computation",
+              "statement": "PSL(2,ℤ): S* = ℙ¹, ∂ = {∞}, S = 𝔸¹."
+            },
+            {
+              "name": "cocompact_torsion",
+              "kind": "degenerate",
+              "statement": "Cocompact with torsion: S* = S normal projective."
+            },
+            {
+              "name": "independence",
+              "kind": "characterisation",
+              "statement": "Γ′, Γ″ give the same S*_Γ through S*_{Γ′∩Γ″}."
+            }
+          ]
+        },
+        {
+          "id": "9.6",
+          "kind": "theorem",
+          "name": "BallQuotient.minimalCompactification_n1",
+          "statement": "For n = 1, (S*_Γ)^an is FuchsianOrbifolds Layer 4's compactified quotient; that compact Riemann surface is projective.",
+          "hypotheses": [
+            "n = 1",
+            "Γ lattice"
+          ],
+          "locator": {
+            "source": "MilneSVI",
+            "where": "line 1690 to line 1694"
+          },
+          "prerequisites": [
+            "target:7.4",
+            "target:9.5",
+            "roadmap:FuchsianOrbifolds Layer 4"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "modular",
+              "kind": "computation",
+              "statement": "PSL(2,ℤ): ℙ¹."
+            },
+            {
+              "name": "gamma3",
+              "kind": "computation",
+              "statement": "Γ(3): ℙ¹ with four cusps."
+            },
+            {
+              "name": "gamma0_11",
+              "kind": "computation",
+              "statement": "Γ₀(11): no elliptic points, two cusps, genus 1."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "10",
+      "title": "Extension, Borel algebraicity and uniqueness",
+      "targets": [
+        {
+          "id": "10.1",
+          "kind": "theorem",
+          "name": "BallQuotient.hyperbolicallyEmbedded",
+          "statement": "For torsion-free lattice Γ: holomorphic maps from Δ (curvature −2 metric) and from Δ* (metric |dq|²/(2|q|²log²|q|)) into (X_Γ, d_Γ) are distance-decreasing; X_Γ is hyperbolically embedded in (S*_Γ)^an for d_Γ.",
+          "hypotheses": [
+            "Γ torsion-free lattice"
+          ],
+          "locator": {
+            "source": "Kiernan1972",
+            "where": "line 57 to line 75; Deng2020 line 61 to line 63"
+          },
+          "prerequisites": [
+            "target:2.5",
+            "target:4.2",
+            "target:7.2",
+            "target:9.4",
+            "target:9.5"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "circle_length",
+              "kind": "computation",
+              "statement": "|q| = r has length √2π/|log r| → 0."
+            },
+            {
+              "name": "cusps_far",
+              "kind": "computation",
+              "statement": "Γ(3): points tending to distinct cusps are at distance → ∞."
+            },
+            {
+              "name": "torsion_fails",
+              "kind": "non-example",
+              "statement": "PSL(2,ℤ)\\ℍ ≅ ℂ has vanishing Kobayashi pseudo-distance."
+            }
+          ]
+        },
+        {
+          "id": "10.2",
+          "kind": "theorem",
+          "name": "BallQuotient.extension_theorem",
+          "statement": "For torsion-free lattice Γ and r, s ≥ 0, every holomorphic (Δ*)^r × Δ^s → X_Γ extends uniquely to Δ^{r+s} → (S*_Γ)^an.",
+          "hypotheses": [
+            "Γ torsion-free lattice"
+          ],
+          "locator": {
+            "source": "Kiernan1972",
+            "where": "Theorem 1 line 111 to line 116; Theorem 2 line 157 to line 160; MilneSVI Lemma 3.15 line 1746 to line 1748"
+          },
+          "prerequisites": [
+            "target:10.1",
+            "roadmap:ComplexKahlerGeometry K3"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "cusp_inverse",
+              "kind": "computation",
+              "statement": "The inverse cusp coordinate of Γ(3) extends with value the cusp."
+            },
+            {
+              "name": "exp_torsion",
+              "kind": "non-example",
+              "statement": "exp(1/z) into PSL(2,ℤ)\\ℍ ≅ ℂ does not extend: torsion."
+            },
+            {
+              "name": "r_zero",
+              "kind": "degenerate",
+              "statement": "r = 0: nothing to extend."
+            }
+          ]
+        },
+        {
+          "id": "10.3",
+          "kind": "theorem",
+          "name": "BallQuotient.borel_algebraicity",
+          "statement": "For torsion-free lattice Γ and smooth variety V over ℂ, every holomorphic V^an → S_Γ^an is the analytification of a unique morphism; every smooth projective SNC compactification of S_Γ maps uniquely to S*_Γ extending the identity.",
+          "hypotheses": [
+            "Γ torsion-free lattice",
+            "V smooth separated of finite type over ℂ"
+          ],
+          "locator": {
+            "source": "MilneSVI",
+            "where": "Theorem 3.14 line 1742 to line 1744; line 1764 to line 1769; line 1775 to line 1780; Deng2020 Theorem A line 87 to line 90"
+          },
+          "prerequisites": [
+            "target:10.2",
+            "roadmap:AlgebraicModuliForArithmeticGeometry §9.5",
+            "roadmap:ComplexComparisonPartII §C−1.1",
+            "roadmap:ComplexComparisonPartII §C4.4"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "covering_algebraic",
+              "kind": "computation",
+              "statement": "S_{Γ′}^an → S_Γ^an is algebraic for torsion-free Γ′ ⊂ Γ."
+            },
+            {
+              "name": "exp_not_algebraic",
+              "kind": "non-example",
+              "statement": "exp: 𝔸¹(ℂ) → Y(1)(ℂ) is not algebraic (torsion)."
+            },
+            {
+              "name": "identity",
+              "kind": "degenerate",
+              "statement": "The identity of S_Γ algebraizes uniquely."
+            }
+          ]
+        },
+        {
+          "id": "10.4",
+          "kind": "theorem",
+          "name": "BallQuotient.unique_model",
+          "statement": "(a) Torsion-free Γ: any two quasi-projective models of X_Γ are uniquely isomorphic compatibly with the identifications. (b) Any Γ: S_Γ is the unique quasi-projective model admitting a finite morphism from a model of some torsion-free normal finite-index X_{Γ′} lifting X_{Γ′} → X_Γ, and then S ≅ S′/(Γ/Γ′). (c) π: B → S_Γ^an holomorphic, a covering for torsion-free Γ.",
+          "hypotheses": [
+            "Γ lattice; (a) Γ torsion-free"
+          ],
+          "locator": {
+            "source": "MilneSVI",
+            "where": "Corollary 3.16 line 1770 to line 1774; BaldiUllmo2023 Theorem 3.1.12 line 455 to line 465, line 102 to line 104, Definition 3.1.8 line 431"
+          },
+          "prerequisites": [
+            "target:9.5",
+            "target:10.3",
+            "roadmap:ShimuraVarieties §3.3",
+            "roadmap:ShimuraVarieties §3.4a",
+            "roadmap:ComplexComparisonPartII §C4.4",
+            "gap:normality-analytification"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "automorphisms",
+              "kind": "compatibility",
+              "statement": "Biholomorphisms of X_Γ (torsion-free) come from the normaliser of Γ and are algebraic."
+            },
+            {
+              "name": "modular",
+              "kind": "computation",
+              "statement": "PSL(2,ℤ): S = 𝔸¹; analytic automorphisms of ℂ are affine."
+            },
+            {
+              "name": "cusp_normalization",
+              "kind": "non-example",
+              "statement": "t ↦ (t²,t³) onto the cusp is bijective but not an isomorphism."
+            }
+          ]
+        },
+        {
+          "id": "10.5",
+          "kind": "theorem",
+          "name": "BallQuotient.unique_finite_compactification",
+          "statement": "For every lattice Γ and compact normal complex space Y ⊃ X_Γ open dense with finite complement, id_{X_Γ} extends uniquely to Y ≅ (S*_Γ)^an, algebraic when Y is the analytification of a normal projective variety.",
+          "hypotheses": [
+            "Γ lattice",
+            "Y compact normal",
+            "Y ∖ X_Γ finite"
+          ],
+          "locator": {
+            "source": "MilneSVI",
+            "where": "line 1690 to line 1694; BaldiUllmo2023 line 513 to line 516"
+          },
+          "prerequisites": [
+            "target:9.4",
+            "target:9.5",
+            "roadmap:ComplexKahlerGeometry K3",
+            "roadmap:ComplexComparisonPartII §C0.6",
+            "roadmap:ComplexComparisonPartII §C4.4",
+            "gap:normal-riemann-extension"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "cstar",
+              "kind": "computation",
+              "statement": "ℙ¹ is the only normal finite-point compactification of ℂ*."
+            },
+            {
+              "name": "nodal",
+              "kind": "non-example",
+              "statement": "The nodal cubic compactifies ℂ* by one non-normal point."
+            },
+            {
+              "name": "toroidal",
+              "kind": "non-example",
+              "statement": "X^M has divisorial boundary: finiteness is needed."
+            }
+          ]
+        },
+        {
+          "id": "10.6",
+          "kind": "theorem",
+          "name": "BallQuotient.functoriality",
+          "statement": "For lattices Γ′ ⊆ Γ of finite index, X_{Γ′} → X_Γ is the analytification of a unique finite surjective S_{Γ′} → S_Γ of degree [Γ:Γ′], extending to S*_{Γ′} → S*_Γ with ∂ onto ∂; g ∈ G induces S_Γ ≅ S_{gΓg⁻¹}; compatible with composition.",
+          "hypotheses": [
+            "Γ′ ⊆ Γ lattices of finite index"
+          ],
+          "locator": {
+            "source": "BaldiUllmo2023",
+            "where": "line 102 to line 104"
+          },
+          "prerequisites": [
+            "target:9.5",
+            "target:10.4",
+            "target:10.5"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "degree6",
+              "kind": "computation",
+              "statement": "PSL(2,ℤ) ⊃ Γ(2)/{±1}: degree 6, {0,1,∞} ↦ ∞."
+            },
+            {
+              "name": "inner",
+              "kind": "degenerate",
+              "statement": "g ∈ Γ induces the identity."
+            },
+            {
+              "name": "effective",
+              "kind": "computation",
+              "statement": "Image of Γ(3): index and degree 12, versus index 24 in SL(2,ℤ)."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "11",
+      "title": "Arithmetic lattices and Shimura data",
+      "targets": [
+        {
+          "id": "11.1",
+          "kind": "definition",
+          "name": "BallQuotient.IsArithmetic",
+          "statement": "Γ ⊂ G is arithmetic if there are a connected semisimple ℚ-group 𝐆 ⊂ GL_N and a continuous surjection p: 𝐆(ℝ)° → G with compact kernel such that p(𝐆(ℤ) ∩ 𝐆(ℝ)°) is commensurable with Γ.",
+          "hypotheses": [
+            "𝐆 connected semisimple over ℚ",
+            "p continuous surjective with compact kernel"
+          ],
+          "locator": {
+            "source": "WitteMorris2015",
+            "where": "Definition 5.1.19 line 3732 to line 3739; BaldiUllmo2023 Proposition 2.3.3 line 333 to line 339"
+          },
+          "prerequisites": [
+            "roadmap:AdelicAlgebraicGroups §3.4",
+            "mathlib:Subgroup.Commensurable"
+          ],
+          "api": [
+            {
+              "name": "commensurability_invariant",
+              "role": "structure",
+              "statement": "Invariant under commensurability and conjugation."
+            },
+            {
+              "name": "representation_independent",
+              "role": "characterisation",
+              "statement": "Independent of the faithful representation."
+            },
+            {
+              "name": "simple_factor",
+              "role": "constructor",
+              "statement": "𝐆 may be replaced by its ℚ-simple factor with noncompact real points."
+            }
+          ],
+          "tests": [
+            {
+              "name": "modular",
+              "kind": "computation",
+              "statement": "PSL(2,ℤ) via 𝐆 = SL₂ and Cayley conjugation."
+            },
+            {
+              "name": "picard",
+              "kind": "computation",
+              "statement": "SU(V) over ℚ for K imaginary quadratic: the Picard modular group."
+            },
+            {
+              "name": "nonarithmetic",
+              "kind": "non-example",
+              "statement": "Mostow1980 Theorem 17.3 and DeligneMostow1986 line 151 lattices are not arithmetic."
+            }
+          ]
+        },
+        {
+          "id": "11.2",
+          "kind": "theorem",
+          "name": "BallQuotient.arithmetic_isLattice",
+          "statement": "Every arithmetic Γ ⊂ G is a lattice, cocompact iff 𝐆 is ℚ-anisotropic.",
+          "hypotheses": [
+            "Γ arithmetic"
+          ],
+          "locator": {
+            "source": "WitteMorris2015",
+            "where": "line 1896 to line 1898; BaldiUllmo2023 line 336 to line 339"
+          },
+          "prerequisites": [
+            "target:5.1",
+            "roadmap:AdelicAlgebraicGroups §3.4",
+            "roadmap:VonNeumannAlgebras Layer 9"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "picard_noncocompact",
+              "kind": "computation",
+              "statement": "(1,1,0,…) is isotropic: Picard groups are not cocompact."
+            },
+            {
+              "name": "cm_cocompact",
+              "kind": "computation",
+              "statement": "A CM field with K⁺ ≠ ℚ and signature (1,n) at one place, definite elsewhere: cocompact."
+            },
+            {
+              "name": "compact_group",
+              "kind": "non-example",
+              "statement": "A ℚ-group with compact real points admits no surjection onto G."
+            }
+          ]
+        },
+        {
+          "id": "11.3",
+          "kind": "construction",
+          "name": "BallQuotient.shimuraDatum",
+          "statement": "For arithmetic Γ with ℚ-simple 𝐆: 𝐆^ad(ℝ) = G × C, h₀(z) = ([diag(1,z/z̄,…,z/z̄)], 1) with diag(1,z/z̄,…,z/z̄) ∈ U(1,n) (the class of diag(z̄,z,…,z) in PGL_{n+1}(ℂ), a matrix in U(1,n) only for |z| = 1), X the conjugacy class of h₀; (𝐆^ad, X) is a pure Shimura datum (ShimuraVarieties §P.1), X ≅ B biholomorphically (ShimuraVarieties §P.2), and components at every level K_f are Γ_a^eff\\B with Γ_a^eff commensurable with Γ, neat for neat K_f.",
+          "hypotheses": [
+            "Γ arithmetic",
+            "𝐆 ℚ-simple"
+          ],
+          "locator": {
+            "source": "MilneSVI",
+            "where": "line 1686 to line 1689; BaldiUllmo2023 Remark 3.1.11 line 450 to line 454 and line 486 to line 506"
+          },
+          "prerequisites": [
+            "target:1.4",
+            "target:11.1",
+            "roadmap:ShimuraVarieties §P.1",
+            "roadmap:ShimuraVarieties §P.2",
+            "roadmap:ShimuraVarieties §0.4",
+            "roadmap:ShimuraVarieties §1.2",
+            "roadmap:AdelicAlgebraicGroups §3.4"
+          ],
+          "api": [
+            {
+              "name": "sv_axioms",
+              "role": "structure",
+              "statement": "SV1–SV3 hold for (𝐆^ad, X)."
+            },
+            {
+              "name": "component_identification",
+              "role": "compatibility",
+              "statement": "The orbit map identifies X with B biholomorphically."
+            },
+            {
+              "name": "component_groups",
+              "role": "structure",
+              "statement": "Component groups at every level are arithmetic, commensurable with Γ."
+            }
+          ],
+          "tests": [
+            {
+              "name": "cartan_involution",
+              "kind": "computation",
+              "statement": "h₀(i) = [diag(1,i/(−i),…)] = [diag(1,−1,…,−1)] acts by w ↦ −w."
+            },
+            {
+              "name": "sign_pinned",
+              "kind": "non-example",
+              "statement": "[diag(1,z̄/z,…,z̄/z)] acts by z̄/z and gives the opposite complex structure."
+            },
+            {
+              "name": "picard_pel",
+              "kind": "compatibility",
+              "statement": "For Picard groups: the adjoint of PELModuli §M5.5's unitary datum of signature (1,n)."
+            }
+          ]
+        },
+        {
+          "id": "11.4",
+          "kind": "theorem",
+          "name": "BallQuotient.minimal_eq_bailyBorel",
+          "statement": "For every component group Γ_a^eff of 11.3, id extends to a unique S*_{Γ_a^eff} ≅ Baily–Borel component (ShimuraVarieties §2.7), restricting to the algebraization of ShimuraVarieties §§1.2, 3.3, 3.5; arbitrary arithmetic Γ are related through S*_{Γ∩Γ_c}.",
+          "hypotheses": [
+            "Γ arithmetic"
+          ],
+          "locator": {
+            "source": "MilneSVI",
+            "where": "Theorem 3.12 line 1686; Remark 3.13 line 1722 to line 1727; BailyBorel1966 Theorem 10.11; BaldiUllmo2023 line 457"
+          },
+          "prerequisites": [
+            "target:10.5",
+            "target:10.6",
+            "target:11.3",
+            "roadmap:ShimuraVarieties §1.2",
+            "roadmap:ShimuraVarieties §2.7",
+            "roadmap:ShimuraVarieties §3.3",
+            "roadmap:ShimuraVarieties §3.5"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "modular",
+              "kind": "computation",
+              "statement": "PSL(2,ℤ): both are ℙ¹."
+            },
+            {
+              "name": "picard_boundary",
+              "kind": "computation",
+              "statement": "Picard surface: both boundaries are the cusp classes, codimension 2."
+            },
+            {
+              "name": "nonarithmetic",
+              "kind": "non-example",
+              "statement": "Non-arithmetic Γ: no Shimura datum, but S*_Γ exists."
+            }
+          ]
+        },
+        {
+          "id": "11.5",
+          "kind": "theorem",
+          "name": "BallQuotient.borelEmbedding",
+          "statement": "The open embedding B ⊂ ℙⁿ (chart z₀ ≠ 0) is the Borel embedding into the compact dual for the datum of 11.3, G-equivariant through PGL_{n+1}(ℂ).",
+          "hypotheses": [
+            "n ≥ 1"
+          ],
+          "locator": {
+            "source": "BaldiUllmo2023",
+            "where": "line 533 to line 540"
+          },
+          "prerequisites": [
+            "target:1.3",
+            "target:11.3",
+            "roadmap:ShimuraData §3.8"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "n1",
+              "kind": "computation",
+              "statement": "n = 1: the disc in the Riemann sphere."
+            },
+            {
+              "name": "boundary_quadric",
+              "kind": "computation",
+              "statement": "∂B is the real hypersurface ⟨z,z⟩ = 0."
+            },
+            {
+              "name": "siegel_chart",
+              "kind": "compatibility",
+              "statement": "𝔖 is the positive set of Im(Zₙ conj Z₀) − |Z′|²."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "12",
+      "title": "Totally geodesic subvarieties and the Ax–Schanuel setting",
+      "targets": [
+        {
+          "id": "12.1",
+          "kind": "definition",
+          "name": "BallQuotient.IsTotallyGeodesicSubvariety",
+          "statement": "Γ-special sub-ball: 𝔹(W) of dimension m ≥ 1 with r_W(Γ ∩ H_W) a lattice in PU(1,m); Γ-special subvariety: π(X_H) with reduced structure; totally geodesic subvariety: irreducible closed W ⊂ S_Γ, dim ≥ 1, every irreducible component of π⁻¹(W^an) with totally geodesic regular locus.",
+          "hypotheses": [
+            "Γ lattice",
+            "dim W ≥ 1"
+          ],
+          "locator": {
+            "source": "BaldiUllmo2023",
+            "where": "line 49 to line 50; Definition 3.1.6 line 421 to line 423; Definition 3.1.13 line 468 to line 473"
+          },
+          "prerequisites": [
+            "target:3.1",
+            "target:10.4",
+            "roadmap:ComplexKahlerGeometry K3",
+            "roadmap:RiemannianGeometry R5a"
+          ],
+          "api": [
+            {
+              "name": "torsionFree_iff",
+              "role": "characterisation",
+              "statement": "For torsion-free Γ: W totally geodesic iff W^reg totally geodesic in (X_Γ, ω_Γ)."
+            },
+            {
+              "name": "orbit_invariant",
+              "role": "structure",
+              "statement": "Γ-special depends only on the Γ-orbit and is stable under finite index."
+            },
+            {
+              "name": "lattice_iff",
+              "role": "characterisation",
+              "statement": "Γ_H lattice in H_W iff r_W(Γ_H) lattice in PU(1,m)."
+            }
+          ],
+          "tests": [
+            {
+              "name": "whole",
+              "kind": "degenerate",
+              "statement": "W = S_Γ is totally geodesic and Γ-special."
+            },
+            {
+              "name": "points_excluded",
+              "kind": "degenerate",
+              "statement": "Points are excluded by dim ≥ 1."
+            },
+            {
+              "name": "parabola",
+              "kind": "non-example",
+              "statement": "A preimage component like {w₂ = w₁²} is not totally geodesic."
+            }
+          ]
+        },
+        {
+          "id": "12.2",
+          "kind": "theorem",
+          "name": "BallQuotient.special_isAlgebraic",
+          "statement": "For a Γ-special sub-ball X_H of dimension m: π(X_H) = W^an for an irreducible closed W ⊂ S_Γ of dimension m; j: S_{Γ_H} → S_Γ finite, birational onto W (S_{Γ_H} = normalization of W), extending to S*_{Γ_H} → S*_Γ with ∂ into ∂; W totally geodesic with preimage components γX_H.",
+          "hypotheses": [
+            "Γ lattice",
+            "X_H Γ-special"
+          ],
+          "locator": {
+            "source": "BaldiUllmo2023",
+            "where": "Corollary 3.4.6 line 686 to line 702; line 433 to line 434; line 474"
+          },
+          "prerequisites": [
+            "target:3.1",
+            "target:3.4",
+            "target:9.5",
+            "target:10.2",
+            "target:10.3",
+            "target:10.6",
+            "roadmap:ComplexComparisonPartII §C4.1",
+            "roadmap:AlgebraicModuliForArithmeticGeometry §5.4"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "whole",
+              "kind": "degenerate",
+              "statement": "m = n: W = S_Γ and j = id."
+            },
+            {
+              "name": "picard_curve",
+              "kind": "computation",
+              "statement": "Picard over ℚ(i), sub-ball {w₂ = 0}: Γ_H ⊃ finite index in U(1,1;ℤ[i]) × U(1;ℤ[i]); W a modular curve."
+            },
+            {
+              "name": "trivial_stabiliser",
+              "kind": "non-example",
+              "statement": "A sub-ball with trivial stabiliser is not Γ-special."
+            }
+          ]
+        },
+        {
+          "id": "12.3",
+          "kind": "theorem",
+          "name": "BallQuotient.totallyGeodesic_isSpecial",
+          "statement": "Every totally geodesic subvariety W ⊂ S_Γ of dimension m ≥ 1 is Γ-special: preimage components are sub-balls X_H and r_W(Γ ∩ H_W) is a lattice in PU(1,m).",
+          "hypotheses": [
+            "Γ lattice",
+            "W totally geodesic"
+          ],
+          "locator": {
+            "source": "BaldiUllmo2023",
+            "where": "line 135 to line 137; Theorem 1.3.2 line 151 to line 152; Corollary 5.5.2 line 1346 to line 1352"
+          },
+          "prerequisites": [
+            "target:3.1",
+            "target:3.3",
+            "target:5.3",
+            "target:6.4",
+            "target:8.5",
+            "target:9.4",
+            "target:12.1"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "n1",
+              "kind": "degenerate",
+              "statement": "n = 1: only W = S_Γ."
+            },
+            {
+              "name": "finiteness_consumer",
+              "kind": "compatibility",
+              "statement": "BaldiUllmo2023 Theorem 1.2.1 concerns these objects."
+            },
+            {
+              "name": "non_lattice_image",
+              "kind": "non-example",
+              "statement": "Images of sub-balls with non-lattice stabilisers are not subvarieties."
+            }
+          ]
+        },
+        {
+          "id": "12.4",
+          "kind": "theorem",
+          "name": "BallQuotient.axSchanuel_setting",
+          "statement": "Algebraic subvarieties of B × S_Γ (components of (B × S_Γ^an) ∩ Y^an, Y ⊂ ℙⁿ × S_Γ closed) are closed irreducible analytic; Π = graph of π is closed irreducible of pure dimension n; for every component U of W ∩ Π, dim U ≥ dim W − n (codim U ≤ codim W + codim Π).",
+          "hypotheses": [
+            "Γ lattice",
+            "W algebraic subvariety of B × S_Γ"
+          ],
+          "locator": {
+            "source": "BaldiUllmo2023",
+            "where": "Theorem 1.2.2 line 91 to line 97"
+          },
+          "prerequisites": [
+            "target:10.4",
+            "target:10.6",
+            "target:11.5",
+            "roadmap:ComplexComparisonPartII §C−1.1",
+            "roadmap:ComplexComparisonPartII §C0.6",
+            "roadmap:ComplexKahlerGeometry K3",
+            "mathlib:Ideal.height_le_spanFinrank"
+          ],
+          "api": [],
+          "tests": [
+            {
+              "name": "fibre",
+              "kind": "computation",
+              "statement": "n = 1, W = B × {s}: U points, dim U = 0 = dim W − n."
+            },
+            {
+              "name": "whole",
+              "kind": "degenerate",
+              "statement": "W = B × S_Γ: U = Π, dim n = 2n − n."
+            },
+            {
+              "name": "point_times",
+              "kind": "computation",
+              "statement": "W = {x₀} × S_Γ: U a point, 0 = n − n."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "suppliers": [
+    {
+      "roadmap": "FuchsianOrbifolds",
+      "sections": [
+        "Layer 0",
+        "Layer 1",
+        "Layer 3",
+        "Layer 4"
+      ],
+      "what": "The n = 1 picture: PSL(2,ℝ) action, coarse quotient, cusps, compactified quotient Riemann surface; used through §§1.6, 7.4, 9.6."
+    },
+    {
+      "roadmap": "RiemannianGeometry",
+      "sections": [
+        "R4.7",
+        "R5a"
+      ],
+      "what": "Quotient Riemannian manifolds of free properly discontinuous isometric actions, local isometries determined by one-jets, second fundamental form."
+    },
+    {
+      "roadmap": "ConformalMapping",
+      "sections": [
+        "Layer 2"
+      ],
+      "what": "Schwarz–Pick on the disc and disc automorphisms (Completed)."
+    },
+    {
+      "roadmap": "ComplexKahlerGeometry",
+      "sections": [
+        "K1",
+        "K2",
+        "K3",
+        "K4",
+        "K6.0"
+      ],
+      "what": "Complex structures and ∂∂̄, analytic subsets and extension theorems on manifolds, Hermitian holomorphic bundles and canonical bundles, Kähler metrics and curvature lower bounds."
+    },
+    {
+      "roadmap": "ComplexManifolds",
+      "sections": [
+        "Milestone 4",
+        "Milestone 5",
+        "Milestone 6",
+        "Milestone 7"
+      ],
+      "what": "Free holomorphic quotients, open gluing, finite gluing topology, holomorphic line bundles."
+    },
+    {
+      "roadmap": "VonNeumannAlgebras",
+      "sections": [
+        "Layer 9"
+      ],
+      "what": "Lattices in unimodular second-countable locally compact groups, uniform lattices, Weil's formula."
+    },
+    {
+      "roadmap": "ComplexComparisonPartII",
+      "sections": [
+        "§C−1.1",
+        "§C−1.2",
+        "§C0.6",
+        "§C1.4",
+        "§C1.6",
+        "§C1.9",
+        "§C4.1",
+        "§C4.2",
+        "§C4.4"
+      ],
+      "what": "Complex analytic spaces, analytification with its smooth-chart comparison (a smooth variety has a complex manifold as analytification), completed stalks, analytic set geometry and normalization, weighted L² estimate, Montel and finiteness, GAGA, Remmert, Chow, algebraicity of maps out of proper schemes."
+    },
+    {
+      "roadmap": "ShimuraVarieties",
+      "sections": [
+        "§P.1",
+        "§P.2",
+        "§P.6",
+        "§0.4",
+        "§1.2",
+        "§2.7",
+        "§3.3",
+        "§3.4a",
+        "§3.5"
+      ],
+      "what": "Pure Shimura data, Hermitian components, finite analytic quotients, arithmetic quotients, Baily–Borel, unique algebraization at neat level, finite quotients."
+    },
+    {
+      "roadmap": "AdelicAlgebraicGroups",
+      "sections": [
+        "§3.4"
+      ],
+      "what": "Arithmetic subgroups, Borel–Harish-Chandra, S-arithmetic subgroups are lattices with the anisotropy criterion, level subgroups."
+    },
+    {
+      "roadmap": "PELModuli",
+      "sections": [
+        "§M5.5"
+      ],
+      "what": "Unitary PEL data of signature (1,n) for the Picard examples."
+    },
+    {
+      "roadmap": "ShimuraData",
+      "sections": [
+        "§3.8"
+      ],
+      "what": "Compact dual and Borel embedding."
+    },
+    {
+      "roadmap": "AlgebraicModuliForArithmeticGeometry",
+      "sections": [
+        "§5.4",
+        "§9.5"
+      ],
+      "what": "Normalization; strict-SNC compactifications of smooth quasi-projective varieties."
+    },
+    {
+      "roadmap": "SchemeAndStackFoundations",
+      "sections": [
+        "§1.17"
+      ],
+      "what": "Finite group quotients of projective schemes."
+    }
+  ],
+  "consumers": [
+    {
+      "roadmap": "A roadmap on special subvarieties of non-arithmetic ball quotients and Ax–Schanuel",
+      "what": "S_Γ, π, uniqueness (§10.4), totally geodesic and Γ-special subvarieties (§§12.1–12.3), algebraic subvarieties of 𝔹ⁿ × S_Γ (§12.4)."
+    },
+    {
+      "roadmap": "ShimuraCompactifications",
+      "what": "Rank-one toroidal (Layer 8) and minimal (Layer 9) compactifications as targets of its boundary comparisons."
+    },
+    {
+      "roadmap": "A ComplexKahlerGeometry Part II on hyperbolicity",
+      "what": "Ball quotients as complete Kähler–Einstein manifolds of negative curvature and hyperbolicity examples."
+    },
+    {
+      "roadmap": "ShimuraVarietiesPartII",
+      "what": "Picard modular surfaces as arithmetic ball quotients and their minimal compactifications, through §11.4."
+    }
+  ],
+  "gaps": [
+    {
+      "slug": "normality-analytification",
+      "title": "Normality and smoothness under analytification",
+      "neededBy": [
+        "9.4",
+        "9.5",
+        "10.4"
+      ],
+      "detail": "For a variety X over ℂ: X normal iff X^an normal, X smooth if X^an is a complex manifold, and the analytification of the normalization is the analytic normalization, compatibly with structure maps; the converse smooth direction (X smooth ⇒ X^an a manifold) is §C−1.1's smooth-chart comparison, not part of the gap.",
+      "needs": "For a variety X over ℂ, normality of X and of X^an are equivalent, a complex-manifold X^an forces X smooth, and the analytification of the normalization of X is the analytic normalization of X^an, compatibly with the structure maps.",
+      "supplier": "ComplexComparisonPartII",
+      "section": "§C−1.2 (after completedAnalyticStalkComparison, using §C0.6)"
+    },
+    {
+      "slug": "normal-riemann-extension",
+      "title": "Riemann extension on normal complex spaces",
+      "neededBy": [
+        "9.4",
+        "9.5",
+        "10.5"
+      ],
+      "detail": "On a normal complex analytic space, a continuous function holomorphic outside a nowhere-dense analytic subset is holomorphic; hence continuous maps between normal spaces holomorphic off such a subset are holomorphic.",
+      "needs": "The Riemann extension theorem for continuous functions on normal complex analytic spaces.",
+      "supplier": "ComplexComparisonPartII",
+      "section": "§C0.6"
+    }
+  ]
+}
