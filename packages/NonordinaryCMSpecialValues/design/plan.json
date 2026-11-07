@@ -1891,50 +1891,16 @@
   ],
   "gaps": [
     {
-      "id": "NonordinaryCMSpecialValues:G1",
-      "title": "Integral smoothing and the normalized zeta lattice",
-      "neededBy": [
-        "NonordinaryCMSpecialValues:NCM.1/normalized-zeta-class",
-        "NonordinaryCMSpecialValues:NCM.1/elliptic-reciprocity",
-        "NonordinaryCMSpecialValues:NCM.1/norm-twist-comparison"
-      ],
-      "detail": "The shared CMAllPrimeMainConjectures packet was reviewed on 2026-10-19 with verdict needs_changes. Its CZ.0 theta/Kummer construction and CZ.1 rational reciprocity are reused, but Kato's unsmoothed class lies in the fraction module and Proposition 15.9 is a statement after inverting p, so neither gives BKO's integral class (source issue E7). Two inputs remain: (i) removal of the smoothing factor, for which the projected component used by BKO admits a principal smoothing ideal making N(a)−φ(a)σ_a a unit (route recorded in NCM.1/normalized-zeta-class); (ii) the Betti-lattice statement that γ=per_φ(ω)/Ω generates the integral lattice, including the comparison of BKO's curve over H with Kato's canonical CM pair. Both are requested from CZ.0."
+      "slug": "al-local-frohlich-queyrut",
+      "needs": "The local Fröhlich–Queyrut theorem: for a quadratic extension E/F of local fields, a quasi-character χ of E× trivial on F× and ψ_E = ψ_F ∘ Tr_{E/F}, ε(1/2, χ, ψ_E) = χ(Δ) for every Δ ∈ E× with Δ² ∈ F× and Δ ∉ F.",
+      "supplier": "AutomorphicLFunctionsAndLocalFactors",
+      "section": "Layer AL.1, Local epsilon factors and Gauss sums"
     },
     {
-      "id": "NonordinaryCMSpecialValues:G3",
-      "title": "An independent exact inert-valuation Finis export",
-      "neededBy": [
-        "NonordinaryCMSpecialValues:NCM.4/finis-character-family",
-        "NonordinaryCMSpecialValues:NCM.4/finis-local-corrections",
-        "NonordinaryCMSpecialValues:NCM.4/finis-unit-values"
-      ],
-      "detail": "AutomorphicPadicLFunctions:L3h/finis-divisibility is the sole general owner. Its accepted statement now reproduces Finis Theorem 1.1(2) exactly, with D^(1/4) and the local b term (the design read the earlier version, which omitted them). Its prerequisites, L3/cm-periods (good ordinary reduction) and L3h/hida-cm-density (p-ordinary CM type), cover only an ordinary valuation prime, whereas here the valuation prime p is inert and supersingular. The inert-valuation case needs Finis's own theta-function proof as its prerequisite chain. The specialization checks are planned here; the general proof is not duplicated."
-    },
-    {
-      "id": "NonordinaryCMSpecialValues:G5",
-      "title": "Continuous twist and semilocal regulator compatibility",
-      "neededBy": [
-        "NonordinaryCMSpecialValues:NCM.0/dual-tate-convention",
-        "NonordinaryCMSpecialValues:NCM.1/elliptic-reciprocity",
-        "NonordinaryCMSpecialValues:NCM.1/norm-twist-comparison"
-      ],
-      "detail": "The general continuous Kummer and dual-exponential maps are imported. Their exact finite-S inverse-limit twist, trace pairing and semilocal/corestriction comparison for this coefficient realization require the two precise SIC:L3 and PHR:L1 exports recorded in requests."
-    },
-    {
-      "id": "NonordinaryCMSpecialValues:G6",
-      "title": "The unrestricted ramified-coefficient descent remains open",
-      "neededBy": [
-        "NonordinaryCMSpecialValues:NCM.5/scalar-tensor-character-comparison"
-      ],
-      "detail": "The canonical unramified coefficient ring of NCM.5/unramified-cm-coefficients repairs only that special case. If R is an arbitrary ramified coefficient ring, multiplication Φ_n⊗_Φ Frac(R)→C_p can fail to be injective. No general scalar-to-tensor kernel theorem or extension of BKO §6 is claimed (source issue E8). The local-unit consumer must retain its coefficient gap outside the proved hypothesis. Enlarging an unramified R afterwards is harmless, because membership in V^(*,ε)⊗W is preserved by base change."
-    },
-    {
-      "id": "NonordinaryCMSpecialValues:G7",
-      "title": "Local Fröhlich–Queyrut root numbers",
-      "neededBy": [
-        "NonordinaryCMSpecialValues:NCM.3/twisted-root-sign"
-      ],
-      "detail": "The parity formula needs the local root number at the inert p of an anticyclotomic character of odd order: it is 1 by the Fröhlich–Queyrut theorem (Queyrut, Mém. SMF 37 (1974), p.135; full proof in Fröhlich–Queyrut, Invent. Math. 20 (1973), 125–138, not read). No atlas node states it; AL.1's explicit epsilon factors and Gauss sums do not. Requested from AL.1."
+      "slug": "sic-character-twist",
+      "needs": "The twist isomorphism of Iwasawa cohomology for a finite free O-module T whose G_K-action factors through Gal(F_∞/K) of a p-adic Lie tower F_∞/K, identifying lim_cor H¹(F_n, Z_p(1)) ⊗ T with lim_cor H¹(F_n, T(1)) equivariantly for the diagonal action, compatibly with localisation and corestriction, with the finite-S Kummer completion retained.",
+      "supplier": "SelmerIwasawaCohomology",
+      "section": "§3.7 Twisting Iwasawa cohomology"
     }
   ],
   "restructure": [
