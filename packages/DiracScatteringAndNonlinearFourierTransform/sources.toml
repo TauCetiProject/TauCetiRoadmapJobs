@@ -11,6 +11,7 @@ locator = "pp. 637–640"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6004#issuecomment-6645264652"
+cited_for = ["References (continuous Szegő theory behind denisov2006 §8, background for 6.8)"]
 
 [[source]]
 id = "debranges1968"
@@ -22,6 +23,7 @@ locator = "§§19–23"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6004#issuecomment-6645264652"
+cited_for = ["6.1", "6.6"]
 
 [[source]]
 id = "remling2018"
@@ -30,10 +32,11 @@ title = "Spectral Theory of Canonical Systems"
 year = 2018
 doi = "10.1515/9783110563238"
 locator_scheme = "chapter"
-locator = "Ch. 1"
+locator = "Ch. 1–3"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6004#issuecomment-6645264652"
+cited_for = ["6.4", "6.6"]
 
 [[source]]
 id = "coddingtonlevinson1955"
@@ -45,6 +48,7 @@ locator = "Ch. 1 §7, Ch. 2"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6004#issuecomment-6645264652"
+cited_for = ["1.1", "1.2", "1.4", "1.5", "1.6", "1.7"]
 
 [[source]]
 id = "poltoratski2024"
@@ -55,7 +59,7 @@ venue = "Annals of Mathematics 199 (2024), no. 2, 741–793"
 doi = "10.4007/annals.2024.199.2.4"
 arxiv = "2103.13349v14"
 locator_scheme = "theorem"
-locator = "§1 (1.1); §2 (2.1)–(2.7); §5 (5.1)–(5.5), Theorem 1; §§6–9 (proof)"
+locator = "§1 (1.1); §2 (2.1)–(2.7); §3 Lemma 1; §4 (4.1)–(4.3); §5 (5.1)–(5.5), Theorem 1; §6 Lemmas 2–4; §7 Lemmas 5–6, Corollaries 1–3; §8 Lemmas 7–8; §9 Lemma 9, (9.1)–(9.10); Appendix Lemma 10"
 url = "https://arxiv.org/abs/2103.13349v14"
 fetched_from = "https://arxiv.org/pdf/2103.13349v14"
 fetched_at = "2026-11-05T02:49:50Z"
@@ -63,8 +67,8 @@ sha256 = "3e2115456571cc7b950c00ee4d93e62ab53949b188e22746d821cce6cc94e83b"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-version_note = "arXiv v14 read (OCR text); section and equation numbers cited against the arXiv text; the design re-checks them against the Annals version"
-cited_for = ["Final targets: Dirac systems, scattering functions, non-linear Fourier transform, pointwise convergence"]
+version_note = "arXiv v14 read (OCR text of an image-only scan); all locators are to v14. Its §9 (subinterval calculus, insertion of zero intervals, Lemma 10) differs from the published version, whose Lemma 11 mnatsakanyan2022 v4 reports to be in error; formulas garbled by OCR are cross-checked against mauth2022 and recomputed in the design"
+cited_for = ["Conventions", "2.8", "3.1", "3.2", "3.3", "4.1", "4.3", "4.4", "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "6.1", "6.2", "6.3", "6.5", "6.6", "6.8", "7.1", "7.2", "7.3", "8.1", "8.2", "8.3", "8.4", "8.5", "8.6", "8.7", "8.8", "8.9", "9.1", "9.2", "9.3", "9.4", "9.5", "9.6", "9.7", "9.8"]
 
 [[source]]
 id = "taothiele2012"
@@ -73,7 +77,7 @@ title = "Nonlinear Fourier Analysis"
 year = 2012
 arxiv = "1201.5129v1"
 locator_scheme = "section"
-locator = "Lecture 1 §1 Lemmas 1–3, Theorem 1 (discrete SU(1,1) model); Lecture 2 Lemma 6 (nonlinear Plancherel), Lemmas 9–14 (ℓ² extension)"
+locator = "Lecture 1 §1 Lemmas 1–3, Theorem 1 (discrete SU(1,1) model); Lecture 1 §3 Lemma 5 and the ℓ¹ bound on arccosh|a| (ℓ¹ extension, discrete analogue for 4.2); Lecture 2 Lemma 6 (nonlinear Plancherel), Lemmas 9–14 (ℓ² extension)"
 url = "https://arxiv.org/abs/1201.5129v1"
 fetched_from = "https://arxiv.org/pdf/1201.5129v1"
 fetched_at = "2026-11-05T02:52:52Z"
@@ -82,7 +86,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v1"
-cited_for = ["Background: the discrete SU(1,1) non-linear Fourier transform, its Plancherel identity and the open problem of pointwise convergence"]
+cited_for = ["4.2", "4.3", "4.4", "5.6"]
 
 [[source]]
 id = "romanov2014"
@@ -91,7 +95,7 @@ title = "Canonical systems and de Branges spaces"
 year = 2014
 arxiv = "1408.6022v1"
 locator_scheme = "section"
-locator = "§0 (fundamental solution, estimate (3), det ≡ 1, chain rule, Krein's theorem); §1 Example 1 (Dirac equation as a canonical system); §3 Proposition 4 (Hermite–Biehler)"
+locator = "§0 (fundamental solution, estimate (3), det ≡ 1, chain rule); §1 Example 1; §3 identities (12)–(15), Proposition 4, Theorem 5; §8 Theorems 15–16, Lemma 23"
 url = "https://arxiv.org/abs/1408.6022v1"
 fetched_from = "https://arxiv.org/pdf/1408.6022v1"
 fetched_at = "2026-11-05T02:52:57Z"
@@ -100,7 +104,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v1"
-cited_for = ["Canonical systems, transfer matrices, Hermite–Biehler functions"]
+cited_for = ["Conventions", "1.2", "1.3", "1.4", "1.6", "3.1", "3.3", "6.1", "6.2", "6.3", "6.4", "6.5", "6.6"]
 
 [[source]]
 id = "mauth2022"
@@ -109,7 +113,7 @@ title = "On Pointwise convergence of the non-linear Fourier transform"
 year = 2022
 arxiv = "2210.12286v1"
 locator_scheme = "section"
-locator = "§1 Theorem 2; §2.1 Lemmas 1–11 (Hardy spaces of C+, with page locators into Garnett); §2.3 Lemmas 13–19; §3.8 Theorem 6"
+locator = "§1 Theorem 2; §2.1 Lemmas 1–11 (with page locators into Garnett); §2.2 Lemma 12; §2.3 Lemmas 13–20, Theorem 3; §3.1–3.2 Lemmas 21–23, Corollaries 3–6; §3.3 Corollary 7; §3.4 Lemmas 29, 32; §3.7 Lemmas 43, 45; §3.8 Theorem 6"
 url = "https://arxiv.org/abs/2210.12286v1"
 fetched_from = "https://arxiv.org/pdf/2210.12286v1"
 fetched_at = "2026-11-05T02:53:03Z"
@@ -118,7 +122,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v1"
-cited_for = ["Expository account (with page locators into Garnett) of the Hardy-space tools, the Dirac-system lemmas and the proof of pointwise convergence"]
+cited_for = ["2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "3.1", "3.2", "3.3", "4.1", "4.4", "5.2", "5.4", "5.5", "6.1", "6.2", "6.5", "6.8", "7.1", "7.2", "8.1", "8.2", "8.3", "8.4", "8.5", "8.6", "8.7", "8.8", "8.9", "9.3", "9.8"]
 
 [[source]]
 id = "garnett2007"
@@ -128,12 +132,12 @@ year = 2007
 venue = "Graduate Texts in Mathematics"
 doi = "10.1007/0-387-49763-3"
 locator_scheme = "chapter"
-locator = "Ch. II §§1–5 (Hardy spaces of the half-plane, Fatou nontangential limits, outer functions, Smirnov class, canonical factorisation); pp. 55, 64, 84 as cited by mauth2022"
+locator = "Ch. I §§3–5 (pp. 16, 27, 30); Ch. II §§1–4 (pp. 55, 64, 84), as cited by mauth2022; Ch. II §4 for the logarithmic bound and the outer multipliers of H² in 2.6 and 2.8"
 url = "https://doi.org/10.1007/0-387-49763-3"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Hardy spaces of the half-plane, Fatou's theorem, outer functions, Smirnov class"]
+cited_for = ["2.2", "2.3", "2.4", "2.5", "2.6", "2.8"]
 
 [[source]]
 id = "denisov2006"
@@ -152,4 +156,41 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v1 (posted 2009) read; section numbers cited against the arXiv text, whose §§11 and 13 are the chapters 12 and 14 of the IMRS 2006 version that Poltoratski cites; the design re-checks the published numbering"
-cited_for = ["Scattering limit of the Krein-system coefficients; relation of Dirac and Krein systems"]
+cited_for = ["Conventions", "4.4", "4.5", "5.1", "5.4", "6.8"]
+
+[[source]]
+id = "killipsimon2003"
+authors = "Rowan Killip, Barry Simon"
+title = "Sum Rules for Jacobi Matrices and Their Applications to Spectral Theory"
+year = 2003
+venue = "Ann. of Math. (2), Vol. 158 (2003), no. 1, 253--321"
+arxiv = "math-ph/0112008v2"
+locator_scheme = "section"
+locator = "§5: definition (5.9), Lemma 5.1, Theorem 5.2, Corollary 5.3"
+url = "https://arxiv.org/abs/math-ph/0112008v2"
+fetched_from = "https://arxiv.org/pdf/math-ph/0112008v2"
+fetched_at = "2026-11-06T18:20:33Z"
+sha256 = "0d237afc8e8f669056f9dcc7c5e0a6bc0e916aa6a2f5a69550bc0bf1e205008c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "published 2003 (Ann. of Math. 158); arXiv math-ph/0112008 first submitted December 2001, v2 read; locators are to that version"
+cited_for = ["6.7", "6.8"]
+
+[[source]]
+id = "mnatsakanyan2022"
+authors = "Gevorg Mnatsakanyan"
+title = "Some quantitative estimates for the nonlinear Fourier Transform"
+year = 2022
+arxiv = "2210.00309v4"
+locator_scheme = "section"
+locator = "abstract and §1 (line 9–13, 135–139 of the v4 text)"
+url = "https://arxiv.org/abs/2210.00309v4"
+fetched_from = "https://arxiv.org/pdf/2210.00309v4"
+fetched_at = "2026-11-06T18:20:50Z"
+sha256 = "1ab7834ff0e15aee1abfea0854808332c20cd06a6e6ac150d8994f7002cb5223"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v4"
+cited_for = ["References and Layer 9 (choice of route)"]
