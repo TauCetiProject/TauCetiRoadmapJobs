@@ -1,0 +1,1697 @@
+{
+ "roadmap": "NashBlowups",
+ "title": "Nash blowups",
+ "parent": null,
+ "summary": "The Nash blowup and the normalised Nash blowup of a reduced finite-type k-scheme of pure dimension d with dense smooth locus, built intrinsically from the Grassmannian of rank-d quotients of Ω_{X/k}: universal property, modification property, locality, field base change, the Gauss-map and blowup descriptions, the triviality criterion (ν iso iff Ω has a locally free rank-d quotient), Nobile's theorem in characteristic zero, the Duarte–Núñez-Betancourt theorem for normal schemes over perfect fields of characteristic p, the criteria for the normalised blowup, and the never-resolves principle for the two iterations.",
+ "baseline": {
+  "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+  "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
+ },
+ "layers": [
+  {
+   "key": "0",
+   "title": "Interfaces with the pinned libraries",
+   "targets": [
+    {
+     "id": "0.1",
+     "kind": "construction",
+     "name": "AlgebraicGeometry.Scheme.relativeDifferentials.pullbackMap",
+     "statement": "For f : X ⟶ Y over Spec R, the O_X-linear comparison map c_f : f^*Ω_{Y/R} ⟶ Ω_{X/R}, adjoint to the R-derivation h ↦ d(f^*h).",
+     "hypotheses": [
+      "R a commutative ring",
+      "X, Y schemes over Spec R",
+      "f a morphism over Spec R"
+     ],
+     "locator": {
+      "source": "stacksNormalization",
+      "where": "Morphisms Lemma 29.33.8 (01UV), line 2900"
+     },
+     "prerequisites": [
+      "tauceti:AlgebraicGeometry.Scheme.relativeDifferentials",
+      "tauceti:AlgebraicGeometry.Scheme.relativeDifferentialsHomEquiv",
+      "tauceti:TauCeti.AlgebraicGeometry.relativeDifferentialsRestrictIso",
+      "mathlib:AlgebraicGeometry.Scheme.Modules.pullback"
+     ],
+     "api": [
+      {
+       "name": "pullbackMap_d",
+       "role": "characterisation",
+       "statement": "c_f(f^*(dh)) = d(f^*h) for local sections h of O_Y, and c_f is the unique O_X-linear map with this property"
+      },
+      {
+       "name": "pullbackMap_id / pullbackMap_comp",
+       "role": "functoriality",
+       "statement": "c_id = id and c_{g∘f} = c_f ∘ f^*(c_g) under the pullback composition isomorphism"
+      },
+      {
+       "name": "pullbackMap_isIso_of_isOpenImmersion",
+       "role": "compatibility",
+       "statement": "for an open immersion c_f is an isomorphism agreeing with relativeDifferentialsRestrictIso"
+      },
+      {
+       "name": "pullbackMap_affine",
+       "role": "compatibility",
+       "statement": "on Spec B → Spec A over Spec R it is the sheaf of B ⊗_A Ω[A/R] → Ω[B/R]"
+      }
+     ],
+     "tests": [
+      {
+       "name": "pullbackMap_cusp_param",
+       "kind": "computation",
+       "statement": "for t ↦ (t², t³), c_f(dx) = 2t dt, c_f(dy) = 3t² dt; in characteristic 2, c_f(dx) = 0"
+      },
+      {
+       "name": "pullbackMap_id_affineLine",
+       "kind": "non-example",
+       "statement": "for the identity of 𝔸¹, c(dx) = dx; the zero map is excluded by the characterisation"
+      },
+      {
+       "name": "pullbackMap_point_not_iso",
+       "kind": "degenerate",
+       "statement": "for Spec k → 𝔸¹ the map k·dx → 0 is surjective and not injective"
+      }
+     ]
+    },
+    {
+     "id": "0.2",
+     "kind": "theorem",
+     "name": "AlgebraicGeometry.Scheme.relativeDifferentials.baseChangeIso",
+     "statement": "For R → R' and X over Spec R with X' = X ×_{Spec R} Spec R' and projection g', c_{g'} : g'^*Ω_{X/R} ⟶ Ω_{X'/R'} is an isomorphism; for a closed immersion i : Z → X over Spec R, c_i is surjective.",
+     "hypotheses": [
+      "R → R' a ring map",
+      "X a scheme over Spec R",
+      "for the second clause, i a closed immersion over Spec R"
+     ],
+     "locator": {
+      "source": "stacksNormalization",
+      "where": "Morphisms Lemmas 29.33.10 (01V0), line 2926, and 29.33.15 (01UZ), line 2953"
+     },
+     "prerequisites": [
+      "target:0.1",
+      "mathlib:KaehlerDifferential.tensorKaehlerEquiv",
+      "mathlib:KaehlerDifferential.mapBaseChange_surjective"
+     ]
+    },
+    {
+     "id": "0.3",
+     "kind": "definition",
+     "name": "AlgebraicGeometry.Scheme.smoothLocusOfDim",
+     "statement": "For X locally of finite type over a field k and d : ℕ, the open subscheme X_sm^{(d)} of points of the smooth locus at which Ω_{X/k} has rank d.",
+     "hypotheses": [
+      "k a field",
+      "X locally of finite type over k",
+      "d : ℕ"
+     ],
+     "locator": {
+      "source": "stacksAlgebra",
+      "where": "Lemma 10.140.3 (00TT), (1) ⇒ (3), line 17618"
+     },
+     "prerequisites": [
+      "mathlib:AlgebraicGeometry.Scheme.Hom.smoothLocus",
+      "tauceti:TauCeti.AlgebraicGeometry.isFiniteLocallyFree_relativeDifferentials",
+      "tauceti:TauCeti.AlgebraicGeometry.FiniteLocallyFreeSheaf.rank_relativeDifferentials_apply",
+      "tauceti:TauCeti.AlgebraicGeometry.smoothOfRelativeDimension_iff_ringKrullDim_stalk_eq",
+      "tauceti:AlgebraicGeometry.Scheme.Hom.smooth_smoothLocus_ι_comp",
+      "tauceti:TauCeti.AlgebraicGeometry.relativeDifferentialsRestrictIso",
+      "roadmap:SchemeAndStackFoundations §0.7"
+     ],
+     "api": [
+      {
+       "name": "isFiniteLocallyFree_restrict_smoothLocusOfDim",
+       "role": "structure",
+       "statement": "Ω_{X/k} restricted to X_sm^{(d)} is finite locally free of rank d"
+      },
+      {
+       "name": "smoothOfRelativeDimension_smoothLocusOfDim",
+       "role": "structure",
+       "statement": "X_sm^{(d)} → Spec k is smooth of relative dimension d, and X_sm is the disjoint union of the X_sm^{(d)}"
+      },
+      {
+       "name": "rank_eq_dimAt",
+       "role": "characterisation",
+       "statement": "for x ∈ X_sm the rank of Ω_{X/k} at x is dim_x X; hence X_sm^{(d)} = X_sm when X is pure of dimension d"
+      },
+      {
+       "name": "smoothLocusOfDim_restrict",
+       "role": "functoriality",
+       "statement": "for V ⊆ X open, V_sm^{(d)} = V ∩ X_sm^{(d)}"
+      }
+     ],
+     "tests": [
+      {
+       "name": "smoothLocusOfDim_disjoint_union",
+       "kind": "computation",
+       "statement": "for 𝔸² ⊔ 𝔸¹: X_sm^{(2)} = 𝔸², X_sm^{(1)} = 𝔸¹, X_sm^{(0)} = ∅ while X_sm = X"
+      },
+      {
+       "name": "smoothLocusOfDim_cusp",
+       "kind": "computation",
+       "statement": "for the cusp over ℚ, X_sm^{(1)} is the complement of the origin and X_sm^{(0)} = ∅"
+      },
+      {
+       "name": "smoothLocusOfDim_dualNumbers",
+       "kind": "non-example",
+       "statement": "for Spec k[ε]/(ε²), Ω has rank 1 at the point but the smooth locus is empty, so X_sm^{(1)} = ∅"
+      }
+     ]
+    },
+    {
+     "id": "0.4",
+     "kind": "theorem",
+     "name": "AlgebraicGeometry.coherentGrassmannian.mapOfSurjective",
+     "statement": "A surjection p : E' → E of quasi-coherent sheaves of finite type on S induces a closed immersion Gr_r(E) → Gr_r(E') over S, sending h^*E → Q to h^*E' → h^*E → Q, whose image represents the quotients killing h^*(ker p), compatibly with the universal quotients and with base change; for E' = O_S^n it embeds Gr_r(E) in S ×_ℤ Gr(r, n).",
+     "hypotheses": [
+      "S a scheme",
+      "E', E quasi-coherent of finite type",
+      "p surjective",
+      "r : ℕ"
+     ],
+     "locator": {
+      "source": "alperModuli",
+      "where": "proof of Theorem 1.4.5, lines 2985–3007 (printed pp. 61–62), with Remark 1.1.4(1), line 2283"
+     },
+     "prerequisites": [
+      "roadmap:AlgebraicModuliForArithmeticGeometry §1.3",
+      "mathlib:AlgebraicGeometry.IsClosedImmersion"
+     ]
+    },
+    {
+     "id": "0.5",
+     "kind": "theorem",
+     "name": "cotangentSpaceEquivKaehler",
+     "statement": "For a local k-algebra (R, m, κ), not necessarily Noetherian, with κ finite separable over k, the map m/m² → κ ⊗_R Ω_{R/k}, a ↦ 1 ⊗ da, is a κ-linear isomorphism; surjectivity holds whenever Ω_{κ/k} = 0.",
+     "hypotheses": [
+      "k a field",
+      "R a local k-algebra (no Noetherian hypothesis)",
+      "κ = R/m finite separable over k"
+     ],
+     "locator": {
+      "source": "stacksAlgebra",
+      "where": "Lemma 10.140.4 (00TU), line 17647, stated for Noetherian R with a proof (lines 17654–17671) that does not use it, and the exact sequence in the proof of Lemma 10.140.5 (00TV), lines 17676–17678"
+     },
+     "prerequisites": [
+      "mathlib:retractionKerCotangentToTensorEquivSection",
+      "mathlib:KaehlerDifferential.exact_kerCotangentToTensor_mapBaseChange",
+      "mathlib:Algebra.FormallyEtale.of_isSeparable"
+     ],
+     "tests": [
+      {
+       "name": "cotangentSpaceEquivKaehler_line",
+       "kind": "computation",
+       "statement": "R = k[x]_(x): the class of x maps to dx"
+      },
+      {
+       "name": "cotangentSpaceEquivKaehler_field",
+       "kind": "degenerate",
+       "statement": "R = k: both sides are zero"
+      },
+      {
+       "name": "cotangentSpace_inseparable_counterexample",
+       "kind": "non-example",
+       "statement": "k = 𝔽_p(t), R = k[x]_(x^p − t): the nonzero class of x^p − t maps to d(x^p − t) = 0"
+      },
+      {
+       "name": "cotangentSpaceEquivKaehler_nonNoetherian",
+       "kind": "compatibility",
+       "statement": "R = k[x_1, x_2, …] localised at (x_1, x_2, …): x_i ↦ dx_i is an isomorphism of infinite-dimensional spaces; the Noetherian hypothesis is not needed"
+      }
+     ]
+    },
+    {
+     "id": "0.6",
+     "kind": "theorem",
+     "name": "AlgebraicGeometry.smooth_iff_isRegularLocalRing_closedPoints",
+     "statement": "For X locally of finite type over a perfect field k, X → Spec k is smooth iff O_{X,x} is regular for every closed point x.",
+     "hypotheses": [
+      "k a perfect field",
+      "X locally of finite type over k"
+     ],
+     "locator": {
+      "source": "stacksVarieties",
+      "where": "Lemma 33.25.8 (0B8X), line 2130"
+     },
+     "prerequisites": [
+      "roadmap:SchemeAndStackFoundations §4.13",
+      "mathlib:AlgebraicGeometry.LocallyOfFiniteType.jacobsonSpace",
+      "mathlib:nonempty_inter_closedPoints",
+      "mathlib:IsRegularLocalRing"
+     ],
+     "tests": [
+      {
+       "name": "cusp_not_smooth",
+       "kind": "non-example",
+       "statement": "the cusp has embedding dimension 2 > 1 at the origin and is not smooth"
+      },
+      {
+       "name": "affineSpace_regular",
+       "kind": "computation",
+       "statement": "𝔸ⁿ_k is smooth with regular local rings at closed points"
+      },
+      {
+       "name": "imperfect_field_point",
+       "kind": "non-example",
+       "statement": "over 𝔽_p(t), Spec k(t^{1/p}) is regular but not smooth: perfectness is needed"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "1",
+   "title": "The setting and the Nash modification of a sheaf",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "theorem",
+     "name": "AlgebraicGeometry.setting",
+     "statement": "For X reduced and locally of finite type over k: X_sm is dense iff X is geometrically reduced; over a perfect field X_sm is dense; if X_sm is dense it contains every generic point and meets every component densely; if moreover X is pure of dimension d, X_sm = X_sm^{(d)} and Ω_{X/k}|_{X_sm} is finite locally free of rank d.",
+     "hypotheses": [
+      "k a field",
+      "X reduced, locally of finite type over k",
+      "for the last clause, X pure of dimension d"
+     ],
+     "locator": {
+      "source": "stacksVarieties",
+      "where": "Lemma 33.25.7 (056V), line 2112; Lemmas 33.25.4 (056T), line 2084, and 33.6.8(3) (04KS), line 296"
+     },
+     "prerequisites": [
+      "target:0.3",
+      "mathlib:AlgebraicGeometry.Scheme.Hom.dense_smoothLocus_of_perfectField",
+      "mathlib:AlgebraicGeometry.GeometricallyReduced",
+      "mathlib:PerfectClosure",
+      "mathlib:AlgebraicGeometry.tfae_universallyInjective",
+      "tauceti:TauCeti.AlgebraicGeometry.isRegularLocalRing_stalk_of_smooth",
+      "roadmap:SchemeAndStackFoundations §0.11",
+      "roadmap:SchemeAndStackFoundations §0.23"
+     ],
+     "tests": [
+      {
+       "name": "setting_inseparable_point",
+       "kind": "non-example",
+       "statement": "Spec 𝔽_p(t)[y]/(y^p − t) is reduced, not geometrically reduced, with empty smooth locus"
+      },
+      {
+       "name": "setting_dualNumbers",
+       "kind": "non-example",
+       "statement": "Spec k[ε]/(ε²) is excluded; its reduction is in the Setting with d = 0"
+      },
+      {
+       "name": "setting_mixed_dimension",
+       "kind": "non-example",
+       "statement": "𝔸² ⊔ 𝔸¹ has dense smooth locus but X_sm ≠ X_sm^{(2)}"
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "definition",
+     "name": "AlgebraicGeometry.nashModification",
+     "statement": "For a scheme X, a quasi-coherent O_X-module F of finite type, r : ℕ and an open U with F|_U finite locally free of rank r, N(X, F, r, U) is the scheme-theoretic image of the classifying map σ_U : U → Gr_r(F) of the identity quotient of F|_U, with π_N : N → X the restriction of the Grassmannian's structure map.",
+     "hypotheses": [
+      "X a scheme (reduced and locally Noetherian for the API)",
+      "F quasi-coherent of finite type",
+      "U open with F|_U finite locally free of rank r (dense for the API)"
+     ],
+     "locator": {
+      "source": "nashModificationNotes2024",
+      "where": "Section 3, lines 216–225; gonzalezSprinberg1982 §1.1, lines 85–90"
+     },
+     "prerequisites": [
+      "roadmap:AlgebraicModuliForArithmeticGeometry §1.3",
+      "mathlib:AlgebraicGeometry.Scheme.Hom.image",
+      "mathlib:AlgebraicGeometry.Scheme.Hom.support_ker",
+      "mathlib:AlgebraicGeometry.Scheme.Hom.toImage"
+     ],
+     "api": [
+      {
+       "name": "nashModification.isClosedImmersion",
+       "role": "structure",
+       "statement": "N → Gr_r(F) is a closed immersion, N is reduced, and its support is the closure of σ_U(U)"
+      },
+      {
+       "name": "nashModification.isIso_over",
+       "role": "structure",
+       "statement": "π_N restricts to an isomorphism π_N⁻¹(U) → U, and π_N⁻¹(U) is dense in N"
+      },
+      {
+       "name": "nashModification.eq_of_le",
+       "role": "extensionality",
+       "statement": "for a dense open U' ⊆ U, N(X, F, r, U') = N(X, F, r, U) as closed subschemes of Gr_r(F)"
+      },
+      {
+       "name": "nashModification.quotient",
+       "role": "constructor",
+       "statement": "the universal quotient restricts to a locally free rank-r quotient π_N^*F → L_F, the identity quotient over U"
+      },
+      {
+       "name": "nashModification.isProper",
+       "role": "structure",
+       "statement": "π_N is proper"
+      }
+     ],
+     "tests": [
+      {
+       "name": "nashModification_locallyFree",
+       "kind": "degenerate",
+       "statement": "if F is finite locally free of rank r on X then N ≅ X"
+      },
+      {
+       "name": "nashModification_torsion_summand",
+       "kind": "computation",
+       "statement": "for O ⊕ O/(x) on 𝔸¹, r = 1, U = D(x): the Grassmannian fibre over 0 is ℙ¹ but N ≅ 𝔸¹ with L_F = O"
+      },
+      {
+       "name": "nashModification_maximalIdeal",
+       "kind": "computation",
+       "statement": "for the ideal of the origin in 𝔸², r = 1, U = 𝔸² ∖ 0: N is the blowup of the origin, N ≠ X"
+      },
+      {
+       "name": "nashModification_not_whole_grassmannian",
+       "kind": "non-example",
+       "statement": "the whole Grassmannian (fibre ℙ¹ over the origin in the second test) is excluded"
+      }
+     ]
+    },
+    {
+     "id": "1.3",
+     "kind": "theorem",
+     "name": "AlgebraicGeometry.nashModification.lift",
+     "statement": "For h : Z → X with Z reduced, h⁻¹(U) dense, and a locally free rank-r quotient h^*F → M, there is a unique q : Z → N(X, F, r, U) with π_N ∘ q = h and q^*L_F = M as quotients, and M is the only such quotient of h^*F.",
+     "hypotheses": [
+      "hypotheses of 1.2 with X reduced, locally Noetherian, U dense",
+      "Z reduced",
+      "h⁻¹(U) dense in Z",
+      "h^*F → M surjective, M locally free of rank r"
+     ],
+     "locator": {
+      "source": "nashModificationNotes2024",
+      "where": "Section 3, lines 226–229, and Section 2, lines 153–162; gonzalezSprinberg1982 §1.2, lines 94–98"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "tauceti:AlgebraicGeometry.Scheme.IdealSheafData.vanishingIdeal_le_ker_of_range_subset",
+      "mathlib:AlgebraicGeometry.IsClosedImmersion.lift",
+      "mathlib:AlgebraicGeometry.ext_of_isDominant_of_isSeparated",
+      "roadmap:AlgebraicModuliForArithmeticGeometry §1.3"
+     ],
+     "tests": [
+      {
+       "name": "lift_id",
+       "kind": "degenerate",
+       "statement": "for the identity of X with F locally free, q is the inverse of π_N"
+      },
+      {
+       "name": "lift_needs_density",
+       "kind": "non-example",
+       "statement": "Spec k → origin with (a, b) ↦ b on O ⊕ O/(x) does not factor; h⁻¹(U) = ∅"
+      },
+      {
+       "name": "lift_blowup_not_terminal",
+       "kind": "non-example",
+       "statement": "for X smooth and Bl_p X → X with the identity quotient, q = Bl_p X → X is not an isomorphism"
+      }
+     ]
+    },
+    {
+     "id": "1.4",
+     "kind": "theorem",
+     "name": "AlgebraicGeometry.nashModification.pluckerIso",
+     "statement": "The Plücker immersion restricts to an isomorphism over X, N(X, F, r, U) ≅ N(X, ∧^r F, 1, U), carrying ∧^r L_F to L_{∧^r F}.",
+     "hypotheses": [
+      "hypotheses of 1.3"
+     ],
+     "locator": {
+      "source": "gonzalezSprinberg1982",
+      "where": "§1.3, lines 99–104; nashModificationNotes2024 Section 3, line 230"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:1.3",
+      "roadmap:AlgebraicModuliForArithmeticGeometry §1.3",
+      "tauceti:SheafOfModules.exteriorPower"
+     ]
+    },
+    {
+     "id": "1.5",
+     "kind": "theorem",
+     "name": "AlgebraicGeometry.nashModification.baseChange",
+     "statement": "For V ⊆ X open, N(V, F|_V, r, U ∩ V) ≅ π_N⁻¹(V); for g : X' → X flat with X' reduced locally Noetherian and g⁻¹(U) dense, N(X', g^*F, r, g⁻¹U) ≅ N(X, F, r, U) ×_X X' compatibly with the quotients.",
+     "hypotheses": [
+      "hypotheses of 1.3",
+      "g flat",
+      "g⁻¹(U) dense in X'"
+     ],
+     "locator": {
+      "source": "stacksNormalization",
+      "where": "Morphisms Lemma 29.26.16 (081I), line 2198"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "roadmap:AlgebraicModuliForArithmeticGeometry §1.3",
+      "roadmap:AlgebraicModuliForArithmeticGeometry §5.4"
+     ],
+     "tests": [
+      {
+       "name": "restrict_inside_U",
+       "kind": "degenerate",
+       "statement": "for V ⊆ U, π_N⁻¹(V) ≅ V"
+      },
+      {
+       "name": "baseChange_open_inclusion",
+       "kind": "compatibility",
+       "statement": "for g the inclusion of U both sides are U"
+      },
+      {
+       "name": "baseChange_needs_flatness",
+       "kind": "non-example",
+       "statement": "for {0} → 𝔸² in the maximal-ideal example the fibre product is ℙ¹ while the left side is empty"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "The Nash blowup",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "definition",
+     "name": "AlgebraicGeometry.nashBlowup",
+     "statement": "For X locally of finite type over k and d : ℕ, X* = N(X, Ω_{X/k}, d, X_sm^{(d)}) with nashBlowupHom ν : X* → X and the Nash cotangent bundle ν^*Ω_{X/k} → L.",
+     "hypotheses": [
+      "k a field",
+      "X locally of finite type over k",
+      "d : ℕ"
+     ],
+     "locator": {
+      "source": "gonzalezSprinberg1982",
+      "where": "§1.1–1.2, lines 79–98; duarteNunezBetancourt2020 Definition 2.1, line 127; castilloDuarteLeytonLiendo2026 lines 13–21"
+     },
+     "prerequisites": [
+      "target:0.3",
+      "target:1.1",
+      "target:1.2",
+      "tauceti:AlgebraicGeometry.Scheme.relativeDifferentials",
+      "tauceti:TauCeti.AlgebraicGeometry.isFinitePresentation_relativeDifferentials"
+     ],
+     "api": [
+      {
+       "name": "nashBlowupHom_isIso_over_smoothLocus",
+       "role": "structure",
+       "statement": "ν⁻¹(X_sm^{(d)}) → X_sm^{(d)} is an isomorphism and L is the identity quotient there"
+      },
+      {
+       "name": "nashCotangent_isLocallyFree",
+       "role": "structure",
+       "statement": "L is locally free of rank d and ν^*Ω_{X/k} → L is surjective"
+      },
+      {
+       "name": "smoothLocusOfDim_eq_of_setting",
+       "role": "compatibility",
+       "statement": "for X in the Setting, X_sm^{(d)} = X_sm"
+      }
+     ],
+     "tests": [
+      {
+       "name": "nashBlowup_smooth",
+       "kind": "degenerate",
+       "statement": "X smooth of relative dimension d: ν is an isomorphism and L = Ω_{X/k}"
+      },
+      {
+       "name": "nashBlowup_cusp_char0",
+       "kind": "computation",
+       "statement": "cusp in characteristic 0 or ≥ 5: X* ≅ 𝔸¹, ν(t) = (t², t³), ν^*Ω ≅ k[t]dx ⊕ k[t]/(t³)"
+      },
+      {
+       "name": "nashBlowup_node",
+       "kind": "computation",
+       "statement": "node xy = 0 in every characteristic: X* = 𝔸¹ ⊔ 𝔸¹ (tangent quotients [1:0] and [0:1])"
+      },
+      {
+       "name": "nashBlowup_point",
+       "kind": "degenerate",
+       "statement": "d = 0, X = Spec k: X* = X"
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "theorem",
+     "name": "AlgebraicGeometry.nashBlowupHom_isModification",
+     "statement": "For X in the Setting, ν factors as a closed immersion X* → P(∧^d Ω_{X/k}) followed by the projection, so it is proper; it is an isomorphism over X_sm, ν⁻¹(X_sm) is dense, and ν is a modification with witness X_sm, birational on every component.",
+     "hypotheses": [
+      "X in the Setting"
+     ],
+     "locator": {
+      "source": "nashModificationNotes2024",
+      "where": "Section 2, lines 152–155; gonzalezSprinberg1982 §1.2, line 94"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:1.4",
+      "target:2.1",
+      "roadmap:SchemeAndStackFoundations §4.11",
+      "roadmap:AlgebraicModuliForArithmeticGeometry §1.3"
+     ],
+     "tests": [
+      {
+       "name": "cusp_finite_not_iso",
+       "kind": "computation",
+       "statement": "cusp in characteristic 0: ν finite, birational, not an isomorphism"
+      },
+      {
+       "name": "whitney_umbrella_fibre",
+       "kind": "computation",
+       "statement": "y² = x²z in characteristic ≠ 2: ν⁻¹(0) ≅ ℙ¹, proper not finite (nobile1975 Example 4)"
+      },
+      {
+       "name": "smooth_identity",
+       "kind": "degenerate",
+       "statement": "X smooth: ν is the identity"
+      }
+     ]
+    },
+    {
+     "id": "2.3",
+     "kind": "theorem",
+     "name": "AlgebraicGeometry.nashBlowup_setting",
+     "statement": "For X in the Setting, X* is reduced, separated and of finite type over k, pure of dimension d, and its smooth locus contains ν⁻¹(X_sm), hence is dense.",
+     "hypotheses": [
+      "X in the Setting"
+     ],
+     "locator": {
+      "source": "nashModificationNotes2024",
+      "where": "Section 1, lines 109–112 (the Nash modification is a proper birational morphism of varieties)"
+     },
+     "prerequisites": [
+      "target:0.3",
+      "target:1.2",
+      "target:2.1",
+      "target:2.2",
+      "roadmap:SchemeAndStackFoundations §0.7",
+      "tauceti:TauCeti.IsPureDimensional"
+     ],
+     "tests": [
+      {
+       "name": "cusp_char0_setting",
+       "kind": "computation",
+       "statement": "cusp in characteristic 0: X* = 𝔸¹ in the Setting with d = 1"
+      },
+      {
+       "name": "cusp_char2_setting",
+       "kind": "computation",
+       "statement": "cusp in characteristic 2: X* ≅ X"
+      },
+      {
+       "name": "mixed_dimension_discarded",
+       "kind": "non-example",
+       "statement": "𝔸² ⊔ 𝔸¹ with d = 2: X* = 𝔸², ν not surjective"
+      }
+     ]
+    },
+    {
+     "id": "2.4",
+     "kind": "theorem",
+     "name": "AlgebraicGeometry.nashBlowup.lift",
+     "statement": "For X in the Setting, Z reduced, h : Z → X with h⁻¹(X_sm) dense and a locally free rank-d quotient h^*Ω_{X/k} → M, there is a unique q : Z → X* over X with q^*L = M; M is unique. For a surjective π : X₁ → X with X₁ reduced, π⁻¹(X_sm) dense and such a quotient, the lift is an isomorphism iff the classifying map X₁ → Gr_d(Ω_{X/k}) is a closed immersion.",
+     "hypotheses": [
+      "X in the Setting",
+      "Z reduced, h⁻¹(X_sm) dense",
+      "for the second clause π surjective"
+     ],
+     "locator": {
+      "source": "nashModificationNotes2024",
+      "where": "Section 2, lines 153–162 (Teissier's formulation)"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:2.1",
+      "mathlib:AlgebraicGeometry.IsClosedImmersion"
+     ],
+     "tests": [
+      {
+       "name": "blowup_point_not_nash",
+       "kind": "non-example",
+       "statement": "Bl_0 𝔸² → 𝔸² with the identity quotient: projective birational with a quotient but not the Nash blowup"
+      },
+      {
+       "name": "cusp_normalization_is_nash",
+       "kind": "computation",
+       "statement": "cusp in characteristic 0: 𝔸¹ → X with classifying map t ↦ (t², t³, [1 : 3t/2]) a closed immersion"
+      },
+      {
+       "name": "point_excluded",
+       "kind": "non-example",
+       "statement": "Spec k → cusp point: h⁻¹(X_sm) = ∅, excluded"
+      },
+      {
+       "name": "surjectivity_needed",
+       "kind": "non-example",
+       "statement": "X = 𝔸¹ ⊔ 𝔸¹, X₁ one line: classifying map a closed immersion, lift not an isomorphism"
+      }
+     ]
+    },
+    {
+     "id": "2.5",
+     "kind": "theorem",
+     "name": "AlgebraicGeometry.nashBlowupHom_isIso_iff",
+     "statement": "For X in the Setting, ν is an isomorphism iff Ω_{X/k} admits a locally free quotient of rank d; in particular ν is an isomorphism when X is smooth.",
+     "hypotheses": [
+      "X in the Setting"
+     ],
+     "locator": {
+      "source": "nashModificationNotes2024",
+      "where": "Section 2, lines 170–171; duarteNunezBetancourt2020 Lemma 2.4, lines 152–182"
+     },
+     "prerequisites": [
+      "target:0.3",
+      "target:2.1",
+      "target:2.2",
+      "target:2.4",
+      "roadmap:AlgebraicModuliForArithmeticGeometry §1.3"
+     ],
+     "tests": [
+      {
+       "name": "cusp_char2_iso",
+       "kind": "computation",
+       "statement": "cusp in characteristic 2: Ω = (dx, dy)/(x² dx), quotient dx ↦ 0, dy ↦ 1; ν iso (nobile1975 Example 1)"
+      },
+      {
+       "name": "cusp_char3_iso",
+       "kind": "computation",
+       "statement": "cusp in characteristic 3: relation 2y dy, quotient dx ↦ 1; ν iso (nobile1975 Example 2)"
+      },
+      {
+       "name": "cusp_char0_not_iso",
+       "kind": "non-example",
+       "statement": "cusp in characteristic 0: no free rank-one quotient since t ∉ k[[t², t³]]"
+      }
+     ]
+    },
+    {
+     "id": "2.6",
+     "kind": "theorem",
+     "name": "AlgebraicGeometry.nashBlowup.baseChange",
+     "statement": "For X in the Setting: for V ⊆ X open, V* ≅ ν⁻¹(V) over V compatibly with L; for a field extension k'/k, X_{k'} is in the Setting and (X*)_{k'} ≅ (X_{k'})* over X_{k'} compatibly with the Nash cotangent bundles.",
+     "hypotheses": [
+      "X in the Setting",
+      "k'/k a field extension"
+     ],
+     "locator": {
+      "source": "nobile1975",
+      "where": "Introduction, lines 42–44 (independence of the embedding, globalisation)"
+     },
+     "prerequisites": [
+      "target:0.1",
+      "target:0.2",
+      "target:1.1",
+      "target:1.2",
+      "target:1.5",
+      "target:2.1",
+      "tauceti:TauCeti.AlgebraicGeometry.isPureDimensional_pullback_Spec_map_iff_of_field",
+      "tauceti:AlgebraicGeometry.Scheme.Hom.preimage_smoothLocus_le_smoothLocus_pullback_snd"
+     ],
+     "tests": [
+      {
+       "name": "cusp_baseChange_Qi",
+       "kind": "compatibility",
+       "statement": "cusp over ℚ and k' = ℚ(i): both sides are 𝔸¹_{ℚ(i)}"
+      },
+      {
+       "name": "restrict_smoothLocus",
+       "kind": "degenerate",
+       "statement": "for V = X_sm, V* = V"
+      },
+      {
+       "name": "inseparable_point_outside_setting",
+       "kind": "non-example",
+       "statement": "Spec 𝔽_p(t)[y]/(y^p − t) becomes non-reduced over k(t^{1/p}); it is outside the Setting"
+      }
+     ]
+    },
+    {
+     "id": "2.7",
+     "kind": "definition",
+     "name": "AlgebraicGeometry.nashIterate",
+     "statement": "X^{(0)} = X and X^{(i+1)} = (X^{(i)})* with the same d, with composite maps to X; NashIterationResolves X d means some X^{(i)} → Spec k is smooth.",
+     "hypotheses": [
+      "k a field",
+      "X locally of finite type over k",
+      "d : ℕ"
+     ],
+     "locator": {
+      "source": "nobile1975",
+      "where": "proof of Theorem 2, lines 202–203"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.3",
+      "target:2.5"
+     ],
+     "api": [
+      {
+       "name": "nashIterate_zero / nashIterate_succ",
+       "role": "evaluation",
+       "statement": "X^{(0)} = X and X^{(i+1)} = nashBlowup of X^{(i)}"
+      },
+      {
+       "name": "nashIterate_setting",
+       "role": "structure",
+       "statement": "every iterate of X in the Setting is in the Setting"
+      },
+      {
+       "name": "nashIterationResolves_iff",
+       "role": "characterisation",
+       "statement": "NashIterationResolves X d ↔ ∃ i, Smooth (X^{(i)} → Spec k)"
+      }
+     ],
+     "tests": [
+      {
+       "name": "nashIterate_smooth",
+       "kind": "degenerate",
+       "statement": "X smooth: X^{(i)} ≅ X for all i, resolved at i = 0"
+      },
+      {
+       "name": "nashIterate_cusp_char0",
+       "kind": "computation",
+       "statement": "cusp in characteristic 0 is resolved at i = 1"
+      },
+      {
+       "name": "nashIterate_cusp_char2",
+       "kind": "non-example",
+       "statement": "cusp in characteristic 2: X^{(i)} ≅ X for all i, never resolved"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "Embedded and blowup descriptions",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "theorem",
+     "name": "AlgebraicGeometry.nashBlowup_eq_closure_graph_gaussMap",
+     "statement": "For X in the Setting, a closed subscheme of an open W ⊆ 𝔸ⁿ_k, with Gauss map Φ : X_sm → Gr_d(kⁿ) classifying O^n → Ω_{X/k}|_{X_sm}, X* is isomorphic over X to the scheme-theoretic image of (id, Φ) : X_sm → X ×_k Gr_d(kⁿ), carrying L to the pulled-back universal quotient.",
+     "hypotheses": [
+      "X in the Setting",
+      "X a closed subscheme of an open of 𝔸ⁿ_k"
+     ],
+     "locator": {
+      "source": "nobile1975",
+      "where": "Introduction, lines 29–44; castilloDuarteLeytonLiendo2026 lines 13–21; gonzalezSprinberg1982 §1.4, lines 105–112"
+     },
+     "prerequisites": [
+      "target:0.2",
+      "target:0.4",
+      "target:1.2",
+      "target:2.1",
+      "roadmap:AlgebraicModuliForArithmeticGeometry §1.3"
+     ],
+     "tests": [
+      {
+       "name": "gauss_line_convention",
+       "kind": "computation",
+       "statement": "for y = 2x, Φ is constant [1 : 2], not [2 : −1]"
+      },
+      {
+       "name": "gauss_cusp",
+       "kind": "computation",
+       "statement": "for the cusp Φ(t) = [1 : 3t/2] and the closure is ≅ 𝔸¹"
+      },
+      {
+       "name": "gauss_affineSpace",
+       "kind": "degenerate",
+       "statement": "for X = 𝔸ⁿ, Φ is constant and the closure is X"
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "theorem",
+     "name": "AlgebraicGeometry.nashBlowup_iso_blowup",
+     "statement": "For X in the Setting, an ideal sheaf I and a surjection φ : ∧^d Ω_{X/k} → I that is an isomorphism over X_sm, X* ≅ Bl_I X over X and I·O_{X*} ≅ ∧^d L; every point of X has an affine neighbourhood Spec A with such an I containing a nonzerodivisor.",
+     "hypotheses": [
+      "X in the Setting",
+      "φ surjective onto I and an isomorphism over X_sm"
+     ],
+     "locator": {
+      "source": "nobile1975",
+      "where": "Theorem 1, line 105; nashModificationNotes2024 Section 3, lines 243–247"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:1.4",
+      "target:2.1",
+      "tauceti:AlgebraicGeometry.Scheme.IdealSheafData.blowup",
+      "tauceti:AlgebraicGeometry.Scheme.IdealSheafData.blowupToBase",
+      "tauceti:AlgebraicGeometry.Scheme.IdealSheafData.blowupLift",
+      "tauceti:AlgebraicGeometry.Scheme.IdealSheafData.blowup_hom_ext",
+      "tauceti:AlgebraicGeometry.Scheme.IdealSheafData.isIso_blowupToBase_iff",
+      "tauceti:SheafOfModules.exteriorPower"
+     ],
+     "tests": [
+      {
+       "name": "blowup_line_invertible",
+       "kind": "degenerate",
+       "statement": "𝔸¹ with dx ↦ x onto (x): Bl = X = X*"
+      },
+      {
+       "name": "blowup_cusp",
+       "kind": "computation",
+       "statement": "cusp: I = (y, x²) in characteristic 0 gives 𝔸¹; I = (x²) in characteristic 2 gives X"
+      },
+      {
+       "name": "blowup_zero_ideal",
+       "kind": "non-example",
+       "statement": "I = 0, φ = 0: surjective but not an isomorphism over X_sm, Bl_0 X = ∅"
+      }
+     ]
+    },
+    {
+     "id": "3.3",
+     "kind": "theorem",
+     "name": "AlgebraicGeometry.nashBlowup_hypersurface",
+     "statement": "For f ∈ k[x_1, …, x_n] with X = V(f) ⊆ 𝔸ⁿ_k reduced, pure of dimension n − 1, with dense smooth locus, X* ≅ Bl_{J_f} X over X, where J_f is the image of (∂f/∂x_1, …, ∂f/∂x_n).",
+     "hypotheses": [
+      "X = V(f) reduced, pure of dimension n − 1, dense smooth locus"
+     ],
+     "locator": {
+      "source": "nobile1975",
+      "where": "Remark 2, lines 129–133; Examples 1–2, lines 136–141"
+     },
+     "prerequisites": [
+      "target:0.2",
+      "target:3.2",
+      "tauceti:AlgebraicGeometry.Scheme.IdealSheafData.blowup"
+     ],
+     "tests": [
+      {
+       "name": "jacobian_cusp_all_chars",
+       "kind": "computation",
+       "statement": "J = (2y, 3x²) = (y, x²), (x²), (y) in characteristic 0/≥5, 2, 3"
+      },
+      {
+       "name": "jacobian_node",
+       "kind": "computation",
+       "statement": "node: J = (x, y), Bl = 𝔸¹ ⊔ 𝔸¹"
+      },
+      {
+       "name": "jacobian_xp_yq",
+       "kind": "computation",
+       "statement": "x^p − y^q in characteristic p: J = (y^{q−1}) principal, ν an isomorphism, curve singular"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "Characteristic zero",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "theorem",
+     "name": "exists_coordinates_of_kaehler_surjection",
+     "statement": "For a local k-algebra (R, m, κ) and a surjection q : Ω_{R/k} → R^d there are x_1, …, x_d ∈ R and k-derivations ∂_i with ∂_i(x_j) = δ_ij and Ω_{R/k} = (⊕ R dx_j) ⊕ ker q; if κ is finite separable over k the x_j can be taken in m.",
+     "hypotheses": [
+      "k a field",
+      "R local k-algebra",
+      "q surjective"
+     ],
+     "locator": {
+      "source": "nashModificationNotes2024",
+      "where": "Section 2, lines 194–197, and Section 5, lines 484–501; duarteNunezBetancourt2020 proof of Theorem 3.10, lines 263–268"
+     },
+     "prerequisites": [
+      "target:0.5",
+      "mathlib:Derivation",
+      "mathlib:KaehlerDifferential"
+     ],
+     "tests": [
+      {
+       "name": "coordinates_plane",
+       "kind": "computation",
+       "statement": "R = k[x, y]_(x,y), q = id: x_1 = x, x_2 = y, ∂_i = ∂/∂x_i"
+      },
+      {
+       "name": "coordinates_cusp_char3",
+       "kind": "computation",
+       "statement": "cusp in characteristic 3: x_1 = x, ∂ = ∂/∂x, ker q = R dy/(y dy) torsion"
+      },
+      {
+       "name": "coordinates_zero",
+       "kind": "degenerate",
+       "statement": "d = 0: no coordinates, ker q = Ω_{R/k}"
+      }
+     ]
+    },
+    {
+     "id": "4.2",
+     "kind": "construction",
+     "name": "Derivation.lieDerivative",
+     "statement": "For a k-derivation ∂ of a k-algebra R, the additive map L_∂ : Ω_{R/k} → Ω_{R/k} with L_∂(a db) = ∂(a) db + a d(∂b), induced on J/J² by ∂ ⊗ 1 + 1 ⊗ ∂; if an R-submodule N is L_∂-stable then Ann_R(Ω_{R/k}/N) is ∂-stable.",
+     "hypotheses": [
+      "k a field (or commutative ring)",
+      "R a k-algebra",
+      "∂ a k-derivation of R"
+     ],
+     "locator": {
+      "source": "stacksAlgebra",
+      "where": "Lemma 10.131.13 (00RW), line 15590; hamann2003 proof of Lemma 0.1, lines 61–64"
+     },
+     "prerequisites": [
+      "mathlib:KaehlerDifferential",
+      "mathlib:Derivation",
+      "mathlib:Algebra.TensorProduct",
+      "roadmap:DiophantineApproximationAndTranscendence §5.6"
+     ],
+     "api": [
+      {
+       "name": "lieDerivative_smul",
+       "role": "evaluation",
+       "statement": "L_∂(a ω) = ∂(a) ω + a L_∂(ω)"
+      },
+      {
+       "name": "lieDerivative_d",
+       "role": "evaluation",
+       "statement": "L_∂ ∘ d = d ∘ ∂"
+      },
+      {
+       "name": "lieDerivative_add / lieDerivative_smul_derivation",
+       "role": "structure",
+       "statement": "L is additive in ∂ and k-linear"
+      },
+      {
+       "name": "isStable_annihilator",
+       "role": "characterisation",
+       "statement": "for an L_∂-stable submodule N, Ann_R(Ω/N) is ∂-stable"
+      },
+      {
+       "name": "lieDerivative_dx_coordinate",
+       "role": "compatibility",
+       "statement": "in the situation of 4.1, L_{∂_i}(dx_j) = 0 and ⊕ R dx_j is L_{∂_i}-stable"
+      },
+      {
+       "name": "lieDerivative_eq_lieDerivativeOneForm",
+       "role": "compatibility",
+       "statement": "if R is a field and k has characteristic zero, L_∂ equals DiophantineApproximationAndTranscendence's lieDerivativeOneForm ∂ (§5.6), by the uniqueness in exists_lieDerivativeOneForm"
+      }
+     ],
+     "tests": [
+      {
+       "name": "lieDerivative_polynomial",
+       "kind": "computation",
+       "statement": "R = k[x], ∂ = d/dx: L(x dx) = dx, L(dx) = 0"
+      },
+      {
+       "name": "lieDerivative_euler",
+       "kind": "non-example",
+       "statement": "∂ = x d/dx: L(dx) = dx ≠ 0, excluding the coefficients-only model"
+      },
+      {
+       "name": "lieDerivative_dualNumbers",
+       "kind": "compatibility",
+       "statement": "R = k[x]/(x²), ∂(x) = x: L(x dx) = 2x dx = 0 respects the relation"
+      }
+     ]
+    },
+    {
+     "id": "4.3",
+     "kind": "theorem",
+     "name": "Derivation.isStable_of_mem_minimalPrimes",
+     "statement": "In a Noetherian ring containing ℚ, every minimal prime over a ∂-stable ideal is ∂-stable.",
+     "hypotheses": [
+      "R Noetherian",
+      "ℚ ⊆ R",
+      "I a ∂-stable ideal"
+     ],
+     "locator": {
+      "source": "hamann2003",
+      "where": "Lemma 0.1, line 56 (proof lines 58–64)"
+     },
+     "prerequisites": [
+      "mathlib:Ideal.minimalPrimes",
+      "mathlib:Ideal.radical",
+      "mathlib:Derivation"
+     ],
+     "tests": [
+      {
+       "name": "seidenberg_unstable_square",
+       "kind": "non-example",
+       "statement": "in ℚ[x] with d/dx, (x²) is not stable; only 0 and ℚ[x] are"
+      },
+      {
+       "name": "seidenberg_two_variables",
+       "kind": "computation",
+       "statement": "in ℚ[x, y] with ∂/∂x, (y²) has stable minimal prime (y)"
+      },
+      {
+       "name": "seidenberg_char_p",
+       "kind": "non-example",
+       "statement": "in 𝔽_p[x], (x^p) is stable with non-stable minimal prime (x)"
+      }
+     ]
+    },
+    {
+     "id": "4.4",
+     "kind": "theorem",
+     "name": "AlgebraicGeometry.smooth_of_kaehler_surjection_charZero",
+     "statement": "For k of characteristic zero and X reduced, locally of finite type over k and pure of dimension d, if Ω_{X/k} admits a locally free quotient of rank d then X is smooth over k.",
+     "hypotheses": [
+      "char k = 0",
+      "X reduced, locally of finite type, pure of dimension d",
+      "Ω_{X/k} → L surjective with L locally free of rank d"
+     ],
+     "locator": {
+      "source": "nashModificationNotes2024",
+      "where": "Proposition 2.3, lines 179–199 (proof through completions there; the route here uses 4.2 and 4.3)"
+     },
+     "prerequisites": [
+      "target:0.3",
+      "target:0.5",
+      "target:0.6",
+      "target:1.1",
+      "target:4.1",
+      "target:4.2",
+      "target:4.3",
+      "roadmap:SchemeAndStackFoundations §0.7",
+      "mathlib:IsRegularLocalRing"
+     ],
+     "tests": [
+      {
+       "name": "smooth_trivial",
+       "kind": "degenerate",
+       "statement": "X smooth: identity quotient"
+      },
+      {
+       "name": "cusp_Q_no_quotient",
+       "kind": "compatibility",
+       "statement": "the cusp over ℚ has no free rank-one quotient (2.5), consistently"
+      },
+      {
+       "name": "cusp_F2_counterexample",
+       "kind": "non-example",
+       "statement": "over 𝔽_2 the cusp has a free quotient and is singular; step 4 fails"
+      }
+     ]
+    },
+    {
+     "id": "4.5",
+     "kind": "theorem",
+     "name": "AlgebraicGeometry.nashBlowupHom_isIso_iff_smooth_charZero",
+     "statement": "For k of characteristic zero and X in the Setting, ν : X* → X is an isomorphism iff X is smooth over k.",
+     "hypotheses": [
+      "char k = 0",
+      "X in the Setting"
+     ],
+     "locator": {
+      "source": "nobile1975",
+      "where": "Theorem 2, line 143; nashModificationNotes2024 Theorem 2.1, line 143; duarteNunezBetancourt2020 Theorem 2.3, line 136"
+     },
+     "prerequisites": [
+      "target:2.5",
+      "target:4.4"
+     ],
+     "tests": [
+      {
+       "name": "nobile_cusp",
+       "kind": "computation",
+       "statement": "cusp over ℚ: singular and ν not an isomorphism"
+      },
+      {
+       "name": "nobile_node",
+       "kind": "computation",
+       "statement": "node: X* = 𝔸¹ ⊔ 𝔸¹ ≠ X"
+      },
+      {
+       "name": "nobile_char2_false",
+       "kind": "non-example",
+       "statement": "cusp in characteristic 2: singular with ν an isomorphism"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "Normal varieties in positive characteristic",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "theorem",
+     "name": "frobenius_finite_of_essFiniteType",
+     "statement": "For a perfect field k of characteristic p and a k-algebra R essentially of finite type, the absolute Frobenius of R is finite; for a domain F_*R ≅ R^{1/p}.",
+     "hypotheses": [
+      "k perfect of characteristic p",
+      "R essentially of finite type over k"
+     ],
+     "locator": {
+      "source": "nashModificationNotes2024",
+      "where": "Section 5, lines 418–420"
+     },
+     "prerequisites": [
+      "mathlib:frobenius",
+      "mathlib:Algebra.FiniteType",
+      "mathlib:Module.Finite"
+     ],
+     "tests": [
+      {
+       "name": "frobenius_polynomial",
+       "kind": "computation",
+       "statement": "k[t]: F_*R free on 1, t, …, t^{p−1}"
+      },
+      {
+       "name": "frobenius_perfect_field",
+       "kind": "degenerate",
+       "statement": "R = k: F is an isomorphism"
+      },
+      {
+       "name": "frobenius_imperfect",
+       "kind": "non-example",
+       "statement": "over 𝔽_p(t), k(s) has degree p² over its p-th powers, not p"
+      }
+     ]
+    },
+    {
+     "id": "5.2",
+     "kind": "theorem",
+     "name": "exists_pMonomialOperators",
+     "statement": "For a local k-algebra R of characteristic p with x_j ∈ m and derivations ∂_i, ∂_i(x_j) = δ_ij, there are R^p-linear operators φ_γ (γ ∈ {0,…,p−1}^d) with φ_γ(x^β) = δ_{γβ}, built from (α!)⁻¹ ∂^α and the inverse of the unitriangular matrix (∂^{(α)}(x^β)).",
+     "hypotheses": [
+      "R local of characteristic p",
+      "x_j ∈ m",
+      "∂_i(x_j) = δ_ij"
+     ],
+     "locator": {
+      "source": "duarteNunezBetancourt2020",
+      "where": "proof of Theorem 3.10, lines 271–283; nashModificationNotes2024 lines 394–407"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "mathlib:Derivation",
+      "mathlib:Matrix"
+     ],
+     "tests": [
+      {
+       "name": "pMonomial_d1_p2",
+       "kind": "computation",
+       "statement": "d = 1, p = 2: φ_0 = id − x∂, φ_1 = ∂"
+      },
+      {
+       "name": "pMonomial_d0",
+       "kind": "degenerate",
+       "statement": "d = 0: φ = id"
+      },
+      {
+       "name": "pMonomial_cusp_char3",
+       "kind": "non-example",
+       "statement": "cusp in characteristic 3: operators exist but y = t³ is not in the R³-span of 1, x, x²"
+      }
+     ]
+    },
+    {
+     "id": "5.3",
+     "kind": "theorem",
+     "name": "frobeniusBasis_functionField",
+     "statement": "For k perfect of characteristic p, K finitely generated over k with dim Ω_{K/k} = d and dx_1, …, dx_d a basis, the monomials x^α (α ∈ {0,…,p−1}^d) form a K^p-basis of K; [K : K^p] = p^d.",
+     "hypotheses": [
+      "k perfect of characteristic p",
+      "K finitely generated over k",
+      "dx_j a basis of Ω_{K/k}"
+     ],
+     "locator": {
+      "source": "duarteNunezBetancourt2020",
+      "where": "proof of Theorem 3.10, lines 284–286 and 301–302 (rank p^d of R^{1/p})"
+     },
+     "prerequisites": [
+      "roadmap:DerivedDeRhamCohomology §0.23",
+      "mathlib:KaehlerDifferential",
+      "mathlib:frobenius"
+     ],
+     "tests": [
+      {
+       "name": "frobeniusBasis_rational",
+       "kind": "computation",
+       "statement": "K = k(t): basis 1, t, …, t^{p−1}"
+      },
+      {
+       "name": "frobeniusBasis_finite",
+       "kind": "degenerate",
+       "statement": "d = 0: K perfect, basis {1}"
+      },
+      {
+       "name": "frobeniusBasis_tp_not_basis",
+       "kind": "non-example",
+       "statement": "t^p has zero differential and is not a p-basis of k(t)"
+      }
+     ]
+    },
+    {
+     "id": "5.4",
+     "kind": "theorem",
+     "name": "frobeniusPushforward_free_of_kaehler_surjection",
+     "statement": "For k perfect of characteristic p, X normal, of finite type, pure of dimension d, x closed, R = O_{X,x} and q : Ω_{R/k} → R^d surjective, ψ : ⊕_α R e_α → F_*R, e_α ↦ x^α, is an isomorphism; hence Frobenius is flat and R is regular.",
+     "hypotheses": [
+      "k perfect of characteristic p",
+      "X normal, finite type, pure of dimension d",
+      "x a closed point",
+      "q surjective"
+     ],
+     "locator": {
+      "source": "duarteNunezBetancourt2020",
+      "where": "proof of Theorem 3.10, lines 284–305; nashModificationNotes2024 Section 5, lines 408–439"
+     },
+     "prerequisites": [
+      "target:0.3",
+      "target:1.1",
+      "target:4.1",
+      "target:5.1",
+      "target:5.2",
+      "target:5.3",
+      "roadmap:SchemeAndStackFoundations §0.17",
+      "roadmap:SchemeAndStackFoundations §0.30",
+      "roadmap:SchemeAndStackFoundations §4.13",
+      "roadmap:EnhancedDerivedSheaves §E1.6"
+     ],
+     "tests": [
+      {
+       "name": "psi_polynomial",
+       "kind": "computation",
+       "statement": "R = k[x_1..x_d]_m: ψ is the standard basis of F_*R"
+      },
+      {
+       "name": "psi_cusp_char3",
+       "kind": "non-example",
+       "statement": "cusp in characteristic 3: ψ injective, not surjective; normality needed"
+      },
+      {
+       "name": "psi_point",
+       "kind": "degenerate",
+       "statement": "d = 0, R = k: ψ is the identity"
+      }
+     ]
+    },
+    {
+     "id": "5.5",
+     "kind": "theorem",
+     "name": "AlgebraicGeometry.nashBlowupHom_isIso_iff_smooth_of_normal",
+     "statement": "For a perfect field k of characteristic p > 0 and X normal in the Setting, ν is an isomorphism iff X is smooth over k.",
+     "hypotheses": [
+      "k perfect, char k = p > 0",
+      "X normal, in the Setting"
+     ],
+     "locator": {
+      "source": "duarteNunezBetancourt2020",
+      "where": "Theorem 3.10, line 256; nashModificationNotes2024 Theorem 5.1, line 362"
+     },
+     "prerequisites": [
+      "target:0.6",
+      "target:2.5",
+      "target:5.4"
+     ],
+     "tests": [
+      {
+       "name": "imperfect_regular_curve",
+       "kind": "non-example",
+       "statement": "over 𝔽_p(t), x^p + y² + t = 0 is regular, not smooth, and ν is an isomorphism (stacksAlgebra Example 10.140.8, 00TY)"
+      },
+      {
+       "name": "cusp_small_char",
+       "kind": "non-example",
+       "statement": "cusp in characteristic 2 or 3: singular with ν iso, not normal"
+      },
+      {
+       "name": "quadric_cone",
+       "kind": "computation",
+       "statement": "z² = xy in characteristic p ≠ 2: J = (x, y, z) not invertible, ν not an isomorphism"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "6",
+   "title": "The normalised Nash blowup",
+   "targets": [
+    {
+     "id": "6.1",
+     "kind": "definition",
+     "name": "AlgebraicGeometry.normalizedNashBlowup",
+     "statement": "X̄* is the normalisation of X* (AlgebraicModuliForArithmeticGeometry §5.4) with η : X̄* → X* and ν̄ = ν ∘ η.",
+     "hypotheses": [
+      "k a field",
+      "X locally of finite type over k",
+      "d : ℕ"
+     ],
+     "locator": {
+      "source": "castilloDuarteLeytonLiendo2026",
+      "where": "Introduction, lines 20–21; gonzalezSprinberg1982 lines 60–69; stacksNormalization Definition 29.55.1 (035N) line 6498, Lemma 29.55.3 (035P) line 6521"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.2",
+      "target:2.3",
+      "roadmap:AlgebraicModuliForArithmeticGeometry §5.4",
+      "roadmap:SchemeAndStackFoundations §0.30"
+     ],
+     "api": [
+      {
+       "name": "normalizedNashBlowup.isFinite",
+       "role": "structure",
+       "statement": "η is finite, surjective, birational on components and an isomorphism over the normal locus of X*, in particular over ν⁻¹(X_sm)"
+      },
+      {
+       "name": "normalizedNashBlowup_setting",
+       "role": "structure",
+       "statement": "X̄* is normal, separated, of finite type, pure of dimension d, with dense smooth locus"
+      },
+      {
+       "name": "normalizedNashBlowupHom_isModification",
+       "role": "structure",
+       "statement": "ν̄ is proper, an isomorphism over X_sm, with ν̄⁻¹(X_sm) dense"
+      }
+     ],
+     "tests": [
+      {
+       "name": "normalized_cusp_char0",
+       "kind": "computation",
+       "statement": "cusp in characteristic 0: X̄* = X* = 𝔸¹"
+      },
+      {
+       "name": "normalized_cusp_char2",
+       "kind": "computation",
+       "statement": "cusp in characteristic 2: X* ≅ X, X̄* = 𝔸¹"
+      },
+      {
+       "name": "normalized_vs_normalization",
+       "kind": "non-example",
+       "statement": "y² = x²z in characteristic ≠ 2: the normalisation of X is finite over X, while X̄* = X* has ℙ¹ over 0; normalising X instead of X* is excluded (in characteristic 2, J_f = (x²) is invertible and X* = X)"
+      }
+     ]
+    },
+    {
+     "id": "6.2",
+     "kind": "theorem",
+     "name": "AlgebraicGeometry.normalizedNashBlowup.lift",
+     "statement": "For X in the Setting, Z locally Noetherian and normal, h : Z → X sending generic points of components to generic points, and a locally free rank-d quotient of h^*Ω_{X/k}, there is a unique Z → X̄* over X compatible with the quotients.",
+     "hypotheses": [
+      "X in the Setting",
+      "Z locally Noetherian, normal",
+      "h maps generic points of components of Z to generic points of components of X"
+     ],
+     "locator": {
+      "source": "stacksNormalization",
+      "where": "Lemma 29.55.5(4) (035Q), line 6570"
+     },
+     "prerequisites": [
+      "target:2.4",
+      "target:6.1",
+      "roadmap:AlgebraicModuliForArithmeticGeometry §5.4"
+     ],
+     "tests": [
+      {
+       "name": "lift_self",
+       "kind": "degenerate",
+       "statement": "Z = X̄*: the lift is the identity"
+      },
+      {
+       "name": "lift_cusp_char2",
+       "kind": "computation",
+       "statement": "cusp in characteristic 2 with Z = 𝔸¹: the lift is 𝔸¹ ≅ X̄*"
+      },
+      {
+       "name": "lift_closed_point",
+       "kind": "non-example",
+       "statement": "a closed point of X_sm does not map a generic point to a generic point; outside the hypotheses"
+      }
+     ]
+    },
+    {
+     "id": "6.3",
+     "kind": "theorem",
+     "name": "AlgebraicGeometry.normalizedNashBlowup.baseChange",
+     "statement": "For V ⊆ X open, V̄* ≅ ν̄⁻¹(V); for a finite separable extension k'/k, (X̄*)_{k'} ≅ (X_{k'})̄* over X_{k'}.",
+     "hypotheses": [
+      "X in the Setting",
+      "k'/k finite separable"
+     ],
+     "locator": {
+      "source": "stacksNormalization",
+      "where": "Lemma 29.55.5 (035Q), line 6561"
+     },
+     "prerequisites": [
+      "target:2.6",
+      "target:6.1",
+      "roadmap:AlgebraicModuliForArithmeticGeometry §5.4",
+      "mathlib:AlgebraicGeometry.Scheme.Hom.normalizationPullback"
+     ],
+     "tests": [
+      {
+       "name": "restrict_smooth",
+       "kind": "degenerate",
+       "statement": "V = X_sm: V̄* = V"
+      },
+      {
+       "name": "cusp_Qi",
+       "kind": "compatibility",
+       "statement": "cusp over ℚ, k' = ℚ(i): both sides 𝔸¹"
+      },
+      {
+       "name": "inseparable_fails",
+       "kind": "non-example",
+       "statement": "C : x^p + y² + t = 0 over 𝔽_p(t): C̄* = C but (C_{k'})̄* = 𝔸¹ ≠ C_{k'} for k' = k(t^{1/p})"
+      }
+     ]
+    },
+    {
+     "id": "6.4",
+     "kind": "theorem",
+     "name": "AlgebraicGeometry.normalizedNashBlowupHom_isIso_iff",
+     "statement": "For X in the Setting, ν̄ is an isomorphism iff X is normal and ν is an isomorphism; hence in characteristic zero, and over a perfect field of characteristic p, ν̄ is an isomorphism iff X is smooth.",
+     "hypotheses": [
+      "X in the Setting",
+      "for the corollary: char k = 0, or k perfect"
+     ],
+     "locator": {
+      "source": "nashModificationNotes2024",
+      "where": "Section 6, lines 515–517; stacksNormalization Lemma 29.55.9 (0H7D), line 6636"
+     },
+     "prerequisites": [
+      "target:2.5",
+      "target:4.5",
+      "target:5.5",
+      "target:6.1",
+      "mathlib:AlgebraicGeometry.isIso_of_isClosedImmersion_of_surjective",
+      "roadmap:AlgebraicModuliForArithmeticGeometry §5.4"
+     ],
+     "tests": [
+      {
+       "name": "cusp_char2_normalized_not_iso",
+       "kind": "computation",
+       "statement": "cusp in characteristic 2: ν iso, X not normal, ν̄ not iso"
+      },
+      {
+       "name": "smooth_both_iso",
+       "kind": "degenerate",
+       "statement": "X smooth: both isomorphisms"
+      },
+      {
+       "name": "imperfect_regular_curve_normalized",
+       "kind": "non-example",
+       "statement": "x^p + y² + t = 0 over 𝔽_p(t): ν̄ iso, not smooth"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "7",
+   "title": "Iteration and the never-resolves principle",
+   "targets": [
+    {
+     "id": "7.1",
+     "kind": "definition",
+     "name": "AlgebraicGeometry.normalizedNashIterate",
+     "statement": "Y_0 = X, Y_{i+1} = (Y_i)̄*; NormalizedNashIterationResolves X d means some Y_i → Spec k is smooth; if X is smooth, X^{(i)} ≅ X ≅ Y_i for all i.",
+     "hypotheses": [
+      "k a field",
+      "X locally of finite type over k",
+      "d : ℕ"
+     ],
+     "locator": {
+      "source": "castilloDuarteLeytonLiendo2026",
+      "where": "Introduction, lines 28–32 and 52–55"
+     },
+     "prerequisites": [
+      "target:2.7",
+      "target:6.1",
+      "target:6.4"
+     ],
+     "api": [
+      {
+       "name": "normalizedNashIterate_zero / _succ",
+       "role": "evaluation",
+       "statement": "Y_0 = X, Y_{i+1} = normalizedNashBlowup of Y_i"
+      },
+      {
+       "name": "normalizedNashIterate_setting",
+       "role": "structure",
+       "statement": "for X in the Setting each Y_i (i ≥ 1) is normal and in the Setting"
+      },
+      {
+       "name": "nashIterate_of_smooth / normalizedNashIterate_of_smooth",
+       "role": "characterisation",
+       "statement": "X smooth implies X^{(i)} ≅ X ≅ Y_i over X"
+      }
+     ],
+     "tests": [
+      {
+       "name": "normalizedIterate_cusp_char0",
+       "kind": "computation",
+       "statement": "cusp in characteristic 0: Y_1 = 𝔸¹"
+      },
+      {
+       "name": "normalizedIterate_cusp_char2",
+       "kind": "computation",
+       "statement": "cusp in characteristic 2: Y_1 = 𝔸¹ smooth while X^{(i)} ≅ X"
+      },
+      {
+       "name": "normalizedIterate_zero",
+       "kind": "degenerate",
+       "statement": "Y_0 = X, normal or not"
+      }
+     ]
+    },
+    {
+     "id": "7.2",
+     "kind": "theorem",
+     "name": "AlgebraicGeometry.iterate_openSubscheme",
+     "statement": "For Y in the Setting, U ⊆ Y open and a k-isomorphism U ≅ Z, the i-th (normalised) Nash iterate of Y contains an open subscheme k-isomorphic to that of Z; so if Y_m ⊇ U ≅ X with m ≥ 1, then Y_{m+i} contains a copy of Y_i and Y_{jm} a copy of X for all j ≥ 1, and likewise for X^{(i)}.",
+     "hypotheses": [
+      "Y in the Setting",
+      "U ⊆ Y open",
+      "U ≅ Z over k"
+     ],
+     "locator": {
+      "source": "castilloDuarteLeytonLiendo2026",
+      "where": "Theorem, lines 58–67 (the consequence drawn there)"
+     },
+     "prerequisites": [
+      "target:2.4",
+      "target:2.6",
+      "target:6.3",
+      "target:7.1"
+     ],
+     "tests": [
+      {
+       "name": "open_self",
+       "kind": "degenerate",
+       "statement": "U = Y: identity"
+      },
+      {
+       "name": "cusp_char2_copies",
+       "kind": "computation",
+       "statement": "cusp in characteristic 2: X^{(j)} ⊇ X for all j"
+      },
+      {
+       "name": "smoothLocus_iterates",
+       "kind": "compatibility",
+       "statement": "U = Y_sm: the iterates of U are U"
+      }
+     ]
+    },
+    {
+     "id": "7.3",
+     "kind": "theorem",
+     "name": "AlgebraicGeometry.not_normalizedNashIterationResolves_of_openSubscheme",
+     "statement": "If X is in the Setting and singular and for some m ≥ 1 the iterate Y_m (resp. X^{(m)}) contains an open subscheme k-isomorphic to X, then no Y_i (resp. X^{(i)}) is smooth over k.",
+     "hypotheses": [
+      "X in the Setting",
+      "X not smooth over k",
+      "m ≥ 1",
+      "an open subscheme of Y_m (resp. X^{(m)}) k-isomorphic to X"
+     ],
+     "locator": {
+      "source": "castilloDuarteLeytonLiendo2026",
+      "where": "Theorem, lines 58–67"
+     },
+     "prerequisites": [
+      "target:7.1",
+      "target:7.2"
+     ],
+     "tests": [
+      {
+       "name": "m_zero_fails",
+       "kind": "non-example",
+       "statement": "m = 0: the hypothesis always holds and the cusp in characteristic 0 is resolved"
+      },
+      {
+       "name": "smooth_excluded",
+       "kind": "degenerate",
+       "statement": "X smooth: singularity hypothesis fails, Y_0 smooth"
+      },
+      {
+       "name": "cusp_char2_nash",
+       "kind": "computation",
+       "statement": "cusp in characteristic 2, m = 1, Nash iteration: never smooth; normalised iteration resolved since Y_1 = 𝔸¹ has no open copy of X"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "AlgebraicModuliForArithmeticGeometry",
+   "sections": [
+    "§1.3",
+    "§5.4"
+   ],
+   "what": "coherentGrassmannian with universal quotient, classifying maps, base change and properness over an affine base; plucker; normalisation of reduced schemes (scheme case of DMNormalization.stack) with universal property, finiteness over Nagata bases and smooth base change; schematic closure commuting with flat base change."
+  },
+  {
+   "roadmap": "SchemeAndStackFoundations",
+   "sections": [
+    "§0.7",
+    "§0.11",
+    "§0.17",
+    "§0.23",
+    "§0.30",
+    "§4.11",
+    "§4.13"
+   ],
+   "what": "dimension theory of finite-type k-schemes; descent of smoothness along field extensions; bijective_of_depth; universal homeomorphisms; normal schemes and DVR codimension-one stalks; modifications with witness; regularLocus_eq_smoothLocus over a perfect field and Serre's normality criterion."
+  },
+  {
+   "roadmap": "EnhancedDerivedSheaves",
+   "sections": [
+    "§E1.6"
+   ],
+   "what": "isRegular_of_frobenius_flat (converse of Kunz's theorem)."
+  },
+  {
+   "roadmap": "DerivedDeRhamCohomology",
+   "sections": [
+    "§0.23"
+   ],
+   "what": "p-bases of fields: a family is a p-basis exactly when its differentials form a basis of Ω¹_{K/𝔽_p}; the forward half is DerivedDeRham.pBasis_kaehler_basis, the converse half (used by §5.3) is stated in the prose of §0.23."
+  },
+  {
+   "roadmap": "DiophantineApproximationAndTranscendence",
+   "sections": [
+    "§5.6"
+   ],
+   "what": "exists_lieDerivativeOneForm / lieDerivativeOneForm: the unique C-linear Lie derivative on Ω[F⁄C] for fields C ⊆ F with C of characteristic zero; used only for the agreement bullet of §4.2."
+  }
+ ],
+ "consumers": [
+  {
+   "roadmap": "NashBlowupsPartII",
+   "what": "Proposed Part II: higher-order Nash blowups (principal parts), normalised Nash transformations of surfaces, the Fitting-ideal comparison; consumes §§1.2–1.5, Layer 2 and Layer 6."
+  }
+ ],
+ "gaps": []
+}

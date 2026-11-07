@@ -18,7 +18,7 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "publisher's open back-issue scan (MSP); the same paper is on Project Euclid"
-cited_for = ["definition of the Nash blowup by the Gauss map and its independence of the embedding (Introduction)", "Theorem 1: the Nash blowup is locally a blowup of an ideal", "Theorem 2: in characteristic zero the Nash blowup is an isomorphism iff the variety is nonsingular", "positive-characteristic counterexample x^p = y^q"]
+cited_for = ["§3.2 Theorem 1: the Nash blowup is locally the blowup of an ideal (line 105)", "§3.3 Remark 2 and Examples 1-2: Jacobian ideal of a hypersurface, cusp in characteristic 2 and q (lines 129-141)", "§3.1 Introduction: Gauss-map definition and independence of the embedding (lines 29-44)", "§4.5 Theorem 2: characteristic zero criterion (line 143)", "§2.2 Example 4: y^2 = x^2 z, non-finite Nash blowup (lines 314-324)", "§2.7 iterated Nash blowups (lines 202-203)"]
 
 [[source]]
 id = "nashModificationNotes2024"
@@ -36,7 +36,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v1"
-cited_for = ["Section 2: Teissier's formulation of the Nash modification as the universal projective birational morphism with a locally free rank-d quotient of the pulled-back differentials, and its identification with the Gauss-map closure", "Proposition 2.3: in characteristic zero a locally free rank-d quotient of the differentials forces nonsingularity (Zariski's derivation lemma)", "Theorem 5.1 and Section 5: the normal case in characteristic p via Kunz's theorem", "Section 6: toric statements (consumer side)"]
+cited_for = ["§1.2-§1.3 Section 3: Nash modification relative to a coherent sheaf, universal property, SN(F) = SN(wedge^d F) (lines 216-230)", "§2.4 Section 2: Teissier's universal formulation (lines 153-162)", "§2.5 Section 2: transport of the quotient (lines 170-171)", "§4.4 Proposition 2.3 (lines 179-199)", "§4.1 coordinates from a free quotient (lines 194-197, 484-501)", "§5.4-§5.5 Theorem 5.1 and its proof (lines 362-439); the statement there reads 'singular' for 'nonsingular'", "§3.2 Oneto-Zatini fractional ideal (lines 243-247)", "§6.4 Section 6 normalised criterion argument (lines 515-517)"]
 
 [[source]]
 id = "duarteNunezBetancourt2020"
@@ -56,7 +56,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v2 read; numbering of the journal version not checked, locators refer to the arXiv text"
-cited_for = ["Definition 2.1: Nash blowup of order n as the reduced closure of the smooth locus in the Grassmannian of quotients of principal parts, with the Grassmannian's universal property", "Theorem 2.3: Nobile's theorem restated", "Theorem 3.10: for a normal variety over an algebraically closed field of characteristic p, the Nash blowup is an isomorphism iff the variety is nonsingular"]
+cited_for = ["§2.1 Definition 2.1 (line 127)", "§2.5 Lemma 2.4 (lines 152-182)", "§4.5 Theorem 2.3 (line 136)", "§4.1, §5.2-§5.5 Theorem 3.10 and its proof (lines 256-305)"]
 
 [[source]]
 id = "castilloDuarteLeytonLiendo2026"
@@ -75,7 +75,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v3 (dated 7 Nov 2025) read; the journal version's numbering was not checked, locators refer to the arXiv text"
-cited_for = ["Introduction: definitions of the Nash blowup and the normalised Nash blowup by the Gauss map, and the history of Nash's and Semple's question", "Theorem (Introduction): for d >= 4 a normal affine toric variety whose (second) normalised Nash blowup contains an open subset isomorphic to it, so the iteration never resolves it (statement only; a consumer proves it)", "Section 1: combinatorial description of the Nash blowup of a toric variety (consumer side)", "Lemma 1: Nash blowup of a product with affine space"]
+cited_for = ["§2.1, §3.1, §6.1 Introduction: Gauss-map definitions of the Nash and normalised Nash blowups (lines 13-21)", "§7.2-§7.3 Theorem of the Introduction and its consequence (lines 58-67), statement only", "§3.3 Nobile's curve x^p - y^q (lines 33-35)", "Downstream consumers: Section 1 toric description (consumer side)"]
 
 [[source]]
 id = "gonzalezSprinberg1982"
@@ -92,12 +92,12 @@ sha256 = "e395cdf618b29d87645908279beaf6e9665f5b6295dd0a7b0ed0c706b9af533a"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["Section 1 (1.1-1.3): the Nash transform of a reduced variety as the closure in the Grassmannian of rank-d quotients of the differentials, the Nash cotangent bundle, properness and birationality, and the normalised Nash transform", "Section 5: normalised Nash iteration resolves rational double points (surface example, consumer side)"]
+cited_for = ["§1.2, §2.1 Section 1.1-1.2: Nash transform in the Grassmannian of quotients of the differentials, Nash cotangent bundle, universal property (lines 79-98)", "§1.4 Section 1.3: Plücker form (lines 99-104)", "§3.1 Section 1.4: embedded description (lines 105-112)", "§6.1 Introduction: normalised Nash transform (lines 60-69)"]
 
 [[source]]
 id = "stacksNormalization"
 authors = "The Stacks Project Authors"
-title = "The Stacks Project, Morphisms of Schemes, Sections 54-55 (relative normalization, normalization)"
+title = "The Stacks Project, Morphisms of Schemes (Chapter 29), including Sections 54-55 (relative normalization, normalization)"
 year = 2026
 locator_scheme = "tag"
 locator = "035E"
@@ -108,7 +108,7 @@ sha256 = "0bebe1d93baa7e4e99cb4f36fe50c7bcb6094772b8a2f760885a492892eca75f"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["Tag 0BAK (Section 54): normalization of one scheme in another", "Definition 55.1 (035N): the normalization of a scheme with locally finitely many irreducible components", "Lemma 55.3 (035P): affine-local description by integral closures in the total ring of fractions", "Lemma 55.8 (0AB1): a finite birational morphism onto a normal scheme is an isomorphism", "Lemma 55.11 (035S): the normalization of a Nagata scheme is finite"]
+cited_for = ["§0.1 Lemma 29.33.8 (01UV, line 2900)", "§0.2 Lemmas 29.33.10 (01V0, line 2926) and 29.33.15 (01UZ, line 2953)", "§1.5 Lemma 29.26.16 (081I, line 2198)", "§6.1 Definition 29.55.1 (035N, line 6498) and Lemma 29.55.3 (035P, line 6521)", "§6.2-§6.3 Lemma 29.55.5 (035Q, lines 6561-6572)", "§6.4 Lemma 29.55.9 (0H7D, line 6636)", "background: Lemmas 29.55.8 (0AB1) and 29.55.11 (035S)"]
 
 [[source]]
 id = "stacksVarieties"
@@ -124,7 +124,7 @@ sha256 = "ed339c312c86721e3f830876da14cabe89a96e83e454a78b7cd355555f4bca45"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["Lemma 25.7 (056V): a reduced scheme locally of finite type over a field is geometrically reduced iff it contains a dense open smooth over the field (the Setting's dense smooth locus)"]
+cited_for = ["§1.1 Lemma 33.25.7 (056V, line 2112), Lemma 33.25.4 (056T, line 2084), Lemma 33.6.8 (04KS, line 296)", "§0.6 Lemma 33.25.8 (0B8X, line 2130)"]
 
 [[source]]
 id = "hironaka1983"
@@ -184,7 +184,7 @@ url = "https://doi.org/10.1007/BFb0071291"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text; the algebraic proof of Nobile's theorem is reproduced in nashModificationNotes2024, Section 2"
-cited_for = ["background: the Nash transform through the Grassmannian of the sheaf of differentials and the algebraic proof of Nobile's theorem"]
+cited_for = ["background: the Nash transform through the Grassmannian of the sheaf of differentials and the algebraic proof of Nobile's theorem, reproduced in nashModificationNotes2024 Section 2"]
 
 [[source]]
 id = "ega1"
@@ -197,4 +197,55 @@ locator = "Section 9.7"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (Springer edition); cited by its locator without the text; the Grassmannian itself is supplied by AlgebraicModuliForArithmeticGeometry Section 1.3 and ModularCurves Layer 0G, not planned here"
-cited_for = ["background: Grassmannians of locally free quotients of a quasi-coherent module and their representability"]
+cited_for = ["background: Grassmannians of locally free quotients; supplied by AlgebraicModuliForArithmeticGeometry §1.3, not planned here"]
+
+[[source]]
+id = "hamann2003"
+authors = "Eloise Hamann"
+title = "A Question about Differential Ideals"
+year = 2003
+arxiv = "math/0311006v1"
+locator_scheme = "theorem"
+locator = "Lemma 0.1"
+url = "https://arxiv.org/abs/math/0311006v1"
+fetched_from = "https://arxiv.org/pdf/math/0311006v1"
+fetched_at = "2026-11-07T00:21:21Z"
+sha256 = "a2190ccfca8c20f223cc9ea45e3e5cb3ca5acef2aaba45ab03c75d705162ecd8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["§4.3 Lemma 0.1: minimal primes over a derivation-stable ideal of a Noetherian Q-algebra are derivation-stable (lines 56-64)", "§4.2 computation pattern for stable annihilators (lines 61-64)"]
+
+[[source]]
+id = "stacksAlgebra"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Commutative Algebra (Chapter 10)"
+year = 2026
+locator_scheme = "tag"
+locator = "00TT"
+url = "https://stacks.math.columbia.edu/tag/00TT"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=00TT"
+fetched_at = "2026-11-07T00:23:48Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["§0.3 Lemma 10.140.3 (00TT, line 17618)", "§0.5 Lemma 10.140.4 (00TU, line 17647; its proof, lines 17654-17671, uses no Noetherian hypothesis) and the proof of Lemma 10.140.5 (00TV, lines 17676-17678)", "§4.2 Lemma 10.131.13 (00RW, line 15590)", "§5.5 Example 10.140.8 (00TY, lines 17720-17726): a regular non-smooth curve over F_p(t)"]
+
+[[source]]
+id = "alperModuli"
+authors = "Jarod Alper"
+title = "Stacks and Moduli"
+year = 2024
+version_note = "author-page version of 19 August 2024; printed page numbers differ from PDF page numbers"
+locator_scheme = "section"
+locator = "§1.4.3, proof of Theorem 1.4.5"
+url = "https://sites.math.washington.edu/~jarod/moduli-versions/moduli-8-19-24.pdf"
+fetched_from = "https://sites.math.washington.edu/~jarod/moduli-versions/moduli-8-19-24.pdf"
+fetched_at = "2026-11-07T00:31:46Z"
+sha256 = "4d95d2bbe08ede1b0fa94ff6dcf4d653e0942fbfdfd1195541a7082b820d7bd5"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["§0.4 proof of Theorem 1.4.5 (lines 2985-3007, printed pp. 61-62) with Remark 1.1.4(1) (line 2283): a surjection gives a closed immersion of Quot/Grassmannian functors cut out by the vanishing of the kernel"]
