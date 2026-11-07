@@ -3766,11 +3766,16 @@
   ],
   "gaps": [
     {
-      "title": "Small-prime Ext input for the smooth-dual criterion",
-      "neededBy": [
-        "ModpRepresentationsOfGL2OverLocalFields:MP.1/smooth-dual-length"
-      ],
-      "detail": "CDN Theorem 1.24 is stated without a lower prime bound. The primary DEG text read here assumes p≥5, and its Lemma 4.2.1 supplies the crucial Ext^1(pi,I(sigma)) finiteness only in that range. A proof or a separate primary reference for p=2,3 is still required; the R30.6 request records the exact input. The theorem is a source-backed target, not a claim of a closed proof chain."
+      "slug": "ext1-finite-length-into-compact-induction",
+      "needs": "For G' = GL2(Qp)/p^Z, a smooth finite-length k[G']-representation pi and a Serre weight sigma, Ext^1_{G'}(pi, I(sigma)) is finite-dimensional over k for every prime p, including p = 2, 3 (Dotto-Emerton-Gee Lemma 4.2.1 covers p >= 5).",
+      "supplier": "PadicLocalLanglandsForGL2Qp",
+      "section": "§2.7"
+    },
+    {
+      "slug": "barthel-livne-finite-codimension",
+      "needs": "For a Serre weight sigma of GL2(F) and a nonzero G-subrepresentation pi' of I(sigma) = c-Ind_{KZ}^G sigma, the I_1-invariants of pi' have finite codimension in I(sigma)^{I_1} (Barthel-Livne, Proposition 18).",
+      "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheory",
+      "section": "R07.5.15"
     }
   ],
   "restructure": [
