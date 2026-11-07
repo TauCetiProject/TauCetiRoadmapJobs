@@ -1,0 +1,2165 @@
+{
+ "roadmap": "LieGroupsPartII",
+ "title": "Lie groups, Part II: parabolic subgroups, Langlands decompositions and the Bruhat decomposition of real reductive groups",
+ "parent": "LieGroups",
+ "summary": "Continue LieGroups Layer 9 on its carrier: strengthen the Cartan datum (invariant form, global Cartan decomposition), prove conjugacy of Cartan data with a fixed split centre and of Iwasawa triples, build the minimal parabolic P = MAN with its Langlands decomposition, the Tits system and Bruhat decomposition with cell coordinates, the classification of standard parabolic subalgebras and subgroups and their Langlands decompositions, general parabolics and the dynamical description, the self-adjoint matrix model pinned in Lean, and the comparison with R-parabolic subgroups of real algebraic groups. The abstract Tits-system parabolic theory is Tau Ceti's and is consumed.",
+ "baseline": {
+  "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+  "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
+ },
+ "layers": [
+  {
+   "key": "1",
+   "title": "Reductive Cartan data and their conjugacy",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "definition",
+     "name": "ReductiveCartanDatum",
+     "statement": "A reductive Cartan datum on G is a LieGroups CartanInvolution I G (smooth involutive automorphism θ with compact fixed set, reductive 𝔤) together with a symmetric nondegenerate bilinear form B on 𝔤, invariant under Ad(g) for all g ∈ G and under dθ = lieMap θ, with 𝔨 ⊥ 𝔭, B negative definite on 𝔨 and positive definite on 𝔭, such that the polar map K × 𝔭 → G, (k, X) ↦ k·lieExp X, is a homeomorphism (K = G^θ). These are Knapp's axioms (i)–(iv) without axiom (v).",
+     "hypotheses": [
+      "G is a real finite-dimensional C^infinity Lie group (LieGroup I ∞ G, FiniteDimensional ℝ E), 𝔤 = LeftInvariantDerivation I G"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VII §2 (reductive Lie groups and their axioms)"
+     },
+     "prerequisites": [
+      "roadmap:LieGroups Layer 9",
+      "roadmap:LieGroups Layer 0",
+      "roadmap:LieGroups Layer 2",
+      "roadmap:LieGroups Layer 3",
+      "mathlib:LinearMap.BilinForm",
+      "mathlib:LieAlgebra.IsSemisimple",
+      "mathlib:LieAlgebra.center",
+      "mathlib:LieAlgebra.derivedSeries"
+     ],
+     "api": [
+      {
+       "name": "toCartanInvolution",
+       "role": "projection",
+       "statement": "forgetting B and the polar field gives the base CartanInvolution"
+      },
+      {
+       "name": "theta_polar",
+       "role": "evaluation",
+       "statement": "θ(k·lieExp X) = k·lieExp(−X) for k ∈ K, X ∈ 𝔭"
+      },
+      {
+       "name": "polar_diffeomorph",
+       "role": "structure",
+       "statement": "the polar map is a diffeomorphism"
+      },
+      {
+       "name": "ad_symmetric",
+       "role": "structure",
+       "statement": "B_θ(X,Y) = −B(X, dθY) is an inner product; ad X is B_θ-symmetric for X ∈ 𝔭 and skew for X ∈ 𝔨"
+      },
+      {
+       "name": "derived_cartan",
+       "role": "compatibility",
+       "statement": "dθ restricted to [𝔤,𝔤] is a Cartan involution of the semisimple Lie algebra [𝔤,𝔤]"
+      },
+      {
+       "name": "components",
+       "role": "structure",
+       "statement": "K meets every component of G; K/K⁰ ≅ G/G⁰; K ∩ G⁰ = K⁰; G has finitely many components"
+      },
+      {
+       "name": "maximal_compact",
+       "role": "characterisation",
+       "statement": "K is a maximal compact subgroup of G"
+      },
+      {
+       "name": "split_centre",
+       "role": "structure",
+       "statement": "𝔷 = (𝔷∩𝔨) ⊕ (𝔷∩𝔭); lieExp is an injective homomorphism of 𝔷∩𝔭 onto a closed central vector subgroup A_G"
+      },
+      {
+       "name": "conj",
+       "role": "functoriality",
+       "statement": "gDg⁻¹ is a reductive Cartan datum with fixed group gKg⁻¹ and −1-eigenspace Ad(g)𝔭"
+      }
+     ],
+     "tests": [
+      {
+       "name": "GL_n_trace_form",
+       "kind": "computation",
+       "statement": "GL_2(ℝ), θ(g) = (gᵀ)⁻¹, B = tr(XY): B(diag(1,−1),diag(1,−1)) = 2 and B(Y,Y) = −2 for Y = ((0,1),(−1,0)); the opposite sign fails definiteness"
+      },
+      {
+       "name": "SU2_nontrivial_involution",
+       "kind": "non-example",
+       "statement": "SU(2) with θ = Ad(diag(i,−i)) satisfies the base fields but lieExp(πY) = −1 ∈ K for Y = ((0,1),(−1,0)) ∈ 𝔭, so the polar map is not injective"
+      },
+      {
+       "name": "circle_inversion",
+       "kind": "non-example",
+       "statement": "S¹ = ℝ/ℤ with θ(x) = −x: fixed set {0, 1/2}, lieExp(1) = 0, polar map not injective"
+      },
+      {
+       "name": "R_times",
+       "kind": "degenerate",
+       "statement": "ℝ^× with θ(x) = x⁻¹: K = {±1}, 𝔭 = ℝ, (±1, t) ↦ ±e^t a homeomorphism, A_G = ℝ_{>0}"
+      },
+      {
+       "name": "compact",
+       "kind": "degenerate",
+       "statement": "compact G with θ = id: 𝔭 = 0 and the polar map is the identity"
+      },
+      {
+       "name": "euclidean_motion",
+       "kind": "non-example",
+       "statement": "ℝ^n ⋊ O(n) with θ(v,k) = (−v,k) fails reductivity of 𝔤"
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "theorem",
+     "name": "LieAlgebra.cartanInvolution_conj",
+     "statement": "For a finite-dimensional real semisimple Lie algebra 𝔰 and Cartan involutions σ, σ' (−κ(X, σY) positive definite, κ the Killing form), there is a unique X in the −1-eigenspace of σ with σ' = e^{ad X} σ e^{−ad X}; moreover σ'σ = e^{2 ad X}.",
+     "hypotheses": [
+      "𝔰 finite-dimensional real semisimple",
+      "σ, σ' Cartan involutions of 𝔰"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VI §2 (Cartan decompositions on the Lie algebra level)"
+     },
+     "prerequisites": [
+      "mathlib:LieAlgebra.IsSemisimple",
+      "mathlib:LieAlgebra.ad",
+      "mathlib:NormedSpace.exp",
+      "mathlib:LieDerivation.IsKilling.exists_eq_ad"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "sl2_diag",
+       "kind": "computation",
+       "statement": "𝔰𝔩_2(ℝ), σ(Y) = −Yᵀ, σ' = Ad(g)σAd(g)⁻¹ with g = diag(2,1/2): σ'σ = Ad(diag(4,1/4)) = e^{2 ad X} for X = diag(log 2, −log 2)"
+      },
+      {
+       "name": "su2_identity_only",
+       "kind": "non-example",
+       "statement": "on 𝔰𝔲(2) the only Cartan involution is the identity; Ad(diag(i,−i)) is not one"
+      }
+     ]
+    },
+    {
+     "id": "1.3",
+     "kind": "theorem",
+     "name": "ReductiveCartanDatum.conj",
+     "statement": "If D, D' are reductive Cartan data on G with 𝔷∩𝔭 = 𝔷∩𝔭', there are X ∈ 𝔭 and Z ∈ 𝔷∩𝔭 with g = lieExp(X)·lieExp(Z) ∈ G⁰, θ' = c_g θ c_g⁻¹, K' = gKg⁻¹ and 𝔭' = Ad(g)𝔭; conversely G⁰-conjugate data have the same split central part. Without the hypothesis on the split central part the conclusion fails.",
+     "hypotheses": [
+      "G is a real finite-dimensional C^infinity Lie group (LieGroup I ∞ G, FiniteDimensional ℝ E), 𝔤 = LeftInvariantDerivation I G",
+      "D, D' reductive Cartan data on G",
+      "𝔷(𝔤) ∩ 𝔭 = 𝔷(𝔤) ∩ 𝔭'"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VI §2 and Ch. VII §2"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.2",
+      "roadmap:LieGroups Layer 1",
+      "roadmap:LieGroups Layer 3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "R_times_S1_tilt",
+       "kind": "non-example",
+       "statement": "G = ℝ × S¹, θ_c(t,s) = (−t, s − 2ct): every θ_c is a reductive Cartan datum with 𝔭_c = {(x, cx)}; G abelian, so θ_c and θ_{c'} are not conjugate for c ≠ c'"
+      },
+      {
+       "name": "R_semidirect_Z2",
+       "kind": "computation",
+       "statement": "G = ℝ ⋊ ℤ/2, θ_a(t,ε) = (−t + aε, ε), K_a = {(0,0),(a/2,1)}; conjugation by lieExp(a/4) carries θ_0 to θ_a"
+      },
+      {
+       "name": "GL_n_conj",
+       "kind": "compatibility",
+       "statement": "GL_n(ℝ): θ and c_gθc_g⁻¹ for symmetric positive definite g are conjugate by lieExp(½ log(gᵀg))"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "Restricted roots, positive systems and the two Weyl groups",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "definition",
+     "name": "RootSystem.positiveSystem",
+     "statement": "For a finite crystallographic root system Φ (possibly non-reduced) in V: a positive system is Φ⁺ = {β : β(v) > 0} for v regular; its simple roots are the elements of Φ⁺ that are not sums of two elements of Φ⁺; Φ_ind = {β : β/2 ∉ Φ}. Theorem: Φ_ind is reduced with the same reflections, Weyl group and chambers; Φ⁺ ↦ Φ⁺ ∩ Φ_ind is a bijection onto positive systems of Φ_ind, simple roots are indivisible and form a RootPairing.Base of Φ_ind; W(Φ) acts simply transitively on positive systems; stabilizers of closed-chamber points (and pointwise stabilizers of subspaces) are generated by the reflections they contain.",
+     "hypotheses": [
+      "Φ a finite crystallographic root system in a real vector space, possibly non-reduced"
+     ],
+     "locator": {
+      "source": "bourbaki-lie4-6",
+      "where": "Ch. VI §1 (root systems; non-reduced systems; positive systems and bases)"
+     },
+     "prerequisites": [
+      "mathlib:RootPairing",
+      "mathlib:RootPairing.Base",
+      "mathlib:RootPairing.IsReduced",
+      "tauceti:RootPairing.Base.existsUnique_map_eq",
+      "tauceti:TauCeti.stabilizer_eq_closure_wallReflections",
+      "mathlib:RootPairing.weylGroup"
+     ],
+     "api": [
+      {
+       "name": "positiveSystem_union",
+       "role": "structure",
+       "statement": "Φ⁺ ⊔ (−Φ⁺) = Φ; positive systems are exactly {β : β(v) > 0} for v in an open chamber"
+      },
+      {
+       "name": "double_root_positive",
+       "role": "structure",
+       "statement": "β ∈ Φ⁺ and 2β ∈ Φ imply 2β ∈ Φ⁺; divisible roots are never simple"
+      },
+      {
+       "name": "parabolic_subsystem",
+       "role": "construction",
+       "statement": "for Π' ⊆ Π, Φ ∩ span(Π') is a root system with positive system Φ⁺ ∩ span(Π'), simple roots Π' and Weyl group W_{Π'}"
+      }
+     ],
+     "tests": [
+      {
+       "name": "BC1",
+       "kind": "computation",
+       "statement": "BC₁ = {±λ, ±2λ}: Φ_ind = {±λ}, positive systems {λ,2λ} and {−λ,−2λ}, Π = {λ}; BC₁ itself has no RootPairing.Base"
+      },
+      {
+       "name": "A2",
+       "kind": "computation",
+       "statement": "A₂ has six positive systems permuted simply transitively by S₃; stabilizer of v with α₁(v) = 0 < α₂(v) is {1, s_{α₁}}"
+      },
+      {
+       "name": "BC2_span",
+       "kind": "non-example",
+       "statement": "BC₂: Φ ∩ span({e₂}) = {±e₂, ±2e₂}; coefficient-one combinations of Π' miss ±2e₂"
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "theorem",
+     "name": "ReductiveCartanDatum.exists_conj_maximalAbelian",
+     "statement": "Any two maximal abelian subspaces 𝔞, 𝔞' ⊆ 𝔭 are Ad(K⁰)-conjugate; 𝔭 = ⋃_{k∈K⁰} Ad(k)𝔞; every 𝔞 contains 𝔷∩𝔭.",
+     "hypotheses": [
+      "G is a real finite-dimensional C^infinity Lie group (LieGroup I ∞ G, FiniteDimensional ℝ E), 𝔤 = LeftInvariantDerivation I G",
+      "D = (θ, B) is a reductive Cartan datum on G (target 1.1)",
+      "𝔞, 𝔞' ⊆ 𝔭 maximal abelian subspaces"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VI §5 (uniqueness properties of the Iwasawa decomposition)"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "roadmap:LieGroups Layer 9"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "GL2_rotation",
+       "kind": "computation",
+       "statement": "rotation by π/4 moves ℝ·((0,1),(1,0)) to ℝ·diag(1,−1) in Sym_2(ℝ)"
+      },
+      {
+       "name": "degenerate",
+       "kind": "degenerate",
+       "statement": "ℝ^×: 𝔞 = 𝔭 = ℝ unique; compact G: 𝔞 = 0"
+      }
+     ]
+    },
+    {
+     "id": "2.3",
+     "kind": "definition",
+     "name": "IwasawaTriple.groupWeyl",
+     "statement": "W_G = N_K(𝔞)/Z_K(𝔞) acting on 𝔞 by Ad. Theorem: W_G acts faithfully and preserves Σ and multiplicities; for β ∈ Σ and nonzero X ∈ 𝔤^β some lieExp(c(X + dθX)) ∈ K⁰ normalizes 𝔞 and acts by s_β; N_{K⁰}(𝔞)/Z_{K⁰}(𝔞) = W(Σ), normal in W_G; N_G(𝔞) = N_K(𝔞)·A, Z_G(𝔞) = M·A with M ∩ A = 1, so N_G(𝔞)/Z_G(𝔞) ≅ W_G.",
+     "hypotheses": [
+      "G is a real finite-dimensional C^infinity Lie group (LieGroup I ∞ G, FiniteDimensional ℝ E), 𝔤 = LeftInvariantDerivation I G",
+      "D = (θ, B) is a reductive Cartan datum on G (target 1.1)",
+      "(𝔞, Σ⁺) completes D to an Iwasawa triple: 𝔞 ⊆ 𝔭 maximal abelian, Σ⁺ a positive system of Σ(𝔤, 𝔞)"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VI §5"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:2.1",
+      "target:2.2",
+      "roadmap:LieGroups Layer 4",
+      "roadmap:LieGroups Layer 7",
+      "roadmap:LieGroups Layer 9"
+     ],
+     "api": [
+      {
+       "name": "faithful",
+       "role": "structure",
+       "statement": "W_G acts faithfully on 𝔞 and preserves Σ and dim 𝔤^β"
+      },
+      {
+       "name": "reflection_realized",
+       "role": "constructor",
+       "statement": "each s_β is realized by an element of N_{K⁰}(𝔞)"
+      },
+      {
+       "name": "connected_part",
+       "role": "characterisation",
+       "statement": "N_{K⁰}(𝔞)/Z_{K⁰}(𝔞) = W(Σ), a normal subgroup of W_G"
+      },
+      {
+       "name": "normalizer_G",
+       "role": "structure",
+       "statement": "N_G(𝔞) = N_K(𝔞)·A and Z_G(𝔞) = M·A"
+      }
+     ],
+     "tests": [
+      {
+       "name": "GL_n",
+       "kind": "compatibility",
+       "statement": "GL_n(ℝ): W_G ≅ S_n, agreeing with TauCeti.unitaryNormalizerPosDiagonalQuotientMulEquivPerm"
+      },
+      {
+       "name": "SL2",
+       "kind": "computation",
+       "statement": "SL_2(ℝ): W_G = {1, s}, s the class of ((0,−1),(1,0)), acting on ℝ·diag(1,−1) by −1"
+      },
+      {
+       "name": "O11",
+       "kind": "non-example",
+       "statement": "O(1,1): Σ = ∅, W(Σ) = 1, but diag(1,−1) ∈ K acts on 𝔞 by −1, so W_G ≅ ℤ/2 ≠ W(Σ)"
+      }
+     ]
+    },
+    {
+     "id": "2.4",
+     "kind": "definition",
+     "name": "IwasawaTriple.ComponentCondition",
+     "statement": "The component condition: every connected component of G meets M = Z_K(𝔞), i.e. G = M·G⁰. Theorem: equivalent to W_G = W(Σ), to N_K(𝔞) = M·N_{K⁰}(𝔞), and to the stabilizer of a positive system in N_K(𝔞) being M; independent of 𝔞; implied by Knapp's axiom (v) (Ad(G) ⊆ Int(𝔤_ℂ)); holds for connected and for compact G.",
+     "hypotheses": [
+      "G is a real finite-dimensional C^infinity Lie group (LieGroup I ∞ G, FiniteDimensional ℝ E), 𝔤 = LeftInvariantDerivation I G",
+      "D = (θ, B) is a reductive Cartan datum on G (target 1.1)",
+      "(𝔞, Σ⁺) completes D to an Iwasawa triple: 𝔞 ⊆ 𝔭 maximal abelian, Σ⁺ a positive system of Σ(𝔤, 𝔞)"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VII §5 (structure of M)"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "target:2.3"
+     ],
+     "api": [
+      {
+       "name": "iff_weyl",
+       "role": "characterisation",
+       "statement": "component condition ⇔ W_G = W(Σ) ⇔ N_K(𝔞) = M·N_{K⁰}(𝔞) ⇔ Stab_{N_K(𝔞)}(Σ⁺) = M"
+      },
+      {
+       "name": "independent",
+       "role": "compatibility",
+       "statement": "the condition does not depend on the maximal abelian 𝔞"
+      },
+      {
+       "name": "of_inner",
+       "role": "constructor",
+       "statement": "Knapp's axiom (v) implies the condition"
+      },
+      {
+       "name": "of_connected_or_compact",
+       "role": "constructor",
+       "statement": "connected G and compact G satisfy it"
+      }
+     ],
+     "tests": [
+      {
+       "name": "GL_n",
+       "kind": "computation",
+       "statement": "GL_n(ℝ): diag(−1,1,…,1) ∈ M lies in the determinant-negative component"
+      },
+      {
+       "name": "O11",
+       "kind": "non-example",
+       "statement": "O(1,1): M = {±1} meets two of the four components"
+      },
+      {
+       "name": "Aut_sl3",
+       "kind": "non-example",
+       "statement": "Aut(𝔰𝔩_3(ℝ)): σ·Ad(w₀) with σ(X) = −Xᵀ lies in K, swaps e₁−e₂ and e₂−e₃, preserves Σ⁺, and is not in W(A₂); |W_G| = 12"
+      },
+      {
+       "name": "O4",
+       "kind": "compatibility",
+       "statement": "compact O(4): condition holds (M = G) though axiom (v) fails; the condition is strictly weaker than (v)"
+      }
+     ]
+    },
+    {
+     "id": "2.5",
+     "kind": "theorem",
+     "name": "IwasawaTriple.conj",
+     "statement": "For Iwasawa triples (D, 𝔞, Σ⁺), (D', 𝔞', Σ'⁺) with equal split central parts there is g ∈ G⁰ with gDg⁻¹ = D', Ad(g)𝔞 = 𝔞', Ad(g)Σ⁺ = Σ'⁺; for D = D', 𝔞 = 𝔞' the elements of K doing this form a coset of Stab_{N_K(𝔞)}(Σ⁺), equal to M under the component condition.",
+     "hypotheses": [
+      "G is a real finite-dimensional C^infinity Lie group (LieGroup I ∞ G, FiniteDimensional ℝ E), 𝔤 = LeftInvariantDerivation I G",
+      "(D,𝔞,Σ⁺), (D',𝔞',Σ'⁺) Iwasawa triples on G",
+      "𝔷∩𝔭 = 𝔷∩𝔭'"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VI §§2, 5"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:2.1",
+      "target:2.2",
+      "target:2.3",
+      "target:2.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "SL3_positive_systems",
+       "kind": "computation",
+       "statement": "SL_3(ℝ): the six positive systems are permuted by signed permutation matrices of determinant one realizing S₃"
+      },
+      {
+       "name": "R_times_S1",
+       "kind": "non-example",
+       "statement": "ℝ × S¹: triples (θ_c, 𝔭_c, ∅) are conjugate only for equal c"
+      }
+     ]
+    },
+    {
+     "id": "2.6",
+     "kind": "construction",
+     "name": "IwasawaTriple.toIwasawaData",
+     "statement": "The base IwasawaData I G with cartan the underlying CartanInvolution, K = G^θ, 𝔞, A = lieExp 𝔞, N = lieExp 𝔫 (𝔫 = ⨁_{β∈Σ⁺} 𝔤^β) and chamber the closed positive chamber; every field holds, so the base iwasawaDecomposition and kakDecomposition apply.",
+     "hypotheses": [
+      "G is a real finite-dimensional C^infinity Lie group (LieGroup I ∞ G, FiniteDimensional ℝ E), 𝔤 = LeftInvariantDerivation I G",
+      "D = (θ, B) is a reductive Cartan datum on G (target 1.1)",
+      "(𝔞, Σ⁺) completes D to an Iwasawa triple: 𝔞 ⊆ 𝔭 maximal abelian, Σ⁺ a positive system of Σ(𝔤, 𝔞)"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VI §4 (Iwasawa decomposition)"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:2.1",
+      "roadmap:LieGroups Layer 9"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "GL_n_iwasawa",
+       "kind": "compatibility",
+       "statement": "GL_n(ℝ): (O(n), positive diagonal, upper unitriangular); the base decomposition agrees with Matrix.GeneralLinearGroup.existsUnique_iwasawa"
+      },
+      {
+       "name": "SL2_chamber",
+       "kind": "computation",
+       "statement": "SL_2(ℝ): chamber {diag(t,−t) : t ≥ 0} spans 𝔞; the empty cone fails chamber_span"
+      },
+      {
+       "name": "SL2_all_roots",
+       "kind": "non-example",
+       "statement": "SL_2(ℝ): the wrong choice 𝔫 = 𝔤^β ⊕ 𝔤^{−β} (all of Σ instead of Σ⁺) fails iwasawa_compl, since 𝔨 = ℝ(E₋ − E₊) lies in ℝE₊ ⊕ ℝE₋ and 1 + 1 + 2 = 4 > 3 = dim 𝔤; the open chamber {H : β(H) > 0} omits 0 and fails chamber_smul at c = 0"
+      },
+      {
+       "name": "compact",
+       "kind": "degenerate",
+       "statement": "compact G: 𝔭 = 0, so 𝔞 = 0, Σ⁺ = ∅, 𝔫 = 0, A = N = {1} and chamber = {0}, whose span is 𝔞 = 0; the base Iwasawa decomposition reduces to G = K"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "The minimal parabolic subgroup",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "theorem",
+     "name": "IwasawaTriple.centralizer_reductiveCartanDatum",
+     "statement": "For a subspace 𝔰 ⊆ 𝔞, L = Z_G(𝔰) is a closed θ-stable subgroup with Lie algebra Z_𝔤(𝔰) = 𝔪 ⊕ 𝔞 ⊕ ⨁_{β|𝔰=0} 𝔤^β; (θ|_L, B|) is a reductive Cartan datum with fixed group K ∩ L and L = (K∩L)·lieExp(𝔩∩𝔭); 𝔞 is maximal abelian in 𝔩∩𝔭 with roots {β : β|_𝔰 = 0} and Z_{K∩L}(𝔞) = M; the component condition passes from G to L.",
+     "hypotheses": [
+      "G is a real finite-dimensional C^infinity Lie group (LieGroup I ∞ G, FiniteDimensional ℝ E), 𝔤 = LeftInvariantDerivation I G",
+      "D = (θ, B) is a reductive Cartan datum on G (target 1.1)",
+      "(𝔞, Σ⁺) completes D to an Iwasawa triple: 𝔞 ⊆ 𝔭 maximal abelian, Σ⁺ a positive system of Σ(𝔤, 𝔞)",
+      "𝔰 ⊆ 𝔞 a subspace"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VII §2"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:2.1",
+      "target:2.2",
+      "target:2.3",
+      "target:2.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "GL3_block",
+       "kind": "computation",
+       "statement": "GL_3(ℝ), 𝔰 = ℝ·diag(1,1,−2): L = GL_2 × GL_1 block diagonal, roots ±(e₁−e₂)"
+      },
+      {
+       "name": "extremes",
+       "kind": "degenerate",
+       "statement": "𝔰 = 0 gives L = G; 𝔰 = 𝔞 gives L = MA"
+      },
+      {
+       "name": "SL2C",
+       "kind": "computation",
+       "statement": "SL_2(ℂ), 𝔰 = 𝔞: L = MA with M ≅ U(1)"
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "definition",
+     "name": "IwasawaTriple.minimalParabolic",
+     "statement": "M = Z_K(𝔞), N = lieExp 𝔫 (𝔫 = ⨁_{β∈Σ⁺} 𝔤^β), P = M·A·N.",
+     "hypotheses": [
+      "G is a real finite-dimensional C^infinity Lie group (LieGroup I ∞ G, FiniteDimensional ℝ E), 𝔤 = LeftInvariantDerivation I G",
+      "D = (θ, B) is a reductive Cartan datum on G (target 1.1)",
+      "(𝔞, Σ⁺) completes D to an Iwasawa triple: 𝔞 ⊆ 𝔭 maximal abelian, Σ⁺ a positive system of Σ(𝔤, 𝔞)"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VII §7 (parabolic subgroups); Ch. VI §4"
+     },
+     "prerequisites": [
+      "target:2.6",
+      "roadmap:LieGroups Layer 0",
+      "roadmap:LieGroups Layer 2",
+      "mathlib:Subgroup.centralizer"
+     ],
+     "api": [
+      {
+       "name": "M_compact",
+       "role": "structure",
+       "statement": "M is compact, possibly disconnected, Lie(M) = 𝔪, M = Z_K(A), M preserves every 𝔤^β"
+      },
+      {
+       "name": "A_vector",
+       "role": "structure",
+       "statement": "A is closed and lieExp : 𝔞 → A is an isomorphism of Lie groups"
+      },
+      {
+       "name": "N_nilpotent",
+       "role": "structure",
+       "statement": "N is closed, simply connected, nilpotent, lieExp : 𝔫 → N a diffeomorphism"
+      },
+      {
+       "name": "MA",
+       "role": "structure",
+       "statement": "M and A commute, M ∩ A = 1, MA = Z_G(𝔞) ≅ M × A, and M, A normalize N"
+      },
+      {
+       "name": "P_subgroup",
+       "role": "constructor",
+       "statement": "P is a subgroup containing Z(G)"
+      }
+     ],
+     "tests": [
+      {
+       "name": "SL2",
+       "kind": "computation",
+       "statement": "SL_2(ℝ): M = {±1}, P upper triangular; M-factor of ((−2,3),(0,−1/2)) is −1; replacing M by M⁰ = {1} fails P ⊇ Z(G)"
+      },
+      {
+       "name": "GL_n",
+       "kind": "compatibility",
+       "statement": "GL_n(ℝ): |M| = 2^n, P = TauCeti.upperTriangularGroup"
+      },
+      {
+       "name": "SL2C",
+       "kind": "computation",
+       "statement": "SL_2(ℂ): M ≅ U(1), N = {((1,z),(0,1))}, dim N = 2"
+      },
+      {
+       "name": "degenerate",
+       "kind": "degenerate",
+       "statement": "compact G and ℝ^×: P = G"
+      }
+     ]
+    },
+    {
+     "id": "3.3",
+     "kind": "theorem",
+     "name": "IwasawaTriple.minimalParabolic_langlands",
+     "statement": "(a) P closed, N normal in P; (b) M × A × N → P a diffeomorphism, Lie(P) = 𝔪 ⊕ 𝔞 ⊕ 𝔫; (c) P ∩ θ(P) = MA with θ(P) = MAN̄; (d) G = KAN = KP, K ∩ P = M, K/M ≅ G/P compact; (e) 𝔫 = Lie(P)^⊥_B, MA = P ∩ θ(P), 𝔞 = Lie(P∩θ(P)) ∩ 𝔭, M = Z_K(𝔞), Σ⁺ = {β : 𝔤^β ⊆ Lie(P)}; (f) under the component condition P = N_G(𝔫) = N_G(P), and P = G iff Σ = ∅.",
+     "hypotheses": [
+      "G is a real finite-dimensional C^infinity Lie group (LieGroup I ∞ G, FiniteDimensional ℝ E), 𝔤 = LeftInvariantDerivation I G",
+      "D = (θ, B) is a reductive Cartan datum on G (target 1.1)",
+      "(𝔞, Σ⁺) completes D to an Iwasawa triple: 𝔞 ⊆ 𝔭 maximal abelian, Σ⁺ a positive system of Σ(𝔤, 𝔞)",
+      "(f) additionally: the component condition"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VII §§2, 7; also warner1972 Ch. 1 §1.2"
+     },
+     "prerequisites": [
+      "target:2.3",
+      "target:2.4",
+      "target:2.6",
+      "target:3.1",
+      "target:3.2",
+      "roadmap:LieGroups Layer 2",
+      "roadmap:LieGroups Layer 9"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "SL2",
+       "kind": "computation",
+       "statement": "SL_2(ℝ): P ∩ θ(P) diagonal, G/P ≅ ℙ¹(ℝ), det(Ad(diag(t,1/t))|_𝔫) = t²"
+      },
+      {
+       "name": "SO_n1",
+       "kind": "computation",
+       "statement": "SO₀(n,1): M ≅ SO(n−1), N ≅ ℝ^{n−1}, P the stabilizer of ℝ(e_n + e_{n+1}), G/P ≅ S^{n−1}"
+      },
+      {
+       "name": "O11",
+       "kind": "non-example",
+       "statement": "O(1,1): P = MA has index two and is normal, so N_G(P) = G ≠ P though Σ = ∅"
+      },
+      {
+       "name": "GL2_nilradical",
+       "kind": "non-example",
+       "statement": "GL_2(ℝ): nilradical of Lie(P) is ℝE₁₂ ⊕ ℝ·1, while 𝔫 = ℝE₁₂ = Lie(P)^⊥_B"
+      }
+     ]
+    },
+    {
+     "id": "3.4",
+     "kind": "theorem",
+     "name": "IwasawaTriple.minimalParabolic_isConj",
+     "statement": "Minimal parabolic subgroups P(D', 𝔞, Σ⁺) over all Iwasawa triples of data D' with the split central part of D form one G⁰-conjugacy class; for fixed D one K⁰-conjugacy class.",
+     "hypotheses": [
+      "G is a real finite-dimensional C^infinity Lie group (LieGroup I ∞ G, FiniteDimensional ℝ E), 𝔤 = LeftInvariantDerivation I G",
+      "D = (θ, B) is a reductive Cartan datum on G (target 1.1)"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VI §5; Ch. VII §7"
+     },
+     "prerequisites": [
+      "target:2.5",
+      "target:3.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "SL2_P1",
+       "kind": "computation",
+       "statement": "SL_2(ℝ): minimal parabolics are the point stabilizers on ℙ¹(ℝ)"
+      },
+      {
+       "name": "rank_one",
+       "kind": "characterisation",
+       "statement": "real rank one: Σ ⊆ {±λ, ±2λ}; the minimal parabolics containing MA are P and θ(P)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "The Bruhat decomposition and the Tits system",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "theorem",
+     "name": "IwasawaTriple.fixedPoints_A",
+     "statement": "𝔭 ∩ (𝔪⊕𝔞⊕𝔫) = 𝔞; for g = kp, Ad(g)(𝔪⊕𝔞⊕𝔫) ⊇ 𝔞 iff k ∈ N_K(𝔞), so the minimal parabolic subalgebras containing 𝔞 are those of the positive systems, permuted simply transitively by W(Σ); for regular H₀ the fixed points of t ↦ lieExp(tH₀) on G/P are the kP, k ∈ N_K(𝔞), which are the |W_G| distinct points n_wP, w ∈ W_G (n_wP = n_{w'}P iff n_w⁻¹n_{w'} ∈ K ∩ P = M), and under the component condition the |W| points indexed by W(Σ).",
+     "hypotheses": [
+      "G is a real finite-dimensional C^infinity Lie group (LieGroup I ∞ G, FiniteDimensional ℝ E), 𝔤 = LeftInvariantDerivation I G",
+      "D = (θ, B) is a reductive Cartan datum on G (target 1.1)",
+      "(𝔞, Σ⁺) completes D to an Iwasawa triple: 𝔞 ⊆ 𝔭 maximal abelian, Σ⁺ a positive system of Σ(𝔤, 𝔞)"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VII §4 (Bruhat decomposition)"
+     },
+     "prerequisites": [
+      "target:2.3",
+      "target:2.4",
+      "target:3.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "SL2",
+       "kind": "computation",
+       "statement": "SL_2(ℝ) on ℙ¹(ℝ): diag(e^t, e^{−t}) fixes exactly [e₁] and [e₂]"
+      },
+      {
+       "name": "SL3",
+       "kind": "computation",
+       "statement": "SL_3(ℝ): six fixed coordinate flags"
+      }
+     ]
+    },
+    {
+     "id": "4.2",
+     "kind": "theorem",
+     "name": "IwasawaTriple.bruhat_decomposition",
+     "statement": "For every Iwasawa triple: G = ⨆_{w∈W_G} P n_w P with W_G = N_K(𝔞)/M, independent of representatives; with N_w = N ∩ n_w N̄ n_w⁻¹ = lieExp(⨁_{β∈Σ⁺, w⁻¹β<0} 𝔤^β), (u,p) ↦ u n_w p is a homeomorphism N_w × P → P n_w P, a locally closed submanifold of dimension dim P + Σ_{β>0, w⁻¹β<0} dim 𝔤^β; the open cells are those with w⁻¹Σ⁺ = −Σ⁺, one per element of the stabilizer of Σ⁺ in W_G, and none is dense when there are several. Under the component condition W_G = W(Σ), the union is indexed by W(Σ), P n_{w₀} P is the unique open cell and is dense, and N̄ × M × A × N → G is a diffeomorphism onto the open dense N̄MAN.",
+     "hypotheses": [
+      "G is a real finite-dimensional C^infinity Lie group (LieGroup I ∞ G, FiniteDimensional ℝ E), 𝔤 = LeftInvariantDerivation I G",
+      "D = (θ, B) is a reductive Cartan datum on G (target 1.1)",
+      "(𝔞, Σ⁺) completes D to an Iwasawa triple: 𝔞 ⊆ 𝔭 maximal abelian, Σ⁺ a positive system of Σ(𝔤, 𝔞)",
+      "the component condition G = Z_K(𝔞)·G⁰ (target 2.4), for the W(Σ)-indexed form and the open dense big cell only"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VII §4; also warner1972 Ch. 1 §1.2"
+     },
+     "prerequisites": [
+      "target:2.3",
+      "target:2.4",
+      "target:3.3",
+      "target:4.1",
+      "roadmap:LieGroups Layer 1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "SL2",
+       "kind": "compatibility",
+       "statement": "SL_2(ℝ): G = P ⊔ P n_s P with P n_s P = {g₂₁ ≠ 0}; for GL_2 this is TauCeti.GL2Borel.mem_doubleCoset_weyl_iff"
+      },
+      {
+       "name": "SL3_dims",
+       "kind": "computation",
+       "statement": "SL_3(ℝ): six cells of dimensions 5,6,6,7,7,8"
+      },
+      {
+       "name": "SU21",
+       "kind": "computation",
+       "statement": "SU(2,1): big cell dimension 5 + (2+1) = 8 = dim G; counting only m_λ gives 7"
+      },
+      {
+       "name": "O11",
+       "kind": "non-example",
+       "statement": "O(1,1): W_G = ℤ/2 and G = P ⊔ dP, d = diag(1,−1), two open one-dimensional cells, neither dense; the union over W(Σ) = 1 is P ≠ G, so only the W(Σ)-indexed form and the dense big cell need the component condition"
+      },
+      {
+       "name": "Aut_sl3_cells",
+       "kind": "computation",
+       "statement": "Aut(𝔰𝔩_3(ℝ)): twelve cells indexed by W_G of order 12, two of them open"
+      },
+      {
+       "name": "compact",
+       "kind": "degenerate",
+       "statement": "compact G: 𝔞 = 0, N_K(𝔞) = K = M, W_G = 1, single cell G = P"
+      }
+     ]
+    },
+    {
+     "id": "4.3",
+     "kind": "construction",
+     "name": "IwasawaTriple.titsSystem",
+     "statement": "Under the component condition, a TauCeti.TitsSystem G with subgroupB = P, subgroupN = N_G(𝔞) (P ∩ N_G(𝔞) = MA), Weyl group N_G(𝔞)/Z_G(𝔞) ≅ W(Σ), simple reflections the classes of n_{s_α}, α ∈ Π; its bruhatCell of w is P n_w P.",
+     "hypotheses": [
+      "G is a real finite-dimensional C^infinity Lie group (LieGroup I ∞ G, FiniteDimensional ℝ E), 𝔤 = LeftInvariantDerivation I G",
+      "D = (θ, B) is a reductive Cartan datum on G (target 1.1)",
+      "(𝔞, Σ⁺) completes D to an Iwasawa triple: 𝔞 ⊆ 𝔭 maximal abelian, Σ⁺ a positive system of Σ(𝔤, 𝔞)",
+      "the component condition holds: G = Z_K(𝔞)·G⁰ (target 2.4)"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VII §§4, 6; bourbaki-lie4-6 Ch. IV §2"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:3.3",
+      "target:4.2",
+      "tauceti:TauCeti.TitsSystem",
+      "tauceti:TauCeti.TitsSystem.existsUnique_mem_bruhatCell",
+      "tauceti:TauCeti.TitsSystem.disjoint_bruhatCell_iff"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "GL_n",
+       "kind": "compatibility",
+       "statement": "GL_n(ℝ): the subgroups are those of TauCeti.glTitsSystem ℝ (n−1), Weyl group S_n by TauCeti.glTitsSystemWeylGroupMulEquivPerm"
+      },
+      {
+       "name": "SL2_rank_one",
+       "kind": "compatibility",
+       "statement": "SL_2(ℝ): TauCeti.TitsSystem.ofRankOne with n = ((0,−1),(1,0))"
+      },
+      {
+       "name": "compact",
+       "kind": "degenerate",
+       "statement": "compact G: P = G, S = ∅ (TauCeti subgroupB_eq_top_iff)"
+      },
+      {
+       "name": "Aut_sl3",
+       "kind": "non-example",
+       "statement": "Aut(𝔰𝔩_3(ℝ)): N_G(𝔞)/Z_G(𝔞) of order 12 is not generated by two simple reflections"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "Standard parabolic subalgebras",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "definition",
+     "name": "IwasawaTriple.standardParabolicSubalgebra",
+     "statement": "For Π' ⊆ Π: 𝔮_{Π'} = 𝔪 ⊕ 𝔞 ⊕ ⨁_{β∈Σ⁺∪Σ_{Π'}} 𝔤^β with Σ_{Π'} = Σ ∩ span(Π'); 𝔞_{Π'} = ⋂_{α∈Π'} ker α; 𝔩_{Π'} = 𝔪 ⊕ 𝔞 ⊕ ⨁_{β∈Σ_{Π'}} 𝔤^β; 𝔫_{Π'} = ⨁_{β∈Σ⁺∖Σ_{Π'}} 𝔤^β.",
+     "hypotheses": [
+      "G is a real finite-dimensional C^infinity Lie group (LieGroup I ∞ G, FiniteDimensional ℝ E), 𝔤 = LeftInvariantDerivation I G",
+      "D = (θ, B) is a reductive Cartan datum on G (target 1.1)",
+      "(𝔞, Σ⁺) completes D to an Iwasawa triple: 𝔞 ⊆ 𝔭 maximal abelian, Σ⁺ a positive system of Σ(𝔤, 𝔞)",
+      "Π' ⊆ Π"
+     ],
+     "locator": {
+      "source": "brown-rodriguezhertz-wang2022",
+      "where": "§1.2, equation (1), arXiv v2 lines 132–144"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "roadmap:LieGroups Layer 9"
+     ],
+     "api": [
+      {
+       "name": "endpoints",
+       "role": "simp",
+       "statement": "𝔮_∅ = 𝔪⊕𝔞⊕𝔫 and 𝔮_Π = 𝔤"
+      },
+      {
+       "name": "levi_split",
+       "role": "structure",
+       "statement": "𝔮_{Π'} = 𝔩_{Π'} ⊕ 𝔫_{Π'}, 𝔩_{Π'} = Z_𝔤(𝔞_{Π'}) = 𝔮_{Π'} ∩ dθ𝔮_{Π'}"
+      },
+      {
+       "name": "nilradical_orth",
+       "role": "characterisation",
+       "statement": "𝔫_{Π'} is an ideal of 𝔮_{Π'} and equals its B-orthogonal"
+      },
+      {
+       "name": "split_part",
+       "role": "structure",
+       "statement": "𝔞_{Π'} = 𝔷(𝔩_{Π'}) ∩ 𝔭 ⊇ 𝔷∩𝔭"
+      }
+     ],
+     "tests": [
+      {
+       "name": "SL3",
+       "kind": "computation",
+       "statement": "SL_3(ℝ): 𝔮_∅ upper triangular, 𝔮_{α₁} blocks (2,1), 𝔮_{α₂} blocks (1,2), 𝔮_Π = 𝔤"
+      },
+      {
+       "name": "SU_n1",
+       "kind": "non-example",
+       "statement": "SU(n,1), n ≥ 2: 𝔮_Π must contain 𝔤^{−2λ}; using ±Π' only gives a non-subalgebra"
+      },
+      {
+       "name": "GL_n",
+       "kind": "computation",
+       "statement": "GL_n(ℝ): 2^{n−1} subsets ↔ compositions of n; 𝔞_{Π'} block-scalar diagonals"
+      }
+     ]
+    },
+    {
+     "id": "5.2",
+     "kind": "theorem",
+     "name": "IwasawaTriple.standardParabolicSubalgebra_orderIso",
+     "statement": "Each 𝔮_{Π'} is a Lie subalgebra and Π' ↦ 𝔮_{Π'} is an order isomorphism from subsets of Π onto Lie subalgebras of 𝔤 containing 𝔪⊕𝔞⊕𝔫, with inverse 𝔮 ↦ {α ∈ Π : 𝔤^{−α} ⊆ 𝔮}.",
+     "hypotheses": [
+      "G is a real finite-dimensional C^infinity Lie group (LieGroup I ∞ G, FiniteDimensional ℝ E), 𝔤 = LeftInvariantDerivation I G",
+      "D = (θ, B) is a reductive Cartan datum on G (target 1.1)",
+      "(𝔞, Σ⁺) completes D to an Iwasawa triple: 𝔞 ⊆ 𝔭 maximal abelian, Σ⁺ a positive system of Σ(𝔤, 𝔞)"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VII §7, Proposition 7.76 and Lemma 7.73 (as cited in brown-fisher-hurtado2022 lines 511–521 and brown-rodriguezhertz-wang2022 lines 132–144)"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.3",
+      "target:5.1",
+      "roadmap:LieGroups Layer 9"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "SL3_nonsubalgebra",
+       "kind": "non-example",
+       "statement": "𝔮_∅ ⊕ ℝE₃₁ is not a subalgebra: [E₁₂, E₃₁] = −E₃₂"
+      },
+      {
+       "name": "SL2C_M_rotation",
+       "kind": "computation",
+       "statement": "SL_2(ℂ): 𝔪 rotates ℂE₂₁, so no subalgebra contains 𝔮_∅ ⊕ ℝE₂₁ without iE₂₁"
+      },
+      {
+       "name": "compact",
+       "kind": "degenerate",
+       "statement": "compact G: Π = ∅ and only 𝔤"
+      }
+     ]
+    },
+    {
+     "id": "5.3",
+     "kind": "theorem",
+     "name": "IwasawaTriple.standardParabolicSubalgebra_eq_nonneg",
+     "statement": "For X ∈ 𝔞 with β(X) ≥ 0 on Σ⁺ and Π' = {α ∈ Π : α(X) = 0}: 𝔮_{Π'} is the sum of the nonnegative ad X-eigenspaces, 𝔩_{Π'} = ker ad X = Z_𝔤(X), 𝔫_{Π'} the sum of the positive ones.",
+     "hypotheses": [
+      "G is a real finite-dimensional C^infinity Lie group (LieGroup I ∞ G, FiniteDimensional ℝ E), 𝔤 = LeftInvariantDerivation I G",
+      "D = (θ, B) is a reductive Cartan datum on G (target 1.1)",
+      "(𝔞, Σ⁺) completes D to an Iwasawa triple: 𝔞 ⊆ 𝔭 maximal abelian, Σ⁺ a positive system of Σ(𝔤, 𝔞)",
+      "X ∈ 𝔞 in the closed positive chamber"
+     ],
+     "locator": {
+      "source": "brown-rodriguezhertz-wang2022",
+      "where": "§1.2, arXiv v2 lines 132–157; knapp2002 Ch. VII §7"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:5.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "SL3_X",
+       "kind": "computation",
+       "statement": "X = diag(1,1,−2): α₁(X) = 0, α₂(X) = 3, nonnegative eigenspaces = 𝔮_{α₁}"
+      },
+      {
+       "name": "extremes",
+       "kind": "degenerate",
+       "statement": "X = 0 gives 𝔤; regular X gives 𝔮_∅"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "6",
+   "title": "Standard parabolic subgroups and their Langlands decompositions",
+   "targets": [
+    {
+     "id": "6.1",
+     "kind": "definition",
+     "name": "IwasawaTriple.standardParabolic",
+     "statement": "Q_{Π'} = N_G(𝔮_{Π'}). Theorem (component condition, T the Tits system of 4.3, J = {s_α : α ∈ Π'}): Q_{Π'} = T.standardParabolic J = ⨆_{w∈W_{Π'}} P n_w P, Lie(Q_{Π'}) = 𝔮_{Π'}; every subgroup containing P is Q_{Π'} for exactly one Π' (hence closed), Π' ↦ Q_{Π'} an order isomorphism; N_G(Q_{Π'}) = Q_{Π'}; Q_{Π'}\\G/Q_{Π''} ≃ W_{Π'}\\W/W_{Π''}; Q_{Π'} ∩ N_G(𝔞) maps onto W_{Π'}.",
+     "hypotheses": [
+      "G is a real finite-dimensional C^infinity Lie group (LieGroup I ∞ G, FiniteDimensional ℝ E), 𝔤 = LeftInvariantDerivation I G",
+      "D = (θ, B) is a reductive Cartan datum on G (target 1.1)",
+      "(𝔞, Σ⁺) completes D to an Iwasawa triple: 𝔞 ⊆ 𝔭 maximal abelian, Σ⁺ a positive system of Σ(𝔤, 𝔞)",
+      "the component condition holds: G = Z_K(𝔞)·G⁰ (target 2.4)",
+      "Π' ⊆ Π"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VII §7; bourbaki-lie4-6 Ch. IV §2 nos. 5–6; borel-tits1965 5.17–5.20, lines 1924–1955, pp. 101–102"
+     },
+     "prerequisites": [
+      "target:4.3",
+      "target:5.1",
+      "target:5.2",
+      "tauceti:TauCeti.TitsSystem.standardParabolic",
+      "tauceti:TauCeti.TitsSystem.standardParabolic_eq_of_subgroupB_le",
+      "tauceti:TauCeti.TitsSystem.standardParabolicOrderIso",
+      "tauceti:TauCeti.TitsSystem.normalizer_standardParabolic",
+      "tauceti:TauCeti.TitsSystem.parabolicDoubleCosetEquiv",
+      "mathlib:Subgroup.normalizer"
+     ],
+     "api": [
+      {
+       "name": "eq_standardParabolic",
+       "role": "compatibility",
+       "statement": "Q_{Π'} = T.standardParabolic J"
+      },
+      {
+       "name": "lie",
+       "role": "structure",
+       "statement": "Lie(Q_{Π'}) = N_𝔤(𝔮_{Π'}) = 𝔮_{Π'}"
+      },
+      {
+       "name": "classification",
+       "role": "characterisation",
+       "statement": "subgroups containing P are exactly the Q_{Π'}, order-isomorphically"
+      },
+      {
+       "name": "self_normalizing",
+       "role": "structure",
+       "statement": "N_G(Q_{Π'}) = Q_{Π'}"
+      },
+      {
+       "name": "double_cosets",
+       "role": "structure",
+       "statement": "Q_{Π'}\\G/Q_{Π''} ≃ W_{Π'}\\W/W_{Π''}"
+      }
+     ],
+     "tests": [
+      {
+       "name": "GL3",
+       "kind": "computation",
+       "statement": "GL_3(ℝ): four block upper triangular groups, |W_{Π'}| = 1, 2, 2, 6"
+      },
+      {
+       "name": "SL2",
+       "kind": "degenerate",
+       "statement": "SL_2(ℝ): overgroups of P are P and G"
+      },
+      {
+       "name": "Sp4",
+       "kind": "computation",
+       "statement": "Sp_4(ℝ): Siegel {((A,B),(0,(Aᵀ)⁻¹))} with Levi GL_2(ℝ); Klingen with Levi ℝ^× × SL_2(ℝ)"
+      },
+      {
+       "name": "O11",
+       "kind": "non-example",
+       "statement": "O(1,1): 𝔮_∅ = 𝔤 so N_G(𝔮_∅) = G ≠ P = MA"
+      }
+     ]
+    },
+    {
+     "id": "6.2",
+     "kind": "definition",
+     "name": "zeroPart",
+     "statement": "For a group L with a reductive Cartan datum: ⁰L = {l : χ(l) = 1 for every continuous homomorphism χ : L → ℝ_{>0}}; A_L = lieExp(𝔷(𝔩) ∩ 𝔭_L). Theorem: ⁰L closed normal, ⁰L = K_L·lieExp(𝔭_L ∩ ⁰𝔩) with ⁰𝔩 = [𝔩,𝔩] ⊕ (𝔷(𝔩)∩𝔨_L) = Lie(⁰L), the datum restricts to ⁰L with fixed group K_L, ⁰L × A_L → L an isomorphism of Lie groups; ⁰L is independent of the datum, A_L is not.",
+     "hypotheses": [
+      "L a Lie group with a reductive Cartan datum (θ_L, B_L)"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VII §2; wallach1988 Ch. 2 §2.2"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "roadmap:LieGroups Layer 3"
+     ],
+     "api": [
+      {
+       "name": "normal",
+       "role": "structure",
+       "statement": "⁰L is a closed normal subgroup"
+      },
+      {
+       "name": "polar",
+       "role": "characterisation",
+       "statement": "⁰L = K_L·lieExp(𝔭_L ∩ ⁰𝔩), Lie(⁰L) = ⁰𝔩 = joint kernel of the dχ"
+      },
+      {
+       "name": "restrict_datum",
+       "role": "constructor",
+       "statement": "the datum restricts to a reductive Cartan datum on ⁰L with fixed group K_L"
+      },
+      {
+       "name": "product",
+       "role": "structure",
+       "statement": "⁰L × A_L → L is an isomorphism of Lie groups"
+      }
+     ],
+     "tests": [
+      {
+       "name": "R_times",
+       "kind": "computation",
+       "statement": "ℝ^×: homomorphisms x ↦ |x|^s, ⁰L = {±1}, A_L = ℝ_{>0}"
+      },
+      {
+       "name": "GL_n",
+       "kind": "computation",
+       "statement": "GL_n(ℝ): ⁰L = {|det| = 1}, A_L = ℝ_{>0}·1"
+      },
+      {
+       "name": "compact",
+       "kind": "degenerate",
+       "statement": "compact L: ⁰L = L, A_L = 1"
+      },
+      {
+       "name": "tilted",
+       "kind": "characterisation",
+       "statement": "ℝ × S¹ with θ_c: ⁰L = {0} × S¹ for every c, A_L = {(t, ct)} depends on c"
+      },
+      {
+       "name": "K_alone",
+       "kind": "non-example",
+       "statement": "⁰L ≠ K_L for GL_2(ℝ): diag(2,1/2) has |det| = 1 and is not orthogonal"
+      }
+     ]
+    },
+    {
+     "id": "6.3",
+     "kind": "theorem",
+     "name": "IwasawaTriple.standardParabolic_langlands",
+     "statement": "Under the component condition, with A_{Π'} = lieExp 𝔞_{Π'}, N_{Π'} = lieExp 𝔫_{Π'}, L_{Π'} = Z_G(𝔞_{Π'}), M_{Π'} = ⁰L_{Π'}: (a) L_{Π'} = Q_{Π'} ∩ θ(Q_{Π'}), A_{Π'} its split component; (b) L_{Π'} = M_{Π'} × A_{Π'}; (c) M_{Π'} is a reductive Cartan group with the component condition, fixed group K ∩ L_{Π'}, Iwasawa triple (𝔞∩𝔪_{Π'}, Σ_{Π'}∩Σ⁺) with simple roots Π', minimal parabolic P ∩ M_{Π'}; (d) N_{Π'} closed, simply connected, nilpotent, lieExp a diffeomorphism, normal in Q_{Π'}, normalized by L_{Π'}; (e) M_{Π'} × A_{Π'} × N_{Π'} → Q_{Π'} a diffeomorphism, Q_{Π'} = L_{Π'} ⋉ N_{Π'}; (f) G = KQ_{Π'}, G/Q_{Π'} ≅ K/(K∩L_{Π'}).",
+     "hypotheses": [
+      "G is a real finite-dimensional C^infinity Lie group (LieGroup I ∞ G, FiniteDimensional ℝ E), 𝔤 = LeftInvariantDerivation I G",
+      "D = (θ, B) is a reductive Cartan datum on G (target 1.1)",
+      "(𝔞, Σ⁺) completes D to an Iwasawa triple: 𝔞 ⊆ 𝔭 maximal abelian, Σ⁺ a positive system of Σ(𝔤, 𝔞)",
+      "the component condition holds: G = Z_K(𝔞)·G⁰ (target 2.4)",
+      "Π' ⊆ Π"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VII §7; wallach1988 Ch. 2 §2.2; warner1972 Ch. 1 §1.2"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:5.1",
+      "target:5.3",
+      "target:6.1",
+      "target:6.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "GL3_block",
+       "kind": "computation",
+       "statement": "GL_3(ℝ), Π' = {α₁}: A_{Π'} = {diag(a,a,b) : a,b > 0}, M_{Π'} = {(g, c) : |det g| = 1, c = ±1}, N_{Π'} the 2×1 corner"
+      },
+      {
+       "name": "extremes",
+       "kind": "degenerate",
+       "statement": "Π' = ∅ recovers 3.3; Π' = Π gives Q = G, N = 1, A = A_G, M = ⁰G"
+      },
+      {
+       "name": "SU21",
+       "kind": "computation",
+       "statement": "SU(2,1), Π' = ∅: dim Q = 1 + 1 + 3 = 5"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "7",
+   "title": "Parabolic subgroups and subalgebras in general",
+   "targets": [
+    {
+     "id": "7.1",
+     "kind": "theorem",
+     "name": "TauCeti.TitsSystem.mem_standardParabolic_of_conj_le",
+     "statement": "For a TauCeti.TitsSystem with subgroup B and J, J' ⊆ S: g B g⁻¹ ⊆ P_J implies g ∈ P_J; g P_J g⁻¹ = P_{J'} implies J = J' and g ∈ P_J; g P_J g⁻¹ ⊆ P_{J'} implies J ⊆ J' and g ∈ P_{J'}.",
+     "hypotheses": [
+      "T : TauCeti.TitsSystem G for an arbitrary group G",
+      "J, J' sets of simple reflections"
+     ],
+     "locator": {
+      "source": "bourbaki-lie4-6",
+      "where": "Ch. IV §2 nos. 5–6; borel-tits1965 Corollaire 5.18 (ii), line 1931, p. 101"
+     },
+     "prerequisites": [
+      "tauceti:TauCeti.TitsSystem.standardParabolic",
+      "tauceti:TauCeti.TitsSystem.mem_standardParabolic_iff",
+      "tauceti:TauCeti.TitsSystem.coxeterSystem"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "GL3_maximal",
+       "kind": "non-example",
+       "statement": "TauCeti.glTitsSystem for GL_3(k): the (2,1) and (1,2) maximal standard parabolics are not conjugate"
+      },
+      {
+       "name": "empty_S",
+       "kind": "degenerate",
+       "statement": "S = ∅, B = G: statements trivial"
+      }
+     ]
+    },
+    {
+     "id": "7.2",
+     "kind": "definition",
+     "name": "IsParabolicSubgroup",
+     "statement": "Under the component condition, a parabolic subgroup is a subgroup containing a minimal parabolic subgroup (3.4); a parabolic subalgebra is an Ad(G)-conjugate of some 𝔮_{Π'}. Theorem: each parabolic subgroup is G⁰-conjugate to Q_{Π'} for exactly one Π' (its type), is closed and self-normalizing with Q = N_G(Lie Q); Q ↦ Lie(Q), 𝔮 ↦ N_G(𝔮) are inverse order-preserving equivariant bijections; parabolics of the same type containing a common minimal parabolic are equal.",
+     "hypotheses": [
+      "G is a real finite-dimensional C^infinity Lie group (LieGroup I ∞ G, FiniteDimensional ℝ E), 𝔤 = LeftInvariantDerivation I G",
+      "D = (θ, B) is a reductive Cartan datum on G (target 1.1)",
+      "(𝔞, Σ⁺) completes D to an Iwasawa triple: 𝔞 ⊆ 𝔭 maximal abelian, Σ⁺ a positive system of Σ(𝔤, 𝔞)",
+      "the component condition holds: G = Z_K(𝔞)·G⁰ (target 2.4)"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VII §7"
+     },
+     "prerequisites": [
+      "target:3.4",
+      "target:6.1",
+      "target:7.1"
+     ],
+     "api": [
+      {
+       "name": "type",
+       "role": "characterisation",
+       "statement": "every parabolic subgroup is conjugate to Q_{Π'} for exactly one Π'"
+      },
+      {
+       "name": "closed_self_normalizing",
+       "role": "structure",
+       "statement": "parabolic subgroups are closed, self-normalizing, Q = N_G(Lie Q)"
+      },
+      {
+       "name": "lie_bijection",
+       "role": "structure",
+       "statement": "Q ↦ Lie(Q) and 𝔮 ↦ N_G(𝔮) are inverse bijections"
+      },
+      {
+       "name": "same_type",
+       "role": "characterisation",
+       "statement": "two parabolics of the same type containing a common minimal parabolic coincide"
+      }
+     ],
+     "tests": [
+      {
+       "name": "SL2",
+       "kind": "computation",
+       "statement": "SL_2(ℝ): parabolics are G and the point stabilizers on ℙ¹(ℝ)"
+      },
+      {
+       "name": "SL3",
+       "kind": "computation",
+       "statement": "SL_3(ℝ): types {α₂}, {α₁}, ∅ are stabilizers of lines, planes, flags"
+      },
+      {
+       "name": "compact",
+       "kind": "degenerate",
+       "statement": "compact G: the only parabolic subgroup is G"
+      },
+      {
+       "name": "O11",
+       "kind": "non-example",
+       "statement": "O(1,1): Lie(P) = 𝔤 and N_G(Lie P) = G ≠ P, so Q = N_G(Lie Q) fails without the component condition"
+      }
+     ]
+    },
+    {
+     "id": "7.3",
+     "kind": "theorem",
+     "name": "IwasawaTriple.dynamicParabolic_eq",
+     "statement": "For X ∈ 𝔞 in the closed positive chamber, Π' = {α ∈ Π : α(X) = 0}, Q(X) = {g : {lieExp(−tX) g lieExp(tX) : t ≥ 0} relatively compact}, N(X) = {g : lieExp(−tX) g lieExp(tX) → 1}: (i) Q(X), N(X) are subgroups and Q(X) ⊆ N_G(𝔮_{Π'}); for regular X moreover N(X) = N and Q(X) = ⨆ P n_w P over the w ∈ W_G with wX = X; (ii) under the component condition Q(X) = Q_{Π'}, N(X) = N_{Π'}, Q(X) ∩ Q(−X) = Z_G(X) = L_{Π'}, θ(Q(X)) = Q(−X).",
+     "hypotheses": [
+      "G is a real finite-dimensional C^infinity Lie group (LieGroup I ∞ G, FiniteDimensional ℝ E), 𝔤 = LeftInvariantDerivation I G",
+      "D = (θ, B) is a reductive Cartan datum on G (target 1.1)",
+      "(𝔞, Σ⁺) completes D to an Iwasawa triple: 𝔞 ⊆ 𝔭 maximal abelian, Σ⁺ a positive system of Σ(𝔤, 𝔞)",
+      "X ∈ 𝔞 with β(X) ≥ 0 for β ∈ Σ⁺",
+      "(ii) additionally: the component condition"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VII §7; brown-rodriguezhertz-wang2022 §1.2; Lie-group form of borel-tits1965 Théorème 4.15, line 1488, pp. 90–91"
+     },
+     "prerequisites": [
+      "target:3.3",
+      "target:4.2",
+      "target:5.3",
+      "target:6.1",
+      "target:6.3",
+      "roadmap:LieGroups Layer 1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "GL2_sign",
+       "kind": "computation",
+       "statement": "GL_2(ℝ), X = diag(1,0): Q(X) upper triangular, N(X) upper unitriangular, Z_G(X) diagonal; X = diag(0,1) gives lower triangular"
+      },
+      {
+       "name": "zero",
+       "kind": "degenerate",
+       "statement": "X = 0: Q(0) = G, N(0) = 1"
+      },
+      {
+       "name": "Aut_sl3",
+       "kind": "non-example",
+       "statement": "Aut(𝔰𝔩_3(ℝ)), X₀ = diag(1,0,−1): σ·Ad(w₀) ∈ Z_G(X₀) ∖ MA; Q(X₀) = P ⊔ σ·Ad(w₀)·P ⊋ P while N(X₀) = N"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "8",
+   "title": "The self-adjoint linear model",
+   "targets": [
+    {
+     "id": "8.1",
+     "kind": "definition",
+     "name": "IsSelfAdjointLinearGroup",
+     "statement": "For G : Subgroup (GL (Fin n) ℝ): G is closed in GL (Fin n) ℝ, stable under transposition, and has finitely many connected components.",
+     "hypotheses": [
+      "n : ℕ",
+      "G : Subgroup (GL (Fin n) ℝ)"
+     ],
+     "locator": {
+      "source": "wallach1988",
+      "where": "Ch. 2 §2.1 (real reductive groups); knapp2002 Ch. VII §2"
+     },
+     "prerequisites": [
+      "mathlib:Matrix.GeneralLinearGroup",
+      "mathlib:ConnectedComponents"
+     ],
+     "api": [
+      {
+       "name": "isClosed",
+       "role": "projection",
+       "statement": "G is closed in GL (Fin n) ℝ"
+      },
+      {
+       "name": "transpose_mem",
+       "role": "projection",
+       "statement": "the unit with matrix gᵀ lies in G for every g ∈ G"
+      },
+      {
+       "name": "finite_components",
+       "role": "projection",
+       "statement": "ConnectedComponents G is finite"
+      }
+     ],
+     "tests": [
+      {
+       "name": "classical",
+       "kind": "computation",
+       "statement": "GL_n(ℝ), SL_n(ℝ), O(p,q), Matrix.symplecticGroup, SU(p,q) realified are self-adjoint linear groups"
+      },
+      {
+       "name": "discrete_infinite",
+       "kind": "non-example",
+       "statement": "{diag(2^k, 2^{−k}) : k ∈ ℤ}: transpose-stable, infinitely many components, linearLieAlgebra = 0, polar map not surjective"
+      },
+      {
+       "name": "unipotent",
+       "kind": "non-example",
+       "statement": "upper unitriangular 2×2 group: not transpose-stable; K = {1}, 𝔭 = 0, polar map not surjective"
+      }
+     ]
+    },
+    {
+     "id": "8.1b",
+     "kind": "definition",
+     "name": "linearLieAlgebra",
+     "statement": "linearLieAlgebra G = {X ∈ Matrix (Fin n) (Fin n) ℝ : ∀ t : ℝ, NormedSpace.exp (t • X) is the matrix of an element of G}.",
+     "hypotheses": [
+      "G : Subgroup (GL (Fin n) ℝ)"
+     ],
+     "locator": {
+      "source": "wallach1988",
+      "where": "Ch. 2 §2.1"
+     },
+     "prerequisites": [
+      "mathlib:NormedSpace.exp",
+      "roadmap:LieGroups Layer 2"
+     ],
+     "api": [
+      {
+       "name": "lie_subalgebra",
+       "role": "structure",
+       "statement": "closed under sums, scalars and commutators when G is closed"
+      },
+      {
+       "name": "transpose",
+       "role": "structure",
+       "statement": "stable under transposition when G is"
+      },
+      {
+       "name": "eq_lie",
+       "role": "compatibility",
+       "statement": "equals the Lie algebra of G as an embedded Lie subgroup (LieGroups isEmbeddedLieSubgroup_of_isClosed)"
+      },
+      {
+       "name": "ad_symmetric",
+       "role": "structure",
+       "statement": "for symmetric X in it, ad X is real-diagonalizable on matrices"
+      }
+     ],
+     "tests": [
+      {
+       "name": "GL_n",
+       "kind": "computation",
+       "statement": "linearLieAlgebra GL_n(ℝ) = all matrices"
+      },
+      {
+       "name": "SL_n",
+       "kind": "computation",
+       "statement": "linearLieAlgebra SL_n(ℝ) = trace-zero matrices; E₁₁ is excluded since det exp(tE₁₁) = e^t"
+      },
+      {
+       "name": "discrete",
+       "kind": "degenerate",
+       "statement": "a discrete G has linearLieAlgebra = 0"
+      }
+     ]
+    },
+    {
+     "id": "8.1c",
+     "kind": "theorem",
+     "name": "IsSelfAdjointLinearGroup.reductiveCartanDatum",
+     "statement": "A self-adjoint linear group with θ(g) = (gᵀ)⁻¹ and B(X,Y) = tr(XY) is a reductive Cartan datum with 𝔨 the skew and 𝔭 the symmetric elements of linearLieAlgebra G and K = G ∩ unitarySubgroup.",
+     "hypotheses": [
+      "G : Subgroup (GL (Fin n) ℝ) with IsSelfAdjointLinearGroup G (target 8.1)"
+     ],
+     "locator": {
+      "source": "wallach1988",
+      "where": "Ch. 2 §2.1; knapp2002 Ch. VII §2"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:8.1",
+      "target:8.1b",
+      "roadmap:LieGroups Layer 2",
+      "mathlib:unitarySubgroup",
+      "mathlib:Matrix.exp_transpose",
+      "tauceti:Matrix.GeneralLinearGroup.existsUnique_posDef_mul_unitary"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "GL2_polar",
+       "kind": "compatibility",
+       "statement": "GL_2(ℝ): the datum is the polar decomposition, K = O(2)"
+      },
+      {
+       "name": "discrete_negative",
+       "kind": "non-example",
+       "statement": "{diag(2^k,2^{−k})}: fails polar surjectivity; finiteness of components is needed"
+      }
+     ]
+    },
+    {
+     "id": "8.2",
+     "kind": "definition",
+     "name": "dynamicParabolic",
+     "statement": "dynamicParabolic G X = {g ∈ G : {NormedSpace.exp (−t • X) * g * NormedSpace.exp (t • X) : t ≥ 0} is bounded}.",
+     "hypotheses": [
+      "G : Subgroup (GL (Fin n) ℝ)",
+      "X : Matrix (Fin n) (Fin n) ℝ"
+     ],
+     "locator": {
+      "source": "brown-rodriguezhertz-wang2022",
+      "where": "§1.2 (dynamical conventions); knapp2002 Ch. VII §7"
+     },
+     "prerequisites": [
+      "mathlib:NormedSpace.exp",
+      "mathlib:Bornology.IsBounded"
+     ],
+     "api": [
+      {
+       "name": "subgroup",
+       "role": "structure",
+       "statement": "a closed subgroup when G is closed and X is symmetric"
+      },
+      {
+       "name": "transpose",
+       "role": "compatibility",
+       "statement": "θ maps dynamicParabolic G X onto dynamicParabolic G (−X)"
+      },
+      {
+       "name": "zero",
+       "role": "simp",
+       "statement": "dynamicParabolic G 0 = G"
+      }
+     ],
+     "tests": [
+      {
+       "name": "GL2",
+       "kind": "computation",
+       "statement": "GL_2(ℝ), X = diag(1,0): upper triangular group"
+      },
+      {
+       "name": "zero",
+       "kind": "degenerate",
+       "statement": "X = 0 gives G"
+      },
+      {
+       "name": "sign",
+       "kind": "non-example",
+       "statement": "X = diag(0,1) gives the lower triangular group; reversing t would swap them"
+      }
+     ]
+    },
+    {
+     "id": "8.2b",
+     "kind": "definition",
+     "name": "dynamicUnipotent",
+     "statement": "dynamicUnipotent G X = {g ∈ G : NormedSpace.exp (−t • X) * g * NormedSpace.exp (t • X) → 1 as t → +∞}.",
+     "hypotheses": [
+      "G : Subgroup (GL (Fin n) ℝ)",
+      "X : Matrix (Fin n) (Fin n) ℝ"
+     ],
+     "locator": {
+      "source": "brown-rodriguezhertz-wang2022",
+      "where": "§1.2; knapp2002 Ch. VII §7"
+     },
+     "prerequisites": [
+      "mathlib:NormedSpace.exp",
+      "mathlib:Filter.Tendsto"
+     ],
+     "api": [
+      {
+       "name": "subgroup",
+       "role": "structure",
+       "statement": "a closed subgroup, normal in dynamicParabolic G X, for symmetric X ∈ linearLieAlgebra G"
+      },
+      {
+       "name": "le_parabolic",
+       "role": "structure",
+       "statement": "dynamicUnipotent G X ⊆ dynamicParabolic G X"
+      },
+      {
+       "name": "zero",
+       "role": "simp",
+       "statement": "dynamicUnipotent G 0 = 1"
+      }
+     ],
+     "tests": [
+      {
+       "name": "GL2",
+       "kind": "computation",
+       "statement": "GL_2(ℝ), X = diag(1,0): upper unitriangular group"
+      },
+      {
+       "name": "zero",
+       "kind": "degenerate",
+       "statement": "X = 0 gives {1}"
+      },
+      {
+       "name": "skew",
+       "kind": "non-example",
+       "statement": "skew X = ((0,1),(−1,0)) in GL_2(ℝ): only {1}, while every conjugate orbit is bounded"
+      }
+     ]
+    },
+    {
+     "id": "8.2c",
+     "kind": "definition",
+     "name": "dynamicLevi",
+     "statement": "dynamicLevi G X = {g ∈ G : g * X = X * g}.",
+     "hypotheses": [
+      "G : Subgroup (GL (Fin n) ℝ)",
+      "X : Matrix (Fin n) (Fin n) ℝ"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VII §7"
+     },
+     "prerequisites": [
+      "mathlib:Matrix.GeneralLinearGroup"
+     ],
+     "api": [
+      {
+       "name": "subgroup",
+       "role": "structure",
+       "statement": "a closed subgroup"
+      },
+      {
+       "name": "le_parabolic",
+       "role": "structure",
+       "statement": "dynamicLevi G X ⊆ dynamicParabolic G X"
+      },
+      {
+       "name": "transpose",
+       "role": "structure",
+       "statement": "θ-stable when X is symmetric"
+      }
+     ],
+     "tests": [
+      {
+       "name": "GL2",
+       "kind": "computation",
+       "statement": "GL_2(ℝ), X = diag(1,0): diagonal group"
+      },
+      {
+       "name": "zero",
+       "kind": "degenerate",
+       "statement": "X = 0 gives G"
+      },
+      {
+       "name": "scalar",
+       "kind": "degenerate",
+       "statement": "X scalar gives G"
+      }
+     ]
+    },
+    {
+     "id": "8.2d",
+     "kind": "theorem",
+     "name": "dynamicLevi_decomposition",
+     "statement": "For G closed in GL (Fin n) ℝ and transpose-stable and X a symmetric matrix (X ∈ linearLieAlgebra G is not needed): the three dynamic sets are closed subgroups, dynamicUnipotent G X is normal in dynamicParabolic G X, every element of dynamicParabolic G X is uniquely l·u with l ∈ dynamicLevi G X and u ∈ dynamicUnipotent G X, and dynamicParabolic G X ∩ θ(dynamicParabolic G X) = dynamicLevi G X.",
+     "hypotheses": [
+      "G : Subgroup (GL (Fin n) ℝ) closed and transpose-stable",
+      "X : Matrix (Fin n) (Fin n) ℝ with Xᵀ = X"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VII §7 (Langlands decomposition, matrix form); brown-rodriguezhertz-wang2022 §1.2"
+     },
+     "prerequisites": [
+      "target:8.1b",
+      "target:8.2",
+      "target:8.2b",
+      "target:8.2c",
+      "mathlib:NormedSpace.exp",
+      "mathlib:Matrix.exp_conj"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "GL2_factor",
+       "kind": "computation",
+       "statement": "((2,3),(0,5)) = diag(2,5)·((1,3/2),(0,1)); the u·l order would give ((1,3/5),(0,1))"
+      },
+      {
+       "name": "zero",
+       "kind": "degenerate",
+       "statement": "X = 0: P = L = G, U = 1"
+      },
+      {
+       "name": "skew_negative",
+       "kind": "non-example",
+       "statement": "skew X in GL_2(ℝ): bounded set is G but L·U is only the centralizer {aI + bX}"
+      },
+      {
+       "name": "SL2_X_not_in_g",
+       "kind": "computation",
+       "statement": "SL_2(ℝ), X = diag(1,0) ∉ 𝔰𝔩_2(ℝ): upper triangular, upper unitriangular and diagonal subgroups of SL_2(ℝ); all four conclusions hold"
+      }
+     ]
+    },
+    {
+     "id": "8.3",
+     "kind": "definition",
+     "name": "LinearComponentCondition",
+     "statement": "For G : Subgroup (GL (Fin n) ℝ) and a subspace 𝔞 of symmetric matrices: every g ∈ G lies in connectedComponentIn G of some orthogonal m ∈ G commuting with every element of 𝔞.",
+     "hypotheses": [
+      "G : Subgroup (GL (Fin n) ℝ)",
+      "𝔞 : Submodule ℝ (Matrix (Fin n) (Fin n) ℝ)"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VII §5"
+     },
+     "prerequisites": [
+      "mathlib:connectedComponentIn",
+      "target:2.4"
+     ],
+     "api": [
+      {
+       "name": "iff_component_condition",
+       "role": "compatibility",
+       "statement": "for a self-adjoint linear group and maximal abelian 𝔞 ⊆ 𝔭, equivalent to the component condition 2.4 of the datum 8.1c"
+      },
+      {
+       "name": "of_connected",
+       "role": "constructor",
+       "statement": "holds when G is connected"
+      },
+      {
+       "name": "conj",
+       "role": "functoriality",
+       "statement": "independent of 𝔞 up to K⁰-conjugacy"
+      }
+     ],
+     "tests": [
+      {
+       "name": "GL_n",
+       "kind": "computation",
+       "statement": "GL_n(ℝ), 𝔞 diagonal: diag(−1,1,…,1) witnesses the determinant-negative component"
+      },
+      {
+       "name": "O11",
+       "kind": "non-example",
+       "statement": "O(1,1): fails"
+      },
+      {
+       "name": "O_pq",
+       "kind": "computation",
+       "statement": "O(p,q), p > q ≥ 1: M ∋ diag(ε, k', ε), ε ∈ {±1}^q, k' ∈ O(p−q), block determinants (Πε·det k', Πε) take all four values, so the condition holds; for p = q it fails"
+      }
+     ]
+    },
+    {
+     "id": "8.3b",
+     "kind": "theorem",
+     "name": "minimalParabolic_langlands",
+     "statement": "For a self-adjoint linear group G, 𝔞 maximal abelian in the symmetric part of linearLieAlgebra G, H₀ ∈ 𝔞 regular (every element of linearLieAlgebra G commuting with H₀ commutes with 𝔞), M = {m ∈ K : m commutes with 𝔞}, N = dynamicUnipotent G H₀, P = M·exp(𝔞)·N, and LinearComponentCondition G 𝔞: dynamicParabolic G H₀ = P, every element of P is uniquely m·exp(H)·u with m ∈ M, H ∈ 𝔞, u ∈ N; P is self-normalizing in G and G = K·P.",
+     "hypotheses": [
+      "G : Subgroup (GL (Fin n) ℝ) with IsSelfAdjointLinearGroup G (target 8.1)",
+      "𝔞 maximal abelian in the symmetric part of linearLieAlgebra G",
+      "H₀ ∈ 𝔞 regular",
+      "LinearComponentCondition G 𝔞"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VII §§2, 7"
+     },
+     "prerequisites": [
+      "target:3.3",
+      "target:7.3",
+      "target:8.1c",
+      "target:8.2d",
+      "target:8.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "GL_n",
+       "kind": "compatibility",
+       "statement": "GL_n(ℝ), H₀ = diag(n,…,1): P = TauCeti.upperTriangularGroup"
+      },
+      {
+       "name": "O11",
+       "kind": "non-example",
+       "statement": "O(1,1): P = {±exp(tY)} of index two, not self-normalizing"
+      }
+     ]
+    },
+    {
+     "id": "8.3c",
+     "kind": "theorem",
+     "name": "bruhat_decomposition_linear",
+     "statement": "For a self-adjoint linear group G, 𝔞 maximal abelian in the symmetric part of linearLieAlgebra G, H₀ ∈ 𝔞 regular, M = {m ∈ K : m commutes with 𝔞}, N = dynamicUnipotent G H₀ and P = M·exp(𝔞)·N, without any component condition: for every g ∈ G there is k ∈ K normalizing 𝔞 with g ∈ P k P; if k, k' ∈ K normalize 𝔞 and PkP meets Pk'P then k⁻¹k' commutes with 𝔞.",
+     "hypotheses": [
+      "G : Subgroup (GL (Fin n) ℝ) with IsSelfAdjointLinearGroup G (target 8.1)",
+      "𝔞 maximal abelian in the symmetric part of linearLieAlgebra G",
+      "H₀ ∈ 𝔞 regular"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VII §4"
+     },
+     "prerequisites": [
+      "target:4.2",
+      "target:7.3",
+      "target:8.1c",
+      "target:8.2b",
+      "mathlib:DoubleCoset.doubleCoset"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "GL_n",
+       "kind": "compatibility",
+       "statement": "GL_n(ℝ): representatives are signed permutation matrices, S_n modulo signs"
+      },
+      {
+       "name": "O11",
+       "kind": "computation",
+       "statement": "O(1,1): P = {±exp(tY)}, K = {±1, ±d} all normalizing 𝔞, G = P ⊔ dP; both clauses hold although the component condition fails"
+      },
+      {
+       "name": "Aut_sl3_dynamic",
+       "kind": "non-example",
+       "statement": "Aut(𝔰𝔩_3(ℝ)): with dynamicParabolic G H₀ ∋ σ·Ad(w₀) in place of P, k = 1 and k' = σ·Ad(w₀) give the same double coset and k⁻¹k' does not commute with 𝔞; the hypothesis-free form needs P = M·exp(𝔞)·N"
+      }
+     ]
+    },
+    {
+     "id": "8.3d",
+     "kind": "theorem",
+     "name": "eq_dynamicParabolic_of_le",
+     "statement": "Same hypotheses as 8.3b: every subgroup Q with P ≤ Q ≤ G equals dynamicParabolic G X for some X ∈ 𝔞; for X, Y ∈ 𝔞 with P contained in both dynamic parabolics, the two are equal iff X and Y have the same centralizer in linearLieAlgebra G.",
+     "hypotheses": [
+      "G : Subgroup (GL (Fin n) ℝ) with IsSelfAdjointLinearGroup G (target 8.1)",
+      "𝔞, H₀, LinearComponentCondition as in 8.3b"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VII §7"
+     },
+     "prerequisites": [
+      "target:6.1",
+      "target:7.3",
+      "target:8.3b"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "SL3",
+       "kind": "computation",
+       "statement": "SL_3(ℝ): diag(1,1,−2) and diag(2,2,−4) same centralizer and parabolic; diag(1,0,−1) different"
+      },
+      {
+       "name": "O11",
+       "kind": "non-example",
+       "statement": "O(1,1): 0 and Y have the same centralizer 𝔤 but dynamicParabolic G 0 = G ≠ P"
+      }
+     ]
+    },
+    {
+     "id": "8.3e",
+     "kind": "theorem",
+     "name": "exists_conj_maximalAbelian",
+     "statement": "For a self-adjoint linear group G and maximal abelian subspaces 𝔞, 𝔞' of the symmetric part of linearLieAlgebra G there is k ∈ K in the identity component of G with k𝔞k⁻¹ = 𝔞'.",
+     "hypotheses": [
+      "G : Subgroup (GL (Fin n) ℝ) with IsSelfAdjointLinearGroup G (target 8.1)",
+      "𝔞, 𝔞' maximal abelian in the symmetric part of linearLieAlgebra G"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VI §5"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "target:8.1c"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "GL2",
+       "kind": "computation",
+       "statement": "rotation by π/4 conjugates ℝ·((0,1),(1,0)) to ℝ·diag(1,−1)"
+      },
+      {
+       "name": "compact",
+       "kind": "degenerate",
+       "statement": "compact G: 𝔞 = 0"
+      }
+     ]
+    },
+    {
+     "id": "8.3f",
+     "kind": "theorem",
+     "name": "exists_eq_nonnegEigenspaces_of_le",
+     "statement": "For a self-adjoint linear group G, 𝔞 maximal abelian in the symmetric part of linearLieAlgebra G, H₀ ∈ 𝔞 regular and 𝔮₀ the sum of the non-negative eigenspaces of ad H₀ on linearLieAlgebra G: every Lie subalgebra of linearLieAlgebra G containing 𝔮₀ is the sum of the non-negative eigenspaces of ad Y for some Y ∈ 𝔞; for X, Y ∈ 𝔞 whose non-negative eigenspace sums contain 𝔮₀, the sums are equal iff X and Y have the same centralizer in linearLieAlgebra G.",
+     "hypotheses": [
+      "G : Subgroup (GL (Fin n) ℝ) with IsSelfAdjointLinearGroup G (target 8.1)",
+      "𝔞 maximal abelian in the symmetric part of linearLieAlgebra G",
+      "H₀ ∈ 𝔞 regular"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VII §7 (Proposition 7.76 with Lemma 7.73); brown-rodriguezhertz-wang2022 §1.2"
+     },
+     "prerequisites": [
+      "target:5.2",
+      "target:5.3",
+      "target:8.1c",
+      "mathlib:Module.End.eigenspace"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "SL3_four",
+       "kind": "computation",
+       "statement": "SL_3(ℝ): 𝔮₀ upper triangular; the four subalgebras containing it are the non-negative eigenspace sums of diag(1,0,−1), diag(1,1,−2), diag(2,−1,−1), 0"
+      },
+      {
+       "name": "same_centralizer",
+       "kind": "computation",
+       "statement": "SL_3(ℝ): diag(1,1,−2) and diag(2,2,−4) give the same sum; GL_2(ℝ): 0 and the scalar 1 both give 𝔤"
+      },
+      {
+       "name": "GL_n_count",
+       "kind": "computation",
+       "statement": "GL_n(ℝ): 2^{n−1} block upper triangular algebras, one per composition of n"
+      }
+     ]
+    },
+    {
+     "id": "8.3g",
+     "kind": "theorem",
+     "name": "exists_titsSystem_linear",
+     "statement": "For a self-adjoint linear group G, 𝔞, H₀, M, N, P as in 8.3b, and LinearComponentCondition G 𝔞: there is T : TauCeti.TitsSystem G with T.subgroupB = P and T.subgroupN = N_G(𝔞) = {g ∈ G : g𝔞g⁻¹ = 𝔞}.",
+     "hypotheses": [
+      "G : Subgroup (GL (Fin n) ℝ) with IsSelfAdjointLinearGroup G (target 8.1)",
+      "𝔞, H₀, LinearComponentCondition as in 8.3b"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VII §4; bourbaki-lie4-6 Ch. IV §2"
+     },
+     "prerequisites": [
+      "target:4.3",
+      "target:8.3b",
+      "tauceti:TauCeti.TitsSystem"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "GL_n",
+       "kind": "compatibility",
+       "statement": "GL_n(ℝ): the subgroups of TauCeti.glTitsSystem ℝ (n−1)"
+      },
+      {
+       "name": "O11",
+       "kind": "non-example",
+       "statement": "O(1,1): P is normal in G, so sPs⁻¹ ≠ P fails for every candidate reflection; the condition is needed"
+      },
+      {
+       "name": "compact",
+       "kind": "degenerate",
+       "statement": "compact G: P = G, N_G(𝔞) = G, empty simple set"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "9",
+   "title": "Comparison with ℝ-parabolic subgroups",
+   "targets": [
+    {
+     "id": "9.1",
+     "kind": "theorem",
+     "name": "realPoints_isSelfAdjointLinearGroup",
+     "statement": "For 𝐇 connected reductive over ℝ with a transpose-stable embedding in GL_n and G = 𝐇(ℝ) or 𝐇(ℝ)⁰: G is a self-adjoint linear group and its datum (8.1c) satisfies the component condition, by Knapp's axiom (v): 𝐇(ℂ) is connected (MordellLawrenceVenkatesh 3.10) with Lie algebra 𝔤_ℂ, so Ad(𝐇(ℂ)) = Int(𝔤_ℂ) ⊇ Ad(𝐇(ℝ)) and 2.4 applies. θ is an algebraic Cartan involution (ALS.0.1), and for 𝐇 = (Res_{F/ℚ} G)_ℝ the datum agrees with the Lie-theoretic Cartan datum of ALS.0.2.",
+     "hypotheses": [
+      "𝐇 connected reductive linear algebraic group over ℝ",
+      "transpose-stable embedding 𝐇 ⊆ GL_n",
+      "G = 𝐇(ℝ) or 𝐇(ℝ)⁰"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VII §2 (real points of connected reductive groups satisfy axioms (i)–(v)); borel-tits1965 Théorème 14.4, line 3750, p. 146, as a remark only"
+     },
+     "prerequisites": [
+      "roadmap:ArithmeticLocallySymmetricSpaces ALS.F.1",
+      "roadmap:ArithmeticLocallySymmetricSpaces ALS.0.1",
+      "roadmap:ArithmeticLocallySymmetricSpaces ALS.0.2",
+      "roadmap:MordellLawrenceVenkatesh 3.10",
+      "roadmap:LieGroups Layer 1",
+      "roadmap:LieGroups Layer 3",
+      "target:2.4",
+      "target:8.1c"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "GL_n",
+       "kind": "computation",
+       "statement": "𝐇 = GL_n: sign matrices meet both components"
+      },
+      {
+       "name": "SO21",
+       "kind": "computation",
+       "statement": "𝐇 = SO(2,1): M = {1, diag(1,−1,−1)} meets both components"
+      },
+      {
+       "name": "O11",
+       "kind": "non-example",
+       "statement": "𝐇 = O(1,1) is not connected and the conclusion fails"
+      },
+      {
+       "name": "GL_n_axiom_v",
+       "kind": "computation",
+       "statement": "GL_n(ℂ) is connected and Ad(diag(−1,1,…,1)) = Ad(exp(iπE₁₁)) ∈ Int(𝔤𝔩_n(ℂ)); for O(1,1), Ad(diag(1,−1)) = −1 on 𝔰𝔬(1,1)_ℂ ∉ Int = {1}, as O(1,1)(ℂ) = O_2(ℂ) is disconnected"
+      }
+     ]
+    },
+    {
+     "id": "9.2",
+     "kind": "theorem",
+     "name": "realParabolic_comparison",
+     "statement": "With (𝔞, Σ⁺) completing the datum of 9.1: (a) the Zariski closure 𝐒 of A is a maximal ℝ-split torus, Lie(𝐒)(ℝ) = 𝔞, A = 𝐒(ℝ)⁰; (b) differentials identify Φ(𝐇,𝐒) with Σ, root subspaces with the 𝔤^β, and the relative Weyl group with W(Σ) = N_K(𝔞)/Z_K(𝔞); (c) for λ ∈ X_*(𝐒) positive on Σ⁺, 𝐏 = 𝐏_𝐇(λ) is a minimal ℝ-parabolic, P = G ∩ 𝐏(ℝ), N = 𝐔_𝐇(λ)(ℝ), MA = G ∩ 𝐙_𝐇(𝐒)(ℝ); (d) for λ with X_λ = dλ(1) in the closed positive chamber and Π' = {α(X_λ) = 0}: Q_{Π'} = G ∩ 𝐏_𝐇(λ)(ℝ), L_{Π'} = G ∩ 𝐙_𝐇(λ)(ℝ), N_{Π'} = 𝐔_𝐇(λ)(ℝ).",
+     "hypotheses": [
+      "hypotheses of 9.1",
+      "(𝔞, Σ⁺) an Iwasawa triple for the datum of 9.1"
+     ],
+     "locator": {
+      "source": "borel-tits1965",
+      "where": "§14.7, lines 3775–3821, pp. 147–148; with Théorème 4.15 (line 1488), Corollaire 5.9 (line 1802), Théorème 5.15 (line 1868), Corollaires 5.18–5.20 (lines 1930–1955)"
+     },
+     "prerequisites": [
+      "target:3.3",
+      "target:5.3",
+      "target:6.1",
+      "target:6.3",
+      "target:7.3",
+      "target:9.1",
+      "roadmap:ReductiveGroups Layer 7",
+      "tauceti:TauCeti.Cocharacter.parabolic",
+      "tauceti:TauCeti.Cocharacter.levi",
+      "tauceti:TauCeti.Cocharacter.unipotent",
+      "gap:minimal-parabolic-orderings",
+      "gap:real-compactness-criterion"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "GL_n_weights",
+       "kind": "compatibility",
+       "statement": "𝐇 = GL_n, λ(t) = diag(t^{k₁},…,t^{kₙ}) with k₁ ≥ … ≥ kₙ: 𝐏(λ)(ℝ) is the block upper triangular group of equal-k blocks; λ(t) = diag(t,1) gives upper triangular"
+      },
+      {
+       "name": "SO21_torus",
+       "kind": "computation",
+       "statement": "𝐇 = SO(2,1): 𝐒(ℝ) = A × {1, diag(1,−1,−1)}, A of index two"
+      },
+      {
+       "name": "Gm_SO2",
+       "kind": "non-example",
+       "statement": "𝐇 = 𝔾_m × SO(2): only the c = 0 datum of 1.3 is algebraic"
+      }
+     ]
+    },
+    {
+     "id": "9.3",
+     "kind": "theorem",
+     "name": "isParabolicSubalgebra_iff_borel",
+     "statement": "For a reductive Cartan datum with the component condition and a real Lie subalgebra 𝔮 ⊆ 𝔤: 𝔮 is a parabolic subalgebra iff 𝔷(𝔤) ⊆ 𝔮 and 𝔮 ⊗ ℂ ∩ [𝔤,𝔤]_ℂ contains TauCeti.borelSubalgebra 𝔥 b for some splitting Cartan subalgebra 𝔥 of [𝔤,𝔤]_ℂ and base b. Every parabolic subalgebra contains 𝔷 = (𝔷∩𝔨) ⊕ 𝔷_𝔭 ⊆ 𝔪 ⊕ 𝔞.",
+     "hypotheses": [
+      "G is a real finite-dimensional C^infinity Lie group (LieGroup I ∞ G, FiniteDimensional ℝ E), 𝔤 = LeftInvariantDerivation I G",
+      "D = (θ, B) is a reductive Cartan datum on G (target 1.1)",
+      "(𝔞, Σ⁺) completes D to an Iwasawa triple: 𝔞 ⊆ 𝔭 maximal abelian, Σ⁺ a positive system of Σ(𝔤, 𝔞)",
+      "the component condition holds: G = Z_K(𝔞)·G⁰ (target 2.4)",
+      "𝔮 ⊆ 𝔤 a real Lie subalgebra"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VII §7"
+     },
+     "prerequisites": [
+      "target:5.2",
+      "target:7.2",
+      "target:9.2",
+      "roadmap:LieGroups Layer 7",
+      "tauceti:TauCeti.borelSubalgebra",
+      "roadmap:ReductiveGroups Layer 7"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "SL2_so2",
+       "kind": "non-example",
+       "statement": "𝔰𝔬(2) ⊆ 𝔰𝔩_2(ℝ) complexifies to a Cartan subalgebra containing no Borel; not parabolic"
+      },
+      {
+       "name": "SU2",
+       "kind": "degenerate",
+       "statement": "SU(2): 𝔤 is the only parabolic, 𝔰𝔩_2(ℂ) contains a Borel; 𝔱 does not"
+      },
+      {
+       "name": "SL2C",
+       "kind": "computation",
+       "statement": "SL_2(ℂ): 𝔮_∅ ⊗ ℂ ≅ sum of the two upper triangular Borels"
+      },
+      {
+       "name": "GL2_tracezero_borel",
+       "kind": "non-example",
+       "statement": "GL_2(ℝ), 𝔮 = trace-zero upper triangular: 𝔮 ⊗ ℂ ∩ 𝔰𝔩_2(ℂ) is a Borel but 1 ∉ 𝔮 and dim 𝔮 = 2 < 3 = dim 𝔮_∅, so not parabolic; 𝔮 ⊕ ℝ·1 = 𝔮_∅ satisfies both conditions; ℝ·1 contains 𝔷 but no Borel"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "LieGroups",
+   "sections": [
+    "Layer 0",
+    "Layer 1",
+    "Layer 2",
+    "Layer 3",
+    "Layer 4",
+    "Layer 7",
+    "Layer 9"
+   ],
+   "what": "lieExp, Ad, closed-subgroup theorem, lieMap, integration of Lie algebra homomorphisms, complexification; CartanInvolution, IwasawaData, iwasawaDecomposition, kakDecomposition, restricted root system"
+  },
+  {
+   "roadmap": "RootSystems",
+   "sections": [
+    "Exact supplier contracts"
+   ],
+   "what": "the record of the Mathlib and Tau Ceti root-system declarations consumed in 2.1 (RootPairing, RootPairing.Base, RootPairing.IsReduced, RootPairing.weylGroup, RootPairing.Base.existsUnique_map_eq, TauCeti.stabilizer_eq_closure_wallReflections); no RootSystems target is used"
+  },
+  {
+   "roadmap": "ReductiveGroups",
+   "sections": [
+    "Layer 7",
+    "Layer 7b"
+   ],
+   "what": "parabolic k-subgroups, P_H(λ), U_H(λ), Z_H(λ), maximal split tori, relative root system and Weyl group, Bruhat decomposition over a field"
+  },
+  {
+   "roadmap": "ArithmeticLocallySymmetricSpaces",
+   "sections": [
+    "ALS.F.1",
+    "ALS.0.1",
+    "ALS.0.2",
+    "ALS.0.3"
+   ],
+   "what": "real points of linear algebraic groups as Lie groups with finitely many components, algebraic Cartan involutions, transpose-stable realizations, Lie-theoretic Cartan datum of real points"
+  },
+  {
+   "roadmap": "MordellLawrenceVenkatesh",
+   "sections": [
+    "3.10"
+   ],
+   "what": "complex points of a connected scheme of finite type over ℂ are connected in the analytic topology; applied to 𝐇(ℂ) for connected 𝐇 over ℝ in 9.1"
+  }
+ ],
+ "consumers": [
+  {
+   "roadmap": "AutomorphicFormsOnReductiveGroups",
+   "what": "§2.3a minimal parabolic, Langlands decomposition, conjugacy and Borel–Tits comparison (Layers 2, 3, 9); §2.3 parabolic subgroups P = MAN (Layer 6); §2.4 standard parabolics and Levi subgroups (Layer 6)"
+  },
+  {
+   "roadmap": "AutomorphicSpectralTheoryPartII",
+   "what": "archimedean minimal parabolic and standard Levi subgroups (Layers 3, 6)"
+  },
+  {
+   "roadmap": "NoncompactQuantumSymmetry",
+   "what": "amenability of the minimal parabolic from MA ≅ M × A and N normal nilpotent (Layer 3)"
+  },
+  {
+   "roadmap": "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups",
+   "what": "standard parabolics at the real place (Layer 6)"
+  },
+  {
+   "roadmap": "SmoothBanachRepresentations",
+   "what": "through AutomorphicFormsOnReductiveGroups"
+  },
+  {
+   "roadmap": "KleinianGroups",
+   "what": "minimal parabolic of SO₀(n,1) and PU(1,n) (Layer 3)"
+  },
+  {
+   "roadmap": "FuchsianOrbifoldsPartII",
+   "what": "minimal parabolic of SL_2(ℝ) (Layer 3)"
+  }
+ ],
+ "gaps": [
+  {
+   "slug": "minimal-parabolic-orderings",
+   "title": "Minimal k-parabolics containing a maximal split torus and orderings",
+   "neededBy": [
+    "9.2"
+   ],
+   "detail": "Borel–Tits Théorème 4.15 and Corollaire 5.9: for a maximal k-split torus S of a connected reductive H, the minimal parabolic k-subgroups containing S are the P_H(λ) for regular cocharacters λ of S, two λ give the same subgroup iff they lie in the same open chamber of Φ(H,S), and the relative Weyl group permutes them simply transitively.",
+   "needs": "The bijection between minimal parabolic k-subgroups containing a maximal split torus and the open chambers of the relative root system, with the cocharacter description.",
+   "supplier": "ReductiveGroups",
+   "section": "Layer 7"
+  },
+  {
+   "slug": "real-compactness-criterion",
+   "title": "Compactness criterion for real points (Borel–Tits 9.3)",
+   "neededBy": [
+    "9.2"
+   ],
+   "detail": "Over ℝ, a closed ℝ-subgroup L of a connected H with H(ℝ)/L(ℝ) compact contains a maximal connected ℝ-trigonalizable subgroup of H.",
+   "needs": "Borel–Tits Proposition 9.3 over k = ℝ.",
+   "supplier": "ReductiveGroups",
+   "section": "Layer 7"
+  }
+ ]
+}
