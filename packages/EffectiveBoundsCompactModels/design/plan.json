@@ -1680,7 +1680,20 @@
       ]
     }
   ],
-  "gaps": [],
+  "gaps": [
+    {
+      "slug": "isolated-intersection-lengths",
+      "needs": "Over an algebraically closed characteristic-zero field, for r≥1 positive-degree homogeneous forms in projective r-space, the isolated common points are finite and the sum of their local intersection lengths is at most the product of their degrees, even when other components have positive dimension.",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "5.12"
+    },
+    {
+      "slug": "bounded-field-class-interface",
+      "needs": "Provide the native quotient of finite-dimensional intermediate fields in an algebraic closure of ℚ by rational algebra isomorphism, with invariant degree and absolute discriminant, inclusive real sublevels, Hermite finiteness, and compatibility of residue-field component classes with these sublevels.",
+      "supplier": "EffectiveBoundsPartII",
+      "section": "EB.5/components-to-classes and EB.5/discriminant-count-bound"
+    }
+  ],
   "sourceIssues": [],
   "review": {
     "status": "accepted",
