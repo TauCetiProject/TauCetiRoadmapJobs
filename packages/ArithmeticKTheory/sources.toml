@@ -435,3 +435,35 @@ status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv v5"
 cited_for = ["7.5"]
+
+[[source]]
+id = "quillen-oberwolfach"
+authors = "Daniel Quillen"
+title = "Finite generation of K-groups for rings of S-integers"
+year = 1974
+venue = "Algebraische K-Theorie, Tagungsbericht 26/1974, Mathematisches Forschungsinstitut Oberwolfach"
+locator_scheme = "page"
+locator = "p. 7"
+url = "https://oda.mfo.de/bitstream/handle/mfo/1481/full-text.pdf?isAllowed=y&sequence=1"
+fetched_from = "https://oda.mfo.de/bitstream/handle/mfo/1481/full-text.pdf?isAllowed=y&sequence=1"
+fetched_at = "2026-11-07T10:03:28Z"
+sha256 = "aa86bcf8a5101d748618b43834261f164cdaae12d112dbfe4dbd92ebaa1399ec"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["3.2"]
+
+[[source]]
+id = "grayson-curve"
+authors = "Daniel R. Grayson"
+title = "Finite generation of K-groups of a curve over a finite field"
+year = 1982
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0062167"
+locator_scheme = "page"
+locator = "pp. 69-90"
+url = "https://doi.org/10.1007/BFb0062167"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.2"]
