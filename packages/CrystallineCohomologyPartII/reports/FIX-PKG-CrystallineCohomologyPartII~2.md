@@ -1,0 +1,73 @@
+# FIX-PKG-CrystallineCohomologyPartII~2: repair of the findings of REV-PKG-CrystallineCohomologyPartII
+
+Files edited: `packages/CrystallineCohomologyPartII/README.md`, `packages/CrystallineCohomologyPartII/Suggested.lean`, `packages/CrystallineCohomologyPartII/sources.toml`. Not changed: `metadata.toml`, `design/plan.json` (no gap changes were needed).
+
+## REV-PKG-CrystallineCohomologyPartII/F01 (P2) — applied
+
+Verified at Tau Ceti `2fd255d9` and Mathlib `1b1ccf4b` (the manifest pins): every witness the review names exists at the cited file and line (`cohomologyPullback` at `TauCeti/AlgebraicGeometry/Cohomology/Pullback.lean` 65, `pullbackObjUnitIso` at `Modules/Pullback/Basic.lean` 211, `LineBundleClass.IsAmple` at `LineBundle/Ample.lean` 71, `InvertibleSheaf.dual` at `LineBundle/Dual.lean` 44, `IsEffectiveCartier.toInvertibleSheaf` at `EffectiveCartierDivisor/Invertible.lean` 307, `cohomologyBaseModule` at `Cohomology/Module/Base.lean` 48, `AbelianVariety` at `AbelianVariety/Basic.lean` 95, `Chow.cyclesOfDimension` 86 and `Chow.RatEquiv` 257 at `Chow/Basic.lean`, `Scheme.IsProjectiveOver` at `ProjectiveSpectrum/ProjectiveOver.lean` 57 with its instance `IsProjectiveOver.isProper` at line 77, Mathlib `GeometricallyConnected` at `Geometrically/Connected.lean` 40, `LocallyOfFiniteType.isLocallyNoetherian` at `Noetherian.lean` 236, `Scheme.Hom.residueDegree` at `ResidueField.lean` 147). The sources state the three headlines as claimed: BBE07 line 195 (Corollary 1.6), BBE07 line 166 (definition of a theta divisor: effective divisor with `O_A(D)` ample defining a principal polarization) and line 169 (Theorem 1.4), ESN03 line 63 (congruence (1.4)) and line 67 (Corollary 1.2). The docstring's three "not statable" claims were false.
+
+Changes. `Suggested.lean`: old three theorems with one Tau Ceti import → eight declarations with nine Tau Ceti imports: `card_rationalPoints_modEq_of_cohomologyPullback_bijective` (§6.4 (ii)), the two Ax–Katz theorems unchanged, `IsThetaDivisor` and `card_thetaDivisor_modEq` (§6.9), `zeroCycleDegree`, `UniversallyCH0Trivial` and `card_rationalPoints_modEq_one_of_universallyCH0Trivial` (§6.10, §6.14 (i)); `card_rationalPoints_modEq_one_of_cohomology_vanishing` deleted (the case `Y = Spec K`); docstring rewritten, the refuted items removed. README: Scope and ownership and the Tau Ceti and Mathlib contracts rewritten with the names above (the "no pullback" sentences dropped); §6.4 (ii), §6.9, §6.10 and §6.14 (i) carry the new names, hypotheses and encodings, with new Checks; §6.4 (iv) kept as a target without a Lean name.
+
+Two departures from the suggested text, both stricter. (a) `UniversallyCH0Trivial` encodes "deg ⊗ ℚ bijective" as "some zero-cycle has nonzero degree and the kernel of deg is torsion", not as the kernel condition alone: with the kernel condition only, the empty scheme would be universally CH_0-trivial, against §6.10's definition (deg ⊗ ℚ: 0 → ℚ is not surjective). ℚ is flat, so the two clauses are exactly injectivity and surjectivity of deg ⊗ ℚ. Recorded in §6.10 with the empty scheme as a Check. (b) The Esnault headline drops the redundant `[IsProper (X ↘ Spec K)]` binder: `IsProjectiveOver.isProper` is an instance at the pin. The theta-divisor encoding is justified in §6.9 by AbelianSchemesAndArithmeticModuli §A2.4 (`ampleCohomologyAndDegree`, read at its head: for ample `L`, `h⁰(L) = χ(L)` and `deg φ_L = χ(L)²`), so `h⁰(O_A(Θ)) = 1` is "principal". The Lean theorems state the case `r = 1`; §6.9 and §6.14 say so and give the base-change argument for `r > 1`, as §6.4 (iv) already did.
+
+## REV-PKG-CrystallineCohomologyPartII/F02 (P3) — applied
+
+Verified at the heads (`roadmaps show`): CrystallineCohomology (#857) has no `crysTrace`; its §CR.3:duality.1 "The trace, duality and Gysin maps" has the bold target *Proper smooth crystalline trace*, (1) `Tr^Ek: W_nΩ^d_X → f_n^!W_n[−d]` an isomorphism compatible with étale maps, with "(For (1), X smooth of pure dimension d suffices.)"; its §CR.4.6 has the targets *Witt schemes on locally p-nilpotent schemes* and *Witt differential quotients and completion topologies* (the latter defines `W_r(I) = ker(W_r(A) → W_r(A/I))`, so the scope sentence on affine Witt ideals is right and now names it). ClassicalAdicEtaleCohomology (#875) §5.4 states the plurinodal alteration theorem (dominant proper morphism between integral excellent schemes) without a `PlurinodalAlteration` name. SchemeAndStackFoundations on main has no "SF.2"; `ω_X := H^{−d}(f^! k)` is in §2.20.
+
+Changes: `crysTrace_iso`/`crysTrace_etale_local` → "§CR.3:duality.1, proper smooth crystalline trace" (contract, Scope, §4.1 statement, *Needs:*, route step 4, Layer 4 Dependencies); `wittScheme` → "§CR.4.6, Witt schemes on locally p-nilpotent schemes" (contract, §0.1 *Needs:* and route step 1, Layer 0 Dependencies); `PlurinodalAlteration.exists` → "§5.4, plurinodal alteration theorem" (contract, §5.2 *Needs:* and route step 1, Layer 5 Dependencies); "SchemeAndStackFoundations:SF.2" → "§2.20" (§4.1 API).
+
+## REV-PKG-CrystallineCohomologyPartII/F03 (P3) — applied
+
+Verified at the Mathlib pin: `frobenius_verschiebung` line 43, `verschiebung_mul_frobenius` 102, `verschiebung_frobenius` 141, `map_surjective` 263, `frobeniusEquiv` 283, `char_dvd_card_solutions_of_sum_lt` 110; `#check @WittVector.Isocrystal` elaborates with `[CommRing k] [CharP k p] [PerfectRing k p]` and no `IsDomain` (the `IsDomain` at `Isocrystal.lean` line 72 is a section variable the class does not mention).
+
+Changes: "At 6b7abb3c:" → "At the pinned Mathlib:", "At a91d3aaf:" → "At the pinned Tau Ceti:", lines 44, 99, 138, 109 → 43, 102, 141, 110, "perfect characteristic-p domain" → "perfect ring of characteristic p (no domain hypothesis)".
+
+## REV-PKG-CrystallineCohomologyPartII/F04 (P3) — applied
+
+Verified: no `WV.` in the README; the nine keys occurred in References only. Locators checked in the cached texts: Gro85 line 1483 (Définition 4.1.7, printed page 50), CT03 line 5340 (Proposition 11.2.5), Del74 line 553 ((6.2.5), the inductive construction of hypercoverings), EGAIII1 line 4409 (Proposition (3.3.1)); Eke84, EkeII, Tsu03, Tsu04, BS83 are uncertified and keyed "cited by locator".
+
+Changes: keys added at the locators of §4.3 (Gro85), §4.1 statement and route step 4 (Eke84, EkeII), §2.5 route step 2 (Del74, Tsu03), §2.1 route step 2 and §2.6 route step 1 (EGAIII1), §3.4 route step 3 (Tsu04, CT03), §5.11 (BS83). Every `cited_for` in `sources.toml` rewritten as README sections (for example BBE07 `["§0.1–§0.8", "§2.1–§2.6", "§3.2–§3.7", "§6.1–§6.9"]`, Gro85 `["§4.3"]`, EGAIII1 `["§2.1", "§2.6"]`, Stacks `["§6.10"]`); nothing else in the manifest changed.
+
+## Checks
+
+- **Elaboration.** `lake env lean packages/CrystallineCohomologyPartII/Suggested.lean` from the content checkout: exit 0 in 16 s, exactly five warnings, "declaration uses `sorry`" at lines 74, 90, 102, 124, 157, nothing else. All nine `TauCeti.*` modules have their object files at the pin: `lake build --no-build` on the nine answers "All targets up-to-date (7375 jobs)" with exit 0, so no module had to be built. The file is written in the module form (`module`, `public import Mathlib` and the nine `public import TauCeti.…` lines, `@[expose] public section` before the namespace), the form of the roadmaps on main, so the build does not log the "consider adding `module`" warning that the worker records as a problem; the plain `import` form of the earlier run elaborated identically and was changed only for that warning. Under `module` the three definitions with bodies (`IsThetaDivisor`, `zeroCycleDegree`, `UniversallyCH0Trivial`) elaborate unchanged: they use only constructors and theorems the pins expose.
+- **`#check` comparison.** A scratch copy of the file (module form) with `#check @name` for all eight declarations was elaborated after the header change; each type was compared with its README statement. The file has no section `variable`s, so no binder can be lost; the relative theorem carries `[IsProper πX] [IsProper πY]`, `f ≫ πY = πX` and the bijectivity for every `i : ℕ`; `IsThetaDivisor` carries the `Over` instance it needs through a `letI` in its body; `UniversallyCH0Trivial` keeps `[IsProper π]` in its own signature; the Esnault theorem carries `Over`, `IsProjectiveOver`, `Smooth`, `GeometricallyConnected` and the triviality hypothesis. What changed against the brief's signature list: the absolute theorem is gone, five declarations are new, the two Ax–Katz types are unchanged.
+- **Dependency gate.** `tauceti-roadmap gate --depcheck … --movable`: `depcheck: 242 roadmaps, 2485 edges, 0 problem(s)`; no UPWARD, CYCLE or `moved:` line.
+- **Citation resolver.** `roadmaps resolve` on the README: "Cross-roadmap citations found nowhere: None. Lean names found nowhere: None."
+- **README–Lean agreement.** Each of the eight Lean names occurs in the README; the bare backticked names of the README that are not declared in the file are all attributed supplier or library names (`WittVector`, `ampleCohomologyAndDegree`, `moduleDescent`, …), as before; the one bare field name introduced in the contract was qualified as `AbelianVariety.toScheme`.
+- **Ownership.** `roadmaps grep` over main and the open heads: `zeroCycleDegree|UniversallyCH0Trivial|IsThetaDivisor` and "universally CH_0-trivial" match nothing; "theta divisor" matches only the genus-one and Jacobian theta divisors of ModularCurvesPartII, JacobianChallengePartII and FaltingsFinitenessAndIsogenyTheorems, which are different objects (a specific divisor on a Jacobian, not the predicate on an abelian variety). Open pull requests were checked through that index, not file by file.
+- No gate failures were listed in the brief.
+
+## Adversarial pass on the new and changed statements (`q = |K|`)
+
+| Statement | Instances | Values on each side | Result |
+| --- | --- | --- | --- |
+| `card_rationalPoints_modEq_of_cohomologyPullback_bijective` | `X = Y = Spec K`, `f = id`; `X = Y = ∅` | `H⁰`: `K → K` bijective, `1 ≡ 1`; all groups `0`, `0 ≡ 0` | holds |
+| same | `∅ → Spec K`; `Spec K′ → Spec K`, `[K′ : K] = 2` | `H⁰`: `K → 0` not injective, `0 ≢ 1`; `K → K′` not surjective, `0 ≢ 1` | hypothesis `i = 0` sharp |
+| same | `ℙ¹ → Spec K`; blowup `X̃ → X` of a surface at a rational point | bijective in every degree, `q + 1 ≡ 1`; bijective (`R^{>0}f_*O = 0`, `f_*O = O`), difference `q` | holds |
+| same | fold `ℙ¹ ⊔ ℙ¹ → ℙ¹`; ordinary `E → Spec F_p` | `H⁰`: `K → K²` not surjective, `q + 1 ≢ 0`; `H¹`: `0 → F_p` not surjective, `p + 1 − a ≢ 1` | hypotheses for `i = 0`, `i = 1` sharp |
+| same, `hf` | `f` not over `K` | `f` does not map sections of `πX` to sections of `πY` | hypothesis needed |
+| `IsThetaDivisor`, direction of the dual | `E`, `Θ = P` rational: `I = O(−P)` | `I^∨ = O(P)`, degree `+1`, ample; `h⁰ = 1 − 1 + 1 = 1` by Riemann–Roch; `|Θ(K)| = 1` | witness for the convention |
+| `IsThetaDivisor`, wrong model `I` for `I^∨` | `E`, `I = O(−P)` | `h⁰(O(−P)) = 0`, not ample | no instance; excluded by the `g = 1` Check |
+| `IsThetaDivisor`, ampleness only | `E`, `2P` vs `P + Q` | both ample of degree 2, `h⁰ = 2 ≠ 1`; counts `1` vs `2`, `1 ≢ 2 mod q` | `h⁰ = 1` needed; Check added |
+| `card_thetaDivisor_modEq`, `dim A = 0` | `A = Spec K` | only effective Cartier ideal is `(1)` (`0` is a zero divisor); `Θ = ∅`, `0 ≡ 0` | holds |
+| `card_thetaDivisor_modEq`, `g = 1` | two rational points `P`, `Q` | `1 ≡ 1` | holds |
+| `zeroCycleDegree` | `ℙ¹/F_q`: `[x]` rational, `[y]` of degree 2, `[y] − 2[x]` | `1·1 = 1`; `1·2 = 2`; `2 − 2 = 0` (unweighted sum: `−1`) | weights needed; Check added |
+| `zeroCycleDegree`, junk values | infinite support; infinite residue degree | not reached: support locally finite on quasi-compact `X_L`; closed points of finite type have finite degree | no junk |
+| `UniversallyCH0Trivial` | `ℙⁿ`, `Spec K` | `CH₀ = ℤ` by degree, kernel `0`, `[pt]` has degree `1` | holds |
+| same | `∅` | no zero-cycle at all, first clause fails | fails, as §6.10 requires; the kernel-only encoding would admit it |
+| same | genus `≥ 1` curve `C`, `L = \overline{K(C)}` | `[η_L] − [x₀]` degree `0`, non-torsion in `J(L)` | fails |
+| same | `Spec F_{q²}` over `F_q`, `L = \bar F_q` | two points `x, y`; `[x] − [y]` degree `0`; `RatEquiv = ⊥` (no points of dimension 1) | fails |
+| `card_rationalPoints_modEq_one_of_universallyCH0Trivial` | `ℙⁿ`; cubic surface | `1 + q + ⋯ + qⁿ ≡ 1`; `q² + tq + 1 ≡ 1` | holds |
+| same, negative controls | `E/F_p`; `Spec F_{q²}`; `∅` | not CH₀-trivial, `p + 1 − a ≢ 1`; not geometrically connected and not CH₀-trivial, `0 ≢ 1`; `ConnectedSpace` is nonempty (`ConnectedSpace.toNonempty`), so excluded, `0 ≢ 1` | each violates a hypothesis |
+| same, redundancy | nonempty `X` with two geometric components | `[x] − [y]` degree `0` non-torsion, so `UniversallyCH0Trivial` already forces geometric connectedness; the binder stays as in §6.14 (i) | harmless |
+| `WittVector.Isocrystal` hypothesis (F03) | `#check` at the pin | `[CommRing k] [CharP k p] [PerfectRing k p]`, no `IsDomain` | contract corrected |
+| F02 replacements | trace; alteration; Witt schemes; `ω_X` | head hypotheses: `X` smooth pure dimension `d`; dominant proper between integral excellent schemes; `p` locally nilpotent; CM of pure dimension `d` over `k` | each covers its use (§4.1 smooth `X`; §5.2 integral finite type over `Spec k`; §0.1 `F_p`-schemes; §4.1 cites §2.20 for the sheaf `ω_X = H^{−d}(f^! k)`, which §2.20 states under a Cohen–Macaulay hypothesis that normal `X` need not satisfy; see the maintainer note) |
+
+## For the maintainer
+
+- Name changes other roadmaps might cite: `card_rationalPoints_modEq_one_of_cohomology_vanishing` no longer exists (its content is the case `Y = Spec K` of `card_rationalPoints_modEq_of_cohomologyPullback_bijective`); `roadmaps grep` finds no citation of it outside this package.
+- New names: `card_rationalPoints_modEq_of_cohomologyPullback_bijective`, `IsThetaDivisor`, `card_thetaDivisor_modEq`, `zeroCycleDegree`, `UniversallyCH0Trivial`, `card_rationalPoints_modEq_one_of_universallyCH0Trivial`.
+- `Suggested.lean` now imports nine `TauCeti.AlgebraicGeometry.*` modules (listed at its head); all exist at the pinned Tau Ceti.
+- The two declared supplier gaps (`gap:qcqs-frobenius-factorization`, `gap:h-descent-formalism`) are unchanged.
+- Source issue, outside the findings: in the §4.1 API bullet the sheaf `ω_X` of SchemeAndStackFoundations §2.20 is defined there for Cohen–Macaulay `X`; §4.1 (1) applies it to normal `X`, following CR12 Proposition 4.1.4, where "canonical sheaf" of a normal variety means `H^{−d}` of the dualizing complex, which §4.1 defines directly as `W_1ω_X`. No edit was made beyond the section pointer.

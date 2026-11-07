@@ -8,7 +8,7 @@ title = "On Witt vector cohomology for singular varieties"
 year = 2005
 arxiv = "math/0510349v1"
 locator_scheme = "theorem"
-locator = "Theorem 1.1; Propositions 2.1–2.10, 3.2, 6.2–6.9; §6.5"
+locator = "Theorem 1.1; Corollaries 1.3, 1.5, 1.6; Propositions 2.1–2.10, 3.2, 6.2–6.9; §6.5"
 url = "https://arxiv.org/abs/math/0510349v1"
 fetched_from = "https://arxiv.org/pdf/math/0510349v1"
 fetched_at = "2026-10-25T14:48:27Z"
@@ -17,7 +17,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1"
-cited_for = ["WV.0–WV.6"]
+cited_for = ["§0.1–§0.8", "§2.1–§2.6", "§3.2–§3.7", "§6.1–§6.9"]
 
 [[source]]
 id = "BS17"
@@ -35,7 +35,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v3"
-cited_for = ["WV.1"]
+cited_for = ["§1.1–§1.6"]
 
 [[source]]
 id = "CR12"
@@ -53,7 +53,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1"
-cited_for = ["WV.0; WV.4–WV.6"]
+cited_for = ["§0.1–§0.8", "§2.1–§2.2", "§4.1–§4.6", "§5.1–§5.12", "§6.5", "§6.10", "§6.13"]
 
 [[source]]
 id = "CR11"
@@ -71,7 +71,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2"
-cited_for = ["WV.4"]
+cited_for = ["§4.3"]
 
 [[source]]
 id = "GNT19"
@@ -89,7 +89,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v3"
-cited_for = ["WV.0; WV.2; WV.6"]
+cited_for = ["§0.1", "§2.1–§2.2", "§6.11", "§6.14"]
 
 [[source]]
 id = "NT20"
@@ -109,7 +109,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2"
-cited_for = ["WV.0"]
+cited_for = ["§0.4"]
 
 [[source]]
 id = "ESN03"
@@ -128,7 +128,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2"
-cited_for = ["WV.6"]
+cited_for = ["§5.11", "§6.10", "§6.13", "§6.14"]
 
 [[source]]
 id = "HW23"
@@ -147,7 +147,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "Certified text: arXiv v2, Corollary 4.6. Published Corollary 4.7 is the corresponding result. Published Corollary 1.3 and pp. 19–20 are cited by locator only; they are absent from v2 and are not certified by this extraction."
-cited_for = ["Scope; WV.2; WV.5"]
+cited_for = ["Scope and ownership", "§2.2", "§3.6", "§5.5", "§6.5", "§6.11", "§6.13", "§6.14"]
 
 [[source]]
 id = "Tan18"
@@ -165,7 +165,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv:1502.01381v3, Proposition A.4, p. 30; published J. Reine Angew. Math. 744 (2018), 237–264. Locators use arXiv v3."
-cited_for = ["WV.6/rationally-chain-connected"]
+cited_for = ["§6.11"]
 
 [[source]]
 id = "dJ97"
@@ -181,7 +181,7 @@ sha256 = "caf07fbacaea01f0fc9bba14aad435d23f2fe2b847f1607baf6f2a3f874e4854"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["WV.5/quasi-resolution"]
+cited_for = ["§5.2"]
 
 [[source]]
 id = "dJ96"
@@ -197,7 +197,7 @@ sha256 = "9e4e7dab2525e9a0fb0820752434c5a168914873b6118f5a967fcccae257ffb7"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["WV.5/quasi-resolution"]
+cited_for = ["§5.2"]
 
 [[source]]
 id = "Gro85"
@@ -213,7 +213,7 @@ sha256 = "fffa536be3bcf10a24f4e8679258dc37bcab13b8ed5f77da15852033e9def27a"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["WV.4/hodge-witt-cycle-class"]
+cited_for = ["§4.3"]
 
 [[source]]
 id = "Eke84"
@@ -228,7 +228,7 @@ url = "https://doi.org/10.1007/BF02384380"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["WV.4/witt-canonical-system", "WV.4–WV.6"]
+cited_for = ["§4.1"]
 
 [[source]]
 id = "Kol96"
@@ -242,7 +242,7 @@ url = "https://doi.org/10.1007/978-3-662-03276-3"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["WV.6/rationally-chain-connected; WV.6/rcc-chow-zero-triviality"]
+cited_for = ["§6.11", "§6.12"]
 
 [[source]]
 id = "EkeII"
@@ -257,7 +257,7 @@ url = "https://doi.org/10.1007/BF02384419"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["WV.4/witt-canonical-system", "WV.4–WV.6"]
+cited_for = ["§4.1"]
 
 [[source]]
 id = "Ser58Top"
@@ -273,7 +273,7 @@ sha256 = "63516b0190e598ed8581503ef1cdf0d905457cf0322db30bf2323d1186094f25"
 licence_class = "institutional"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["WV.4–WV.6"]
+cited_for = ["§6.8"]
 
 [[source]]
 id = "CT03"
@@ -289,7 +289,7 @@ sha256 = "f332fdec43e968bf5501e2442744eac35678c0bf19515724c084580c65aed271"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["WV.4–WV.6"]
+cited_for = ["§3.4"]
 
 [[source]]
 id = "Tsu03"
@@ -304,7 +304,7 @@ url = "https://doi.org/10.1007/s00222-002-0252-9"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["WV.3; WV.6"]
+cited_for = ["§2.5"]
 
 [[source]]
 id = "Del74"
@@ -320,7 +320,7 @@ sha256 = "d78d4f46742916cd669279e7db365e4db6a43f38d2dcdec6862c6d27d07216b3"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["WV.2/simplicial-resolution"]
+cited_for = ["§2.5"]
 
 [[source]]
 id = "Ser58"
@@ -334,7 +334,7 @@ url = "https://doi.org/10.2307/2372780"
 licence_class = "none"
 status = "uncertified"
 version_note = "Uncertified publisher text; cited by locator."
-cited_for = ["WV.6/serre-bockstein-vanishing"]
+cited_for = ["§6.8"]
 
 [[source]]
 id = "Ax64"
@@ -348,7 +348,7 @@ url = "https://doi.org/10.2307/2373163"
 licence_class = "none"
 status = "uncertified"
 version_note = "Uncertified publisher text; cited by locator."
-cited_for = ["WV.6/ax-congruence-criterion"]
+cited_for = ["§6.6"]
 
 [[source]]
 id = "BS83"
@@ -362,7 +362,7 @@ url = "https://doi.org/10.2307/2374341"
 licence_class = "none"
 status = "uncertified"
 version_note = "Uncertified publisher text; cited by locator."
-cited_for = ["WV.5/bloch-srinivas-decomposition"]
+cited_for = ["§5.11"]
 
 [[source]]
 id = "Tsu04"
@@ -376,7 +376,7 @@ url = "https://doi.org/10.1515/9783110198133.2.931"
 licence_class = "none"
 status = "uncertified"
 version_note = "Uncertified publisher text; cited by locator."
-cited_for = ["WV.3/simplicial-frobenius-embedding"]
+cited_for = ["§3.4"]
 
 [[source]]
 id = "EGAIII1"
@@ -392,7 +392,7 @@ sha256 = "3ed59fe81da07f1ab685ddc54a93128a364419d4ddafbc7affcd8abc8b401605"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["WV.2/witt-ideal-vanishing", "WV.2/witt-proper-hypercover-descent"]
+cited_for = ["§2.1", "§2.6"]
 
 [[source]]
 id = "Stacks"
@@ -400,7 +400,7 @@ authors = "The Stacks project authors"
 title = "The Stacks project"
 year = 2026
 locator_scheme = "tag"
-locator = "0FH6 (Lemma 45.8.2); 02RH (Lemma 42.15.2)"
+locator = "0FH6 (Lemma 45.8.2, Weil cohomology chapter); 02RH (Lemma 42.15.2, Chow homology chapter, https://stacks.math.columbia.edu/tag/02RH)"
 url = "https://stacks.math.columbia.edu/tag/0FH6"
 fetched_from = "https://stacks.math.columbia.edu/download/weil.pdf#nameddest=0FH6"
 fetched_at = "2026-10-26T03:16:10Z"
@@ -408,4 +408,4 @@ sha256 = "01f8d89f2c09649af2e0355b4798a71ee8c31ff97f8f2fa13a5b907e0db7caa2"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
-cited_for = ["WV.6.10"]
+cited_for = ["§6.10"]
