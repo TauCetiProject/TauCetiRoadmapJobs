@@ -2354,31 +2354,106 @@
   ],
   "gaps": [
     {
-      "id": "G1",
-      "title": "Coherent ppav realization and the p=3 Moore construction",
-      "detail": "EH.6/G7 remains open. Verify the Γ/product/coefficient-compatible realization of the graded rigidified ppav atlas, including Moore smashing before completion at p=3, and strictification or a genuine homotopy-coherent spectral action. Appendix A.5 identifies the homotopy groups but does not by itself supply all point-set choices in the current atlas framework. R22 and H.5 R21 must be integrated before the action is a closed proof plan.",
-      "neededBy": [
-        "ArithmeticKTheoryPartII:AK2.4/spectrum-action",
-        "ArithmeticKTheoryPartII:AK2.6/finite-action",
-        "ArithmeticKTheoryPartII:AK2.7/padic-universality"
-      ]
+      "slug": "duality-transfer",
+      "needs": "Compare integral dualization with finite-projective transfer through the trace-dual inverse different and preserve the Bott descent edges and coefficient maps at every odd prime power.",
+      "supplier": "SchemeKTheoryOperations",
+      "section": "§6.11"
     },
     {
-      "id": "G2",
-      "title": "Hurewicz endpoint 2p−2",
-      "detail": "The source’s Postnikov H-space splitting can fail at the printed endpoint because of a P¹ k-invariant. Prove that the endpoint class survives the integral indecomposable quotient by treating that extension directly, or supply another primary proof. The planned theorem stops at 2p−3 and the even application degrees are at most 2p−4, so the Bernoulli result does not depend on this unresolved endpoint.",
-      "neededBy": [
-        "ArithmeticKTheoryPartII:AK2.8/low-hurewicz",
-        "ArithmeticKTheoryPartII:AK2.8/stable-symplectic-homology"
-      ]
+      "slug": "topological-symplectic-hodge",
+      "needs": "Provide the ku/KU realization of the unitary model, tangent-normalized primitive Chern-character pairing with bott=−β_Top and bott^m=(−1)^mβ_Top^m, integral lifts for m<p and coefficient-Bockstein compatibility.",
+      "supplier": "GeneralizedCohomology",
+      "section": "G5.4–G5.6"
     },
     {
-      "id": "G3",
-      "title": "Characteristic-number prime boundary",
-      "detail": "The source proof does not justify p=max_j n_j: the denominator n_j! of ch_{n_j} can have a factor p, so the integral cap-product step fails. Establish a different integral characteristic-class argument for that boundary or retain the strict inequality permanently. The planned divisibility theorem assumes p>max_j n_j.",
-      "neededBy": [
-        "ArithmeticKTheoryPartII:AK2.8/characteristic-divisibility"
-      ]
+      "slug": "skew-integer-splitting",
+      "needs": "Specialize the GW–L fiber sequence to integral skew forms and prove the odd-primary positive-factor splitting with unscaled hyperbolic map H, c_B H=1+ψ⁻¹, and retraction (1/2)c_B.",
+      "supplier": "GeometryOfNumbersAndQuadraticArithmetic",
+      "section": "§§6.8a, 6.10a–6.11"
+    },
+    {
+      "slug": "compatible-v1-towers",
+      "needs": "Provide compatible odd Moore v₁ self-maps and reduction maps after common iteration, telescope independence and their p-completed K(1)-local comparison, including q=3 without an associative Moore product.",
+      "supplier": "ChromaticHomotopyTheory",
+      "section": "CH.2–CH.3"
+    },
+    {
+      "slug": "cyclotomic-p-class-fields",
+      "needs": "Construct H_q as the fixed field of the prime-to-p subgroup in the supplied cyclotomic Hilbert field, compatibly along the cyclotomic tower, and provide the local-p-split class-field comparison.",
+      "supplier": "ClassFieldTheory",
+      "section": "Layers 11–13"
+    },
+    {
+      "slug": "ppav-embedding-atlases",
+      "needs": "Provide the projective-embedding and Hilbert-polynomial pieces of the principally polarized stack atlas, their smooth descent and coherent product/selfadjoint-factor refinements used by the graded Čech model.",
+      "supplier": "PELModuli",
+      "section": "§§M2.4, M6.3"
+    },
+    {
+      "slug": "cm-arbitrary-automorphism",
+      "needs": "Provide the arbitrary-automorphism polarized reciprocity dictionary on isometries with conjugation-paired embedding lifts and possibly negative translating signatures, natural for positive-line Serre tensor.",
+      "supplier": "ComplexMultiplicationAndExplicitReciprocity",
+      "section": "§§1.3, 2.1–2.2"
+    },
+    {
+      "slug": "relative-homology-edges",
+      "needs": "Provide relative chain quotients and long exact sequences and the finite and compact relative homological Hochschild–Serre edges for the arithmetic pairs used here.",
+      "supplier": "ArithmeticGaloisDuality",
+      "section": "R02.2"
+    },
+    {
+      "slug": "low-postnikov-finite-type",
+      "needs": "Provide the p-local H-space Postnikov splitting for positive integral finite-type spectra through degree 2p−3 and the free/cyclic Eilenberg–Mac Lane homology and Bockstein calculations in that range.",
+      "supplier": "StableHomotopyKTheory",
+      "section": "§§3.20, 3.34–3.37"
+    },
+    {
+      "slug": "compact-relative-cocycles",
+      "needs": "Provide completed relative bar homology for finite-free coefficients and finite-type compact targets, with coefficient coinvariants and exact finite inverse limits.",
+      "supplier": "ArithmeticGaloisDuality",
+      "section": "R02.1 and R02.2"
+    },
+    {
+      "slug": "bernoulli-weight-nonvanishing",
+      "needs": "For every odd 1≤m<p identify nonvanishing of H²_et(ℤ[1/p],ℤ_p(m+1)) with p dividing the numerator of B_(m+1), including twist, duality, control and Euler-factor conventions.",
+      "supplier": "IntegralIwasawaTheory",
+      "section": "§12.3"
+    },
+    {
+      "slug": "sphere-unit-finite-field",
+      "needs": "For odd p and k≥1, provide surjectivity of π^s_(4k−1)(S;ℤ_p)→K_(4k−1)(𝔽_ℓ;ℤ_p) when the prime ℓ topologically generates ℤ_p×.",
+      "supplier": "KTheoryFiniteLocalFields",
+      "section": "§§1.1–1.2"
+    },
+    {
+      "slug": "pontryagin-bockstein-cap",
+      "needs": "Provide finite-type integral ℤ_p and finite-coefficient Pontryagin/Künneth products, cap and fundamental classes with natural coefficient Bocksteins and mixed Tor representative β_d(xy).",
+      "supplier": "AlgebraicTopology",
+      "section": "Stage 6"
+    },
+    {
+      "slug": "graded-moore-realization",
+      "needs": "Provide a homotopy-coherent realization of the graded ppav Γ-diagrams preserving products, finite Moore smashing before completion at p=3, automorphisms, coefficient reductions and p-adic homotopy limits.",
+      "supplier": "EtaleHomotopyTypes",
+      "section": "EH.5, EH.6 and G7"
+    },
+    {
+      "slug": "lisse-integral-extension",
+      "needs": "Provide the equivalence between finite-type compact continuous ℤ_p-representations of Gal(ℚ(p)/ℚ) and lisse integral coefficient sheaves on Spec ℤ[1/p], compatible with kernels and restriction to Spec ℚ_p.",
+      "supplier": "EtaleCohomologyFoundations",
+      "section": "F.4"
+    },
+    {
+      "slug": "full-cyclotomic-h2-descent",
+      "needs": "Extend §6.11’s top-degree corestriction descent to the full cover K_q/ℚ at every integer twist t, giving H²_et(O′_q,μ_q^(⊗t))_(Gal(K_q/ℚ))≅H²_et(ℤ[1/p],μ_q^(⊗t)) by corestriction.",
+      "supplier": "ArithmeticKTheory",
+      "section": "§6.11"
+    },
+    {
+      "slug": "classical-symplectic-plus",
+      "needs": "Identify the group completion of finite free unimodular alternating ℤ-forms under orthogonal sum with a space having component group ℤ by half-rank and identity component BSp∞(ℤ)⁺ at the stable perfect commutator, naturally for the forgetful and hyperbolic maps.",
+      "supplier": "StableHomotopyKTheory",
+      "section": "§4.27"
     }
   ],
   "requests": [
