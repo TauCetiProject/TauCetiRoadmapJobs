@@ -1,0 +1,2234 @@
+{
+ "roadmap": "ComplexHessianEquations",
+ "title": "Complex Hessian equations",
+ "parent": null,
+ "summary": "Spectral functions over RCLike 𝕜 (Lewis derivative, Spruck concavity), Gårding cones and admissible pairs with the structural condition, the equation f(λ[χ + i∂∂̄φ]) = c e^F on compact Hermitian manifolds with uniqueness by the comparison principle, Yau's theorem on compact Kähler manifolds (continuity method with Calabi's third-order estimate), the uniform exponential integrability of quasi-plurisubharmonic functions, and the Guo–Phong–Tong L^∞ estimates on fixed and degenerating Kähler backgrounds.",
+ "baseline": {
+  "mathlib": "f6090c7095e1e56b3464c1daba5f24631f1290d2",
+  "tauceti": "358314d4ab97483df4fc4cb8adcc02e74a8d9f5a"
+ },
+ "layers": [
+  {
+   "key": "1",
+   "title": "Eigenvalues and spectral functions",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "definition",
+     "name": "relEigenvalues",
+     "statement": "For a Hermitian form a on a finite-dimensional inner product space E over RCLike 𝕜 of dimension n, the representing self-adjoint operator A_a with a(u,v) = ⟪u, A_a v⟫ and the decreasingly sorted eigenvalue vector λ[a] = λ(A_a) ∈ ℝⁿ; a ≤ b means A_a ≤ A_b in the Loewner order. Monotonicity and Lipschitz continuity of λ are consumed from OperatorTheory/PolarDecomposition PD-A52 and PD-A53.",
+     "hypotheses": [
+      "E finite-dimensional inner product space over RCLike 𝕜",
+      "finrank 𝕜 E = n",
+      "a Hermitian sesquilinear form"
+     ],
+     "locator": {
+      "source": "szekelyhidi2018",
+      "where": "line 17–24; gpt2023 line 62–66"
+     },
+     "prerequisites": [
+      "mathlib:LinearMap.IsSymmetric.eigenvalues",
+      "mathlib:LinearMap.IsSymmetric.eigenvectorBasis",
+      "roadmap:OperatorTheory/PolarDecomposition PD-A52",
+      "roadmap:OperatorTheory/PolarDecomposition PD-A53"
+     ],
+     "api": [
+      {
+       "name": "relEigenvalues_inner",
+       "role": "evaluation",
+       "statement": "λ[⟪·,·⟫] = e"
+      },
+      {
+       "name": "relEigenvalues_add_smul_inner",
+       "role": "structure",
+       "statement": "λ[a + t⟪·,·⟫] = λ[a] + t·e for t ∈ ℝ"
+      },
+      {
+       "name": "relEigenvalues_smul",
+       "role": "structure",
+       "statement": "λ[s·a] = s·λ[a] for s ≥ 0"
+      },
+      {
+       "name": "sum_relEigenvalues",
+       "role": "compatibility",
+       "statement": "Σ λ_i[a] = tr A_a and ∏ λ_i[a] = det A_a"
+      },
+      {
+       "name": "det_one_add_smul_eq_sum_esymm",
+       "role": "compatibility",
+       "statement": "det(Id + t·A_a) = Σ_k σ_k(λ[a]) t^k"
+      },
+      {
+       "name": "relEigenvalues_unitary",
+       "role": "invariance",
+       "statement": "λ[a(U·,U·)] = λ[a] for unitary U"
+      },
+      {
+       "name": "relEigenvalues_eq_spectrum_inv_mul",
+       "role": "compatibility",
+       "statement": "in a basis with Gram matrix g, λ[a] is the spectrum of g⁻¹a"
+      },
+      {
+       "name": "relEigenvalues_mono",
+       "role": "structure",
+       "statement": "a ≤ b gives λ_i[a] ≤ λ_i[b] for every i (PD-A52)"
+      },
+      {
+       "name": "relEigenvalues_lipschitz",
+       "role": "structure",
+       "statement": "|λ_i[a] − λ_i[b]| ≤ ‖A_a − A_b‖ for every i (PD-A53); a ↦ λ[a] is continuous"
+      }
+     ],
+     "tests": [
+      {
+       "name": "relEigenvalues_example_gram",
+       "kind": "computation",
+       "statement": "on ℂ² with Gram diag(2,1) and a = diag(2,3), λ[a] = (3,1); with the Euclidean inner product it would be (3,2)"
+      },
+      {
+       "name": "relEigenvalues_zero_neg",
+       "kind": "degenerate",
+       "statement": "λ[0] = 0 and λ[−a] = (−1,−3) when λ[a] = (3,1)"
+      },
+      {
+       "name": "relEigenvalues_nonHermitian",
+       "kind": "non-example",
+       "statement": "a(u,v) = ū₁v₂ − ū₂v₁ has representing matrix [[0,1],[−1,0]] with eigenvalues ±i, excluded by the Hermitian hypothesis"
+      },
+      {
+       "name": "det_one_add_smul_diag",
+       "kind": "compatibility",
+       "statement": "det(Id + t·diag(1,2,3)) = 1 + 6t + 11t² + 6t³, matching σ = (6,11,6)"
+      },
+      {
+       "name": "relEigenvalues_mono_sorted_pairing",
+       "kind": "non-example",
+       "statement": "diag(3,0) ≤ diag(3,1): sorted vectors compare, (3,0) ≤ (3,1), but the cross pairing λ_1(diag(3,0)) = 3 > λ_2(diag(3,1)) = 1"
+      },
+      {
+       "name": "relEigenvalues_not_additive",
+       "kind": "non-example",
+       "statement": "λ(diag(1,0) + diag(0,1)) = (1,1) ≠ (2,0) = λ(diag(1,0)) + λ(diag(0,1))"
+      },
+      {
+       "name": "relEigenvalues_lipschitz_sharp",
+       "kind": "computation",
+       "statement": "λ([[0,ε],[ε,0]]) = (ε, −ε) with operator norm ε: the Lipschitz constant 1 is attained"
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "theorem",
+     "name": "kyFan_differentiable",
+     "statement": "For T self-adjoint and 1 ≤ m ≤ n, the Ky Fan sum κ_m(T) = Σ_{i≤m} λ_i(T) is convex and subadditive; it equals max Re tr(PT) over rank-m orthogonal projections (MAJ-A27 evaluated on orthonormal bases of ranges); if λ_m(T) > λ_{m+1}(T) then the spectral projection P_T onto the top m eigenvectors is the unique maximizer and κ_m is differentiable at T with gradient P_T. The two-sided trace inequality Σ γ_i μ_i ≤ Re tr(FB) ≤ Σ γ_i μ_{n+1−i} (γ decreasing eigenvalues of F, μ increasing eigenvalues of B) is recorded as PA-B32 applied to (F,B) and (F,−B).",
+     "hypotheses": [
+      "F, B, T self-adjoint on a finite-dimensional inner product space over RCLike 𝕜",
+      "1 ≤ m ≤ n",
+      "spectral gap λ_m(T) > λ_{m+1}(T) for the uniqueness and differentiability clauses (vacuous for m = n)"
+     ],
+     "locator": {
+      "source": "lewis1996",
+      "where": "line 145–148 and Theorem 2.1, line 150–158; spruck2005 Lemma 1.5, line 11089–11091 for the lower trace bound"
+     },
+     "prerequisites": [
+      "roadmap:OperatorTheory/PrincipalAngles PA-B32",
+      "roadmap:OperatorTheory/Majorization MAJ-A27",
+      "roadmap:OperatorTheory/PolarDecomposition PD-A53",
+      "mathlib:LinearMap.IsSymmetric.eigenvectorBasis"
+     ],
+     "tests": [
+      {
+       "name": "vonNeumann_two_sided_example",
+       "kind": "computation",
+       "statement": "F = diag(2,1), B = diag(0,3): tr(FB) = 3 equals the lower bound 3; B' = diag(3,0) gives 6, the upper bound; the lower bound is PA-B32 at −B: −3 ≤ 2·0 + 1·(−3)"
+      },
+      {
+       "name": "kyFan_no_gap",
+       "kind": "non-example",
+       "statement": "T = diag(3,1,1), m = 2: κ_2(T + t diag(0,1,−1)) = 4 + |t| is not differentiable at 0"
+      },
+      {
+       "name": "kyFan_subadditive_strict",
+       "kind": "computation",
+       "statement": "κ_1(diag(1,0) + diag(0,1)) = 1 < 2"
+      }
+     ]
+    },
+    {
+     "id": "1.3.1",
+     "kind": "definition",
+     "name": "spectralFunction",
+     "statement": "For an open permutation-invariant Ω ⊆ ℝⁿ and a symmetric f : Ω → ℝ, the spectral domain Sym_Ω(E) = {T self-adjoint : λ(T) ∈ Ω}, open in the real space of self-adjoint operators because λ is continuous (PD-A53), and the spectral function F_f(T) = f(λ(T)) on it.",
+     "hypotheses": [
+      "Ω ⊆ ℝⁿ open and invariant under permutations",
+      "f symmetric"
+     ],
+     "locator": {
+      "source": "lewis1996",
+      "where": "line 61–72"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "roadmap:OperatorTheory/PolarDecomposition PD-A53"
+     ],
+     "api": [
+      {
+       "name": "spectralFunction_unitary",
+       "role": "invariance",
+       "statement": "F_f(U T U*) = F_f(T)"
+      },
+      {
+       "name": "spectralFunction_diag",
+       "role": "evaluation",
+       "statement": "F_f(diag μ) = f(μ) for μ ∈ Ω"
+      },
+      {
+       "name": "spectralFunction_trace",
+       "role": "compatibility",
+       "statement": "for f = σ_1, F_f = trace"
+      },
+      {
+       "name": "spectralFunction_det",
+       "role": "compatibility",
+       "statement": "for f = σ_n, F_f = det (Mathlib LinearMap.IsSymmetric.det_eq_prod_eigenvalues)"
+      },
+      {
+       "name": "isOpen_spectralDomain",
+       "role": "structure",
+       "statement": "Sym_Ω(E) is open"
+      },
+      {
+       "name": "spectralFunction_shift",
+       "role": "structure",
+       "statement": "if Ω + ℝe = Ω and g(μ) = f(μ + te) then F_g(T) = F_f(T + t Id)"
+      }
+     ],
+     "tests": [
+      {
+       "name": "spectralFunction_sq",
+       "kind": "computation",
+       "statement": "f = μ_1² + μ_2² gives F_f(T) = tr(T²)"
+      },
+      {
+       "name": "spectralFunction_max",
+       "kind": "degenerate",
+       "statement": "f = max gives F_f = λ_1, continuous but not differentiable at Id"
+      },
+      {
+       "name": "spectralFunction_det_example",
+       "kind": "compatibility",
+       "statement": "f = σ_2 at T = [[2,1],[1,2]] gives det = 3 = 3·1"
+      },
+      {
+       "name": "spectralFunction_any_order",
+       "kind": "characterisation",
+       "statement": "F_f(T) = f(μ) for every ordering μ of the eigenvalues, by symmetry"
+      }
+     ]
+    },
+    {
+     "id": "1.3.2",
+     "kind": "theorem",
+     "name": "hasFDerivAt_spectralFunction_iff",
+     "statement": "F_f is differentiable at T iff f is differentiable at λ(T); then ∇F_f(T) = Σ_i ∂_i f(λ(T)) e_i ⊗ e_i* for any orthonormal eigenbasis (e_i) of T ordered by λ(T). Moreover F_f is C¹ on Sym_Ω(E) iff f is C¹ on Ω. The case 𝕜 = ℝ is the real symmetric statement.",
+     "hypotheses": [
+      "Ω open symmetric",
+      "f symmetric"
+     ],
+     "locator": {
+      "source": "lewis1996",
+      "where": "Theorem 1.1, line 77–81; line 144; line 468–469"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:1.3.1",
+      "roadmap:OperatorTheory/PolarDecomposition PD-A53",
+      "mathlib:HasFDerivAt",
+      "mathlib:ContDiffOn"
+     ],
+     "tests": [
+      {
+       "name": "grad_det_example",
+       "kind": "computation",
+       "statement": "f = σ_2, T = [[2,1],[1,2]]: ∇F = [[2,−1],[−1,2]], not diag(1,3)"
+      },
+      {
+       "name": "grad_trace",
+       "kind": "degenerate",
+       "statement": "f = σ_1: ∇F = Id"
+      },
+      {
+       "name": "max_not_differentiable",
+       "kind": "non-example",
+       "statement": "f = max at (1,1): λ_1(Id + t diag(1,0)) = 1 + max(t,0)"
+      }
+     ]
+    },
+    {
+     "id": "1.4",
+     "kind": "theorem",
+     "name": "spectralFunction_concave_elliptic",
+     "statement": "For an open convex symmetric Γ and a symmetric C¹ f on Γ: Sym_Γ(E) is convex; if f is concave then F_f is concave on Sym_Γ(E); if ∂_i f > 0 on Γ then ∇F_f(T) is positive definite; if Γ + Γ_n ⊆ Γ, S ∈ Sym_Γ(E) and S ≤ T then T ∈ Sym_Γ(E), and F_f(S) ≤ F_f(T) when ∂_i f ≥ 0 on Γ, with F_f(S) < F_f(T) unless S = T when ∂_i f > 0 on Γ; the same for vectors μ ≤ ν componentwise.",
+     "hypotheses": [
+      "Γ open, convex, permutation-invariant",
+      "f : Γ → ℝ symmetric and C¹",
+      "∂_i f ≥ 0 on Γ for the monotonicity inequality; ∂_i f > 0 on Γ for its strictness clause"
+     ],
+     "locator": {
+      "source": "spruck2005",
+      "where": "Theorem 1.4, line 11066–11100"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:1.3.2",
+      "roadmap:OperatorTheory/PolarDecomposition PD-A52",
+      "roadmap:OperatorTheory/PrincipalAngles PA-B32",
+      "mathlib:ConcaveOn"
+     ],
+     "tests": [
+      {
+       "name": "det_root_concave",
+       "kind": "computation",
+       "statement": "det^{1/2}(diag(4,1)) = det^{1/2}(diag(1,4)) = 2 and det^{1/2} of the midpoint is 5/2"
+      },
+      {
+       "name": "nonconvex_cone",
+       "kind": "non-example",
+       "statement": "Γ = Γ_2 ∪ {μ1 > 0, −μ1/2 < μ2 < −μ1/3} ∪ mirror: diag(1,−0.4), diag(1,0.1) ∈ Sym_Γ but the midpoint diag(1,−0.15) is not"
+      },
+      {
+       "name": "det_not_concave",
+       "kind": "non-example",
+       "statement": "t ↦ det(t Id_2) = t² is convex"
+      },
+      {
+       "name": "monotone_needs_ellipticity",
+       "kind": "non-example",
+       "statement": "Γ = Γ_1 ⊂ ℝ², f = −σ_1, S = diag(1,0) ≤ T = diag(2,0): F_f(S) = −1 > −2 = F_f(T); and f ≡ 0 gives F_f(S) = F_f(T) with S ≠ T, so strictness needs ∂_i f > 0"
+      },
+      {
+       "name": "gradient_ordering",
+       "kind": "computation",
+       "statement": "f = σ_2^{1/2} at μ = (4,1): ∂_1 f = 1/4 ≤ ∂_2 f = 1, the ordering used in the concavity route"
+      }
+     ]
+    },
+    {
+     "id": "1.5",
+     "kind": "theorem",
+     "name": "det_grad_euler_traceAMGM",
+     "statement": "det ∇F_f(T) = ∏_i ∂_i f(λ(T)); if f is positively homogeneous of degree one then Re tr(∇F_f(T) T) = F_f(T); for positive definite A, B: Re tr(AB) ≥ n (det A det B)^{1/n} with equality iff B = cA⁻¹.",
+     "hypotheses": [
+      "f C¹ symmetric on an open symmetric cone",
+      "A, B positive definite"
+     ],
+     "locator": {
+      "source": "gpt2023",
+      "where": "line 241–255"
+     },
+     "prerequisites": [
+      "target:1.3.2",
+      "mathlib:Real.geom_mean_le_arith_mean_weighted",
+      "mathlib:LinearMap.IsSymmetric.det_eq_prod_eigenvalues"
+     ],
+     "tests": [
+      {
+       "name": "euler_MA",
+       "kind": "computation",
+       "statement": "f = σ_2^{1/2}, T = diag(1,4): det ∇F = 1/4 and tr(∇F T) = 2 = F(T)"
+      },
+      {
+       "name": "amgm_equality",
+       "kind": "degenerate",
+       "statement": "A = diag(1,4), B = A⁻¹: 2 = 2"
+      },
+      {
+       "name": "euler_degree_two",
+       "kind": "non-example",
+       "statement": "f = σ_2 at diag(1,4): tr(∇F T) = 8 = 2 F(T)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "Gårding cones and admissible pairs",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "theorem",
+     "name": "newton_maclaurin",
+     "statement": "Identities σ_k = λ_i σ_{k−1;i} + σ_{k;i}, ∂σ_k/∂λ_i = σ_{k−1;i}, Σ_i σ_{k;i} = (n−k)σ_k, Σ_i λ_i σ_{k−1;i} = kσ_k, σ_k(λ + te) = Σ_j binom(n−j,k−j) σ_j(λ) t^{k−j}; Newton S_{k−1}S_{k+1} ≤ S_k² on ℝⁿ with equality on Γ_n only for equal entries; Maclaurin S_k^{1/k} ≥ S_l^{1/l} on Γ_l for 1 ≤ k ≤ l; generalized Newton–Maclaurin.",
+     "hypotheses": [
+      "λ ∈ ℝⁿ",
+      "λ ∈ Γ_l for Maclaurin",
+      "1 ≤ k ≤ n−1 for Newton"
+     ],
+     "locator": {
+      "source": "spruck2005",
+      "where": "Proposition 2.7, Corollary 2.8, Lemma 2.10, line 11257–11293; dinew-kolodziej2014 line 152–159"
+     },
+     "prerequisites": [
+      "mathlib:MvPolynomial.esymm",
+      "mathlib:Polynomial.card_roots_le_derivative"
+     ],
+     "tests": [
+      {
+       "name": "newton_123",
+       "kind": "computation",
+       "statement": "λ = (1,2,3): S = (2, 11/3, 6), S_1 S_3 = 12 ≤ 121/9"
+      },
+      {
+       "name": "newton_equality_off_cone",
+       "kind": "non-example",
+       "statement": "λ = (1,0,0): S_1 S_3 = 0 = S_2² with unequal entries"
+      },
+      {
+       "name": "maclaurin_off_cone",
+       "kind": "non-example",
+       "statement": "λ = −e: S_1 = −1 < S_2^{1/2} = 1"
+      },
+      {
+       "name": "shift_expansion",
+       "kind": "computation",
+       "statement": "n = 3, k = 2, λ = e, t = 1: both sides 12"
+      }
+     ]
+    },
+    {
+     "id": "2.2.1",
+     "kind": "definition",
+     "name": "IsHyperbolic",
+     "statement": "A homogeneous real polynomial p of degree m on ℝ^N is hyperbolic in the direction a if p(a) > 0 and t ↦ p(x + ta) has only real roots for every x; its Gårding cone is Γ(p,a) = {x : p(x + ta) ≠ 0 for all t ≥ 0}.",
+     "hypotheses": [
+      "p homogeneous of degree m"
+     ],
+     "locator": {
+      "source": "spruck2005",
+      "where": "Definition 2.1, line 11182–11185; Theorem 2.2 proof, line 11189–11195"
+     },
+     "prerequisites": [
+      "mathlib:Polynomial.card_roots_le_derivative"
+     ],
+     "api": [
+      {
+       "name": "isHyperbolic_derivative",
+       "role": "structure",
+       "statement": "D_a p is hyperbolic in a and Γ(p,a) ⊆ Γ(D_a p, a)"
+      },
+      {
+       "name": "gardingCone_eq_component",
+       "role": "characterisation",
+       "statement": "Γ(p,a) is the connected component of {p ≠ 0} containing a"
+      },
+      {
+       "name": "isHyperbolic_prod",
+       "role": "constructor",
+       "statement": "∏_i (x_i) is hyperbolic in e with cone Γ_n"
+      },
+      {
+       "name": "isHyperbolic_sigma",
+       "role": "constructor",
+       "statement": "σ_k is hyperbolic in e"
+      }
+     ],
+     "tests": [
+      {
+       "name": "prod_hyperbolic",
+       "kind": "computation",
+       "statement": "σ_n(λ + te) = ∏(λ_i + t) has the real roots −λ_i"
+      },
+      {
+       "name": "sum_squares_not_hyperbolic",
+       "kind": "non-example",
+       "statement": "p = x_1² + x_2² on ℝ²: p(x + t a) with x ⟂ a has no real root"
+      },
+      {
+       "name": "linear_hyperbolic",
+       "kind": "degenerate",
+       "statement": "p = σ_1 is hyperbolic in e with cone the half-space Γ_1"
+      }
+     ]
+    },
+    {
+     "id": "2.2.2",
+     "kind": "definition",
+     "name": "hessianCone",
+     "statement": "Γ_k = {λ ∈ ℝⁿ : σ_1(λ) > 0, …, σ_k(λ) > 0} for 1 ≤ k ≤ n.",
+     "hypotheses": [
+      "1 ≤ k ≤ n"
+     ],
+     "locator": {
+      "source": "guo-phong2024",
+      "where": "line 76–80; dinew-kolodziej2014 line 139–140"
+     },
+     "prerequisites": [
+      "mathlib:MvPolynomial.esymm"
+     ],
+     "api": [
+      {
+       "name": "hessianCone_eq_gardingCone",
+       "role": "characterisation",
+       "statement": "Γ_k = Γ(σ_k, e)"
+      },
+      {
+       "name": "convex_hessianCone",
+       "role": "structure",
+       "statement": "Γ_k is an open convex permutation-invariant cone"
+      },
+      {
+       "name": "hessianCone_antitone",
+       "role": "structure",
+       "statement": "Γ_n ⊆ Γ_k ⊆ Γ_{k−1} ⊆ Γ_1"
+      },
+      {
+       "name": "hessianCone_add_posOrthant",
+       "role": "structure",
+       "statement": "Γ_k + Γ_n ⊆ Γ_k"
+      },
+      {
+       "name": "sigma_pos_of_mem_hessianCone",
+       "role": "evaluation",
+       "statement": "λ ∈ Γ_k ⇒ σ_{k−1;i}(λ) > 0 for every i"
+      }
+     ],
+     "tests": [
+      {
+       "name": "mem_Gamma2_not_Gamma3",
+       "kind": "computation",
+       "statement": "(3,3,−1): σ = (5,3,−9), in Γ_2 \\ Γ_3"
+      },
+      {
+       "name": "neg_e_not_Gamma2",
+       "kind": "non-example",
+       "statement": "σ_2(−e) = 3 > 0 but −e ∉ Γ_2; {σ_2 > 0} is not convex"
+      },
+      {
+       "name": "Gamma_n_two",
+       "kind": "degenerate",
+       "statement": "n = 2: Γ_2 is the quadrant and (1,−1/2) ∈ Γ_1 \\ Γ_2"
+      }
+     ]
+    },
+    {
+     "id": "2.2.3",
+     "kind": "theorem",
+     "name": "garding",
+     "statement": "Γ(p,a) is an open convex cone, p is hyperbolic in every b ∈ Γ(p,a) with the same cone, p^{1/m} is concave on Γ(p,a), and D_b p > 0 on Γ(p,a) for b ∈ Γ(p,a). For symmetric p hyperbolic in e the cone contains Γ_n and lies in Γ_1. Hence Γ_k is convex and σ_k^{1/k} is concave on Γ_k with ∂_i σ_k > 0; on self-adjoint operators T ↦ σ_k(λ(T)) is hyperbolic in Id with cone Sym_{Γ_k}.",
+     "hypotheses": [
+      "p hyperbolic in a"
+     ],
+     "locator": {
+      "source": "spruck2005",
+      "where": "Theorem 2.2, Proposition 2.3, Corollary 2.4, line 11186–11235"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.2.1",
+      "target:2.2.2",
+      "target:1.4"
+     ]
+    },
+    {
+     "id": "2.3",
+     "kind": "theorem",
+     "name": "quotient_concave_and_tangent",
+     "statement": "For 0 ≤ l < k ≤ n, (σ_k/σ_l)^{1/(k−l)} is concave on Γ_k with positive partials; for g concave and positively 1-homogeneous on an open convex cone, g(μ) ≤ Σ μ_i ∂_i g(λ); in particular Σ μ_i σ_{k−1;i}(λ) ≥ k σ_k(μ)^{1/k} σ_k(λ)^{(k−1)/k} for λ, μ ∈ Γ_k.",
+     "hypotheses": [
+      "0 ≤ l < k ≤ n",
+      "λ, μ in the cone"
+     ],
+     "locator": {
+      "source": "spruck2005",
+      "where": "Theorems 2.11 and 2.16, Lemma 2.12, Proposition 2.15, line 11295–11365; dinew-kolodziej2014 line 165–172"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.2.3"
+     ],
+     "tests": [
+      {
+       "name": "quotient_concave_example",
+       "kind": "computation",
+       "statement": "λ1λ2/(λ1+λ2): 0.8 at (4,1),(1,4) and 1.25 at the midpoint"
+      },
+      {
+       "name": "sigma2_not_concave",
+       "kind": "non-example",
+       "statement": "σ_2(te) = t² on ℝ²"
+      },
+      {
+       "name": "tangent_example",
+       "kind": "computation",
+       "statement": "g = σ_2^{1/2}, λ = (1,4), μ = (4,1): 2 ≤ 4.25"
+      }
+     ]
+    },
+    {
+     "id": "2.4.1",
+     "kind": "definition",
+     "name": "IsAdmissibleCone",
+     "statement": "An open subset Γ ⊆ ℝⁿ invariant under permutations and positive dilations with Γ_n ⊆ Γ ⊆ Γ_1.",
+     "hypotheses": [],
+     "locator": {
+      "source": "guo-phong2024",
+      "where": "line 76–80; gpt2023 line 71–73"
+     },
+     "prerequisites": [
+      "target:2.2.2"
+     ],
+     "api": [
+      {
+       "name": "isAdmissibleCone_hessianCone",
+       "role": "constructor",
+       "statement": "each Γ_k is an admissible cone"
+      },
+      {
+       "name": "isAdmissibleCone_inter",
+       "role": "constructor",
+       "statement": "intersections of admissible cones are admissible"
+      },
+      {
+       "name": "sum_pos_of_mem",
+       "role": "evaluation",
+       "statement": "λ ∈ Γ ⇒ σ_1(λ) > 0"
+      }
+     ],
+     "tests": [
+      {
+       "name": "Gamma1_admissible",
+       "kind": "degenerate",
+       "statement": "Γ_1 itself is admissible"
+      },
+      {
+       "name": "quadrant_shift_not_cone",
+       "kind": "non-example",
+       "statement": "{λ : λ_i > −1} is not a cone"
+      },
+      {
+       "name": "nonconvex_admissible",
+       "kind": "characterisation",
+       "statement": "the non-convex cone of 1.5 is admissible, so convexity is a separate hypothesis"
+      }
+     ]
+    },
+    {
+     "id": "2.4.2",
+     "kind": "definition",
+     "name": "AdmissiblePair",
+     "statement": "An admissible pair (f, Γ): an admissible cone Γ and a C¹ function f : Γ → ℝ that is symmetric, positively homogeneous of degree one and elliptic (∂_j f > 0 on Γ). Concave admissible pair: in addition Γ convex and f concave.",
+     "hypotheses": [
+      "Γ admissible cone"
+     ],
+     "locator": {
+      "source": "guo-phong2024",
+      "where": "line 83–84; gpt2023 line 73–76; szekelyhidi2018 line 29–31"
+     },
+     "prerequisites": [
+      "target:2.4.1",
+      "target:1.3.1"
+     ],
+     "api": [
+      {
+       "name": "AdmissiblePair.pos_of_mem_posOrthant",
+       "role": "evaluation",
+       "statement": "f > 0 on Γ_n"
+      },
+      {
+       "name": "AdmissiblePair.euler",
+       "role": "structure",
+       "statement": "Σ λ_j ∂_j f = f"
+      },
+      {
+       "name": "AdmissiblePair.grad_posDef",
+       "role": "structure",
+       "statement": "∇F_f(T) positive definite on Sym_Γ"
+      },
+      {
+       "name": "AdmissiblePair.concaveOn",
+       "role": "structure",
+       "statement": "F_f concave on Sym_Γ for a concave pair"
+      },
+      {
+       "name": "AdmissiblePair.add",
+       "role": "constructor",
+       "statement": "positive combinations on intersections of cones are admissible pairs"
+      },
+      {
+       "name": "AdmissiblePair.restrict",
+       "role": "constructor",
+       "statement": "restriction to a smaller admissible cone"
+      }
+     ],
+     "tests": [
+      {
+       "name": "MA_pair",
+       "kind": "computation",
+       "statement": "(σ_n^{1/n}, Γ_n): partials at (1,4) are 1 and 1/4"
+      },
+      {
+       "name": "sigma1_minus_eps_norm",
+       "kind": "non-example",
+       "statement": "σ_1 − ε|λ| on Γ_1 is admissible but negative at (1, −1 + δ)"
+      },
+      {
+       "name": "max_not_pair",
+       "kind": "non-example",
+       "statement": "max_j λ_j is not C¹ at e"
+      }
+     ]
+    },
+    {
+     "id": "2.4.3",
+     "kind": "definition",
+     "name": "StructuralCondition",
+     "statement": "An admissible pair satisfies the structural condition with constant γ > 0 if ∏_j ∂_j f(λ) ≥ γ for every λ ∈ Γ.",
+     "hypotheses": [
+      "(f, Γ) admissible pair",
+      "γ > 0"
+     ],
+     "locator": {
+      "source": "guo-phong2024",
+      "where": "(1.2), line 85–90; gpt2023 (1.4), line 84–86"
+     },
+     "prerequisites": [
+      "target:2.4.2"
+     ],
+     "api": [
+      {
+       "name": "structuralCondition_iff_det",
+       "role": "characterisation",
+       "statement": "equivalent to det ∇F_f(T) ≥ γ for all T ∈ Sym_Γ"
+      },
+      {
+       "name": "structuralCondition_mono",
+       "role": "structure",
+       "statement": "holds for every γ' ≤ γ"
+      },
+      {
+       "name": "structuralCondition_add",
+       "role": "constructor",
+       "statement": "for af_1 + bf_2 with constant (aγ_1^{1/n} + bγ_2^{1/n})^n"
+      }
+     ],
+     "tests": [
+      {
+       "name": "MA_constant",
+       "kind": "computation",
+       "statement": "∏ ∂_j σ_n^{1/n} ≡ n^{−n}"
+      },
+      {
+       "name": "Laplace_constant",
+       "kind": "degenerate",
+       "statement": "(σ_1, Γ_1) has constant 1"
+      },
+      {
+       "name": "pure_quotient_fails",
+       "kind": "non-example",
+       "statement": "σ_2/σ_1 on Γ_2 ⊂ ℝ²: ∏∂_j f ≈ ε² at (ε,1)"
+      }
+     ]
+    },
+    {
+     "id": "2.4.4",
+     "kind": "theorem",
+     "name": "structuralCondition_of_concave_lowerBound",
+     "statement": "A concave admissible pair with f(μ) ≥ nγ^{1/n} (∏ μ_j)^{1/n} on Γ_n satisfies the structural condition with constant γ; the structural condition is equivalent to det ∇F_f ≥ γ on Sym_Γ; positive combinations satisfy it with constant (aγ_1^{1/n} + bγ_2^{1/n})^n.",
+     "hypotheses": [
+      "concave admissible pair",
+      "γ > 0",
+      "a, b > 0 for combinations"
+     ],
+     "locator": {
+      "source": "gpt2023",
+      "where": "Lemma 4, line 744–769; guo-phong2024 line 103–104; spruck2005 line 11314"
+     },
+     "prerequisites": [
+      "target:1.5",
+      "target:2.3",
+      "target:2.4.3"
+     ]
+    },
+    {
+     "id": "2.5",
+     "kind": "theorem",
+     "name": "admissiblePair_examples",
+     "statement": "Concave admissible pairs with structural constants: (σ_n^{1/n}, Γ_n) with n^{−n}; (σ_1, Γ_1) with 1; (σ_k^{1/k}, Γ_k) with (binom(n,k)^{1/k}/n)^n, attained at e; ((σ_k/σ_l)^{1/(k−l)} + c σ_p^{1/p}, Γ_{max(k,p)}) with at least (c binom(n,p)^{1/p}/n)^n; positive combinations on intersections.",
+     "hypotheses": [
+      "1 ≤ k ≤ n",
+      "0 ≤ l < k",
+      "1 ≤ p ≤ n",
+      "c > 0"
+     ],
+     "locator": {
+      "source": "gpt2023",
+      "where": "line 90–93 and 770–776; guo-phong2024 line 91–104"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.3",
+      "target:2.4.4"
+     ],
+     "tests": [
+      {
+       "name": "hessian_constant_n3k2",
+       "kind": "computation",
+       "statement": "∂_j σ_2^{1/2}(e) = 3^{−1/2} in ℝ³, constant 3^{−3/2}"
+      },
+      {
+       "name": "hessian_constant_endpoints",
+       "kind": "degenerate",
+       "statement": "k = 1 gives 1 and k = n gives n^{−n}"
+      },
+      {
+       "name": "quotient_n3",
+       "kind": "non-example",
+       "statement": "σ_2/σ_1 in ℝ³ at (M,1,1): product ≈ 3/M² → 0; adding cσ_1 gives ≥ c³"
+      }
+     ]
+    },
+    {
+     "id": "2.5.2",
+     "kind": "example",
+     "name": "pureQuotient_not_structural",
+     "statement": "The pure quotients σ_2/σ_1 on Γ_2 ⊂ ℝ² and on Γ_2 ⊂ ℝ³ are concave admissible pairs without any structural constant.",
+     "hypotheses": [
+      "n ∈ {2, 3}"
+     ],
+     "locator": {
+      "source": "spruck2005",
+      "where": "Theorem 2.16, line 11364–11365; gpt2023 line 93 (the quotient example carries + cσ_m^{1/m})"
+     },
+     "prerequisites": [
+      "target:2.3",
+      "target:2.4.3"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "The equation on a compact Hermitian manifold",
+   "targets": [
+    {
+     "id": "3.1.1",
+     "kind": "definition",
+     "name": "relEigenvalueFun",
+     "statement": "For a complex manifold X with Hermitian metric ω (a TauCeti.SmoothTwoForm compatible with J) and a continuous real (1,1)-form α, x ↦ λ_ω[α](x) = λ[H_{α,x}] relative to h_x, where H_α(u,v) = α(u,Jv) + iα(u,v) and h = H_ω.",
+     "hypotheses": [
+      "ω Hermitian metric",
+      "α continuous and J-invariant"
+     ],
+     "locator": {
+      "source": "gpt2023",
+      "where": "line 62–66; szekelyhidi2018 line 17–24"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "tauceti:TauCeti.SmoothTwoForm.Invariant",
+      "tauceti:TauCeti.SmoothTwoForm.Compatible",
+      "roadmap:ComplexKahlerGeometry K1"
+     ],
+     "api": [
+      {
+       "name": "relEigenvalueFun_continuous",
+       "role": "structure",
+       "statement": "continuous in x"
+      },
+      {
+       "name": "relEigenvalueFun_self",
+       "role": "evaluation",
+       "statement": "λ_ω[ω] = e"
+      },
+      {
+       "name": "relEigenvalueFun_add",
+       "role": "structure",
+       "statement": "λ_ω[α + tω] = λ_ω[α] + t e"
+      },
+      {
+       "name": "relEigenvalueFun_scale_metric",
+       "role": "structure",
+       "statement": "λ_{sω}[α] = s⁻¹ λ_ω[α]"
+      },
+      {
+       "name": "trace_relEigenvalueFun",
+       "role": "compatibility",
+       "statement": "Σ λ_j = tr_ω α and n α ∧ ω^{n−1} = (tr_ω α) ω^n"
+      }
+     ],
+     "tests": [
+      {
+       "name": "eigen_ddbar_norm_sq",
+       "kind": "computation",
+       "statement": "ℂⁿ standard: λ[i∂∂̄|z|²] = 2e"
+      },
+      {
+       "name": "eigen_metric_doubling",
+       "kind": "compatibility",
+       "statement": "relative to 2ω, λ[i∂∂̄|z|²] = e"
+      },
+      {
+       "name": "eigen_single_coordinate",
+       "kind": "degenerate",
+       "statement": "λ[i∂∂̄|z_1|²] = (2,0,…,0)"
+      }
+     ]
+    },
+    {
+     "id": "3.1.2",
+     "kind": "definition",
+     "name": "iddbar",
+     "statement": "For u ∈ C²(X), the continuous real (1,1)-form i∂∂̄u given in holomorphic charts by (i∂∂̄u)(v,w) = (1/2)(D²u(Jv,w) − D²u(v,Jw)), and the complex Laplacian Δ_ω u = Σ_j λ_j[i∂∂̄u].",
+     "hypotheses": [
+      "X complex manifold",
+      "u ∈ C²"
+     ],
+     "locator": {
+      "source": "dinew-kolodziej2014",
+      "where": "line 26–35; gpt2023 line 63–65"
+     },
+     "prerequisites": [
+      "roadmap:ComplexKahlerGeometry K2",
+      "target:3.1.1"
+     ],
+     "api": [
+      {
+       "name": "iddbar_chart_independent",
+       "role": "characterisation",
+       "statement": "independent of the holomorphic chart"
+      },
+      {
+       "name": "iddbar_eq_K2",
+       "role": "compatibility",
+       "statement": "agrees with ComplexKahlerGeometry K2's i∂∂̄ on smooth functions"
+      },
+      {
+       "name": "iddbar_add",
+       "role": "structure",
+       "statement": "additive, vanishing on constants"
+      },
+      {
+       "name": "iddbar_comp",
+       "role": "structure",
+       "statement": "i∂∂̄(γ∘u) = γ'(u) i∂∂̄u + γ''(u) i∂u ∧ ∂̄u"
+      },
+      {
+       "name": "iddbar_pullback",
+       "role": "invariance",
+       "statement": "commutes with pullback by holomorphic maps"
+      }
+     ],
+     "tests": [
+      {
+       "name": "iddbar_x_sq",
+       "kind": "computation",
+       "statement": "i∂∂̄(x_1²) = dx_1 ∧ dy_1 and Δ_ω(x_1²) = 1"
+      },
+      {
+       "name": "iddbar_pluriharmonic",
+       "kind": "degenerate",
+       "statement": "i∂∂̄(Re z_1²) = 0"
+      },
+      {
+       "name": "laplacian_norm_sq",
+       "kind": "compatibility",
+       "statement": "Δ_ω|z|² = 2n while the Euclidean Laplacian is 4n"
+      }
+     ]
+    },
+    {
+     "id": "3.1.3",
+     "kind": "theorem",
+     "name": "iddbar_nonpos_of_isLocalMax",
+     "statement": "If x_0 is a local maximum of u ∈ C²(X) then H_{i∂∂̄u}(x_0) ≤ 0.",
+     "hypotheses": [
+      "u ∈ C²(X)",
+      "x_0 local maximum"
+     ],
+     "locator": {
+      "source": "gpt2023",
+      "where": "line 236 (i∂∂̄Φ(x_0) ≤ 0 at a maximum)"
+     },
+     "prerequisites": [
+      "target:3.1.2",
+      "mathlib:IsLocalMax"
+     ],
+     "tests": [
+      {
+       "name": "max_neg_norm_sq",
+       "kind": "computation",
+       "statement": "u = −|z|²: H = −2h at 0"
+      },
+      {
+       "name": "saddle_no_converse",
+       "kind": "non-example",
+       "statement": "u = x_1² − y_1² has H = 0 at 0 but no maximum"
+      },
+      {
+       "name": "constant_max",
+       "kind": "degenerate",
+       "statement": "constants have H = 0 everywhere"
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "theorem",
+     "name": "form_and_integration_identities",
+     "statement": "α^k ∧ ω^{n−k} = (k!(n−k)!/n!) σ_k(λ[α]) ω^n and its mixed version; ω^n = n! dvol_g; Gårding: λ[α] ∈ Γ̄_k, λ[β] ∈ Γ_k ⇒ α ∧ β^{k−1} ∧ ω^{n−k} ≥ (k!(n−k)!/n!) σ_k(λ[α])^{1/k} σ_k(λ[β])^{(k−1)/k} ω^n; Maclaurin form (β^k ∧ ω^{n−k}/ω^n)^{1/k} ≥ (β^n/ω^n)^{1/n} for β > 0; on compact X, ∫ i∂∂̄u ∧ Θ = ∫ u i∂∂̄Θ, ∫ Δ_ω u ω^n = n ∫ u i∂∂̄ω^{n−1}; Kähler invariance ∫ χ_φ^k ∧ ω^{n−k} = ∫ χ^k ∧ ω^{n−k} when dω = dχ = 0.",
+     "hypotheses": [
+      "ω Hermitian metric",
+      "u, φ ∈ C²",
+      "X compact for the integral identities",
+      "dω = dχ = 0 for invariance"
+     ],
+     "locator": {
+      "source": "dinew-kolodziej2014",
+      "where": "line 33–35, 165–172, 259–263; gpt2023 line 924–926"
+     },
+     "prerequisites": [
+      "target:3.1.2",
+      "target:2.2.3",
+      "target:2.3",
+      "roadmap:DifferentialGeometry Layer 5",
+      "roadmap:DifferentialGeometry Layer 12",
+      "roadmap:ComplexManifolds Milestone 2",
+      "tauceti:TauCeti.riemannianVolume"
+     ],
+     "tests": [
+      {
+       "name": "form_identity_n2",
+       "kind": "computation",
+       "statement": "α ∧ ω = ((λ_1+λ_2)/2) ω² and α² = λ_1λ_2 ω²"
+      },
+      {
+       "name": "maclaurin_form_example",
+       "kind": "computation",
+       "statement": "λ[β] = (4,1), k = 1: 5/2 ≥ 2"
+      },
+      {
+       "name": "laplacian_integral_kahler",
+       "kind": "degenerate",
+       "statement": "on a flat torus ∫ Δ_ω u ω^n = 0"
+      }
+     ]
+    },
+    {
+     "id": "3.3.1",
+     "kind": "definition",
+     "name": "IsSolution",
+     "statement": "Given a continuous real (1,1)-form χ, an admissible cone Γ and an admissible pair (f,Γ): φ ∈ C²(X) is (χ,Γ)-admissible if λ_ω[χ + i∂∂̄φ](x) ∈ Γ for all x; a solution for F ∈ C⁰(X) is (c, φ) with c > 0, φ admissible, f(λ_ω[χ_φ]) = c e^F and sup φ = 0; F is normalized if ∫ e^{nF} ω^n = V.",
+     "hypotheses": [
+      "X compact",
+      "(f,Γ) admissible pair"
+     ],
+     "locator": {
+      "source": "gpt2023",
+      "where": "line 66–70, 107–111; guo-phong2024 line 108–113"
+     },
+     "prerequisites": [
+      "target:3.1.1",
+      "target:3.1.2",
+      "target:2.4.2"
+     ],
+     "api": [
+      {
+       "name": "isAdmissible_add_const",
+       "role": "structure",
+       "statement": "admissibility is preserved by adding constants"
+      },
+      {
+       "name": "isOpen_admissible",
+       "role": "structure",
+       "statement": "admissibility is open in C²"
+      },
+      {
+       "name": "isAdmissible_mono",
+       "role": "structure",
+       "statement": "if Γ + Γ_n ⊆ Γ and χ ≤ χ' then (χ,Γ)-admissible ⇒ (χ',Γ)-admissible"
+      },
+      {
+       "name": "IsSolution.const_pow",
+       "role": "evaluation",
+       "statement": "with normalized F, c^n = V⁻¹ ∫ f(λ[χ_φ])^n ω^n"
+      },
+      {
+       "name": "IsSolution.biholomorphic",
+       "role": "invariance",
+       "statement": "transported by biholomorphisms"
+      }
+     ],
+     "tests": [
+      {
+       "name": "trivial_solution",
+       "kind": "computation",
+       "statement": "χ = ω, F = 0, φ = 0: c = f(e), equal to 1, binom(n,k)^{1/k}, n for the MA, Hessian, Laplace pairs"
+      },
+      {
+       "name": "constant_F",
+       "kind": "degenerate",
+       "statement": "F = a constant, χ = ω, MA pair: c = e^{−a}, φ = 0"
+      },
+      {
+       "name": "CP1_double",
+       "kind": "computation",
+       "statement": "ℂP¹ of area 1, χ = 2ω, normalized F: c = 2"
+      }
+     ]
+    },
+    {
+     "id": "3.3.2",
+     "kind": "theorem",
+     "name": "equation_instances",
+     "statement": "MA instance: (χ,Γ_n)-admissible ⟺ χ_φ > 0, and then σ_n^{1/n}(λ[χ_φ]) = c e^F ⟺ χ_φ^n = c^n e^{nF} ω^n; Hessian instance: χ_φ^j ∧ ω^{n−j} > 0 for j ≤ k and χ_φ^k ∧ ω^{n−k} = binom(n,k)⁻¹ c^k e^{kF} ω^n; Kähler constants c^n = ∫χ^n/∫e^{nF}ω^n and c^k = binom(n,k) ∫χ^k∧ω^{n−k}/∫e^{kF}ω^n; admissible φ satisfy Δ_ω φ > −tr_ω χ.",
+     "hypotheses": [
+      "X compact",
+      "dω = dχ = 0 for the constants"
+     ],
+     "locator": {
+      "source": "tosatti-weinkove2010",
+      "where": "line 21–31; dinew-kolodziej2014 line 56–64; gpt2023 line 974–981"
+     },
+     "prerequisites": [
+      "target:3.2",
+      "target:3.3.1",
+      "target:2.5"
+     ]
+    },
+    {
+     "id": "3.4.1",
+     "kind": "definition",
+     "name": "degeneratingEnergy",
+     "statement": "On compact Kähler (X, ω_X) with χ smooth, closed, ≥ 0: ω_t = χ + tω_X for t ∈ (0,1], V_t = ∫ ω_t^n, the equations f(λ_{ω_X}[ω_{t,φ_t}]) = c_t e^{F_t}, sup φ_t = 0, λ ∈ Γ with normalized F_t, and the energy E_t(φ) = V_t⁻¹ ∫ (−φ) f(λ[ω_{t,φ}])^n ω_X^n.",
+     "hypotheses": [
+      "dω_X = 0",
+      "dχ = 0",
+      "χ ≥ 0"
+     ],
+     "locator": {
+      "source": "gpt2023",
+      "where": "line 101–119"
+     },
+     "prerequisites": [
+      "target:3.3.1"
+     ],
+     "api": [
+      {
+       "name": "omega_t_kahler",
+       "role": "structure",
+       "statement": "ω_t is Kähler for t > 0 and V_t ≥ t^n V"
+      },
+      {
+       "name": "energy_of_solution",
+       "role": "evaluation",
+       "statement": "E_t(φ_t) = (c_t^n/V_t) ∫ (−φ_t) e^{nF_t} ω_X^n"
+      },
+      {
+       "name": "MA_relative_volume",
+       "role": "characterisation",
+       "statement": "for the MA pair c_t^n/V_t = 1/V"
+      }
+     ],
+     "tests": [
+      {
+       "name": "chi_zero",
+       "kind": "degenerate",
+       "statement": "χ = 0: V_t = t^n V and λ[ω_t] = t e"
+      },
+      {
+       "name": "energy_zero",
+       "kind": "computation",
+       "statement": "E_t(0) = 0"
+      },
+      {
+       "name": "chi_eq_omega",
+       "kind": "computation",
+       "statement": "χ = ω_X, MA: V_t = (1+t)^n V and c_t^n = (1+t)^n"
+      }
+     ]
+    },
+    {
+     "id": "3.4.2",
+     "kind": "definition",
+     "name": "entropy",
+     "statement": "Ent_p(F) = V⁻¹ ∫_X e^{nF} |F|^p ω_X^n for p > 0.",
+     "hypotheses": [
+      "p > 0"
+     ],
+     "locator": {
+      "source": "gpt2023",
+      "where": "(1.3), line 82–83; guo-phong2024 line 120–126"
+     },
+     "prerequisites": [
+      "target:3.3.1"
+     ],
+     "api": [
+      {
+       "name": "entropy_nonneg",
+       "role": "structure",
+       "statement": "Ent_p(F) ≥ 0"
+      },
+      {
+       "name": "entropy_mass_bound",
+       "role": "evaluation",
+       "statement": "for every F ∈ C⁰(X) and p > 0, V⁻¹ ∫ e^{nF} ω_X^n ≤ Ent_p(F) + e^n (gpt2023 (3.2), line 450–451)"
+      },
+      {
+       "name": "entropy_mono",
+       "role": "structure",
+       "statement": "Ent_q(F) ≤ 1 + Ent_p(F) for 0 < q ≤ p and normalized F"
+      }
+     ],
+     "tests": [
+      {
+       "name": "entropy_zero",
+       "kind": "degenerate",
+       "statement": "Ent_p(0) = 0"
+      },
+      {
+       "name": "entropy_norm_comparison",
+       "kind": "compatibility",
+       "statement": "‖e^{nF}‖_{L¹(log L)^p} = n^p V Ent_p(F)"
+      },
+      {
+       "name": "entropy_constant",
+       "kind": "computation",
+       "statement": "F = a constant on V = 1: Ent_p(a) = e^{na}|a|^p"
+      },
+      {
+       "name": "entropy_mass_bound_constant",
+       "kind": "computation",
+       "statement": "F = a constant, V = 1: e^{na} ≤ e^{na}|a|^p + e^n, from the first term when |a| ≥ 1 and from e^{na} < e^n when |a| < 1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "The comparison principle and uniqueness",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "theorem",
+     "name": "comparison_at_localMax",
+     "statement": "If (f,Γ) is an admissible pair with Γ + Γ_n ⊆ Γ, χ a continuous real (1,1)-form, φ, ψ ∈ C²(X) (χ,Γ)-admissible and x_0 a local maximum of ψ − φ, then f(λ[χ_ψ](x_0)) ≤ f(λ[χ_φ](x_0)).",
+     "hypotheses": [
+      "Γ + Γ_n ⊆ Γ",
+      "φ, ψ admissible",
+      "x_0 local maximum of ψ − φ"
+     ],
+     "locator": {
+      "source": "tosatti-weinkove2010",
+      "where": "line 38–47"
+     },
+     "prerequisites": [
+      "roadmap:OperatorTheory/PolarDecomposition PD-A52",
+      "target:1.4",
+      "target:3.1.3",
+      "target:3.3.1"
+     ],
+     "tests": [
+      {
+       "name": "comparison_disc",
+       "kind": "computation",
+       "statement": "χ = ω on ℂ, φ = 0, ψ = −|z|²/4: λ[χ_ψ](0) = 1/2 ≤ 1"
+      },
+      {
+       "name": "comparison_constant_shift",
+       "kind": "degenerate",
+       "statement": "ψ = φ + c: equality"
+      },
+      {
+       "name": "comparison_nonconvex",
+       "kind": "non-example",
+       "statement": "the non-convex cone of 1.5 violates Γ + Γ_n ⊆ Γ at (1,−0.4) + (0,0.25)"
+      }
+     ]
+    },
+    {
+     "id": "4.2",
+     "kind": "theorem",
+     "name": "solution_unique",
+     "statement": "On a compact connected complex manifold with Hermitian metric, for an admissible pair (f,Γ) with Γ convex, a continuous real (1,1)-form χ and F ∈ C⁰(X): two solutions (c,φ), (c',ψ) satisfy c = c' and φ = ψ.",
+     "hypotheses": [
+      "X compact connected",
+      "Γ convex",
+      "χ continuous",
+      "F continuous"
+     ],
+     "locator": {
+      "source": "tosatti-weinkove2010",
+      "where": "Corollary 1, line 36–47"
+     },
+     "prerequisites": [
+      "target:1.3.2",
+      "target:1.4",
+      "target:3.3.1",
+      "target:4.1",
+      "roadmap:PDE Lane C item 13"
+     ],
+     "tests": [
+      {
+       "name": "unique_MA_trivial",
+       "kind": "computation",
+       "statement": "Kähler MA, χ = ω, F = 0: (1,0) is the only solution"
+      },
+      {
+       "name": "two_components",
+       "kind": "non-example",
+       "statement": "X_1 ⊔ X_2 with φ = 0 and ψ = −1 on X_2: both solutions"
+      },
+      {
+       "name": "no_normalization",
+       "kind": "non-example",
+       "statement": "without sup φ = 0, φ and φ + 1 both solve"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "Linear analysis on compact Kähler manifolds",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "theorem",
+     "name": "kahler_laplacian",
+     "statement": "If dω = 0 then 2Δ_ω u = laplaceBeltrami_g u and Δ_d u = −2Δ_ω u; ∫ v Δ_ω u ω^n = −n ∫ i∂u ∧ ∂̄v ∧ ω^{n−1}; on compact connected Kähler X, Δ_ω u = 0 implies u constant; for any Hermitian ω on compact connected X, Δ_ω u = 0 implies u constant.",
+     "hypotheses": [
+      "ω Hermitian; dω = 0 for the first three clauses",
+      "X compact connected for the kernel"
+     ],
+     "locator": {
+      "source": "pss2012",
+      "where": "line 871–875 (tr h = n + Δφ); twwy2015 line 75"
+     },
+     "prerequisites": [
+      "target:3.1.2",
+      "target:3.2",
+      "roadmap:ComplexKahlerGeometry K6.0",
+      "roadmap:DifferentialGeometry Layer 12",
+      "roadmap:PDE Lane C item 13"
+     ],
+     "tests": [
+      {
+       "name": "laplacian_euclidean",
+       "kind": "computation",
+       "statement": "2Δ_ω|z|² = 4n; on the unit torus Δ_ω cos 2πx = −2π² cos 2πx"
+      },
+      {
+       "name": "conformal_nonkahler",
+       "kind": "non-example",
+       "statement": "ω = e^{x_1} ω_0 on ℂ²: 2Δ_ω x_1 − Δ_g x_1 = −e^{−x_1}"
+      },
+      {
+       "name": "curve_kahler",
+       "kind": "degenerate",
+       "statement": "n = 1: every metric is Kähler and ker Δ_ω = constants on ℂ/(ℤ+iℤ)"
+      }
+     ]
+    },
+    {
+     "id": "5.2",
+     "kind": "theorem",
+     "name": "laplacian_holder_isomorphism",
+     "statement": "For a smooth Kähler ω' on compact connected X, k ≥ 0, 0 < α < 1: Δ_{ω'} : {u ∈ C^{k+2,α} : ∫ u ω'^n = 0} → {v ∈ C^{k,α} : ∫ v ω'^n = 0} is a bounded isomorphism, and (u,β) ↦ Δ_{ω'}u − β is a bounded isomorphism {∫ u ω^n = 0} × ℝ → C^{k,α}; global Schauder ‖u‖_{C^{k+2,α}} ≤ C(‖Lu‖_{C^{k,α}} + ‖u‖_{C⁰}) for L u = Re tr(a H_{i∂∂̄u}) with a ∈ C^{k,α} uniformly positive; C^{k,α} → C^{k,β} compact for β < α.",
+     "hypotheses": [
+      "X compact connected",
+      "ω' smooth Kähler",
+      "a uniformly positive definite C^{k,α}"
+     ],
+     "locator": {
+      "source": "pss2012",
+      "where": "§2.2, line 229–231 (openness by the implicit function theorem)"
+     },
+     "prerequisites": [
+      "target:5.1",
+      "roadmap:PseudodifferentialOperators §5.4",
+      "roadmap:PseudodifferentialOperators §6.2",
+      "roadmap:ComplexKahlerGeometry K5a",
+      "roadmap:PDE Lane E item 22",
+      "mathlib:ArzelaAscoli.isCompact_closure_of_isClosedEmbedding"
+     ],
+     "tests": [
+      {
+       "name": "torus_inverse",
+       "kind": "computation",
+       "statement": "Δ_ω⁻¹ cos 2πx = −cos(2πx)/(2π²); 1 is not in the range"
+      },
+      {
+       "name": "holder_noncompact",
+       "kind": "non-example",
+       "statement": "j^{−α} sin(jx) bounded in C^{0,α}, no C^{0,α}-convergent subsequence"
+      },
+      {
+       "name": "two_components_kernel",
+       "kind": "non-example",
+       "statement": "on two components the kernel is two-dimensional"
+      }
+     ]
+    },
+    {
+     "id": "5.3",
+     "kind": "theorem",
+     "name": "poincare_sobolev",
+     "statement": "On a compact connected Riemannian manifold ‖u − ū‖_{L²} ≤ λ_1^{−1/2} ‖du‖_{L²} for u ∈ H¹; on X of complex dimension n ≥ 2, ‖u‖_{L^{2n/(n−1)}} ≤ C(‖du‖_{L²} + ‖u‖_{L²}).",
+     "hypotheses": [
+      "X compact connected",
+      "n ≥ 2 for Sobolev"
+     ],
+     "locator": {
+      "source": "pss2012",
+      "where": "line 278–288"
+     },
+     "prerequisites": [
+      "roadmap:ComplexKahlerGeometry K5a",
+      "roadmap:Yamabe Y1.1"
+     ],
+     "tests": [
+      {
+       "name": "poincare_circle",
+       "kind": "computation",
+       "statement": "circle of length 2π, u = sin: equality with λ_1 = 1"
+      },
+      {
+       "name": "poincare_two_components",
+       "kind": "non-example",
+       "statement": "±1 on two components: du = 0, u − ū ≠ 0"
+      },
+      {
+       "name": "sobolev_exponent",
+       "kind": "computation",
+       "statement": "n = 2: exponent 4 = 2m/(m−2) at m = 4"
+      }
+     ]
+    },
+    {
+     "id": "5.4.1",
+     "kind": "theorem",
+     "name": "integral_neg_le_of_quasiPSH",
+     "statement": "For compact connected X with Hermitian ω and a continuous real (1,1)-form ω̂ there is C with ∫ (−ψ) ω^n ≤ C for every ψ ∈ C²(X) with ω̂ + i∂∂̄ψ ≥ 0 and sup ψ = 0.",
+     "hypotheses": [
+      "X compact connected",
+      "ω̂ continuous real (1,1)-form"
+     ],
+     "locator": {
+      "source": "guedj-zeriahi2005",
+      "where": "Proposition 1.7, line 255–274"
+     },
+     "prerequisites": [
+      "target:3.1.2",
+      "roadmap:PDE Lane C item 12"
+     ],
+     "tests": [
+      {
+       "name": "qpsh_zero",
+       "kind": "degenerate",
+       "statement": "ψ = 0 with ω̂ ≥ 0 gives 0"
+      },
+      {
+       "name": "qpsh_CP1_family",
+       "kind": "computation",
+       "statement": "ψ_ε = log((|z|²+ε)/(1+|z|²)) on ℂP¹: sup ψ_ε = 0 and ∫(−ψ_ε) ω' bounded"
+      },
+      {
+       "name": "qpsh_no_normalization",
+       "kind": "non-example",
+       "statement": "ψ = −M without sup normalization has unbounded integral"
+      }
+     ]
+    },
+    {
+     "id": "5.4.2",
+     "kind": "theorem",
+     "name": "integral_neg_le_of_laplacian_ge",
+     "statement": "If dω = 0 there is C(X, ω, A) with ∫ (−φ) ω^n ≤ C for every φ ∈ C²(X) with Δ_ω φ ≥ −A and sup φ = 0.",
+     "hypotheses": [
+      "X compact connected",
+      "dω = 0",
+      "A ≥ 0"
+     ],
+     "locator": {
+      "source": "gpt2023",
+      "where": "line 689–692"
+     },
+     "prerequisites": [
+      "target:5.1",
+      "gap:weak-harnack-supersolutions"
+     ],
+     "tests": [
+      {
+       "name": "subsolution_zero",
+       "kind": "degenerate",
+       "statement": "φ = 0 gives 0"
+      },
+      {
+       "name": "subsolution_torus",
+       "kind": "computation",
+       "statement": "on the unit torus φ = ε(cos 2πx − 1): Δ_ω φ = −2π²ε cos 2πx ≥ −2π²ε and ∫(−φ) = ε"
+      },
+      {
+       "name": "subsolution_no_normalization",
+       "kind": "non-example",
+       "statement": "φ = −M has Δ_ω φ = 0 and unbounded integral"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "6",
+   "title": "Yau's theorem",
+   "targets": [
+    {
+     "id": "6.1",
+     "kind": "theorem",
+     "name": "kahler_curvature_identities",
+     "statement": "For Kähler ω and ω_φ = ω + i∂∂̄φ > 0 with h = ω⁻¹ω_φ: Ric(ω_φ) = Ric(ω) − i∂∂̄ log(ω_φ^n/ω^n); the formula for Δ_{ω_φ} tr h with nonnegative gradient terms and the bisectional curvature constant Λ; the formula for Δ_{ω_φ} S, S = |∇'h h⁻¹|².",
+     "hypotheses": [
+      "dω = 0",
+      "φ smooth",
+      "ω_φ > 0"
+     ],
+     "locator": {
+      "source": "pss2012",
+      "where": "(2.2), (5.4), (6.2)–(6.6), (7.1)–(7.4); line 163–164, 837–840, 994–1016, 1046–1064"
+     },
+     "prerequisites": [
+      "target:3.1.2",
+      "target:5.1",
+      "roadmap:ComplexKahlerGeometry K4",
+      "roadmap:ComplexKahlerGeometry K6.0"
+     ],
+     "tests": [
+      {
+       "name": "ricci_torus",
+       "kind": "degenerate",
+       "statement": "flat torus: Ric = 0 and S = 0 for φ = 0"
+      },
+      {
+       "name": "ricci_CP1",
+       "kind": "computation",
+       "statement": "ω = i∂∂̄ log(1+|z|²) on ℂP¹: Ric(ω) = 2ω, unchanged under ω ↦ 2ω"
+      },
+      {
+       "name": "trace_scaled",
+       "kind": "computation",
+       "statement": "ω' = sω: tr h = ns"
+      }
+     ]
+    },
+    {
+     "id": "6.2",
+     "kind": "theorem",
+     "name": "c0_estimate",
+     "statement": "For n ≥ 2 and a smooth solution of ω_φ^n = e^F ω^n with ω_φ > 0 on compact connected Kähler X: osc φ ≤ C(n, sup F, ω).",
+     "hypotheses": [
+      "n ≥ 2",
+      "dω = 0",
+      "F smooth"
+     ],
+     "locator": {
+      "source": "pss2012",
+      "where": "Theorem 3, line 245–308; tosatti-weinkove2010 line 104–106; yau1978 §2"
+     },
+     "prerequisites": [
+      "target:3.2",
+      "target:5.3",
+      "roadmap:DifferentialGeometry Layer 5"
+     ],
+     "tests": [
+      {
+       "name": "c0_F_zero",
+       "kind": "degenerate",
+       "statement": "F = 0: φ constant, osc 0"
+      },
+      {
+       "name": "c0_torus_exact",
+       "kind": "computation",
+       "statement": "ℂ²/ℤ⁴, φ = ε cos 2πx_1: e^F = 1 − 2π²ε cos 2πx_1, osc φ = 2ε"
+      },
+      {
+       "name": "c0_n1_excluded",
+       "kind": "non-example",
+       "statement": "n = 1 has no Sobolev exponent 2n/(n−1); handled linearly in 6.6"
+      }
+     ]
+    },
+    {
+     "id": "6.3",
+     "kind": "theorem",
+     "name": "c2_estimate",
+     "statement": "0 < tr_ω ω_φ ≤ C exp(A(φ − inf φ)) with A, C depending on sup F, a lower bound of Δ_ω F, Λ and an upper bound of the scalar curvature; hence C⁻¹ω ≤ ω_φ ≤ Cω with C depending on ‖F‖_{C²} and ω.",
+     "hypotheses": [
+      "dω = 0",
+      "φ smooth solution"
+     ],
+     "locator": {
+      "source": "pss2012",
+      "where": "Theorem 8, line 981–990; proof line 994–1031"
+     },
+     "prerequisites": [
+      "target:3.1.2",
+      "target:6.1",
+      "target:6.2"
+     ],
+     "tests": [
+      {
+       "name": "c2_trivial",
+       "kind": "degenerate",
+       "statement": "F = 0: tr h = n"
+      },
+      {
+       "name": "c2_lower_bound",
+       "kind": "computation",
+       "statement": "λ = (4,1/4), F(x) = 0: tr h = 17/4 and λ_2 = e^F/λ_1"
+      },
+      {
+       "name": "c2_harmonic_arith",
+       "kind": "computation",
+       "statement": "(tr h)⁻¹ ≤ tr h⁻¹: 4/17 ≤ 17/4"
+      }
+     ]
+    },
+    {
+     "id": "6.4",
+     "kind": "theorem",
+     "name": "c3_estimate",
+     "statement": "S = |∇'h h⁻¹|²_{ω_φ} is bounded by a constant depending on the C² bound, inf F, ‖F‖_{C³} and ‖Rm(ω)‖_{C¹}.",
+     "hypotheses": [
+      "dω = 0",
+      "φ smooth solution"
+     ],
+     "locator": {
+      "source": "pss2012",
+      "where": "Theorem 9, line 1070–1081; twwy2015 line 132–135"
+     },
+     "prerequisites": [
+      "target:6.1",
+      "target:6.3"
+     ],
+     "tests": [
+      {
+       "name": "c3_trivial",
+       "kind": "degenerate",
+       "statement": "ω_φ = ω: S = 0"
+      },
+      {
+       "name": "c3_torus",
+       "kind": "computation",
+       "statement": "torus solution of 6.2: S = O(ε²) and S ≠ 0 for ε ≠ 0"
+      }
+     ]
+    },
+    {
+     "id": "6.5",
+     "kind": "theorem",
+     "name": "higher_regularity",
+     "statement": "From 6.2–6.4, ‖φ‖_{C^{2,α}} ≤ C for α < 1; ‖φ‖_{C^{k+2,α}} ≤ C_k(X, ω, ‖F‖_{C^{k+1,α}}); a C^{2,α} solution with smooth F and ω_φ > 0 is smooth.",
+     "hypotheses": [
+      "dω = 0",
+      "0 < α < 1"
+     ],
+     "locator": {
+      "source": "tosatti-weinkove2010",
+      "where": "line 93–99; gilbarg-trudinger2001 Lemma 17.16"
+     },
+     "prerequisites": [
+      "target:5.2",
+      "target:6.2",
+      "target:6.3",
+      "target:6.4",
+      "roadmap:PDE Lane E item 22"
+     ],
+     "tests": [
+      {
+       "name": "regularity_zero",
+       "kind": "degenerate",
+       "statement": "F = 0: φ = 0"
+      },
+      {
+       "name": "regularity_linear",
+       "kind": "computation",
+       "statement": "n = 1: Δ_ω φ = e^F − 1 gains exactly two derivatives"
+      },
+      {
+       "name": "regularity_holder_F",
+       "kind": "non-example",
+       "statement": "F ∈ C^{0,α} only: Δ_ω F need not be bounded below, so 6.3 does not apply"
+      }
+     ]
+    },
+    {
+     "id": "6.6",
+     "kind": "theorem",
+     "name": "yau",
+     "statement": "Let (X, ω) be a compact connected Kähler manifold of dimension n ≥ 1 and F ∈ C^∞(X, ℝ). There are a unique b ∈ ℝ and a unique φ ∈ C^∞(X, ℝ) with ω + i∂∂̄φ > 0, (ω + i∂∂̄φ)^n = e^{F+b} ω^n and sup φ = 0; b = log(∫ ω^n/∫ e^F ω^n); ‖φ‖_{C^k} ≤ C_k(X, ω, F). For a Kähler form χ and normalized F, χ_φ^n = c^n e^{nF} ω_X^n has a unique solution with c^n = ∫ χ^n/V.",
+     "hypotheses": [
+      "X compact connected",
+      "dω = 0",
+      "F smooth",
+      "χ Kähler for the second statement"
+     ],
+     "locator": {
+      "source": "tosatti-weinkove2010",
+      "where": "line 52–59; pss2012 Theorem 1, line 170–179; yau1978 §2; szekelyhidi2014 Theorem 3.1"
+     },
+     "prerequisites": [
+      "target:3.2",
+      "target:3.3.2",
+      "target:4.2",
+      "target:5.2",
+      "target:6.2",
+      "target:6.3",
+      "target:6.4",
+      "target:6.5",
+      "mathlib:HasStrictFDerivAt.toOpenPartialHomeomorph"
+     ],
+     "tests": [
+      {
+       "name": "yau_F_const",
+       "kind": "degenerate",
+       "statement": "F = a: b = −a, φ = 0"
+      },
+      {
+       "name": "yau_torus_bessel",
+       "kind": "computation",
+       "statement": "unit square torus, n = 1, F = ε cos 2πx: b = −log I_0(ε) = −ε²/4 + O(ε⁴)"
+      },
+      {
+       "name": "yau_two_components",
+       "kind": "non-example",
+       "statement": "different ratios ∫ e^F ω^n/∫ ω^n on two components: no single b"
+      },
+      {
+       "name": "yau_chi_double",
+       "kind": "computation",
+       "statement": "χ = 2ω on ℂP¹ of area 1: c = 2"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "7",
+   "title": "Exponential integrability of quasi-plurisubharmonic functions",
+   "targets": [
+    {
+     "id": "7.1.1",
+     "kind": "theorem",
+     "name": "exp_integrable_subharmonic_disc",
+     "statement": "For 0 < r < R' < R and A > 0, with α_1 = log(R/R')/A and C_1 = 2π(2R')²(R/R')^{(R'+r)/(R'−r)}: every subharmonic v ≤ 0 on a neighbourhood of the closed disc D̄(0,R) ⊂ ℂ with v(0) ≥ −A satisfies ∫_{D(0,r)} e^{−αv} dλ ≤ C_1 for 0 < α ≤ α_1.",
+     "hypotheses": [
+      "v subharmonic on a neighbourhood of D̄(0,R), v ≤ 0",
+      "v(0) ≥ −A",
+      "0 < r < R' < R",
+      "0 < α ≤ log(R/R')/A"
+     ],
+     "locator": {
+      "source": "demailly2012",
+      "where": "Proposition 4.22, line 1717–1731 (Green–Riesz representation and Harnack inequality); route: Jensen's formula for the Riesz mass, Jensen's inequality for the logarithmic potential"
+     },
+     "prerequisites": [
+      "roadmap:PDE Lane C item 12",
+      "mathlib:ConvexOn.map_integral_le"
+     ],
+     "tests": [
+      {
+       "name": "disc_point_mass",
+       "kind": "computation",
+       "statement": "v = log(|t − w_0|/(2R)), |w_0| = R/2: A = log 4, Riesz mass 2π ≤ 2π log 4/log(R/R'); (2R/|t−w_0|)^α integrable iff α < 2, the threshold αM < 4π"
+      },
+      {
+       "name": "disc_harmonic",
+       "kind": "degenerate",
+       "statement": "v ≡ −A: M = 0 and the integral is πr² e^{αA}, within the bound since C_H ≥ 1"
+      },
+      {
+       "name": "disc_centre_hypothesis",
+       "kind": "non-example",
+       "statement": "v = c log(|t|/R): v(0) = −∞ so the lemma does not apply at 0; recentred at R/4 it gives α_1 = log(R/R')/(c log 4) and (R/|t|)^{αc} is integrable iff αc < 2"
+      }
+     ]
+    },
+    {
+     "id": "7.1.2",
+     "kind": "theorem",
+     "name": "local_exp_integrable_psh",
+     "statement": "For n ≥ 1 and A > 0 there are α(n,A) = log(12/11)·vol(B(0,1/4))/A > 0 and C(n) with ∫_{B(0,1)} e^{−αu} ≤ C for every plurisubharmonic u ∈ C²(B(0,2)), B(0,2) ⊂ ℂⁿ, with u ≤ 0 and ∫_{B(0,2)} (−u) ≤ A, for 0 < α ≤ α(n,A). Route: a point x_0 ∈ B(0,1/4) with u(x_0) ≥ −A/vol(B(0,1/4)), the one-variable estimate 7.1.1 on every complex line through x_0, and polar coordinates about x_0.",
+     "hypotheses": [
+      "u plurisubharmonic and C²",
+      "u ≤ 0",
+      "∫(−u) ≤ A"
+     ],
+     "locator": {
+      "source": "pss2012",
+      "where": "line 2943–2945; gpt2023 line 287–289 (attributed to hormander1990, Chapter IV); demailly2012 Proposition 4.22 for the one-variable input"
+     },
+     "prerequisites": [
+      "target:3.1.2",
+      "target:7.1.1",
+      "roadmap:PDE Lane C item 12"
+     ],
+     "tests": [
+      {
+       "name": "log_example",
+       "kind": "computation",
+       "statement": "u = c log(|z|²/4): e^{−αu} integrable on B(0,1) iff αc < n"
+      },
+      {
+       "name": "zero_function",
+       "kind": "degenerate",
+       "statement": "u = 0 gives |B(0,1)|"
+      },
+      {
+       "name": "subharmonic_not_enough",
+       "kind": "non-example",
+       "statement": "−|x|^{−1} on ℝ⁴ = ℂ² is subharmonic, integrable, but e^{α/|x|} is never integrable near 0: its slices along complex lines are not subharmonic"
+      }
+     ]
+    },
+    {
+     "id": "7.2",
+     "kind": "theorem",
+     "name": "alphaInvariant",
+     "statement": "For compact connected X with Hermitian ω and a continuous real (1,1)-form ω̂ there are α > 0 and C with ∫_X e^{−α(ψ − sup ψ)} ω^n ≤ C for every ψ ∈ C²(X) with ω̂ + i∂∂̄ψ ≥ 0; hence ∫ (sup ψ − ψ)^p ω^n ≤ C_p for p ≥ 1.",
+     "hypotheses": [
+      "X compact connected",
+      "ω̂ continuous real (1,1)-form"
+     ],
+     "locator": {
+      "source": "pss2012",
+      "where": "Theorem 31, line 2946–2955; gpt2023 line 283–289 (global form attributed to tian1987)"
+     },
+     "prerequisites": [
+      "target:5.4.1",
+      "target:7.1.2"
+     ],
+     "tests": [
+      {
+       "name": "alpha_zero",
+       "kind": "degenerate",
+       "statement": "ψ = 0, ω̂ ≥ 0: integral V"
+      },
+      {
+       "name": "alpha_CP1_bound",
+       "kind": "non-example",
+       "statement": "ω̂ = i∂∂̄ log(1+|z|²) on ℂP¹: any uniform α is < 1, via ψ_ε"
+      },
+      {
+       "name": "alpha_scaling",
+       "kind": "characterisation",
+       "statement": "the optimal α for 2ω̂ is half that for ω̂"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "8",
+   "title": "Sharp L^∞ estimates",
+   "targets": [
+    {
+     "id": "8.1",
+     "kind": "theorem",
+     "name": "gpt_comparison_lemma",
+     "statement": "In the degenerating setting of 3.4.1 on compact connected Kähler (X, ω_X), with (f,Γ) admissible satisfying the structural condition with constant γ, φ_t ∈ C² solving the equation with normalized smooth F_t and E_t(φ_t) ≤ Ē: there are C, β_0 > 0 depending only on n, ω_X, χ, γ such that for every s > 0 with inf φ_t < −s, ∫_{Ω_s} exp{β_0 (−(φ_t + s)/A_s^{1/(n+1)})^{(n+1)/n}} ω_X^n ≤ C e^{CĒ}, where A_s = (c_t^n/V_t) ∫_{Ω_s} (−φ_t − s) e^{nF_t} ω_X^n > 0.",
+     "hypotheses": [
+      "dω_X = 0",
+      "χ smooth closed ≥ 0",
+      "t ∈ (0,1]",
+      "structural constant γ",
+      "inf φ_t < −s"
+     ],
+     "locator": {
+      "source": "gpt2023",
+      "where": "Lemma 1, line 198–302"
+     },
+     "prerequisites": [
+      "target:1.5",
+      "target:2.4.3",
+      "target:3.1.3",
+      "target:3.4.1",
+      "target:6.6",
+      "target:7.2"
+     ],
+     "tests": [
+      {
+       "name": "comparison_vacuous",
+       "kind": "degenerate",
+       "statement": "φ_t ≡ 0: Ω_s empty for s > 0"
+      },
+      {
+       "name": "comparison_zero_over_zero",
+       "kind": "non-example",
+       "statement": "s = −inf φ_t excluded: the integrand would be 0/0 on the minimum set"
+      },
+      {
+       "name": "comparison_MA_trivial",
+       "kind": "computation",
+       "statement": "MA pair, χ = 0, t = 1, F = 0: φ = 0 and c^n/V = 1/V"
+      }
+     ]
+    },
+    {
+     "id": "8.2",
+     "kind": "theorem",
+     "name": "deGiorgi_lemma",
+     "statement": "If φ : [0,∞) → [0,∞) is nonincreasing, right-continuous, tends to 0, and rφ(s+r) ≤ B_0 φ(s)^{1+δ_0} for s > 0, r ∈ [0,1] with B_0, δ_0 > 0, and φ(s_0)^{δ_0} < 1/(2B_0), then φ(s) = 0 for s ≥ s_0 + 1/(1 − 2^{−δ_0}).",
+     "hypotheses": [
+      "B_0 > 0",
+      "δ_0 > 0"
+     ],
+     "locator": {
+      "source": "gpt2023",
+      "where": "Lemma 2, line 412–426"
+     },
+     "prerequisites": [],
+     "tests": [
+      {
+       "name": "deGiorgi_indicator",
+       "kind": "computation",
+       "statement": "1_{[0,1)} with B_0 = 1 vanishes from s = 1"
+      },
+      {
+       "name": "deGiorgi_exp",
+       "kind": "non-example",
+       "statement": "e^{−s} violates the hypothesis for large s"
+      },
+      {
+       "name": "deGiorgi_delta_zero",
+       "kind": "non-example",
+       "statement": "δ_0 = 0: e^{−s} satisfies the hypothesis with B_0 = 1 and never vanishes"
+      }
+     ]
+    },
+    {
+     "id": "8.3",
+     "kind": "theorem",
+     "name": "gpt_degenerating",
+     "statement": "In the degenerating setting of 3.4.1 on compact connected Kähler (X, ω_X), with (f,Γ) admissible satisfying the structural condition with constant γ, p > n, and φ_t ∈ C² solving the equation with normalized smooth F_t: sup |φ_t| ≤ C with C depending only on ω_X, χ, p, n, γ and upper bounds for c_t^n/V_t, E_t(φ_t), Ent_p(F_t); explicitly inf φ_t ≥ −(2B_0)^{1/δ_0} Ē − 1/(1 − 2^{−δ_0}) with δ_0 = (p−n)/(pn). The De Giorgi lemma 8.2 is applied to the strict sublevel function Φ(s) = (c_t^n/V_t) ∫_{{φ_t < −s}} e^{nF_t} ω_X^n, which is right-continuous; A_s is unchanged since its integrand vanishes on {φ_t = −s}.",
+     "hypotheses": [
+      "dω_X = 0",
+      "χ smooth closed ≥ 0",
+      "t ∈ (0,1]",
+      "p > n"
+     ],
+     "locator": {
+      "source": "gpt2023",
+      "where": "Theorem 2, line 120–130; proof line 303–441"
+     },
+     "prerequisites": [
+      "target:3.4.1",
+      "target:3.4.2",
+      "target:8.1",
+      "target:8.2"
+     ],
+     "tests": [
+      {
+       "name": "degenerating_trivial",
+       "kind": "computation",
+       "statement": "MA, χ = ω_X, F_t = 0: φ_t = 0 with c_t = 1 + t"
+      },
+      {
+       "name": "degenerating_exponent",
+       "kind": "degenerate",
+       "statement": "δ_0 > 0 exactly for p > n"
+      },
+      {
+       "name": "degenerating_curve",
+       "kind": "computation",
+       "statement": "n = 1: δ_0 = (p−1)/p, the Poisson equation"
+      },
+      {
+       "name": "degenerating_right_continuity",
+       "kind": "non-example",
+       "statement": "φ_t = −ε ρ with ρ a bump equal to 1 exactly on a closed set with interior U: s ↦ vol{φ_t ≤ −s} is ≥ vol(U) at s = ε and 0 for s > ε, not right-continuous; s ↦ vol{φ_t < −s} is 0 at and after ε"
+      }
+     ]
+    },
+    {
+     "id": "8.4",
+     "kind": "theorem",
+     "name": "gpt_mongeAmpere",
+     "statement": "For the Monge–Ampère pair in the degenerating setting: c_t^n/V_t = 1/V, E_t(φ_t) ≤ C(n, ω_X, χ, Ent_1(F_t)), and if Ent_q(F_t) is bounded uniformly in t for some q > n then ‖φ_t‖_{L^∞} is bounded uniformly in t.",
+     "hypotheses": [
+      "dω_X = 0",
+      "χ smooth closed ≥ 0",
+      "q > n"
+     ],
+     "locator": {
+      "source": "gpt2023",
+      "where": "Theorem 4, Lemmas 5–6, line 785–850"
+     },
+     "prerequisites": [
+      "target:3.2",
+      "target:3.4.1",
+      "target:7.2",
+      "target:8.3"
+     ],
+     "tests": [
+      {
+       "name": "MA_volumes",
+       "kind": "computation",
+       "statement": "χ = ω_X, F_t = 0: V_t = (1+t)^n V, c_t^n = (1+t)^n"
+      },
+      {
+       "name": "MA_entropy_mono",
+       "kind": "degenerate",
+       "statement": "Ent_1 ≤ 1 + Ent_q"
+      },
+      {
+       "name": "MA_kolodziej",
+       "kind": "compatibility",
+       "statement": "fixed background recovers kolodziej1998 §1"
+      }
+     ]
+    },
+    {
+     "id": "8.5",
+     "kind": "theorem",
+     "name": "gpt_energy_trudinger",
+     "statement": "On compact connected Kähler (X, ω_X), for φ ∈ C² solving f(λ[ω_{X,φ}]) = e^F, sup φ = 0, λ ∈ Γ, with smooth normalized F and structural constant γ: (a) p' ∈ (0,n) ⇒ ∫ exp{c(−φ)^{n/(n−p')}} ω_X^n ≤ C; (b) p' = n ⇒ ∫ exp{c_N(−φ)^N} ω_X^n ≤ C_N for every N > 0; (c) ∫ (−φ)^N e^{nF} ω_X^n ≤ C for N = n/(n−p') when p' ∈ [1,n) and every N when p' = n; constants depending on ω_X, n, p', γ, Ent_{p'}(F), N.",
+     "hypotheses": [
+      "dω_X = 0",
+      "F smooth normalized",
+      "structural constant γ"
+     ],
+     "locator": {
+      "source": "gpt2023",
+      "where": "Theorem 3, Lemma 3, line 458–736"
+     },
+     "prerequisites": [
+      "target:1.5",
+      "target:5.4.2",
+      "target:6.6",
+      "target:7.2",
+      "gap:abp-maximum-principle",
+      "gap:weak-harnack-supersolutions"
+     ],
+     "tests": [
+      {
+       "name": "energy_trivial",
+       "kind": "degenerate",
+       "statement": "F = 0, φ = 0"
+      },
+      {
+       "name": "energy_exponent_limit",
+       "kind": "computation",
+       "statement": "n/(n − p') → ∞ as p' → n"
+      },
+      {
+       "name": "energy_p_small",
+       "kind": "non-example",
+       "statement": "(c) is not claimed for p' < 1"
+      }
+     ]
+    },
+    {
+     "id": "8.6",
+     "kind": "theorem",
+     "name": "gpt_fixed",
+     "statement": "On compact connected Kähler (X, ω_X), for an admissible pair with structural constant γ, p > n, smooth F with ∫ e^{nF} ω_X^n = V and φ ∈ C²(X) with f(λ[ω_{X,φ}]) = e^F, sup φ = 0, λ ∈ Γ: sup |φ| ≤ C(n, p, γ, ω_X, Ent_p(F)).",
+     "hypotheses": [
+      "dω_X = 0",
+      "p > n",
+      "F smooth normalized"
+     ],
+     "locator": {
+      "source": "gpt2023",
+      "where": "Theorem 1, line 84–89; proof line 442–457"
+     },
+     "prerequisites": [
+      "target:8.3",
+      "target:8.5"
+     ],
+     "tests": [
+      {
+       "name": "fixed_MA",
+       "kind": "compatibility",
+       "statement": "agrees with 8.4 at χ = 0, t = 1"
+      },
+      {
+       "name": "fixed_curve",
+       "kind": "computation",
+       "statement": "n = 1, Laplace pair: 1 + Δ_ω φ = e^F"
+      },
+      {
+       "name": "fixed_infinite_entropy",
+       "kind": "non-example",
+       "statement": "Ent_p(F) = ∞ for all p > n is outside the statement"
+      }
+     ]
+    },
+    {
+     "id": "8.7",
+     "kind": "theorem",
+     "name": "gpt_hessian",
+     "statement": "Lemma 7: E_t(φ_t) ≤ (c_t^n/V_t) ‖e^{nF_t}‖_{L^q} ‖φ_t‖_{L^{q'}}. Lemma 8: for 1 ≤ k < n and 0 < p' < n/(n−k), ‖u‖_{L^{p'}} ≤ C(n,k,p',ω_X) for u ∈ C² with sup u = 0 and λ[ω_X + i∂∂̄u] ∈ Γ_k. Theorem 5: if λ[ω_{t,φ_t}] ∈ Γ_k and q > n/k then ‖φ_t‖_{L^∞} ≤ C(n,k,q,γ,ω_X,χ,‖e^{nF_t}‖_{L^q}, c_t^n/V_t).",
+     "hypotheses": [
+      "dω_X = 0",
+      "χ smooth closed ≥ 0",
+      "1 ≤ k < n for Lemma 8",
+      "q > n/k"
+     ],
+     "locator": {
+      "source": "gpt2023",
+      "where": "Theorem 5, Lemmas 7–8, line 861–952"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "target:3.2",
+      "target:5.4.2",
+      "target:6.6",
+      "target:8.3",
+      "target:8.4",
+      "gap:weak-harnack-supersolutions"
+     ],
+     "tests": [
+      {
+       "name": "hessian_k_eq_n",
+       "kind": "degenerate",
+       "statement": "k = n excluded from Lemma 8; 7.2 gives all p'"
+      },
+      {
+       "name": "hessian_conjugate",
+       "kind": "computation",
+       "statement": "q' = n/(n−k) has conjugate q = n/k"
+      },
+      {
+       "name": "hessian_green_singularity",
+       "kind": "compatibility",
+       "statement": "n = 2, k = 1: |x|^{−2} ∈ L^{p'} on ℝ⁴ exactly for p' < 2"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "OperatorTheory/PolarDecomposition",
+   "sections": [
+    "PD-A51",
+    "PD-A52",
+    "PD-A53"
+   ],
+   "what": "Courant–Fischer min–max, Loewner monotonicity and Weyl's operator-norm bound for sorted eigenvalues of symmetric endomorphisms of finite-dimensional inner product spaces over ℝ or ℂ"
+  },
+  {
+   "roadmap": "OperatorTheory/PrincipalAngles",
+   "sections": [
+    "PA-B32"
+   ],
+   "what": "von Neumann's trace inequality tr(TS) ≤ Σ λ_i(T)λ_i(S), consumed in both directions via −S"
+  },
+  {
+   "roadmap": "OperatorTheory/Majorization",
+   "sections": [
+    "MAJ-A27"
+   ],
+   "what": "Ky Fan's maximum principle: Σ Re⟪Sw_i,w_i⟫ over an orthonormal family of k vectors is at most the sum of the k largest eigenvalues"
+  },
+  {
+   "roadmap": "ComplexKahlerGeometry",
+   "sections": [
+    "K1",
+    "K2",
+    "K4",
+    "K5a",
+    "K6.0"
+   ],
+   "what": "type calculus and metric conventions, ∂ and ∂̄ on smooth forms, Chern connections and curvature, Laplace-type L² elliptic theory and spectral decomposition, Kähler metrics, normal coordinates and Δ_d = 2Δ_∂̄"
+  },
+  {
+   "roadmap": "PseudodifferentialOperators",
+   "sections": [
+    "§5.4",
+    "§6.2"
+   ],
+   "what": "Hölder spaces C^{k,α} on compact bases; Schauder regularity and Fredholm theory for smooth-coefficient elliptic operators"
+  },
+  {
+   "roadmap": "PDE",
+   "sections": [
+    "Lane C item 12",
+    "Lane C item 13",
+    "Lane E item 22",
+    "Lane E item 23"
+   ],
+   "what": "mean value inequality, Hopf strong maximum principle, interior Schauder estimates with Hölder coefficients, weak Harnack inequality for supersolutions (gap)"
+  },
+  {
+   "roadmap": "Yamabe",
+   "sections": [
+    "Y1.1"
+   ],
+   "what": "closed-manifold Sobolev inequality"
+  },
+  {
+   "roadmap": "DifferentialGeometry",
+   "sections": [
+    "Layer 0",
+    "Layer 1",
+    "Layer 5",
+    "Layer 12"
+   ],
+   "what": "forms, d, integration and Stokes, laplaceBeltrami and Riemannian volume"
+  },
+  {
+   "roadmap": "ComplexManifolds",
+   "sections": [
+    "Milestone 1",
+    "Milestone 2"
+   ],
+   "what": "real restriction and canonical orientation"
+  }
+ ],
+ "consumers": [
+  {
+   "roadmap": "K3Surfaces",
+   "what": "§2.1 Ricci-flat Kähler forms: imports Yau's theorem (6.6) in dimension two"
+  },
+  {
+   "roadmap": "ComplexHessianEquationsPartII",
+   "what": "Tosatti–Weinkove existence and Guo–Phong L^∞ estimates on compact Hermitian manifolds, consuming Layers 1–5; also subsolution theory, Hessian existence and the Aubin–Yau equation"
+  },
+  {
+   "roadmap": "OptimalTransport",
+   "what": "a real Hessian-equation extension of Layer 6 can consume Layer 1 at 𝕜 = ℝ, Γ_n and the determinant identities"
+  }
+ ],
+ "gaps": [
+  {
+   "slug": "weak-harnack-supersolutions",
+   "title": "Weak Harnack inequality for nonnegative supersolutions",
+   "neededBy": [
+    "5.4.2",
+    "8.5",
+    "8.6",
+    "8.7"
+   ],
+   "detail": "r^{−m}‖u‖_{L¹(B_{2r})} ≤ C(inf_{B_r} u + r^{2−m/q}‖f‖_{L^q(B_{4r})}), q > m/2, for nonnegative weak supersolutions of divergence-form uniformly elliptic equations with bounded measurable coefficients (gilbarg-trudinger2001 Theorem 8.18); used on coordinate balls for −φ with Δ_ω φ ≥ −A on Kähler manifolds.",
+   "needs": "the weak Harnack inequality r^{−m}‖u‖_{L¹(B_{2r})} ≤ C(inf_{B_r} u + r^{2−m/q}‖f‖_{L^q(B_{4r})}), q > m/2, for nonnegative weak supersolutions u of divergence-form uniformly elliptic equations Lu ≤ f with bounded measurable coefficients on balls of ℝ^m",
+   "supplier": "PDE",
+   "section": "Lane E item 23"
+  },
+  {
+   "slug": "abp-maximum-principle",
+   "title": "Aleksandrov–Bakelman–Pucci maximum principle",
+   "neededBy": [
+    "8.5",
+    "8.6"
+   ],
+   "detail": "sup_Ω u ≤ sup_{∂Ω} u + C(m) diam(Ω) ‖(Lu)^−/D^{1/m}‖_{L^m(Γ⁺)} for u ∈ C²(Ω) ∩ C⁰(Ω̄), L = a^{ij}∂_i∂_j with positive definite a, D = det a, Γ⁺ the upper contact set (gilbarg-trudinger2001 Lemma 9.2, Theorem 9.1); applied on coordinate balls of ℝ^{2n} in the energy estimate.",
+   "needs": "the Aleksandrov–Bakelman–Pucci bound sup_Ω u ≤ sup_{∂Ω} u + C(m)·diam(Ω)·‖(Lu)^−/D^{1/m}‖_{L^m(Γ⁺)} for u ∈ C²(Ω) ∩ C⁰(Ω̄) on bounded domains Ω ⊂ ℝ^m and L = a^{ij}∂_i∂_j with positive definite a, D = det a and Γ⁺ the upper contact set",
+   "supplier": "PDE",
+   "section": "proposed PDE Part II, Lane C (Aleksandrov–Bakelman–Pucci maximum principle)"
+  }
+ ]
+}

@@ -8,7 +8,7 @@ title = "On $L^\\infty$ estimates for complex Monge-Ampère equations"
 year = 2021
 arxiv = "2106.02224v1"
 locator_scheme = "theorem"
-locator = "Theorems 1 and 2"
+locator = "Theorems 1–5, Lemmas 1–8"
 url = "https://arxiv.org/abs/2106.02224v1"
 fetched_from = "https://arxiv.org/pdf/2106.02224v1"
 fetched_at = "2026-11-04T14:36:54Z"
@@ -16,38 +16,26 @@ sha256 = "2af60e01d8c8f558ee561715fb8433411634aa7bdef322b51e8a266fd392d854"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
-version_note = "arXiv v1"
-cited_for = ["Final targets (c)"]
+version_note = "arXiv v1, the version read and cited; line locators refer to it"
+cited_for = ["3.1.1", "3.1.3", "3.3.1", "3.4.1", "3.4.2", "1.6", "2.4.4", "2.5", "5.4.2", "8.1", "8.2", "8.3", "8.4", "8.5", "8.6", "8.7"]
 
 [[source]]
-id = "cns1985"
-authors = "L. Caffarelli, L. Nirenberg, J. Spruck"
-title = "The Dirichlet problem for nonlinear second order elliptic equations, III: Functions of the eigenvalues of the Hessian"
-year = 1985
-venue = "Acta Mathematica 155"
-doi = "10.1007/BF02392544"
-locator_scheme = "section"
-locator = "§1"
-url = "https://projecteuclid.org/journals/acta-mathematica/volume-155/issue-none/The-Dirichlet-problem-for-nonlinear-second-order-elliptic-equations-III-Functions/10.1007/BF02392544.pdf"
+id = "guo-phong2024"
+authors = "Bin Guo, Duong H. Phong"
+title = "On $L^\\infty$ estimates for fully nonlinear partial differential equations"
+year = 2022
+arxiv = "2204.12549v3"
+locator_scheme = "theorem"
+locator = "conditions (1)–(4) and Theorem 1"
+url = "https://arxiv.org/abs/2204.12549v3"
+fetched_from = "https://arxiv.org/pdf/2204.12549v3"
+fetched_at = "2026-11-04T14:37:27Z"
+sha256 = "985bdc1a7f39b0229072534afafa697babbf76eed34381745723abf7568dbd6f"
 licence_class = "open-repository"
-status = "uncertified"
-version_note = "Project Euclid open content; the service received an Incapsula block page instead of the PDF, so the text was not read; cited by its locator"
-cited_for = ["Scope: admissible cones"]
-
-[[source]]
-id = "kolodziej1998"
-authors = "Sławomir Kołodziej"
-title = "The complex Monge-Ampère equation"
-year = 1998
-venue = "Acta Mathematica 180"
-doi = "10.1007/BF02392879"
-locator_scheme = "section"
-locator = "§1"
-url = "https://projecteuclid.org/journals/acta-mathematica/volume-180/issue-1/The-complex-Monge-Amp%C3%A8re-equation/10.1007/BF02392879.pdf"
-licence_class = "open-repository"
-status = "uncertified"
-version_note = "Project Euclid open content; the service received an Incapsula block page instead of the PDF, so the text was not read; cited by its locator"
-cited_for = ["Risks: pluripotential boundary"]
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v3"
+cited_for = ["2.2.2", "2.4.1", "2.4.2", "2.4.3", "2.5", "3.3.1", "3.4.2", "Scope and ownership: Part II boundary"]
 
 [[source]]
 id = "szekelyhidi2018"
@@ -56,7 +44,7 @@ title = "Fully non-linear elliptic equations on compact Hermitian manifolds"
 year = 2015
 arxiv = "1501.02762v3"
 locator_scheme = "section"
-locator = "§1–2"
+locator = "§1–2 (setting and cone conditions)"
 url = "https://arxiv.org/abs/1501.02762v3"
 fetched_from = "https://arxiv.org/pdf/1501.02762v3"
 fetched_at = "2026-11-04T14:37:10Z"
@@ -65,7 +53,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v3"
-cited_for = ["Scope: the general equation"]
+cited_for = ["1.1", "2.4.2", "3.1.1"]
 
 [[source]]
 id = "tosatti-weinkove2010"
@@ -76,7 +64,7 @@ venue = "J. Amer. Math. Soc. 23 (2010), no.4, 1187-1195"
 doi = "10.1090/S0894-0347-2010-00673-X"
 arxiv = "0910.1390v2"
 locator_scheme = "theorem"
-locator = "Theorem 1.1"
+locator = "Main Theorem and Corollary 1"
 url = "https://arxiv.org/abs/0910.1390v2"
 fetched_from = "https://arxiv.org/pdf/0910.1390v2"
 fetched_at = "2026-11-04T14:37:15Z"
@@ -85,7 +73,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v2"
-cited_for = ["Final targets (b)"]
+cited_for = ["3.3.2", "4.1", "4.2", "6.2", "6.5", "6.6", "Scope and ownership: Part II boundary"]
 
 [[source]]
 id = "dinew-kolodziej2014"
@@ -96,7 +84,7 @@ venue = "Anal. PDE 7 (2014) 227-244"
 doi = "10.2140/apde.2014.7.227"
 arxiv = "1112.3063v1"
 locator_scheme = "section"
-locator = "§1"
+locator = "§1 (Preliminaries) and Proposition 1.7"
 url = "https://arxiv.org/abs/1112.3063v1"
 fetched_from = "https://arxiv.org/pdf/1112.3063v1"
 fetched_at = "2026-11-04T14:37:21Z"
@@ -105,70 +93,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v1"
-cited_for = ["Scope: k-Hessian"]
-
-[[source]]
-id = "guo-phong2024"
-authors = "Bin Guo, Duong H. Phong"
-title = "On $L^\\infty$ estimates for fully nonlinear partial differential equations"
-year = 2022
-arxiv = "2204.12549v3"
-locator_scheme = "theorem"
-locator = "Theorem 1"
-url = "https://arxiv.org/abs/2204.12549v3"
-fetched_from = "https://arxiv.org/pdf/2204.12549v3"
-fetched_at = "2026-11-04T14:37:27Z"
-sha256 = "985bdc1a7f39b0229072534afafa697babbf76eed34381745723abf7568dbd6f"
-licence_class = "open-repository"
-status = "certified"
-accessed = "2026-11-04"
-version_note = "arXiv v3"
-cited_for = ["Final targets (c)"]
-
-[[source]]
-id = "gilbarg-trudinger2001"
-authors = "David Gilbarg, Neil S. Trudinger"
-title = "Elliptic Partial Differential Equations of Second Order"
-year = 2001
-venue = "Classics in Mathematics"
-doi = "10.1007/978-3-642-61798-0"
-locator_scheme = "theorem"
-locator = "Theorems 6.6, 17.14"
-url = "https://doi.org/10.1007/978-3-642-61798-0"
-licence_class = "none"
-status = "uncertified"
-version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Suppliers: Schauder, Evans–Krylov"]
-
-[[source]]
-id = "yau1978"
-authors = "Shing-Tung Yau"
-title = "On the Ricci curvature of a compact Kähler manifold and the complex Monge-Ampère equation, I"
-year = 1978
-venue = "Comm. Pure Appl. Math. 31, 339-411"
-doi = "10.1002/cpa.3160310304"
-locator_scheme = "section"
-locator = "§2, Theorem 1 (existence) and the uniqueness statement of §2"
-url = "https://doi.org/10.1002/cpa.3160310304"
-licence_class = "none"
-status = "uncertified"
-version_note = "paywalled (Wiley); cited by its locator without the text, as the target form requests"
-cited_for = ["Final targets (b)"]
-
-[[source]]
-id = "szekelyhidi2014"
-authors = "Gábor Székelyhidi"
-title = "An Introduction to Extremal Kähler Metrics"
-year = 2014
-venue = "Graduate Studies in Mathematics 152, AMS"
-doi = "10.1090/gsm/152"
-locator_scheme = "chapter"
-locator = "Ch. 3 (Theorem 3.1 and §§3.2-3.4)"
-url = "https://doi.org/10.1090/gsm/152"
-licence_class = "none"
-status = "uncertified"
-version_note = "paywalled (AMS); cited by its locator without the text, as the target form requests"
-cited_for = ["Final targets (b)"]
+cited_for = ["2.1", "2.2.2", "2.3", "3.1.2", "3.2", "3.3.2"]
 
 [[source]]
 id = "pss2012"
@@ -178,7 +103,7 @@ year = 2012
 venue = "Surveys in Differential Geomety, vol. 17, 327-411 (2012)"
 arxiv = "1209.2203v2"
 locator_scheme = "section"
-locator = "§§2–3"
+locator = "Theorems 1, 3, 8, 9, 31 and §2.2"
 url = "https://arxiv.org/abs/1209.2203v2"
 fetched_from = "https://arxiv.org/pdf/1209.2203v2"
 fetched_at = "2026-11-04T15:00:30Z"
@@ -187,7 +112,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v2"
-cited_for = ["Final targets (T3)"]
+cited_for = ["5.1", "5.2", "5.3", "6.1", "6.2", "6.3", "6.4", "6.6", "7.1", "7.2"]
 
 [[source]]
 id = "twwy2015"
@@ -207,7 +132,138 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v2"
-cited_for = ["Risks: complex Evans–Krylov"]
+cited_for = ["6.4", "Scope and ownership: complex Evans–Krylov in Part II"]
+
+[[source]]
+id = "spruck2005"
+authors = "Joel Spruck"
+title = "Geometric aspects of the theory of fully nonlinear elliptic equations"
+year = 2005
+venue = "Global Theory of Minimal Surfaces, Clay Math. Proc. 2, AMS, 283-309"
+locator_scheme = "section"
+locator = "§§1–2: Theorem 1.4, Lemma 1.5, Definition 2.1, Theorem 2.2–Theorem 2.16"
+url = "https://www.claymath.org/wp-content/uploads/2022/03/cmip02.pdf"
+fetched_from = "https://www.claymath.org/wp-content/uploads/2022/03/cmip02.pdf"
+fetched_at = "2026-11-04T16:00:22Z"
+sha256 = "eed6d6807e4d07a645a0674fb35ff6382b00b4fbc6a6f18bf43a13219a2b765d"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "read from the Clay Mathematics Institute download of the whole volume (cmip02.pdf); image-only scan recognised by OCR"
+cited_for = ["1.3", "1.5", "2.1", "2.2.1", "2.2.3", "2.3", "2.4.4", "2.5.2"]
+
+[[source]]
+id = "lewis1996"
+authors = "A. S. Lewis"
+title = "Derivatives of spectral functions"
+year = 1996
+venue = "Mathematics of Operations Research 21 (1996), no. 3, 576–588"
+doi = "10.1287/moor.21.3.576"
+locator_scheme = "theorem"
+locator = "Theorem 1.1, Theorem 2.1, Lemmas 2.2–2.3, Theorem 2.4"
+url = "https://people.orie.cornell.edu/aslewis/publications/96-derivatives.pdf"
+fetched_from = "https://people.orie.cornell.edu/aslewis/publications/96-derivatives.pdf"
+fetched_at = "2026-11-05T10:16:54Z"
+sha256 = "92d51d0d2667845273ac0c8863f211abe2d780b93848fb636e183389dc02a228"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "the published article as scanned on the author's Cornell page; image-only scan recognised by OCR, so quote with care"
+cited_for = ["1.2", "1.3", "1.4.1", "1.4.2"]
+
+[[source]]
+id = "guedj-zeriahi2005"
+authors = "Vincent Guedj, Ahmed Zeriahi"
+title = "Intrinsic capacities on compact Kähler manifolds"
+year = 2004
+venue = "J. Geom. Anal. 15 (2005)"
+arxiv = "math/0401302v2"
+locator_scheme = "theorem"
+locator = "Proposition 1.7"
+url = "https://arxiv.org/abs/math/0401302v2"
+fetched_from = "https://arxiv.org/pdf/math/0401302v2"
+fetched_at = "2026-11-05T10:14:57Z"
+sha256 = "11e8169420a5ca5e8aba9f9184003dea9f46bb520d96163911c0be656dba37bd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v2, the version read; numbering cited as read"
+cited_for = ["5.4.1"]
+
+[[source]]
+id = "cns1985"
+authors = "L. Caffarelli, L. Nirenberg, J. Spruck"
+title = "The Dirichlet problem for nonlinear second order elliptic equations, III: Functions of the eigenvalues of the Hessian"
+year = 1985
+venue = "Acta Mathematica 155"
+doi = "10.1007/BF02392544"
+locator_scheme = "section"
+locator = "§1"
+url = "https://projecteuclid.org/journals/acta-mathematica/volume-155/issue-none/The-Dirichlet-problem-for-nonlinear-second-order-elliptic-equations-III-Functions/10.1007/BF02392544.pdf"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "Project Euclid open content; the service received an Incapsula block page instead of the PDF, so the text was not read; cited by its locator"
+cited_for = ["Scope and ownership: the Caffarelli–Nirenberg–Spruck setting of Layer 1"]
+
+[[source]]
+id = "kolodziej1998"
+authors = "Sławomir Kołodziej"
+title = "The complex Monge-Ampère equation"
+year = 1998
+venue = "Acta Mathematica 180"
+doi = "10.1007/BF02392879"
+locator_scheme = "section"
+locator = "§1"
+url = "https://projecteuclid.org/journals/acta-mathematica/volume-180/issue-1/The-complex-Monge-Amp%C3%A8re-equation/10.1007/BF02392879.pdf"
+licence_class = "open-repository"
+status = "uncertified"
+version_note = "Project Euclid open content; the service received an Incapsula block page instead of the PDF, so the text was not read; cited by its locator"
+cited_for = ["8.4 (the bound recovered)"]
+
+[[source]]
+id = "gilbarg-trudinger2001"
+authors = "David Gilbarg, Neil S. Trudinger"
+title = "Elliptic Partial Differential Equations of Second Order"
+year = 2001
+venue = "Classics in Mathematics"
+doi = "10.1007/978-3-642-61798-0"
+locator_scheme = "theorem"
+locator = "Theorems 2.1, 3.5, 8.18, 9.1, Lemmas 9.2, 17.16"
+url = "https://doi.org/10.1007/978-3-642-61798-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Exact supplier contracts: PDE Lane C items 12–13, Lane E item 23 (weak-harnack-supersolutions), abp-maximum-principle", "6.5"]
+
+[[source]]
+id = "yau1978"
+authors = "Shing-Tung Yau"
+title = "On the Ricci curvature of a compact Kähler manifold and the complex Monge-Ampère equation, I"
+year = 1978
+venue = "Comm. Pure Appl. Math. 31, 339-411"
+doi = "10.1002/cpa.3160310304"
+locator_scheme = "section"
+locator = "§2"
+url = "https://doi.org/10.1002/cpa.3160310304"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (Wiley); cited by its locator without the text, as the target form requests"
+cited_for = ["6.2", "6.6"]
+
+[[source]]
+id = "szekelyhidi2014"
+authors = "Gábor Székelyhidi"
+title = "An Introduction to Extremal Kähler Metrics"
+year = 2014
+venue = "Graduate Studies in Mathematics 152, AMS"
+doi = "10.1090/gsm/152"
+locator_scheme = "chapter"
+locator = "Ch. 3 (Theorem 3.1 and §§3.2-3.4)"
+url = "https://doi.org/10.1090/gsm/152"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (AMS); cited by its locator without the text, as the target form requests"
+cited_for = ["6.6"]
 
 [[source]]
 id = "ckns1985"
@@ -222,22 +278,49 @@ url = "https://doi.org/10.1002/cpa.3160380206"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (Wiley); cited by its locator without the text"
-cited_for = ["Final targets (T5)"]
+cited_for = ["Scope and ownership: the Dirichlet problem of the Part II Hermitian L∞ estimate"]
 
 [[source]]
-id = "spruck2005"
-authors = "Joel Spruck"
-title = "Geometric aspects of the theory of fully nonlinear elliptic equations"
-year = 2005
-venue = "Global Theory of Minimal Surfaces, Clay Math. Proc. 2, AMS, 283-309"
-version_note = "read from the Clay Mathematics Institute download of the whole volume (cmip02.pdf); image-only scan recognised by OCR"
+id = "tian1987"
+authors = "Gang Tian"
+title = "On Kähler-Einstein metrics on certain Kähler manifolds with C_1(M) > 0"
+year = 1987
+venue = "Inventiones Mathematicae 89"
+doi = "10.1007/BF01389077"
 locator_scheme = "section"
-locator = "§2–3"
-url = "https://www.claymath.org/wp-content/uploads/2022/03/cmip02.pdf"
-fetched_from = "https://www.claymath.org/wp-content/uploads/2022/03/cmip02.pdf"
-fetched_at = "2026-11-04T16:00:22Z"
-sha256 = "eed6d6807e4d07a645a0674fb35ff6382b00b4fbc6a6f18bf43a13219a2b765d"
-licence_class = "institutional"
+locator = "the global α-invariant estimate cited as reference [19] at gpt2023 line 288–289"
+url = "https://doi.org/10.1007/BF01389077"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited without the text, as the global version of the estimate that gpt2023 and pss2012 attribute to it"
+cited_for = ["7.1", "7.2"]
+
+[[source]]
+id = "hormander1990"
+authors = "Lars Hörmander"
+title = "An Introduction to Complex Analysis in Several Variables"
+year = 1990
+venue = "3rd edition, North-Holland Mathematical Library 7"
+locator_scheme = "chapter"
+locator = "Chapter IV, the local integrability estimate for plurisubharmonic functions cited as reference [12] at gpt2023 line 288"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled book; the sources service found no legal copy; cited without the text as the local estimate that gpt2023 and pss2012 attribute to it"
+cited_for = ["7.1"]
+
+[[source]]
+id = "demailly2012"
+authors = "Jean-Pierre Demailly"
+title = "Complex Analytic and Differential Geometry"
+year = 2012
+venue = "book manuscript, Institut Fourier, Université de Grenoble I, version of 21 June 2012"
+locator_scheme = "theorem"
+locator = "Proposition 4.22 (Chapter I, §4.B, p. 37): the Green–Riesz representation and the Harnack inequality for subharmonic functions on a disc, the one-variable input of 7.1"
+url = "https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/agbook.pdf"
+fetched_from = "https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/agbook.pdf"
+fetched_at = "2026-11-05T14:50:23Z"
+sha256 = "d7c7654a7417e8322e5dcf8fe8ec818b4c1a18cf280b41f2df5a871b776d89a1"
+licence_class = "author-page"
 status = "certified"
-accessed = "2026-11-04"
-cited_for = ["Scope: cones Γ_k and admissible functions"]
+accessed = "2026-11-05"
+cited_for = ["7.1"]
