@@ -1,0 +1,1766 @@
+{
+ "roadmap": "LorentzianGeometry",
+ "title": "Lorentzian geometry",
+ "parent": null,
+ "summary": "Foundations of Lorentzian geometry at finite regularity: Lorentzian scalar products and their causal cones; Lorentzian metrics of class C^k and C^{k,α} on manifolds with corners, C^0 included; the Levi-Civita connection, curvature and geodesics of nondegenerate metrics of finite regularity, with geodesic uniqueness for C^{1,1}; time orientations, spacetimes, the time-orientation double cover and extensions; null hypersurfaces, optical functions, null generators and the characteristic hypersurfaces of the wave operator.",
+ "baseline": {
+  "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+  "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
+ },
+ "layers": [
+  {
+   "key": "1",
+   "title": "Lorentzian scalar products and their causal cones",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "definition",
+     "name": "LinearMap.BilinForm.IsLorentzian",
+     "statement": "For b : LinearMap.BilinForm ℝ V with V finite-dimensional, IsLorentzian b means b is symmetric, nondegenerate and sigNeg b.toQuadraticMap = 1; equivalently V has a basis in which b = −e⁰⊗e⁰ + Σ_{i≥1} e^i⊗e^i.",
+     "hypotheses": [
+      "V a finite-dimensional real vector space"
+     ],
+     "locator": {
+      "source": "minguzzi2019",
+      "where": "§1.3, lines 296–300, p. 7; oneill1983 Ch. 2 (index)"
+     },
+     "prerequisites": [
+      "mathlib:LinearMap.BilinForm.IsSymm",
+      "mathlib:LinearMap.BilinForm.Nondegenerate",
+      "mathlib:sigNeg",
+      "mathlib:QuadraticForm.equivalent_one_neg_one_weighted_sum_squared",
+      "mathlib:QuadraticForm.sigNeg_of_equiv_weightedSumSquares",
+      "mathlib:QuadraticMap.Equivalent.sigNeg_eq",
+      "tauceti:QuadraticForm.sigPos_add_sigNeg_of_nondegenerate",
+      "tauceti:QuadraticForm.sigPos_smul_of_neg",
+      "tauceti:LinearMap.BilinForm.card_le_sigNeg_toQuadraticMap_of_iIsOrtho",
+      "tauceti:QuadraticForm.sigNeg_prod"
+     ],
+     "proofSketch": "Sylvester: diagonalise by ±1 and count negative weights.",
+     "api": [
+      {
+       "name": "IsLorentzian.iff_exists_basis",
+       "role": "characterisation",
+       "statement": "b is Lorentzian iff it is symmetric, nondegenerate and diagonal with entries −1, 1, …, 1 in some basis."
+      },
+      {
+       "name": "IsLorentzian.sigPos_eq",
+       "role": "computation",
+       "statement": "For Lorentzian b, sigPos b.toQuadraticMap = finrank V − 1 and finrank V ≥ 1."
+      },
+      {
+       "name": "IsLorentzian.congr",
+       "role": "functoriality",
+       "statement": "Being Lorentzian is invariant under linear equivalences."
+      },
+      {
+       "name": "IsLorentzian.smul_pos",
+       "role": "structure",
+       "statement": "For c > 0, c • b is Lorentzian iff b is; for Lorentzian b, −b is Lorentzian iff finrank V = 2."
+      },
+      {
+       "name": "IsLorentzian.not_isOrtho_of_isTimelike",
+       "role": "structure",
+       "statement": "An orthogonal family of timelike vectors has at most one member."
+      },
+      {
+       "name": "IsLorentzian.restrict_iff",
+       "role": "structure",
+       "statement": "The restriction to a subspace W is Lorentzian iff it is nondegenerate and W contains a timelike vector."
+      }
+     ],
+     "tests": [
+      {
+       "name": "minkowski2_isLorentzian",
+       "kind": "computation",
+       "statement": "η = −u⁰w⁰ + u¹w¹ on ℝ² has sigNeg = 1, sigPos = 1 and is Lorentzian; the Euclidean form has sigNeg = 0 and is not."
+      },
+      {
+       "name": "degenerate_rejected",
+       "kind": "non-example",
+       "statement": "diag(−1, 0) on ℝ² is symmetric with sigNeg = 1 but degenerate, so not Lorentzian."
+      },
+      {
+       "name": "index_two_rejected",
+       "kind": "non-example",
+       "statement": "diag(−1, −1, 1) on ℝ³ has sigNeg = 2, not Lorentzian."
+      },
+      {
+       "name": "sign_flip",
+       "kind": "compatibility",
+       "statement": "−η₄ = diag(1, −1, −1, −1) (LocalVariationalFieldTheory §3.8) has sigNeg = 3 and the same timelike set with reversed sign; in dimension 2, −η is Lorentzian and swaps timelike and spacelike."
+      },
+      {
+       "name": "dimension_one",
+       "kind": "degenerate",
+       "statement": "b(x, y) = −xy on ℝ is Lorentzian; the zero space carries no Lorentzian form."
+      },
+      {
+       "name": "clifford_three_one",
+       "kind": "compatibility",
+       "statement": "For Q = TauCeti.realCliffordForm 3 1, QuadraticMap.associated Q (half the polar form) has Gram matrix diag(1, 1, 1, −1) and is Lorentzian with timelike e₃ and value Q(e₃) = −1 at (e₃, e₃); the polar form QuadraticMap.polar Q has Gram matrix diag(2, 2, 2, −2), value −2 at (e₃, e₃)."
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "definition",
+     "name": "LinearMap.BilinForm.dualForm",
+     "statement": "For nondegenerate b, the inverse form on V* is b⁻¹(ξ, ζ) = ξ(b♯ ζ) with b♯ = (b.toDual hb).symm.",
+     "hypotheses": [
+      "V finite-dimensional",
+      "b nondegenerate"
+     ],
+     "locator": {
+      "source": "chrusciel2011",
+      "where": "§2.2, (2.2.3), lines 193–198, pp. 5–6 (contravariant metric g^♯)"
+     },
+     "prerequisites": [
+      "mathlib:LinearMap.BilinForm.toDual",
+      "target:1.1"
+     ],
+     "api": [
+      {
+       "name": "dualForm_toDual_toDual",
+       "role": "compatibility",
+       "statement": "b♭ is an isometry from b to b⁻¹: b⁻¹(b♭u, b♭w) = b(u, w); so b⁻¹ has the signature of b and is Lorentzian iff b is."
+      },
+      {
+       "name": "apply_toDual_symm",
+       "role": "evaluation",
+       "statement": "b(b♯ξ, w) = ξ(w) for all w."
+      },
+      {
+       "name": "dualForm_smul",
+       "role": "structure",
+       "statement": "(c • b)⁻¹ = c⁻¹ • b⁻¹ for c ≠ 0; the Gram matrix of b⁻¹ in a dual basis is the inverse Gram matrix."
+      }
+     ],
+     "tests": [
+      {
+       "name": "minkowski_inverse",
+       "kind": "computation",
+       "statement": "For η on ℝ²: b♯(dt) = −e₀, b⁻¹(dt, dt) = −1, b⁻¹(dx, dx) = 1, b⁻¹(dt, dx) = 0."
+      },
+      {
+       "name": "diag_minus_two",
+       "kind": "non-example",
+       "statement": "For diag(−2, 1): b⁻¹(e⁰, e⁰) = −½, whereas the wrong definition by the Gram matrix of b gives −2."
+      },
+      {
+       "name": "double_null_inverse",
+       "kind": "computation",
+       "statement": "For Gram matrix [[0, −2], [−2, 0]]: b⁻¹(e⁰, e¹) = −½ and b⁻¹(e⁰, e⁰) = 0; for 4η, b⁻¹(dt, dt) = −¼."
+      }
+     ]
+    },
+    {
+     "id": "1.3",
+     "kind": "definition",
+     "name": "LinearMap.BilinForm.IsTimelike",
+     "statement": "v is timelike if b v v < 0; null if b v v = 0 and v ≠ 0; causal if b v v ≤ 0 and v ≠ 0; spacelike if 0 < b v v or v = 0.",
+     "hypotheses": [
+      "b : LinearMap.BilinForm ℝ V"
+     ],
+     "locator": {
+      "source": "minguzzi2019",
+      "where": "§1.3, lines 301–306, p. 7 (null here is his 'lightlike'); sbierski2018 §2.1, lines 263–264, p. 7"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "mathlib:LinearMap.BilinForm.orthogonal",
+      "mathlib:LinearMap.BilinForm.restrict_nondegenerate_iff_isCompl_orthogonal",
+      "tauceti:QuadraticForm.posDef_iff_sigNeg_eq_zero_and_radical_eq_bot"
+     ],
+     "api": [
+      {
+       "name": "trichotomy",
+       "role": "structure",
+       "statement": "Exactly one of timelike, null, spacelike holds; causal is timelike or null."
+      },
+      {
+       "name": "isTimelike_smul",
+       "role": "structure",
+       "statement": "Each predicate is invariant under v ↦ c v for c ≠ 0 and under isometries."
+      },
+      {
+       "name": "IsLorentzian.orthogonal_posDef",
+       "role": "structure",
+       "statement": "For Lorentzian b and timelike v, v^⊥ is positive definite and V = ℝv ⊕ v^⊥."
+      },
+      {
+       "name": "IsLorentzian.not_isOrtho",
+       "role": "structure",
+       "statement": "A timelike and a nonzero causal vector are never orthogonal; two null vectors are orthogonal iff proportional."
+      },
+      {
+       "name": "IsLorentzian.exists_isNull_iff",
+       "role": "characterisation",
+       "statement": "Null vectors exist iff finrank V ≥ 2."
+      }
+     ],
+     "tests": [
+      {
+       "name": "minkowski_types",
+       "kind": "computation",
+       "statement": "For η: η(e₀, e₀) = −1 timelike, η(e₀+e₁, e₀+e₁) = 0 null, η(e₁, e₁) = 1 spacelike."
+      },
+      {
+       "name": "zero_vector",
+       "kind": "degenerate",
+       "statement": "0 is spacelike and neither null nor causal; null by b v v = 0 alone would make 0 causal."
+      },
+      {
+       "name": "dimension_one_no_null",
+       "kind": "degenerate",
+       "statement": "For b = −xy on ℝ every nonzero vector is timelike; no null vectors."
+      },
+      {
+       "name": "null_orthogonality",
+       "kind": "computation",
+       "statement": "η(e₀+e₁, e₀−e₁) = −2 ≠ 0 for non-proportional null vectors; e₀+e₁ ⊥ 2e₀+2e₁."
+      }
+     ]
+    },
+    {
+     "id": "1.4",
+     "kind": "definition",
+     "name": "LinearMap.BilinForm.timeCone",
+     "statement": "timeCone b v = {w | b w w < 0 ∧ b v w < 0}, the time cone of the timelike vector v.",
+     "hypotheses": [
+      "b : LinearMap.BilinForm ℝ V",
+      "v timelike for the theorems"
+     ],
+     "locator": {
+      "source": "chrusciel2011",
+      "where": "§2.1, lines 84–98, p. 3; minguzzi2019 §1.3, lines 308–314, p. 7"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "mathlib:ConvexCone"
+     ],
+     "api": [
+      {
+       "name": "mem_timeCone_self",
+       "role": "evaluation",
+       "statement": "For timelike v, v ∈ timeCone b v and timeCone b (−v) = −timeCone b v."
+      },
+      {
+       "name": "isOpen_timeCone",
+       "role": "structure",
+       "statement": "timeCone b v is open and closed under positive scalars."
+      },
+      {
+       "name": "IsLorentzian.timeCone_convexCone",
+       "role": "structure",
+       "statement": "For Lorentzian b and timelike v, timeCone b v is closed under addition (a ConvexCone), equals timeCone b v' for v' in it, and has closure {b w w ≤ 0 ∧ b v w ≤ 0}."
+      }
+     ],
+     "tests": [
+      {
+       "name": "cone_membership",
+       "kind": "computation",
+       "statement": "For η and v = e₀: (2, 1) ∈ timeCone (η = −3, η(e₀, ·) = −2); (−1, ½) ∈ timeCone(−e₀)."
+      },
+      {
+       "name": "spacelike_base_rejected",
+       "kind": "non-example",
+       "statement": "For v = e₁, the set contains (1, −½) and (−1, −½) but not their midpoint (0, −½): not convex."
+      },
+      {
+       "name": "closure_null_rays",
+       "kind": "computation",
+       "statement": "closure(timeCone η e₀) contains 0 and e₀+e₁ but not −e₀+e₁ (η(e₀, −e₀+e₁) = 1)."
+      }
+     ]
+    },
+    {
+     "id": "1.5",
+     "kind": "theorem",
+     "name": "LinearMap.BilinForm.IsLorentzian.timelike_eq_timeCone_union",
+     "statement": "For Lorentzian b and timelike v, the timelike vectors are the disjoint union of timeCone b v and timeCone b (−v), nonempty open convex cones exchanged by w ↦ −w; for w ∈ timeCone b v and timelike w', w' ∈ timeCone b v iff b w w' < 0; every causal vector lies in the closure of exactly one cone and the closures meet only in 0. Hence the timelike set has exactly two connected components.",
+     "hypotheses": [
+      "b Lorentzian",
+      "v timelike"
+     ],
+     "locator": {
+      "source": "chrusciel2011",
+      "where": "§2.1, (2.1.1), lines 84–98, p. 3; minguzzi2019 §1.3, lines 308–309, p. 7; minguzzi2019cone lines 236–244; oneill1983 Ch. 5"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:1.4",
+      "mathlib:ConvexCone"
+     ],
+     "proofSketch": "Normalise b(v, v) = −1, decompose w = a v + w⊥ with v^⊥ Euclidean; timeCone = {a > ‖w⊥‖}; Cauchy–Schwarz in v^⊥ gives the sign of b(w, w').",
+     "api": [
+      {
+       "name": "LinearMap.BilinForm.IsLorentzian.mem_timeCone_iff",
+       "role": "theorem",
+       "statement": "For w ∈ timeCone b v and timelike w', w' ∈ timeCone b v ↔ b w w' < 0."
+      },
+      {
+       "name": "LinearMap.BilinForm.IsLorentzian.causal_mem_closure_timeCone",
+       "role": "theorem",
+       "statement": "Every causal vector lies in exactly one of closure(timeCone b v), closure(timeCone b (−v)); these meet in {0}."
+      }
+     ],
+     "tests": []
+    },
+    {
+     "id": "1.6",
+     "kind": "theorem",
+     "name": "LinearMap.BilinForm.IsLorentzian.reverse_cauchy_schwarz",
+     "statement": "For Lorentzian b and u, w in the closure of one time cone, −b(u, w) ≥ √(−b(u,u)) √(−b(w,w)), equality iff u, w linearly dependent; reverse triangle inequality F(u + w) ≥ F(u) + F(w) for F = √(−b(·,·)) on the closed cone, with the same equality case; F is concave there.",
+     "hypotheses": [
+      "b Lorentzian",
+      "u, w in the closure of one time cone"
+     ],
+     "locator": {
+      "source": "minguzzi2019",
+      "where": "Theorem 1.2 (lines 336–348, p. 8), Theorem 1.3 (lines 349–368, pp. 8–9), Corollary 1.4 (line 371, p. 9)"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "target:1.5"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "1.7",
+     "kind": "theorem",
+     "name": "LinearMap.BilinForm.IsLorentzian.orthogonal_isNull",
+     "statement": "For Lorentzian b: v timelike ⇒ v^⊥ positive definite of dimension dim V − 1; n null ⇒ n^⊥ is a hyperplane containing n, n^⊥ ∩ (n^⊥)^⊥ = ℝn, vectors of n^⊥ outside ℝn are spacelike, and the null vectors of n^⊥ are the nonzero multiples of n.",
+     "hypotheses": [
+      "b Lorentzian"
+     ],
+     "locator": {
+      "source": "galloway2004",
+      "where": "§3, lines 176–181, p. 5; oneill1983 Ch. 5"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:1.5",
+      "mathlib:LinearMap.BilinForm.finrank_add_finrank_orthogonal"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "1.8",
+     "kind": "theorem",
+     "name": "LinearMap.BilinForm.IsLorentzian.hyperplane_classification",
+     "statement": "For Lorentzian b, ξ ∈ V* ∖ 0 and W = ker ξ: b|_W positive definite ⇔ b⁻¹(ξ,ξ) < 0; b|_W Lorentzian ⇔ b⁻¹(ξ,ξ) > 0; b|_W degenerate ⇔ b⁻¹(ξ,ξ) = 0 ⇔ W contains a null vector and no timelike vector, and then W^⊥ = ℝ b♯ξ ⊆ W is the radical and the null vectors of W are exactly the nonzero elements of that radical line (§1.7), every other nonzero vector of W being spacelike.",
+     "hypotheses": [
+      "b Lorentzian",
+      "ξ ≠ 0"
+     ],
+     "locator": {
+      "source": "galloway2004",
+      "where": "§3, lines 174–182, p. 5 (degenerate case); oneill1983 Ch. 5"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:1.3",
+      "target:1.7",
+      "tauceti:QuadraticForm.sigNeg_prod"
+     ],
+     "proofSketch": "N = b♯ξ has W = N^⊥ and b(N, N) = b⁻¹(ξ, ξ); split by the causal type of N.",
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "1.9",
+     "kind": "example",
+     "name": "LinearMap.BilinForm.acousticalForm",
+     "statement": "The associated bilinear form (QuadraticMap.associated, half the polar form) of TauCeti.realCliffordForm n 1 (time last), with value TauCeti.realCliffordForm n 1 v at (v, v), is Lorentzian with ker dt spacelike; −θ⁰⊗θ⁰ + Σθ^i⊗θ^i is Lorentzian for a basis θ of V*; the acoustical form a_{c,v} = −c²ττ' + ⟪ξ − τv, ξ' − τ'v⟫ (c > 0) is Lorentzian, a(B, B) = −c² for B = (1, v), a⁻¹ = −c⁻² B⊗B + Σ ∂_i⊗∂_i, a⁻¹(dt, dt) = −c⁻², and (τ, ξ) is causal iff nonzero with |ξ − τv| ≤ c|τ|.",
+     "hypotheses": [
+      "c > 0",
+      "v ∈ ℝⁿ"
+     ],
+     "locator": {
+      "source": "luoyu2023",
+      "where": "line 95; luoyu2023b lines 211–214; minguzzi2019 §1.3, lines 296–300, p. 7"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.2",
+      "target:1.3",
+      "target:1.8",
+      "tauceti:TauCeti.realCliffordForm",
+      "mathlib:QuadraticMap.associated"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "acoustical_values",
+       "kind": "computation",
+       "statement": "c = 2, v = (1, 0): a(B, B) = −4, (1, (3, 0)) null, (1, (1, 0)) timelike, a⁻¹(dt, dt) = −¼."
+      },
+      {
+       "name": "one_plus_one_null",
+       "kind": "computation",
+       "statement": "−c²dt² + (dx − v dt)² has null vectors ∂_t + (v ± c)∂_x."
+      },
+      {
+       "name": "time_coordinate_last",
+       "kind": "compatibility",
+       "statement": "TauCeti.realCliffordForm 1 1 has weights 1, −1: Q(e₁) = −1, Q(e₀) = 1, so e₁ is timelike and ker dt = ℝe₀ spacelike; time-first reading would make e₀ timelike."
+      },
+      {
+       "name": "acoustical_shift_direction",
+       "kind": "non-example",
+       "statement": "c = 2, v = (1, 0): (1, (3, 0)) has a = −4 + 4 = 0 (null); the unshifted form gives 5 and the opposite shift ξ + τv gives 12."
+      },
+      {
+       "name": "acoustical_inverse_not_gram",
+       "kind": "computation",
+       "statement": "c = 2, v = (1, 0): Gram [[−3,−1,0],[−1,1,0],[0,0,1]], inverse [[−¼,−¼,0],[−¼,¾,0],[0,0,1]] = −¼B⊗B + Σ∂_i⊗∂_i, a⁻¹(dt,dt) = −¼; the Gram matrix read in the dual basis gives −3."
+      },
+      {
+       "name": "sound_speed_nonzero",
+       "kind": "degenerate",
+       "statement": "c = 0: B = (1, v) lies in the radical of ⟪ξ − τv, ξ' − τ'v⟫, which is degenerate."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "Lorentzian metrics of finite regularity",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "definition",
+     "name": "ContDiffLocallyHolderOn",
+     "statement": "ContDiffLocallyHolderOn k α f s: f is ContDiffOn ℝ k on s and every x ∈ s has a neighbourhood U within s and C with HolderOnWith C α (iteratedFDerivWithin ℝ k f s) U.",
+     "hypotheses": [
+      "f : F → G between normed spaces",
+      "s : Set F (used for sets relatively open in range I; the Lipschitz, algebra and composition facts assume s relatively open in a convex set with nonempty interior)",
+      "k : ℕ",
+      "0 < α ≤ 1"
+     ],
+     "locator": {
+      "source": "chrusciel2011",
+      "where": "§2.2, footnote 2, lines 234–236, p. 6 (C^{k,α}: k-th derivatives locally Hölder)"
+     },
+     "prerequisites": [
+      "mathlib:HolderOnWith",
+      "mathlib:iteratedFDerivWithin",
+      "mathlib:ContDiffOn",
+      "mathlib:ModelWithCorners.uniqueDiffOn",
+      "mathlib:ModelWithCorners.convex_range",
+      "mathlib:ModelWithCorners.nonempty_interior",
+      "mathlib:uniqueDiffOn_convex",
+      "mathlib:UniqueDiffOn.inter",
+      "mathlib:ContDiffPointwiseHolderAt",
+      "roadmap:PDE §1.7"
+     ],
+     "api": [
+      {
+       "name": "ContDiffLocallyHolderOn.mono_exponent",
+       "role": "structure",
+       "statement": "Exponent monotonicity; implies ContDiffOn ℝ k; for s relatively open in a convex set with nonempty interior (such as range I), ContDiffOn ℝ (k+1) on s implies exponent 1 at order k."
+      },
+      {
+       "name": "ContDiffLocallyHolderOn.congr_cover",
+       "role": "structure",
+       "statement": "Restriction to relatively open subsets and locality over covers."
+      },
+      {
+       "name": "ContDiffLocallyHolderOn.comp",
+       "role": "functoriality",
+       "statement": "For s (and, for compositions, the domain t of f) relatively open in a convex set with nonempty interior: sums, bilinear compositions, composition with maps C^∞ within s, and postcomposition F ∘ f with a map F that is C^∞ on an open set containing f(s) (inversion of invertible linear maps, t ↦ 1/t on nowhere-vanishing scalar functions, exp) preserve the class."
+      },
+      {
+       "name": "contDiffLocallyHolderOn_iff_mem_Ckα_loc",
+       "role": "compatibility",
+       "statement": "On open Ω ⊆ ℝⁿ the predicate is membership in PDE §1.7's C^{k,α}_loc(Ω)."
+      },
+      {
+       "name": "ContDiffLocallyHolderOn.contDiffPointwiseHolderAt",
+       "role": "compatibility",
+       "statement": "Implies ContDiffPointwiseHolderAt k α f x at interior points; the converse fails."
+      }
+     ],
+     "tests": [
+      {
+       "name": "abs_pow",
+       "kind": "computation",
+       "statement": "|x|^α on (−1,1) is locally α-Hölder with seminorm 1 at 0 and not β-Hölder for β > α."
+      },
+      {
+       "name": "x_abs_x",
+       "kind": "computation",
+       "statement": "x|x| is C^{1,1} (derivative 2|x| is 2-Lipschitz) and not C²."
+      },
+      {
+       "name": "pointwise_not_local",
+       "kind": "non-example",
+       "statement": "x² sin(1/x²) is pointwise 1-Hölder at every point but f'((2πm)^{−1/2}) = −2√(2πm) → −∞, so not locally Lipschitz at 0."
+      },
+      {
+       "name": "corner_tested",
+       "kind": "degenerate",
+       "statement": "√(x+y) on [0,1)² is C^{0,½} and not C^{0,1} at the corner, though C^∞ at every interior point."
+      },
+      {
+       "name": "empty_interior",
+       "kind": "degenerate",
+       "statement": "On the segment (0,1) × {0} in ℝ² (convex, empty interior), every 2t dx + c dy is a derivative of x² within the set at (t, 0), so iteratedFDerivWithin ℝ 1 is an arbitrary choice and C² gives no Lipschitz bound on it; on (0,1) × (−1,1) the derivative 2x dx is 2-Lipschitz."
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "definition",
+     "name": "TauCeti.Manifold.LorentzianMetric",
+     "statement": "A continuous section (ContMDiffSection of order 0) of Hom(TM, Hom(TM, ℝ)), with fibre T_xM →L[ℝ] T_xM →L[ℝ] ℝ, Lorentzian at every point.",
+     "hypotheses": [
+      "I : ModelWithCorners ℝ E H, E finite-dimensional",
+      "IsManifold I ∞ M"
+     ],
+     "locator": {
+      "source": "minguzzi2019",
+      "where": "§1.5, line 396, p. 9, and §1.7 lines 439–452, pp. 10–11; sbierski2018 §2.1, line 263, p. 7; chruscielgrant2012 lines 64–73"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.2",
+      "mathlib:ContMDiffSection",
+      "tauceti:TauCeti.Manifold.ContMDiffNondegenerateMetric",
+      "tauceti:TauCeti.Manifold.ContMDiffNondegenerateMetric.signature"
+     ],
+     "api": [
+      {
+       "name": "LorentzianMetric.ext",
+       "role": "extensionality",
+       "statement": "Coercion to pointwise forms, symmetry, extensionality."
+      },
+      {
+       "name": "LorentzianMetric.sharp",
+       "role": "structure",
+       "statement": "Pointwise inverse forms, musical maps and gradients."
+      },
+      {
+       "name": "LorentzianMetric.toContMDiffNondegenerateMetric",
+       "role": "compatibility",
+       "statement": "A C^∞ Lorentzian metric is a ContMDiffNondegenerateMetric with signature (dim M − 1, 1); conversely a smooth nondegenerate metric with sigNeg = 1 at a point of each component is Lorentzian."
+      }
+     ],
+     "tests": [
+      {
+       "name": "minkowski_constant",
+       "kind": "computation",
+       "statement": "The constant Minkowski form on Fin (n+1) → ℝ is a Lorentzian metric; the Euclidean form is not."
+      },
+      {
+       "name": "degenerate_locus_rejected",
+       "kind": "non-example",
+       "statement": "diag(−1, x²) on ℝ² is continuous with sigNeg = 1 but degenerate on {x = 0}."
+      },
+      {
+       "name": "discontinuous_rejected",
+       "kind": "non-example",
+       "statement": "diag(−1, sign x) is not a continuous section and is excluded."
+      }
+     ]
+    },
+    {
+     "id": "2.3",
+     "kind": "definition",
+     "name": "TauCeti.Manifold.IsBilinFormOfClass",
+     "statement": "For ℛ : TauCeti.Manifold.MetricRegularity (C^k, k ∈ ℕ∞, or C^{k,α}), a pointwise bilinear field b is of class C^k if its section is ContMDiff of order k, and of class C^{k,α} if for every x₀ its coefficients in the chart at x₀ are ContDiffLocallyHolderOn k α on the extended chart target (extChartAt I x₀).target. The class ℛ of a function f : M → ℝ and of a section s of TM, T*M or Hom(TM, TM) is defined by the same test: C^k is ContMDiff of order k (of f, respectively of the section into the total space); C^{k,α} is ContDiffLocallyHolderOn k α of f ∘ (extChartAt I x₀).symm, respectively of z ↦ (trivializationAt _ _ x₀ ⟨y, s y⟩).2 with y = (extChartAt I x₀).symm z, on (extChartAt I x₀).target for every x₀; on an open U, the same test on the open submanifold U.",
+     "hypotheses": [
+      "IsManifold I ∞ M",
+      "E finite-dimensional"
+     ],
+     "locator": {
+      "source": "chrusciel2011",
+      "where": "Definition 2.1.1, lines 118–120, p. 4, and §2.2 footnote 2, lines 234–236, p. 6; minguzzi2019cone lines 81–92"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.2",
+      "mathlib:contMDiffAt_hom_bundle",
+      "mathlib:contMDiffWithinAt_hom_bundle",
+      "mathlib:Bundle.contMDiffAt_section",
+      "mathlib:extChartAt",
+      "mathlib:ModelWithCorners.uniqueDiffOn",
+      "tauceti:TauCeti.Manifold.tangentBilinFormInCoordinates"
+     ],
+     "api": [
+      {
+       "name": "IsBilinFormOfClass.mono",
+       "role": "structure",
+       "statement": "Class ℛ implies class ℛ' for ℛ ⊆ ℛ'; every Lorentzian metric is C^0."
+      },
+      {
+       "name": "IsBilinFormOfClass.restrict",
+       "role": "structure",
+       "statement": "Locality on open covers and restriction to open subsets."
+      },
+      {
+       "name": "IsBilinFormOfClass.add_mul_inv",
+       "role": "structure",
+       "statement": "Sums of fields of class ℛ; products of a class-ℛ function with a class-ℛ function, vector field, one-form or bilinear field; quotients by a nowhere-vanishing class-ℛ function; F ∘ f for f of class ℛ and F C^∞ on an open set containing f(M); tensor products of class-ℛ one-forms; contractions b(·, X) and evaluations θ(X); and the coefficient matrix of the pointwise inverse of a nondegenerate field (in every chart) are of class ℛ."
+      }
+     ],
+     "tests": [
+      {
+       "name": "half_power",
+       "kind": "computation",
+       "statement": "diag(−1, 1 + |x|^{3/2}) on ℝ² is C^{1,½} and not C²."
+      },
+      {
+       "name": "quadrant_corner",
+       "kind": "degenerate",
+       "statement": "−(1 + (x+y)^{3/2})dx² + dy² on the quadrant is C^{1,½}, not C^{1,1} at the corner, C^∞ elsewhere."
+      },
+      {
+       "name": "nonsmooth_chart",
+       "kind": "non-example",
+       "statement": "Through the homeomorphism (t, x) ↦ (t, x³) the flat metric has coefficient (1/9)y^{−4/3}: only charts of the smooth atlas are allowed."
+      },
+      {
+       "name": "function_class_product_rule",
+       "kind": "computation",
+       "statement": "On ℝ × ℝ² (self model), f(t, x) = |x|^{3/2} has derivative (3/2)|x|^{−1/2}⟪x, ·⟫, ½-Hölder (ratio 3√a/√(2a) = 3/√2 ≈ 2.1213 at x = (±a, 0)), radial second derivative (3/4)|x|^{−1/2} unbounded: f is C^{1,½}, not C². Hence f∂_{x¹} is C^{1,½} and the acoustical metric −4dt² + (dx¹ − f dt)² + (dx²)² is C^{1,½} by the product rule, not C² since g(∂_t, ∂_{x¹}) = −f."
+      },
+      {
+       "name": "vector_field_by_coordinates",
+       "kind": "non-example",
+       "statement": "X = x∂_x on ℝ has coordinate x and is C^∞ while its length |x| is not differentiable at 0: a definition by the class of the pointwise length would reject a smooth field."
+      }
+     ]
+    },
+    {
+     "id": "2.3a",
+     "kind": "theorem",
+     "name": "TauCeti.Manifold.isBilinFormOfClass_iff_forall_mem_maximalAtlas",
+     "statement": "b is of class ℛ iff for every chart e of the maximal smooth atlas the coefficient matrix z ↦ b(De⁻¹_z ·, De⁻¹_z ·), with De⁻¹_z the derivative within range I of (e.extend I).symm at z, is C^k, respectively ContDiffLocallyHolderOn k α, on the extended chart target (e.extend I).target = I.symm ⁻¹' e.target ∩ range I ⊆ E, relatively open in range I.",
+     "hypotheses": [
+      "IsManifold I ∞ M",
+      "E finite-dimensional"
+     ],
+     "locator": {
+      "source": "minguzzi2019",
+      "where": "§1.5, lines 396–397, p. 9 (Lorentzian manifold: smooth manifold with a metric of finite regularity); chrusciel2011 §2.2 footnote 2, lines 234–236, p. 6 (local Hölder class); hawkingellis1973 Ch. 2 (regularity of tensor fields read in charts); chart independence is a consequence of the C^∞ transitions, proved here"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.3",
+      "mathlib:contMDiffAt_hom_bundle",
+      "mathlib:OpenPartialHomeomorph.extend",
+      "mathlib:OpenPartialHomeomorph.extend_target"
+     ],
+     "proofSketch": "C^k: contMDiffAt_hom_bundle in every chart. C^{k,α}: transition maps are C^∞ within range I and 2.1 is stable under composition and products.",
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "2.4",
+     "kind": "theorem",
+     "name": "TauCeti.Manifold.LorentzianMetric.isLocallyConstant_signature",
+     "statement": "A continuous field of symmetric nondegenerate forms has locally constant (sigPos, sigNeg); on preconnected M, Lorentzian at one point implies Lorentzian everywhere. For continuous X on open U, the timelike locus {g(X,X) < 0} and the nonzero-spacelike locus {g(X,X) > 0} are disjoint open subsets of U, so on a preconnected C ⊆ U where X is nowhere null and nowhere zero, X is timelike throughout or spacelike throughout. For continuous T timelike and X causal on a preconnected C, g(T, X) is nowhere zero, hence of constant sign on C. Every point has a neighbourhood with a smooth timelike vector field.",
+     "hypotheses": [
+      "E finite-dimensional",
+      "the field continuous as a section"
+     ],
+     "locator": {
+      "source": "minguzzi2019",
+      "where": "§1.7, lines 450–452, p. 11 (a coordinate field timelike at one point is timelike nearby by continuity; local timelike fields); signature constancy is Tau Ceti TauCeti.Manifold.isLocallyConstant_sigPos_sigNeg_of_continuous; constancy of causal character and time sense on preconnected sets proved here"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.3",
+      "target:2.2",
+      "tauceti:TauCeti.Manifold.isLocallyConstant_sigPos_sigNeg_of_continuous"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "causal_character_strip",
+       "kind": "computation",
+       "statement": "On Minkowski ℝ², X = ∂_t + x∂_x has g(X,X) = −1 + x²: timelike throughout on the connected strip {|x| < 1}; on ℝ² timelike at (0,0) and spacelike at (0,2), the null locus {|x| = 1} separating them, so 'nowhere null' is load-bearing."
+      },
+      {
+       "name": "zero_locus_needed",
+       "kind": "non-example",
+       "statement": "X = x∂_t on ℝ² has g(X,X) = −x²: nowhere null, timelike off {x = 0} and zero (spacelike) on it, so 'nowhere zero' is load-bearing; the spacelike locus {x = 0} is not open."
+      },
+      {
+       "name": "time_sense_constant",
+       "kind": "computation",
+       "statement": "For T = ∂_t: g(T, ∂_t + x∂_x) = −1 on the closed strip {|x| ≤ 1} where the field is causal; g(T, x∂_t) = −x changes sign across the zero locus {x = 0}."
+      }
+     ]
+    },
+    {
+     "id": "2.5",
+     "kind": "construction",
+     "name": "TauCeti.Manifold.LorentzianMetric.pullback",
+     "statement": "Restriction to open subsets; pullback along smooth local diffeomorphisms; conformal rescaling e^{2φ}g; metrics from continuous coframes; the acoustical metric −c²dt² + Σ(dx^i − v^i dt)² for functions t, x^i with independent differentials (corners allowed), with B = ∂_t + v·∇ timelike, g(B,B) = −c², g⁻¹(dt,dt) = −c⁻², slices spacelike; the double null metric −2Ω²(du⊗dv + dv⊗du) + γ for a function Ω > 0 and coefficient functions γ_{AB} of class ℛ with g⁻¹(du,du) = 0, g⁻¹(du,dv) = −(2Ω²)⁻¹; and g = h − 2h(·,X)h(·,X)/h(X,X) from a Riemannian h and nowhere-vanishing X; each of the class of its data.",
+     "hypotheses": [
+      "data of class ℛ (functions, vector fields, one-forms and bilinear fields in the sense of 2.3)",
+      "c > 0, Ω > 0, γ positive definite, X nowhere vanishing"
+     ],
+     "locator": {
+      "source": "sbierski2018",
+      "where": "Remark 2.3, lines 281–284, p. 7, Definition 2.15, lines 475–478, p. 11; chrusciel2011 Prop. 2.1.3 lines 163–171, p. 5; luoyu2023 line 95; luoyu2023b lines 211–214; rodnianskishlapentokhrothman2023 line 263"
+     },
+     "prerequisites": [
+      "target:1.9",
+      "target:2.2",
+      "target:2.3",
+      "mathlib:ContMDiffSection",
+      "mathlib:IsSmoothEmbedding"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "sbierski_extension_class",
+       "kind": "computation",
+       "statement": "e^{2√|t|}(−dt² + dx²) on ℝ² is C^{0,½} and not C¹."
+      },
+      {
+       "name": "conformal_factor_convention",
+       "kind": "computation",
+       "statement": "On (ℝ², −dt² + dx²) with the constant φ = log 2, the rescaled metric e^{2φ}g has e^{2φ}g(∂_t, ∂_t) = −4, e^{2φ}g(∂_t + ∂_x, ∂_t + ∂_x) = 0 and inverse value (e^{2φ}g)⁻¹(dt, dt) = −¼; a rescaling by e^{φ} gives −2 and −½."
+      },
+      {
+       "name": "pullback_direction",
+       "kind": "characterisation",
+       "statement": "For the diffeomorphism φ(s, y) = (2s, y) of ℝ² and η = −dt² + dx², φ^*η = −4ds² + dy², so (φ^*η)(∂_s, ∂_s) = η(2∂_t, 2∂_t) = −4; the pushforward (pullback along φ⁻¹) gives −¼, and pullback along the identity returns η."
+      },
+      {
+       "name": "riemannian_to_lorentzian_minkowski",
+       "kind": "compatibility",
+       "statement": "For h = dt² + dx² on ℝ² and X = 2∂_t, h − 2h(·, X)h(·, X)/h(X, X) = dt² + dx² − 2(2dt)²/4 = −dt² + dx², the Minkowski metric; omitting the division by h(X, X) gives −7dt² + dx². For X = ∂_t + ∂_x, h(X, X) = 2 and g(X, X) = 2 − 2·2·2/2 = −2 < 0, so X is timelike."
+      },
+      {
+       "name": "double_null_is_rescaled_minkowski",
+       "kind": "compatibility",
+       "statement": "In two dimensions with Ω = 1 and u = t − x, v = t + x on ℝ², −2(du ⊗ dv + dv ⊗ du) = 4(−dt² + dx²); then g(∂_u, ∂_v) = −2, g⁻¹(du, du) = ¼(−1 + 1) = 0 and g⁻¹(du, dv) = ¼η⁻¹(dt − dx, dt + dx) = −½ = −(2Ω²)⁻¹, in agreement with the §1.2 Check for 4η."
+      },
+      {
+       "name": "coframe_needs_basis",
+       "kind": "non-example",
+       "statement": "The one-forms θ⁰ = dt, θ¹ = t dx on ℝ² are continuous but not a basis of T*_xℝ² on {t = 0}; −θ⁰ ⊗ θ⁰ + θ¹ ⊗ θ¹ = −dt² + t²dx² is degenerate there and is not a Lorentzian metric, so the pointwise basis hypothesis is load-bearing."
+      }
+     ]
+    },
+    {
+     "id": "2.6",
+     "kind": "definition",
+     "name": "TauCeti.Manifold.LorentzianMetric.IsCausalCurve",
+     "statement": "γ is causal on [a, b] if a strict partition witnessing IsPiecewiseContMDiffOn I 1 γ a b exists with causal within-velocities on every closed piece and, at interior break points, both one-sided velocities in the closure of one time cone; timelike and null curves analogously.",
+     "hypotheses": [
+      "a < b",
+      "g a Lorentzian metric (class C^0)"
+     ],
+     "locator": {
+      "source": "sbierski2018",
+      "where": "Definition 2.1, lines 269–273, p. 7; minguzzi2019 §1.3 footnote 1, lines 323–326, p. 7"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:1.4",
+      "target:1.5",
+      "target:2.2",
+      "tauceti:TauCeti.Manifold.IsPiecewiseContMDiffOn",
+      "tauceti:TauCeti.Manifold.curveVelocityWithin"
+     ],
+     "api": [
+      {
+       "name": "IsCausalCurve.of_refine",
+       "role": "structure",
+       "statement": "Independence of the witnessing partition."
+      },
+      {
+       "name": "IsCausalCurve.comp_reparam",
+       "role": "functoriality",
+       "statement": "Increasing C¹ reparametrisations with positive derivative, and restriction to a subinterval [c, d] ⊆ [a, b] with c < d, preserve causal, timelike and null curves."
+      },
+      {
+       "name": "IsCausalCurve.concat_iff",
+       "role": "structure",
+       "statement": "For causal (timelike, null) γ₁ on [a, b] and γ₂ on [b, c] with γ₁(b) = γ₂(b), their concatenation is causal (timelike, null) on [a, c] iff the velocity of γ₁ within [a, b] at b and the velocity of γ₂ within [b, c] at b lie in the closure of one time cone of g_{γ₁(b)}."
+      },
+      {
+       "name": "IsCausalCurve.velocity_ne_zero",
+       "role": "structure",
+       "statement": "One-sided velocities of a causal curve are nonzero."
+      }
+     ],
+     "tests": [
+      {
+       "name": "minkowski_curves",
+       "kind": "computation",
+       "statement": "(s, s/2) timelike, (s, s) null, (s, 2s) not causal (−1 + 4 > 0)."
+      },
+      {
+       "name": "constant_rejected",
+       "kind": "degenerate",
+       "statement": "The constant curve is not causal."
+      },
+      {
+       "name": "break_condition",
+       "kind": "non-example",
+       "statement": "Velocities (1,0) then (−1,0) are timelike on each piece but in opposite cones (η((1,0),(−1,0)) = 1 > 0), so this concatenation of two timelike curves with matching endpoint is not timelike: concatenation needs the junction condition; (1,1) then (1,−1) is a null curve; (1,1) then (−1,−1) has η = 0 ≤ 0 yet is not causal."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "Connection, curvature and geodesics at finite regularity",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "definition",
+     "name": "CovariantDerivative.IsLeviCivitaFor",
+     "statement": "For a pointwise bilinear field b and cov : CovariantDerivative I E (TangentSpace I), the conjunction of: the pairings y ↦ b_y(Y y, Z y) of fields Y, Z differentiable at x are differentiable at x, for every x; cov.torsion = 0; and v(b(Y, Z)) = b(∇_v Y, Z) + b(Y, ∇_v Z) for v ∈ T_xM and Y, Z differentiable at x. The first clause makes the left side of compatibility a derivative rather than the junk value 0; it holds for b differentiable as a section (MDifferentiableAt.clm_bundle_apply₂), in particular for b of class C¹.",
+     "hypotheses": [
+      "IsManifold I ∞ M",
+      "E finite-dimensional"
+     ],
+     "locator": {
+      "source": "oneill1983",
+      "where": "Ch. 3 (Levi-Civita connection); chrusciel2011 §2.2, (2.2.1)–(2.2.3), lines 186–193, p. 5"
+     },
+     "prerequisites": [
+      "mathlib:CovariantDerivative",
+      "mathlib:CovariantDerivative.torsion",
+      "mathlib:MDifferentiableAt.clm_bundle_apply₂",
+      "tauceti:TauCeti.Manifold.ContMDiffNondegenerateMetric.mdifferentiableAt_apply",
+      "tauceti:TauCeti.Manifold.koszulBilinear",
+      "tauceti:TauCeti.Manifold.koszulBilinear_sub_two_mul_apply_eq_derivBilinearTensor",
+      "tauceti:TauCeti.Manifold.metricProductRule_of_two_apply_eq_koszulBilinear",
+      "tauceti:TauCeti.Manifold.torsion_eq_zero_of_two_apply_eq_koszulBilinear",
+      "tauceti:TauCeti.Manifold.ContMDiffNondegenerateMetric.IsLeviCivitaConnection",
+      "tauceti:TauCeti.Manifold.ContMDiffNondegenerateMetric.isLeviCivitaConnection_ofRiemannianBundle_leviCivitaConnection"
+     ],
+     "api": [
+      {
+       "name": "IsLeviCivitaFor.iff_smooth",
+       "role": "compatibility",
+       "statement": "For smooth b it is ContMDiffNondegenerateMetric.IsLeviCivitaConnection (the first clause by ContMDiffNondegenerateMetric.mdifferentiableAt_apply); for smooth Riemannian metrics Mathlib's CovariantDerivative.IsLeviCivitaConnection."
+      },
+      {
+       "name": "isLeviCivitaFor_iff_koszul",
+       "role": "characterisation",
+       "statement": "For symmetric b, IsLeviCivitaFor cov b implies 2b(∇_X Y, Z) = koszulBilinear I b X Y Z for differentiable X, Y, Z; if b is symmetric, nondegenerate at every point and has differentiable pairings of differentiable fields, the Koszul identity implies IsLeviCivitaFor cov b (compatibility from symmetry alone, torsion-freeness from nondegeneracy), so for such b the two are equivalent."
+      },
+      {
+       "name": "IsLeviCivitaFor.pullback",
+       "role": "functoriality",
+       "statement": "Pullback along local diffeomorphisms and restriction to open sets."
+      }
+     ],
+     "tests": [
+      {
+       "name": "flat_minkowski",
+       "kind": "computation",
+       "statement": "The trivial connection on ℝ² is Levi-Civita for the constant η."
+      },
+      {
+       "name": "nonconstant_fails",
+       "kind": "non-example",
+       "statement": "For diag(−1, e^{2t}) the trivial connection fails compatibility: ∂_t(e^{2t}) = 2e^{2t} ≠ 0."
+      },
+      {
+       "name": "both_laws_needed",
+       "kind": "non-example",
+       "statement": "A(v,w) = v⁰w⁰e₀ is torsion free, not compatible (−2 ≠ 0); A(v,w) = v⁰Jw with the η-skew boost J is compatible with torsion J e₁ = e₀ ≠ 0."
+      },
+      {
+       "name": "degenerate_koszul",
+       "kind": "non-example",
+       "statement": "For b = 0 on ℝ² and ∇_v Y = DY(v) + v⁰JY, the Koszul identity reads 0 = 0 while the torsion at (e₀, e₁) is e₀ ≠ 0: the converse needs nondegeneracy. For b = η the same connection violates it: with constant X = Z = e₀, Y = e₁, koszulBilinear = 0 and 2η(Je₁, e₀) = −2."
+      },
+      {
+       "name": "nondifferentiable_pairing",
+       "kind": "non-example",
+       "statement": "b = (1 + |t|)η on ℝ² is a continuous Lorentzian metric; the pairing −(1 + |t|) of the constant fields e₀, e₀ is not differentiable at (0, x), so no covariant derivative is Levi-Civita for b. Without the first clause the compatibility law at (0, x) for these fields and the trivial connection would read 0 = 0 with the junk derivative 0, although the one-sided t-derivatives of the pairing are ∓1."
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "theorem",
+     "name": "CovariantDerivative.exists_isLeviCivitaFor",
+     "statement": "For b symmetric and nondegenerate at every point and differentiable as a section (any signature; e.g. C¹), some cov satisfies IsLeviCivitaFor cov b; two such agree on vector fields differentiable at the point; for smooth b they agree with ContMDiffNondegenerateMetric.leviCivitaConnection, for smooth Riemannian metrics with CovariantDerivative.leviCivitaConnection.",
+     "hypotheses": [
+      "b symmetric, nondegenerate, MDifferentiable as a section",
+      "IsManifold I ∞ M",
+      "E finite-dimensional"
+     ],
+     "locator": {
+      "source": "oneill1983",
+      "where": "Ch. 3 (fundamental theorem); chrusciel2011 §2.2, (2.2.1)–(2.2.3), lines 186–193, p. 5"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:1.2",
+      "mathlib:CovariantDerivative",
+      "tauceti:TauCeti.Manifold.tensorialAt_koszulBilinear_first",
+      "tauceti:TauCeti.Manifold.tensorialAt_koszulBilinear_third",
+      "tauceti:TauCeti.Manifold.ContMDiffNondegenerateMetric.leviCivitaConnection",
+      "tauceti:TauCeti.Manifold.ContMDiffNondegenerateMetric.IsLeviCivitaConnection.uniqueness"
+     ],
+     "proofSketch": "∇_v Y = ½ b♯ K(v, Y, ·) from the tensorial Koszul expression, junk 0 on non-differentiable fields; laws via the converse Koszul direction of §3.1, which uses nondegeneracy; uniqueness via nondegeneracy.",
+     "api": [
+      {
+       "name": "CovariantDerivative.IsLeviCivitaFor.uniqueness",
+       "role": "theorem",
+       "statement": "Two Levi-Civita connections for b agree on fields differentiable at the point."
+      }
+     ],
+     "tests": []
+    },
+    {
+     "id": "3.3",
+     "kind": "theorem",
+     "name": "CovariantDerivative.IsLeviCivitaFor.christoffelSymbol_eq",
+     "statement": "For symmetric nondegenerate b of class C^k (k ≥ 1, k ∈ ℕ∞), resp. C^{k,α} (k ≥ 1), and ∇ Levi-Civita for b: in the chart at x₀, Γ^k_ij = ½ g^{kl}(∂_i g_jl + ∂_j g_il − ∂_l g_ij) on the extended chart target (extChartAt I x₀).target with within-derivatives; Γ is C^{k−1}, resp. ContDiffLocallyHolderOn (k−1) α; Γ̃_z(a,b) = (Dφ_z)⁻¹(D²φ_z(a,b) + Γ_{φ(z)}(Dφ_z a, Dφ_z b)) for φ the transition from the chart of Γ̃ to the chart of Γ (x = φ(z)); ∇Y is C^{min(j, k−1)} for Y ∈ C^{j+1}.",
+     "hypotheses": [
+      "b symmetric nondegenerate of class C^k or C^{k,α}, k ≥ 1"
+     ],
+     "locator": {
+      "source": "chrusciel2011",
+      "where": "§2.2, (2.2.2)–(2.2.3), lines 186–193, p. 5, and lines 201–203, p. 6; oneill1983 Ch. 3"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.3",
+      "target:3.2",
+      "tauceti:TauCeti.Manifold.christoffelSymbol",
+      "tauceti:TauCeti.Manifold.christoffelMap",
+      "tauceti:TauCeti.Manifold.ContMDiffNondegenerateMetric.IsLeviCivitaConnection.christoffelSymbol_eq_fderivWithin"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "transition_direction",
+       "kind": "computation",
+       "statement": "For dx² on x > 0 (Γ = 0) and x = φ(z) = z²: Γ̃ = (2z)⁻¹·2 = 1/z, agreeing with z'' = −(z')²/z for the geodesics x = a + bt; the reverse transition ψ(x) = √x gives (Dψ)⁻¹D²ψ = −1/(2x), −½ instead of 1 at z = 1."
+      }
+     ]
+    },
+    {
+     "id": "3.4",
+     "kind": "definition",
+     "name": "CovariantDerivative.IsLeviCivitaFor.curvatureTensorC2",
+     "statement": "For symmetric nondegenerate g of class C^k, k ≥ 2, and ∇ Levi-Civita for g: R_x(u,v)w from curvatureOperator at x on extensions of u, v, w that are C² near x (only germs matter, by locality); Ric_x(v,w) = tr(u ↦ R_x(u,v)w); Rm_x = g_x(R_x(·,·)·, ·); Scal = tr_g Ric.",
+     "hypotheses": [
+      "g symmetric nondegenerate of class C^k, k ≥ 2 (any signature)",
+      "T2Space M for the smooth comparison (the Tau Ceti tensors are declared under it)"
+     ],
+     "locator": {
+      "source": "oneill1983",
+      "where": "Ch. 3 (curvature); chrusciel2011 §2.2, (2.2.2)–(2.2.3), lines 186–193, p. 5"
+     },
+     "prerequisites": [
+      "target:2.3",
+      "target:3.2",
+      "target:3.3",
+      "tauceti:CovariantDerivative.curvatureOperator",
+      "tauceti:CovariantDerivative.curvatureTensor",
+      "tauceti:CovariantDerivative.ricciTensor",
+      "tauceti:CovariantDerivative.riemannCurvatureTensor",
+      "tauceti:TauCeti.Manifold.ContMDiffNondegenerateMetric.IsLeviCivitaConnection.contMDiffCovariantDerivative",
+      "mathlib:IsCovariantDerivativeOn.congr_of_eventuallyEq",
+      "roadmap:RiemannianGeometry R1"
+     ],
+     "api": [
+      {
+       "name": "curvatureTensorC2_tensorial",
+       "role": "structure",
+       "statement": "Independence of the extensions; chart formula ∂Γ − ∂Γ + ΓΓ − ΓΓ; R, Ric, Rm, Scal of class C^{k−2} (resp. C^{k−2,α})."
+      },
+      {
+       "name": "riemann_symmetries",
+       "role": "structure",
+       "statement": "Antisymmetries, first Bianchi, pair symmetry, symmetric Ricci."
+      },
+      {
+       "name": "scal_smul",
+       "role": "structure",
+       "statement": "Naturality under local diffeomorphisms; for c ≠ 0, R and Ric unchanged and Scal_{cg} = Scal_g / c."
+      },
+      {
+       "name": "scal_conformal_two",
+       "role": "computation",
+       "statement": "On a surface, Scal_{e^{2φ}g₀} = −2e^{−2φ} □_{g₀} φ for flat g₀."
+      },
+      {
+       "name": "curvatureTensorC2_eq_curvatureTensor",
+       "role": "compatibility",
+       "statement": "For M Hausdorff and smooth g, ∇ is a ContMDiffCovariantDerivative of order ∞ and R_x, Ric_x equal Tau Ceti's curvatureTensor and ricciTensor; for M Hausdorff and smooth Riemannian g, Rm equals riemannCurvatureTensor."
+      }
+     ],
+     "tests": [
+      {
+       "name": "de_sitter_two",
+       "kind": "computation",
+       "statement": "−dt² + cosh²t dx²: R(∂_t,∂_x)∂_x = cosh²t ∂_t, Ric_tt = −1, Ric_xx = cosh²t, Scal = 2."
+      },
+      {
+       "name": "milne_flat",
+       "kind": "degenerate",
+       "statement": "−dt² + t²dx² on t > 0 has Scal = 0."
+      },
+      {
+       "name": "sbierski_scalar",
+       "kind": "computation",
+       "statement": "e^{2√t}(−dt² + dx²) has Scal = −½ e^{−2√t} t^{−3/2}, unbounded as t → 0⁺."
+      },
+      {
+       "name": "sphere_sign",
+       "kind": "compatibility",
+       "statement": "The round unit sphere has Scal = 2, the sign of de Sitter."
+      }
+     ]
+    },
+    {
+     "id": "3.5",
+     "kind": "theorem",
+     "name": "CovariantDerivative.IsLeviCivitaFor.apply_velocity_self_eq",
+     "statement": "Geodesics (C² curves with accelerationWithin ∇ γ s = 0 for ∇ Levi-Civita for a differentiable nondegenerate g; independent of the choice of ∇): chart form u'' + Γ(u',u') = 0; g(γ',γ') constant on preconnected s for C¹ g; affine reparametrisations are geodesics; a C² curve with nowhere-zero velocity and D_tγ' = f γ' (f continuous) becomes a geodesic after the increasing C² reparametrisation with φ⁻¹(s) = ∫^s exp(∫^r f).",
+     "hypotheses": [
+      "g differentiable nondegenerate (C¹ for constancy)",
+      "UniqueDiffOn ℝ s"
+     ],
+     "locator": {
+      "source": "chrusciel2011",
+      "where": "§2.2, (2.2.1)–(2.2.3), lines 184–193, p. 5; galloway2004 Proposition 3.1, lines 183–185, p. 5"
+     },
+     "prerequisites": [
+      "target:3.2",
+      "target:3.3",
+      "tauceti:CovariantDerivative.accelerationWithin",
+      "tauceti:CovariantDerivative.accelerationWithin_eq_zero_iff",
+      "tauceti:CovariantDerivative.accelerationWithin_comp",
+      "tauceti:TauCeti.Manifold.curveVelocityWithin",
+      "tauceti:TauCeti.Manifold.ContMDiffNondegenerateMetric.IsMetricCompatible.apply_curveVelocityWithin_self_eq_of_accelerationWithin_eq_zero"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "parametrisation_matters",
+       "kind": "non-example",
+       "statement": "Minkowski: s ↦ p + sv is a geodesic; s ↦ p + s²v (v ≠ 0) has acceleration 2v although its image lies on the same line; on s > 0 it is a pregeodesic with f = 1/s, φ⁻¹(s) = s²/2, giving σ ↦ p + 2σv."
+      },
+      {
+       "name": "constancy_needs_compatibility",
+       "kind": "non-example",
+       "statement": "Null line (s, s): g(γ',γ') = 0 for all s. For the torsion-free non-compatible ∇ = D + v⁰Y⁰e₀ of 3.1, (log(1+s), 0) has zero acceleration and g(γ',γ') = −(1+s)⁻² = −1, −¼ at s = 0, 1."
+      },
+      {
+       "name": "pregeodesic_reparametrisation_sign",
+       "kind": "computation",
+       "statement": "γ(t) = (e^{2t}/2, 0): γ'' = 2γ', φ(s) = ½ log(2s + c) solves φ'' = −2φ'², γ∘φ(s) = ((2s + c)/2, 0) (0.8 at s = 0.3, c = 1); the wrong sign φ = −½ log(1 − 2s) gives (1/(2(1 − 2s)), 0) with second derivative 4 at s = 0."
+      },
+      {
+       "name": "de_sitter_coordinate_lines",
+       "kind": "computation",
+       "statement": "−dt² + cosh²t dx²: Γ^t_tt = Γ^x_tt = 0, so (s, 0) is a geodesic (g = −1); (t₀, s) has acceleration cosh t₀ sinh t₀ ∂_t (0.4047 at t₀ = 0.37), a geodesic only for t₀ = 0, although both are coordinate-straight."
+      }
+     ]
+    },
+    {
+     "id": "3.6",
+     "kind": "theorem",
+     "name": "CovariantDerivative.IsLeviCivitaFor.geodesic_unique",
+     "statement": "For M Hausdorff, b symmetric nondegenerate of class C^{1,1}, ∇ Levi-Civita for b: two geodesics on an open interval J with the same position and velocity at some t₀ ∈ J agree on J; at interior points p, for every v ∈ T_pM a geodesic with γ(0) = p, γ'(0) = v exists on an open interval around 0.",
+     "hypotheses": [
+      "T2Space M",
+      "IsBilinFormOfClass (C^{1,1}) b",
+      "existence: p interior"
+     ],
+     "locator": {
+      "source": "chrusciel2011",
+      "where": "§2.2, lines 201–207, p. 6, §2.5.1, lines 1305–1306, p. 31; minguzzi2019cone lines 81–83; minguzzi2019 §2, lines 1025–1027, p. 25"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:3.3",
+      "target:3.5",
+      "mathlib:ODE_solution_unique_of_mem_Ioo",
+      "mathlib:IsPicardLindelof"
+     ],
+     "proofSketch": "Christoffel symbols locally Lipschitz on each extended chart target (extChartAt I x₀).target; ODE uniqueness on that set (relatively open in range I); open-closed argument in J.",
+     "api": [],
+     "tests": []
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "Time orientation, spacetimes and extensions",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "definition",
+     "name": "TauCeti.Manifold.LorentzianMetric.TimeOrientation",
+     "statement": "TimelikeVectorField g: continuous sections T of TM with g(T, T) < 0 everywhere; T ∼ T' iff g(T, T') < 0 everywhere; TimeOrientation g is the quotient; IsTimeOrientable g is Nonempty (TimelikeVectorField g).",
+     "hypotheses": [
+      "g a Lorentzian metric of class C^0"
+     ],
+     "locator": {
+      "source": "sbierski2018",
+      "where": "§2.1, lines 265–268, p. 7; chrusciel2011 §2.1, lines 99–112, pp. 3–4; minguzzi2019 §1.7, lines 440–449, pp. 10–11; minguzzi2019cone lines 240–244; hawkingellis1973 §6.1; wald1984 §8.1; beemehrlicheasley1996 Ch. 3"
+     },
+     "prerequisites": [
+      "target:1.5",
+      "target:2.2"
+     ],
+     "api": [
+      {
+       "name": "timelikeSetoid",
+       "role": "structure",
+       "statement": "∼ is an equivalence relation (transitivity from 1.5)."
+      },
+      {
+       "name": "TimeOrientation.neg",
+       "role": "structure",
+       "statement": "[T] ↦ [−T] is an involution, fixed-point free when M is nonempty."
+      },
+      {
+       "name": "TimeOrientation.pullback",
+       "role": "functoriality",
+       "statement": "Restriction, pullback along local diffeomorphisms, invariance under conformal rescaling."
+      }
+     ],
+     "tests": [
+      {
+       "name": "minkowski_orientations",
+       "kind": "computation",
+       "statement": "[∂_t] ≠ [−∂_t] since g(∂_t, −∂_t) = 1; ∂_t + ½∂_x ∼ ∂_t."
+      },
+      {
+       "name": "empty_manifold",
+       "kind": "degenerate",
+       "statement": "On the empty manifold there is exactly one time orientation."
+      },
+      {
+       "name": "two_components",
+       "kind": "degenerate",
+       "statement": "Two disjoint copies of Minkowski space have four time orientations."
+      },
+      {
+       "name": "continuity_needed",
+       "kind": "non-example",
+       "statement": "∂_t on {x < 0} and −∂_t on {x ≥ 0} is timelike but not continuous, so excluded."
+      }
+     ]
+    },
+    {
+     "id": "4.2",
+     "kind": "theorem",
+     "name": "TauCeti.Manifold.LorentzianMetric.exists_timelikeVectorField_of_locally",
+     "statement": "For M Hausdorff and σ-compact: locally consistent continuous timelike fields glue to a global one (partition of unity, convexity of time cones); time orientations are continuous cone fields; every time orientation contains a smooth timelike field for any C^0 metric; M carries a time-oriented C^0 Lorentzian metric iff it has a continuous nowhere-vanishing vector field, and then a C^∞ one.",
+     "hypotheses": [
+      "T2Space M",
+      "SigmaCompactSpace M",
+      "g of class C^0"
+     ],
+     "locator": {
+      "source": "chrusciel2011",
+      "where": "§2.1, lines 99–112, pp. 3–4, 132–144, p. 4, Proposition 2.1.3 lines 163–171, p. 5; minguzzi2019 §1.7, lines 453–455, p. 11"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "target:1.5",
+      "target:2.4",
+      "target:2.5",
+      "mathlib:PartitionOfUnity.exists_isSubordinate",
+      "mathlib:SmoothPartitionOfUnity.exists_isSubordinate",
+      "mathlib:paracompact_of_locallyCompact_sigmaCompact",
+      "mathlib:NormalSpace.of_paracompactSpace_r1Space",
+      "tauceti:TauCeti.nonempty_contMDiffRiemannianMetric"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "4.3",
+     "kind": "theorem",
+     "name": "TauCeti.Manifold.LorentzianMetric.card_timeOrientation",
+     "statement": "For time-orientable (M, g) with ConnectedSpace M, Nat.card (TimeOrientation g) = 2. Future-/past-directed causal vectors (g(T(x), v) < 0 / > 0) depend only on the orientation; a causal curve is future-directed iff one of its one-sided velocities is. The concatenation of two future-directed causal (timelike, null) curves with matching endpoint is a future-directed causal (timelike, null) curve, since both one-sided velocities at the junction lie in the closure of the future time cone (2.6 junction condition).",
+     "hypotheses": [
+      "ConnectedSpace M",
+      "IsTimeOrientable g"
+     ],
+     "locator": {
+      "source": "chrusciel2011",
+      "where": "§2.1, lines 114–116, p. 4; sbierski2018 §2.1, lines 265–268, and Definition 2.2, lines 274–276, p. 7"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:1.5",
+      "target:2.4",
+      "target:2.6",
+      "target:4.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "concat_future_directed",
+       "kind": "non-example",
+       "statement": "For [∂_t] on Minkowski ℝ²: (1, 1) then (1, −1) are future-directed (η(e₀, ·) = −1) and concatenate to a future-directed null curve; (1, 0) then (−1, 0) joins a future-directed piece (η(e₀, (1, 0)) = −1) to a past-directed one (η(e₀, (−1, 0)) = 1) and is not causal."
+      }
+     ]
+    },
+    {
+     "id": "4.3a",
+     "kind": "definition",
+     "name": "TauCeti.Manifold.Spacetime",
+     "statement": "A spacetime is a connected Lorentzian manifold with a time orientation.",
+     "hypotheses": [
+      "ConnectedSpace M"
+     ],
+     "locator": {
+      "source": "minguzzi2019cone",
+      "where": "lines 240–244; chrusciel2011 Definition 2.1.1, lines 118–120, p. 4"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "target:4.1"
+     ],
+     "api": [
+      {
+       "name": "Spacetime.futureDirected",
+       "role": "structure",
+       "statement": "Future-directed causal vectors and curves of a spacetime."
+      },
+      {
+       "name": "Spacetime.restrict",
+       "role": "functoriality",
+       "statement": "Connected open subsets of a spacetime are spacetimes."
+      },
+      {
+       "name": "Spacetime.ofMinkowski",
+       "role": "constructor",
+       "statement": "Minkowski space with [∂_t] is a spacetime."
+      }
+     ],
+     "tests": [
+      {
+       "name": "minkowski_spacetime",
+       "kind": "computation",
+       "statement": "Minkowski space with [∂_t] is a spacetime with exactly two time orientations."
+      },
+      {
+       "name": "compact_allowed",
+       "kind": "compatibility",
+       "statement": "The flat Lorentzian torus (ℝ/ℤ)² with −dt² + dx² and [∂_t] is a compact spacetime; Minguzzi's Living Review variant (non-compact) would exclude it."
+      },
+      {
+       "name": "disconnected_rejected",
+       "kind": "non-example",
+       "statement": "Two copies of Minkowski space are not a spacetime (not connected), unlike Chruściel's convention."
+      }
+     ]
+    },
+    {
+     "id": "4.4",
+     "kind": "construction",
+     "name": "TauCeti.Manifold.LorentzianMetric.timeOrientationCover",
+     "statement": "The double cover p : M̂ → M of pairs (x, time cone at x), a two-sheeted covering and local diffeomorphism with p^*g of the class of g and a continuous canonical cone field (x, 𝒯) ↦ 𝒯; p has a continuous section iff M̂ ≅ M × {±1} over M (for connected M: iff M̂ disconnected); a time orientation gives a section. For M Hausdorff and σ-compact: M̂ is Hausdorff and σ-compact, the canonical cone field is a time orientation by the gluing of 4.2, (M, g) is time-orientable iff p has a continuous section, and local isometries from time-oriented manifolds lift uniquely compatibly with the orientation.",
+     "hypotheses": [
+      "g Lorentzian of class C^0",
+      "T2Space M and SigmaCompactSpace M for the canonical time orientation, the converse of the section criterion and the lifting"
+     ],
+     "locator": {
+      "source": "chrusciel2011",
+      "where": "Remark 2.1.2, lines 121–131, p. 4; minguzzi2019 §1.7, lines 456–465, p. 11; sbierski2018 Remark 2.16, lines 485–489, p. 11"
+     },
+     "prerequisites": [
+      "target:1.5",
+      "target:2.4",
+      "target:2.5",
+      "target:4.1",
+      "target:4.2",
+      "target:4.3",
+      "roadmap:DifferentialGeometry Layer 2.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "mobius_cover",
+       "kind": "computation",
+       "statement": "The flat Möbius band (quotient of ℝ² by (t,x) ↦ (−t, x+1)) is not time-orientable; its cover is the cylinder ℝ × (ℝ/2ℤ)."
+      },
+      {
+       "name": "minkowski_two_sheets",
+       "kind": "computation",
+       "statement": "For Minkowski space ℝ² the fibre of p over each point has exactly two points, M̂ has exactly two connected components (the cones of ∂_t and of −∂_t), each mapped diffeomorphically onto ℝ² by p, and p has exactly two continuous sections, matching card_timeOrientation = 2 (§4.3); the plausible wrong model with points (x, timelike ray in T_xM) has as fibre the timelike rays of ℝ^{1,1}, two open arcs, not two points."
+      },
+      {
+       "name": "empty_manifold",
+       "kind": "degenerate",
+       "statement": "For M = ∅, M̂ = ∅ and p has exactly one continuous section, the empty map, matching the single time orientation of the empty manifold (§4.1); a criterion 'time-orientable iff M̂ has exactly two components' fails here, since M̂ has none."
+      },
+      {
+       "name": "disconnected_mobius_pair",
+       "kind": "non-example",
+       "statement": "For M the disjoint union of two flat Möbius bands, M̂ is the disjoint union of two cylinders ℝ × (ℝ/2ℤ), hence disconnected, while M is not time-orientable; so the clause 'time-orientable iff M̂ disconnected' needs M connected."
+      },
+      {
+       "name": "mobius_lifts",
+       "kind": "computation",
+       "statement": "With M̂ of the flat Möbius band identified with ℝ × (ℝ/2ℤ) through the sheet of ∂_t, the quotient map π : ℝ² → M lifts for the orientation [∂_t] to (t, x) ↦ (t, x mod 2) and for [−∂_t] to (t, x) ↦ (−t, x + 1 mod 2); the two lifts differ by the fixed-point-free deck involution (t, y) ↦ (−t, y + 1), which exchanges the two time cones over each point."
+      }
+     ]
+    },
+    {
+     "id": "4.5",
+     "kind": "definition",
+     "name": "TauCeti.Manifold.LorentzianMetric.IsExtension",
+     "statement": "For connected (M, g) over a boundaryless model: ι : M → M̃ into a connected Lorentzian (M̃, g̃) over the same model with M̃ Hausdorff and σ-compact and g̃ of class ℛ, IsSmoothEmbedding of order ∞, ι^*g̃ = g and range ι ≠ univ; IsExtendible g ℛ is existence of one.",
+     "hypotheses": [
+      "ConnectedSpace M",
+      "boundaryless model",
+      "T2Space M̃ and SigmaCompactSpace M̃ for the target (part of the definition)"
+     ],
+     "locator": {
+      "source": "sbierski2018",
+      "where": "Definition 2.15, lines 475–481, p. 11, with the Hausdorff second-countable convention of line 255, p. 6; minguzzi2019 §1.5 lines 378–379, p. 9; dafermosluk2017 §1.1.4 lines 370–372"
+     },
+     "prerequisites": [
+      "target:2.3",
+      "target:2.5",
+      "target:4.1",
+      "target:4.4",
+      "mathlib:IsSmoothEmbedding",
+      "tauceti:TauCeti.isLocalDiffeomorphAt_of_mfderiv_eq"
+     ],
+     "api": [
+      {
+       "name": "IsExtension.isOpen_range",
+       "role": "structure",
+       "statement": "An extension is a local diffeomorphism with open image and nonempty boundary."
+      },
+      {
+       "name": "isExtension_iff_injective",
+       "role": "characterisation",
+       "statement": "Over equal models: injective, smooth, ι^*g̃ = g, not surjective."
+      },
+      {
+       "name": "IsExtendible.mono",
+       "role": "structure",
+       "statement": "ℛ-extendible ⇒ ℛ'-extendible for ℛ ⊆ ℛ'; an ℛ-extension forces g of class ℛ."
+      },
+      {
+       "name": "IsExtendible.exists_timeOriented",
+       "role": "theorem",
+       "statement": "A time-oriented ℛ-extendible manifold has an ℛ-extension with a time orientation pulling back to the given one: lift an extension ι : M → M̃ (M̃ Hausdorff and σ-compact) to the double cover of M̃ (4.4) and take the component containing the image."
+      }
+     ],
+     "tests": [
+      {
+       "name": "sbierski_example",
+       "kind": "computation",
+       "statement": "(0,∞)×ℝ with e^{2√t}(−dt²+dx²) is C^{0,½}-extendible into ℝ² with e^{2√|t|}(−dt²+dx²); no C² metric on an open W meeting {t = 0} restricts to it, as Scal = −½e^{−2√t}t^{−3/2} is unbounded."
+      },
+      {
+       "name": "proper_open_subset",
+       "kind": "degenerate",
+       "statement": "{t > 0} ⊆ Minkowski is C^∞-extendible; the identity of Minkowski space is not an extension."
+      },
+      {
+       "name": "injectivity_needed",
+       "kind": "non-example",
+       "statement": "The covering ℝ² → ℝ×(ℝ/ℤ) restricted to (0,1)×ℝ is a local isometry onto a proper open set but not injective, so not an extension."
+      },
+      {
+       "name": "nonhausdorff_target_excluded",
+       "kind": "non-example",
+       "statement": "Two copies of Minkowski ℝ² glued along {t < 0} form a connected non-Hausdorff smooth manifold with a flat metric into which the first copy embeds isometrically with proper image; without T2Space M̃, Minkowski space would be C^∞-extendible."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "Hypersurfaces, null geometry and characteristics",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "definition",
+     "name": "TauCeti.Manifold.IsHypersurface",
+     "statement": "IsHypersurface I r H: each p ∈ H has open U ∋ p and f of class C^r on U with H ∩ U = U ∩ f⁻¹(0), and for x ∈ H ∩ U, mfderiv f x ≠ 0 and span (TauCeti.mtangentConeAt I H x) = ker (mfderiv f x). T_xH is that span.",
+     "hypotheses": [
+      "r ≥ 1"
+     ],
+     "locator": {
+      "source": "galloway2004",
+      "where": "§3, lines 174–175, p. 5; kupeli1987 §1"
+     },
+     "prerequisites": [
+      "mathlib:ImplicitFunctionData",
+      "tauceti:TauCeti.mtangentConeAt",
+      "tauceti:TauCeti.IsRegularPoint",
+      "tauceti:TauCeti.isManifold_regularLevel",
+      "tauceti:TauCeti.IsRegularPoint.range_mfderiv_eq_ker_mfderiv"
+     ],
+     "api": [
+      {
+       "name": "IsHypersurface.tangent_unique",
+       "role": "structure",
+       "statement": "T_xH and the conormal line do not depend on the defining function."
+      },
+      {
+       "name": "isHypersurface_of_interior",
+       "role": "characterisation",
+       "statement": "At interior points the tangent-cone condition follows from the others (implicit function theorem)."
+      },
+      {
+       "name": "IsHypersurface.division",
+       "role": "structure",
+       "statement": "C¹ functions and fields vanishing on H have derivative zero on T_pH; at interior points such functions are O(|f|)."
+      },
+      {
+       "name": "IsHypersurface.isManifold",
+       "role": "compatibility",
+       "statement": "Over a boundaryless model H ∩ U is a C^r manifold with tangent spaces T_xH (TauCeti regular levels); regular level sets are hypersurfaces."
+      }
+     ],
+     "tests": [
+      {
+       "name": "light_cone",
+       "kind": "computation",
+       "statement": "{t = |x|} ∖ {0} is a C^∞ hypersurface; with the vertex its tangent cone spans ℝ^{1+n}, so it is not a C¹ hypersurface."
+      },
+      {
+       "name": "conormal_independent",
+       "kind": "compatibility",
+       "statement": "t and t e^x define {t = 0} with the same conormal line ℝ dt."
+      },
+      {
+       "name": "boundary_face",
+       "kind": "degenerate",
+       "statement": "{x = 0} in the quadrant is a hypersurface; its tangent cone at the corner is ℝ_{≥0} e_y spanning ker dx."
+      },
+      {
+       "name": "degenerate_corner",
+       "kind": "non-example",
+       "statement": "{x + y = 0} ∩ quadrant = {0} with defining functions x+y, x+2y is excluded by the tangent-cone condition."
+      }
+     ]
+    },
+    {
+     "id": "5.2",
+     "kind": "theorem",
+     "name": "TauCeti.Manifold.LorentzianMetric.isNull_iff",
+     "statement": "For g of class C^0 and a C¹ hypersurface H with defining function f at p: g⁻¹_p(df_p, df_p) = 0 ⇔ T_pH contains a null vector and no timelike vector ⇔ g_p|T_pH degenerate; then the radical is the null line ℝ grad f(p). Spacelike and timelike loci are open in H; grad f is a null normal along a null H; null normals differ by nonvanishing factors and can be chosen future-directed on a spacetime.",
+     "hypotheses": [
+      "g Lorentzian of class C^0",
+      "H hypersurface of class C¹"
+     ],
+     "locator": {
+      "source": "galloway2004",
+      "where": "§3, lines 174–182, p. 5; kupeli1987; oneill1983 Ch. 5"
+     },
+     "prerequisites": [
+      "target:1.7",
+      "target:1.8",
+      "target:2.2",
+      "target:2.4",
+      "target:4.3",
+      "target:5.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "three_types_minkowski3",
+       "kind": "computation",
+       "statement": "Minkowski ℝ³: {t = 0}, {x¹ = 0}, {t = x¹} have g⁻¹(df,df) = −1, 1, 0 (spacelike, timelike, null); grad(t − x¹) = −∂_t − ∂_{x¹}, radical ℝ(∂_t + ∂_{x¹})."
+      },
+      {
+       "name": "both_clauses_needed",
+       "kind": "non-example",
+       "statement": "{x¹ = 0} contains the null ∂_t + ∂_{x²} and the timelike ∂_t; {t = 0} contains no timelike vector; tangent vectors (a, a, b) of {t = x¹} have g = b² ≥ 0."
+      },
+      {
+       "name": "null_normal_direction",
+       "kind": "computation",
+       "statement": "∂_t + ∂_{x¹} and 3(∂_t + ∂_{x¹}) are null normals of {t = x¹}; g(∂_t, ∂_t + ∂_{x¹}) = −1 (future-directed), grad(t − x¹) past-directed; the Euclidean normal ∂_t − ∂_{x¹} is null but d(t − x¹)(∂_t − ∂_{x¹}) = 2, not tangent."
+      },
+      {
+       "name": "mixed_type_parabola",
+       "kind": "computation",
+       "statement": "H = {t = x²/2} in Minkowski ℝ²: g⁻¹(df,df) = −1 + x² (−0.75, 0, 3 at x = 0.5, 1, 2); spacelike and timelike loci open in H, null locus {x = ±1} not open."
+      },
+      {
+       "name": "acoustical_slices_spacelike",
+       "kind": "compatibility",
+       "statement": "Acoustical slices {t = const}: g⁻¹(dt, dt) = −c⁻² < 0, spacelike."
+      }
+     ]
+    },
+    {
+     "id": "5.3",
+     "kind": "definition",
+     "name": "TauCeti.Manifold.LorentzianMetric.IsOpticalFunction",
+     "statement": "u of class C¹ on open U with du ≠ 0 and g⁻¹(du, du) = 0 on U. Then ker du_x is null with radical ℝ L(x), L = −grad u, du(L) = 0; over a boundaryless model the level sets are null C¹ hypersurfaces with null normal L.",
+     "hypotheses": [
+      "U open",
+      "g of class C^0"
+     ],
+     "locator": {
+      "source": "dafermosluk2017",
+      "where": "§2.2.1, (2.7), lines 1900–1905, p. 38 (eikonal equation; its level sets are null hypersurfaces); luoyu2023 §2.1, lines 999–1000 (level sets of the acoustical function are null hypersurfaces) and 1005–1008 (null generator L); christodoulou2007 Ch. 1–2; galloway2004 §3, lines 176–181, p. 5"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:2.4",
+      "target:4.3",
+      "target:5.1",
+      "target:5.2",
+      "roadmap:DifferentialGeometry Layer 12.2"
+     ],
+     "api": [
+      {
+       "name": "IsOpticalFunction.isNull_level",
+       "role": "theorem",
+       "statement": "Level sets null with null normal −grad u."
+      },
+      {
+       "name": "IsOpticalFunction.future",
+       "role": "structure",
+       "statement": "On a spacetime, L is future- or past-directed on each component of U; on positive-definite metrics grad u is TauCeti.Manifold.mgradient."
+      },
+      {
+       "name": "IsOpticalFunction.comp",
+       "role": "functoriality",
+       "statement": "Invariant under conformal rescaling and composition with C¹ diffeomorphisms of ℝ."
+      }
+     ],
+     "tests": [
+      {
+       "name": "minkowski_cone_function",
+       "kind": "computation",
+       "statement": "u = t − |x| on {x ≠ 0}: g⁻¹(du,du) = −1 + 1 = 0, L = ∂_t + ∂_r future-directed."
+      },
+      {
+       "name": "time_not_optical",
+       "kind": "non-example",
+       "statement": "t has g⁻¹(dt,dt) = −1; −grad t = ∂_t timelike."
+      },
+      {
+       "name": "double_null_optical",
+       "kind": "computation",
+       "statement": "u, v optical for −2Ω²(du⊗dv+dv⊗du)+γ with −grad u = (2Ω²)⁻¹∂_v."
+      },
+      {
+       "name": "open_set_needed",
+       "kind": "non-example",
+       "statement": "w = t² − |x|² has g⁻¹(dw,dw) = −4w, null level {w = 0}∖{0}, not optical; ∇_L L = 2L for L = −grad w."
+      }
+     ]
+    },
+    {
+     "id": "5.4",
+     "kind": "theorem",
+     "name": "TauCeti.Manifold.LorentzianMetric.covariantDerivative_nullNormal",
+     "statement": "For g of class C¹, ∇ Levi-Civita for g, H a null C² hypersurface and L a C¹ field on U that is a null normal along H ∩ U: ∇_L L = κL on H ∩ U with κ continuous. Over a boundaryless model, for an integral curve γ : J → U of L on an open interval meeting H, the parameter set {s ∈ J | γ(s) ∈ H} is open in J; when H ∩ U is closed in U (one defining function on U, or a level set of an optical function) it is J, so γ stays in H while in U. On intervals of the parameter set γ is a null pregeodesic and reparametrises to a null geodesic (null generator). For M Hausdorff, every p ∈ H ∩ U lies on exactly one maximal generator segment (an integral curve of L in H ∩ U through p of which every other is a restriction). For u optical of class C² and L = −grad u, ∇_L L = 0 on U.",
+     "hypotheses": [
+      "g of class C¹",
+      "H of class C², null",
+      "L of class C¹, null normal along H ∩ U",
+      "boundaryless model (integral curves)",
+      "H ∩ U closed in U (staying in H)",
+      "M Hausdorff (uniqueness of maximal generator segments)"
+     ],
+     "locator": {
+      "source": "galloway2004",
+      "where": "Proposition 3.1, lines 183–194, p. 5; christodoulou2007 Ch. 1–2; luoyu2023b lines 331–332"
+     },
+     "prerequisites": [
+      "target:3.2",
+      "target:3.3",
+      "target:3.5",
+      "target:5.1",
+      "target:5.2",
+      "target:5.3",
+      "mathlib:exists_isMIntegralCurveAt_of_contMDiffAt",
+      "mathlib:isMIntegralCurveOn_Ioo_eqOn_of_contMDiff_boundaryless"
+     ],
+     "proofSketch": "N = grad f: ∇_N N = ½ grad h with h = g⁻¹(df, df) vanishing on H, so dh ∝ df on H; general L via φ = g(L, Y); optical case ∇_L L = ½ grad g⁻¹(du,du) = 0. Openness of the parameter set: (f∘γ)' = df(L)∘γ with |df(L)| ≤ C|f| near H by the division lemma and Grönwall; closedness from H ∩ U closed in U; maximal segments from uniqueness of integral curves on open intervals, which needs T2Space.",
+     "api": [],
+     "tests": [
+      {
+       "name": "closedness_needed",
+       "kind": "non-example",
+       "statement": "Minkowski ℝ², H = {t = x, x > 0}, U = ℝ², L = ∂_t + ∂_x: the curve (1+s, 1+s) is in H at s = −½ and not at s = −1, −1.5 (points (0,0), (−½,−½) of U); parameter set (−1, ∞) open; on U' = {x > 0}, where H is closed, the curve is in H for all s > −1."
+      },
+      {
+       "name": "hausdorff_needed",
+       "kind": "non-example",
+       "statement": "Two Minkowski planes glued along {t < 0}, H the union of the lines {t = x}, L = ∂_t + ∂_x: through (−1, −1) pass two integral curves in H, equal for s < 1 and different for s ≥ 1."
+      },
+      {
+       "name": "light_cone_kappa",
+       "kind": "computation",
+       "statement": "H = {t = |x|, x ≠ 0} closed in U = ℝ^{1+n} ∖ {0}, L = 2t∂_t + 2x·∇ = 2t(∂_t + ∂_r) on H: ∇_L L = 2L, κ = 2 (at (1,1,0): L = (2,2,0), ∇_L L = (4,4,0)); integral curves e^{2s}(t₀,x₀) stay in H; for u = t − |x|, L = ∂_t + ∂_r has ∇_L L = 0."
+      }
+     ]
+    },
+    {
+     "id": "5.5",
+     "kind": "definition",
+     "name": "TauCeti.Manifold.LorentzianMetric.waveOperator",
+     "statement": "□_g u = tr_g(Hess u), Hess u(X, Y) = X(Yu) − (∇_X Y)u, for g of class C¹, ∇ Levi-Civita for g (an argument; the value is independent of it), u of class C²; principal symbol σ_g(x, ξ) = g⁻¹_x(ξ, ξ); characteristic covectors σ = 0, ξ ≠ 0; H characteristic at p iff df_p characteristic.",
+     "hypotheses": [
+      "g of class C¹",
+      "u of class C² on open U"
+     ],
+     "locator": {
+      "source": "christodoulou2007",
+      "where": "Ch. 1; luoyu2023 lines 422–424; luoyu2023b line 418; hawkingellis1973 Ch. 2"
+     },
+     "prerequisites": [
+      "target:1.8",
+      "target:3.2",
+      "target:3.3",
+      "target:5.1",
+      "target:5.2",
+      "roadmap:DifferentialGeometry Layer 12.3",
+      "roadmap:PseudodifferentialOperators P1.0"
+     ],
+     "api": [
+      {
+       "name": "waveOperator_chart",
+       "role": "evaluation",
+       "statement": "□_g u = g^{ij}(∂_i∂_j u − Γ^k_ij ∂_k u) = |det g|^{−½}∂_i(|det g|^{½} g^{ij}∂_j u); continuous; Hess u symmetric."
+      },
+      {
+       "name": "waveOperator_mul",
+       "role": "structure",
+       "statement": "□(fu) = f□u + u□f + 2g⁻¹(df,du); ½[[□, f], f] = g⁻¹(df, df)."
+      },
+      {
+       "name": "waveOperator_conformal_two",
+       "role": "structure",
+       "statement": "In dimension 2, □_{e^{2φ}g} = e^{−2φ}□_g."
+      },
+      {
+       "name": "waveOperator_eq_laplaceBeltrami",
+       "role": "compatibility",
+       "statement": "On smooth positive-definite metrics □_g = TauCeti.Manifold.laplaceBeltrami."
+      }
+     ],
+     "tests": [
+      {
+       "name": "minkowski_box",
+       "kind": "computation",
+       "statement": "□(t²) = −2, □(|x|²) = 2n, □(t² − |x|²) = −2 − 2n; the Euclidean trace would give □(t²) = 2."
+      },
+      {
+       "name": "symbol_values",
+       "kind": "computation",
+       "statement": "σ(dt) = −1 (not characteristic), σ(dt − dx¹) = 0 (characteristic, null); ½[[□, t], t] = −1."
+      },
+      {
+       "name": "psido_comparison",
+       "kind": "compatibility",
+       "statement": "For smooth g on boundaryless M, σ_g(df) equals PseudodifferentialOperators P1.0's σ_geom(□_g)(df); the Fourier symbol is −g⁻¹(ξ, ξ)."
+      },
+      {
+       "name": "acoustical_characteristic",
+       "kind": "computation",
+       "statement": "Acoustical: σ(dt) = −c⁻²; in 1+1 with constant c, v, conormal dx − (v+c)dt has σ = −c⁻²c² + 1 = 0."
+      }
+     ]
+    },
+    {
+     "id": "5.5a",
+     "kind": "theorem",
+     "name": "TauCeti.Manifold.LorentzianMetric.isCharacteristic_iff_isNull",
+     "statement": "A C¹ hypersurface is characteristic for □_g at p iff it is null at p; level sets of optical functions are characteristic; characteristic covectors are the null covectors of g⁻¹.",
+     "hypotheses": [
+      "g of class C¹",
+      "H hypersurface of class C¹"
+     ],
+     "locator": {
+      "source": "luoyu2023",
+      "where": "lines 422–424; christodoulou2007 Ch. 1"
+     },
+     "prerequisites": [
+      "target:1.8",
+      "target:5.2",
+      "target:5.5"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "HopfRinow",
+   "sections": [
+    "Layer 1"
+   ],
+   "what": "Nondegenerate Levi-Civita supplier (smooth nondegenerate metrics, Koszul construction, Christoffel formula, signature, along-curve compatibility), implemented in the pinned Tau Ceti and extended here to finite regularity."
+  },
+  {
+   "roadmap": "DifferentialGeometry",
+   "sections": [
+    "Boundary and corners",
+    "Layer 2.3",
+    "Layer 12.2",
+    "Layer 12.3"
+   ],
+   "what": "Corner conventions; covering-space smooth structures for the time-orientation double cover; positive-definite gradient, Hessian and Laplace–Beltrami for comparisons."
+  },
+  {
+   "roadmap": "PDE",
+   "sections": [
+    "§1.7"
+   ],
+   "what": "C^{k,α}_loc(Ω) on open Ω, agreement with the local Hölder predicate of 2.1."
+  },
+  {
+   "roadmap": "PseudodifferentialOperators",
+   "sections": [
+    "P1.0"
+   ],
+   "what": "Homogeneous principal symbol σ_geom, for the comparison Check of 5.5."
+  },
+  {
+   "roadmap": "RiemannianGeometry",
+   "sections": [
+    "Conventions and suppliers",
+    "R1"
+   ],
+   "what": "Curvature sign convention and positive-definite curvature identities, for the comparison Checks of 3.4."
+  },
+  {
+   "roadmap": "LocalVariationalFieldTheory",
+   "sections": [
+    "§3.8"
+   ],
+   "what": "The (+,−,−,−) Minkowski convention, for the sign-flip Check of 1.1."
+  }
+ ],
+ "consumers": [
+  {
+   "roadmap": "CompressibleEulerEquations",
+   "what": "Acoustical metric, causal and future-directed vectors and piecewise C¹ causal curves, time orientation by ∂_t + v·∇, null hypersurfaces, null normals and generators of the characteristic boundary, C^{1,1} geodesics."
+  },
+  {
+   "roadmap": "LorentzianGeometryPartII",
+   "what": "Proposed causality Part II: I^±, J^±, causal ladder, global hyperbolicity, Cauchy surfaces and horizons, domains of dependence, convex neighbourhoods, locally Lipschitz causal curves."
+  }
+ ],
+ "gaps": []
+}
