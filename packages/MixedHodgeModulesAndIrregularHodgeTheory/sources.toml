@@ -7,7 +7,8 @@ authors = "Morihiko Saito"
 title = "Modules de Hodge polarisables"
 year = 1988
 locator_scheme = "theorem"
-locator = "Definition 5.1.6, Definition 5.2.10, Theorem 5.3.1, Proposition 3.4.12"
+locator = "Definition 5.1.6, Definition 5.2.10, Theorem 5.3.1, Proposition 3.4.12, Lemmas 5.1.8-5.1.10, Proposition 5.1.14, Corollary 5.2.13"
+cited_for = ["Layer 4"]
 url = "https://ems.press/journals/prims/articles/3445"
 fetched_from = "https://ems.press/content/serial-article-files/42460"
 fetched_at = "2026-11-04T16:24:16Z"
@@ -23,7 +24,8 @@ authors = "Morihiko Saito"
 title = "Mixed Hodge modules"
 year = 1990
 locator_scheme = "section"
-locator = "§§2.17, 4.1-4.5; Proposition 0.3"
+locator = "§§2.17, 4.1-4.5; Proposition 0.3; Theorem 3.21"
+cited_for = ["Layers 4, 5"]
 url = "https://ems.press/journals/prims/articles/3552"
 fetched_from = "https://ems.press/content/serial-article-files/42511"
 fetched_at = "2026-11-04T16:24:20Z"
@@ -40,6 +42,7 @@ title = "A study of variation of mixed Hodge structure"
 year = 1986
 locator_scheme = "section"
 locator = "§1"
+cited_for = ["Layer 3"]
 url = "https://ems.press/journals/prims/articles/3317"
 fetched_from = "https://ems.press/content/serial-article-files/42350"
 fetched_at = "2026-11-04T16:24:21Z"
@@ -56,6 +59,7 @@ title = "Hodge theory with degenerating coefficients: L2 cohomology in the Poinc
 year = 1979
 locator_scheme = "theorem"
 locator = "Theorem 4.8, Theorem 7.12, Corollary 7.13, Proposition 8.2"
+cited_for = ["Layer 3"]
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/494#issuecomment-6632676619"
@@ -66,7 +70,8 @@ authors = "Alan Adolphson, Steven Sperber"
 title = "On twisted de Rham cohomology"
 year = 1997
 locator_scheme = "theorem"
-locator = "Theorem 1.4 and (4.3)"
+locator = "Theorem 4.13, Theorem 5.1, Theorem 4.1, (4.3)"
+cited_for = ["Layer 12; Suggested.lean"]
 url = "https://www.cambridge.org/core/journals/nagoya-mathematical-journal/article/on-twisted-de-rham-cohomology/E4AFE6D6DCAE8FFF5EF549D83E3361D5"
 fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/E4AFE6D6DCAE8FFF5EF549D83E3361D5/S0027763000006218a.pdf/div-class-title-on-twisted-de-rham-cohomology-div.pdf"
 fetched_at = "2026-11-04T16:24:22Z"
@@ -75,3 +80,276 @@ licence_class = "answered-by:CBirkbeck"
 status = "certified"
 accessed = "2026-11-04"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/494#issuecomment-6632676619"
+
+[[source]]
+id = "FSY"
+authors = "Javier Fresán, Claude Sabbah, Jeng-Daw Yu"
+title = "Hodge theory of Kloosterman connections"
+year = 2018
+venue = "Duke Math. J. 171 (2022), no. 8, 1649-1747"
+doi = "10.1215/00127094-2021-0036"
+arxiv = "1810.06454v5"
+locator_scheme = "theorem"
+locator = "Proposition A.10, Theorem A.24, Theorem A.30, Corollary A.31, Proposition 2.4, Proposition 2.21"
+url = "https://arxiv.org/abs/1810.06454v5"
+fetched_from = "https://arxiv.org/pdf/1810.06454v5"
+fetched_at = "2026-11-04T16:42:25Z"
+sha256 = "835580aa6314798e2866c248d6f7179379698d61a7baae0136806d4755b1f20a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v5"
+cited_for = ["Layers 2, 5, 6, 7, 8, 9, 10, 11"]
+
+[[source]]
+id = "ESY"
+authors = "Hélène Esnault, Claude Sabbah, Jeng-Daw Yu"
+title = "E_1-degeneration of the irregular Hodge filtration (with an appendix by Morihiko Saito)"
+year = 2013
+venue = "J. reine angew. Math. 729 (2017), p. 171-227"
+doi = "10.1515/crelle-2014-0118"
+arxiv = "1302.4537v4"
+locator_scheme = "theorem"
+locator = "Theorem 1.2.2, Proposition 1.7.4, Proposition 3.1.2, Theorem 3.3.1"
+url = "https://arxiv.org/abs/1302.4537v4"
+fetched_from = "https://arxiv.org/pdf/1302.4537v4"
+fetched_at = "2026-11-04T16:42:30Z"
+sha256 = "530e0ebae3852e3b76736dd26c5c692b69a877818880fd358b3b67e7fe6c751b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v4"
+cited_for = ["Layers 2, 4, 7, 12"]
+
+[[source]]
+id = "Yu"
+authors = "Jeng-Daw Yu"
+title = "Irregular Hodge filtration on twisted de Rham cohomology"
+year = 2012
+arxiv = "1203.2338v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.7, Theorem 2.2, Theorem 4.1, Theorem 4.6, Proposition 4.4"
+url = "https://arxiv.org/abs/1203.2338v2"
+fetched_from = "https://arxiv.org/pdf/1203.2338v2"
+fetched_at = "2026-11-04T16:42:36Z"
+sha256 = "c93ae0e6872773b23c3fb9b4912b129290bb99b66cf749bae6734ab0b3618a1a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["Layers 9, 12; Suggested.lean"]
+
+[[source]]
+id = "KS"
+authors = "Maxim Kontsevich, Yan Soibelman"
+title = "Cohomological Hall algebra, exponential Hodge structures and motivic Donaldson-Thomas invariants"
+year = 2010
+arxiv = "1006.2706v2"
+locator_scheme = "section"
+locator = "§§4.2-4.4"
+url = "https://arxiv.org/abs/1006.2706v2"
+fetched_from = "https://arxiv.org/pdf/1006.2706v2"
+fetched_at = "2026-11-04T16:42:44Z"
+sha256 = "112e37646324143b1367c99a77e640e6dee25b959a6869dbefe08822935d7899"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["Layers 2, 6"]
+
+[[source]]
+id = "MT"
+authors = "Yutaka Matsui, Kiyoshi Takeuchi"
+title = "Monodromy at infinity of polynomial maps and Newton polyhedra (with Appendix by C. Sabbah)"
+year = 2009
+arxiv = "0912.5144v12"
+locator_scheme = "theorem"
+locator = "Proposition A.3, Lemma A.4"
+url = "https://arxiv.org/abs/0912.5144v12"
+fetched_from = "https://arxiv.org/pdf/0912.5144v12"
+fetched_at = "2026-11-04T16:42:49Z"
+sha256 = "72b79aec67f493556ffbf530fd69b501641aba13febb5f171059e4cb62d4c248"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v12"
+cited_for = ["Layer 11"]
+
+[[source]]
+id = "Sab10"
+authors = "Claude Sabbah"
+title = "Fourier-Laplace transform of a variation of polarized complex Hodge structure, II"
+year = 2008
+venue = "in New developments in algebraic geometry, integrable systems and mirror symmetry (RIMS, Kyoto, 2008), Adv. Stud. Pure Math., vol. 59, Math. Soc. Japan, Tokyo, 2010, p. 289--347"
+arxiv = "0804.4328v3"
+locator_scheme = "theorem"
+locator = "Theorem 6.1, Proposition 6.10"
+url = "https://arxiv.org/abs/0804.4328v3"
+fetched_from = "https://arxiv.org/pdf/0804.4328v3"
+fetched_at = "2026-11-04T16:42:55Z"
+sha256 = "db038ac479817cd7475ef8b50a5fa54d18ee2d966303139dae5007f81068a447"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v3"
+cited_for = ["Layer 7"]
+
+[[source]]
+id = "Sab05"
+authors = "Claude Sabbah"
+title = "Polarizable twistor D-modules"
+year = 2005
+venue = "Astérisque vol. 300, Société mathématique de France (2005), vi+208 pp"
+arxiv = "math/0503038v2"
+locator_scheme = "theorem"
+locator = "Theorem 5.0.1, §6.1, §8.4"
+url = "https://arxiv.org/abs/math/0503038v2"
+fetched_from = "https://arxiv.org/pdf/math/0503038v2"
+fetched_at = "2026-11-04T16:43:08Z"
+sha256 = "fdb89a3d431608330852aaeb358914962af72e8cd8e963b762db3ead42c18ef1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["Layer 7"]
+
+[[source]]
+id = "Kash84"
+authors = "Masaki Kashiwara"
+title = "The Riemann-Hilbert problem for holonomic systems"
+year = 1984
+venue = "Publ. Res. Inst. Math. Sci. 20 (1984), 319-365"
+locator_scheme = "section"
+locator = "§§6-7"
+url = "https://www.kurims.kyoto-u.ac.jp/~kenkyubu/kashiwara/RiemannHilbert.pdf"
+fetched_from = "https://www.kurims.kyoto-u.ac.jp/~kenkyubu/kashiwara/RiemannHilbert.pdf"
+fetched_at = "2026-11-04T16:43:23Z"
+sha256 = "50ad9c9f2b1bc1732680266abe2853c366fe84c48094745809efcc0d89c1839f"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["Layer 1"]
+
+[[source]]
+id = "DL"
+authors = "Jan Denef, François Loeser"
+title = "Weights of exponential sums, intersection cohomology, and Newton polyhedra"
+year = 1991
+venue = "Invent. Math. 106 (1991), 275-294"
+locator_scheme = "section"
+locator = "§§3.3-3.9"
+url = "https://webusers.imj-prg.fr/~francois.loeser/inv91.pdf"
+fetched_from = "https://webusers.imj-prg.fr/~francois.loeser/inv91.pdf"
+fetched_at = "2026-11-04T16:43:24Z"
+sha256 = "de8e88867f8bfb81ceccbf18bbafb843353be74d6bbb470b0d65a474047d423b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["Layer 12"]
+
+[[source]]
+id = "Dimca"
+authors = "Alexandru Dimca"
+title = "Sheaves in Topology"
+year = 2004
+venue = "Universitext"
+doi = "10.1007/978-3-642-18868-8"
+locator_scheme = "theorem"
+locator = "Theorem 4.1.5, Theorem 5.1.20, Theorems 5.3.1 and 5.3.3"
+url = "https://doi.org/10.1007/978-3-642-18868-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 1"]
+
+[[source]]
+id = "Schmid"
+authors = "Wilfried Schmid"
+title = "Variation of hodge structure: The singularities of the period mapping"
+year = 1973
+venue = "Inventiones Mathematicae 22"
+doi = "10.1007/BF01389674"
+locator_scheme = "theorem"
+locator = "Theorem 4.9, Theorem 6.16"
+url = "https://doi.org/10.1007/BF01389674"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 3"]
+
+[[source]]
+id = "SZ"
+authors = "Joseph Steenbrink, Steven Zucker"
+title = "Variation of mixed Hodge structure. I"
+year = 1985
+venue = "Inventiones Mathematicae 80"
+doi = "10.1007/BF01388729"
+locator_scheme = "section"
+locator = "§§1-4"
+url = "https://doi.org/10.1007/BF01388729"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layers 3, 5"]
+
+[[source]]
+id = "Verdier"
+authors = "Jean-Louis Verdier"
+title = "Stratifications de Whitney et théorème de Bertini-Sard"
+year = 1976
+venue = "Inventiones Mathematicae 36"
+doi = "10.1007/BF01390015"
+locator_scheme = "theorem"
+locator = "Théorème 3.3, Corollaire 5.1"
+url = "https://doi.org/10.1007/BF01390015"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 1"]
+
+[[source]]
+id = "Kash76"
+authors = "Masaki Kashiwara"
+title = "B-functions and holonomic systems"
+year = 1976
+venue = "Inventiones Mathematicae 38"
+doi = "10.1007/BF01390168"
+locator_scheme = "theorem"
+locator = "§§5-6"
+url = "https://doi.org/10.1007/BF01390168"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 4"]
+
+[[source]]
+id = "Kou"
+authors = "A. G. Kouchnirenko"
+title = "Polyèdres de Newton et nombres de Milnor"
+year = 1976
+venue = "Inventiones Mathematicae 32"
+doi = "10.1007/BF01389769"
+locator_scheme = "theorem"
+locator = "Théorème 2.8"
+url = "https://doi.org/10.1007/BF01389769"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 12"]
+
+[[source]]
+id = "CY"
+authors = "Kai-Chieh Chen, Jeng-Daw Yu"
+title = "The Künneth formula for the twisted de Rham and Higgs cohomologies"
+year = 2018
+venue = "SIGMA 14 (2018), 055"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://sigma-journal.com/2018/055/sigma18-055.pdf"
+fetched_from = "https://sigma-journal.com/2018/055/sigma18-055.pdf"
+fetched_at = "2026-11-04T16:47:33Z"
+sha256 = "3eb5be54fa3188da3a4db6cc084c8b2e1843bb2e09dfb9d3032b5cb60969249a"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["Layer 12"]

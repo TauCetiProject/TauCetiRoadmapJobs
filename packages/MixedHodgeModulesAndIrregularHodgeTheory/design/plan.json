@@ -4266,45 +4266,34 @@
   ],
   "gaps": [
     {
-      "id": "MixedHodgeModulesAndIrregularHodgeTheory/G1",
-      "title": "Weighted L² Hodge analytic input",
-      "neededBy": [
-        "MixedHodgeModulesAndIrregularHodgeTheory:H.0/curve-l2-hodge"
-      ],
-      "detail": "No inspected supplier covers Zucker’s complete punctured-curve weighted L² domains: equality of the closed weak/strong extensions, essential self-adjointness of the Laplacian and closed range yielding finite-dimensional harmonic representatives and Hodge decomposition (Zucker §7.1–§7.12, pp. 444–447). Current DifferentialGeometry has the compact smooth Laplacian/Green operator and excludes this analysis. The nilpotent-orbit norm estimates are requested separately from HodgeStructuresPartII:H.6. To close this gap, assign and plan the stated analytic theorem, with the local Hardy estimates of Zucker §5–§6; neither compact Hodge theory nor an unexplained appeal to elliptic regularity closes it."
+      "slug": "holonomic-specializability",
+      "needs": "For a holonomic D_X-module on a smooth complex variety and a smooth hypersurface x = 0, the existence of a good V_0 D_X-lattice with a nonzero Bernstein–Sato polynomial for the Euler operator on its graded quotient, also after graph embedding of a regular function, and the rationality of its roots for regular holonomic modules with quasi-unipotent monodromy.",
+      "supplier": "SpringerResolutionAndCharacteristicCycles",
+      "section": "Layer H (holonomic-modules, regular-holonomic)"
     },
     {
-      "id": "MixedHodgeModulesAndIrregularHodgeTheory/G2",
-      "title": "Polarized twistor Fourier strictness",
-      "neededBy": [
-        "MixedHodgeModulesAndIrregularHodgeTheory:I/polarized-curve-strictness"
-      ],
-      "detail": "Sab10 Theorem 6.1 uses the strict Fourier transform of a polarized regular twistor D-module and its harmonic-metric/analytic existence theorem (the proof of Proposition 6.10 invokes Sab05 Theorems 3.3.15 and 6.1.1 and Sab06 Proposition 4.1(ii) and Corollary 5.9). The inspected HodgeStructuresPartII nonabelian Hodge moduli targets do not supply the twistor D-module category or this theorem. To close: assign the restricted polarized-curve twistor Fourier theorem, read those primary proofs, and give its construction, API and analytic prerequisites. The Deligne/Rees formulas and ESY’s mixed-weight induction are planned here; E₁ degeneration remains dependent on this input."
+      "slug": "regular-holonomic-stability",
+      "needs": "Stability of the bounded derived category with regular holonomic cohomology under f_+, f_!, f^†, duality, external product and restriction to the diagonal, for algebraic maps of smooth complex varieties.",
+      "supplier": "SpringerResolutionAndCharacteristicCycles",
+      "section": "Layer H (transfer-and-duality, regular-holonomic)"
     },
     {
-      "id": "MixedHodgeModulesAndIrregularHodgeTheory/G3",
-      "title": "Kernel proof of regular Fourier stationary phase",
-      "neededBy": [
-        "MixedHodgeModulesAndIrregularHodgeTheory:T/stationary-phase"
-      ],
-      "detail": "MT Lemma A.4, pp. 38–39, gives the comparison of φ at Fourier zero with ψ at input infinity by adapting an earlier proof, rather than writing the local kernel-specialization calculation. That calculation was not established in this pass. Read Sabbah, Monodromy at infinity and Fourier transform II, Proposition 4.1(ivb), and build the regular eigenvalue-one specialization/variation comparison, including the Fourier sign and filtered Tate translation. Exact Weyl Fourier and formal Levelt–Turrittin alone are not a proof."
+      "slug": "toric-normal-fan",
+      "needs": "The normal fan of a full-dimensional lattice polytope Δ ⊂ ℝ^n, the existence of a regular complete refinement, and the identification of Δ with the polytope of the torus-invariant divisor of the refined fan whose coefficient on the ray v_ρ is −min_{u ∈ Δ} ⟨u, v_ρ⟩.",
+      "supplier": "AnalyticToricGeometryPartII",
+      "section": "§0.3"
     },
     {
-      "id": "MixedHodgeModulesAndIrregularHodgeTheory/G4",
-      "title": "Newton graded acyclicity over the cone semigroup algebra",
-      "neededBy": [
-        "MixedHodgeModulesAndIrregularHodgeTheory:N/newton-concentration"
-      ],
-      "detail": "Yu Theorem 4.1, pp. 26–27, cites the Adolphson–Sperber acyclicity theorem; it does not prove the needed face-graded Koszul regular-sequence/semigroup-ring statement. The original proof of Adolphson–Sperber, On twisted de Rham cohomology, Nagoya Math. J. 146 (1997), 55–81, was not read. To close: read it, identify the precise characteristic-zero theorem for the cone complex, and assign its commutative-algebra foundations (including the required Cohen–Macaulay or equivalent acyclicity result) once. Do not infer top-degree concentration solely from face nondegeneracy without that argument."
+      "slug": "toric-rounded-vanishing",
+      "needs": "For a smooth complete toric variety X_Σ and a nef torus-invariant ℚ-divisor D, the vanishing H^i(X_Σ, O(⌊D⌋)) = 0 for every i > 0.",
+      "supplier": "AnalyticToricGeometryPartII",
+      "section": "§0.3"
     },
     {
-      "id": "MixedHodgeModulesAndIrregularHodgeTheory/G5",
-      "title": "Algebraic Whitney stratifications and stratified local triviality",
-      "neededBy": [
-        "MixedHodgeModulesAndIrregularHodgeTheory:B/constructible-six-operations",
-        "MixedHodgeModulesAndIrregularHodgeTheory:B/middle-perverse"
-      ],
-      "detail": "Constructibility of Rf_* and Rf_! for algebraic maps of complex varieties (Dimca Theorem 4.1.5), and the normal-slice description used for the middle perversity, rest on the existence of finite algebraic Whitney stratifications of source and target for which f is a stratified submersion, with Thom–Mather local topological triviality over each stratum (Verdier's stratification theorem). No atlas packet or upstream roadmap plans this for complex algebraic maps: SchemeAndStackFoundations SF.0 has no stratification or analytification node; AlgebraicTopologyPartII AT2.16/stratified-pair-transport assumes the Whitney stratification and control data for real manifolds; the upstream CohomologicalPointCounting/ComplexComparison proposal (TauCetiRoadmap pull request 196, Layer 3) gives semialgebraic triangulations compatible with algebraic stratifications, which yields finiteness on a fixed variety but not relative triviality of a map. To close: plan Verdier's theorem (or Hardt's semialgebraic triviality applied to the analytified map) once, as a node with its hypotheses, in this layer or in a semialgebraic-topology roadmap, and cite it from both consumers."
+      "slug": "blowup-exceptional-divisor",
+      "needs": "For the blow-up π : X̃ → X of a smooth variety over a field along a smooth closed subvariety Z of pure codimension c ≥ 2, with ideal I and normal bundle N_{Z/X} = (I/I²)^∨, the smoothness of X̃, the identification of the exceptional divisor E = π⁻¹(Z) with the projective bundle P(N_{Z/X}) = Proj(Sym(I/I²)) over Z, and O_X̃(−E)|_E = O_E(1), so that the normal line of E in X̃ is O_E(−1).",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "§5.5"
     }
   ],
   "restructure": [
