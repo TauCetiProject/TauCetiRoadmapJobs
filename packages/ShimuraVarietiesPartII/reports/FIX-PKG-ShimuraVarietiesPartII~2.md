@@ -1,0 +1,62 @@
+# FIX-PKG-ShimuraVarietiesPartII~2: repair of REV-PKG-ShimuraVarietiesPartII
+
+Every finding was verified against the supplier's current pull-request head (via `roadmaps show`), the pinned Mathlib and Tau Ceti (manifest pins), or the cached source texts, before it was applied. All eight are applied; none is disputed. The repairs change citations, locators and two gap statements only; no target, hypothesis or Check changed its mathematics, and `Suggested.lean` is untouched (it declares nothing).
+
+## REV-PKG-ShimuraVarietiesPartII/F01 (P2) — applied
+
+Verified: at the head of FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII no `TD.*` id occurs (grep count 0); the objects are §§2.10, 2.11, 3.13, 3.14, 3.15, 3.16, 3.17, 4.3, 4.4, 4.12, 6.4, 6.5 as the review says (read each heading and statement). Old → new, everywhere in `packages/ShimuraVarietiesPartII/README.md` (Scope paragraph, Conventions, the supplier contract, §§1.1, 1.2, 2.3, 2.4, 2.6 proof sketch, 5.3, 5.5 proof sketch, 5.7, 5.8 and its proof sketch, and the Layer 1, 2 and 5 Dependencies): TD.2/very-good → §2.10; TD.2/very-good and tensor-family-independence → §§2.10–2.11; TD.3/nonexceptional-embedding → §3.13; TD.3/D-central-cover → §§3.14 and 3.17; TD.3/A-central-cover → §3.15; TD.3/polarized-chain → §3.16; the bare "TD.3" of the §5.3 proof sketch → §§3.13–3.17; TD.4/integral-tensor-frame and crystalline-tensor-integrality → §§4.3–4.4; TD.4/versal-adapted → §4.12; TD.6/ordinary-adapted-lift and sigma-centralizer-action → §§6.4–6.5. No `TD.` string remains.
+
+## REV-PKG-ShimuraVarietiesPartII/F02 (P2) — applied
+
+Verified: at the head of GeometricSatakeAndFusionPartII no `LM.*` id occurs; the objects are §1.4 (polynomial adjoint and derived-isogeny comparisons), §3.1 (canonical model in the classical abelian-type range), §3.4 (algebraic and Witt special-fibre interfaces), §5.5 (same-residue-field curve theorem), §7.6 (general normal minuscule local models). Old → new, in the supplier contract, the gap line, the §6.3 proof sketch, the Scope paragraph and all 14 `*Needs:*`/Dependencies lines: LM.1/adjoint-comparison → §1.4; LM.3/canonical-abelian-model and LM.7/general-normal-representative → §§3.1 and 7.6; LM.3/special-fibre-interfaces → §3.4; LM.5/same-field-curve → §5.5. The `section` field of the `local-models` gap in `packages/ShimuraVarietiesPartII/design/plan.json` reads "§§3.1 and 7.6, very-special special fibre (new statement)". No `LM.` string remains.
+
+## REV-PKG-ShimuraVarietiesPartII/F03 (P2) — applied
+
+Verified at the head of NeronModelsAndSemistableAbelianVarieties: §5.1 opens with a henselian discrete valuation ring and ℓ ≠ char k and says explicitly that the predicate descends from the henselisation with no excellence of R; §5.2 is stated for an arbitrary discrete valuation ring and includes the descent of the abelian-scheme model from the henselisation. The word "excellent" does not occur in either. HT Lemma 1.3.6 itself (HT line 764) is stated for an arbitrary discrete valuation ring of mixed characteristic (0,p); its finite flat extension step (HT line 772) serves only (iii)⇒(i). §1.8 asserts only (i)⇔(ii) at pro-level: full prime-to-p level makes the Galois action on T_ℓ trivial for every ℓ ≠ p, §5.1 over the henselisation gives good reduction, §5.2 descends it, and the normalisation criterion needs nothing of R. Old → new: the contract sentence "…for excellent discrete valuation rings" plus the gap paragraph → one sentence describing §5.1 (henselian) and §5.2 (arbitrary DVR, descent) with "no excellence hypothesis is assumed"; `(gap:arbitrary-dvr-good-reduction)` removed from §1.8's `*Needs:*` and from the Layer 1 Dependencies; the gap deleted from `plan.json` (21 → 20 gaps; README and plan.json gap sets compared equal).
+
+## REV-PKG-ShimuraVarietiesPartII/F04 (P2) — applied
+
+Verified: GeometricSatakeAndFusionPartII §3.7 at the head states, for every connected reductive G over a finite extension of ℚ_p, every parahoric and minuscule μ, an open subscheme of the weakly normal representative smooth over O_E whose geometric special fibre is the dense union of the maximal admissible orbits, with no tameness restriction; §7.6 makes that representative the normal model. Old → new: the `needs` sentence of `gap:local-models` (README contract and `plan.json`) now asks only that, for a very special parahoric and odd p, the μ-admissible set has a unique maximal element, so the geometric special fibre of the normal local model of §§3.1 and 7.6 is irreducible, hence integral (KZ Theorem 4.4.4 and proof, p.43; §5.2.1, p.49), and says that extremal-stratum smoothness is §3.7 and not part of the gap. §3.7 is cited directly in the supplier contract (with its generality) and in the `*Needs:*` lines of §§1.9, 5.7 and 6.1, and named in the Scope paragraph.
+
+## REV-PKG-ShimuraVarietiesPartII/F05 (P3) — applied
+
+Verified at the head of GlobalShtukasAndFunctionFieldLanglands: §6.1 states the constant twist making the determinant finite order and its algebraic p-plain refinement (Chin Proposition 4.3); §6.2 states, for an irreducible lisse sheaf on a smooth curve, the λ-adic companion after a finite local coefficient extension and the compatible system by the constant-twist reduction, citing KZ §5.3.1. Old → new: the `needs` sentence (README contract and `plan.json`) now asks only for the semisimple form on a smooth geometrically connected open curve over F_q, as the direct sum of the companions of the irreducible constituents with one common finite coefficient extension, and says the constant twist and the irreducible companion are supplied. The `section` field notes "(semisimple form)".
+
+## REV-PKG-ShimuraVarietiesPartII/F06 (P3) — applied
+
+Verified at the heads: BunGAndNewtonStrata Layer 0 has §§0.2, 0.6, 0.7, 0.8, 0.9 and no §0.5, with B(G) at §0.6; AutomorphicBundles has no B-numbering and its Betti, étale, filtered de Rham coefficients, comparison and tensor/Hecke coherence (the last with the Tate line) are §§3.4–3.8; ShimuraCompactifications' integral PEL compactifications are Layer 7, no C-numbering; IgusaVarietiesAndTorsionConcentration has B(G) at §0.1, the Newton and Kottwitz maps at §0.2 and the Newton stratification at §0.12, with Layer 2 being partial compactifications. Old → new: BunGAndNewtonStrata §0.5 → §0.6 (contract, §4.1 `*Needs:*`, Layer 4 Dependencies); AutomorphicBundles §§B2.4–B2.7 → §§3.4–3.8 (contract, §§0.4, 5.10, 7.1 and the Layer 7 Dependencies); ShimuraCompactifications Layer C5 → Layer 7 (contract, gap line, §4.7 `*Needs:*`, Layer 4 Dependencies, and the gap's `section` in `plan.json`); Igusa "Layers IG.0 and IG.2" → "§§0.1–0.2 and §0.12" (contract, Scope paragraph, §4.3 Check).
+
+## REV-PKG-ShimuraVarietiesPartII/F07 (P3) — applied
+
+Verified: `lake-manifest.json` pins mathlib `1b1ccf4b088b32fa3f23f2de1127433254a81e1e` and TauCeti `2fd255d997f47c0b5d834ee416c7015d55444ce5`, and both checked-out package heads agree. At those pins `class Isocrystal` is at `Mathlib/RingTheory/WittVector/Isocrystal.lean:112`, `structure AbelianVariety` at `TauCeti/AlgebraicGeometry/AbelianVariety/Basic.lean:95`, `def End` at `TauCeti/AlgebraicGeometry/AbelianVariety/End/Basic.lean:74`, `theorem transpose_mul_J_mul_eq_det_smul` at `TauCeti/LinearAlgebra/Matrix/SymplecticMultiplier.lean:63`, `def reductiveCommHopfAlgProperty` at `TauCeti/Algebra/AlgebraicGroup/Reductive/Basic.lean:71`. Old → new in the Mathlib and Tau Ceti contracts: the two hashes replaced by the pins; lines 113 → 112, 83 → 74, 76 → 63, 70 → 71; line 95 unchanged.
+
+## REV-PKG-ShimuraVarietiesPartII/F08 (P3) — applied
+
+Verified: HT page 21 starts at HT line 938, §2.1.1 at line 940 and §2.1.2 at line 963, so both paragraphs are on p.21; KPZ Theorem 7.1.3(1) (KPZ line 3196, p.73) is the pro-level bijection for a mixed-characteristic discrete valuation ring; Deligne–Milne is not in `sources.toml`, and MotivesAndAlgebraicCycles §6.3 at its head states the closed-immersion criterion for the map of Tannakian groups induced by a tensor functor. Old → new: §0.3 locator "pp.20–21" → "p.21"; §1.8 locator "(HT, Lemma 1.3.6, p.17)" → "(KPZ, Theorem 7.1.3(1), p.73; HT, Lemma 1.3.6, p.17, for the normalization criterion)", and "§1.8" added to the `cited_for` of KPZ in `sources.toml`; the Motives contract cites §6.3 alone, describing the criterion without naming Deligne–Milne. No source was added to the manifest.
+
+## Checks
+
+- Elaboration: `lake env lean` on `packages/ShimuraVarietiesPartII/Suggested.lean` from the content checkout: exit 0, no output (the file declares nothing, so no `sorry` warning), 13 s. No `TauCeti.*` module is imported, so no `lake build` was needed. The `#check @name` comparison has nothing to compare: the file has no declarations, and no README target changed.
+- Dependency direction, prescribed command after the edits: `depcheck: 242 roadmaps, 2497 edges, 0 problem(s)`. No UPWARD, CYCLE or `moved:` line.
+- `roadmaps resolve` on the README: one lead, "ReductiveGroupsPartIII RG3.0: no roadmap ReductiveGroupsPartIII on main or in an open pull request". It is a board design (`packages/ReductiveGroupsPartIII/design/README.md`) earlier in the merge order, and the RG3.0–RG3.3 targets it cites exist there, as the review already confirmed; the two other leads of the worker's citation file (AutomorphicBundles B2.4, BunGAndNewtonStrata 0.5) are gone.
+- Gap consistency: the 20 `gap:` slugs in the README equal the 20 slugs in `design/plan.json`.
+- No `TD.`, `LM.`, `B2.`, `IG.` or `Layer C5` string remains in the README; no absolute path, pull-request number or process word was added.
+
+## Adversarial pass on the changed statements
+
+| Statement | Instances tried | Values | Result | Change |
+|---|---|---|---|---|
+| §1.8 without the DVR gap: pro-level good reduction over any mixed-characteristic DVR R | R = ℤ_(p) (non-henselian), R = ℤ_p, R = O_K totally ramified | full prime-to-p level ⇒ Galois of R[1/p] acts trivially on T_ℓ for every ℓ ≠ p; over R^h §5.1 gives an abelian-scheme model; §5.2 descends it to R; normalisation of a finite-type O_E-scheme is finite, independent of R | holds; HT Lemma 1.3.6 (i)⇔(ii) is for arbitrary DVR | gap deleted |
+| §1.8 negative control | one finite level K^p, E with bad reduction at p | T_ℓ has nontrivial inertia action, no extension; the pro-level claim does not assert finite-level extension | consistent with the §1.8 Remark | none |
+| gap:local-models narrowed: unique maximal element at very special level | hyperspecial GL₂, μ=(1,0): Adm = {μ}; Iwahori GL₂: Adm = {(1,0),(0,1)}, two maximal elements | hyperspecial: special fibre P¹_k irreducible; Iwahori: two components (the §1.9 Check k[[u,v]]/(uv)) and not very special | the narrowed clause is exactly what distinguishes the two; smoothness of each maximal orbit is §3.7 in both cases | needs sentence narrowed |
+| gap:open-curve-companions narrowed | L = L₁ ⊕ L₂ with companions needing extensions E₁, E₂ of the coefficient field | common extension E₁E₂ serves both; the constant twist of §6.1 is applied constituent by constituent | the remaining obligation is the direct sum with a common extension | needs sentence narrowed |
+| §0.3 locator | HT page markers | page 21 = HT lines 938–984 contains both §2.1.1 (940) and §2.1.2 (963) | p.21 | locator fixed |
+| Library lines | `grep -n` at the pins | 112, 95, 74, 63, 71 | each returns the declaration | lines fixed |
+
+## For the maintainer
+
+- The gap `arbitrary-dvr-good-reduction` no longer exists; NeronModelsAndSemistableAbelianVarieties owes this roadmap nothing beyond its §§5.1–5.2 as stated.
+- The gaps `local-models` (GeometricSatakeAndFusionPartII) and `open-curve-companions` (GlobalShtukasAndFunctionFieldLanglands) are narrower than before; their suppliers' obligations are the unique maximal admissible element at very special level, and the semisimple direct-sum form of the companion theorem, respectively.
+- All citations of FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII, GeometricSatakeAndFusionPartII, BunGAndNewtonStrata, AutomorphicBundles, ShimuraCompactifications and IgusaVarietiesAndTorsionConcentration now use the section numbers at those roadmaps' current pull-request heads; if those heads are renumbered again before merge, these citations drift again.
+- Ownership against open pull requests was not re-checked in this round beyond the citation resolver: no new object was introduced.
+- No `needs-references.toml` entry was needed: every source read is in the manifest and cached.
