@@ -3972,105 +3972,34 @@
   ],
   "gaps": [
     {
-      "id": "G1",
-      "title": "Holonomic operations and Fourier foundations",
-      "neededBy": [
-        "KloostermanMomentsAndPotentialAutomorphy:KM.2/connection",
-        "KloostermanMomentsAndPotentialAutomorphy:KM.2/cyclic-cover",
-        "KloostermanMomentsAndPotentialAutomorphy:KM.2/connection-structure",
-        "KloostermanMomentsAndPotentialAutomorphy:KM.2/symmetric-connections",
-        "KloostermanMomentsAndPotentialAutomorphy:KM.3/thom-sebastiani",
-        "KloostermanMomentsAndPotentialAutomorphy:KM.3/middle-cohomology",
-        "KloostermanMomentsAndPotentialAutomorphy:KM.3/de-rham-realization",
-        "KloostermanMomentsAndPotentialAutomorphy:KM.3/inverse-fourier",
-        "KloostermanMomentsAndPotentialAutomorphy:KM.5/rank-two-frame",
-        "KloostermanMomentsAndPotentialAutomorphy:KM.5/formal-type",
-        "KloostermanMomentsAndPotentialAutomorphy:KM.5/intermediate-extensions",
-        "KloostermanMomentsAndPotentialAutomorphy:KM.5/inverse-fourier-local",
-        "KloostermanMomentsAndPotentialAutomorphy:KM.5/de-rham-bases"
-      ],
-      "detail": "No existing companion MixedHodgeModulesAndIrregularHodgeTheory definition, packet or reserved stage was found. The exact general input is the category of algebraic holonomic left D-modules on smooth characteristic-zero varieties; direct/inverse images with the de Rham shifts of FSY A.1, pp. 59–61; duality and intermediate extension; exponential tensor connections and induced symmetric-power connections on the existing local module quotient; Fourier inversion, stationary phase and the regular Gauss–Manin comparison; logarithmic canonical extensions and local formal slope calculations. These must be owned by a new foundational companion extending the existing analytic/derived suppliers. EDC.5 only treats étale/perverse coefficients and does not provide these operations. No invented stage id is used as an already supplied prerequisite."
+      "slug": "higher-thickness-picard-lefschetz",
+      "needs": "The conclusions of §RD.7.20 (strict semistability after resolution over O_L, L = Q_p(sqrt(-p)), and an injective Frobenius-compatible rigid-to-de Rham map compatible with boundary restriction) for isolated ordinary quadratic points with local equations Q - u*(sqrt(-p))^(2e) over O_L, u a unit and e >= 1 arbitrary.",
+      "supplier": "PadicDifferentialEquationsAndRigidCohomology",
+      "section": "§RD.7.20"
     },
     {
-      "id": "G2",
-      "title": "Mixed Hodge modules and irregular Hodge comparison",
-      "neededBy": [
-        "KloostermanMomentsAndPotentialAutomorphy:KM.3/inverse-fourier",
-        "KloostermanMomentsAndPotentialAutomorphy:KM.4/classical-hodge",
-        "KloostermanMomentsAndPotentialAutomorphy:KM.4/hypersurface-comparison",
-        "KloostermanMomentsAndPotentialAutomorphy:KM.6/cover-hodge-numbers",
-        "KloostermanMomentsAndPotentialAutomorphy:KM.6/newton-weights",
-        "KloostermanMomentsAndPotentialAutomorphy:KM.6/product-compactification",
-        "KloostermanMomentsAndPotentialAutomorphy:KM.6/filtered-bases"
-      ],
-      "detail": "The missing companion must provide Saito mixed Hodge modules, strict filtered morphisms, six operations with weights, nearby/vanishing cycles, exponential projector Π and its de Rham fiber functor (FSY Appendix A.2–A.5, pp. 61–67). Needed exact milestones are Proposition A.13 (classical subcategory has the ordinary filtration), Theorem A.24 (product t g on A¹×V, constant A¹ factor, and the stated *0/!0 variants), Example A.27 (compact-support/local-support hypersurface comparison), Theorem A.30/Corollary A.31 (Fourier fibers and nearby-cycle Hodge data), pp. 65–72; also the filtered blowup invariance, E₁ degeneration and Newton filtration results used in §4.3, pp. 35–37. Tau Ceti already has MHS carriers and strictness; HodgeStructuresPartII concerns variations/Higgs objects and does not supply MHM or these irregular operations. This is a precise new-companion request, not a claim of closure."
+      "slug": "irregular-stationary-phase",
+      "needs": "For a holonomic module on the affine line whose formal structure at infinity is a sum of E^(c_i t) tensor regular modules R_i (plus parts of slope other than one), the inverse Fourier transform is smooth away from the c_i and its vanishing cycles at c_i are R_i with their monodromy, in the sign convention of the kernel E^(t tau).",
+      "supplier": "MixedHodgeModulesAndIrregularHodgeTheory",
+      "section": "Layer T"
     },
     {
-      "id": "G3",
-      "title": "Nori weights and realization compatibility",
-      "neededBy": [
-        "KloostermanMomentsAndPotentialAutomorphy:KM.4/middle-motive",
-        "KloostermanMomentsAndPotentialAutomorphy:KM.7/galois-realization"
-      ],
-      "detail": "MC.5 supplies a rational Nori category, tensor structure and cohomology-with-supports nodes, but no exact node inspected states the functorial Nori weight filtration and all realization compatibilities needed for gr^W H_c. Request the specified MC.5 extension as Motives and Algebraic Cycles, Part II. FSY (3.1), p. 18 points to Huber–Müller-Stach Theorem 10.2.5; its original text was not consulted and a theorem/page-level primary check remains. No passage or file from a restricted book was copied. A vector-space weight filtration cannot be promoted to a motivic one by definition."
+      "slug": "nori-weight-filtration",
+      "needs": "A functorial finite exhaustive increasing weight filtration on the Nori motives H^i_c(X) of varieties over Q, strictly compatible with morphisms, Tate twists and images of rational idempotents, whose Betti, de Rham and l-adic realizations are the weight filtrations of the corresponding mixed Hodge structures and Galois representations.",
+      "supplier": "MotivesAndAlgebraicCycles",
+      "section": "Layer 5"
     },
     {
-      "id": "G4",
-      "title": "Characteristic-two nonordinary quadratic vanishing cycles",
-      "neededBy": [
-        "KloostermanMomentsAndPotentialAutomorphy:KM.7/singularities",
-        "KloostermanMomentsAndPotentialAutomorphy:KM.8/odd-local"
-      ],
-      "detail": "The exact input at p=2 and odd k is concentration of the vanishing-cycle cohomology in degree k−1 for the isolated nonordinary quadratic singularity y_i=1, giving injective cospecialization in that degree (FSY proof of Theorem 5.8, p. 43, citing Illusie, Perversité et variation, Corollary 2.10). The inspected LPV.2 ordinary-quadratic contract excludes this case. Add the nonordinary theorem as Lefschetz Pencils and Vanishing Cycles, Part II; the Illusie source and its exact hypotheses have not been read here. Dimension equality alone does not establish injectivity."
+      "slug": "orthogonal-motive-root-number",
+      "needs": "T. Saito's theorem that the global root number of an orthogonal motive over Q of even weight is +1, for motives arising from even-degree cohomology of smooth projective varieties over Q through finite-group projectors and boundary-restriction kernels with a nondegenerate symmetric realization-compatible pairing.",
+      "supplier": "MotivesAndAlgebraicCycles",
+      "section": "§2.7"
     },
     {
-      "id": "G5",
-      "title": "Generic preservation of similitude forms under semisimplification",
-      "neededBy": [
-        "KloostermanMomentsAndPotentialAutomorphy:KM.9/compatible-system"
-      ],
-      "detail": "The needed general statement is now pinned directly to Serre Theorem 4.2.1, pp. 9–10, read with its proof. A maximal isotropic submodule gives an anisotropic semisimple quotient and a paired hyperbolic summand; this produces the same symmetric or alternating type on the semisimplification. G7 has the symmetric-power polarization API but no exact node found for this theorem for algebras with involution. The request specifies it and the χ_cyc-twisted group-algebra involution; add it to that owner as a Part II extension, not as another Kloosterman theorem."
-    },
-    {
-      "id": "G6",
-      "title": "Higher-thickness semistable model in the bad-prime comparison",
-      "neededBy": [
-        "KloostermanMomentsAndPotentialAutomorphy:KM.9/padic-comparison",
-        "KloostermanMomentsAndPotentialAutomorphy:KM.9/newton-polygon"
-      ],
-      "detail": "The existing RD.7 Mieda node requires each local equation over Z_p[sqrt(−p)] to be Q−u(sqrt(−p))² with u a unit. The expansion in FSY (5.6)/(5.16) has constant 2ap/2bp. For example k=9,p=3,a=3 gives constant 18 of valuation two, not one; p may divide the orbit parameter. The assertion on FSY p. 50 does not verify this unit hypothesis. A resolution for arbitrary thickness, a stronger comparison theorem, or another proof of semistability and Frobenius compatibility is required. The good-prime crystalline branch and the all-prime de Rham assertion do not use this step. Record source issue E9 and the limitation of the imported RD.7 node; do not silently treat it as an unconditional supplier."
-    },
-    {
-      "id": "G7",
-      "title": "Arithmetic base extension of the current toric supplier",
-      "neededBy": [
-        "KloostermanMomentsAndPotentialAutomorphy:KM.6/signed-fan",
-        "KloostermanMomentsAndPotentialAutomorphy:KM.6/product-compactification",
-        "KloostermanMomentsAndPotentialAutomorphy:KM.7/integral-boundary",
-        "KloostermanMomentsAndPotentialAutomorphy:KM.7/even-resolution"
-      ],
-      "detail": "The current AnalyticToricGeometry README and Suggested file are built on the implemented toric fan/monoid-algebra/gluing API, but their scheme carrier is over C. The Kloosterman model needs the same regular signed fan over Z and Q, compatible base changes to all F_p and Z_p, properness, smoothness, monomial charts, toric boundary and equivariant blowups. Specify Analytic Toric Geometry, Part II: arithmetic toric models, importing the current layer unchanged. The signed fan and its explicit g_1 calculation are owned here; general toric geometry is not replanned."
-    },
-    {
-      "id": "G8",
-      "title": "Original proof leaves of arithmetic Kloosterman inputs",
-      "neededBy": [
-        "KloostermanMomentsAndPotentialAutomorphy:KM.1/sheaf-structure",
-        "KloostermanMomentsAndPotentialAutomorphy:KM.1/monodromy",
-        "KloostermanMomentsAndPotentialAutomorphy:KM.2/differential-galois",
-        "KloostermanMomentsAndPotentialAutomorphy:KM.8/degree-formulas",
-        "KloostermanMomentsAndPotentialAutomorphy:KM.10/determinant"
-      ],
-      "detail": "The exact theorem statements were read in FSY Proposition 2.7, §3.2.1 and §5.1.1, pp. 12,24,39–40, and XZ §1.1.2, p. 3. The original Deligne construction, Katz local/differential monodromy proofs, Fu–Wan determinant/local invariant calculations and Yun’s characteristic-two formula were not read at proof level in this run. Their full cited conclusions are separate targets here, with all exceptional branches retained; the backward proof chain still needs original-source decomposition. Locate Deligne SGA 4½ Sommes trig. 7.4/7.8, Katz’s referenced monodromy results, Fu–Wan 2005 Theorem 0.2 and 2010 Theorem 0.1, and Yun Lemma 4.3.4/Corollary 4.3.5 before treating those proof leaves as supplied. No unconsulted source is represented as read."
-    },
-    {
-      "id": "G9",
-      "title": "Orthogonal-motive root-number theorem and scope",
-      "neededBy": [
-        "KloostermanMomentsAndPotentialAutomorphy:KM.11/odd-root-number",
-        "KloostermanMomentsAndPotentialAutomorphy:KM.11/odd-functional-equation"
-      ],
-      "detail": "FSY p. 58 invokes T. Saito, The sign of the functional equation of the L-function of an orthogonal motive, Invent. Math. 120 (1995), 119–142. The original theorem and its exact motive/realization hypotheses have not been read, and no matching atlas node was found. A Motives and Algebraic Cycles, Part II extension should supply the precise even-weight orthogonal-motive root-number theorem, with compatibility for this Nori motive and the global measure/character convention. The generic epsilon-factor node supplies local constants, not positivity of their global product. Until that contract is verified, the explicit + sign of the odd functional equation has this recorded input gap."
+      "slug": "semisimplification-similitude-form",
+      "needs": "For a characteristic-zero field E, an E-algebra with E-linear anti-involution and a finite-dimensional module with a nondegenerate involution-compatible symmetric or alternating form, the semisimplification carries a nondegenerate compatible form of the same type (Serre, arXiv:1708.00046v3, Theorem 4.2.1).",
+      "supplier": "ArithmeticGaloisRepresentations",
+      "section": "§7.4"
     }
   ],
   "restructure": [
