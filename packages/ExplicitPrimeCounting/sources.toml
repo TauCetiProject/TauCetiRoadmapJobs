@@ -59,6 +59,7 @@ resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6066#i
 
 [[source]]
 id = "dusart-1999-mc"
+authors = "Pierre Dusart"
 title = "The kth prime is greater than k(ln k + ln ln k − 1) for k ≥ 2"
 year = 1999
 locator_scheme = "theorem"
@@ -68,7 +69,6 @@ licence_class = "operator-local"
 status = "certified"
 local_name = "dusart-1999-mc.pdf"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6066#issuecomment-6671941951"
-authors = "Pierre Dusart"
 
 [[source]]
 id = "dusart-2002"
@@ -184,7 +184,9 @@ resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6066#i
 
 [[source]]
 id = "dusart-1998-thesis"
+authors = "Pierre Dusart"
 title = "Autour de la fonction qui compte le nombre de nombres premiers (thèse, Université de Limoges)"
+year = 1998
 locator_scheme = "chapter"
 locator = "Chapitres 1-4"
 sha256 = "fb780e05f58f623ce433559a6f47094a407c3397c902063d9876c22ecdef7e2d"
@@ -192,8 +194,6 @@ licence_class = "operator-local"
 status = "certified"
 local_name = "dusart-1998-thesis.pdf"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6066#issuecomment-6671941951"
-authors = "Pierre Dusart"
-year = 1998
 
 [[source]]
 id = "rosser-schoenfeld-1962"
@@ -211,6 +211,7 @@ resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6066#i
 
 [[source]]
 id = "cipolla-1902"
+authors = "Michele Cipolla"
 title = "La determinazione assintotica dell'nimo numero primo"
 year = 1902
 locator_scheme = "page"
@@ -218,7 +219,6 @@ locator = "pp. 132-166"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6066#issuecomment-6671941951"
-authors = "Michele Cipolla"
 
 [[source]]
 id = "platt-2011-thesis"
@@ -297,6 +297,9 @@ cited_for = ["H1"]
 
 [[source]]
 id = "platt-trudgian-2021-error"
+authors = "David J. Platt, Timothy S. Trudgian"
+title = "The error term in the prime number theorem"
+year = 2021
 arxiv = "1809.03134"
 locator_scheme = "theorem"
 locator = "Theorem 1"
@@ -309,15 +312,15 @@ status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv, latest version"
 cited_for = ["Layer 2"]
-authors = "David J. Platt, Timothy S. Trudgian"
-title = "The error term in the prime number theorem"
-year = 2021
 
 [[source]]
 id = "fiori-kadiri-swidinsky-2023"
+authors = "Andrew Fiori, Habiba Kadiri, Joshua Swidinsky"
+title = "Sharper bounds for the Chebyshev function ψ(x)"
+year = 2023
 arxiv = "2206.12557"
 locator_scheme = "theorem"
-locator = "Theorem 1"
+locator = "Theorem 3, Theorem 6, Corollary 22, Remark 2"
 url = "https://arxiv.org/abs/2206.12557"
 fetched_from = "https://arxiv.org/pdf/2206.12557"
 fetched_at = "2026-11-06T01:01:19Z"
@@ -327,12 +330,12 @@ status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv, latest version"
 cited_for = ["Layer 2"]
-authors = "Andrew Fiori, Habiba Kadiri, Joshua Swidinsky"
-title = "Sharper bounds for the Chebyshev function ψ(x)"
-year = 2023
 
 [[source]]
 id = "johnston-yang-2023"
+authors = "Daniel R. Johnston, Andrew Yang"
+title = "Some explicit estimates for the error term in the prime number theorem"
+year = 2023
 arxiv = "2204.01980"
 locator_scheme = "theorem"
 locator = "Theorem 1.1"
@@ -345,12 +348,12 @@ status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv, latest version"
 cited_for = ["Layer 2"]
-authors = "Daniel R. Johnston, Andrew Yang"
-title = "Some explicit estimates for the error term in the prime number theorem"
-year = 2023
 
 [[source]]
 id = "axler-2016"
+authors = "Christian Axler"
+title = "New bounds for the prime counting function"
+year = 2016
 arxiv = "1409.1780"
 locator_scheme = "theorem"
 locator = "Theorems 1.3-1.4"
@@ -363,9 +366,6 @@ status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv, latest version"
 cited_for = ["Layer 2"]
-authors = "Christian Axler"
-title = "New bounds for the prime counting function"
-year = 2016
 
 [[source]]
 id = "axler-2019"
@@ -374,7 +374,7 @@ title = "New bounds for the sum of the first $n$ prime numbers"
 year = 2016
 arxiv = "1606.06874v2"
 locator_scheme = "theorem"
-locator = "Theorems 1.6-1.7"
+locator = "Theorems 1.6–1.9"
 url = "https://arxiv.org/abs/1606.06874v2"
 fetched_from = "https://arxiv.org/pdf/1606.06874v2"
 fetched_at = "2026-11-06T01:02:29Z"
@@ -387,9 +387,12 @@ cited_for = ["Layer 4"]
 
 [[source]]
 id = "carneiro-milinovich-soundararajan-2019"
+authors = "Emanuel Carneiro, Micah B. Milinovich, Kannan Soundararajan"
+title = "Fourier optimization and prime gaps"
+year = 2019
 arxiv = "1708.04122"
 locator_scheme = "theorem"
-locator = "Theorem 1"
+locator = "Theorem 5, Lemma 7, display (1.15)"
 url = "https://arxiv.org/abs/1708.04122"
 fetched_from = "https://arxiv.org/pdf/1708.04122"
 fetched_at = "2026-11-06T01:02:38Z"
@@ -399,12 +402,12 @@ status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv, latest version"
 cited_for = ["Layer 1"]
-authors = "Emanuel Carneiro, Micah B. Milinovich, Kannan Soundararajan"
-title = "Fourier optimization and prime gaps"
-year = 2019
 
 [[source]]
 id = "bennett-martin-obryant-rechnitzer-2018"
+authors = "Michael A. Bennett, Greg Martin, Kevin O'Bryant, Andrew Rechnitzer"
+title = "Explicit bounds for primes in arithmetic progressions"
+year = 2018
 arxiv = "1802.00085"
 locator_scheme = "theorem"
 locator = "Theorems 1.1-1.3"
@@ -417,12 +420,12 @@ status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv, latest version"
 cited_for = ["Layer 5"]
-authors = "Michael A. Bennett, Greg Martin, Kevin O'Bryant, Andrew Rechnitzer"
-title = "Explicit bounds for primes in arithmetic progressions"
-year = 2018
 
 [[source]]
 id = "kadiri-lumley-2014"
+authors = "Habiba Kadiri, Allysa Lumley"
+title = "Short effective intervals containing primes"
+year = 2014
 arxiv = "1407.7902"
 locator_scheme = "theorem"
 locator = "Theorem 1.1"
@@ -435,9 +438,6 @@ status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv, latest version"
 cited_for = ["Layer 6"]
-authors = "Habiba Kadiri, Allysa Lumley"
-title = "Short effective intervals containing primes"
-year = 2014
 
 [[source]]
 id = "trudgian-2016"
@@ -459,6 +459,9 @@ cited_for = ["Layer 6"]
 
 [[source]]
 id = "dudek-2016"
+authors = "Adrian W. Dudek"
+title = "An explicit result for primes between cubes"
+year = 2016
 arxiv = "1401.4233"
 locator_scheme = "theorem"
 locator = "Theorem 1"
@@ -471,12 +474,12 @@ status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv, latest version"
 cited_for = ["Layer 6"]
-authors = "Adrian W. Dudek"
-title = "An explicit result for primes between cubes"
-year = 2016
 
 [[source]]
 id = "cully-hugill-2021"
+authors = "Michaela Cully-Hugill"
+title = "Primes between consecutive powers"
+year = 2021
 arxiv = "2107.14468"
 locator_scheme = "theorem"
 locator = "Theorem 1"
@@ -489,12 +492,12 @@ status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv, latest version"
 cited_for = ["Layer 6"]
-authors = "Michaela Cully-Hugill"
-title = "Primes between consecutive powers"
-year = 2021
 
 [[source]]
 id = "dudek-2015"
+authors = "Adrian W. Dudek"
+title = "On the Riemann hypothesis and the difference between primes"
+year = 2015
 arxiv = "1402.6417"
 locator_scheme = "theorem"
 locator = "Theorem 1.1"
@@ -507,12 +510,12 @@ status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv, latest version"
 cited_for = ["Layer 1"]
-authors = "Adrian W. Dudek"
-title = "On the Riemann hypothesis and the difference between primes"
-year = 2015
 
 [[source]]
 id = "cully-hugill-lee-2022"
+authors = "Michaela Cully-Hugill, Ethan S. Lee"
+title = "Explicit interval estimates for prime numbers"
+year = 2022
 arxiv = "2103.05986"
 locator_scheme = "theorem"
 locator = "Theorem 1"
@@ -525,9 +528,6 @@ status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv, latest version"
 cited_for = ["Layer 6"]
-authors = "Michaela Cully-Hugill, Ethan S. Lee"
-title = "Explicit interval estimates for prime numbers"
-year = 2022
 
 [[source]]
 id = "ramare-2013"
@@ -549,13 +549,12 @@ cited_for = ["Layer 3"]
 
 [[source]]
 id = "ramare-2002"
-authors = "Martin Arkowitz, Hideaki Oshima, Jeffrey Strom"
-title = "The inverses of an H-space"
+authors = "Olivier Ramaré"
+title = "Sur un théorème de Mertens"
 year = 2002
-venue = "manuscripta mathematica 108"
-doi = "10.1007/s002290200271"
+venue = "manuscripta mathematica 108 (2002), 495–513"
 locator_scheme = "theorem"
-locator = "Theorem 2"
+locator = "Corollaire 1, Théorème 2, Corollaires 4–5"
 url = "https://ramare-olivier.github.io/Maths/mertens.pdf"
 fetched_from = "https://ramare-olivier.github.io/Maths/mertens.pdf"
 fetched_at = "2026-11-06T01:27:30Z"
@@ -563,6 +562,7 @@ sha256 = "a4757eb2b12b14a3d2ca7b9030c924107fcd0351abd09b48813c73f410fe9933"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-06"
+version_note = "The cached text is the author's copy of the manuscripta mathematica paper (pages 495–513); the DOI of the entry had resolved to a different article of the same volume and was removed."
 cited_for = ["Layer 5"]
 
 [[source]]
@@ -641,7 +641,7 @@ year = 2018
 venue = "Journal of the Australian Mathematical Society 106"
 doi = "10.1017/S1446788718000083"
 locator_scheme = "theorem"
-locator = "Proposition 2.7, Corollary 2.8"
+locator = "Proposition 2.6, Corollary 2.7 (HAL text numbering, lines 448–548)"
 url = "https://hal.science/hal-02079258v1"
 fetched_from = "https://hal.science/hal-02079258/document"
 fetched_at = "2026-11-06T01:08:24Z"
@@ -657,7 +657,7 @@ authors = "Marc Deléglise, Jean-Louis Nicolas"
 title = "The Landau function and the Riemann hypothesis"
 year = 2019
 locator_scheme = "theorem"
-locator = "Proposition 2.5, Corollaries 2.6-2.8"
+locator = "Proposition 2.5, Corollaries 2.6–2.8 (HAL text numbering, lines 611–796)"
 url = "https://hal.science/hal-02177338v1"
 fetched_from = "https://hal.science/hal-02177338/document"
 fetched_at = "2026-11-06T01:08:26Z"
@@ -669,6 +669,9 @@ cited_for = ["Layer 3"]
 
 [[source]]
 id = "robin-1983"
+authors = "Guy Robin"
+title = "Estimation de la fonction de Tchebychef θ sur le k-ième nombre premier et grandes valeurs de la fonction ω(n) nombre de diviseurs premiers de n"
+year = 1983
 locator_scheme = "theorem"
 locator = "Théorème 8"
 url = "http://matwbn.icm.edu.pl/ksiazki/aa/aa42/aa4242.pdf"
@@ -679,12 +682,12 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-06"
 cited_for = ["Layer 4"]
-authors = "Guy Robin"
-title = "Estimation de la fonction de Tchebychef θ sur le k-ième nombre premier et grandes valeurs de la fonction ω(n) nombre de diviseurs premiers de n"
-year = 1983
 
 [[source]]
 id = "rosser-schoenfeld-1975"
+authors = "J. Barkley Rosser, Lowell Schoenfeld"
+title = "Sharper bounds for the Chebyshev functions θ(x) and ψ(x)"
+year = 1975
 locator_scheme = "theorem"
 locator = "Theorems 1-12"
 url = "https://www.ams.org/journals/mcom/1975-29-129/S0025-5718-1975-0457373-7/S0025-5718-1975-0457373-7.pdf"
@@ -695,12 +698,12 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-06"
 cited_for = ["Layer 2"]
-authors = "J. Barkley Rosser, Lowell Schoenfeld"
-title = "Sharper bounds for the Chebyshev functions θ(x) and ψ(x)"
-year = 1975
 
 [[source]]
 id = "dusart-2016"
+authors = "Pierre Dusart"
+title = "Estimates of ψ, θ for large values of x without the Riemann hypothesis"
+year = 2016
 locator_scheme = "theorem"
 locator = "Theorem 1.1, Proposition 5.1"
 url = "https://www.ams.org/journals/mcom/2016-85-298/S0025-5718-2015-03005-1/S0025-5718-2015-03005-1.pdf"
@@ -711,12 +714,12 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-06"
 cited_for = ["Layer 2"]
-authors = "Pierre Dusart"
-title = "Estimates of ψ, θ for large values of x without the Riemann hypothesis"
-year = 2016
 
 [[source]]
 id = "faber-kadiri-2015"
+authors = "Laura Faber, Habiba Kadiri"
+title = "New bounds for ψ(x)"
+year = 2015
 locator_scheme = "theorem"
 locator = "Theorem 1.1, Table 1"
 url = "https://www.ams.org/journals/mcom/2015-84-293/S0025-5718-2014-02886-X/S0025-5718-2014-02886-X.pdf"
@@ -727,12 +730,12 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-06"
 cited_for = ["Layer 2"]
-authors = "Laura Faber, Habiba Kadiri"
-title = "New bounds for ψ(x)"
-year = 2015
 
 [[source]]
 id = "faber-kadiri-2018-corrigendum"
+authors = "Laura Faber, Habiba Kadiri"
+title = "Corrigendum to New bounds for ψ(x)"
+year = 2018
 locator_scheme = "theorem"
 locator = "Table 1"
 url = "https://www.ams.org/journals/mcom/2018-87-311/S0025-5718-2018-03340-3/S0025-5718-2018-03340-3.pdf"
@@ -743,12 +746,12 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-06"
 cited_for = ["Layer 2"]
-authors = "Laura Faber, Habiba Kadiri"
-title = "Corrigendum to New bounds for ψ(x)"
-year = 2018
 
 [[source]]
 id = "mccurley-1984"
+authors = "Kevin S. McCurley"
+title = "Explicit estimates for the error term in the prime number theorem for arithmetic progressions"
+year = 1984
 locator_scheme = "theorem"
 locator = "Theorems 1.1-1.3"
 url = "https://www.ams.org/journals/mcom/1984-42-165/S0025-5718-1984-0726004-6/S0025-5718-1984-0726004-6.pdf"
@@ -759,12 +762,12 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-06"
 cited_for = ["Layer 5"]
-authors = "Kevin S. McCurley"
-title = "Explicit estimates for the error term in the prime number theorem for arithmetic progressions"
-year = 1984
 
 [[source]]
 id = "bach-sorenson-1996"
+authors = "Eric Bach, Jonathan Sorenson"
+title = "Explicit bounds for primes in residue classes"
+year = 1996
 locator_scheme = "theorem"
 locator = "Theorem 5.3"
 url = "https://www.ams.org/journals/mcom/1996-65-216/S0025-5718-96-00763-6/S0025-5718-96-00763-6.pdf"
@@ -775,12 +778,12 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-06"
 cited_for = ["Layer 5"]
-authors = "Eric Bach, Jonathan Sorenson"
-title = "Explicit bounds for primes in residue classes"
-year = 1996
 
 [[source]]
 id = "deleglise-rivat-1996"
+authors = "Marc Deléglise, Joël Rivat"
+title = "Computing π(x): the Meissel, Lehmer, Lagarias, Miller, Odlyzko method"
+year = 1996
 locator_scheme = "page"
 locator = "Table"
 url = "https://www.ams.org/journals/mcom/1996-65-213/S0025-5718-96-00674-6/S0025-5718-96-00674-6.pdf"
@@ -791,12 +794,12 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-06"
 cited_for = ["H3"]
-authors = "Marc Deléglise, Joël Rivat"
-title = "Computing π(x): the Meissel, Lehmer, Lagarias, Miller, Odlyzko method"
-year = 1996
 
 [[source]]
 id = "massias-robin-1996"
+authors = "Jean-Pierre Massias, Guy Robin"
+title = "Bornes effectives pour certaines fonctions concernant les nombres premiers"
+year = 1996
 locator_scheme = "theorem"
 locator = "Théorème A"
 url = "https://www.numdam.org/item/JTNB_1996__8_1_215_0.pdf"
@@ -807,14 +810,14 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 cited_for = ["Layer 4"]
-authors = "Jean-Pierre Massias, Guy Robin"
-title = "Bornes effectives pour certaines fonctions concernant les nombres premiers"
-year = 1996
 
 [[source]]
 id = "panaitopol-2000"
-locator_scheme = "page"
-locator = "pp. 55-56"
+authors = "Laurenţiu Panaitopol"
+title = "A formula for π(x) applied to a result of Koninck–Ivić"
+year = 2000
+locator_scheme = "theorem"
+locator = "Theorems 1 and 3"
 url = "https://www.nieuwarchief.nl/serie5/pdf/naw5-2000-01-1-055.pdf"
 fetched_from = "https://www.nieuwarchief.nl/serie5/pdf/naw5-2000-01-1-055.pdf"
 fetched_at = "2026-11-06T01:37:06Z"
@@ -823,14 +826,14 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-06"
 cited_for = ["Layer 2"]
-authors = "Laurenţiu Panaitopol"
-title = "A formula for π(x) applied to a result of Koninck–Ivić"
-year = 2000
 
 [[source]]
 id = "vanlalngaia-2017"
+authors = "Ramdinmawia Vanlalngaia"
+title = "Explicit Mertens sums"
+year = 2017
 locator_scheme = "theorem"
-locator = "Theorems 1-3"
+locator = "Corollaries 1–2 (digits decoded from the extraction's font map)"
 url = "https://zenodo.org/records/10636070/files/r11.pdf?download=1"
 fetched_from = "https://zenodo.org/records/10636070/files/r11.pdf?download=1"
 fetched_at = "2026-11-06T01:37:39Z"
@@ -839,9 +842,6 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 cited_for = ["Layer 3"]
-authors = "Ramdinmawia Vanlalngaia"
-title = "Explicit Mertens sums"
-year = 2017
 
 [[source]]
 id = "dusart-1999-cr"
@@ -851,10 +851,10 @@ year = 1999
 venue = "C. R. Math. Acad. Sci. Soc. R. Can. 21 (1999), no. 2, 53-59"
 locator_scheme = "theorem"
 locator = "Théorèmes 1-3"
-cited_for = ["Layer 2"]
+fetched_at = "2026-11-06"
 licence_class = "none"
 status = "uncertified"
-fetched_at = "2026-11-06"
+cited_for = ["Layer 2"]
 note = "No DOI and no open copy; the proofs are in the author's thesis, held locally as dusart-1998-thesis (Chapitre 1)."
 
 [[source]]
@@ -862,14 +862,14 @@ id = "platt-ramare-2017"
 authors = "David J. Platt, Olivier Ramaré"
 title = "Explicit estimates: from Λ(n) in arithmetic progressions to Λ(n)/n"
 year = 2017
-doi = "10.1080/10586458.2015.1123124"
 venue = "Exp. Math. 26 (2017), no. 1, 77-92"
+doi = "10.1080/10586458.2015.1123124"
 locator_scheme = "theorem"
 locator = "Theorem 1.7"
-cited_for = ["Layer 0"]
+fetched_at = "2026-11-06"
 licence_class = "none"
 status = "uncertified"
-fetched_at = "2026-11-06"
+cited_for = ["Layer 0"]
 note = "Publisher paywalled (HTTP 403 to the service); Bristol's repository lists an accepted manuscript at research-information.bris.ac.uk/files/67056122/PsiTilde_12_2.pdf but answers scripts with HTTP 403."
 
 [[source]]
@@ -877,14 +877,14 @@ id = "rosser-1938"
 authors = "J. Barkley Rosser"
 title = "The n-th prime is greater than n log n"
 year = 1938
-doi = "10.1112/plms/s2-45.1.21"
 venue = "Proc. London Math. Soc. (2) 45 (1938), 21-44"
+doi = "10.1112/plms/s2-45.1.21"
 locator_scheme = "theorem"
 locator = "Theorems 1-2"
-cited_for = ["Layer 4"]
+fetched_at = "2026-11-06"
 licence_class = "none"
 status = "uncertified"
-fetched_at = "2026-11-06"
+cited_for = ["Layer 4"]
 note = "Wiley/LMS paywalled; cited by locator."
 
 [[source]]
@@ -892,14 +892,14 @@ id = "rosser-1941"
 authors = "J. Barkley Rosser"
 title = "Explicit bounds for some functions of prime numbers"
 year = 1941
-doi = "10.2307/2371291"
 venue = "Amer. J. Math. 63 (1941), 211-232"
+doi = "10.2307/2371291"
 locator_scheme = "theorem"
 locator = "Theorems 1-3"
-cited_for = ["Layer 4"]
+fetched_at = "2026-11-06"
 licence_class = "none"
 status = "uncertified"
-fetched_at = "2026-11-06"
+cited_for = ["Layer 4"]
 note = "JSTOR paywalled; cited by locator."
 
 [[source]]
@@ -907,12 +907,48 @@ id = "cully-hugill-lee-2024"
 authors = "Michaela Cully-Hugill, Ethan S. Lee"
 title = "Corrigendum to Explicit interval estimates for prime numbers"
 year = 2024
-doi = "10.1090/mcom/3884"
 venue = "Math. Comp. 93 (2024), no. 346, 1019-1025"
+doi = "10.1090/mcom/3884"
 locator_scheme = "theorem"
 locator = "Theorem 1 and the corrected Table 2"
-cited_for = ["Layer 6"]
+fetched_at = "2026-11-06"
 licence_class = "none"
 status = "uncertified"
-fetched_at = "2026-11-06"
+cited_for = ["Layer 6"]
 note = "AMS Math. Comp. article still inside the five-year paywall window; the 2022 paper it corrects is read from arXiv (cully-hugill-lee-2022)."
+
+[[source]]
+id = "oliveira-e-silva-herzog-pardi-2014"
+authors = "Tomás Oliveira e Silva, Siegfried Herzog, Silvio Pardi"
+title = "Empirical verification of the even Goldbach conjecture and computation of prime gaps up to 4·10^18"
+year = 2014
+venue = "Mathematics of Computation 83 (2014), 2033–2060"
+doi = "10.1090/S0025-5718-2013-02787-1"
+locator_scheme = "page"
+locator = "Table 8 (record gaps up to 4·10^18), lines 1795–1821 of the text"
+url = "https://www.ams.org/journals/mcom/2014-83-288/S0025-5718-2013-02787-1/S0025-5718-2013-02787-1.pdf"
+fetched_from = "https://www.ams.org/journals/mcom/2014-83-288/S0025-5718-2013-02787-1/S0025-5718-2013-02787-1.pdf"
+fetched_at = "2026-11-06T13:25:27Z"
+sha256 = "ea31c7601aefa47b939b508b1048344cbdca234cd945a5bfbe736b7dd26be821"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["1.4"]
+
+[[source]]
+id = "broadbent-kadiri-lumley-ng-wilk-2021"
+authors = "Samuel Broadbent, Habiba Kadiri, Allysa Lumley, Nathan Ng, Kirsten Wilk"
+title = "Sharper Bounds for the Chebyshev function $θ(x)$"
+year = 2020
+arxiv = "2002.11068v2"
+locator_scheme = "theorem"
+locator = "Corollaries 11.1–11.2 (arXiv v2, lines 927–975)"
+url = "https://arxiv.org/abs/2002.11068v2"
+fetched_from = "https://arxiv.org/pdf/2002.11068v2"
+fetched_at = "2026-11-06T19:37:51Z"
+sha256 = "4260869785b9c77294519851a520429a2870aaa513813585e67b985a59b76bb8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v2 read; its numbering differs from the published Math. Comp. 90 (2021) version. The v2 Corollaries 11.1–11.2 re-prove the 0.15 bound and the Theorem 4.2 rows of dusart-2018; v2 works with R = 5.573412 and does not contain the bound with R = 5.5666305 and A = 121.096 that fiori-kadiri-swidinsky-2023 lines 151–154 quote as Corollary 1.3 of the published version, which is cited through that quotation"
+cited_for = ["3.1", "3.3", "3.5", "4.6", "7.5"]

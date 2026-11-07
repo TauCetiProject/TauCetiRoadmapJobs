@@ -1,0 +1,3024 @@
+{
+ "roadmap": "ExplicitPrimeCounting",
+ "title": "Explicit prime counting: numerically explicit bounds for ψ, θ, π, the n-th prime, sums over primes, primes in progressions and short intervals",
+ "parent": null,
+ "summary": "Explicit transfer identities between ψ, θ, π and Li; the computational hypotheses as named propositions; bounds under RH and RH to a height; the general unconditional scheme (region, verified height, zero count, zero density) and its published instances (Rosser–Schoenfeld, Schoenfeld, Dusart, Faber–Kadiri, Trudgian, Platt–Trudgian, Johnston–Yang, Fiori–Kadiri–Swidinsky); explicit Mertens and prime-power sums; the n-th prime; primes in progressions (Ramaré–Rumely, Dusart, McCurley, Bennett–Martin–O'Bryant–Rechnitzer, Ramaré, Bach–Sorenson, Kadiri); short intervals (Schoenfeld, Ramaré–Saouter, Kadiri–Lumley, Cully-Hugill–Lee, Trudgian, Axler, Dudek, Cully-Hugill).",
+ "baseline": {
+  "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+  "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
+ },
+ "layers": [
+  {
+   "key": "0",
+   "title": "Carriers and transfer identities",
+   "targets": [
+    {
+     "id": "0.1",
+     "kind": "definition",
+     "name": "ExplicitPrimes.li",
+     "statement": "liTwo is the Cauchy principal value lim_{ε→0⁺}(∫₀^{1−ε} dt/log t + ∫_{1+ε}^2 dt/log t); li x = TauCeti.Real.logIntegral x + liTwo for every real x.",
+     "hypotheses": [
+      "none (total definitions); the calculus lemmas assume x > 1"
+     ],
+     "locator": {
+      "source": "deleglise-nicolas-2019-landau",
+      "where": "lines 560–580 (the same principal value) and 600–608 (the series)"
+     },
+     "prerequisites": [
+      "tauceti:TauCeti.Real.logIntegral",
+      "tauceti:TauCeti.Real.logIntegral_two",
+      "mathlib:Real.eulerMascheroniConstant",
+      "roadmap:ZerosOfLFunctions §8.9"
+     ],
+     "api": [
+      {
+       "name": "li_sub_logIntegral",
+       "role": "evaluation",
+       "statement": "li x − Li x = liTwo for every real x; li 2 = liTwo"
+      },
+      {
+       "name": "liTwo_exists",
+       "role": "construction",
+       "statement": "the limit defining liTwo exists: the two logarithmic divergences at t = 1 cancel"
+      },
+      {
+       "name": "liTwo_series",
+       "role": "evaluation",
+       "statement": "liTwo = γ + log log 2 + ∑_{n≥1} (log 2)^n/(n·n!)"
+      },
+      {
+       "name": "hasDerivAt_li",
+       "role": "structure",
+       "statement": "for x > 1, li has derivative 1/log x, and li x → −∞ as x → 1⁺"
+      },
+      {
+       "name": "li_isEquivalent",
+       "role": "compatibility",
+       "statement": "li x ∼ Li x ∼ x/log x and li x − x/log x ∼ x/log² x"
+      }
+     ],
+     "tests": [
+      {
+       "name": "liTwo_crude",
+       "kind": "computation",
+       "statement": "from 1/2 < γ < 2/3 and the series (0.6931+0.1201+0.0185+0.0024, tail < 0.0003), 0.96 < liTwo < 1.14; in particular liTwo ≠ 0 so li ≠ Li"
+      },
+      {
+       "name": "li_sign_change",
+       "kind": "characterisation",
+       "statement": "li 1.4 < 0 < li 2: the lower Riemann sum 0.2·(2.128+1.701+1.443) = 1.054 of 1/log t on [1.4,2] exceeds liTwo < 1.0452"
+      },
+      {
+       "name": "li_e",
+       "kind": "computation",
+       "statement": "Li e ∈ ((e−2), (e−2)/log 2) = (0.718, 1.036), so li e ∈ (1.76, 2.08); the true value is 1.895"
+      },
+      {
+       "name": "not_lebesgue",
+       "kind": "non-example",
+       "statement": "∫₀² dt/log t is not Lebesgue integrable; a definition by the total interval integral returns the junk value 0 and would make li = Li"
+      }
+     ]
+    },
+    {
+     "id": "0.2",
+     "kind": "definition",
+     "name": "ExplicitPrimes.logPsiAP",
+     "statement": "logPsiAP q a x = ∑_{n ∈ Ioc 0 ⌊x⌋₊, (n : ZMod q) = a} Λ(n)/n for q : ℕ, a : ZMod q, x : ℝ (the sum ψ̃(x; q, a)).",
+     "hypotheses": [
+      "none"
+     ],
+     "locator": {
+      "source": "ramare-2002",
+      "where": "lines 19–24 (the sum V(L; q, a))"
+     },
+     "prerequisites": [
+      "mathlib:ArithmeticFunction.vonMangoldt",
+      "mathlib:ZMod",
+      "roadmap:AnalyticNumberTheoryPartI §0.2"
+     ],
+     "api": [
+      {
+       "name": "logPsiAP_eq_zero_of_lt_two",
+       "role": "evaluation",
+       "statement": "logPsiAP q a x = 0 for x < 2; nonnegative and monotone in x"
+      },
+      {
+       "name": "logPsiAP_one",
+       "role": "compatibility",
+       "statement": "logPsiAP 1 0 x = ∑_{n ≤ x} Λ(n)/n"
+      },
+      {
+       "name": "sum_logPsiAP_classes",
+       "role": "structure",
+       "statement": "for q ≥ 1, ∑_{a : ZMod q} logPsiAP q a x = logPsiAP 1 0 x"
+      },
+      {
+       "name": "logPsiAP_eq_psiAP_div_add_integral",
+       "role": "evaluation",
+       "statement": "for x ≥ 1, logPsiAP q a x = psiAP q a x/x + ∫₁ˣ psiAP q a t/t² dt"
+      }
+     ],
+     "tests": [
+      {
+       "name": "logPsiAP_ten",
+       "kind": "computation",
+       "statement": "logPsiAP 1 0 10 = log 2(1/2+1/4+1/8) + log 3(1/3+1/9) + log 5/5 + log 7/7 = 1.6947"
+      },
+      {
+       "name": "logPsiAP_one_x",
+       "kind": "degenerate",
+       "statement": "logPsiAP q a 1 = 0 and logPsiAP 2 0 x = ∑_{2^k ≤ x} log 2/2^k ≤ log 2 for every x"
+      },
+      {
+       "name": "logPsiAP_classes_four",
+       "kind": "compatibility",
+       "statement": "logPsiAP 4 1 x + logPsiAP 4 3 x = logPsiAP 2 1 x: the odd integers are the two classes"
+      },
+      {
+       "name": "logPsiAP_wrong_weight",
+       "kind": "non-example",
+       "statement": "the sum of Λ(n) (without 1/n) over the class is psiAP, which grows like x/φ(q), not like log x"
+      }
+     ]
+    },
+    {
+     "id": "0.2b",
+     "kind": "definition",
+     "name": "ExplicitPrimes.mertensProgressionConstant",
+     "statement": "C(q, a) = limUnder atTop (fun x ↦ logPsiAP q a x − log x/φ(q)).",
+     "hypotheses": [
+      "none for the definition; q ≥ 1 and a a unit of ZMod q for the existence and the closed form"
+     ],
+     "locator": {
+      "source": "ramare-2002",
+      "where": "lines 74–86, Corollaire 1 (the closed form)"
+     },
+     "prerequisites": [
+      "target:0.2",
+      "mathlib:Nat.totient",
+      "mathlib:Real.eulerMascheroniConstant",
+      "mathlib:DirichletCharacter.LFunction",
+      "mathlib:DirichletCharacter.sum_char_inv_mul_char_eq",
+      "roadmap:AnalyticNumberTheoryPartI §0.32",
+      "roadmap:AnalyticNumberTheoryPartI §0.30",
+      "roadmap:ZerosOfLFunctions §8.5",
+      "roadmap:ZerosOfLFunctions §8.6",
+      "mathlib:DirichletCharacter.LFunction_apply_one_ne_zero"
+     ],
+     "api": [
+      {
+       "name": "mertensProgressionConstant_exists",
+       "role": "construction",
+       "statement": "for q ≥ 1 and a a unit the limit exists and equals 1/φ(q) + ∫₁^∞ (psiAP q a t − t/φ(q))/t² dt, the integral converging absolutely by Siegel–Walfisz at A = 2"
+      },
+      {
+       "name": "mertensProgressionConstant_closedForm",
+       "role": "evaluation",
+       "statement": "C(q, a) = −(1/φ(q))(γ + ∑_{p∣q} log p/(p−1) + ∑_{χ≠χ₀} conj χ(a) (L'/L)(1, χ))"
+      },
+      {
+       "name": "logPsiAP_sub_eq",
+       "role": "evaluation",
+       "statement": "for x ≥ 1 and E(t) = psiAP q a t − t/φ(q): logPsiAP q a x − log x/φ(q) − C(q,a) = E(x)/x − ∫ₓ^∞ E(t)/t² dt"
+      },
+      {
+       "name": "sum_mertensProgressionConstant",
+       "role": "structure",
+       "statement": "∑_{a unit} C(q, a) = −γ − ∑_{p∣q} log p/(p−1)"
+      }
+     ],
+     "tests": [
+      {
+       "name": "C_one",
+       "kind": "computation",
+       "statement": "C(1, 0) = −γ; a definition forgetting the Abel boundary term would give 1 − γ"
+      },
+      {
+       "name": "C_two",
+       "kind": "computation",
+       "statement": "C(2, 1) = −γ − log 2, since ∑_{2^k≤x} log 2/2^k → log 2"
+      },
+      {
+       "name": "C_four_bias",
+       "kind": "characterisation",
+       "statement": "C(4, 3) − C(4, 1) = (L'/L)(1, χ₄); a definition through the full sum ∑_{n≤x} Λ(n)/n makes the classes equal; also C(4,1) + C(4,3) = C(2,1)"
+      },
+      {
+       "name": "C_nonunit",
+       "kind": "non-example",
+       "statement": "for q = 2, a = 0 the sequence logPsiAP 2 0 x − log x tends to −∞: no limit, the unit hypothesis is necessary"
+      }
+     ]
+    },
+    {
+     "id": "0.3",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.psi_sub_theta_bounds",
+     "statement": "For x ≥ 1: 0 ≤ ψ(x) − θ(x) ≤ (log 4)(√x + (log x/log 2 − 2)⁺ x^{1/3}). If θ(y) ≤ c y for all y > 0 and |θ(y) − y| ≤ ε y for all y ≥ y₀ ≥ 1, then for x ≥ max(4, y₀²): (1 − ε)√x ≤ ψ(x) − θ(x) ≤ (1 + ε)√x + c (log x/log 2 − 2) x^{1/3}.",
+     "hypotheses": [
+      "x ≥ 1 (first part); c ≥ 0, y₀ ≥ 1, ε ≥ 0 and the two θ-bounds (second part)"
+     ],
+     "locator": {
+      "source": "schoenfeld-1976",
+      "where": "line 672 (the decomposition ψ − θ = ∑_{k≥2} θ(x^{1/k}))"
+     },
+     "prerequisites": [
+      "mathlib:Chebyshev.psi_eq_theta_add_sum_theta",
+      "mathlib:Chebyshev.theta_le_log4_mul_x",
+      "mathlib:Chebyshev.theta_nonneg",
+      "mathlib:Chebyshev.theta_mono"
+     ],
+     "tests": [
+      {
+       "name": "x_eight",
+       "kind": "computation",
+       "statement": "ψ(8) − θ(8) = 2 log 2 = θ(√8) + θ(8^{1/3}); keeping only θ(√x) gives log 2"
+      },
+      {
+       "name": "x_121",
+       "kind": "computation",
+       "statement": "ψ(121) − θ(121) = log 332 640 = 12.715 ≤ 1.3863·(11 + 4.918·4.946) = 48.98"
+      },
+      {
+       "name": "x_120_9",
+       "kind": "non-example",
+       "statement": "at x = 120.9, ψ − θ = log 30 240 = 10.317 < 0.998697·√120.9 = 10.98: the lower bound with ε = 0.001303 fails below 121 and holds at 121, so the transfer needs x ≥ y₀²"
+      }
+     ]
+    },
+    {
+     "id": "0.4",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.primeCounting_sub_logIntegral_eq",
+     "statement": "For x ≥ 2: π(x) − Li x = (θ(x) − x)/log x + ∫₂ˣ (θ(t) − t)/(t log² t) dt + 2/log 2; difference form for 2 ≤ x₀ ≤ x; and if |θ(t) − t| ≤ t ε(t) on [x₀, x] then |π(x) − Li x| ≤ |π(x₀) − Li x₀| + x ε(x)/log x + x₀ ε(x₀)/log x₀ + ∫_{x₀}^x ε(t)/log² t dt.",
+     "hypotheses": [
+      "x ≥ 2; for the transfer 2 ≤ x₀ ≤ x and a θ-bound on [x₀, x]"
+     ],
+     "locator": {
+      "source": "rosser-schoenfeld-1962",
+      "where": "line 460, (4.17), the difference form (as cited at schoenfeld-1976 lines 101–102); the identity is Mathlib’s plus Tau Ceti’s Li identity"
+     },
+     "prerequisites": [
+      "mathlib:Chebyshev.primeCounting_eq_theta_div_log_add_integral",
+      "mathlib:Chebyshev.theta_eq_primeCounting_mul_log_sub_integral",
+      "mathlib:Chebyshev.integrableOn_theta_div_id_mul_log_sq",
+      "tauceti:TauCeti.Real.logIntegral_eq_div_log_sub_add",
+      "tauceti:TauCeti.Real.intervalIntegrable_div_mul_log_sq",
+      "tauceti:TauCeti.primeCount_sub_mul_logIntegral_eq",
+      "roadmap:EffectiveClassNumbers §4.4",
+      "target:0.1"
+     ],
+     "tests": [
+      {
+       "name": "x_two",
+       "kind": "computation",
+       "statement": "at x = 2 both sides equal 1: (log 2 − 2)/log 2 + 2/log 2 = 1"
+      },
+      {
+       "name": "x_three",
+       "kind": "computation",
+       "statement": "at x = 3 the right side is −1.0998 + 0.3691 − 1.279 + 2.8854 + 1.1184 = 1.994 (Simpson), the left side 2"
+      },
+      {
+       "name": "drop_constant",
+       "kind": "non-example",
+       "statement": "without 2/log 2 = 2.885 the identity fails at x = 2; with li in place of Li the constant becomes 2/log 2 − liTwo = 1.840"
+      }
+     ]
+    },
+    {
+     "id": "0.5",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.theta_pi_bounds_of_psi_bound",
+     "statement": "If |ψ(y) − y| ≤ ε(y) y for all y ≥ y₀ ≥ 2 then for x ≥ y₀: |θ(x) − x| ≤ (ε(x) + (log 4)(x^{−1/2} + (log x/log 2 − 2)⁺ x^{−2/3})) x (with log 4 replaced by c when θ ≤ c y is available), and for x ≥ x₀ ≥ y₀ the π-bound of target 0.4 with the θ-error so obtained.",
+     "hypotheses": [
+      "y₀ ≥ 2 and the ψ-bound on [y₀, ∞)"
+     ],
+     "locator": {
+      "source": "schoenfeld-1976",
+      "where": "lines 201–206, Theorem 11 (the scheme)"
+     },
+     "prerequisites": [
+      "target:0.3",
+      "target:0.4"
+     ],
+     "tests": [
+      {
+       "name": "schoenfeld_eps0",
+       "kind": "computation",
+       "statement": "Schoenfeld's ε₀(x) = √(8/(17π)) X^{1/2} e^{−X}, X = √(log x/9.645908801): ε₀(e¹⁰⁰) = 0.38703·1.7944·0.03999 = 0.02777, decreasing for x > e^{R/4} = 11.2"
+      },
+      {
+       "name": "eps_zero",
+       "kind": "degenerate",
+       "statement": "with ε ≡ 0 the θ-error is (log 4) x^{−1/2} plus the cube-root term, not 0"
+      },
+      {
+       "name": "x0_eq_x",
+       "kind": "degenerate",
+       "statement": "the π transfer at x₀ = x is a tautology; the content is in x₀ < x"
+      }
+     ]
+    },
+    {
+     "id": "0.6",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.agreements",
+     "statement": "psiAP 1 0 x = ψ(x); for q ≥ 1 and a : ZMod q, primeCountAP q a x = SieveDistribution.primeCountAP x q a.val; for a a unit, rayClassPsi at K = ℚ, 𝔪 = (q)∞ and the class of a equals psiAP q a x. The four finite-range inputs of AnalyticNumberTheoryPartI are proved in targets 3.2, 3.5a, 4.3 and 6.1.",
+     "hypotheses": [
+      "q ≥ 1 for the sieve agreement; a a unit for the ray-class agreement"
+     ],
+     "locator": {
+      "source": "ramare-rumely-1996",
+      "where": "lines 58–65 (the progression sums ψ(x; k, l), θ(x; k, l) compared)"
+     },
+     "prerequisites": [
+      "roadmap:AnalyticNumberTheoryPartI §0.2",
+      "roadmap:SieveMethodsAndPrimePatterns §3.1",
+      "roadmap:ZerosOfLFunctions §8.7"
+     ],
+     "tests": [
+      {
+       "name": "primeCountAP_agree",
+       "kind": "computation",
+       "statement": "primeCountAP 4 3 3 = 1 = SieveDistribution.primeCountAP 3 4 3"
+      },
+      {
+       "name": "q_zero",
+       "kind": "non-example",
+       "statement": "at q = 0, a = −5, x = 5: (−5 : ZMod 0).val = 5, primeCountAP 0 (−5) 5 = 0 but SieveDistribution.primeCountAP 5 0 5 = 1, so the agreement is stated for q ≥ 1"
+      },
+      {
+       "name": "rayclass_nonunit",
+       "kind": "non-example",
+       "statement": "psiAP 2 0 x = ∑_{2^k≤x} log 2 ≠ rayClassPsi for the non-unit class, which is 0"
+      }
+     ]
+    },
+    {
+     "id": "0.7",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.logPsiAP_transfer",
+     "statement": "For q ≥ 1, a a unit, x ≥ 1, E(t) = psiAP q a t − t/φ(q): logPsiAP q a x − log x/φ(q) − C(q,a) − E(x)/x = −∫ₓ^∞ E(t)/t² dt; hence if |E(t)| ≤ ε(t) t/φ(q) for t ≥ x then |logPsiAP q a x − log x/φ(q) − C(q,a)| ≤ |E(x)|/x + φ(q)⁻¹ ∫ₓ^∞ ε(t)/t dt.",
+     "hypotheses": [
+      "q ≥ 1, a a unit of ZMod q, x ≥ 1"
+     ],
+     "locator": {
+      "source": "ramare-2013",
+      "where": "lines 80–87 (the q = 1 form, Theorem 1.1)"
+     },
+     "prerequisites": [
+      "target:0.2b"
+     ],
+     "tests": [
+      {
+       "name": "constant_eps_diverges",
+       "kind": "non-example",
+       "statement": "with the constant row ε = 0.000213 the tail ∫_{10¹⁰}^∞ dt/t diverges: constant ε gives nothing"
+      },
+      {
+       "name": "log_square_eps",
+       "kind": "computation",
+       "statement": "with ε(t) = η/log² t on [x, ∞), ∫ₓ^∞ ε(t)/t dt = η/log x"
+      },
+      {
+       "name": "x_one",
+       "kind": "degenerate",
+       "statement": "at x = 1: logPsiAP q a 1 = 0, E(1) = −1/φ(q), both sides equal −∫₁^∞ E(t)/t² dt"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "1",
+   "title": "Hypotheses",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "definition",
+     "name": "ExplicitPrimes.RiemannHypothesisUpTo",
+     "statement": "RH(H): every s : ℂ with riemannZeta s = 0, 0 < Re s < 1 and |Im s| ≤ H has Re s = 1/2 (the statement form over riemannZeta; the proposition, its antitonicity, its implication from RiemannHypothesis and its named instances are ExplicitZetaBounds target 20).",
+     "hypotheses": [
+      "none"
+     ],
+     "locator": {
+      "source": "platt-trudgian-2021-rh",
+      "where": "lines 48–49, Theorem 1 (the height 3 000 175 332 800); van-de-lune-te-riele-winter-1986 lines 13–14; platt-2017 lines 485–486"
+     },
+     "prerequisites": [
+      "mathlib:riemannZeta",
+      "mathlib:riemannZeta_ne_zero_of_one_le_re",
+      "roadmap:ZerosOfLFunctions Layer 0",
+      "roadmap:ZerosOfLFunctions Layer 9",
+      "gap:rh-up-to-height"
+     ],
+     "api": [
+      {
+       "name": "iff_supplier",
+       "role": "compatibility",
+       "statement": "RH(H) ↔ the proposition of gap:rh-up-to-height at H (a zero of the entire completion in the closed rectangle is a zero of riemannZeta in the open strip, and conversely)"
+      },
+      {
+       "name": "heights",
+       "role": "structure",
+       "statement": "the heights used as hypotheses are the supplier’s instances 545 439 823, 30 610 046 000 and 3 000 175 332 800"
+      }
+     ],
+     "tests": [
+      {
+       "name": "rh_zero",
+       "kind": "degenerate",
+       "statement": "RH(0) says ζ has no real zero in (0, 1), a true statement; with |Im s| < H it would be vacuous"
+      },
+      {
+       "name": "rh_fourteen",
+       "kind": "computation",
+       "statement": "RH(14) holds (first ordinate 14.1347…); RH(15) is about the first zero"
+      },
+      {
+       "name": "trivial_zeros",
+       "kind": "non-example",
+       "statement": "quantifying over all zeros fails for every H ≥ 0 because riemannZeta (−2) = 0 and Re(−2) ≠ 1/2"
+      },
+      {
+       "name": "finite_height",
+       "kind": "characterisation",
+       "statement": "for finite H, RH(H) concerns finitely many zeros; RiemannHypothesis is equivalent to RH(H) for every H"
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "definition",
+     "name": "ExplicitPrimes.DirichletGRHUpTo",
+     "statement": "GRH(q, H) for q ≥ 1: for every Dirichlet character χ modulo q, imprimitive ones included, and every s with LFunction χ s = 0, 0 < Re s < 1, |Im s| ≤ H, one has Re s = 1/2.",
+     "hypotheses": [
+      "q ≥ 1"
+     ],
+     "locator": {
+      "source": "rumely-1993",
+      "where": "lines 29–32 (the instances, for primitive characters); the list at ramare-2002 lines 152–159"
+     },
+     "prerequisites": [
+      "mathlib:DirichletCharacter.LFunction",
+      "mathlib:DirichletCharacter.IsPrimitive",
+      "roadmap:AnalyticNumberTheoryPartI §1.6",
+      "target:1.1",
+      "gap:grh-up-to-height"
+     ],
+     "api": [
+      {
+       "name": "iff_primitive",
+       "role": "compatibility",
+       "statement": "for q ≥ 1, GRH(q, H) ↔ for every primitive χ* of conductor f ∣ q, every zero of L(s, χ*) with 0 < Re s < 1 and |Im s| ≤ H has real part 1/2 (the Euler factors at p ∣ q vanish only on Re s = 0); with the supplier’s primitive instances this gives GRH(q, 10 000) for q ≤ 13, GRH(q, 2500) for q in Rumely’s list and GRH(q, 10⁸/q) for q ≤ 400 000"
+      },
+      {
+       "name": "one",
+       "role": "compatibility",
+       "statement": "GRH(1, H) ↔ RH(H)"
+      }
+     ],
+     "tests": [
+      {
+       "name": "principal_mod_two",
+       "kind": "non-example",
+       "statement": "L(s, χ₀ mod 2) = (1 − 2^{−s})ζ(s) vanishes at 2πi/log 2 with Re = 0; GRH(2, 10) ignores it by 0 < Re s"
+      },
+      {
+       "name": "mod_eight",
+       "kind": "compatibility",
+       "statement": "at q = 8 the conductors carrying a primitive character are 1, 4, 8; GRH(8, 10 000) is the bounded-zero clause of ModEightFiniteInput"
+      },
+      {
+       "name": "trivial_zeros",
+       "kind": "non-example",
+       "statement": "over all zeros the statement is refuted by the trivial zeros at nonpositive integers"
+      },
+      {
+       "name": "direction",
+       "kind": "characterisation",
+       "statement": "the law is used from conductors to moduli; the implication GRH(q, H) → statement for f ∣ q is not the one used"
+      }
+     ]
+    },
+    {
+     "id": "1.3",
+     "kind": "definition",
+     "name": "ExplicitPrimes.FiniteRange",
+     "statement": "One Prop per published finite computation, each on the bounded range on which it is needed: ButheVerified; RosserSchoenfeld1962Range; Schoenfeld1976Range ((5.1*)–(5.4*) for 0 < x ≤ 10⁸; (6.2) for 73.2 < x ≤ 1423, (6.3) for 599 < x ≤ 1423, (6.4) for 59 < x ≤ 1423; (6.18) for 2657 < x ≤ 5·10⁷; Theorem 12 for 2 010 759.9 < x ≤ 10⁸); Buthe2016Range (Theorem 2 for x < 5000, the π* clause from x ≥ 97); DusartThesisRange; Robin1983Range (p_k ≤ k(log k + log log k − 0.9385) for 8602 ≤ k ≤ 39 016); Dusart2018Range; TrudgianRange (ψ for 23 ≤ x ≤ 36, θ for 149 ≤ x ≤ 1423, the interval for 2 898 242 ≤ x ≤ 4 652 353); JohnstonYangRange (the π bound for 2 ≤ x ≤ 5); AxlerRange; Axler2019Range; Ramare2013Range; VanlalngaiaRange; DelegliseNicolasRange; BachSorensonRange, each as stated in the README.",
+     "hypotheses": [
+      "none (propositions)"
+     ],
+     "locator": {
+      "source": "buthe-2018",
+      "where": "lines 73–85, Theorem 2"
+     },
+     "prerequisites": [
+      "target:0.1",
+      "mathlib:Chebyshev.psi",
+      "mathlib:Chebyshev.theta",
+      "mathlib:Nat.primeCounting"
+     ],
+     "api": [
+      {
+       "name": "statements",
+       "role": "structure",
+       "statement": "each proposition is a closed Prop with its range and constants in the statement; none is proved"
+      },
+      {
+       "name": "buthe_psi_to_theta",
+       "role": "compatibility",
+       "statement": "for x > 121, ButheVerified's ψ clause with target 0.3's lower bound gives x − θ(x) ≥ 0.0587√x, consistent with its third clause"
+      }
+     ],
+     "tests": [
+      {
+       "name": "psi_113",
+       "kind": "computation",
+       "statement": "ψ(113)/113 = 1.03882…: RosserSchoenfeld1962Range is consistent with the supremum of ψ(x)/x at 113"
+      },
+      {
+       "name": "buthe_pi",
+       "kind": "computation",
+       "statement": "at x = 10⁴: li − π = 17.1 ≤ 28.2; at x = 10⁹: 1701 ≤ 3341"
+      },
+      {
+       "name": "threshold_prime",
+       "kind": "degenerate",
+       "statement": "10 544 111 is a prime and the threshold of Dusart's θ bound; the proposition covers the open range above it"
+      },
+      {
+       "name": "not_littlewood",
+       "kind": "non-example",
+       "statement": "ButheVerified does not assert θ(x) < x for all x, which is false"
+      },
+      {
+       "name": "robin_start",
+       "kind": "non-example",
+       "statement": "p₇₀₂₂ = 70 919 > 70 918.61 and p₈₆₀₁ = 88 807 > 88 805.00, while p₈₆₀₂ = 88 811 < 88 816.44: Robin1983Range starts at 8602"
+      },
+      {
+       "name": "trudgian_gap",
+       "kind": "non-example",
+       "statement": "2 898 239 and 2 898 359 are consecutive primes; at x = 2 898 240 the interval [x, x(1 + 1/(111 log² x))] = [2 898 240, 2 898 357.93] contains no prime, so the interval clause starts at 2 898 242"
+      },
+      {
+       "name": "trudgian_ranges",
+       "kind": "computation",
+       "statement": "0.94√x ≤ x ε₀(x) exactly for x ≥ 35.08; at x = 1423, x ε₀(x) = 196.4 against 1.95√x = 73.6"
+      },
+      {
+       "name": "bach_sorenson_q2",
+       "kind": "computation",
+       "statement": "at q = 2 the least prime ≡ 1 is 3 and 3/(2 log 2)² = 1.561 < 2"
+      }
+     ]
+    },
+    {
+     "id": "1.4",
+     "kind": "definition",
+     "name": "ExplicitPrimes.MaximalPrimeGapTable",
+     "statement": "For the record pairs (P_i, g_i) of Oliveira e Silva–Herzog–Pardi's Table 8 (last row P = 1 425 172 824 437 699 411, g = 1476): every prime p < 4·10¹⁸ has next-prime gap ≤ 1476, and for each row every prime p < P_i has gap < g_i.",
+     "hypotheses": [
+      "none"
+     ],
+     "locator": {
+      "source": "oliveira-e-silva-herzog-pardi-2014",
+      "where": "lines 1795–1821, Table 8"
+     },
+     "prerequisites": [
+      "mathlib:Nat.nth",
+      "mathlib:Nat.prime_nth_prime"
+     ],
+     "api": [
+      {
+       "name": "gap_lt_log_sq",
+       "role": "construction",
+       "statement": "consequence: p⁺ − p < log² p for every prime 11 ≤ p ≤ 4·10¹⁸ (carneiro-milinovich-soundararajan-2019 lines 269–273)"
+      },
+      {
+       "name": "nicely_segment",
+       "role": "compatibility",
+       "statement": "Nicely's search to 10¹⁵ is the initial segment, largest gap 906 after 218 209 405 436 543"
+      }
+     ],
+     "tests": [
+      {
+       "name": "p_seven",
+       "kind": "non-example",
+       "statement": "at p = 7 the gap 4 ≥ log² 7 = 3.79: the consequence needs 11 ≤ p"
+      },
+      {
+       "name": "rows",
+       "kind": "computation",
+       "statement": "113 → 14 < 22.4; 1327 → 34 < 51.7; last row 1476 < 41.80² = 1747"
+      },
+      {
+       "name": "tightest",
+       "kind": "computation",
+       "statement": "the row (1 693 182 318 746 371, 1132): 1132 < 35.07² = 1230, ratio 0.92"
+      }
+     ]
+    },
+    {
+     "id": "1.4b",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.gap_lt_log_sq",
+     "statement": "Under MaximalPrimeGapTable: p⁺ − p < log² p for every prime p with 11 ≤ p ≤ 4·10¹⁸.",
+     "hypotheses": [
+      "MaximalPrimeGapTable"
+     ],
+     "locator": {
+      "source": "carneiro-milinovich-soundararajan-2019",
+      "where": "lines 269–273, display (1.15)"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "mathlib:Nat.nth"
+     ],
+     "tests": [
+      {
+       "name": "rows",
+       "kind": "computation",
+       "statement": "between rows the gap is below g_{i+1} and log² p ≥ log² P_i; the check g_{i+1} ≤ log² P_i over the rows, e.g. 1132 ≤ 1230"
+      }
+     ]
+    },
+    {
+     "id": "1.5",
+     "kind": "definition",
+     "name": "ExplicitPrimes.ProgressionTabulations",
+     "statement": "RamareRumelyTabulation: for k in Ramaré–Rumely’s Table 1, l a unit, 1 ≤ x ≤ 10¹⁰: max_{y≤x}|θ(y;k,l) − y/φ(k)| ≤ 2.072√x and max_{y≤x}|ψ(y;k,l) − y/φ(k)| ≤ 1.745√x. RamareRumelyTabulationSharp: the ψ clause with 1.000 for k = 5 and k ≥ 7, and √2 for k = 1. Ramare2002Tabulation: for q in Rumely’s list, max_{1≤L≤10⁵} max_a √L |logPsiAP q a L − log L/φ(q) − C(q,a)| ≤ v♯(q) ≤ 1 and max_{182≤L≤10⁵} max_a |…| ≤ ε♯(q).",
+     "hypotheses": [
+      "none"
+     ],
+     "locator": {
+      "source": "ramare-rumely-1996",
+      "where": "lines 77–92, Theorem 2; ramare-2002 lines 161–169, Théorème 2, and lines 1229–1232"
+     },
+     "prerequisites": [
+      "roadmap:AnalyticNumberTheoryPartI §0.2",
+      "target:0.2",
+      "target:0.2b"
+     ],
+     "api": [
+      {
+       "name": "statements",
+       "role": "structure",
+       "statement": "closed Props with the lists of moduli as data"
+      }
+     ],
+     "tests": [
+      {
+       "name": "k_one",
+       "kind": "compatibility",
+       "statement": "at k = 1 the first says |ψ(y) − y| ≤ 1.745√x for y ≤ x ≤ 10¹⁰, weaker than ButheVerified's 0.94√x"
+      },
+      {
+       "name": "q_six_L_one",
+       "kind": "computation",
+       "statement": "at q = 6, a = 1, L = 1 the second asserts |C(6,1)| ≤ 1; the value is 0.978…"
+      },
+      {
+       "name": "q_one_absent",
+       "kind": "degenerate",
+       "statement": "q = 1 is not in Rumely's list; the analogue would be the 1.31/√x statement of target 4.2"
+      }
+     ]
+    },
+    {
+     "id": "1.6",
+     "kind": "definition",
+     "name": "ExplicitPrimes.ConstantEnclosures",
+     "statement": "EulerGammaEnclosure: |γ − 0.5772156649| < 10⁻⁹ (γ = Real.eulerMascheroniConstant); MeisselMertensEnclosure: |B − 0.2614972128| < 10⁻⁹ (B = TauCeti.LFunctions.mertensConstant ℚ).",
+     "hypotheses": [
+      "none"
+     ],
+     "locator": {
+      "source": "rosser-schoenfeld-1962",
+      "where": "line 81, (2.10) (the decimals of B); ramare-rumely-1996 line 294 (the decimals of γ)"
+     },
+     "prerequisites": [
+      "mathlib:Real.eulerMascheroniConstant",
+      "tauceti:TauCeti.LFunctions.mertensConstant",
+      "roadmap:ComputationalNumberTheory §4.17a",
+      "target:0.1"
+     ],
+     "api": [
+      {
+       "name": "gamma_pin",
+       "role": "compatibility",
+       "statement": "consistent with 1/2 < γ < 2/3"
+      },
+      {
+       "name": "B_eq",
+       "role": "compatibility",
+       "statement": "B is the constant of AnalyticNumberTheoryPartI §0.19 and of TauCeti.LFunctions.mertensConstant ℚ: the limit of ∑_{p≤x} 1/p − log log x"
+      },
+      {
+       "name": "liTwo_enclosure",
+       "role": "compatibility",
+       "statement": "under EulerGammaEnclosure, 1.0451 < liTwo < 1.0452 by the series of target 0.1 (0.5772157 − 0.3665129 + 0.8344610 = 1.0451638)"
+      }
+     ],
+     "tests": [
+      {
+       "name": "B_lt_gamma",
+       "kind": "characterisation",
+       "statement": "B = γ + ∑_p (log(1 − 1/p) + 1/p) < γ: 0.2615 < 0.5772"
+      },
+      {
+       "name": "B_not_frac",
+       "kind": "non-example",
+       "statement": "B ≠ γ − 1/2 = 0.0772"
+      },
+      {
+       "name": "gamma_pin",
+       "kind": "compatibility",
+       "statement": "1/2 < 0.5772 < 2/3"
+      },
+      {
+       "name": "liTwo_pin_only",
+       "kind": "non-example",
+       "statement": "from 1/2 < γ < 2/3 alone the series gives only 0.96 < liTwo < 1.14"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "Bounds under the Riemann hypothesis and under the Riemann hypothesis to a height",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.weilFormula_Cm",
+     "statement": "The Weil explicit formula at K = ℚ holds for every continuous φ with compact support [a, b] ⊂ (0, ∞), absolutely continuous, whose derivative t φ′(t) agrees a.e. with a function of bounded variation V; then |φ̃(s)| ≤ max(1, b) V/|s|² on 0 ≤ Re s ≤ 1 and the zero side converges absolutely. Also ∑_ρ 1/(ρ(1−ρ)) = 2 + γ − log 4π; explicit bounds for ∑_{0<γ≤T} 1/γ under the explicit zero count; the weighted sums over ordinates.",
+     "hypotheses": [
+      "φ continuous, compactly supported in (0, ∞), absolutely continuous, t φ′ of bounded variation; the explicit zero count and the weighted ordinate sum as gaps"
+     ],
+     "locator": {
+      "source": "carneiro-milinovich-soundararajan-2019",
+      "where": "lines 1185–1199, Lemma 7 (the Mellin kernel formula); kadiri-lumley-2014 lines 503–509 (the kernels)"
+     },
+     "prerequisites": [
+      "roadmap:ZerosOfLFunctions §8.4",
+      "roadmap:ZerosOfLFunctions §4.5",
+      "roadmap:ZerosOfLFunctions §5.6",
+      "mathlib:mellin",
+      "gap:explicit-zero-count-error",
+      "gap:lehman-weighted-zero-sum"
+     ],
+     "tests": [
+      {
+       "name": "sum_inv_rho",
+       "kind": "computation",
+       "statement": "1 + γ/2 − (log 4π)/2 = 0.02310; the first seven ordinates give 0.01217 and the tail about 0.011; twice the total, 0.04619 = 2 + γ − log 4π"
+      },
+      {
+       "name": "phi_zero",
+       "kind": "degenerate",
+       "statement": "φ = 0 gives 0 = 0; φ supported in (0,1) kills the prime side"
+      },
+      {
+       "name": "kernel_m_one",
+       "kind": "characterisation",
+       "statement": "4t(1 − t) on [0, 1] (m = 1, Rosser–Schoenfeld’s Theorem 2) is continuous, not C¹; its derivative jumps 0→4 and −4→0, so t φ′ has finite variation and the kernel is in the class, which a C^m (m ≥ 2) class would exclude"
+      },
+      {
+       "name": "kernel_cosine",
+       "kind": "characterisation",
+       "statement": "t^{−1/2} cos(ϑ log(a/t)) on [a e^{−δ}, a e^{δ}], ϑδ = π/2, vanishes at both ends with two corners: in the class"
+      },
+      {
+       "name": "indicator",
+       "kind": "non-example",
+       "statement": "the indicator of an interval is not continuous; its transform decays like 1/|s| and ∑_ρ 1/|ρ| diverges"
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.schoenfeld_of_riemannHypothesis",
+     "statement": "Under RiemannHypothesis: |ψ(x) − x| < √x log² x/(8π) for x > 73.2; ψ(x) − x > −√x log² x/(8π) for x > 59; |θ(x) − x| < √x log² x/(8π) for x > 599; θ(x) − x < √x log² x/(8π) for x > 0; |ψ(x) − x|, |θ(x) − x| < (1/8π)√x (log x − 2) log x for x > 23·10⁸; |π(x) − li x| < √x log x/(8π) for x > 2657; π(x) − li x < √x log x/(8π) for x > 3/2.",
+     "hypotheses": [
+      "RiemannHypothesis; ButheVerified and Schoenfeld1976Range for x ≤ 10¹⁹"
+     ],
+     "locator": {
+      "source": "schoenfeld-1976",
+      "where": "lines 20–28, Theorem 10; lines 98–100, Corollary 1"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:0.3",
+      "target:0.4",
+      "target:1.3",
+      "mathlib:RiemannHypothesis",
+      "gap:explicit-zero-count-error"
+     ],
+     "tests": [
+      {
+       "name": "x_100",
+       "kind": "computation",
+       "statement": "ψ(100) = 94.045, |ψ(100) − 100| = 5.96 < 8.44; |θ(100) − 100| = 16.27 > 8.44, consistent with the θ threshold 599"
+      },
+      {
+       "name": "x_1000",
+       "kind": "computation",
+       "statement": "|θ(1000) − 1000| = 43.75 and |ψ(1000) − 1000| = 3.33, both < 60.05"
+      },
+      {
+       "name": "x_1e4_pi",
+       "kind": "computation",
+       "statement": "li 10⁴ − π(10⁴) = 17.1 < 36.65"
+      },
+      {
+       "name": "coverage",
+       "kind": "computation",
+       "statement": "ButheVerified gives (6.2), (6.4) only from x ≥ 129.1 and (6.3) from x ≥ 1423; Schoenfeld1976Range covers (6.2) on (73.2, 1423], (6.3) on (599, 1423], (6.4) on (59, 1423]; at x = 60, ψ(60) − 60 = −2.47 > −5.17"
+      }
+     ]
+    },
+    {
+     "id": "2.3",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.buthe_of_rh_up_to",
+     "statement": "Let T > 0 with RH(T). For every x with 4.92√(x/log x) ≤ T: |ψ(x) − x| ≤ √x log² x/(8π) for x > 59; |θ(x) − x| ≤ √x log² x/(8π) for x > 599; |π*(x) − li x| ≤ √x log x/(8π) for x ≥ 97 (the printed x > 59 fails on 96.29 < x < 97) with π*(x) = ∑_{k≥1} π(x^{1/k})/k; |π(x) − li x| ≤ √x log x/(8π) for x > 2657.",
+     "hypotheses": [
+      "RH(T); 4.92√(x/log x) ≤ T; the ranges stated; Buthe2016Range for x < 5000"
+     ],
+     "locator": {
+      "source": "buthe-2016",
+      "where": "lines 688–705, Theorem 2"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:1.1",
+      "target:0.3",
+      "target:0.4",
+      "gap:explicit-zero-count-error",
+      "target:1.3"
+     ],
+     "tests": [
+      {
+       "name": "range_3e12",
+       "kind": "computation",
+       "statement": "with T = 3 000 175 332 800 the condition holds for x ≤ 2.16·10²⁵ (log x = 58.33, 4.92√(x/log x) = 2.99·10¹²)"
+      },
+      {
+       "name": "range_vdl",
+       "kind": "computation",
+       "statement": "with T = 545 439 823 the bounds hold for x ≤ 5·10¹⁷"
+      },
+      {
+       "name": "pistar_ne_pi",
+       "kind": "non-example",
+       "statement": "π*(x) − π(x) ≥ π(√x)/2 > 0 for x ≥ 4: the π bound is derived from the θ bound (7.4), not from the π* bound"
+      },
+      {
+       "name": "x_60",
+       "kind": "computation",
+       "statement": "at x = 60: condition 18.8 ≤ T, bound 5.17, and |ψ(60) − 60| = |57.53 − 60| = 2.47"
+      },
+      {
+       "name": "pistar_97",
+       "kind": "non-example",
+       "statement": "for 96.29 < x < 97, π*(x) = 27.533 and li x − π*(x) reaches 1.939 > √97 log 97/(8π) = 1.793; from x = 97 (π*(97) = 28.533) the bound holds"
+      }
+     ]
+    },
+    {
+     "id": "2.4",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.buthe_consequences",
+     "statement": "Under ButheVerified: ψ(x) ≤ x + 0.94√x ≤ 1.03883x for 587 ≤ x ≤ 10¹⁹; θ(x) < x for 1 ≤ x ≤ 10¹⁹; π(x) < li x for 2 ≤ x ≤ 10¹⁹.",
+     "hypotheses": [
+      "ButheVerified"
+     ],
+     "locator": {
+      "source": "buthe-2018",
+      "where": "lines 73–85, Theorem 2"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:0.4"
+     ],
+     "tests": [
+      {
+       "name": "threshold_587",
+       "kind": "computation",
+       "statement": "0.94/√587 = 0.0388 ≤ 0.03883 while 0.94/√586 = 0.038831 > 0.03883"
+      },
+      {
+       "name": "theta_1e6",
+       "kind": "computation",
+       "statement": "θ(10⁶) = 998 484.2 < 10⁶, x − θ(x) = 1515.8 ≥ 50"
+      },
+      {
+       "name": "range_only",
+       "kind": "non-example",
+       "statement": "θ(x) < x for all x is false (Littlewood); the statement is on [1, 10¹⁹]"
+      }
+     ]
+    },
+    {
+     "id": "2.5",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.shortIntervals_of_riemannHypothesis",
+     "statement": "Under RiemannHypothesis: (x − √x log² x/(4π), x] contains a prime for x > 599; (x − (4/π)√x log x, x] contains a prime for x ≥ 2 (Dudek); (x − (8/5)√x log x, x] for x ≥ 2 (Ramaré–Saouter); [x, x + (22/25)√x log x] contains a prime for x ≥ 4, equivalently p_{n+1} − p_n ≤ (22/25)√p_n log p_n for n ≥ 3 (Carneiro–Milinovich–Soundararajan, with MaximalPrimeGapTable for x ≤ 4·10¹⁸ and the explicit Brun–Titchmarsh inequality).",
+     "hypotheses": [
+      "RiemannHypothesis; for the last, MaximalPrimeGapTable and gap:explicit-brun-titchmarsh"
+     ],
+     "locator": {
+      "source": "carneiro-milinovich-soundararajan-2019",
+      "where": "lines 261–262, Theorem 5; dudek-2015 lines 51–52, Theorem 2; ramare-saouter-2003 Theorem 1 (uncertified, as quoted at dudek-2015 line 48)"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.2",
+      "target:1.4",
+      "target:1.4b",
+      "mathlib:RiemannHypothesis",
+      "gap:explicit-brun-titchmarsh",
+      "gap:explicit-zero-count-error"
+     ],
+     "tests": [
+      {
+       "name": "schoenfeld_600",
+       "kind": "computation",
+       "statement": "at x = 600 the interval (520.25, 600] contains 521"
+      },
+      {
+       "name": "dudek_small",
+       "kind": "computation",
+       "statement": "at x = 2: (0.752, 2] contains 2; at x = 100: (41.4, 100]"
+      },
+      {
+       "name": "cms_small",
+       "kind": "computation",
+       "statement": "at x = 4: [4, 6.44] contains 5; at x = 4·10¹⁸ the record gap 1476 ≪ 7.5·10¹⁰"
+      },
+      {
+       "name": "constants_order",
+       "kind": "characterisation",
+       "statement": "22/25 < 4/π < 8/5; the first interval lies above x, the others below"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "Unconditional bounds for ψ, θ and π",
+   "targets": [
+    {
+     "id": "3.1a",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.scheme_region",
+     "statement": "If ζ has no zero with |t| ≥ 2π and σ ≥ 1 − 1/(R log |t|) (implied by the classical-shape region with constant R > 0), then with X = √(log x/R) and ε_R(x) = √(8/π) X^{1/2} e^{−X}: max(|θ(x) − x|, |ψ(x) − x|) < x ε_R(x) whenever X ≥ max(8.36, 8R).",
+     "hypotheses": [
+      "R > 0; the region for |t| ≥ 2π; X ≥ max(8.36, 8R)"
+     ],
+     "locator": {
+      "source": "dusart-2016",
+      "where": "lines 74–80, Theorem 1.1"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "gap:classical-zero-free-constants",
+      "gap:lehman-weighted-zero-sum",
+      "mathlib:Real.exp"
+     ],
+     "tests": [
+      {
+       "name": "R_5_69693",
+       "kind": "computation",
+       "statement": "at log x = 10⁴, R = 5.69693: X = 41.90, ε_R = 6.6·10⁻¹⁸, but X ≥ 8R = 45.6 fails (log x ≥ 11 840 needed)"
+      },
+      {
+       "name": "R_sensitivity",
+       "kind": "characterisation",
+       "statement": "R₀ = 5.70175 versus 5.573412 at log x = 10⁴ changes √(log x/R) from 41.88 to 42.36, a factor e^{0.48} = 1.6 in the bound"
+      }
+     ]
+    },
+    {
+     "id": "3.1b",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.scheme_height",
+     "statement": "Let A > 0 with RH(A), R > 0 with the Rosser–Schoenfeld-shape region, and R(T) = a₁ log T + a₂ log log T + a₃ with |N(T) − M(T)| ≤ R(T) for T ≥ 2. For b > 1/2, m ≥ 1, 0 < δ < (1 − e^{−b})/m with T₁ ≥ 158.84998, the explicit ε(b, m, δ) = Ω₁ e^{−b/2} + Ω₂ δ^{−m} + mδ/2 + e^{−b} log 2π of Dusart's Theorem 1 satisfies |ψ(x) − x| < ε x for all x ≥ e^b. Rosser–Schoenfeld's Theorem 2 is the case m = 1, T₁ = T₂ = 0.",
+     "hypotheses": [
+      "RH(A); the region; the zero-count error; b > 1/2, m ≥ 1, 0 < δ < (1 − e^{−b})/m, T₁ ≥ 158.84998"
+     ],
+     "locator": {
+      "source": "dusart-1999-mc",
+      "where": "lines 61–99, Theorem 1 (Theorem 4 of rosser-schoenfeld-1975); rosser-schoenfeld-1975 lines 530–535, Theorem 2"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:1.1",
+      "gap:classical-zero-free-constants",
+      "gap:explicit-zero-count-error",
+      "gap:lehman-weighted-zero-sum"
+     ],
+     "tests": [
+      {
+       "name": "dusart_row_50",
+       "kind": "computation",
+       "statement": "b = 50, A = 545 439 823.215, m = 18, δ = 0.947265625·10⁻⁸ gives ε = 0.905·10⁻⁷; mδ/2 = 8.5·10⁻⁸ alone is of that size"
+      },
+      {
+       "name": "small_b",
+       "kind": "degenerate",
+       "statement": "for b just above 1/2, e^{−b} log 2π = 1.1 makes ε > 1: the scheme has content only for large b"
+      }
+     ],
+     "api": [
+      {
+       "name": "DusartThesisTable",
+       "role": "definition",
+       "statement": "dusart-1998-thesis lines 847–852, Table 1.1: the rows (b, ε) = (22, 2.78652·10⁻⁴), (23, 1.8436·10⁻⁴), (30, 0.978·10⁻⁵), (600, 0.75·10⁻⁷), (2000, …), with A = 545 439 823.215 and R = 9.645908801: the error function at each row is at most ε"
+      },
+      {
+       "name": "Dusart1999Row",
+       "role": "definition",
+       "statement": "dusart-1999-mc lines 102–108: b = 50, δ = 0.947265625·10⁻⁸, m = 18, ε = 0.905·10⁻⁷, same A and R"
+      }
+     ]
+    },
+    {
+     "id": "3.1c",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.scheme_density",
+     "statement": "Let H with RH(H), R₀ with the classical-shape region, R(T) as in 3.1b, 3/5 ≤ σ₀ < 1 with N(σ₀, T) ≤ c₁T + c₂ log T + c₃ for T ≥ H, δ > 0, m ≥ 2, b₀ > 0 with b₀ < m R₀ (log H)². Then |ψ(x) − x| ≤ ε₀ x for x ≥ e^{b₀} with ε₀ = max(ε(b₀,1,1+δ,m,σ₀,T₁), ε(b₀,1−δ,1,m,σ₀,T₁)) the explicit function of the Faber–Kadiri corrigendum; in the Platt–Trudgian/Johnston–Yang form, |ψ(x) − x| ≤ A (log x/R)^B exp(−C√(log x/R)) x for log x ≥ X with (X, A, B, C) functions of the same parameters.",
+     "hypotheses": [
+      "RH(H); region; zero count; density at σ₀; δ > 0, m ≥ 2, b₀ < m R₀ (log H)²"
+     ],
+     "locator": {
+      "source": "faber-kadiri-2018-corrigendum",
+      "where": "lines 20–45, Theorem 0.1; platt-trudgian-2021-error lines 58–62; johnston-yang-2023 lines 57–63"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:1.1",
+      "gap:classical-zero-free-constants",
+      "gap:explicit-zero-count-error",
+      "gap:explicit-zero-density",
+      "gap:lehman-weighted-zero-sum"
+     ],
+     "tests": [
+      {
+       "name": "pt_row",
+       "kind": "computation",
+       "statement": "Platt–Trudgian row X = 1000 evaluates to 1.27·10⁻⁵ against the printed 1.20·10⁻⁵"
+      },
+      {
+       "name": "sigma0_range",
+       "kind": "degenerate",
+       "statement": "σ₀ < 3/5 is excluded; σ₀ = 1 would make the density hypothesis empty"
+      },
+      {
+       "name": "pt_row_1000",
+       "kind": "computation",
+       "statement": "461.9·(1000/5.573412)^{1.52}·exp(−1.89√(1000/5.573412)) = 1.27·10⁻⁵, the printed 1.20·10⁻⁵ up to rounding of A, B, C"
+      },
+      {
+       "name": "fk_row_20",
+       "kind": "computation",
+       "statement": "e²⁰ = 485 165 195.4, so x ≥ 485 165 196 is the integer form of x ≥ e²⁰"
+      }
+     ],
+     "api": [
+      {
+       "name": "FaberKadiriTable",
+       "role": "definition",
+       "statement": "faber-kadiri-2018-corrigendum lines 96–98, Table 1, H = 30 610 046 000: the rows b₀ ↦ ε₀, in particular (20, 5.3688·10⁻⁴)"
+      },
+      {
+       "name": "PlattTrudgianTable",
+       "role": "definition",
+       "statement": "platt-trudgian-2021-error lines 81–92, Table 1, R = 5.573412: the rows (X, σ, A, B, C, ε₀)"
+      },
+      {
+       "name": "JohnstonYangTable",
+       "role": "definition",
+       "statement": "johnston-yang-2023 lines 95–113, Table 1: the rows (X, σ, K, A, B, C, ε₀), the first row asserted from x₀ = e^{2488} (lines 277–279)"
+      },
+      {
+       "name": "BroadbentRow",
+       "role": "definition",
+       "statement": "fiori-kadiri-swidinsky-2023 lines 151–154, Remark 2: with R = 5.5666305, |ψ(x) − x| ≤ 121.096 (log x/R)^{3/2} exp(−2√(log x/R)) x for x ≥ 2"
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.rosserSchoenfeld_constants",
+     "statement": "Under RH(545 439 823), the Rosser–Schoenfeld-shape region with R = 9.645908801, Rosser's zero-count triple, DusartThesisTable, RosserSchoenfeld1962Range, Schoenfeld1976Range and ButheVerified: θ(x) < 1.01624x (x > 0); ψ(x) < 1.03883x and ψ(x)/x ≤ ψ(113)/113 (x > 0); x(1 − 1/(2 log x)) < θ(x) (x ≥ 563), θ(x) < x(1 + 1/(2 log x)) (x > 1), x(1 − 1/log x) < θ(x) (x ≥ 41); θ(x) < 1.001093x (x > 0), 0.998697x < θ(x) (x > 1 155 901), ψ(x) − θ(x) < 1.001093√x + 3x^{1/3} (x > 0), 0.998697√x < ψ(x) − θ(x) (x > 121); with ε₀ as in 0.5, |ψ(x) − x| < xε₀(x) (x > 17), |θ(x) − x| < xε₀(x) (x > 101). The input SchoenfeldFiniteRangeInput of AnalyticNumberTheoryPartI §0.3 (θ(x) < 1.000081x for 0 < x < exp 10000) holds: θ = 0 on (0, 1), θ(x) < x on [1, 10¹⁹] by ButheVerified, θ(x) ≤ ψ(x) ≤ (1 + 0.978·10⁻⁵)x beyond e³⁰ by DusartThesisTable; the full-range statement is §0.3 there.",
+     "hypotheses": [
+      "as listed"
+     ],
+     "locator": {
+      "source": "rosser-schoenfeld-1962",
+      "where": "lines 252–253, 306–307, 328, 341–342; schoenfeld-1976 lines 201–206, 729–733, 1288–1294"
+     },
+     "prerequisites": [
+      "target:3.1b",
+      "target:0.3",
+      "target:0.5",
+      "target:1.1",
+      "target:1.3",
+      "target:2.4",
+      "gap:classical-zero-free-constants",
+      "gap:explicit-zero-count-error",
+      "roadmap:AnalyticNumberTheoryPartI §0.3",
+      "gap:rh-up-to-height"
+     ],
+     "tests": [
+      {
+       "name": "psi_113",
+       "kind": "computation",
+       "statement": "ψ(113)/113 = 1.03882… < 1.03883; θ(113)/113 = 0.9475"
+      },
+      {
+       "name": "thm4_100",
+       "kind": "non-example",
+       "statement": "100(1 − 1/(2 log 100)) = 89.14 > θ(100) = 83.73: the lower bound fails at 100; at 1000: 927.6 < 956.25 < 1072.4"
+      },
+      {
+       "name": "eps0_17",
+       "kind": "computation",
+       "statement": "at x = 17: ε₀ = 0.166, bound 2.82, |ψ(17) − 17| = 0.68"
+      },
+      {
+       "name": "schoenfeld_input_margin",
+       "kind": "computation",
+       "statement": "1 + 0.978·10⁻⁵ = 1.0000098 < 1.000081 beyond e³⁰ = 1.07·10¹³; the row b = 22 (1.000279) would not suffice"
+      }
+     ]
+    },
+    {
+     "id": "3.3",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.dusart_bounds",
+     "statement": "Under RH(545 439 823), the Rosser–Schoenfeld-shape region with R = 9.645908801, Rosser's triple, DusartThesisTable, Dusart1999Row, DusartThesisRange, ButheVerified: |ψ(x) − x| ≤ 0.006409 x/log x (x > e²²); |θ(x) − x| ≤ 0.006788 x/log x (x > 10 544 111); |θ(x) − x| < η_k x/log^k x (x > 1) with η₂ = 3.965, η₃ = 515, η₄ = 1 717 433; |θ(x) − x| ≤ 0.2 x/log² x (x > 3 594 641); |ψ(x) − x| ≤ 0.905·10⁻⁷ x (x ≥ e⁵⁰). Under the classical-shape region with R₀ = 5.69693: max(|θ(x)−x|, |ψ(x)−x|) < √(8/π) R₀^{−1/4} x (log x)^{1/4} exp(−√(log x/R₀)) for x ≥ 3. Under RH(3·10¹²), R₀ = 5.573412 and Dusart2018Range: |θ(x) − x| ≤ x/log³ x (x ≥ 89 967 803) and ≤ 0.5 x/log³ x (x ≥ 767 135 587).",
+     "hypotheses": [
+      "as listed"
+     ],
+     "locator": {
+      "source": "dusart-1998-thesis",
+      "where": "lines 845–846 (Théorème 1.3), 869–874 and 924–925 (Théorème 1.4); dusart-1999-mc lines 102–108; dusart-2016 lines 84–90; dusart-2018 Theorem 4.2 as quoted at deleglise-nicolas-2019-landau lines 387–388; dusart-1998-thesis lines 845–874, 924–925; broadbent-kadiri-lumley-ng-wilk-2021 lines 954–967 (Corollary 11.2, re-proving the 2018 rows)"
+     },
+     "prerequisites": [
+      "target:3.1a",
+      "target:3.1b",
+      "target:0.3",
+      "target:0.5",
+      "target:1.1",
+      "target:1.3",
+      "gap:classical-zero-free-constants",
+      "gap:explicit-zero-count-error",
+      "gap:rh-up-to-height"
+     ],
+     "tests": [
+      {
+       "name": "row_22",
+       "kind": "computation",
+       "statement": "2.78652·10⁻⁴·23 = 6.409·10⁻³; row 30: 0.978·10⁻⁵·600 = 5.87·10⁻³"
+      },
+      {
+       "name": "psi_1e10",
+       "kind": "computation",
+       "statement": "|ψ(10¹⁰) − 10¹⁰| = 42 119.8 < 0.94·10⁵ and < 0.006409·10¹⁰/23.03 = 2.78·10⁶"
+      },
+      {
+       "name": "eta2_59",
+       "kind": "characterisation",
+       "statement": "|θ(x) − x| log² x/x at x = 59 is 3.9648…, the value fixing η₂ = 3.965"
+      },
+      {
+       "name": "dusart2016_x3",
+       "kind": "computation",
+       "statement": "at x = 3 the bound is 2.04 ≥ |ψ(3) − 3| = 1.21"
+      }
+     ]
+    },
+    {
+     "id": "3.4a",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.faberKadiri",
+     "statement": "Under RH(30 610 046 000), the classical-shape region with R₀ = 5.69693, Rosser’s triple, the density N(17/20, T) bound, FaberKadiriTable and ButheVerified: |ψ(x) − x| ≤ 5.3688·10⁻⁴ x for x ≥ e²⁰ (from ButheVerified on [e²⁰, 10¹⁹], since 0.94√x ≤ 5.3688·10⁻⁴x for x ≥ 3.07·10⁶).",
+     "hypotheses": [
+      "as listed"
+     ],
+     "locator": {
+      "source": "faber-kadiri-2015",
+      "where": "line 43, Corollary 1.2; faber-kadiri-2018-corrigendum line 98"
+     },
+     "prerequisites": [
+      "target:3.1c",
+      "target:1.1",
+      "target:1.3",
+      "gap:classical-zero-free-constants",
+      "gap:explicit-zero-count-error",
+      "gap:explicit-zero-density",
+      "gap:rh-up-to-height"
+     ],
+     "tests": [
+      {
+       "name": "x_1e10",
+       "kind": "computation",
+       "statement": "5.3688·10⁻⁴·10¹⁰ = 5.4·10⁶ ≥ 42 120"
+      }
+     ]
+    },
+    {
+     "id": "3.4b",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.trudgian",
+     "statement": "Trudgian’s region: if ζ has no zero with |t| ≥ 2 and σ ≥ 1 − 1/(5.69693 log|t|) and RH(30 610 046 000) holds, then ζ has no zero with |t| ≥ 24 and σ ≥ 1 − 1/(6.455 log(|t|/17)). Under RH(30 610 046 000), the classical-shape region with R₀ = 5.69693, Rosser’s triple, TrudgianRange and ButheVerified: with ε₀(x) = √(8/(17π)) X^{1/2} e^{−X}, X = √(log x/6.455): |θ(x) − x| ≤ xε₀(x) for x ≥ 149, |ψ(x) − x| ≤ xε₀(x) for x ≥ 23, and |π(x) − li x| ≤ 0.2795 x (log x)^{3/4} exp(−√(log x/6.455)) for x ≥ 229.",
+     "hypotheses": [
+      "as listed"
+     ],
+     "locator": {
+      "source": "trudgian-2016",
+      "where": "lines 49–61 (the region), 66–73, Theorem 1; lines 132–140, Theorem 2"
+     },
+     "prerequisites": [
+      "target:3.1b",
+      "target:0.4",
+      "target:1.1",
+      "target:1.3",
+      "gap:classical-zero-free-constants",
+      "gap:explicit-zero-count-error",
+      "target:3.2",
+      "gap:rh-up-to-height"
+     ],
+     "tests": [
+      {
+       "name": "x_23",
+       "kind": "computation",
+       "statement": "ε₀(23) = 0.161, bound 3.70 ≥ |ψ(23) − 23| = 0.60"
+      },
+      {
+       "name": "x_149",
+       "kind": "computation",
+       "statement": "ε₀(149) = 0.1506, bound 22.4 ≥ |θ(149) − 149| = 17.35"
+      },
+      {
+       "name": "x_126_99",
+       "kind": "non-example",
+       "statement": "at x = 126.99, θ = 107.07 and |107.07 − 126.99| = 19.92 > 19.24: the θ bound fails below 127, hence the threshold 149"
+      },
+      {
+       "name": "region_threshold",
+       "kind": "computation",
+       "statement": "exp(6.455 log 17/(6.455 − 5.69693)) = 3.0014·10¹⁰ ≤ 3.0610046·10¹⁰; at |t| = 24 the region is σ ≥ 0.5508, at |t| = 23 it would be σ ≥ 0.4875"
+      }
+     ]
+    },
+    {
+     "id": "3.4c",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.plattTrudgian",
+     "statement": "Under RH(3 000 175 332 800), the classical-shape region with R = 5.573412, the zero-count error, the density bounds of gap:explicit-zero-density and PlattTrudgianTable: for each row (X, A, B, C, ε₀), |ψ(x) − x| ≤ A (log x/R)^B exp(−C√(log x/R)) x and ≤ ε₀ x for log x ≥ X; |θ(x) − x| ≤ (A + 0.1)(log x/R)^B exp(−C√(log x/R)) x; |π(x) − li x| ≤ 235 x (log x)^{0.52} exp(−0.8√log x) for log x ≥ 2000. No finite range is asserted (every statement is for log x ≥ 1000).",
+     "hypotheses": [
+      "as listed"
+     ],
+     "locator": {
+      "source": "platt-trudgian-2021-error",
+      "where": "lines 58–69, Theorem 1 and Corollary 1; lines 76–77, Corollary 2"
+     },
+     "prerequisites": [
+      "target:3.1c",
+      "target:0.3",
+      "target:0.4",
+      "target:1.1",
+      "target:1.3",
+      "gap:classical-zero-free-constants",
+      "gap:explicit-zero-count-error",
+      "gap:explicit-zero-density",
+      "gap:rh-up-to-height"
+     ],
+     "tests": [
+      {
+       "name": "cor2_2000",
+       "kind": "computation",
+       "statement": "at log x = 2000: 235·52.1·2.9·10⁻¹⁶ = 3.5·10⁻¹² relative to x, consistent with the row ε₀ = 8.35·10⁻¹⁰ divided by log x"
+      }
+     ]
+    },
+    {
+     "id": "3.4d",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.johnstonYang",
+     "statement": "Under RH(3 000 175 332 800), the classical-shape region with R = 5.573412, the zero-count error, the density bounds of gap:explicit-zero-density with the paper’s Table 3 constants, JohnstonYangTable, BroadbentRow, ButheVerified and JohnstonYangRange: |ψ(x) − x| ≤ 9.39 x (log x)^{1.515} exp(−0.8274√log x) for x ≥ 2 (on 2 ≤ x < e^{2488} from BroadbentRow, whose bound 9.2202 x (log x)^{3/2} exp(−0.84768√log x) is smaller for every x ≥ 2; beyond, the first row); the rows for log x ≥ X; |θ(x) − x| ≤ (A + 0.01) x (log x)^B exp(−C√log x) on each row’s range; |π(x) − li x| ≤ 9.59 x (log x)^{0.515} exp(−0.8274√log x) for x ≥ 2.",
+     "hypotheses": [
+      "as listed"
+     ],
+     "locator": {
+      "source": "johnston-yang-2023",
+      "where": "lines 57–72, Theorem 1.1, Corollaries 1.2–1.3"
+     },
+     "prerequisites": [
+      "target:3.1c",
+      "target:0.3",
+      "target:0.4",
+      "target:1.1",
+      "target:1.3",
+      "gap:classical-zero-free-constants",
+      "gap:explicit-zero-count-error",
+      "gap:explicit-zero-density",
+      "gap:rh-up-to-height"
+     ],
+     "tests": [
+      {
+       "name": "x_two",
+       "kind": "computation",
+       "statement": "9.39·2·0.5738·0.5021 = 5.41 ≥ |ψ(2) − 2| = 1.31"
+      },
+      {
+       "name": "trivial_range",
+       "kind": "characterisation",
+       "statement": "the bound exceeds x for log x ≤ 150 and is 0.0053x at log x = 400; the exponent 1.51 would change the value by 400^{0.005} = 1.03"
+      },
+      {
+       "name": "trivial_range",
+       "kind": "computation",
+       "statement": "the right side of (1.3) is at least x exactly for log x ≤ 137.37; it is 0.74x at log x = 150 and 0.0053x at log x = 400"
+      },
+      {
+       "name": "broadbent_ratio",
+       "kind": "computation",
+       "statement": "(9.39/9.2202)(log x)^{0.015} exp(0.0203√log x) ≥ 1.03 for x ≥ 2; at log x = 137 the bounds are 0.726x and 1.009x"
+      },
+      {
+       "name": "broadbent_C",
+       "kind": "non-example",
+       "statement": "a row with C = 1.9 (C/√R = 0.805 < 0.8274) would fall below (1.3) for large x and could not replace the first row"
+      }
+     ]
+    },
+    {
+     "id": "3.4e",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.fioriKadiriSwidinsky",
+     "statement": "If |θ(x) − x| ≤ A_θ (log x/R)^B exp(−C√(log x/R)) x on [x₀, ∞) with B ≥ max(3/2, 1 + C²/(16R)), then |π(x) − Li x| ≤ (1+ν)(1+μ) A_θ (log x/R)^{B−1} exp(−C√(log x/R)) x on [x₁, ∞) with the explicit ν(x₀), μ(x₀, x₁) of the paper; instance under BroadbentRow, R = 5.5666305 and RH(3·10¹²): |π(x) − Li x| ≤ 9.2211 x √(log x) exp(−0.84768363√log x) for x ≥ 2.",
+     "hypotheses": [
+      "the admissible θ-bound; B ≥ max(3/2, 1 + C²/(16R)); x₁ ≥ the paper's threshold"
+     ],
+     "locator": {
+      "source": "fiori-kadiri-swidinsky-2023",
+      "where": "lines 159–182, Theorem 3; lines 712–725, Corollary 22"
+     },
+     "prerequisites": [
+      "target:0.4",
+      "target:3.1c",
+      "target:1.1",
+      "gap:classical-zero-free-constants"
+     ],
+     "tests": [
+      {
+       "name": "x_two",
+       "kind": "computation",
+       "statement": "9.2211·2·0.8326·0.4937 = 7.58 ≥ |π(2) − Li 2| = 1"
+      },
+      {
+       "name": "nontrivial",
+       "kind": "characterisation",
+       "statement": "below x/log x once 9.2211 (log x)^{3/2} e^{−0.8477√log x} < 1, e.g. 0.02 at log x = 300"
+      }
+     ]
+    },
+    {
+     "id": "3.5b",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.dusart_pi",
+     "statement": "Under the hypotheses of 3.3: (x/log x)(1 + 1/log x) ≤ π(x) (x > 599); π(x) ≤ (x/log x)(1 + 1.2762/log x) (x > 1); π(x) ≤ (x/log x)(1 + 1.0992/log x) (x > 1.332·10¹⁰); π(x) ≤ x/(log x − 1.1) (x > 60 184); π(x) > x/(log x − 1) (x > 5393); (x/log x)(1 + 1/log x + 1.8/log² x) ≤ π(x) (x > 32 299); π(x) ≤ (x/log x)(1 + 1/log x + 2.51/log² x) (x > 355 991).",
+     "hypotheses": [
+      "as in 3.3"
+     ],
+     "locator": {
+      "source": "dusart-1998-thesis",
+      "where": "lines 1418–1445, Théorème 1.10"
+     },
+     "prerequisites": [
+      "target:3.3",
+      "target:0.4",
+      "target:1.3"
+     ],
+     "tests": [
+      {
+       "name": "item5",
+       "kind": "computation",
+       "statement": "10⁴/(9.2103 − 1) = 1218.0 < 1229; at x = 100: 27.7 > 25, the threshold cannot be 100"
+      }
+     ]
+    },
+    {
+     "id": "3.5a",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.rosserSchoenfeld_pi",
+     "statement": "Under the hypotheses of 3.2 and RosserSchoenfeld1962Range: π(x) < (x/log x)(1 + 3/(2 log x)) for 1 < x < 59 (Theorem 1 for x ≥ 59 being AnalyticNumberTheoryPartI §0.5); x/(log x − 1/2) < π(x) for x ≥ 67 and π(x) < x/(log x − 3/2) for x > e^{3/2}; x/log x < π(x) for x ≥ 17 and π(x) < 1.25506 x/log x for x > 1; π(x) < 5x/(4 log x) for 1 < x < 113 and x ≥ 113.6; 3x/(5 log x) < π(2x) − π(x) for x ≥ 41/2 and 0 < π(2x) − π(x) < 7x/(5 log x) for x > 1. The input RosserSchoenfeldFiniteRangeInput of AnalyticNumberTheoryPartI §0.5 holds: from 3.5b for x > 599 and RosserSchoenfeld1962Range for 59 ≤ x ≤ 599.",
+     "hypotheses": [
+      "as in 3.2"
+     ],
+     "locator": {
+      "source": "rosser-schoenfeld-1962",
+      "where": "lines 195–212, Theorems 1–2, Corollaries 1–3"
+     },
+     "prerequisites": [
+      "target:3.2",
+      "target:0.4",
+      "target:1.3",
+      "roadmap:ClassicalArithmeticCompletion §6.34",
+      "roadmap:AnalyticNumberTheoryPartI §0.5",
+      "target:3.5b"
+     ],
+     "tests": [
+      {
+       "name": "x_59",
+       "kind": "computation",
+       "statement": "π(59) = 17 ∈ (16.24, 19.79); at 58 the lower bound 16.04 > 16 fails"
+      },
+      {
+       "name": "x_113_max",
+       "kind": "characterisation",
+       "statement": "π(x) log x/x is largest at 113: 1.2550594… < 1.25506; 1.25505 would fail"
+      },
+      {
+       "name": "cor1_10",
+       "kind": "non-example",
+       "statement": "10/log 10 = 4.34 > π(10) = 4"
+      },
+      {
+       "name": "cor3_41_2",
+       "kind": "computation",
+       "statement": "at x = 41/2: 13 − 8 = 5 > 4.07; at x = 20.4: 12 − 8 = 4 < 4.06"
+      }
+     ]
+    },
+    {
+     "id": "3.5c",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.axler_pi",
+     "statement": "Under AxlerRange, ButheVerified, DusartThesisRange and the θ-bound |θ(x) − x| < 0.35x/log³ x for x ≥ e³⁰ (Axler’s Proposition 3.3) as a hypothesis: for x > 1, π(x) < x/log x + x/log² x + 2x/log³ x + 6.35x/log⁴ x + 24.35x/log⁵ x + 121.75x/log⁶ x + 730.5x/log⁷ x + 6801.4x/log⁸ x; for x ≥ 1 332 450 001 the lower bound with coefficients 1, 1, 2, 5.65, 23.65, 118.25, 709.5, 4966.5; for x ≥ e^{3.804}, π(x) < x/(log x − 1 − 1/log x − 3.35/log² x − 12.65/log³ x − 71.7/log⁴ x − 466.1275/log⁵ x − 3489.8225/log⁶ x); for x ≥ 1 332 479 531 the lower bound with 2.65, 13.35, 70.3, 455.6275, 3404.4225.",
+     "hypotheses": [
+      "AxlerRange; ButheVerified; DusartThesisRange; the θ-bound 0.35x/log³ x for x ≥ e³⁰"
+     ],
+     "locator": {
+      "source": "axler-2016",
+      "where": "lines 31–48, Theorems 1.1–1.4"
+     },
+     "prerequisites": [
+      "target:3.3",
+      "target:0.4",
+      "target:1.3"
+     ],
+     "tests": [
+      {
+       "name": "thm11_1e4",
+       "kind": "computation",
+       "statement": "terms 1085.7, 117.9, 25.6, 8.82, 3.67, 1.99, 1.30, 1.31, sum 1246.3 > 1229"
+      },
+      {
+       "name": "thm12_1e10",
+       "kind": "computation",
+       "statement": "the lower terms sum to 455 042 009 < 455 052 511 = π(10¹⁰)"
+      }
+     ]
+    },
+    {
+     "id": "3.5d",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.panaitopol_expansion",
+     "statement": "With k_m defined by k_m + 1!k_{m−1} + ⋯ + (m−1)!k₁ = m·m!: π(x) = x/(log x − 1 − k₁/log x − ⋯ − k_n(1 + α_n(x))/logⁿ x) with α_n(x) → 0; k_m is the displayed determinant.",
+     "hypotheses": [
+      "none (asymptotic statement)"
+     ],
+     "locator": {
+      "source": "panaitopol-2000",
+      "where": "lines 17–22, Theorem 1; lines 100–118, Theorem 3"
+     },
+     "prerequisites": [
+      "roadmap:ZerosOfLFunctions §8.5",
+      "roadmap:ZerosOfLFunctions §8.9"
+     ],
+     "tests": [
+      {
+       "name": "k_values",
+       "kind": "computation",
+       "statement": "k₁ = 1, k₂ = 3 (k₂ + k₁ = 4), k₃ = 13 (k₃ + k₂ + 2k₁ = 18), k₄ = 71, k₅ = 461, k₆ = 3441"
+      }
+     ]
+    },
+    {
+     "id": "3.6",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.johnstonYang_VK",
+     "statement": "Under the Vinogradov–Korobov region of gap:vinogradov-korobov-constants (constant 57.54), RH(3·10¹²), the zero-count error, the density bounds of gap:explicit-zero-density and JohnstonYangTable: for x ≥ 23, |ψ(x) − x| ≤ 0.026 x (log x)^{1.801} exp(−0.1853 (log x)^{3/5}(log log x)^{−1/5}), |θ(x) − x| ≤ 0.027 x (…), |π(x) − li x| ≤ 0.028 x (log x)^{0.801} exp(−0.1853 (log x)^{3/5}(log log x)^{−1/5}).",
+     "hypotheses": [
+      "as listed"
+     ],
+     "locator": {
+      "source": "johnston-yang-2023",
+      "where": "lines 77–80, Theorem 1.4 (the π display prints π(x) − x; the statement is with li)"
+     },
+     "prerequisites": [
+      "target:3.1c",
+      "target:0.3",
+      "target:0.4",
+      "target:1.1",
+      "gap:vinogradov-korobov-constants",
+      "gap:explicit-zero-count-error",
+      "gap:explicit-zero-density",
+      "gap:rh-up-to-height"
+     ],
+     "tests": [
+      {
+       "name": "x_23",
+       "kind": "computation",
+       "statement": "0.026·23·7.83·e^{−0.358} = 3.27 ≥ 0.60"
+      },
+      {
+       "name": "crossover",
+       "kind": "characterisation",
+       "statement": "sharper than 3.4d only for log x beyond about 10⁹; at log x = 10⁵ the exponents are −113.7 and −261.6"
+      },
+      {
+       "name": "pi_minus_x",
+       "kind": "non-example",
+       "statement": "π(x) − x on the left would be false at every large x"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "Sums over primes",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.mertens_one_sided",
+     "statement": "Under RosserSchoenfeld1962Range: log log x < ∑_{p≤x} 1/p and ∑_{p≤x} 1/p < log log x + B + 1/log x for x > 1; ∑_{p≤x} (log p)/p < log x for x > 1 and log x + E − 1/log x < ∑_{p≤x} (log p)/p for x ≥ 32.",
+     "hypotheses": [
+      "RosserSchoenfeld1962Range"
+     ],
+     "locator": {
+      "source": "rosser-schoenfeld-1962",
+      "where": "lines 256–293, 304–322, Theorems 5–6 and Corollaries"
+     },
+     "prerequisites": [
+      "roadmap:AnalyticNumberTheoryPartI §0.8",
+      "roadmap:AnalyticNumberTheoryPartI §0.19",
+      "target:1.3"
+     ],
+     "tests": [
+      {
+       "name": "x_10",
+       "kind": "computation",
+       "statement": "∑_{p≤10} 1/p = 1.1762 < 1.5298; ∑_{p≤10} (log p)/p = 1.3127 < 2.3026"
+      },
+      {
+       "name": "x_two",
+       "kind": "degenerate",
+       "statement": "log log 2 = −0.3665 < 1/2; 0.3466 < 0.6931"
+      },
+      {
+       "name": "empty",
+       "kind": "degenerate",
+       "statement": "at x = 1.5 the sums are empty and log log 1.5 < 0"
+      }
+     ]
+    },
+    {
+     "id": "4.2",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.sum_vonMangoldt_div",
+     "statement": "For x ≥ 1: ∑_{n≤x} Λ(n)/n = log x − γ + (ψ(x) − x)/x − ∫ₓ^∞ (ψ(t) − t)/t² dt. Under RH(3·10¹²): for x ≥ 8950, |∫ₓ^∞ (ψ(t) − t)/t² dt| ≤ 1/(2√x) + 1.75·10⁻¹²; under the classical region with R = 5.69693, for log x ≥ 9270 the bound 1/(2√x) + (1 + 2√(log x/R)) exp(−2√(log x/R))/(2π). Instances: O*(1.833/log² x) for x > 1; O*(1.31/√x) for 1 ≤ x ≤ 10¹⁰; O*(0.0067/log x) for x > e²².",
+     "hypotheses": [
+      "RH(3·10¹²); the region; Ramare2013Range; the Layer 3 bounds for the instances"
+     ],
+     "locator": {
+      "source": "ramare-2013",
+      "where": "lines 82–104, Theorem 1.1; lines 105–107, Corollary"
+     },
+     "prerequisites": [
+      "target:0.7",
+      "target:2.1",
+      "target:3.3",
+      "target:3.4c",
+      "target:1.1",
+      "target:1.3",
+      "gap:classical-zero-free-constants",
+      "gap:lehman-weighted-zero-sum",
+      "roadmap:ZerosOfLFunctions §5.6"
+     ],
+     "tests": [
+      {
+       "name": "x_10",
+       "kind": "computation",
+       "statement": "∑_{n≤10} Λ(n)/n = 1.6947, log 10 − γ = 1.7254, difference 0.0307 < 0.346 and < 0.414"
+      },
+      {
+       "name": "x_one",
+       "kind": "degenerate",
+       "statement": "empty sum, log 1 − γ = −0.5772, 1.31 > 0.5772"
+      },
+      {
+       "name": "e22",
+       "kind": "computation",
+       "statement": "1/(2√e²²) = 8.35·10⁻⁶ < 0.000291/22, so 0.006409 + 0.000291 = 0.0067"
+      }
+     ]
+    },
+    {
+     "id": "4.3",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.sum_inv_prime",
+     "statement": "For x ≥ 2: ∑_{p≤x} 1/p = θ(x)/(x log x) + ∫₂ˣ θ(t)(1 + log t)/(t² log² t) dt; B = 1/log 2 − log log 2 + ∫₂^∞ (θ(t) − t)(1 + log t)/(t² log² t) dt and ∑_{p≤x} 1/p − log log x − B = (θ(x) − x)/(x log x) − ∫ₓ^∞ (θ(t) − t)(1 + log t)/(t² log² t) dt; if |θ(t) − t| ≤ η t/log^k t for t ≥ x (k ≥ 2) then the error is at most η(1/k + (k+2)/((k+1) log x))/log^k x. Instances (Vanlalngaia) under the Dusart 2018 row (1, 89 967 803), VanlalngaiaRange and MeisselMertensEnclosure: 4/log³ x (x ≥ 2), 2.3/log³ x (x ≥ 1000), 1/log³ x (x ≥ 24 284); and under Dusart 2016's Corollary 1.2: 1.1 exp(−√(0.175 log x))/(log x)^{3/4} for log x ≥ 4635. The input PrimeProductFiniteInput of AnalyticNumberTheoryPartI §0.25 follows from §0.19 there and MeisselMertensEnclosure, since 0.2615 + 1/(2 log² 10⁸) < 0.27.",
+     "hypotheses": [
+      "as listed"
+     ],
+     "locator": {
+      "source": "vanlalngaia-2017",
+      "where": "lines 26–51, Corollary 1; lines 59–65, Corollary 2 (digits decoded from the font map)"
+     },
+     "prerequisites": [
+      "target:0.3",
+      "target:3.3",
+      "target:1.6",
+      "target:1.3",
+      "tauceti:TauCeti.LFunctions.mertensConstant",
+      "tauceti:TauCeti.LFunctions.tendsto_primeSummatory_inv_absNorm_sub_log_log",
+      "roadmap:ZerosOfLFunctions §8.5",
+      "mathlib:sum_mul_eq_sub_sub_integral_mul",
+      "roadmap:AnalyticNumberTheoryPartI §0.19",
+      "roadmap:AnalyticNumberTheoryPartI §0.25"
+     ],
+     "tests": [
+      {
+       "name": "x_three",
+       "kind": "computation",
+       "statement": "left 0.8333; right 0.5436 + 0.6931·0.4179 = 0.8333 with the antiderivative −1/(t log t); without the factor 1 + log t the right side is 0.61"
+      },
+      {
+       "name": "B_integral",
+       "kind": "computation",
+       "statement": "1/log 2 − log log 2 = 1.8092, so the integral in B equals −1.5477"
+      },
+      {
+       "name": "x_10_1000",
+       "kind": "computation",
+       "statement": "x = 10: difference 0.0807 < 0.3276; x = 1000: 0.0039 < 0.0070"
+      },
+      {
+       "name": "k_one",
+       "kind": "non-example",
+       "statement": "a θ-bound with relative error 1/log t gives a divergent ∫ dt/(t log t)"
+      },
+      {
+       "name": "prime_product_margin",
+       "kind": "computation",
+       "statement": "0.2615 + 1/(2 log² 10⁸) = 0.2615 + 0.0015 = 0.2630 < 0.27"
+      }
+     ]
+    },
+    {
+     "id": "4.4",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.ramare_weighted_sum",
+     "statement": "For P ≥ 2 and f C¹, nonnegative, non-increasing on [P, ∞) with ∫_P^∞ f < ∞ (forcing t f(t) → 0): ∑_{p≥P} f(p) log p = −f(P) θ(P⁻) − ∫_P^∞ θ(t) f'(t) dt; if θ(t) ≤ (1+ε)t for t ≥ P then ∑_{p≥P} f(p) log p ≤ (1+ε)∫_P^∞ f + f(P)((1+ε)P − θ(P⁻)); Ramaré's form with ε = 1/914: for P ≥ 3 600 000, ≤ (1+ε)∫_P^∞ f + εP f(P) + P f(P)/(5 log² P), and for P ≥ 2 with 1/5 replaced by 4.",
+     "hypotheses": [
+      "f C¹, nonnegative, non-increasing on [P, ∞) with ∫_P^∞ f < ∞; the θ-bounds of 3.2 and 3.3 for Ramaré’s form"
+     ],
+     "locator": {
+      "source": "ramare-2016",
+      "where": "lines 294–303, Lemma 3.2"
+     },
+     "prerequisites": [
+      "target:3.2",
+      "target:3.3",
+      "mathlib:Chebyshev.theta_le_log4_mul_x",
+      "mathlib:sum_mul_eq_sub_sub_integral_mul"
+     ],
+     "tests": [
+      {
+       "name": "f_inv_sq",
+       "kind": "computation",
+       "statement": "f = t⁻², P = 2, the 4-version: ∑ (log p)/p² = 0.4931 ≤ 0.5005 + 0.0005 + 4.16 = 4.66"
+      },
+      {
+       "name": "f_inv",
+       "kind": "non-example",
+       "statement": "f = 1/t is excluded: t f(t) → 1 and the series ∑ (log p)/p diverges"
+      },
+      {
+       "name": "eps_914",
+       "kind": "compatibility",
+       "statement": "1.001093 − 1 = 0.001093 ≤ 1/914 = 0.001094; Dusart's 0.2 gives 1/5 and η₂ = 3.965 ≤ 4 gives 4"
+      },
+      {
+       "name": "not_integrable",
+       "kind": "non-example",
+       "statement": "f(t) = 1/(t log t) on [3 600 000, ∞) is C¹, decreasing, t f(t) → 0, but ∫ f = ∞ and ∑_{p≥P} f(p) log p = ∑ 1/p diverges"
+      }
+     ]
+    },
+    {
+     "id": "4.5",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.trevino_sum_primes",
+     "statement": "If x − k₂x/log x ≤ θ(x) ≤ x + k₁x/log x for x ≥ a and ∫ₐˣ t/log³ t dt ≤ C x²/log² x for x ≥ a, then with the explicit c₁(a,k₁,k₂,C), c₂(a,k₁,k₂,C) of Treviño's proof: x²/(2 log x) + c₁x²/log² x ≤ ∑_{p≤x} p ≤ x²/(2 log x) + c₂x²/log² x for x ≥ a; the rows of Table 1 are the instances at the rows of Table 2 under TrevinoTables.",
+     "hypotheses": [
+      "the θ-bounds on [a, ∞); the integral bound; TrevinoTables for the rows"
+     ],
+     "locator": {
+      "source": "trevino-2012",
+      "where": "lines 466–480, Lemma 3.4 and Table 1; lines 481–496, Table 2"
+     },
+     "prerequisites": [
+      "target:3.2",
+      "target:3.3",
+      "mathlib:sum_mul_eq_sub_sub_integral_mul"
+     ],
+     "tests": [
+      {
+       "name": "row_at_1e4",
+       "kind": "computation",
+       "statement": "row (315 437, 0.205448, 0.330479) at x = 10⁴: bracket [5 670 860, 5 818 254] contains ∑_{p≤10⁴} p = 5 736 396"
+      },
+      {
+       "name": "quarter",
+       "kind": "characterisation",
+       "statement": "c₁ < 1/4 < c₂ in every row, 1/4 being the second-order coefficient"
+      },
+      {
+       "name": "C_positive",
+       "kind": "non-example",
+       "statement": "C = 0 is never admissible: at a = 315 437, ∫ₐˣ t/log³ t dt/(x²/log² x) is 0.0299 at x = 2a and 0.0367 at x = 10a"
+      }
+     ],
+     "api": [
+      {
+       "name": "TrevinoTables",
+       "role": "definition",
+       "statement": "trevino-2012 lines 471–480 and 493–496: for every row (a, k₁, k₂, C) of Table 2, ∫ₐˣ t/log³ t dt ≤ C x²/log² x for x ≥ a, and the explicit c₁, c₂ are at least, respectively at most, the Table 1 values at the same a"
+      }
+     ]
+    },
+    {
+     "id": "4.6",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.sum_prime_powers",
+     "statement": "Let 0 < α ≤ 1, x₁ ≥ 89 967 803 with |θ(x) − x| < αx/log³ x for x ≥ x₁. For r ≥ 0.6 and x ≥ x₁: π_r(x) ≤ C₀ + x^{r+1}/((r+1) log x) + x^{r+1}/((r+1)² log² x) + 2x^{r+1}/((r+1)³ log³ x) + (α(51r⁴+176r³+222r²+120r+23) + 168) x^{r+1}/(24(r+1)⁴ log⁴ x), with the lower bounds (2.16)/(2.17) and the constants C₀ of (2.15)/(2.18). Instances (Corollaries 2.6–2.8) under the Dusart 2018 rows, Axler's Theorem 1.1 for α = 0.15, and DelegliseNicolasRange: the π₁, π₂ bounds with thresholds 110 117 910, 905 238 547, 60 173, 60 297, 1 091 239, 32 321; π₃ ≤ 0.271x⁴/log x (x ≥ 664), π₄ ≤ 0.237x⁵/log x (x ≥ 200), π₅ ≤ 0.226x⁶/log x (x ≥ 44); π_r(x) ≤ (log 3/3)(1 + (2/3)^r) x^{r+1}/log x for x > 1, r ≥ 5.",
+     "hypotheses": [
+      "the Dusart 2018 row (1, 89 967 803); the θ-bound 0.15 x/log³ x for x ≥ 19 035 709 163 for the π₁ bounds; DelegliseNicolasRange"
+     ],
+     "locator": {
+      "source": "deleglise-nicolas-2019-landau",
+      "where": "lines 613–705, Proposition 2.5; lines 706–767, Corollaries 2.6–2.8"
+     },
+     "prerequisites": [
+      "target:3.3",
+      "target:0.1",
+      "target:0.4",
+      "target:1.3",
+      "mathlib:sum_mul_eq_sub_sub_integral_mul"
+     ],
+     "tests": [
+      {
+       "name": "r1_alpha015",
+       "kind": "computation",
+       "statement": "(0.15·592 + 168)/384 = 107/160 and −(0.15·24 − 6)/16 = 3/20: Corollary 2.6 is the general bound at r = 1, α = 0.15"
+      },
+      {
+       "name": "r2_alpha1",
+       "kind": "computation",
+       "statement": "3207/1944 = 1069/648 and (3375 + 168)/1944 = 1181/648"
+      },
+      {
+       "name": "pi5_3",
+       "kind": "computation",
+       "statement": "π₅(3) = 275 = (log 3/3)(1 + (2/3)⁵)·3⁶/log 3, equality at x = 3"
+      },
+      {
+       "name": "pi3_threshold",
+       "kind": "characterisation",
+       "statement": "π₃(t) log t/t⁴ crosses 0.271 at t = 663.35, so 664 is sharp"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "The n-th prime",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.nthPrime_inversion",
+     "statement": "With p_n = Nat.nth Nat.Prime (n−1): if π(x) < x/(log x − c) for x ≥ x₁ then p_n > n(log p_n − c) for p_n ≥ x₁; if π(x) > x/(log x − c′) for x ≥ x₁ then p_n < n(log p_n − c′); bootstrap: if p_n > n(log p_n − c) and log n > c then p_n > n(log n + log(log n − c) − c); if p_n < n(log p_n − c′) and L ≥ log p_n with L > c′ then p_n < n(log n + log(L − c′) − c′); and from |θ(x) − x| ≤ κx/log x on [a, ∞), |∑_{i≤n} log p_i − p_n| ≤ κ p_n/log p_n for p_n ≥ a.",
+     "hypotheses": [
+      "the π- or θ-bounds as stated"
+     ],
+     "locator": {
+      "source": "dusart-1999-mc",
+      "where": "lines 119–125 (the θ form)"
+     },
+     "prerequisites": [
+      "mathlib:Nat.nth",
+      "mathlib:Nat.primeCounting'_nth_eq",
+      "mathlib:Nat.prime_nth_prime",
+      "tauceti:Nat.primeCounting_nth_prime",
+      "target:3.5b"
+     ],
+     "tests": [
+      {
+       "name": "index_shift",
+       "kind": "characterisation",
+       "statement": "Nat.nth Nat.Prime 0 = 2 = p_1; the unshifted statement would be weaker"
+      },
+      {
+       "name": "n_one",
+       "kind": "degenerate",
+       "statement": "p_1 = 2, π(2) = 1, θ(2) = log 2"
+      },
+      {
+       "name": "dusart_constants",
+       "kind": "computation",
+       "statement": "c = 1.1 (π(x) ≤ x/(log x − 1.1), x > 60 184) and c′ = 1 (π(x) > x/(log x − 1), x > 5393) at n = 10⁴: 104 591 ≤ 104 729 < 105 591"
+      },
+      {
+       "name": "wrong_upper",
+       "kind": "non-example",
+       "statement": "at n = 61, p = 283, c = 1.1, c′ = 1 the hypotheses hold (277.27 < 283 < 283.37), but the form with the lower bound log n + log(log n − c) in place of L gives 277.49 < 283; with L = log n + log(log n + log log n) = 5.820 the stated form gives 285.70"
+      }
+     ]
+    },
+    {
+     "id": "5.2",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.rosserSchoenfeld_nthPrime",
+     "statement": "Under the hypotheses of 3.5a and RosserSchoenfeld1962Range: n(log n + log log n − 3/2) < p_n for n ≥ 2; p_n < n(log n + log log n − 1/2) for n ≥ 20; n log n < p_n for n ≥ 1; p_n < n(log n + log log n) for n ≥ 6. Rosser (uncertified): p_n > n log n (n ≥ 1); n(log n + log log n − 10) < p_n < n(log n + log log n + 8) (n > 1); n(log n + log log n − 4) < p_n < n(log n + log log n + 2) (n ≥ 55).",
+     "hypotheses": [
+      "as in 3.5a"
+     ],
+     "locator": {
+      "source": "rosser-schoenfeld-1962",
+      "where": "lines 224–241, Theorem 3 and Corollary; rosser-1938 Theorems 1–2 and rosser-1941 Theorems 1–3 (uncertified)"
+     },
+     "prerequisites": [
+      "target:5.1",
+      "target:3.5a",
+      "target:1.3"
+     ],
+     "tests": [
+      {
+       "name": "n_six",
+       "kind": "computation",
+       "statement": "p_6 = 13 < 14.25; p_5 = 11 > 10.43: threshold 6 is sharp"
+      },
+      {
+       "name": "n_twenty",
+       "kind": "computation",
+       "statement": "p_20 = 71 < 71.86; p_19 = 67 > 66.96: threshold 20 is sharp"
+      },
+      {
+       "name": "n_two",
+       "kind": "degenerate",
+       "statement": "2(0.6931 − 0.3665 − 1.5) = −2.35 < 3; 1·log 1 = 0 < 2"
+      }
+     ]
+    },
+    {
+     "id": "5.3",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.dusart_nthPrime",
+     "statement": "Robin (under 3.2 and RosserSchoenfeld1962Range): p_k ≥ k(log k + log log k − 1.0072629) for k ≥ 2; θ(p_k) ≥ k(log k + log log k − 1 + (log log k − 2.1454)/log k) for k ≥ 3; p_k ≥ k(log k + log log k − 1) for k ≥ 2, p_k ≤ 10¹¹; p_k ≤ k(log k + log log k − 0.9385) for k ≥ 8602 (the printed k ≥ 7022 fails at 7022 and 8581–8601; from Dusart’s −0.9484 for k ≥ 39 017 and Robin1983Range below). Massias–Robin (Théorème A): the constant 1 is admissible for p_k ≤ e⁵⁹⁸ and p_k ≥ e¹⁸⁰⁰. Dusart (under RH(545 439 823), 3.3 and DusartThesisRange): p_k ≥ k(log k + log log k − 1) for all k ≥ 2, through 0.905·10⁻⁷ on e⁵⁰⁰ < p_k < e¹⁸⁰⁰ and η₄ = 1 717 433 beyond; p_k ≤ k(log k + log log k − 0.9484) for k ≥ 39 017.",
+     "hypotheses": [
+      "as listed"
+     ],
+     "locator": {
+      "source": "dusart-1999-mc",
+      "where": "lines 116–159, Theorem 3; line 168; robin-1983 lines 59–66, 81–84 and (23) at line 378; massias-robin-1996 Théorème A"
+     },
+     "prerequisites": [
+      "target:5.1",
+      "target:3.2",
+      "target:3.3",
+      "target:1.3"
+     ],
+     "tests": [
+      {
+       "name": "k_two_1e4",
+       "kind": "computation",
+       "statement": "k = 2: −1.35 ≤ 3; k = 10⁴: 104 306 ≤ 104 729 ≤ 104 822"
+      },
+      {
+       "name": "upper_k10",
+       "kind": "non-example",
+       "statement": "10(2.3026 + 0.8340 − 0.9484) = 21.9 < 29 = p_10: the upper bound needs its threshold"
+      },
+      {
+       "name": "constants_order",
+       "kind": "characterisation",
+       "statement": "1.0072629 > 1 > 0.9484 > 0.9385, consistent with Cipolla's −1"
+      },
+      {
+       "name": "robin_false_range",
+       "kind": "non-example",
+       "statement": "p₇₀₂₂ = 70 919 > 70 918.61 and p₈₆₀₁ = 88 807 > 88 805.00"
+      },
+      {
+       "name": "middle_range_limit",
+       "kind": "computation",
+       "statement": "at log k = 10⁴, (log log k − 2.1454)/(log k (log k + log log k)) = 7.06·10⁻⁸ < 0.905·10⁻⁷; at log k = 1792.5 it is 1.66·10⁻⁶; log² k (log log k − 2.1454) = 1.7·10⁷ > 1 717 433 for log k ≥ 1792"
+      }
+     ]
+    },
+    {
+     "id": "5.4",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.cipolla_expansion",
+     "statement": "p_n = n(log n + log log n − 1 + (log log n − 2)/log n − ((log log n)² − 6 log log n + 11)/(2 log² n) + o(1/log² n)).",
+     "hypotheses": [
+      "none (asymptotic)"
+     ],
+     "locator": {
+      "source": "cipolla-1902",
+      "where": "Matematiche (Napoli) 3, pp. 132–166 (waived)"
+     },
+     "prerequisites": [
+      "roadmap:ZerosOfLFunctions §8.5",
+      "roadmap:ZerosOfLFunctions §8.9",
+      "target:5.1"
+     ],
+     "tests": [
+      {
+       "name": "n_1e6",
+       "kind": "computation",
+       "statement": "10⁶(15.4413 + 0.04530 − 0.005608) = 15 481 000 against p_{10⁶} = 15 485 863, relative error 3·10⁻⁴ < 1/log² n = 5.2·10⁻³"
+      },
+      {
+       "name": "drop_minus_one",
+       "kind": "non-example",
+       "statement": "without the −1 the estimate is off by n"
+      },
+      {
+       "name": "n_ten",
+       "kind": "degenerate",
+       "statement": "at n = 10 the expansion gives 14.8 against 29: asymptotic, not a bound"
+      }
+     ]
+    },
+    {
+     "id": "5.5",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.sum_first_primes",
+     "statement": "With B_n = n p_n/2 − ∑_{k≤n} p_k, under 3.5c, 5.3 and AxlerRange: B_n > n²/4 + n²/(4 log n) − n²(log log n − 2.9)/(4 log² n) for n ≥ 6 309 751; B_n < n²/4 + n²/(4 log n) − n²(log log n − 4.42)/(4 log² n) for n ≥ 256 376; ∑_{k≤n} p_k < (n²/2)(log n + log log n − 3/2 + (log log n − 5/2)/log n − ((log log n)² − 7 log log n + 13.567)/(2 log² n)) for n ≥ 1 897 700; the same with 15.741 as a lower bound for n ≥ 2. De Koninck–Letendre: ∑_{i≤k} log p_i ≤ k(log k + log log k − 1/2) for k ≥ 5; ∑_{i≤k} log log p_i ≥ k(log log k + (log log k − 3/2)/log k) for k ≥ 6.",
+     "hypotheses": [
+      "as listed"
+     ],
+     "locator": {
+      "source": "axler-2019",
+      "where": "lines 145–150, Theorems 1.6–1.7; lines 159–166, Theorems 1.8–1.9; de-koninck-letendre-2020 lines 489–500, Lemma 4.8"
+     },
+     "prerequisites": [
+      "target:3.5c",
+      "target:5.2",
+      "target:5.3",
+      "target:1.3",
+      "mathlib:sum_mul_eq_sub_sub_integral_mul"
+     ],
+     "tests": [
+      {
+       "name": "B_small",
+       "kind": "computation",
+       "statement": "B_9 = 3.5 > 0, B_8 = −1, consistent with B_n > 0 for n ≥ 9"
+      },
+      {
+       "name": "thm19_n10",
+       "kind": "degenerate",
+       "statement": "at n = 10 the lower bound is −4.3 < 129"
+      },
+      {
+       "name": "dkl_k5",
+       "kind": "computation",
+       "statement": "k = 5: log 2310 = 7.745 ≤ 7.93; k = 4: 5.347 > 4.85"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "6",
+   "title": "Primes in arithmetic progressions",
+   "targets": [
+    {
+     "id": "6.1",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.progression_scheme",
+     "statement": "Ramaré–Rumely/Dusart shape: let q > 1, H > 1000 with GRH(q, H), and suppose every zero β + iγ of L(s, χ), χ mod q, with |γ| ≥ H satisfies 1 − β ≥ 1/(R log(q|γ|/C₁(χ, H))), R = 9.645908801 (Ramaré–Rumely’s Theorem 3.6.3); put C₁(q) = min(min_χ C₁(χ, H), 32π), so 9.14 ≤ C₁(q) ≤ 32π. With X = √(log x/R) and ε(X) = 3√(q/(φ(q)C₁(q))) X^{1/2} e^{−X}, for X > X₄(q, H): max_{1≤y≤x}|ψ(y;q,a) − y/φ(q)| < xε(X) and the same for θ, a a unit. McCurley shape: R = 9.645908801, IsExceptionalModulus q as a real zero β > 1 − 1/(R log q); McCurley’s region follows for q ≥ 3 from the R = 6.4355 region; for q > 10^b not exceptional and (ε, b) ↦ c an entry of McCurleyTable, |ψ(x;q,a) − x/φ(q)| < εx/φ(q) and the same for θ for x ≥ exp(c log² q). The theta clause of ModEightFiniteInput of AnalyticNumberTheoryPartI §0.16 follows from the row (8, 0.002811, 10¹⁰) of RamareRumelyTable1 under GRH(8, 10 000).",
+     "hypotheses": [
+      "as listed; a a unit"
+     ],
+     "locator": {
+      "source": "dusart-2002",
+      "where": "lines 95–112 (C₁), 989–1012, Theorem 5; ramare-rumely-1996 lines 58–74, 822–826, 1385; mccurley-1984 lines 56–62, 63–118 and 122–130"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:0.3",
+      "target:1.2",
+      "roadmap:AnalyticNumberTheoryPartI §0.2",
+      "roadmap:AnalyticNumberTheoryPartI §0.30",
+      "roadmap:ZerosOfLFunctions §8.6",
+      "gap:grh-up-to-height",
+      "gap:dirichlet-zero-free-constants",
+      "gap:dirichlet-zero-count-error",
+      "gap:lehman-weighted-zero-sum",
+      "mathlib:Nat.totient",
+      "mathlib:DirichletCharacter.sum_char_inv_mul_char_eq",
+      "roadmap:AnalyticNumberTheoryPartI §0.16"
+     ],
+     "tests": [
+      {
+       "name": "row_k1",
+       "kind": "computation",
+       "statement": "row (1, 0.000213, 10¹⁰): 2.13·10⁶ ≥ |ψ(10¹⁰) − 10¹⁰| = 42 120"
+      },
+      {
+       "name": "q_one",
+       "kind": "compatibility",
+       "statement": "q = 1 is Layer 3 with GRH(1, H) = RH(H)"
+      },
+      {
+       "name": "nonunit",
+       "kind": "non-example",
+       "statement": "ψ(x; 2, 0) ≈ log x while x/φ(2) = x: the unit hypothesis is necessary"
+      },
+      {
+       "name": "rr_rows",
+       "kind": "compatibility",
+       "statement": "the uniform row k ≤ 13 (0.004560) is weaker than the row k = 8 (0.002811); both are asserted"
+      },
+      {
+       "name": "C1_values",
+       "kind": "computation",
+       "statement": "C₁ = 38.31 for k = 1, H = 545 000 000; 20.92 for k = 3, H = 10 000; C₁ ≥ 9.14 for k > 1, H > 1000; the radical reading gives the coefficient 3/√38.31 = 0.485 against Schoenfeld’s 0.387, the other reading 3/38.31 = 0.078"
+      },
+      {
+       "name": "regions_nested",
+       "kind": "non-example",
+       "statement": "at q = 3, |t| = 1 the R = 6.4355 region excludes σ ≥ 0.8586, McCurley’s only σ > 0.9550"
+      }
+     ],
+     "api": [
+      {
+       "name": "RamareRumelyTable1",
+       "role": "definition",
+       "statement": "ramare-rumely-1996 lines 58–74 and 1385, Table 1: the rows (k, ε, x₀), in particular (1, 0.000213, 10¹⁰), (8, 0.002811, 10¹⁰), k ≤ 13: (0.004560, 10¹⁰), k ≤ 72: (0.023269, 10¹⁰)"
+      },
+      {
+       "name": "Dusart2002Table",
+       "role": "definition",
+       "statement": "dusart-2002 lines 989–1012: the rows (k, ε, x₀)"
+      },
+      {
+       "name": "McCurleyTable",
+       "role": "definition",
+       "statement": "mccurley-1984 lines 63–118, Table 1: the entries (ε, b) ↦ c"
+      }
+     ]
+    },
+    {
+     "id": "6.2",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.ramareRumely_tabulation_rows",
+     "statement": "Under RamareRumelyTabulation: for k in Table 1, l a unit, x₀ ≤ x ≤ 10¹⁰: max_{y≤x}|θ(y;k,l) − y/φ(k)| ≤ 2.072√x ≤ (2.072φ(k)/√x₀) x/φ(k); for k = 5 or k ≥ 7 the ψ constant 1.745 may be replaced by 1.000 (RamareRumelyTabulationSharp).",
+     "hypotheses": [
+      "RamareRumelyTabulation"
+     ],
+     "locator": {
+      "source": "ramare-rumely-1996",
+      "where": "lines 85–90"
+     },
+     "prerequisites": [
+      "target:1.5",
+      "roadmap:AnalyticNumberTheoryPartI §0.2"
+     ],
+     "tests": [
+      {
+       "name": "k1_1e6",
+       "kind": "computation",
+       "statement": "k = 1, x₀ = 10⁶: |θ(10⁶) − 10⁶| = 1516 ≤ 2072"
+      },
+      {
+       "name": "k8_1e10",
+       "kind": "computation",
+       "statement": "2.072·4/10⁵ = 8.3·10⁻⁵ below the analytic row 0.002811"
+      },
+      {
+       "name": "x_one",
+       "kind": "degenerate",
+       "statement": "at x = 1: θ(1;k,l) = 0 and |0 − 1/φ(k)| ≤ 2.072"
+      }
+     ]
+    },
+    {
+     "id": "6.3",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.bmor",
+     "statement": "Under GRH(q, 10⁸/q) for q ≤ 400 000, no real zero in (0,1) for conductors ≤ 400 000, the region for L(s,χ) with R = 6.4355, the Dirichlet zero count and BMORTables: for q ≥ 3 and a a unit, with c₀(q) = 1/840 (3 ≤ q ≤ 10⁴), 1/160 (q > 10⁴) and x₀(q) = 8·10⁹ (3 ≤ q ≤ 10⁵), exp(0.03√q log³ q) (q > 10⁵): |ψ(x;q,a) − x/φ(q)| < c_ψ(q)x/log x for x ≥ x_ψ(q); |θ(x;q,a) − x/φ(q)| < c_θ(q)x/log x for x ≥ x_θ(q); |π(x;q,a) − Li x/φ(q)| < c_π(q)x/log² x for x ≥ x_π(q); with c(q) ≤ c₀(q), x(q) ≤ x₀(q), the per-modulus values for 3 ≤ q ≤ 10⁵ being the table's.",
+     "hypotheses": [
+      "as listed"
+     ],
+     "locator": {
+      "source": "bennett-martin-obryant-rechnitzer-2018",
+      "where": "lines 165–195, Theorems 1.1–1.3"
+     },
+     "prerequisites": [
+      "target:6.1",
+      "target:0.3",
+      "target:0.4",
+      "target:1.2",
+      "roadmap:ComputationalNumberTheory §4.24",
+      "gap:dirichlet-zero-free-constants",
+      "gap:dirichlet-zero-count-error",
+      "gap:grh-up-to-height"
+     ],
+     "tests": [
+      {
+       "name": "q3",
+       "kind": "computation",
+       "statement": "q = 3, x = 8·10⁹: bound 4.2·10⁵ for a class of mass 4·10⁹"
+      },
+      {
+       "name": "regime_jump",
+       "kind": "characterisation",
+       "statement": "at q = 10⁴ + 1 the constant jumps to 1/160 and at q = 10⁵ + 1 the threshold to exp(14 490)"
+      },
+      {
+       "name": "q_two",
+       "kind": "degenerate",
+       "statement": "q = 2 is excluded; its unit class is Layer 3 after removing powers of 2"
+      },
+      {
+       "name": "Li_normalisation",
+       "kind": "compatibility",
+       "statement": "the π bound uses Li x/φ(q) = ∫₂ˣ dt/log t/φ(q), the paper’s normalisation; with li the left side changes by liTwo/φ(q) and the printed constants are not asserted for that form"
+      }
+     ],
+     "api": [
+      {
+       "name": "BMORTables",
+       "role": "definition",
+       "statement": "bennett-martin-obryant-rechnitzer-2018 lines 165–167: for 3 ≤ q ≤ 10⁵ the per-modulus constants c_ψ, c_θ, c_π, x_ψ, x_θ, x_π, each at most c₀(q), x₀(q), are admissible for the paper’s error function at q"
+      }
+     ]
+    },
+    {
+     "id": "6.4",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.ramare_mertens_progressions",
+     "statement": "Ramaré’s explicit transfer (§9): for q ≥ 3, 1 ≤ L₁ ≤ L₀, if ψ(x; d, a) = (x/φ(d))(1 + O*(η_d)) for every d ∣ q, unit a mod d and x ≥ L₀, and ψ(x; q, a) = x/φ(q) + O*(η_q√x) for L₁ ≤ x ≤ L₀, then for L ≥ L₂ ≥ L₁, |logPsiAP q a L − log L/φ(q) − C(q, a)| ≤ the explicit quantity (44). Instances under GRH(q, 2500) for q in Rumely’s list, RamareRumelyTable1, RamareRumelyTabulation, Ramare2002Tabulation and Ramare2002Tables: |…| ≤ 1 for x ≥ 1 and ≤ ε♯(q) ≤ 2/9 for x ≥ 182.",
+     "hypotheses": [
+      "as listed"
+     ],
+     "locator": {
+      "source": "ramare-2002",
+      "where": "lines 980–1004 (§9, (41)–(45)); lines 646–693 (§6); lines 1228–1235; lines 174–187, Corollaires 4–5"
+     },
+     "prerequisites": [
+      "target:0.2b",
+      "target:6.1",
+      "target:1.2",
+      "target:1.5",
+      "mathlib:DirichletCharacter.LFunction",
+      "roadmap:AnalyticNumberTheoryPartI §0.2",
+      "gap:grh-up-to-height"
+     ],
+     "tests": [
+      {
+       "name": "q6_x1",
+       "kind": "computation",
+       "statement": "at q = 6, a = 1, x = 1 the quantity is |C(6,1)| = 0.978…, the paper's extremum"
+      },
+      {
+       "name": "x_1e5",
+       "kind": "computation",
+       "statement": "at x = 10⁵ the tabulation gives 0.0032 and the transfer tail at most 0.011"
+      },
+      {
+       "name": "q_one",
+       "kind": "degenerate",
+       "statement": "q = 1 is not in the list; its analogue is target 4.2"
+      },
+      {
+       "name": "no_parts",
+       "kind": "non-example",
+       "statement": "the transfer of 0.7 with a constant ε of a Table 1 row has the divergent tail ∫ε dt/t; the source (lines 137–139) says integration by parts needs stronger information"
+      },
+      {
+       "name": "second_clause",
+       "kind": "characterisation",
+       "statement": "at x = 182 the first tabulation clause gives only 1/√182 = 0.074, more than ε♯(q) when ε♯(q) < 0.074"
+      }
+     ],
+     "api": [
+      {
+       "name": "Ramare2002Tables",
+       "role": "definition",
+       "statement": "ramare-2002 lines 980–1004 and the final tables: for q in Rumely’s list, (44) at L₂ = 10⁵, L₀ = 10¹⁰, the η_d of RamareRumelyTable1, η_q = 1.745 and the paper’s θ_d is at most ε♯(q)"
+      }
+     ]
+    },
+    {
+     "id": "6.5a",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.cyclotomic_discr",
+     "statement": "|disc ℚ(ζ_q)| = q^{φ(q)}/∏_{p∣q} p^{φ(q)/(p−1)} for q ≥ 3; hence (φ(q)/2) log(q/2) ≤ log|disc| ≤ φ(q) log q.",
+     "hypotheses": [
+      "q ≥ 3"
+     ],
+     "locator": {
+      "source": "bach-sorenson-1996",
+      "where": "lines 926–927"
+     },
+     "prerequisites": [
+      "mathlib:NumberField.discr",
+      "mathlib:IsCyclotomicExtension",
+      "roadmap:LFunctions Layer 4"
+     ],
+     "tests": [
+      {
+       "name": "small_q",
+       "kind": "computation",
+       "statement": "q = 3: 3; q = 4: 4; q = 5: 125; q = 12: 20736/144 = 144"
+      }
+     ]
+    },
+    {
+     "id": "6.5b",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.bachSorenson_cyclotomic",
+     "statement": "Under DirichletGRH χ for every χ modulo q: for every unit m modulo q there is a prime p ≡ m (mod q) with p ≤ (4 log|disc ℚ(ζ_q)| + 2.5φ(q) + 5)².",
+     "hypotheses": [
+      "DirichletGRH for all χ mod q; m a unit"
+     ],
+     "locator": {
+      "source": "bach-sorenson-1996",
+      "where": "lines 802–811, Theorem 5.1 at E = ℚ(ζ_q), K = ℚ"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:0.3",
+      "target:6.5a",
+      "roadmap:AnalyticNumberTheoryPartI §0.2",
+      "roadmap:AnalyticNumberTheoryPartI §1.6",
+      "gap:dirichlet-zero-count-error"
+     ],
+     "tests": [
+      {
+       "name": "q3",
+       "kind": "computation",
+       "statement": "q = 3: log 3 = 1.0986, bound (4.39 + 5 + 5)² = 207; the primes 2 and 7 are far below"
+      },
+      {
+       "name": "nonunit",
+       "kind": "non-example",
+       "statement": "for m not a unit there is no such prime (no prime ≡ 0 mod 4)"
+      }
+     ]
+    },
+    {
+     "id": "6.5c",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.bachSorenson_leastPrime",
+     "statement": "Under DirichletGRH χ for every χ modulo q, q ≥ 2, m a unit: some prime p ≡ m (mod q) satisfies p < 2(q log q)²; via BachSorensonTable for q ≥ 1000 and BachSorensonRange for 2 ≤ q < 1000.",
+     "hypotheses": [
+      "DirichletGRH for all χ mod q; q ≥ 2; m a unit"
+     ],
+     "locator": {
+      "source": "bach-sorenson-1996",
+      "where": "lines 921–937, Theorem 5.3 and its proof"
+     },
+     "prerequisites": [
+      "target:6.5a",
+      "target:6.5b",
+      "target:1.3"
+     ],
+     "tests": [
+      {
+       "name": "q3",
+       "kind": "computation",
+       "statement": "q = 3: 2(3 log 3)² = 21.7; m = 2 → 2, m = 1 → 7"
+      },
+      {
+       "name": "q_one_two",
+       "kind": "degenerate",
+       "statement": "q = 1 gives the bound 0 (excluded); q = 2, m = 1: 3 < 3.84"
+      },
+      {
+       "name": "q_1e4",
+       "kind": "characterisation",
+       "statement": "q = 10⁴: 1.7·10¹⁰, a worst-case bound over all classes"
+      }
+     ],
+     "api": [
+      {
+       "name": "BachSorensonTable",
+       "role": "definition",
+       "statement": "bach-sorenson-1996 lines 931–934 and Table 3: the program’s bound at K = ℚ, E = ℚ(ζ_q), n = φ(q) > 170, log Δ ≥ 2170 log 2, is at most (1.1 log Δ + 0.7n + 11)²"
+      }
+     ]
+    },
+    {
+     "id": "6.6",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.kadiri_intervals_progressions",
+     "statement": "Under the McCurley shape of 6.1, for q > 10^b not exceptional in McCurley’s sense, a a unit, ε > 0: there is α > 0 such that for every x ≥ α log² q the interval [eˣ, e^{x+ε}] contains a prime ≡ a (mod q). Kadiri’s exceptional moduli: ∏ L(s, χ) has a zero with σ ≥ 1 − 1/(6.50 log(q max(1, |t|))). Under the R = 6.4355 region, the four-zero region, the Dirichlet zero count and Kadiri2008Table: for every entry (q₀, ε) ↦ α(q₀, ε), every q ≥ q₀ not exceptional in Kadiri’s sense, every unit a and x ≥ α log² q, [eˣ, e^{x+ε}] contains a prime ≡ a (mod q).",
+     "hypotheses": [
+      "as listed; a a unit; ε > 0"
+     ],
+     "locator": {
+      "source": "kadiri-2008",
+      "where": "lines 128–131, Theorem 1.1; lines 140–162, Table 1; lines 327–341"
+     },
+     "prerequisites": [
+      "target:6.1",
+      "target:0.3",
+      "gap:dirichlet-zero-free-constants",
+      "gap:dirichlet-four-zero-region",
+      "gap:dirichlet-zero-count-error"
+     ],
+     "tests": [
+      {
+       "name": "row",
+       "kind": "computation",
+       "statement": "(q₀, ε) = (5·10⁴, 1): α = 6.9684; for q = 10⁵, x ≥ 923"
+      },
+      {
+       "name": "monotone",
+       "kind": "characterisation",
+       "statement": "α decreases along a row as ε grows: 19.228, 15.550, 12.245, 9.4357, 6.9684, 4.8430"
+      },
+      {
+       "name": "eps_zero",
+       "kind": "degenerate",
+       "statement": "ε = 0 is excluded: [eˣ, eˣ] contains a prime only if eˣ is one"
+      },
+      {
+       "name": "nested_exceptional",
+       "kind": "characterisation",
+       "statement": "non-exceptional for 6.4355 implies non-exceptional for 6.50, not conversely (at q = 10⁵ the bounds are 0.986637 and 0.986503)"
+      },
+      {
+       "name": "four_zero_needed",
+       "kind": "computation",
+       "statement": "Kadiri reports α = 7.281 from the region alone and 4.401 with the four-zero region at q ≥ 10³⁰, ε = log 3 (lines 133–137)"
+      }
+     ],
+     "api": [
+      {
+       "name": "Kadiri2008Table",
+       "role": "definition",
+       "statement": "kadiri-2008 lines 140–162, Table 1: for every entry the explicit lower bound of the paper’s §§3–4 for the weighted sum over the class is positive for q ≥ q₀ and x ≥ α(q₀, ε) log² q"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "7",
+   "title": "Short intervals containing a prime, unconditionally",
+   "targets": [
+    {
+     "id": "7.1",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.schoenfeld_interval",
+     "statement": "Under RH(545 439 823), the Rosser–Schoenfeld-shape region with R = 9.645908801, Rosser’s triple, DusartThesisTable, the hypotheses of 3.2, MaximalPrimeGapTable and Schoenfeld1976Range: for every x > 2 010 759.9 the open interval (x, x + x/16597) contains a prime (Schoenfeld1976Range up to 10⁸; MaximalPrimeGapTable with Schoenfeld’s Lemma 10 on [10⁸, 4·10¹⁸], every gap being ≤ 1476 < 6025; the row b = 30 beyond e³⁰).",
+     "hypotheses": [
+      "as listed"
+     ],
+     "locator": {
+      "source": "schoenfeld-1976",
+      "where": "lines 646–716, Lemma 10 and Theorem 12"
+     },
+     "prerequisites": [
+      "target:3.2",
+      "target:3.3",
+      "target:0.3",
+      "target:1.3",
+      "target:1.4",
+      "target:3.1b"
+     ],
+     "tests": [
+      {
+       "name": "threshold",
+       "kind": "computation",
+       "statement": "the maximal gap 148 after 2 010 733 ends at 2 010 881 and x + x/16597 > 2 010 881 exactly for x > 2 010 759.9; at x = 2 010 750 the interval contains no prime"
+      },
+      {
+       "name": "dusart_row",
+       "kind": "computation",
+       "statement": "1/(2·16597) = 3.01·10⁻⁵ > 0.978·10⁻⁵ (row e³⁰), and e³⁰ < 10¹⁹"
+      },
+      {
+       "name": "gap_step",
+       "kind": "computation",
+       "statement": "at x = 10⁸ every gap below 4·10¹⁸ must be below x/16597 = 6025; the largest is 1476; just above the threshold the record 148 exceeds 121.2, so the first range is a computation"
+      }
+     ]
+    },
+    {
+     "id": "7.2",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.ramareSaouter_intervals",
+     "statement": "Under the stated heights, the Rosser–Schoenfeld-shape region with R = 9.645908801 and RamareSaouterTable: (x(1 − 1/28 314 000), x] contains a prime for x > 10 726 905 041 and (x(1 − 1/204 879 661), x] for x ≥ e⁵³, from RH(3.3·10⁹) (implied by RH(3·10¹²)); (x(1 − 1/14 500 755 538), x] for x ≥ e⁶⁰ from RH(3·10¹²).",
+     "hypotheses": [
+      "as listed"
+     ],
+     "locator": {
+      "source": "ramare-saouter-2003",
+      "where": "Theorems 1–3 (uncertified)"
+     },
+     "prerequisites": [
+      "target:7.3a",
+      "target:1.1",
+      "gap:classical-zero-free-constants",
+      "gap:explicit-zero-count-error",
+      "gap:rh-up-to-height"
+     ],
+     "tests": [
+      {
+       "name": "e60",
+       "kind": "computation",
+       "statement": "at x = e⁶⁰, x/Δ = 7.9·10¹⁵ ≫ log² x = 3600"
+      },
+      {
+       "name": "monotone",
+       "kind": "characterisation",
+       "statement": "larger thresholds admit larger Δ"
+      },
+      {
+       "name": "threshold_gap",
+       "kind": "non-example",
+       "statement": "the record gap 382 after 10 726 904 659 ends at 10 726 905 041, the threshold; the interval length there is 378.9, so just below it the interval lies in that gap"
+      }
+     ],
+     "api": [
+      {
+       "name": "RamareSaouterTable",
+       "role": "definition",
+       "statement": "ramare-saouter-2003 (uncertified; the first row as quoted at dudek-2016 line 815): for each of the three rows (x₀, Δ) the quantity of the smoothing argument is positive for x ≥ x₀"
+      }
+     ]
+    },
+    {
+     "id": "7.3a",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.kadiriLumley_general",
+     "statement": "Let T₀ < H with RH(H), R₀ with the classical-shape region, 3/5 ≤ σ₀ < 1 with N(σ₀,T) ≤ c₁T + c₂ log T + c₃, the zero-count error, and parameters m ≥ 1, u, δ, a > 0, Δ, X₀ satisfying (2.1). If the explicit quantity of display (2.64) is positive then for every x ≥ X₀ the interval (x(1 − Δ⁻¹), x) contains a prime; f = (4t(1−t))^m with ‖f‖₁ = 2^{2m}(m!)²/(2m+1)!.",
+     "hypotheses": [
+      "as listed"
+     ],
+     "locator": {
+      "source": "kadiri-lumley-2014",
+      "where": "lines 493–501, Theorem 2.7; line 508"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:1.1",
+      "gap:classical-zero-free-constants",
+      "gap:explicit-zero-count-error",
+      "gap:explicit-zero-density",
+      "gap:lehman-weighted-zero-sum",
+      "gap:rh-up-to-height"
+     ],
+     "tests": [
+      {
+       "name": "f_norms",
+       "kind": "computation",
+       "statement": "‖f₁‖₁ = 2/3, ‖f₂‖₁ = 8/15"
+      },
+      {
+       "name": "delta_one",
+       "kind": "degenerate",
+       "statement": "Δ ≤ 1 makes the interval contain (0, x): Bertrand-trivial; (2.1) forces Δ large"
+      }
+     ]
+    },
+    {
+     "id": "7.3b",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.kadiriLumley_rows",
+     "statement": "Under RH(30 610 046 000), the classical-shape region with R₀ = 5.69693, Kadiri's density, the zero-count error and KadiriLumleyTable: for every x₀ ≥ 4·10¹⁸ of Table 2 and x > x₀, ((1 − Δ(x₀)⁻¹)x, x) contains a prime; Δ = 1 946 282 821 at x₀ = e⁵⁹, Δ = 1 966 196 911 at x₀ = 4·10¹⁸.",
+     "hypotheses": [
+      "as listed"
+     ],
+     "locator": {
+      "source": "kadiri-lumley-2014",
+      "where": "lines 28–29, Theorem 1.1; line 36; line 52"
+     },
+     "prerequisites": [
+      "target:7.3a",
+      "target:1.1",
+      "gap:classical-zero-free-constants",
+      "gap:explicit-zero-count-error",
+      "gap:explicit-zero-density",
+      "gap:rh-up-to-height"
+     ],
+     "tests": [
+      {
+       "name": "e60_compare",
+       "kind": "characterisation",
+       "statement": "at x₀ = e⁶⁰: 2.09·10⁸ (Ramaré–Saouter) < 1.96·10⁹ (Kadiri–Lumley) < 7.69·10¹⁰ (Cully-Hugill–Lee)"
+      },
+      {
+       "name": "below_4e18",
+       "kind": "compatibility",
+       "statement": "below 4·10¹⁸ the record gaps (≤ 1476) settle every such statement"
+      }
+     ],
+     "api": [
+      {
+       "name": "KadiriLumleyTable",
+       "role": "definition",
+       "statement": "kadiri-lumley-2014 lines 28–29 and Table 2: x₀ ↦ Δ, in particular (e⁵⁹, 1 946 282 821) and (4·10¹⁸, 1 966 196 911); (2.64) is positive at each row"
+      }
+     ]
+    },
+    {
+     "id": "7.3c",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.cullyHugillLee_rows",
+     "statement": "Under RH(3·10¹²), the classical-shape region with R = 5.573412, the density bounds of gap:explicit-zero-density, the zero-count error and CullyHugillLeeTable: for each (Δ, x₀) of the corrected Table 2, (x(1 − Δ⁻¹), x] contains a prime for all x ≥ x₀; Δ = 7.69·10¹⁰ at log x₀ = 60, Δ = 2.07·10¹¹ at log x₀ = 150.",
+     "hypotheses": [
+      "as listed"
+     ],
+     "locator": {
+      "source": "cully-hugill-lee-2022",
+      "where": "lines 75–88, Theorem 1 and Tables 1–2; cully-hugill-lee-2024 (uncertified) for the corrected table"
+     },
+     "prerequisites": [
+      "target:7.3a",
+      "target:1.1",
+      "gap:classical-zero-free-constants",
+      "gap:explicit-zero-count-error",
+      "gap:explicit-zero-density",
+      "gap:rh-up-to-height"
+     ],
+     "tests": [
+      {
+       "name": "rows",
+       "kind": "computation",
+       "statement": "log x₀ = 60 → 7.69·10¹⁰; 150 → 2.07·10¹¹"
+      }
+     ],
+     "api": [
+      {
+       "name": "CullyHugillLeeTable",
+       "role": "definition",
+       "statement": "cully-hugill-lee-2022 lines 75–88, as corrected by cully-hugill-lee-2024: log x₀ ↦ Δ, in particular (60, 7.69·10¹⁰), (150, 2.07·10¹¹)"
+      }
+     ]
+    },
+    {
+     "id": "7.4a",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.interval_of_theta_bound",
+     "statement": "Let k ≥ 0, η ≥ 0, x₀ ≥ 2 with |θ(t) − t| ≤ η t/log^k t for t ≥ x₀, and c > 0 with c(1 − η/log^k x₀) > 2η. Then for every x ≥ x₀ the interval (x, x(1 + c/log^k x)] contains a prime.",
+     "hypotheses": [
+      "as stated"
+     ],
+     "locator": {
+      "source": "trudgian-2016",
+      "where": "lines 229–236 (the argument of Corollary 2)"
+     },
+     "prerequisites": [
+      "mathlib:Chebyshev.theta_mono",
+      "mathlib:Chebyshev.theta_eq_sum_primesLE"
+     ],
+     "tests": [
+      {
+       "name": "dusart_02",
+       "kind": "computation",
+       "statement": "η = 0.2, k = 2, x₀ = 3 594 641: the condition is c > 0.4004 (log² x₀ = 228.4); with c = 0.41 at x = 10⁷ the interval (10⁷, 10 015 787] contains 10 000 019"
+      },
+      {
+       "name": "trudgian_margin",
+       "kind": "computation",
+       "statement": "η = 0.0045, c = 1/111: c(1 − η/log² x₀) = 0.0090089 > 0.009; with 112 the condition fails"
+      },
+      {
+       "name": "c_too_small",
+       "kind": "non-example",
+       "statement": "c = 2η fails the condition; with c = 1 and η = 1/2 (k = 3) the condition fails"
+      },
+      {
+       "name": "dusart2018_needs",
+       "kind": "computation",
+       "statement": "the interval [x, x(1 + 1/log³ x)] for x > 89 693 would need η < 0.4998 with k = 3; [x, x(1 + 1/(5000 log² x))] for x > 468 991 632 would need η < 0.9999997·10⁻⁴ with k = 2; neither follows from the 2018 rows η = 1, 0.5 (k = 3)"
+      }
+     ]
+    },
+    {
+     "id": "7.4b",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.trudgian_interval",
+     "statement": "Under 3.4b, FaberKadiriTable, MaximalPrimeGapTable and TrudgianRange: |θ(x) − x| ≤ 0.0045x/log² x for x ≥ e³⁵, and [x, x(1 + 1/(111 log² x))] contains a prime for every x ≥ 2 898 242 (the printed 2 898 239 is false): the lemma for x ≥ e³⁵, MaximalPrimeGapTable on [4 652 353, 4·10¹⁸], TrudgianRange on [2 898 242, 4 652 353].",
+     "hypotheses": [
+      "as in 3.4b; FaberKadiriTable; MaximalPrimeGapTable; TrudgianRange"
+     ],
+     "locator": {
+      "source": "trudgian-2016",
+      "where": "lines 229–236, Corollary 2 and Lemma 1"
+     },
+     "prerequisites": [
+      "target:7.4a",
+      "target:3.4b",
+      "target:1.3",
+      "target:1.4",
+      "target:3.1c"
+     ],
+     "tests": [
+      {
+       "name": "fail_2010733",
+       "kind": "non-example",
+       "statement": "at x = 2 010 733 (gap 148) the length is 86 < 148, so the threshold exceeds 2 010 795"
+      },
+      {
+       "name": "threshold",
+       "kind": "non-example",
+       "statement": "at x = 2 898 240 the interval [2 898 240, 2 898 357.93] lies in the gap (2 898 239, 2 898 359); at 2 898 242 the right end is 2 898 359.93"
+      },
+      {
+       "name": "table_rows",
+       "kind": "computation",
+       "statement": "every record (P_i, g_i) with P_i ≥ 4 652 353 has g_i ≤ P_i/(111 log² P_i); at 4 652 353 the length is 177.8 ≥ 154"
+      }
+     ]
+    },
+    {
+     "id": "7.4c",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.axler_interval",
+     "statement": "Under 3.5c: for every x ≥ 58 837 there is a prime in (x, x(1 + 1.1817/log³ x)].",
+     "hypotheses": [
+      "as in 3.5c"
+     ],
+     "locator": {
+      "source": "axler-2016",
+      "where": "lines 51–54, Theorem 1.5"
+     },
+     "prerequisites": [
+      "target:7.4a",
+      "target:3.5c",
+      "target:3.3"
+     ],
+     "tests": [
+      {
+       "name": "fail_31397",
+       "kind": "non-example",
+       "statement": "at x = 31 397 (gap 72) the length is 33.4 < 72, so the threshold exceeds 31 469"
+      },
+      {
+       "name": "pass_155921",
+       "kind": "computation",
+       "statement": "at x = 155 921 (gap 86) the length is 107.8; at 58 837 it is 52.5"
+      },
+      {
+       "name": "eta_half",
+       "kind": "compatibility",
+       "statement": "c = 1.1817, k = 3 needs η < 0.59; Dusart's row η = 1/2 works, c = 1 would not"
+      }
+     ]
+    },
+    {
+     "id": "7.5",
+     "kind": "theorem",
+     "name": "ExplicitPrimes.primes_between_powers",
+     "statement": "Dudek: if N(σ, T) ≤ A(3T)^{8(1−σ)/3} log^{5−2σ} T + 103 log² T for T ≥ 2000 and σ ≥ 0.52, there is a prime between n³ and (n+1)³ for every n ≥ exp(exp(c_A)), c_{9.7} = 33.217 (the paper’s A = 9.7 comes from ramare-2016 Theorem 1.1, whose leading constant is reported off by a factor over 100). Cully-Hugill (with the density bounds C₁(σ)T^{8(1−σ)/3} log^{5−2σ} T + C₂(σ) log² T): a prime in (n¹⁵⁵, (n+1)¹⁵⁵) for every n ≥ 1; between n³ and (n+1)³ for every n ≥ exp(exp(33.990)); and (x, x + 3(x+1)^{2/3} + 1] contains a prime for real x ≥ exp(exp(33.990)).",
+     "hypotheses": [
+      "as listed"
+     ],
+     "locator": {
+      "source": "dudek-2016",
+      "where": "line 63, Theorem 1.1; lines 700–806; cully-hugill-2021 lines 28, 98–118, 662–664; broadbent-kadiri-lumley-ng-wilk-2021 lines 950–952"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:3.6",
+      "target:1.1",
+      "gap:vinogradov-korobov-constants",
+      "gap:explicit-zero-density",
+      "gap:explicit-zero-count-error",
+      "gap:rh-up-to-height"
+     ],
+     "tests": [
+      {
+       "name": "size",
+       "kind": "characterisation",
+       "statement": "exp(exp(33.217)) has more than 10¹⁴ digits; the 155-th power statement holds from n = 1 ((1, 2¹⁵⁵) contains 2)"
+      },
+      {
+       "name": "n_two",
+       "kind": "degenerate",
+       "statement": "(8, 27) contains 11, outside the theorem's range"
+      },
+      {
+       "name": "x_form",
+       "kind": "computation",
+       "statement": "(x^{1/3} + 1)³ = x + 3x^{2/3} + 3x^{1/3} + 1, so the x-form carries 3(x+1)^{2/3} + 1"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "ZerosOfLFunctions",
+   "sections": [
+    "Layer 0",
+    "§4.1",
+    "§4.5",
+    "§5.6",
+    "§6.2",
+    "§6.3",
+    "§6.4",
+    "§8.3",
+    "§8.4",
+    "§8.5",
+    "§8.6",
+    "§8.7",
+    "§8.9",
+    "Layer 9"
+   ],
+   "what": "zero counting, the entire completion, Hadamard's constant, zero-free regions with existential constants, the explicit formulas, the prime number theorem with error term (also in progressions), the Li adapters, AllOnCriticalLine and the bridge to RiemannHypothesis"
+  },
+  {
+   "roadmap": "LFunctions",
+   "sections": [
+    "Layer 4"
+   ],
+   "what": "Dirichlet L-function records with conductors"
+  },
+  {
+   "roadmap": "AnalyticNumberTheoryPartI",
+   "sections": [
+    "§0.2",
+    "§0.3",
+    "§0.5",
+    "§0.8",
+    "§0.16",
+    "§0.19",
+    "§0.20",
+    "§0.25",
+    "§0.30",
+    "§0.32",
+    "§1.6",
+    "§1.9"
+   ],
+   "what": "progression carriers psiAP, primeCountAP, theta_ap; the finite-range inputs (proved here in 3.2, 3.5a, 4.3, 6.1) and the theorems they gate, including θ(x) < 1.000081x and Rosser–Schoenfeld’s Theorem 1 for x ≥ 59; the rational Dirichlet-to-ray-class dictionary; Siegel–Walfisz; DirichletGRH and GRH; the conditional O-bounds (consistency only)"
+  },
+  {
+   "roadmap": "ComputationalNumberTheory",
+   "sections": [
+    "§4.17a",
+    "§4.24"
+   ],
+   "what": "digamma remainders (a route to the γ enclosure); no real zeros for conductor ≤ 400 000 (its §4.22 enters through gap:grh-up-to-height)"
+  },
+  {
+   "roadmap": "SieveMethodsAndPrimePatterns",
+   "sections": [
+    "§3.1"
+   ],
+   "what": "SieveDistribution.primeCountAP for the agreement lemma"
+  },
+  {
+   "roadmap": "EffectiveClassNumbers",
+   "sections": [
+    "§4.4"
+   ],
+   "what": "the rational prime-counting adapter TauCeti.primeCount ℚ univ x = π(⌊x⌋₊)"
+  },
+  {
+   "roadmap": "ClassicalArithmeticCompletion",
+   "sections": [
+    "§6.34"
+   ],
+   "what": "dyadicPrimeCount, the lower dyadic inequality, for the agreement recorded in 3.5a"
+  }
+ ],
+ "consumers": [
+  {
+   "roadmap": "ExplicitMultiplicativeFunctions",
+   "what": "Layers 3–4 (explicit ψ, ∑ Λ(n)/n, ∑ 1/p) and the enclosures of §1.6"
+  },
+  {
+   "roadmap": "ExplicitNumberFields",
+   "what": "Layers 3–6: sums over primes and primes in progressions"
+  }
+ ],
+ "gaps": [
+  {
+   "slug": "rh-up-to-height",
+   "title": "The proposition RH(H) and its named instances",
+   "neededBy": [
+    "1.1",
+    "3.2",
+    "3.3",
+    "3.4a",
+    "3.4b",
+    "3.4c",
+    "3.4d",
+    "3.6",
+    "7.2",
+    "7.3a",
+    "7.3b",
+    "7.3c",
+    "7.5"
+   ],
+   "detail": "Section 1.1 here proves that RH(H) agrees with the statement form over riemannZeta used in Suggested.lean.",
+   "needs": "Supply, for real H, the proposition RH(H) that every zero of the entire completion of ζ with 0 ≤ Re s ≤ 1 and |Im s| ≤ H has real part 1/2, antitone in H and implied by Mathlib’s RiemannHypothesis, with its instances at H = 545 439 823, 30 610 046 000 and 3 000 175 332 800 as named hypotheses.",
+   "supplier": "ExplicitZetaBounds",
+   "section": "target 20"
+  },
+  {
+   "slug": "grh-up-to-height",
+   "title": "Bounded-height GRH for primitive characters, Rumely’s instances and the Platt bridge",
+   "neededBy": [
+    "1.2",
+    "6.1",
+    "6.3",
+    "6.4"
+   ],
+   "detail": "Section 1.2 here turns these primitive-character statements into GRH(q, H) for all characters modulo q.",
+   "needs": "Supply, for each conductor f ≥ 1 and real H, the proposition that every zero of L(s, χ*) with 0 < Re s < 1 and |Im s| ≤ H has real part 1/2 for every primitive character χ* of conductor f, antitone in H, with Rumely’s instances (height 10 000 for f ≤ 13; height 2500 for f ≤ 72, composite f ≤ 112 and the moduli listed at ramare-2002 lines 155–159) and the instance at height 10⁸/f for every f ≤ 400 000 derived from ComputationalNumberTheory §4.22.",
+   "supplier": "ExplicitZetaBounds",
+   "section": "target 20"
+  },
+  {
+   "slug": "classical-zero-free-constants",
+   "title": "Zero-free regions for ζ with decimal constants",
+   "neededBy": [
+    "3.1a",
+    "3.1b",
+    "3.1c",
+    "3.2",
+    "3.3",
+    "3.4a",
+    "3.4b",
+    "3.4c",
+    "3.4d",
+    "3.4e",
+    "4.2",
+    "7.2",
+    "7.3a",
+    "7.3b",
+    "7.3c"
+   ],
+   "detail": "Each of the first three is implied by the region with any smaller R, for instance 5.558691.",
+   "needs": "Supply, for ζ, that no zero has |t| ≥ 2 and σ ≥ 1 − 1/(R log |t|) for each of R = 5.69693, 5.573412 and 5.5666305, and that no zero has |t| ≥ 21 and σ ≥ 1 − 1/(9.645908801 log(|t|/17)).",
+   "supplier": "ExplicitZetaBounds",
+   "section": "target 16"
+  },
+  {
+   "slug": "dirichlet-zero-free-constants",
+   "title": "Zero-free regions for Dirichlet L-functions with decimal constants",
+   "neededBy": [
+    "6.1",
+    "6.3",
+    "6.6"
+   ],
+   "detail": "The first region implies McCurley’s (R = 9.645908801) and Kadiri’s R = 6.50 form; the second is Ramaré–Rumely’s, lines 822–826.",
+   "needs": "Supply, for q ≥ 3, that ∏_{χ mod q} L(s, χ) has at most one zero with σ ≥ 1 − 1/(6.4355 log(q max(1, |t|))), real, simple and of a real nonprincipal character; and, for χ of conductor k and H ≥ 1000, that every zero β + iγ of L(s, χ) with |γ| ≥ H satisfies 1 − β ≥ 1/(9.645908801 log(k|γ|/C₁(χ, H))) with the constant C₁(χ, H) of ramare-rumely-1996 Theorem 3.6.3.",
+   "supplier": "ExplicitZetaBounds",
+   "section": "target 16"
+  },
+  {
+   "slug": "dirichlet-four-zero-region",
+   "title": "At most four zeros near σ = 1 for the characters modulo q",
+   "neededBy": [
+    "6.6"
+   ],
+   "detail": "The statement quoted at kadiri-2008 lines 337–341 (her Theorem 2.2), used for her Table 1.",
+   "needs": "Supply, for real x ≥ 8·10⁹ and 1 ≤ q ≤ x, that ∏_{χ mod q} L(s, χ) has at most four zeros with |Im s| ≤ x/q and σ ≥ 1 − 1/(3.82 log x).",
+   "supplier": "ExplicitZetaBounds",
+   "section": "target 16, Dirichlet regions"
+  },
+  {
+   "slug": "vinogradov-korobov-constants",
+   "title": "The Vinogradov–Korobov region with an explicit constant",
+   "neededBy": [
+    "3.6",
+    "7.5"
+   ],
+   "detail": "The region used at dudek-2016 lines 702–706 and cully-hugill-2021 lines 98–100; the supplier itself declares the explicit mean value theorem behind it as a gap.",
+   "needs": "Supply, for |t| ≥ 3, that ζ has no zero with σ ≥ 1 − 1/(57.54 (log |t|)^{2/3} (log log |t|)^{1/3}).",
+   "supplier": "ExplicitZetaBounds",
+   "section": "target 17"
+  },
+  {
+   "slug": "explicit-zero-count-error",
+   "title": "Explicit Riemann–von Mangoldt error for ζ",
+   "neededBy": [
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.5",
+    "3.1b",
+    "3.1c",
+    "3.2",
+    "3.3",
+    "3.4a",
+    "3.4b",
+    "3.4c",
+    "3.4d",
+    "3.6",
+    "7.2",
+    "7.3a",
+    "7.3b",
+    "7.3c",
+    "7.5"
+   ],
+   "detail": "Rosser’s triple is the one of targets 3.2, 3.3, 3.4a, 3.4b and 7.1.",
+   "needs": "Supply, with N(T) the number of zeros of ζ with 0 < Re ρ < 1 and 0 < Im ρ ≤ T counted with multiplicity and M(T) = (T/2π) log(T/2π) − T/2π + 7/8, |N(T) − M(T)| ≤ 0.137 log T + 0.443 log log T + 1.588 for T ≥ 2 and |N(T) − M(T)| ≤ 0.112 log T + 0.278 log log T + 2.510 + 1/(5T) for T ≥ e.",
+   "supplier": "ExplicitZetaBounds",
+   "section": "target 8"
+  },
+  {
+   "slug": "dirichlet-zero-count-error",
+   "title": "Explicit zero count for primitive Dirichlet L-functions",
+   "neededBy": [
+    "6.1",
+    "6.3",
+    "6.5b",
+    "6.6"
+   ],
+   "detail": "Used by targets 6.1, 6.3, 6.5b and 6.6.",
+   "needs": "Supply, for a primitive character χ of conductor q > 1 and T ≥ 5/7 with ℓ = log(q(T + 2)/(2π)) > 1.567, that the number of zeros of L(s, χ) with 0 < Re ρ < 1 and |Im ρ| ≤ T, counted with multiplicity, is (T/π) log(qT/(2π)) − T/π − χ(−1)/4 + O*(0.22737 ℓ + 2 log(1 + ℓ) − 0.5).",
+   "supplier": "ExplicitZetaBounds",
+   "section": "target 9"
+  },
+  {
+   "slug": "explicit-zero-density",
+   "title": "Explicit zero-density bounds for ζ, one-sided count",
+   "neededBy": [
+    "3.1c",
+    "3.4a",
+    "3.4c",
+    "3.4d",
+    "3.6",
+    "7.3a",
+    "7.3b",
+    "7.3c",
+    "7.5"
+   ],
+   "detail": "Target 19 writes 2N for the count over |Im ρ| ≤ T. Dudek takes A = 9.7 from ramare-2016 Theorem 1.1, whose leading constant broadbent-kadiri-lumley-ng-wilk-2021 lines 950–952 report to be off by a factor over 100.",
+   "needs": "Supply, with N(σ, T) the number of zeros of ζ with σ ≤ Re ρ < 1 and 0 < Im ρ ≤ T counted with multiplicity, N(17/20, T) ≤ 0.5561 T + 0.7586 log T − 268 658 for T ≥ 3.061·10¹⁰; N(σ, T) ≤ A (3T)^{8(1−σ)/3} log^{5−2σ} T + 103 log² T for T ≥ 2000 and σ ≥ 0.52 with an explicit A; and, for 3/4 ≤ σ < 1 and T ≥ 1, N(σ, T) ≤ C₁(σ) T^{8(1−σ)/3} log^{5−2σ} T + C₂(σ) log² T with tabulated C₁(σ), C₂(σ), including the recomputed constants of johnston-yang-2023 Table 3.",
+   "supplier": "ExplicitZetaBounds",
+   "section": "target 19"
+  },
+  {
+   "slug": "lehman-weighted-zero-sum",
+   "title": "The weighted sum over ordinates",
+   "neededBy": [
+    "2.1",
+    "3.1a",
+    "3.1b",
+    "3.1c",
+    "4.2",
+    "6.1",
+    "7.3a"
+   ],
+   "detail": "Used for the high zeros in Layers 2, 3, 6, 7.",
+   "needs": "Supply, for φ continuous, positive and decreasing on [T₁, T₂] with T₁ ≥ 2πe, that the sum of φ(γ) over the ordinates T₁ < γ ≤ T₂ of the zeros of ζ, with multiplicity, is (1/2π) ∫_{T₁}^{T₂} φ(t) log(t/2π) dt + O*(4 φ(T₁) log T₁ + 2 ∫_{T₁}^{T₂} φ(t) dt/t).",
+   "supplier": "ExplicitZetaBounds",
+   "section": "target 10"
+  },
+  {
+   "slug": "explicit-brun-titchmarsh",
+   "title": "Brun–Titchmarsh with the constant 2",
+   "neededBy": [
+    "2.5"
+   ],
+   "detail": "Used in target 2.5 for the prime powers and the edges.",
+   "needs": "Supply, for real x > 0 and y > k and coprime positive integers k and ℓ, π(x + y; k, ℓ) − π(x; k, ℓ) ≤ 2y/(φ(k) log(y/k)) for the primes p ≡ ℓ (mod k).",
+   "supplier": "ExplicitCharacterSumsAndSieves",
+   "section": "target 21"
+  }
+ ]
+}
