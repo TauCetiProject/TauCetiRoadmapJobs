@@ -86,7 +86,6 @@ AnalyticNumberTheoryPartII
 AnalyticNumberTheory
 AlgebraicModularFormsAndSerreWeights
 GL2AutomorphicRepresentationsAndTransfer
-ModularCharactersAndBlocks
 EllipticLegendreCharacterInterfaces
 HypergeometricMotives
 EllipticCurvesPartII
@@ -102,7 +101,6 @@ ArithmeticStatisticsPartII
 ArithmeticStatisticsPartIII
 ArithmeticStatisticsPartIV
 ArithmeticStatisticsPartV
-FiniteGroupInvariants
 PELModuli
 ShimuraData
 FarguesFontaineDiamonds
@@ -380,4 +378,4 @@ AbelianVarietiesOverFiniteFields
 AbelianSurfacesModularity
 DeRhamCohomologyAndDuality
 PadicExtensionFamilies
-GlaubermanZStar
+OddOrderTheorem
