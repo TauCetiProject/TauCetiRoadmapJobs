@@ -477,3 +477,37 @@ locator = "Published §3.4, Proposition 3.6; UCL manuscript pp.9–11"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/284#issuecomment-6331926037"
+
+[[source]]
+id = "LS-EXCLUSION"
+authors = "OpenAI"
+title = "Uniform exclusion of Landau–Siegel zeros"
+year = 2026
+version_note = "OpenAI mathematics release of 1 October 2026 (repository openai/math, 9 pages); numbering of that version, not of the community revision of 26 October 2026"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://raw.githubusercontent.com/openai/math/main/preprints/Uniform-exclusion-of-Landau-Siegel-zeros-October-1-2026/paper.pdf"
+fetched_from = "https://raw.githubusercontent.com/openai/math/main/preprints/Uniform-exclusion-of-Landau-Siegel-zeros-October-1-2026/paper.pdf"
+fetched_at = "2026-11-07T10:33:55Z"
+sha256 = "fab9f6e84ece2a37d834b2c031d8eb14e81413d9f6270791e7b5468b295214ef"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["3.0"]
+
+[[source]]
+id = "GREEN-LS"
+authors = "Ben Green"
+title = "On Landau–Siegel zeros"
+year = 2026
+version_note = "Hexagon 2610.00311v2, 5 pages"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://hexagonmath.org/pdf/2610.00311v2"
+fetched_from = "https://hexagonmath.org/pdf/2610.00311v2"
+fetched_at = "2026-11-07T10:33:57Z"
+sha256 = "6b948696c9f9c088257d9b98ab0bcee75c71ef8d884cfa23d1685ed04e95238c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["3.0"]
