@@ -1,0 +1,1901 @@
+{
+ "roadmap": "ModularCharactersAndBlocksPartII",
+ "title": "Modular characters and blocks, part II — the Glauberman correspondence and heights of characters",
+ "parent": "ModularCharactersAndBlocks",
+ "summary": "Coprime actions on characters (canonical extension, Gallagher's correspondence, Brauer's permutation lemma, the cyclic, p-group and solvable cases, the unique compatible family and the Glauberman correspondence θ ↦ θ*, the degree relation θ(1) ∣ |Γ:C| θ*(1) and degree-divisibility as a predicate) and heights (defect classes, Brauer's theorem on heights, heights and height zero characters, Min–Max, covering, Fong–Reynolds, Fong's theorem, the extended first main theorem, blocks of P C_G(P), Reynolds' theorem), with Brauer's height zero and the Alperin–McKay conjectures as predicates.",
+ "baseline": {
+  "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+  "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
+ },
+ "layers": [
+  {
+   "key": "1",
+   "title": "Coprime actions on characters",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "definition",
+     "name": "invariantIrreducibleCharacters",
+     "statement": "For a group S acting on a finite group Γ by automorphisms, the action of S on functions Γ → ℂ given by Mathlib's arrowAction, (s · χ)(g) = χ(s⁻¹ • g), the set Irr_S(Γ) of S-invariant members of TauCeti.irreducibleCharacters ℂ Γ, and C_Γ(S) = FixedPoints.subgroup S Γ.",
+     "hypotheses": [
+      "Γ a finite group",
+      "S a group",
+      "MulDistribMulAction S Γ"
+     ],
+     "locator": {
+      "source": "glauberman",
+      "where": "line 94 (the conjugate η^a); hartley-turull line 302"
+     },
+     "prerequisites": [
+      "mathlib:MulDistribMulAction",
+      "mathlib:arrowAction",
+      "mathlib:FixedPoints.subgroup",
+      "mathlib:SemidirectProduct.inl_aut",
+      "tauceti:TauCeti.irreducibleCharacters",
+      "tauceti:TauCeti.conjNormalFDRep",
+      "tauceti:TauCeti.char_conjFDRep",
+      "tauceti:TauCeti.inertia",
+      "roadmap:InductionRestriction Layer 1"
+     ],
+     "api": [
+      {
+       "name": "charSMul_mem_irreducibleCharacters",
+       "role": "preservation",
+       "statement": "s · χ is an irreducible character when χ is; degrees and the pairing are preserved."
+      },
+      {
+       "name": "charSMul_eq_conj",
+       "role": "compatibility",
+       "statement": "s · χ is the character of the conjugate by inr s, in Γ ⋊ S, of a representation affording χ; χ ∈ Irr_S(Γ) exactly when its inertia group in Γ ⋊ S is everything."
+      },
+      {
+       "name": "invariant_iff_quotient_kernel",
+       "role": "reduction",
+       "statement": "For K the kernel of S → MulAut Γ, Irr_S(Γ) = Irr_{S/K}(Γ) and C_Γ(S) = C_Γ(S/K)."
+      },
+      {
+       "name": "charSMul_internal",
+       "role": "internal case",
+       "statement": "For S ≤ N_G(Γ) acting by conjugation, (s · χ)(g) = χ(s⁻¹ g s)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "c7_order3_witness",
+       "kind": "computation",
+       "statement": "Γ = C₇, S = C₃ acting by r ↦ r², χ(r) = ζ₇: (s · χ)(r) = ζ₇⁴ (not ζ₇²); Irr_S(Γ) = {1}, C = 1."
+      },
+      {
+       "name": "q8_c3",
+       "kind": "computation",
+       "statement": "Γ = Q₈ with C₃ as in SL(2,3): Irr_S(Q₈) = {1, χ₂}, C = Z(Q₈)."
+      },
+      {
+       "name": "trivial_action",
+       "kind": "degenerate",
+       "statement": "Trivial action or S = 1: Irr_S(Γ) = Irr(Γ), C = Γ."
+      },
+      {
+       "name": "q8_linear_permuted",
+       "kind": "non-example",
+       "statement": "The three nontrivial linear characters of Q₈ are permuted cyclically by C₃, so they are not in Irr_S(Q₈)."
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "theorem",
+     "name": "conjClasses_fixedPoints_equiv_invariantConjClasses",
+     "statement": "For S coprime to Γ, with S or Γ solvable: elements of C conjugate in Γ are conjugate in C; an S-invariant class of Γ meets C; an S-invariant coset gH of an S-invariant subgroup H meets C. Hence classes of C correspond bijectively to S-invariant classes of Γ.",
+     "hypotheses": [
+      "Γ and S finite groups",
+      "MulDistribMulAction S Γ",
+      "Nat.Coprime (Nat.card S) (Nat.card Γ)",
+      "IsSolvable S ∨ IsSolvable Γ"
+     ],
+     "locator": {
+      "source": "glauberman",
+      "where": "Lemma 3 (a)-(c), line 287"
+     },
+     "prerequisites": [
+      "roadmap:LocalFiniteGroupTheory L3",
+      "mathlib:ConjClasses",
+      "mathlib:FixedPoints.subgroup"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "q8_count",
+       "kind": "computation",
+       "statement": "Q₈ with C₃: two invariant classes {1}, {−1}; two classes of C."
+      },
+      {
+       "name": "inner_noncoprime",
+       "kind": "non-example",
+       "statement": "S = ⟨t⟩ of order 2 acting on S₃ by conjugation: three invariant classes, two classes of C = ⟨t⟩."
+      },
+      {
+       "name": "coset_noncoprime",
+       "kind": "non-example",
+       "statement": "C₂ swapping C₂ × C₂: the invariant coset (1,0) + C contains no fixed point."
+      },
+      {
+       "name": "a5_on_f7_fifth",
+       "kind": "computation",
+       "statement": "S = A₅ (not solvable) permuting the coordinates of Γ = 𝔽₇⁵: C is the line of constant vectors, 7 invariant classes = 7 classes of C; each invariant coset {Σ v_i = c} of H = {Σ v_i = 0} contains the constant vector 3c. Over 𝔽₅⁵ (not coprime) the coset {Σ v_i = 1} has no constant vector."
+      }
+     ]
+    },
+    {
+     "id": "1.3",
+     "kind": "theorem",
+     "name": "card_fixed_irreducibleCharacters_eq_card_fixed_conjClasses",
+     "statement": "For a finite group Γ and σ ∈ MulAut Γ, the number of χ ∈ Irr(Γ) with χ ∘ σ = χ equals the number of conjugacy classes fixed by σ; for a cyclic group acting, |Irr_A(Γ)| equals the number of invariant classes; orbit counts agree for any finite acting group.",
+     "hypotheses": [
+      "Γ a finite group",
+      "σ ∈ MulAut Γ"
+     ],
+     "locator": {
+      "source": "glauberman",
+      "where": "line 355 (Brauer's permutation lemma); isaacs Theorem 6.32"
+     },
+     "prerequisites": [
+      "tauceti:TauCeti.characterTable",
+      "tauceti:TauCeti.sum_characterTable_mul_conj",
+      "roadmap:CharacterTheory §3.5",
+      "target:1.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "small_counts",
+       "kind": "computation",
+       "statement": "C₃ with inversion: 1 = 1; Q₈ with an order-3 automorphism: 2 = 2; inner automorphism of S₃: 3 = 3."
+      },
+      {
+       "name": "noncyclic_counterexample",
+       "kind": "non-example",
+       "statement": "A = ⟨1 + E₁₂, 1 + E₁₃⟩ on 𝔽₂³: two fixed classes, four fixed characters; each element fixes four of each."
+      },
+      {
+       "name": "trivial_group",
+       "kind": "degenerate",
+       "statement": "Γ = 1: one character, one class."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "The canonical extension and Gallagher's correspondence",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "theorem",
+     "name": "existsUnique_extension_det_eq_one",
+     "statement": "Let Γ be a group, A a finite group acting on Γ, F a field, ρ a representation of Γ on a nonzero finite-dimensional V with scalar endomorphisms, Nat.Coprime |A| (dim V), and ρ ∘ (a • ·) ≅ ρ for all a. Then there is a unique representation ρ* of Γ ⋊ A on V with ρ*(inl g) = ρ g and det ρ*(inr a) = 1.",
+     "hypotheses": [
+      "Γ a group (not necessarily finite)",
+      "A a finite group",
+      "MulDistribMulAction A Γ",
+      "F a field",
+      "V nonzero, finite-dimensional",
+      "every F[Γ]-endomorphism of V is a scalar",
+      "Nat.Coprime (Nat.card A) (finrank F V)",
+      "for all a, g ↦ ρ(a • g) is isomorphic to ρ"
+     ],
+     "locator": {
+      "source": "glauberman",
+      "where": "Theorem 1, line 100"
+     },
+     "prerequisites": [
+      "mathlib:SemidirectProduct",
+      "mathlib:LinearMap.det",
+      "roadmap:InductionRestriction Layer 7"
+     ],
+     "api": [
+      {
+       "name": "restrict_subgroup",
+       "role": "functoriality",
+       "statement": "For B ≤ A, the restriction of ρ* to Γ ⋊ B is the normalised extension for B."
+      },
+      {
+       "name": "natural_iso",
+       "role": "naturality",
+       "statement": "ρ* is natural for isomorphisms of ρ and commutes with scalar extension."
+      }
+     ],
+     "tests": [
+      {
+       "name": "trivial_rep",
+       "kind": "degenerate",
+       "statement": "Γ = 1, V = F = ℚ, A = C₂: ρ* trivial; the sign extension has det −1."
+      },
+      {
+       "name": "noncoprime_q8",
+       "kind": "non-example",
+       "statement": "Q₈ with A = C₂ acting by conjugation by i: the order-2 implementing operators ±√−1·ρ(i) have det −1."
+      },
+      {
+       "name": "sl23",
+       "kind": "computation",
+       "statement": "Q₈ with C₃: ρ* is SL(2,3) ⊆ SL₂(ℂ); an order-3 element has trace −1, det 1."
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "construction",
+     "name": "canonicalExtension",
+     "statement": "For coprime finite Γ, S and χ ∈ Irr_S(Γ), the unique χ̂ ∈ Irr(Γ ⋊ S) with χ̂ ∘ inl = χ and det χ̂ trivial on inr(S) (equivalently, det χ̂ of order coprime to |S|).",
+     "hypotheses": [
+      "Γ and S finite groups",
+      "MulDistribMulAction S Γ",
+      "Nat.Coprime (Nat.card S) (Nat.card Γ)",
+      "χ ∈ Irr_S(Γ)"
+     ],
+     "locator": {
+      "source": "glauberman",
+      "where": "Theorem 2 (a), line 234; hartley-turull Definition 3.1, line 304"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:1.1",
+      "tauceti:TauCeti.Representation.finrank_dvd_card",
+      "tauceti:Representation.nonempty_equiv_of_character_eq"
+     ],
+     "api": [
+      {
+       "name": "canonicalExtension_comp_inl",
+       "role": "extension",
+       "statement": "χ̂ ∘ inl = χ."
+      },
+      {
+       "name": "canonicalExtension_unique",
+       "role": "characterisation",
+       "statement": "Any irreducible extension with det trivial on S equals χ̂; the two normalisations agree."
+      },
+      {
+       "name": "canonicalExtension_restrict",
+       "role": "restriction",
+       "statement": "For T ≤ S, the canonical extension for T is χ̂ restricted to Γ ⋊ T."
+      },
+      {
+       "name": "canonicalExtension_aut",
+       "role": "equivariance",
+       "statement": "For α ∈ Aut(Γ ⋊ S) preserving inl(Γ), inr(S): canonical extension of χ ∘ α⁻¹ is χ̂ ∘ α⁻¹."
+      },
+      {
+       "name": "canonicalExtension_galois",
+       "role": "Galois",
+       "statement": "For j coprime to |Γ ⋊ S|, canonical extension of χ^{(j)} is χ̂^{(j)}."
+      },
+      {
+       "name": "canonicalExtension_one",
+       "role": "unit",
+       "statement": "The canonical extension of 1 is 1."
+      }
+     ],
+     "tests": [
+      {
+       "name": "sl23_value",
+       "kind": "computation",
+       "statement": "SL(2,3): χ̂ for χ₂ has value −1 at an order-3 element; χ̂λ has det λ² ≠ 1."
+      },
+      {
+       "name": "direct_product",
+       "kind": "compatibility",
+       "statement": "Trivial action: χ̂ = χ × 1_S."
+      },
+      {
+       "name": "s3_not_sign",
+       "kind": "non-example",
+       "statement": "S₃ = C₃ ⋊ C₂: canonical extension of 1 is 1, not sgn (det −1 on C₂)."
+      }
+     ]
+    },
+    {
+     "id": "2.3",
+     "kind": "theorem",
+     "name": "characterField_canonicalExtension",
+     "statement": "For coprime m, n: ℚ(ζ_m) ∩ ℚ(ζ_n) = ℚ in ℂ and automorphisms extend jointly to ℚ(ζ_{mn}). For χ ∈ Irr_S(Γ): ℚ(χ̂) = ℚ(χ) and χ̂(inr s) ∈ ℤ for all s.",
+     "hypotheses": [
+      "Γ and S finite groups",
+      "MulDistribMulAction S Γ",
+      "Nat.Coprime (Nat.card S) (Nat.card Γ)",
+      "χ ∈ Irr_S(Γ)"
+     ],
+     "locator": {
+      "source": "glauberman",
+      "where": "Lemma 1, line 173; Theorem 2 (b), line 238"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "mathlib:IsCyclotomicExtension",
+      "mathlib:IsPrimitiveRoot.autToPow",
+      "mathlib:ZMod.chineseRemainder",
+      "mathlib:IsGalois",
+      "mathlib:IntermediateField.fixedField",
+      "mathlib:IsIntegral",
+      "tauceti:IsPrimitiveRoot.cyclotomicIrreducibleCharacterAction_apply",
+      "tauceti:FDRep.characterField",
+      "mathlib:Representation.isIntegral_character",
+      "roadmap:CharacterTheory §4.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "sl23_rational",
+       "kind": "computation",
+       "statement": "SL(2,3): canonical values 2, −2, 0, −1, 1; χ̂ω has value −ω ∉ ℤ."
+      },
+      {
+       "name": "trivial_action_field",
+       "kind": "compatibility",
+       "statement": "C₂ acting trivially on C₃, χ(r) = ζ₃: χ̂(s) = 1, ℚ(χ̂) = ℚ(ζ₃)."
+      },
+      {
+       "name": "cyclotomic_noncoprime",
+       "kind": "non-example",
+       "statement": "ℚ(ζ₄) ∩ ℚ(ζ₃) = ℚ but ℚ(ζ₄) ∩ ℚ(ζ₈) = ℚ(i)."
+      }
+     ]
+    },
+    {
+     "id": "2.4",
+     "kind": "theorem",
+     "name": "gallagher_bijection",
+     "statement": "For N ⊴ G finite, θ ∈ Irr(N) and an extension χ̂ ∈ Irr(G) of θ, β ↦ χ̂ · (β ∘ π) is a bijection Irr(G/N) → Irr(G | θ).",
+     "hypotheses": [
+      "G a finite group",
+      "N ⊴ G",
+      "θ ∈ Irr(N)",
+      "χ̂ ∈ Irr(G) with χ̂|_N = θ"
+     ],
+     "locator": {
+      "source": "glauberman",
+      "where": "Theorem 2 (c), line 240; isaacs Corollary 6.17"
+     },
+     "prerequisites": [
+      "tauceti:TauCeti.IsProjectiveInertiaExtension",
+      "tauceti:TauCeti.IsProjectiveInertiaExtension.tensorRepEquiv",
+      "tauceti:TauCeti.IsProjectiveInertiaExtension.isIrreducible_tensorRep_iff",
+      "tauceti:TauCeti.IsProjectiveInertiaExtension.tmulIntertwining_bijective",
+      "tauceti:TauCeti.inertia",
+      "roadmap:InductionRestriction Layer 7"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "sl23_three",
+       "kind": "computation",
+       "statement": "SL(2,3) over χ₂: three characters χ̂, χ̂ω, χ̂ω²."
+      },
+      {
+       "name": "degenerate_N",
+       "kind": "degenerate",
+       "statement": "N = G gives {θ}; N = 1 gives the identity of Irr(G)."
+      },
+      {
+       "name": "no_extension",
+       "kind": "non-example",
+       "statement": "N = Z(Q₈), θ faithful: no extension, |Irr(Q₈|θ)| = 1 ≠ 4."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "The cyclic case",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "theorem",
+     "name": "isConj_inr_mul_inl_fixedPoints",
+     "statement": "For A = ⟨a⟩ cyclic and coprime to Γ: every inr a · inl g is conjugate to some inr a · inl t with t ∈ C; inr a · inl t₁ and inr a · inl t₂ are conjugate iff t₁, t₂ are conjugate in C; the centraliser of inr a · inl t is inr(A) · inl(C_C(t)).",
+     "hypotheses": [
+      "Γ and S finite groups",
+      "MulDistribMulAction S Γ",
+      "A cyclic with generator a, acting coprimely"
+     ],
+     "locator": {
+      "source": "glauberman",
+      "where": "Lemma 2, line 266"
+     },
+     "prerequisites": [
+      "roadmap:LocalFiniteGroupTheory L1",
+      "mathlib:SemidirectProduct",
+      "mathlib:IsCyclic"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "s3_coset",
+       "kind": "computation",
+       "statement": "S₃: the coset of a is the three transpositions, all conjugate to a."
+      },
+      {
+       "name": "sl23_coset",
+       "kind": "computation",
+       "statement": "SL(2,3): aQ₈ splits into two classes of size 4, matching the two classes of {±1}."
+      },
+      {
+       "name": "d8_noncoprime",
+       "kind": "non-example",
+       "statement": "D₈ = C₄ ⋊ C₂: ax is conjugate to neither a nor ax²."
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "construction",
+     "name": "cyclicGlaubermanCorrespondence",
+     "statement": "For A cyclic and coprime to Γ and χ ∈ Irr_A(Γ): a unique sign ε(χ) and χ*_cyc ∈ Irr(C) with χ̂(a t) = ε(χ) χ*_cyc(t) for all t ∈ C and every generator a; χ ↦ χ*_cyc is a bijection Irr_A(Γ) → Irr(C).",
+     "hypotheses": [
+      "Γ and S finite groups",
+      "MulDistribMulAction S Γ",
+      "Nat.Coprime (Nat.card S) (Nat.card Γ)",
+      "S = A cyclic"
+     ],
+     "locator": {
+      "source": "glauberman",
+      "where": "Theorem 3, line 299; hartley-turull Proposition 3.2, line 306"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:1.3",
+      "target:2.2",
+      "target:2.3",
+      "target:2.4",
+      "target:3.1",
+      "roadmap:CharacterTheory §3.6",
+      "roadmap:CharacterTheory §4.4",
+      "tauceti:IsPrimitiveRoot.cyclotomicIrreducibleCharacterAction_apply"
+     ],
+     "api": [
+      {
+       "name": "cyclicGlaubermanSign",
+       "role": "data",
+       "statement": "The sign ε(χ) ∈ {1, −1}."
+      },
+      {
+       "name": "canonicalExtension_apply_gen_mul",
+       "role": "defining law",
+       "statement": "χ̂(a t) = ε(χ) χ*_cyc(t) for every generator a and t ∈ C."
+      },
+      {
+       "name": "cyclicGlaubermanCorrespondence_bijective",
+       "role": "bijectivity",
+       "statement": "χ ↦ χ*_cyc is a bijection Irr_A(Γ) → Irr(C)."
+      },
+      {
+       "name": "sign_mul_degree",
+       "role": "value",
+       "statement": "ε(χ) χ*_cyc(1) = χ̂(a) ∈ ℤ."
+      }
+     ],
+     "tests": [
+      {
+       "name": "sl23_sign",
+       "kind": "computation",
+       "statement": "SL(2,3): χ̂(a) = −1, χ̂(−a) = 1, so ε = −1 and χ₂*_cyc = sgn, for the generators a and a²."
+      },
+      {
+       "name": "trivial_action",
+       "kind": "compatibility",
+       "statement": "Trivial action of C₂ on C₃: ε = 1, χ*_cyc = χ."
+      },
+      {
+       "name": "A_trivial",
+       "kind": "degenerate",
+       "statement": "A = 1: ε = 1, χ*_cyc = χ."
+      },
+      {
+       "name": "no_sign_fails",
+       "kind": "non-example",
+       "statement": "Without the sign, t ↦ χ̂(at) = −sgn on {±1} is not a character."
+      }
+     ]
+    },
+    {
+     "id": "3.3",
+     "kind": "theorem",
+     "name": "canonicalExtension_apply_mul_fixedBy",
+     "statement": "For A coprime to Γ, χ ∈ Irr_A(Γ) and a ∈ A: there are a sign ε and λ ∈ Irr(C_Γ(a)) with χ̂(a t) = ε λ(t) for t ∈ C_Γ(a).",
+     "hypotheses": [
+      "Γ and S finite groups",
+      "MulDistribMulAction S Γ",
+      "Nat.Coprime (Nat.card S) (Nat.card Γ)",
+      "χ ∈ Irr_S(Γ)",
+      "a ∈ S"
+     ],
+     "locator": {
+      "source": "glauberman",
+      "where": "Corollary 4, line 364"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "target:3.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "sl23_element",
+       "kind": "computation",
+       "statement": "SL(2,3), a of order 3: ε = −1, λ = sgn."
+      },
+      {
+       "name": "a_one",
+       "kind": "degenerate",
+       "statement": "a = 1: C_a = Γ, ε = 1, λ = χ."
+      },
+      {
+       "name": "noncyclic_kernel",
+       "kind": "computation",
+       "statement": "C₃ × C₃ acting on Q₈ through one factor: a in the kernel gives ε = 1, λ = χ₂."
+      }
+     ]
+    },
+    {
+     "id": "3.4",
+     "kind": "theorem",
+     "name": "glauberman_restriction_formula",
+     "statement": "For A cyclic coprime to Γ, B < A with C_Γ(a) = C for a ∉ B, χ ∈ Irr_A(Γ), λ = χ*_cyc: there are a sign ε' and a linear θ₀ of A with θ₀² = 1 such that χ̂(a t) = ε' θ₀(a) λ(t) for a ∉ B; and either χ|_C = ε'λ, ε' = 1 and Γ = C · ker χ, or |A : B|⁻¹(χ|_C − ε'λ) is a character of C.",
+     "hypotheses": [
+      "Γ and S finite groups",
+      "MulDistribMulAction S Γ",
+      "Nat.Coprime (Nat.card S) (Nat.card Γ)",
+      "S = A cyclic",
+      "B < A with C_Γ(a) = C_Γ(A) for a ∈ A ∖ B",
+      "χ ∈ Irr_A(Γ)"
+     ],
+     "locator": {
+      "source": "glauberman",
+      "where": "Corollary 5 (a)-(b), line 375; Corollary 6 (c), line 454"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:3.1",
+      "target:3.2",
+      "roadmap:CharacterTheory §3.6"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "sl23_cor5",
+       "kind": "computation",
+       "statement": "SL(2,3), B = 1: (2 sgn + sgn)/3 = sgn."
+      },
+      {
+       "name": "trivial_char",
+       "kind": "degenerate",
+       "statement": "χ = 1: χ|_C = λ, ε' = 1, Γ = C·Γ."
+      },
+      {
+       "name": "extraspecial",
+       "kind": "computation",
+       "statement": "3^{1+2}_+ with the involution fixing Z: (3ω − ω)/2 = ω."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "The solvable case",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "construction",
+     "name": "compositionSeriesCorrespondence",
+     "statement": "For S solvable coprime to Γ and a composition series S = S₀ ⊵ ⋯ ⊵ S_m = 1, Λ_C : Irr(C_Γ(S)) → Irr(Γ) by successive inverse cyclic correspondences of S_{i−1}/S_i on C_Γ(S_i). Includes: for B acting on Γ and cyclic coprime A ⊴ B, (β·χ)*_cyc = β·χ*_cyc; for normal series, the inverse construction inverts Λ_C.",
+     "hypotheses": [
+      "Γ and S finite groups",
+      "MulDistribMulAction S Γ",
+      "Nat.Coprime (Nat.card S) (Nat.card Γ)",
+      "IsSolvable S",
+      "C a composition series of S"
+     ],
+     "locator": {
+      "source": "glauberman",
+      "where": "Lemma 4, line 481; Definition, line 503; Lemma 5, line 524"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "target:3.2",
+      "mathlib:FixedPoints.subgroup",
+      "mathlib:MulDistribMulAction (G ⧸ H) (FixedPoints.subgroup H α)",
+      "mathlib:IsSolvable"
+     ],
+     "api": [
+      {
+       "name": "fixedPoints_quotient",
+       "role": "identification",
+       "statement": "For T ⊴ S, C_{C_Γ(T)}(S/T) = C_Γ(S) as subgroups of Γ."
+      },
+      {
+       "name": "cyclic_equivariant",
+       "role": "Lemma 4",
+       "statement": "For A ⊴ B cyclic coprime, β ∈ B: β(C_Γ(A)) = C_Γ(A) and (β·χ)*_cyc = β·χ*_cyc."
+      },
+      {
+       "name": "length_one",
+       "role": "base case",
+       "statement": "For a series of length one, Λ_C is the inverse cyclic correspondence."
+      },
+      {
+       "name": "normal_series_inverse",
+       "role": "Lemma 5",
+       "statement": "For a series of normal subgroups, the inverse construction on Irr_S(Γ) inverts Λ_C."
+      }
+     ],
+     "tests": [
+      {
+       "name": "c3_on_q8",
+       "kind": "computation",
+       "statement": "S = C₃ on Q₈: Λ(sgn) = χ₂, Λ(1) = 1."
+      },
+      {
+       "name": "c6_two_series",
+       "kind": "computation",
+       "statement": "C₆ = C₂ × C₃ on Q₈ × C₅: both series send sgn to χ₂ × 1."
+      },
+      {
+       "name": "S_trivial",
+       "kind": "degenerate",
+       "statement": "S = 1: Λ = id."
+      }
+     ]
+    },
+    {
+     "id": "4.2",
+     "kind": "theorem",
+     "name": "compositionSeriesCorrespondence_pGroup",
+     "statement": "For S a p-group coprime to Γ, every composition series C and λ ∈ Irr(C_Γ(S)): for some sign ε, (Λ_C(λ)|_C − ελ)/p is zero or a character of C.",
+     "hypotheses": [
+      "Γ and S finite groups",
+      "MulDistribMulAction S Γ",
+      "Nat.Coprime (Nat.card S) (Nat.card Γ)",
+      "IsPGroup p S",
+      "C a composition series of S"
+     ],
+     "locator": {
+      "source": "glauberman",
+      "where": "Theorem 4 (a), line 540"
+     },
+     "prerequisites": [
+      "target:3.4",
+      "target:4.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "sl23",
+       "kind": "computation",
+       "statement": "SL(2,3): (2 sgn + sgn)/3 = sgn."
+      },
+      {
+       "name": "extraspecial",
+       "kind": "computation",
+       "statement": "3^{1+2}_+ with S = C₂: (3ω − ω)/2 = ω."
+      },
+      {
+       "name": "S_trivial",
+       "kind": "degenerate",
+       "statement": "S = 1: quotient zero, ε = 1."
+      }
+     ]
+    },
+    {
+     "id": "4.3",
+     "kind": "theorem",
+     "name": "compositionSeriesCorrespondence_independent",
+     "statement": "For S cyclic, Λ_C is the inverse cyclic correspondence; for S solvable, Λ_C = Λ_D for any two composition series; Λ is computed by any subnormal chain with prime-power factors.",
+     "hypotheses": [
+      "Γ and S finite groups",
+      "MulDistribMulAction S Γ",
+      "Nat.Coprime (Nat.card S) (Nat.card Γ)",
+      "IsSolvable S"
+     ],
+     "locator": {
+      "source": "glauberman",
+      "where": "Theorem 4 (b), (c), line 543"
+     },
+     "prerequisites": [
+      "target:3.2",
+      "target:3.4",
+      "target:4.1",
+      "target:4.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "c6",
+       "kind": "computation",
+       "statement": "The two series of C₆ give Λ(sgn) = χ₂ × 1."
+      },
+      {
+       "name": "c9_on_c19",
+       "kind": "degenerate",
+       "statement": "C₉ ≤ Aut(C₁₉): C = 1, Irr_S = {1}."
+      },
+      {
+       "name": "trivial_action",
+       "kind": "compatibility",
+       "statement": "Trivial action: every series gives the identity."
+      }
+     ]
+    },
+    {
+     "id": "4.4",
+     "kind": "theorem",
+     "name": "compositionSeriesCorrespondence_bijective",
+     "statement": "If S ⊴ B for B acting on Γ, Λ(β·λ) = β·Λ(λ); Λ : Irr(C_Γ(S)) → Irr_S(Γ) is a bijection; |Irr_S(Γ)| = |Irr(C_Γ(S))| = number of S-invariant classes of Γ.",
+     "hypotheses": [
+      "Γ and S finite groups",
+      "MulDistribMulAction S Γ",
+      "Nat.Coprime (Nat.card S) (Nat.card Γ)",
+      "IsSolvable S"
+     ],
+     "locator": {
+      "source": "glauberman",
+      "where": "Corollaries 7-9, lines 601, 607, 623"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:4.1",
+      "target:4.3",
+      "tauceti:TauCeti.card_irreducibleCharacters"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "sl23_count",
+       "kind": "computation",
+       "statement": "SL(2,3): 2 = 2 = 2; extraspecial 3^{1+2}_+: 3 = 3 = 3."
+      },
+      {
+       "name": "frobenius21",
+       "kind": "computation",
+       "statement": "C₇ ⋊ C₃ with the automorphism inverting C₇: C = C₃, 3 = 3 = 3."
+      },
+      {
+       "name": "c3_on_c7",
+       "kind": "degenerate",
+       "statement": "C₃ on C₇: 1 = 1 = 1."
+      }
+     ]
+    },
+    {
+     "id": "4.5",
+     "kind": "construction",
+     "name": "glaubermanCorrespondence",
+     "statement": "There is exactly one assignment of bijections π(Γ, S) : Irr_S(Γ) → Irr(C_Γ(S)), for all finite Γ (fixed universe) and solvable coprime S, such that for p-groups π(Γ,S)(χ) is a constituent of χ|_C of multiplicity prime to p, and π(Γ,S) = π(C_Γ(T), S/T) ∘ π(Γ,T) for T ⊴ S. For p-groups the constituent of multiplicity prime to p is unique, has multiplicity ≡ ±1 mod p, all others ≡ 0. The Glauberman correspondence is θ* = π(Γ,S)(θ).",
+     "hypotheses": [
+      "Γ and S finite groups",
+      "MulDistribMulAction S Γ",
+      "Nat.Coprime (Nat.card S) (Nat.card Γ)",
+      "IsSolvable S"
+     ],
+     "locator": {
+      "source": "glauberman",
+      "where": "Theorem 4, line 543; Corollaries 7-8, line 601; spath-vallejo lines 118, 129; navarro-2018 Chapter 2; isaacs Chapter 13"
+     },
+     "prerequisites": [
+      "target:4.2",
+      "target:4.3",
+      "target:4.4"
+     ],
+     "api": [
+      {
+       "name": "glauberman_pGroup",
+       "role": "characterisation",
+       "statement": "For S a p-group and χ ∈ Irr_S(Γ): ∃! λ ∈ Irr(C), p ∤ [χ|_C, λ]; [χ|_C, λ] ≡ ±1 (mod p); [χ|_C, μ] ≡ 0 (mod p) for μ ≠ λ."
+      },
+      {
+       "name": "glauberman_compat",
+       "role": "compatibility",
+       "statement": "π(Γ,S) = π(C_Γ(T), S/T) ∘ π(Γ,T) for T ⊴ S."
+      },
+      {
+       "name": "glauberman_family_unique",
+       "role": "uniqueness",
+       "statement": "Any family with the p-group property and the compatibility law equals π."
+      },
+      {
+       "name": "glauberman_trivial",
+       "role": "degenerate",
+       "statement": "Trivial action or S = 1: θ* = θ."
+      },
+      {
+       "name": "glauberman_cyclic",
+       "role": "agreement",
+       "statement": "For cyclic S, θ* = θ*_cyc."
+      },
+      {
+       "name": "glauberman_kernel",
+       "role": "reduction",
+       "statement": "π(Γ,S) = π(Γ,S/K) for K the kernel of the action."
+      }
+     ],
+     "tests": [
+      {
+       "name": "sl23",
+       "kind": "computation",
+       "statement": "SL(2,3): χ₂* = sgn, 1* = 1, [χ₂|_C, sgn] = 2 ≡ −1 (mod 3)."
+      },
+      {
+       "name": "swap_c3c3",
+       "kind": "computation",
+       "statement": "C₂ swapping C₃ × C₃: (ψ_a × ψ_a)* = ψ_{2a} on the diagonal, not ψ_a."
+      },
+      {
+       "name": "noncoprime",
+       "kind": "non-example",
+       "statement": "C₂ swapping C₂ × C₂: both invariant characters restrict to the trivial character with multiplicity 1; no injective assignment."
+      }
+     ]
+    },
+    {
+     "id": "4.6",
+     "kind": "theorem",
+     "name": "glaubermanCorrespondence_equivariant",
+     "statement": "For S solvable coprime and θ ∈ Irr_S(Γ): (a) for α ∈ MulAut Γ, φ ∈ MulAut S with α(s•g) = φ(s)•α(g), α(C) = C and (θ ∘ α⁻¹)* = θ* ∘ α⁻¹; (b) (θ^{(j)})* = (θ*)^{(j)} for j coprime to |Γ|; (c) ℚ(θ*) = ℚ(θ); (d) [θ|_C, θ*] ≠ 0.",
+     "hypotheses": [
+      "Γ and S finite groups",
+      "MulDistribMulAction S Γ",
+      "Nat.Coprime (Nat.card S) (Nat.card Γ)",
+      "IsSolvable S",
+      "θ ∈ Irr_S(Γ)"
+     ],
+     "locator": {
+      "source": "glauberman",
+      "where": "Theorem 5 (a)-(d), line 636"
+     },
+     "prerequisites": [
+      "target:2.3",
+      "target:3.2",
+      "target:4.4",
+      "target:4.5",
+      "tauceti:IsPrimitiveRoot.cyclotomicIrreducibleCharacterAction_apply",
+      "tauceti:FDRep.characterField",
+      "roadmap:CharacterTheory §4.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "swap_inversion",
+       "kind": "computation",
+       "statement": "Swap on C₃ × C₃, α = inversion: (ψ_{−a} × ψ_{−a})* = ψ_{−2a} = ψ_{2a} ∘ α⁻¹."
+      },
+      {
+       "name": "swap_galois",
+       "kind": "computation",
+       "statement": "Same example, j = 2: (ψ_{2a} × ψ_{2a})* = ψ_{4a} = ψ_a = (ψ_{2a})^{(2)}."
+      },
+      {
+       "name": "sl23_field_constituent",
+       "kind": "computation",
+       "statement": "SL(2,3): ℚ(χ₂) = ℚ = ℚ(sgn), [χ₂|_C, sgn] = 2."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "Degree relations",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "theorem",
+     "name": "glaubermanCorrespondence_degree_dvd",
+     "statement": "For S solvable coprime and θ ∈ Irr_S(Γ): θ(1) ∣ |Γ : C| θ*(1).",
+     "hypotheses": [
+      "Γ and S finite groups",
+      "MulDistribMulAction S Γ",
+      "Nat.Coprime (Nat.card S) (Nat.card Γ)",
+      "IsSolvable S",
+      "θ ∈ Irr_S(Γ)"
+     ],
+     "locator": {
+      "source": "glauberman",
+      "where": "Theorem 5 (e), line 644"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:3.2",
+      "target:4.5",
+      "tauceti:TauCeti.Representation.isIntegral_centralCharacter_classSumCenter",
+      "tauceti:TauCeti.Representation.centralCharacter_classSumCenter_mul_character_one",
+      "roadmap:CharacterTheory §4.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "sl23",
+       "kind": "computation",
+       "statement": "SL(2,3): 2 ∣ 4·1."
+      },
+      {
+       "name": "extraspecial",
+       "kind": "computation",
+       "statement": "3^{1+2}_+: 3 ∣ 9·1; trivial action: θ(1) ∣ θ(1)."
+      },
+      {
+       "name": "reverse_false",
+       "kind": "non-example",
+       "statement": "θ = 1 and C ≠ Γ: |Γ : C| ∤ 1."
+      }
+     ]
+    },
+    {
+     "id": "5.2",
+     "kind": "definition",
+     "name": "GlaubermanDegreeDivisibility",
+     "statement": "The proposition: for every finite Γ, solvable S acting coprimely and θ ∈ Irr_S(Γ), θ*(1) ∣ θ(1). Equivalent to its prime-order case; θ* = θ|_C when θ|_C is irreducible (abelian Γ, trivial action). Holds in general by Hartley–Turull and Geck (cited, not planned).",
+     "hypotheses": [
+      "a universe of groups"
+     ],
+     "locator": {
+      "source": "geck",
+      "where": "line 29; hartley-turull Theorem A, line 84, reduction line 91"
+     },
+     "prerequisites": [
+      "target:4.5",
+      "target:4.6"
+     ],
+     "api": [
+      {
+       "name": "iff_prime_order",
+       "role": "reduction",
+       "statement": "The proposition is equivalent to its case of S of prime order."
+      },
+      {
+       "name": "eq_restrict_of_irreducible",
+       "role": "special case",
+       "statement": "If θ|_C is irreducible then θ* = θ|_C."
+      },
+      {
+       "name": "dvd_chain",
+       "role": "consequence",
+       "statement": "Under the proposition, θ*(1) ∣ θ(1) ∣ |Γ : C| θ*(1)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "sl23",
+       "kind": "computation",
+       "statement": "SL(2,3): 1 ∣ 2; extraspecial: 1 ∣ 3."
+      },
+      {
+       "name": "abelian",
+       "kind": "degenerate",
+       "statement": "Abelian Γ: θ* = θ|_C linear, 1 ∣ 1."
+      },
+      {
+       "name": "reverse_false",
+       "kind": "non-example",
+       "statement": "θ(1) ∣ θ*(1) fails for SL(2,3): 2 ∤ 1."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "6",
+   "title": "Heights",
+   "targets": [
+    {
+     "id": "6.1",
+     "kind": "theorem",
+     "name": "blockCentralCharacter_osima_defectClass",
+     "statement": "For χ ∈ Irr(B): ω_χ(𝒞⁺) ∈ O and λ_B(𝒞⁺) = ω_χ(𝒞⁺) mod m for every class 𝒞, λ_B the unique algebra map Z(k[G]) → k with λ_B(e_B) = 1. Osima's formula for unions of components of the Brauer graph; their idempotents lie in Z(O[G]); Irr(B) is one component. A defect class exists and consists of p-regular elements.",
+     "hypotheses": [
+      "G a finite group",
+      "p a prime",
+      "(K, O, k) a splitting p-modular system for G (base §1.1): O a complete discrete valuation ring, K its fraction field of characteristic zero containing a primitive exp(G)-th root of unity, k its residue field of characteristic p",
+      "B a block of k[G]"
+     ],
+     "locator": {
+      "source": "martinez",
+      "where": "lines 351, 373; Proposition 2.3 line 414; Proposition 2.5 line 512; Corollary 2.7 line 566; lines 699, 760"
+     },
+     "prerequisites": [
+      "roadmap:ModularCharactersAndBlocks §1.1",
+      "roadmap:ModularCharactersAndBlocks §1.3",
+      "roadmap:ModularCharactersAndBlocks §2.3",
+      "roadmap:ModularCharactersAndBlocks §2.4",
+      "roadmap:ModularCharactersAndBlocks §3.1",
+      "roadmap:ModularCharactersAndBlocks §4.1",
+      "roadmap:ModularCharactersAndBlocks §4.2",
+      "roadmap:ModularCharactersAndBlocks §6.2",
+      "roadmap:ModularCharactersAndBlocks §7.1",
+      "roadmap:CharacterTheory §4.3",
+      "tauceti:TauCeti.Representation.isIntegral_centralCharacter_classSumCenter"
+     ],
+     "api": [
+      {
+       "name": "IsDefectClass",
+       "role": "definition",
+       "statement": "A class 𝒞 with a_B(𝒞) λ_B(𝒞⁺) ≠ 0."
+      },
+      {
+       "name": "exists_isDefectClass",
+       "role": "existence",
+       "statement": "Every block has a defect class."
+      },
+      {
+       "name": "isDefectClass_pRegular",
+       "role": "regularity",
+       "statement": "Elements of a defect class are p-regular."
+      },
+      {
+       "name": "osima",
+       "role": "formula",
+       "statement": "Σ_{χ∈A} χ(g)χ(x) = Σ_{φ∈IBr(A)} φ(g)Φ_φ(x) for g p-regular, A a union of components."
+      },
+      {
+       "name": "block_connected",
+       "role": "connectivity",
+       "statement": "Irr(B) is a connected component of the Brauer graph."
+      }
+     ],
+     "tests": [
+      {
+       "name": "s3_principal",
+       "kind": "computation",
+       "statement": "S₃, p = 2: coefficients of e_{B₀} are 1/3 ≡ 1, 1/3 ≡ 1, 0; {1} is a defect class."
+      },
+      {
+       "name": "s3_defect_zero",
+       "kind": "computation",
+       "statement": "Block r + r²: coefficients 2/3 ≡ 0 at 1, −1/3 ≡ 1 at the 3-cycles; that class is a defect class with trivial Sylow 2-subgroup of C₃."
+      },
+      {
+       "name": "not_component",
+       "kind": "non-example",
+       "statement": "{1} is not a union of components; f_{{1}} has coefficient 1/6 ∉ ℤ₂."
+      }
+     ]
+    },
+    {
+     "id": "6.2",
+     "kind": "theorem",
+     "name": "brauer_height",
+     "statement": "For a block B with defect group D, |G|_p = p^a, |D| = p^d: p^{a−d} ∣ χ(1) for all χ ∈ Irr(B), and ν(χ(1)) = a − d for some χ ∈ Irr(B).",
+     "hypotheses": [
+      "G a finite group",
+      "p a prime",
+      "(K, O, k) a splitting p-modular system for G (base §1.1): O a complete discrete valuation ring, K its fraction field of characteristic zero containing a primitive exp(G)-th root of unity, k its residue field of characteristic p",
+      "B a block with defect group D"
+     ],
+     "locator": {
+      "source": "martinez",
+      "where": "Theorem 3.4, line 728, proof lines 783-831; mnst line 51; navarro-1998 Chapter 3; feit Chapter IV"
+     },
+     "prerequisites": [
+      "target:6.1",
+      "roadmap:ModularCharactersAndBlocks §2.2",
+      "roadmap:ModularCharactersAndBlocks §2.4",
+      "roadmap:ModularCharactersAndBlocks §3.1",
+      "roadmap:ModularCharactersAndBlocks §4.2",
+      "roadmap:ModularCharactersAndBlocks §6.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "s3",
+       "kind": "computation",
+       "statement": "S₃, p = 2: B₀ a = d = 1, degrees 1,1; defect zero d = 0, 2 ∣ 2."
+      },
+      {
+       "name": "sl23_p3",
+       "kind": "computation",
+       "statement": "SL(2,3), p = 3: block of χ₂ has ν₃(2) = 0 = a − d; {χ₃}: 3 ∣ 3."
+      },
+      {
+       "name": "a5_wrong_model",
+       "kind": "non-example",
+       "statement": "A₅, p = 2: B₀ has odd degrees, so p^a ∣ χ(1) fails; only p^{a−d} divides."
+      }
+     ]
+    },
+    {
+     "id": "6.3",
+     "kind": "definition",
+     "name": "height",
+     "statement": "For χ ∈ Irr(B): h(χ) = ν(χ(1)) − (a − d), d(χ) = a − ν(χ(1)), Irr₀(B) = {χ : h(χ) = 0}. Independent of the defect group; Irr₀(B) ≠ ∅; h(χ) = 0 ⟺ d(χ) = d ⟺ ν(χ(1)) = a − d; d = max d(χ).",
+     "hypotheses": [
+      "G a finite group",
+      "p a prime",
+      "(K, O, k) a splitting p-modular system for G (base §1.1): O a complete discrete valuation ring, K its fraction field of characteristic zero containing a primitive exp(G)-th root of unity, k its residue field of characteristic p",
+      "B a block with defect group D"
+     ],
+     "locator": {
+      "source": "martinez",
+      "where": "Section 3.2, line 718; reynolds line 60"
+     },
+     "prerequisites": [
+      "target:6.2",
+      "roadmap:ModularCharactersAndBlocks §6.2",
+      "mathlib:padicValNat",
+      "tauceti:TauCeti.Representation.finrank_dvd_card"
+     ],
+     "api": [
+      {
+       "name": "heightZeroCharacters",
+       "role": "definition",
+       "statement": "Irr₀(B) = {χ ∈ Irr(B) : h(χ) = 0}."
+      },
+      {
+       "name": "height_add_defect",
+       "role": "identity",
+       "statement": "h(χ) + d(χ) = d."
+      },
+      {
+       "name": "height_conj_invariant",
+       "role": "invariance",
+       "statement": "Heights are invariant under isomorphisms, conjugation and change of splitting system."
+      },
+      {
+       "name": "heightZero_nonempty",
+       "role": "existence",
+       "statement": "Irr₀(B) ≠ ∅."
+      }
+     ],
+     "tests": [
+      {
+       "name": "sl23_p2",
+       "kind": "computation",
+       "statement": "SL(2,3), p = 2: heights 0,0,0,1,1,1,0; |Irr₀| = 4."
+      },
+      {
+       "name": "d8_trivial",
+       "kind": "degenerate",
+       "statement": "D₈ heights 0,0,0,0,1; trivial group height 0."
+      },
+      {
+       "name": "no_truncation",
+       "kind": "characterisation",
+       "statement": "S₃, p = 2, std: ν = 1 = a, d(std) = 0, h = 0; natural subtraction never truncates."
+      }
+     ]
+    },
+    {
+     "id": "6.4",
+     "kind": "theorem",
+     "name": "height_special_blocks",
+     "statement": "Irr₀(B₀) = p'-degree characters of B₀; defect zero blocks have Irr(B) = {χ} = Irr₀(B) and conversely; for the Brauer correspondent b' in N_G(D), D is a defect group and Irr₀(b') = {ψ : ψ(1)_p = |N_G(D) : D|_p}.",
+     "hypotheses": [
+      "G a finite group",
+      "p a prime",
+      "(K, O, k) a splitting p-modular system for G (base §1.1): O a complete discrete valuation ring, K its fraction field of characteristic zero containing a primitive exp(G)-th root of unity, k its residue field of characteristic p"
+     ],
+     "locator": {
+      "source": "martinez",
+      "where": "Section 3.2, line 718; Theorem 2.8, line 583"
+     },
+     "prerequisites": [
+      "target:6.3",
+      "roadmap:ModularCharactersAndBlocks §4.3",
+      "roadmap:ModularCharactersAndBlocks §6.2",
+      "roadmap:ModularCharactersAndBlocks §7.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "s3_principal",
+       "kind": "computation",
+       "statement": "S₃, p = 2: Irr₀(B₀) = {1, sgn}."
+      },
+      {
+       "name": "a5_correspondent",
+       "kind": "computation",
+       "statement": "A₅, p = 2: |Irr₀(B₀)| = 4; correspondent in A₄ has four height-zero characters."
+      },
+      {
+       "name": "sl23_p3",
+       "kind": "computation",
+       "statement": "SL(2,3), p = 3: the χ₂-block's correspondent in C₆ has three height-zero characters."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "7",
+   "title": "Blocks and normal subgroups",
+   "targets": [
+    {
+     "id": "7.1",
+     "kind": "theorem",
+     "name": "minMax",
+     "statement": "λ_B(𝒞_x⁺) ≠ 0 ⇒ D_B ≤_G D_x; a_B(Cl(x)) ≠ 0 ⇒ D_x ≤_G D_B (D_x ∈ Syl_p(C_G(x))). For b ∈ Bl(H) with b^G defined, every defect group of b lies in a defect group of b^G.",
+     "hypotheses": [
+      "G a finite group",
+      "p a prime",
+      "(K, O, k) a splitting p-modular system for G (base §1.1): O a complete discrete valuation ring, K its fraction field of characteristic zero containing a primitive exp(G)-th root of unity, k its residue field of characteristic p",
+      "B a block with defect group D_B",
+      "x ∈ G, D_x a Sylow p-subgroup of C_G(x)"
+     ],
+     "locator": {
+      "source": "martinez",
+      "where": "Theorem 3.3, line 710; Lemma 4.4, line 984"
+     },
+     "prerequisites": [
+      "target:6.1",
+      "roadmap:ModularCharactersAndBlocks §6.1",
+      "roadmap:ModularCharactersAndBlocks §6.2",
+      "roadmap:ModularCharactersAndBlocks §7.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "s3_p2",
+       "kind": "computation",
+       "statement": "S₃, p = 2: λ_{B₀} = 1 at transpositions, D_t = ⟨t⟩; a_{B₀} = 1 at 3-cycles, D_r = 1."
+      },
+      {
+       "name": "s3_p3",
+       "kind": "computation",
+       "statement": "S₃, p = 3: λ = 3 ≡ 0 at transpositions; λ = 2 at 3-cycles with D_r = C₃."
+      },
+      {
+       "name": "trivial_group",
+       "kind": "degenerate",
+       "statement": "G = 1: D_B = D_1 = 1."
+      }
+     ]
+    },
+    {
+     "id": "7.2",
+     "kind": "theorem",
+     "name": "covering_centralCharacter",
+     "statement": "For N ⊴ G: χ over θ ⟺ ω_χ = ω_θ on G-class sums in N; B covers b ⟺ λ_B = λ_b on G-class sums in N; Σ_{B covers b} e_B = Σ e_{b'} over G-conjugates; covered blocks form one orbit; if B covers b, every θ ∈ Irr(b) (and φ ∈ IBr(b)) lies under a member of B; b^G covers b when defined.",
+     "hypotheses": [
+      "G a finite group",
+      "p a prime",
+      "(K, O, k) a splitting p-modular system for G (base §1.1): O a complete discrete valuation ring, K its fraction field of characteristic zero containing a primitive exp(G)-th root of unity, k its residue field of characteristic p",
+      "N ⊴ G"
+     ],
+     "locator": {
+      "source": "martinez",
+      "where": "Proposition 7.6 line 1652; Proposition 7.11 line 1790; line 1642; Corollary 7.8 line 1760; Proposition 7.9 line 1763; Lemma 8.6 line 1976"
+     },
+     "prerequisites": [
+      "target:6.1",
+      "roadmap:ModularCharactersAndBlocks §0.2",
+      "roadmap:ModularCharactersAndBlocks §2.1",
+      "roadmap:ModularCharactersAndBlocks §2.4",
+      "roadmap:ModularCharactersAndBlocks §3.1",
+      "roadmap:ModularCharactersAndBlocks §4.2",
+      "roadmap:ModularCharactersAndBlocks §7.1",
+      "roadmap:ModularCharactersAndBlocks §8.2",
+      "roadmap:InductionRestriction Layer 2",
+      "roadmap:InductionRestriction Layer 5",
+      "tauceti:TauCeti.clifford_restrict_character",
+      "tauceti:TauCeti.Representation.isSemisimpleRepresentation_comp_subtype",
+      "mathlib:Rep.indResAdjunction"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "s3_n_c3_p2",
+       "kind": "computation",
+       "statement": "S₃, N = C₃, p = 2: B₀ covers {1}; the defect-zero block covers {λ}, {λ̄}; ω_std = −1 = ω_λ on {r, r²}."
+      },
+      {
+       "name": "s3_n_c3_p3",
+       "kind": "computation",
+       "statement": "S₃, N = C₃, p = 3: one block each side."
+      },
+      {
+       "name": "extreme_N",
+       "kind": "degenerate",
+       "statement": "N = 1: every block covers; N = G: covering is equality."
+      },
+      {
+       "name": "s4_a4_p2_modular_step",
+       "kind": "computation",
+       "statement": "S₄, N = A₄, p = 2, k ⊇ 𝔽₄: the two-dimensional simple k[S₄]-module W (inflated from S₃) restricts to λ ⊕ λ̄, semisimple although 2 divides |A₄|; the adjunction makes W a quotient of Ind λ, so W ≅ Ind λ with Brauer character (2, −1), and λ, λ̄ lie under W; |G| = 24 is zero in k."
+      }
+     ]
+    },
+    {
+     "id": "7.3",
+     "kind": "theorem",
+     "name": "domination_defectGroup_le",
+     "statement": "For N ⊴ G, B̄ ∈ Bl(G/N) dominated by B with defect group D: some defect group of B̄ lies in DN/N.",
+     "hypotheses": [
+      "G a finite group",
+      "p a prime",
+      "(K, O, k) a splitting p-modular system for G (base §1.1): O a complete discrete valuation ring, K its fraction field of characteristic zero containing a primitive exp(G)-th root of unity, k its residue field of characteristic p",
+      "N ⊴ G",
+      "B̄ a block of G/N dominated by B",
+      "D a defect group of B"
+     ],
+     "locator": {
+      "source": "martinez",
+      "where": "Theorem 8.5 (i), line 1928"
+     },
+     "prerequisites": [
+      "roadmap:ModularCharactersAndBlocks §6.1",
+      "roadmap:ModularCharactersAndBlocks §6.2",
+      "roadmap:ModularCharactersAndBlocks §8.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "s3_p2",
+       "kind": "computation",
+       "statement": "S₃, N = C₃, p = 2: D N/N = C₂."
+      },
+      {
+       "name": "s3_p3",
+       "kind": "computation",
+       "statement": "S₃, N = C₃, p = 3: dominated blocks of C₂ have defect zero inside C₃N/N = 1."
+      },
+      {
+       "name": "N_trivial",
+       "kind": "degenerate",
+       "statement": "N = 1: B̄ = B."
+      }
+     ]
+    },
+    {
+     "id": "7.4",
+     "kind": "construction",
+     "name": "fongReynolds",
+     "statement": "For N ⊴ G, b ∈ Bl(N), T its stabiliser: B ↦ B^G is a bijection Bl(T | b) → Bl(G | b); ψ ↦ ψ^G is a bijection Irr(B) → Irr(B^G) and IBr(B) → IBr(B^G) preserving decomposition numbers; defect groups of B are defect groups of B^G; h(ψ^G) = h(ψ).",
+     "hypotheses": [
+      "G a finite group",
+      "p a prime",
+      "(K, O, k) a splitting p-modular system for G (base §1.1): O a complete discrete valuation ring, K its fraction field of characteristic zero containing a primitive exp(G)-th root of unity, k its residue field of characteristic p",
+      "N ⊴ G",
+      "b a block of N",
+      "T the stabiliser of b in G"
+     ],
+     "locator": {
+      "source": "martinez",
+      "where": "Theorem 7.12, line 1823; reynolds Theorems 1-2, lines 133, 149; sambale Chapter 1, Theorem 1.19"
+     },
+     "prerequisites": [
+      "target:6.2",
+      "target:6.3",
+      "target:7.1",
+      "target:7.2",
+      "roadmap:ModularCharactersAndBlocks §0.2",
+      "roadmap:ModularCharactersAndBlocks §1.2",
+      "roadmap:ModularCharactersAndBlocks §2.1",
+      "roadmap:ModularCharactersAndBlocks §7.1",
+      "roadmap:ModularCharactersAndBlocks §8.2",
+      "tauceti:FDRep.cliffordCorrespondence"
+     ],
+     "api": [
+      {
+       "name": "fongReynolds_bijective",
+       "role": "bijection",
+       "statement": "B ↦ B^G is a bijection of covering blocks."
+      },
+      {
+       "name": "fongReynolds_irr",
+       "role": "characters",
+       "statement": "Irr(B^G) = {ψ^G : ψ ∈ Irr(B)}, and likewise IBr."
+      },
+      {
+       "name": "fongReynolds_defectGroup",
+       "role": "defect groups",
+       "statement": "Every defect group of B is a defect group of B^G."
+      },
+      {
+       "name": "fongReynolds_height",
+       "role": "heights",
+       "statement": "h(ψ^G) = h(ψ)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "s3_lambda",
+       "kind": "computation",
+       "statement": "S₃, N = C₃, p = 2, b = {λ}: {λ} ↦ {std}, heights 0 = 0."
+      },
+      {
+       "name": "invariant_b",
+       "kind": "degenerate",
+       "statement": "T = G: the identity."
+      },
+      {
+       "name": "s4_v4_p3",
+       "kind": "computation",
+       "statement": "S₄, N = V₄, p = 3, b = {λ}: T = D₈, two linear extensions induce to the two degree-3 characters, heights 0."
+      }
+     ]
+    },
+    {
+     "id": "7.5",
+     "kind": "definition",
+     "name": "IsRegularBlock",
+     "statement": "B regular w.r.t. N ⊴ G: λ_B(𝒞⁺) = 0 for classes 𝒞 ⊄ N. B covering b is regular ⟺ b^G = B; C_G(D) ≤ N ⇒ regular; for Q ⊴ G a p-subgroup, b ∈ Bl(QC_G(Q)), b^G is the unique block covering b; Fong: for b G-invariant and B covering b of maximal defect with defect group P, p ∤ |G : PN| and P ∩ N is a defect group of b.",
+     "hypotheses": [
+      "G a finite group",
+      "p a prime",
+      "(K, O, k) a splitting p-modular system for G (base §1.1): O a complete discrete valuation ring, K its fraction field of characteristic zero containing a primitive exp(G)-th root of unity, k its residue field of characteristic p",
+      "N ⊴ G"
+     ],
+     "locator": {
+      "source": "martinez",
+      "where": "line 2264; Propositions 9.1, 9.3, 9.4, Corollary 9.5, Theorem 9.2, lines 2161-2293"
+     },
+     "prerequisites": [
+      "target:7.1",
+      "target:7.2",
+      "roadmap:ModularCharactersAndBlocks §6.2",
+      "roadmap:ModularCharactersAndBlocks §7.1"
+     ],
+     "api": [
+      {
+       "name": "isRegular_iff_induce",
+       "role": "characterisation",
+       "statement": "For B covering b: regular ⟺ b^G defined and equal to B."
+      },
+      {
+       "name": "isRegular_of_centralizer_le",
+       "role": "criterion",
+       "statement": "C_G(D) ≤ N ⇒ B regular w.r.t. N."
+      },
+      {
+       "name": "unique_cover_QCQ",
+       "role": "uniqueness",
+       "statement": "b^G is the unique block covering b ∈ Bl(Q C_G(Q))."
+      },
+      {
+       "name": "fong",
+       "role": "Fong's theorem",
+       "statement": "p ∤ |G : PN| and P ∩ N ∈ δ(b)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "s3_not_regular",
+       "kind": "non-example",
+       "statement": "S₃, N = C₃, p = 2: B₀ has λ = 1 at transpositions, not regular; the defect-zero block is regular, = {λ}^G."
+      },
+      {
+       "name": "Q_trivial_case",
+       "kind": "degenerate",
+       "statement": "Q C_G(Q) = G: b^G = b."
+      },
+      {
+       "name": "fong_s3_p3",
+       "kind": "computation",
+       "statement": "S₃, p = 3, N = C₃: P = C₃, |G : PN| = 2, P ∩ N = C₃."
+      }
+     ]
+    },
+    {
+     "id": "7.6",
+     "kind": "theorem",
+     "name": "extended_first_main",
+     "statement": "For a p-subgroup P: blocks b of PC_G(P) with b^G = B ∈ Bl(G|P) form one N_G(P)-orbit, have defect group P, and b^{N_G(P)} is the Brauer correspondent; for b ∈ Bl(PC_G(P)|P), b^G has defect group P ⟺ p ∤ |N_G(P,b) : PC_G(P)|.",
+     "hypotheses": [
+      "G a finite group",
+      "p a prime",
+      "(K, O, k) a splitting p-modular system for G (base §1.1): O a complete discrete valuation ring, K its fraction field of characteristic zero containing a primitive exp(G)-th root of unity, k its residue field of characteristic p",
+      "P a p-subgroup of G"
+     ],
+     "locator": {
+      "source": "martinez",
+      "where": "Theorem 8.8, line 1985; Theorem 9.6, line 2295; sambale Chapter 1, Theorem 1.18"
+     },
+     "prerequisites": [
+      "target:7.1",
+      "target:7.2",
+      "target:7.4",
+      "target:7.5",
+      "roadmap:ModularCharactersAndBlocks §6.2",
+      "roadmap:ModularCharactersAndBlocks §7.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "s3_p2",
+       "kind": "computation",
+       "statement": "S₃, p = 2, P = ⟨t⟩: inertial index 1, b^G = B₀."
+      },
+      {
+       "name": "s3_p3",
+       "kind": "computation",
+       "statement": "S₃, p = 3, P = C₃: index 2, prime to 3."
+      },
+      {
+       "name": "s4_v4",
+       "kind": "non-example",
+       "statement": "S₄, p = 2, P = V₄: index 6, and the 2-block has defect group D₈."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "8",
+   "title": "Blocks with a normal defect group",
+   "targets": [
+    {
+     "id": "8.1",
+     "kind": "theorem",
+     "name": "character_eq_zero_of_pPart_not_mem_defectGroup",
+     "statement": "For χ ∈ Irr(B) and g whose p-part lies in no defect group of B, χ(g) = 0.",
+     "hypotheses": [
+      "G a finite group",
+      "p a prime",
+      "(K, O, k) a splitting p-modular system for G (base §1.1): O a complete discrete valuation ring, K its fraction field of characteristic zero containing a primitive exp(G)-th root of unity, k its residue field of characteristic p",
+      "B a block"
+     ],
+     "locator": {
+      "source": "martinez",
+      "where": "Theorem 8.10, line 2011; navarro-1998 Theorem 5.9"
+     },
+     "prerequisites": [
+      "roadmap:ModularCharactersAndBlocks §5.1",
+      "roadmap:ModularCharactersAndBlocks §6.3",
+      "roadmap:ModularCharactersAndBlocks §7.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "s3_defect_zero",
+       "kind": "computation",
+       "statement": "S₃, p = 2: std(t) = 0."
+      },
+      {
+       "name": "sl23_chi3",
+       "kind": "computation",
+       "statement": "SL(2,3), p = 3: χ₃ vanishes on elements of order 3 and 6."
+      },
+      {
+       "name": "principal",
+       "kind": "degenerate",
+       "statement": "Principal block: no vanishing forced."
+      }
+     ]
+    },
+    {
+     "id": "8.2",
+     "kind": "construction",
+     "name": "canonicalCharacter",
+     "statement": "For G = P C_G(P), B ∈ Bl(G|P): unique θ ∈ Irr(B) with P ≤ ker θ, ν(θ(1)) = ν(|G:P|); IBr(B) = {θ⁰}; ξ ↦ θ_ξ (θ(g_{p'})ξ(g_p) if g_p ∈ P, else 0) is a bijection Irr(P) → Irr(B) with θ_ξ(1) = θ(1)ξ(1); heights {ν(ξ(1))}.",
+     "hypotheses": [
+      "G a finite group",
+      "p a prime",
+      "(K, O, k) a splitting p-modular system for G (base §1.1): O a complete discrete valuation ring, K its fraction field of characteristic zero containing a primitive exp(G)-th root of unity, k its residue field of characteristic p",
+      "P a p-subgroup with G = P C_G(P)",
+      "B a block with defect group P"
+     ],
+     "locator": {
+      "source": "martinez",
+      "where": "Theorem 8.11, line 2018; Corollary 8.12, line 2131; reynolds Theorem 7, line 509, and line 201"
+     },
+     "prerequisites": [
+      "target:6.3",
+      "target:7.3",
+      "target:8.1",
+      "roadmap:ModularCharactersAndBlocks §3.1",
+      "roadmap:ModularCharactersAndBlocks §4.2",
+      "roadmap:ModularCharactersAndBlocks §6.2",
+      "roadmap:ModularCharactersAndBlocks §8.1"
+     ],
+     "api": [
+      {
+       "name": "canonicalCharacter_unique",
+       "role": "uniqueness",
+       "statement": "θ is the unique character of B with P in its kernel."
+      },
+      {
+       "name": "ibr_eq_singleton",
+       "role": "Brauer characters",
+       "statement": "IBr(B) = {θ⁰}."
+      },
+      {
+       "name": "theta_xi_bijective",
+       "role": "bijection",
+       "statement": "ξ ↦ θ_ξ is a bijection Irr(P) → Irr(B)."
+      },
+      {
+       "name": "height_theta_xi",
+       "role": "heights",
+       "statement": "h(θ_ξ) = ν(ξ(1))."
+      }
+     ],
+     "tests": [
+      {
+       "name": "d8",
+       "kind": "computation",
+       "statement": "G = P = D₈: θ = 1, Irr(B) = Irr(D₈), heights {0, 1}."
+      },
+      {
+       "name": "c2xc3",
+       "kind": "computation",
+       "statement": "G = C₂ × C₃, P = C₂: three blocks with θ = 1 × ψ."
+      },
+      {
+       "name": "P_trivial",
+       "kind": "degenerate",
+       "statement": "P = 1: defect zero, θ_1 = θ."
+      },
+      {
+       "name": "sl23_not_form",
+       "kind": "non-example",
+       "statement": "SL(2,3), p = 2: C_G(Q₈) = Z(Q₈), so G ≠ Q₈ C_G(Q₈)."
+      }
+     ]
+    },
+    {
+     "id": "8.3",
+     "kind": "theorem",
+     "name": "height_normal_defect",
+     "statement": "For D ⊴ G a defect group of B, N = D C_G(D), b ∈ Bl(N) with b^G = B, T its stabiliser: for χ ∈ Irr(B) over θ_ξ ∈ Irr(b), h(χ) ≥ ν(ξ(1)), and every θ_ξ lies under some χ ∈ Irr(B); Reynolds' formula h(χ) = ν(ξ(1)) for a constituent ξ of χ|_D (with gap clifford-multiplicity-dvd-index), so the heights of B are {ν(ξ(1)) : ξ ∈ Irr(D)}.",
+     "hypotheses": [
+      "G a finite group",
+      "p a prime",
+      "(K, O, k) a splitting p-modular system for G (base §1.1): O a complete discrete valuation ring, K its fraction field of characteristic zero containing a primitive exp(G)-th root of unity, k its residue field of characteristic p",
+      "D ⊴ G a defect group of B"
+     ],
+     "locator": {
+      "source": "reynolds",
+      "where": "Theorem 8, line 531; martinez Corollary 8.12, line 2131"
+     },
+     "prerequisites": [
+      "target:6.3",
+      "target:7.2",
+      "target:7.6",
+      "target:8.2",
+      "tauceti:FDRep.cliffordCorrespondence",
+      "tauceti:FDRep.clifford_restrict_dvd_finrank",
+      "gap:clifford-multiplicity-dvd-index"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "sl23_p2",
+       "kind": "computation",
+       "statement": "SL(2,3), p = 2: heights {0, 1} = {ν(1), ν(2)}."
+      },
+      {
+       "name": "a4_p2",
+       "kind": "computation",
+       "statement": "A₄, p = 2: V₄ abelian, heights {0}."
+      },
+      {
+       "name": "direct_product",
+       "kind": "compatibility",
+       "statement": "G = D × H, H a p'-group: h(ξ × ψ) = ν(ξ(1))."
+      }
+     ]
+    },
+    {
+     "id": "8.4",
+     "kind": "theorem",
+     "name": "reynolds",
+     "statement": "For a block B with a normal defect group D: Irr(B) = Irr₀(B) ⟺ D is abelian.",
+     "hypotheses": [
+      "G a finite group",
+      "p a prime",
+      "(K, O, k) a splitting p-modular system for G (base §1.1): O a complete discrete valuation ring, K its fraction field of characteristic zero containing a primitive exp(G)-th root of unity, k its residue field of characteristic p",
+      "B a block with defect group D",
+      "D ⊴ G"
+     ],
+     "locator": {
+      "source": "reynolds",
+      "where": "Theorem 9, line 542 (a corollary of Theorem 8, line 531); martinez Theorem 9.8, line 2328"
+     },
+     "prerequisites": [
+      "target:6.3",
+      "target:8.3",
+      "tauceti:TauCeti.card_irreducibleCharacters",
+      "tauceti:TauCeti.Representation.finrank_dvd_card",
+      "roadmap:CharacterTheory §2.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "defect_zero",
+       "kind": "degenerate",
+       "statement": "D = 1: Irr(B) = {χ} = Irr₀(B)."
+      },
+      {
+       "name": "p_groups",
+       "kind": "characterisation",
+       "statement": "G a p-group: all heights 0 ⟺ G abelian; D₈ has height 1."
+      },
+      {
+       "name": "abelian_and_products",
+       "kind": "computation",
+       "statement": "Abelian G and G = D × H: heights 0 ⟺ D abelian; SL(2,3) at 2 has height 1; A₄ at 2 all 0."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "9",
+   "title": "The height zero and Alperin–McKay conjectures",
+   "targets": [
+    {
+     "id": "9.1",
+     "kind": "definition",
+     "name": "BrauerHeightZero",
+     "statement": "For a prime p: for every finite G (fixed universe), every splitting p-modular system and every block B with defect group D, Irr(B) = Irr₀(B) ⟺ D abelian. Proved instances: defect zero, normal defect group. Cited: kessar-malle Thm 1.1, mnst Thm A, ruhstorfer Cor B.",
+     "hypotheses": [
+      "p a prime",
+      "a universe of groups"
+     ],
+     "locator": {
+      "source": "martinez",
+      "where": "Conjecture 9.7, line 2321; mnst line 48"
+     },
+     "prerequisites": [
+      "target:6.3",
+      "target:6.4",
+      "target:8.4"
+     ],
+     "api": [
+      {
+       "name": "brauerHeightZero_defectZero",
+       "role": "instance",
+       "statement": "Blocks of defect zero satisfy the equivalence."
+      },
+      {
+       "name": "brauerHeightZero_normal",
+       "role": "instance",
+       "statement": "Blocks with a normal defect group satisfy it (§8.4)."
+      },
+      {
+       "name": "brauerHeightZero_indep_system",
+       "role": "invariance",
+       "statement": "Independent of the splitting system."
+      }
+     ],
+     "tests": [
+      {
+       "name": "s3",
+       "kind": "computation",
+       "statement": "S₃ at p = 2, 3: cyclic defect groups, heights 0."
+      },
+      {
+       "name": "s4_p2",
+       "kind": "computation",
+       "statement": "S₄, p = 2: height 1 occurs and D₈ is nonabelian."
+      },
+      {
+       "name": "trivial_group",
+       "kind": "degenerate",
+       "statement": "G = 1: one block of defect zero."
+      }
+     ]
+    },
+    {
+     "id": "9.2",
+     "kind": "definition",
+     "name": "AlperinMcKay",
+     "statement": "For a block B with defect group D and Brauer correspondent b' in N_G(D): |Irr₀(B)| = |Irr₀(b')|; the property at p for all blocks of all finite groups. Proved instances: defect zero, normal defect group. Cited: ruhstorfer Theorem A (p = 2).",
+     "hypotheses": [
+      "p a prime",
+      "a universe of groups"
+     ],
+     "locator": {
+      "source": "ruhstorfer",
+      "where": "line 16; martinez Conjecture 9.9, line 2360"
+     },
+     "prerequisites": [
+      "target:6.3",
+      "target:6.4",
+      "roadmap:ModularCharactersAndBlocks §7.1"
+     ],
+     "api": [
+      {
+       "name": "alperinMcKay_normal",
+       "role": "instance",
+       "statement": "If D ⊴ G then b' = B and the equality holds."
+      },
+      {
+       "name": "alperinMcKay_defectZero",
+       "role": "instance",
+       "statement": "Defect zero blocks satisfy it."
+      }
+     ],
+     "tests": [
+      {
+       "name": "s3",
+       "kind": "computation",
+       "statement": "S₃, p = 2: 2 = 2."
+      },
+      {
+       "name": "a5",
+       "kind": "computation",
+       "statement": "A₅, p = 2: 4 = 4 with N_G(V₄) = A₄."
+      },
+      {
+       "name": "sl23_p3",
+       "kind": "computation",
+       "statement": "SL(2,3), p = 3: 3 = 3 for both blocks of positive defect."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "ModularCharactersAndBlocks",
+   "sections": [
+    "§0.2",
+    "§1.1",
+    "§1.2",
+    "§1.3",
+    "§2.1",
+    "§2.2",
+    "§2.3",
+    "§2.4",
+    "§3.1",
+    "§4.1",
+    "§4.2",
+    "§4.3",
+    "§5.1",
+    "§6.1",
+    "§6.2",
+    "§6.3",
+    "§7.1",
+    "§7.2",
+    "§8.1",
+    "§8.2"
+   ],
+   "what": "splitting p-modular systems, block idempotents and their lifts, Brauer characters, decomposition numbers, projective characters, block partitions, generalized decomposition numbers, relative traces and the Brauer map, defect groups and their characterisations, Brauer pairs, block induction, the first and second main theorems, domination and covering"
+  },
+  {
+   "roadmap": "LocalFiniteGroupTheory",
+   "sections": [
+    "L1",
+    "L3"
+   ],
+   "what": "conjugacy of complements (exists_conj_eq_of_isComplement'), Glauberman's lemma and fixed points modulo an invariant normal subgroup"
+  },
+  {
+   "roadmap": "CharacterTheory",
+   "sections": [
+    "§2.1",
+    "§3.5",
+    "§3.6",
+    "§4.3",
+    "§4.4"
+   ],
+   "what": "sum of squares, column orthogonality, characters of direct products, central characters and integrality, the Galois action and fields of values"
+  },
+  {
+   "roadmap": "InductionRestriction",
+   "sections": [
+    "Layer 1",
+    "Layer 2",
+    "Layer 5",
+    "Layer 7"
+   ],
+   "what": "conjugate representations, Frobenius reciprocity, Clifford theory, the extension obstruction and the tensor factorisation"
+  }
+ ],
+ "consumers": [],
+ "gaps": [
+  {
+   "slug": "clifford-multiplicity-dvd-index",
+   "title": "Clifford degree quotient divides the index",
+   "neededBy": [
+    "8.3"
+   ],
+   "detail": "For a finite group G, N ⊴ G, χ ∈ Irr(G) and θ an irreducible constituent of χ|_N, χ(1)/θ(1) is a natural number dividing |G : N| (isaacs Corollary 11.29; the step at reynolds line 538 in the proof of Theorem 8). Route: by the Clifford correspondence (InductionRestriction Layer 5) reduce to θ invariant; the tensor factorisation of InductionRestriction Layer 7 writes the character over θ as a compatible projective extension of θ tensored with an irreducible projective representation of G/N, whose degree divides |G : N| by Schur's theorem, itself from the lifting to a finite central extension (Layer 7) and the divisibility of a degree by the index of a central subgroup (isaacs Theorem 3.12). InductionRestriction Layer 7 and the pinned Tau Ceti supply the factorisation and the lifting but no degree divisibility.",
+   "needs": "InductionRestriction Layer 7 must prove that χ(1)/θ(1) divides |G : N| for a finite group G, N ⊴ G, χ ∈ Irr(G) and an irreducible constituent θ of χ|_N.",
+   "supplier": "InductionRestriction",
+   "section": "Layer 7"
+  }
+ ]
+}

@@ -11,7 +11,7 @@ year = 1968
 venue = "Canad. J. Math. 20 (1968), 1465–1488"
 doi = "10.4153/CJM-1968-148-x"
 locator_scheme = "theorem"
-locator = "Theorem 2 (canonical extension); Theorem 3 (cyclic case); Theorem 4 and Corollaries 7–9 (solvable case); Theorem 5 (equivariance, constituent, degree bound)"
+locator = "Theorem 1 (line 100); Theorem 2 (line 234); Lemmas 1–3 (lines 173, 266, 287; proof of Lemma 2 (a), lines 274–280); Theorem 3 (line 299); Corollaries 4–6 (lines 364, 375, 454); Lemmas 4–5 and the definition (lines 481, 503, 524); Theorem 4 (line 537; proof of (b), line 562); Corollaries 7–9 (lines 601, 607, 623); Theorem 5 (line 636)"
 url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/5766071B70A89446C7D02B69C20CCC03/S0008414X0005286Xa.pdf/correspondences-of-characters-for-relatively-prime-operator-groups.pdf"
 fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/5766071B70A89446C7D02B69C20CCC03/S0008414X0005286Xa.pdf/correspondences-of-characters-for-relatively-prime-operator-groups.pdf"
 fetched_at = "2026-11-05T02:46:11Z"
@@ -20,7 +20,7 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "Canadian Journal of Mathematics archive on Cambridge Core, served without login"
-cited_for = ["Glauberman correspondence: canonical extension, cyclic, p-group and solvable cases"]
+cited_for = ["§1.1", "§1.2", "§1.3", "§2.1", "§2.2", "§2.3", "§2.4", "§3.1", "§3.2", "§3.3", "§3.4", "§4.1", "§4.2", "§4.3", "§4.4", "§4.5", "§4.6", "§5.1"]
 
 [[source]]
 id = "hartley-turull"
@@ -30,7 +30,7 @@ year = 1994
 venue = "J. reine angew. Math. 451 (1994), 175–219"
 doi = "10.1515/crll.1994.451.175"
 locator_scheme = "theorem"
-locator = "Theorem A; Definition 3.1; Proposition 3.2"
+locator = "Theorem A (line 84); reduction to prime order (line 91); Definition 3.1 (line 304); Proposition 3.2 (line 306)"
 url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0451/LOG_0013.pdf"
 fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0451/LOG_0013.pdf"
 fetched_at = "2026-11-05T02:48:59Z"
@@ -39,7 +39,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "GDZ scan (EuDML record 153629), image-only; the cached text is OCR, numbering checked for the cited items"
-cited_for = ["Glauberman degree-divisibility (conditional form); canonical extension; sign function of the cyclic case"]
+cited_for = ["Scope and ownership", "§1.1", "§2.2", "§3.2", "§5.2"]
 
 [[source]]
 id = "geck"
@@ -50,7 +50,7 @@ venue = "Ann. of Math. (2) 192 (2020), no. 1, 229–249"
 doi = "10.4007/annals.2020.192.1.4"
 arxiv = "1904.04586v1"
 locator_scheme = "section"
-locator = "Section 1 (statement of Glauberman degree-divisibility)"
+locator = "Section 1, statement of Glauberman degree-divisibility and its completion (lines 29–36)"
 url = "https://arxiv.org/abs/1904.04586v1"
 fetched_from = "https://arxiv.org/pdf/1904.04586v1"
 fetched_at = "2026-11-05T02:43:03Z"
@@ -59,7 +59,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v1; the published version is the Annals article of the same title"
-cited_for = ["Glauberman degree-divisibility, cited theorem"]
+cited_for = ["Scope and ownership", "§5.2"]
 
 [[source]]
 id = "kessar-malle"
@@ -69,7 +69,7 @@ year = 2013
 venue = "Ann. of Math. (2) 178 (2013), 321–384"
 arxiv = "1112.2642v2"
 locator_scheme = "theorem"
-locator = "Theorem 1.1"
+locator = "Theorem 1.1 (line 25)"
 url = "https://arxiv.org/abs/1112.2642v2"
 fetched_from = "https://arxiv.org/pdf/1112.2642v2"
 fetched_at = "2026-11-05T02:43:17Z"
@@ -78,7 +78,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v2"
-cited_for = ["height zero conjecture: abelian defect group implies all heights zero, cited theorem"]
+cited_for = ["Scope and ownership", "§9.1"]
 
 [[source]]
 id = "mnst"
@@ -89,7 +89,7 @@ venue = "Ann. of Math. (2) 200 (2024), no. 2, article 4"
 doi = "10.4007/annals.2024.200.2.4"
 arxiv = "2209.04736v2"
 locator_scheme = "theorem"
-locator = "Theorem A"
+locator = "Brauer's theorem on heights recalled (line 51); the conjecture (line 48); Theorem A (line 70); Corollary (line 73)"
 url = "https://arxiv.org/abs/2209.04736v2"
 fetched_from = "https://arxiv.org/pdf/2209.04736v2"
 fetched_at = "2026-11-05T02:43:22Z"
@@ -98,7 +98,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v2"
-cited_for = ["height zero conjecture, odd p: all heights zero implies abelian defect group, cited theorem"]
+cited_for = ["Scope and ownership", "§6.2", "§9.1"]
 
 [[source]]
 id = "ruhstorfer"
@@ -109,7 +109,7 @@ venue = "Ann. of Math. (2) 201 (2025), no. 2, 379–457"
 doi = "10.4007/annals.2025.201.2.2"
 arxiv = "2204.06373v1"
 locator_scheme = "theorem"
-locator = "Theorem A; Corollary B"
+locator = "Alperin–McKay statement (line 16); Theorem A (line 20); Corollary B (line 33)"
 url = "https://arxiv.org/abs/2204.06373v1"
 fetched_from = "https://arxiv.org/pdf/2204.06373v1"
 fetched_at = "2026-11-05T02:43:11Z"
@@ -118,7 +118,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v1, titled 'The Alperin–McKay conjecture for the prime 2'; the Annals version adds the height zero conjecture to the title"
-cited_for = ["Alperin–McKay and height zero conjectures at p = 2, cited theorems"]
+cited_for = ["Scope and ownership", "§9.1", "§9.2"]
 
 [[source]]
 id = "reynolds"
@@ -128,7 +128,7 @@ year = 1963
 venue = "Nagoya Math. J. 22 (1963), 15–32"
 doi = "10.1017/S0027763000011004"
 locator_scheme = "theorem"
-locator = "Theorems 8 and 9; definition of height on p. 16"
+locator = "height (line 60); Theorem 1 (line 133); Theorem 2 (line 149); the projective-character argument (line 201); Theorem 7 (line 509); Theorem 8 (line 531) and the projective-degree step of its proof (line 538); Theorem 9 (line 542)"
 url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/6A237E1857DE9EA8AA916597260D4433/S0027763000011004a.pdf/blocks-and-normal-subgroups-of-finite-groups.pdf"
 fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/6A237E1857DE9EA8AA916597260D4433/S0027763000011004a.pdf/blocks-and-normal-subgroups-of-finite-groups.pdf"
 fetched_at = "2026-11-05T02:46:12Z"
@@ -137,7 +137,7 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "Nagoya Mathematical Journal archive on Cambridge Core, served without login"
-cited_for = ["height zero conjecture for blocks with normal defect group"]
+cited_for = ["Exact supplier contracts (gap:clifford-multiplicity-dvd-index)", "§6.3", "§7.4", "§8.2", "§8.3", "§8.4"]
 
 [[source]]
 id = "martinez"
@@ -145,7 +145,7 @@ authors = "J. M. Martínez"
 title = "Modular representation theory of finite groups (course notes, Firenze 2024)"
 year = 2024
 locator_scheme = "theorem"
-locator = "Section 3.2 (heights); Theorem 3.4; Proposition 5.6; Lecture 7 (Fong–Reynolds and heights); Theorem 8.11 and Corollary 8.12; Conjecture 9.7 and Theorem 9.8"
+locator = "central characters and blocks (lines 351, 373); Proposition 2.3 (line 414); Proposition 2.5 (line 512); Corollary 2.7 (line 566); Theorem 2.8 (line 583); defect classes (lines 699, 760); Theorem 3.3 (line 710); §3.2 (line 718); Theorem 3.4 (line 728, proof lines 783–831); Lemma 4.4 (line 984); Lecture 7 (lines 1582–1870: Propositions 7.6, 7.9, 7.11, Corollary 7.8, Theorem 7.12); Theorem 8.5 (line 1928); Lemma 8.6 (line 1976); Theorem 8.8 (line 1985); Theorem 8.10 (line 2011); Theorem 8.11 (line 2018); Corollary 8.12 (line 2131); Lecture 9 (lines 2161–2360: Propositions 9.1, 9.3, 9.4, Corollary 9.5, Theorems 9.2, 9.6, Conjecture 9.7, Theorem 9.8, Conjecture 9.9)"
 url = "https://www.uv.es/jomimar8/pdfs/course%20notes.pdf"
 fetched_from = "https://www.uv.es/jomimar8/pdfs/course%20notes.pdf"
 fetched_at = "2026-11-05T02:45:22Z"
@@ -154,7 +154,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "the same text the base roadmap ModularCharactersAndBlocks cites under this key"
-cited_for = ["Brauer's theorem on heights", "heights and height zero characters", "Reynolds' theorem"]
+cited_for = ["§6.1", "§6.2", "§6.3", "§6.4", "§7.1", "§7.2", "§7.3", "§7.4", "§7.5", "§7.6", "§8.1", "§8.2", "§8.3", "§8.4", "§9.1", "§9.2"]
 
 [[source]]
 id = "sambale"
@@ -163,7 +163,7 @@ title = "Blocks of Finite Groups and Their Invariants"
 year = 2014
 venue = "Lecture Notes in Mathematics 2127, Springer"
 locator_scheme = "chapter"
-locator = "Chapter 1"
+locator = "Chapter 1: central characters of blocks, Theorem 1.18 (extended first main theorem), Theorem 1.19 (Fong–Reynolds)"
 url = "https://benjaminsambale.github.io/pdfs/lnm.pdf"
 fetched_from = "https://benjaminsambale.github.io/pdfs/lnm.pdf"
 fetched_at = "2026-11-05T02:45:27Z"
@@ -172,7 +172,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "the same text the base roadmap ModularCharactersAndBlocks cites under this key"
-cited_for = ["block-theory conventions shared with the base roadmap"]
+cited_for = ["§6.1", "§7.4", "§7.6"]
 
 [[source]]
 id = "spath-vallejo"
@@ -181,7 +181,7 @@ title = "Brauer characters and coprime action"
 year = 2016
 venue = "J. Algebra 457 (2016), 276–311"
 locator_scheme = "section"
-locator = "Section 1 (statement of the Glauberman–Isaacs correspondence and its compatibility with normal subgroups of the acting group)"
+locator = "Section 1, the Glauberman–Isaacs correspondence and its compatibility law (lines 118–130)"
 url = "https://www.uv.es/cavaro3/download/SVCoprime.pdf"
 fetched_from = "https://www.uv.es/cavaro3/download/SVCoprime.pdf"
 fetched_at = "2026-11-05T02:44:28Z"
@@ -189,7 +189,7 @@ sha256 = "b3aa1a312666bb6eb45e64b51716ef09616c4e3022f93acc1aa0519123e889f1"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["statement of the Glauberman–Isaacs correspondence and the compatibility law"]
+cited_for = ["§4.5"]
 
 # Paywalled works, cited by locator without the text.
 
@@ -200,12 +200,12 @@ title = "Character Theory of Finite Groups"
 year = 1976
 venue = "Academic Press 1976; AMS Chelsea reprint 2006"
 locator_scheme = "chapter"
-locator = "Chapter 6 (Clifford theory, Gallagher's theorem), Chapter 8 (extension theorems), Chapter 13 (the Glauberman correspondence)"
+locator = "Theorem 3.12, Corollary 6.17, Theorem 6.32, Corollary 11.29, Chapter 13"
 url = "https://bookstore.ams.org/chel-359"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Glauberman correspondence, textbook treatment", "canonical extension"]
+cited_for = ["Exact supplier contracts (gap:clifford-multiplicity-dvd-index)", "§1.3", "§2.4", "§4.5"]
 
 [[source]]
 id = "isaacs-1973"
@@ -220,7 +220,7 @@ url = "https://doi.org/10.2307/2373731"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (JSTOR); cited by its locator without the text; the odd-order correspondence is out of scope and only named"
-cited_for = ["the Isaacs correspondence for groups of odd order, named only"]
+cited_for = ["Scope and ownership"]
 
 [[source]]
 id = "navarro-1998"
@@ -230,12 +230,12 @@ year = 1998
 venue = "LMS Lecture Note Series 250, Cambridge University Press"
 doi = "10.1017/CBO9780511526015"
 locator_scheme = "chapter"
-locator = "Chapter 3 (blocks and the theorem on heights), Chapter 4 (defect groups, the first main theorem)"
+locator = "Chapter 3 (theorem on heights); Theorem 5.9 (vanishing off defect groups)"
 url = "https://doi.org/10.1017/CBO9780511526015"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Brauer's theorem on heights", "defect groups and the Brauer correspondent"]
+cited_for = ["§6.2", "§8.1"]
 
 [[source]]
 id = "navarro-2018"
@@ -245,12 +245,12 @@ year = 2018
 venue = "Cambridge Studies in Advanced Mathematics 175, Cambridge University Press"
 doi = "10.1017/9781108552790"
 locator_scheme = "chapter"
-locator = "Chapter 2 (actions on characters, the Glauberman correspondence and its uniqueness)"
+locator = "Chapter 2 (the Glauberman correspondence and its uniqueness)"
 url = "https://doi.org/10.1017/9781108552790"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["uniqueness of the family of Glauberman bijections"]
+cited_for = ["§4.5"]
 
 [[source]]
 id = "feit"
@@ -264,4 +264,4 @@ url = "https://www.sciencedirect.com/bookseries/north-holland-mathematical-libra
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["blocks, defect groups and heights, alternative textbook locator"]
+cited_for = ["§6.2"]
