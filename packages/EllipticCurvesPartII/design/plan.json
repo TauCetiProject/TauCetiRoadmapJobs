@@ -865,7 +865,20 @@
     }
   ],
   "requests": [],
-  "gaps": [],
+  "gaps": [
+    {
+      "slug": "legendre-rational-local-units",
+      "needs": "For every rational elliptic Weierstrass curve and prime p, identify curve-level good reduction through a minimal model over ℚ_p, prove that good reduction makes j p-integral, and identify zero rational valuations with nonzero residue classes of ℤ_p units so that an integral unit-discriminant Legendre equation has good reduction.",
+      "supplier": "EllipticCurves",
+      "section": "Layer 4"
+    },
+    {
+      "slug": "finite-field-native-twist-trace",
+      "needs": "For every finite field k of odd characteristic, elliptic Weierstrass curve W over k and nonzero d in k, prove that the native twist W.quadraticTwistOf 0 (−d/4) has Frobenius trace quadraticChar(d) times the trace of W and good Euler polynomial 1−quadraticChar(d)·a_k(W)·T+#k·T², including square d.",
+      "supplier": "EllipticCurves",
+      "section": "Layer 5"
+    }
+  ],
   "inheritedObligations": {
     "ownerPacket": "research/blueprint/packets/EllipticLegendreCharacterInterfaces.json",
     "coverage": [
