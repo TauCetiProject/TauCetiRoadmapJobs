@@ -19,7 +19,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v3"
-cited_for = ["strict convexity of the boundary at a point and everywhere; functions with strictly concave level sets"]
+cited_for = ["2.1 strict convexity at a point, on a subset and everywhere (lines 53, 89-93)", "3.1 domains in a boundaryless extension (lines 96-97)", "3.2 level sets strictly concave from the superlevel sets (lines 128-129, 198-200, 203-205)", "4.3 signed distance from a hypersurface (lines 99-100)", "4.4 boundary normal coordinates, normal gauge (lines 20-22, 220-221)", "4.5 convexity functions (lines 128-134)", "5.1 opposite labelling of the boundary strata (line 151)", "5.6 lens relation and its identification with the unit ball bundle (lines 150-163)", "6.5 Herglotz-Wiechert condition (lines 66-72)"]
 
 [[source]]
 id = "uhlmann-vasy2016"
@@ -39,7 +39,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v1"
-cited_for = ["strictly convex boundaries and the convexity function x with strictly concave level sets"]
+cited_for = ["1.3 boundary defining functions (lines 25-26, 134-136)", "2.2 covector form of strict convexity (lines 499-503)", "2.3 stability under perturbation of the metric (lines 49-51)", "3.1 domains with ambient defining functions (lines 25-26)", "3.2 level sets concave from the superlevel sets (lines 137-140, 507-509)", "4.2 covector condition through the musical isomorphism (lines 499-503)", "4.5 existence of the convexity function (Theorem, lines 30-32; Section 3, lines 504-524)"]
 
 [[source]]
 id = "lee-riemannian2018"
@@ -54,7 +54,7 @@ url = "https://doi.org/10.1007/978-3-319-91755-9"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Riemannian submanifolds, second fundamental form, sign conventions, boundary normal (Fermi) coordinates"]
+cited_for = ["1.2, 1.4, 1.5, 3.6 Riemannian hypersurfaces, second fundamental form, Weingarten map, mean curvature, Gauss equation (Ch. 8)", "1.6 conformal change (Ch. 7-8)", "4.3, 4.4 tubular neighbourhoods, Gauss lemma, Fermi coordinates (Ch. 5-6)", "6.4 small geodesic balls (Ch. 6)"]
 
 [[source]]
 id = "lee-smooth2012"
@@ -69,7 +69,7 @@ url = "https://doi.org/10.1007/978-1-4419-9982-5"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["collar neighbourhood theorem and boundary flowout"]
+cited_for = ["3.3 smooth collar of the boundary (Theorem 9.25), consumed through GeometricTopology Layer 1"]
 
 [[source]]
 id = "paternain-salo-uhlmann2023"
@@ -79,8 +79,8 @@ year = 2023
 venue = "Cambridge Studies in Advanced Mathematics 204"
 doi = "10.1017/9781009039901"
 version_note = "authors' copy on G. Uhlmann's publications page, posted with the publisher's personal-use notice; numbering agrees with the published book"
-locator_scheme = "chapter"
-locator = "Chapter 3"
+locator_scheme = "section"
+locator = "Sections 2.5 and 3.1-3.3"
 url = "https://sites.math.washington.edu/~gunther/publications/GIP2D_driver%20(14).pdf"
 fetched_from = "https://sites.math.washington.edu/~gunther/publications/GIP2D_driver%20(14).pdf"
 fetched_at = "2026-11-05T03:40:46Z"
@@ -88,7 +88,7 @@ sha256 = "58a266e9668ef2268ff14044c30f1975a029a76c8ca3e7479ef59ebebffd80e6"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["manifolds with boundary, strict convexity, exit times, scattering relation"]
+cited_for = ["1.1, 1.2 inward unit normal and the strata of boundary vectors (lines 2684-2696)", "4.3 normalised boundary defining function (Lemma 3.1.10, lines 2766-2773)", "1.4 second fundamental form (lines 2728-2737; Lemma 3.1.12)", "1.6, 6.2, 6.5 rotationally symmetric metrics (Definition 2.5.1, Lemma 2.5.2, Corollary 2.5.3, lines 2449-2481)", "2.1 strict convexity (Definition 3.1.7, lines 2738-2739)", "2.2, 4.2 Hessian and geodesic characterisation (Lemmas 3.1.12-3.1.13, lines 2781-2844)", "2.3, 4.6 openness and enlargement (lines 3093-3096)", "3.3, 3.5 closed extension and double (Lemma 3.1.8, Exercise 3.1.9, lines 2749-2762)", "4.1 geodesics of M (lines 2646-2658, 2763-2765)", "5.1 unit sphere bundle, strata, geodesic flow (lines 2646-2648, 2682-2696, 2931, 3063-3079)", "5.2 exit time and non-trapping (Definitions 3.1.1, 3.1.3; Exercise 3.1.2)", "5.3 fold normal form and even functions (Lemma 3.2.10, Exercise 3.2.12)", "5.4 regularity of the exit time (Lemmas 3.2.3, 3.2.6, 3.2.8, 3.2.9, 3.2.11; Remark 3.2.13; Exercise 3.3.3)", "5.5 Proposition 3.3.1", "5.6 scattering relation (Definition 3.3.4, Lemma 3.3.5, Exercise 3.3.6)", "6.1, 6.3, 6.4 examples (Examples 2.5.4-2.5.5, 3.1.4, 3.2.1); 6.1 strictly convex Euclidean domains as simple manifolds (lines 307-310)"]
 
 [[source]]
 id = "sharafutdinov1994"
@@ -103,4 +103,4 @@ url = "https://doi.org/10.1515/9783110900095"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled publisher copy; cited by its locator without the text. Optional: Paternain-Salo-Uhlmann 2023, Chapter 3 is the certified source for the same material (compact non-trapping manifolds with strictly convex boundary)"
-cited_for = ["compact dissipative Riemannian manifolds and strictly convex boundary"]
+cited_for = ["References: compact dissipative Riemannian manifolds (Ch. 4), an alternative account of Layer 5; no target relies on it"]
