@@ -2110,7 +2110,7 @@
     "7.2"
    ],
    "detail": "For a prime p, a Z_(p)-algebra R and a truncation set S, the natural ring isomorphism W_S(R) = prod_{d in S prime to p} W_{s_S(d)}(R), compatible with restriction, V_n, F_n.",
-   "needs": "QWittVectors states big Witt rings and the comparison with p-typical Witt vectors on p-power truncation sets but not the product decomposition over Z_(p)-algebras.",
+   "needs": "For a prime p, a Z_(p)-algebra R and a truncation set S, the natural ring isomorphism W_S(R) = prod_{d in S prime to p} W_{s_S(d)}(R), s_S(d) = #{j >= 0 : d p^j in S}, commuting with restriction, carrying V_n and F_n for n prime to p to the reindexings up to the unit n, and carrying V_p and F_p to the p-typical V and F.",
    "supplier": "QWittVectors",
    "section": "§1.5"
   },
@@ -2122,7 +2122,7 @@
     "6.2"
    ],
    "detail": "For every perfect F_p-algebra A, IK(A)->IK(A[T]) is an equivalence (amm-perfectoid Proposition 5.1, through cdh descent for perfect schemes).",
-   "needs": "No roadmap states that NK vanishes for perfect F_p-algebras that are not regular noetherian.",
+   "needs": "For every perfect F_p-algebra A, the map IK(A) -> IK(A[T]) of nonconnective K-theory spectra is an equivalence (amm-perfectoid Proposition 5.1).",
    "supplier": "SchemeKTheoryOperations",
    "section": "§5.2"
   }
