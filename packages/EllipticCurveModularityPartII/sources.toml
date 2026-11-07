@@ -213,3 +213,19 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-03"
 cited_for = ["Exact supplier contracts; Layer 6.0c: geometric cuspidal-divisor torsion"]
+
+[[source]]
+id = "StacksProject"
+authors = "The Stacks project authors"
+title = "The Stacks project, Chapter 39: Groupoid Schemes"
+year = 2026
+locator_scheme = "tag"
+locator = "Tag 047I (Lemma 39.6.3) and Tag 047N (Lemma 39.8.2)"
+url = "https://stacks.math.columbia.edu/tag/047N"
+fetched_from = "https://stacks.math.columbia.edu/download/groupoids.pdf#nameddest=047N"
+fetched_at = "2026-11-07T10:33:11Z"
+sha256 = "4506a39201063afc270cbb68c9c0c1d3c90937c03f98cfee074605b402e7a30f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["Layer 6.0f: Cartier's theorem and free differentials of group schemes, for the minimal period subvariety"]
