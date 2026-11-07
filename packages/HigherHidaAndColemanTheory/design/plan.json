@@ -5296,6 +5296,7 @@
   "gaps": [
     {
       "id": "gap:solid-localization-kernel",
+      "slug": "solid-localization-kernel",
       "supplier": "SolidAnalyticRings",
       "section": "§§7.2–7.3",
       "needs": "Identify the relative polynomial analytic localization kernel by its idempotent completion algebra, prove its localization triangles and A[[T]]⊗^L_(A[T],A)_■A[T,T⁻¹]_■=0.",
@@ -5308,6 +5309,7 @@
     },
     {
       "id": "gap:discrete-adic-solid-comparison",
+      "slug": "discrete-adic-solid-comparison",
       "supplier": "SolidAnalyticRings",
       "section": "§§7.3–7.4",
       "needs": "Extend the supplied discrete animated Huber-pair coefficient structures and common-presentation comparisons to the discrete-adic locales and countable completion/localization towers used in BP-Hida, preserving their specified derived tensors and limits.",
@@ -5321,6 +5323,7 @@
     },
     {
       "id": "gap:siegel-ordinary-igusa",
+      "slug": "siegel-ordinary-igusa",
       "supplier": "HodgeTateAndCanonicalSubgroups",
       "section": "§5.1 (Siegel continuation)",
       "needs": "Supply full polarized ordinary Siegel Igusa towers in every genus with cofinal decomposable P-levels, cyclotomic action, toroidal quotients and de Rham reduction, including the cofinal p=2 construction.",
@@ -5334,6 +5337,7 @@
     },
     {
       "id": "gap:klingen-height-one-igusa",
+      "slug": "klingen-height-one-igusa",
       "supplier": "HodgeTateAndCanonicalSubgroups",
       "section": "§5.1 (height-one continuation)",
       "needs": "Supply the Klingen height-one multiplicative tower on the p-rank-at-least-one locus, its ℤ_p× Igusa torsor, and affine étale nonfinite transitions with the prescribed toroidal quotient compatibility.",
@@ -5344,6 +5348,7 @@
     },
     {
       "id": "gap:abelian-affinoid-basis",
+      "slug": "abelian-affinoid-basis",
       "supplier": "PerfectoidShimuraVarieties",
       "section": "§§3.13, 6.8",
       "needs": "Extend the Hodge-type affinoid basis to classical flag points after abelian-type descent, with the finite-level and toroidal comparisons used by BP-Coleman Theorem 4.5.2.",
@@ -5353,6 +5358,7 @@
     },
     {
       "id": "gap:projective-banach-cohomology",
+      "slug": "projective-banach-cohomology",
       "supplier": "AdicSpacesPartIII",
       "section": "§§R3.4, R3.6",
       "needs": "Extend coherent quasi-Stein cohomology to locally projective Banach coefficients on finite quasi-Stein covers, with compact restrictions, the finite-dimensional projected-lattice lemma and bounded-p-torsion integral Čech comparison of BP-Coleman §§2.4–2.6 and Lemma 5.9.10.",
@@ -5368,6 +5374,7 @@
     },
     {
       "id": "gap:banach-support-duality",
+      "slug": "banach-support-duality",
       "supplier": "AdicSpacesPartIV",
       "section": "§F1.10",
       "needs": "Extend the coherent dagger Serre pairing to complementary-support compact-type LB/Fréchet coefficient systems over finite extensions of ℚ_p, using Ω^d in degree d and finite-slope perfect pairings, as in BP-Coleman §2.7.",
@@ -5378,13 +5385,13 @@
     },
     {
       "id": "gap:coherent-correspondences",
+      "slug": "coherent-correspondences",
       "supplier": "AutomorphicBundlesPartII",
-      "section": "§IC.3",
-      "needs": "Supply coherent correspondence composition, Tor-independent base change, transpose and the two partial-support orders with twist formulas, completion triangles and equivariant closed-support filtrations, including the solid/discrete enhancement required by BP-Hida §§2.2–2.3 and Proposition 2.9.9.",
+      "section": "§§3.10–3.12 on the solid enhancement of §3.0a",
+      "needs": "Supply the two partial-support objects K+−(F)=RΓ(Xbar,j+_*j−_!F) and K−+(F)=RΓ(Xbar,i−_!i+_*F) of BP-Hida Definition 2.2.4 for closed D+,D− in a proper Xbar, their support-change maps of Lemma-construction 2.2.6, the comparison map K−+→K+−, the action of a cohomological correspondence with expanded D+ and contracted D− on both, and the Rlim/colim twist formulas of Corollary 2.3.11 for a coherent extension with locally principal D±.",
       "neededBy": [
         "HigherHidaAndColemanTheory:D1/ordinary-localization",
         "HigherHidaAndColemanTheory:D1/discrete-base-change",
-        "HigherHidaAndColemanTheory:D1/ordinary-perfectness",
         "HigherHidaAndColemanTheory:D1/ordinary-duality",
         "HigherHidaAndColemanTheory:D1/compact-dynamics",
         "HigherHidaAndColemanTheory:H2/integral-normalization",
@@ -5402,29 +5409,8 @@
       ]
     },
     {
-      "id": "gap:equivariant-coherent-models",
-      "supplier": "AutomorphicBundlesPartII",
-      "section": "§IC.2",
-      "needs": "Supply finite perfect group-ring models for flat coherent coefficients on finite étale abelian covers, with derived coefficient change and deck descent as in BP-Hida Lemma 2.6.11, without dividing by the group order.",
-      "neededBy": [
-        "HigherHidaAndColemanTheory:D1/ordinary-perfectness"
-      ]
-    },
-    {
-      "id": "gap:pel-subcanonical-vanishing",
-      "supplier": "AutomorphicBundlesPartII",
-      "section": "§IC.5, relative-subcanonical-vanishing",
-      "needs": "Supply the formally subcanonical chart criterion and toroidal-to-minimal relative vanishing on the normalized Siegel and Klingen models and their finite-coefficient thickenings used in the ordinary and two-affine-cover arguments.",
-      "neededBy": [
-        "HigherHidaAndColemanTheory:H2/stratum-dynamics",
-        "HigherHidaAndColemanTheory:B7/integral-overconvergent",
-        "HigherHidaAndColemanTheory:B7/family-comparison",
-        "HigherHidaAndColemanTheory:X8/klingen-complex",
-        "HigherHidaAndColemanTheory:X8/klingen-control"
-      ]
-    },
-    {
       "id": "gap:abelian-subcanonical-vanishing",
+      "slug": "abelian-subcanonical-vanishing",
       "supplier": "AutomorphicBundlesPartII",
       "section": "§IC.5, relative-subcanonical-vanishing (abelian-type extension)",
       "needs": "Extend the PEL formally subcanonical vanishing to abelian-type toroidal-to-minimal maps and the locally trivialized projective Banach coefficient situation of BP-Coleman Theorem 4.1.7 and Lemma 6.6.2 with its bounded-torsion reductions.",
