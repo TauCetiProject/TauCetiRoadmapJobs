@@ -9,7 +9,7 @@ year = 1989
 venue = "Inventiones Mathematicae 97"
 doi = "10.1007/BF01388892"
 locator_scheme = "section"
-locator = "§3, §5"
+locator = "§1 (1.5)–(1.20), §2 (2.1)–(2.5), §3 (3.1)–(3.21), §4 (4.1)–(4.7), §5 (5.1)–(5.6), §6 (6.1)"
 url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0097/LOG_0033.pdf"
 fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0097/LOG_0033.pdf"
 fetched_at = "2026-11-05T20:00:40Z"
@@ -17,7 +17,7 @@ sha256 = "b73ebcdad99f23e97279e3c3c171108a938d7abab293b8d08d2a0cd981a91c53"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["rational Chow groups of DM stacks, coarse moduli comparison"]
+cited_for = ["Layer 1 degrees and local embeddings", "Layer 2 cycles and Chow groups", "Layer 3 pullback and pushforward", "Layer 4 Gysin maps, rational equivalence, bivariant classes", "Layer 5 homotopy invariance and products", "Layer 6 coarse moduli comparison and degrees"]
 
 [[source]]
 id = "kresch1999"
@@ -26,8 +26,8 @@ title = "Cycle groups for Artin stacks"
 year = 1998
 doi = "10.1007/s002220050351"
 arxiv = "math/9810166v1"
-locator_scheme = "section"
-locator = "§2–§5"
+locator_scheme = "theorem"
+locator = "Theorem 2.1.12, Theorem 6.2.1"
 url = "https://arxiv.org/abs/math/9810166v1"
 fetched_from = "https://arxiv.org/pdf/math/9810166v1"
 fetched_at = "2026-11-05T19:52:27Z"
@@ -36,7 +36,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v1"
-cited_for = ["Chow groups of Artin stacks, comparison"]
+cited_for = ["scope boundaries: Chow groups of Artin stacks, virtual classes without global resolutions", "downstream consumers"]
 
 [[source]]
 id = "edidin-graham1998"
@@ -44,8 +44,8 @@ authors = "Dan Edidin, William Graham"
 title = "Equivariant intersection theory"
 year = 1996
 arxiv = "alg-geom/9603008v3"
-locator_scheme = "section"
-locator = "§2, §5"
+locator_scheme = "theorem"
+locator = "Proposition 10, Proposition 11 and the remark preceding Proposition 10"
 url = "https://arxiv.org/abs/alg-geom/9603008v3"
 fetched_from = "https://arxiv.org/pdf/alg-geom/9603008v3"
 fetched_at = "2026-11-05T19:52:33Z"
@@ -54,7 +54,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v3"
-cited_for = ["equivariant Chow groups, comparison with Vistoli after tensoring with Q"]
+cited_for = ["6.2 comparison with equivariant Chow groups"]
 
 [[source]]
 id = "behrend-fantechi1997"
@@ -64,7 +64,7 @@ year = 1996
 doi = "10.1007/s002220050136"
 arxiv = "alg-geom/9601010v1"
 locator_scheme = "section"
-locator = "§2–§5, §7"
+locator = "§1 (Lemma 1.1–Proposition 1.13), §2 (Propositions 2.1–2.7), §3 (Proposition 3.1–Proposition 3.14), §4 (Propositions 4.1–4.2, Definition 4.4, Theorem 4.5), §5 (Definitions 5.1–5.2, Propositions 5.3–5.10, Lemma 5.9), §6 (the basic example, Proposition 6.2), §7 (Propositions 7.1–7.5)"
 url = "https://arxiv.org/abs/alg-geom/9601010v1"
 fetched_from = "https://arxiv.org/pdf/alg-geom/9601010v1"
 fetched_at = "2026-11-05T19:52:39Z"
@@ -73,7 +73,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v1"
-cited_for = ["cone stacks, intrinsic normal cone, obstruction theories, virtual fundamental class"]
+cited_for = ["7.1–7.5 cones, cone stacks and h1/h0", "8.1–8.5 intrinsic normal sheaf and cone", "9.1–9.4 obstruction theories", "10.1–10.8 virtual fundamental classes", "11.2–11.4 obstruction theory of spaces of maps"]
 
 [[source]]
 id = "behrend1997"
@@ -82,8 +82,8 @@ title = "Gromov-Witten invariants in algebraic geometry"
 year = 1996
 doi = "10.1007/s002220050132"
 arxiv = "alg-geom/9601011v1"
-locator_scheme = "section"
-locator = "§1, §5"
+locator_scheme = "theorem"
+locator = "Propositions 2, 4, 5; Theorem 6; the virtual dimension count"
 url = "https://arxiv.org/abs/alg-geom/9601011v1"
 fetched_from = "https://arxiv.org/pdf/alg-geom/9601011v1"
 fetched_at = "2026-11-05T19:52:45Z"
@@ -92,7 +92,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v1"
-cited_for = ["Gromov–Witten obstruction theory on the stack of stable maps"]
+cited_for = ["11.1 spaces of maps over the stack of prestable curves", "11.5 global resolutions", "11.6 virtual dimension", "downstream consumers"]
 
 [[source]]
 id = "li-tian1998"
@@ -100,8 +100,8 @@ authors = "Jun Li, Gang Tian"
 title = "Virtual moduli cycles and Gromov-Witten invariants of algebraic varieties"
 year = 1996
 arxiv = "alg-geom/9602007v6"
-locator_scheme = "section"
-locator = "§1–§3"
+locator_scheme = "theorem"
+locator = "Theorem 4.3 (1)"
 url = "https://arxiv.org/abs/alg-geom/9602007v6"
 fetched_from = "https://arxiv.org/pdf/alg-geom/9602007v6"
 fetched_at = "2026-11-05T19:52:52Z"
@@ -110,7 +110,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v6"
-cited_for = ["virtual moduli cycles, comparison"]
+cited_for = ["11.6 virtual dimension", "downstream consumers"]
 
 [[source]]
 id = "keel-mori1997"
@@ -119,7 +119,7 @@ title = "Quotients by Groupoids"
 year = 1995
 arxiv = "alg-geom/9508012v1"
 locator_scheme = "theorem"
-locator = "Corollary 1.3"
+locator = "Theorem 1.1, Corollary 1.3"
 url = "https://arxiv.org/abs/alg-geom/9508012v1"
 fetched_from = "https://arxiv.org/pdf/alg-geom/9508012v1"
 fetched_at = "2026-11-05T19:52:57Z"
@@ -128,7 +128,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v1"
-cited_for = ["coarse moduli spaces"]
+cited_for = ["6.1 coarse moduli spaces of separated DM stacks"]
 
 [[source]]
 id = "graber-pandharipande1999"
@@ -136,8 +136,8 @@ authors = "T. Graber, R. Pandharipande"
 title = "Localization of virtual classes"
 year = 1997
 arxiv = "alg-geom/9708001v2"
-locator_scheme = "section"
-locator = "§1"
+locator_scheme = "theorem"
+locator = "Proposition 1"
 url = "https://arxiv.org/abs/alg-geom/9708001v2"
 fetched_from = "https://arxiv.org/pdf/alg-geom/9708001v2"
 fetched_at = "2026-11-05T19:53:03Z"
@@ -146,7 +146,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v2"
-cited_for = ["localisation of virtual classes (consumer statement)"]
+cited_for = ["downstream consumers: torus localisation"]
 
 [[source]]
 id = "kiem-li2013"
@@ -154,8 +154,8 @@ authors = "Young-Hoon Kiem, Jun Li"
 title = "Localizing Virtual Cycles by Cosections"
 year = 2010
 arxiv = "1007.3085v2"
-locator_scheme = "section"
-locator = "§1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
 url = "https://arxiv.org/abs/1007.3085v2"
 fetched_from = "https://arxiv.org/pdf/1007.3085v2"
 fetched_at = "2026-11-05T19:53:09Z"
@@ -164,7 +164,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v2"
-cited_for = ["cosection localisation (consumer statement)"]
+cited_for = ["downstream consumers: cosection localisation"]
 
 [[source]]
 id = "fulton-pandharipande1997"
@@ -172,8 +172,8 @@ authors = "W. Fulton, R. Pandharipande"
 title = "Notes on stable maps and quantum cohomology"
 year = 1996
 arxiv = "alg-geom/9608011v2"
-locator_scheme = "section"
-locator = "§1, §7"
+locator_scheme = "theorem"
+locator = "Theorem 1"
 url = "https://arxiv.org/abs/alg-geom/9608011v2"
 fetched_from = "https://arxiv.org/pdf/alg-geom/9608011v2"
 fetched_at = "2026-11-05T19:53:16Z"
@@ -182,7 +182,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v2"
-cited_for = ["the stack of stable maps and its properness"]
+cited_for = ["downstream consumers: stable maps"]
 
 [[source]]
 id = "behrend-manin1996"
@@ -190,8 +190,8 @@ authors = "K. Behrend, Yu. Manin"
 title = "Stacks of Stable Maps and Gromov-Witten Invariants"
 year = 1995
 arxiv = "alg-geom/9506023v2"
-locator_scheme = "section"
-locator = "§3, §5"
+locator_scheme = "theorem"
+locator = "Theorem 3.14"
 url = "https://arxiv.org/abs/alg-geom/9506023v2"
 fetched_from = "https://arxiv.org/pdf/alg-geom/9506023v2"
 fetched_at = "2026-11-05T19:53:21Z"
@@ -200,7 +200,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v2"
-cited_for = ["stacks of prestable and stable maps"]
+cited_for = ["downstream consumers: stacks of stable maps"]
 
 [[source]]
 id = "chang-guo-li2021"
@@ -209,7 +209,7 @@ title = "Polynomial structure of Gromov-Witten potential of quintic $3$-folds vi
 year = 2018
 arxiv = "1809.11058v1"
 locator_scheme = "theorem"
-locator = "Theorem 1.1"
+locator = "Remark 0.2 (definition of N_{g,d})"
 url = "https://arxiv.org/abs/1809.11058v1"
 fetched_from = "https://arxiv.org/pdf/1809.11058v1"
 fetched_at = "2026-11-05T19:53:27Z"
@@ -218,7 +218,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v1"
-cited_for = ["quintic Gromov–Witten invariants as virtual degrees"]
+cited_for = ["downstream consumers: quintic Gromov–Witten invariants"]
 
 [[source]]
 id = "gillet1984"
@@ -228,12 +228,12 @@ year = 1984
 venue = "Journal of Pure and Applied Algebra 34"
 doi = "10.1016/0022-4049(84)90036-7"
 locator_scheme = "section"
-locator = "§3"
+locator = "§4"
 url = "https://www.sciencedirect.com/science/article/pii/0022404984900367"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["intersection theory on Q-varieties"]
+cited_for = ["2.1 cycle groups of stacks (definitions restated by Vistoli)"]
 
 [[source]]
 id = "stacks-chow"
@@ -241,7 +241,7 @@ authors = "The Stacks Project Authors"
 title = "Chow Homology and Chern Classes (The Stacks Project, Tag 02P3)"
 year = 2026
 locator_scheme = "tag"
-locator = "02P3"
+locator = "Lemma 19.3 (02RX), Lemma 32.2 (0B74), Definition 33.1 (0B76), Definition 41.1 (0AZ1)"
 url = "https://stacks.math.columbia.edu/download/chow.pdf"
 fetched_from = "https://stacks.math.columbia.edu/download/chow.pdf"
 fetched_at = "2026-11-05T19:53:35Z"
@@ -249,7 +249,7 @@ sha256 = "28aaf3c7a76d359c3be56f1c86167ab42fcb40bc35b1ae6ef3b47cb41f9a41f5"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["cycles, rational equivalence, Gysin maps on schemes"]
+cited_for = ["2.4, 3.4 localisation on schemes", "5.1 homotopy invariance on schemes", "4.5 bivariant formalism on schemes", "6.3 degree of zero-cycles on schemes"]
 
 [[source]]
 id = "stacks-chow-spaces"
@@ -257,7 +257,7 @@ authors = "The Stacks Project Authors"
 title = "Chow Groups of Spaces (The Stacks Project, Tag 0EDQ)"
 year = 2026
 locator_scheme = "tag"
-locator = "0EDQ"
+locator = "Definition 3.1 (0EDZ), Lemma 4.3 (0EE3), Lemma 10.3 (0EPY), Lemma 13.2 (0EQ2), Definition 15.1 (0EQ6), Lemma 15.2 (0EQ7)"
 url = "https://stacks.math.columbia.edu/download/spaces-chow.pdf"
 fetched_from = "https://stacks.math.columbia.edu/download/spaces-chow.pdf"
 fetched_at = "2026-11-05T19:53:37Z"
@@ -265,7 +265,7 @@ sha256 = "221ed10e07b99e8260625a16f2a884bc5b130ac176657212c974a06c2e9abfc3"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["Chow groups of algebraic spaces"]
+cited_for = ["2.1–2.4 cycles, multiplicities, principal divisors and rational equivalence on algebraic spaces", "3.4 localisation"]
 
 [[source]]
 id = "stacks-cotangent"
@@ -273,7 +273,7 @@ authors = "The Stacks Project Authors"
 title = "The Cotangent Complex (The Stacks Project, Tag 08P5)"
 year = 2026
 locator_scheme = "tag"
-locator = "08P5"
+locator = "Lemma 18.8 (08SZ), Lemma 22.4 (08V2)"
 url = "https://stacks.math.columbia.edu/download/cotangent.pdf"
 fetched_from = "https://stacks.math.columbia.edu/download/cotangent.pdf"
 fetched_at = "2026-11-05T19:53:41Z"
@@ -281,7 +281,7 @@ sha256 = "11ac3f3090cbd582cd4f6c54ff282533104693f6ff233307dfc1b661b510b952"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["cotangent complex of an algebraic stack"]
+cited_for = ["8.2 agreement of the truncated cotangent complex with the naive cotangent complex", "8.3 transitivity"]
 
 [[source]]
 id = "fulton1998"
@@ -290,12 +290,12 @@ title = "Intersection Theory"
 year = 1998
 doi = "10.1007/978-1-4612-1700-8"
 locator_scheme = "chapter"
-locator = "Ch. 1, Ch. 6, §14.1, App. B.6"
+locator = "§1.10, Corollary 6.3, Proposition 8.1.1, Appendix B.6.6"
 url = "https://doi.org/10.1007/978-1-4612-1700-8"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["cycles, degree, Gysin maps, localised top Chern class, normal cones"]
+cited_for = ["3.5 exterior products", "5.2 self-intersection formula", "5.3 intersection products", "4.2 pure dimension of normal cones"]
 
 [[source]]
 id = "olsson2007"
@@ -304,8 +304,8 @@ title = "Sheaves on Artin stacks"
 year = 2007
 venue = "J. reine angew. Math. 603, 55–112"
 doi = "10.1515/CRELLE.2007.012"
-locator_scheme = "section"
-locator = "§8"
+locator_scheme = "theorem"
+locator = "Theorem 8.1"
 url = "https://drive.usercontent.google.com/download?id=1lFjebGL5Wmj7SXL8uvzqrTmRzrdynfuD&export=download"
 fetched_from = "https://drive.usercontent.google.com/download?id=1lFjebGL5Wmj7SXL8uvzqrTmRzrdynfuD&export=download"
 fetched_at = "2026-11-05T20:03:16Z"
@@ -313,7 +313,7 @@ sha256 = "e2e8b8aa042defc6144b9b9989f934d6c5cb4cac5e1e9a6122ceba8f3abe98e2"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["cotangent complex of a morphism of algebraic stacks"]
+cited_for = ["8.2–8.3 the full cotangent complex of a morphism of algebraic stacks, functoriality and flat base change"]
 
 [[source]]
 id = "stacks-properties"
@@ -321,7 +321,7 @@ authors = "The Stacks Project Authors"
 title = "Properties of Algebraic Stacks (The Stacks Project, Tag 04XA)"
 year = 2026
 locator_scheme = "tag"
-locator = "04XA"
+locator = "Definition 9.9 (04YM), Lemma 9.6 (0H20), Lemma 9.11 (0507), Lemmas 10.1–10.3 (0509, 050A, 050B), Lemma 12.1 (0AFM), Definitions 12.2–12.3 (0AFN, 0AFP), Example 12.5 (0AFR)"
 url = "https://stacks.math.columbia.edu/download/stacks-properties.pdf"
 fetched_from = "https://stacks.math.columbia.edu/download/stacks-properties.pdf"
 fetched_at = "2026-11-05T20:03:01Z"
@@ -329,4 +329,38 @@ sha256 = "0bed3a87534ac17a31cd9bd897c57d81910ac28be21df5a0d80465b6766da57a"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["points, dimension and closed substacks of algebraic stacks"]
+cited_for = ["1.2 closed and integral substacks", "1.3 dimension"]
+
+[[source]]
+id = "deligne-mumford1969"
+authors = "P. Deligne, D. Mumford"
+title = "The irreducibility of the space of curves of given genus"
+year = 1969
+venue = "Publications Mathématiques de l'IHÉS 36, 75–109"
+doi = "10.1007/BF02684599"
+locator_scheme = "theorem"
+locator = "Theorem 4.12"
+url = "http://www.numdam.org/item/PMIHES_1969__36__75_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1969__36__75_0.pdf"
+fetched_at = "2026-11-07T02:22:35Z"
+sha256 = "79316edb045ef5540367e9beaa4c057ac954a887eabb8c42a8208304dd8f60c5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["1.1 proper covers of separated DM stacks"]
+
+[[source]]
+id = "stacks-divisors"
+authors = "The Stacks Project Authors"
+title = "Divisors (The Stacks Project, Tag 01WO)"
+year = 2026
+locator_scheme = "tag"
+locator = "Lemma 21.4 (063H), Lemma 22.3 (063L)"
+url = "https://stacks.math.columbia.edu/download/divisors.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/divisors.pdf"
+fetched_at = "2026-11-07T11:21:35Z"
+sha256 = "0527740ac9877baff00aaad784e66aae83ff541dad40d4939028059f9f28a493"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["8.5 a closed immersion whose normal cone is a vector bundle is quasi-regular, hence regular on a locally Noetherian scheme"]

@@ -1,0 +1,2662 @@
+{
+ "roadmap": "VirtualFundamentalClasses",
+ "title": "Virtual fundamental classes",
+ "parent": null,
+ "summary": "Rational intersection theory on Deligne-Mumford stacks of finite type over a field (Gillet-Vistoli cycles and Chow groups, flat pullback, proper pushforward, Vistoli's Gysin maps and bivariant classes, homotopy invariance, Chern classes, intersection products), the comparisons with coarse moduli spaces and Edidin-Graham equivariant Chow groups and the rational degree of zero-cycles, and the Behrend-Fantechi theory: cone stacks, h1/h0, the truncated relative cotangent complex of a morphism of Deligne-Mumford type, the relative intrinsic normal cone of pure dimension, obstruction theories, the virtual fundamental class with its properties, and the perfect obstruction theory of relative spaces of maps from families of prestable curves.",
+ "baseline": {
+  "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+  "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
+ },
+ "layers": [
+  {
+   "key": "1",
+   "title": "Integral substacks, dimension and degrees",
+   "targets": [
+    {
+     "id": "1.1a",
+     "kind": "definition",
+     "name": "DMStack.ProperCover",
+     "statement": "A proper cover of a DM stack M over k is a proper surjective morphism X -> M from a scheme X of finite type over k.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k"
+     ],
+     "locator": {
+      "source": "vistoli1989",
+      "where": "§3, lines 887-890 (standing hypothesis)"
+     },
+     "prerequisites": [
+      "roadmap:SchemeAndStackFoundations §1.20",
+      "roadmap:SchemeAndStackFoundations §1.19"
+     ],
+     "api": [
+      {
+       "name": "ProperCover.comp",
+       "role": "constructor",
+       "statement": "The composite of a proper cover with a proper representable surjection of DM stacks is a proper cover."
+      },
+      {
+       "name": "ProperCover.baseChange",
+       "role": "functoriality",
+       "statement": "The base change of a proper cover along a morphism of DM stacks is a proper cover."
+      }
+     ],
+     "tests": [
+      {
+       "name": "properCover_BG",
+       "kind": "computation",
+       "statement": "For G finite constant, Spec k -> BG is finite etale of degree |G| and is a proper cover; BG has no dense open scheme, so a birational definition fails."
+      },
+      {
+       "name": "properCover_scheme_id",
+       "kind": "degenerate",
+       "statement": "The identity of a scheme of finite type, including the non-separated line with doubled origin, is a proper cover."
+      },
+      {
+       "name": "properCover_doubled_origin_group",
+       "kind": "non-example",
+       "statement": "For the group scheme over A^1 with fibre Z/2 over 0 and trivial elsewhere (doubled origin), BG is DM with quasi-finite non-finite inertia and admits no proper cover, since the pulled-back torsor would be separated while the unit section of G is not closed."
+      }
+     ]
+    },
+    {
+     "id": "1.1b",
+     "kind": "theorem",
+     "name": "DMStack.exists_properCover_of_separated",
+     "statement": "Every separated DM stack M of finite type over k admits a proper cover X -> M that is generically finite with X quasi-projective over k; if M is integral, X can be chosen integral.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k",
+      "M separated (IsSeparatedStack)"
+     ],
+     "locator": {
+      "source": "deligne-mumford1969",
+      "where": "Theorem 4.12, line 1012; vistoli1989 lines 582-584 and Lemma 1.10, line 299"
+     },
+     "prerequisites": [
+      "roadmap:SchemeAndStackFoundations §1.20",
+      "target:1.1a",
+      "target:1.2b"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "1.2a",
+     "kind": "definition",
+     "name": "DMStack.ClosedSubstack",
+     "statement": "A closed substack of M is a morphism Z -> M representable by closed immersions of algebraic spaces, up to equivalence over M.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k"
+     ],
+     "locator": {
+      "source": "stacks-properties",
+      "where": "Definition 9.9 (04YM), line 853; vistoli1989 (1.5), line 232"
+     },
+     "prerequisites": [
+      "roadmap:SchemeAndStackFoundations §1.19",
+      "roadmap:SchemeAndStackFoundations §1.20"
+     ],
+     "api": [
+      {
+       "name": "ClosedSubstack.equivInvariant",
+       "role": "characterisation",
+       "statement": "For an etale presentation [U/R] -> M, closed substacks correspond to closed subschemes Z of U with s^-1(Z) = t^-1(Z) (Lemma 9.11, 0507)."
+      },
+      {
+       "name": "ClosedSubstack.points_closedEmbedding",
+       "role": "evaluation",
+       "statement": "|Z| -> |M| is a homeomorphism onto a closed subset (Lemma 9.6, 0H20)."
+      },
+      {
+       "name": "ClosedSubstack.reducedInduced",
+       "role": "constructor",
+       "statement": "For a closed subset T of |M| there is a unique reduced closed substack with underlying set T (Lemmas 10.1-10.2, 0509, 050A)."
+      },
+      {
+       "name": "ClosedSubstack.factor_iff",
+       "role": "universal property",
+       "statement": "A morphism from a reduced stack factors through Z iff it does on underlying sets (Lemma 10.3, 050B)."
+      },
+      {
+       "name": "ClosedSubstack.baseChange",
+       "role": "functoriality",
+       "statement": "Base change along N -> M is a closed substack of N with underlying set the preimage."
+      }
+     ],
+     "tests": [
+      {
+       "name": "closedSubstack_BG_point_rejected",
+       "kind": "non-example",
+       "statement": "Spec k -> BG has closed image in |BG| but is not a closed substack: Spec k x_BG Spec k = G is not a closed subscheme of Spec k for G nontrivial."
+      },
+      {
+       "name": "closedSubstack_quotient_invariant",
+       "kind": "computation",
+       "statement": "In [A^1/mu_2] (x -> -x), V(x^2 - 1) defines a closed substack and V(x - 1) does not."
+      },
+      {
+       "name": "closedSubstack_nonreduced",
+       "kind": "degenerate",
+       "statement": "[V(x^2)/mu_2] is a non-reduced closed substack with reduction Bmu_2 and the same one-point underlying set."
+      },
+      {
+       "name": "closedSubstack_scheme",
+       "kind": "compatibility",
+       "statement": "For a scheme X closed substacks are closed subschemes (agreement with Mathlib IsClosedImmersion)."
+      }
+     ]
+    },
+    {
+     "id": "1.2b",
+     "kind": "theorem",
+     "name": "DMStack.integralSubstackEquivIrreducibleClosed",
+     "statement": "Z |-> |Z| is a bijection from integral (reduced, irreducible) closed substacks of M onto irreducible closed subsets of |M|; |M| is Noetherian and every closed substack has finitely many irreducible components; the image of an integral closed substack under a proper morphism is integral.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k"
+     ],
+     "locator": {
+      "source": "stacks-properties",
+      "where": "Lemmas 10.1-10.3, lines 1073-1106; vistoli1989 (1.6)-(1.7), lines 245-269"
+     },
+     "prerequisites": [
+      "target:1.2a",
+      "roadmap:SchemeAndStackFoundations §1.20"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "1.3",
+     "kind": "definition",
+     "name": "DMStack.dimAt",
+     "statement": "dim_x M := dim_u U for an etale morphism U -> M from a scheme and u over x; dim M := sup_x dim_x M; pure dimension n means dim_x M = n for all x.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k"
+     ],
+     "locator": {
+      "source": "stacks-properties",
+      "where": "Lemma 12.1 (0AFM), line 1374; Definitions 12.2-12.3 (0AFN, 0AFP), lines 1404-1417"
+     },
+     "prerequisites": [
+      "target:1.2a",
+      "roadmap:SchemeAndStackFoundations §1.20",
+      "roadmap:SchemeAndStackFoundations §0.7"
+     ],
+     "api": [
+      {
+       "name": "dimAt_independent",
+       "role": "well-definedness",
+       "statement": "dim_u U does not depend on the etale chart (R_u is etale over kappa(u), so the correction term vanishes)."
+      },
+      {
+       "name": "dim_integral_eq_trdeg",
+       "role": "characterisation",
+       "statement": "For integral V of finite type over k, dim V = trdeg_k k(V) = dim U for any etale U -> V from a nonempty integral scheme."
+      },
+      {
+       "name": "dim_flat",
+       "role": "functoriality",
+       "statement": "For f flat of relative dimension d, dim_x F = dim_{f(x)} G + d."
+      },
+      {
+       "name": "dim_closedSubstack_le",
+       "role": "monotonicity",
+       "statement": "dim Z <= dim M, with equality for integral Z inside integral M only if Z = M."
+      }
+     ],
+     "tests": [
+      {
+       "name": "dim_BG",
+       "kind": "computation",
+       "statement": "dim BG = 0 for G finite etale; dim [A^1/mu_2] = 1."
+      },
+      {
+       "name": "dim_smooth_atlas_correction",
+       "kind": "non-example",
+       "statement": "For Spec k with smooth atlas A^1, the uncorrected dim_u U gives 1 instead of 0."
+      },
+      {
+       "name": "dim_BGm",
+       "kind": "degenerate",
+       "statement": "B G_m is algebraic, not DM, of dimension -1; DM stacks of finite type have dimension >= 0 or are empty."
+      },
+      {
+       "name": "dim_scheme",
+       "kind": "compatibility",
+       "statement": "For a scheme of finite type over k, dimAt agrees with Mathlib's dimension of the scheme at a point."
+      }
+     ]
+    },
+    {
+     "id": "1.4a",
+     "kind": "definition",
+     "name": "DMStack.functionField",
+     "statement": "For integral V, k(V) is the colimit over nonempty open substacks U of V of the rings of morphisms U -> A^1; it is a field.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k",
+      "V integral"
+     ],
+     "locator": {
+      "source": "vistoli1989",
+      "where": "(1.14), lines 347-355"
+     },
+     "prerequisites": [
+      "target:1.2b",
+      "target:1.3"
+     ],
+     "api": [
+      {
+       "name": "functionField_etale",
+       "role": "characterisation",
+       "statement": "For etale U -> V from an integral scheme, k(V) -> k(U) is finite separable and identifies k(V) with rational functions on U with equal pullbacks to U x_V U."
+      },
+      {
+       "name": "functionField_quotient",
+       "role": "evaluation",
+       "statement": "k([X/G]) = k(X)^G for G finite etale acting on integral X."
+      },
+      {
+       "name": "functionField_map",
+       "role": "functoriality",
+       "statement": "A dominant morphism of integral stacks induces f^* : k(G) -> k(F)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "functionField_BG",
+       "kind": "computation",
+       "statement": "k(BG) = k."
+      },
+      {
+       "name": "functionField_quotient_mu2",
+       "kind": "computation",
+       "statement": "k([A^1/mu_2]) = k(x)^{mu_2} = k(x^2)."
+      },
+      {
+       "name": "functionField_gerbe",
+       "kind": "non-example",
+       "statement": "For [Spec C/(Z/4)] over R, k = C^{Z/4} = R, not C."
+      },
+      {
+       "name": "functionField_scheme",
+       "kind": "compatibility",
+       "statement": "For an integral scheme it is Mathlib's Scheme.functionField."
+      }
+     ]
+    },
+    {
+     "id": "1.4b",
+     "kind": "definition",
+     "name": "DMStack.genericStabilizerOrder",
+     "statement": "e(V) is the order of the automorphism group of a geometric point over the generic point of |V|; equivalently the generic degree of the inertia I_V -> V, which is finite etale of constant degree over a dense open.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k",
+      "V integral"
+     ],
+     "locator": {
+      "source": "vistoli1989",
+      "where": "(1.13), line 337, and line 422"
+     },
+     "prerequisites": [
+      "target:1.4a",
+      "roadmap:SchemeAndStackFoundations §1.20"
+     ],
+     "api": [
+      {
+       "name": "genericStabilizerOrder_eq_degree",
+       "role": "characterisation",
+       "statement": "e(V) = deg(I_V/V)."
+      },
+      {
+       "name": "genericStabilizerOrder_eq_one_iff",
+       "role": "characterisation",
+       "statement": "e(V) = 1 iff V has a dense open substack which is an algebraic space (setoid_criterion)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "e_BG",
+       "kind": "computation",
+       "statement": "e(BG) = |G| for G finite constant."
+      },
+      {
+       "name": "e_quotient",
+       "kind": "computation",
+       "statement": "e([A^1/mu_2]) = 1 while e(Bmu_2) = 2: the generic stabiliser is not the largest one."
+      },
+      {
+       "name": "e_gerbe",
+       "kind": "non-example",
+       "statement": "For [Spec C/(Z/4)] over R, e = 2 (the kernel), not 4 (the acting group)."
+      },
+      {
+       "name": "e_space",
+       "kind": "degenerate",
+       "statement": "e = 1 for every integral algebraic space."
+      }
+     ]
+    },
+    {
+     "id": "1.5",
+     "kind": "definition",
+     "name": "DMStack.degree",
+     "statement": "For a separated dominant morphism f : F -> G of integral DM stacks, deg(F/G) in Q_{>=0}: for representable f the generic rank of F x_G V over an etale integral chart V (0 if not generically finite), in general deg(U/G)/deg(U/F) for an etale integral chart U of F.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k",
+      "F, G integral",
+      "f separated and dominant"
+     ],
+     "locator": {
+      "source": "vistoli1989",
+      "where": "(1.15)-(1.17), lines 365-432"
+     },
+     "prerequisites": [
+      "target:1.4a",
+      "target:1.4b"
+     ],
+     "api": [
+      {
+       "name": "degree_mul",
+       "role": "functoriality",
+       "statement": "deg(F/H) = deg(F/G) deg(G/H) (1.16)."
+      },
+      {
+       "name": "degree_eq",
+       "role": "characterisation",
+       "statement": "deg(F/G) = (e(G)/e(F)) [k(F):k(G)], with [E:K] = 0 for infinite extensions (1.17)."
+      },
+      {
+       "name": "degree_pos_iff",
+       "role": "evaluation",
+       "statement": "deg(F/G) > 0 iff dim F = dim G; deg is an integer for representable f."
+      },
+      {
+       "name": "degree_baseChange",
+       "role": "functoriality",
+       "statement": "deg is invariant under dominant base change with integral fibre product."
+      }
+     ],
+     "tests": [
+      {
+       "name": "degree_BG",
+       "kind": "computation",
+       "statement": "deg(BG/Spec k) = 1/|G| and deg(Spec k/BG) = |G|; the definition [k(F):k(G)] gives 1 and breaks multiplicativity."
+      },
+      {
+       "name": "degree_infinite",
+       "kind": "degenerate",
+       "statement": "deg(A^1/Spec k) = 0."
+      },
+      {
+       "name": "degree_coarse_mu2",
+       "kind": "computation",
+       "statement": "[A^1/mu_2] -> A^1 has degree 1 and Bmu_2 -> {0} degree 1/2."
+      },
+      {
+       "name": "degree_char_p",
+       "kind": "computation",
+       "statement": "For Z/p acting on k[x,y] by y -> y + x in char p, [V(x)/(Z/p)] -> Spec k[y^p] has degree (1/p) p = 1."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "Cycles, rational equivalence and Chow groups",
+   "targets": [
+    {
+     "id": "2.1a",
+     "kind": "definition",
+     "name": "StackChow.Cycles",
+     "statement": "Z_k(M) is the free abelian group on integral closed substacks of M of dimension k; Z_k(M)_Q its rationalisation.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k"
+     ],
+     "locator": {
+      "source": "vistoli1989",
+      "where": "(3.1), line 892; gillet1984 §4"
+     },
+     "prerequisites": [
+      "target:1.2b",
+      "target:1.3",
+      "mathlib:AlgebraicCycle"
+     ],
+     "api": [
+      {
+       "name": "Cycles.etaleDescent",
+       "role": "characterisation",
+       "statement": "For etale surjective U -> M from a scheme, pullback Z_k(M) -> Z_k(U) is injective with image the cycles whose two pullbacks to U x_M U agree."
+      },
+      {
+       "name": "Cycles.equivIrreducible",
+       "role": "characterisation",
+       "statement": "Z_k(M) is free on irreducible closed subsets of |M| of dimension k."
+      }
+     ],
+     "tests": [
+      {
+       "name": "cycles_BG",
+       "kind": "computation",
+       "statement": "Z_0(BG) = Z [BG]."
+      },
+      {
+       "name": "cycles_empty",
+       "kind": "degenerate",
+       "statement": "Z_k of the empty stack is 0 for every k."
+      },
+      {
+       "name": "cycles_scheme",
+       "kind": "compatibility",
+       "statement": "For a scheme of finite type, Z_k(X) = Chow.cyclesOfDimension k X k (finite sums since X is quasi-compact)."
+      }
+     ]
+    },
+    {
+     "id": "2.1b",
+     "kind": "definition",
+     "name": "StackChow.cycleOf",
+     "statement": "The cycle of a closed substack Z is the sum over its irreducible components V of m_V [V], m_V the length of the local ring of Z x_M U at the generic point of a component of V x_M U for an etale U -> M.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k"
+     ],
+     "locator": {
+      "source": "vistoli1989",
+      "where": "(3.5), lines 967-971; stacks-chow-spaces Lemma 4.3 (0EE3), line 169"
+     },
+     "prerequisites": [
+      "target:2.1a"
+     ],
+     "api": [
+      {
+       "name": "cycleOf_integral",
+       "role": "evaluation",
+       "statement": "[V] = 1 [V] for integral V."
+      },
+      {
+       "name": "cycleOf_etale_pullback",
+       "role": "compatibility",
+       "statement": "Formation of [Z] commutes with etale pullback (stacks-chow-spaces Lemma 10.3, 0EPY)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "cycleOf_nonreduced_mu2",
+       "kind": "computation",
+       "statement": "[[V(x^2)/mu_2]] = 2 [Bmu_2]; the reduced support gives 1."
+      },
+      {
+       "name": "cycleOf_empty",
+       "kind": "degenerate",
+       "statement": "The cycle of the empty substack is 0."
+      },
+      {
+       "name": "cycleOf_scheme",
+       "kind": "compatibility",
+       "statement": "For schemes, [Z] is the cycle of SchemeAndStackFoundations §5.1 / stacks-chow §9."
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "definition",
+     "name": "StackChow.div",
+     "statement": "For integral V of dimension k+1 and phi in k(V)^x, ord_W(phi) for integral W of dimension k is Mathlib's Scheme.ord on an etale integral chart at a codimension-one point over W; div(phi) = sum ord_W(phi) [W]; W_k(M) = direct sum of k(V)^x and boundary W_k(M) -> Z_k(M).",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k"
+     ],
+     "locator": {
+      "source": "vistoli1989",
+      "where": "(3.2), lines 901-911, Lemma 3.3, lines 940-948; stacks-chow-spaces Lemma 13.2 (0EQ2), line 667"
+     },
+     "prerequisites": [
+      "target:1.4a",
+      "target:2.1a",
+      "mathlib:AlgebraicGeometry.Scheme.ord"
+     ],
+     "api": [
+      {
+       "name": "ord_independent",
+       "role": "well-definedness",
+       "statement": "ord_W does not depend on the chart or component."
+      },
+      {
+       "name": "ord_mul",
+       "role": "multiplicativity",
+       "statement": "ord_W(phi psi) = ord_W(phi) + ord_W(psi)."
+      },
+      {
+       "name": "div_finite",
+       "role": "finiteness",
+       "statement": "Only finitely many W have nonzero order."
+      }
+     ],
+     "tests": [
+      {
+       "name": "div_mu2",
+       "kind": "computation",
+       "statement": "On [A^1/mu_2], div(x^2) = 2 [Bmu_2] while on the coarse line div(y) = [0]; x is not a rational function on the stack."
+      },
+      {
+       "name": "W_BG",
+       "kind": "degenerate",
+       "statement": "W_k(BG) = 0 for every k."
+      },
+      {
+       "name": "ord_unit",
+       "kind": "non-example",
+       "statement": "A unit near the generic point of W has order 0; the junk value of Scheme.ord at coheight != 1 is never used."
+      }
+     ]
+    },
+    {
+     "id": "2.3",
+     "kind": "definition",
+     "name": "StackChow.ChowGroup",
+     "statement": "R_k(M) is the image of the boundary; A_k(M) := Z_k(M)/R_k(M); A_k(M)_Q := A_k(M) tensor Q.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k"
+     ],
+     "locator": {
+      "source": "vistoli1989",
+      "where": "(3.4), lines 960-966"
+     },
+     "prerequisites": [
+      "target:2.1a",
+      "target:2.2"
+     ],
+     "api": [
+      {
+       "name": "cycleClass_surjective",
+       "role": "constructor",
+       "statement": "The class map Z_k -> A_k is surjective."
+      },
+      {
+       "name": "ChowGroup_vanish",
+       "role": "degenerate",
+       "statement": "A_k(M) = 0 for k < 0 and k > dim M."
+      },
+      {
+       "name": "ChowGroup_top_free",
+       "role": "evaluation",
+       "statement": "A_{dim M}(M) is free on the irreducible components of top dimension."
+      },
+      {
+       "name": "ChowGroup_sum",
+       "role": "functoriality",
+       "statement": "A_k of a finite disjoint union is the direct sum."
+      }
+     ],
+     "tests": [
+      {
+       "name": "chow_BG",
+       "kind": "computation",
+       "statement": "A_0(BG) = Z and A_k(BG) = 0 for k != 0."
+      },
+      {
+       "name": "chow_mu2_torsion",
+       "kind": "computation",
+       "statement": "A_0([A^1/mu_2]) = Z/2 generated by [Bmu_2], and A_0([A^1/mu_2])_Q = 0."
+      },
+      {
+       "name": "chow_scheme",
+       "kind": "compatibility",
+       "statement": "For a scheme of finite type, A_k(X) = Chow.ChowGroup k X k."
+      },
+      {
+       "name": "chow_empty",
+       "kind": "degenerate",
+       "statement": "All Chow groups of the empty stack vanish."
+      }
+     ]
+    },
+    {
+     "id": "2.4",
+     "kind": "theorem",
+     "name": "StackChow.chowGroup_scheme_equiv",
+     "statement": "For a scheme X of finite type over k, Z_k(X) = Chow.cyclesOfDimension, R_k(X) = Chow.RatEquiv and A_k(X) is isomorphic to Chow.ChowGroup compatibly with the class maps; for an algebraic space of finite type the groups are those of stacks-chow-spaces Definitions 3.1 and 15.1.",
+     "hypotheses": [
+      "X a scheme (resp. algebraic space) of finite type over k"
+     ],
+     "locator": {
+      "source": "stacks-chow-spaces",
+      "where": "Definitions 3.1 (0EDZ) and 15.1 (0EQ6), lines 126 and 797; stacks-chow Lemma 19.3 (02RX)"
+     },
+     "prerequisites": [
+      "target:2.3",
+      "roadmap:SchemeAndStackFoundations §5.1"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "Flat pullback, proper pushforward and exterior products",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "construction",
+     "name": "StackChow.flatPullback",
+     "statement": "For f : F -> G flat of relative dimension d, f^*[V] := [V x_G F] defines f^* : A_k(G) -> A_{k+d}(F), functorial, agreeing with SchemeAndStackFoundations §5.2 on schemes.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k",
+      "f flat of relative dimension d"
+     ],
+     "locator": {
+      "source": "vistoli1989",
+      "where": "(3.6)(i), line 974; (3.7), line 989; lines 1012-1025"
+     },
+     "prerequisites": [
+      "target:2.3",
+      "target:2.1b",
+      "roadmap:SchemeAndStackFoundations §5.2"
+     ],
+     "api": [
+      {
+       "name": "flatPullback_comp",
+       "role": "functoriality",
+       "statement": "(g f)^* = f^* g^*, id^* = id."
+      },
+      {
+       "name": "flatPullback_open",
+       "role": "evaluation",
+       "statement": "For an open substack, f^* is restriction."
+      }
+     ],
+     "tests": [
+      {
+       "name": "flatPullback_BG",
+       "kind": "computation",
+       "statement": "For pi : Spec k -> BG, pi^*[BG] = [Spec k], not |G| [Spec k]."
+      },
+      {
+       "name": "flatPullback_A1",
+       "kind": "computation",
+       "statement": "pr : A^1 x M -> M sends [V] to [A^1 x V]."
+      },
+      {
+       "name": "flatPullback_coarse_mu2",
+       "kind": "computation",
+       "statement": "The flat coarse map [A^1/mu_2] -> A^1 pulls [0] back to 2 [Bmu_2]."
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "construction",
+     "name": "StackChow.properPushforward",
+     "statement": "For f proper and representable, f_*[V] := deg(V/f(V)) [f(V)] (0 if the dimension drops) defines f_* : A_k(F) -> A_k(G), functorial, agreeing with Mathlib's AlgebraicCycle.map with residue-degree weights on schemes.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k",
+      "f proper and representable"
+     ],
+     "locator": {
+      "source": "vistoli1989",
+      "where": "(3.6)(ii), line 980; (3.7), lines 989-1011"
+     },
+     "prerequisites": [
+      "target:1.5",
+      "target:2.3",
+      "roadmap:SchemeAndStackFoundations §5.2",
+      "mathlib:AlgebraicCycle.map"
+     ],
+     "api": [
+      {
+       "name": "properPushforward_comp",
+       "role": "functoriality",
+       "statement": "(g f)_* = g_* f_*."
+      },
+      {
+       "name": "properPushforward_closedImmersion",
+       "role": "evaluation",
+       "statement": "For a closed immersion i_*[V] = [V]."
+      }
+     ],
+     "tests": [
+      {
+       "name": "pushforward_BG_cover",
+       "kind": "computation",
+       "statement": "pi_*[Spec k] = |G| [BG] for pi : Spec k -> BG, and pi_* pi^* = |G|."
+      },
+      {
+       "name": "pushforward_P1",
+       "kind": "compatibility",
+       "statement": "For P^1 -> Spec k, f_*[P] = [kappa(P):k][Spec k]."
+      },
+      {
+       "name": "pushforward_dimension_drop",
+       "kind": "degenerate",
+       "statement": "A curve mapping to a point pushes forward to 0."
+      }
+     ]
+    },
+    {
+     "id": "3.3",
+     "kind": "construction",
+     "name": "StackChow.properPushforwardRat",
+     "statement": "For f : F -> G proper with F admitting a proper cover, f_* with Vistoli's rational degree defines A_k(F)_Q -> A_k(G)_Q; for f proper surjective, f_* is surjective on rational cycles and rational equivalences lift; functorial; equals 3.2 for representable f.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k",
+      "f proper",
+      "F admits a proper cover"
+     ],
+     "locator": {
+      "source": "vistoli1989",
+      "where": "(3.6)(iii), line 985; Lemma 3.8, line 1027; lines 1045-1048"
+     },
+     "prerequisites": [
+      "target:1.1a",
+      "target:1.5",
+      "target:3.1",
+      "target:3.2"
+     ],
+     "api": [
+      {
+       "name": "properPushforwardRat_comp",
+       "role": "functoriality",
+       "statement": "(g f)_* = g_* f_*."
+      },
+      {
+       "name": "properPushforwardRat_surjective",
+       "role": "evaluation",
+       "statement": "Lemma 3.8 (i)-(ii)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "pushforwardRat_BG",
+       "kind": "computation",
+       "statement": "BG -> Spec k sends [BG] to (1/|G|)[Spec k]; composing with Spec k -> BG gives the identity."
+      },
+      {
+       "name": "pushforwardRat_mu2",
+       "kind": "computation",
+       "statement": "The coarse map sends 2[Bmu_2] to [0] = div(y)."
+      },
+      {
+       "name": "pushforwardRat_not_integral",
+       "kind": "non-example",
+       "statement": "No integral pushforward along BG -> Spec k compatible with 3.2 exists, since |G| c = 1 has no integer solution."
+      }
+     ]
+    },
+    {
+     "id": "3.4a",
+     "kind": "theorem",
+     "name": "StackChow.flatPullback_properPushforward",
+     "statement": "For a 2-cartesian square with f proper and phi flat, phi^* f_* = f'_* phi'^* (integrally for representable f, rationally in general).",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k",
+      "f proper",
+      "phi flat of relative dimension d"
+     ],
+     "locator": {
+      "source": "vistoli1989",
+      "where": "Lemma 3.9, line 1049"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:3.2",
+      "target:3.3"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "3.4b",
+     "kind": "theorem",
+     "name": "StackChow.localization_exact",
+     "statement": "For a closed substack Z of M with complement U, A_k(Z) -> A_k(M) -> A_k(U) -> 0 is exact, integrally and rationally.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k"
+     ],
+     "locator": {
+      "source": "stacks-chow",
+      "where": "Lemma 19.3 (02RX), line 1395; stacks-chow-spaces Lemma 15.2 (0EQ7), line 813"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:3.2",
+      "target:1.2b"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "3.5",
+     "kind": "construction",
+     "name": "StackChow.externalProduct",
+     "statement": "[V] x [W] := [V x_k W] defines A_k(F) tensor A_l(G) -> A_{k+l}(F x_k G), associative, commutative, unital, compatible with flat pullback and proper pushforward; on schemes Chow.externalProduct.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k"
+     ],
+     "locator": {
+      "source": "fulton1998",
+      "where": "§1.10; vistoli1989 line 1707"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:3.3",
+      "roadmap:SchemeAndStackFoundations §5.5"
+     ],
+     "api": [
+      {
+       "name": "externalProduct_assoc",
+       "role": "structure",
+       "statement": "Associativity and commutativity up to the swap, unit [Spec k]."
+      }
+     ],
+     "tests": [
+      {
+       "name": "externalProduct_separable",
+       "kind": "computation",
+       "statement": "[Spec K] x [Spec K] for K/k separable quadratic is a sum of two points."
+      },
+      {
+       "name": "externalProduct_inseparable",
+       "kind": "computation",
+       "statement": "For K = k(a^{1/p}), [Spec K] x [Spec K] = p [Spec K]; the reduced product gives [Spec K]."
+      },
+      {
+       "name": "externalProduct_BG",
+       "kind": "computation",
+       "statement": "[BG] x [BH] = [B(G x H)]."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "Local embeddings, normal cones and Gysin homomorphisms",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "construction",
+     "name": "Cone.ofGradedAlgebra",
+     "statement": "For a quasi-coherent graded O_M-algebra S with S_0 = O_M, S_1 coherent and S generated by S_1, C(S) -> M is the stack of pairs (t in M(T), O_T-algebra map t^*S -> O_T); it is representable by schemes and affine, with vertex and A^1-action; abelian cones C(F) = C(Sym F) and vector bundles C(E^dual).",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k",
+      "S graded quasi-coherent, S_0 = O, S_1 coherent, generated in degree 1"
+     ],
+     "locator": {
+      "source": "behrend-fantechi1997",
+      "where": "lines 181-236; vistoli1989 lines 470-484"
+     },
+     "prerequisites": [
+      "roadmap:SchemeAndStackFoundations §1.22",
+      "roadmap:AlgebraicVectorBundles L1A",
+      "roadmap:AlgebraicVectorBundles L2A",
+      "roadmap:AlgebraicVectorBundles L2B"
+     ],
+     "api": [
+      {
+       "name": "Cone.baseChange",
+       "role": "functoriality",
+       "statement": "C(S) x_M N = C(S_N) for N -> M."
+      },
+      {
+       "name": "Cone.chart",
+       "role": "evaluation",
+       "statement": "C(S) x_M T is AlgebraicVectorBundles' relativeSpec of t^*S."
+      },
+      {
+       "name": "Cone.abelian_represents",
+       "role": "universal property",
+       "statement": "C(F)(T) = Hom(F_T, O_T)."
+      },
+      {
+       "name": "Cone.descent",
+       "role": "constructor",
+       "statement": "Cones descend along etale covers."
+      }
+     ],
+     "tests": [
+      {
+       "name": "cone_trivial",
+       "kind": "computation",
+       "statement": "C(O) = A^1 x M and C(0) = M."
+      },
+      {
+       "name": "cone_nonabelian",
+       "kind": "non-example",
+       "statement": "Spec k[x,y]/(xy) is a cone over Spec k that is not abelian."
+      },
+      {
+       "name": "cone_dualisation",
+       "kind": "compatibility",
+       "statement": "C(L^dual) is totalSpace L; on P^1, C(O(1)) is the total space of O(-1)."
+      }
+     ]
+    },
+    {
+     "id": "4.2a",
+     "kind": "definition",
+     "name": "DMStack.IsLocalEmbedding",
+     "statement": "A local embedding is a morphism of DM stacks representable by schemes, unramified and of finite type; equivalently there are etale atlases U -> F, V -> G and a closed immersion U -> V compatible with f; regular of codimension d if U -> V can be chosen regular of codimension d; the same definitions apply to morphisms of algebraic k-stacks representable by schemes, with smooth atlases, and base change to DM stacks gives local embeddings of DM stacks.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k"
+     ],
+     "locator": {
+      "source": "vistoli1989",
+      "where": "Lemma 1.19, line 485; (1.20), line 503"
+     },
+     "prerequisites": [
+      "roadmap:SchemeAndStackFoundations §1.19",
+      "roadmap:SchemeAndStackFoundations §5.5"
+     ],
+     "api": [
+      {
+       "name": "IsLocalEmbedding.baseChange",
+       "role": "functoriality",
+       "statement": "Local embeddings are stable under base change."
+      },
+      {
+       "name": "IsLocalEmbedding.diagonal",
+       "role": "constructor",
+       "statement": "The diagonal of a smooth separated DM stack of pure dimension d is a regular local embedding of codimension d."
+      },
+      {
+       "name": "IsLocalEmbedding.zeroSection",
+       "role": "constructor",
+       "statement": "The zero section of a vector bundle is a regular local embedding."
+      }
+     ],
+     "tests": [
+      {
+       "name": "localEmbedding_BG_diagonal",
+       "kind": "computation",
+       "statement": "The diagonal of BG (G finite etale) is finite etale, regular of codimension 0, and not a closed immersion."
+      },
+      {
+       "name": "localEmbedding_closed",
+       "kind": "degenerate",
+       "statement": "Closed immersions are local embeddings."
+      },
+      {
+       "name": "localEmbedding_nonunramified",
+       "kind": "non-example",
+       "statement": "A^1 -> Spec k is representable of finite type but not unramified."
+      }
+     ]
+    },
+    {
+     "id": "4.2b",
+     "kind": "construction",
+     "name": "DMStack.normalCone",
+     "statement": "The normal cone C_{F/G} of a local embedding, by etale descent of the normal cones C_{U/V}; the normal sheaf N_{F/G} = C(I/I^2); for regular f the normal bundle.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k",
+      "f a local embedding"
+     ],
+     "locator": {
+      "source": "vistoli1989",
+      "where": "lines 508-535; Lemma 3.14, line 1126"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "target:4.2a",
+      "roadmap:SchemeAndStackFoundations §5.5"
+     ],
+     "api": [
+      {
+       "name": "normalCone_baseChange",
+       "role": "functoriality",
+       "statement": "A closed embedding C_{F'/G'} -> C_{F/G} x_F F' for base change, an isomorphism for flat base change."
+      },
+      {
+       "name": "normalCone_pureDim",
+       "role": "dimension",
+       "statement": "If G has pure dimension n, C_{F/G} has pure dimension n (fulton1998 B.6.6)."
+      },
+      {
+       "name": "normalSheaf_abelianHull",
+       "role": "characterisation",
+       "statement": "N_{F/G} is the abelian hull of C_{F/G}."
+      }
+     ],
+     "tests": [
+      {
+       "name": "normalCone_zeroSection",
+       "kind": "computation",
+       "statement": "The zero section of E has normal bundle E."
+      },
+      {
+       "name": "normalCone_mu2",
+       "kind": "computation",
+       "statement": "Bmu_2 -> [A^1/mu_2] has normal bundle the sign-character line."
+      },
+      {
+       "name": "normalCone_fatPoint",
+       "kind": "non-example",
+       "statement": "For Spec k[x,y]/(x,y)^2 in A^2 the normal cone has dimension 2 and the normal sheaf has a fibre A^3."
+      }
+     ]
+    },
+    {
+     "id": "4.3",
+     "kind": "construction",
+     "name": "Gysin.gysinScheme",
+     "statement": "For a regular local embedding f : F -> G of codimension d and Y -> G from a scheme, f^! : A_k(Y) -> A_{k-d}(F x_G Y) defined by f^![T] = (U -> X)_* s^*[C_{U/T}]; it passes to rational equivalence, commutes with proper pushforward and flat pullback of schemes, two Gysin maps commute, and it equals Chow.gysin for regular closed immersions of schemes.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k",
+      "f a regular local embedding of codimension d",
+      "Y a scheme of finite type over k"
+     ],
+     "locator": {
+      "source": "vistoli1989",
+      "where": "(3.10)-(3.13), lines 1081-1123; Lemmas 3.19-3.20; §4"
+     },
+     "prerequisites": [
+      "target:4.2b",
+      "target:4.4",
+      "target:3.2",
+      "target:3.1",
+      "roadmap:SchemeAndStackFoundations §5.2",
+      "roadmap:SchemeAndStackFoundations §5.5"
+     ],
+     "api": [
+      {
+       "name": "gysinScheme_proper",
+       "role": "compatibility",
+       "statement": "f^! q_* = p_* f^! for proper q."
+      },
+      {
+       "name": "gysinScheme_flat",
+       "role": "compatibility",
+       "statement": "f^! q^* = p^* f^! for flat q."
+      },
+      {
+       "name": "gysinScheme_comm",
+       "role": "structure",
+       "statement": "f_1^! f_2^! = f_2^! f_1^!."
+      }
+     ],
+     "tests": [
+      {
+       "name": "gysin_double_cover",
+       "kind": "computation",
+       "statement": "Along {0} -> A^1 through z -> z^2, f^![A^1] = 2 [pt]."
+      },
+      {
+       "name": "gysin_BG_codim0",
+       "kind": "computation",
+       "statement": "For Spec k -> BG and Y = Spec k, f^![Spec k] = [G] = |G| [pt]."
+      },
+      {
+       "name": "gysin_self",
+       "kind": "compatibility",
+       "statement": "For the zero section of E over a scheme, s^! is the inverse of flat pullback and s^![M] = c_r(E) cap [M] for Y = M."
+      }
+     ]
+    },
+    {
+     "id": "4.4",
+     "kind": "construction",
+     "name": "Gysin.vistoliRationalEquivalence",
+     "statement": "For a 2-cartesian square of DM stacks with Y reduced of pure dimension, i : X -> Y a local embedding and v : Y' -> Y a regular local embedding with normal bundle N, the canonical rational equivalence beta(Y',X) in W_*(N x_Y C_{X/Y}) with boundary [C_{u^*C/C}] - [rho^* C_{X'/Y'}]; compatible with smooth base change, smooth factorisation and the tangent action; consequence v^![C] = [C_{X'/Y'}] in A_*(u^*C).",
+     "hypotheses": [
+      "Y a DM stack over the field k (IsDeligneMumford, of finite type over Spec k), reduced and of pure dimension",
+      "i a local embedding",
+      "v a regular local embedding"
+     ],
+     "locator": {
+      "source": "vistoli1989",
+      "where": "Lemma 3.16, line 1172; Lemma 4.6, line 1458, and lines 1451-1452 (reduced equidimensional Y), 1465-1470 (construction); behrend-fantechi1997 Propositions 3.3-3.5, lines 834-897"
+     },
+     "prerequisites": [
+      "target:4.2b",
+      "target:2.3",
+      "roadmap:SchemeAndStackFoundations §5.5"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "beta_trivial",
+       "kind": "degenerate",
+       "statement": "For X = Y the boundary is [N] - [N] = 0, and beta = 0 itself: the product of the ideals of X and Y' is zero, so the blow-up in Vistoli's construction is empty (vistoli1989 lines 1466-1470, 1482-1488)."
+      },
+      {
+       "name": "beta_identity",
+       "kind": "degenerate",
+       "statement": "For v the identity, the boundary is [C] - [C] = 0, and beta = 0 because the ideal of Y' is zero."
+      },
+      {
+       "name": "beta_regular_self",
+       "kind": "computation",
+       "statement": "For v = i regular, v^![N] = s_*[X] in A(N), both with s^! equal to c_d(N) cap [X]; equality holds in A_*, not on cycles (xy = 0 in A^2 example)."
+      },
+      {
+       "name": "beta_nonreduced",
+       "kind": "non-example",
+       "statement": "For Y = A^1 x Spec k[eps]/(eps^2) and X the origin, [C_{X/Y}] = 2[A^1] (gr = k[T,E]/(E^2)) while the cone of the origin in Y_red = A^1 has multiplicity 1; the normalised blow-up only sees Y_red, so reducedness of Y is needed."
+      }
+     ]
+    },
+    {
+     "id": "4.5",
+     "kind": "construction",
+     "name": "Gysin.gysin",
+     "statement": "Bivariant groups A^p(F -> G) with rational coefficients for morphisms representable by schemes, with product, pushforward, pullback, the commuting subgroup C^* and orientation classes [f] of flat maps and regular local embeddings; their action on A_*(G')_Q for stacks with a proper cover; the Gysin map f^! eta := [f] eta, with f^![G] = [F] for equidimensional G; the extension to regular local embeddings and flat morphisms of algebraic stacks acting on DM stacks over them, and Gysin maps of lci morphisms factored as regular local embedding followed by smooth morphism.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k",
+      "G' admits a proper cover"
+     ],
+     "locator": {
+      "source": "vistoli1989",
+      "where": "(5.1)-(5.5), lines 1550-1704; behrend-fantechi1997 lines 1617-1643"
+     },
+     "prerequisites": [
+      "target:1.1a",
+      "target:1.5",
+      "target:3.3",
+      "target:4.3"
+     ],
+     "api": [
+      {
+       "name": "gysin_proper",
+       "role": "compatibility",
+       "statement": "Gysin maps on stacks commute with proper pushforward and flat representable pullback (Lemma 5.3)."
+      },
+      {
+       "name": "gysin_fundamental",
+       "role": "evaluation",
+       "statement": "f^![G] = [F] for G equidimensional (Lemma 5.5)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "bivariant_id",
+       "kind": "degenerate",
+       "statement": "[id] acts as the identity."
+      },
+      {
+       "name": "bivariant_BG",
+       "kind": "computation",
+       "statement": "[pi] for pi : Spec k -> BG sends [BG] to [Spec k]."
+      },
+      {
+       "name": "gysin_zeroSection",
+       "kind": "computation",
+       "statement": "For the zero section of E, s^![E] = [M]."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "Vector bundles, Chern classes and intersection products",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "theorem",
+     "name": "StackChow.homotopy_invariance",
+     "statement": "For M admitting a proper cover and pi : E -> M a vector bundle of constant rank r with zero section s, pi^* : A_k(M)_Q -> A_{k+r}(E)_Q is an isomorphism with inverse s^!; for a surjection of vector bundles q with q s' = s, s'^! q^* = s^!.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k",
+      "M admits a proper cover",
+      "E locally free of constant rank r"
+     ],
+     "locator": {
+      "source": "vistoli1989",
+      "where": "Lemma 5.5, lines 1671-1684; Lemma 3.8, line 1027; stacks-chow Lemma 32.2 (0B74), line 2769"
+     },
+     "prerequisites": [
+      "target:1.1a",
+      "target:3.1",
+      "target:3.3",
+      "target:3.4a",
+      "target:4.5",
+      "roadmap:SchemeAndStackFoundations §5.2"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "5.2",
+     "kind": "construction",
+     "name": "StackChow.chernClass",
+     "statement": "For a vector bundle E of rank r, c_i(E) in C^i(M -> M) with rational coefficients acting by c_i(E|_Y) cap on schemes Y -> M; Whitney sum, vanishing above the rank, projection formula; self-intersection s^! s_* alpha = c_r(E) cap alpha.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k",
+      "E locally free of constant rank r"
+     ],
+     "locator": {
+      "source": "fulton1998",
+      "where": "Corollary 6.3; vistoli1989 lines 1570-1602"
+     },
+     "prerequisites": [
+      "target:4.5",
+      "target:5.1",
+      "roadmap:SchemeAndStackFoundations §5.4",
+      "roadmap:SchemeAndStackFoundations §5.5"
+     ],
+     "api": [
+      {
+       "name": "chernClass_whitney",
+       "role": "structure",
+       "statement": "c(E) = c(E')c(E'') for a short exact sequence."
+      },
+      {
+       "name": "chernClass_vanish",
+       "role": "degenerate",
+       "statement": "c_i(E) = 0 for i > r, c_0 = 1."
+      },
+      {
+       "name": "chernClass_selfIntersection",
+       "role": "characterisation",
+       "statement": "s^! s_* alpha = c_r(E) cap alpha."
+      }
+     ],
+     "tests": [
+      {
+       "name": "chern_P1",
+       "kind": "computation",
+       "statement": "deg(c_1(O(-1)) cap [P^1]) = -1."
+      },
+      {
+       "name": "chern_BG",
+       "kind": "computation",
+       "statement": "Rational Chern classes of representations of a finite group vanish in positive degree on BG."
+      },
+      {
+       "name": "chern_LplusLdual",
+       "kind": "computation",
+       "statement": "For E = L + L^dual, c_1 = 0 and c_2 = -c_1(L)^2."
+      }
+     ]
+    },
+    {
+     "id": "5.3",
+     "kind": "construction",
+     "name": "StackChow.intersectionProduct",
+     "statement": "For smooth separated G of pure dimension n and f : F -> G, x ._f y := gamma^!(x x y); A^*(G)_Q is a commutative graded ring with unit [G]; evaluation A^*(T -> G) -> A_*(T)_Q is an isomorphism for representable T -> G; agreement with Chow.intersect on smooth schemes.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k",
+      "G smooth, separated, pure dimension n"
+     ],
+     "locator": {
+      "source": "vistoli1989",
+      "where": "lines 1705-1718; (5.6), line 1719; fulton1998 Proposition 8.1.1"
+     },
+     "prerequisites": [
+      "target:3.5",
+      "target:4.2a",
+      "target:4.5",
+      "target:5.2",
+      "roadmap:SchemeAndStackFoundations §5.6"
+     ],
+     "api": [
+      {
+       "name": "intersectionProduct_ring",
+       "role": "structure",
+       "statement": "Associative, commutative, unital; flat pullback is a ring map."
+      },
+      {
+       "name": "intersectionProduct_projection",
+       "role": "compatibility",
+       "statement": "Projection formula for proper representable maps."
+      }
+     ],
+     "tests": [
+      {
+       "name": "product_BG",
+       "kind": "computation",
+       "statement": "A^*(BG)_Q = Q in degree 0."
+      },
+      {
+       "name": "product_P1mu2",
+       "kind": "computation",
+       "statement": "On [P^1/mu_2], [P]·[M] = [P] with integral 1/2."
+      },
+      {
+       "name": "product_P1",
+       "kind": "compatibility",
+       "statement": "On P^1, [pt]·[pt] = 0 and [P^1] is the unit."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "6",
+   "title": "Comparisons: coarse moduli spaces, quotient stacks, degrees of zero-cycles",
+   "targets": [
+    {
+     "id": "6.1",
+     "kind": "theorem",
+     "name": "StackChow.coarsePushforward_bijective",
+     "statement": "For M with a proper cover and p : M -> Mbar proper to an algebraic space of finite type, bijective on Omega-points for algebraically closed Omega: V -> p(V) is a dimension-preserving bijection on integral substacks, k(p(V)) in k(V) is purely inseparable, deg(V/p(V)) = [k(V):k(p(V))]/e(V) (= 1/e(V) if k(p(V)) is perfect), and p_* : A_k(M)_Q -> A_k(Mbar)_Q is an isomorphism; applies to the Keel-Mori coarse space of a separated DM stack.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k",
+      "M admits a proper cover",
+      "p proper, bijective on geometric points"
+     ],
+     "locator": {
+      "source": "vistoli1989",
+      "where": "(2.1), (2.3)-(2.5), lines 542-579; (6.1), line 1758; keel-mori1997 Corollary 1.3, line 28"
+     },
+     "prerequisites": [
+      "target:1.1b",
+      "target:1.2b",
+      "target:1.4b",
+      "target:1.5",
+      "target:3.3",
+      "target:2.4",
+      "roadmap:SchemeAndStackFoundations §1.23"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "6.2",
+     "kind": "theorem",
+     "name": "StackChow.equivariantComparison",
+     "statement": "For G smooth affine of dimension g acting on quasi-projective X with a G-linearised ample sheaf such that [X/G] is a separated DM stack, A^G_i(X) tensor Q is isomorphic to A_{i-g}([X/G])_Q, compatibly with flat pullback and proper pushforward; for X smooth a ring isomorphism with the product of 5.3.",
+     "hypotheses": [
+      "G smooth affine over k",
+      "X quasi-projective with G-linearised ample invertible sheaf",
+      "[X/G] separated DM"
+     ],
+     "locator": {
+      "source": "edidin-graham1998",
+      "where": "Proposition 10, line 770, with lines 765-768; Proposition 11, line 790"
+     },
+     "prerequisites": [
+      "target:3.4b",
+      "target:5.1",
+      "target:5.3",
+      "roadmap:EquivariantIntersectionTheory §2.1",
+      "roadmap:EquivariantIntersectionTheory §2.2",
+      "roadmap:SchemeAndStackFoundations §1.21"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "6.3a",
+     "kind": "definition",
+     "name": "StackChow.integral",
+     "statement": "For M proper over k, the degree map A_0(M)_Q -> Q, the rational pushforward along M -> Spec k.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k",
+      "M proper over k"
+     ],
+     "locator": {
+      "source": "vistoli1989",
+      "where": "(3.6)-(3.7), lines 974-997"
+     },
+     "prerequisites": [
+      "target:3.3"
+     ],
+     "api": [
+      {
+       "name": "integral_pushforward",
+       "role": "functoriality",
+       "statement": "Integral over N of f_* equals integral over M for f proper."
+      },
+      {
+       "name": "integral_coarse",
+       "role": "compatibility",
+       "statement": "Integral over M equals integral over Mbar of p_*."
+      }
+     ],
+     "tests": [
+      {
+       "name": "integral_BG",
+       "kind": "computation",
+       "statement": "Integral of [BG] is 1/|G|."
+      },
+      {
+       "name": "integral_point",
+       "kind": "computation",
+       "statement": "Integral of [Spec K] is [K:k], including p for purely inseparable K of degree p."
+      },
+      {
+       "name": "integral_gerbe",
+       "kind": "non-example",
+       "statement": "For [Spec C/(Z/4)] over R the integral is 1/2, not 1/4."
+      },
+      {
+       "name": "integral_scheme",
+       "kind": "compatibility",
+       "statement": "On proper schemes it is the degree of zero-cycles (stacks-chow Definition 41.1)."
+      }
+     ]
+    },
+    {
+     "id": "6.3b",
+     "kind": "theorem",
+     "name": "StackChow.integral_point",
+     "statement": "For a closed point x of a proper DM stack M with reduced closed substack V_x, kappa(x) := k(V_x) is finite over k and the integral of [V_x] is [kappa(x):k]/|Aut(xbar)|.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k",
+      "M proper over k",
+      "x a closed point of |M|"
+     ],
+     "locator": {
+      "source": "vistoli1989",
+      "where": "(1.17), line 428; lines 372-376"
+     },
+     "prerequisites": [
+      "target:6.3a",
+      "target:1.5",
+      "target:1.4b"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  },
+  {
+   "key": "7",
+   "title": "Cone stacks and stacks of the form h1/h0",
+   "targets": [
+    {
+     "id": "7.1",
+     "kind": "definition",
+     "name": "Cone.abelianHull",
+     "statement": "The abelian hull A(C) = C(S_1) of a cone C = C(S), short exact sequences of cones, E-cones, morphisms of vector bundle cones and homotopies; a cone is a vector bundle iff smooth; Proposition 1.4.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k"
+     ],
+     "locator": {
+      "source": "behrend-fantechi1997",
+      "where": "lines 237-345: Lemma 1.1, Definition 1.2, Lemma 1.3, Proposition 1.4"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "roadmap:AlgebraicVectorBundles L2A"
+     ],
+     "api": [
+      {
+       "name": "abelianHull_closed",
+       "role": "characterisation",
+       "statement": "A morphism of cones is a closed immersion iff its abelianisation is."
+      },
+      {
+       "name": "cone_vectorBundle_iff_smooth",
+       "role": "characterisation",
+       "statement": "A cone is a vector bundle iff it is smooth over X."
+      },
+      {
+       "name": "exactSequence_of_sheaves",
+       "role": "constructor",
+       "statement": "0 -> F' -> F -> E -> 0 with E locally free gives 0 -> C(E) -> C(F) -> C(F') -> 0."
+      }
+     ],
+     "tests": [
+      {
+       "name": "abelianHull_xy",
+       "kind": "computation",
+       "statement": "The abelian hull of Spec k[x,y]/(xy) is A^2."
+      },
+      {
+       "name": "abelianHull_alphap",
+       "kind": "non-example",
+       "statement": "Spec F_p[t]/(t^p) is a group scheme and a cone that is not abelian (hull A^1, not smooth)."
+      },
+      {
+       "name": "exact_split",
+       "kind": "degenerate",
+       "statement": "0 -> O -> O+O -> O -> 0 gives 0 -> A^1 -> A^2 -> A^1 -> 0."
+      }
+     ]
+    },
+    {
+     "id": "7.2",
+     "kind": "definition",
+     "name": "ConeStack.ConeStack",
+     "statement": "An algebraic X-stack with section and coherent A^1-pseudo-action admitting etale-locally a smooth surjective A^1-equivariant morphism from a cone; abelian cone stacks, vector bundle stacks, abelian hull, E-cone stacks, short exact sequences, dimension dim C - rk E; for a closed subcone stack of [E_1/E_0] of pure dimension c, its fibre product with E_1 is a closed E_0-stable subcone of pure dimension c + rk E_0.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k"
+     ],
+     "locator": {
+      "source": "behrend-fantechi1997",
+      "where": "Definitions 1.5-1.12, Lemma 1.6, Propositions 1.7, 1.10, 1.13, lines 346-525; lines 1289-1298"
+     },
+     "prerequisites": [
+      "target:7.1",
+      "target:1.3",
+      "roadmap:SchemeAndStackFoundations §1.21"
+     ],
+     "api": [
+      {
+       "name": "ConeStack.quotient",
+       "role": "constructor",
+       "statement": "[C/E] for an E-cone C, via Stack.quotient."
+      },
+      {
+       "name": "ConeStack.homotopy",
+       "role": "characterisation",
+       "statement": "A^1-equivariant 2-isomorphisms correspond to homotopies (Lemma 1.6)."
+      },
+      {
+       "name": "ConeStack.iso_of_cartesian",
+       "role": "characterisation",
+       "statement": "Proposition 1.7."
+      },
+      {
+       "name": "ConeStack.fibreProduct_dim",
+       "role": "dimension",
+       "statement": "dim(C x_E E_1) = dim C + rk E_0."
+      }
+     ],
+     "tests": [
+      {
+       "name": "coneStack_BE",
+       "kind": "computation",
+       "statement": "BE is a vector bundle stack of dimension dim X - rk E."
+      },
+      {
+       "name": "coneStack_translation",
+       "kind": "degenerate",
+       "statement": "[A^1/G_a] with translation is a point; with trivial action it is A^1 x BG_a."
+      },
+      {
+       "name": "coneStack_equivariance",
+       "kind": "non-example",
+       "statement": "The 2-automorphisms x -> a x of the zero morphism A^1 -> BG_a are the equivariant ones; x -> x^2 is not equivariant."
+      }
+     ]
+    },
+    {
+     "id": "7.3a",
+     "kind": "definition",
+     "name": "DMStack.smallEtaleSite",
+     "statement": "The small etale site of X: schemes with an etale morphism to X, morphisms with 2-isomorphisms, jointly surjective coverings, structure sheaf; O_X-modules as Mathlib SheafOfModules, coherent modules, D(O_X) as Mathlib DerivedCategory.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k"
+     ],
+     "locator": {
+      "source": "behrend-fantechi1997",
+      "where": "lines 171-174 and 642-669"
+     },
+     "prerequisites": [
+      "roadmap:SchemeAndStackFoundations §1.10",
+      "roadmap:SchemeAndStackFoundations §1.22",
+      "roadmap:SchemeAndStackFoundations §2.9",
+      "roadmap:EnhancedDerivedSheaves §0.2",
+      "mathlib:SheafOfModules",
+      "mathlib:DerivedCategory",
+      "mathlib:AlgebraicGeometry.Scheme.smallEtaleTopology"
+     ],
+     "api": [
+      {
+       "name": "smallEtaleSite_space",
+       "role": "compatibility",
+       "statement": "For an algebraic space it is equivalent to SchemeAndStackFoundations' smallEtale restricted to schemes."
+      },
+      {
+       "name": "smallEtaleSite_localize",
+       "role": "functoriality",
+       "statement": "X_et/U is U_et for etale U -> X."
+      },
+      {
+       "name": "qcoh_equiv",
+       "role": "compatibility",
+       "statement": "Quasi-coherent O_X-modules are equivalent to Stacks.QCoh X."
+      }
+     ],
+     "tests": [
+      {
+       "name": "smallEtale_BG",
+       "kind": "computation",
+       "statement": "Coherent modules on (BG)_et are finite-dimensional representations of G."
+      },
+      {
+       "name": "smallEtale_point",
+       "kind": "degenerate",
+       "statement": "For X = Spec k (k separably closed), O-modules are k-vector spaces."
+      },
+      {
+       "name": "smallEtale_scheme",
+       "kind": "compatibility",
+       "statement": "For a scheme the site is Mathlib's Scheme.smallEtaleTopology site."
+      }
+     ]
+    },
+    {
+     "id": "7.3b",
+     "kind": "definition",
+     "name": "DMStack.ConditionStar",
+     "statement": "E in D(O_X) satisfies (star) if h^i(E) = 0 for i > 0 and h^0, h^-1 are coherent; E is perfect of amplitude [-1,0] if etale-locally [E^-1 -> E^0] with E^i locally free of finite rank; a global resolution is a global such complex with an isomorphism to E; E^dual := RHom(Lv^*E, O_fl) on the big fppf site.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k"
+     ],
+     "locator": {
+      "source": "behrend-fantechi1997",
+      "where": "Definition 2.3, line 670; lines 175-177; Definition 5.2, line 1282"
+     },
+     "prerequisites": [
+      "target:7.3a"
+     ],
+     "api": [
+      {
+       "name": "ConditionStar.local_presentation",
+       "role": "characterisation",
+       "statement": "(star) objects are etale-locally [E^-1 -> E^0] with E^0 free and E^-1 coherent."
+      },
+      {
+       "name": "perfect_conditionStar",
+       "role": "constructor",
+       "statement": "Perfect objects of amplitude [-1,0] satisfy (star)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "star_shift_one",
+       "kind": "computation",
+       "statement": "O[1] is perfect of amplitude [-1,0] with rank -1."
+      },
+      {
+       "name": "star_shift_two",
+       "kind": "degenerate",
+       "statement": "O[2] satisfies (star) but is not perfect of amplitude [-1,0]."
+      },
+      {
+       "name": "star_shift_minus_one",
+       "kind": "non-example",
+       "statement": "O[-1] violates (star)."
+      },
+      {
+       "name": "star_residue_field",
+       "kind": "non-example",
+       "statement": "k on Spec k[e]/e^2 satisfies (star) but is not perfect."
+      }
+     ]
+    },
+    {
+     "id": "7.4",
+     "kind": "construction",
+     "name": "ConeStack.h1h0",
+     "statement": "h1/h0([E0 -> E1]) := [E1/E0] via Stack.quotient; invariance under quasi-isomorphism (Prop 2.1), Lemma 2.2; for E with (star), h1/h0(E^dual) is an abelian cone stack equal to [C(E^-1)/C(E^0)] for any local presentation, a vector bundle stack [E_1/E_0] for perfect E of amplitude [-1,0] (Prop 2.4).",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k",
+      "E satisfies (star)"
+     ],
+     "locator": {
+      "source": "behrend-fantechi1997",
+      "where": "lines 535-689: Proposition 2.1, Lemma 2.2, Proposition 2.4"
+     },
+     "prerequisites": [
+      "target:7.2",
+      "target:7.3b",
+      "roadmap:SchemeAndStackFoundations §1.21"
+     ],
+     "api": [
+      {
+       "name": "h1h0_quasiIso",
+       "role": "characterisation",
+       "statement": "Quasi-isomorphisms induce isomorphisms."
+      },
+      {
+       "name": "h1h0_presentation",
+       "role": "evaluation",
+       "statement": "h1/h0(E^dual) = [C(E^-1)/C(E^0)]."
+      }
+     ],
+     "tests": [
+      {
+       "name": "h1h0_acyclic",
+       "kind": "computation",
+       "statement": "[O -id-> O] gives a point; the zero differential gives A^1 x BG_a."
+      },
+      {
+       "name": "h1h0_shift",
+       "kind": "computation",
+       "statement": "O[1] gives A^1 and O[0] gives BG_a."
+      },
+      {
+       "name": "h1h0_smooth",
+       "kind": "compatibility",
+       "statement": "Omega_X[0] for smooth X gives BT_X; [I/I^2 -> Omega_W|U] gives [N_{U/W}/T_W|U]."
+      }
+     ]
+    },
+    {
+     "id": "7.5",
+     "kind": "theorem",
+     "name": "ConeStack.h1h0_closedImmersion_iff",
+     "statement": "For phi : E -> F between (star) objects, phi^dual is a morphism of abelian cone stacks, representable iff h^0(phi) is surjective, a closed immersion iff h^0(phi) is an isomorphism and h^-1(phi) is surjective, an isomorphism iff both are isomorphisms; a triangle with G perfect of amplitude [-1,0] gives a short exact sequence of abelian cone stacks.",
+     "hypotheses": [
+      "M is a DM stack over the field k: IsDeligneMumford, of finite type over Spec k",
+      "E, F satisfy (star)"
+     ],
+     "locator": {
+      "source": "behrend-fantechi1997",
+      "where": "Propositions 2.5-2.7, lines 692-746"
+     },
+     "prerequisites": [
+      "target:7.4"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  },
+  {
+   "key": "8",
+   "title": "The truncated relative cotangent complex and the intrinsic normal cone",
+   "targets": [
+    {
+     "id": "8.1",
+     "kind": "definition",
+     "name": "Cotangent.RelLocalEmbedding",
+     "statement": "A relative local embedding (U, W): U affine etale over M, W an algebraic space smooth over frakM, U -> W a local embedding over frakM; Omega_{W/frakM} by descent; the two-term complex K_{U,W} = [C_{U/W} -> Omega_{W/frakM}|_U] and the quasi-isomorphisms induced by morphisms of local embeddings, strictly compatible with composition.",
+     "hypotheses": [
+      "frakM an algebraic k-stack of pure dimension m; f : M -> frakM of Deligne-Mumford type; M a DM stack of finite type over k with affine diagonal"
+     ],
+     "locator": {
+      "source": "behrend-fantechi1997",
+      "where": "Definition 3.7, line 906; lines 918-959; lines 1654-1655"
+     },
+     "prerequisites": [
+      "target:4.2b",
+      "roadmap:SchemeAndStackFoundations §1.1",
+      "roadmap:SchemeAndStackFoundations §1.19"
+     ],
+     "api": [
+      {
+       "name": "RelLocalEmbedding.exists",
+       "role": "constructor",
+       "statement": "Every point lies in a relative local embedding with U -> W a closed immersion into an affine scheme."
+      },
+      {
+       "name": "RelLocalEmbedding.prod",
+       "role": "constructor",
+       "statement": "Products (U' x_M U, W' x_frakM W) are relative local embeddings."
+      },
+      {
+       "name": "localComplex_map_quasiIso",
+       "role": "characterisation",
+       "statement": "Morphisms of relative local embeddings induce quasi-isomorphisms."
+      }
+     ],
+     "tests": [
+      {
+       "name": "relLocalEmbedding_BG",
+       "kind": "computation",
+       "statement": "For BG over Spec k, K = 0, also for the product (G, Spec k) with G -> Spec k unramified."
+      },
+      {
+       "name": "relLocalEmbedding_fatline",
+       "kind": "computation",
+       "statement": "For Spec k[x]/(x^2) in A^1, K = [(x^2)/(x^4) -> A dx], x^2 -> 2x dx, zero in characteristic 2."
+      },
+      {
+       "name": "relLocalEmbedding_identity",
+       "kind": "degenerate",
+       "statement": "For f = id, K = 0."
+      }
+     ]
+    },
+    {
+     "id": "8.2",
+     "kind": "construction",
+     "name": "Cotangent.truncCotangent",
+     "statement": "tau^{>=-1} L_{M/frakM} in D(O_M): the total complex of the Cech double complex of j_* K over a finite cover by relative local embeddings; restricts to K_{U,W} on each U; independent of choices; satisfies (star) with h^0 = Omega_{M/frakM}; agrees with DerivedModuleAlgebra §0.7 and Mathlib Algebra.Extension.cotangentComplex on affine pieces over an affine base.",
+     "hypotheses": [
+      "frakM an algebraic k-stack of pure dimension m; f : M -> frakM of Deligne-Mumford type; M a DM stack of finite type over k with affine diagonal"
+     ],
+     "locator": {
+      "source": "behrend-fantechi1997",
+      "where": "lines 940-951 and 1649-1651; stacks-cotangent Lemma 22.4 (08V2), line 1724"
+     },
+     "prerequisites": [
+      "target:8.1",
+      "target:7.3b",
+      "roadmap:DerivedModuleAlgebra §0.7",
+      "mathlib:Algebra.Extension.cotangentComplex",
+      "mathlib:Algebra.H1Cotangent"
+     ],
+     "api": [
+      {
+       "name": "truncCotangent_restrict",
+       "role": "evaluation",
+       "statement": "Restriction to U_i is K_{U_i,W_i}."
+      },
+      {
+       "name": "truncCotangent_independent",
+       "role": "well-definedness",
+       "statement": "Refinements induce canonical isomorphisms."
+      },
+      {
+       "name": "truncCotangent_h0",
+       "role": "evaluation",
+       "statement": "h^0 = Omega_{M/frakM}."
+      }
+     ],
+     "tests": [
+      {
+       "name": "truncCotangent_etale_smooth",
+       "kind": "degenerate",
+       "statement": "Etale: 0; smooth: Omega[0]."
+      },
+      {
+       "name": "truncCotangent_fatline",
+       "kind": "computation",
+       "statement": "For k[x]/(x^2) over k, char != 2: h^-1 = k x^3, h^0 = k dx; char 2: both A."
+      },
+      {
+       "name": "truncCotangent_fatpoint",
+       "kind": "computation",
+       "statement": "For k[x,y]/(x,y)^2: h^0 length 3, h^-1 length 4 (char != 2); the h^-2 class of the full complex is not seen."
+      }
+     ]
+    },
+    {
+     "id": "8.3",
+     "kind": "theorem",
+     "name": "Cotangent.truncCotangent_functorial",
+     "statement": "Functoriality u^* tau L_{M/frakM} -> tau L_{M'/frakM'} for 2-commutative squares, an isomorphism for 2-cartesian squares with f or frakM' -> frakM flat; products; perfect of amplitude [-1,0] for local complete intersection morphisms; transitivity triangle for M' -> M -> frakM with M' -> M a local complete intersection.",
+     "hypotheses": [
+      "frakM an algebraic k-stack of pure dimension m; f : M -> frakM of Deligne-Mumford type; M a DM stack of finite type over k with affine diagonal"
+     ],
+     "locator": {
+      "source": "olsson2007",
+      "where": "Theorem 8.1 (ii), line 1136; behrend-fantechi1997 Proposition 5.7, line 1366, lines 1045-1050; stacks-cotangent Lemma 18.8 (08SZ), line 1543"
+     },
+     "prerequisites": [
+      "target:8.2",
+      "target:7.3b"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "8.4",
+     "kind": "definition",
+     "name": "Cotangent.intrinsicNormalSheaf",
+     "statement": "N_{M/frakM} := h1/h0((tau L_{M/frakM})^dual), an abelian cone stack with local presentations [N_{U/W}/T_{W/frakM}|_U]; a vector bundle stack iff tau L_{M/frakM} is perfect of amplitude [-1,0], in particular when M -> frakM is lci (not conversely over a non-reduced base); BT_{M/frakM} for smooth M -> frakM.",
+     "hypotheses": [
+      "frakM an algebraic k-stack of pure dimension m; f : M -> frakM of Deligne-Mumford type; M a DM stack of finite type over k with affine diagonal"
+     ],
+     "locator": {
+      "source": "behrend-fantechi1997",
+      "where": "Definition 3.6, line 902; lines 943-962; line 1652; Proposition 2.4, line 674; Lemma 1.1, line 244; lines 237-239"
+     },
+     "prerequisites": [
+      "target:7.1",
+      "target:7.4",
+      "target:8.2",
+      "target:8.3"
+     ],
+     "api": [
+      {
+       "name": "intrinsicNormalSheaf_local",
+       "role": "evaluation",
+       "statement": "[N_{U/W}/T_{W/frakM}|_U] = N|_U, compatibly with morphisms of local embeddings."
+      },
+      {
+       "name": "intrinsicNormalSheaf_lci",
+       "role": "characterisation",
+       "statement": "Vector bundle stack iff tau L_{M/frakM} is perfect of amplitude [-1,0] (the presentation C(I/I^2) is then smooth, hence a vector bundle, so I/I^2 is locally free); in particular a vector bundle stack when M -> frakM is lci."
+      }
+     ],
+     "tests": [
+      {
+       "name": "normalSheaf_etale",
+       "kind": "degenerate",
+       "statement": "Etale: the zero cone stack M."
+      },
+      {
+       "name": "normalSheaf_smooth",
+       "kind": "computation",
+       "statement": "Smooth of dimension n over k: BT_M of dimension 0."
+      },
+      {
+       "name": "normalSheaf_fatpoint",
+       "kind": "computation",
+       "statement": "For k[x,y]/(x,y)^2: a fibre [A^3/A^2], dimension 1; I/I^2 has length 7, not 9, so it is not free and N is not a vector bundle stack."
+      },
+      {
+       "name": "normalSheaf_nonreduced_base",
+       "kind": "non-example",
+       "statement": "For the closed point Spec k -> Spec k[eps]/(eps^2): I/I^2 = k, Omega_{W/frakM} = 0, tau L = k[1] perfect and N = A^1 a vector bundle, but C = Spec k[t]/(t^2) is not a vector bundle stack, so the morphism is not lci."
+      }
+     ]
+    },
+    {
+     "id": "8.5",
+     "kind": "construction",
+     "name": "Cotangent.intrinsicNormalCone",
+     "statement": "The unique closed subcone stack C_{M/frakM} of N_{M/frakM} with C|_U = [C_{U/W}/T_{W/frakM}|_U]; pure dimension m with abelian hull N; lci iff vector bundle stack, and then C = N (C = N alone does not force lci); products; base change along v with finite unramified diagonal (closed immersion, isomorphism for flat v); smooth pullback exact sequence.",
+     "hypotheses": [
+      "frakM an algebraic k-stack of pure dimension m; f : M -> frakM of Deligne-Mumford type; M a DM stack of finite type over k with affine diagonal"
+     ],
+     "locator": {
+      "source": "behrend-fantechi1997",
+      "where": "Lemma 3.2, Proposition 3.1, Lemma 3.8, Corollary 3.9, Definition 3.10, Theorem 3.11, Propositions 3.12-3.14, lines 762-1064; Proposition 7.1, line 1676; line 1656; stacks-divisors Lemma 21.4 (063H), Lemma 22.3 (063L)"
+     },
+     "prerequisites": [
+      "target:4.2b",
+      "target:7.2",
+      "target:8.4",
+      "target:1.3",
+      "target:7.1",
+      "roadmap:SchemeAndStackFoundations §5.5"
+     ],
+     "api": [
+      {
+       "name": "intrinsicNormalCone_pureDim",
+       "role": "dimension",
+       "statement": "C_{M/frakM} has pure dimension m (Theorem 3.11)."
+      },
+      {
+       "name": "normalCone_vectorBundle_iff_regular",
+       "role": "characterisation",
+       "statement": "For a closed immersion U -> W of locally Noetherian schemes, the normal cone C_{U/W} is a vector bundle over U iff the immersion is regular ('if': SchemeAndStackFoundations §5.5 conormal_regular, normalCone_eq_normalBundle; 'only if': the ideal is quasi-regular, stacks-divisors Lemma 21.4, hence regular, Lemma 22.3)."
+      },
+      {
+       "name": "intrinsicNormalCone_lci",
+       "role": "characterisation",
+       "statement": "lci iff C_{M/frakM} is a vector bundle stack, and then C = N (Proposition 3.12; for 'if', C_{U/W} is a torsor over a smooth stack, hence smooth, hence a vector bundle, and U -> W is regular by normalCone_vectorBundle_iff_regular). C = N does not imply lci."
+      },
+      {
+       "name": "intrinsicNormalCone_baseChange",
+       "role": "functoriality",
+       "statement": "Proposition 7.1."
+      }
+     ],
+     "tests": [
+      {
+       "name": "normalCone_fatline",
+       "kind": "computation",
+       "statement": "For k[x]/(x^2) in A^1: C_{U/W} = M x A^1 of dimension 1, C_M of dimension 0, equal to N_M."
+      },
+      {
+       "name": "normalCone_fatpoint_neq",
+       "kind": "non-example",
+       "statement": "For k[x,y]/(x,y)^2: C_M has dimension 0 and N_M dimension 1, so C_M != N_M and the fat point is not lci."
+      },
+      {
+       "name": "normalCone_BGm",
+       "kind": "computation",
+       "statement": "For Spec k -> BG_m, C = BG_a of dimension -1 = m."
+      },
+      {
+       "name": "normalCone_embeddedPoint_eq",
+       "kind": "non-example",
+       "statement": "For k[x,y]/(x^2, xy) in A^2: I = x(x,y) is of linear type (I ~ (x,y), I^n = x^n (x,y)^n), so Sym(I/I^2) = gr_I and C_M = N_M; but M is not Cohen-Macaulay (depth 0, dimension 1 at the origin), hence not lci, and C_M = N_M is not a vector bundle stack."
+      },
+      {
+       "name": "normalCone_regular_criterion",
+       "kind": "computation",
+       "statement": "For Spec k -> Spec k[eps]/(eps^2), gr_(eps) = k[t]/(t^2) is not a vector bundle and (eps) is not generated by a nonzerodivisor; for k[x]/(x^2) in A^1 the cone is a line bundle and x^2 is a nonzerodivisor."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "9",
+   "title": "Obstruction theories",
+   "targets": [
+    {
+     "id": "9.1",
+     "kind": "construction",
+     "name": "ObstructionTheory.obstructionClass",
+     "statement": "For a square-zero extension T -> Tbar over frakM with ideal J and g : T -> M over frakM, omega(g) in Ext^1(g^* tau L_{M/frakM}, J), vanishing iff g extends, extensions forming a torsor under Hom(g^* Omega, J); ob(g) : C(J) -> g^* N and Propositions 4.1-4.2, Corollary 4.3.",
+     "hypotheses": [
+      "frakM an algebraic k-stack of pure dimension m; f : M -> frakM of Deligne-Mumford type; M a DM stack of finite type over k with affine diagonal",
+      "T -> Tbar a square-zero extension of affine schemes over frakM"
+     ],
+     "locator": {
+      "source": "behrend-fantechi1997",
+      "where": "lines 1067-1137"
+     },
+     "prerequisites": [
+      "target:7.5",
+      "target:8.2",
+      "target:8.4",
+      "roadmap:DerivedModuleAlgebra §0.25",
+      "mathlib:derivationToSquareZeroEquivLift"
+     ],
+     "api": [
+      {
+       "name": "obstructionClass_vanish_iff",
+       "role": "characterisation",
+       "statement": "g extends iff omega(g) = 0."
+      },
+      {
+       "name": "obstructionClass_torsor",
+       "role": "structure",
+       "statement": "Extensions form a Hom(g^*Omega, J)-torsor."
+      }
+     ],
+     "tests": [
+      {
+       "name": "obstruction_smooth",
+       "kind": "degenerate",
+       "statement": "For smooth M -> frakM the class vanishes."
+      },
+      {
+       "name": "obstruction_fatline",
+       "kind": "computation",
+       "statement": "For k[x]/(x^2), lifting x -> e from k[e]/e^2 to k[e]/e^3 is obstructed in every characteristic."
+      },
+      {
+       "name": "obstruction_etale",
+       "kind": "degenerate",
+       "statement": "Etale: unique extensions."
+      }
+     ]
+    },
+    {
+     "id": "9.2",
+     "kind": "definition",
+     "name": "ObstructionTheory.IsObstructionTheory",
+     "statement": "An obstruction theory is E with (star) and phi : E -> tau L_{M/frakM} with h^0(phi) an isomorphism and h^-1(phi) surjective; perfect if E is perfect of amplitude [-1,0]; rank, vd = m + rk E, Ob = h^1(E^dual).",
+     "hypotheses": [
+      "frakM an algebraic k-stack of pure dimension m; f : M -> frakM of Deligne-Mumford type; M a DM stack of finite type over k with affine diagonal"
+     ],
+     "locator": {
+      "source": "behrend-fantechi1997",
+      "where": "Definition 4.4, line 1139; Definition 5.1, line 1259; lines 1268-1273, 1657, 1665-1666"
+     },
+     "prerequisites": [
+      "target:7.3b",
+      "target:7.5",
+      "target:8.2"
+     ],
+     "api": [
+      {
+       "name": "IsObstructionTheory.id",
+       "role": "constructor",
+       "statement": "tau L itself is an obstruction theory; it is perfect iff N_{M/frakM} is a vector bundle stack, in particular if M -> frakM is lci (behrend-fantechi1997 line 1321); perfect does not imply lci (Spec k -> Spec k[eps]/(eps^2))."
+      },
+      {
+       "name": "virtualDim",
+       "role": "evaluation",
+       "statement": "vd = m + rk E."
+      }
+     ],
+     "tests": [
+      {
+       "name": "ot_identity_hypersurface",
+       "kind": "computation",
+       "statement": "For a hypersurface in A^n over k, tau L is perfect with vd = n - 1."
+      },
+      {
+       "name": "ot_zero",
+       "kind": "degenerate",
+       "statement": "E = 0 is an obstruction theory iff M -> frakM is etale."
+      },
+      {
+       "name": "ot_P1",
+       "kind": "computation",
+       "statement": "For P^1, [O(1) -0-> Omega] is perfect with vd 0 and Ob = O(-1)."
+      }
+     ]
+    },
+    {
+     "id": "9.3",
+     "kind": "theorem",
+     "name": "ObstructionTheory.isObstructionTheory_tfae",
+     "statement": "For E with (star) and phi : E -> tau L_{M/frakM}: (1) phi is an obstruction theory; (2) phi^dual : N -> h1/h0(E^dual) is a closed immersion; (3) the deformation-theoretic criterion on square-zero extensions; (4) extensions correspond to equivariant isomorphisms of phi^dual ob(g) with the vertex.",
+     "hypotheses": [
+      "frakM an algebraic k-stack of pure dimension m; f : M -> frakM of Deligne-Mumford type; M a DM stack of finite type over k with affine diagonal",
+      "E satisfies (star)"
+     ],
+     "locator": {
+      "source": "behrend-fantechi1997",
+      "where": "Theorem 4.5, line 1162; lines 1172-1201; line 1657"
+     },
+     "prerequisites": [
+      "target:7.5",
+      "target:9.1",
+      "target:9.2"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "9.4",
+     "kind": "theorem",
+     "name": "ObstructionTheory.basicExample",
+     "statement": "For X = Y x_W V with V, W smooth DM stacks and i : Y -> W a regular local embedding, [g^* N_{Y/W}^dual -> j^* Omega_V] is a perfect obstruction theory; zero loci of sections of vector bundles on smooth W have vd = n - r.",
+     "hypotheses": [
+      "V, W smooth DM stacks over k",
+      "i a regular local embedding"
+     ],
+     "locator": {
+      "source": "behrend-fantechi1997",
+      "where": "the basic example, lines 1503-1519"
+     },
+     "prerequisites": [
+      "target:9.2",
+      "target:9.3",
+      "target:4.2a"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  },
+  {
+   "key": "10",
+   "title": "Virtual fundamental classes",
+   "targets": [
+    {
+     "id": "10.1",
+     "kind": "theorem",
+     "name": "Virtual.globalResolution_dominate",
+     "statement": "For global resolutions F, H of E, the fibre product K_1 := F_1 x_{h1/h0(E^dual)} H_1 is a vector bundle on M and its projections K_1 -> F_1, K_1 -> H_1 are surjective morphisms of vector bundles with kernels H_0 and F_0 (hence smooth). Etale-locally on an affine U the isomorphism H = F in D(O_U) is a quasi-isomorphism of complexes psi, and K^0 = H^0 + F^0, K^-1 = F^-1 x_{F^0} K^0 = F^-1 + H^0 receives F and H by degreewise split monomorphisms with C(K^-1) = K_1|_U; no global morphism of complexes is needed.",
+     "hypotheses": [
+      "frakM an algebraic k-stack of pure dimension m; f : M -> frakM of Deligne-Mumford type; M a DM stack of finite type over k with affine diagonal; M separated; E -> tau L a perfect obstruction theory of constant rank r"
+     ],
+     "locator": {
+      "source": "behrend-fantechi1997",
+      "where": "proof of Proposition 5.3, lines 1303-1312 (the source assumes a global morphism of complexes; here only an etale-local one is used)"
+     },
+     "prerequisites": [
+      "target:7.1",
+      "target:7.3b",
+      "target:7.4",
+      "roadmap:SchemeAndStackFoundations §2.6",
+      "roadmap:SchemeAndStackFoundations §2.10"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "globalResolution_zero",
+       "kind": "degenerate",
+       "statement": "E = 0 with [0 -> 0] and [O -id-> O]: h1/h0 = M, K_1 = A^1 x M, K_1 -> F_1 has kernel H_0 = A^1 x M and K_1 -> H_1 is the identity."
+      },
+      {
+       "name": "globalResolution_ranks",
+       "kind": "computation",
+       "statement": "E = Omega_M[0], M smooth of dimension n, F = [0 -> Omega_M], H = [G -> Omega_M + G] with G of rank g: K_1 = H_0 of rank n + g = rk F_1 + rk H_0 = rk H_1 + rk F_0."
+      },
+      {
+       "name": "globalResolution_not_chain_map",
+       "kind": "non-example",
+       "statement": "On P^1 with E = [O(-4) -0-> Omega] (projection to Omega): Hom_D(E,E) = k + k + Ext^1(Omega, O(-4)) with Ext^1 = H^1(O(-2)) = k, while chain maps are pairs of scalars and homotopies vanish; 1 + xi is an automorphism of (E, phi) not given by a morphism of complexes, and K_1 is still defined."
+      }
+     ]
+    },
+    {
+     "id": "10.2",
+     "kind": "definition",
+     "name": "Virtual.virtualClass",
+     "statement": "For a global resolution F of E, C(F) := C_{M/frakM} x_{h1/h0(E^dual)} F_1 is a closed subcone of F_1 = C(F^-1) of pure dimension m + rk F^0, and [M,E]^vir := 0_{F_1}^! [C(F)] in A_{m+r}(M)_Q.",
+     "hypotheses": [
+      "frakM an algebraic k-stack of pure dimension m; f : M -> frakM of Deligne-Mumford type; M a DM stack of finite type over k with affine diagonal; M separated; E -> tau L a perfect obstruction theory of constant rank r",
+      "E has a global resolution"
+     ],
+     "locator": {
+      "source": "behrend-fantechi1997",
+      "where": "Definition 5.2, line 1282; lines 1286-1298 and 1664-1667"
+     },
+     "prerequisites": [
+      "target:5.1",
+      "target:7.2",
+      "target:7.4",
+      "target:8.5",
+      "target:9.2"
+     ],
+     "api": [
+      {
+       "name": "virtualClass_dim",
+       "role": "dimension",
+       "statement": "[M,E]^vir lies in A_{vd}(M)_Q."
+      },
+      {
+       "name": "virtualClass_negative",
+       "role": "degenerate",
+       "statement": "[M,E]^vir = 0 if vd < 0."
+      }
+     ],
+     "tests": [
+      {
+       "name": "vir_smooth",
+       "kind": "computation",
+       "statement": "Smooth M -> frakM with E = Omega: C(F) = M and [M]^vir = [M]."
+      },
+      {
+       "name": "vir_P1",
+       "kind": "computation",
+       "statement": "P^1 with [O(1) -0-> Omega]: degree -1; the wrong dualisation gives +1."
+      },
+      {
+       "name": "vir_negative",
+       "kind": "degenerate",
+       "statement": "vd < 0 gives 0."
+      }
+     ]
+    },
+    {
+     "id": "10.3",
+     "kind": "theorem",
+     "name": "Virtual.virtualClass_independent",
+     "statement": "[M,E]^vir is independent of the global resolution (both F and H give 0^!_{K_1} of the common inverse image C_{M/frakM} x_{h1/h0} K_1 under the comparison of 10.1) and depends only on the isomorphism class of (E, phi).",
+     "hypotheses": [
+      "frakM an algebraic k-stack of pure dimension m; f : M -> frakM of Deligne-Mumford type; M a DM stack of finite type over k with affine diagonal; M separated; E -> tau L a perfect obstruction theory of constant rank r",
+      "E has a global resolution"
+     ],
+     "locator": {
+      "source": "behrend-fantechi1997",
+      "where": "Proposition 5.3, line 1299; lines 1313-1320"
+     },
+     "prerequisites": [
+      "target:10.1",
+      "target:10.2",
+      "target:5.1"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "10.4",
+     "kind": "theorem",
+     "name": "Virtual.virtualClass_unobstructed",
+     "statement": "If Ob = 0 then M -> frakM is smooth and [M,E]^vir = [M]; if M -> frakM is smooth then Ob is locally free of rank s = dim M - vd and [M,E]^vir = c_s(Ob) cap [M].",
+     "hypotheses": [
+      "frakM an algebraic k-stack of pure dimension m; f : M -> frakM of Deligne-Mumford type; M a DM stack of finite type over k with affine diagonal; M separated; E -> tau L a perfect obstruction theory of constant rank r",
+      "E has a global resolution"
+     ],
+     "locator": {
+      "source": "behrend-fantechi1997",
+      "where": "Propositions 5.5, 5.6 and 7.3, lines 1353, 1357, 1702"
+     },
+     "prerequisites": [
+      "target:10.2",
+      "target:10.3",
+      "target:5.2",
+      "target:8.2",
+      "mathlib:Algebra.FormallySmooth",
+      "mathlib:Algebra.FormallySmooth.iff_split_injection"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "10.5",
+     "kind": "theorem",
+     "name": "Virtual.virtualClass_prod",
+     "statement": "E boxplus E' is a perfect obstruction theory for M x M' over frakM x frakM' with a global resolution and [M x M']^vir = [M]^vir x [M']^vir.",
+     "hypotheses": [
+      "frakM an algebraic k-stack of pure dimension m; f : M -> frakM of Deligne-Mumford type; M a DM stack of finite type over k with affine diagonal; M separated; E -> tau L a perfect obstruction theory of constant rank r",
+      "the same for M' -> frakM'"
+     ],
+     "locator": {
+      "source": "behrend-fantechi1997",
+      "where": "Propositions 5.7 and 7.4, lines 1366 and 1713"
+     },
+     "prerequisites": [
+      "target:3.5",
+      "target:8.3",
+      "target:8.5",
+      "target:10.2"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "10.6",
+     "kind": "theorem",
+     "name": "Virtual.virtualClass_pullback",
+     "statement": "For a 2-cartesian square over v : frakM' -> frakM (pure dimension, finite unramified diagonal), u^*E is a perfect obstruction theory with a global resolution and v^![M,E]^vir = [M',u^*E]^vir when v is flat, and when v is a regular local embedding and frakM is reduced (4.4 is applied on the W of relative local embeddings, smooth over frakM).",
+     "hypotheses": [
+      "frakM an algebraic k-stack of pure dimension m; f : M -> frakM of Deligne-Mumford type; M a DM stack of finite type over k with affine diagonal; M separated; E -> tau L a perfect obstruction theory of constant rank r",
+      "frakM' pure dimensional",
+      "v with finite unramified diagonal",
+      "M' separated",
+      "frakM reduced (for the regular local embedding case)"
+     ],
+     "locator": {
+      "source": "behrend-fantechi1997",
+      "where": "Proposition 7.2, line 1682; lines 1690-1699; Lemma 5.9, line 1397; stated for smooth frakM, frakM' at line 1668"
+     },
+     "prerequisites": [
+      "target:4.4",
+      "target:4.5",
+      "target:8.1",
+      "target:8.3",
+      "target:8.5",
+      "target:10.2"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "10.7",
+     "kind": "theorem",
+     "name": "Virtual.virtualClass_functorial",
+     "statement": "For compatible perfect obstruction theories over an lci v : Z' -> Z of frakM-stacks with finite unramified diagonal, v^![X,E]^vir = [X',F]^vir when v is smooth, or when frakM is reduced and Z', Z are smooth over frakM, with v^! flat pullback, resp. the Gysin map of the graph Z' -> Z' x_frakM Z composed with flat pullback.",
+     "hypotheses": [
+      "frakM an algebraic k-stack of pure dimension m; f : M -> frakM of Deligne-Mumford type; M a DM stack of finite type over k with affine diagonal; M separated; E -> tau L a perfect obstruction theory of constant rank r",
+      "compatibility datum (morphism of distinguished triangles)",
+      "frakM reduced (for the case Z', Z smooth over frakM)"
+     ],
+     "locator": {
+      "source": "behrend-fantechi1997",
+      "where": "Definition 5.8, Lemma 5.9, Proposition 5.10, lines 1381-1498; Proposition 7.5, line 1734 (base smooth of constant dimension, line 1668)"
+     },
+     "prerequisites": [
+      "target:4.4",
+      "target:5.1",
+      "target:7.5",
+      "target:8.3",
+      "target:8.5",
+      "target:10.2",
+      "target:10.6"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "10.8",
+     "kind": "theorem",
+     "name": "Virtual.virtualCount_deformationInvariant",
+     "statement": "For M proper over k the virtual count is the integral of [M,E]^vir (vd = 0); for frakM reduced, M -> frakM x B with B a smooth connected curve and M proper over B, the virtual counts of the fibres over k-points of B are equal.",
+     "hypotheses": [
+      "frakM an algebraic k-stack of pure dimension m; f : M -> frakM of Deligne-Mumford type; M a DM stack of finite type over k with affine diagonal; M separated; E -> tau L a perfect obstruction theory of constant rank r",
+      "M proper over B",
+      "B a smooth connected curve over k",
+      "frakM reduced (for deformation invariance)"
+     ],
+     "locator": {
+      "source": "behrend-fantechi1997",
+      "where": "Proposition 7.2, line 1682 (pullback to fibres); vistoli1989 (3.12)"
+     },
+     "prerequisites": [
+      "target:6.3a",
+      "target:10.2",
+      "target:10.6",
+      "target:3.3",
+      "target:4.5"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  },
+  {
+   "key": "11",
+   "title": "Obstruction theories of spaces of maps from curves",
+   "targets": [
+    {
+     "id": "11.1",
+     "kind": "definition",
+     "name": "MapsFromCurves.IsRelativeMapSpace",
+     "statement": "(M, F) is a relative space of maps from C to X if for every square-zero extension T -> Tbar over frakB and g : T -> M over frakB, restriction is a bijection from extensions of g to extensions of F composed with C_g to C_Tbar.",
+     "hypotheses": [
+      "frakB an algebraic k-stack of pure dimension b; C -> frakB representable with prestable fibres over schemes; X smooth quasi-projective over k; M separated DM over k; M -> frakB of Deligne-Mumford type; F : C_M -> X"
+     ],
+     "locator": {
+      "source": "behrend1997",
+      "where": "line 135 and Proposition 4, line 139"
+     },
+     "prerequisites": [
+      "target:9.1",
+      "roadmap:StableReduction Layer 3",
+      "roadmap:SchemeAndStackFoundations §1.19"
+     ],
+     "api": [
+      {
+       "name": "IsRelativeMapSpace.open",
+       "role": "constructor",
+       "statement": "Open substacks of Mor_frakB(C, X), when DM, are relative spaces of maps."
+      },
+      {
+       "name": "IsRelativeMapSpace.point",
+       "role": "degenerate",
+       "statement": "For X = Spec k it means M -> frakB is etale."
+      }
+     ],
+     "tests": [
+      {
+       "name": "mapspace_point_target",
+       "kind": "degenerate",
+       "statement": "X = Spec k: equivalent to M -> frakB etale."
+      },
+      {
+       "name": "mapspace_fixed_curve",
+       "kind": "compatibility",
+       "statement": "frakB = Spec k, C fixed, M open in Mor(C, X): behrend-fantechi1997 Proposition 6.2."
+      },
+      {
+       "name": "mapspace_single_map",
+       "kind": "non-example",
+       "statement": "M = Spec k carrying id : P^1 -> P^1 over frakB = Spec k is not one: h^0(E) = k^3 while h^0(tau L) = 0."
+      }
+     ]
+    },
+    {
+     "id": "11.2",
+     "kind": "theorem",
+     "name": "MapsFromCurves.duality",
+     "statement": "For pi : C_M -> M, Rpi_* of a locally free sheaf is perfect of amplitude [0,1] and commutes with base change; omega_pi is invertible with trace R^1 pi_* omega_pi -> O_M; (Rpi_* V)^dual = Rpi_*(V^dual tensor omega_pi)[1]; Rpi_* is left adjoint to pi^! = Lpi^*(-) tensor omega_pi[1].",
+     "hypotheses": [
+      "frakB an algebraic k-stack of pure dimension b; C -> frakB representable with prestable fibres over schemes; X smooth quasi-projective over k; M separated DM over k; M -> frakB of Deligne-Mumford type; F : C_M -> X"
+     ],
+     "locator": {
+      "source": "behrend-fantechi1997",
+      "where": "lines 1539-1545"
+     },
+     "prerequisites": [
+      "target:7.3a",
+      "roadmap:SchemeAndStackFoundations §1.10",
+      "roadmap:SchemeAndStackFoundations §2.20",
+      "roadmap:StableReduction Layer 2",
+      "roadmap:EnhancedDerivedSheaves E1.4"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "11.3",
+     "kind": "construction",
+     "name": "MapsFromCurves.kodairaSpencer",
+     "statement": "e : F^* Omega_X -> pi^* tau L_{M/frakB} from graph-form relative local embeddings of C_M over C and flat base change, and phi : (Rpi_* F^* T_X)^dual -> tau L_{M/frakB} its adjoint through duality.",
+     "hypotheses": [
+      "frakB an algebraic k-stack of pure dimension b; C -> frakB representable with prestable fibres over schemes; X smooth quasi-projective over k; M separated DM over k; M -> frakB of Deligne-Mumford type; F : C_M -> X"
+     ],
+     "locator": {
+      "source": "behrend-fantechi1997",
+      "where": "lines 1583-1599; behrend1997 lines 148-153"
+     },
+     "prerequisites": [
+      "target:8.3",
+      "target:11.2"
+     ],
+     "api": [
+      {
+       "name": "kodairaSpencer_baseChange",
+       "role": "functoriality",
+       "statement": "Compatible with base change along frakB' -> frakB."
+      }
+     ],
+     "tests": [
+      {
+       "name": "ks_point",
+       "kind": "degenerate",
+       "statement": "X = Spec k: e = 0 and phi = 0."
+      },
+      {
+       "name": "ks_fixed_curve",
+       "kind": "compatibility",
+       "statement": "For Mor(C, X), h^0(phi) is dual to H^0(C, F^*T_X) -> T Mor, the classical isomorphism."
+      },
+      {
+       "name": "ks_h0",
+       "kind": "computation",
+       "statement": "On h^0, e is the differential of F in the base direction."
+      }
+     ]
+    },
+    {
+     "id": "11.4",
+     "kind": "theorem",
+     "name": "MapsFromCurves.isPerfectObstructionTheory",
+     "statement": "If (M, F) is a relative space of maps from C to X, then phi : (Rpi_* F^* T_X)^dual -> tau L_{M/frakB} is a perfect relative obstruction theory with Ob = R^1 pi_* F^* T_X.",
+     "hypotheses": [
+      "frakB an algebraic k-stack of pure dimension b; C -> frakB representable with prestable fibres over schemes; X smooth quasi-projective over k; M separated DM over k; M -> frakB of Deligne-Mumford type; F : C_M -> X",
+      "(M, F) a relative space of maps"
+     ],
+     "locator": {
+      "source": "behrend-fantechi1997",
+      "where": "Proposition 6.2, line 1602, proof lines 1605-1614; behrend1997 lines 148-153"
+     },
+     "prerequisites": [
+      "target:9.3",
+      "target:11.1",
+      "target:11.2",
+      "target:11.3",
+      "roadmap:SchemeAndStackFoundations §4.1",
+      "roadmap:DerivedModuleAlgebra §0.25"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "11.5",
+     "kind": "theorem",
+     "name": "MapsFromCurves.globalResolution",
+     "statement": "If C_M carries an invertible sheaf ample on the fibres of pi, then Rpi_* V of every locally free V of finite rank is a two-term complex of locally free sheaves, and the obstruction theory of 11.4 has a global resolution.",
+     "hypotheses": [
+      "frakB an algebraic k-stack of pure dimension b; C -> frakB representable with prestable fibres over schemes; X smooth quasi-projective over k; M separated DM over k; M -> frakB of Deligne-Mumford type; F : C_M -> X",
+      "an invertible sheaf on C_M ample on the fibres of pi"
+     ],
+     "locator": {
+      "source": "behrend1997",
+      "where": "Proposition 5, line 165"
+     },
+     "prerequisites": [
+      "target:11.2",
+      "target:10.1",
+      "roadmap:StableReduction Layer 2"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "11.6",
+     "kind": "theorem",
+     "name": "MapsFromCurves.virtualDim",
+     "statement": "On the locus of fibre genus g and deg F^*T_X = delta, rk E = delta + dim X (1 - g) and vd = b + delta + dim X (1 - g); for b = 3g - 3 + n this is int_beta c_1(T_X) + (dim X - 3)(1 - g) + n.",
+     "hypotheses": [
+      "frakB an algebraic k-stack of pure dimension b; C -> frakB representable with prestable fibres over schemes; X smooth quasi-projective over k; M separated DM over k; M -> frakB of Deligne-Mumford type; F : C_M -> X",
+      "(M, F) a relative space of maps"
+     ],
+     "locator": {
+      "source": "behrend1997",
+      "where": "lines 157-161 and 193-197; li-tian1998 Theorem 4.3 (1), line 1586"
+     },
+     "prerequisites": [
+      "target:11.4",
+      "target:11.5",
+      "roadmap:SchemeAndStackFoundations §3.3",
+      "roadmap:StableReduction Layer 2"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "SchemeAndStackFoundations",
+   "sections": [
+    "§0.7",
+    "§1.1",
+    "§1.10",
+    "§1.18",
+    "§1.19",
+    "§1.20",
+    "§1.21",
+    "§1.22",
+    "§1.23",
+    "§2.6",
+    "§2.9",
+    "§2.10",
+    "§2.20",
+    "§3.3",
+    "§4.1",
+    "§5.1",
+    "§5.2",
+    "§5.4",
+    "§5.5",
+    "§5.6"
+   ],
+   "what": "stacks in groupoids, DM stacks, |M|, properness, quotient stacks, QCoh on stacks, coarse moduli spaces and Keel-Mori; the small etale site of algebraic spaces; local dimension of schemes; big-site modules; affine vanishing and topology comparison of quasi-coherent cohomology; relative duality; degrees on curves; lifting for smooth morphisms; Chow groups of schemes with pushforward, pullback, localisation, homotopy invariance, Chern classes, normal cones, refined Gysin maps and intersection products"
+  },
+  {
+   "roadmap": "AlgebraicVectorBundles",
+   "sections": [
+    "L0B",
+    "L1A",
+    "L2A",
+    "L2B"
+   ],
+   "what": "finite locally free sheaves and rank, relative Spec, linearSpec (abelian cones), totalSpace (vector bundles) on schemes"
+  },
+  {
+   "roadmap": "DerivedModuleAlgebra",
+   "sections": [
+    "§0.7",
+    "§0.13",
+    "§0.25"
+   ],
+   "what": "naive truncation of the cotangent complex of a ring map, regular quotients, affine obstruction class for square-zero lifts"
+  },
+  {
+   "roadmap": "EnhancedDerivedSheaves",
+   "sections": [
+    "§0.2",
+    "E1.2",
+    "E1.4"
+   ],
+   "what": "K-injective replacements and derived pullback, pushforward and adjunction on ringed sites"
+  },
+  {
+   "roadmap": "StableReduction",
+   "sections": [
+    "Layer 2",
+    "Layer 3"
+   ],
+   "what": "coherent cohomology, base change, relative dualising sheaf and ampleness for nodal families; prestable families"
+  },
+  {
+   "roadmap": "EquivariantIntersectionTheory",
+   "sections": [
+    "Conventions 1, 4, 5",
+    "§2.1",
+    "§2.2"
+   ],
+   "what": "equivariant Chow groups by Totaro's approximation, their operations and the equivariant product"
+  }
+ ],
+ "consumers": [
+  {
+   "roadmap": "MotivicStructuresInModuliOfCurves",
+   "what": "rational Chow groups, Gysin pullbacks, intersection products and degrees on the DM stacks Mbar_{g,n} (Layers 2-6)"
+  },
+  {
+   "roadmap": "a roadmap on stacks of stable maps and algebraic Gromov-Witten invariants",
+   "what": "virtual classes of Mbar_{g,n}(X, beta) and the Gromov-Witten axioms from Layers 10-11"
+  },
+  {
+   "roadmap": "a roadmap on torus and cosection localisation of virtual classes",
+   "what": "Layers 8-10"
+  },
+  {
+   "roadmap": "a roadmap on residual gerbes",
+   "what": "identification of the integral zero-dimensional substacks of 6.3 with residual gerbes"
+  },
+  {
+   "roadmap": "a roadmap on Kresch's Chow groups of Artin stacks",
+   "what": "Layers 2-5 as the groups A°_* and the comparison of kresch1999 Theorem 2.1.12 (ii)"
+  },
+  {
+   "roadmap": "a roadmap on the full cotangent complex of morphisms of algebraic stacks",
+   "what": "comparison of its truncation with 8.2"
+  }
+ ],
+ "gaps": []
+}
