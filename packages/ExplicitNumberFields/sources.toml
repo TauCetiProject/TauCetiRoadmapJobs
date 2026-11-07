@@ -7,12 +7,13 @@ authors = "Olivier Bordellès"
 title = "Explicit upper bounds for the average order of d_n(m) and application to class number"
 year = 2002
 locator_scheme = "theorem"
-locator = "Theorem 2"
+locator = "Theorem 5.1"
 sha256 = "321ca48d8c21570ad31317144d4153478d060e2deb464e5177b87c55a164bd73"
 licence_class = "operator-local"
 status = "certified"
 local_name = "bordelles2002.pdf"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6064#issuecomment-6671942201"
+cited_for = ["0.1", "0.3", "5.3"]
 
 [[source]]
 id = "bordelles2006"
@@ -20,12 +21,13 @@ authors = "Olivier Bordellès"
 title = "An inequality for the class number"
 year = 2006
 locator_scheme = "theorem"
-locator = "Theorem 1"
+locator = "Theorem 2.2"
 sha256 = "c8ee318853727413594167d063eb40a8dee3cd4f35bc290895ec7afcbb86d809"
 licence_class = "operator-local"
 status = "certified"
 local_name = "bordelles2006.pdf"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6064#issuecomment-6671942201"
+cited_for = ["0.3", "5.3"]
 
 [[source]]
 id = "louboutin2015mmj"
@@ -37,7 +39,9 @@ locator_scheme = "section"
 locator = "Section 2.6.4"
 licence_class = "none"
 status = "waived"
+version_note = "waived; no legal text readable; the Li-type bound is not planned"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6064#issuecomment-6671942201"
+cited_for = ["Scope (motivation for a Part II)"]
 
 [[source]]
 id = "louboutin2017"
@@ -46,12 +50,13 @@ title = "Simple zeros of Dedekind zeta functions"
 year = 2017
 doi = "10.7169/facm/1598"
 locator_scheme = "theorem"
-locator = "Theorem 1"
+locator = "Theorem 3"
 sha256 = "bec7dbc6530640f176a036f5fdc52acea292df56b82bead7d4350aa7057fbe73"
 licence_class = "operator-local"
 status = "certified"
 local_name = "louboutin2017.pdf"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6064#issuecomment-6672868062"
+cited_for = ["4.3", "4.4", "4.5"]
 
 [[source]]
 id = "louboutin2015ijnt"
@@ -60,12 +65,13 @@ title = "Real zeros of Dedekind zeta functions"
 year = 2015
 doi = "10.1142/S1793042115500463"
 locator_scheme = "theorem"
-locator = "Theorem 1"
+locator = "Theorem 6"
 sha256 = "c5474936bbd32e8e84489296f46f878a6a3d14160518531208bc17541273c1c7"
 licence_class = "operator-local"
 status = "certified"
 local_name = "louboutin2015ijnt.pdf"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6064#issuecomment-6672868062"
+cited_for = ["4.3"]
 
 [[source]]
 id = "rademacher1959"
@@ -80,7 +86,7 @@ url = "https://doi.org/10.1007/BF01162949"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Layer 1"]
+cited_for = ["1.1"]
 
 [[source]]
 id = "lee2023ideals"
@@ -99,8 +105,8 @@ sha256 = "8e5f8c7af4fbfc2d2f930d2195cdd8ebb2bae9f6389c3a2d0317f306a30fbd55"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
-version_note = "arXiv v2"
-cited_for = ["Layer 2"]
+version_note = "arXiv v2; the text layer is OCR and garbles the displayed constant of Theorem 1.2, whose closed form was read from the arXiv HTML rendering of the same version"
+cited_for = ["1.1", "2.2", "2.3"]
 
 [[source]]
 id = "debaene2019"
@@ -118,7 +124,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv, latest version"
-cited_for = ["Layer 2"]
+cited_for = ["2.1", "2.4"]
 
 [[source]]
 id = "gunramaresivaraman2023"
@@ -136,7 +142,7 @@ sha256 = "69650c9c6c9c80ff687891e255bb527ddf8728305e0afd58d5b4ca470f45b08f"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
-cited_for = ["Layer 2"]
+cited_for = ["2.5"]
 
 [[source]]
 id = "garcialee2022mertens"
@@ -154,7 +160,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv, latest version"
-cited_for = ["Layer 3"]
+cited_for = ["3.3", "4.7"]
 
 [[source]]
 id = "garcialee2022artin"
@@ -163,7 +169,7 @@ title = "Explicit estimates for Artin L-functions: Duke's short-sum theorem and 
 year = 2022
 arxiv = "2101.11853"
 locator_scheme = "theorem"
-locator = "Corollary 2"
+locator = "Theorem 1"
 url = "https://arxiv.org/abs/2101.11853"
 fetched_from = "https://arxiv.org/pdf/2101.11853"
 fetched_at = "2026-11-06T01:02:50Z"
@@ -172,7 +178,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv, latest version"
-cited_for = ["Layer 3"]
+cited_for = ["0.5", "3.5", "3.6"]
 
 [[source]]
 id = "trudgian2015"
@@ -190,7 +196,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv, latest version"
-cited_for = ["Layer 5"]
+cited_for = ["4.1"]
 
 [[source]]
 id = "hasanalizadeshenwong2022"
@@ -199,7 +205,7 @@ title = "Counting zeros of Dedekind zeta functions"
 year = 2021
 arxiv = "2102.04663v3"
 locator_scheme = "theorem"
-locator = "Theorem 1"
+locator = "Theorem 1.1"
 url = "https://arxiv.org/abs/2102.04663v3"
 fetched_from = "https://arxiv.org/pdf/2102.04663v3"
 fetched_at = "2026-11-06T01:04:35Z"
@@ -208,22 +214,27 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv v3"
-cited_for = ["Layer 5"]
+cited_for = ["4.1", "4.2"]
 
 [[source]]
 id = "lee2021zerofree"
 authors = "Ethan S. Lee"
 title = "On an explicit zero-free region for the Dedekind zeta-function"
-year = 2021
+year = 2020
 venue = "Journal of Number Theory 224"
 doi = "10.1016/j.jnt.2020.12.015"
+arxiv = "2002.05456v3"
 locator_scheme = "theorem"
-locator = "Theorem 1.1"
-url = "https://doi.org/10.1016/j.jnt.2020.12.015"
-licence_class = "none"
-status = "uncertified"
-version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Layer 5"]
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/2002.05456v3"
+fetched_from = "https://arxiv.org/pdf/2002.05456v3"
+fetched_at = "2026-11-06T13:18:19Z"
+sha256 = "923709cffe96244679fc1d339d5e13a75653cfb6f99960c973e2d17846b8c48f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v3 read; the published Journal of Number Theory text prints 0.0501 where the arXiv text prints 0.05017; the targets follow the text read"
+cited_for = ["4.6"]
 
 [[source]]
 id = "mcgowntrudgian2020"
@@ -232,7 +243,7 @@ title = "Explicit upper bounds on the least primitive root"
 year = 2020
 arxiv = "1904.12373"
 locator_scheme = "theorem"
-locator = "Theorem 1.1"
+locator = "Theorem 3"
 url = "https://arxiv.org/abs/1904.12373"
 fetched_from = "https://arxiv.org/pdf/1904.12373"
 fetched_at = "2026-11-06T01:05:46Z"
@@ -241,7 +252,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv, latest version"
-cited_for = ["Layer 6"]
+cited_for = ["0.6", "6.2", "6.3"]
 
 [[source]]
 id = "kerrmcgowntrudgian2020"
@@ -250,7 +261,7 @@ title = "The least primitive root modulo $p^{2}$"
 year = 2019
 arxiv = "1908.11497v1"
 locator_scheme = "theorem"
-locator = "Theorem 1.1"
+locator = "Theorem 1"
 url = "https://arxiv.org/abs/1908.11497v1"
 fetched_from = "https://arxiv.org/pdf/1908.11497v1"
 fetched_at = "2026-11-06T01:06:49Z"
@@ -259,7 +270,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv v1"
-cited_for = ["Layer 6"]
+cited_for = ["0.6", "6.1", "6.5"]
 
 [[source]]
 id = "trevino2015"
@@ -268,7 +279,7 @@ title = "The Burgess inequality and the least k-th power non-residue"
 year = 2015
 arxiv = "1412.3062v2"
 locator_scheme = "theorem"
-locator = "Theorem 1.1"
+locator = "Theorem 1"
 url = "https://arxiv.org/abs/1412.3062v2"
 fetched_from = "https://arxiv.org/pdf/1412.3062v2"
 fetched_at = "2026-11-06T01:07:25Z"
@@ -277,7 +288,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv v2"
-cited_for = ["Layer 6, H1"]
+cited_for = ["Scope (the explicit Burgess inequalities, left to ExplicitCharacterSumsAndSieves Layer 4)"]
 
 [[source]]
 id = "mcgown2012"
@@ -286,7 +297,7 @@ title = "On the constant in Burgess' bound for the number of consecutive residue
 year = 2012
 arxiv = "1011.4490v1"
 locator_scheme = "theorem"
-locator = "Theorem 1.1"
+locator = "Theorem A.1"
 url = "https://arxiv.org/abs/1011.4490v1"
 fetched_from = "https://arxiv.org/pdf/1011.4490v1"
 fetched_at = "2026-11-06T01:07:39Z"
@@ -295,7 +306,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv v1"
-cited_for = ["H1"]
+cited_for = ["Scope (the explicit Burgess inequalities, left to ExplicitCharacterSumsAndSieves Layer 4)"]
 
 [[source]]
 id = "louboutin2005"
@@ -303,7 +314,7 @@ authors = "Stéphane R. Louboutin"
 title = "On the use of explicit bounds on residues of Dedekind zeta functions taking into account the behavior of small primes"
 year = 2005
 locator_scheme = "theorem"
-locator = "Theorem 1"
+locator = "Theorem 10"
 url = "http://www.numdam.org/item/JTNB_2005__17_2_559_0/"
 fetched_from = "https://www.numdam.org/item/JTNB_2005__17_2_559_0.pdf"
 fetched_at = "2026-11-06T01:09:34Z"
@@ -311,7 +322,8 @@ sha256 = "8f589798df23bcf1ecc49905fae75ac88de4126e02d064c24dbd21d61f688632"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
-cited_for = ["Layer 3, Layer 4(a)"]
+version_note = "the displayed inequalities of Theorem 10 are absent from the Numdam text layer; inequality (13) is restated from its proof route and (14) is not planned"
+cited_for = ["0.2", "3.2", "5.1", "5.2"]
 
 [[source]]
 id = "louboutin2000"
@@ -321,12 +333,12 @@ year = 2000
 venue = "Journal of Number Theory 85"
 doi = "10.1006/jnth.2000.2545"
 locator_scheme = "theorem"
-locator = "Theorem 1"
+locator = "Corollary 3"
 url = "https://doi.org/10.1006/jnth.2000.2545"
 licence_class = "none"
 status = "uncertified"
-version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Layer 3, Layer 4(c)"]
+version_note = "paywalled; Corollary 3 is quoted at louboutin2003 lines 603-605, where it is cited as [Lou7, Corollary 3]"
+cited_for = ["5.5"]
 
 [[source]]
 id = "cullyhugilltrudgian2021"
@@ -341,7 +353,7 @@ url = "https://doi.org/10.1007/s11139-020-00333-3"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Layer 4(b)"]
+cited_for = ["5.4 (consumed from ExplicitMultiplicativeFunctions T7.5)"]
 
 [[source]]
 id = "kadiri2012"
@@ -361,7 +373,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv v1"
-cited_for = ["Layer 5"]
+cited_for = ["4.5"]
 
 [[source]]
 id = "mcgowntrevinotrudgian2016"
@@ -381,7 +393,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv v1"
-cited_for = ["Layer 6"]
+cited_for = ["6.1", "6.4"]
 
 [[source]]
 id = "louboutin2003"
@@ -397,7 +409,7 @@ sha256 = "bb4743480bfebf91b7f0975f860c95493b940dfa072d9d7aa40b9fc15ea96eef"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-06"
-cited_for = ["Layer 4(c)"]
+cited_for = ["0.2", "0.4", "0.5", "3.1", "3.4", "5.5", "5.6"]
 
 [[source]]
 id = "booker2006"
@@ -405,7 +417,7 @@ authors = "Andrew R. Booker"
 title = "Quadratic class numbers and character sums"
 year = 2006
 locator_scheme = "theorem"
-locator = "Theorem 1"
+locator = "Proposition 2"
 url = "https://www.ams.org/journals/mcom/2006-75-255/S0025-5718-06-01850-3/S0025-5718-06-01850-3.pdf"
 fetched_from = "https://www.ams.org/journals/mcom/2006-75-255/S0025-5718-06-01850-3/S0025-5718-06-01850-3.pdf"
 fetched_at = "2026-11-06T01:14:35Z"
@@ -413,22 +425,7 @@ sha256 = "d5f7c9a26a62940faba552f3cbea2a5f77c77d05d31eaf554e2689eed37484a7"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-06"
-cited_for = ["H1 (consumed)"]
-
-[[source]]
-id = "ahnkwon2014"
-authors = "Milton Espinoza"
-title = "Signed Shintani cones for number fields with one complex place"
-year = 2014
-venue = "Journal of Number Theory 145"
-doi = "10.1016/j.jnt.2014.06.003"
-locator_scheme = "theorem"
-locator = "Theorem 1"
-url = "https://doi.org/10.1016/j.jnt.2014.06.003"
-licence_class = "none"
-status = "uncertified"
-version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Layer 5"]
+cited_for = ["Scope (the explicit Burgess inequalities, left to ExplicitCharacterSumsAndSieves Layer 4)"]
 
 [[source]]
 id = "sunley1973"
@@ -444,7 +441,7 @@ sha256 = "a1c40b201f182ed898e1c1ca727fbe514cb0826817fb7b49837bb7b4a7342a0d"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-06"
-cited_for = ["Layer 2"]
+cited_for = ["1.1", "2.2"]
 
 [[source]]
 id = "louboutin2001"
@@ -454,12 +451,12 @@ year = 2001
 venue = "Canadian Journal of Mathematics 53 (2001), no. 6, 1194–1222"
 doi = "10.4153/CJM-2001-045-5"
 locator_scheme = "theorem"
-locator = "Theorem 1"
+locator = "Theorems 1 and 7"
 url = "https://doi.org/10.4153/CJM-2001-045-5"
 licence_class = "none"
 status = "uncertified"
-version_note = "paywalled (Cambridge); the sources service found no legal copy; cited by its locator without the text"
-cited_for = ["Layer 3", "Layer 4(a)"]
+version_note = "paywalled; Theorem 1 is quoted at louboutin2003 lines 297–300 and louboutin2005 lines 38–39; Theorem 7 is quoted at louboutin2003 lines 337–339 (Lemma 7(2), as [Lou8, Theorem 7])"
+cited_for = ["3.1", "5.1", "5.6"]
 
 [[source]]
 id = "chen2022"
@@ -473,8 +470,8 @@ locator = "Theorem 1.1"
 url = "https://doi.org/10.1142/S1793042122500233"
 licence_class = "none"
 status = "uncertified"
-version_note = "paywalled (World Scientific, HTTP 403 to the service); cited by its locator without the text"
-cited_for = ["Layer 6", "H3"]
+version_note = "paywalled; no legal text; the exponent 0.74 is not planned"
+cited_for = ["6.5 (motivation for a Part II)"]
 
 [[source]]
 id = "ramare2001"
@@ -489,7 +486,7 @@ url = "https://doi.org/10.4064/aa100-3-4"
 licence_class = "none"
 status = "uncertified"
 version_note = "open at the IMPAN archive, which answered HTTP 502 to the service on every attempt; cited by its locator; the bounds are consumed from ExplicitZetaBounds target 14, which records the same work"
-cited_for = ["Layer 4(a)"]
+cited_for = ["5.2 (consumed from ExplicitZetaBounds target 14)"]
 
 [[source]]
 id = "cohenoliveirasilvatrudgian2016"
@@ -497,8 +494,8 @@ authors = "Stephen D. Cohen, Tomás Oliveira e Silva, Tim Trudgian"
 title = "On Grosswald's conjecture on primitive roots"
 year = 2015
 arxiv = "1503.04519v1"
-locator_scheme = "section"
-locator = "Section 4"
+locator_scheme = "theorem"
+locator = "Theorem 1"
 url = "https://arxiv.org/abs/1503.04519v1"
 fetched_from = "https://arxiv.org/pdf/1503.04519v1"
 fetched_at = "2026-11-06T01:18:04Z"
@@ -507,4 +504,99 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv v1"
-cited_for = ["H2"]
+cited_for = ["6.3", "6.4"]
+
+[[source]]
+id = "widmer2010"
+authors = "Martin Widmer"
+title = "Counting primitive points of bounded height"
+year = 2010
+arxiv = "1204.0927v1"
+locator_scheme = "theorem"
+locator = "Theorem 5.4"
+url = "https://arxiv.org/abs/1204.0927v1"
+fetched_from = "https://arxiv.org/pdf/1204.0927v1"
+fetched_at = "2026-11-06T13:27:48Z"
+sha256 = "bbcd89a7b217cde0cca52100ac9e26b1fd7d160307507aab0752bdac0c659bfb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v1"
+cited_for = ["2.1"]
+
+[[source]]
+id = "friedman1989"
+authors = "Eduardo Friedman"
+title = "Analytic formulas for the regulator of a number field"
+year = 1989
+venue = "Inventiones Mathematicae 98 (1989), 599–622"
+doi = "10.1007/BF01393839"
+locator_scheme = "theorem"
+locator = "Theorem B"
+url = "https://doi.org/10.1007/BF01393839"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; the bound R_K/w_K ≥ 0.09058 is quoted at garcialee2022mertens line 1215"
+cited_for = ["3.3"]
+
+[[source]]
+id = "rosser-schoenfeld-1962"
+authors = "J. Barkley Rosser, Lowell Schoenfeld"
+title = "Approximate formulas for some functions of prime numbers"
+year = 1962
+venue = "Illinois Journal of Mathematics 6, 64-94"
+doi = "10.1215/ijm/1255631807"
+local_name = "rosser-schoenfeld-1962.pdf"
+locator_scheme = "theorem"
+locator = "Theorem 15"
+fetched_at = "2026-11-06T21:07:09Z"
+sha256 = "8e37b06f82e09421bceb2502578c47b61469141f0287e6acedb70e01765ab556"
+licence_class = "operator-local"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["gap:totient-quotient-bound"]
+
+[[source]]
+id = "schoenfeld-1976"
+authors = "Lowell Schoenfeld"
+title = "Sharper Bounds for the Chebyshev Functions θ(x) and ψ(x). II"
+year = 1976
+venue = "Mathematics of Computation 30, 337-360"
+doi = "10.2307/2005976"
+local_name = "schoenfeld-1976.pdf"
+locator_scheme = "theorem"
+locator = "Corollary 2"
+fetched_at = "2026-11-06T21:07:42Z"
+sha256 = "8c3cac1ee52eb05af05ec410adc587a18505a46aacdde41ae097038b0e7c3897"
+licence_class = "operator-local"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["gap:explicit-mertens-second"]
+
+[[source]]
+id = "washington1997"
+authors = "Lawrence C. Washington"
+title = "Introduction to Cyclotomic Fields"
+year = 1997
+venue = "Graduate Texts in Mathematics 83, 2nd edition, Springer"
+doi = "10.1007/978-1-4612-1934-7"
+locator_scheme = "theorem"
+locator = "Theorem 4.10"
+licence_class = "none"
+status = "uncertified"
+version_note = "textbook, not openly available; cited by its locator for the standard divisibility h(K+) | h(K) of a CM-field"
+cited_for = ["0.4"]
+
+[[source]]
+id = "lang1994"
+authors = "Serge Lang"
+title = "Algebraic Number Theory"
+year = 1994
+venue = "Graduate Texts in Mathematics 110, 2nd edition, Springer"
+doi = "10.1007/978-1-4612-0853-2"
+locator_scheme = "chapter"
+locator = "Chapter XIII"
+licence_class = "none"
+status = "uncertified"
+version_note = "textbook, not openly available; cited by its locator for the class-number formula and the Hecke integral representation, as louboutin2003 line 138 cites it"
+cited_for = ["0.4", "References"]
