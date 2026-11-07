@@ -1,0 +1,1968 @@
+{
+ "roadmap": "GaussianIsoperimetryAndClusters",
+ "title": "Weighted perimeter, Gaussian isoperimetry and clusters",
+ "parent": null,
+ "summary": "Weighted perimeter for positive C¹ densities on finite-dimensional real inner product spaces, clusters and existence of minimizing clusters, the Gaussian model simplicial clusters and model profile with ∇²I_m = −L_A⁻¹, Ehrhard symmetrisation of sets of finite Gaussian perimeter, the Gaussian isoperimetric theorem with equality (half-spaces) and its two-cell cluster form, the Borell–Sudakov–Tsirelson inequality for every Gaussian law, Bobkov's inequality and its converse, median concentration of Lipschitz functions, and Ehrhard's inequality for convex sets.",
+ "baseline": {
+  "mathlib": "f6090c7095e1e56b3464c1daba5f24631f1290d2",
+  "tauceti": "358314d4ab97483df4fc4cb8adcc02e74a8d9f5a"
+ },
+ "layers": [
+  {
+   "key": "1",
+   "title": "The standard Gaussian on the line and on Euclidean spaces",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "definition",
+     "name": "gaussianIsoperimetricProfile",
+     "statement": "I : ℝ → ℝ, I(v) = φ(Φ⁻¹(v)) for 0 < v < 1 with Φ⁻¹(v) the quantile of gaussianReal 0 1, and I(v) = 0 otherwise.",
+     "hypotheses": [],
+     "locator": {
+      "source": "MilmanNeeman2022",
+      "where": "line 182–185 (I_m^(1) = φ∘Φ⁻¹, equation (1.1))"
+     },
+     "prerequisites": [
+      "mathlib:ProbabilityTheory.gaussianPDFReal",
+      "mathlib:ProbabilityTheory.cdf",
+      "tauceti:TauCeti.Probability.cdf_gaussianReal_zero_one",
+      "tauceti:TauCeti.Real.strictMono_erf",
+      "tauceti:TauCeti.Real.continuous_erf",
+      "tauceti:MeasureTheory.Measure.quantile",
+      "roadmap:StandardDistributions Layer 7.2"
+     ],
+     "api": [
+      {
+       "name": "profile_cdf",
+       "role": "evaluation",
+       "statement": "I(Φ(s)) = φ(s) for every real s; Φ(Φ⁻¹(v)) = v on (0,1) and Φ⁻¹(Φ(s)) = s."
+      },
+      {
+       "name": "profile_one_sub",
+       "role": "symmetry",
+       "statement": "I(1 − v) = I(v) for all v."
+      },
+      {
+       "name": "continuousOn_profile",
+       "role": "regularity",
+       "statement": "I is continuous on [0,1], positive on (0,1), zero at 0 and 1, maximal value φ(0) only at 1/2."
+      },
+      {
+       "name": "profile_deriv",
+       "role": "calculus",
+       "statement": "I is C^∞ on (0,1) with I′ = −Φ⁻¹ and I″ = −1/I; hence strictly concave on [0,1] and locally Lipschitz on (0,1)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "profile_half",
+       "kind": "computation",
+       "statement": "I(1/2) = φ(0) = 0.398942; I(1 − Φ(1)) = φ(1) = 0.241971; I(1/3) = I(2/3) = 0.363600."
+      },
+      {
+       "name": "profile_endpoints",
+       "kind": "degenerate",
+       "statement": "I(0) = I(1) = 0, whereas φ of the quantile junk value 0 at level 0 is 0.398942."
+      },
+      {
+       "name": "profile_ode",
+       "kind": "characterisation",
+       "statement": "The second difference of I at 0.3 is −2.876104 = −1/I(0.3) and I′(0.3) = 0.524401 = −Φ⁻¹(0.3); the rescaled profile √(2π)·I violates I″ = −1/I."
+      },
+      {
+       "name": "profile_normalization",
+       "kind": "non-example",
+       "statement": "The Cianchi–Fusco–Maggi–Pratelli profile e^{−Φ_CFMP⁻¹(r)²/2} equals √(2π)·I: at r = 1 − Φ(1) it is 0.606531 instead of 0.241971."
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "theorem",
+     "name": "one_sub_cdf_gaussianReal_le",
+     "statement": "For r > 0, 1 − Φ(r) < φ(r)/r; for r ≥ 0, 1 − Φ(r) ≤ ½ e^{−r²/2}, with equality only at r = 0.",
+     "hypotheses": [],
+     "locator": {
+      "source": "CianchiFuscoMaggiPratelli2011",
+      "where": "Lemma 3.4, inequality (3.2), line 295–299 (their normalization, for the first bound); Ledoux1999 inequality (1.6), line 225–226 (the tail bound e^{−r²/2} without the factor ½; the ½ form is proved here)"
+     },
+     "prerequisites": [
+      "target:1.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "tail_one",
+       "kind": "computation",
+       "statement": "1 − Φ(1) = 0.158655 < φ(1) = 0.241971 and < ½e^{−1/2} = 0.303265; at r = 2, 0.022750 < 0.067668."
+      },
+      {
+       "name": "tail_zero",
+       "kind": "degenerate",
+       "statement": "At r = 0 both sides of the second bound equal 1/2; a constant 1/4 fails."
+      }
+     ]
+    },
+    {
+     "id": "1.3",
+     "kind": "theorem",
+     "name": "stdGaussian_eq_map_add_prod",
+     "statement": "For a subspace F ⊆ E, addition F × F^⊥ → E carries stdGaussian F ⊗ stdGaussian F^⊥ to stdGaussian E; the orthogonal projection onto F carries γ_E to γ_F; γ_E({⟨x,ν⟩ < s}) = Φ(s) for unit ν; and γ_E = e^{−W}·volume with W(x) = ‖x‖²/2 + (n/2)log(2π).",
+     "hypotheses": [
+      "E finite-dimensional real inner product space",
+      "F a subspace of E",
+      "ν a unit vector"
+     ],
+     "locator": {
+      "source": "MilmanNeeman2022",
+      "where": "line 481–483 and equation (2.1), line 490–497"
+     },
+     "prerequisites": [
+      "mathlib:ProbabilityTheory.stdGaussian_eq_map_pi_orthonormalBasis",
+      "mathlib:ProbabilityTheory.stdGaussian_map",
+      "mathlib:MeasureTheory.measurePreserving_sumPiEquivProdPi",
+      "mathlib:Submodule.measurePreserving_measurableEquivProd",
+      "tauceti:TauCeti.Probability.stdGaussian_eq_withDensity"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "splitting_diagonal",
+       "kind": "computation",
+       "statement": "In ℝ² with F = ℝ(e_1+e_2)/√2, γ({x_1 + x_2 < √2}) = Φ(1) = 0.841345."
+      },
+      {
+       "name": "splitting_simplex",
+       "kind": "computation",
+       "statement": "On E^(2), √(3/2)·x_i ~ N(0,1): γ({x_i ≥ 1}) = 1 − Φ(√1.5) = 0.110336, not 0.207108."
+      },
+      {
+       "name": "splitting_trivial",
+       "kind": "degenerate",
+       "statement": "F = {0} gives γ_E = δ_0 ⊗ γ_E; the density at 0 in ℝ² is (2π)^{−1} = 0.159155."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "Weighted variation and perimeter",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "definition",
+     "name": "weightedVariation",
+     "statement": "For a C¹ weight W, open Ω ⊆ E and u ∈ L¹_loc(Ω): V_μ(u;Ω) = sup {∫_Ω u (div X − ⟨∇W,X⟩) e^{−W} dx : X smooth, compactly supported in Ω, ‖X‖ ≤ 1} ∈ [0,∞]. P_μ(U;Ω) = V_μ(χ_U;Ω), P_μ(U) = P_μ(U;E).",
+     "hypotheses": [
+      "E finite-dimensional real inner product space, dim E = n ≥ 1",
+      "W : E → ℝ of class C¹",
+      "Ω open",
+      "U Lebesgue measurable"
+     ],
+     "locator": {
+      "source": "MilmanNeeman2022",
+      "where": "line 30–31 and 753–754; CianchiFuscoMaggiPratelli2011 equation (2.5), line 200–208"
+     },
+     "prerequisites": [
+      "roadmap:GeometricMeasureTheory G3",
+      "roadmap:GeometricMeasureTheory G4"
+     ],
+     "api": [
+      {
+       "name": "weightedPerimeter",
+       "role": "definition",
+       "statement": "P_μ(U;Ω) = V_μ(χ_U;Ω)."
+      },
+      {
+       "name": "weightedVariation_eq_sup_density_bounded",
+       "role": "characterisation",
+       "statement": "V_μ(u;Ω) = sup ∫_Ω u div Y dx over C¹ (or smooth) Y compactly supported in Ω with ‖Y‖ ≤ e^{−W}."
+      },
+      {
+       "name": "weightedPerimeter_compl",
+       "role": "invariance",
+       "statement": "P_μ(E∖U;Ω) = P_μ(U;Ω); V_μ depends only on the a.e. class of u; P_μ(∅) = P_μ(E) = 0."
+      },
+      {
+       "name": "weightedVariation_mono",
+       "role": "monotonicity",
+       "statement": "Ω ⊆ Ω′ ⇒ V_μ(u;Ω) ≤ V_μ(u;Ω′); subadditive and absolutely homogeneous in u."
+      },
+      {
+       "name": "weightedVariation_add_const",
+       "role": "normalization",
+       "statement": "The weight W + c multiplies V_μ by e^{−c}; W = 0 gives the Euclidean variation of GeometricMeasureTheory G3."
+      },
+      {
+       "name": "weightedVariation_local_comparison",
+       "role": "comparison",
+       "statement": "For Ω′ with compact closure in Ω: (min e^{−W})|Du|(Ω′) ≤ V_μ(u;Ω′) ≤ (max e^{−W})|Du|(Ω′); V_μ(u;Ω) < ∞ ⇒ u ∈ BV_loc(Ω)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "euclidean_halfline",
+       "kind": "compatibility",
+       "statement": "W = 0 on ℝ: P((0,∞)) = 1, P((0,1)) = 2; a half-plane of ℝ² has Euclidean perimeter ∞ but finite Gaussian perimeter."
+      },
+      {
+       "name": "gaussian_disc",
+       "kind": "computation",
+       "statement": "Under γ on ℝ², P_γ(ball(0,1)) = e^{−1/2} = 0.606531 and P_γ({x_1 > 1}) = 0.241971."
+      },
+      {
+       "name": "missing_drift_term",
+       "kind": "non-example",
+       "statement": "Without −⟨∇W,X⟩ the supremum gives ℝ under γ the value ∫|t| dγ = 0.797885 instead of 0 and is not complement invariant."
+      },
+      {
+       "name": "empty_and_whole",
+       "kind": "degenerate",
+       "statement": "P_μ(∅) = P_μ(E) = 0 for every weight."
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "theorem",
+     "name": "weightedVariation_eq_lintegral",
+     "statement": "For u ∈ BV_loc(Ω) and open Ω′ ⊆ Ω, V_μ(u;Ω′) = ∫_{Ω′} e^{−W} d|Du|, defining V_μ(u;B) for Borel B; if U has locally finite perimeter in Ω (in particular if P_μ(U;Ω) < ∞), then P_μ(U;B) = μ^{n−1}(∂*U ∩ B) = μ^{n−1}(∂^M U ∩ B) for Borel B ⊆ Ω.",
+     "hypotheses": [
+      "W of class C¹",
+      "n ≥ 1"
+     ],
+     "locator": {
+      "source": "MilmanNeeman2022",
+      "where": "line 755–757; CianchiFuscoMaggiPratelli2011 (2.3)–(2.5), line 174–208; Maggi2012 Theorem 15.9"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "roadmap:GeometricMeasureTheory G3",
+      "roadmap:GeometricMeasureTheory G4",
+      "roadmap:GeometricMeasureTheory G5"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "interval",
+       "kind": "computation",
+       "statement": "U = (−1,1): P_γ(U) = 2φ(1) = 0.483941, γ(U) = 0.682689."
+      },
+      {
+       "name": "null_modification",
+       "kind": "degenerate",
+       "statement": "Removing the origin from ball(0,1) ⊂ ℝ² or adding a null dense set outside it leaves P_γ = 0.606531."
+      }
+     ]
+    },
+    {
+     "id": "2.3",
+     "kind": "theorem",
+     "name": "weightedPerimeter_le_frontier",
+     "statement": "For Lebesgue-measurable U and open Ω, P_μ(U;Ω) ≤ μ^{n−1}(∂^M U ∩ Ω) ≤ μ^{n−1}(frontier U ∩ Ω); for open convex C and bounded Lipschitz domains, P_μ(C;Ω) = μ^{n−1}(∂C ∩ Ω); P_γ({⟨x,ν⟩ < s}) = φ(s) and P_γ(ball(0,r)) = (2π)^{−n/2} e^{−r²/2} n ω_n r^{n−1}.",
+     "hypotheses": [
+      "W of class C¹",
+      "n ≥ 1",
+      "ν unit",
+      "r > 0"
+     ],
+     "locator": {
+      "source": "MilmanNeeman2022",
+      "where": "line 32–33; CianchiFuscoMaggiPratelli2011 line 48–56 and 182–184"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:2.2",
+      "roadmap:GeometricMeasureTheory G5",
+      "roadmap:GeometricMeasureTheory G6",
+      "roadmap:GeometricMeasureTheory G2",
+      "mathlib:AffineSubspace.euclideanHausdorffMeasure_coe_image",
+      "mathlib:EuclideanGeometry.measurePreserving_vaddConst"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "ball_dim1",
+       "kind": "compatibility",
+       "statement": "n = 1, r = 1: 2φ(1) = 0.483941 with ω_1 = 2."
+      },
+      {
+       "name": "ball_dim2",
+       "kind": "computation",
+       "statement": "n = 2, r = 1: P_γ = 0.606531, γ = 0.393469, I(γ) = 0.384633."
+      },
+      {
+       "name": "not_translation_invariant",
+       "kind": "non-example",
+       "statement": "{x_1 < 0} has P_γ = 0.398942, {x_1 < 1} has 0.241971."
+      }
+     ]
+    },
+    {
+     "id": "2.4",
+     "kind": "theorem",
+     "name": "weightedVariation_lowerSemicontinuous",
+     "statement": "u_k → u in L¹_loc(Ω) ⇒ V_μ(u;Ω) ≤ liminf V_μ(u_k;Ω); if μ(E) < ∞, sets with sup P_μ(U_k) < ∞ have a subsequence converging in L¹(μ) to some U with P_μ(U) ≤ liminf P_μ(U_k).",
+     "hypotheses": [
+      "W of class C¹",
+      "μ(E) < ∞ for the compactness part"
+     ],
+     "locator": {
+      "source": "CianchiFuscoMaggiPratelli2011",
+      "where": "line 209–213; MilmanNeeman2022 line 939–947; Maggi2012 Proposition 12.15 and Theorem 12.26"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "roadmap:GeometricMeasureTheory G4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "escaping_halfspaces",
+       "kind": "computation",
+       "statement": "Under γ, {x_1 < k} → E with P_γ = φ(k) → 0."
+      },
+      {
+       "name": "infinite_mass",
+       "kind": "non-example",
+       "statement": "Weight 0 on ℝ: (k,k+1) has perimeter 2 and no L¹ limit."
+      },
+      {
+       "name": "strict_lsc",
+       "kind": "computation",
+       "statement": "(−1,1) ∪ (1+1/k,2): limit perimeter 0.779903 against 0.295962 for (−1,2)."
+      }
+     ]
+    },
+    {
+     "id": "2.5",
+     "kind": "theorem",
+     "name": "integral_weightedDiv_eq_boundary",
+     "statement": "For U of locally finite perimeter and X ∈ C¹_c: ∫_U div_μ X dμ = ∫_{∂*U} ⟨X,ν_U⟩ dμ^{n−1}; the same for bounded C¹ X with bounded derivative and ⟨∇W,X⟩ ∈ L¹(μ) when μ(E) < ∞ and P_μ(U) < ∞; for γ and P_γ(U) < ∞, d/dt γ(U + tw)|_{t=0} = ∫_{∂*U} ⟨w,ν_U⟩ dγ^{n−1}.",
+     "hypotheses": [
+      "outward normal ν_U",
+      "W of class C¹"
+     ],
+     "locator": {
+      "source": "MilmanNeeman2022",
+      "where": "equations (3.1) and (3.3), line 705–708 and 758–761; Maggi2012 Theorem 15.9"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:2.2",
+      "roadmap:GeometricMeasureTheory G6"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "halfline",
+       "kind": "computation",
+       "statement": "U = (−∞,s): both sides X(s)φ(s)."
+      },
+      {
+       "name": "translation_sign",
+       "kind": "computation",
+       "statement": "U = {x_1 < s}, w = e_1: derivative φ(s); an inner normal gives −φ(s)."
+      },
+      {
+       "name": "whole_space",
+       "kind": "degenerate",
+       "statement": "U = E: ∫ −x_1 dγ = 0."
+      }
+     ]
+    },
+    {
+     "id": "2.6",
+     "kind": "theorem",
+     "name": "lintegral_weighted_coarea",
+     "statement": "(a) Lipschitz f, Borel g ≥ 0: ∫ g‖∇f‖ dμ = ∫_ℝ ∫_{f⁻¹(t)} g dμ^{n−1} dt; (b) u ∈ L¹_loc(Ω): V_μ(u;Ω) = ∫_ℝ P_μ({u > t};Ω) dt, and on Borel subsets for u ∈ BV_loc(Ω).",
+     "hypotheses": [
+      "W of class C¹",
+      "n ≥ 1"
+     ],
+     "locator": {
+      "source": "Maggi2012",
+      "where": "Sections 13.1 and 18.1"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.2",
+      "roadmap:GeometricMeasureTheory G2",
+      "roadmap:GeometricMeasureTheory G4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "radial",
+       "kind": "computation",
+       "statement": "f = ‖x‖ on ℝ², μ = γ: both sides 1.000000."
+      },
+      {
+       "name": "linear",
+       "kind": "computation",
+       "statement": "u(t) = t on ℝ: ∫φ = 1 on both sides."
+      }
+     ]
+    },
+    {
+     "id": "2.7",
+     "kind": "theorem",
+     "name": "gaussianPerimeter_cylinder",
+     "statement": "For a linear isometry equivalence T : E ≃ E′, P_γ(T U) = P_γ(U); for a subspace F and Lebesgue-measurable U ⊆ F, γ_E(U ⊕ F^⊥) = γ_F(U) and P_{γ_E}(U ⊕ F^⊥) = P_{γ_F}(U).",
+     "hypotheses": [
+      "F subspace of E"
+     ],
+     "locator": {
+      "source": "MilmanNeeman2022",
+      "where": "line 481–483 and 554–556"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:2.1",
+      "target:2.5",
+      "mathlib:ProbabilityTheory.stdGaussian_map"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "halfplane_cylinder",
+       "kind": "computation",
+       "statement": "F = ℝe_1 ⊂ ℝ², U = (−∞,s): φ(s) both sides."
+      },
+      {
+       "name": "zero_subspace",
+       "kind": "degenerate",
+       "statement": "F = {0}: perimeters 0."
+      },
+      {
+       "name": "translation",
+       "kind": "non-example",
+       "statement": "Translating {x_1 < 0} by e_1 changes 0.398942 to 0.241971."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "Clusters and their interfaces",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "definition",
+     "name": "Cluster",
+     "statement": "A q-cluster (q ≥ 2) for μ is a q-tuple of Lebesgue-measurable, pairwise disjoint cells Ω_i with μ(E ∖ ⋃Ω_i) = 0 and P_μ(Ω_i) < ∞; total perimeter P_μ(Ω) = ½ Σ_i P_μ(Ω_i); measure vector μ(Ω) ∈ Δ^(q−1) when μ(E) = 1; equivalence up to null sets.",
+     "hypotheses": [
+      "q ≥ 2",
+      "W of class C¹"
+     ],
+     "locator": {
+      "source": "MilmanNeeman2022",
+      "where": "line 57–67 and 697–702; Maggi2012 Part IV synopsis, line 716–725"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.7"
+     ],
+     "api": [
+      {
+       "name": "Cluster.congr",
+       "role": "invariance",
+       "statement": "Equivalent clusters have equal total perimeter, measure vector and interfaces."
+      },
+      {
+       "name": "Cluster.perm",
+       "role": "symmetry",
+       "statement": "Permuting cells gives a cluster with the same total perimeter and permuted measure vector."
+      },
+      {
+       "name": "Cluster.merge",
+       "role": "construction",
+       "statement": "For q ≥ 3, merging Ω_i and Ω_j gives a (q−1)-cluster whose total perimeter drops by A_ij."
+      },
+      {
+       "name": "Cluster.perimeter_two",
+       "role": "computation",
+       "statement": "For q = 2, P_μ(Ω) = P_μ(Ω_1) = P_μ(Ω_2)."
+      },
+      {
+       "name": "Cluster.isometry",
+       "role": "transport",
+       "statement": "A linear isometry carries γ-clusters to γ-clusters with the same total perimeter."
+      }
+     ],
+     "tests": [
+      {
+       "name": "three_intervals",
+       "kind": "computation",
+       "statement": "Cells (−∞,a),(a,b),(b,∞) under γ on ℝ have total perimeter φ(a)+φ(b); without the factor ½ every interface is counted twice."
+      },
+      {
+       "name": "trivial_cluster",
+       "kind": "degenerate",
+       "statement": "(E, ∅) is a 2-cluster of total perimeter 0 with measure vector (1,0)."
+      },
+      {
+       "name": "infinite_perimeter_cell",
+       "kind": "non-example",
+       "statement": "(⋃_k (1/(2k+1),1/(2k)), complement) is not a cluster: the first cell has infinite perimeter; overlapping cells are excluded by disjointness."
+      },
+      {
+       "name": "halfspace_pair",
+       "kind": "compatibility",
+       "statement": "({x_1 < s},{x_1 > s}) has total perimeter φ(s) = P_γ({x_1 < s})."
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "theorem",
+     "name": "Cluster.interface_decomposition",
+     "statement": "With Σ_ij = ∂*Ω_i ∩ ∂*Ω_j and A_ij = μ^{n−1}(Σ_ij): for S ⊆ {1..q}, μHE[n−1]-a.e. point of ∂*(⋃_S Ω_i) lies in some Σ_ij with i ∈ S, j ∉ S; a.e. point of ∂*Ω_i lies in exactly one Σ_ij; P_μ(Ω_i) = Σ_{j≠i} A_ij; P_μ(⋃_S Ω_i) = Σ_{i∈S,j∉S} A_ij; P_μ(Ω) = Σ_{i<j} A_ij; closure(∂*Ω_i) = closure(⋃_{j≠i} Σ_ij).",
+     "hypotheses": [
+      "Ω a q-cluster",
+      "n ≥ 1"
+     ],
+     "locator": {
+      "source": "MilmanNeeman2022",
+      "where": "equations (3.4)–(3.6), line 769–784; Maggi2012 Exercise 29.7"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "target:3.1",
+      "roadmap:GeometricMeasureTheory G5"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "two_cells",
+       "kind": "computation",
+       "statement": "q = 2: A_12 = P_μ(Ω_1) = P_μ(Ω)."
+      },
+      {
+       "name": "three_intervals_interfaces",
+       "kind": "computation",
+       "statement": "A_12 = φ(a), A_23 = φ(b), A_13 = 0."
+      },
+      {
+       "name": "set_equality_fails",
+       "kind": "non-example",
+       "statement": "Ω_1 = {x_2 < 0}, Ω_2 = half-annuli of radii in [2^{−2k−1},2^{−2k}), Ω_3 the rest of the upper half-plane: 0 ∈ ∂*Ω_1 but 0 ∉ ∂*Ω_2 ∪ ∂*Ω_3."
+      }
+     ]
+    },
+    {
+     "id": "3.3",
+     "kind": "theorem",
+     "name": "Cluster.posDef_interfaceForm",
+     "statement": "If μ(E) = 1 and μ(Ω) ∈ int Δ^(q−1), the interface graph is connected and L_A is positive definite on E^(q−1).",
+     "hypotheses": [
+      "μ(E) = 1",
+      "μ(Ω) in the relative interior of the simplex"
+     ],
+     "locator": {
+      "source": "MilmanNeeman2022",
+      "where": "Lemma 3.4, line 892–905"
+     },
+     "prerequisites": [
+      "target:3.2",
+      "roadmap:GeometricMeasureTheory G4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "chain",
+       "kind": "computation",
+       "statement": "Three intervals: ⟨a,L_A a⟩ = φ(a)(a_1−a_2)² + φ(b)(a_2−a_3)², zero on E^(2) only at 0."
+      },
+      {
+       "name": "boundary_point",
+       "kind": "degenerate",
+       "statement": "(E,∅,∅) has L_A = 0."
+      }
+     ]
+    },
+    {
+     "id": "3.4",
+     "kind": "definition",
+     "name": "isoperimetricProfile",
+     "statement": "For μ(E) = 1, q ≥ 2, v ∈ Δ^(q−1): I_μ^(q−1)(v) = inf {P_μ(Ω) : Ω a q-cluster with μ(Ω) = v}; a cluster is μ-minimizing when P_μ(Ω) = I_μ^(q−1)(μ(Ω)); I^(q−1) = I_γ^(q−1); I^(0)(1) = 0.",
+     "hypotheses": [
+      "μ(E) = 1"
+     ],
+     "locator": {
+      "source": "MilmanNeeman2022",
+      "where": "line 169–170 and 909–910"
+     },
+     "prerequisites": [
+      "target:2.3",
+      "target:3.1",
+      "roadmap:GeometricMeasureTheory G2"
+     ],
+     "api": [
+      {
+       "name": "isoperimetricProfile_lt_top",
+       "role": "finiteness",
+       "statement": "I_μ^(q−1)(v) < ∞ via concentric annuli."
+      },
+      {
+       "name": "isoperimetricProfile_perm",
+       "role": "symmetry",
+       "statement": "Invariant under simultaneous permutation of coordinates; 0 at vertices."
+      },
+      {
+       "name": "isoperimetricProfile_le_face",
+       "role": "monotonicity",
+       "statement": "I_μ^(q−1)(v) ≤ I_μ^(|J|−1)(v_J) when v vanishes outside J."
+      },
+      {
+       "name": "isoperimetricProfile_two",
+       "role": "compatibility",
+       "statement": "For q = 2, I_μ^(1)(v_1,1−v_1) = inf {P_μ(U) : μ(U) = v_1}."
+      }
+     ],
+     "tests": [
+      {
+       "name": "vertex",
+       "kind": "degenerate",
+       "statement": "I_μ^(1)(1,0) = 0 attained by (E,∅)."
+      },
+      {
+       "name": "halfplane_failure",
+       "kind": "non-example",
+       "statement": "For ρ(x,y) = c(1+y²)exp(−x²(1+y²)⁴) the only half-plane {x<t} of measure 1/2 has infinite perimeter; balls and the symmetric slab {|x|<a} of measure 1/2 give finiteness."
+      },
+      {
+       "name": "gaussian_half",
+       "kind": "computation",
+       "statement": "I^(1)(1/2,1/2) = 0.398942 (Layer 7); the disc gives I^(1)(0.393469,·) ≤ 0.606531 against the value 0.384633."
+      }
+     ]
+    },
+    {
+     "id": "3.5",
+     "kind": "theorem",
+     "name": "exists_isMinimizing_cluster",
+     "statement": "If μ(E) = 1, then for every q ≥ 2 and v ∈ Δ^(q−1) there is a μ-minimizing q-cluster with measure vector v.",
+     "hypotheses": [
+      "μ(E) = 1",
+      "W of class C¹"
+     ],
+     "locator": {
+      "source": "MilmanNeeman2022",
+      "where": "Theorem 4.1 (i), line 918–922; proof at line 939–956"
+     },
+     "prerequisites": [
+      "target:2.4",
+      "target:3.1",
+      "target:3.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "gaussian_half",
+       "kind": "computation",
+       "statement": "q = 2, γ, v = (1/2,1/2): a minimizer exists; Layer 7 identifies it as a half-space through 0."
+      },
+      {
+       "name": "infinite_mass",
+       "kind": "non-example",
+       "statement": "Weight 0 on ℝ: (k,k+1) is minimizing with no L¹ limit."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "Model simplicial clusters and the model profile",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "definition",
+     "name": "modelCluster",
+     "statement": "On E^(q−1) = {x ∈ ℝ^q : Σx_i = 0}: Ω^m_i = {x : x_i > x_j ∀ j ≠ i}; x + Ω^m; Σ^m_ij = {x : x_i = x_j ≥ x_k ∀k}; A^m_ij(x) = γ_{q−1}^{q−2}(x + Σ^m_ij).",
+     "hypotheses": [
+      "q ≥ 1"
+     ],
+     "locator": {
+      "source": "MilmanNeeman2022",
+      "where": "line 499–505"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:2.3",
+      "target:3.2"
+     ],
+     "api": [
+      {
+       "name": "modelCluster_isCluster",
+       "role": "structure",
+       "statement": "x + Ω^m is a γ-cluster of open convex polyhedral cones with interfaces x + Σ^m_ij and normals n_ij = (e_j − e_i)/√2."
+      },
+      {
+       "name": "modelInterfaceArea_pos",
+       "role": "positivity",
+       "statement": "A^m_ij(x) > 0 and P_γ(x + Ω^m) = Σ_{i<j} A^m_ij(x)."
+      },
+      {
+       "name": "modelConormal_sum",
+       "role": "balancing",
+       "statement": "Each codimension-two face lies on exactly three interfaces with conormals (2e_k − e_i − e_j)/√6 summing to 0."
+      },
+      {
+       "name": "modelInterfaceArea_eq",
+       "role": "factorization",
+       "statement": "A^m_ij(x) = φ(⟨n_ij,x⟩)·γ_{n_ij^⊥}(π_ij x + Σ^m_ij)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "q_two",
+       "kind": "computation",
+       "statement": "q = 2, x = t(e_1−e_2)/√2: γ(x+Ω^m_1) = Φ(−t), A^m_12 = φ(t)."
+      },
+      {
+       "name": "tripod",
+       "kind": "computation",
+       "statement": "q = 3, x = 0: A^m_ij = 1/(2√(2π)) = 0.199471, total 0.598413, cells of measure 1/3."
+      },
+      {
+       "name": "conormals",
+       "kind": "characterisation",
+       "statement": "(−1,−1,2)/√6 + (2,−1,−1)/√6 + (−1,2,−1)/√6 = 0 (120° junction)."
+      },
+      {
+       "name": "one_cell",
+       "kind": "degenerate",
+       "statement": "q = 1: E^(0) = {0}, the one-cell cluster has perimeter 0."
+      }
+     ]
+    },
+    {
+     "id": "4.2",
+     "kind": "definition",
+     "name": "simplicialCluster",
+     "statement": "For 2 ≤ q ≤ n+1 and pairwise equidistant p_1..p_q ∈ E: Ω_i = {y : ‖y − p_i‖ < ‖y − p_j‖ ∀ j ≠ i}.",
+     "hypotheses": [
+      "2 ≤ q ≤ n + 1",
+      "‖p_i − p_j‖ = d > 0 for i ≠ j"
+     ],
+     "locator": {
+      "source": "MilmanNeeman2022",
+      "where": "line 76–82"
+     },
+     "prerequisites": [
+      "target:2.7",
+      "target:4.1",
+      "mathlib:ProbabilityTheory.stdGaussian_map"
+     ],
+     "api": [
+      {
+       "name": "simplicialCluster_eq_image",
+       "role": "structure",
+       "statement": "Every simplicial cluster is ι(x + Ω^m) ⊕ (range ι)^⊥ for a linear isometric embedding ι : E^(q−1) → E and x ∈ E^(q−1), and conversely."
+      },
+      {
+       "name": "simplicialCluster_cones",
+       "role": "geometry",
+       "statement": "Cells are open convex cones with apex the circumcentre; invariant under scaling the centres."
+      },
+      {
+       "name": "simplicialCluster_measure",
+       "role": "transport",
+       "statement": "γ(Ω_i) = γ_{q−1}(x + Ω^m_i) and P_γ(Ω) = P_γ(x + Ω^m)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "two_centres",
+       "kind": "compatibility",
+       "statement": "q = 2 gives complementary half-spaces: measures (Φ(s),1−Φ(s)), perimeter φ(s)."
+      },
+      {
+       "name": "equilateral",
+       "kind": "computation",
+       "statement": "q = 3 in ℝ²: three 120° sectors, measures 1/3, perimeter 0.598413."
+      },
+      {
+       "name": "collinear",
+       "kind": "non-example",
+       "statement": "Centres 0,1,2 in ℝ give a 3-cluster that is not simplicial."
+      }
+     ]
+    },
+    {
+     "id": "4.3",
+     "kind": "theorem",
+     "name": "modelMeasureMap_diffeomorph",
+     "statement": "Ψ(x) = γ_{q−1}(x + Ω^m) is C^∞, injective, with image int Δ^(q−1) and derivative −L_{A^m(x)}/√2 on E^(q−1), invertible; Ψ is a diffeomorphism onto int Δ^(q−1).",
+     "hypotheses": [
+      "q ≥ 2"
+     ],
+     "locator": {
+      "source": "MilmanNeeman2022",
+      "where": "Lemma 2.1, line 506–543"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:1.3",
+      "target:2.5",
+      "target:4.1",
+      "mathlib:isOpenMap_of_hasStrictFDerivAt_equiv"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "q_two_derivative",
+       "kind": "computation",
+       "statement": "Ψ_1(tu) = Φ(−t): derivative −φ(0.7) = −0.312254, matching −L_A/√2."
+      },
+      {
+       "name": "tripod_derivative",
+       "kind": "computation",
+       "statement": "q = 3, x = 0: DΨ = −0.423142·Id."
+      },
+      {
+       "name": "tie",
+       "kind": "degenerate",
+       "statement": "y − x = (1,1,−2) lies in no open cell; the maximal-coordinate argument still gives Ψ_1(y) < Ψ_1(x)."
+      }
+     ]
+    },
+    {
+     "id": "4.4",
+     "kind": "definition",
+     "name": "modelProfile",
+     "statement": "I_m^(q−1)(v) = P_γ(Ψ⁻¹(v) + Ω^m) = Σ_{i<j} A^m_ij(Ψ⁻¹(v)) on int Δ^(q−1); I_m^(0)(1) = 0. For n ≥ q − 1 every simplicial q-cluster in E with measure vector v has perimeter I_m^(q−1)(v), and one exists for each interior v.",
+     "hypotheses": [
+      "q ≥ 1",
+      "n ≥ q − 1 for the transport statement"
+     ],
+     "locator": {
+      "source": "MilmanNeeman2022",
+      "where": "Definition 2.2, line 548–553, and line 554–556"
+     },
+     "prerequisites": [
+      "target:4.2",
+      "target:4.3"
+     ],
+     "api": [
+      {
+       "name": "modelProfile_perm",
+       "role": "symmetry",
+       "statement": "Invariant under permuting coordinates."
+      },
+      {
+       "name": "modelProfile_two",
+       "role": "compatibility",
+       "statement": "I_m^(1)(v) = I(v_1) on int Δ^(1)."
+      },
+      {
+       "name": "modelProfile_pos",
+       "role": "positivity",
+       "statement": "I_m^(q−1) > 0 on int Δ^(q−1)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "q_two_value",
+       "kind": "computation",
+       "statement": "I_m^(1)(1/2,1/2) = 0.398942."
+      },
+      {
+       "name": "tripod_value",
+       "kind": "computation",
+       "statement": "I_m^(2)(1/3,1/3,1/3) = 0.598413 > I(1/3) = 0.363600."
+      },
+      {
+       "name": "wrong_point",
+       "kind": "non-example",
+       "statement": "Evaluating at v − (1/q,…,1/q) instead of Ψ⁻¹(v) gives 0.355065 at v = (Φ(1),1−Φ(1)) instead of 0.241971."
+      }
+     ]
+    },
+    {
+     "id": "4.5",
+     "kind": "theorem",
+     "name": "modelProfile_continuous_face",
+     "statement": "I_m^(q−1) is C^∞ on int Δ^(q−1), extends continuously to Δ^(q−1), and I_m^(q−1)(v) = I_m^(|J|−1)(v_J) on the face Δ_J, 0 < |J| < q.",
+     "hypotheses": [
+      "q ≥ 2"
+     ],
+     "locator": {
+      "source": "MilmanNeeman2022",
+      "where": "Lemma 2.3, line 558–564; proof at line 577–659"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:1.3",
+      "target:4.1",
+      "target:4.3",
+      "target:4.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "face",
+       "kind": "computation",
+       "statement": "I_m^(2)(1/2,1/2,0) = 0.398942."
+      },
+      {
+       "name": "vertex",
+       "kind": "degenerate",
+       "statement": "I_m^(q−1)(e_i) = 0."
+      }
+     ]
+    },
+    {
+     "id": "4.6",
+     "kind": "theorem",
+     "name": "modelProfile_hessian",
+     "statement": "On int Δ^(q−1): ∇I_m = Ψ⁻¹/√2, ∇²I_m = −(L_{A^m}∘Ψ⁻¹)⁻¹ on E^(q−1), and −tr[(∇²I_m)⁻¹] = 2 I_m.",
+     "hypotheses": [
+      "q ≥ 2"
+     ],
+     "locator": {
+      "source": "MilmanNeeman2022",
+      "where": "Proposition 2.4, line 669–695; equations (1.3)–(1.4), line 200–207"
+     },
+     "prerequisites": [
+      "target:2.5",
+      "target:4.1",
+      "target:4.3",
+      "target:4.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "q_two_ode",
+       "kind": "compatibility",
+       "statement": "Second derivative along u is −1/(2I(v_1)) = −1/(2A_12)."
+      },
+      {
+       "name": "tripod_hessian",
+       "kind": "computation",
+       "statement": "∇²I_m(1/3,1/3,1/3) = −1.671086·Id; −tr[(∇²I_m)⁻¹] = 1.196827 = 2·0.598413."
+      },
+      {
+       "name": "conormal_terms",
+       "kind": "non-example",
+       "statement": "Keeping one apex term (2π)^{−1}⟨w,η⟩ = 0.159155⟨w,η⟩ breaks ∇I_m = 0 at the symmetric point."
+      }
+     ]
+    },
+    {
+     "id": "4.7",
+     "kind": "theorem",
+     "name": "isoperimetricProfile_le_modelProfile",
+     "statement": "For n ≥ q − 1 and v ∈ Δ^(q−1): I^(q−1)(v) ≤ I_m^(q−1)(v).",
+     "hypotheses": [
+      "n ≥ q − 1"
+     ],
+     "locator": {
+      "source": "MilmanNeeman2022",
+      "where": "line 660–666"
+     },
+     "prerequisites": [
+      "target:3.4",
+      "target:4.4",
+      "target:4.5"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "tripod_bound",
+       "kind": "computation",
+       "statement": "I^(2)(1/3,1/3,1/3) ≤ 0.598413 for n ≥ 2."
+      },
+      {
+       "name": "low_dimension",
+       "kind": "non-example",
+       "statement": "n = 1, q = 3: the three-interval cluster with measures 1/3 has perimeter 0.727200; the statement is not claimed."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "Gaussian isoperimetry on the line",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "theorem",
+     "name": "perimeter_real_locallyFinite_structure",
+     "statement": "For an open interval J ⊆ ℝ and U with locally finite perimeter in J: T = ∂^M U ∩ J is locally finite, equals ∂*U ∩ J, U ∩ J is a.e. a union of open intervals with endpoints T, and P_μ(U;B) = Σ_{t ∈ T∩B} e^{−W(t)}.",
+     "hypotheses": [
+      "W : ℝ → ℝ of class C¹"
+     ],
+     "locator": {
+      "source": "CianchiFuscoMaggiPratelli2011",
+      "where": "line 245–248"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "roadmap:GeometricMeasureTheory G3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "merged",
+       "kind": "computation",
+       "statement": "U = (0,1) ∪ (1,2): T = {0,2}, P_γ = 0.452933."
+      },
+      {
+       "name": "rationals",
+       "kind": "degenerate",
+       "statement": "U = ℚ: T = ∅, P_γ = 0."
+      },
+      {
+       "name": "accumulating",
+       "kind": "non-example",
+       "statement": "⋃(1/(2k+1),1/(2k)) is not of locally finite perimeter near 0."
+      }
+     ]
+    },
+    {
+     "id": "5.2",
+     "kind": "theorem",
+     "name": "shift_interval_perimeter_lt",
+     "statement": "For −∞ < a < b < ∞ with a + b ≥ 0 and a < a′ < b′ ≤ ∞ with γ¹((a′,b′)) = γ¹((a,b)): φ(a′) + φ(b′) < φ(a) + φ(b); symmetric for left shifts when a + b ≤ 0.",
+     "hypotheses": [
+      "a + b ≥ 0"
+     ],
+     "locator": {
+      "source": "CianchiFuscoMaggiPratelli2011",
+      "where": "Definition 3.2 and Lemma 3.3, line 226–232"
+     },
+     "prerequisites": [
+      "target:1.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "unit_interval",
+       "kind": "computation",
+       "statement": "(0,1): 0.640913 → (0.408796,∞): 0.366963."
+      },
+      {
+       "name": "wrong_side",
+       "kind": "non-example",
+       "statement": "(−1,0) shifted right to (−0.9,0.063724) or (−0.5,0.385003) has perimeter 0.664218 or 0.722510 > 0.640913."
+      }
+     ]
+    },
+    {
+     "id": "5.3",
+     "kind": "theorem",
+     "name": "gaussianPerimeter_real_ge",
+     "statement": "Every Lebesgue-measurable U ⊆ ℝ satisfies P_γ(U) ≥ I(γ¹(U)), with equality iff γ¹(U) ∈ {0,1} or U is a.e. (−∞,s) or (s,∞).",
+     "hypotheses": [],
+     "locator": {
+      "source": "CianchiFuscoMaggiPratelli2011",
+      "where": "Proposition 3.1, line 220–223; proof at line 233–293"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:2.2",
+      "target:5.1",
+      "target:5.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "halfline",
+       "kind": "computation",
+       "statement": "(−∞,−0.430727) has measure 1/3 and perimeter 0.363600 = I(1/3)."
+      },
+      {
+       "name": "interval",
+       "kind": "computation",
+       "statement": "(−1,1): 0.483941 > I(0.682689) = 0.356343."
+      },
+      {
+       "name": "ae_halfline",
+       "kind": "degenerate",
+       "statement": "(−∞,0) ∪ ℚ attains equality: the characterization is up to null sets."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "6",
+   "title": "Gaussian symmetrisation of sets of finite Gaussian perimeter",
+   "targets": [
+    {
+     "id": "6.1",
+     "kind": "definition",
+     "name": "gaussianSymmetral",
+     "statement": "For a subspace F of dimension k ≥ 1, unit u ∈ F and Lebesgue-measurable U: U_x = {y ∈ F : x + y ∈ U}, v_U(x) = γ_F(U_x) for x ∈ F^⊥, S_{F,u}(U) = {x + y : Φ(⟨y,u⟩) < v_U(x)}; for F = ℝe, u = e it is the Ehrhard symmetral S_e(U).",
+     "hypotheses": [
+      "k ≥ 1",
+      "u ∈ F unit"
+     ],
+     "locator": {
+      "source": "CianchiFuscoMaggiPratelli2011",
+      "where": "line 543–552 (mirrored superlevel convention); Ehrhard1983 Définition 1.1, line 117–129"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.3"
+     ],
+     "api": [
+      {
+       "name": "gaussianSymmetral_measure",
+       "role": "invariance",
+       "statement": "S_{F,u}(U) is Lebesgue measurable, v_{S(U)} = v_U a.e., γ(S_{F,u}(U)) = γ(U)."
+      },
+      {
+       "name": "gaussianSymmetral_mono",
+       "role": "monotonicity",
+       "statement": "U ⊆ U′ ⇒ S(U) ⊆ S(U′); a.e.-equal sets have a.e.-equal symmetrals; S is idempotent."
+      },
+      {
+       "name": "gaussianSymmetral_isometry",
+       "role": "equivariance",
+       "statement": "For a linear isometry T with T(F) = F, T(u) = u: S(T U) = T S(U)."
+      },
+      {
+       "name": "gaussianSymmetral_halfSpace",
+       "role": "fixed points",
+       "statement": "{⟨x,u⟩ < a} is fixed; null sets go to ∅, conull sets to E."
+      }
+     ],
+     "tests": [
+      {
+       "name": "halfspace_fixed",
+       "kind": "characterisation",
+       "statement": "{⟨x,e⟩ < a} is fixed; the superlevel rule gives measure 1 − Φ(a) = 0.158655 instead of 0.841345 at a = 1."
+      },
+      {
+       "name": "disc",
+       "kind": "computation",
+       "statement": "U = ball(0,1) ⊂ ℝ², e = e_2: v_U(z) = 2Φ(√(1−z²)) − 1, γ(S_e(U)) = 0.393469, section over 0 is (−∞,0.475231)."
+      },
+      {
+       "name": "null_line",
+       "kind": "degenerate",
+       "statement": "S_e(ℚe) = ∅ and S_e of its complement is E."
+      }
+     ]
+    },
+    {
+     "id": "6.2",
+     "kind": "theorem",
+     "name": "lintegral_reducedBoundary_projection",
+     "statement": "For U of locally finite perimeter, n ≥ 2, unit e, Borel g ≥ 0: ∫_{∂*U} g|⟨ν_U,e⟩| dμHE[n−1] = ∫_{e^⊥} Σ_{t : z+te ∈ ∂*U} g(z+te) dz; for a.e. z the section has locally finite perimeter, ∂*(U_z) = ∂^M(U_z) = (∂*U)_z and ⟨ν_U,e⟩ ≠ 0 there; {⟨ν_U,e⟩ = 0} projects to a null set.",
+     "hypotheses": [
+      "n ≥ 2",
+      "e unit"
+     ],
+     "locator": {
+      "source": "CianchiFuscoMaggiPratelli2011",
+      "where": "Theorem 4.2 and equation (4.1), line 527–542; Maggi2012 Sections 18.2–18.3; AmbrosioFuscoPallara2000 Theorem 3.108"
+     },
+     "prerequisites": [
+      "target:5.1",
+      "roadmap:GeometricMeasureTheory G2",
+      "roadmap:GeometricMeasureTheory G5",
+      "roadmap:Isoperimetry I4",
+      "mathlib:LinearMap.normDet"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "sloped_line",
+       "kind": "computation",
+       "statement": "U = {x_2 < m x_1}, g = 1 on {0 ≤ x_1 ≤ 1}: both sides 1; the reciprocal Jacobian gives 1 + m² = 2 at m = 1."
+      },
+      {
+       "name": "vertical_boundary",
+       "kind": "degenerate",
+       "statement": "ν ⊥ e: left side 0, projection a point."
+      }
+     ]
+    },
+    {
+     "id": "6.3",
+     "kind": "theorem",
+     "name": "sectionMeasure_bvLoc",
+     "statement": "For P_γ(U) < ∞, n ≥ 2, unit e: v_U ∈ BV_loc(e^⊥), ∫_B e^{−W_{e^⊥}} d|Dv_U| ≤ P_γ(U; B ⊕ ℝe) for Borel B, and the absolutely continuous part of Dv_U has density −Σ_t φ(t) ν_U^⊥/|⟨ν_U,e⟩| at good z, its singular part carried by the null projection of {⟨ν_U,e⟩ = 0}.",
+     "hypotheses": [
+      "n ≥ 2",
+      "P_γ(U) < ∞"
+     ],
+     "locator": {
+      "source": "CianchiFuscoMaggiPratelli2011",
+      "where": "Lemma 4.4, equations (4.7)–(4.8), line 605–618"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:2.1",
+      "target:2.5",
+      "target:6.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "tilted",
+       "kind": "compatibility",
+       "statement": "U = {x_2 < a + bx_1}: v_U = Φ(a+bz), v_U′ = bφ(a+bz) from the formula with ν = (−b,1)/√(1+b²)."
+      },
+      {
+       "name": "variation_bound",
+       "kind": "computation",
+       "statement": "a = b = 1: 0.219695 ≤ 0.310697."
+      },
+      {
+       "name": "normalization_slip",
+       "kind": "non-example",
+       "statement": "Section weight e^{−t²/2} without (2π)^{−1/2} gives √(2π)bφ(a+bz)."
+      }
+     ]
+    },
+    {
+     "id": "6.4",
+     "kind": "theorem",
+     "name": "gaussianPerimeter_cylinder_ge_sections",
+     "statement": "With p_U(z) = Σ_{t ∈ ∂^M(U_z)} φ(t): for P_γ(U) < ∞, n ≥ 2 and Borel B of good points, P_γ(U; B ⊕ ℝe) ≥ ∫_B √(p_U² + ‖∇v_U‖²) dγ_{e^⊥}, with equality when U and S_e(U) agree on B ⊕ ℝe.",
+     "hypotheses": [
+      "n ≥ 2",
+      "P_γ(U) < ∞",
+      "B ⊆ good points"
+     ],
+     "locator": {
+      "source": "CianchiFuscoMaggiPratelli2011",
+      "where": "Lemma 4.6, line 781–828"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:5.1",
+      "target:6.2",
+      "target:6.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "tilted_equality",
+       "kind": "computation",
+       "statement": "{x_2 < 1 + x_1}: both sides 0.310697."
+      },
+      {
+       "name": "slab",
+       "kind": "non-example",
+       "statement": "{|x_2| < 1} gives equality 0.483941 without being a symmetral: the equality condition is not necessary."
+      }
+     ]
+    },
+    {
+     "id": "6.5",
+     "kind": "theorem",
+     "name": "gaussianPerimeter_symmetral_le_sum",
+     "statement": "For P_γ(U) < ∞, n ≥ 2, Borel B ⊆ e^⊥: P_γ(S_e(U); B ⊕ ℝe) ≤ ∫_B e^{−W_{e^⊥}} d|Dv_U| + ∫_B I(v_U) dγ_{e^⊥}; hence P_γ(S_e(U)) ≤ 2P_γ(U).",
+     "hypotheses": [
+      "n ≥ 2",
+      "P_γ(U) < ∞"
+     ],
+     "locator": {
+      "source": "CianchiFuscoMaggiPratelli2011",
+      "where": "Lemma 4.5, line 624–779"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.3",
+      "target:2.1",
+      "target:2.2",
+      "target:6.1",
+      "target:6.3",
+      "roadmap:GeometricMeasureTheory G4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "flat",
+       "kind": "computation",
+       "statement": "{x_2 < a}: bound φ(a) = P_γ; without ∫I(v_U) the bound 0 fails."
+      },
+      {
+       "name": "tilted_slack",
+       "kind": "computation",
+       "statement": "{x_2 < 1 + x_1}: 0.439392 > 0.310697."
+      }
+     ]
+    },
+    {
+     "id": "6.6",
+     "kind": "theorem",
+     "name": "gaussianPerimeter_ehrhardSymmetral_le",
+     "statement": "For n ≥ 2, unit e, P_γ(U) < ∞ and Borel B ⊆ e^⊥: P_γ(S_e(U); B ⊕ ℝe) ≤ P_γ(U; B ⊕ ℝe); in particular P_γ(S_e(U)) ≤ P_γ(U).",
+     "hypotheses": [
+      "n ≥ 2",
+      "P_γ(U) < ∞"
+     ],
+     "locator": {
+      "source": "CianchiFuscoMaggiPratelli2011",
+      "where": "Theorem 4.3, inequality (4.3), line 583–588; proof at line 833–846"
+     },
+     "prerequisites": [
+      "target:5.3",
+      "target:6.1",
+      "target:6.3",
+      "target:6.4",
+      "target:6.5"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "disc",
+       "kind": "computation",
+       "statement": "Disc in ℝ²: P_γ(S_e(U)) = 0.517483 ∈ [0.384633, 0.606531]."
+      },
+      {
+       "name": "reflected_halfplane",
+       "kind": "degenerate",
+       "statement": "⟨ν,e⟩ < 0: the symmetral is the reflected half-plane with the same perimeter φ(s)."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "7",
+   "title": "The Gaussian isoperimetric theorem",
+   "targets": [
+    {
+     "id": "7.1",
+     "kind": "theorem",
+     "name": "isMinimizing_sections_halfLine",
+     "statement": "For n ≥ 2, 0 < r < 1 and a minimizer H (γ(H) = r, P_γ(H) = I^(1)(r,1−r)), for every unit e and a.e. z ∈ e^⊥, H_z is null, conull, or a.e. a half-line.",
+     "hypotheses": [
+      "n ≥ 2",
+      "0 < r < 1"
+     ],
+     "locator": {
+      "source": "CianchiFuscoMaggiPratelli2011",
+      "where": "Section 4.2, Steps I–II, line 889–912"
+     },
+     "prerequisites": [
+      "target:3.5",
+      "target:5.3",
+      "target:6.6"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "halfspace",
+       "kind": "computation",
+       "statement": "Half-spaces satisfy the conclusion in every direction."
+      },
+      {
+       "name": "disc",
+       "kind": "non-example",
+       "statement": "The disc has the section (−1,1); its perimeter 0.606531 > 0.384633."
+      }
+     ]
+    },
+    {
+     "id": "7.2",
+     "kind": "theorem",
+     "name": "isMinimizing_densityOne_convex",
+     "statement": "For H as in 7.1, the density-one set H^(1) is open and convex, and so is (E∖H)^(1).",
+     "hypotheses": [
+      "n ≥ 2"
+     ],
+     "locator": {
+      "source": "CianchiFuscoMaggiPratelli2011",
+      "where": "Section 4.2, Steps III–IV, line 913–966"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:7.1",
+      "mathlib:Besicovitch.ae_tendsto_measure_inter_div"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "halfspace",
+       "kind": "computation",
+       "statement": "H = {x_1 < s}: H^(1) = H, (E∖H)^(1) = {x_1 > s}."
+      },
+      {
+       "name": "null_addition",
+       "kind": "degenerate",
+       "statement": "H = {x_1 < 0} ∪ ℚ²: H^(1) = {x_1 < 0}."
+      }
+     ]
+    },
+    {
+     "id": "7.3",
+     "kind": "theorem",
+     "name": "gaussianIsoperimetric",
+     "statement": "For n ≥ 1 and Lebesgue-measurable U ⊆ E: P_γ(U) ≥ I(γ(U)) (equivalently P_γ(U) ≥ φ(a) whenever γ(U) = Φ(a)); equality iff γ(U) ∈ {0,1} or U is a.e. an open half-space {⟨x,ν⟩ < s}.",
+     "hypotheses": [
+      "n ≥ 1"
+     ],
+     "locator": {
+      "source": "CianchiFuscoMaggiPratelli2011",
+      "where": "Theorem 4.1, line 508–509, and Proposition 3.1; MilmanNeeman2022 line 47–52 and 83–84; Ledoux1999 (1.4), line 212–219"
+     },
+     "prerequisites": [
+      "target:2.3",
+      "target:3.5",
+      "target:5.3",
+      "target:7.2",
+      "mathlib:geometric_hahn_banach_open_open"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "disc",
+       "kind": "computation",
+       "statement": "0.606531 > 0.384633; slab {|x_1|<1}: 0.483941 > 0.356343."
+      },
+      {
+       "name": "empty",
+       "kind": "degenerate",
+       "statement": "U = ∅ attains equality without being a half-space."
+      },
+      {
+       "name": "phi_form",
+       "kind": "non-example",
+       "statement": "For γ(U) = 0 no real a satisfies γ(U) = Φ(a); no junk value of Φ⁻¹ is used."
+      }
+     ]
+    },
+    {
+     "id": "7.4",
+     "kind": "theorem",
+     "name": "isoperimetricProfile_two_eq",
+     "statement": "For n ≥ 1, v ∈ Δ^(1): I^(1)(v) = I_m^(1)(v) = I(v_1); for interior v a 2-cluster with measure v is minimizing iff it is equivalent to a pair of complementary open half-spaces.",
+     "hypotheses": [
+      "n ≥ 1"
+     ],
+     "locator": {
+      "source": "MilmanNeeman2022",
+      "where": "Theorems 1.1–1.2 for q = 2, line 98–102, and line 83–84"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:4.2",
+      "target:4.4",
+      "target:4.5",
+      "target:7.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "half",
+       "kind": "computation",
+       "statement": "I^(1)(1/2,1/2) = 0.398942."
+      },
+      {
+       "name": "vertex",
+       "kind": "degenerate",
+       "statement": "I^(1)(1,0) = 0 attained by (E,∅), which is not simplicial."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "8",
+   "title": "Integrated, functional and concentration forms",
+   "targets": [
+    {
+     "id": "8.1",
+     "kind": "theorem",
+     "name": "borell_sudakov_tsirelson",
+     "statement": "For Borel A, real a with Φ(a) ≤ γ(A) and r > 0: γ(Metric.thickening r A) ≥ Φ(a + r); hence γ(Metric.cthickening r A) ≥ Φ(a + r) for r ≥ 0 and the inner measure of A + r·closedBall(0,1) is ≥ Φ(a + r); equality for {⟨x,ν⟩ < a}. For multivariateGaussian m S and K = CFC.sqrt S (any square S): γ_{m,S}(A + rK(ball(0,1))) ≥ Φ(a + r) (outer measure) when Φ(a) ≤ γ_{m,S}(A), r > 0.",
+     "hypotheses": [
+      "n ≥ 1",
+      "A Borel",
+      "r > 0 for the open form"
+     ],
+     "locator": {
+      "source": "Borell1975",
+      "where": "Theorem 3.1, line 85–99; Ledoux1993 Théorème 3, line 238–256; Ledoux1999 (1.5) and (1.7), line 220–247; Ehrhard1983 Théorème 2.4, line 356–359"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:2.3",
+      "target:2.6",
+      "target:7.3",
+      "mathlib:Metric.thickening",
+      "mathlib:Metric.cthickening",
+      "mathlib:Metric.cthickening_zero",
+      "mathlib:norm_fderiv_le_of_lipschitz",
+      "mathlib:LipschitzWith.ae_differentiableAt",
+      "mathlib:Monotone.ae_differentiableAt",
+      "mathlib:MonotoneOn.intervalIntegral_deriv_mem_uIcc",
+      "mathlib:ProbabilityTheory.multivariateGaussian"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "halfspace",
+       "kind": "computation",
+       "statement": "A = {x_1 < a}: equality Φ(a+r)."
+      },
+      {
+       "name": "disc",
+       "kind": "computation",
+       "statement": "Disc in ℝ², r = 1: 0.864665 ≥ Φ(0.729711) = 0.767217."
+      },
+      {
+       "name": "zero_radius",
+       "kind": "degenerate",
+       "statement": "Metric.thickening 0 A = ∅: the open form needs r > 0; the closed form at r = 0 is γ(closure A) ≥ Φ(a)."
+      },
+      {
+       "name": "dirac",
+       "kind": "degenerate",
+       "statement": "S not positive semidefinite: law δ_m, K = 0, statement reduces to δ_m(A) ≥ Φ(a+r), true."
+      }
+     ]
+    },
+    {
+     "id": "8.2",
+     "kind": "theorem",
+     "name": "gaussian_minkowskiContent_ge",
+     "statement": "For Borel A: liminf_{r↓0} (γ(Metric.cthickening r A) − γ(A))/r ≥ I(γ(A)).",
+     "hypotheses": [],
+     "locator": {
+      "source": "Ledoux1999",
+      "where": "equations (1.3)–(1.4), line 207–219"
+     },
+     "prerequisites": [
+      "target:8.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "disc",
+       "kind": "computation",
+       "statement": "Disc in ℝ²: derivative e^{−1/2} = 0.606531 ≥ 0.384633."
+      },
+      {
+       "name": "rational_points",
+       "kind": "non-example",
+       "statement": "ℚ²: quotient 1/r → ∞; Minkowski content sees null sets."
+      }
+     ]
+    },
+    {
+     "id": "8.3",
+     "kind": "definition",
+     "name": "subgraphSet",
+     "statement": "For continuous f : E → [0,1]: A_f = {(x,y) ∈ E × ℝ : Φ(y) < f(x)} in the L²-product inner product space E × ℝ. Then γ(A_f) = ∫ f dγ_E, and for locally Lipschitz f the frontier is the graph of Φ⁻¹∘f over {0 < f < 1} with γ^n(frontier A_f) = ∫ √(I(f)² + ‖∇f‖²) dγ_E.",
+     "hypotheses": [
+      "f continuous with values in [0,1]"
+     ],
+     "locator": {
+      "source": "CianchiFuscoMaggiPratelli2011",
+      "where": "equations (4.13) and (4.6), line 656–720 and 597–601"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.3",
+      "roadmap:GeometricMeasureTheory G2"
+     ],
+     "api": [
+      {
+       "name": "subgraphSet_isOpen",
+       "role": "topology",
+       "statement": "A_f is open; A_{f′} ⊆ A_f when f′ ≤ f; A_0 = ∅, A_1 = E × ℝ."
+      },
+      {
+       "name": "subgraphSet_const",
+       "role": "computation",
+       "statement": "For constant c, A_f = E × (−∞,Φ⁻¹(c))."
+      },
+      {
+       "name": "subgraphSet_eq_symmetral",
+       "role": "compatibility",
+       "statement": "A_f is the Gaussian symmetral (6.1) of any set whose sections over E have measures f."
+      }
+     ],
+     "tests": [
+      {
+       "name": "phi_profile",
+       "kind": "computation",
+       "statement": "f = Φ on ℝ: γ(A_f) = 1/2, A_f a half-plane, γ¹(frontier) = 0.398942."
+      },
+      {
+       "name": "zero_function",
+       "kind": "degenerate",
+       "statement": "f = 0: A_f = ∅, measure 0."
+      },
+      {
+       "name": "square",
+       "kind": "computation",
+       "statement": "f = min(x²,1): γ(A_f) = 0.516059, weighted frontier length 0.647406."
+      }
+     ]
+    },
+    {
+     "id": "8.3.1",
+     "kind": "theorem",
+     "name": "bobkov_inequality",
+     "statement": "For locally Lipschitz f : E → [0,1]: I(∫ f dγ) ≤ ∫ √(I(f)² + ‖∇f‖²) dγ, with equality for constants and for Φ(α⟨x,ν⟩ + β); conversely the inequality for all Lipschitz f implies the Minkowski-content inequality of 8.2 for closed A.",
+     "hypotheses": [
+      "n ≥ 1"
+     ],
+     "locator": {
+      "source": "Bobkov1997",
+      "where": "Theorem 1.1 (by locator); Ledoux1999 (1.11) and its equivalence with (1.4), line 296–313"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.3",
+      "target:2.3",
+      "target:7.3",
+      "target:8.3",
+      "roadmap:GeometricMeasureTheory G2",
+      "mathlib:LipschitzWith.ae_differentiableAt",
+      "mathlib:Metric.cthickening"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "equality_cases",
+       "kind": "computation",
+       "statement": "f = Φ(x), Φ(2x): both sides 0.398942."
+      },
+      {
+       "name": "strict",
+       "kind": "computation",
+       "statement": "f = min(x²,1): 0.398619 < 0.647406."
+      },
+      {
+       "name": "drop_profile_term",
+       "kind": "non-example",
+       "statement": "Omitting I(f)² makes the right side 0 for constants, and the inequality false."
+      }
+     ]
+    },
+    {
+     "id": "8.4",
+     "kind": "theorem",
+     "name": "gaussian_concentration_median",
+     "statement": "For L ≥ 0, L-Lipschitz f and m with γ({f ≤ m}) ≥ 1/2: γ({f > m + Lr}) ≤ 1 − Φ(r) ≤ ½e^{−r²/2} for r ≥ 0; with also γ({f ≥ m}) ≥ 1/2, γ({|f − m| > Lr}) ≤ 2(1 − Φ(r)).",
+     "hypotheses": [
+      "L ≥ 0",
+      "r ≥ 0"
+     ],
+     "locator": {
+      "source": "Ledoux1993",
+      "where": "inequality (10), line 257–262; Ledoux1999 (1.6), line 225–226 (bound 1 − Φ(r) and tail e^{−r²/2}; the factor ½ is target 1.2)"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:8.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "linear",
+       "kind": "computation",
+       "statement": "f = x_1: equality; r = 2: 0.022750 ≤ 0.067668."
+      },
+      {
+       "name": "constant",
+       "kind": "degenerate",
+       "statement": "f ≡ m, r = 0: {f ≥ m} has measure 1 > 1/2; strictness needed."
+      },
+      {
+       "name": "mean_vs_median",
+       "kind": "non-example",
+       "statement": "|x_1| has median 0.674490 and mean 0.797885."
+      },
+      {
+       "name": "lipschitz_zero",
+       "kind": "degenerate",
+       "statement": "L = 0: f ≡ c, γ({f ≤ m}) ≥ 1/2 forces c ≤ m, {f > m} = ∅; the case 8.5 uses when S = 0."
+      }
+     ]
+    },
+    {
+     "id": "8.5",
+     "kind": "theorem",
+     "name": "gaussian_max_concentration",
+     "statement": "For nonempty finite ι, positive semidefinite S, σ = max_i √S_ii and m with γ_{0,S}(max_i x_i ≤ m) ≥ 1/2: γ_{0,S}(max_i x_i > m + σr) ≤ 1 − Φ(r) for r ≥ 0.",
+     "hypotheses": [
+      "ι nonempty finite",
+      "S positive semidefinite"
+     ],
+     "locator": {
+      "source": "Ledoux1999",
+      "where": "inequality (1.8), line 252–271"
+     },
+     "prerequisites": [
+      "target:8.4",
+      "mathlib:ProbabilityTheory.multivariateGaussian"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "one_coordinate",
+       "kind": "computation",
+       "statement": "S = (1): equality."
+      },
+      {
+       "name": "two_independent",
+       "kind": "computation",
+       "statement": "median 0.544952; P(max > 2.544952) = 0.010899 ≤ 0.022750."
+      },
+      {
+       "name": "zero_covariance",
+       "kind": "degenerate",
+       "statement": "S = 0: σ = 0, bound holds."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "9",
+   "title": "Gaussian symmetrisation of closed sets and Ehrhard's inequality",
+   "targets": [
+    {
+     "id": "9.1",
+     "kind": "definition",
+     "name": "closedGaussianSymmetral",
+     "statement": "For F, u as in 6.1 and closed C: S̄_{F,u}(C) = {x + y : x ∈ F^⊥, y ∈ F, Φ(⟨y,u⟩) ≤ γ_F(C_x)}.",
+     "hypotheses": [
+      "C closed"
+     ],
+     "locator": {
+      "source": "Ehrhard1983",
+      "where": "Définition 1.1, line 117–129; Proposition 1.2, line 134–140; Lemme 2.2 and Corollaire 2.3, line 329–355"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:6.1"
+     ],
+     "api": [
+      {
+       "name": "closedGaussianSymmetral_isClosed",
+       "role": "topology",
+       "statement": "v_C upper semicontinuous for closed C, v_O lower semicontinuous for open O; S̄(C) closed, S(O) open."
+      },
+      {
+       "name": "closedGaussianSymmetral_measure",
+       "role": "invariance",
+       "statement": "γ(S̄(C)) = γ(C); S(C) ⊆ S̄(C) with null difference; monotone."
+      },
+      {
+       "name": "gaussianSymmetral_compl",
+       "role": "duality",
+       "statement": "S_{F,u}(E∖C) = E ∖ S̄_{F,−u}(C)."
+      },
+      {
+       "name": "closedGaussianSymmetral_iInter",
+       "role": "continuity",
+       "statement": "Inner continuity on increasing open unions, outer continuity on decreasing closed intersections."
+      },
+      {
+       "name": "closedGaussianSymmetral_comp",
+       "role": "composition",
+       "statement": "If F_1 ∩ F_2 = ℝu with orthogonal complements of ℝu orthogonal, S̄_{F_2,u}∘S̄_{F_1,u} = S̄_{F_1+F_2,u}."
+      }
+     ],
+     "tests": [
+      {
+       "name": "disc_full",
+       "kind": "computation",
+       "statement": "closedBall(0,1) ⊂ ℝ², F = ℝ²: {⟨y,u⟩ ≤ −0.270289}, measure 0.393469; the strict rule gives an open half-plane."
+      },
+      {
+       "name": "ball_composition",
+       "kind": "characterisation",
+       "statement": "In ℝ³ (measure 0.198748) the two-step composite and the one-step symmetral give {x_3 ≤ −0.846102}."
+      },
+      {
+       "name": "direction_matters",
+       "kind": "non-example",
+       "statement": "S̄_{F,−u} sends {⟨x,u⟩ ≤ a} to {⟨x,u⟩ ≥ −a}, a different set of the same measure."
+      }
+     ]
+    },
+    {
+     "id": "9.2",
+     "kind": "theorem",
+     "name": "ehrhard_g_concaveOn",
+     "statement": "g(a,b) = Φ⁻¹(Φ(b) − Φ(a)) is concave on {a < b}, with limits b as a → −∞ and −a as b → ∞; for unit e and closed convex C, S̄_{ℝe,e}(C) is closed and convex.",
+     "hypotheses": [],
+     "locator": {
+      "source": "Ehrhard1983",
+      "where": "Lemme 3.3, line 410–438; Théorème 3.1 for one-dimensional symmetrisations, line 377–439"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:9.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "hessians",
+       "kind": "computation",
+       "statement": "At (−1,1): ∂²g = −0.459910, det 0.163502; also negative definite at (0,2), (−3,−0.5), (0.5,0.6)."
+      },
+      {
+       "name": "symmetric_interval",
+       "kind": "computation",
+       "statement": "g(−1,1) = 0.475231."
+      },
+      {
+       "name": "without_inverse",
+       "kind": "non-example",
+       "statement": "Φ(b) − Φ(a) is convex in b for b < 0."
+      }
+     ]
+    },
+    {
+     "id": "9.3",
+     "kind": "theorem",
+     "name": "planar_approximation",
+     "statement": "For 2-dimensional F, orthonormal u_0,u_1 ∈ F and the rotating sequence u_j: the iterates f_j satisfy f_j(C) + ℝ₊u_0 + ℝ₊u_j ⊆ f_j(C), converge locally in the Hausdorff metric to S̄_{F,−u_1}(C) uniformly over closed C with γ_F(C) ∈ [ε,1−ε]; consequently 2-dimensional closed symmetrals preserve closed convex sets.",
+     "hypotheses": [
+      "dim F = 2",
+      "0 < ε < 1/2"
+     ],
+     "locator": {
+      "source": "Ehrhard1983",
+      "where": "Exemple 1.4, Proposition 1.5, Théorème 1.6, line 212–295; proof of Théorème 3.1, line 440–457"
+     },
+     "prerequisites": [
+      "target:8.1",
+      "target:9.1",
+      "target:9.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "angles",
+       "kind": "computation",
+       "statement": "u_1, u_2, u_3 at 90°, 135°, 157.5° from u_0, increasing to 180°."
+      },
+      {
+       "name": "disc_limit",
+       "kind": "computation",
+       "statement": "closedBall(0,1) ⊂ ℝ²: limit {⟨x,u_1⟩ ≥ 0.270289}, measure 0.393469."
+      }
+     ]
+    },
+    {
+     "id": "9.4",
+     "kind": "theorem",
+     "name": "closedGaussianSymmetral_convex",
+     "statement": "For every subspace F of dimension k ≥ 1, unit u ∈ F and closed convex C, S̄_{F,u}(C) is convex.",
+     "hypotheses": [
+      "k ≥ 1"
+     ],
+     "locator": {
+      "source": "Ehrhard1983",
+      "where": "Théorème 3.1, line 367–369; Corollaire 2.3, line 350–355"
+     },
+     "prerequisites": [
+      "target:9.1",
+      "target:9.2",
+      "target:9.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "ball3",
+       "kind": "computation",
+       "statement": "closedBall(0,1) ⊂ ℝ³: {x_3 ≤ −0.846102}."
+      },
+      {
+       "name": "two_discs",
+       "kind": "non-example",
+       "statement": "Two disjoint discs have a half-plane as symmetral: the converse fails."
+      }
+     ]
+    },
+    {
+     "id": "9.5",
+     "kind": "theorem",
+     "name": "ehrhard_inequality_convex",
+     "statement": "For nonempty convex A, B ⊆ E, λ ∈ [0,1], reals a, b with Φ(a) ≤ γ(A), Φ(b) ≤ γ(B): γ(λA + (1−λ)B) ≥ Φ(λa + (1−λ)b).",
+     "hypotheses": [
+      "A, B nonempty convex",
+      "0 ≤ λ ≤ 1"
+     ],
+     "locator": {
+      "source": "Ehrhard1983",
+      "where": "Théorème 3.2, line 374–376; proof at line 458–469; Bogachev1998 Chapter 4"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:9.4",
+      "mathlib:Convex.nullMeasurableSet"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "intervals",
+       "kind": "computation",
+       "statement": "[−1,1], [−3,3], λ = 1/2: 1.690143 ≥ 1.628703."
+      },
+      {
+       "name": "halfspaces",
+       "kind": "degenerate",
+       "statement": "{x_1 ≤ a}, {x_1 ≤ b}: equality."
+      },
+      {
+       "name": "log_concavity",
+       "kind": "compatibility",
+       "statement": "0.954500 ≥ 0.948312 ≥ 0.825134: stronger than the Prékopa–Leindler bound of Isoperimetry I1."
+      },
+      {
+       "name": "borell_limit",
+       "kind": "compatibility",
+       "statement": "A = [−1,1], r = 1, λ = 0.9: right side 1.554146 ≤ 1.690143; limit λ → 1 is 1.475231."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "GeometricMeasureTheory",
+   "sections": [
+    "G2",
+    "G3",
+    "G4",
+    "G5",
+    "G6"
+   ],
+   "what": "Euclidean BV, vector derivative measure and polar decomposition (G3); lower semicontinuity, L¹_loc compactness, mollification, BV Poincaré, scalar BV coarea (G4); reduced and essential boundary, De Giorgi, locality, boundary criterion (G5); Gauss–Green and Lipschitz-domain surface comparison (G6); area, coarea, tangential area formula, graph and sphere measure (G2)."
+  },
+  {
+   "roadmap": "Isoperimetry",
+   "sections": [
+    "I4"
+   ],
+   "what": "Euclidean finite-perimeter slicing theorem along lines with reduced-boundary and normal comparison."
+  },
+  {
+   "roadmap": "StandardDistributions",
+   "sections": [
+    "Layer 7.2"
+   ],
+   "what": "Quantiles of continuous strictly increasing distribution functions are two-sided inverses on (0,1)."
+  }
+ ],
+ "consumers": [
+  {
+   "roadmap": "GaussianIsoperimetryAndClustersPartII",
+   "what": "Proposed Part II proving the Gaussian double- and multi-bubble theorems for 3 ≤ q ≤ n+1; consumes Layer 3 (clusters, interfaces, existence, L_A), Layer 4 (model profile and its differential identities) and §7.4 (the case q = 2)."
+  }
+ ],
+ "gaps": []
+}
