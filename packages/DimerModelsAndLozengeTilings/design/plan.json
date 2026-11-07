@@ -1,0 +1,2288 @@
+{
+ "roadmap": "DimerModelsAndLozengeTilings",
+ "title": "Dimer models and lozenge tilings",
+ "parent": null,
+ "summary": "Lattice statistical mechanics with the hexagonal dimer model as worked case: the triangular lattice, lozenge tilings as perfect matchings, height functions, combinatorial simple connectivity with a bridge from topology, flips and Thurston's criterion; Kasteleyn's theorem and determinantal local statistics on finite simply connected regions; Gibbs specifications on finite-alphabet subshifts with a proper countable-group action (tail lemma, Bernoulli ergodicity, face property, closedness) and the dimer specification on periodic graphs; slopes and the classification on the boundary of the slope triangle; torus tilings and torus limits; the four-determinant torus formula; the explicit determinantal ergodic Gibbs measure of every interior slope, identified with the incomplete beta kernel and the discrete sine kernel; local-statistics convergence of tilings of growing regions.",
+ "baseline": {
+  "mathlib": "f6090c7095e1e56b3464c1daba5f24631f1290d2",
+  "tauceti": "358314d4ab97483df4fc4cb8adcc02e74a8d9f5a"
+ },
+ "layers": [
+  {
+   "key": "1",
+   "title": "The triangular lattice and lozenge tilings",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "definition",
+     "name": "TriFace",
+     "statement": "The triangular lattice on ℤ×ℤ: edges (v,k), k∈{1,2,3}, from v to v+e_k with e₁=(1,0), e₂=(0,1), e₃=(1,1) (carrier TriEdge); white faces W(v)={v,v+e₁,v+e₃} and black faces B(v)={v,v+e₂,v+e₃} (carrier TriFace) with their edges; translations and the rotation ρ(x,y)=(−y,x−y).",
+     "hypotheses": [],
+     "locator": {
+      "source": "aggarwal2023",
+      "where": "Section 1.2, lines 324–337"
+     },
+     "prerequisites": [],
+     "api": [
+      {
+       "name": "edge_mem_two_faces",
+       "role": "incidence",
+       "statement": "Every edge lies in exactly two faces, one white and one black: (v,1)∈W(v),B(v−e₂); (v,2)∈B(v),W(v−e₁); (v,3)∈W(v),B(v)."
+      },
+      {
+       "name": "faces_share_le_one_edge",
+       "role": "incidence",
+       "statement": "Two distinct faces share at most one edge, and faces sharing an edge have opposite colours."
+      },
+      {
+       "name": "faces_at_vertex",
+       "role": "local structure",
+       "statement": "Exactly six faces contain v: W(v),W(v−e₁),W(v−e₃),B(v),B(v−e₂),B(v−e₃)."
+      },
+      {
+       "name": "rho_order_three",
+       "role": "symmetry",
+       "statement": "ρ³=id, ρ preserves colours and maps direction k to k+1 mod 3; translations act freely preserving colours and directions."
+      }
+     ],
+     "tests": [
+      {
+       "name": "W0_B0_share",
+       "kind": "computation",
+       "statement": "W(0) and B(0) share exactly the edge (0,3)."
+      },
+      {
+       "name": "edge01_faces",
+       "kind": "non-example",
+       "statement": "(0,1) lies in W(0) and B(−e₂)={(0,−1),(0,0),(1,0)}, not in B(0)."
+      },
+      {
+       "name": "rho_W0",
+       "kind": "computation",
+       "statement": "ρ(W(0))=W(−e₁)={(−1,0),(0,0),(0,1)}; the reflection (x,y)↦(y,x) maps W(0) to B(0), reversing colours."
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "definition",
+     "name": "hexGraph",
+     "statement": "hexGraph : SimpleGraph TriFace, two faces adjacent when distinct and sharing an edge.",
+     "hypotheses": [],
+     "locator": {
+      "source": "gorin2021",
+      "where": "Lecture 2, lines 690–700"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "mathlib:SimpleGraph",
+      "mathlib:SimpleGraph.LocallyFinite"
+     ],
+     "api": [
+      {
+       "name": "hexGraph_adj_white",
+       "role": "neighbours",
+       "statement": "W(v) is adjacent exactly to B(v), B(v−e₂), B(v+e₁)."
+      },
+      {
+       "name": "hexGraph_edge_equiv",
+       "role": "edges",
+       "statement": "The edges of hexGraph are in bijection with TriEdge via the shared edge."
+      },
+      {
+       "name": "hexGraph_bipartite_locallyFinite",
+       "role": "structure",
+       "statement": "hexGraph is 3-regular, locally finite and bipartite; translations and ρ are automorphisms; faces at a vertex form a 6-cycle."
+      }
+     ],
+     "tests": [
+      {
+       "name": "nbrs_W0",
+       "kind": "computation",
+       "statement": "Neighbours of W(0): B(0), B(−e₂), B(e₁); W(0) and B(1,−1) meet only at (1,0) and are not adjacent."
+      },
+      {
+       "name": "hexagon_cycle",
+       "kind": "computation",
+       "statement": "Faces at 0 form the cycle W(0)–B(0)–W(−e₁)–B(−e₃)–W(−e₃)–B(−e₂)–W(0)."
+      },
+      {
+       "name": "vertex_adjacency_wrong",
+       "kind": "non-example",
+       "statement": "Adjacency by a shared vertex would create odd cycles (W(0), W(e₁), B(1,−1) pairwise share vertices)."
+      }
+     ]
+    },
+    {
+     "id": "1.3",
+     "kind": "definition",
+     "name": "TriRegion.boundaryVertices",
+     "statement": "For a set R of faces: V(R), E(R), interior edges E°(R) (both faces in R), boundary edges E∂(R) (exactly one face in R), boundary vertices ∂R, the boundary graph, connectedness of (V(R),E(R)), the union of faces F(R)⊆ℝ²; for a vertex set V the region Faces(V) (Aggarwal's induced-subgraph convention).",
+     "hypotheses": [],
+     "locator": {
+      "source": "aggarwal2023",
+      "where": "lines 338–341"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "mathlib:convexHull"
+     ],
+     "api": [
+      {
+       "name": "three_card_eq",
+       "role": "counting",
+       "statement": "For finite R, 3|R| = 2|E°(R)| + |E∂(R)|."
+      },
+      {
+       "name": "not_mem_boundary_iff",
+       "role": "boundary",
+       "statement": "v∈V(R)∖∂R iff all six faces at v lie in R."
+      },
+      {
+       "name": "aggarwal_boundary_eq",
+       "role": "compatibility",
+       "statement": "If every vertex of V lies in a face of Faces(V), Aggarwal's boundary of V equals ∂(Faces(V))."
+      },
+      {
+       "name": "region_equivariant",
+       "role": "symmetry",
+       "statement": "All constructions commute with translations and ρ."
+      }
+     ],
+     "tests": [
+      {
+       "name": "single_face",
+       "kind": "degenerate",
+       "statement": "R={W(0)}: no interior edge, three boundary edges, 3=2·0+3."
+      },
+      {
+       "name": "unit_hexagon",
+       "kind": "computation",
+       "statement": "Unit hexagon R₆: six interior edges, six boundary edges, ∂R₆ the six neighbours of 0, 18=2·6+6."
+      },
+      {
+       "name": "faces_of_vertex_set",
+       "kind": "non-example",
+       "statement": "Faces({(0,0),(1,0)})=∅ although the induced subgraph has an edge."
+      }
+     ]
+    },
+    {
+     "id": "1.4",
+     "kind": "definition",
+     "name": "IsTiling",
+     "statement": "IsTiling R M: M is a set of edges each lying in two faces of R, and every face of R contains exactly one edge of M; free tilings drop the first condition and require M⊆E(R); IsPlaneTiling M for R all faces.",
+     "hypotheses": [],
+     "locator": {
+      "source": "aggarwal2023",
+      "where": "lines 342–364 and 380–383"
+     },
+     "prerequisites": [
+      "target:1.3"
+     ],
+     "api": [
+      {
+       "name": "lozenges_partition",
+       "role": "structure",
+       "statement": "The lozenges of a tiling partition R; a finite tileable R has |R|=2|M| and equally many white and black faces."
+      },
+      {
+       "name": "free_tiling_isTiling_iff",
+       "role": "boundary",
+       "statement": "A free tiling of R is a tiling iff it contains no boundary edge; restrictions of plane tilings are free tilings."
+      },
+      {
+       "name": "tiling_equivariant",
+       "role": "symmetry",
+       "statement": "Translations and ρ map tilings to tilings of the image region."
+      }
+     ],
+     "tests": [
+      {
+       "name": "hexagon_two_tilings",
+       "kind": "computation",
+       "statement": "The unit hexagon has exactly the tilings T_a={(0,3),((−1,0),1),((0,−1),2)} and T_b={(0,1),(0,2),((−1,−1),3)}."
+      },
+      {
+       "name": "single_face_free",
+       "kind": "degenerate",
+       "statement": "{W(0)} has no tiling and three free tilings."
+      },
+      {
+       "name": "union_not_tiling",
+       "kind": "non-example",
+       "statement": "M₁∪M₃ is not a plane tiling: W(0) contains two of its edges."
+      }
+     ]
+    },
+    {
+     "id": "1.5",
+     "kind": "theorem",
+     "name": "isTiling_iff_isPerfectMatching",
+     "statement": "For every region R, sending a tiling M to the subgraph of hexGraph.induce R whose edges are the pairs of faces sharing an edge of M is a bijection from the tilings of R onto the perfect matchings of hexGraph.induce R; for R all faces, plane tilings are the perfect matchings of hexGraph.",
+     "hypotheses": [
+      "R : Set TriFace arbitrary (finite or infinite)"
+     ],
+     "locator": {
+      "source": "aggarwal2023",
+      "where": "lines 342–364"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:1.4",
+      "mathlib:SimpleGraph.induce",
+      "mathlib:SimpleGraph.Subgraph.IsPerfectMatching",
+      "mathlib:SimpleGraph.Subgraph.isPerfectMatching_iff"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "empty_region",
+       "kind": "degenerate",
+       "statement": "R=∅: one tiling, one (empty) perfect matching."
+      },
+      {
+       "name": "single_face_none",
+       "kind": "degenerate",
+       "statement": "R={W(0)}: neither side has an element."
+      },
+      {
+       "name": "hexagon_C6",
+       "kind": "computation",
+       "statement": "Unit hexagon: two tilings and the 6-cycle has two perfect matchings."
+      }
+     ]
+    },
+    {
+     "id": "1.6",
+     "kind": "definition",
+     "name": "rowTiling",
+     "statement": "Row tilings M_ε={((x,y),1):ε_x=1}∪{((x,y),3):ε_x=0} for ε∈{0,1}^ℤ (column x filled with type-1 lozenges when ε_x=1, with unit squares when ε_x=0), with the shift (σε)_x=ε_{x−1}; the frozen tilings M₁, M₂, M₃ are M_1, the all-direction-2 tiling and M_0.",
+     "hypotheses": [],
+     "locator": {
+      "source": "kenyon2009",
+      "where": "Exercise 13, line 891; gorin2021 lines 4638–4642"
+     },
+     "prerequisites": [
+      "target:1.4"
+     ],
+     "api": [
+      {
+       "name": "rowTiling_isPlaneTiling",
+       "role": "well-definedness",
+       "statement": "M_ε is a plane tiling: W(x,y) contains ((x,y),1) or ((x,y),3) and B(x,y) contains ((x,y+1),1) or ((x,y),3) according as ε_x=1 or 0, and no other edge."
+      },
+      {
+       "name": "rowTiling_noType2_injective",
+       "role": "structure",
+       "statement": "M_ε has no direction-2 edge, hence no type-2 lozenge; ε↦M_ε is injective with ε_x=[((x,0),1)∈M_ε] and continuous for the product topologies."
+      },
+      {
+       "name": "rowTiling_translate",
+       "role": "equivariance",
+       "statement": "τ_{e₂}M_ε=M_ε and τ_{e₁}M_ε=M_{σε}; the constant sequences give M₁ and M₃."
+      }
+     ],
+     "tests": [
+      {
+       "name": "constant_sequences",
+       "kind": "degenerate",
+       "statement": "ε≡1 gives M₁ and ε≡0 gives M₃; no ε gives M₂, whose edges have direction 2."
+      },
+      {
+       "name": "half_line",
+       "kind": "computation",
+       "statement": "ε=1_{[0,∞)}: W(−1,0) contains ((−1,0),3), W(0,0) contains ((0,0),1); τ_{e₁}M_ε=M_{1_{[1,∞)}}≠M_ε while τ_{e₂} fixes M_ε."
+      },
+      {
+       "name": "column_indexing_fails",
+       "kind": "non-example",
+       "statement": "Reading ε along a column, {((x,y),1):ε_y=1}∪{((x,y),3):ε_y=0}, is not a tiling for ε=1_{{0}}: B(x,0) gets neither ((x,1),1) (ε_1=0) nor ((x,0),3) (ε_0=1)."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "Height functions, simple connectivity and Thurston's criterion",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "definition",
+     "name": "IsSimplyConnectedRegion",
+     "statement": "An edge cochain c : TriEdge → ℤ is closed on R if c(v,1)+c(v+e₁,2)=c(v,3) for W(v)∈R and c(v,2)+c(v+e₂,1)=c(v,3) for B(v)∈R, exact on R if c(u,k)=g(u+e_k)−g(u) on E(R) for some g : V(R)→ℤ; R is simply connected if nonempty, connected and every closed cochain is exact.",
+     "hypotheses": [],
+     "locator": {
+      "source": "aggarwal2023",
+      "where": "lines 338–341"
+     },
+     "prerequisites": [
+      "target:1.3"
+     ],
+     "api": [
+      {
+       "name": "exact_closed",
+       "role": "basic",
+       "statement": "Exact cochains are closed; primitives on connected regions are unique up to a constant."
+      },
+      {
+       "name": "simplyConnected_equivariant",
+       "role": "symmetry",
+       "statement": "Simple connectivity is invariant under translations and ρ."
+      },
+      {
+       "name": "shelling",
+       "role": "construction",
+       "statement": "Adding to a simply connected R a face meeting F(R) in exactly one edge with new opposite vertex, or in exactly two of its edges, preserves simple connectivity."
+      }
+     ],
+     "tests": [
+      {
+       "name": "single_face_sc",
+       "kind": "computation",
+       "statement": "{W(0)} is simply connected with primitive g(0)=0, g(e₁)=c(0,1), g(e₃)=c(0,3)."
+      },
+      {
+       "name": "ring_not_sc",
+       "kind": "non-example",
+       "statement": "R_ring (the twelve faces other than W(0) meeting W(0)) carries the dual-path cochain with sum c(0,1)+c(e₁,2)−c(0,3)=1 round W(0): not simply connected."
+      },
+      {
+       "name": "hexagon_shelling",
+       "kind": "computation",
+       "statement": "The unit hexagon is simply connected by shelling W(0),B(0),W(−e₁),B(−e₃),W(−e₃),B(−e₂)."
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "theorem",
+     "name": "isSimplyConnectedRegion_univ",
+     "statement": "Every cochain closed on the set of all faces is exact.",
+     "hypotheses": [],
+     "locator": {
+      "source": "gorin2021",
+      "where": "lines 454–457"
+     },
+     "prerequisites": [
+      "target:2.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "neutral_not_closed",
+       "kind": "non-example",
+       "statement": "c₀ (0 on directions 1,2; 1 on direction 3) is not closed: 0+0≠1 on W(v)."
+      },
+      {
+       "name": "primitive_M1",
+       "kind": "computation",
+       "statement": "The cochain of M₁ has primitive x; that of M₃ has primitive 0."
+      },
+      {
+       "name": "plane_minus_face",
+       "kind": "non-example",
+       "statement": "On all faces except W(0) the dual-path cochain is closed and not exact."
+      }
+     ]
+    },
+    {
+     "id": "2.3",
+     "kind": "theorem",
+     "name": "not_isSimplyConnectedRegion_of_hole",
+     "statement": "If R is nonempty and Q is a nonempty finite set of faces outside R such that every face sharing an edge with a face of Q lies in Q∪R, then R is not simply connected; for finite simply connected R the complement is connected through shared edges.",
+     "hypotheses": [
+      "R nonempty",
+      "Q finite nonempty, disjoint from R, closed under edge-adjacency outside R"
+     ],
+     "locator": {
+      "source": "kenyon2009",
+      "where": "Section 2.2, lines 360–367"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "ring_hole",
+       "kind": "computation",
+       "statement": "R_ring with Q={W(0)} satisfies the hypothesis."
+      },
+      {
+       "name": "fan_not_enclosed",
+       "kind": "non-example",
+       "statement": "The five faces at 0 other than W(0) with Q={W(0)} fail the hypothesis (B(e₁) is outside both); that region is simply connected."
+      },
+      {
+       "name": "empty_region",
+       "kind": "degenerate",
+       "statement": "R=∅: vacuous, since simple connectivity includes nonemptiness."
+      }
+     ]
+    },
+    {
+     "id": "2.4",
+     "kind": "theorem",
+     "name": "IsSimplyConnected.isSimplyConnectedRegion",
+     "statement": "If F(R)⊆ℝ² satisfies IsSimplyConnected then IsSimplyConnectedRegion R.",
+     "hypotheses": [
+      "IsSimplyConnected (F R)"
+     ],
+     "locator": {
+      "source": "aggarwal2023",
+      "where": "lines 338–341"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "mathlib:IsSimplyConnected",
+      "mathlib:LocallyPathConnectedSpace",
+      "mathlib:IsCoveringMap.existsUnique_continuousMap_lifts",
+      "mathlib:AddCircle.isCoveringMap_coe"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "triangle",
+       "kind": "computation",
+       "statement": "F({W(0)}) is a convex triangle; both notions hold."
+      },
+      {
+       "name": "wedge",
+       "kind": "computation",
+       "statement": "W(0) and B(1,1) meeting at (1,1): F(R) a wedge of triangles, simply connected; cochains glue at (1,1)."
+      },
+      {
+       "name": "ring",
+       "kind": "non-example",
+       "statement": "F(R_ring) is not simply connected; 2.3 shows R_ring is not either."
+      }
+     ]
+    },
+    {
+     "id": "2.5",
+     "kind": "theorem",
+     "name": "planeHeight_bijective",
+     "statement": "For every plane tiling M there is a unique H_M : ℤ²→ℤ with H_M(0)=0, H_M(v+e₁)−H_M(v)=[(v,1)∈M], H_M(v+e₂)−H_M(v)=[(v,2)∈M], H_M(v+e₃)−H_M(v)=1−[(v,3)∈M]; M↦H_M is a bijection onto the height functions (increments in {0,1} along e₁,e₂,e₃) vanishing at 0.",
+     "hypotheses": [],
+     "locator": {
+      "source": "aggarwal2023",
+      "where": "lines 384–399"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "target:2.2"
+     ],
+     "api": [
+      {
+       "name": "planeHeight_translate",
+       "role": "equivariance",
+       "statement": "H_{τ_w M}(v)=H_M(v−w)−H_M(−w)."
+      },
+      {
+       "name": "planeHeight_rotate",
+       "role": "equivariance",
+       "statement": "H_{ρM}(w)=H_M(ρ⁻¹w)+w₁."
+      },
+      {
+       "name": "planeHeight_lipschitz",
+       "role": "bound",
+       "statement": "H_M(u+(a,b))−H_M(u) ≤ max(a,b,0)."
+      },
+      {
+       "name": "gorin_height",
+       "role": "compatibility",
+       "statement": "Gorin's height is x+y−3H_M."
+      }
+     ],
+     "tests": [
+      {
+       "name": "frozen_heights",
+       "kind": "computation",
+       "statement": "H_{M₁}=x, H_{M₂}=y, H_{M₃}=0, H_{M_ε}(x,y)=Σ_{0≤i<x}ε_i."
+      },
+      {
+       "name": "floor_height",
+       "kind": "computation",
+       "statement": "⌊(x+y)/2⌋ is a height function whose tiling has no type-3 lozenge."
+      },
+      {
+       "name": "x_plus_y",
+       "kind": "non-example",
+       "statement": "x+y is not a height function (increment 2 along e₃)."
+      }
+     ]
+    },
+    {
+     "id": "2.6",
+     "kind": "theorem",
+     "name": "freeTiling_equiv_height",
+     "statement": "For simply connected R, v₀∈V(R), m∈ℤ: free tilings of R correspond bijectively to height functions on R with H(v₀)=m, and tilings to those with neutral increments along all boundary edges.",
+     "hypotheses": [
+      "IsSimplyConnectedRegion R",
+      "v₀ ∈ V(R)"
+     ],
+     "locator": {
+      "source": "aggarwal2023",
+      "where": "lines 380–401"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "target:2.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "triangle_heights",
+       "kind": "computation",
+       "statement": "{W(0)}: free tilings {(0,1)},{(e₁,2)},{(0,3)} give (H(e₁),H(e₃))=(1,1),(0,1),(0,0); none is a tiling."
+      },
+      {
+       "name": "ring_no_height",
+       "kind": "non-example",
+       "statement": "R_ring's tiling T has increments summing to −1 round W(0): no height function."
+      },
+      {
+       "name": "hexagon_heights",
+       "kind": "computation",
+       "statement": "Unit hexagon normalised at (1,0): H=0 at (1,0),(0,1),(1,1), H=−1 at (−1,0),(0,−1),(−1,−1); H(0)=0 for T_a, −1 for T_b."
+      }
+     ]
+    },
+    {
+     "id": "2.7",
+     "kind": "theorem",
+     "name": "boundaryHeight_eq",
+     "statement": "A finite simply connected region has connected boundary graph; if the boundary graph of R is connected and M, M' are tilings of R whose height cochains are exact on R (every tiling when R is simply connected, by 2.6), their height functions agree on ∂R after normalisation at a common boundary vertex, so the boundary height h_R depends only on R.",
+     "hypotheses": [
+      "R finite and IsSimplyConnectedRegion R (first part)",
+      "boundary graph connected and the two tilings have exact height cochains on R, e.g. R simply connected (second part)"
+     ],
+     "locator": {
+      "source": "aggarwal2023",
+      "where": "lines 403–407"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "target:2.3",
+      "target:2.6"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "hexagon_boundary",
+       "kind": "computation",
+       "statement": "Unit hexagon: h=0 at (1,0),(1,1),(0,1), h=−1 at (−1,0),(−1,−1),(0,−1), induced by both tilings."
+      },
+      {
+       "name": "strip",
+       "kind": "non-example",
+       "statement": "The strip between y=0 and y=1 is simply connected with two boundary components; M₃ and M₂ restricted give heights 0 and 1 on y=1."
+      },
+      {
+       "name": "pinch",
+       "kind": "degenerate",
+       "statement": "W(0) and B(1,1) at a vertex: connected boundary, no boundary height, untileable."
+      },
+      {
+       "name": "pinched_ring",
+       "kind": "non-example",
+       "statement": "R_ring minus W(−e₃), B(−e₃): connected boundary graph (inner triangle joined to the outer boundary at 0 by ((−1,0),1)), unique tiling T∖{((−1,−1),3)} whose cochain sums to −1 round W(0): no height function, so exactness cannot be dropped."
+      }
+     ]
+    },
+    {
+     "id": "2.8",
+     "kind": "theorem",
+     "name": "flip_connected",
+     "statement": "Minima and maxima of height functions are height functions; for finite simply connected tileable R the height functions with boundary values h_R have least and greatest elements given by ρ_R; a tiling with H≠H_min admits a downward flip staying ≥H_min; any two tilings are joined by finitely many flips; all tilings have the same numbers of lozenges of each type.",
+     "hypotheses": [
+      "R finite, IsSimplyConnectedRegion R, tileable"
+     ],
+     "locator": {
+      "source": "gorin2021",
+      "where": "Theorem 2.1, first proof, lines 756–782"
+     },
+     "prerequisites": [
+      "target:2.6",
+      "target:2.7"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "hexagon_flip",
+       "kind": "computation",
+       "statement": "T_a = H_max flips at 0 to T_b = H_min; H_max(0)−H_min(0)=1."
+      },
+      {
+       "name": "three_cycle",
+       "kind": "computation",
+       "statement": "The flip changes W(0)–B(0), W(−e₁)–B(−e₃), W(−e₃)–B(−e₂) to W(0)–B(−e₂), W(−e₁)–B(0), W(−e₃)–B(−e₃)."
+      },
+      {
+       "name": "torus_frozen",
+       "kind": "non-example",
+       "statement": "On the 2×2 torus the two tilings of height change (1,0) admit no flip."
+      }
+     ]
+    },
+    {
+     "id": "2.9",
+     "kind": "theorem",
+     "name": "thurston_tileable_iff",
+     "statement": "For finite connected R: a boundary function h : ∂R→ℤ with neutral increments along boundary edges and h(v)−h(u)≤ρ_R(u,v) exists iff R has a tiling with exact height cochain, given by H=min_u(h(u)+ρ_R(u,·)); for simply connected R, R is tileable iff such h exists.",
+     "hypotheses": [
+      "R finite and connected",
+      "IsSimplyConnectedRegion R for the tileability form"
+     ],
+     "locator": {
+      "source": "gorin2021",
+      "where": "Theorem 1.4, lines 521–526, and Corollary 1.5, line 613"
+     },
+     "prerequisites": [
+      "target:2.6",
+      "target:2.8"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "hexagon_ok",
+       "kind": "computation",
+       "statement": "Unit hexagon: h exists and the inequalities hold."
+      },
+      {
+       "name": "triangle_no_h",
+       "kind": "degenerate",
+       "statement": "{W(0)}: c₀ sums to −1 round the triangle; no h."
+      },
+      {
+       "name": "R6prime_fails",
+       "kind": "non-example",
+       "statement": "R₆'={W(0,0),B(1,0),W(1,0),W(1,1),B(1,1),B(2,1)}: h(1,1)−h(2,1)=1>0=ρ_R((2,1),(1,1)); untileable."
+      }
+     ]
+    },
+    {
+     "id": "2.10",
+     "kind": "theorem",
+     "name": "card_direction_diff_eq",
+     "statement": "If plane tilings M, M' differ on finitely many edges, then for each k, M∖M' and M'∖M contain equally many edges of direction k.",
+     "hypotheses": [
+      "M Δ M' finite"
+     ],
+     "locator": {
+      "source": "kenyon2009",
+      "where": "Section 5.5, lines 869–878"
+     },
+     "prerequisites": [
+      "target:2.5"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "hexagon_counts",
+       "kind": "computation",
+       "statement": "T_a∖T_b and T_b∖T_a each contain one edge of each direction."
+      },
+      {
+       "name": "frozen_infinite",
+       "kind": "non-example",
+       "statement": "M₁ and M₃ differ on infinitely many edges with densities 1 and 0."
+      },
+      {
+       "name": "row_column",
+       "kind": "non-example",
+       "statement": "M_ε and M_ε' with ε,ε' differing at one site differ along a whole column."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "Kasteleyn theory on finite simply connected regions",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "definition",
+     "name": "kasteleynMatrix",
+     "statement": "For finite R and a positive edge weight w: K_R (rows white faces, columns black faces, entry w(e) for faces sharing e, else 0), partitionFunction R w = Σ_{M∈𝔈(R)} ∏_{e∈M} w(e), and the Boltzmann measure on 𝔈(R).",
+     "hypotheses": [
+      "R finite",
+      "w positive"
+     ],
+     "locator": {
+      "source": "gorin2021",
+      "where": "Lecture 3, lines 1199–1215"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "target:1.5",
+      "mathlib:Matrix.det"
+     ],
+     "api": [
+      {
+       "name": "kasteleyn_square_iff",
+       "role": "shape",
+       "statement": "K_R is square iff R has equally many white and black faces; otherwise 𝔈(R)=∅."
+      },
+      {
+       "name": "kasteleyn_det_bijection",
+       "role": "well-definedness",
+       "statement": "Determinants for two bijections differ by a sign; the inverse (rows black, columns white) is independent of the bijection."
+      },
+      {
+       "name": "kasteleyn_entries",
+       "role": "structure",
+       "statement": "At most three nonzero entries per row and column; equivariance under translations and ρ."
+      }
+     ],
+     "tests": [
+      {
+       "name": "hexagon_matrix",
+       "kind": "computation",
+       "statement": "Unit hexagon: [[1,0,1],[1,1,0],[0,1,1]], det 2; swapping two columns gives −2."
+      },
+      {
+       "name": "hexagon_weighted",
+       "kind": "computation",
+       "statement": "Type weights (a,b,c): [[c,0,a],[b,a,0],[0,c,b]], det 2abc = abc + abc."
+      },
+      {
+       "name": "single_face",
+       "kind": "degenerate",
+       "statement": "{W(0)}: one row, no column, partition function 0."
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "theorem",
+     "name": "partitionFunction_eq_abs_det",
+     "statement": "For finite simply connected R with equally many white and black faces and positive w, all nonzero Leibniz terms of the square Kasteleyn matrix have the same sign; |det| = partitionFunction R w, and = #𝔈(R) for w≡1.",
+     "hypotheses": [
+      "R finite",
+      "IsSimplyConnectedRegion R",
+      "#white = #black",
+      "w positive"
+     ],
+     "locator": {
+      "source": "gorin2021",
+      "where": "Theorem 2.1, lines 714–717; Theorem 3.1, lines 1218–1219"
+     },
+     "prerequisites": [
+      "target:2.8",
+      "target:3.1",
+      "mathlib:Matrix.det_apply",
+      "mathlib:Equiv.Perm.sign"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "hexagon",
+       "kind": "computation",
+       "statement": "Unit hexagon: 2, and 2abc with type weights."
+      },
+      {
+       "name": "R6prime_zero",
+       "kind": "computation",
+       "statement": "R₆': matrix [[1,0,0],[1,0,0],[1,1,1]], det 0, no tiling."
+      },
+      {
+       "name": "ring_fails",
+       "kind": "non-example",
+       "statement": "R_ring: dual 12-cycle, two tilings differing by an odd 6-cycle; det 0 while the partition function is 2."
+      }
+     ]
+    },
+    {
+     "id": "3.3",
+     "kind": "theorem",
+     "name": "sum_perm_fixing_eq_det_mul_det_inv",
+     "statement": "For invertible square A over a field with rows I and columns J identified by a bijection, distinct rows i_l and columns j_l: Σ_{σ(i_l)=j_l} sgn(σ)∏_{i∉{i_l}} A(i,σi) = det A · det[(A⁻¹)(j_l,i_m)].",
+     "hypotheses": [
+      "A invertible",
+      "i_l pairwise distinct",
+      "j_l pairwise distinct"
+     ],
+     "locator": {
+      "source": "gorin2021",
+      "where": "proof of Theorem 3.5, lines 1339–1349"
+     },
+     "prerequisites": [
+      "roadmap:PadicMeasuresIwasawaAlgebras §6.4",
+      "mathlib:Matrix.det_apply",
+      "mathlib:Matrix.inv",
+      "mathlib:Matrix.adjugate_apply"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "k_one",
+       "kind": "compatibility",
+       "statement": "k=1: Mathlib's adjugate entry det A·(A⁻¹)(j,i)."
+      },
+      {
+       "name": "two_by_two",
+       "kind": "computation",
+       "statement": "A=[[a,b],[c,d]], (i)=(1,2), (j)=(2,1): both sides equal −1."
+      },
+      {
+       "name": "repeated_row",
+       "kind": "degenerate",
+       "statement": "i₁=i₂: empty sum versus two equal columns; both 0."
+      }
+     ]
+    },
+    {
+     "id": "3.4",
+     "kind": "theorem",
+     "name": "lozenge_correlation_eq_det",
+     "statement": "For finite simply connected R with positive partition function, positive w and pairwise distinct pairs (f_i,g_i) of white and black faces: the Boltzmann probability that each f_i is matched to g_i is ∏K(f_i,g_i)·det[K⁻¹(g_i,f_j)].",
+     "hypotheses": [
+      "R finite",
+      "IsSimplyConnectedRegion R",
+      "partitionFunction R w > 0",
+      "pairs pairwise distinct"
+     ],
+     "locator": {
+      "source": "gorin2021",
+      "where": "Theorem 3.5, lines 1281–1288"
+     },
+     "prerequisites": [
+      "target:3.2",
+      "target:3.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "hexagon_one",
+       "kind": "computation",
+       "statement": "Unit hexagon: P(W(0)–B(0)) = K⁻¹(B(0),W(0)) = 1/2."
+      },
+      {
+       "name": "hexagon_two",
+       "kind": "computation",
+       "statement": "P(W(0)–B(0) and W(−e₁)–B(−e₃)) = det[[1/2,1/2],[−1/2,1/2]] = 1/2."
+      },
+      {
+       "name": "shared_face",
+       "kind": "non-example",
+       "statement": "Pairs sharing B(0): equal rows, probability 0."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "Gibbs specifications on configuration spaces",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "definition",
+     "name": "tailSigma",
+     "statement": "For a countable infinite group Γ acting properly on a countable set I (for finite F,F' only finitely many γ have γF∩F'≠∅) and Ω = I → S with the product σ-algebra: the outside σ-algebras 𝓕_{Λᶜ}, the tail σ-algebra 𝓣 = ⋂_{Λ finite} 𝓕_{Λᶜ}, cylinder events, and the action (γω)(i)=ω(γ⁻¹i).",
+     "hypotheses": [
+      "I countable",
+      "Γ countable infinite, proper action"
+     ],
+     "locator": {
+      "source": "sheffield2005",
+      "where": "Section 3.2, lines 1341–1344"
+     },
+     "prerequisites": [
+      "mathlib:MeasurableSpace.pi",
+      "tauceti:TauCeti.Probability.tailProcess",
+      "tauceti:TauCeti.Probability.tailProcess_eq_iInf_tailFamily"
+     ],
+     "api": [
+      {
+       "name": "tail_invariant",
+       "role": "structure",
+       "statement": "𝓣 is a sub-σ-algebra invariant under the action; tail events are unchanged by finitely many coordinate changes."
+      },
+      {
+       "name": "cylinder_ring",
+       "role": "generation",
+       "statement": "Cylinder events form a ring of sets generating the product σ-algebra."
+      },
+      {
+       "name": "tail_eq_tailProcess",
+       "role": "compatibility",
+       "statement": "For I infinite (forced by properness unless I=∅) and any enumeration e:ℕ≃I, 𝓣 = TauCeti.Probability.tailProcess (fun k ω => ω (e k)), by tailProcess_eq_iInf_tailFamily and cofinality of the sets e([0,n)) among finite Λ; this is the limsup-atTop form Mathlib's measure_zero_or_one_of_measurableSet_limsup_atTop consumes, independent of e."
+      }
+     ],
+     "tests": [
+      {
+       "name": "infinitely_many_ones",
+       "kind": "computation",
+       "statement": "On {0,1}^ℤ the event 'infinitely many ones' lies in 𝓣 and in tailProcess along any enumeration of ℤ; 'ω(0)=1' lies in neither."
+      },
+      {
+       "name": "finite_index",
+       "kind": "degenerate",
+       "statement": "For finite I the tail σ-algebra is trivial."
+      },
+      {
+       "name": "non_proper",
+       "kind": "non-example",
+       "statement": "ℤ acting trivially on a point is not proper; the invariant event ω(pt)=1 has measure 1/2 under (δ₀+δ₁)/2 and is not a.s. tail."
+      }
+     ]
+    },
+    {
+     "id": "4.2",
+     "kind": "theorem",
+     "name": "exists_tail_ae_eq_of_invariant",
+     "statement": "If μ is a Γ-invariant probability measure on Ω and A is measurable with γA=A for all γ, some tail event T has μ(AΔT)=0.",
+     "hypotheses": [
+      "Γ countable infinite, proper action on countable I",
+      "μ Γ-invariant probability"
+     ],
+     "locator": {
+      "source": "sheffield2005",
+      "where": "Lemma 3.2.2, lines 1367–1371 (ingredient of its proof; georgii2011 Theorem 14.15)"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "mathlib:MeasureTheory.exists_measure_symmDiff_lt_of_generateFrom_isSetRing"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "density_event",
+       "kind": "computation",
+       "statement": "The shift-invariant event 'the density of ones is 1/2' is itself tail."
+      },
+      {
+       "name": "finite_group",
+       "kind": "non-example",
+       "statement": "For the trivial group on a point the conclusion fails as in 4.1."
+      },
+      {
+       "name": "point_mass",
+       "kind": "degenerate",
+       "statement": "Under the point mass at a constant configuration take T∈{∅,Ω}."
+      }
+     ]
+    },
+    {
+     "id": "4.3",
+     "kind": "theorem",
+     "name": "ergodicSMul_infinitePi",
+     "statement": "For a probability measure ν on S, ν^{⊗I} (Measure.infinitePi) is Γ-invariant, trivial on 𝓣 and ErgodicSMul Γ Ω ν^{⊗I}.",
+     "hypotheses": [
+      "Γ countable infinite, proper action"
+     ],
+     "locator": {
+      "source": "sheffield2005",
+      "where": "Lemma 3.2.1, lines 1352–1360"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "target:4.2",
+      "mathlib:MeasureTheory.Measure.infinitePi",
+      "mathlib:ProbabilityTheory.measure_zero_or_one_of_measurableSet_limsup_atTop",
+      "mathlib:ErgodicSMul"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "bernoulli_shift",
+       "kind": "computation",
+       "statement": "The two-sided Bernoulli(1/2) shift on {0,1}^ℤ is ergodic."
+      },
+      {
+       "name": "dirac",
+       "kind": "degenerate",
+       "statement": "ν=δ_a gives the point mass at a constant configuration, ergodic."
+      },
+      {
+       "name": "mixture",
+       "kind": "non-example",
+       "statement": "(Bern(1/3)^{⊗ℤ}+Bern(2/3)^{⊗ℤ})/2 is invariant and not ergodic."
+      }
+     ]
+    },
+    {
+     "id": "4.4",
+     "kind": "theorem",
+     "name": "tendsto_iff_cylinder_tendsto",
+     "statement": "For finite S and closed Γ-invariant X⊆Ω: X is compact metrisable, cylinder events are clopen, ProbabilityMeasure X is compact, Γ acts by affine homeomorphisms, μ_n→μ iff μ_n(C)→μ(C) for all cylinder events C; for S=Bool correlation functions determine μ and their convergence is weak convergence.",
+     "hypotheses": [
+      "S finite",
+      "X closed and Γ-invariant"
+     ],
+     "locator": {
+      "source": "gorin2021",
+      "where": "Definition 13.1 and Lemma 13.2, lines 4509–4519"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "mathlib:Function.compactSpace",
+      "mathlib:Pi.borelSpace",
+      "mathlib:MeasureTheory.ProbabilityMeasure",
+      "mathlib:MeasureTheory.ProbabilityMeasure.tendsto_measure_of_isClopen_of_tendsto",
+      "mathlib:IsPiSystem.tendsto_probabilityMeasure_of_tendsto_of_mem"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "receding_indicator",
+       "kind": "computation",
+       "statement": "Point masses at 1_{[n,∞)} converge to the point mass at 0."
+      },
+      {
+       "name": "one_point_insufficient",
+       "kind": "non-example",
+       "statement": "Bern(1/2)^{⊗ℤ} and (δ_0+δ_1)/2 share the one-point function 1/2 but have two-point functions 1/4 and 1/2."
+      },
+      {
+       "name": "not_closed",
+       "kind": "non-example",
+       "statement": "Finitely supported configurations are not closed: point masses at 1_{[0,n]} converge to that at 1_{[0,∞)}."
+      }
+     ]
+    },
+    {
+     "id": "4.5",
+     "kind": "definition",
+     "name": "Specification",
+     "statement": "A specification on X: Markov kernels γ_Λ (Λ⊆I finite) from X to X, 𝓕_{Λᶜ}-measurable, proper (γ_Λ(B∩C|ω)=1_B(ω)γ_Λ(C|ω) for B∈𝓕_{Λᶜ}) and consistent (γ_Δγ_Λ=γ_Δ for Λ⊆Δ); μ is Gibbs if μγ_Λ=μ for all Λ; Γ-equivariance and quasilocality.",
+     "hypotheses": [],
+     "locator": {
+      "source": "sheffield2005",
+      "where": "Section 1.1.2, lines 303–342"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "mathlib:MeasureTheory.condExp"
+     ],
+     "api": [
+      {
+       "name": "isGibbs_iff_condExp",
+       "role": "characterisation",
+       "statement": "μ is Gibbs iff γ_Λ(C|·) is a version of the conditional expectation of 1_C given 𝓕_{Λᶜ}."
+      },
+      {
+       "name": "gibbs_convex",
+       "role": "convexity",
+       "statement": "The Gibbs measures form a convex set."
+      },
+      {
+       "name": "gibbs_equivariant",
+       "role": "symmetry",
+       "statement": "For Γ-equivariant γ the Gibbs measures form a Γ-invariant set; 𝒢_inv and 𝔓_inv denote invariant elements."
+      }
+     ],
+     "tests": [
+      {
+       "name": "trivial_spec",
+       "kind": "degenerate",
+       "statement": "γ_Λ(·|ω)=δ_ω: every probability measure is Gibbs."
+      },
+      {
+       "name": "independent_spec",
+       "kind": "computation",
+       "statement": "γ_Λ = ν^{⊗Λ}⊗δ_{ω|Λᶜ}: the only Gibbs measure is ν^{⊗I}."
+      },
+      {
+       "name": "inconsistent",
+       "kind": "non-example",
+       "statement": "Independent kernels with different laws on {i} and {i,j} violate consistency; no measure is Gibbs for both."
+      }
+     ]
+    },
+    {
+     "id": "4.6",
+     "kind": "theorem",
+     "name": "gibbsInvariant_extreme_iff_ergodic",
+     "statement": "(a) Gibbs measures are stable under tail-measurable probability densities; (b) for Γ-equivariant γ, 𝒢_inv is a face of 𝔓_inv, so μ∈𝒢_inv is extreme in 𝒢_inv iff extreme in 𝔓_inv iff ErgodicSMul, and conditioning on invariant events of positive measure stays in 𝒢_inv; (c) for quasilocal γ, 𝒢, 𝔓_inv and 𝒢_inv are weakly closed and compact.",
+     "hypotheses": [
+      "Γ countable infinite, proper action",
+      "γ Γ-equivariant for (b)",
+      "γ quasilocal and S finite for (c)"
+     ],
+     "locator": {
+      "source": "sheffield2005",
+      "where": "Lemma 3.2.2, lines 1367–1371"
+     },
+     "prerequisites": [
+      "target:4.2",
+      "target:4.4",
+      "target:4.5",
+      "tauceti:ErgodicSMul.iff_mem_extremePoints",
+      "tauceti:TauCeti.MeasureTheory.invariantMeasuresOfMeasureUnivEq"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "trivial_face",
+       "kind": "degenerate",
+       "statement": "Trivial specification: 𝒢_inv=𝔓_inv."
+      },
+      {
+       "name": "independent_face",
+       "kind": "computation",
+       "statement": "Independent specification: 𝒢_inv={ν^{⊗ℤ}}, a one-point face, ergodic by 4.3."
+      },
+      {
+       "name": "non_tail_density",
+       "kind": "non-example",
+       "statement": "Density 2·1_{ω(0)=1} against Bern(1/2)^{⊗ℤ} is not tail-measurable and the result is not Gibbs for the independent specification."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "Dimer models on periodic graphs",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "definition",
+     "name": "dimerConfigurations",
+     "statement": "For a locally finite simple graph G on a countable type with a proper action (on edges) of a countable infinite group Γ by automorphisms: 𝔛(G) = {ω : G.edgeSet → Bool : every vertex lies in exactly one edge e with ω e = true}.",
+     "hypotheses": [
+      "G locally finite, countable vertex type"
+     ],
+     "locator": {
+      "source": "kenyon2009",
+      "where": "Section 1.1, lines 96–100"
+     },
+     "prerequisites": [
+      "target:4.4",
+      "mathlib:SimpleGraph.Subgraph.IsPerfectMatching",
+      "mathlib:SimpleGraph.LocallyFinite"
+     ],
+     "api": [
+      {
+       "name": "dimer_closed",
+       "role": "topology",
+       "statement": "𝔛(G) is closed, compact, metrisable and Γ-invariant; Γ acts by homeomorphisms."
+      },
+      {
+       "name": "dimer_perfectMatching",
+       "role": "compatibility",
+       "statement": "𝔛(G) is in bijection with Mathlib's perfect matchings of G."
+      },
+      {
+       "name": "completion_finite",
+       "role": "locality",
+       "statement": "Completion sets Ω_F(ω) are finite, contain ω, and depend only on ω on F and adjacent edges."
+      }
+     ],
+     "tests": [
+      {
+       "name": "path_graph",
+       "kind": "computation",
+       "statement": "ℤ with nearest-neighbour edges: exactly two configurations."
+      },
+      {
+       "name": "infinite_degree",
+       "kind": "non-example",
+       "statement": "A vertex of infinite degree: {c x_k} → ∅, uncovering c, so closedness fails."
+      },
+      {
+       "name": "C6",
+       "kind": "degenerate",
+       "statement": "The 6-cycle: two configurations, matching 1.5."
+      }
+     ]
+    },
+    {
+     "id": "5.2",
+     "kind": "definition",
+     "name": "dimerSpecification",
+     "statement": "γ^w_F(·|ω) is the probability measure on Ω_F(ω) with masses ∝ ∏_{e∈ω'∩F} w(e).",
+     "hypotheses": [
+      "w positive edge weight"
+     ],
+     "locator": {
+      "source": "kos2006",
+      "where": "Section 2.2.1, lines 195–202"
+     },
+     "prerequisites": [
+      "target:4.5",
+      "target:5.1"
+     ],
+     "api": [
+      {
+       "name": "dimerSpecification_spec",
+       "role": "structure",
+       "statement": "γ^w is a proper consistent quasilocal specification on 𝔛(G), Γ-equivariant for Γ-invariant w, uniform for w≡1."
+      },
+      {
+       "name": "isGibbs_iff_cylinder",
+       "role": "characterisation",
+       "statement": "μ is Gibbs iff w(ω'∩F)·μ[ω]_E = w(ω∩F)·μ[ω']_E for finite F, ω,ω' agreeing off F, and finite E containing F and its adjacent edges."
+      },
+      {
+       "name": "vertex_form",
+       "role": "compatibility",
+       "statement": "Gorin's vertex-set formulation of the Gibbs property is equivalent."
+      },
+      {
+       "name": "gauge_invariance",
+       "role": "invariance",
+       "statement": "Vertex gauge transformations of w leave γ^w unchanged."
+      }
+     ],
+     "tests": [
+      {
+       "name": "path_all_gibbs",
+       "kind": "degenerate",
+       "statement": "On ℤ every completion set is a singleton and every measure is Gibbs."
+      },
+      {
+       "name": "C6_boltzmann",
+       "kind": "computation",
+       "statement": "On C₆ with F all edges the only Gibbs measure gives each matching mass 1/2."
+      },
+      {
+       "name": "gauge",
+       "kind": "non-example",
+       "statement": "A gauge multiplies both matchings of C₆ by ∏g(v); weights are not determined by the specification."
+      }
+     ]
+    },
+    {
+     "id": "5.3",
+     "kind": "theorem",
+     "name": "dimer_gibbsInvariant_face",
+     "statement": "For Γ-invariant w: 𝒢, 𝔓_inv, 𝒢_inv of γ^w are weakly closed convex and compact; 𝒢_inv is a face of 𝔓_inv; μ∈𝒢_inv is ergodic iff extreme in 𝒢_inv iff extreme in 𝔓_inv iff invariant events are trivial; conditioning on invariant events of positive measure stays in 𝒢_inv.",
+     "hypotheses": [
+      "w Γ-invariant"
+     ],
+     "locator": {
+      "source": "gorin2021",
+      "where": "Definitions 13.4–13.6 and Lemma 13.7, lines 4534–4582"
+     },
+     "prerequisites": [
+      "target:4.6",
+      "target:5.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "path_segment",
+       "kind": "computation",
+       "statement": "On ℤ with Γ=2ℤ: 𝒢_inv is the segment [δ_even, δ_odd]; the midpoint is not ergodic."
+      },
+      {
+       "name": "gorin_kenyon_agree",
+       "kind": "compatibility",
+       "statement": "Gorin's extreme-point and Kenyon's trivial-invariant-event definitions of ergodic agree."
+      },
+      {
+       "name": "non_invariant_gibbs",
+       "kind": "non-example",
+       "statement": "On ℤ with Γ=ℤ, δ_even is Gibbs and not invariant."
+      }
+     ]
+    },
+    {
+     "id": "5.4",
+     "kind": "definition",
+     "name": "IsLozengeGibbs",
+     "statement": "The lozenge instance: 𝔈(𝕋) ≅ 𝔛(hexGraph) with TriEdge as edge set, ℤ² acting by τ; 𝔓(𝕋) = ProbabilityMeasure 𝔛(hexGraph); IsLozengeGibbs μ means Gibbs for the uniform specification; type weights give the uniform specification.",
+     "hypotheses": [],
+     "locator": {
+      "source": "aggarwal2023",
+      "where": "lines 412–420"
+     },
+     "prerequisites": [
+      "target:1.5",
+      "target:2.10",
+      "target:5.3"
+     ],
+     "api": [
+      {
+       "name": "lozenge_proper",
+       "role": "structure",
+       "statement": "hexGraph is locally finite and countable; ℤ² acts freely, colour-preservingly, properly on edges."
+      },
+      {
+       "name": "typeWeights_eq_uniform",
+       "role": "invariance",
+       "statement": "For type weights (w₁,w₂,w₃), γ^w = γ^unif."
+      },
+      {
+       "name": "lozenge_shift",
+       "role": "compatibility",
+       "statement": "The action on 𝔛(hexGraph) is τ."
+      }
+     ],
+     "tests": [
+      {
+       "name": "frozen_gibbs",
+       "kind": "computation",
+       "statement": "δ_{M₁}, δ_{M₂}, δ_{M₃} are invariant and Gibbs."
+      },
+      {
+       "name": "nu3",
+       "kind": "non-example",
+       "statement": "(δ_{M₁}+δ_{M₂}+δ_{M₃})/3 is in 𝒢_inv and not ergodic."
+      },
+      {
+       "name": "hexagon_weights",
+       "kind": "compatibility",
+       "statement": "With type weights both hexagon tilings weigh abc, so weighted and uniform laws agree."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "6",
+   "title": "Slopes and the boundary of the slope triangle",
+   "targets": [
+    {
+     "id": "6.1",
+     "kind": "definition",
+     "name": "slope",
+     "statement": "For μ∈𝔓_inv(𝕋): slope μ = (μ{(0,1)∈M}, μ{(0,2)∈M}).",
+     "hypotheses": [],
+     "locator": {
+      "source": "aggarwal2023",
+      "where": "lines 421–431"
+     },
+     "prerequisites": [
+      "target:2.5",
+      "target:5.4"
+     ],
+     "api": [
+      {
+       "name": "slope_densities",
+       "role": "interpretation",
+       "statement": "Faces lie in lozenges of types 1,2,3 with probabilities s,t,1−s−t; slope ∈ 𝒯̄."
+      },
+      {
+       "name": "expected_height",
+       "role": "interpretation",
+       "statement": "E_μ[H_M(x,y)] = sx+ty."
+      },
+      {
+       "name": "slope_affine_continuous",
+       "role": "regularity",
+       "statement": "slope is affine and weakly continuous; slope(ρ_*μ)=(1−s−t,s); fibres in 𝒢_inv are compact convex."
+      }
+     ],
+     "tests": [
+      {
+       "name": "frozen_slopes",
+       "kind": "computation",
+       "statement": "δ_{M₁},δ_{M₂},δ_{M₃}: (1,0),(0,1),(0,0); ρ_*δ_{M₁}=δ_{M₂}."
+      },
+      {
+       "name": "nu3_slope",
+       "kind": "computation",
+       "statement": "ν₃ has slope (1/3,1/3)."
+      },
+      {
+       "name": "bernoulli_row",
+       "kind": "computation",
+       "statement": "Bernoulli(s) rows: slope (s,0); W(0) in a type-3 lozenge with probability 1−s."
+      }
+     ]
+    },
+    {
+     "id": "6.2",
+     "kind": "theorem",
+     "name": "slope_eq_corner_iff",
+     "statement": "For μ∈𝔓_inv(𝕋): slope (1,0) iff μ=δ_{M₁}; (0,1) iff δ_{M₂}; (0,0) iff δ_{M₃}; these are ergodic Gibbs measures.",
+     "hypotheses": [
+      "μ translation-invariant"
+     ],
+     "locator": {
+      "source": "gorin2021",
+      "where": "lines 4638–4642"
+     },
+     "prerequisites": [
+      "target:6.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "mixture_not_corner",
+       "kind": "computation",
+       "statement": "(δ_{M₁}+δ_{M₂})/2 has slope (1/2,1/2)."
+      },
+      {
+       "name": "non_invariant",
+       "kind": "non-example",
+       "statement": "δ_{M_ε}, ε=1_{[0,∞)}, has μ{(0,1)∈M}=1 but is not δ_{M₁}."
+      },
+      {
+       "name": "corner_face",
+       "kind": "degenerate",
+       "statement": "Corner fibres are points, hence faces."
+      }
+     ]
+    },
+    {
+     "id": "6.3",
+     "kind": "theorem",
+     "name": "slopeEdge_ergodicGibbs_equiv",
+     "statement": "Φ₂ (no type-2 lozenge) ≅ {0,1}^ℤ via ε(M)_x=[((x,0),1)∈M], intertwining τ_{e₁} with the shift and τ_{e₂} with id; completion sets of M∈Φ₂ are singletons; measures on Φ₂ are Gibbs; invariant μ has slope (s,0) iff μ(Φ₂)=1 and density s; μ↦ε_*μ is an affine homeomorphism onto shift-invariant measures of density s preserving ergodicity; for 0<s<1 Bern(s)^{⊗ℤ} and the block measure β_s give two distinct EGMs of slope (s,0); likewise on the other edges by ρ.",
+     "hypotheses": [
+      "0 < s < 1 for the non-uniqueness"
+     ],
+     "locator": {
+      "source": "sheffield2005",
+      "where": "Theorem 9.5.1, lines 6195–6198"
+     },
+     "prerequisites": [
+      "target:1.6",
+      "target:2.5",
+      "target:4.3",
+      "target:5.3",
+      "target:6.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "two_point",
+       "kind": "computation",
+       "statement": "P(ε₀=ε₁=1): s² versus (s+s²)/2; at s=1/2, 1/4 versus 3/8."
+      },
+      {
+       "name": "corner_case",
+       "kind": "degenerate",
+       "statement": "At s=1 the only option is the all-ones sequence, i.e. δ_{M₁}."
+      },
+      {
+       "name": "step_gibbs",
+       "kind": "non-example",
+       "statement": "δ_{M_ε} for ε=1_{[0,∞)} is Gibbs and not invariant."
+      }
+     ]
+    },
+    {
+     "id": "6.4",
+     "kind": "example",
+     "name": "extreme_fibre_not_ergodic",
+     "statement": "ν₃=(δ_{M₁}+δ_{M₂}+δ_{M₃})/3 is an extreme point of the slope fibre over (1/3,1/3) in 𝒢_inv and is not ergodic; so slope fibres are not faces and Krein–Milman on a fibre does not produce ergodic measures.",
+     "hypotheses": [],
+     "locator": {
+      "source": "kenyon2009",
+      "where": "Section 5.4, lines 860–866 (the argument corrected here)"
+     },
+     "prerequisites": [
+      "target:5.3",
+      "target:6.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "nu3_in_fibre",
+       "kind": "computation",
+       "statement": "ν₃∈𝒢_inv (5.4) with slope (1/3,1/3); the invariant event M=M₁ has measure 1/3."
+      },
+      {
+       "name": "corner_fibre_point",
+       "kind": "degenerate",
+       "statement": "At a corner the fibre is a point (6.2), hence a face: the phenomenon is specific to non-corner slopes."
+      },
+      {
+       "name": "alternating_row_average",
+       "kind": "computation",
+       "statement": "On t=0, the average of the point masses at M_ε and M_{σε} for the alternating ε is invariant, Gibbs by 6.3(c), of slope (1/2,0) and ergodic by 6.3(e)."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "7",
+   "title": "Torus tilings and torus limits",
+   "targets": [
+    {
+     "id": "7.1",
+     "kind": "definition",
+     "name": "heightChange",
+     "statement": "For n₁,n₂≥1, torus tilings are the (n₁ℤ×n₂ℤ)-invariant plane tilings; their height change (h₁,h₂) is H_M(v+(n₁,0))−H_M(v) and H_M(v+(0,n₂))−H_M(v).",
+     "hypotheses": [
+      "n₁, n₂ ≥ 1"
+     ],
+     "locator": {
+      "source": "kos2006",
+      "where": "Section 2.1.2, lines 187–192"
+     },
+     "prerequisites": [
+      "target:1.5",
+      "target:2.5"
+     ],
+     "api": [
+      {
+       "name": "heightChange_count",
+       "role": "interpretation",
+       "statement": "h₁ (h₂) counts type-1 (type-2) lozenges on a horizontal (vertical) period segment."
+      },
+      {
+       "name": "type_counts",
+       "role": "counting",
+       "statement": "Per fundamental domain: n₂h₁ type-1, n₁h₂ type-2 and n₁n₂−n₂h₁−n₁h₂ type-3 lozenges."
+      },
+      {
+       "name": "attainable",
+       "role": "existence",
+       "statement": "The attainable height changes are the (a,b)∈ℕ² with n₂a+n₁b≤n₁n₂, realised by ⌊(n₂ax+n₁by)/(n₁n₂)⌋."
+      }
+     ],
+     "tests": [
+      {
+       "name": "one_by_one",
+       "kind": "degenerate",
+       "statement": "n₁=n₂=1: three torus tilings with height changes (1,0),(0,1),(0,0)."
+      },
+      {
+       "name": "floor_two",
+       "kind": "computation",
+       "statement": "n₁=n₂=2, (1,1): ⌊(x+y)/2⌋, no type-3 lozenge, 4−2−2=0."
+      },
+      {
+       "name": "not_attained",
+       "kind": "non-example",
+       "statement": "(2,1) on the 2×2 torus violates 2a+2b≤4."
+      }
+     ]
+    },
+    {
+     "id": "7.2",
+     "kind": "definition",
+     "name": "torusMeasure",
+     "statement": "μ^{(a,b)}_{n₁,n₂} uniform on torus tilings with height change (a,b); μ^{s,t}_n = μ^{(⌊ns⌋,⌊nt⌋)}_{n,n} for (s,t)∈𝒯̄; μ^w_{n₁,n₂} Boltzmann for type weights on all torus tilings; all in 𝔓(𝕋).",
+     "hypotheses": [
+      "(a,b) attainable"
+     ],
+     "locator": {
+      "source": "kos2006",
+      "where": "Section 2.2.2, lines 206–213"
+     },
+     "prerequisites": [
+      "target:7.1"
+     ],
+     "api": [
+      {
+       "name": "torusMeasure_invariant",
+       "role": "symmetry",
+       "statement": "Each torus measure is ℤ²-invariant."
+      },
+      {
+       "name": "torusMeasure_slope",
+       "role": "slope",
+       "statement": "slope μ^{(a,b)}_{n₁,n₂} = (a/n₁, b/n₂)."
+      },
+      {
+       "name": "floor_le",
+       "role": "well-definedness",
+       "statement": "⌊ns⌋+⌊nt⌋ ≤ n for (s,t)∈𝒯̄."
+      }
+     ],
+     "tests": [
+      {
+       "name": "dirac_corner",
+       "kind": "degenerate",
+       "statement": "μ^{0,0}_1 = δ_{M₃}."
+      },
+      {
+       "name": "half_zero",
+       "kind": "computation",
+       "statement": "n=2, (1/2,0): two row tilings of period two, each of mass 1/2, slope (1/2,0)."
+      },
+      {
+       "name": "two_by_two_uniform",
+       "kind": "computation",
+       "statement": "μ^w_{2,2} with unit weights is uniform on nine tilings with slope (1/3,1/3)."
+      }
+     ]
+    },
+    {
+     "id": "7.3",
+     "kind": "theorem",
+     "name": "torusLimit_mem_gibbsInvariant_slope",
+     "statement": "Every weak limit point of (μ^{s,t}_n) lies in 𝒢_inv with slope (s,t); every weak limit point of μ^w_{n₁(k),n₂(k)} with n₁,n₂→∞ lies in 𝒢_inv; hence each slope fibre of 𝒢_inv over 𝒯̄ is nonempty, compact and convex.",
+     "hypotheses": [
+      "(s,t) ∈ 𝒯̄"
+     ],
+     "locator": {
+      "source": "kenyon2009",
+      "where": "Section 5.4, lines 844–866"
+     },
+     "prerequisites": [
+      "target:5.3",
+      "target:6.1",
+      "target:7.2",
+      "mathlib:MeasureTheory.ProbabilityMeasure"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "corner",
+       "kind": "degenerate",
+       "statement": "(0,0): every μ^{0,0}_n is δ_{M₃}."
+      },
+      {
+       "name": "half_zero_limit",
+       "kind": "computation",
+       "statement": "(1/2,0): patterns on k sites with j ones have probability C(2m−k,m−j)/C(2m,m)→2^{−k}; the limit is the Bernoulli row measure."
+      },
+      {
+       "name": "exact_third",
+       "kind": "computation",
+       "statement": "n=3, (1/3,1/3): height change (1,1), slope exactly (1/3,1/3)."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "8",
+   "title": "Kasteleyn theory on the torus",
+   "targets": [
+    {
+     "id": "8.1",
+     "kind": "definition",
+     "name": "twistedKasteleyn",
+     "statement": "K_{ab}, (a,b)∈{0,1}², indexed by [0,n₁)×[0,n₂) (rows W(v), columns B(v)), with weight entries and the factor (−1)^a on type-2 entries crossing the vertical seam and (−1)^b on type-1 entries crossing the horizontal seam.",
+     "hypotheses": [
+      "w positive and n₁ℤ×n₂ℤ-periodic"
+     ],
+     "locator": {
+      "source": "gorin2021",
+      "where": "Definition 3.9, lines 1452–1457"
+     },
+     "prerequisites": [
+      "target:7.1",
+      "mathlib:Matrix.det"
+     ],
+     "api": [
+      {
+       "name": "twisted_entries",
+       "role": "structure",
+       "statement": "Each row has entries w₃, ±w₁, ±w₂ at columns v, v−e₂, v+e₁ modulo the period."
+      },
+      {
+       "name": "twisted_commute",
+       "role": "symmetry",
+       "statement": "For type weights K_{ab} commutes with twisted translations."
+      },
+      {
+       "name": "twisted_leibniz",
+       "role": "expansion",
+       "statement": "det K_{ab} is a signed sum of weights of torus tilings."
+      }
+     ],
+     "tests": [
+      {
+       "name": "one_by_one",
+       "kind": "degenerate",
+       "statement": "n₁=n₂=1: K_{ab} = w₃+(−1)^b w₁+(−1)^a w₂."
+      },
+      {
+       "name": "two_by_two",
+       "kind": "computation",
+       "statement": "2×2, unit weights: det K₀₀=−3, det K₁₀=det K₀₁=det K₁₁=5."
+      },
+      {
+       "name": "one_by_two",
+       "kind": "non-example",
+       "statement": "1×2, unit weights: det K₁₀=−1, det K₀₁=5, so swapping seam conventions changes the matrices."
+      }
+     ]
+    },
+    {
+     "id": "8.2",
+     "kind": "theorem",
+     "name": "twistedKasteleyn_sign",
+     "statement": "The term of a torus tiling of height change (h₁,h₂) in det K_{ab} has sign (−1)^{h₁h₂+(n₂+1+b)h₁+(n₁+1+a)h₂}.",
+     "hypotheses": [
+      "n₁, n₂ ≥ 1"
+     ],
+     "locator": {
+      "source": "kenyon2009",
+      "where": "Lemma 5, lines 698–717"
+     },
+     "prerequisites": [
+      "target:7.1",
+      "target:8.1",
+      "mathlib:Equiv.Perm.sign"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "one_by_one_signs",
+       "kind": "computation",
+       "statement": "1×1: signs (−1)^b and (−1)^a for the type-1 and type-2 tilings."
+      },
+      {
+       "name": "four_cycle",
+       "kind": "computation",
+       "statement": "2×2 floor tiling (1,1): a 4-cycle with one twist on each seam; sign −1 for a=b=0."
+      },
+      {
+       "name": "sum_signs",
+       "kind": "computation",
+       "statement": "2×2, a=b=0: 1−2−2+1+1−2 = −3 = det K₀₀."
+      }
+     ]
+    },
+    {
+     "id": "8.3",
+     "kind": "theorem",
+     "name": "torus_partitionFunction_eq",
+     "statement": "Σ_M ∏ w = (ε₀₀ det K₀₀ + ε₀₁ det K₀₁ + ε₁₀ det K₁₀ + ε₁₁ det K₁₁)/2 with ε_{ab}=−1 iff (a,b)≡(n₁,n₂) mod 2.",
+     "hypotheses": [
+      "n₁, n₂ ≥ 1",
+      "w positive periodic"
+     ],
+     "locator": {
+      "source": "gorin2021",
+      "where": "Theorem 3.10, lines 1458–1472"
+     },
+     "prerequisites": [
+      "target:8.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "one_by_one",
+       "kind": "computation",
+       "statement": "1×1: ((w₃+w₁+w₂)+(w₃−w₁+w₂)+(w₃+w₁−w₂)−(w₃−w₁−w₂))/2 = w₁+w₂+w₃."
+      },
+      {
+       "name": "two_by_two",
+       "kind": "computation",
+       "statement": "2×2: (3+5+5+5)/2 = 9."
+      },
+      {
+       "name": "wrong_signs",
+       "kind": "non-example",
+       "statement": "ε₀₀=−1 on the 1×1 torus would give w₃−w₁−w₂."
+      }
+     ]
+    },
+    {
+     "id": "8.4",
+     "kind": "theorem",
+     "name": "torus_correlation_eq",
+     "statement": "For distinct torus lozenges ℓ_i=(W(u_i),B(v_i)): P(all ℓ_i ∈ M) = (2Z)⁻¹ Σ ε_{ab} ∏K_{ab}(ℓ_i)·c_{ab} with c_{ab} the signed complementary minor, equal to det K_{ab}·det[K_{ab}⁻¹(v_i,u_j)] when det K_{ab}≠0; the coefficients ε_{ab}det K_{ab}/(2Z) lie in [−1/2,1/2] and sum to 1.",
+     "hypotheses": [
+      "lozenges pairwise distinct"
+     ],
+     "locator": {
+      "source": "gorin2021",
+      "where": "Theorem 4.10, lines 1847–1850"
+     },
+     "prerequisites": [
+      "target:3.3",
+      "target:8.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "one_by_one",
+       "kind": "computation",
+       "statement": "1×1, type-3 lozenge: w₃/(w₁+w₂+w₃)."
+      },
+      {
+       "name": "coefficients",
+       "kind": "computation",
+       "statement": "2×2: coefficients 3/18, 5/18, 5/18, 5/18."
+      },
+      {
+       "name": "shared_white",
+       "kind": "degenerate",
+       "statement": "Two lozenges sharing a white face: every c_{ab} is an empty sum; probability 0."
+      }
+     ]
+    },
+    {
+     "id": "8.5",
+     "kind": "theorem",
+     "name": "det_twistedKasteleyn_eq_prod",
+     "statement": "For type weights, characters z^{v₁}w^{v₂} with z^{n₁}=(−1)^a, w^{n₂}=(−1)^b diagonalise K_{ab} with eigenvalue w₃+w₂z+w₁w⁻¹; det K_{ab} = ∏(w₃+w₂z+w₁w⁻¹) and K_{ab}⁻¹(B(v'),W(v)) = (n₁n₂)⁻¹Σ z^{v'₁−v₁}w^{v'₂−v₂}/(w₃+w₂z+w₁w⁻¹).",
+     "hypotheses": [
+      "type weights",
+      "det K_{ab} ≠ 0 for the inverse"
+     ],
+     "locator": {
+      "source": "gorin2021",
+      "where": "Claims 4.1–4.2, lines 1545–1600"
+     },
+     "prerequisites": [
+      "target:8.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "one_by_one",
+       "kind": "degenerate",
+       "statement": "1×1: the single eigenvalue w₃+(−1)^a w₂+(−1)^b w₁."
+      },
+      {
+       "name": "two_by_two",
+       "kind": "computation",
+       "statement": "2×2, a=b=0: eigenvalues 3,1,1,−1, product −3; a=1,b=0: (2+i)(2−i)(i)(−i)=5."
+      },
+      {
+       "name": "three_by_three_singular",
+       "kind": "non-example",
+       "statement": "3×3, uniform, a=b=0: eigenvalue 1+e^{2πi/3}+e^{−2πi/3}=0, det K₀₀=0."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "9",
+   "title": "The explicit kernel and ergodic Gibbs measures of interior slopes",
+   "targets": [
+    {
+     "id": "9.1",
+     "kind": "definition",
+     "name": "inverseKernel",
+     "statement": "P̂_w(θ,φ)=w₃+w₂e^{iθ}+w₁e^{−iφ}; w liquid if the strict triangle inequalities hold; G_w(d)=(4π²)⁻¹∬e^{i(d₁θ+d₂φ)}/P̂_w dθdφ; K⁻¹_∞(B(v'),W(v))=G_w(v'−v).",
+     "hypotheses": [
+      "w liquid"
+     ],
+     "locator": {
+      "source": "gorin2021",
+      "where": "Theorem 4.11, lines 1853–1871"
+     },
+     "prerequisites": [
+      "target:8.5",
+      "mathlib:intervalIntegral",
+      "mathlib:tendsto_integral_exp_inner_smul_cocompact"
+     ],
+     "api": [
+      {
+       "name": "zeros_simple",
+       "role": "analysis",
+       "statement": "For liquid w, P̂_w has exactly two zeros ±(θ₀,φ₀), θ₀,φ₀∉πℤ, with invertible real Jacobian; 1/P̂_w is integrable."
+      },
+      {
+       "name": "inverse_identities",
+       "role": "algebra",
+       "statement": "Σ_{v'}K(W(u),B(v'))G_w(v'−v)=[u=v] and Σ_u G_w(v'−u)K(W(u),B(v''))=[v'=v'']."
+      },
+      {
+       "name": "decay",
+       "role": "analysis",
+       "statement": "G_w(d)→0 as |d|→∞."
+      },
+      {
+       "name": "angles",
+       "role": "evaluation",
+       "statement": "w₁G_w(−e₂)=θ₁/π, w₂G_w(e₁)=θ₂/π, w₃G_w(0)=θ₃/π (θ_k opposite w_k); w₁G_w((m,−1))=(−1)^m sin(θ₁m)/(πm)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "uniform_values",
+       "kind": "computation",
+       "statement": "w=(1,1,1): zeros ±(2π/3,2π/3), G(0)=1/3, G(0,−2)=√3/(2π)−1/3."
+      },
+      {
+       "name": "frozen_weights",
+       "kind": "non-example",
+       "statement": "w=(1,1,3): no zero; w₃G(0)=1."
+      },
+      {
+       "name": "degenerate_weights",
+       "kind": "degenerate",
+       "statement": "w=(1,1,2): single zero (π,π) with singular Jacobian; excluded."
+      }
+     ]
+    },
+    {
+     "id": "9.2",
+     "kind": "theorem",
+     "name": "riemannSum_tendsto",
+     "statement": "(a) For θ∉πℤ and large n, n or n+1 lies in W_θ={n: |θ−πj/n|>n^{−3/2} ∀j}; (b) for liquid w with zero (θ₀,φ₀), n₁(k)∈W_{θ₀}, n₂(k)→∞ with bounded ratios, the twisted Riemann sums converge to G_w(d) for each (a,b) and d, and det K_{ab}≠0 along the sequence.",
+     "hypotheses": [
+      "w liquid",
+      "n₁(k) ∈ W_{θ₀}",
+      "n₁(k)/n₂(k) bounded above and below"
+     ],
+     "locator": {
+      "source": "gorin2021",
+      "where": "Lemma 4.7 and lines 1748–1806 (corrected to n+1)"
+     },
+     "prerequisites": [
+      "target:8.5",
+      "target:9.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "half_pi",
+       "kind": "non-example",
+       "statement": "W_{π/2} contains no even n (Gorin's n+2 version fails) and every odd n≥2."
+      },
+      {
+       "name": "two_thirds",
+       "kind": "computation",
+       "statement": "θ=2π/3: 3∉W_θ, 4∈W_θ (π/12>1/8)."
+      },
+      {
+       "name": "three_torus",
+       "kind": "compatibility",
+       "statement": "The 3×3 uniform grid hits the zero, consistent with 3∉W_{2π/3}."
+      }
+     ]
+    },
+    {
+     "id": "9.3",
+     "kind": "theorem",
+     "name": "exists_unique_determinantalGibbs",
+     "statement": "For liquid w there is a unique μ^w∈𝔓(𝕋) with μ^w{ℓ₁,…,ℓ_k∈M}=∏w(ℓ_i)·det[G_w(v_i−u_j)] for distinct lozenges ℓ_i=(W(u_i),B(v_i)); it is the weak limit of μ^w_{n₁(k),n₂(k)} along every sequence of 9.2(b); it lies in 𝒢_inv; slope μ^w=(θ₁/π,θ₂/π).",
+     "hypotheses": [
+      "w liquid"
+     ],
+     "locator": {
+      "source": "kos2006",
+      "where": "Theorem 4.3, lines 714–725"
+     },
+     "prerequisites": [
+      "target:4.4",
+      "target:7.3",
+      "target:8.4",
+      "target:9.1",
+      "target:9.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "uniform_pair",
+       "kind": "computation",
+       "statement": "w=(1,1,1): type-1 lozenges at (0,0),(0,1) have probability 2/9−√3/(6π)≈0.130."
+      },
+      {
+       "name": "single",
+       "kind": "computation",
+       "statement": "One lozenge: densities θ_k/π summing to 1."
+      },
+      {
+       "name": "shared_face",
+       "kind": "degenerate",
+       "statement": "Lozenges sharing a face: probability 0."
+      }
+     ]
+    },
+    {
+     "id": "9.4",
+     "kind": "theorem",
+     "name": "determinantalGibbs_mixing",
+     "statement": "For liquid w, μ^w(A∩τ_dB)→μ^w(A)μ^w(B) as |d|→∞; μ^w is ergodic under ℤ² and under ℤd₀ for every d₀≠0.",
+     "hypotheses": [
+      "w liquid"
+     ],
+     "locator": {
+      "source": "kenyon1997",
+      "where": "introduction, lines 85–93 (strong mixing)"
+     },
+     "prerequisites": [
+      "target:4.4",
+      "target:9.1",
+      "target:9.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "covariance",
+       "kind": "computation",
+       "statement": "Type-3 lozenges at 0 and d: covariance −w₃²G_w(d)G_w(−d)→0."
+      },
+      {
+       "name": "frozen_mixing",
+       "kind": "degenerate",
+       "statement": "Frozen point masses are mixing."
+      },
+      {
+       "name": "nu3_not_mixing",
+       "kind": "non-example",
+       "statement": "ν₃({M=M₁}∩τ_d{M=M₁})=1/3≠1/9."
+      }
+     ]
+    },
+    {
+     "id": "9.5",
+     "kind": "theorem",
+     "name": "exists_ergodicGibbs_of_slope",
+     "statement": "For every (s,t)∈𝒯̄ there is an ergodic translation-invariant Gibbs measure on 𝔈(𝕋) of slope (s,t).",
+     "hypotheses": [
+      "(s,t) ∈ 𝒯̄"
+     ],
+     "locator": {
+      "source": "kos2006",
+      "where": "Theorem 2.1 (existence), lines 215–220"
+     },
+     "prerequisites": [
+      "target:6.2",
+      "target:6.3",
+      "target:9.3",
+      "target:9.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "uniform",
+       "kind": "computation",
+       "statement": "(1/3,1/3): w=(√3/2,√3/2,√3/2), a multiple of uniform weights."
+      },
+      {
+       "name": "liquid_check",
+       "kind": "computation",
+       "statement": "(1/2,1/4): w=(1,√2/2,√2/2), 1<√2, liquid."
+      },
+      {
+       "name": "edge_needs_63",
+       "kind": "non-example",
+       "statement": "(1/2,0): w=(1,0,1) is not positive; edges use 6.3."
+      }
+     ]
+    },
+    {
+     "id": "9.6",
+     "kind": "definition",
+     "name": "incompleteBetaKernel",
+     "statement": "ξ(s,t)=e^{πis}sin(πt)/sin(π(1−s−t)); X(M)={v:(v,1)∈M}; K_ξ(v₁;v₂)=(2πi)⁻¹∫_{ξ̄}^{ξ}(1−z)^{y₁−y₂}z^{x₂−x₁−1}dz along ξ̄→1/2→ξ if y₁≥y₂ and ξ̄→−1→ξ if y₁<y₂.",
+     "hypotheses": [],
+     "locator": {
+      "source": "aggarwal2023",
+      "where": "Definitions 1.2–1.3, lines 463–476"
+     },
+     "prerequisites": [
+      "mathlib:intervalIntegral",
+      "mathlib:Complex.log"
+     ],
+     "api": [
+      {
+       "name": "complexSlope_bijective",
+       "role": "bijection",
+       "statement": "ξ:𝒯→ℍ is a bijection with inverse ξ↦(arg ξ/π, −arg(1−ξ)/π)."
+      },
+      {
+       "name": "kernel_path_independent",
+       "role": "well-definedness",
+       "statement": "K_ξ depends only on v₂−v₁ and the side of crossing (Cauchy)."
+      },
+      {
+       "name": "kernel_values",
+       "role": "evaluation",
+       "statement": "K_ξ(v;v)=s; K_ξ((x,y);(x+m,y))=|ξ|^m sin(πsm)/(πm)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "diagonal",
+       "kind": "computation",
+       "statement": "Diagonal value arg ξ/π = s; crossing (−∞,0) instead would give −(1−s)."
+      },
+      {
+       "name": "vertical",
+       "kind": "computation",
+       "statement": "K_ξ((0,0);(0,1))=−(1−s−t), K_ξ((0,1);(0,0))=s−Im ξ/π; for s=t=1/3: −1/3 and 1/3−√3/(2π)."
+      },
+      {
+       "name": "uniform_row",
+       "kind": "degenerate",
+       "statement": "s=t=1/3: ξ=e^{πi/3}, |ξ|=1, the row kernel is the discrete sine kernel."
+      }
+     ]
+    },
+    {
+     "id": "9.7",
+     "kind": "theorem",
+     "name": "incompleteBetaProcess_exists_unique",
+     "statement": "For ξ∈ℍ with slope (s,t) and w=(sin πs, sin πt, sin π(1−s−t)): entrywise w₁G_w(v_i−v_j−e₂)=(−1)^{(x_i−x_j)+(y_i−y_j)}|ξ|^{x_j−x_i}|1−ξ|^{y_i−y_j}K_ξ(v_j;v_i) with |ξ|=w₂/w₃, |1−ξ|=w₁/w₃, i.e. the matrices are conjugate by the diagonal of κ(x,y)=(−1)^{x+y}|ξ|^{−x}|1−ξ|^{y} up to transposition, so det[w₁G_w(v_i−v_j−e₂)]=det[K_ξ(v_i;v_j)]; μ_ξ=μ^w satisfies μ_ξ{v₁,…,v_m∈X(M)}=det[K_ξ(v_i;v_j)]; it is the unique such measure; it is an ergodic translation-invariant Gibbs measure of slope (s,t); along a row its type-1 correlations are det[sin(πs(x_i−x_j))/(π(x_i−x_j))]; a.s. every row has infinitely many type-1 lozenges, and M is a measurable function of X(M) on tilings where no two consecutive rows lack type-1 lozenges.",
+     "hypotheses": [
+      "ξ in the upper half-plane",
+      "v_i pairwise distinct"
+     ],
+     "locator": {
+      "source": "aggarwal2023",
+      "where": "equation (1.2), lines 491–507"
+     },
+     "prerequisites": [
+      "target:4.4",
+      "target:9.3",
+      "target:9.4",
+      "target:9.6"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "uniform_pair",
+       "kind": "computation",
+       "statement": "ξ=e^{πi/3}: s²−K_ξ(v₁;v₂)K_ξ(v₂;v₁)=2/9−√3/(6π), equal to 9.3; |ξ|=|1−ξ|=1 there alone, and the factor reduces to κ(x,y)=(−1)^{x+y}."
+      },
+      {
+       "name": "general_slope_factors",
+       "kind": "computation",
+       "statement": "Slope (0.3,0.45): |ξ|≈1.3968, |1−ξ|≈1.1441; w₁G_w(0,−2)/K_ξ((0,1);(0,0))≈−0.8740=−1/|1−ξ|, w₁G_w(−2,−1)/K_ξ((2,0);(0,0))≈1.9511=|ξ|², w₁G_w(−1,−2)/K_ξ((1,1);(0,0))≈1.2209=|ξ|/|1−ξ|; vertical-pair determinants both ≈0.0751, triple (0,0),(1,2),(−1,1) both ≈0.0342."
+      },
+      {
+       "name": "sine_pair",
+       "kind": "computation",
+       "statement": "Row, s=1/2: adjacent pair probability 1/4−1/π²≈0.149."
+      },
+      {
+       "name": "not_injective",
+       "kind": "non-example",
+       "statement": "Heights 1_{x>0} on rows y≤0 and 1 or y on rows y≥1 give two tilings with the same X(M)."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "10",
+   "title": "Local statistics of tilings of growing regions",
+   "targets": [
+    {
+     "id": "10.1",
+     "kind": "definition",
+     "name": "LocalConvergence",
+     "statement": "For finite regions R_N with tilings, probability measures μ_N on 𝔈(R_N) in 𝔓(TriEdge→Bool) and vertices v_N: the local statistics converge to μ when τ_{−v_N*}μ_N→μ weakly, equivalently all cylinder probabilities converge.",
+     "hypotheses": [],
+     "locator": {
+      "source": "aggarwal2023",
+      "where": "lines 568–580"
+     },
+     "prerequisites": [
+      "target:4.4",
+      "target:5.4"
+     ],
+     "api": [
+      {
+       "name": "localConvergence_cylinder",
+       "role": "characterisation",
+       "statement": "Cylinder and correlation-function criteria (4.4)."
+      },
+      {
+       "name": "localConvergence_shift",
+       "role": "symmetry",
+       "statement": "Shifting all v_N by a fixed vector shifts the limit."
+      },
+      {
+       "name": "localConvergence_subseq",
+       "role": "compactness",
+       "statement": "Subsequential limits exist."
+      }
+     ],
+     "tests": [
+      {
+       "name": "constant",
+       "kind": "degenerate",
+       "statement": "R_N all faces, μ_N=μ, v_N=0: limit μ."
+      },
+      {
+       "name": "hexagons",
+       "kind": "non-example",
+       "statement": "R_N=R₆+v_N uniform: limit (δ_{T_a}+δ_{T_b})/2, not on 𝔈(𝕋)."
+      },
+      {
+       "name": "wrong_sign",
+       "kind": "non-example",
+       "statement": "Translating by +v_N: limit is the point mass at the empty configuration."
+      }
+     ]
+    },
+    {
+     "id": "10.2",
+     "kind": "theorem",
+     "name": "localLimit_isLozengeGibbs",
+     "statement": "Limits are unique; for R_N all faces and v_N=0 local convergence is weak convergence in 𝔓(𝕋); if every face lies in R_N−v_N eventually, limits are concentrated on 𝔈(𝕋); if moreover μ_N is uniform on 𝔈(R_N) for finite tileable R_N, every limit is Gibbs.",
+     "hypotheses": [
+      "exhaustion: every face lies in R_N − v_N for large N",
+      "R_N finite and tileable, μ_N uniform"
+     ],
+     "locator": {
+      "source": "aggarwal2023",
+      "where": "lines 413–415 and 568–580"
+     },
+     "prerequisites": [
+      "target:5.2",
+      "target:10.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "forced_step",
+       "kind": "non-example",
+       "statement": "Forced regions of M_ε, ε=1_{[0,∞)}: limit δ_{M_ε}, Gibbs, not invariant."
+      },
+      {
+       "name": "forced_squares",
+       "kind": "computation",
+       "statement": "Forced regions of M₃: limit δ_{M₃}."
+      },
+      {
+       "name": "corner_tiling",
+       "kind": "non-example",
+       "statement": "Point masses at restrictions of the corner tiling min(0,x,y) converge to a non-Gibbs δ_{M_c}: uniformity is used."
+      }
+     ]
+    },
+    {
+     "id": "10.3",
+     "kind": "example",
+     "name": "aggarwal_lattice_inventory",
+     "statement": "The lattice objects of aggarwal2023 Theorem 1.5 are defined here: finite simply connected tileable domains (with 2.4 for Aggarwal's convention), boundary heights, uniform measures, shifts and local convergence, and μ_{s,t}=μ_{ξ(s,t)}; the continuum objects and uniqueness belong to the proposed Part II.",
+     "hypotheses": [],
+     "locator": {
+      "source": "aggarwal2023",
+      "where": "Theorem 1.5, lines 572–580"
+     },
+     "prerequisites": [
+      "target:2.4",
+      "target:2.7",
+      "target:9.7",
+      "target:10.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "abc_hexagon_simply_connected",
+       "kind": "compatibility",
+       "statement": "Aggarwal's A×B×C hexagon is a finite region whose union of faces is a convex hexagon, simply connected by 2.4."
+      },
+      {
+       "name": "abc_hexagon_boundary",
+       "kind": "computation",
+       "statement": "Its boundary graph is a single closed curve, so its boundary height is determined (2.7)."
+      },
+      {
+       "name": "unit_hexagon_case",
+       "kind": "degenerate",
+       "statement": "A=B=C=1 is the unit hexagon R₆ with two tilings."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "PadicMeasuresIwasawaAlgebras",
+   "sections": [
+    "§6.4"
+   ],
+   "what": "Matrix.compound, Matrix.compound_mul (Cauchy–Binet), the unit rule C_r(1)=1, Matrix.higherAdjugate and Matrix.compound_mul_higherAdjugate, from which 3.3 derives Jacobi's complementary-minor identity."
+  }
+ ],
+ "consumers": [
+  {
+   "roadmap": "DimerModelsAndLozengeTilingsPartII",
+   "what": "Sheffield's uniqueness of the ergodic Gibbs measure of each interior slope, convergence of the fixed-height-change torus measures, surface tension, the variational principle and limit shapes, and Aggarwal's universality theorem; consumes Layers 2, 5–7, 9 and 10."
+  }
+ ],
+ "gaps": []
+}

@@ -8,7 +8,7 @@ title = "Universality for Lozenge Tiling Local Statistics"
 year = 2019
 arxiv = "1907.09991v4"
 locator_scheme = "section"
-locator = "Section 1, equation (1.2), Definition 1.1"
+locator = "Section 1.2 (lines 322-407), Section 1.3 with Definitions 1.2-1.3 and equation (1.2) (lines 408-507), Theorem 1.5 (lines 568-580); arXiv v4 numbering"
 url = "https://arxiv.org/abs/1907.09991v4"
 fetched_from = "https://arxiv.org/pdf/1907.09991v4"
 fetched_at = "2026-11-04T18:37:21Z"
@@ -17,7 +17,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v4"
-cited_for = ["conventions for lozenge tilings, the slope, ergodic Gibbs measures and the incomplete beta kernel; universality statement"]
+cited_for = ["1.1-1.5 lattice, lozenge types and tilings", "1.3 Aggarwal's induced-subgraph domains", "2.1, 2.4 simple connectivity of domains", "2.5-2.7 height functions and boundary heights", "4.4, 5.4, 6.1 Gibbs measures, translation invariance, slope", "9.6-9.7 complex slope, incomplete beta kernel, equation (1.2)", "10.1-10.3 local-statistics convergence and Theorem 1.5"]
 
 [[source]]
 id = "sheffield2005"
@@ -26,8 +26,8 @@ title = "Random Surfaces"
 year = 2003
 venue = "Asterisque 2005, No. 304"
 arxiv = "math/0304049v3"
-locator_scheme = "chapter"
-locator = "Chapter 9"
+locator_scheme = "theorem"
+locator = "Section 1.1.2 (lines 303-342); Lemmas 3.2.1-3.2.2 (lines 1341-1371); Theorem 9.1.1 (lines 5443-5445, proposed Part II); Theorem 9.5.1 (lines 6195-6198)"
 url = "https://arxiv.org/abs/math/0304049v3"
 fetched_from = "https://arxiv.org/pdf/math/0304049v3"
 fetched_at = "2026-11-04T18:37:29Z"
@@ -36,7 +36,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v3"
-cited_for = ["uniqueness of translation-invariant ergodic Gibbs measures of given slope"]
+cited_for = ["4.1 tail sigma-algebra", "4.2, 4.3, 4.6 invariant events, ergodicity, face property", "4.5 specifications and Gibbs measures", "6.3 ergodic Gibbs measures on the boundary of the slope triangle"]
 
 [[source]]
 id = "kos2006"
@@ -44,8 +44,8 @@ authors = "Richard Kenyon, Andrei Okounkov, Scott Sheffield"
 title = "Dimers and Amoebae"
 year = 2003
 arxiv = "math-ph/0311005v1"
-locator_scheme = "section"
-locator = "Section 2"
+locator_scheme = "theorem"
+locator = "Section 2 (lines 158-256), Theorem 2.1 (lines 215-220), Theorems 4.2-4.3 (lines 652-727)"
 url = "https://arxiv.org/abs/math-ph/0311005v1"
 fetched_from = "https://arxiv.org/pdf/math-ph/0311005v1"
 fetched_at = "2026-11-04T18:37:34Z"
@@ -54,7 +54,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v1"
-cited_for = ["ergodic Gibbs measures, slopes, torus limits, surface tension"]
+cited_for = ["2.10 gauge and magnetic invariance", "5.2-5.3 dimer Gibbs measures", "6.1 slope", "7.1-7.3 height change and torus measures", "8.4-8.5 torus correlations and Fourier form", "9.1-9.5 infinite inverse Kasteleyn kernel, subsequential torus limits, decay, existence"]
 
 [[source]]
 id = "kenyon2009"
@@ -63,7 +63,7 @@ title = "Lectures on Dimers"
 year = 2009
 arxiv = "0910.3129v1"
 locator_scheme = "section"
-locator = "Sections 1-3 and the section on ergodic Gibbs measures"
+locator = "Sections 1.1, 2.2, 3.3-3.5, 4.2-4.3, 5.1-5.5, 6.1-6.2 (lines 95-1036); Lemmas 4-5, Theorem 2, Corollary 3, Exercise 13"
 url = "https://arxiv.org/abs/0910.3129v1"
 fetched_from = "https://arxiv.org/pdf/0910.3129v1"
 fetched_at = "2026-11-04T18:37:40Z"
@@ -72,7 +72,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v1"
-cited_for = ["dimers, height functions, Kasteleyn matrices, local statistics"]
+cited_for = ["1.2, 1.5 dimer coverings", "2.3, 2.5 heights and flows", "2.8, 3.2 flips and Kasteleyn's theorem on the honeycomb", "3.4 local statistics", "5.1-5.3 Gibbs measures", "6.2-6.4 corners, edges, the fibre argument corrected in 6.4", "7.1, 8.2-8.5 torus counts, signs, eigenvalues", "9.1-9.5 inverse Kasteleyn matrix and angles"]
 
 [[source]]
 id = "okounkov-reshetikhin2003"
@@ -80,8 +80,8 @@ authors = "Andrei Okounkov, Nikolai Reshetikhin"
 title = "Correlation function of Schur process with application to local geometry of a random 3-dimensional Young diagram"
 year = 2001
 arxiv = "math/0107056v3"
-locator_scheme = "section"
-locator = "incomplete beta kernel"
+locator_scheme = "theorem"
+locator = "Definition 4 (lines 965-968), Theorem 2 (lines 993-1006), equation (36) (lines 1076-1083)"
 url = "https://arxiv.org/abs/math/0107056v3"
 fetched_from = "https://arxiv.org/pdf/math/0107056v3"
 fetched_at = "2026-11-04T18:37:44Z"
@@ -90,7 +90,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v3"
-cited_for = ["the incomplete beta kernel of the Schur process"]
+cited_for = ["9.6 incomplete beta kernel", "9.7 determinantal formula and residue identity"]
 
 [[source]]
 id = "cohn-kenyon-propp2001"
@@ -101,7 +101,7 @@ venue = "Journal of the AMS 14 (2001), 297-346"
 doi = "10.1090/S0894-0347-00-00355-6"
 arxiv = "math/0008220v3"
 locator_scheme = "section"
-locator = "Sections 1-2"
+locator = "Section 1.4 (the lattice of height functions)"
 url = "https://arxiv.org/abs/math/0008220v3"
 fetched_from = "https://arxiv.org/pdf/math/0008220v3"
 fetched_at = "2026-11-04T18:37:51Z"
@@ -110,7 +110,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v3"
-cited_for = ["height functions, variational principle for tilings, entropy"]
+cited_for = ["2.8 the distributive lattice of height functions"]
 
 [[source]]
 id = "kenyon1997"
@@ -118,8 +118,8 @@ authors = "Richard Kenyon"
 title = "Local statistics of lattice dimers"
 year = 1997
 venue = "Annales de l'Institut Henri Poincare, Probabilites et Statistiques 33 (1997), no. 5, 591-618"
-locator_scheme = "page"
-locator = "pp. 591-618"
+locator_scheme = "theorem"
+locator = "Theorem 2 (lines 184-197), Theorem 6 (lines 362-373), Lemmas 7-8 (lines 392-406), mixing statement of the introduction (lines 85-93)"
 url = "http://www.numdam.org/item/AIHPB_1997__33_5_591_0.pdf"
 fetched_from = "https://www.numdam.org/item/AIHPB_1997__33_5_591_0.pdf"
 fetched_at = "2026-11-04T18:37:52Z"
@@ -127,7 +127,7 @@ sha256 = "1a91b9b05622559ac45f534ba1249040ea857a5b7ff1eb50cebfc9bdc170e420"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
-cited_for = ["local statistics of lattice dimers; Kasteleyn inverse and local statistics"]
+cited_for = ["3.2 Kasteleyn's theorem for simply connected honeycomb regions", "3.3-3.4 inverse Kasteleyn matrix and local statistics", "8.1, 8.3-8.4 torus Kasteleyn formulas", "9.3-9.4 the lozenge measure and mixing"]
 
 [[source]]
 id = "gorin2021"
@@ -136,8 +136,8 @@ title = "Lectures on Random Lozenge Tilings"
 year = 2021
 venue = "Cambridge Studies in Advanced Mathematics 193, Cambridge University Press (2021)"
 version_note = "pre-publication version posted by the author; lecture and theorem numbering as in the printed edition, page numbers differ"
-locator_scheme = "chapter"
-locator = "Lectures 1-2 and the lectures on ergodic translation-invariant Gibbs measures"
+locator_scheme = "theorem"
+locator = "Theorem 1.4 and Corollary 1.5 (lines 521-613); Theorem 2.1 (lines 714-782); Theorems 3.1, 3.5, 3.10 (lines 1218-1504); Theorems 4.3-4.11 (lines 1603-1898); Theorem 6.1 (lines 2256-2298); Lecture 13 (lines 4491-4786)"
 url = "https://www.stat.berkeley.edu/~vadicgor/Random_tilings.pdf"
 fetched_from = "https://www.stat.berkeley.edu/~vadicgor/Random_tilings.pdf"
 fetched_at = "2026-11-04T18:38:02Z"
@@ -145,7 +145,7 @@ sha256 = "03583d9a62340174fe2ff8840a20ed27a80d83e47e98c3a61a840ffefbcd123e"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-04"
-cited_for = ["tilings, height functions, ergodic translation-invariant Gibbs measures"]
+cited_for = ["1.2-1.5 dual hexagonal graph and tilings", "2.1-2.9 heights, flips, Thurston's criterion", "3.1-3.4 Kasteleyn theory on simply connected regions", "4.4, 5.2-5.3 correlation functions, Gibbs and ergodic measures", "6.1-6.2 slope", "8.1-8.5 torus Kasteleyn theory and Fourier diagonalisation", "9.1-9.7 asymptotics, angles, correlations of ergodic Gibbs measures, discrete sine kernel"]
 
 [[source]]
 id = "thurston1990"
@@ -160,7 +160,7 @@ locator = "pp. 757-773"
 licence_class = "none"
 status = "uncertified"
 accessed = "2026-11-04"
-cited_for = ["original source of the height-function criterion for tileability of simply connected regions; the statement and proof used are gorin2021 Theorem 1.4"]
+cited_for = ["2.9 original source of the tileability criterion; statement and proof used are gorin2021 Theorem 1.4"]
 note = "JSTOR and Taylor & Francis only (HTTP 403 at the DOI landing page); cited by locator alone, no text read"
 
 [[source]]
@@ -171,9 +171,9 @@ year = 2011
 venue = "de Gruyter Studies in Mathematics 9, 2nd edition (2011)"
 doi = "10.1515/9783110250329"
 locator_scheme = "theorem"
-locator = "Theorems 7.7, 14.5, 14.15 and 14.17"
+locator = "Theorem 14.15"
 licence_class = "none"
 status = "uncertified"
 accessed = "2026-11-04"
-cited_for = ["extremal Gibbs measures and tail triviality; ergodic translation-invariant measures as extreme points; ergodic Gibbs measures as extreme points of the translation-invariant Gibbs measures; ergodic decomposition"]
+cited_for = ["4.2, 4.6 invariant Gibbs measures form a face of the invariant measures; restated in sheffield2005 Lemma 3.2.2"]
 note = "de Gruyter only; cited by locator alone, no text read; the statements used are restated in open text in sheffield2005 Lemmas 3.2.1-3.2.5"
