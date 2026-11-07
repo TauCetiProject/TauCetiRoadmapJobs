@@ -103,3 +103,54 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-07"
 cited_for = ["4.4"]
+
+[[source]]
+id = "grothendieck-raynaud-sga1"
+authors = "Alexander Grothendieck, Michele Raynaud"
+title = "Revêtements étales et groupe fondamental (SGA 1)"
+year = 2002
+arxiv = "math/0206203v2"
+locator_scheme = "theorem"
+locator = "Exposé V, Proposition 8.2"
+url = "https://arxiv.org/abs/math/0206203v2"
+fetched_from = "https://arxiv.org/pdf/math/0206203v2"
+fetched_at = "2026-11-07T12:20:09Z"
+sha256 = "8e64218d356456c534eebf996940f0f957e43b54f1a080241debe12cbaf60d3c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2"
+cited_for = ["5.13"]
+
+[[source]]
+id = "serre-1961-corps-locaux"
+authors = "Jean-Pierre Serre"
+title = "Sur les corps locaux à corps résiduel algébriquement clos"
+year = 1961
+venue = "Bull. Soc. Math. France 89 (1961), 105–154"
+doi = "10.24033/bsmf.1562"
+locator_scheme = "section"
+locator = "n° 3.7, (28)–(29), Théorème 2 and Remarque 2°, pp. 137–139"
+url = "https://www.numdam.org/item/10.24033/bsmf.1562.pdf"
+fetched_from = "https://www.numdam.org/item/10.24033/bsmf.1562.pdf"
+fetched_at = "2026-11-07T12:20:15Z"
+sha256 = "52152ad27e8b153e02849710fb59992d7bd970f88156d9297529a42f9b0a85b3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["3.2", "3.5"]
+
+[[source]]
+id = "khare-wintenberger-2009-ii"
+authors = "Chandrashekhar Khare, Jean-Pierre Wintenberger"
+title = "Serre’s modularity conjecture (II)"
+year = 2009
+venue = "Inventiones mathematicae 178"
+doi = "10.1007/s00222-009-0206-6"
+locator_scheme = "theorem"
+locator = "Lemma 4.3"
+url = "https://doi.org/10.1007/s00222-009-0206-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.7"]
