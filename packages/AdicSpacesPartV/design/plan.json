@@ -3828,39 +3828,54 @@
  ],
  "gaps": [
   {
-   "title": "G1: original proof of the arbitrary-field Riemann extension theorem",
-   "neededBy": [
-    "AdicSpacesPartV:RZ.1/riemann-extension",
-    "AdicSpacesPartV:RZ.1/dense-open-connected"
-   ],
-   "detail": "Conrad 2010 Theorem 2.1.1, p. 4 has now been read and supplies the exact statement over arbitrary K. Its original Bartenwerfer proof (§3 of the reference cited there) has not been read or decomposed. Read that proof and close this theorem node. Do not restore the invalid argument that connectedness survives completed algebraic closure."
+   "slug": "adic-proper-kiehl-proper",
+   "needs": "For every complete nontrivially valued rank-one nonarchimedean field K, every K-affinoid algebra A and every adic-proper morphism f : X → Spa(A,A°) of rigid K-spaces, f is Kiehl-proper: X has finite affinoid open covers (Vᵢ) and (Uᵢ) with Vᵢ relatively compact in Uᵢ over A for each i.",
+   "supplier": "AdicSpacesPartIII",
+   "section": "R3.6"
   },
   {
-   "title": "G3: scheme-level functorial desingularization at target level only",
-   "neededBy": [
-    "AdicSpacesPartV:RZ.5/functorial-desingularization-varieties",
-    "AdicSpacesPartV:RZ.5/functorial-desingularization-qe"
-   ],
-   "detail": "AlgebraicModuliForArithmeticGeometry R09.7 plans Bierstone–Milman for varieties, compatible with local isomorphisms only. Compatibility with smooth and regular morphisms (Bierstone–Milman 2008, Bierstone–Milman–Temkin 2011) and Temkin's extension to quasi-excellent schemes (§§3–4, using Gabber–Ramero algebraization and Nishimura–Nishimura) are stated here as two theorem nodes with proof sketches; their decomposition belongs to a Part II of AlgebraicModuliForArithmeticGeometry (see restructure). Also check regularity of completed affinoid scalar extension for ground-field compatibility in Theorem 5.2.2; flatness alone does not suffice."
+    "slug": "formal-affinoid-localization",
+    "needs": "For every quasi-separated quasi-paracompact rigid K-space X and every affinoid open W = Spa(R, R°) ⊆ X, there are an admissible formal model 𝔛 of X and a formal affine open Spf(R₀) ⊆ 𝔛 with generic fibre W, where R₀ ⊆ R° is open and bounded, such that Spec(R°/R°°) → Spec(R₀/ϖR₀) is a homeomorphism for a pseudo-uniformizer ϖ of K.",
+    "supplier": "AdicSpacesPartIII",
+    "section": "R2.4–R2.5"
   },
   {
-   "title": "G4: all-characteristic affinoid excellence supplier",
-   "neededBy": [
-    "AdicSpacesPartV:RZ.0/affinoid-localization-regular",
-    "AdicSpacesPartV:RZ.1/rigid-normalization",
-    "AdicSpacesPartV:RZ.2/singular-locus"
-   ],
-   "detail": "Request Q1: the existing parent F1/dagger-algebra-excellent is characteristic zero only. Conrad 1999 §1.1 recalls the all-characteristic affinoid result, including Kiehl’s imperfect-characteristic-p theorem; the original Kiehl proof has not been read. Characteristic-zero uses already have a matching supplier."
+    "slug": "generically-reduced-functorial-resolution",
+    "needs": "Extend its §§7.5–7.6 marked strong resolution functor from reduced to generically reduced noetherian quasi-excellent ℚ-schemes, preserving the entire regular locus and functoriality for all regular maps, with invariant values in a countable ordered set.",
+    "supplier": "ResolutionOfSingularitiesCharacteristicZero",
+    "section": "7.5–7.6"
   },
   {
-   "title": "G5: formal-model localization for the third weakly-Shilov characterization",
-   "neededBy": [
-    "AdicSpacesPartV:RZ.4/weakly-shilov-transcendence-criterion",
-    "AdicSpacesPartV:RZ.4/shilov-point-characterisation"
-   ],
-   "detail": "The rank-one residue-transcendence equivalence is checked against Poineau and G2 is closed. For the formal-model condition, BH22 Proposition 2.9 invokes Bosch Lectures Theorem 8.4.3 to realize a specified affinoid domain as a formal open after admissible blow-up. Raynaud equivalence by itself does not state that localization lemma; request it precisely from AdicSpacesPartII:R2 and check its proof. For the Banach Shilov-boundary comparison in BH22 Proposition 2.2, the exact statement is checked there but its invoked Berkovich Spectral theory Proposition 2.4.4 proof has not been independently read."
+    "slug": "countable-resolution-invariants",
+    "needs": "Provide a countable totally ordered set of invariant values labelling the steps of the §§7.5–7.6 reduced resolution functor, compatibly with pullback along regular morphisms after deleting empty steps.",
+    "supplier": "ResolutionOfSingularitiesCharacteristicZero",
+    "section": "7.5–7.6"
+  },
+  {
+    "slug": "represented-smooth-homogeneous-quotient",
+    "needs": "For a smooth finite-type affine group G over a field of characteristic zero and a closed subgroup scheme H whose fppf quotient G/H is represented by a scheme, the quotient morphism G → G/H is smooth and surjective.",
+    "supplier": "ReductiveGroups",
+    "section": "Layer 3"
+  },
+  {
+    "slug": "regular-local-flat-transfer",
+    "needs": "For a flat local homomorphism R → S of noetherian local rings, if S is regular then R is regular, and if R is regular and the closed fibre S/m_R S is a regular ring then S is regular.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "0.21"
+  },
+  {
+    "slug": "regular-map-composition-descent",
+    "needs": "For ring maps A → B → C with B and C noetherian, if A → B and B → C are regular then A → C is regular, if A → C is regular and B → C is faithfully flat then A → B is regular, and A → B is regular as soon as A → B_n is regular for every maximal ideal n of B.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "0.21"
+  },
+  {
+    "slug": "complete-local-formal-smoothness-regular",
+    "needs": "For a local homomorphism A → B of complete noetherian local rings that is formally smooth for the m_B-adic topology, A → B is a regular ring map.",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "0.21"
   }
- ],
+],
  "sourceIssues": [
   {
    "id": "AdicSpacesPartV/E1",
