@@ -4025,91 +4025,10 @@
   ],
   "gaps": [
     {
-      "id": "SheafTheoreticSmithTheory/G1",
-      "title": "Uniform integral Smith theory over W(k)",
-      "detail": "The existing normalized-adic supplier treats the ring of integers of a finite extension of Q_p. Prove the extension to O=W(overline(F_p)) with enhanced limits, finite-level group-ring coefficients, common constructible stratifications and uniform Tor/cohomological intervals. In particular prove the projection-formula and derived-limit comparisons for Rf!, the ambient local Rj* bound and the conservative constructible-to-ind Tate quotient comparison. Levelwise finite-Tor assertions alone do not give these conclusions. Torsion k-coefficient Smith theory and finite-dimensional pieces do not depend on this extension.",
-      "neededBy": [
-        "SheafTheoreticSmithTheory:tate-categories",
-        "SheafTheoreticSmithTheory:tate-cohomology",
-        "SheafTheoreticSmithTheory:finite-tor-pushforward",
-        "SheafTheoreticSmithTheory:near-fixed-flat",
-        "SheafTheoreticSmithTheory:fixed-restrictions",
-        "SheafTheoreticSmithTheory:flat-pushforward",
-        "SheafTheoreticSmithTheory:smith-pushforward",
-        "SheafTheoreticSmithTheory:smith-preserves-parity",
-        "SheafTheoreticSmithTheory:hyperbolic-localization",
-        "SheafTheoreticSmithTheory:constant-term-satake",
-        "SheafTheoreticSmithTheory:constant-term-smith",
-        "SheafTheoreticSmithTheory:norm-smith-exact"
-      ]
-    },
-    {
-      "id": "SheafTheoreticSmithTheory/G2",
-      "title": "Étale modular Satake and parity transport",
-      "detail": "Supply the equal-characteristic scheme-theoretic modular k/O branch over arbitrary separably closed F of characteristic different from p: fusion with signs, weight-functor exactness, integral dual-group reconstruction and the needed finite-Schubert/stratum geometry. Transport the JMW/LL complex-topological parity and integral Tate Hom results, with constant local systems on strata in positive characteristic (finding E38), with their composition grading, equivariant realization, coefficient change and CT compatibility. Check the F_p-form against the geometric one. MV07 Theorem 14.1 gives a model through Z_p and scalar extension, but does not by itself document every W(k)-adic/LL compatibility. The B_dR^+ Satake roadmap is not a theorem covering this case.",
-      "neededBy": [
-        "SheafTheoreticSmithTheory:modular-satake",
-        "SheafTheoreticSmithTheory:satake-standard-comparison",
-        "SheafTheoreticSmithTheory:grassmannian-parity",
-        "SheafTheoreticSmithTheory:parity-tilting",
-        "SheafTheoreticSmithTheory:integral-tate-hom",
-        "SheafTheoreticSmithTheory:tate-parity-indecomposables",
-        "SheafTheoreticSmithTheory:smith-preserves-parity",
-        "SheafTheoreticSmithTheory:satake-prime-field-form",
-        "SheafTheoreticSmithTheory:hyperbolic-localization",
-        "SheafTheoreticSmithTheory:extreme-orbits",
-        "SheafTheoreticSmithTheory:constant-term-satake",
-        "SheafTheoreticSmithTheory:constant-term-smith",
-        "SheafTheoreticSmithTheory:constant-term-lifting",
-        "SheafTheoreticSmithTheory:base-change-characters",
-        "SheafTheoreticSmithTheory:feng-base-change",
-        "SheafTheoreticSmithTheory:constant-term-conservative",
-        "SheafTheoreticSmithTheory:norm-smith-exact",
-        "SheafTheoreticSmithTheory:base-change-galois"
-      ]
-    },
-    {
-      "id": "SheafTheoreticSmithTheory/G3",
-      "title": "The good-prime parity-perversity engine",
-      "detail": "MR18 Corollary 1.6 uses its Theorem 1.1, an equivalence from Iwahori-constructible parity sheaves on the complex affine Grassmannian to graded exotic tilting coherent sheaves on the dual Springer resolution, with [1] corresponding to grading shift ⟨−1⟩ and E_λ to T_{−λ}. Its proof requires the modular exotic highest-weight category, Kostant–Whittaker/Soergel description and central-isogeny/product reductions. These inputs are not the characteristic-zero Springer correspondence. Establish this engine or give another proof under the same good-prime hypothesis, then the transport in G2. Do not substitute JMW16’s stronger prime bound for the promised theorem.",
-      "neededBy": [
-        "SheafTheoreticSmithTheory:parity-tilting",
-        "SheafTheoreticSmithTheory:smith-preserves-parity",
-        "SheafTheoreticSmithTheory:constant-term-satake",
-        "SheafTheoreticSmithTheory:constant-term-lifting",
-        "SheafTheoreticSmithTheory:base-change-characters",
-        "SheafTheoreticSmithTheory:feng-base-change"
-      ]
-    },
-    {
-      "id": "SheafTheoreticSmithTheory/G4",
-      "title": "Naturality of the integral comparison on the norm image",
-      "detail": "Prove the comparison F_T Psm Nm≅I_k L Psm Nm natural on all ordinary normalized integral parity maps. It suffices to prove that their Smith images have only index-zero components in the integral Tate Hom decomposition, or that every positive component is killed by coefficient reduction, with coherent choices of object identifications. Neither follows from additivity, normalization or the objectwise comparison. On the P¹ minuscule Schubert variety, a positive-index Tate morphism disproves the comparison on all Tate maps. This obligation is needed by the global Tate-cohomology consumer, not by the definition of BC.",
-      "neededBy": [
-        "SheafTheoreticSmithTheory:norm-image-comparison"
-      ]
-    },
-    {
-      "id": "SheafTheoreticSmithTheory/G5",
-      "title": "A natural dual-group-equivariant comparison",
-      "detail": "The CT square and character classification identify the output tilting objects, and the torus case identifies maps after torus restriction. Construct comparison components which intertwine the whole Ĥ-action and are natural in every source morphism. A sufficient route checks compatibility with each simple-root subgroup/rank-one Levi together with the torus, then uses generation of Ĥ. Faithful torus restriction only gives uniqueness of a lift, not its existence. Also check Γ-equivariance of these components for the arithmetic corollary. This is the exact gap between character equality and the natural isomorphism in Feng24 Theorem 4.20.",
-      "neededBy": [
-        "SheafTheoreticSmithTheory:reductive-comparison-maps",
-        "SheafTheoreticSmithTheory:feng-base-change",
-        "SheafTheoreticSmithTheory:base-change-galois"
-      ]
-    },
-    {
       "slug": "witt-adic-uniform-operations",
       "needs": "Extend the normalized systems of §§3.1–3.2 to O=W(F̄_p) with common finite strata and degree/Tor intervals, coherent coefficient reduction, biduality, compact-support projection and derived-limit comparison, and a uniform ambient local bound for Rj* on the finite-dimensional schemes used here.",
       "supplier": "EtaleDualityAndPerverseSheaves",
       "section": "3.1–3.2"
-    },
-    {
-      "slug": "grassmannian-arbitrary-geometric-field",
-      "needs": "Extend the geometric constructions and finite-jet/factorization comparisons of §§1.1–1.3 from the curve setting to split connected reductive H over every separably closed field F, retaining the ordinary scheme-theoretic test-ring functor and its finite Schubert models.",
-      "supplier": "GlobalShtukasAndFunctionFieldLanglands",
-      "section": "1.1–1.3"
     },
     {
       "slug": "finite-highest-weight-ideals",

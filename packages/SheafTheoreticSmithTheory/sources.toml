@@ -221,3 +221,60 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["tilting-category"]
+
+[[source]]
+id = "Zhu17"
+authors = "Xinwen Zhu"
+title = "An introduction to affine Grassmannians and the geometric Satake equivalence"
+year = 2017
+venue = "Geometry of moduli spaces and representation theory, IAS/Park City Math. Ser. 24, AMS (2017), pp.59-154"
+arxiv = "1603.05593v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1.3, p.8; Theorem 1.2.2, p.10; Propositions 1.2.5–1.2.6, p.11; (1.2.12)–(1.2.15), pp.12–13; Proposition 1.3.6 and Remark 1.3.8, p.14; Theorem 1.3.11, p.15; Theorem 1.4.2, p.16; (2.1.2), p.23; Propositions 2.1.4–2.1.5, pp.24–25; Corollary 2.1.11, p.26; Definition 3.1.1 and Theorem 3.1.3, p.38; (3.1.10), p.39; Propositions 3.1.13–3.1.14, p.40; (3.1.21) and Lemma 3.1.23, pp.42–43; Theorem 3.2.1, p.44; §5.1, p.58; (5.3.5) and Proposition 5.3.6, p.64; Lemma 5.3.7, p.65"
+url = "https://arxiv.org/abs/1603.05593v2"
+fetched_from = "https://arxiv.org/pdf/1603.05593v2"
+fetched_at = "2026-11-07T12:36:24Z"
+sha256 = "86fbada481347c63634167801b34d0865c3bbf682d5d20c0513b36feab7fa1a9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2; README locators use this preprint numbering and pagination, with the published year recorded."
+cited_for = ["3.0"]
+
+[[source]]
+id = "PappasRapoport08"
+authors = "G. Pappas, M. Rapoport"
+title = "Twisted loop groups and their affine flag varieties"
+year = 2008
+venue = "Adv. Math. 219 (2008), pp.118-198"
+arxiv = "math/0607130v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.4, p.9; Propositions 8.7–8.8, pp.38–39; Proposition 9.6 and its proof, pp.48–49"
+url = "https://arxiv.org/abs/math/0607130v2"
+fetched_from = "https://arxiv.org/pdf/math/0607130v2"
+fetched_at = "2026-11-07T12:36:33Z"
+sha256 = "6fbdb2748ef12fc788cc2241dd94046390c2f6a60ed1bee4a82b80330a9ca62d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2; README locators use this preprint numbering and pagination, with the published year recorded."
+cited_for = ["3.0"]
+
+[[source]]
+id = "Alper14"
+authors = "Jarod Alper"
+title = "Adequate moduli spaces and geometrically reductive group schemes"
+year = 2014
+venue = "Algebraic Geometry 1 (2014), pp.489-531"
+arxiv = "1005.2398v3"
+locator_scheme = "theorem"
+locator = "Theorem 9.7.5, p.49; Corollary 9.7.7 and Proposition 9.7.8, p.51"
+url = "https://arxiv.org/abs/1005.2398v3"
+fetched_from = "https://arxiv.org/pdf/1005.2398v3"
+fetched_at = "2026-11-07T12:36:37Z"
+sha256 = "ce851a09e2f7e571239b96e5431f5e7661bcfe45c77d6d46ef50bc69a19282d1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v3; README locators use this preprint numbering and pagination, with the published year recorded."
+cited_for = ["3.0"]
