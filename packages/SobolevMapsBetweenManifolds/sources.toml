@@ -8,7 +8,7 @@ title = "De Rham algebras of closed quasiregularly elliptic manifolds are Euclid
 year = 2023
 arxiv = "2302.11440v2"
 locator_scheme = "section"
-locator = "Appendix B"
+locator = "Section 1, Introduction, lines 20–27 (W^{1,n}_loc(M,N), ‖Df‖, J_f); Appendix B, proof of Proposition B.1, lines 1328–1329"
 url = "https://arxiv.org/abs/2302.11440v2"
 fetched_from = "https://arxiv.org/pdf/2302.11440v2"
 fetched_at = "2026-11-05T05:53:59Z"
@@ -17,7 +17,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v2"
-cited_for = ["Sobolev maps into manifolds via an embedding; quasiregular maps as W^{1,n}_loc maps with Jacobian measure"]
+cited_for = ["4.2 class W^{1,p}_loc(M,N) of continuous maps (lines 22–23)", "4.3, 4.4 weak differential (lines 22–26)", "5.1 operator norm ‖Df‖ (line 26)", "6.2, 6.4 Jacobian J_f and Jacobian measure (lines 25–27)", "6.3 borderline p = n (line 23)", "8.2 the class through a Nash embedding (lines 1328–1329)"]
 
 [[source]]
 id = "Bethuel1991"
@@ -32,7 +32,7 @@ url = "https://projecteuclid.org/journals/acta-mathematica/volume-167/issue-none
 licence_class = "open-repository"
 status = "uncertified"
 version_note = "Open content on Project Euclid (Acta Mathematica archive); the sources service received only a bot-protection page, so no text is cached; cited by its locator"
-cited_for = ["Definition of W^{1,p}(M,N) through an isometric embedding; density questions as context"]
+cited_for = ["8.3 the class of Sobolev maps into a manifold through an embedding (Introduction)", "Part II scope: the approximation problem"]
 
 [[source]]
 id = "Ziemer1989"
@@ -42,12 +42,12 @@ year = 1989
 venue = "Graduate Texts in Mathematics"
 doi = "10.1007/978-1-4612-1015-3"
 locator_scheme = "theorem"
-locator = "Theorem 2.1.11"
+locator = "Chapter 2 §2.1; Theorem 2.1.11 (chain rule); Theorem 2.2.2 (change of variables)"
 url = "https://doi.org/10.1007/978-1-4612-1015-3"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Chain rule and change of variables for Sobolev functions on Euclidean domains"]
+cited_for = ["1.2 Sobolev classes on domains (Ch. 2 §2.1)", "2.2, 4.6(a) change of variables (Theorem 2.2.2)", "2.3, 2.4, 4.6(b) chain rule (Theorem 2.1.11)", "Part II scope: bi-Lipschitz changes of variables (Theorem 2.2.2)"]
 
 [[source]]
 id = "Mazya2011"
@@ -62,7 +62,7 @@ url = "https://doi.org/10.1007/978-3-642-15564-2"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Basic properties of Sobolev spaces, locality, change of variables"]
+cited_for = ["1.1 local Lebesgue classes", "1.3, 1.4, 4.5 locality and gluing of weak derivatives", "2.2, 2.4 change of variables and composition"]
 
 [[source]]
 id = "Rickman1993"
@@ -76,7 +76,7 @@ url = "https://doi.org/10.1007/978-3-642-78201-5"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["ACL maps, Sobolev classes W^{1,n}_loc, the Jacobian and Hadamard's inequality"]
+cited_for = ["5.1, 5.2 the L^p characterisation through ‖Df‖", "5.3 comparable metrics", "6.1, 6.3 the Jacobian and |J| ≤ ‖Df‖ⁿ"]
 
 [[source]]
 id = "Hajlasz2009"
@@ -85,7 +85,7 @@ title = "Sobolev mappings between manifolds and metric spaces"
 year = 2009
 venue = "Sobolev Spaces in Mathematics I, International Mathematical Series 8, Springer, pp. 185-222"
 locator_scheme = "section"
-locator = "Section 2"
+locator = "Section 1, lines 20–28 and 37–53; Section 2, Theorem 2.1, lines 129–130 (p > dim M), and lines 138–141 (p = dim M)"
 url = "https://sites.pitt.edu/~hajlasz/OriginalPublications/Sobolev%20mappings%20between%20metric%20spaces3.pdf"
 fetched_from = "https://sites.pitt.edu/~hajlasz/OriginalPublications/Sobolev%20mappings%20between%20metric%20spaces3.pdf"
 fetched_at = "2026-11-05T05:55:31Z"
@@ -93,7 +93,7 @@ sha256 = "431192170fd8dafa744bbbd89e59c1aff9d85dbb08c0b5dc050a01b188747850"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["Definition of W^{1,p}(M,N) via an embedding; Euclidean Sobolev mappings into manifolds"]
+cited_for = ["4.1 ambient vector-valued class W^{1,p}(M,R^ν) (line 28)", "8.2 extrinsic description (line 28)", "8.3, 8.4 the class {u ∈ W^{1,p}(M,R^ν) : u(x) ∈ N a.e.} for closed N (lines 23–28)", "Part II scope: density of smooth maps, Theorem 2.1 for p > dim M (lines 129–130) and the case p = dim M (lines 138–141), weakly p-harmonic maps (lines 37–53)"]
 
 [[source]]
 id = "Lee2012"
@@ -103,12 +103,12 @@ year = 2012
 venue = "Graduate Texts in Mathematics"
 doi = "10.1007/978-1-4419-9982-5"
 locator_scheme = "chapter"
-locator = "Ch. 6 (sets of measure zero in manifolds); Ch. 15 (orientations); Ch. 16 (integration, Riemannian volume form)"
+locator = "Ch. 4 (rank theorem); Ch. 6 (sets of measure zero); Ch. 15 (orientations, Riemannian volume form in oriented charts); Ch. 16 (integration, change of variables)"
 url = "https://doi.org/10.1007/978-1-4419-9982-5"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Chartwise null sets on manifolds; orientations and the Riemannian volume form in positively oriented charts"]
+cited_for = ["2.1, 3.3 null sets under C¹ maps (Ch. 6)", "3.1, 3.2 chartwise null sets and the Riemannian volume (Ch. 6, Ch. 16)", "6.2 chart formula of the volume form (Ch. 15)", "6.4 change of variables (Ch. 16)", "8.1 local retractions of immersions (Ch. 4)"]
 
 [[source]]
 id = "MartioRickmanVaisala1969"
@@ -118,7 +118,7 @@ year = 1969
 venue = "Annales Academiae Scientiarum Fennicae, Series A I, 448"
 doi = "10.5186/aasfm.1969.448"
 locator_scheme = "section"
-locator = "§2 (Definitions 2.16 and 2.20)"
+locator = "page 6, line 124 (the Jacobian J(x,f)); §2, Definition 2.16, lines 332–340 (ACL and ACL^p)"
 url = "https://afm.journal.fi/article/download/134124/82706"
 fetched_from = "https://afm.journal.fi/article/download/134124/82706"
 fetched_at = "2026-11-05T05:58:03Z"
@@ -126,4 +126,4 @@ sha256 = "e9d55447ac88457141ef813653a8051b37a0221b75fac3c89534ab5e98edf97d"
 licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["Euclidean ACL^n and W^{1,n}_loc maps, the Jacobian, compatibility of the manifold definitions with the Euclidean case"]
+cited_for = ["6.1 the Jacobian of a linear map on R^n (line 124)", "7.1 Euclidean compatibility, J_f = det Du (line 124, lines 332–340)"]

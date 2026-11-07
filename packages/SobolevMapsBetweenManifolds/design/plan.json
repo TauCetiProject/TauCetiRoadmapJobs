@@ -1,0 +1,1668 @@
+{
+ "roadmap": "SobolevMapsBetweenManifolds",
+ "title": "Sobolev maps between manifolds",
+ "parent": null,
+ "summary": "First-order local Sobolev classes of maps between C¹ manifolds: the vector-valued local classes W^{1,p}_loc(Ω;F) on finite-dimensional domains with gluing and chain rules (T1); chartwise null sets equal Riemannian null sets; the continuous class W^{1,p}_loc(M,N) with atlas independence and the weak differential (T2); the operator norm and the L^p characterisation (T3); the oriented Jacobian, Hadamard's inequality and Jacobian measures (T4); the extrinsic description through C¹ immersions (T5); Euclidean compatibility (T6); and the embedding-independent class of measurable maps into a closed manifold (T7).",
+ "baseline": {
+  "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+  "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
+ },
+ "layers": [
+  {
+   "key": "1",
+   "title": "Local classes on Euclidean domains",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "definition",
+     "name": "MemLpLoc",
+     "statement": "For a topological space X with a measure μ, s ⊆ X, p : ℝ≥0∞ and g : X → B into a normed group, MemLpLoc μ p s g means MemLp g p (μ.restrict K) for every compact K ⊆ s.",
+     "hypotheses": [
+      "X topological space with MeasurableSpace and a measure μ",
+      "s : Set X",
+      "p : ℝ≥0∞"
+     ],
+     "locator": {
+      "source": "Mazya2011",
+      "where": "Section 1.1 (local Lebesgue spaces)"
+     },
+     "prerequisites": [
+      "mathlib:MeasureTheory.MemLp",
+      "mathlib:MeasureTheory.Measure.restrict",
+      "mathlib:MeasureTheory.MemLp.of_le",
+      "mathlib:MeasureTheory.memLp_top_of_bound",
+      "mathlib:MeasureTheory.locallyIntegrableOn_iff",
+      "roadmap:PseudoholomorphicCurveAnalysis PH1.1"
+     ],
+     "api": [
+      {
+       "name": "MemLpLoc.mono_set",
+       "role": "restriction",
+       "statement": "t ⊆ s and MemLpLoc μ p s g give MemLpLoc μ p t g; every g satisfies MemLpLoc μ p ∅ g."
+      },
+      {
+       "name": "MemLpLoc.add / const_smul / of_le_mul",
+       "role": "algebra and domination",
+       "statement": "Closed under sums and scalar multiples; if ‖g' x‖ ≤ c x ‖g x‖ a.e. on s with c bounded on compact subsets of s and g' a.e.-strongly measurable on compacts, then MemLpLoc μ p s g'; in particular A ∘ g for continuous linear A; a.e.-equal functions have the same membership."
+      },
+      {
+       "name": "MemLpLoc.of_exponent_le",
+       "role": "exponents",
+       "statement": "If μ is finite on compact sets and p ≤ q, MemLpLoc μ q s g gives MemLpLoc μ p s g."
+      },
+      {
+       "name": "ContinuousOn.memLpLoc",
+       "role": "continuous functions",
+       "statement": "X Hausdorff, opens measurable, μ finite on compacts, g continuous on s ⇒ MemLpLoc μ p s g for every p."
+      },
+      {
+       "name": "memLpLoc_one_iff_locallyIntegrableOn",
+       "role": "p = 1",
+       "statement": "X locally compact, s locally closed ⇒ (MemLpLoc μ 1 s g ↔ LocallyIntegrableOn g s μ)."
+      },
+      {
+       "name": "MemLpLoc.iUnion",
+       "role": "gluing",
+       "statement": "X locally compact, s = ⋃ sᵢ with sᵢ open, MemLpLoc μ p sᵢ g for all i ⇒ MemLpLoc μ p s g."
+      },
+      {
+       "name": "memLpLoc_congr_measure",
+       "role": "comparable measures",
+       "statement": "If for each compact K ⊆ s there is C with ν|K ≤ C μ|K and μ|K ≤ C ν|K, then MemLpLoc μ p s g ↔ MemLpLoc ν p s g."
+      }
+     ],
+     "tests": [
+      {
+       "name": "id_real_memLpLoc_not_memLp",
+       "kind": "computation",
+       "statement": "id : ℝ → ℝ satisfies MemLpLoc volume p univ for all p but MemLp on ℝ for no p (∫|x|ᵖ = ∞, unbounded); a global-Lᵖ definition fails."
+      },
+      {
+       "name": "abs_rpow_neg_half",
+       "kind": "computation",
+       "statement": "g = |x|^(−1/2): ∫_{−1}^{1}|x|^{−p/2} = 4/(2−p) for p < 2 (= 4 at p = 1), infinite at p = 2; MemLpLoc p univ iff p < 2; MemLpLoc ∞ (ℝ ∖ {0})."
+      },
+      {
+       "name": "inv_on_unit_interval",
+       "kind": "non-example",
+       "statement": "g = 1/x on (0,1): MemLpLoc ∞ (0,1) (bounded by 1/a on [a,b]) yet ∫_0^1 1/x = ∞; a definition through bounded subsets rejects it."
+      },
+      {
+       "name": "empty_set",
+       "kind": "degenerate",
+       "statement": "MemLpLoc μ p ∅ g holds for every g."
+      },
+      {
+       "name": "planar_agreement",
+       "kind": "compatibility",
+       "statement": "For X = ℂ with volume this is PseudoholomorphicCurveAnalysis PH1.1's MemLpLoc, literally."
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "definition",
+     "name": "MemW1pLoc",
+     "statement": "For an additive Haar measure μ on a finite-dimensional real normed space E, Ω : Opens E, 1 ≤ p ≤ ∞ and u : E → F (F finite-dimensional), MemW1pLoc μ p Ω u means MemLpLoc μ p Ω u ∧ ∃ U : E → E →L[ℝ] F, TauCeti.HasWeakFDerivOn μ Ω u U ∧ MemLpLoc μ p Ω U.",
+     "hypotheses": [
+      "E, F finite-dimensional real normed spaces with Borel σ-algebras",
+      "μ.IsAddHaarMeasure",
+      "Ω : Opens E",
+      "1 ≤ p"
+     ],
+     "locator": {
+      "source": "Ziemer1989",
+      "where": "Chapter 2, §2.1"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "tauceti:TauCeti.HasWeakFDerivOn",
+      "tauceti:TauCeti.HasWeakFDerivOn.ae_eq",
+      "tauceti:TauCeti.HasWeakFDerivOn.add",
+      "tauceti:TauCeti.HasWeakFDerivOn.const_smul",
+      "tauceti:TauCeti.HasWeakFDerivOn.clm_comp",
+      "tauceti:TauCeti.HasWeakFDerivOn.mono",
+      "tauceti:TauCeti.HasWeakFDerivOn.congr_ae",
+      "tauceti:TauCeti.HasWeakFDerivOn.congr_ae_deriv",
+      "tauceti:Module.Basis.hasWeakFDerivOn_of_forall",
+      "tauceti:TauCeti.hasWeakFDerivOn_of_differentiableOn",
+      "mathlib:MeasureTheory.Measure.isAddLeftInvariant_eq_smul",
+      "roadmap:PseudoholomorphicCurveAnalysis PH1.1"
+     ],
+     "api": [
+      {
+       "name": "memW1pLoc_congr_addHaar",
+       "role": "Haar independence",
+       "statement": "For additive Haar μ, μ' on E: MemW1pLoc μ p Ω u ↔ MemW1pLoc μ' p Ω u, with the same weak derivatives."
+      },
+      {
+       "name": "MemW1pLoc.congr_ae",
+       "role": "null sets",
+       "statement": "Modifying u or U on a μ-null set changes neither membership nor the weak-derivative relation."
+      },
+      {
+       "name": "MemW1pLoc.add / const_smul / clm_comp",
+       "role": "linearity",
+       "statement": "Sums, scalar multiples and A ∘ u for A : F →L[ℝ] F' are members with D(A ∘ u) = A ∘ Du."
+      },
+      {
+       "name": "memW1pLoc_iff_coord",
+       "role": "coordinates",
+       "statement": "For a basis (f_j) of F: MemW1pLoc μ p Ω u ↔ ∀ j, MemW1pLoc μ p Ω (f_j^* ∘ u), with Du = Σ_j D(f_j^* ∘ u) · f_j; products split componentwise."
+      },
+      {
+       "name": "ContDiffOn.memW1pLoc",
+       "role": "C¹ maps",
+       "statement": "u C¹ on Ω ⇒ MemW1pLoc μ p Ω u for every p with weak derivative fderiv u; constants have weak derivative 0."
+      },
+      {
+       "name": "MemW1pLoc.of_exponent_le / mono",
+       "role": "exponents and restriction",
+       "statement": "p ≤ q gives W^{1,q}_loc ⊆ W^{1,p}_loc; restriction to Ω' ≤ Ω preserves membership with the same derivative."
+      }
+     ],
+     "tests": [
+      {
+       "name": "id_memW1pLoc",
+       "kind": "computation",
+       "statement": "id : E → E (E ≠ 0) is a member for every p with Du = id constant, but not in global W^{1,p}(E)."
+      },
+      {
+       "name": "log_norm_plane",
+       "kind": "computation",
+       "statement": "u = log|x| on ℝ²: |Du| = 1/|x|, ∫_{|x|<1}|x|^{−p} = 2π/(2−p) for p < 2, infinite at p = 2; member iff p < 2; omitting the bound on Du would accept p = 2."
+      },
+      {
+       "name": "heaviside_not_member",
+       "kind": "non-example",
+       "statement": "The Heaviside function is in L^p_loc(ℝ) but has no weak derivative (∫ U φ = φ(0) impossible); an a.e.-classical-derivative definition accepts it."
+      },
+      {
+       "name": "cantor_not_member",
+       "kind": "non-example",
+       "statement": "The Cantor function on (0,1) has classical derivative 0 a.e. but is not in W^{1,1}_loc: members are absolutely continuous on compact subintervals (TauCeti.HasWeakLineDerivOn.absolutelyContinuousOnInterval), the Cantor function is not (TauCeti.not_absolutelyContinuousOnInterval_cantorFunction)."
+      },
+      {
+       "name": "empty_domain",
+       "kind": "degenerate",
+       "statement": "Ω = ∅: every u is a member."
+      },
+      {
+       "name": "planar_agreement",
+       "kind": "compatibility",
+       "statement": "For E = ℂ with volume, MemW1pLoc volume p Ω u is PseudoholomorphicCurveAnalysis PH1.1's MemWkpLoc p Ω 1 u."
+      }
+     ]
+    },
+    {
+     "id": "1.3",
+     "kind": "theorem",
+     "name": "hasWeakFDerivOn_iUnion",
+     "statement": "Let (Ωᵢ)_{i∈ι} be open subsets of E with union Ω. If TauCeti.HasWeakFDerivOn μ Ωᵢ u Uᵢ for every i, there is U with TauCeti.HasWeakFDerivOn μ Ω u U and U = Uᵢ μ-a.e. on Ωᵢ for every i. Consequently MemW1pLoc μ p Ω u ↔ ∀ i, MemW1pLoc μ p Ωᵢ u.",
+     "hypotheses": [
+      "ι arbitrary index type",
+      "Ωᵢ open, Ω = ⋃ Ωᵢ",
+      "μ additive Haar measure",
+      "F finite-dimensional"
+     ],
+     "locator": {
+      "source": "Mazya2011",
+      "where": "Section 1.1 (locality of weak derivatives)"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.2",
+      "tauceti:TauCeti.hasWeakFDerivOn_iff_forall_isCompact_closure",
+      "tauceti:TauCeti.HasWeakFDerivOn.ae_eq",
+      "tauceti:TauCeti.HasWeakFDerivOn.congr_ae_deriv",
+      "mathlib:SmoothPartitionOfUnity.exists_isSubordinate"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "sign_half_planes",
+       "kind": "non-example",
+       "statement": "sign(x₁) is a member on {x₁>0} and {x₁<0} (Du = 0) but not on ℝ²; the two half-planes do not cover ℝ², and a gluing over covers up to null sets would wrongly accept it."
+      },
+      {
+       "name": "log_norm_cover",
+       "kind": "computation",
+       "statement": "log|x| ∈ W^{1,p}_loc(ℝ²∖{0}) for all p and ∈ W^{1,p}_loc(B(0,1)) iff p < 2; the cover {ℝ²∖{0}, B(0,1)} gives membership on ℝ² exactly for p < 2."
+      },
+      {
+       "name": "empty_cover",
+       "kind": "degenerate",
+       "statement": "Empty index set: Ω = ∅ and both sides hold."
+      }
+     ]
+    },
+    {
+     "id": "1.4",
+     "kind": "theorem",
+     "name": "memW1pLoc_iff_forall_w1p",
+     "statement": "For E a finite-dimensional real inner product space and F = ℝ: MemW1pLoc μ p Ω u ↔ for every V : Opens E with closure compact and contained in Ω, ∃ w : TauCeti.W1p μ V p with value w =ᵐ[μ.restrict V] u; then Du = ⟪∇w, ·⟫ a.e. on V.",
+     "hypotheses": [
+      "E finite-dimensional real inner product space",
+      "F = ℝ",
+      "μ additive Haar",
+      "1 ≤ p ≤ ∞"
+     ],
+     "locator": {
+      "source": "Mazya2011",
+      "where": "Section 1.1"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:1.3",
+      "tauceti:TauCeti.W1p",
+      "tauceti:TauCeti.mem_w1pSubmodule_iff_hasWeakFDerivOn"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "coordinate_function",
+       "kind": "computation",
+       "statement": "u = x₁ on ℝ², V = B(0,1/2): w ∈ W1p with gradient e₁ and Du = ⟪e₁,·⟫."
+      },
+      {
+       "name": "log_norm_p2",
+       "kind": "non-example",
+       "statement": "u = log|x|, p = 2, V = B(0,1/2): no w ∈ W1p μ V 2 has value u since ∫_V |x|^{−2} = ∞."
+      },
+      {
+       "name": "abs_p_infty",
+       "kind": "degenerate",
+       "statement": "u = |x| on ℝ, p = ∞: on bounded V the restriction lies in W1p μ V ∞ with gradient sign x; on V = ℝ (not relatively compact) it does not."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "Chain rules on Euclidean domains",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "theorem",
+     "name": "addHaar_preimage_eq_zero_of_isInvertible_fderiv",
+     "statement": "(i) If θ : E' → E is differentiable on A with μ'(A) = 0 and finrank E' ≤ finrank E, then μ(θ '' A) = 0. (ii) If θ is C¹ on open Ω' ⊆ E' with fderiv θ y invertible for every y ∈ Ω', then μ'(Ω' ∩ θ⁻¹' S) = 0 for every S with μ S = 0.",
+     "hypotheses": [
+      "μ, μ' additive Haar measures on E, E'",
+      "finrank E' ≤ finrank E for (i)",
+      "ContDiffOn ℝ 1 θ Ω' and ∀ y ∈ Ω', (fderiv ℝ θ y).IsInvertible for (ii)"
+     ],
+     "locator": {
+      "source": "Lee2012",
+      "where": "Ch. 6 (sets of measure zero, images under C¹ maps)"
+     },
+     "prerequisites": [
+      "mathlib:MeasureTheory.addHaar_image_eq_zero_of_differentiableOn_of_addHaar_eq_zero",
+      "mathlib:ContDiffAt.toOpenPartialHomeomorph",
+      "tauceti:DifferentiableOn.addHaar_image_eq_zero_of_finrank_lt_finrank"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "projection",
+       "kind": "non-example",
+       "statement": "(x,y) ↦ x maps the null set ℝ×{0} onto ℝ: dimension hypothesis used."
+      },
+      {
+       "name": "constant_map",
+       "kind": "non-example",
+       "statement": "A constant map of ℝ² pulls a point back to ℝ²: invertibility used."
+      },
+      {
+       "name": "cantor_function_image",
+       "kind": "non-example",
+       "statement": "The Cantor function maps the null Cantor set onto [0,1]; differentiability on A is used."
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "theorem",
+     "name": "HasWeakFDerivOn.comp_of_isInvertible_fderiv",
+     "statement": "Let θ : E' → E be C¹ on open Ω' with θ '' Ω' ⊆ Ω and fderiv θ y invertible on Ω'. If TauCeti.HasWeakFDerivOn μ Ω u U then TauCeti.HasWeakFDerivOn μ' Ω' (u ∘ θ) (fun y => U (θ y) ∘L fderiv ℝ θ y); if MemW1pLoc μ p Ω u then MemW1pLoc μ' p Ω' (u ∘ θ) for 1 ≤ p ≤ ∞, with D(u ∘ θ) = (Du ∘ θ) Dθ a.e. (T1(a)).",
+     "hypotheses": [
+      "μ, μ' additive Haar",
+      "Ω ⊆ E, Ω' ⊆ E' open",
+      "ContDiffOn ℝ 1 θ Ω'",
+      "MapsTo θ Ω' Ω",
+      "∀ y ∈ Ω', (fderiv ℝ θ y).IsInvertible",
+      "1 ≤ p ≤ ∞"
+     ],
+     "locator": {
+      "source": "Ziemer1989",
+      "where": "Theorem 2.2.2"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:1.3",
+      "target:2.1",
+      "tauceti:TauCeti.W1p.compL",
+      "tauceti:TauCeti.W1p.value_compL_ae",
+      "tauceti:TauCeti.W1p.gradient_compL_ae",
+      "tauceti:TauCeti.HasWeakFDerivOn.comp_measurePreserving",
+      "tauceti:TauCeti.hasWeakFDerivOn_iff_forall_isCompact_closure",
+      "mathlib:ContDiffAt.toOpenPartialHomeomorph",
+      "mathlib:MeasureTheory.lintegral_image_eq_lintegral_abs_det_fderiv_mul"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "dilation",
+       "kind": "computation",
+       "statement": "θ(y) = 2y, u = |x|: Du(2y) ∘ 2·id = 2⟪y,·⟫/|y| = D(2|y|)."
+      },
+      {
+       "name": "square_map",
+       "kind": "computation",
+       "statement": "θ(z) = z² on ℂ∖{0}, u = log|w|: Du(z²)(2zh) = ⟪z²,2zh⟫/|z|⁴ = 2⟪z,h⟫/|z|² = D(2 log|z|)h."
+      },
+      {
+       "name": "degenerate_projection",
+       "kind": "non-example",
+       "statement": "θ(y) = (y₁,0), u = log|x| ∈ W^{1,1}_loc(ℝ²): u∘θ = log|y₁| with ∫_{[−1,1]²}|y₁|^{−1} = ∞."
+      },
+      {
+       "name": "unbounded_derivative",
+       "kind": "degenerate",
+       "statement": "θ(y) = y³ + y, u = |x| ∈ W^{1,∞}_loc(ℝ): D(u∘θ) = (3y²+1) sign y ∈ L^∞_loc but not L^∞(ℝ)."
+      },
+      {
+       "name": "w1p_compL_agreement",
+       "kind": "compatibility",
+       "statement": "E' = E inner product, p < ∞, θ injective with ‖Dθ‖ ≤ L, |det Dθ| ≥ c > 0, F = ℝ: agrees with TauCeti.W1p.gradient_compL_ae."
+      },
+      {
+       "name": "ph12_change_of_variables_agreement",
+       "kind": "compatibility",
+       "statement": "E = E' = ℂ, p > 2, θ a C¹ diffeomorphism Ω' → Ω: the membership statement is PseudoholomorphicCurveAnalysis PH1.2's change of variables at k = 1; the covering z ↦ z² and every 1 ≤ p ≤ 2 lie outside it."
+      }
+     ]
+    },
+    {
+     "id": "2.3",
+     "kind": "theorem",
+     "name": "HasWeakFDerivOn.comp_of_contDiff_of_norm_fderiv_le",
+     "statement": "Let G : F → F' be C¹ with ‖fderiv G v‖ ≤ L for all v. If TauCeti.HasWeakFDerivOn μ Ω u U then TauCeti.HasWeakFDerivOn μ Ω (G ∘ u) (fun x => fderiv ℝ G (u x) ∘L U x); MemW1pLoc μ p Ω u ⇒ MemW1pLoc μ p Ω (G ∘ u). No continuity of u.",
+     "hypotheses": [
+      "G : F → F', ContDiff ℝ 1 G",
+      "∀ v, ‖fderiv ℝ G v‖ ≤ L",
+      "μ additive Haar",
+      "1 ≤ p ≤ ∞"
+     ],
+     "locator": {
+      "source": "Ziemer1989",
+      "where": "Theorem 2.1.11"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "tauceti:TauCeti.HasWeakFDerivOn.hasFDerivAt_indicator_convolution_normed",
+      "tauceti:TauCeti.HasWeakFDerivOn.fderiv_indicator_convolution_normed",
+      "tauceti:TauCeti.tendsto_eLpNorm_normed_convolution_sub",
+      "tauceti:TauCeti.hasWeakFDerivOn_of_tendsto_lintegral_enorm_sub",
+      "tauceti:TauCeti.hasWeakFDerivOn_iff_forall_isCompact_closure",
+      "tauceti:TauCeti.W1p.hasWeakFDerivOn_comp",
+      "mathlib:ContDiffBump"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "scalar_agreement",
+       "kind": "compatibility",
+       "statement": "F = F' = ℝ, p < ∞, u ∈ W1p: agrees with TauCeti.W1p.hasWeakFDerivOn_comp."
+      },
+      {
+       "name": "linear_G",
+       "kind": "degenerate",
+       "statement": "G linear: the statement is D(A ∘ u) = A ∘ Du of 1.2."
+      },
+      {
+       "name": "exp_square",
+       "kind": "non-example",
+       "statement": "G(t) = e^{t²}, u = log|x|: G(u) ≥ |x|^{−2} for |x| ≤ e^{−2}, not L¹_loc(ℝ²); bounded derivative is used."
+      }
+     ]
+    },
+    {
+     "id": "2.4",
+     "kind": "theorem",
+     "name": "HasWeakFDerivOn.comp_contDiffOn_of_continuousOn",
+     "statement": "Let W ⊆ F be open, G : F → F' C¹ on W, u continuous on Ω with u '' Ω ⊆ W. If TauCeti.HasWeakFDerivOn μ Ω u U then TauCeti.HasWeakFDerivOn μ Ω (G ∘ u) (fun x => fderiv ℝ G (u x) ∘L U x); MemW1pLoc μ p Ω u ⇒ MemW1pLoc μ p Ω (G ∘ u) (T1(b)).",
+     "hypotheses": [
+      "W open in F",
+      "ContDiffOn ℝ 1 G W",
+      "ContinuousOn u Ω",
+      "MapsTo u Ω W",
+      "1 ≤ p ≤ ∞"
+     ],
+     "locator": {
+      "source": "Ziemer1989",
+      "where": "Theorem 2.1.11"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:2.3",
+      "mathlib:exists_contDiff_support_eq_eq_one_iff"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "leibniz",
+       "kind": "computation",
+       "statement": "G(s,t) = st: D(u₁u₂) = u₂Du₁ + u₁Du₂ for continuous u."
+      },
+      {
+       "name": "log_of_norm",
+       "kind": "computation",
+       "statement": "G = log on (0,∞), u = |x| on ℝ²∖{0}: D log|x| = ⟪x,·⟫/|x|²; on ℝ² the hypothesis fails at 0 and log|x| ∉ W^{1,2}_loc(ℝ²)."
+      },
+      {
+       "name": "continuity_used",
+       "kind": "non-example",
+       "statement": "u = log|x| discontinuous, G = e^{t²} on W = ℝ: G ∘ u ∉ L¹_loc."
+      },
+      {
+       "name": "ph12_composition_agreement",
+       "kind": "compatibility",
+       "statement": "E = ℂ, p > 2, W = F: a member has a continuous representative (PH1.2 Morrey) and the statement for it is PseudoholomorphicCurveAnalysis PH1.2's composition at k = 1; G = log on W = (0,∞) lies outside it."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "Null sets and local integrability on manifolds",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "theorem",
+     "name": "isNullSet_iff_riemannianVolume_eq_zero",
+     "statement": "For every s ⊆ M: TauCeti.IsNullSet I s ↔ TauCeti.riemannianVolume s = 0. Hence a.e. for the Riemannian volume means outside an IsNullSet, any two continuous metrics have the same null sets, and on a finite-dimensional real inner product space with its flat metric the Riemannian volume is volume.",
+     "hypotheses": [
+      "E finite-dimensional real normed space",
+      "I : ModelWithCorners ℝ E H",
+      "IsManifold I 1 M",
+      "LindelofSpace M",
+      "MeasurableSpace M, BorelSpace M",
+      "RiemannianBundle and IsContinuousRiemannianBundle on the tangent bundle"
+     ],
+     "locator": {
+      "source": "Lee2012",
+      "where": "Ch. 6 (measure zero in manifolds) and Ch. 16 (Riemannian density)"
+     },
+     "prerequisites": [
+      "tauceti:TauCeti.IsNullSet",
+      "tauceti:TauCeti.IsNullSet.iUnion",
+      "tauceti:TauCeti.riemannianVolume",
+      "tauceti:TauCeti.riemannianVolume_restrict_source",
+      "tauceti:TauCeti.chartRiemannianVolume",
+      "tauceti:TauCeti.chartVolumeDensity",
+      "tauceti:TauCeti.chartVolumeDensity_pos",
+      "mathlib:MeasurableEmbedding.comap_apply",
+      "mathlib:MeasureTheory.withDensity_absolutelyContinuous",
+      "mathlib:Module.Basis.addHaar_eq_iff",
+      "roadmap:DifferentialGeometry 12.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "dimension_zero",
+       "kind": "degenerate",
+       "statement": "0-manifold: Haar on the zero space charges {0}, so only ∅ is chartwise null; the volume is counting measure; only ∅ is null."
+      },
+      {
+       "name": "unit_square",
+       "kind": "computation",
+       "statement": "ℝ²: unit square volume 1 (flat) and 4 for 4(dx²+dy²) (density √det(4I₂) = 4); a segment is null for both."
+      },
+      {
+       "name": "open_sets",
+       "kind": "compatibility",
+       "statement": "Non-empty open sets are null on neither side: TauCeti.IsNullSet.interior_eq_empty and TauCeti.isOpenPosMeasure_riemannianVolume agree."
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "theorem",
+     "name": "memLpLoc_riemannianVolume_iff",
+     "statement": "For boundaryless M as in 3.1, g : M → B and 1 ≤ p ≤ ∞: MemLpLoc riemannianVolume p univ g ↔ ∀ x₀, MemLpLoc μ p (extChartAt I x₀).target (g ∘ (extChartAt I x₀).symm) for one (every) Haar μ on E; likewise with any atlas in the maximal atlas. So L^p_loc(M) is the same for all continuous metrics and is local.",
+     "hypotheses": [
+      "as in 3.1",
+      "I.Boundaryless",
+      "B normed group",
+      "1 ≤ p ≤ ∞"
+     ],
+     "locator": {
+      "source": "Lee2012",
+      "where": "Ch. 16 (integration in charts)"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:3.1",
+      "mathlib:isOpen_extChartAt_target",
+      "mathlib:contDiffOn_ext_coord_change",
+      "tauceti:TauCeti.chartVolumeDensity_changeChart",
+      "tauceti:TauCeti.setLIntegral_riemannianVolume_of_subset"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "non_comparable_metrics",
+       "kind": "computation",
+       "statement": "ℝ with dx² and e^{2x}dx²: same local classes; g = 1_{[0,∞)}e^{−x} has ∫ g dx = 1, ∫ g eˣ dx = ∞."
+      },
+      {
+       "name": "inverse_on_half_line",
+       "kind": "computation",
+       "statement": "M = (0,∞), g = 1/x: in L^∞_loc(M)."
+      },
+      {
+       "name": "zero_manifold",
+       "kind": "degenerate",
+       "statement": "On a 0-manifold every function is locally Lᵖ."
+      }
+     ]
+    },
+    {
+     "id": "3.3",
+     "kind": "theorem",
+     "name": "IsNullSet.preimage_of_isLocalDiffeomorph",
+     "statement": "(i) θ : M' → M with IsLocalDiffeomorph I' I 1 θ: IsNullSet I s ⇒ IsNullSet I' (θ ⁻¹' s). (ii) f : M' → M C¹ with finrank E' ≤ finrank E, and s ⊆ ⋃ₖ (extChartAt I' xₖ).source for countably many xₖ (every s when LindelofSpace M'): IsNullSet I' s ⇒ IsNullSet I (f '' s). (iii) For U : Opens M and s ⊆ U: null in U ↔ null in M.",
+     "hypotheses": [
+      "M', M boundaryless C¹ manifolds with finite-dimensional models E', E",
+      "(ii) only: s covered by countably many preferred chart sources of M' (automatic under LindelofSpace M')"
+     ],
+     "locator": {
+      "source": "Lee2012",
+      "where": "Ch. 6"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "mathlib:IsLocalDiffeomorph",
+      "mathlib:contDiffOn_ext_coord_change",
+      "tauceti:TauCeti.IsNullSet",
+      "tauceti:TauCeti.IsNullSet.iUnion"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "circle_covering",
+       "kind": "computation",
+       "statement": "t ↦ e^{it} pulls a point back to a translate of 2πℤ, countable and null."
+      },
+      {
+       "name": "collapse",
+       "kind": "non-example",
+       "statement": "(x,y) ↦ (x,0) on ℝ² is not a local diffeomorphism and pulls the null line ℝ×{0} back to ℝ²."
+      },
+      {
+       "name": "projection_image",
+       "kind": "non-example",
+       "statement": "ℝ² → ℝ maps the null line ℝ×{0} onto ℝ: dimension hypothesis of (ii) used."
+      },
+      {
+       "name": "non_lindelof_source",
+       "kind": "non-example",
+       "statement": "M' = ℝ × D, D = ℝ discrete, charts (x,d) ↦ x on slices; f(x,d) = d is C¹; s = {0} × D meets each chart source in one point, so is null, but f(s) = ℝ is not null; s meets uncountably many slices, so the countable-cover hypothesis of (ii) is used. With D = ℤ, f(s) = ℤ is null."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "Sobolev classes on manifolds and the weak differential",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "definition",
+     "name": "MemW1pLocOn",
+     "statement": "u : M → V lies in W^{1,p}_loc(M; V) when ∀ x₀, MemW1pLoc μ p (extChartAt I x₀).target (u ∘ (extChartAt I x₀).symm) for every Haar μ; a field D : (x : M) → (TangentSpace I x →L[ℝ] V) is a weak differential (HasWeakMDeriv) when z ↦ D(φ.symm z) ∘L mfderiv of φ.symm at z is a weak derivative of u ∘ φ.symm on φ.target for every preferred chart φ.",
+     "hypotheses": [
+      "V finite-dimensional real normed space",
+      "I.Boundaryless",
+      "IsManifold I 1 M",
+      "1 ≤ p ≤ ∞"
+     ],
+     "locator": {
+      "source": "Hajlasz2009",
+      "where": "line 28 (W^{1,p}(M, R^ν) as the ambient class)"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:1.3",
+      "target:2.2",
+      "target:2.3",
+      "target:2.4",
+      "target:3.3",
+      "mathlib:extChartAt",
+      "mathlib:isOpen_extChartAt_target",
+      "mathlib:contDiffOn_ext_coord_change",
+      "mathlib:IsManifold.maximalAtlas",
+      "mathlib:mfderiv_eq_fderiv",
+      "tauceti:TauCeti.HasWeakFDerivOn",
+      "tauceti:TauCeti.IsNullSet.iUnion"
+     ],
+     "api": [
+      {
+       "name": "memW1pLocOn_iff_atlas",
+       "role": "charts",
+       "statement": "Membership and weak differentials may be tested in the charts of any atlas contained in the maximal atlas."
+      },
+      {
+       "name": "MemW1pLocOn.exists_hasWeakMDeriv",
+       "role": "existence and uniqueness",
+       "statement": "M Lindelöf and u a member ⇒ a weak differential exists; two agree outside a TauCeti.IsNullSet; a total choice weakMDeriv (0 off the class) is a weak differential of every member."
+      },
+      {
+       "name": "MemW1pLocOn.add / smul / clm_comp / congr",
+       "role": "algebra",
+       "statement": "Closed under sums, scalar multiples, continuous linear maps with D(A ∘ u) = A ∘ Du; unchanged by modification on a null set."
+      },
+      {
+       "name": "ContMDiff.memW1pLocOn",
+       "role": "C¹ functions",
+       "statement": "C¹ u lies in the class for every p with weak differential mfderiv u."
+      },
+      {
+       "name": "MemW1pLocOn.restrict / iUnion",
+       "role": "locality",
+       "statement": "Restriction to open U preserves membership; membership on every set of an open cover gives membership on M."
+      },
+      {
+       "name": "MemW1pLocOn.comp_isLocalDiffeomorph / comp_contDiff",
+       "role": "composition",
+       "statement": "u ∘ θ for C¹ local diffeomorphisms θ with D(u∘θ) = Du(θ y) ∘ dθ_y a.e.; G ∘ u for C¹ G with bounded derivative (no continuity), and for G C¹ on an open set containing u(M) when u is continuous."
+      }
+     ],
+     "tests": [
+      {
+       "name": "abs_on_line",
+       "kind": "computation",
+       "statement": "M = ℝ, u = |x|: member of W^{1,∞}_loc with Du = sign x a.e."
+      },
+      {
+       "name": "exotic_structure",
+       "kind": "non-example",
+       "statement": "On ℝ with the atlas {x ↦ x³}, |x| reads |y|^{1/3} with derivative |y|^{−2/3}/3, locally Lᵖ iff p < 3/2: the class depends on the C¹ structure."
+      },
+      {
+       "name": "sign_off_line",
+       "kind": "compatibility",
+       "statement": "sign(x₁) is a member on ℝ²∖{x₁=0} with Du = 0 and not on ℝ²."
+      },
+      {
+       "name": "zero_manifold",
+       "kind": "degenerate",
+       "statement": "On a 0-manifold every u is a member with weak differential 0."
+      }
+     ]
+    },
+    {
+     "id": "4.2",
+     "kind": "definition",
+     "name": "MemW1pLocMap",
+     "statement": "f : M → N lies in W^{1,p}_loc(M, N) when f is continuous and for all x₀ ∈ M, y₀ ∈ N and Haar μ, MemW1pLoc μ p Ω_{x₀y₀}(f) ((extChartAt J y₀) ∘ f ∘ (extChartAt I x₀).symm), where Ω_{x₀y₀}(f) = φ.target ∩ φ.symm ⁻¹' (f ⁻¹' ψ.source). Headline T2: for continuous f and atlases 𝒜 ⊆ maximalAtlas I 1 M, ℬ ⊆ maximalAtlas J 1 N covering M and N, membership of all representatives for 𝒜 × ℬ ↔ f ∈ W^{1,p}_loc(M,N) ↔ membership for all charts of both maximal atlases.",
+     "hypotheses": [
+      "I, J boundaryless",
+      "IsManifold I 1 M, IsManifold J 1 N",
+      "1 ≤ p ≤ ∞"
+     ],
+     "locator": {
+      "source": "HeikkilaPankka2025",
+      "where": "lines 22–23"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:1.3",
+      "target:2.2",
+      "target:2.4",
+      "target:4.1",
+      "mathlib:extChartAt",
+      "mathlib:isOpen_extChartAt_target",
+      "mathlib:contDiffOn_ext_coord_change",
+      "mathlib:IsManifold.maximalAtlas",
+      "tauceti:TauCeti.WithMetric"
+     ],
+     "api": [
+      {
+       "name": "memW1pLocMap_iff_atlas",
+       "role": "T2 atlas independence",
+       "statement": "For continuous f and covering atlases 𝒜, ℬ in the maximal atlases: f ∈ W^{1,p}_loc(M,N) iff the representatives for 𝒜 × ℬ are members, iff those for all charts are."
+      },
+      {
+       "name": "isOpen_localRepDomain",
+       "role": "openness",
+       "statement": "Each Ω_{x₀y₀}(f) is open for continuous f."
+      },
+      {
+       "name": "memW1pLocMap_withMetric",
+       "role": "metric independence",
+       "statement": "The class involves no metric; TauCeti.WithMetric copies have the same members."
+      },
+      {
+       "name": "MemW1pLocMap.of_exponent_le / const",
+       "role": "exponents",
+       "statement": "W^{1,q}_loc(M,N) ⊆ W^{1,p}_loc(M,N) for p ≤ q; constant maps are members."
+      },
+      {
+       "name": "memW1pLocMap_vector_iff",
+       "role": "vector targets",
+       "statement": "For N = V with its single chart: f ∈ W^{1,p}_loc(M,V) ↔ f continuous ∧ f ∈ W^{1,p}_loc(M;V)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "log_norm_discontinuous",
+       "kind": "non-example",
+       "statement": "log|x| ∈ W^{1,1}_loc(ℝ²;ℝ) but not in W^{1,1}_loc(ℝ²,ℝ): continuity is part of the definition."
+      },
+      {
+       "name": "circle_map",
+       "kind": "computation",
+       "statement": "f(t) = (cos|t|^{1/2}, sin|t|^{1/2}) : ℝ → S¹: angle-chart representative |t|^{1/2} with derivative sign(t)|t|^{−1/2}/2; member iff p < 2."
+      },
+      {
+       "name": "exotic_source_structure",
+       "kind": "non-example",
+       "statement": "With the atlas {x ↦ x³} on the source, id lies in the class iff p < 3/2."
+      },
+      {
+       "name": "identity",
+       "kind": "degenerate",
+       "statement": "id_M is a member for every p."
+      }
+     ]
+    },
+    {
+     "id": "4.3",
+     "kind": "definition",
+     "name": "HasWeakMFDeriv",
+     "statement": "For continuous f, D : (x : M) → (TangentSpace I x →L[ℝ] TangentSpace J (f x)) is a weak differential when for all x₀, y₀, Haar μ, z ↦ mfderiv ψ ∘L D(φ.symm z) ∘L mfderiv φ.symm z is a weak derivative of ψ ∘ f ∘ φ.symm on Ω_{x₀y₀}(f); weakMFDeriv f is a total choice (0 when none exists). T2: existence for Lindelöf M and members, uniqueness outside an IsNullSet, chart formula in all maximal-atlas charts.",
+     "hypotheses": [
+      "as in 4.2",
+      "LindelofSpace M for existence"
+     ],
+     "locator": {
+      "source": "HeikkilaPankka2025",
+      "where": "lines 22–26"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "target:4.2",
+      "tauceti:TauCeti.HasWeakFDerivOn.ae_eq",
+      "tauceti:TauCeti.IsNullSet.iUnion",
+      "mathlib:mfderiv"
+     ],
+     "api": [
+      {
+       "name": "MemW1pLocMap.exists_hasWeakMFDeriv",
+       "role": "existence",
+       "statement": "M Lindelöf, f ∈ W^{1,p}_loc(M,N) ⇒ ∃ D, HasWeakMFDeriv f D, and HasWeakMFDeriv f (weakMFDeriv f)."
+      },
+      {
+       "name": "HasWeakMFDeriv.isNullSet_ne",
+       "role": "uniqueness",
+       "statement": "HasWeakMFDeriv f D → HasWeakMFDeriv f D' → TauCeti.IsNullSet I {x | D x ≠ D' x}; modifying D on a null set keeps the predicate."
+      },
+      {
+       "name": "HasWeakMFDeriv.chart_formula",
+       "role": "chart formula",
+       "statement": "For all charts φ, ψ of the maximal atlases, dψ ∘ D ∘ (dφ)⁻¹ = D(ψ ∘ f ∘ φ⁻¹) ∘ φ a.e. on φ.source ∩ f⁻¹ ψ.source; chart expressions are a.e.-strongly measurable and locally Lᵖ."
+      },
+      {
+       "name": "weakMFDeriv_vector",
+       "role": "vector targets",
+       "statement": "For N = V the weak differential is that of 4.1."
+      }
+     ],
+     "tests": [
+      {
+       "name": "chart_direction",
+       "kind": "computation",
+       "statement": "M = N = ℝ, chart φ(x) = 2x, f = id: representative y/2 with derivative 1/2 and 1·Df·(1/2) = 1/2 gives Df = 1; using dφ gives 1/4."
+      },
+      {
+       "name": "identity",
+       "kind": "degenerate",
+       "statement": "f = id_M: Df = id outside a null set."
+      },
+      {
+       "name": "junk_value",
+       "kind": "non-example",
+       "statement": "For discontinuous f, weakMFDeriv f = 0 everywhere."
+      },
+      {
+       "name": "circle_map_differential",
+       "kind": "computation",
+       "statement": "For the circle map at p < 2, Df(t) = sign(t)|t|^{−1/2}/2 times the angular unit vector for t ≠ 0."
+      }
+     ]
+    },
+    {
+     "id": "4.4",
+     "kind": "theorem",
+     "name": "ContMDiff.memW1pLocMap",
+     "statement": "If f : M → N is C¹ (ContMDiff I J 1 f) then f ∈ W^{1,p}_loc(M,N) for every 1 ≤ p ≤ ∞, HasWeakMFDeriv f (mfderiv I J f), and weakMFDeriv f = mfderiv I J f outside an IsNullSet (T2).",
+     "hypotheses": [
+      "ContMDiff I J 1 f",
+      "1 ≤ p ≤ ∞"
+     ],
+     "locator": {
+      "source": "HeikkilaPankka2025",
+      "where": "lines 22–26"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:4.2",
+      "target:4.3",
+      "mathlib:mfderiv_eq_fderiv",
+      "mathlib:ContMDiff"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "t_abs_t",
+       "kind": "computation",
+       "statement": "f(t) = t|t| is C¹ not C²: Df = 2|t| everywhere, member for every p."
+      },
+      {
+       "name": "abs_not_C1",
+       "kind": "compatibility",
+       "statement": "|t| is not C¹ but is a member with Df = sign t: sufficient condition only."
+      },
+      {
+       "name": "cantor",
+       "kind": "non-example",
+       "statement": "The Cantor function is C¹ off a closed null set but in no class."
+      }
+     ]
+    },
+    {
+     "id": "4.5",
+     "kind": "theorem",
+     "name": "MemW1pLocMap.restrict_iff_iUnion",
+     "statement": "For continuous f: (i) f ∈ W^{1,p}_loc(M,N) ⇒ f|_U ∈ W^{1,p}_loc(U,N) for open U with D(f|_U) = Df|_U a.e.; (ii) an open cover (Uᵢ) with f|_{Uᵢ} members gives f a member; (iii) f(M) ⊆ W open: f member ↔ corestriction to W member; (iv) membership is the same between TauCeti.WithMetric copies and weak differentials agree outside a null set.",
+     "hypotheses": [
+      "as in 4.2"
+     ],
+     "locator": {
+      "source": "Mazya2011",
+      "where": "Section 1.1 (locality)"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:3.3",
+      "target:4.2",
+      "target:4.3",
+      "mathlib:TopologicalSpace.Opens.instChartedSpace",
+      "tauceti:TauCeti.WithMetric"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "circle_map_cover",
+       "kind": "non-example",
+       "statement": "The circle map is smooth on (0,∞) and (−∞,0) but a member on ℝ only for p < 2: the cover must contain 0."
+      },
+      {
+       "name": "sign_half_planes",
+       "kind": "non-example",
+       "statement": "sign(x₁) on half-planes: the cover must be an open cover of all of M."
+      },
+      {
+       "name": "tanh_corestriction",
+       "kind": "computation",
+       "statement": "tanh : ℝ → ℝ corestricts to (−1,1) with Df = 1 − tanh²."
+      }
+     ]
+    },
+    {
+     "id": "4.6",
+     "kind": "theorem",
+     "name": "MemW1pLocMap.comp",
+     "statement": "(a) θ : M' → M with IsLocalDiffeomorph I' I 1 θ and f ∈ W^{1,p}_loc(M,N) ⇒ f ∘ θ ∈ W^{1,p}_loc(M',N) with D(f∘θ)(y) = Df(θ y) ∘ dθ_y a.e.; (b) g : N → P C¹ ⇒ g ∘ f ∈ W^{1,p}_loc(M,P) with D(g∘f)(x) = dg_{f x} ∘ Df(x) a.e. No bounds on the derivatives.",
+     "hypotheses": [
+      "IsLocalDiffeomorph I' I 1 θ for (a)",
+      "ContMDiff J I_P 1 g for (b)",
+      "1 ≤ p ≤ ∞"
+     ],
+     "locator": {
+      "source": "Ziemer1989",
+      "where": "Theorem 2.1.11 and Theorem 2.2.2"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "target:2.4",
+      "target:3.3",
+      "target:4.2",
+      "target:4.3",
+      "mathlib:IsLocalDiffeomorph",
+      "mathlib:ContMDiff"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "dilation_source",
+       "kind": "computation",
+       "statement": "θ(y) = 2y, f = |t|^{1/2}: D(f∘θ)(y) = 2Df(2y) = sign(y)|2y|^{−1/2}, the derivative of √2|y|^{1/2}."
+      },
+      {
+       "name": "exp_to_circle",
+       "kind": "computation",
+       "statement": "g(s) = (cos s, sin s), f = |t|^{1/2}: g ∘ f is the circle map, a member exactly for p < 2."
+      },
+      {
+       "name": "collapse_source",
+       "kind": "non-example",
+       "statement": "θ(y) = (y₁,0), f = |x|^{1/2} on ℝ²: f member iff p < 4, f ∘ θ = |y₁|^{1/2} member iff p < 2; for 2 ≤ p < 4 (a) fails without the local-diffeomorphism hypothesis."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "The operator norm of the differential",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "theorem",
+     "name": "aestronglyMeasurable_norm_weakMFDeriv",
+     "statement": "With continuous metrics on M and N, M Lindelöf with Borel structure, and f ∈ W^{1,p}_loc(M,N): x ↦ ‖weakMFDeriv f x‖ (operator norm for g_M, g_N) is a.e.-strongly measurable for riemannianVolume; on a compact K ⊆ φ.source ∩ f⁻¹ ψ.source there is C ≥ 1 with C⁻¹‖D(ψ∘f∘φ⁻¹)(φ x)‖ ≤ ‖Df x‖ ≤ C‖D(ψ∘f∘φ⁻¹)(φ x)‖ a.e. on K; for C¹ f, ‖Df‖ = ‖mfderiv f‖ a.e.",
+     "hypotheses": [
+      "RiemannianBundle and IsContinuousRiemannianBundle on M and N",
+      "LindelofSpace M, MeasurableSpace M, BorelSpace M",
+      "f ∈ W^{1,p}_loc(M,N)"
+     ],
+     "locator": {
+      "source": "HeikkilaPankka2025",
+      "where": "line 26"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:4.3",
+      "target:4.4",
+      "mathlib:Bundle.RiemannianBundle",
+      "mathlib:IsContinuousRiemannianBundle"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "scaled_target_metric",
+       "kind": "computation",
+       "statement": "id from flat ℝ to (ℝ, 4dt²): ‖Df‖ = 2; model norms would give 1."
+      },
+      {
+       "name": "circle_radius",
+       "kind": "computation",
+       "statement": "Circle map into the unit round circle: ‖Df(t)‖ = |t|^{−1/2}/2; into the circle of radius 3: 3|t|^{−1/2}/2."
+      },
+      {
+       "name": "naive_chart_norm",
+       "kind": "non-example",
+       "statement": "In the chart φ(x) = 2x, the representative of id has norm 1/2 while ‖Df‖ = 1."
+      }
+     ]
+    },
+    {
+     "id": "5.2",
+     "kind": "theorem",
+     "name": "memW1pLocMap_iff_memLpLoc_norm",
+     "statement": "If f ∈ W^{1,1}_loc(M,N) and 1 ≤ p ≤ ∞ then f ∈ W^{1,p}_loc(M,N) ↔ MemLpLoc riemannianVolume p univ (fun x => ‖weakMFDeriv f x‖) (T3).",
+     "hypotheses": [
+      "as in 5.1",
+      "I boundaryless",
+      "f ∈ W^{1,1}_loc(M,N)",
+      "1 ≤ p ≤ ∞"
+     ],
+     "locator": {
+      "source": "Rickman1993",
+      "where": "Chapter I, Section 1"
+     },
+     "prerequisites": [
+      "target:3.2",
+      "target:4.2",
+      "target:4.3",
+      "target:5.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "sqrt_abs",
+       "kind": "computation",
+       "statement": "f = |t|^{1/2} on flat ℝ: ‖Df‖ = |t|^{−1/2}/2 ∈ L^p_loc iff p < 2, the range of the class."
+      },
+      {
+       "name": "t_log_t",
+       "kind": "computation",
+       "statement": "f = t log|t|: ‖Df‖ = |log|t| + 1| in L^p_loc for all finite p, not L^∞_loc; member for all finite p, not p = ∞."
+      },
+      {
+       "name": "cantor_hypothesis",
+       "kind": "non-example",
+       "statement": "Cantor function: classical derivative 0 a.e. but in no class; the hypothesis f ∈ W^{1,1}_loc is used."
+      }
+     ]
+    },
+    {
+     "id": "5.3",
+     "kind": "theorem",
+     "name": "norm_le_of_comparable_metrics",
+     "statement": "If a|v| ≤ |v|' ≤ b|v| on TM and α|w| ≤ |w|' ≤ β|w| on TN (0 < a ≤ b, 0 < α ≤ β), then (α/b)‖A‖ ≤ ‖A‖' ≤ (β/a)‖A‖ for every linear A : T_xM → T_yN; hence (α/b)‖Df‖ ≤ ‖Df‖' ≤ (β/a)‖Df‖ a.e.; continuous metrics are uniformly comparable on compact sets, so T3 is metric independent.",
+     "hypotheses": [
+      "two continuous metrics on M and on N with the comparison constants"
+     ],
+     "locator": {
+      "source": "Rickman1993",
+      "where": "Chapter I, Section 1"
+     },
+     "prerequisites": [
+      "target:4.5",
+      "target:5.1",
+      "target:5.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "constant_rescale",
+       "kind": "computation",
+       "statement": "g'_N = c² g_N: ‖A‖' = c‖A‖ attains both bounds (a = b = 1, α = β = c)."
+      },
+      {
+       "name": "anisotropic",
+       "kind": "computation",
+       "statement": "Target ℝ² with dx² + 4dy² against flat (α = 1, β = 2): ‖id‖' = 2 = β/a."
+      },
+      {
+       "name": "non_comparable",
+       "kind": "non-example",
+       "statement": "Target ℝ with e^{2x}dx²: ‖id‖' = eˣ, unbounded on ℝ, bounded on compacts."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "6",
+   "title": "Jacobians",
+   "targets": [
+    {
+     "id": "6.1",
+     "kind": "definition",
+     "name": "orientedJacobian",
+     "statement": "For real inner product spaces V, W of dimension n with orientations o_V, o_W : Orientation ℝ · (Fin n) and linear A : V → W, orientedJacobian o_V o_W A is the unique scalar c with (o_W.volumeForm).compLinearMap A = c • o_V.volumeForm; it exists by AlternatingMap.eq_smul_basis_det and is unique since o_V.volumeForm = ±1 on orthonormal bases (also for n = 0, the empty basis). Basis formula: c = o_V.volumeForm b * o_W.volumeForm (A ∘ b) for every orthonormal basis b : Fin n → V, and c = o_W.volumeForm (A ∘ b) for b positively oriented (such b exists iff n ≥ 1 or o_V is positive).",
+     "hypotheses": [
+      "V, W real inner product spaces",
+      "finrank V = finrank W = n",
+      "o_V, o_W orientations indexed by Fin n"
+     ],
+     "locator": {
+      "source": "Rickman1993",
+      "where": "Chapter I, Section 1"
+     },
+     "prerequisites": [
+      "mathlib:Orientation.volumeForm",
+      "mathlib:Orientation.volumeForm_robust",
+      "mathlib:Orientation.volumeForm_neg_orientation",
+      "mathlib:Orientation.abs_volumeForm_apply_le",
+      "mathlib:Orientation.abs_volumeForm_apply_of_orthonormal",
+      "mathlib:Orientation.volumeForm_map",
+      "mathlib:LinearMap.det",
+      "mathlib:LinearMap.normDet",
+      "mathlib:LinearMap.normDet_eq_abs_det",
+      "mathlib:LinearMap.normDet_eq_prod_singularValues",
+      "mathlib:Orientation.finOrthonormalBasis",
+      "mathlib:Module.Basis.orientation_isEmpty",
+      "mathlib:AlternatingMap.eq_smul_basis_det"
+     ],
+     "api": [
+      {
+       "name": "orientedJacobian_eq_volumeForm_basis",
+       "role": "basis formula",
+       "statement": "For every orthonormal basis b : Fin n → V, J(A) = o_V.volumeForm b * o_W.volumeForm (A ∘ b); for b positively oriented, J(A) = o_W.volumeForm (A ∘ b). A positively oriented orthonormal basis exists for n ≥ 1 (Orientation.finOrthonormalBasis), not for n = 0 with o_V negative (Module.Basis.orientation_isEmpty)."
+      },
+      {
+       "name": "orientedJacobian_comp",
+       "role": "multiplicativity",
+       "statement": "J(B ∘ A) = J(B) J(A); J(id) = 1; J(cA) = cⁿ J(A)."
+      },
+      {
+       "name": "orientedJacobian_self_eq_det",
+       "role": "endomorphisms",
+       "statement": "For V = W with o_V = o_W, J(A) = LinearMap.det A."
+      },
+      {
+       "name": "orientedJacobian_neg_left / neg_right",
+       "role": "orientation reversal",
+       "statement": "Reversing one orientation negates J; reversing both leaves it unchanged."
+      },
+      {
+       "name": "abs_orientedJacobian",
+       "role": "normDet",
+       "statement": "|J(A)| = LinearMap.normDet A; J(A) ≠ 0 ↔ A bijective; J(A) > 0 ↔ A bijective and maps o_V to o_W."
+      },
+      {
+       "name": "abs_orientedJacobian_le",
+       "role": "Hadamard",
+       "statement": "|J(A)| ≤ ‖A‖ⁿ (basis formula and Orientation.abs_volumeForm_apply_le on A ∘ b, b orthonormal), with equality for non-negative multiples of linear isometries."
+      },
+      {
+       "name": "orientedJacobian_isometry",
+       "role": "naturality",
+       "statement": "For linear isometric equivalences U, U', J(U' ∘ A ∘ U) = J(U') J(A) J(U) with J(U), J(U') ∈ {±1}."
+      },
+      {
+       "name": "continuous_orientedJacobian",
+       "role": "regularity",
+       "statement": "In orthonormal bases b of V and b' of W, J(A) = o_V.volumeForm b * o_W.volumeForm b' * det[A] with both signs ±1 (empty matrix, det 1, for n = 0); a polynomial in the matrix entries, hence continuous."
+      }
+     ],
+     "tests": [
+      {
+       "name": "diag_two_one",
+       "kind": "computation",
+       "statement": "diag(2,1) on ℝ², standard orientations: J = 2 = det, normDet = 2, ‖A‖² = 4 ≥ 2."
+      },
+      {
+       "name": "reflection_signs",
+       "kind": "characterisation",
+       "statement": "R = diag(−1,1): J = −1 (std → std), +1 (std → −std); unsigned |det| cannot distinguish R from id."
+      },
+      {
+       "name": "non_orthonormal_bases",
+       "kind": "non-example",
+       "statement": "id : ℝ² → ℝ² has matrix diag(2,1) in bases (2e₁,e₂),(e₁,e₂) with det 2, while J(id) = 1."
+      },
+      {
+       "name": "pullback_direction",
+       "kind": "non-example",
+       "statement": "J(diag(2,1)) = 2; a definition by (A⁻¹)^* vol_V = J vol_W gives 1/2."
+      },
+      {
+       "name": "dimension_zero",
+       "kind": "degenerate",
+       "statement": "n = 0: J(A) = 1 for equal sign orientations, −1 otherwise; normDet = 1 = |J|; Hadamard 1 ≤ ‖A‖⁰ = 1. With o_V negative no positively oriented basis exists; o_W.volumeForm (A ∘ b) with b the empty basis would ignore o_V and give +1 for o_V negative, o_W positive."
+      }
+     ]
+    },
+    {
+     "id": "6.2",
+     "kind": "definition",
+     "name": "sobolevJacobian",
+     "statement": "For M, N of dimension n with continuous metrics and orientations o_M, o_N (TauCeti.Manifold.Orientation · · (Fin n)) and f ∈ W^{1,p}_loc(M,N): J_f x = orientedJacobian (o_M.orientationAt x) (o_N.orientationAt (f x)) (weakMFDeriv f x). Headline T4: (Df x)^*(vol_N)_{f x} = J_f x (vol_M)_x for every x with vol = TauCeti.riemannianVolumeForm; uniqueness a.e.; measurability; |J_f| = normDet(Df); sign laws; chart formula J_f(x) = ε_M(x) ε_N(f x) det[D(ψ∘f∘φ⁻¹)(φ x)] ρ_N(f x)/ρ_M(x) a.e. with ρ = TauCeti.chartVolumeDensity and det in Module.finBasis bases; C¹ case.",
+     "hypotheses": [
+      "finrank E = finrank F = n",
+      "o_M, o_N orientations",
+      "continuous metrics",
+      "LindelofSpace M, MeasurableSpace M, BorelSpace M",
+      "f ∈ W^{1,p}_loc(M,N)"
+     ],
+     "locator": {
+      "source": "HeikkilaPankka2025",
+      "where": "lines 25–27"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:4.3",
+      "target:4.4",
+      "target:5.1",
+      "target:6.1",
+      "tauceti:TauCeti.Manifold.Orientation",
+      "tauceti:TauCeti.Manifold.Orientation.orientationAt",
+      "tauceti:TauCeti.Manifold.Orientation.orientationAt_neg",
+      "tauceti:TauCeti.Manifold.Orientation.IsOrientationPreservingAt",
+      "tauceti:TauCeti.riemannianVolumeForm",
+      "tauceti:TauCeti.chartVolumeDensity",
+      "tauceti:TauCeti.chartVolumeDensity_changeChart",
+      "roadmap:DifferentialGeometry Layer 2.1",
+      "roadmap:DifferentialGeometry 12.4"
+     ],
+     "api": [
+      {
+       "name": "sobolevJacobian_volumeForm",
+       "role": "defining identity",
+       "statement": "(Df x)^*(riemannianVolumeForm o_N (f x)) = J_f x • riemannianVolumeForm o_M x for every x; any j with this identity a.e. equals J_f a.e."
+      },
+      {
+       "name": "aestronglyMeasurable_sobolevJacobian",
+       "role": "measurability",
+       "statement": "J_f is a.e.-strongly measurable for riemannianVolume."
+      },
+      {
+       "name": "abs_sobolevJacobian",
+       "role": "normDet",
+       "statement": "|J_f x| = normDet (Df x) for every x."
+      },
+      {
+       "name": "sobolevJacobian_neg",
+       "role": "sign laws",
+       "statement": "Replacing one of o_M, o_N by its negative negates J_f; replacing both leaves it unchanged."
+      },
+      {
+       "name": "sobolevJacobian_chart",
+       "role": "chart formula",
+       "statement": "J_f(x) = ε_M(x) ε_N(f x) det[D(ψ∘f∘φ⁻¹)(φ x)] ρ_N(f x)/ρ_M(x) a.e. on φ.source ∩ f⁻¹ψ.source (Lee2012 Ch. 15)."
+      },
+      {
+       "name": "sobolevJacobian_of_contMDiff",
+       "role": "C¹ maps",
+       "statement": "For C¹ f, J_f = J(mfderiv f) a.e.; J(mfderiv f x) > 0 where f is orientation preserving at x."
+      }
+     ],
+     "tests": [
+      {
+       "name": "line_scaled_metric",
+       "kind": "computation",
+       "statement": "M = N = ℝ flat: J_f = f'; target metric 4dt²: ρ_N = 2, J_f = 2f'; a density-free determinant gives f', contradicting |J_f| = normDet = 2|f'|."
+      },
+      {
+       "name": "identity_reversed",
+       "kind": "characterisation",
+       "statement": "id : (M,o) → (M,−o), M non-empty: J_f = −1."
+      },
+      {
+       "name": "fold_map",
+       "kind": "non-example",
+       "statement": "F(x₁,x₂) = (|x₁|,x₂): J_F = sign x₁ a.e., ‖DF‖ = 1; an unsigned Jacobian gives 1."
+      }
+     ]
+    },
+    {
+     "id": "6.3",
+     "kind": "theorem",
+     "name": "abs_sobolevJacobian_le_and_memLpLoc",
+     "statement": "In the setting of 6.2: |J_f x| ≤ ‖Df x‖ⁿ for every x, and f ∈ W^{1,p}_loc(M,N) ⇒ MemLpLoc riemannianVolume (p/n) univ J_f (p/n in [0,∞], ∞/n = ∞); in particular J_f ∈ L¹_loc when p ≥ n ≥ 1.",
+     "hypotheses": [
+      "as in 6.2"
+     ],
+     "locator": {
+      "source": "Rickman1993",
+      "where": "Chapter I, Section 1"
+     },
+     "prerequisites": [
+      "target:5.2",
+      "target:6.1",
+      "target:6.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "radial_stretch",
+       "kind": "computation",
+       "statement": "f(x) = x|x|^{−1/2} on ℝ²: ‖Df‖ = |x|^{−1/2}, J_f = |x|^{−1}/2 ≤ |x|^{−1}; ‖Df‖ ∈ L^p_loc iff p < 4, J_f ∈ L^q_loc iff q < 2 = p/n bound."
+      },
+      {
+       "name": "conformal_equality",
+       "kind": "characterisation",
+       "statement": "λU has |J| = λⁿ = ‖λU‖ⁿ."
+      },
+      {
+       "name": "bump_sum",
+       "kind": "non-example",
+       "statement": "Sum of λ_k(x−c_k)χ(|x−c_k|/r_k), r_k = 2^{−k}, λ_k = 2^k/√k: continuous, W^{1,p}_loc for p < 2, inner halves contribute π/(4k) to ∫J_f, divergent: J_f ∉ L¹_loc for p < n."
+      }
+     ]
+    },
+    {
+     "id": "6.4",
+     "kind": "definition",
+     "name": "jacobianMeasure",
+     "statement": "For f ∈ W^{1,p}_loc(M,N) with MemLpLoc riemannianVolume 1 univ J_f: μ_f^± = riemannianVolume.withDensity (ENNReal.ofReal (max (±J_f) 0)); the Jacobian measure is μ_f^+ − μ_f^− on relatively compact Borel sets. Theorem: with N also Lindelöf with MeasurableSpace N, BorelSpace N, for a C¹ open embedding f orientation preserving at every point, μ_f^− = 0 and μ_f^+ A = riemannianVolume (f '' A) for Borel A, f '' A being Borel (Topology.IsOpenEmbedding.measurableEmbedding) (roles exchanged if orientation reversing everywhere).",
+     "hypotheses": [
+      "as in 6.2",
+      "J_f locally integrable",
+      "for the change-of-variables theorem: LindelofSpace N, MeasurableSpace N, BorelSpace N (so that vol_N = TauCeti.riemannianVolume of N is defined)"
+     ],
+     "locator": {
+      "source": "Lee2012",
+      "where": "Ch. 16 (integration, change of variables)"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:6.2",
+      "target:6.3",
+      "mathlib:MeasureTheory.Measure.withDensity",
+      "mathlib:MeasureTheory.lintegral_image_eq_lintegral_abs_det_fderiv_mul",
+      "tauceti:TauCeti.setLIntegral_riemannianVolume_of_subset",
+      "mathlib:Topology.IsOpenEmbedding.measurableEmbedding",
+      "tauceti:TauCeti.riemannianVolume"
+     ],
+     "api": [
+      {
+       "name": "isLocallyFiniteMeasure_jacobianMeasure",
+       "role": "local finiteness",
+       "statement": "μ_f^± are locally finite and absolutely continuous with respect to riemannianVolume."
+      },
+      {
+       "name": "jacobianMeasure_neg",
+       "role": "orientation",
+       "statement": "Reversing one orientation exchanges μ_f^+ and μ_f^−; J_f ≥ 0 a.e. gives μ_f^− = 0."
+      },
+      {
+       "name": "jacobianMeasure_le",
+       "role": "Hadamard bound",
+       "statement": "μ_f^+(A) + μ_f^−(A) ≤ ∫_A ‖Df‖ⁿ dvol_M."
+      },
+      {
+       "name": "jacobianMeasure_of_openEmbedding",
+       "role": "change of variables",
+       "statement": "N Lindelöf with MeasurableSpace N, BorelSpace N; f a C¹ open embedding, orientation preserving everywhere: μ_f^− = 0 and μ_f^+(A) = vol_N(f(A)) for Borel A (f(A) Borel by Topology.IsOpenEmbedding.measurableEmbedding)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "dilation",
+       "kind": "computation",
+       "statement": "f(x) = 2x on ℝ: μ_f^+([0,1]) = 2 = vol([0,2])."
+      },
+      {
+       "name": "reflection",
+       "kind": "non-example",
+       "statement": "f(x) = −x: μ_f^+ = 0, μ_f^−([0,1]) = 1; a density |J_f| cannot distinguish f from id."
+      },
+      {
+       "name": "square_multiplicity",
+       "kind": "non-example",
+       "statement": "f(z) = z² on ℂ∖{0}, A = {1<|z|<2}: μ_f^+(A) = 2π∫_1^2 4r³dr = 30π while area f(A) = 15π; injectivity is used."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "7",
+   "title": "Euclidean domains",
+   "targets": [
+    {
+     "id": "7.1",
+     "kind": "theorem",
+     "name": "memW1pLocMap_opens_iff",
+     "statement": "For finite-dimensional real inner product spaces E, F with flat metrics, Ω : Opens E as a manifold with the restricted metric, f : Ω → F and f̃ : E → F with f = f̃ ∘ Subtype.val: f ∈ W^{1,p}_loc(Ω,F) ↔ ContinuousOn f̃ Ω ∧ MemW1pLoc volume p Ω f̃; then Df = U a.e., riemannianVolume of Ω = volume.restrict Ω, ‖Df‖ = ‖U‖ a.e., and for F = E with orientation o on both sides (TauCeti.Manifold.Orientation.model o, restricted to Ω), J_f = LinearMap.det U a.e. (T6).",
+     "hypotheses": [
+      "E, F finite-dimensional real inner product spaces",
+      "Ω : Opens E",
+      "f = f̃ ∘ Subtype.val",
+      "1 ≤ p ≤ ∞"
+     ],
+     "locator": {
+      "source": "MartioRickmanVaisala1969",
+      "where": "line 124 and lines 332–340"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:3.1",
+      "target:4.2",
+      "target:4.3",
+      "target:5.1",
+      "target:6.1",
+      "target:6.2",
+      "mathlib:TopologicalSpace.Opens.instChartedSpace",
+      "mathlib:riemannianMetricVectorSpace",
+      "tauceti:TauCeti.Manifold.instRiemannianBundleOpen",
+      "tauceti:TauCeti.Manifold.Orientation.model",
+      "tauceti:TauCeti.Manifold.Orientation.restrict",
+      "roadmap:DifferentialGeometry 12.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "identity",
+       "kind": "degenerate",
+       "statement": "f = id_Ω: Df = id, ‖Df‖ = 1, J_f = 1."
+      },
+      {
+       "name": "reflection",
+       "kind": "computation",
+       "statement": "(x₁,x₂) ↦ (x₁,−x₂): J_f = −1."
+      },
+      {
+       "name": "complex_square",
+       "kind": "computation",
+       "statement": "z ↦ z² with orientation (1,i): J_f = 4|z|² = |∂f/∂z|² − |∂f/∂z̄|²."
+      },
+      {
+       "name": "radial_stretch",
+       "kind": "compatibility",
+       "statement": "x|x|^{−1/2}: weak and classical derivatives agree off 0, J_f = |x|^{−1}/2."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "8",
+   "title": "Immersions, embeddings and the extrinsic class",
+   "targets": [
+    {
+     "id": "8.1",
+     "kind": "theorem",
+     "name": "exists_contMDiffOn_retraction_of_injective_mfderiv",
+     "statement": "If ι : N → V is C¹ (ContMDiff J 𝓘(ℝ,V) 1 ι) and mfderiv ι y₀ is injective, there are open U ∋ y₀, open t ⊆ V with ι '' U ⊆ t and r : V → N, ContMDiffOn 𝓘(ℝ,V) J 1 r t, with r (ι y) = y for y ∈ U. No injectivity of ι.",
+     "hypotheses": [
+      "J boundaryless",
+      "IsManifold J 1 N",
+      "V finite-dimensional real normed space",
+      "ContMDiff J 𝓘(ℝ, V) 1 ι",
+      "Injective (mfderiv J 𝓘(ℝ,V) ι y₀)"
+     ],
+     "locator": {
+      "source": "Lee2012",
+      "where": "Ch. 4 (rank theorem)"
+     },
+     "prerequisites": [
+      "tauceti:ContMDiffOn.isImmersionAt_iff_injective_mfderiv",
+      "tauceti:Manifold.IsImmersionAt.exists_contMDiffOn_retraction",
+      "mathlib:Manifold.IsImmersionAt"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "unit_circle",
+       "kind": "computation",
+       "statement": "Inclusion of the unit circle in ℝ²: r(v) = v/|v| on ℝ²∖{0}."
+      },
+      {
+       "name": "cube_map",
+       "kind": "non-example",
+       "statement": "ι(s) = s³: the left inverse s^{1/3} is not differentiable at 0; injective differential is used."
+      },
+      {
+       "name": "figure_eight",
+       "kind": "degenerate",
+       "statement": "The figure-eight immersion is not injective but has local retractions on patches."
+      }
+     ]
+    },
+    {
+     "id": "8.2",
+     "kind": "theorem",
+     "name": "memW1pLocMap_iff_comp_immersion",
+     "statement": "Let ι : N → V be C¹ with injective mfderiv everywhere and f : M → N continuous. Then f ∈ W^{1,p}_loc(M,N) ↔ ι ∘ f ∈ W^{1,p}_loc(M;V), and D(ι∘f)(x) = dι_{f x} ∘ Df(x) a.e.; if V is an inner product space and ⟪dι v, dι w⟫ = g_N(v,w), then ‖D(ι∘f)(x)‖ = ‖Df(x)‖ a.e. for every continuous metric on M (T5).",
+     "hypotheses": [
+      "ContMDiff J 𝓘(ℝ,V) 1 ι",
+      "∀ y, Injective (mfderiv J 𝓘(ℝ,V) ι y)",
+      "Continuous f",
+      "1 ≤ p ≤ ∞",
+      "isometry hypothesis for the norm statement"
+     ],
+     "locator": {
+      "source": "Hajlasz2009",
+      "where": "line 28"
+     },
+     "prerequisites": [
+      "target:2.4",
+      "target:4.1",
+      "target:4.2",
+      "target:4.3",
+      "target:4.5",
+      "target:4.6",
+      "target:5.1",
+      "target:8.1",
+      "mathlib:Manifold.IsSmoothEmbedding",
+      "mathlib:exists_embedding_euclidean_of_compact"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "circle_isometric",
+       "kind": "computation",
+       "statement": "Unit circle in ℝ², circle map f: |D(ι∘f)| = |t|^{−1/2}/2 = ‖Df‖; with 2ι the left side doubles."
+      },
+      {
+       "name": "cube_not_immersion",
+       "kind": "non-example",
+       "statement": "ι(s) = s³, f = t^{1/3}: ι∘f = id smooth while Df = t^{−2/3}/3 ∈ L^p_loc iff p < 3/2."
+      },
+      {
+       "name": "double_cover",
+       "kind": "compatibility",
+       "statement": "ι = z ↦ z² on S¹, f(t) = (cos(|t|^{1/2}/2), sin(|t|^{1/2}/2)): ι∘f is the circle map; both members exactly for p < 2."
+      }
+     ]
+    },
+    {
+     "id": "8.3",
+     "kind": "definition",
+     "name": "MemExtrinsicW1pLoc",
+     "statement": "For ι : N → V and any u : M → N, u ∈ W^{1,p}_loc(M,N;ι) when ι ∘ u ∈ W^{1,p}_loc(M;V) (4.1). No continuity required.",
+     "hypotheses": [
+      "ι : N → V",
+      "1 ≤ p ≤ ∞"
+     ],
+     "locator": {
+      "source": "Hajlasz2009",
+      "where": "lines 23–28"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "target:8.2",
+      "tauceti:TauCeti.IsNullSet"
+     ],
+     "api": [
+      {
+       "name": "MemExtrinsicW1pLoc.congr_isNullSet",
+       "role": "null sets",
+       "statement": "Membership is unchanged by modifying u on a TauCeti.IsNullSet."
+      },
+      {
+       "name": "memExtrinsicW1pLoc_iff_ae_mem_range",
+       "role": "source formulation",
+       "statement": "For injective ι and non-empty N: v ∈ W^{1,p}_loc(M;V) with v(x) ∈ ι(N) outside a null set ↔ v = ι ∘ u outside a null set for some member u."
+      },
+      {
+       "name": "memExtrinsicW1pLoc_iff_of_continuous",
+       "role": "continuous members",
+       "statement": "For a C¹ immersion ι, continuous members are exactly W^{1,p}_loc(M,N) (8.2)."
+      },
+      {
+       "name": "MemExtrinsicW1pLoc.comp_isLocalDiffeomorph",
+       "role": "precomposition",
+       "statement": "Precomposition with C¹ local diffeomorphisms of the source preserves the class."
+      }
+     ],
+     "tests": [
+      {
+       "name": "hedgehog",
+       "kind": "computation",
+       "statement": "x/|x| : B³ → S² ⊆ ℝ³: |D(ι∘u)|_HS = √2/|x|, ∫_{B³}|x|^{−p} = 4π∫_0^1 r^{2−p}dr finite iff p < 3; member for 1 ≤ p < 3, in no continuous class."
+      },
+      {
+       "name": "sign_into_S0",
+       "kind": "non-example",
+       "statement": "sign(x₁) : B² → S⁰ ⊆ ℝ has a jump: in no class."
+      },
+      {
+       "name": "lp_only_model",
+       "kind": "non-example",
+       "statement": "A model asking only ι ∘ u ∈ L^p_loc would accept sign(x₁)."
+      }
+     ]
+    },
+    {
+     "id": "8.4",
+     "kind": "theorem",
+     "name": "memW1pLocOn_comp_embedding_iff",
+     "statement": "For compact boundaryless N and C¹ embeddings ι₁ : N → V₁, ι₂ : N → V₂ (Manifold.IsSmoothEmbedding J 𝓘(ℝ,Vᵢ) 1 ιᵢ) and any u : M → N: ι₁ ∘ u ∈ W^{1,p}_loc(M;V₁) ↔ ι₂ ∘ u ∈ W^{1,p}_loc(M;V₂); for every compactly supported C¹ G : V₁ → V₂ with G ∘ ι₁ = ι₂ (such G exist), D(ι₂∘u) = DG(ι₁∘u) ∘ D(ι₁∘u) a.e. (T7).",
+     "hypotheses": [
+      "CompactSpace N",
+      "J boundaryless",
+      "Manifold.IsSmoothEmbedding J 𝓘(ℝ,V₁) 1 ι₁ and J 𝓘(ℝ,V₂) 1 ι₂",
+      "1 ≤ p ≤ ∞"
+     ],
+     "locator": {
+      "source": "Hajlasz2009",
+      "where": "lines 23–28"
+     },
+     "prerequisites": [
+      "target:2.3",
+      "target:4.1",
+      "target:8.3",
+      "tauceti:TauCeti.SmoothEmbedding",
+      "tauceti:TauCeti.SmoothEmbedding.exists_contMDiffMap_extension_hasCompactSupport",
+      "mathlib:Manifold.IsSmoothEmbedding"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "noncompact_target",
+       "kind": "non-example",
+       "statement": "N = ℝ, ι₁ = id, ι₂(s) = (s, exp(exp s)), M = B(0,e^{−1}), u = log log(1/|x|): ι₁∘u ∈ W^{1,2}_loc (∫_0^{1/e} dr/(r log²(1/r)) < ∞) but the second coordinate of ι₂∘u is 1/|x|, not W^{1,1}_loc."
+      },
+      {
+       "name": "double_cover_not_embedding",
+       "kind": "non-example",
+       "statement": "ι₁ = z ↦ z² on S¹, ι₂ inclusion, u = e^{iθ/2} on the punctured disc: ι₁∘u = z/|z| smooth, ι₂∘u jumps across the positive real axis."
+      },
+      {
+       "name": "two_embeddings_circle",
+       "kind": "compatibility",
+       "statement": "Inclusion S¹ ⊆ ℝ² and z ↦ (z,z²) into ℝ⁴ with u = x/|x| on the disc: both compositions in L^p_loc-gradient class iff p < 2."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "DifferentialGeometry",
+   "sections": [
+    "Layer 2.1",
+    "Layer 2.2",
+    "12.1",
+    "12.4"
+   ],
+   "what": "Orientations, tangent orientations and orientation-preserving maps, metrics on open subsets, the Riemannian volume form and measure, consumed through their Tau Ceti implementations (TauCeti.Manifold.Orientation, TauCeti.riemannianVolumeForm, TauCeti.riemannianVolume, TauCeti.Manifold.instRiemannianBundleOpen)."
+  },
+  {
+   "roadmap": "PseudoholomorphicCurveAnalysis",
+   "sections": [
+    "PH1.1",
+    "PH1.2"
+   ],
+   "what": "The planar local classes MemLpLoc and MemWkpLoc (PH1.1), used only in the agreement Checks of 1.1 and 1.2; the composition and change-of-variables theorems for kp > 2 (PH1.2), used at k = 1 only in the agreement Checks of 2.2 and 2.4."
+  }
+ ],
+ "consumers": [
+  {
+   "roadmap": "QuasiregularMaps",
+   "what": "W^{1,n}_loc(M,N), Df, ‖Df‖, J(A), J_f, Hadamard's inequality, the chain rules and the Euclidean case: its requirements map to 4.2/4.4/4.5 (class), 3.1/4.3 (weak differential, null sets), 5.1–5.3 (norm), 6.1–6.3 (Jacobian), 3.3/4.6 (chain rules), 1.2/7.1 (Euclidean case)."
+  },
+  {
+   "roadmap": "PseudoholomorphicCurveAnalysis",
+   "what": "PH4.1's W^{1,p}_loc(Σ,M) for a boundaryless Riemann surface and p > 2 coincides with 4.2; a Check of PH4.1 against 4.2."
+  },
+  {
+   "roadmap": "SobolevMapsBetweenManifolds, Part II",
+   "what": "Density of smooth maps, traces, homotopy classes, metric-space targets, higher order, approximate differentiability and tangency, (p-)harmonic maps; consumes 8.3–8.4."
+  }
+ ],
+ "gaps": []
+}
