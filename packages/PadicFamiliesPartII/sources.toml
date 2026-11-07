@@ -1,0 +1,97 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PadicFamiliesPartII"
+
+[[source]]
+id = "BCGP21"
+authors = "George Boxer, Frank Calegari, Toby Gee, Vincent Pilloni"
+title = "Abelian surfaces over totally real fields are potentially modular"
+year = 2018
+arxiv = "1812.09269v3"
+locator_scheme = "page"
+locator = "Theorem 3.10.1; Theorems 4.2.1, 4.2.12; Proposition 4.4.3; §4.5; Theorem 4.6.1, Proposition 4.6.9, Lemmas 4.6.16-4.6.27; §§5.2-5.8 (Propositions 5.5.1-5.7.9, Lemma 5.8.1, Theorems 5.8.4, 5.8.6, Remark 5.8.7); Theorem 6.2.6; §6.3, Theorem 6.3.16; §6.4; Theorem 6.5.8; Propositions 6.6.1-6.6.2, Theorems 6.6.4-6.6.5"
+venue = "Publ. Math. IHES 134 (2021), 153-501"
+doi = "10.1007/s10240-021-00128-2"
+url = "https://arxiv.org/abs/1812.09269v3"
+fetched_from = "https://arxiv.org/pdf/1812.09269v3"
+fetched_at = "2026-10-26T16:50:54Z"
+sha256 = "7c8d74b0628d8b9cc841a853372ca2d0bc18c086ab46d138f75afd15f35689ed"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3; page locators are its printed pages"
+cited_for = ["Layer 4", "Layer 5", "Layer 6"]
+
+[[source]]
+id = "BCGP25"
+authors = "George Boxer, Frank Calegari, Toby Gee, Vincent Pilloni"
+title = "Modularity theorems for abelian surfaces"
+year = 2025
+arxiv = "2502.20645v1"
+locator_scheme = "page"
+locator = "Definitions 2.2.31, 2.3.30; Theorem 2.2.39; Proposition 3.4.3, Definition 3.4.5; §3.5, Theorem 3.5.11; Theorem 3.6.9, Proposition 3.6.15; Theorems 4.5.20, 4.5.23; Theorems 4.7.1-4.7.5, Corollaries 4.7.3, 4.7.6; Theorem 4.9.4, Corollary 4.9.5, Lemma 4.9.6, Theorem 4.9.9; Propositions 4.10.3, 4.10.6, Remark 4.10.7, §4.10.8, Theorem 4.10.12; Lemma 4.12.3, Theorem 4.12.4, Remark 4.12.5; Theorem 7.3.1, Lemmas 7.3.2-7.3.8"
+url = "https://arxiv.org/abs/2502.20645v1"
+fetched_from = "https://arxiv.org/pdf/2502.20645v1"
+fetched_at = "2026-10-26T16:51:03Z"
+sha256 = "51d7eacca6eae394943f09ab72dfe09ee9aa6da27f563be8237c416e5da4e95c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1; printed pages equal PDF pages"
+cited_for = ["Layer 7", "Layer 8", "Layer 9"]
+
+[[source]]
+id = "P20"
+authors = "Vincent Pilloni"
+title = "Higher coherent cohomology and p-adic modular forms of singular weights"
+year = 2020
+venue = "Duke Mathematical Journal 169 (2020), no. 9, 1647-1807"
+doi = "10.1215/00127094-2019-0075"
+locator_scheme = "theorem"
+locator = "§7.1 and Lemma 7.1.1 (pp. 38-40); Proposition 7.4.2.2 (p. 49); Lemma 8.2.1 and Proposition 8.2.1 (pp. 52-53); Proposition 13.3.3.1 and Corollary 13.3.3.1 (p. 90); Proposition 15.1.1 (p. 106); Theorem 15.2.1 (p. 107); Proposition 15.2.4.1 (p. 109)"
+version_note = "author PDF dated 17 June 2019, 113 pages; page numbers are those of this edition, not the journal"
+url = "https://www.imo.universite-paris-saclay.fr/~vincent.pilloni/complexhidatheorygsp4.pdf"
+fetched_from = "https://www.imo.universite-paris-saclay.fr/~vincent.pilloni/complexhidatheorygsp4.pdf"
+fetched_at = "2026-10-26T16:51:12Z"
+sha256 = "4c05724efeab1dbbb108f980ec9a722127d2a8cd2abf6e8c2a6a2251cf0f9f58"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["3.1", "3.2", "3.3", "3.4", "3.5", "6.4", "6.5"]
+
+[[source]]
+id = "BP26"
+authors = "George Boxer, Vincent Pilloni"
+title = "Higher Hida theory for Siegel modular forms"
+year = 2026
+venue = "Inventiones mathematicae 244 (2026), 45-141"
+doi = "10.1007/s00222-025-01393-2"
+locator_scheme = "section"
+locator = "background to BCGP25 §7.3; results imported through HigherHidaAndColemanTheory"
+version_note = "author version"
+url = "https://www.imo.universite-paris-saclay.fr/~vincent.pilloni/higherhidaSiegel.pdf"
+fetched_from = "https://www.imo.universite-paris-saclay.fr/~vincent.pilloni/higherhidaSiegel.pdf"
+fetched_at = "2026-10-26T16:51:14Z"
+sha256 = "af70d084612b1b75761694923ef2395752d23b41e0b8b458910d096df4c8c3c6"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layer 9"]
+
+[[source]]
+id = "BPS"
+authors = "Stéphane Bijakowski, Vincent Pilloni, Benoît Stroh"
+title = "Classicité de formes modulaires surconvergentes"
+year = 2016
+venue = "Annals of Mathematics 183"
+doi = "10.4007/annals.2016.183.3.5"
+locator_scheme = "page"
+locator = "Hypothesis 1.1.1; §2.3; Propositions 3.1.1-3.2.1, Corollary 3.2.2; Propositions 4.1.2, 4.2.1; Definitions 4.3.2-4.3.5, Lemma 4.3.6, Propositions 4.3.7, 4.3.10; Theorem 4.4.1, Lemmas 4.4.3, 4.4.5; Hypothesis 4.5.1; Definition 4.5.2, Lemmas 4.5.3, 4.5.5, Propositions 4.5.6-4.5.8; Propositions 5.2.1, 5.2.4, Corollaries 5.2.2-5.2.3; Theorem 5.3.1, Remark 5.3.2"
+version_note = "read in the HAL deposit hal-01409534v1; statement numbers agree with the Annals version; page locators are those of the HAL deposit"
+url = "https://hal.science/hal-01409534v1"
+fetched_from = "https://hal.science/hal-01409534/document"
+fetched_at = "2026-10-26T16:51:15Z"
+sha256 = "2f00920faa026002c6baffd83028f2a8b0ec653dbab445e1e20aeaf1b60a6aff"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["1.1", "1.2", "1.3", "1.4", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9"]
