@@ -1,0 +1,2260 @@
+{
+ "roadmap": "HardSphereDynamicsAndKineticLimits",
+ "title": "Hard-sphere dynamics and kinetic limits",
+ "parent": null,
+ "summary": "Finitely many hard spheres of diameter ε in a flat position space (Euclidean space or a flat torus): elastic scattering, trajectories, Alexander's theorem (the hard-sphere flow exists off a null set and is a measure-preserving group), its Koopman group, transported densities and the weak Liouville equation with specular reflection, marginals, Maxwellian canonical and grand canonical ensembles with their invariance and correlation functions, the hard-sphere Boltzmann collision operator and mild solutions, Lanford's theorem stated as a proposition, and its law of large numbers for the rescaled empirical measure.",
+ "baseline": {
+  "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+  "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
+ },
+ "layers": [
+  {
+   "key": "1",
+   "title": "Flat position spaces",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "definition",
+     "name": "FlatPositionSpace",
+     "statement": "Class FlatPositionSpace d X on a proper normed additive commutative group X with Borel measurable structure and a measure volume: data an additive homomorphism π : E →+ X (E = EuclideanSpace ℝ (Fin d)) and a radius ρ ∈ (0, ∞]; axioms: π surjective; ‖π a‖ ≤ |a|; every ξ with ‖ξ‖ < ρ has a lift a with π a = ξ and |a| = ‖ξ‖; π injective on B(0, ρ); volume translation invariant; volume(π(A)) = vol(A) for measurable A ⊆ B(0, ρ).",
+     "hypotheses": [
+      "d ≥ 1",
+      "0 < ρ"
+     ],
+     "locator": {
+      "source": "BGSS2023",
+      "where": "line 119 (torus setting); GST2013 line 833 (Euclidean setting)"
+     },
+     "prerequisites": [
+      "mathlib:EuclideanSpace",
+      "mathlib:MeasureTheory.Measure.IsAddHaarMeasure",
+      "mathlib:MeasureTheory.Measure.addHaar_sphere",
+      "mathlib:EuclideanSpace.volume_ball"
+     ],
+     "api": [
+      {
+       "name": "shortLift",
+       "role": "construction",
+       "statement": "For ‖ξ‖ < ρ the unique ℓ(ξ) ∈ B(0, ρ) with π(ℓ ξ) = ξ; |ℓ ξ| = ‖ξ‖, ℓ(−ξ) = −ℓ ξ, ℓ(π a) = a for |a| < ρ, ℓ continuous on the ball."
+      },
+      {
+       "name": "norm_cover_sub",
+       "role": "local isometry",
+       "statement": "π is 1-Lipschitz and ‖π a − π b‖ = |a − b| when |a − b| < ρ; π(B(a, r)) = B(π a, r) for r ≤ ρ."
+      },
+      {
+       "name": "volume_ball",
+       "role": "evaluation",
+       "statement": "volume(B(x, r)) = vol(B(0, r)) for r ≤ ρ; spheres of radius 0 < r < ρ are null."
+      },
+      {
+       "name": "isAddHaarMeasure",
+       "role": "structure",
+       "statement": "volume is an additive Haar measure, σ-finite, finite on bounded sets and regular."
+      },
+      {
+       "name": "measurePreserving_add_cover",
+       "role": "transport",
+       "statement": "x ↦ x + π(t v) is a measure-preserving homeomorphism and (t, x) ↦ x + π(t v) is continuous."
+      }
+     ],
+     "tests": [
+      {
+       "name": "euclidean_instance",
+       "kind": "compatibility",
+       "statement": "On E with π = id and ρ = ∞ every axiom holds and the short lift is the identity."
+      },
+      {
+       "name": "unit_torus_values",
+       "kind": "computation",
+       "statement": "On the unit flat torus in dimension 2 the class of (1/2, 1/2) has norm √2/2 and the short lift of the class of (0.9, 0) is (−0.1, 0)."
+      },
+      {
+       "name": "sup_norm_torus_fails",
+       "kind": "non-example",
+       "statement": "UnitAddTorus (Fin 2) with its supremum norm fails the lift axiom for the coordinate cover: the class of (0.1, 0.1) has norm 0.1 while every lift has Euclidean norm at least 0.1414."
+      },
+      {
+       "name": "zero_radius_excluded",
+       "kind": "degenerate",
+       "statement": "ρ = 0 would make the lift axiom vacuous and contact normals undefined; the class requires 0 < ρ."
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "construction",
+     "name": "FlatPositionSpace.euclidean",
+     "statement": "Instance of FlatPositionSpace d E with π = id and ρ = ∞; on E the short lift is the identity and contact normals are (x_i − x_j)/ε.",
+     "hypotheses": [
+      "d ≥ 1"
+     ],
+     "locator": {
+      "source": "GST2013",
+      "where": "lines 833–841"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "mathlib:EuclideanSpace.volume_ball"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "normal_value",
+       "kind": "computation",
+       "statement": "The contact normal of x_i = (1, 0), x_j = 0 at ε = 1 is (1, 0)."
+      },
+      {
+       "name": "ball_volume_d3",
+       "kind": "computation",
+       "statement": "vol(B(0, 1)) = 4π/3 ≈ 4.18879 in d = 3."
+      },
+      {
+       "name": "free_transport",
+       "kind": "computation",
+       "statement": "x = 0, v = (1, 0), t = 2 gives (2, 0)."
+      }
+     ]
+    },
+    {
+     "id": "1.3",
+     "kind": "definition",
+     "name": "FlatTorus",
+     "statement": "For L : Submodule ℤ E with DiscreteTopology L and IsZLattice ℝ L, FlatTorus L = E ⧸ L.toAddSubgroup with the quotient norm (QuotientAddGroup.instNormedAddCommGroup, L closed since discrete), the Borel σ-algebra (QuotientAddGroup.borelSpace) and the MeasureSpace instance whose volume is the image of Lebesgue measure restricted to the fundamental domain ZSpan.fundamentalDomain of a chosen ℤ-basis of L; the set is also a fundamental domain for the opposite subgroup acting by right translation (E commutative). Mathlib then gives: AddQuotientMeasureEqMeasurePreimage vol volume (MeasureTheory.IsFundamentalDomain.quotientMeasureEqMeasurePreimage_quotientMeasure, additive form), independence of the fundamental domain (MeasureTheory.IsAddFundamentalDomain.addProjection_respects_measure), measure preservation of the quotient map from vol restricted to a fundamental domain (measurePreserving_quotientAddGroup_mk_of_AddQuotientMeasureEqMeasurePreimage), and the Haar property of the finite measure volume (QuotientMeasureEqMeasurePreimage.haarMeasure_quotient, additive form). Total mass ZLattice.covolume L (ZLattice.covolume_eq_measure_fundamentalDomain). It is a FlatPositionSpace with π the quotient map and ρ half the minimal norm of a nonzero lattice vector; the local measure axiom is the unfolding of a fundamental domain over the disjoint translates of A ⊆ B(0, ρ).",
+     "hypotheses": [
+      "DiscreteTopology L",
+      "IsZLattice ℝ L"
+     ],
+     "locator": {
+      "source": "BGSS2023",
+      "where": "lines 119–142"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "mathlib:AddSubgroup.isClosed_of_discreteTopology",
+      "mathlib:QuotientAddGroup.borelSpace",
+      "mathlib:QuotientAddGroup.instNormedAddCommGroup",
+      "mathlib:QuotientAddGroup.norm_mk",
+      "mathlib:IsZLattice",
+      "mathlib:ZSpan.fundamentalDomain",
+      "mathlib:ZLattice.isAddFundamentalDomain",
+      "mathlib:ZLattice.covolume",
+      "mathlib:ZLattice.covolume_eq_measure_fundamentalDomain",
+      "mathlib:MeasureTheory.AddQuotientMeasureEqMeasurePreimage",
+      "mathlib:MeasureTheory.IsFundamentalDomain.quotientMeasureEqMeasurePreimage_quotientMeasure",
+      "mathlib:MeasureTheory.IsAddFundamentalDomain.addProjection_respects_measure",
+      "mathlib:measurePreserving_quotientAddGroup_mk_of_AddQuotientMeasureEqMeasurePreimage",
+      "mathlib:MeasureTheory.QuotientMeasureEqMeasurePreimage.haarMeasure_quotient",
+      "mathlib:UnitAddTorus.measurePreserving_equivPiIoc"
+     ],
+     "api": [
+      {
+       "name": "isAddFundamentalDomain_op",
+       "role": "construction",
+       "statement": "The chosen fundamental domain is a fundamental domain for AddSubgroup.op L.toAddSubgroup acting by right translation; volume is the image of vol restricted to every fundamental domain of L, the quotient map is measure preserving from vol restricted to any of them, and volume is a finite Haar measure (all three cited from Mathlib). Non-example: B(0, 1/2) is not a fundamental domain of ℤ^d for d ≥ 2 (its translates cover a set of density ω_d/2^d < 1)."
+      },
+      {
+       "name": "compact_connected",
+       "role": "structure",
+       "statement": "FlatTorus L is a compact connected metric group and the quotient map is a covering map and a local isometry on balls of radius ρ."
+      },
+      {
+       "name": "integral_periodic",
+       "role": "unfolding",
+       "statement": "For L-periodic measurable g ≥ 0 on E, ∫ over the torus equals the integral of g over a fundamental domain."
+      },
+      {
+       "name": "unitTorus_equiv",
+       "role": "compatibility",
+       "statement": "The unit torus (L = ℤᵈ) has ρ = 1/2, total mass 1, and the coordinate map is a measure-preserving additive equivalence with UnitAddTorus (Fin d); the norms differ."
+      },
+      {
+       "name": "scaling",
+       "role": "functoriality",
+       "statement": "FlatTorus (c L) is isometric to FlatTorus L with distances times c and measure times c^d."
+      }
+     ],
+     "tests": [
+      {
+       "name": "unit_torus_d2",
+       "kind": "computation",
+       "statement": "Unit torus d = 2: class of (1/2, 1/2) has norm √2/2, class of e_1 is 0, ρ = 1/2."
+      },
+      {
+       "name": "rect_lattice",
+       "kind": "computation",
+       "statement": "L = 2ℤ × ℤ: covolume 2, ρ = 1/2."
+      },
+      {
+       "name": "sup_norm_differs",
+       "kind": "non-example",
+       "statement": "The supremum norm of UnitAddTorus (Fin 2) is 1/2 at (1/2, 1/2), not √2/2."
+      },
+      {
+       "name": "wrong_normalisation",
+       "kind": "non-example",
+       "statement": "A probability normalisation on FlatTorus (2ℤ × ℤ) would give the ball of radius 1/4 measure π/32 instead of π/16, violating the local axiom."
+      }
+     ]
+    },
+    {
+     "id": "1.4",
+     "kind": "theorem",
+     "name": "FlatPositionSpace.volume_shell",
+     "statement": "For 0 ≤ r₁ ≤ r₂ < ρ the shell {r₁ ≤ ‖y − x‖ ≤ r₂} has measure ω_d(r₂^d − r₁^d) ≤ d ω_d r₂^{d−1}(r₂ − r₁); if 0 < ε ≤ 2ρ and ‖x_i − x_j‖ ≥ ε for i ≠ j then N ω_d (ε/2)^d ≤ μ_X(X).",
+     "hypotheses": [
+      "0 ≤ r₁ ≤ r₂ < ρ",
+      "0 < ε ≤ 2ρ for the packing bound"
+     ],
+     "locator": {
+      "source": "GST2013",
+      "where": "line 873 (shell condition); BGSS2023 line 165 (emptiness for large N)"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.3",
+      "mathlib:EuclideanSpace.volume_ball"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "packing_torus",
+       "kind": "computation",
+       "statement": "Unit torus d = 2, ε = 0.4: ω_2(0.2)² ≈ 0.12566, so N ≥ 8 is impossible."
+      },
+      {
+       "name": "shell_area",
+       "kind": "computation",
+       "statement": "On E, d = 2, the shell 1 ≤ |y| ≤ 1.1 has area π(1.21 − 1) ≈ 0.65973."
+      },
+      {
+       "name": "radius_needed",
+       "kind": "non-example",
+       "statement": "Unit torus d = 1: the shell 0.4 ≤ ‖y‖ ≤ 0.6 has measure 0.2, not the formula value 0.4; the hypothesis r₂ < ρ is needed."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "Elastic scattering",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "definition",
+     "name": "HardSphere.scatter",
+     "statement": "σ_ν(v, w) = (v − ⟨v − w, ν⟩ν, w + ⟨v − w, ν⟩ν) as a linear map E × E → E × E; for unit ν it is an involution, σ_{−ν} = σ_ν, preserves v + w and |v|² + |w|², reverses ⟨v − w, ν⟩, is the orthogonal reflection in the hyperplane orthogonal to (ν, −ν), has determinant −1 and preserves Lebesgue measure.",
+     "hypotheses": [
+      "|ν| = 1 for the dynamical properties"
+     ],
+     "locator": {
+      "source": "GST2013",
+      "where": "(4.1.2) lines 843–847 and (4.4.1) lines 1222–1227; BGSS2023 (1.1.2) lines 125–131; DengHaniMa2024 (1.2) lines 157–163"
+     },
+     "prerequisites": [
+      "mathlib:Submodule.reflection",
+      "mathlib:Submodule.det_reflection",
+      "mathlib:MeasureTheory.Measure.map_linearMap_addHaar_eq_smul_addHaar",
+      "mathlib:MeasureTheory.MeasurePreserving"
+     ],
+     "api": [
+      {
+       "name": "scatter_involutive",
+       "role": "structure",
+       "statement": "σ_ν ∘ σ_ν = id for |ν| = 1."
+      },
+      {
+       "name": "scatter_conserves",
+       "role": "conservation",
+       "statement": "v' + w' = v + w and |v'|² + |w'|² = |v|² + |w|²."
+      },
+      {
+       "name": "measurePreserving_scatter",
+       "role": "measure",
+       "statement": "σ_ν preserves Lebesgue measure on E × E; LinearMap.det σ_ν = −1."
+      },
+      {
+       "name": "scatter_normal",
+       "role": "characterisation",
+       "statement": "Tangential components unchanged; ⟨v', ν⟩ = ⟨w, ν⟩ and ⟨w', ν⟩ = ⟨v, ν⟩."
+      },
+      {
+       "name": "scatter_galilean",
+       "role": "equivariance",
+       "statement": "σ_ν(v + c, w + c) = σ_ν(v, w) + (c, c); σ_{Aν}(Av, Aw) = (A×A)σ_ν(v, w) for linear isometries A; σ_ν(w, v) = swap σ_ν(v, w)."
+      },
+      {
+       "name": "scatter_eq_reflection",
+       "role": "compatibility",
+       "statement": "σ_ν equals Submodule.reflection of the orthogonal complement of (ν, −ν) in WithLp 2 (E × E)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "oblique_witness",
+       "kind": "computation",
+       "statement": "d = 2, ν = (1, 0), v = (0, 0.9), w = (0.9, 0): σ_ν(v, w) = ((0.9, 0.9), (0, 0))."
+      },
+      {
+       "name": "head_on",
+       "kind": "computation",
+       "statement": "ν = (1, 0), v = (1, 0), w = (−1, 0): v' = (−1, 0), w' = (1, 0)."
+      },
+      {
+       "name": "fixed_points",
+       "kind": "degenerate",
+       "statement": "v = w and grazing pairs (v = (0, 1), w = 0, ν = (1, 0)) are fixed."
+      },
+      {
+       "name": "separate_reflection",
+       "kind": "non-example",
+       "statement": "Reflecting each velocity separately sends ((1, 0), 0) to ((−1, 0), 0) and changes total momentum."
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "theorem",
+     "name": "HardSphere.measurePreserving_precollision",
+     "statement": "Θ(v, w, ω) = (σ_ω(v, w), −ω) and (v, w, ω) ↦ (w, v, −ω) are measure-preserving involutions of E × E × S^{d−1} (vol ⊗ vol ⊗ σ_S) preserving the hard-sphere kernel ⟨w − v, ω⟩_+; for d ≥ 1, ∫_{S^{d−1}} ⟨k, ω⟩_+ dσ_S = ω_{d−1}|k| with ω_0 = 1 (an elementary computation of this roadmap: polar coordinates reduce it to ∫_{B(0,1)} ⟨e, x⟩_+ = ω_{d−1}/(d + 1), stated in none of the sources).",
+     "hypotheses": [
+      "d ≥ 1"
+     ],
+     "locator": {
+      "source": "GST2013",
+      "where": "lines 394–400 (the involution); (2.2.1) lines 432–437 (unit Jacobians); lines 674 and 1264–1268 (the hard-sphere kernel b(w, ω) = (ω·w)_+); the cross-section value has no source locator"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "mathlib:MeasureTheory.Measure.toSphere",
+      "mathlib:MeasureTheory.Measure.toSphere_apply_univ"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "cross_section_d3",
+       "kind": "computation",
+       "statement": "d = 3: π|k|; d = 2: 2|k|."
+      },
+      {
+       "name": "cross_section_d1",
+       "kind": "degenerate",
+       "statement": "d = 1: σ_S is the counting measure on S⁰ = {±1} (total mass 2) and the integral is |k| = ω_0|k|; ∫_{B(0,1)} ⟨e, x⟩_+ = 1/2 = ω_0/2."
+      },
+      {
+       "name": "prob_normalisation",
+       "kind": "non-example",
+       "statement": "The probability-normalised sphere measure would give |k|/4 in d = 3."
+      },
+      {
+       "name": "kernel_invariance",
+       "kind": "computation",
+       "statement": "At the oblique witness (w − v)·ω = 0.9 = (w' − v')·(−ω)."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "Phase space, contacts and free transport",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "definition",
+     "name": "HardSphere.hardCoreSet",
+     "statement": "𝒟̄^ε_N = {Z ∈ (Fin N → X × E) : ‖x_i − x_j‖ ≥ ε for all i ≠ j} (closed) and 𝒟^ε_N with strict inequalities (open).",
+     "hypotheses": [
+      "ε ≥ 0"
+     ],
+     "locator": {
+      "source": "GST2013",
+      "where": "lines 839–841; BGSS2023 lines 137–142; DengHaniMa2024 (1.1) lines 150–153"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "mathlib:MeasureTheory.measurePreserving_piCongrLeft"
+     ],
+     "api": [
+      {
+       "name": "isClosed_hardCoreSet",
+       "role": "topology",
+       "statement": "𝒟̄ closed, 𝒟 open, both invariant under relabelling and common translations, products of a position set with E^N."
+      },
+      {
+       "name": "hardCoreSet_le_one",
+       "role": "degenerate",
+       "statement": "For N ≤ 1 both are the whole space."
+      },
+      {
+       "name": "volume_frontier",
+       "role": "measure",
+       "statement": "For 0 < ε < ρ, 𝒟̄ ∖ 𝒟 is null."
+      },
+      {
+       "name": "restrict",
+       "role": "structure",
+       "statement": "Subconfigurations of 𝒟̄_N lie in 𝒟̄_s."
+      }
+     ],
+     "tests": [
+      {
+       "name": "contact_pair_E",
+       "kind": "computation",
+       "statement": "On E, d = 2, ε = 1: positions 0, (1, 0) in 𝒟̄_2 \\ 𝒟_2; positions 0, (0.5, 0) in neither."
+      },
+      {
+       "name": "torus_wraparound",
+       "kind": "non-example",
+       "statement": "Unit torus, ε = 0.4: π(0.05, 0), π(0.95, 0) at torus distance 0.1 are excluded; the representative distance 0.9 would wrongly accept them."
+      },
+      {
+       "name": "one_particle",
+       "kind": "degenerate",
+       "statement": "𝒟̄_1 is everything."
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "definition",
+     "name": "HardSphere.contactNormal",
+     "statement": "Contact pairs {i, j} with ‖x_i − x_j‖ = ε; contact matching when pairwise disjoint; ν_ij = ℓ(x_i − x_j)/ε for ε < ρ; boundary pieces ∂^±(i, j) with {i, j} the only contact pair and ±⟨v_i − v_j, ν_ij⟩ > 0.",
+     "hypotheses": [
+      "0 < ε < ρ"
+     ],
+     "locator": {
+      "source": "BGSS2023",
+      "where": "lines 148–152"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:3.1",
+      "mathlib:MeasureTheory.Measure.addHaar_sphere"
+     ],
+     "api": [
+      {
+       "name": "contactNormal_antisymm",
+       "role": "structure",
+       "statement": "ν_ji = −ν_ij, |ν_ij| = 1, ν_ij = (x_i − x_j)/ε on E."
+      },
+      {
+       "name": "boundary_null",
+       "role": "measure",
+       "statement": "Boundary pieces are disjoint from each other and from 𝒟, and null; non-matching contact configurations are null."
+      },
+      {
+       "name": "contact_equivariant",
+       "role": "equivariance",
+       "statement": "Contacts and normals are equivariant under relabelling and invariant under common translations."
+      }
+     ],
+     "tests": [
+      {
+       "name": "torus_contact",
+       "kind": "computation",
+       "statement": "Unit torus, ε = 0.3: π(0.1, 0), π(0.8, 0) are in contact with ν_ij = (1, 0)."
+      },
+      {
+       "name": "non_matching",
+       "kind": "non-example",
+       "statement": "Positions 0, (1, 0), (−1, 0), ε = 1, have contact pairs {1,2}, {1,3}: not a matching."
+      },
+      {
+       "name": "boundary_signs",
+       "kind": "characterisation",
+       "statement": "x_i = (1, 0), x_j = 0: v_i = (1, 0) gives ∂^+, v_i = (−1, 0) gives ∂^−, v_i = (0, 1) is grazing and in neither."
+      }
+     ]
+    },
+    {
+     "id": "3.3",
+     "kind": "definition",
+     "name": "HardSphere.reversal",
+     "statement": "Contact scattering σ_M applies σ_{ν_ij} to each pair of the contact matching M (identity otherwise); reversal ℛ(X, V) = (X, −σ_M V).",
+     "hypotheses": [
+      "0 < ε < ρ"
+     ],
+     "locator": {
+      "source": "GST2013",
+      "where": "lines 1219–1227 (pre-image of post-collisional configurations)"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:3.2"
+     ],
+     "api": [
+      {
+       "name": "reversal_involutive",
+       "role": "structure",
+       "statement": "σ_M and ℛ are involutions of 𝒟̄, commute with relabelling, preserve λ_N; ℛ = (X, −V) off a null set."
+      },
+      {
+       "name": "reversal_conserves",
+       "role": "conservation",
+       "statement": "σ_M preserves P and H; ℛ preserves H and reverses P."
+      },
+      {
+       "name": "reversal_boundary",
+       "role": "characterisation",
+       "statement": "σ_M exchanges ∂^+(i,j) and ∂^−(i,j); ℛ preserves ∂^+(i,j)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "reversal_outgoing",
+       "kind": "computation",
+       "statement": "E, ε = 1, x = ((1,0), 0), V = ((1,0), 0): σ_M V = (0, (1,0)), ℛ(X, V) = (X, (0, (−1,0))), outgoing."
+      },
+      {
+       "name": "no_contact",
+       "kind": "degenerate",
+       "statement": "Without contact ℛ(X, V) = (X, −V)."
+      },
+      {
+       "name": "naive_reversal",
+       "kind": "non-example",
+       "statement": "(X, V) ↦ (X, −V) sends the outgoing state to an incoming one."
+      }
+     ]
+    },
+    {
+     "id": "3.4",
+     "kind": "definition",
+     "name": "HardSphere.freeFlow",
+     "statement": "S_t(X, V) = (X + π(t V), V) componentwise on (Fin N → X × E).",
+     "hypotheses": [],
+     "locator": {
+      "source": "GST2013",
+      "where": "(4.1.1) lines 836–837; BGSS2023 (1.1.1) lines 122–123"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "mathlib:Flow",
+      "mathlib:MeasureTheory.MeasurePreserving",
+      "tauceti:TauCeti.flowOfLipschitz"
+     ],
+     "api": [
+      {
+       "name": "freeFlow_add",
+       "role": "group law",
+       "statement": "S_0 = id, S_{s+t} = S_s ∘ S_t, jointly continuous; S is a Flow."
+      },
+      {
+       "name": "measurePreserving_freeFlow",
+       "role": "measure",
+       "statement": "Each S_t preserves λ_N and commutes with relabelling, common translations and boosts."
+      },
+      {
+       "name": "freeFlow_eq_flowOfLipschitz",
+       "role": "compatibility",
+       "statement": "On E^N × E^N, S is TauCeti.flowOfLipschitz of (X, V) ↦ (V, 0)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "torus_period",
+       "kind": "computation",
+       "statement": "Unit torus d = 2: S_1(π 0, e_1) = (π 0, e_1)."
+      },
+      {
+       "name": "euclid_value",
+       "kind": "computation",
+       "statement": "S_2(0, (1, 0)) = ((2, 0), (1, 0))."
+      },
+      {
+       "name": "leaves_hardcore",
+       "kind": "non-example",
+       "statement": "Positions (2, 0), 0, velocities (−1, 0), 0, ε = 1 leave 𝒟̄_2 at t = 1.5."
+      }
+     ]
+    },
+    {
+     "id": "3.5",
+     "kind": "definition",
+     "name": "HardSphere.kineticEnergy",
+     "statement": "P(V) = Σ_i v_i and H(V) = ½ Σ_i |v_i|²; σ_M and S_t preserve both.",
+     "hypotheses": [],
+     "locator": {
+      "source": "GST2013",
+      "where": "(2.1.3) lines 396–399"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:3.3",
+      "target:3.4"
+     ],
+     "api": [
+      {
+       "name": "conserved",
+       "role": "conservation",
+       "statement": "P ∘ σ_M = P, H ∘ σ_M = H, P and H invariant under S_t; σ_M preserves {|V| ≤ R}."
+      }
+     ],
+     "tests": [
+      {
+       "name": "witness_values",
+       "kind": "computation",
+       "statement": "At the oblique witness P = (0.9, 0.9), H = 0.81 before and after."
+      },
+      {
+       "name": "free_flow",
+       "kind": "characterisation",
+       "statement": "S_t changes positions only."
+      },
+      {
+       "name": "separate_reflection",
+       "kind": "non-example",
+       "statement": "Separate reflection preserves H but not P."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "The two-body problem",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "definition",
+     "name": "HardSphere.collisionTime",
+     "statement": "D(a, u) = ⟨a, u⟩² − |u|²(|a|² − ε²); for ⟨a, u⟩ < 0 and D ≥ 0, τ(a, u) = (−⟨a, u⟩ − √D)/|u|² is the least s ≥ 0 with |a + s u| = ε; ⟨q, u⟩ = −√D at q = a + τu; no contact if ⟨a, u⟩ ≥ 0 and |a| > ε or D < 0; τ smooth on {|a| > ε, ⟨a, u⟩ < 0, D > 0}; s ↦ |a + s u| nondecreasing when ⟨a, u⟩ ≥ 0.",
+     "hypotheses": [
+      "|a| ≥ ε",
+      "ε > 0"
+     ],
+     "locator": {
+      "source": "GST2013",
+      "where": "lines 846–847 and 1210–1216"
+     },
+     "prerequisites": [
+      "mathlib:EuclideanSpace"
+     ],
+     "api": [
+      {
+       "name": "collisionTime_spec",
+       "role": "characterisation",
+       "statement": "τ is the least s ≥ 0 with |a + s u| = ε."
+      },
+      {
+       "name": "separation",
+       "role": "monotonicity",
+       "statement": "After an outgoing collision free motion never brings the pair back to contact."
+      },
+      {
+       "name": "contDiffOn_collisionTime",
+       "role": "regularity",
+       "statement": "τ is smooth on the open non-grazing set."
+      }
+     ],
+     "tests": [
+      {
+       "name": "head_on_tau",
+       "kind": "computation",
+       "statement": "ε = 1, a = (2, 0), u = (−1, 0): D = 1, τ = 1, q = (1, 0)."
+      },
+      {
+       "name": "grazing",
+       "kind": "degenerate",
+       "statement": "a = (1, 3), u = (0, −1): D = 0, tangent at q = (1, 0) at time 3."
+      },
+      {
+       "name": "miss",
+       "kind": "computation",
+       "statement": "a = (2, 3), u = (0, −1): D = −3, no contact."
+      },
+      {
+       "name": "larger_root",
+       "kind": "non-example",
+       "statement": "The larger root (−⟨a,u⟩ + √D)/|u|² = 3 at the head-on data is the exit time of the line, not a collision."
+      }
+     ]
+    },
+    {
+     "id": "4.2",
+     "kind": "definition",
+     "name": "HardSphere.twoBodyMap",
+     "statement": "B_s(a, u) = (q + (s − τ)R_q u, R_q u) if a non-grazing collision occurs at τ ≤ s (R_q u = u − 2⟨u, q/ε⟩q/ε), else (a + s u, u), on {|a| ≥ ε}, s ≥ 0.",
+     "hypotheses": [
+      "s ≥ 0",
+      "|a| ≥ ε"
+     ],
+     "locator": {
+      "source": "GST2013",
+      "where": "lines 842–847; BGSS2023 lines 133–136"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:4.1"
+     ],
+     "api": [
+      {
+       "name": "twoBodyMap_mem",
+       "role": "invariance",
+       "statement": "B_s maps {|a| ≥ ε} to itself and preserves |u|."
+      },
+      {
+       "name": "twoBodyMap_add",
+       "role": "semigroup",
+       "statement": "B_{s+r} = B_r ∘ B_s off incoming contact states; B_0 = id there."
+      },
+      {
+       "name": "twoBodyMap_reverse",
+       "role": "reversibility",
+       "statement": "If (b, u') = B_s(a, u), |a| > ε and no contact at s, then B_s(b, −u') = (a, −u)."
+      },
+      {
+       "name": "twoBodyMap_velocities",
+       "role": "compatibility",
+       "statement": "The particle velocities after collision are σ_{q/ε}(v_i, v_j)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "head_on_B3",
+       "kind": "computation",
+       "statement": "B_3((2,0), (−1,0)) = ((3,0), (1,0)) versus free (−1, 0)."
+      },
+      {
+       "name": "oblique",
+       "kind": "computation",
+       "statement": "a = (3, 0.6), u = (−1, 0): τ = 2.2, q = (0.8, 0.6), R_q u = (0.28, 0.96)."
+      },
+      {
+       "name": "rebase_needed",
+       "kind": "non-example",
+       "statement": "Continuing the reflected line from the initial point gives (5, 0) ≠ (3, 0)."
+      }
+     ]
+    },
+    {
+     "id": "4.3",
+     "kind": "theorem",
+     "name": "HardSphere.det_fderiv_collisionMap",
+     "statement": "On U = {|a| > ε, ⟨a, u⟩ < 0, D > 0}, C(a, u) = (a + τ(u − R_q u), R_q u) is smooth with det DC = 1; B_s = S_s ∘ C on U ∩ {τ < s}, so det DB_s = 1 there.",
+     "hypotheses": [
+      "0 < ε"
+     ],
+     "locator": {
+      "source": "GST2013",
+      "where": "line 883 (invariance of the measure, used); DengHaniMa2024 Proposition 1.2(3) lines 186–187; BGSS2023 lines 133–137"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "target:4.2",
+      "mathlib:Matrix.det_fromBlocks_zero₁₂"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "collisionMap_value",
+       "kind": "computation",
+       "statement": "C((2,0), (−1,0)) = (0, (1,0)) and S_3 C = B_3."
+      },
+      {
+       "name": "finite_difference",
+       "kind": "computation",
+       "statement": "Finite-difference Jacobians of C and B_{τ+0.7} at random points in d = 2, 3, 4 have determinant 1.000000."
+      },
+      {
+       "name": "frozen_normal",
+       "kind": "non-example",
+       "statement": "(a, u) ↦ (a, R_q u) with q frozen has determinant −1."
+      }
+     ]
+    },
+    {
+     "id": "4.4",
+     "kind": "theorem",
+     "name": "HardSphere.measurePreserving_twoBodyMap",
+     "statement": "For s ≥ 0, B_s is measure preserving for vol ⊗ vol restricted to {|a| ≥ ε} and injective off the null set of incoming contact states.",
+     "hypotheses": [
+      "s ≥ 0",
+      "0 < ε"
+     ],
+     "locator": {
+      "source": "GST2013",
+      "where": "line 883; DengHaniMa2024 lines 186–187"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "target:4.2",
+      "target:4.3",
+      "mathlib:MeasureTheory.lintegral_abs_det_fderiv_eq_addHaar_image",
+      "mathlib:MeasureTheory.Measure.addHaar_sphere",
+      "mathlib:MeasureTheory.Measure.addHaar_submodule"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "zero_time",
+       "kind": "degenerate",
+       "statement": "B_0 is the identity off incoming contact states."
+      },
+      {
+       "name": "grazing_null",
+       "kind": "computation",
+       "statement": "For fixed u ≠ 0 the grazing set is the cylinder |a − ⟨a, û⟩û| = ε, null."
+      },
+      {
+       "name": "inelastic",
+       "kind": "non-example",
+       "statement": "The totally inelastic rule maps colliding states into a (2d − 1)-dimensional null set."
+      }
+     ]
+    },
+    {
+     "id": "4.5",
+     "kind": "construction",
+     "name": "HardSphere.pairMap",
+     "statement": "For i ≠ j, ε + η < ρ, 2Rs ≤ η, the pair map P^{ij}_s on {ε ≤ ‖x_i − x_j‖, ‖x_i − x_j‖ + 2Rs < ρ, |v_i|, |v_j| ≤ R} is the skew product (x_j, a, u, w) ↦ (x_j + π(h(a, u, w)), B_s(a, u), w) with a = ℓ(x_i − x_j), u = v_i − v_j, w = v_i + v_j; it is measure preserving and injective off a null set.",
+     "hypotheses": [
+      "0 < ε",
+      "ε + η < ρ",
+      "2Rs ≤ η"
+     ],
+     "locator": {
+      "source": "GST2013",
+      "where": "lines 875–887"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:3.4",
+      "target:4.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "head_on_pair",
+       "kind": "computation",
+       "statement": "P^{12}_3 sends x = ((2,0), 0), v = ((−1,0), 0) to x = ((1,0), (−2,0)), v = (0, (−1,0))."
+      },
+      {
+       "name": "torus_pair",
+       "kind": "computation",
+       "statement": "Unit torus, ε = 0.3: π(0.1,0), π(0.8,0) with relative velocity (−1,0) collide at once through a = (0.3, 0)."
+      },
+      {
+       "name": "velocity_change",
+       "kind": "compatibility",
+       "statement": "(v_i, v_j) ↦ (u, w) has determinant 2^d, applied and inverted, so factors cancel."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "Hard-sphere trajectories",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "definition",
+     "name": "HardSphere.IsTrajectory",
+     "statement": "IsTrajectory ε J Z for an interval J and Z = (X, V) : ℝ → (Fin N → X × E): Z(t) ∈ 𝒟̄ on J; x_i(t) = x_i(s) + π(∫_s^t v_i); V right-continuous, constant off a locally finite set of contact times; contact pairs of X(t) form a matching and are outgoing for V(t); V(t) = σ_M V(t−) at every t ∈ J other than a least element.",
+     "hypotheses": [
+      "0 < ε < ρ"
+     ],
+     "locator": {
+      "source": "DengHaniMa2024",
+      "where": "Definition 1.1, lines 140–172; GST2013 lines 836–847; BGSS2023 lines 122–131"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:3.2",
+      "target:3.3",
+      "target:3.4"
+     ],
+     "api": [
+      {
+       "name": "IsTrajectory.mono",
+       "role": "restriction",
+       "statement": "Restriction to subintervals and time translation."
+      },
+      {
+       "name": "IsTrajectory.conserves",
+       "role": "conservation",
+       "statement": "P(V(t)) and H(V(t)) are constant on J."
+      },
+      {
+       "name": "IsTrajectory.free",
+       "role": "structure",
+       "statement": "On contact-free intervals Z(t) = S_{t−s} Z(s); left limits exist."
+      }
+     ],
+     "tests": [
+      {
+       "name": "one_particle",
+       "kind": "degenerate",
+       "statement": "N = 1: t ↦ S_t Z_0 is a trajectory on ℝ."
+      },
+      {
+       "name": "head_on",
+       "kind": "computation",
+       "statement": "The head-on witness is a trajectory on ℝ with one contact at time 1."
+      },
+      {
+       "name": "pass_through",
+       "kind": "non-example",
+       "statement": "Free motion through contact leaves 𝒟̄_2 after time 1."
+      },
+      {
+       "name": "left_continuous",
+       "kind": "non-example",
+       "statement": "The left-continuous version of the head-on path violates the outgoing condition at time 1."
+      }
+     ]
+    },
+    {
+     "id": "5.2",
+     "kind": "theorem",
+     "name": "HardSphere.IsTrajectory.eqOn",
+     "statement": "Two trajectories on J that agree at one time of J agree on J; trajectories on [a, b] and [b, c] agreeing at b glue to a trajectory on [a, c].",
+     "hypotheses": [
+      "0 < ε < ρ"
+     ],
+     "locator": {
+      "source": "DengHaniMa2024",
+      "where": "Proposition 1.2, lines 182–188; GST2013 lines 848–854"
+     },
+     "prerequisites": [
+      "target:5.1",
+      "target:2.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "free_unique",
+       "kind": "degenerate",
+       "statement": "N = 1: uniqueness of free motion."
+      },
+      {
+       "name": "outgoing_state",
+       "kind": "computation",
+       "statement": "From x = ((1,0), 0), v = (0, (−1,0)) both give x_2(2) = (−2, 0)."
+      },
+      {
+       "name": "gluing",
+       "kind": "computation",
+       "statement": "The head-on trajectories on [0,2] and [1,3] glue to [0,3]."
+      }
+     ]
+    },
+    {
+     "id": "5.3",
+     "kind": "theorem",
+     "name": "HardSphere.IsTrajectory.reverse",
+     "statement": "Trajectories are preserved by time translation, time reversal t ↦ ℛ(Z(−t)) on −J, relabelling, common translation by π(c), and Galilean boosts (X(t) + π(tc), V(t) + c).",
+     "hypotheses": [
+      "0 < ε < ρ"
+     ],
+     "locator": {
+      "source": "GST2013",
+      "where": "(1.1.1) lines 211–215; BGSS2023 lines 184–187"
+     },
+     "prerequisites": [
+      "target:3.3",
+      "target:5.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "reverse_head_on",
+       "kind": "computation",
+       "statement": "The reversed head-on path is at (1,0), (−2,0) at time −3 with velocities 0, (1,0) and returns to (2,0), 0 at time 0."
+      },
+      {
+       "name": "boost",
+       "kind": "computation",
+       "statement": "A boost by (1, 0) gives a collision of 0 and (1, 0), still at time 1."
+      },
+      {
+       "name": "naive_reverse",
+       "kind": "non-example",
+       "statement": "t ↦ (X(−t), −V(−t)) has left-continuous velocities and is not a trajectory."
+      }
+     ]
+    },
+    {
+     "id": "5.4",
+     "kind": "theorem",
+     "name": "HardSphere.IsTrajectory.leftContinuous",
+     "statement": "If Z is a trajectory then t ↦ (X(t), σ_{M(t)} V(t)) = (X(t), V(t−)) has left-continuous velocities and satisfies DengHaniMa2024 Definition 1.1; conversely such paths with locally finite non-grazing matching contacts give trajectories.",
+     "hypotheses": [
+      "0 < ε < ρ"
+     ],
+     "locator": {
+      "source": "DengHaniMa2024",
+      "where": "lines 154–172"
+     },
+     "prerequisites": [
+      "target:3.3",
+      "target:5.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "head_on_left",
+       "kind": "computation",
+       "statement": "Left-continuous state at time 1: v_1 = (−1, 0), v_2 = 0."
+      },
+      {
+       "name": "off_contact",
+       "kind": "degenerate",
+       "statement": "Off contact times the conventions agree."
+      },
+      {
+       "name": "involution",
+       "kind": "characterisation",
+       "statement": "Applying the map twice returns the right-continuous path."
+      }
+     ]
+    },
+    {
+     "id": "5.5",
+     "kind": "definition",
+     "name": "HardSphere.goodSet",
+     "statement": "G = {Z ∈ 𝒟̄^ε_N : some trajectory on ℝ passes through Z at time 0}; G is invariant under trajectories, relabelling, ℛ, common translations and boosts; G = 𝒟̄_N for N ≤ 1.",
+     "hypotheses": [
+      "0 < ε < ρ"
+     ],
+     "locator": {
+      "source": "GST2013",
+      "where": "lines 851–854 (pathological trajectories)"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "target:5.1",
+      "target:5.2",
+      "target:5.3"
+     ],
+     "api": [
+      {
+       "name": "goodSet_invariant",
+       "role": "invariance",
+       "statement": "G is invariant under the symmetries of §5.3 and under the trajectory maps."
+      },
+      {
+       "name": "goodSet_le_one",
+       "role": "degenerate",
+       "statement": "G = 𝒟̄_N for N ≤ 1."
+      }
+     ],
+     "tests": [
+      {
+       "name": "two_body_complement",
+       "kind": "characterisation",
+       "statement": "N = 2 on E: 𝒟̄_2 \\ G = {u ≠ 0, D(a, u) = 0} ∪ {contact with ⟨a, u⟩ ≤ 0}."
+      },
+      {
+       "name": "incoming_excluded",
+       "kind": "non-example",
+       "statement": "The incoming contact state is not in G; the outgoing one is."
+      },
+      {
+       "name": "triple_contact",
+       "kind": "non-example",
+       "statement": "An equilateral triangle of side ε of three touching discs (d = 2) is not in G."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "6",
+   "title": "Alexander's theorem",
+   "targets": [
+    {
+     "id": "6.1",
+     "kind": "theorem",
+     "name": "HardSphere.volume_nearTriple_le",
+     "statement": "For 0 < ε, ε + η < ρ, R > 0 and measurable K ⊆ X, the set I of Z ∈ 𝒟̄^ε_N with positions in K, |V| ≤ R and distinct i, j, k with ‖x_i − x_j‖ ≤ ε + η, ‖x_i − x_k‖ ≤ ε + η has λ_N(I) ≤ N³ μ_X(K)^{N−2}(ω_d((ε + η)^d − ε^d))² vol(B^{dN}_R).",
+     "hypotheses": [
+      "0 < ε",
+      "ε + η < ρ",
+      "R > 0",
+      "K measurable"
+     ],
+     "locator": {
+      "source": "GST2013",
+      "where": "Lemma 4.1.1, lines 864–874"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "target:3.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "two_particles",
+       "kind": "degenerate",
+       "statement": "N = 2: I = ∅."
+      },
+      {
+       "name": "order_eta",
+       "kind": "computation",
+       "statement": "A single near pair has measure of order η: the shell 1 ≤ |x_1 − x_2| ≤ 1 + η in d = 2 has area π(2η + η²)."
+      },
+      {
+       "name": "torus_K",
+       "kind": "computation",
+       "statement": "On the unit torus with K = X the factor μ_X(K) is 1."
+      }
+     ]
+    },
+    {
+     "id": "6.2",
+     "kind": "theorem",
+     "name": "HardSphere.measurePreserving_stepMap",
+     "statement": "For R > 0, δ > 0 with ε + 4Rδ < ρ (near pairs, at distance at most ε + 2Rδ, then satisfy ‖x_i − x_j‖ + 2Rδ ≤ ε + 4Rδ < ρ, the domain of the pair maps of 4.5 with η = 4Rδ), on the set S_{δ,R} (|V| ≤ R, no particle within ε + 2Rδ of two others, no incoming or grazing contact state, no grazing collision in [0, δ] between near pairs) the near pairs form a matching, each collides at most once in [0, δ], the step map Φ_δ (pair maps on near pairs, free transport otherwise) gives the trajectory on [0, δ], and Φ_δ is injective and measure preserving; the complement of S_{δ,R} in 𝒟̄ ∩ {|V| ≤ R} is I (η = 2Rδ) up to a null set.",
+     "hypotheses": [
+      "0 < ε",
+      "R > 0",
+      "δ > 0",
+      "ε + 4Rδ < ρ"
+     ],
+     "locator": {
+      "source": "GST2013",
+      "where": "lines 875–887"
+     },
+     "prerequisites": [
+      "target:4.4",
+      "target:4.5",
+      "target:5.1",
+      "target:6.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "two_body_step",
+       "kind": "computation",
+       "statement": "N = 2, head-on witness, δ = 3, R = 1, ε + 4Rδ < ρ = ∞: Φ_3 reproduces B_3."
+      },
+      {
+       "name": "energy_ball",
+       "kind": "characterisation",
+       "statement": "|V| ≤ R is preserved across a step since H is conserved."
+      },
+      {
+       "name": "three_particles",
+       "kind": "non-example",
+       "statement": "Without the three-particle exclusion a particle can meet two others within one step."
+      },
+      {
+       "name": "chart_domain",
+       "kind": "non-example",
+       "statement": "Unit torus, ε = 0.3, R = 1: δ = 0.09 satisfies ε + 2Rδ = 0.48 < 1/2 but a near pair at distance 0.47 would need the pair map at separation 0.65 ≥ ρ; δ = 0.045 satisfies ε + 4Rδ = 0.48 < 1/2 and near pairs stay within 0.39 + 0.09 = 0.48 < ρ."
+      }
+     ]
+    },
+    {
+     "id": "6.3",
+     "kind": "theorem",
+     "name": "HardSphere.volume_badSteps_le",
+     "statement": "For t > 0, R > 0, bounded K ⊆ X and every δ > 0 with ε + 4Rδ < ρ, the configurations in 𝒟̄ with positions in K and |V| ≤ R whose states at times jδ (0 ≤ j < t/δ) are not all in S_{δ,R} have measure at most C(N, ε, R, K, t) δ, with C independent of δ.",
+     "hypotheses": [
+      "0 < ε < ρ",
+      "t > 0",
+      "R > 0",
+      "K bounded",
+      "δ > 0",
+      "ε + 4Rδ < ρ"
+     ],
+     "locator": {
+      "source": "GST2013",
+      "where": "lines 877–898"
+     },
+     "prerequisites": [
+      "target:6.1",
+      "target:6.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "torus_uniform",
+       "kind": "computation",
+       "statement": "On the unit torus the neighbourhoods of K are X and the constant does not grow with j."
+      },
+      {
+       "name": "euclid_growth",
+       "kind": "computation",
+       "statement": "On E with K = B(0, r) the neighbourhoods are B(0, r + jRδ), contributing (r + jRδ)^{d(N−2)}."
+      },
+      {
+       "name": "two_body",
+       "kind": "degenerate",
+       "statement": "N = 2: the bound is 0 apart from the grazing null set."
+      }
+     ]
+    },
+    {
+     "id": "6.4",
+     "kind": "theorem",
+     "name": "HardSphere.volume_hardCoreSet_diff_goodSet",
+     "statement": "For 0 < ε < ρ, λ_N(𝒟̄^ε_N \\ G) = 0; moreover G is Borel and (t, Z) ↦ Z(t) is Borel measurable on ℝ × G.",
+     "hypotheses": [
+      "0 < ε < ρ"
+     ],
+     "locator": {
+      "source": "GST2013",
+      "where": "Proposition 4.1.1, lines 862–863, proof lines 875–910; BGSS2023 lines 132–139; DengHaniMa2024 Proposition 1.2 lines 182–188; Alexander1976 pp. 217–232; Lanford1975 Proposition 4.3"
+     },
+     "prerequisites": [
+      "target:5.2",
+      "target:5.3",
+      "target:5.5",
+      "target:6.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "one_particle",
+       "kind": "degenerate",
+       "statement": "N = 1: G is everything."
+      },
+      {
+       "name": "two_body",
+       "kind": "computation",
+       "statement": "N = 2 on E: the exceptional set of §5.5 is null (cylinder D = 0 and contact set)."
+      },
+      {
+       "name": "torus_exhaustion",
+       "kind": "computation",
+       "statement": "On the unit torus only t and R vary in the countable union."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "7",
+   "title": "The hard-sphere flow",
+   "targets": [
+    {
+     "id": "7.1",
+     "kind": "definition",
+     "name": "HardSphere.flow",
+     "statement": "T_t Z = value at time t of the trajectory through Z if Z ∈ G, and Z otherwise. T_0 = id, T_{s+t} = T_s ∘ T_t for all real s, t; each T_t is a bijection preserving G, 𝒟̄ and their complements; (t, Z) ↦ T_t Z is measurable; T_t = S_t when there is no contact between 0 and t.",
+     "hypotheses": [
+      "0 < ε < ρ"
+     ],
+     "locator": {
+      "source": "GST2013",
+      "where": "line 862; BGSS2023 lines 132–139; DengHaniMa2024 (1.4) lines 173–178"
+     },
+     "prerequisites": [
+      "target:5.2",
+      "target:5.5",
+      "target:6.4"
+     ],
+     "api": [
+      {
+       "name": "HardSphere.flow_add",
+       "role": "group law",
+       "statement": "T_0 = id and T_{s+t} = T_s ∘ T_t."
+      },
+      {
+       "name": "flow_mem",
+       "role": "invariance",
+       "statement": "T_t preserves G, 𝒟̄ and complements; positions continuous and velocities right-continuous in t."
+      },
+      {
+       "name": "measurable_flow",
+       "role": "measurability",
+       "statement": "(t, Z) ↦ T_t Z is measurable."
+      },
+      {
+       "name": "flow_eq_freeFlow",
+       "role": "compatibility",
+       "statement": "T_t = S_t on configurations with no contact between 0 and t."
+      }
+     ],
+     "tests": [
+      {
+       "name": "one_particle",
+       "kind": "degenerate",
+       "statement": "N = 1: T_t = S_t."
+      },
+      {
+       "name": "head_on_T3",
+       "kind": "computation",
+       "statement": "T_3((2,0), 0; (−1,0), 0) = ((1,0), (−2,0); 0, (−1,0)) and T_{−3} sends it back."
+      },
+      {
+       "name": "naive_free",
+       "kind": "non-example",
+       "statement": "S_t restricted to 𝒟̄ leaves 𝒟̄ and is not the flow."
+      }
+     ]
+    },
+    {
+     "id": "7.2",
+     "kind": "theorem",
+     "name": "HardSphere.measurePreserving_flow",
+     "statement": "For every t, T_t is measure preserving for λ_N and for λ_N restricted to 𝒟̄.",
+     "hypotheses": [
+      "0 < ε < ρ"
+     ],
+     "locator": {
+      "source": "GST2013",
+      "where": "line 883; DengHaniMa2024 Proposition 1.2(3) line 186"
+     },
+     "prerequisites": [
+      "target:6.2",
+      "target:6.4",
+      "target:7.1",
+      "mathlib:MeasureTheory.MeasurePreserving"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "two_body",
+       "kind": "compatibility",
+       "statement": "N = 2 on E reduces to §4.4 and translation of the centre of mass."
+      },
+      {
+       "name": "indicator",
+       "kind": "computation",
+       "statement": "1_{𝒟̄} is invariant exactly."
+      },
+      {
+       "name": "inelastic",
+       "kind": "non-example",
+       "statement": "The totally inelastic rule maps colliding configurations to a null set."
+      }
+     ]
+    },
+    {
+     "id": "7.3",
+     "kind": "theorem",
+     "name": "HardSphere.flow_reversal",
+     "statement": "T_t ∘ ℛ = ℛ ∘ T_{−t}; T_t commutes with relabelling, common translations and boosts (T_t(X, V + c) = (X' + π(tc), V' + c)); P and H are conserved.",
+     "hypotheses": [
+      "0 < ε < ρ"
+     ],
+     "locator": {
+      "source": "GST2013",
+      "where": "(1.1.1) lines 211–215; BGSS2023 lines 184–187"
+     },
+     "prerequisites": [
+      "target:5.3",
+      "target:7.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "head_on_reverse",
+       "kind": "computation",
+       "statement": "ℛ T_3 Z = ((1,0), (−2,0); 0, (1,0)) = T_{−3} ℛ Z at the head-on witness."
+      },
+      {
+       "name": "swap_labels",
+       "kind": "compatibility",
+       "statement": "Swapping the two particles conjugates the flow."
+      },
+      {
+       "name": "rotate_velocities",
+       "kind": "non-example",
+       "statement": "Rotating the head-on velocities by a quarter turn gives v_1 = (0, −1), which never meets particle 2, while the rotated time-3 state has v_2 = (0, −1) after a collision."
+      }
+     ]
+    },
+    {
+     "id": "7.4",
+     "kind": "construction",
+     "name": "HardSphere.koopman",
+     "statement": "For 1 ≤ p < ∞, U_t f = f ∘ T_{−t} on Lp ℝ p (λ_N restricted to 𝒟̄) is a TauCeti.Semigroups.StronglyContinuousGroup of isometries.",
+     "hypotheses": [
+      "1 ≤ p < ∞",
+      "0 < ε < ρ"
+     ],
+     "locator": {
+      "source": "GST2013",
+      "where": "(4.3.5) lines 1138–1140; DengHaniMa2024 (1.5) lines 175–178"
+     },
+     "prerequisites": [
+      "target:7.1",
+      "target:7.2",
+      "mathlib:MeasureTheory.Lp.compMeasurePreserving",
+      "mathlib:MeasureTheory.MemLp.exists_hasCompactSupport_eLpNorm_sub_le",
+      "tauceti:TauCeti.Semigroups.StronglyContinuousGroup"
+     ],
+     "api": [
+      {
+       "name": "koopman_isometry",
+       "role": "norm",
+       "statement": "‖U_t f‖_p = ‖f‖_p."
+      },
+      {
+       "name": "koopman_add",
+       "role": "group law",
+       "statement": "U_{s+t} = U_s U_t."
+      },
+      {
+       "name": "koopman_continuous",
+       "role": "continuity",
+       "statement": "t ↦ U_t f is continuous for p < ∞."
+      }
+     ],
+     "tests": [
+      {
+       "name": "free_group",
+       "kind": "compatibility",
+       "statement": "N = 1 on E: U_t f(x, v) = f(x − tv, v)."
+      },
+      {
+       "name": "constant",
+       "kind": "degenerate",
+       "statement": "Constants on a finite-measure 𝒟̄ are fixed."
+      },
+      {
+       "name": "p_infinity",
+       "kind": "non-example",
+       "statement": "p = ∞: for N = 1 the indicator of B(0,1) × {|v − e_1| < 1/2} has ‖U_t f − f‖_∞ = 1 for small t ≠ 0."
+      }
+     ]
+    },
+    {
+     "id": "7.5",
+     "kind": "construction",
+     "name": "HardSphere.grandPhaseSpace",
+     "statement": "𝒟^ε = Σ_{N ≥ 0} (Fin N → X × E) with the componentwise flow and Λ = Σ_N (1/N!) λ_N|𝒟̄_N; the componentwise flow is a group action preserving Λ, the particle number and the empty configuration.",
+     "hypotheses": [
+      "0 < ε < ρ"
+     ],
+     "locator": {
+      "source": "BGSS2023",
+      "where": "lines 158–166; DengHaniMa2024 Definition 1.3(1) lines 199–204"
+     },
+     "prerequisites": [
+      "target:7.1",
+      "target:7.2",
+      "mathlib:Sigma.instMeasurableSpace",
+      "mathlib:MeasureTheory.Measure.sum"
+     ],
+     "api": [
+      {
+       "name": "measurePreserving_grandFlow",
+       "role": "measure",
+       "statement": "The componentwise flow preserves Λ."
+      },
+      {
+       "name": "card_conserved",
+       "role": "conservation",
+       "statement": "The particle number is invariant."
+      }
+     ],
+     "tests": [
+      {
+       "name": "empty_mass",
+       "kind": "computation",
+       "statement": "The empty configuration has Λ-mass 1."
+      },
+      {
+       "name": "torus_null",
+       "kind": "computation",
+       "statement": "Unit torus, d = 2, ε = 0.4: components N ≥ 8 are Λ-null."
+      },
+      {
+       "name": "one_component",
+       "kind": "compatibility",
+       "statement": "The N = 1 component is μ_X ⊗ vol with weight 1."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "8",
+   "title": "Densities, the Liouville equation and marginals",
+   "targets": [
+    {
+     "id": "8.1",
+     "kind": "definition",
+     "name": "HardSphere.transport",
+     "statement": "For measurable W⁰ vanishing off 𝒟̄, W(t) = W⁰ ∘ T_{−t}; W(0) = W⁰, W(s + t) = W(s) ∘ T_{−t}, ∫ W(t)φ = ∫ W⁰(φ ∘ T_t), ‖W(t)‖_p = ‖W⁰‖_p, symmetry preserved, W(t) = U_t W⁰.",
+     "hypotheses": [
+      "W⁰ measurable",
+      "W⁰ = 0 off 𝒟̄",
+      "0 < ε < ρ"
+     ],
+     "locator": {
+      "source": "BGSS2023",
+      "where": "(1.1.3)–(1.1.4) lines 145–157; GST2013 lines 1138–1140; DengHaniMa2024 (1.10) lines 233–234"
+     },
+     "prerequisites": [
+      "target:7.1",
+      "target:7.2",
+      "target:7.4"
+     ],
+     "api": [
+      {
+       "name": "transport_add",
+       "role": "group law",
+       "statement": "W(s + t) = W(s) ∘ T_{−t}."
+      },
+      {
+       "name": "integral_transport",
+       "role": "duality",
+       "statement": "∫ W(t) φ dλ = ∫ W⁰ (φ ∘ T_t) dλ for integrable or nonnegative data."
+      },
+      {
+       "name": "norm_transport",
+       "role": "norm",
+       "statement": "‖W(t)‖_p = ‖W⁰‖_p."
+      }
+     ],
+     "tests": [
+      {
+       "name": "indicator_fixed",
+       "kind": "computation",
+       "statement": "1_{𝒟̄} is transported to itself exactly."
+      },
+      {
+       "name": "free_value",
+       "kind": "computation",
+       "statement": "N = 1 on E: W(1)((1,0), (1,0)) = W⁰(0, (1,0))."
+      },
+      {
+       "name": "invariant_density",
+       "kind": "characterisation",
+       "statement": "Functions of H and P times 1_{𝒟̄} are constant in time."
+      },
+      {
+       "name": "wrong_sign",
+       "kind": "non-example",
+       "statement": "W⁰ ∘ T_t moves mass in the direction −v."
+      }
+     ]
+    },
+    {
+     "id": "8.2",
+     "kind": "theorem",
+     "name": "HardSphere.weak_liouville",
+     "statement": "For W⁰ ∈ L¹(λ_N) vanishing off 𝒟̄ and every admissible test function φ (bounded measurable, bounded time support, bounded measurable material derivative Lφ(t, Z) = d/dr φ(t + r, S_r Z)|_{r=0} existing everywhere, and φ(t, X, V) = φ(t, X, σ_M V) at nonempty contact matchings), ∫_0^∞ ∫ W(t) Lφ(t) dλ dt + ∫ W⁰ φ(0) dλ = 0.",
+     "hypotheses": [
+      "W⁰ ∈ L¹",
+      "W⁰ = 0 off 𝒟̄",
+      "φ admissible",
+      "0 < ε < ρ"
+     ],
+     "locator": {
+      "source": "GST2013",
+      "where": "(4.2.1) lines 911–918 and (4.3.1) lines 941–958; BGSS2023 (1.1.3)–(1.1.4) lines 145–157"
+     },
+     "prerequisites": [
+      "target:3.3",
+      "target:3.4",
+      "target:7.1",
+      "target:8.1",
+      "mathlib:intervalIntegral.integral_eq_sub_of_hasDerivAt_of_le"
+     ],
+     "api": [
+      {
+       "name": "admissible_smooth",
+       "role": "compatibility",
+       "statement": "On E a compactly supported C¹ function has Lφ = ∂_tφ + Σ⟨v_i, ∇_{x_i}φ⟩."
+      },
+      {
+       "name": "admissible_closure",
+       "role": "structure",
+       "statement": "Admissible functions form a vector space, stable under multiplication by functions of (t, P, H)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "energy_test",
+       "kind": "computation",
+       "statement": "φ = χ(t)ψ(H) gives ∫_0^∞ χ' = −χ(0) times ∫ W⁰ ψ(H)."
+      },
+      {
+       "name": "free_transport",
+       "kind": "compatibility",
+       "statement": "N = 1 on E: the weak form of ∂_t W + ⟨v, ∇_x W⟩ = 0."
+      },
+      {
+       "name": "non_specular",
+       "kind": "non-example",
+       "statement": "φ = χ(t)⟨v_1, e_1⟩ violates the specular condition and the left side is ∫ W⁰ χ(τ)(⟨v_1,e_1⟩ − ⟨v_1',e_1⟩) ≠ 0 for head-on data."
+      },
+      {
+       "name": "collision_time_derivative",
+       "kind": "non-example",
+       "statement": "Head-on witness, φ = χ(t)ψ(⟨x_1 − x_2, e_1⟩) with ψ bounded smooth and the identity on [−10, 10]: t ↦ φ(t, T_t Z) is χ(t)(2 − t) for t < 1 and χ(t) t for t ≥ 1, continuous at 1 with one-sided derivatives χ'(1) ∓ χ(1); the derivative is used only on the open pieces."
+      }
+     ]
+    },
+    {
+     "id": "8.3",
+     "kind": "definition",
+     "name": "HardSphere.marginal",
+     "statement": "For symmetric W_N ≥ 0 vanishing off 𝒟̄_N and s ≤ N, W^{(s)}_N(Z_s) = ∫ W_N(Z_s, z_{s+1}, …, z_N) dz_{s+1} ⋯ dz_N: symmetric, vanishing off 𝒟̄_s, consistent (W^{(s)} = ∫ W^{(s+1)} dz_{s+1}), W^{(N)} = W_N, W^{(0)} = ∫ W_N, and it inherits the specular condition at matching contact configurations.",
+     "hypotheses": [
+      "W_N symmetric",
+      "W_N ≥ 0",
+      "W_N = 0 off 𝒟̄_N",
+      "s ≤ N"
+     ],
+     "locator": {
+      "source": "GST2013",
+      "where": "(4.2.2)–(4.2.3) lines 929–938"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:3.2"
+     ],
+     "api": [
+      {
+       "name": "marginal_consistency",
+       "role": "consistency",
+       "statement": "W^{(s)}_N = ∫ W^{(s+1)}_N dz_{s+1}."
+      },
+      {
+       "name": "marginal_symmetric",
+       "role": "symmetry",
+       "statement": "W^{(s)}_N is symmetric and vanishes off 𝒟̄_s."
+      },
+      {
+       "name": "marginal_specular",
+       "role": "boundary",
+       "statement": "The specular condition passes to marginals at matching contact configurations."
+      }
+     ],
+     "tests": [
+      {
+       "name": "torus_product",
+       "kind": "computation",
+       "statement": "Unit torus, N = 2, g = g̃(v): first marginal g(z_1)(1 − ω_d ε^d)∫g̃."
+      },
+      {
+       "name": "full",
+       "kind": "degenerate",
+       "statement": "s = N gives W_N."
+      },
+      {
+       "name": "no_indicator",
+       "kind": "non-example",
+       "statement": "Dropping the indicator gives g(z_1)∫g̃, too large by 1/(1 − ω_d ε^d)."
+      }
+     ]
+    },
+    {
+     "id": "8.4",
+     "kind": "theorem",
+     "name": "HardSphere.lintegral_sum_injective_eq_marginal",
+     "statement": "For a symmetric probability density W_N and measurable h ≥ 0 on (Fin s → X × E), ∫ W_N Σ_{i injective} h(z_{i_1}, …, z_{i_s}) = N!/(N − s)! ∫ W^{(s)}_N h.",
+     "hypotheses": [
+      "s ≤ N",
+      "W_N symmetric"
+     ],
+     "locator": {
+      "source": "GST2013",
+      "where": "lines 216–220"
+     },
+     "prerequisites": [
+      "target:8.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "s_one",
+       "kind": "computation",
+       "statement": "s = 1, h = 1: both sides N."
+      },
+      {
+       "name": "s_N",
+       "kind": "degenerate",
+       "statement": "s = N: both sides N! ∫ W_N h for symmetric h."
+      },
+      {
+       "name": "non_injective",
+       "kind": "non-example",
+       "statement": "s = 2, N = 3, h = 1: both sides 6; summing over all maps would give 9."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "9",
+   "title": "Equilibria and grand canonical ensembles",
+   "targets": [
+    {
+     "id": "9.1",
+     "kind": "definition",
+     "name": "HardSphere.maxwellian",
+     "statement": "M_{β,u}(v) = (β/2π)^{d/2} exp(−β|v − u|²/2); a probability density equal to TauCeti.Probability.multivariateGaussianPDFReal u (β⁻¹ • 1), with M(v')M(w') = M(v)M(w) for (v', w') = σ_ω(v, w).",
+     "hypotheses": [
+      "β > 0"
+     ],
+     "locator": {
+      "source": "GST2013",
+      "where": "(2.2.5) lines 489–492"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "mathlib:GaussianFourier.integral_rexp_neg_mul_sq_norm",
+      "mathlib:ProbabilityTheory.gaussianPDFReal",
+      "mathlib:ProbabilityTheory.multivariateGaussian",
+      "tauceti:TauCeti.Probability.multivariateGaussianPDFReal",
+      "tauceti:TauCeti.Probability.multivariateGaussian_eq_withDensity"
+     ],
+     "api": [
+      {
+       "name": "integral_maxwellian",
+       "role": "normalisation",
+       "statement": "∫ M_{β,u} = 1."
+      },
+      {
+       "name": "maxwellian_eq_pdf",
+       "role": "compatibility",
+       "statement": "M_{β,u} = multivariateGaussianPDFReal u (β⁻¹ • 1) and vol.withDensity M = multivariateGaussian u (β⁻¹ • 1)."
+      },
+      {
+       "name": "maxwellian_scatter",
+       "role": "collision invariance",
+       "statement": "M(v')M(w') = M(v)M(w)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "d1_value",
+       "kind": "computation",
+       "statement": "d = 1, β = 1, u = 0: M(0) = 1/√(2π) ≈ 0.39894 = gaussianPDFReal 0 1 0."
+      },
+      {
+       "name": "gaussian_integral",
+       "kind": "computation",
+       "statement": "∫ exp(−|v|²/2) dv = (2π)^{3/2} ≈ 15.7496 in d = 3."
+      },
+      {
+       "name": "missing_half",
+       "kind": "non-example",
+       "statement": "exp(−β|v|²) has coordinate variance 1/(2β), not 1/β."
+      }
+     ]
+    },
+    {
+     "id": "9.2",
+     "kind": "theorem",
+     "name": "HardSphere.flow_invariant_of_conserved",
+     "statement": "For measurable Φ : ℝ × E → ℝ≥0∞ the measure with density Φ(H, P) 1_{𝒟̄} w.r.t. λ_N is T_t-invariant; on finite-measure X the canonical measure Π M_{β,u}(v_i) 1_{𝒟̄}/Z^{can}, Z^{can} = μ_X^{⊗N}{‖x_i − x_j‖ ≥ ε} > 0, is invariant.",
+     "hypotheses": [
+      "0 < ε < ρ",
+      "Z^{can} > 0 for the canonical measure"
+     ],
+     "locator": {
+      "source": "BGSS2023",
+      "where": "lines 158–160 (canonical formalism)"
+     },
+     "prerequisites": [
+      "target:3.5",
+      "target:7.2",
+      "target:9.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "one_particle",
+       "kind": "degenerate",
+       "statement": "N = 1 on the unit torus: Z^{can} = 1, measure μ_X ⊗ M."
+      },
+      {
+       "name": "empty_torus",
+       "kind": "computation",
+       "statement": "Unit torus d = 2, ε = 0.4, N = 8: Z^{can} = 0."
+      },
+      {
+       "name": "infinite_mass",
+       "kind": "non-example",
+       "statement": "On E the invariant measure has infinite mass; only the unnormalised statement holds."
+      }
+     ]
+    },
+    {
+     "id": "9.3",
+     "kind": "definition",
+     "name": "HardSphere.grandCanonical",
+     "statement": "For ε ≥ 0, μ > 0 and measurable integrable f⁰ ≥ 0, the measure on 𝒟^ε with N-th component density (μ^N/(N! Z)) Π f⁰(z_i) 1_{𝒟̄_N}, Z = 1 + Σ_{N≥1}(μ^N/N!) ∫ Π f⁰ 1_{𝒟̄_N}; 1 + μ∫f⁰ ≤ Z ≤ exp(μ∫f⁰); a probability measure, exchangeable; finite sum on flat tori; Poisson particle number for ε = 0.",
+     "hypotheses": [
+      "ε ≥ 0",
+      "μ > 0",
+      "f⁰ ≥ 0 measurable",
+      "∫ f⁰ < ∞"
+     ],
+     "locator": {
+      "source": "BGSS2023",
+      "where": "(1.1.5)–(1.1.6) lines 167–181; DengHaniMa2024 Definition 1.3 lines 199–223"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "target:3.1",
+      "target:7.5",
+      "mathlib:ProbabilityTheory.poissonMeasure"
+     ],
+     "api": [
+      {
+       "name": "partition_bounds",
+       "role": "normalisation",
+       "statement": "1 + μ∫f⁰ ≤ Z ≤ exp(μ∫f⁰)."
+      },
+      {
+       "name": "isProbabilityMeasure",
+       "role": "structure",
+       "statement": "The grand canonical measure is a probability measure and exchangeable; all moments of N are finite."
+      },
+      {
+       "name": "grandCanonical_zero",
+       "role": "compatibility",
+       "statement": "For ε = 0 the law of N is poissonMeasure (μ∫f⁰) and given N the particles are i.i.d."
+      },
+      {
+       "name": "partition_antitone",
+       "role": "monotonicity",
+       "statement": "Z is nonincreasing in ε."
+      }
+     ],
+     "tests": [
+      {
+       "name": "poisson_value",
+       "kind": "computation",
+       "statement": "ε = 0, ∫ f⁰ = 1, μ = 2: Z = e², P(N = 1) = 2e^{−2} ≈ 0.27067."
+      },
+      {
+       "name": "no_confinement",
+       "kind": "characterisation",
+       "statement": "On E with ε > 0, Z ≤ exp(μ∫f⁰): no confinement is needed."
+      },
+      {
+       "name": "missing_factorial",
+       "kind": "non-example",
+       "statement": "Weights μ^N without 1/N! diverge for ε = 0 and μ∫f⁰ ≥ 1."
+      }
+     ]
+    },
+    {
+     "id": "9.4",
+     "kind": "theorem",
+     "name": "HardSphere.grandCanonical_flow_invariant",
+     "statement": "On X of finite measure, for 0 < ε < ρ, μ, c, β > 0, u ∈ E and f⁰(x, v) = c M_{β,u}(v), the grand canonical measure is invariant under the componentwise flow.",
+     "hypotheses": [
+      "μ_X(X) < ∞",
+      "0 < ε < ρ",
+      "μ > 0",
+      "c > 0",
+      "β > 0"
+     ],
+     "locator": {
+      "source": "BGSS2023",
+      "where": "lines 479–483 and line 3539"
+     },
+     "prerequisites": [
+      "target:7.5",
+      "target:8.1",
+      "target:9.1",
+      "target:9.2",
+      "target:9.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "maxwellian_torus",
+       "kind": "compatibility",
+       "statement": "On the unit torus with f⁰ = M_{1,0} this is §9.2 with Φ = e^{−H} componentwise."
+      },
+      {
+       "name": "drift",
+       "kind": "computation",
+       "statement": "Π M_{β,u}(v_i) = (β/2π)^{dN/2} exp(−β(2H − 2⟨u, P⟩ + N|u|²)/2)."
+      },
+      {
+       "name": "radial_not_invariant",
+       "kind": "non-example",
+       "statement": "g = 1_{|v| ≤ 1}: g(0, 0.9) g(0.9, 0) = 1 but after σ_{(1,0)}, g(0.9, 0.9) g(0) = 0 since |(0.9, 0.9)| ≈ 1.2728."
+      },
+      {
+       "name": "position_dependent",
+       "kind": "non-example",
+       "statement": "f⁰ = ρ(x)M(v) with nonconstant ρ is moved by free transport."
+      }
+     ]
+    },
+    {
+     "id": "9.5",
+     "kind": "definition",
+     "name": "HardSphere.correlation",
+     "statement": "F_n(t)(Z_n) = μ^{−n} Σ_{p≥0} (1/p!) ∫ W_{n+p}(t)(Z_n, z_{n+1}, …, z_{n+p}) with W_N(t) = W⁰_N ∘ T_{−t}; E[Σ_{injective} h(z_{i_1}(t), …)] = μ^n ∫ F_n(t) h; symmetric, vanishing off 𝒟̄_n, ∫ F_n(t) = μ^{−n} E[N!/(N − n)!]; inversion formula under a Gaussian bound on finite-measure X.",
+     "hypotheses": [
+      "0 < ε < ρ",
+      "μ > 0",
+      "f⁰ ≥ 0 integrable"
+     ],
+     "locator": {
+      "source": "BGSS2023",
+      "where": "(1.1.9)–(1.1.11) lines 218–288; DengHaniMa2024 (1.11) lines 235–244"
+     },
+     "prerequisites": [
+      "target:7.5",
+      "target:8.1",
+      "target:8.4",
+      "target:9.3"
+     ],
+     "api": [
+      {
+       "name": "HardSphere.lintegral_sum_distinct_eq_correlation",
+       "role": "expectation identity",
+       "statement": "E[Σ_{injective i} h(z_{i_1}(t), …, z_{i_n}(t))] = μ^n ∫ F_n(t) h for measurable h ≥ 0; real version for bounded h."
+      },
+      {
+       "name": "correlation_symmetric",
+       "role": "structure",
+       "statement": "F_n(t) is symmetric and vanishes off 𝒟̄_n; ∫ F_n(t) < ∞."
+      },
+      {
+       "name": "correlation_inversion",
+       "role": "inversion",
+       "statement": "W_n(t) = μ^n Σ_p ((−μ)^p/p!) ∫ F_{n+p}(t) a.e. on finite-measure X when f⁰ ≤ C₀ exp(−β₀|v|²/2)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "mean_number",
+       "kind": "computation",
+       "statement": "n = 1, h = 1: E[N] = μ ∫ F_1(t), constant in t."
+      },
+      {
+       "name": "poisson_case",
+       "kind": "degenerate",
+       "statement": "ε = 0, ∫ f⁰ = 1: F_n(0) = (f⁰)^{⊗n}."
+      },
+      {
+       "name": "stationary",
+       "kind": "characterisation",
+       "statement": "For the invariant measure of §9.4, F_n(t) is independent of t."
+      }
+     ]
+    },
+    {
+     "id": "9.6",
+     "kind": "theorem",
+     "name": "HardSphere.boltzmannGrad_scaling",
+     "statement": "For 0 < ε < ρ, F_n(0) = (f⁰)^{⊗n} 1_{𝒟̄_n} p_ε(X_n) with p_ε the probability of no particle within distance < ε of x_1, …, x_n; 0 ≤ (f⁰)^{⊗n}1 − F_n(0) ≤ n μ ω_d ε^d ‖ρ⁰‖_∞ (f⁰)^{⊗n}1; with μ_ε = ε^{−(d−1)} and ∫ f⁰ = 1, 1 − ω_d ε ‖ρ⁰‖_∞ ≤ ε^{d−1} E[N] ≤ 1.",
+     "hypotheses": [
+      "0 < ε < ρ",
+      "∫ f⁰ = 1 for the scaling statement",
+      "ρ⁰ bounded for the convergence"
+     ],
+     "locator": {
+      "source": "BGSS2023",
+      "where": "(1.1.8) lines 211–217; DengHaniMa2024 (1.12) lines 246–252"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "target:8.4",
+      "target:9.3",
+      "target:9.5"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "n_one",
+       "kind": "computation",
+       "statement": "F_1(0) = f⁰ p_ε(x_1) ≤ f⁰."
+      },
+      {
+       "name": "torus_value",
+       "kind": "computation",
+       "statement": "Unit torus, f⁰ = M_{1,0}, d = 3, ε = 0.01: ε²E[N] ∈ [1 − 0.0419, 1]."
+      },
+      {
+       "name": "diagonal",
+       "kind": "non-example",
+       "statement": "At x_1 = x_2, F_2(0) = 0 ≠ f⁰ ⊗ f⁰: convergence only off the diagonal."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "10",
+   "title": "The Boltzmann–Grad limit",
+   "targets": [
+    {
+     "id": "10.1",
+     "kind": "definition",
+     "name": "HardSphere.empirical",
+     "statement": "π_t(h)(N, Z) = μ^{−1} Σ_{i<N} h((T_t Z)_i) and π_t = μ^{−1} Σ_i δ_{(T_t Z)_i}; E[π_t(h)] = ∫ F_1(t) h and E[π_t(h)²] = μ^{−1}∫ F_1(t) h² + ∫ F_2(t) h ⊗ h.",
+     "hypotheses": [
+      "h bounded measurable",
+      "0 < ε < ρ"
+     ],
+     "locator": {
+      "source": "BGSS2023",
+      "where": "(1.2.4)–(1.2.6) lines 324–340 and lines 352–369"
+     },
+     "prerequisites": [
+      "target:7.5",
+      "target:9.5",
+      "tauceti:TauCeti.Probability.empiricalMeasureOfFintype"
+     ],
+     "api": [
+      {
+       "name": "expectation_empirical",
+       "role": "first moment",
+       "statement": "E[π_t(h)] = ∫ F_1(t) h."
+      },
+      {
+       "name": "second_moment_empirical",
+       "role": "second moment",
+       "statement": "E[π_t(h)²] = μ^{−1}∫F_1(t)h² + ∫F_2(t) h⊗h."
+      },
+      {
+       "name": "empirical_eq",
+       "role": "compatibility",
+       "statement": "For N ≥ 1, π_t = (N/μ) · empiricalMeasureOfFintype of the particles at time t."
+      }
+     ],
+     "tests": [
+      {
+       "name": "compat_value",
+       "kind": "compatibility",
+       "statement": "N ≥ 1: π_t = (N/μ) empiricalMeasureOfFintype."
+      },
+      {
+       "name": "total_mass",
+       "kind": "computation",
+       "statement": "h = 1: π_t(1) = N/μ and E[π_t(1)] = E[N]/μ."
+      },
+      {
+       "name": "empty",
+       "kind": "degenerate",
+       "statement": "The empty configuration gives the zero measure, outside the range of empiricalMeasureOfFintype."
+      }
+     ]
+    },
+    {
+     "id": "10.2",
+     "kind": "definition",
+     "name": "HardSphere.collisionOperator",
+     "statement": "Q(g, g)(x, v) = ∫_E ∫_{S^{d−1}} ⟨w − v, ω⟩_+ (g(x, v')g(x, w') − g(x, v)g(x, w)) dσ_S(ω) dw, (v', w') = σ_ω(v, w); absolutely convergent for Gaussian-bounded g with |Q(g, g)| ≤ C'(1 + |v|)exp(−β|v|²/2); gain/loss split; weak form; ∫ Q(g,g)ψ = 0 for collision invariants; Q(M, M) = 0.",
+     "hypotheses": [
+      "|g(x, v)| ≤ C exp(−β|v|²/2)"
+     ],
+     "locator": {
+      "source": "BGSS2023",
+      "where": "(1.2.1)–(1.2.3) lines 292–312; GST2013 (2.1.2) lines 385–393 and (2.2.1) lines 432–437; DengHaniMa2024 (1.13)–(1.14) lines 258–282"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.2",
+      "target:9.1",
+      "mathlib:MeasureTheory.Measure.toSphere"
+     ],
+     "api": [
+      {
+       "name": "collisionOperator_bound",
+       "role": "estimate",
+       "statement": "|Q(g, g)(x, v)| ≤ C'(1 + |v|) exp(−β|v|²/2)."
+      },
+      {
+       "name": "loss_term",
+       "role": "evaluation",
+       "statement": "The loss term is g(x, v) ω_{d−1} ∫ |w − v| g(x, w) dw."
+      },
+      {
+       "name": "weak_form",
+       "role": "symmetry",
+       "statement": "∫ Q(g,g)ψ = ¼∫∫∫ ⟨w − v, ω⟩_+ (g'g'_* − gg_*)(ψ + ψ_* − ψ' − ψ'_*) for ψ of polynomial growth."
+      },
+      {
+       "name": "collision_invariants",
+       "role": "conservation",
+       "statement": "∫ Q(g, g) ψ dv = 0 for ψ ∈ span{1, v_1, …, v_d, |v|²}."
+      },
+      {
+       "name": "collisionOperator_maxwellian",
+       "role": "equilibrium",
+       "statement": "Q(M_{β,u}, M_{β,u}) = 0."
+      }
+     ],
+     "tests": [
+      {
+       "name": "maxwellian_zero",
+       "kind": "computation",
+       "statement": "Q(M, M) = 0 by §9.1."
+      },
+      {
+       "name": "loss_value",
+       "kind": "computation",
+       "statement": "Loss term at g = M_{1,0}, d = 3, v = 0: M(0) π √(8/π)."
+      },
+      {
+       "name": "kernel_sign",
+       "kind": "compatibility",
+       "statement": "The kernels ⟨w − v, ω⟩_+ and ⟨v − w, ω⟩_+ give the same Q by ω ↦ −ω."
+      }
+     ]
+    },
+    {
+     "id": "10.3",
+     "kind": "definition",
+     "name": "HardSphere.IsMildBoltzmannSolution",
+     "statement": "f : ℝ → X × E → ℝ jointly measurable with |f(t, x, v)| ≤ C exp(−β|v|²/2) on [0, T] and f(t, x + π(tv), v) = f⁰(x, v) + ∫_0^t Q(f(s), f(s))(x + π(sv), v) ds for t ∈ [0, T] and a.e. (x, v).",
+     "hypotheses": [
+      "T ≥ 0"
+     ],
+     "locator": {
+      "source": "BGSS2023",
+      "where": "(1.2.1) lines 292–304; GST2013 (2.1.1) lines 380–384"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:10.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "maxwellian_solution",
+       "kind": "computation",
+       "statement": "f(t) = M_{β,u} is a mild solution on every [0, T]."
+      },
+      {
+       "name": "free_case",
+       "kind": "degenerate",
+       "statement": "With Q replaced by 0 the solution is f⁰(x − π(tv), v)."
+      },
+      {
+       "name": "wrong_direction",
+       "kind": "non-example",
+       "statement": "f⁰(x + π(tv), v) is not a solution of the free part."
+      }
+     ]
+    },
+    {
+     "id": "10.4",
+     "kind": "definition",
+     "name": "HardSphere.LanfordStatement",
+     "statement": "Proposition on 𝕋^d, d ≥ 2: ∀ C₀ ≥ 1, β₀ > 0, ∃ T₀ > 0, ∀ continuous probability density f⁰ with f⁰ ≤ C₀ e^{−β₀|v|²/2} and |f⁰(x,v) − f⁰(y,v)| ≤ C₀‖x − y‖e^{−β₀|v|²/2}, ∃ mild solution f on [0, T₀] with datum f⁰ such that, with μ_ε = ε^{−(d−1)}, for all t ∈ [0, T₀]: ∫ F^ε_n(t) g → ∫ f(t)^{⊗n} g for bounded continuous g; F^{ε_k}_n(t) → f(t)^{⊗n} a.e. along every sequence ε_k → 0⁺; ess sup_K |F^ε_1(t) − f(t)| → 0 for compact K.",
+     "hypotheses": [
+      "d ≥ 2"
+     ],
+     "locator": {
+      "source": "BGSS2023",
+      "where": "Theorem 1, lines 316–321; GST2013 Theorem 4 and Remark 3.1.1 lines 668–696, Theorem 8 lines 2069–2080; Lanford1975"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:9.5",
+      "target:10.3"
+     ],
+     "api": [
+      {
+       "name": "lanfordStatement_zero",
+       "role": "initial time",
+       "statement": "At t = 0 every conclusion holds by §9.6."
+      },
+      {
+       "name": "lanfordStatement_lln",
+       "role": "consequence",
+       "statement": "The proposition implies the law of large numbers of §10.5."
+      }
+     ],
+     "tests": [
+      {
+       "name": "quantifiers",
+       "kind": "characterisation",
+       "statement": "T₀ depends only on d, C₀, β₀."
+      },
+      {
+       "name": "maxwellian_datum",
+       "kind": "computation",
+       "statement": "For f⁰ = M_{β₀,0} admissible (C₀ ≥ (β₀/2π)^{d/2}) the solution is f(t) = f⁰ and every conclusion holds by §9.4–9.6."
+      },
+      {
+       "name": "filter_vs_sequence",
+       "kind": "non-example",
+       "statement": "An a.e. conclusion along the filter ε → 0⁺ would depend on representatives of uncountably many functions; sequences are used."
+      }
+     ]
+    },
+    {
+     "id": "10.5",
+     "kind": "theorem",
+     "name": "HardSphere.tendsto_empirical_of_correlation",
+     "statement": "On a flat position space with f⁰ ≥ 0 integrable, t ∈ ℝ, μ_ε → ∞ as ε → 0⁺ and f integrable: if ∫ F^ε_1(t) g → ∫ f g and ∫ F^ε_2(t) g₂ → ∫ f ⊗ f g₂ for all bounded continuous g, g₂, then P_ε(|π^ε_t(h) − ∫ f h| ≥ δ) → 0 for all bounded continuous h and δ > 0; corollary HardSphere.LanfordStatement.tendsto_empirical under HardSphere.LanfordStatement d.",
+     "hypotheses": [
+      "f⁰ ≥ 0 integrable",
+      "μ_ε → ∞",
+      "f integrable",
+      "δ > 0",
+      "h bounded continuous"
+     ],
+     "locator": {
+      "source": "BGSS2023",
+      "where": "Corollary 1.2.1, lines 344–349, proof lines 352–371"
+     },
+     "prerequisites": [
+      "target:9.5",
+      "target:10.1",
+      "target:10.4",
+      "mathlib:ProbabilityTheory.meas_ge_le_variance_div_sq"
+     ],
+     "api": [
+      {
+       "name": "HardSphere.LanfordStatement.tendsto_empirical",
+       "role": "corollary",
+       "statement": "Under HardSphere.LanfordStatement d the empirical measure concentrates on the Boltzmann solution for t ∈ [0, T₀]."
+      }
+     ],
+     "tests": [
+      {
+       "name": "equilibrium",
+       "kind": "compatibility",
+       "statement": "At the Maxwellian equilibrium on the unit torus the hypotheses hold with f = M by §9.4 and §9.6."
+      },
+      {
+       "name": "poisson_variance",
+       "kind": "computation",
+       "statement": "ε = 0, t = 0: Var(π(h)) = μ^{−1} ∫ f⁰ h²."
+      },
+      {
+       "name": "needs_F2",
+       "kind": "non-example",
+       "statement": "If F_2 → 2 f ⊗ f the variance tends to (∫ f h)² > 0."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "suppliers": [],
+ "consumers": [
+  {
+   "roadmap": "future roadmap: BBGKY hierarchy and Lanford's theorem",
+   "what": "Proves HardSphere.LanfordStatement from Layer 7, §8.3, §9.5, §9.6 and §10.2."
+  },
+  {
+   "roadmap": "future roadmap: fluctuations and large deviations of the hard-sphere gas",
+   "what": "Fluctuation field from §10.1 and the grand canonical measure §9.3 (BGSS2023 Theorems 2–3)."
+  },
+  {
+   "roadmap": "future roadmap: long-time derivation of the Boltzmann equation",
+   "what": "Reuses Layers 5–7 on Euclidean space and the left-continuous convention §5.4 (DengHaniMa2024)."
+  },
+  {
+   "roadmap": "future roadmap: the Boltzmann equation (Cauchy problem, H theorem)",
+   "what": "Cauchy problem, H theorem and characterisation of collision invariants, consuming §2.2, §9.1, §10.2–10.3."
+  },
+  {
+   "roadmap": "future roadmaps: infinite hard-sphere systems, short-range potentials, collision-count bounds",
+   "what": "Reuse Layer 4 and Layer 6."
+  },
+  {
+   "roadmap": "future roadmap: dispersing billiards and ergodicity of hard spheres",
+   "what": "Consumes Layer 4 (billiard outside a ball) and §1.3."
+  }
+ ],
+ "gaps": []
+}

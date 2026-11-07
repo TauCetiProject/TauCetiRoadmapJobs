@@ -8,7 +8,7 @@ title = "From Newton to Boltzmann: hard spheres and short-range potentials"
 year = 2012
 arxiv = "1208.5753v2"
 locator_scheme = "chapter"
-locator = "Part II, Ch. 4"
+locator = "Ch. 2 §2.1–2.2; Ch. 3 Thm 4; Ch. 4 Prop. 4.1.1, Lemma 4.1.1, (4.1.1)–(4.4.2); Ch. 6 Thm 8"
 url = "https://arxiv.org/abs/1208.5753v2"
 fetched_from = "https://arxiv.org/pdf/1208.5753v2"
 fetched_at = "2026-11-04T20:38:16Z"
@@ -17,7 +17,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v2"
-cited_for = ["Scope"]
+cited_for = ["1.1", "1.2", "1.4", "2.1", "2.2", "3.1", "3.3", "3.4", "3.5", "4.1", "4.2", "4.3", "4.4", "4.5", "5.1", "5.2", "5.3", "5.5", "6.1", "6.2", "6.3", "6.4", "7.1", "7.2", "7.3", "7.4", "8.1", "8.2", "8.3", "8.4", "9.1", "10.2", "10.3", "10.4"]
 
 [[source]]
 id = "BGSS2023"
@@ -26,7 +26,7 @@ title = "Statistical dynamics of a hard sphere gas: fluctuating Boltzmann equati
 year = 2020
 arxiv = "2008.10403v2"
 locator_scheme = "section"
-locator = "§1.1"
+locator = "§1.1 (1.1.1)–(1.1.11); §1.2 Thm 1, (1.2.1)–(1.2.7), Cor. 1.2.1; §1.3 equilibrium remarks"
 url = "https://arxiv.org/abs/2008.10403v2"
 fetched_from = "https://arxiv.org/pdf/2008.10403v2"
 fetched_at = "2026-11-04T20:38:23Z"
@@ -35,7 +35,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v2"
-cited_for = ["Final targets"]
+cited_for = ["1.1", "1.3", "1.4", "2.1", "3.1", "3.2", "3.4", "4.2", "4.3", "5.1", "5.3", "6.4", "7.1", "7.3", "7.5", "8.1", "8.2", "9.2", "9.3", "9.4", "9.5", "9.6", "10.1", "10.2", "10.3", "10.4", "10.5"]
 
 [[source]]
 id = "Alexander1976"
@@ -50,7 +50,7 @@ url = "https://projecteuclid.org/journals/communications-in-mathematical-physics
 licence_class = "open-repository"
 status = "uncertified"
 version_note = "open on Project Euclid, but the sources service received only a bot-protection page (Incapsula) from projecteuclid.org; cited by its locator without the text. The finite-N statement is proved in full in GST2013 Proposition 4.1.1."
-cited_for = ["Final targets"]
+cited_for = ["6.4"]
 
 [[source]]
 id = "DengHaniMa2024"
@@ -59,7 +59,7 @@ title = "Long time derivation of the Boltzmann equation from hard sphere dynamic
 year = 2024
 arxiv = "2408.07818v3"
 locator_scheme = "section"
-locator = "§1"
+locator = "§1.1 Def. 1.1, Prop. 1.2, Def. 1.3, (1.1)–(1.14)"
 url = "https://arxiv.org/abs/2408.07818v3"
 fetched_from = "https://arxiv.org/pdf/2408.07818v3"
 fetched_at = "2026-11-04T20:38:43Z"
@@ -68,7 +68,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v3"
-cited_for = ["Consumers"]
+cited_for = ["2.1", "3.1", "4.3", "4.4", "5.1", "5.2", "5.4", "6.4", "7.1", "7.2", "7.4", "7.5", "8.1", "9.3", "9.5", "9.6", "10.2"]
 
 [[source]]
 id = "Uchiyama1988"
@@ -83,7 +83,7 @@ url = "https://projecteuclid.org/journals/hiroshima-mathematical-journal/volume-
 licence_class = "open-repository"
 status = "uncertified"
 version_note = "open on Project Euclid, but the sources service received only a bot-protection page (Incapsula) from projecteuclid.org; cited by its locator without the text. Secondary exposition of Lanford1975; not needed by the design."
-cited_for = ["Sources"]
+cited_for = ["References"]
 
 [[source]]
 id = "Lanford1975"
@@ -92,13 +92,13 @@ title = "Time evolution of large classical systems"
 year = 1975
 venue = "Lecture Notes in Physics"
 doi = "10.1007/3-540-07171-7_1"
-locator_scheme = "section"
-locator = "Lecture notes, Part I"
+locator_scheme = "theorem"
+locator = "Proposition 4.3 and the convergence theorem (as attributed in GST2013 line 855 and BGSS2023 line 316)"
 url = "https://doi.org/10.1007/3-540-07171-7_1"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Final targets"]
+cited_for = ["6.4", "10.4"]
 
 [[source]]
 id = "CIP1994"
@@ -113,7 +113,7 @@ url = "https://doi.org/10.1007/978-1-4419-8524-8"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Final targets"]
+cited_for = ["References"]
 
 [[source]]
 id = "Spohn1991"
@@ -127,7 +127,7 @@ url = "https://doi.org/10.1007/978-3-642-84371-6"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Sources"]
+cited_for = ["References"]
 
 [[source]]
 id = "AlexanderThesis1975"
@@ -141,4 +141,4 @@ url = "https://escholarship.org/uc/item/77b0c501"
 licence_class = "none"
 status = "uncertified"
 version_note = "the eScholarship copy answered HTTP 403 to the sources service; cited by its locator without the text. Not needed: Alexander1976 and GST2013 Proposition 4.1.1 carry the theorem."
-cited_for = ["Final targets"]
+cited_for = ["References"]
