@@ -37,7 +37,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1"
-cited_for = ["VS6–VS7"]
+cited_for = ["VS6–VS7, Corrections to the sources"]
 
 [[source]]
 id = "LZ22"
@@ -75,7 +75,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v3"
-cited_for = ["VS6, VS10"]
+cited_for = ["VS6.11, VS7.2–7.3, VS7.7, VS10.7"]
 
 [[source]]
 id = "FS21"
@@ -93,7 +93,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v4"
-cited_for = ["VS6.2–6.3, VS6.8, VS9.9, VS11.1"]
+cited_for = ["VS6.2–6.3, VS6.8, VS7.8, VS8.7, VS9.9, VS11.1"]
 
 [[source]]
 id = "LiuZhengEnhanced"
@@ -111,7 +111,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v4"
-cited_for = ["VS7.4–7.5 supplier gaps"]
+cited_for = ["VS7.4–7.5 supplier gaps, Corrections to the sources"]
 
 [[source]]
 id = "LiuZhengGluing"
