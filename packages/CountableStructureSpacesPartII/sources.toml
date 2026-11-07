@@ -10,7 +10,7 @@ venue = "Ann. of Math. (2) 199 (2024), no. 3, 1177-1224"
 doi = "10.4007/annals.2024.199.3.4"
 arxiv = "2102.12371v6"
 locator_scheme = "theorem"
-locator = "Definition 1.2, Definition 1.4, Remark 1.5, Definition 1.6, Fact 1.7, Convention 1.9, Main Theorem (pp. 2-4)"
+locator = "Definition 1.2 (lines 70-73), Definition 1.4 (line 83), Remark 1.5 (lines 88-91), Definition 1.6 (lines 95-101), Fact 1.7 (lines 103-106), Notation 1.8 and Convention 1.9 (lines 110-121), Main Theorem (lines 169-171)"
 url = "https://arxiv.org/abs/2102.12371v6"
 fetched_from = "https://arxiv.org/pdf/2102.12371v6"
 fetched_at = "2026-11-04T16:58:42Z"
@@ -19,7 +19,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v6; numbering of the introduction (Definitions 1.2-1.6, Main Theorem, Theorem 1.10) read from the arXiv text, to be checked against the Annals version"
-cited_for = ["Borel reducibility of equivalence relations and of sets, Borel completeness, extension to classes K via K_omega", "torsion-free abelian groups are Borel complete by a continuous reduction from graphs", "Friedman-Stanley summary: graphs, linear orders, trees Borel complete; torsion abelian groups complete analytic but not Borel complete"]
+cited_for = ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "1.2", "1.4", "1.6", "2.4", "3.5", "3.8", "5.3", "6.3", "Scope and ownership: torsion-free abelian groups"]
 
 [[source]]
 id = "becker-kechris-bams"
@@ -29,7 +29,7 @@ year = 1993
 venue = "Bull. Amer. Math. Soc. (N.S.) 28 (1993) 334-341"
 arxiv = "math/9304208v1"
 locator_scheme = "theorem"
-locator = "§2 (Borel embeddings of Borel G-spaces, Theorem 2.1, Corollary 2.2, Corollary 2.3), pp. 3-4"
+locator = "§2: Borel G-spaces and Borel embeddings (lines 126-131), Theorem 2.1 (line 132), the logic action (lines 159-164), Corollary 2.2 (lines 172-177), proof sketches (lines 247-268)"
 url = "https://arxiv.org/abs/math/9304208v1"
 fetched_from = "https://arxiv.org/pdf/math/9304208v1"
 fetched_at = "2026-11-04T16:58:51Z"
@@ -38,7 +38,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v1; research announcement with proof sketches only, the full proofs are in becker-kechris-1996"
-cited_for = ["every Borel S_inf-space Borel-embeds equivariantly into the logic action on the structure space of the language with one n-ary relation symbol for each n (universal S_inf-space)"]
+cited_for = ["1.1", "4.1", "4.2", "4.3", "4.4", "4.5"]
 
 [[source]]
 id = "camerlo-gao-boolean"
@@ -48,7 +48,7 @@ year = 2001
 venue = "Trans. Amer. Math. Soc. 353 (2001), no. 2, 491-518"
 doi = "10.1090/S0002-9947-00-02659-3"
 locator_scheme = "theorem"
-locator = "§1 (Borel reducibility, Mod(L), Borel completeness, pp. 492-493), Theorem 1 (p. 505, atomic Boolean algebras), Theorem (p. 514, all countable Boolean algebras)"
+locator = "§1 definitions and completeness of C-infinity (lines 79-110), the classical list (lines 111-118), rooted trees (lines 257-263, 276-281), Theorem 1 (line 405) and the theorem at line 555"
 url = "https://www.ams.org/journals/tran/2001-353-02/S0002-9947-00-02659-3/S0002-9947-00-02659-3.pdf"
 fetched_from = "https://www.ams.org/journals/tran/2001-353-02/S0002-9947-00-02659-3/S0002-9947-00-02659-3.pdf"
 fetched_at = "2026-11-04T16:59:20Z"
@@ -57,7 +57,7 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "AMS open archive (Transactions back issues); the extracted text has run-together words on some lines"
-cited_for = ["Borel completeness of countable Boolean algebras, with the reduction from countable graphs", "the standard definitions of Borel reducibility between invariant Borel classes and of Borel completeness, and the equivalence with S_inf-completeness"]
+cited_for = ["0.1", "1.2", "1.3", "1.5", "1.7", "2.5", "3.8", "3.9", "3.12", "3.13", "5.1", "5.2", "5.4", "6.5", "6.6", "6.7", "Scope and ownership: Boolean algebras"]
 
 [[source]]
 id = "kechris-cdst"
@@ -72,7 +72,7 @@ url = "https://doi.org/10.1007/978-1-4612-4190-4"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["complete analytic sets and the isomorphism relation on Mod_L(omega) as a complete analytic set"]
+cited_for = ["background: spaces of structures and the logic action (§16.C)"]
 
 [[source]]
 id = "friedman-stanley-1989"
@@ -87,7 +87,7 @@ url = "https://doi.org/10.2307/2274750"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (Cambridge); the Project Euclid landing page refused the request; cited by its locator without the text. Section and theorem numbers are from memory and must be checked by anyone with legal access"
-cited_for = ["Friedman-Stanley theorem: countable graphs, trees and linear orders are Borel complete", "countable fields are Borel complete", "torsion abelian groups: complete analytic but not Borel complete (the Friedman-Stanley obstruction)"]
+cited_for = ["2.2", "2.5", "3.7", "3.11", "3.13", "6.8", "Scope and ownership: fields, torsion abelian groups"]
 
 [[source]]
 id = "gao-idst"
@@ -102,7 +102,7 @@ url = "https://doi.org/10.1201/9781584887942"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text; section numbers to be checked by anyone with legal access"
-cited_for = ["Borel reducibility preorder and its elementary properties", "Borel completeness and its equivalent characterisations", "Friedman-Stanley theorem"]
+cited_for = ["5.1", "6.3", "6.9"]
 
 [[source]]
 id = "becker-kechris-1996"
@@ -117,7 +117,7 @@ url = "https://doi.org/10.1017/CBO9780511735264"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text; the announcement becker-kechris-bams is the open statement of the same results"
-cited_for = ["full proof that every Borel S_inf-space Borel-embeds equivariantly into some Mod_L(omega)"]
+cited_for = ["4.5", "5.4"]
 
 [[source]]
 id = "hjorth-2000"
@@ -132,7 +132,7 @@ url = "https://doi.org/10.1090/surv/075"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["background on orbit equivalence relations and classification by countable structures"]
+cited_for = ["background: orbit equivalence relations and classification by countable structures (Chapter 1)"]
 
 [[source]]
 id = "hjorth-kechris-1996"
@@ -147,7 +147,7 @@ url = "https://doi.org/10.1016/S0168-0072(96)00006-1"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["complete analytic isomorphism relations that are not Borel complete; Ulm-type classifications"]
+cited_for = ["6.8", "Scope and ownership: torsion abelian groups"]
 
 [[source]]
 id = "mekler-1981"
@@ -162,4 +162,38 @@ url = "https://doi.org/10.2307/2273227"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text; the section locator is from memory and must be checked by anyone with legal access"
-cited_for = ["countable groups are Borel complete (the Mekler coding of graphs into groups)"]
+cited_for = ["Scope and ownership: groups"]
+
+[[source]]
+id = "montalban-cst2"
+authors = "Antonio Montalbán"
+title = "Computable Structure Theory: Beyond the Arithmetic (draft of Part 2)"
+year = 2025
+version_note = "author's draft of Part 2 compiled April 22, 2025, from the author's web page; locators refer to this draft"
+locator_scheme = "section"
+locator = "Lemma II.37 (lines 2322-2331), Lemma II.38 and Corollary II.39 (lines 2337-2425), Lemma XI.2 (lines 8946-8980), Theorem XI.3 (lines 8997-9012), lines 9046-9054"
+url = "https://math.berkeley.edu/~antonio/CSTpart2.pdf"
+fetched_from = "https://math.berkeley.edu/~antonio/CSTpart2.pdf"
+fetched_at = "2026-11-05T11:22:43Z"
+sha256 = "a1c43f5cc6526ac023e06d1865e6921d3cb698b2a741f3448bc47fe2e82d9ae4"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["6.1", "6.2", "6.4", "6.9", "Scope and ownership: complete analyticity"]
+
+[[source]]
+id = "montalban-cst1"
+authors = "Antonio Montalbán"
+title = "Computable Structure Theory: Within the Arithmetic (draft of Part 1)"
+year = 2019
+version_note = "author's draft of Part 1 compiled June 25, 2019, from the author's web page; the published book (Perspectives in Logic, Cambridge University Press, 2021) may number differently; locators refer to this draft"
+locator_scheme = "theorem"
+locator = "Lemma VI.18 (lines 4203-4288), Theorem VI.27 (lines 4572-4659)"
+url = "https://math.berkeley.edu/~antonio/CSTpart1.pdf"
+fetched_from = "https://math.berkeley.edu/~antonio/CSTpart1.pdf"
+fetched_at = "2026-11-05T11:23:27Z"
+sha256 = "78e530f600f7b733d44ddd6a7420e13d5950093f6d322eea4557e73eb951f7c2"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["2.1", "2.3", "3.1", "3.2", "3.3", "3.4", "3.6", "3.7", "3.10"]

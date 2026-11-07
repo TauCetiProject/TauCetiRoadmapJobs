@@ -1,0 +1,1933 @@
+{
+ "roadmap": "CountableStructureSpacesPartII",
+ "title": "Countable structure spaces, Part II: Borel reducibility of isomorphism relations and Borel completeness",
+ "parent": "CountableStructureSpaces",
+ "summary": "Compares isomorphism relations of classes of countable structures by Borel reducibility; defines Borel completeness (also for languages with function symbols); proves by explicit continuous codings that graphs, linear orders and trees are Borel complete (Friedman–Stanley); embeds every Borel S∞-space into the logic action of the language with one n-ary symbol per n (Becker–Kechris for S∞, through the Polish realization of NoncompactQuantumSymmetry); proves the characterisations of Borel completeness; and shows that a Borel complete isomorphism relation is not Borel, lies above E₀, has continuum many classes and unbounded Scott height, with the Friedman–Stanley obstruction lemma.",
+ "baseline": {
+  "mathlib": "f6090c7095e1e56b3464c1daba5f24631f1290d2",
+  "tauceti": "358314d4ab97483df4fc4cb8adcc02e74a8d9f5a"
+ },
+ "layers": [
+  {
+   "key": "0",
+   "title": "Isomorphism relations of classes and two reducibilities",
+   "targets": [
+    {
+     "id": "0.1",
+     "kind": "definition",
+     "name": "classIso",
+     "statement": "For K : Set (StructureSpace L), classIso K : Setoid K is Setoid.comap of structureIsoSetoid L along the inclusion K → StructureSpace L; K carries the subtype σ-algebra.",
+     "hypotheses": [
+      "L is a relational first-order language ([L.IsRelational]) (no countability needed for the definition)"
+     ],
+     "locator": {
+      "source": "paolini-shelah-tfab",
+      "where": "Definition 1.4, line 83; camerlo-gao-boolean lines 106–110 for classes"
+     },
+     "prerequisites": [
+      "roadmap:CountableStructureSpaces §4.1",
+      "mathlib:Setoid.comap",
+      "mathlib:measurable_subtype_coe"
+     ],
+     "api": [
+      {
+       "name": "classIso_iff",
+       "role": "unfolding",
+       "statement": "For x y : K, classIso K x y holds iff the decoded structures of x and y are isomorphic, iff x and y lie in one orbit of the logic action (structureIsoSetoid_eq_orbitRel)."
+      },
+      {
+       "name": "borelReducible_classIso_univ",
+       "role": "compatibility",
+       "statement": "classIso Set.univ and structureIsoSetoid L are Borel reducible to each other, the inclusion of univ being a measurable equivalence."
+      },
+      {
+       "name": "quotient_injection",
+       "role": "structure",
+       "statement": "A Borel reduction of classIso K' to classIso K induces an injection of quotients (BorelEquivalenceRelations §5.1); it need not be injective on codes."
+      }
+     ],
+     "tests": [
+      {
+       "name": "two_orbit_class",
+       "kind": "computation",
+       "statement": "In the language of one unary predicate, the class {P = ∅, P = ℕ} is invariant Borel and classIso of it is equality with exactly two classes; the class 'P finite' has one class per finite size."
+      },
+      {
+       "name": "empty_class",
+       "kind": "degenerate",
+       "statement": "classIso ∅ reduces to every classIso K by the empty map, and classIso K reduces to classIso ∅ iff K = ∅."
+      },
+      {
+       "name": "noninjective_reduction",
+       "kind": "non-example",
+       "statement": "For K' the codes with P infinite and coinfinite (one orbit, uncountably many codes) and any nonempty K, the constant map reduces classIso K' to classIso K without being injective on codes."
+      },
+      {
+       "name": "noninvariant_subclass",
+       "kind": "compatibility",
+       "statement": "For A the single code P = {0} inside the class |P| = 1, the inclusion reduces classIso A to classIso K; both have one class."
+      }
+     ]
+    },
+    {
+     "id": "0.2",
+     "kind": "theorem",
+     "name": "borelReducible_classIso_of_subset",
+     "statement": "If A ⊆ K then classIso A is Borel reducible to classIso K; hence if classIso K' is Borel reducible to classIso K and A ⊆ K', then classIso A is Borel reducible to classIso K.",
+     "hypotheses": [
+      "L is a relational first-order language ([L.IsRelational])",
+      "A, K, K' arbitrary sets of codes (no Borelness needed)"
+     ],
+     "locator": {
+      "source": "paolini-shelah-tfab",
+      "where": "Definition 1.6, lines 95–101 (reductions between Borel classes)"
+     },
+     "prerequisites": [
+      "target:0.1",
+      "roadmap:BorelEquivalenceRelations §5.1",
+      "mathlib:measurable_subtype_coe",
+      "mathlib:Measurable.subtype_mk"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "restriction_to_orbit",
+       "kind": "computation",
+       "statement": "Restricting the reduction of 2.5 to the orbit of one code of StructureSpace L' gives a reduction of a one-class relation."
+      }
+     ]
+    },
+    {
+     "id": "0.3",
+     "kind": "theorem",
+     "name": "borelReducible_classIso_of_measurable",
+     "statement": "If f : StructureSpace L' → StructureSpace L is measurable, maps K' into K, and for all x y ∈ K' the codes x, y are isomorphic iff f x, f y are, then classIso K' is Borel reducible to classIso K.",
+     "hypotheses": [
+      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([Countable (Σ l, L.Relations l)])",
+      "L' relational",
+      "f measurable"
+     ],
+     "locator": {
+      "source": "paolini-shelah-tfab",
+      "where": "Definition 1.6, lines 95–101"
+     },
+     "prerequisites": [
+      "target:0.1",
+      "roadmap:BorelEquivalenceRelations §5.1",
+      "mathlib:Measurable.subtype_mk"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "0.4",
+     "kind": "definition",
+     "name": "SetReducible",
+     "statement": "SetReducible A B for A : Set X, B : Set Y on measurable spaces: ∃ f : X → Y measurable with ∀ x, x ∈ A ↔ f x ∈ B.",
+     "hypotheses": [
+      "X, Y measurable spaces"
+     ],
+     "locator": {
+      "source": "paolini-shelah-tfab",
+      "where": "Definition 1.2, lines 70–73"
+     },
+     "prerequisites": [
+      "mathlib:Measurable"
+     ],
+     "api": [
+      {
+       "name": "SetReducible.refl/trans",
+       "role": "structure",
+       "statement": "SetReducible is reflexive and transitive."
+      },
+      {
+       "name": "setReducible_compl_iff",
+       "role": "characterisation",
+       "statement": "SetReducible A B ↔ SetReducible Aᶜ Bᶜ."
+      },
+      {
+       "name": "SetReducible.measurableSet",
+       "role": "compatibility",
+       "statement": "SetReducible A B and MeasurableSet B give MeasurableSet A."
+      },
+      {
+       "name": "SetReducible.analyticSet",
+       "role": "compatibility",
+       "statement": "For X, Y Polish with Borel σ-algebras, SetReducible A B and AnalyticSet B give AnalyticSet A (refine the topology by Measurable.exists_continuous, then AnalyticSet.preimage)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "singleton_to_diagonal",
+       "kind": "computation",
+       "statement": "A = {0} ⊆ ℕ, B the diagonal of Cantor space squared: the map 0 ↦ (0,0), n+1 ↦ (0,1) has preimage {0}."
+      },
+      {
+       "name": "empty_and_univ_targets",
+       "kind": "degenerate",
+       "statement": "A is set reducible to ∅ iff A = ∅ and to univ iff A = univ."
+      },
+      {
+       "name": "nonborel_not_reducible",
+       "kind": "non-example",
+       "statement": "The complement of the base's wellOrderClass is analytic and not Borel, so it is not set reducible to the (Borel) diagonal."
+      },
+      {
+       "name": "equality_pullback",
+       "kind": "compatibility",
+       "statement": "For injective measurable f, the graph of equality on X is the preimage of the diagonal of Y under Prod.map f f."
+      }
+     ]
+    },
+    {
+     "id": "0.5",
+     "kind": "theorem",
+     "name": "setReducible_graph_of_borelReducible",
+     "statement": "If BorelReducible E F for setoids E on X and F on Y, then {p | E p.1 p.2} is SetReducible to {p | F p.1 p.2}, by Prod.map f f.",
+     "hypotheses": [
+      "X, Y measurable spaces",
+      "E, F setoids"
+     ],
+     "locator": {
+      "source": "paolini-shelah-tfab",
+      "where": "Remark 1.5, lines 88–91"
+     },
+     "prerequisites": [
+      "target:0.4",
+      "roadmap:BorelEquivalenceRelations §5.1",
+      "mathlib:Measurable.prodMap"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "0.6",
+     "kind": "theorem",
+     "name": "setReducible_eZero_diagonal",
+     "statement": "The graph of eZero is SetReducible to the diagonal of (ℕ → Bool) × (ℕ → Bool), whereas eZero is not BorelReducible to (⊥ : Setoid (ℕ → Bool)); so set reducibility of graphs does not imply Borel reducibility.",
+     "hypotheses": [],
+     "locator": {
+      "source": "paolini-shelah-tfab",
+      "where": "Remark 1.5, line 91"
+     },
+     "prerequisites": [
+      "target:0.4",
+      "roadmap:BorelEquivalenceRelations §5.4",
+      "roadmap:BorelEquivalenceRelations §5.2"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  },
+  {
+   "key": "1",
+   "title": "Borel completeness",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "construction",
+     "name": "StructureSpaceOn.relabel",
+     "statement": "For any language L and e : α ≃ β, the map StructureSpaceOn L α → StructureSpaceOn L β sending c to the code with value c ⟨R, e.symm ∘ w⟩ at ⟨R, w⟩; a homeomorphism and measurable equivalence.",
+     "hypotheses": [
+      "any language L",
+      "e : α ≃ β"
+     ],
+     "locator": {
+      "source": "becker-kechris-bams",
+      "where": "lines 159–164 (the logic action as relabelling of structures on ℕ)"
+     },
+     "prerequisites": [
+      "roadmap:CountableStructureSpaces Layer 0",
+      "roadmap:CountableStructureSpaces §1.2"
+     ],
+     "api": [
+      {
+       "name": "relabel_trans/relabel_refl",
+       "role": "functoriality",
+       "statement": "Relabelling along e.trans e' is the composite and along Equiv.refl is the identity; inverse along e.symm."
+      },
+      {
+       "name": "relabel_perm",
+       "role": "compatibility",
+       "statement": "For α = β = ℕ, relabelling along σ is the logic action σ • ·."
+      },
+      {
+       "name": "relabel_eq_encodeVia",
+       "role": "compatibility",
+       "statement": "For relational L, the relabelled code is encodeVia e of the decoded structure; c and its relabelling decode to isomorphic structures."
+      },
+      {
+       "name": "relabel_iso_iff",
+       "role": "characterisation",
+       "statement": "Two codes on α are isomorphic iff their relabellings are; invariant Borel classes map to invariant Borel classes."
+      }
+     ],
+     "tests": [
+      {
+       "name": "transposition",
+       "kind": "computation",
+       "statement": "Relabelling P = {0} along the transposition (0 1) gives P = {1}, equal to the logic action."
+      },
+      {
+       "name": "fin_zero",
+       "kind": "degenerate",
+       "statement": "On Fin 0 the coding space of a language without nullary symbols is one point and relabelling is the identity; with one nullary symbol, two fixed points."
+      },
+      {
+       "name": "three_cycle_twice",
+       "kind": "non-example",
+       "statement": "Relabelling P = {0} twice along the 3-cycle 0→1→2→0 gives P = {2} ≠ {0}, while relabelling along e then e.symm is the identity."
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "definition",
+     "name": "BorelComplete",
+     "statement": "BorelComplete K for K : Set (StructureSpace L): for every L' : Language.{0,0} with [L'.IsRelational] [Countable (Σ l, L'.Relations l)] and every K' : Set (StructureSpace L') with MeasurableSet K' and IsomorphismInvariant K', BorelReducible (classIso K') (classIso K).",
+     "hypotheses": [
+      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([Countable (Σ l, L.Relations l)])"
+     ],
+     "locator": {
+      "source": "paolini-shelah-tfab",
+      "where": "Definition 1.6, lines 95–101; camerlo-gao-boolean lines 106–110"
+     },
+     "prerequisites": [
+      "target:0.1",
+      "roadmap:BorelEquivalenceRelations §5.1",
+      "roadmap:CountableStructureSpaces §1.2"
+     ],
+     "api": [
+      {
+       "name": "BorelComplete.of_borelReducible",
+       "role": "functoriality",
+       "statement": "BorelComplete K and BorelReducible (classIso K) (classIso K₂) give BorelComplete K₂; in particular K ⊆ K₂."
+      },
+      {
+       "name": "borelComplete_congr",
+       "role": "characterisation",
+       "statement": "Borel completeness depends only on classIso K up to Borel bireducibility."
+      },
+      {
+       "name": "BorelComplete.borelReducible_univ",
+       "role": "universal-property",
+       "statement": "If BorelComplete K then every invariant Borel class of a countable relational language in any universes reduces to K (target 1.3)."
+      },
+      {
+       "name": "borelComplete_map_lequiv_iff",
+       "role": "compatibility",
+       "statement": "For e : L ≃ᴸ L₂, K is Borel complete iff its image under the code-space homeomorphism of e is."
+      }
+     ],
+     "tests": [
+      {
+       "name": "empty_not_complete",
+       "kind": "degenerate",
+       "statement": "BorelComplete ∅ fails: K' = univ for one unary symbol is nonempty."
+      },
+      {
+       "name": "countably_many_types",
+       "kind": "non-example",
+       "statement": "The class of codes of one unary predicate is not Borel complete: the closed class of codes of countably many unary predicates each ∅ or ℕ has types in bijection with ℕ → Bool and cannot inject into a countable quotient."
+      },
+      {
+       "name": "union_not_intersection",
+       "kind": "computation",
+       "statement": "If K is Borel complete so is K ∪ K₂; graphClass ∩ (orbit of the empty graph) is one orbit and not Borel complete."
+      },
+      {
+       "name": "renaming",
+       "kind": "compatibility",
+       "statement": "Renaming adj in Language.graph gives an equivalent language and the image of graphClass is Borel complete."
+      }
+     ]
+    },
+    {
+     "id": "1.3",
+     "kind": "theorem",
+     "name": "BorelComplete.borelReducible_univ",
+     "statement": "If BorelComplete K, then for every L' : Language.{u', v'} with [L'.IsRelational] [Countable (Σ l, L'.Relations l)] and every invariant Borel K' ⊆ StructureSpace L', classIso K' is Borel reducible to classIso K.",
+     "hypotheses": [
+      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([Countable (Σ l, L.Relations l)])",
+      "L' countable relational in arbitrary universes",
+      "K' invariant Borel"
+     ],
+     "locator": {
+      "source": "camerlo-gao-boolean",
+      "where": "lines 87–93 and 101–105 (Mod(L) for an arbitrary countable language)"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "roadmap:InfinitaryModelExistence §0.3",
+      "roadmap:CountableModelCounting Layer 0",
+      "target:1.1"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "1.4",
+     "kind": "construction",
+     "name": "FunCode",
+     "statement": "For L with countably many function and relation symbols, the functional coding space: pairs (F, c) of a table F : (Σ f : (Σ l, L.Functions l), Fin f.1 → ℕ) → ℕ and a relation code c : StructureSpace L, with the product topology; decoding to L.Structure ℕ; the action (σ • F)⟨f, v⟩ = σ (F ⟨f, σ⁻¹ ∘ v⟩) and the logic action on c.",
+     "hypotheses": [
+      "[Countable (Σ l, L.Functions l)]",
+      "[Countable (Σ l, L.Relations l)]"
+     ],
+     "locator": {
+      "source": "paolini-shelah-tfab",
+      "where": "lines 60–64 (groups, abelian groups and torsion-free abelian groups as Borel subsets of the space of structures)"
+     },
+     "prerequisites": [
+      "roadmap:CountableStructureSpaces Layer 0",
+      "roadmap:CountableStructureSpaces §1.2",
+      "mathlib:FirstOrder.Language.Structure"
+     ],
+     "api": [
+      {
+       "name": "polishSpace_funCode",
+       "role": "structure",
+       "statement": "The functional coding space is Polish and the action is continuous."
+      },
+      {
+       "name": "orbitRel_funCode_iff",
+       "role": "characterisation",
+       "statement": "Two points lie in one orbit iff their decoded L-structures are isomorphic."
+      },
+      {
+       "name": "measurableSet_models",
+       "role": "constructor",
+       "statement": "The models on ℕ of a set of first-order L-sentences form an invariant Borel set (target 1.6)."
+      },
+      {
+       "name": "funCode_relational",
+       "role": "compatibility",
+       "statement": "For relational L the table is the empty map and the space is StructureSpace L."
+      }
+     ],
+     "tests": [
+      {
+       "name": "constant_symbol",
+       "kind": "computation",
+       "statement": "For one constant symbol k, a table is one number F k; the table F k = 3 decodes to the structure interpreting k as 3."
+      },
+      {
+       "name": "no_symbols",
+       "kind": "degenerate",
+       "statement": "For the empty language the functional coding space is a single point."
+      },
+      {
+       "name": "orbit_of_constant",
+       "kind": "non-example",
+       "statement": "Two tables F k = 3 and F k = 5 are in one orbit (transposition (3 5)), while a table and a non-isomorphic relation code are not."
+      }
+     ]
+    },
+    {
+     "id": "1.5",
+     "kind": "theorem",
+     "name": "graphCodeFun_homeomorph",
+     "statement": "The graph-code map from the functional coding space to StructureSpace (graphLanguage L), sending a point to the code of graphExpansion of its decoded structure, is continuous, injective and equivariant; its range is the Gδ set of codes whose graph relations are graphs of total functions, which is not closed when L has at least one function symbol and is the whole coding space when L is relational; it is a homeomorphism onto its range, agreeing there with reconstructStructure; and two points decode to isomorphic structures iff their graph codes are isomorphic.",
+     "hypotheses": [
+      "L with countably many function and relation symbols"
+     ],
+     "locator": {
+      "source": "camerlo-gao-boolean",
+      "where": "lines 87–93 (Mod(L) for countable L)"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "roadmap:InfinitaryModelExistence Layer 6",
+      "roadmap:CountableStructureSpaces Layer 0"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "constant_graph",
+       "kind": "computation",
+       "statement": "For one constant symbol and F k = 3, the unary graph relation is {3}."
+      },
+      {
+       "name": "not_in_range",
+       "kind": "non-example",
+       "statement": "A graph code whose unary-function relation holds at (0,1) and (0,2), or at no (0,y), is not in the range; codes with value n at 0 converge as n → ∞ to a code with no value at 0, so the range is not closed."
+      },
+      {
+       "name": "relational_case",
+       "kind": "compatibility",
+       "statement": "For relational L the map is the base coding composed with the symbol relabelling R ↦ base R, and its range is the whole coding space, which is closed."
+      }
+     ]
+    },
+    {
+     "id": "1.6",
+     "kind": "theorem",
+     "name": "measurableSet_funCode_models",
+     "statement": "For a set T of first-order L-sentences, the set of points of the functional coding space whose decoded structure is a model of T is measurable and invariant.",
+     "hypotheses": [
+      "L with countably many function and relation symbols",
+      "T : L.Theory"
+     ],
+     "locator": {
+      "source": "paolini-shelah-tfab",
+      "where": "lines 60–64"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "mathlib:FirstOrder.Language.Theory.Model",
+      "mathlib:FirstOrder.Language.BoundedFormula.Realize"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "simple_graphs",
+       "kind": "compatibility",
+       "statement": "For Language.graph and Theory.simpleGraph the set is graphClass."
+      },
+      {
+       "name": "fields_char_two",
+       "kind": "computation",
+       "statement": "For Language.ring and Theory.fieldOfChar 2 the set contains a code of 𝔽₂(t) and no code of ℚ."
+      }
+     ]
+    },
+    {
+     "id": "1.7",
+     "kind": "theorem",
+     "name": "BorelComplete.borelReducible_funCode",
+     "statement": "If K₀ ⊆ StructureSpace L₀ is Borel complete, then for every L' with countably many function and relation symbols and every invariant Borel class K' of the functional coding space of L', the isomorphism relation of K' is Borel reducible to classIso K₀; an invariant Borel class K of a functional coding space is called Borel complete when its graph-code image is.",
+     "hypotheses": [
+      "L₀ countable relational",
+      "L' countable, function symbols allowed",
+      "K' invariant Borel"
+     ],
+     "locator": {
+      "source": "camerlo-gao-boolean",
+      "where": "lines 87–93 and 101–105"
+     },
+     "prerequisites": [
+      "target:1.5",
+      "target:1.3",
+      "target:1.2"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "Every countable structure codes into a graph",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "construction",
+     "name": "incidenceGraph",
+     "statement": "For countable relational L' and an injection ι of its relation symbols into ℕ, the coloured graph H_c on points p_a (a ∈ ℕ), tuple vertices t_q, position vertices s_{q,j} (j < arity) and truth vertices u_q (q : RelQueryOn L' ℕ), coloured κ(p) = 0, κ(u) = 1, κ(s_{q,j}) = 2+2j, κ(t_{⟨R,v⟩}) = 3+2ι(R), with edges t_q—s_{q,j}, s_{q,j}—p_{v j}, and t_q—u_q iff c q = true.",
+     "hypotheses": [
+      "L' relational with countably many relation symbols"
+     ],
+     "locator": {
+      "source": "montalban-cst1",
+      "where": "Theorem VI.27, lines 4582–4594 (coding a structure by gadgets attached to tuples; different gadgets)"
+     },
+     "prerequisites": [
+      "roadmap:CountableStructureSpaces Layer 0",
+      "mathlib:SimpleGraph",
+      "mathlib:Encodable.ofCountable"
+     ],
+     "api": [
+      {
+       "name": "incidenceGraph_bipartite",
+       "role": "structure",
+       "statement": "H_c is bipartite (points and tuple vertices against positions and truth vertices), hence triangle-free."
+      },
+      {
+       "name": "incidenceGraph_adj_continuous",
+       "role": "compatibility",
+       "statement": "Only tuple–truth edges depend on c, each on one coordinate c q."
+      },
+      {
+       "name": "incidenceGraph_iso_iff",
+       "role": "characterisation",
+       "statement": "c ≅ d iff some colour-preserving bijection of base vertices maps H_c onto H_d (target 2.2)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "one_binary_edge",
+       "kind": "computation",
+       "statement": "For R = {(0,1)}: t_{⟨R,![0,1]⟩} has three neighbours, t_{⟨R,![1,0]⟩} two."
+      },
+      {
+       "name": "empty_language",
+       "kind": "degenerate",
+       "statement": "For L' with no relation symbols, H_c has only points and no edges."
+      },
+      {
+       "name": "nullary_symbol",
+       "kind": "computation",
+       "statement": "A nullary symbol gives a tuple vertex without position neighbours, joined to its truth vertex iff the code says true."
+      },
+      {
+       "name": "colours_needed",
+       "kind": "non-example",
+       "statement": "With two unary symbols, the codes P₁ = {0} and P₂ = {0} are not isomorphic but have isomorphic uncoloured incidence graphs."
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "theorem",
+     "name": "incidenceGraph_iso_iff",
+     "statement": "For codes c, d ∈ StructureSpace L': c and d are isomorphic iff there is a colour-preserving graph isomorphism H_c ≅ H_d.",
+     "hypotheses": [
+      "L' countable relational"
+     ],
+     "locator": {
+      "source": "friedman-stanley-1989",
+      "where": "Theorem 1 (graphs are Borel complete)"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "roadmap:CountableStructureSpaces §4.1",
+      "roadmap:CountableStructureSpaces §1.2"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "2.3",
+     "kind": "construction",
+     "name": "cliqueTag",
+     "statement": "For a triangle-free simple graph H on V with κ : V → ℕ, the tagged graph on V ⊕ Σ x, Fin (κ x + 3): H, a clique on the tag vertices of each x, and an edge from x to its tag vertex 0. Two triangle-free coloured graphs have isomorphic tagged graphs iff they are colour-isomorphic.",
+     "hypotheses": [
+      "H triangle-free"
+     ],
+     "locator": {
+      "source": "montalban-cst1",
+      "where": "Theorem VI.27, lines 4623–4654 (flags distinguishing coded vertices)"
+     },
+     "prerequisites": [
+      "mathlib:SimpleGraph"
+     ],
+     "api": [
+      {
+       "name": "mem_triangle_iff_tag",
+       "role": "characterisation",
+       "statement": "A vertex lies in a triangle iff it is a tag vertex."
+      },
+      {
+       "name": "cliqueTag_adj_base",
+       "role": "compatibility",
+       "statement": "Edges between non-tag vertices are those of H."
+      },
+      {
+       "name": "cliqueTag_colour",
+       "role": "evaluation",
+       "statement": "For non-tag x, κ x + 2 is the number of triangle vertices adjacent to the unique triangle-vertex neighbour of x."
+      }
+     ],
+     "tests": [
+      {
+       "name": "single_edge",
+       "kind": "computation",
+       "statement": "One edge {x,y} with κ = (0,1): 9 vertices and 12 edges."
+      },
+      {
+       "name": "empty",
+       "kind": "degenerate",
+       "statement": "V = ∅ gives the empty graph."
+      },
+      {
+       "name": "triangle_breaks",
+       "kind": "non-example",
+       "statement": "In the tagged graph of a triangle the original vertices lie in triangles, so the recognition rule fails without triangle-freeness."
+      },
+      {
+       "name": "colour_detected",
+       "kind": "computation",
+       "statement": "The tagged one-vertex graphs with κ = 0 and κ = 1 have 4 and 5 vertices and are not isomorphic."
+      }
+     ]
+    },
+    {
+     "id": "2.4",
+     "kind": "definition",
+     "name": "graphClass",
+     "statement": "graphClass : Set (StructureSpace Language.graph) is the set of codes whose decoded adj is irreflexive and symmetric (models of Theory.simpleGraph).",
+     "hypotheses": [],
+     "locator": {
+      "source": "paolini-shelah-tfab",
+      "where": "Notation 1.8 and Convention 1.9, lines 110–118"
+     },
+     "prerequisites": [
+      "mathlib:FirstOrder.Language.graph",
+      "mathlib:FirstOrder.Language.Theory.simpleGraph_model_iff",
+      "roadmap:CountableStructureSpaces Layer 0"
+     ],
+     "api": [
+      {
+       "name": "isClosed_graphClass",
+       "role": "structure",
+       "statement": "graphClass is closed and invariant."
+      },
+      {
+       "name": "range_graphCode",
+       "role": "compatibility",
+       "statement": "graphClass = range graphCode, and graphCode is a measurable equivalence SimpleGraph ℕ ≃ graphClass."
+      },
+      {
+       "name": "mem_graphClass_iff",
+       "role": "evaluation",
+       "statement": "c ∈ graphClass iff ∀ i, ¬ adj(i,i) and ∀ i j, adj(i,j) → adj(j,i)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "empty_graph",
+       "kind": "computation",
+       "statement": "The code of the empty graph is in graphClass."
+      },
+      {
+       "name": "loop",
+       "kind": "non-example",
+       "statement": "A code with adj(0,0) is not in graphClass; one with adj(0,1) and not adj(1,0) is not."
+      },
+      {
+       "name": "one_edge_orbit",
+       "kind": "computation",
+       "statement": "The codes of the one-edge graphs on {0,1} and {5,7} are isomorphic; the one-edge graph and the two-edge path are not."
+      },
+      {
+       "name": "clopen_conditions",
+       "kind": "compatibility",
+       "statement": "Membership depends only on the values at adj(i,i), adj(i,j), adj(j,i): an intersection of clopen sets."
+      }
+     ]
+    },
+    {
+     "id": "2.5",
+     "kind": "theorem",
+     "name": "borelComplete_graphClass",
+     "statement": "BorelComplete graphClass, witnessed for each L' by one continuous map StructureSpace L' → StructureSpace Language.graph (relabelled tagged incidence graph) that lands in graphClass and reflects and preserves isomorphism.",
+     "hypotheses": [],
+     "locator": {
+      "source": "friedman-stanley-1989",
+      "where": "Theorem 1; statement also at camerlo-gao-boolean lines 111–112 and paolini-shelah-tfab line 125"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "target:2.3",
+      "target:2.4",
+      "target:1.1",
+      "target:1.2",
+      "target:0.3",
+      "roadmap:CountableStructureSpaces Layer 0"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "Trees and linear orders",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "definition",
+     "name": "ratColour",
+     "statement": "ν : ℚ → ℕ, ν r = padicValNat 2 r.den; each fibre ν⁻¹(m) is dense in ℚ and the fibres partition ℚ.",
+     "hypotheses": [],
+     "locator": {
+      "source": "montalban-cst1",
+      "where": "Lemma VI.18, lines 4258–4260 (maps onto children with dense preimages)"
+     },
+     "prerequisites": [
+      "mathlib:padicValNat",
+      "mathlib:Rat.den"
+     ],
+     "api": [
+      {
+       "name": "dense_ratColour_preimage",
+       "role": "structure",
+       "statement": "For every m, ν⁻¹(m) is dense in ℚ."
+      },
+      {
+       "name": "ratColour_eq_iff",
+       "role": "evaluation",
+       "statement": "ν r = m iff the reduced denominator r.den is 2^m times an odd number."
+      }
+     ],
+     "tests": [
+      {
+       "name": "values",
+       "kind": "computation",
+       "statement": "ν(3/4) = 2, ν(5) = 0, ν(-1/6) = 1, ν(1/8008) = 3."
+      },
+      {
+       "name": "integers",
+       "kind": "degenerate",
+       "statement": "Every integer has colour 0."
+      },
+      {
+       "name": "half_not_zero",
+       "kind": "non-example",
+       "statement": "ν(1/2) = 1 ≠ 0, so the colour of 1/2 differs from that of 1."
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "theorem",
+     "name": "exists_orderIso_ratColour",
+     "statement": "For every bijection σ of ℕ there is an order automorphism π of ℚ with ν (π r) = σ (ν r) for all r.",
+     "hypotheses": [],
+     "locator": {
+      "source": "montalban-cst1",
+      "where": "Lemma VI.18, lines 4273–4275 (dense labelled orders with dense labels are isomorphic)"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "mathlib:FirstOrder.Language.equiv_between_cg",
+      "mathlib:FirstOrder.Language.IsExtensionPair",
+      "mathlib:FirstOrder.Language.Structure.cg_of_countable"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "identity",
+       "kind": "degenerate",
+       "statement": "σ = id: π = id works."
+      },
+      {
+       "name": "swap",
+       "kind": "computation",
+       "statement": "σ = swap(0,1): π sends 1/2 (colour 1) to a rational of colour 0."
+      },
+      {
+       "name": "density_needed",
+       "kind": "non-example",
+       "statement": "For the two-colouring negative/non-negative, the colour swap has no order automorphism: the negatives are an initial segment and the non-negatives are not."
+      }
+     ]
+    },
+    {
+     "id": "3.3",
+     "kind": "construction",
+     "name": "unravelColour",
+     "statement": "For c ∈ graphClass with graph G and x : List ℚ, a(x) = x.map ν and χ_c(x) ∈ ℕ an injective encoding of (|x|, atomic diagram of a(x) in G: equalities and adjacencies of entries).",
+     "hypotheses": [
+      "c ∈ graphClass"
+     ],
+     "locator": {
+      "source": "montalban-cst1",
+      "where": "Lemma VI.18, lines 4205–4211 and 4262–4265 (labels coding atomic diagrams and lengths)"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "mathlib:Encodable",
+      "mathlib:List.map"
+     ],
+     "api": [
+      {
+       "name": "unravelColour_length",
+       "role": "evaluation",
+       "statement": "χ_c x determines |x|."
+      },
+      {
+       "name": "unravelColour_eq_iff",
+       "role": "characterisation",
+       "statement": "χ_c x = χ_d y iff |x| = |y| and a(x), a(y) have the same atomic type in the two graphs (SameAtomicType)."
+      },
+      {
+       "name": "unravelColour_continuous",
+       "role": "compatibility",
+       "statement": "For fixed x, χ_c x depends on finitely many coordinates of c."
+      }
+     ],
+     "tests": [
+      {
+       "name": "edge_pairs",
+       "kind": "computation",
+       "statement": "For G the edge {0,1}: a([1/2,1]) = (1,0), adjacent and distinct; a([1,2]) = (0,0), equal."
+      },
+      {
+       "name": "short_nodes",
+       "kind": "degenerate",
+       "statement": "χ of [] and of every node of length 1 is the same for all graphs."
+      },
+      {
+       "name": "identity_fails",
+       "kind": "non-example",
+       "statement": "The one-edge graphs on {0,1} and {0,2} are isomorphic but differ at [1,1/2], so the identity is not colour-preserving between them."
+      }
+     ]
+    },
+    {
+     "id": "3.4",
+     "kind": "theorem",
+     "name": "unravel_iso_iff",
+     "statement": "For c, d ∈ graphClass the following are equivalent: (i) c ≅ d; (ii) some order automorphism Φ of List ℚ has χ_d ∘ Φ = χ_c; (iii) some bijection Ψ of List ℚ preserving the parent relation (both ways) has χ_d ∘ Ψ = χ_c.",
+     "hypotheses": [
+      "c, d ∈ graphClass",
+      "List ℚ with Mathlib's lexicographic order"
+     ],
+     "locator": {
+      "source": "montalban-cst1",
+      "where": "Lemma VI.18, lines 4205–4285"
+     },
+     "prerequisites": [
+      "target:3.2",
+      "target:3.3",
+      "roadmap:InfinitaryLogic Layer 1",
+      "mathlib:List.IsPrefix"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "dense_order",
+       "kind": "computation",
+       "statement": "List ℚ is densely ordered with least element []: between [0] and [0,5] lies [0,4]; [] < [-1]."
+      },
+      {
+       "name": "parent_definable",
+       "kind": "characterisation",
+       "statement": "The parent of [1/2, 3] is [1/2]: the unique node of length 1 below it with no node of length < 2 strictly between."
+      }
+     ]
+    },
+    {
+     "id": "3.5",
+     "kind": "definition",
+     "name": "linearOrderClass",
+     "statement": "linearOrderClass : Set (StructureSpace Language.order): codes whose decoded relation is a linear order (models of Language.order.linearOrderTheory).",
+     "hypotheses": [],
+     "locator": {
+      "source": "paolini-shelah-tfab",
+      "where": "line 125 (linear orders)"
+     },
+     "prerequisites": [
+      "mathlib:FirstOrder.Language.order",
+      "mathlib:FirstOrder.Language.linearOrderTheory",
+      "roadmap:CountableStructureSpaces Layer 0"
+     ],
+     "api": [
+      {
+       "name": "isClosed_linearOrderClass",
+       "role": "structure",
+       "statement": "linearOrderClass is closed and invariant."
+      },
+      {
+       "name": "mem_linearOrderClass_orderStructure",
+       "role": "constructor",
+       "statement": "The code of a linear order on ℕ with orderStructure is in linearOrderClass."
+      }
+     ],
+     "tests": [
+      {
+       "name": "nat_le",
+       "kind": "computation",
+       "statement": "The code of (ℕ, ≤) is in linearOrderClass; the code of (ℕ, <) is not."
+      },
+      {
+       "name": "all_true",
+       "kind": "degenerate",
+       "statement": "The code relating every pair fails antisymmetry."
+      },
+      {
+       "name": "divisibility",
+       "kind": "non-example",
+       "statement": "The code of divisibility on ℕ is a partial order that is not total."
+      },
+      {
+       "name": "well_orders",
+       "kind": "compatibility",
+       "statement": "Adding the diagonal to a code of exists_mem_wellOrderClass_type_eq gives a code in linearOrderClass for each ω ≤ β < ω₁."
+      }
+     ]
+    },
+    {
+     "id": "3.6",
+     "kind": "construction",
+     "name": "blockOrder",
+     "statement": "For a graph code c, the linear order on List ℚ × ℕ: lexicographic, first by List ℚ, then inside the block of x by the order of type ω + (χ_c(x) + 2) putting indices ≥ χ_c(x)+2 first; relabelled to ℕ along a fixed bijection.",
+     "hypotheses": [
+      "c a graph code"
+     ],
+     "locator": {
+      "source": "montalban-cst1",
+      "where": "Lemma VI.18, lines 4286–4288 (replace a labelled point by a finite order with label + 2 elements)"
+     },
+     "prerequisites": [
+      "target:3.3",
+      "target:1.1",
+      "mathlib:Prod.Lex"
+     ],
+     "api": [
+      {
+       "name": "blockOrder_linear",
+       "role": "structure",
+       "statement": "The order is a linear order for every code."
+      },
+      {
+       "name": "blockOrder_continuous",
+       "role": "compatibility",
+       "statement": "Each comparison depends on two colours, so the map is continuous."
+      },
+      {
+       "name": "finite_condensation_classes",
+       "role": "characterisation",
+       "statement": "The maximal sets in which any two points bound a finite interval and that are finite are exactly the final finite parts of the blocks, of size χ_c(x)+2."
+      }
+     ],
+     "tests": [
+      {
+       "name": "omega_part_infinite",
+       "kind": "computation",
+       "statement": "A point of the ω-part and the first point of the finite part of the same block bound an infinite interval."
+      },
+      {
+       "name": "root_block",
+       "kind": "degenerate",
+       "statement": "The block of [] has finite part of size χ_c([]) + 2, the same for all graphs."
+      },
+      {
+       "name": "empty_vs_complete",
+       "kind": "non-example",
+       "statement": "The images of the empty graph and the complete graph on ℕ are not isomorphic."
+      }
+     ]
+    },
+    {
+     "id": "3.7",
+     "kind": "theorem",
+     "name": "exists_continuous_reduction_graphClass_linearOrderClass",
+     "statement": "There is a continuous f : StructureSpace Language.graph → StructureSpace Language.order with f '' graphClass ⊆ linearOrderClass and, for c d ∈ graphClass, c ≅ d ↔ f c ≅ f d.",
+     "hypotheses": [],
+     "locator": {
+      "source": "friedman-stanley-1989",
+      "where": "§2 (linear orders); montalban-cst1 Lemma VI.18, lines 4203–4288"
+     },
+     "prerequisites": [
+      "target:3.6",
+      "target:3.4",
+      "target:2.4",
+      "target:3.5"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "3.8",
+     "kind": "theorem",
+     "name": "borelComplete_linearOrderClass",
+     "statement": "BorelComplete linearOrderClass.",
+     "hypotheses": [],
+     "locator": {
+      "source": "paolini-shelah-tfab",
+      "where": "line 125; camerlo-gao-boolean lines 113–114"
+     },
+     "prerequisites": [
+      "target:3.7",
+      "target:2.5",
+      "target:1.2"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "3.9",
+     "kind": "definition",
+     "name": "treeClass",
+     "statement": "treeClass : Set (StructureSpace Language.order): codes whose decoded relation is a partial order with a least element in which every {y | y ≤ x} is finite and linearly ordered.",
+     "hypotheses": [],
+     "locator": {
+      "source": "camerlo-gao-boolean",
+      "where": "lines 257–263 (rooted binary trees as partial orders, the binary case; the definition of treeClass is the roadmap's own)"
+     },
+     "prerequisites": [
+      "mathlib:FirstOrder.Language.order",
+      "roadmap:CountableStructureSpaces Layer 0"
+     ],
+     "api": [
+      {
+       "name": "measurableSet_treeClass",
+       "role": "structure",
+       "statement": "treeClass is Borel and invariant."
+      },
+      {
+       "name": "not_isClosed_treeClass",
+       "role": "structure",
+       "statement": "treeClass is not closed."
+      },
+      {
+       "name": "treeClass_iso_prefix",
+       "role": "compatibility",
+       "statement": "Members are isomorphic to infinite prefix-closed sets of lists (target 3.12)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "chain_and_star",
+       "kind": "computation",
+       "statement": "The codes of (ℕ, ≤) and of the star (0 below all, others incomparable) are in treeClass."
+      },
+      {
+       "name": "integers_reverse",
+       "kind": "non-example",
+       "statement": "(ℤ, ≤) transported (no least element) and (ℕ, ≥) (infinite down-sets) are not."
+      },
+      {
+       "name": "not_closed",
+       "kind": "non-example",
+       "statement": "The chains n < n−1 < … < 0 < n+1 < … are in treeClass and converge to the code of (ℕ, ≥)."
+      }
+     ]
+    },
+    {
+     "id": "3.10",
+     "kind": "construction",
+     "name": "tagTree",
+     "statement": "For a graph code c, the order on List ℚ × Option ℕ: (x, none) ordered by prefix; tag nodes (x, some m) above (x, none) and its ancestors; (x, some 0) below the other tags of x; (x, some m) ≤ (x, some m') for 0 < m ≤ m' ≤ χ_c(x)+1; tags with m > χ_c(x)+1 are leaves above (x, some 0); relabelled to ℕ.",
+     "hypotheses": [
+      "c a graph code"
+     ],
+     "locator": {
+      "source": "montalban-cst1",
+      "where": "Lemma VI.18, lines 4205–4245 (labelled trees of tuples, infinitely repeated)"
+     },
+     "prerequisites": [
+      "target:3.3",
+      "target:1.1"
+     ],
+     "api": [
+      {
+       "name": "tagTree_mem_treeClass",
+       "role": "structure",
+       "statement": "The relabelled code is in treeClass."
+      },
+      {
+       "name": "original_iff_infinite_chain",
+       "role": "characterisation",
+       "statement": "A node is original iff an infinite chain starts at it."
+      },
+      {
+       "name": "tag_height",
+       "role": "evaluation",
+       "statement": "The subtree above (x, some 0) has height χ_c(x)+2, the unique non-original child of (x, none)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "heights",
+       "kind": "computation",
+       "statement": "χ = 0 gives height 2, χ = 1 height 3."
+      },
+      {
+       "name": "surplus",
+       "kind": "degenerate",
+       "statement": "Surplus leaves change no height."
+      },
+      {
+       "name": "untagged",
+       "kind": "non-example",
+       "statement": "Without tags the original nodes form the same tree for every c."
+      }
+     ]
+    },
+    {
+     "id": "3.11",
+     "kind": "theorem",
+     "name": "borelComplete_treeClass",
+     "statement": "BorelComplete treeClass, through a continuous reduction from graphClass.",
+     "hypotheses": [],
+     "locator": {
+      "source": "friedman-stanley-1989",
+      "where": "§2 (trees); paolini-shelah-tfab line 125"
+     },
+     "prerequisites": [
+      "target:3.10",
+      "target:3.4",
+      "target:2.5",
+      "target:3.9"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "3.12",
+     "kind": "theorem",
+     "name": "treeClass_iff_descriptiveTree",
+     "statement": "For c ∈ treeClass there is an infinite T ∈ Descriptive.tree ℕ with the decoded order of c isomorphic to (T, prefix order), and every infinite T ∈ Descriptive.tree ℕ with the prefix order is isomorphic to the decoded order of some c ∈ treeClass.",
+     "hypotheses": [],
+     "locator": {
+      "source": "camerlo-gao-boolean",
+      "where": "lines 276–281 (rooted binary trees identified with subtrees of 2^{<ℕ}, the binary case)"
+     },
+     "prerequisites": [
+      "target:3.9",
+      "mathlib:Descriptive.tree",
+      "roadmap:CountableStructureSpaces Layer 0"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "finite_tree",
+       "kind": "degenerate",
+       "statement": "{[], [0], [1], [0,0]} is finite and has no code on ℕ."
+      },
+      {
+       "name": "full_tree",
+       "kind": "computation",
+       "statement": "The full tree List ℕ gives a code in treeClass."
+      }
+     ]
+    },
+    {
+     "id": "3.13",
+     "kind": "theorem",
+     "name": "borelComplete_rootedGraphTree",
+     "statement": "In the relational language with one binary and one unary symbol, the class of codes of connected acyclic graphs with exactly one marked vertex is invariant Borel and Borel complete, by the Borel (not continuous) reduction from treeClass sending an order to its cover graph with the least element marked.",
+     "hypotheses": [],
+     "locator": {
+      "source": "friedman-stanley-1989",
+      "where": "§2 (trees)"
+     },
+     "prerequisites": [
+      "target:3.11",
+      "target:0.3",
+      "target:1.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "ray",
+       "kind": "computation",
+       "statement": "(ℕ, ≤) gives a ray with its end marked; marking vertex 1 instead gives a non-isomorphic code."
+      },
+      {
+       "name": "star",
+       "kind": "computation",
+       "statement": "The star gives a star with its centre marked."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "Borel S∞-spaces and the universal embedding",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "definition",
+     "name": "instMeasurableSpacePerm",
+     "statement": "Equiv.Perm ℕ carries borel of the base topology, with BorelSpace and StandardBorelSpace; a Borel S∞-space is X with [MeasurableSpace X] [StandardBorelSpace X] [MulAction (Equiv.Perm ℕ) X] [MeasurableSMul₂ (Equiv.Perm ℕ) X], with orbit relation MulAction.orbitRel.",
+     "hypotheses": [],
+     "locator": {
+      "source": "becker-kechris-bams",
+      "where": "lines 126–131 (Borel G-spaces and Borel embeddings)"
+     },
+     "prerequisites": [
+      "roadmap:CountableStructureSpaces §1.1",
+      "mathlib:borel",
+      "mathlib:MeasurableSMul₂",
+      "mathlib:StandardBorelSpace"
+     ],
+     "api": [
+      {
+       "name": "measurableSMul₂_structureSpace",
+       "role": "constructor",
+       "statement": "The logic action on StructureSpace L (countable relational) is a Borel S∞-space with orbit relation structureIsoSetoid L."
+      },
+      {
+       "name": "measurableSMul₂_subtype",
+       "role": "constructor",
+       "statement": "An invariant Borel subset of a Borel S∞-space is one."
+      },
+      {
+       "name": "image_equivariant_injective",
+       "role": "compatibility",
+       "statement": "An equivariant measurable injection between Borel S∞-spaces has invariant Borel image (Lusin–Souslin) and reduces the orbit relations."
+      }
+     ],
+     "tests": [
+      {
+       "name": "evaluation_action",
+       "kind": "computation",
+       "statement": "ℕ with Equiv.Perm.applyMulAction is a Borel S∞-space with one orbit."
+      },
+      {
+       "name": "trivial_action",
+       "kind": "degenerate",
+       "statement": "A standard Borel space with the trivial action is one, with orbit relation equality."
+      },
+      {
+       "name": "uncountable_language",
+       "kind": "non-example",
+       "statement": "For uncountably many unary symbols the coding space carries the product σ-algebra of uncountably many copies of Bool, in which no singleton is measurable (a measurable set depends on countably many coordinates), while a standard Borel space has measurable singletons; so it is not standard Borel. Cardinality does not decide this, since 2^ℵ₁ = 2^ℵ₀ is consistent with ZFC."
+      }
+     ]
+    },
+    {
+     "id": "4.2",
+     "kind": "definition",
+     "name": "universalLanguage",
+     "statement": "universalLanguage : FirstOrder.Language.{0,0}, relational, with exactly one relation symbol of each arity n.",
+     "hypotheses": [],
+     "locator": {
+      "source": "becker-kechris-bams",
+      "where": "lines 172–173 (L∞ = {R_n}, R_n n-ary)"
+     },
+     "prerequisites": [
+      "mathlib:FirstOrder.Language"
+     ],
+     "api": [
+      {
+       "name": "universalLanguage_isRelational",
+       "role": "structure",
+       "statement": "universalLanguage is relational with countably many relation symbols."
+      },
+      {
+       "name": "structureSpace_universal_polish",
+       "role": "structure",
+       "statement": "StructureSpace universalLanguage is compact Polish (base Layer 0)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "arity_count",
+       "kind": "computation",
+       "statement": "There is exactly one symbol of arity 0, so a code is determined at arity 0 by one bit."
+      },
+      {
+       "name": "one_point_code",
+       "kind": "degenerate",
+       "statement": "The code in which every relation holds exactly of injective tuples is fixed by every permutation."
+      },
+      {
+       "name": "not_ℕ_symbols",
+       "kind": "non-example",
+       "statement": "The language with countably many symbols of each arity is not universalLanguage; the coding of 4.4 maps it injectively into universalLanguage."
+      }
+     ]
+    },
+    {
+     "id": "4.3",
+     "kind": "construction",
+     "name": "anchoredCode",
+     "statement": "For a Polish S∞-space X (continuous action) with a countable basis (S_n): the code in the language with countably many symbols of each arity whose (k, n)-th symbol holds of a : Fin k → ℕ at x iff ∃ g, (∀ i, g (a i) = i) ∧ g • x ∈ S_n.",
+     "hypotheses": [
+      "X Polish with continuous action",
+      "(S_n) a countable basis"
+     ],
+     "locator": {
+      "source": "becker-kechris-bams",
+      "where": "proof sketch of Theorem 2.1 and Corollary 2.2, lines 247–268"
+     },
+     "prerequisites": [
+      "roadmap:CountableStructureSpaces §1.1",
+      "roadmap:CountableStructureSpaces §1.2"
+     ],
+     "api": [
+      {
+       "name": "anchoredCode_isOpen",
+       "role": "structure",
+       "statement": "Each coordinate set {x | …} is open, a union of translates g⁻¹ • S_n; the map is measurable."
+      },
+      {
+       "name": "anchoredCode_smul",
+       "role": "compatibility",
+       "statement": "The map is equivariant for the logic action (substitute g' = g h)."
+      },
+      {
+       "name": "anchoredCode_injective",
+       "role": "characterisation",
+       "statement": "The map is injective: anchors (0,…,k−1) give pointwise stabilizers converging to 1."
+      }
+     ],
+     "tests": [
+      {
+       "name": "evaluation_marks",
+       "kind": "computation",
+       "statement": "X = ℕ, S_n = {n}: the (1,0)-th symbol holds of (a) at x iff x = a; for g = (0 1), Φ 1 holds at (1) and not at (0)."
+      },
+      {
+       "name": "one_point",
+       "kind": "degenerate",
+       "statement": "One-point X with S_0 = X: the (k,0)-th symbol holds exactly of injective tuples."
+      },
+      {
+       "name": "no_anchor",
+       "kind": "non-example",
+       "statement": "Without the anchoring g (a i) = i the map is constant on orbits, not injective for X = ℕ."
+      }
+     ]
+    },
+    {
+     "id": "4.4",
+     "kind": "construction",
+     "name": "unpairCode",
+     "statement": "The map from codes of the language with countably many symbols of each arity to StructureSpace universalLanguage reading symbol m on b : Fin m → ℕ as the (k, n)-th symbol on b ∘ Fin.castLE, (n, k) = Nat.unpair m; continuous, injective, equivariant.",
+     "hypotheses": [],
+     "locator": {
+      "source": "becker-kechris-bams",
+      "where": "lines 263–268 (a simple coding into L∞)"
+     },
+     "prerequisites": [
+      "mathlib:Nat.unpair",
+      "mathlib:Nat.unpair_right_le",
+      "mathlib:Nat.right_le_pair"
+     ],
+     "api": [
+      {
+       "name": "unpairCode_injective",
+       "role": "characterisation",
+       "statement": "The (k,n)-th symbol at a is recovered at m = Nat.pair n k on any extension of a."
+      },
+      {
+       "name": "unpairCode_smul",
+       "role": "compatibility",
+       "statement": "The map commutes with the logic action."
+      }
+     ],
+     "tests": [
+      {
+       "name": "pair_zero",
+       "kind": "computation",
+       "statement": "Nat.unpair 0 = (0,0): the arity-0 symbol of universalLanguage reads the (0,0)-th symbol."
+      },
+      {
+       "name": "padding_irrelevant",
+       "kind": "degenerate",
+       "statement": "The value at m does not depend on the entries of b beyond k."
+      },
+      {
+       "name": "not_surjective",
+       "kind": "non-example",
+       "statement": "The map is not surjective: its image consists of codes whose arity-m relation depends only on the first k entries."
+      }
+     ]
+    },
+    {
+     "id": "4.5",
+     "kind": "theorem",
+     "name": "exists_equivariant_measurableEmbedding_universal",
+     "statement": "For every Borel S∞-space X there is Φ : X → StructureSpace universalLanguage, measurable, injective and equivariant; its image is invariant Borel and the orbit relation of X is BorelReducible to structureIsoSetoid universalLanguage.",
+     "hypotheses": [
+      "X a Borel S∞-space"
+     ],
+     "locator": {
+      "source": "becker-kechris-bams",
+      "where": "Theorem 2.1, line 132; Corollary 2.2, lines 174–177; becker-kechris-1996 §2.6–§2.7"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "target:4.2",
+      "target:4.3",
+      "target:4.4",
+      "roadmap:NoncompactQuantumSymmetry Layer 4",
+      "roadmap:CountableStructureSpaces §1.1",
+      "mathlib:MeasurableSet.image_of_measurable_injOn"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "Characterisations of Borel completeness",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "theorem",
+     "name": "borelComplete_iff_graphClass",
+     "statement": "BorelComplete K ↔ BorelReducible (classIso graphClass) (classIso K).",
+     "hypotheses": [
+      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([Countable (Σ l, L.Relations l)])",
+      "K : Set (StructureSpace L) arbitrary"
+     ],
+     "locator": {
+      "source": "camerlo-gao-boolean",
+      "where": "lines 94–105"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:0.2",
+      "target:2.5",
+      "target:4.5",
+      "target:4.1"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "5.2",
+     "kind": "theorem",
+     "name": "borelComplete_iff_forall_structureSpace",
+     "statement": "BorelComplete K ↔ ∀ L' : Language.{0,0} countable relational, BorelReducible (structureIsoSetoid L') (classIso K).",
+     "hypotheses": [
+      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([Countable (Σ l, L.Relations l)])"
+     ],
+     "locator": {
+      "source": "camerlo-gao-boolean",
+      "where": "lines 101–105"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:0.2",
+      "target:2.5",
+      "target:4.5",
+      "target:4.1"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "5.3",
+     "kind": "theorem",
+     "name": "borelComplete_iff_forall_measurableSet",
+     "statement": "BorelComplete K ↔ ∀ L' countable relational, ∀ B ⊆ StructureSpace L' measurable (not necessarily invariant), BorelReducible (classIso B) (classIso K).",
+     "hypotheses": [
+      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([Countable (Σ l, L.Relations l)])"
+     ],
+     "locator": {
+      "source": "paolini-shelah-tfab",
+      "where": "Definition 1.6, lines 95–101"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:0.2",
+      "target:2.5",
+      "target:4.5",
+      "target:4.1"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "5.4",
+     "kind": "theorem",
+     "name": "borelComplete_iff_forall_permSpace",
+     "statement": "BorelComplete K ↔ ∀ X : Type u Borel S∞-space, BorelReducible (MulAction.orbitRel (Equiv.Perm ℕ) X) (classIso K).",
+     "hypotheses": [
+      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([Countable (Σ l, L.Relations l)])",
+      "a fixed universe u"
+     ],
+     "locator": {
+      "source": "camerlo-gao-boolean",
+      "where": "lines 94–100 (C∞ complete for orbit relations of closed subgroups of S∞)"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:0.2",
+      "target:2.5",
+      "target:4.5",
+      "target:4.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "graph_class",
+       "kind": "computation",
+       "statement": "All of 5.1–5.4 hold for K = graphClass."
+      },
+      {
+       "name": "empty",
+       "kind": "degenerate",
+       "statement": "All fail for K = ∅."
+      },
+      {
+       "name": "unary",
+       "kind": "non-example",
+       "statement": "5.1 fails for the codes of one unary predicate (countably many classes against continuum many)."
+      },
+      {
+       "name": "trivial_action",
+       "kind": "compatibility",
+       "statement": "The trivial action on Cantor space shows 5.4 contains the reducibility of equality on Cantor space."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "6",
+   "title": "Consequences of Borel completeness",
+   "targets": [
+    {
+     "id": "6.1",
+     "kind": "theorem",
+     "name": "bfEquiv_iff_intervals",
+     "statement": "For Language.order-structures M, N whose relations are linear orders and tuples a, b of the same atomic type: BFEquiv γ n a b ↔ each open interval cut out by the distinct values of a is BFEquiv γ (empty tuples) to the corresponding interval cut out by b. Sum form: A ≡_γ A' and B ≡_γ B' give A + B ≡_γ A' + B'. Isomorphic orders are BFEquiv at every level.",
+     "hypotheses": [
+      "M, N linear orders read in Language.order",
+      "a, b same atomic type"
+     ],
+     "locator": {
+      "source": "montalban-cst2",
+      "where": "Lemma II.37, lines 2322–2331 (for the one-sided relations ≤_α)"
+     },
+     "prerequisites": [
+      "roadmap:InfinitaryLogic Layer 1",
+      "mathlib:FirstOrder.Language.orderStructure"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "level_zero",
+       "kind": "degenerate",
+       "statement": "At level 0 every pair of linear orders is BFEquiv (no nullary symbols)."
+      },
+      {
+       "name": "omega_vs_omega_plus_one",
+       "kind": "non-example",
+       "statement": "ω and ω+1 are not BFEquiv 2: the maximum of ω+1 cuts an empty upper interval."
+      }
+     ]
+    },
+    {
+     "id": "6.2",
+     "kind": "theorem",
+     "name": "bfEquiv_omega0_opow_mul",
+     "statement": "For every ordinal γ and Language.order-structures M, N whose relations are well-orders of types ω^γ·δ and ω^γ·ε with δ, ε ≠ 0, BFEquiv γ 0 holds between the empty tuples.",
+     "hypotheses": [
+      "δ ≠ 0",
+      "ε ≠ 0"
+     ],
+     "locator": {
+      "source": "montalban-cst2",
+      "where": "Lemma II.38 and Corollary II.39, lines 2337–2425 (sharper one-sided levels ≤_{2α+1})"
+     },
+     "prerequisites": [
+      "target:6.1",
+      "roadmap:InfinitaryLogic Layer 1",
+      "mathlib:Ordinal.type",
+      "mathlib:Ordinal.omega0"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "level_one",
+       "kind": "computation",
+       "statement": "γ = 1: any two nonempty orders are BFEquiv 1; the empty order is not BFEquiv 1 to a nonempty one (δ ≠ 0 needed)."
+      },
+      {
+       "name": "omega_two",
+       "kind": "computation",
+       "statement": "ω and ω·2 are BFEquiv 2, stronger than the theorem at γ = 1."
+      },
+      {
+       "name": "omega_squared",
+       "kind": "computation",
+       "statement": "ω² and ω²·2 are BFEquiv 2 and not isomorphic."
+      }
+     ]
+    },
+    {
+     "id": "6.3",
+     "kind": "theorem",
+     "name": "not_measurableSet_classIso_of_borelComplete",
+     "statement": "If BorelComplete K then {p : K × K | classIso K p.1 p.2} is not measurable for the product of the subtype σ-algebras.",
+     "hypotheses": [
+      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([Countable (Σ l, L.Relations l)])",
+      "K arbitrary"
+     ],
+     "locator": {
+      "source": "paolini-shelah-tfab",
+      "where": "Fact 1.7, lines 103–106 (non-Borel part); gao-idst §13.1"
+     },
+     "prerequisites": [
+      "target:6.2",
+      "target:3.8",
+      "target:0.1",
+      "roadmap:CountableStructureSpaces §4.4",
+      "roadmap:CountableStructureSpaces Layer 0",
+      "roadmap:InfinitaryLogic Layer 1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "three_classes",
+       "kind": "computation",
+       "statement": "graphClass, linearOrderClass and treeClass have non-Borel isomorphism relations."
+      },
+      {
+       "name": "unary_borel",
+       "kind": "non-example",
+       "statement": "The codes of one unary predicate have Borel isomorphism (Scott height ≤ ω) and are not Borel complete."
+      },
+      {
+       "name": "empty",
+       "kind": "degenerate",
+       "statement": "K = ∅ has Borel (empty) isomorphism and is not Borel complete."
+      }
+     ]
+    },
+    {
+     "id": "6.4",
+     "kind": "theorem",
+     "name": "exists_lt_scottHeight_of_borelComplete",
+     "statement": "If K is invariant Borel and BorelComplete K, then for every β < ω₁ some c ∈ K has scottHeight of its decoded structure greater than β; classIso K is Borel reducible to no setoid with Borel graph (in particular not to eZero); the set {p ∈ K ×ˢ K | ¬ p.1 ≅ p.2} of non-isomorphic pairs is not an analytic subset of StructureSpace L × StructureSpace L.",
+     "hypotheses": [
+      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([Countable (Σ l, L.Relations l)])",
+      "K invariant Borel"
+     ],
+     "locator": {
+      "source": "montalban-cst2",
+      "where": "Theorem XI.3, lines 8997–9012 (Borel isomorphism iff bounded Scott rank)"
+     },
+     "prerequisites": [
+      "target:6.3",
+      "roadmap:CountableStructureSpaces §4.3",
+      "roadmap:CountableStructureSpaces Layer 5",
+      "roadmap:CountableStructureSpaces §1.2",
+      "mathlib:MeasureTheory.AnalyticSet.measurableSet_of_compl"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "6.5",
+     "kind": "construction",
+     "name": "eZeroCode",
+     "statement": "For x : ℕ → Bool, the code on Finset ℕ × ℕ (relabelled to ℕ) in the language {S binary, Z, P unary}: on each copy {F} × ℕ, S is the successor, Z = {(F,0)}, P = {(F,n) | x n ≠ decide (n ∈ F)}. The map is continuous and reduces eZero to isomorphism.",
+     "hypotheses": [],
+     "locator": {
+      "source": "camerlo-gao-boolean",
+      "where": "lines 94–100 (orbit relations of closed subgroups of S∞ reduce to C∞), instance for E₀"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "roadmap:BorelEquivalenceRelations §5.4"
+     ],
+     "api": [
+      {
+       "name": "eZeroCode_rigid_copy",
+       "role": "structure",
+       "statement": "Each copy (ℕ, S, Z, P) is rigid."
+      },
+      {
+       "name": "eZeroCode_copies_enumerate",
+       "role": "characterisation",
+       "statement": "F ↦ x with the coordinates in F flipped is a bijection Finset ℕ → eZero-class of x."
+      },
+      {
+       "name": "eZeroCode_iso_iff",
+       "role": "characterisation",
+       "statement": "Codes of x and y are isomorphic iff eZero x y."
+      }
+     ],
+     "tests": [
+      {
+       "name": "related_pair",
+       "kind": "computation",
+       "statement": "0^ω and 1 0^ω are related and F ↦ F ∆ {0} gives an isomorphism; 0^ω and 1^ω are not, finitely versus cofinitely many P-points per copy."
+      },
+      {
+       "name": "rigidity",
+       "kind": "degenerate",
+       "statement": "The only automorphism of one copy is the identity."
+      },
+      {
+       "name": "single_copy",
+       "kind": "non-example",
+       "statement": "Using only the copy F = ∅ reduces equality on Cantor space, not eZero."
+      }
+     ]
+    },
+    {
+     "id": "6.6",
+     "kind": "theorem",
+     "name": "borelReducible_eZero_of_borelComplete",
+     "statement": "If BorelComplete K then BorelReducible eZero (classIso K); hence BorelReducible (⊥ : Setoid (ℕ → Bool)) (classIso K) and K has continuum many isomorphism types.",
+     "hypotheses": [
+      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([Countable (Σ l, L.Relations l)])"
+     ],
+     "locator": {
+      "source": "camerlo-gao-boolean",
+      "where": "lines 94–100"
+     },
+     "prerequisites": [
+      "target:6.5",
+      "target:5.2",
+      "roadmap:BorelEquivalenceRelations §5.4",
+      "roadmap:BorelEquivalenceRelations §5.1"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "6.7",
+     "kind": "theorem",
+     "name": "not_isSmooth_of_borelComplete",
+     "statement": "If BorelComplete K then ¬ IsSmooth (classIso K).",
+     "hypotheses": [
+      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([Countable (Σ l, L.Relations l)])"
+     ],
+     "locator": {
+      "source": "camerlo-gao-boolean",
+      "where": "lines 94–100 (E₀ below a Borel complete relation); BorelEquivalenceRelations §5.4 not_isSmooth_of_borelReducible_eZero"
+     },
+     "prerequisites": [
+      "target:6.6",
+      "roadmap:BorelEquivalenceRelations §5.4"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "6.8",
+     "kind": "theorem",
+     "name": "not_borelComplete_of_rank_bounded",
+     "statement": "Let K ⊆ StructureSpace L be measurable and ρ : StructureSpace L → Ordinal.{0}. If for every α < ω₁ isomorphism restricted to K ∩ {ρ ≤ α} is measurable in the square, and every analytic subset of K has ρ bounded below ω₁, then ¬ BorelComplete K.",
+     "hypotheses": [
+      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([Countable (Σ l, L.Relations l)])",
+      "MeasurableSet K",
+      "(a) Borel isomorphism on each stratum",
+      "(b) ρ bounded on analytic subsets of K"
+     ],
+     "locator": {
+      "source": "friedman-stanley-1989",
+      "where": "§4; hjorth-kechris-1996 §4–§5"
+     },
+     "prerequisites": [
+      "target:6.3",
+      "target:2.5",
+      "mathlib:MeasurableSet.analyticSet_image"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "rho_zero",
+       "kind": "degenerate",
+       "statement": "ρ = 0 gives the contrapositive of 6.3."
+      },
+      {
+       "name": "unary",
+       "kind": "computation",
+       "statement": "For one unary predicate and ρ = 0 the hypotheses hold."
+      },
+      {
+       "name": "tree_heights",
+       "kind": "compatibility",
+       "statement": "If ρ on K is a height of well-founded trees with closed node sets, (b) is analytic_treeHeight_bounded."
+      }
+     ]
+    },
+    {
+     "id": "6.9",
+     "kind": "theorem",
+     "name": "eZero_between_smooth_and_borelComplete",
+     "statement": "For invariant Borel Borel complete K: classIso K is not smooth, eZero reduces to it, and it does not reduce to eZero; for the codes of one unary predicate, isomorphism is Borel and smooth with bounded Scott height.",
+     "hypotheses": [
+      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([Countable (Σ l, L.Relations l)])"
+     ],
+     "locator": {
+      "source": "montalban-cst2",
+      "where": "lines 9046–9054; gao-idst §5.2"
+     },
+     "prerequisites": [
+      "target:6.4",
+      "target:6.6",
+      "target:6.7",
+      "roadmap:BorelEquivalenceRelations §5.2",
+      "roadmap:CountableStructureSpaces §4.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "e0_not_smooth",
+       "kind": "computation",
+       "statement": "eZero is Borel and not smooth."
+      },
+      {
+       "name": "bot_below",
+       "kind": "compatibility",
+       "statement": "Equality on Cantor space reduces to eZero and to classIso graphClass."
+      },
+      {
+       "name": "unary_no_e0",
+       "kind": "non-example",
+       "statement": "Isomorphism of codes of one unary predicate does not reduce eZero (countably versus continuum many classes)."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "CountableStructureSpaces",
+   "sections": [
+    "Layer 0",
+    "§1.1",
+    "§1.2",
+    "Layer 2",
+    "Layer 3",
+    "§4.1",
+    "§4.3",
+    "§4.4",
+    "Layer 5",
+    "§6.2"
+   ],
+   "what": "coding space, S∞ topology and logic action, isomorphism as orbit relation, model classes, tree heights and boundedness, Scott height and bounded-height Borelness, uniform back-and-forth separation, López–Escobar, the well-order class"
+  },
+  {
+   "roadmap": "BorelEquivalenceRelations",
+   "sections": [
+    "§0.3",
+    "§0.5",
+    "§5.1",
+    "§5.2",
+    "§5.3",
+    "§5.4"
+   ],
+   "what": "BorelReducible with refl/trans and quotient injection, IsSmooth, smooth relations are Borel, eZero and its non-smoothness, borelReducible_bot_eZero, HasCantorAntichainOn"
+  },
+  {
+   "roadmap": "InfinitaryLogic",
+   "sections": [
+    "Layer 1"
+   ],
+   "what": "BFEquiv, SameAtomicType, potentialIso_of_equiv, potentialIso_iff_BFEquiv_all, IsTupleBFSystem, potentialIso_iff_exists_isTupleBFSystem, countable_potentialIso_iff_iso"
+  },
+  {
+   "roadmap": "InfinitaryModelExistence",
+   "sections": [
+    "§0.3",
+    "Layer 6"
+   ],
+   "what": "smallPresentation and smallPresentationEquiv; graphLanguage, graphExpansion, graphAxioms, reconstructStructure"
+  },
+  {
+   "roadmap": "CountableModelCounting",
+   "sections": [
+    "Layer 0"
+   ],
+   "what": "the code-space homeomorphism induced by a language equivalence of relational languages (transport between presentations)"
+  },
+  {
+   "roadmap": "NoncompactQuantumSymmetry",
+   "sections": [
+    "Layer 4 (M1.BorelRealization)"
+   ],
+   "what": "exists_polishTopology_continuousSMul: Polish realization of a jointly Borel action of a Polish group on a standard Borel space"
+  }
+ ],
+ "consumers": [
+  {
+   "roadmap": "a roadmap on the Borel completeness of algebraic classes (Boolean algebras, groups, fields, torsion-free abelian groups, torsion abelian groups)",
+   "what": "BorelComplete, the functional coding space, the characterisations and the obstruction lemma"
+  },
+  {
+   "roadmap": "a roadmap on universal G-spaces for closed subgroups of S∞",
+   "what": "the universal embedding of Layer 4"
+  }
+ ],
+ "gaps": []
+}
