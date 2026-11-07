@@ -3469,7 +3469,26 @@
       ]
     }
   ],
-  "gaps": [],
+  "gaps": [
+    {
+      "slug": "dyadic-hilbert-coefficient-families",
+      "needs": "The §F.5 Hilbert coefficient families, ordinary projector, ordinary control, Hecke images and fractional ordinary Eisenstein families E(1,χ) and E(χ,1) also for p = 2, with Λ = O[[T]], u = 5, ν_k(T) = u^(k−1) − 1, the character χω^(1−k) for ω valued in {±1}, and the dyadic level and standard-constant conventions of Dasgupta–Kakde–Ventullo §3.1.",
+      "supplier": "NoncommutativeAndEquivariantIwasawa",
+      "section": "§F.5"
+    },
+    {
+      "slug": "dyadic-hilbert-hida-localization",
+      "needs": "The statements of §§5.10–5.13 (Fourier injectivity on S°(𝔫,χ)_(1), reducedness of T_(𝔪) at minimal tame level, and the total quotient ring as a product of eigenfamily fields with the congruences to E_1(1,χ_S)) also for p = 2, on the dyadic families of NoncommutativeAndEquivariantIwasawa §F.5.",
+      "supplier": "PadicFamilies",
+      "section": "§§5.10–5.13"
+    },
+    {
+      "slug": "hida-family-representations-all-degrees",
+      "needs": "For every totally real F of any degree and every prime p including 2, and every cuspidal eigenfamily H of PadicFamilies §5.13 with coefficient field L_H, a continuous irreducible representation ρ_H : G_F → GL_2(L_H), L_H carrying the Λ-adic topology (that of the maximal ideal (ϖ_E, T) of Λ), unramified outside 𝔫p, with characteristic polynomial X² − c(𝔩,H)X + χε(𝔩) at Frob_𝔩 for 𝔩 ∤ 𝔫p and, at each 𝔮 | p, the ordinary shape [[χεη_{𝔮,H}⁻¹, ∗], [0, η_{𝔮,H}]] on G_𝔮 with η_{𝔮,H} : G_𝔮 → Λ_H^× unramified and η_{𝔮,H}(rec(ϖ⁻¹)) = c(𝔮,H) (Dasgupta–Kakde–Ventullo Theorem 4.1, after Hida and Wiles).",
+      "supplier": "OrdinaryAutomorphicFormsAndModularityLifting",
+      "section": "§2.12"
+    }
+  ],
   "restructure": [],
   "conventions": [
     "Characters have finite order and are totally odd. H is their faithful cyclic CM extension. All isotypic modules are χ^{-1}-components after scalar extension to the characteristic-zero field E.",
