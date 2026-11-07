@@ -4809,37 +4809,58 @@
   ],
   "gaps": [
     {
-      "id": "BM-G1",
-      "title": "No live owner for general KH cdh descent",
-      "neededBy": [
-        "MotivesAndAlgebraicCyclesPartII:BM.7/analytic-kh"
-      ],
-      "detail": "The corrected extraction routes integral KH cdh descent to GeneralAlgebraicKTheoryPartIITelescopicLocalization, which is not a live or reserved roadmap in this checkout. The live GeneralAlgebraicKTheoryPartII supplies a height-one-localized cdh statement and cannot replace it. Needed contract: noetherian finite-dimensional KH cdh descent, with formal-model/admissible-blowup comparison. A pro-cdh K proof followed by ball localization is an alternative, routed to a second absent descent/rigidity Part II. The maintainer must assign the general descent owner; neither absent identifier is used as a prerequisite."
+      "slug": "replete-postnikov",
+      "needs": "for a replete topos (one in which limits of countable towers of epimorphisms are epimorphisms), the hypercomplete ∞-topos of sheaves of spaces on it is Postnikov complete.",
+      "supplier": "EnhancedDerivedSheaves",
+      "section": "§E2.7"
     },
     {
-      "id": "BM-G2",
-      "title": "No live owner for valuation-ring K inputs",
-      "neededBy": [
-        "MotivesAndAlgebraicCyclesPartII:BM.7/unit-k-cofiber",
-        "MotivesAndAlgebraicCyclesPartII:BM.7/perfectoid-k-descent",
-        "MotivesAndAlgebraicCyclesPartII:BM.7/analytic-kh",
-        "MotivesAndAlgebraicCyclesPartII:BM.7/smooth-completion-k"
-      ],
-      "detail": "SchemeKTheoryOperationsPartIIDescentAndRigidity from the extraction is not live; the actual SchemeKTheoryOperationsPartII concerns formal K/Euler theory. Needed contracts: A¹-invariance of K for valuation rings, vanishing of negative K in the field/valuation comparisons used for totally disconnected rings, and the relative K/KH cofiber comparison for completions of smooth O_C-models. The ordinary S.5 regular-noetherian theorem does not cover nonnoetherian valuation rings. These proof leaves remain unestablished here and require a correctly assigned Part-II supplier."
+      "slug": "compact-hausdorff-dimension",
+      "needs": "for a compact Hausdorff space of covering dimension at most `d`, the sheaf cohomology of every abelian sheaf vanishes above degree `d` and the ∞-topos of sheaves of spaces is Postnikov complete.",
+      "supplier": "EnhancedDerivedSheaves",
+      "section": "§E2.4"
     },
     {
-      "id": "BM-G3",
-      "title": "No live owner for the full geometric K-rigidity input",
-      "neededBy": [
-        "MotivesAndAlgebraicCyclesPartII:BM.7/strict-k-formula"
-      ],
-      "detail": "The missing descent/rigidity Part II also owns the Gabber–Suslin finite-coefficient geometric algebraically-closed-field invariance used in Theorem 8.9. L.2 is requested for the henselian comparison it actually plans; it is not silently promoted to the full geometric statement. The exact map and prime-to-residue-characteristic conditions need a source-checked owner."
+      "slug": "animated-group-completion",
+      "needs": "free animated commutative monoids and their group completions; the Breen–Deligne resolution of the group completion of a sheaf of animated commutative monoids by classifying spaces of products of its terms; and the augmentation-ideal filtration of the group algebra of a 1-connective animated abelian group, with graded pieces of increasing connectivity and convergence.",
+      "supplier": "EnhancedDerivedSheaves",
+      "section": "§E5:animation"
     },
     {
-      "id": "BM-G4",
-      "title": "RigDA comparison has no supplied theorem",
-      "neededBy": [],
-      "detail": "No target asserts Dmot(X)≃Ayoub RigDA(X). The corrected brief explicitly says that no roadmap plans RigDA and that this paper does not prove that comparison. The revised Binda–Kato–Vezzani route must import these Berkovich foundations and provide a separate source-checked comparison if required. This is a boundary/comparison gap, not a dependency assumed by any node."
+      "slug": "einfty-fracture-square",
+      "needs": "the arithmetic fracture square for E∞-algebras over an E∞-ring `R`: for a prime `p`, every E∞-`R`-algebra `A` is the pullback of `A[1/p] → A^∧_p[1/p] ← A^∧_p` in E∞-`R`-algebras.",
+      "supplier": "EnhancedDerivedSheaves",
+      "section": "§E5:spectra-comparison"
+    },
+    {
+      "slug": "kh-excision-cdh-descent",
+      "needs": "homotopy K-theory `KH(R) = |K(R ⊗ ℤ[Δ^•])|` of rings and qcqs schemes, its extension to nonunital rings, excision for arbitrary ideals, and descent for abstract blowup squares on noetherian schemes of finite Krull dimension.",
+      "supplier": "SchemeKTheoryOperations",
+      "section": "Layer 5"
+    },
+    {
+      "slug": "valuation-ring-k-regularity",
+      "needs": "for a valuation ring `V`, `K(V) → K(V[T₁, …, T_n])` is an equivalence and `K_{−i}(V) = 0` for `i > 0`, so `K(V) ≃ KH(V)`; and `K(R) ≃ KH(R)` for every smooth algebra `R` over a valuation ring.",
+      "supplier": "SchemeKTheoryOperations",
+      "section": "Layer 5"
+    },
+    {
+      "slug": "suslin-rigidity",
+      "needs": "for an extension `F ⊂ E` of algebraically closed fields and `n` invertible in `F`, the map `K(F; ℤ/n) → K(E; ℤ/n)` is an equivalence.",
+      "supplier": "KTheoryFiniteLocalFields",
+      "section": "§2.1"
+    },
+    {
+      "slug": "padic-k-integers-oc",
+      "needs": "for a complete algebraically closed nonarchimedean field `C` of residue characteristic `p`, the map `K(O_C)^∧_p → K(C)^∧_p` is an equivalence, including `p = 2`.",
+      "supplier": "KTheoryFiniteLocalFields",
+      "section": "§6.5"
+    },
+    {
+      "slug": "affinoid-line-bundles",
+      "needs": "the one-variable Tate algebra `K⟨T⟩` over a complete nonarchimedean field is a principal ideal domain, and finite projective modules over a strictly affinoid algebra satisfy effective descent along finite affinoid coverings, so that analytic line bundles on the closed unit disc are trivial.",
+      "supplier": "TropicalAndBerkovichArithmetic",
+      "section": "§§0.17, 0.20"
     }
   ],
   "coverage": [
