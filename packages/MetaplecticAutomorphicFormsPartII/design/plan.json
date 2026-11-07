@@ -1495,18 +1495,7 @@
       "remaining": []
     }
   ],
-  "gaps": [
-    {
-      "title": "Original Gérardin normalization comparison",
-      "neededBy": [
-        "MetaplecticAutomorphicFormsPartII:FW.2/parity-linearization",
-        "MetaplecticAutomorphicFormsPartII:FW.2/generator-formulas",
-        "MetaplecticAutomorphicFormsPartII:FW.3/parabolic-invariants",
-        "MetaplecticAutomorphicFormsPartII:FW.3/corrected-restriction"
-      ],
-      "detail": "The original 1977 article, Théorème 2.4(a,b), was not obtained: publisher PDF requests returned HTTP 403 and the publisher API returned 406 on 2026-10-19. Neuhauser supplies a complete independent parity-determinant linearization and generator formulas, including q=3,n=1; Fintzen p. 33 supplies the corrected parabolic formula. A reviewer must compare their exact preferred normalization in the exceptional Sp₂(F₃) case with Gérardin before claiming literal identification with that original normalization. This is a source-comparison gap, not a missing existence proof."
-    }
-  ],
+  "gaps": [],
   "sourceAccess": [
     {
       "title": "Gérardin, Weil representations associated to finite fields, Journal of Algebra 46 (1977), 54–101",

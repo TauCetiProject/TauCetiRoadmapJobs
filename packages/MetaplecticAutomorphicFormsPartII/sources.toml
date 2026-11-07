@@ -1,0 +1,91 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "MetaplecticAutomorphicFormsPartII"
+
+[[source]]
+id = "F21"
+authors = "Jessica Fintzen"
+title = "Types for tame p-adic groups"
+year = 2021
+venue = "Annals of Mathematics 193 (2021), 303-346"
+arxiv = "1810.04198v2"
+locator_scheme = "theorem"
+locator = "Lemmas 7.6-7.8, pp. 30-31; Lemma 7.10 and proof, pp. 32-34; footnote 3, p. 33"
+url = "https://arxiv.org/abs/1810.04198v2"
+fetched_from = "https://arxiv.org/pdf/1810.04198v2"
+fetched_at = "2026-10-26T19:25:58Z"
+sha256 = "bd332fd73956082656d767870566fdafd0fce3d834cccb223779a7724c3da8cc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2 read; page numbers of the arXiv version are cited"
+cited_for = ["Layers 1-4"]
+
+[[source]]
+id = "S08"
+authors = "Shaun Stevens"
+title = "The supercuspidal representations of p-adic classical groups"
+year = 2008
+venue = "Inventiones mathematicae 172 (2008), 289-352"
+arxiv = "math/0607622v2"
+locator_scheme = "theorem"
+locator = "Proposition 3.5, p. 14; Lemma 5.6, Corollary 5.7, Lemma 5.12, pp. 29-33"
+url = "https://arxiv.org/abs/math/0607622v2"
+fetched_from = "https://arxiv.org/pdf/math/0607622v2"
+fetched_at = "2026-10-26T19:26:11Z"
+sha256 = "b5b409260344f0d86fbe98bee2c046971a5e9042ab8174f199343d10b5857109"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2 read; page numbers of the arXiv version are cited"
+cited_for = ["Layers 1, 3, 4"]
+
+[[source]]
+id = "FS25"
+authors = "Jessica Fintzen and David Schwein"
+title = "Construction of tame supercuspidal representations in arbitrary residue characteristic"
+year = 2025
+arxiv = "2501.18553"
+version_note = "author manuscript read; equation (3.3.3) has [x,z] for [x,y]"
+locator_scheme = "theorem"
+locator = "Example 3.1.6, p. 11; Lemma 3.3.1, p. 14; Lemma 3.3.4, p. 15; Construction 3.4.2, Remark 3.4.3, Definition 3.4.4, p. 17; Definition 3.4.5, pp. 17-18"
+url = "https://www.math.uni-bonn.de/people/schwein/documents/fintzen_schwein25.pdf"
+fetched_from = "https://www.math.uni-bonn.de/people/schwein/documents/fintzen_schwein25.pdf"
+fetched_at = "2026-10-26T19:26:13Z"
+sha256 = "9d8bdc451c612c5be1afd086bd8f944387405ab6a308de996f45b103c2576d16"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layers 0-4"]
+
+[[source]]
+id = "Gerardin77"
+authors = "Paul Gérardin"
+title = "Weil representations associated to finite fields"
+year = 1977
+venue = "Journal of Algebra 46"
+doi = "10.1016/0021-8693(77)90394-5"
+locator_scheme = "theorem"
+locator = "Theorem 2.4"
+url = "https://doi.org/10.1016/0021-8693(77)90394-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 3"]
+
+[[source]]
+id = "N02"
+authors = "Markus Neuhauser"
+title = "An explicit construction of the metaplectic representation over a finite field"
+year = 2002
+venue = "Journal of Lie Theory 12 (2002), 15-30"
+version_note = "publisher PDF, text recognised by OCR; journal page numbers"
+locator_scheme = "theorem"
+locator = "Section 2, Lemma 2.1, p. 16; Theorem 3.3, p. 18; Theorems 4.1-4.3, pp. 19-22; Example 4.4, pp. 23-24"
+url = "https://www.heldermann-verlag.de/jlt/jlt12/NEUHAUSLAT2E.PDF"
+fetched_from = "https://www.heldermann-verlag.de/jlt/jlt12/NEUHAUSLAT2E.PDF"
+fetched_at = "2026-10-26T19:27:10Z"
+sha256 = "1f8b7011be2d894640db21a9aa94b5916481bcb1f8783e287c27a4df069807c3"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["Layers 1, 2, 4"]
