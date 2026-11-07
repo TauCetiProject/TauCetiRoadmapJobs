@@ -134,7 +134,7 @@ year = 2018
 doi = "10.1007/s00208-018-1671-2"
 arxiv = "1702.06019v2"
 locator_scheme = "theorem"
-locator = "Appendix A, Lemmas A.1 and A.5"
+locator = "Appendix A, Lemmas A.1–A.5"
 url = "https://arxiv.org/abs/1702.06019v2"
 fetched_from = "https://arxiv.org/pdf/1702.06019v2"
 fetched_at = "2026-10-25T12:39:35Z"
@@ -162,7 +162,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv:2206.06944v1, 14 June 2022, 12 pp.; locators use that version's numbering and author pagination. Published as Proc. Natl. Acad. Sci. USA 120 (2023); cited in the arXiv numbering."
-cited_for = ["5.2 local route", "6.1 local route", "gap:crystalline-lift-prescribed-determinant", "gap:crystalline-closure-components", "gap:berthelot-points-components"]
+cited_for = ["Conventions (rigid Zariski density)", "5.2 local route", "6.1 local route", "gap:crystalline-lift-prescribed-determinant", "gap:crystalline-closure-components", "gap:berthelot-points-components"]
 
 [[source]]
 id = "IYE"
@@ -171,7 +171,7 @@ title = "Deformation theory of the trivial mod p Galois representation for GL_n"
 year = 2020
 arxiv = "1904.05996v4"
 locator_scheme = "theorem"
-locator = "Propositions 5.9–5.10"
+locator = "Definition 5.8; Propositions 5.9–5.10 (stated for trivial residual representation, §2.1)"
 url = "https://arxiv.org/abs/1904.05996v4"
 fetched_from = "https://arxiv.org/pdf/1904.05996v4"
 fetched_at = "2026-10-25T22:15:37Z"
@@ -180,7 +180,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv:1904.05996v4, 4 October 2021, 30 pp.; locators use that version's numbering and pagination. Published in Int. Math. Res. Not. IMRN (2020)."
-cited_for = ["gap:crystalline-closure-components"]
+cited_for = ["gap:crystalline-closure-components", "Conventions (rigid Zariski density)"]
 
 [[source]]
 id = "DEJ"

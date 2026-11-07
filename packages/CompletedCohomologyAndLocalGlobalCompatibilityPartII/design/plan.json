@@ -1185,7 +1185,7 @@
       "title": "completed tensor reduced equidimensional",
       "supplier": "DeformationAndDerivedPatchingAlgebra",
       "section": "§4.6",
-      "needs": "For complete Noetherian local O-flat reduced equidimensional factors with residue k and geometrically reduced generic fibres, their completed tensor over O is reduced, O-flat and equidimensional of dimension dim A+dim B−1.",
+      "needs": "For complete Noetherian local O-flat reduced factors with residue k and geometrically reduced generic fibres, their completed tensor over O is reduced; its O-flatness, equidimensionality and dimension dim A+dim B−1 are the statements of LocalGaloisDeformationRings §F.0.1 and DeformationAndDerivedPatchingAlgebra §4.6.",
       "neededBy": [
         "2.1"
       ],
@@ -1250,7 +1250,7 @@
         "5.2",
         "6.1"
       ],
-      "detail": "IYE Proposition 5.10, pp. 26–27 (IYE lines 1023–1087), for the framed space of an arbitrary residual representation, as used in BIPD Theorem 3.3, p. 8 (BIPD lines 349–354); its inputs are the accumulation of crystalline points at benign points of the trianguline variety (IYE Proposition 5.9, line 1020) and gap:local-benign-crystalline-points."
+      "detail": "IYE Proposition 5.10, pp. 26–27 (IYE lines 1023–1087), stated there under IYE’s standing assumption that ρ̄ is trivial (IYE line 224); its proof applies to every ρ̄ with absolutely irreducible Jordan–Hölder factors, as BIPD Theorem 3.3, p. 8, and the proof of BIPD Theorem 4.2, p. 10, use it (BIPD lines 349–354, 439); its inputs are the accumulation of crystalline points at benign points of the trianguline variety (IYE Proposition 5.9, line 1020) and gap:local-benign-crystalline-points."
     },
     {
       "slug": "local-benign-crystalline-points",
