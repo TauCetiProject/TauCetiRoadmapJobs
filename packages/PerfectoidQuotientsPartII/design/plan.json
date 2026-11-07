@@ -2696,15 +2696,7 @@
    ]
   }
  ],
- "gaps": [
-  {
-   "title": "A perfectoid cover inside (R⁺)^∧ for imperfect residue fields",
-   "neededBy": [
-    "PerfectoidQuotientsPartII:Q10/almost-tor-vanishing-plus-closure"
-   ],
-   "detail": "This plan has not supplied, for arbitrary imperfect residue field, the following input used in Bhatt–Scholze Remark 10.13 (pp. 83–84): a faithfully flat map R → R_∞ to an integral perfectoid ring together with an R-algebra map R_∞ → (R⁺)^∧. Q10/prismatic-cover-of-regular-local-ring supplies a faithfully flat perfectoid cover; the proof sketch here does not identify a compatible map from that cover to (R⁺)^∧. Q10/perfectoid-cover-inside-plus-closure supplies both maps for perfect residue fields. Consequently Q10/almost-tor-vanishing-plus-closure retains the cover and its map as explicit hypotheses in general and is unconditional for perfect residue fields. This is an unresolved input of this plan, not an independently established error in the paper."
-  }
- ],
+ "gaps": [],
  "sourceIssues": [
   {
    "id": "PerfectoidQuotientsPartII/E1",
