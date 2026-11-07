@@ -1,0 +1,4 @@
+{"review": {"status": "needs_changes", "reviewer": "independent-review-PRREVIEW-CurvesOverFiniteFields~6",
+            "head": "24a1c2bbd21d66c6ed30a29b5dcc4e73005751fd", "pr": 1729, "folder": "CurvesOverFiniteFields", "date": "2026-11-07",
+            "findings": 1, "blocking": 0,
+            "notes": "incremental re-review of 21 changed lines since f56efad: previous R02 repaired, R01 mathematically repaired (both sign clauses right, witnesses 1.2.c/1.2.ac recomputed) but its lower clause is attributed to Theorem 4.10(b) on P(-T) where it is 4.10(b) on P itself (new R01, P3, Serre cache bdba7daa lines 1641-1654); gate with build OK; depcheck 239/2368/0; no outside-folder change; 36 #check types with no lost binder; FunctionFieldArithmetic §5.6 resolved at c5d655e2; sibling head 3ef7d747 unchanged in substance; 3.2 of the seeded sample re-inspected"}}
