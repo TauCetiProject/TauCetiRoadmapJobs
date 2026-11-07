@@ -4922,51 +4922,79 @@
     }
   ],
   "gaps": [
-    {
-      "id": "G3",
-      "title": "Sharper minor arcs, comparison and endpoint geometry",
-      "neededBy": [
-        "ExponentialSumsAndCircleMethodPartII:GCM.9/minorsharpgate",
-        "ExponentialSumsAndCircleMethodPartII:GCM.10/comparisonsharpgate",
-        "ExponentialSumsAndCircleMethodPartII:GCM.10/irreduciblesafe",
-        "ExponentialSumsAndCircleMethodPartII:GCM.13/tracepairingconjecture",
-        "ExponentialSumsAndCircleMethodPartII:GCM.13/conditionaldegeneration"
-      ],
-      "detail": "The paper’s proof does not imply +4 after dropping the remainder. Current targets prove only +4(k−1), i>−4(tδ−(k−1)) and irreducibility for tδ>k−1. A new sharp estimate would give the printed strict comparison but still would not prove irreducibility at tδ=1. The geometric degree-2D trace outside the supported irreducibility range needs its own dimension/fundamental-class justification. Nothing here asserts the printed sharp theorem or equality endpoint."
-    },
-    {
-      "id": "G4",
-      "title": "Universal monodromy companion and source closure",
-      "neededBy": [
-        "ExponentialSumsAndCircleMethodPartII:GCM.6/minusone",
-        "ExponentialSumsAndCircleMethodPartII:GCM.7/oddpages",
-        "ExponentialSumsAndCircleMethodPartII:GCM.7/shiftE1"
-      ],
-      "detail": "The companion LefschetzPencilsAndVanishingCyclesPartII has no packet/node ids at this snapshot. Existing LPV.5 is a routing owner, not a proof of the required universal orthogonal/symplectic product statement. Verify Katz–Sarnak 11.4.9 and the subsidiary SGA 7/Deligne–Illusie and closed algebraic-group quotient inputs there, then replace the request with exact exports. No unavailable original book was read or substituted here."
-    },
-    {
-      "id": "G5",
-      "title": "Review and source closure of the existing configuration/loop companion",
-      "neededBy": [
-        "ExponentialSumsAndCircleMethodPartII:GCM.5/configdescent",
-        "ExponentialSumsAndCircleMethodPartII:GCM.10/E1support",
-        "ExponentialSumsAndCircleMethodPartII:GCM.11/compactcounter",
-        "ExponentialSumsAndCircleMethodPartII:GCM.13/conditionaldegeneration"
-      ],
-      "detail": "AlgebraicTopologyPartII already has a complete 75-node packet, with exact configuration-torsor, arrangement-cohomology, stable-diagonal, tame-bouquet, double-loop-betti and Fermat connectivity exports. Those statements and their dependency interfaces were read here and match the local uses; the packet has no independent review yet. Its arrangement, Broughton, Hilton and Sullivan original-source proofs were not independently verified in this run. Obtain that companion review/source closure, preserving n≥4 for the full connected loop formula, the n≥5 Fermat connectivity use and all actions/signs. This is a supplier qualification, not a missing-packet or missing-node claim."
-    },
-    {
-      "id": "G6",
-      "title": "Global stronger-germ topology and algebraic inclusion",
-      "neededBy": [
-        "ExponentialSumsAndCircleMethodPartII:GCM.12/stronggermgate",
-        "ExponentialSumsAndCircleMethodPartII:GCM.12/homloops",
-        "ExponentialSumsAndCircleMethodPartII:GCM.13/tracepairingconjecture",
-        "ExponentialSumsAndCircleMethodPartII:GCM.13/conditionaldegeneration"
-      ],
-      "detail": "The compact-open comparison and its trace conjecture are obstructed explicitly. The fixed-radius weighted collar is sufficient only locally. Specify a global topology, prove compact-family control and coordinate compatibility, prove continuity of the polynomial inclusion, and compare with fixed collars. Neither an unspecified colimit nor pointwise O-bounds proves these assertions. The corrected trace comparison remains a conjecture even after this gate is solved."
-    }
-  ],
+  {
+    "slug": "sf-fibre-strata",
+    "supplier": "SchemeAndStackFoundations",
+    "section": "§§0.7–0.8",
+    "needs": "For finite-type morphisms over a field, provide constructible fibre-dimension level sets including empty fibres and the equality dim φ⁻¹(W)=dim W+e on each irreducible locally closed constant-nonempty-fibre-dimension stratum W."
+  },
+  {
+    "slug": "ecf-character-fourier",
+    "supplier": "EtaleCohomologyFoundations",
+    "section": "§§F.0.1, F.2.4–F.4.6",
+    "needs": "For a field of characteristic p, ℓ≠p, finite E/ℚ_ℓ containing μ_p and a nontrivial ψ:𝔽_p→E×, construct L_ψ on 𝔸¹ with its additive tensor law and nonzero-linear and equivariant-translation cancellation, compatibly with base change and finite coefficient extension."
+  },
+  {
+    "slug": "edc-top-components",
+    "supplier": "EtaleDualityAndPerverseSheaves",
+    "section": "§0.6",
+    "needs": "For any nonempty separated finite-type scheme M over a separably closed field with ℓ invertible and finite E/ℚ_ℓ, provide H_c^(2a)(M,E)=E(−a)^c for a=dim M and c the number of a-dimensional geometric irreducible components, and vanishing above 2a, allowing singularities and nilpotents."
+  },
+  {
+    "slug": "lpv-universal-monodromy",
+    "supplier": "LefschetzPencilsAndVanishingCycles",
+    "section": "§§5.1, 5.8 and 5.10; finite orthogonal alternative",
+    "needs": "For the universal family of smooth degree-k hypersurfaces in ℙ^N over an algebraically closed field of characteristic zero or p>k, with k≥3, N≥3 odd, ℓ invertible and primitive middle ℚ_ℓ-cohomology, prove that its geometric monodromy image is infinite unless (k,N)=(3,3)."
+  },
+  {
+    "slug": "ecf-one-variable-fourier",
+    "supplier": "EtaleCohomologyFoundations",
+    "section": "§§F.2.4–F.4.6; one-variable Fourier extension",
+    "needs": "For g∈𝔽_q[a] with 1≤deg g<p and the preceding character data, identify the restriction to 𝔾_m of the normalized ℓ-adic Fourier transform of g_*E with the degree-one sheaf of Rpr_h!L_ψ(hg(a)), and prove that this sheaf is lisse and has no geometrically constant quotient."
+  },
+  {
+    "slug": "symmetric-lattice-shrinking",
+    "supplier": "GeometryOfNumbersAndQuadraticArithmeticPartII",
+    "section": "FunctionFieldLatticesAndShrinking, FL.4 Shrinking",
+    "needs": "In *FunctionFieldLatticesAndShrinking*, FL.4 *Shrinking*, for any finite field 𝔽_Q, symmetric n×n matrix γ over 𝔽_Q((T⁻¹)) and integers a,c,s with c>0 and s≥0, put N_(γ,a,c)=#{u∈𝔽_Q[T]^n:|u|<Q^a, ‖γu‖<Q^(−c)} and prove N_(γ,a,c)≤Q^(ns+n max(⌊(a−c)/2⌋,0)) N_(γ,a−s,c+s), where ‖β‖ is the absolute value of its strictly negative Laurent part, including a≤0 and n=0."
+  },
+  {
+    "slug": "at2-arrangement-cohomology",
+    "supplier": "AlgebraicTopologyPartII",
+    "section": "AT2.2, Split arrangement purity",
+    "needs": "For m≥0, ℓ invertible in 𝔽_q and characteristic-zero E/ℚ_ℓ, provide the S_m-equivariant cohomology of PConf_m(𝔸¹), including the compact-support range m+1≤a≤2m for m>0 and only degree zero for m=0."
+  },
+  {
+    "slug": "at2-stable-diagonal",
+    "supplier": "AlgebraicTopologyPartII",
+    "section": "AT2.3, Stable configuration diagonal",
+    "needs": "For n≥4, d,j≥0 with d(n−3)≥j and finite-dimensional rational V, identify the weighted truncated configuration diagonal with the Euler product in the double-loop Betti formula, including its place-permutation action and sign exponent n−1."
+  },
+  {
+    "slug": "at2-tame-polynomial",
+    "supplier": "AlgebraicTopologyPartII",
+    "section": "AT2.4, Tame complex polynomial",
+    "needs": "For a complex polynomial of degree k≥2 whose leading form defines a smooth projective hypersurface, provide the bound ‖∇f(z)‖≥c‖z‖^(k−1) outside a ball for some c>0 and the resulting tameness, meaning an exterior positive gradient lower bound."
+  },
+  {
+    "slug": "at2-tame-bouquet",
+    "supplier": "AlgebraicTopologyPartII",
+    "section": "AT2.4, Tame fibre bouquet theorem",
+    "needs": "For a tame complex polynomial in n≥2 variables and a regular value, provide a homotopy equivalence of its fibre with a finite bouquet of (n−1)-spheres, with sphere number the sum of its local Milnor numbers."
+  },
+  {
+    "slug": "at2-double-loop-betti",
+    "supplier": "AlgebraicTopologyPartII",
+    "section": "AT2.5, Double-loop Betti series",
+    "needs": "For n≥4 and X homotopy equivalent to a finite bouquet of (n−1)-spheres, provide the connected full double-loop rational Betti series and its equality with the stable configuration diagonal in degrees j≤d(n−3)."
+  },
+  {
+    "slug": "at2-fermat-loop-connectivity",
+    "supplier": "AlgebraicTopologyPartII",
+    "section": "AT2.5, Fermat double-loop simple connectivity",
+    "needs": "For k≥2 and n≥5, prove π₂X=π₃X=0 for X={Σz_i^k=1}⊂ℂ^n, so Ω²X is connected and simply connected."
+  }
+],
   "sourceIssues": [
     {
       "id": "ExponentialSumsAndCircleMethodPartII/E1",
