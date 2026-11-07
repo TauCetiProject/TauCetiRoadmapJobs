@@ -218,3 +218,20 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["5.5"]
+
+[[source]]
+id = "quillen-oberwolfach"
+authors = "D. Quillen"
+title = "Finite generation of K-groups for rings of S-integers"
+year = 1974
+venue = "Mathematisches Forschungsinstitut Oberwolfach, Tagungsbericht 26/1974 (Algebraische K-Theorie)"
+locator_scheme = "page"
+locator = "p. 7, second theorem"
+url = "https://oda.mfo.de/bitstream/handle/mfo/1481/full-text.pdf?isAllowed=y&sequence=1"
+fetched_from = "https://oda.mfo.de/bitstream/handle/mfo/1481/full-text.pdf?isAllowed=y&sequence=1"
+fetched_at = "2026-11-07T10:23:35Z"
+sha256 = "aa86bcf8a5101d748618b43834261f164cdaae12d112dbfe4dbd92ebaa1399ec"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["5.5"]

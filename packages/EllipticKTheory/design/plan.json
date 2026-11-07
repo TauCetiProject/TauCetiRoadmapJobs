@@ -13,12 +13,6 @@
       "needs": "On the imported smooth perfect-field motivic-to-K tower, supply Adams action and rational weight comparison, and compatibility with étale K-theory descent, geometric base change and coefficient edge/section maps for positive invertible coefficients and prime-to-characteristic divisible colimits."
     },
     {
-      "slug": "function-field-steinberg-homology",
-      "supplier": "ArithmeticKTheory",
-      "section": "§3.2",
-      "needs": "For a smooth affine curve ring R over a finite field with fraction field F, every finite projective R-module P of positive rank and q≥0, supply finite generation of H_q(Aut_R(P);St(P⊗F)), independently of Harder finiteness."
-    },
-    {
       "slug": "general-scheme-adams-pullback",
       "supplier": "SchemeKTheoryOperations",
       "section": "§6.8",
