@@ -5,8 +5,8 @@ roadmap = "DynamicalDegreesOfRationalMaps"
 id = "dinhsibony2005"
 authors = "T. C. Dinh, N. Sibony"
 title = "Une borne superieure pour l'entropie topologique d'une application rationnelle"
-venue = "Annals of Mathematics 161 (2005), 1637-1644"
 year = 2005
+venue = "Annals of Mathematics 161 (2005), 1637-1644"
 arxiv = "math/0303271v2"
 locator_scheme = "theorem"
 locator = "Théorème 1; Proposition 6; Corollaire 7"
@@ -18,17 +18,17 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v2 (Dec 2004); numbering of the arXiv version read"
-cited_for = ["Final targets", "Scope"]
+cited_for = ["§1.1", "§1.2", "§4.1", "§4.4", "§4.5", "§5.1", "§5.3", "§5.4", "Scope"]
 
 [[source]]
 id = "dang2020"
 authors = "Nguyen-Bac Dang"
 title = "Degrees of Iterates of Rational Maps on Normal Projective Varieties"
-venue = "Proceedings of the London Mathematical Society 121 (2020), 1268-1310"
 year = 2020
+venue = "Proceedings of the London Mathematical Society 121 (2020), 1268-1310"
 arxiv = "1701.07760v2"
 locator_scheme = "theorem"
-locator = "Theorem 1; Theorem 1.1.1; Theorem 2.5.1; Theorem 3; Section 5"
+locator = "Theorem 1; Theorem 3; Proposition 3.4.1; Theorem 3.4.4; Theorem 5.2.1"
 url = "https://arxiv.org/abs/1701.07760v2"
 fetched_from = "https://arxiv.org/pdf/1701.07760v2"
 fetched_at = "2026-11-04T18:53:58Z"
@@ -37,7 +37,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v2 (Jul 2019); numbering of the arXiv version read"
-cited_for = ["Final targets", "Scope", "Risks"]
+cited_for = ["§1.2", "§1.3", "§3.3", "§3.6", "§4.1", "§4.3", "§4.4", "§4.5", "§5.1", "§5.2", "§5.3", "Scope"]
 
 [[source]]
 id = "truong2020"
@@ -48,7 +48,7 @@ venue = "Journal für die reine und angewandte Mathematik 758 (2020), 139-182"
 doi = "10.1515/crelle-2017-0052"
 arxiv = "1605.05049v2"
 locator_scheme = "theorem"
-locator = "Theorem 1.1; Section 6.3; Section 6.4"
+locator = "Theorem 1.1; §6.3; §6.4"
 url = "https://arxiv.org/abs/1605.05049v2"
 fetched_from = "https://arxiv.org/pdf/1605.05049v2"
 fetched_at = "2026-11-04T18:54:11Z"
@@ -57,14 +57,14 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v2 (May 2016); numbering of the arXiv version read"
-cited_for = ["Final targets", "Risks"]
+cited_for = ["§1.4", "§4.3", "§4.4", "§5.3", "§6.3", "Scope"]
 
 [[source]]
 id = "guedj2010"
 authors = "Vincent Guedj"
 title = "Propriétés ergodiques des applications rationnelles"
-venue = "Panoramas et Synthèses 30 (2010)"
 year = 2010
+venue = "Panoramas et Synthèses 30 (2010)"
 arxiv = "math/0611302v1"
 locator_scheme = "chapter"
 locator = "Section 2.1: Définition 2.3, Théorème 2.4, Exemple 2.2, Exemple 2.5"
@@ -76,14 +76,14 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v1 (Nov 2006); numbering of the arXiv version read"
-cited_for = ["Final targets", "Scope"]
+cited_for = ["§1.2", "§3.5", "§5.2", "§5.4", "§6.1", "§6.2", "§6.3"]
 
 [[source]]
 id = "silverman2014"
 authors = "Joseph H. Silverman"
 title = "Dynamical Degrees, Arithmetic Degrees, and Canonical Heights for Dominant Rational Self-Maps of Projective Space"
-venue = "Ergodic Theory and Dynamical Systems 34 (2014), 647-678"
 year = 2014
+venue = "Ergodic Theory and Dynamical Systems 34 (2014), 647-678"
 arxiv = "1111.5664v2"
 locator_scheme = "section"
 locator = "Section 3: Definition, Examples 5-6, Proposition 7"
@@ -95,7 +95,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v2 (Sep 2012); numbering of the arXiv version read"
-cited_for = ["Final targets"]
+cited_for = ["§4.4", "§5.1", "§6.1", "§6.2", "§6.3", "§6.4", "Scope"]
 
 [[source]]
 id = "russakovskiishiffman1997"
@@ -115,7 +115,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v1 (Apr 1996); numbering of the arXiv version read"
-cited_for = ["Final targets"]
+cited_for = ["§4.1", "§4.2", "§6.1", "§6.2", "§6.3"]
 
 [[source]]
 id = "lazarsfeld2004"
@@ -124,12 +124,12 @@ title = "Positivity in Algebraic Geometry I"
 year = 2004
 doi = "10.1007/978-3-642-18808-4"
 locator_scheme = "theorem"
-locator = "Section 1.6: Theorem 1.6.1, Corollary 1.6.3; Theorem 1.4.9; Theorem 2.2.15"
+locator = "Theorem 1.4.9; Corollary 1.4.10; Theorem 1.6.1; Corollary 1.6.3; Theorem 2.2.15"
 url = "https://doi.org/10.1007/978-3-642-18808-4"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Final targets", "Risks"]
+cited_for = ["§3.2", "§3.3", "§3.5"]
 
 [[source]]
 id = "fulton1998"
@@ -138,22 +138,22 @@ title = "Intersection Theory"
 year = 1998
 doi = "10.1007/978-1-4612-1700-8"
 locator_scheme = "section"
-locator = "Theorem 1.4; Section 2.3-2.5; Theorem 2.4; Proposition 2.5; Section 8.1"
+locator = "Theorem 1.4; Proposition 2.5"
 url = "https://doi.org/10.1007/978-1-4612-1700-8"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Final targets"]
+cited_for = ["§4.1"]
 
 [[source]]
 id = "dangfavre2021"
 authors = "Nguyen-Bac Dang, Charles Favre"
 title = "Spectral interpretations of dynamical degrees and applications"
-venue = "Annals of Mathematics 194 (2021), no. 1"
 year = 2021
+venue = "Annals of Mathematics 194 (2021), no. 1"
 arxiv = "2006.10262v2"
 locator_scheme = "section"
-locator = "Section 1.3, Theorem 1.3; Theorem 1; Theorem 2"
+locator = "§1.3: Theorem 1.2, Theorem 1.3; Theorem 1; Theorem 2"
 url = "https://arxiv.org/abs/2006.10262v2"
 fetched_from = "https://arxiv.org/pdf/2006.10262v2"
 fetched_at = "2026-11-04T18:55:11Z"
@@ -162,4 +162,108 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v2 (May 2021); numbering of the arXiv version read"
-cited_for = ["Final targets", "Consumers"]
+cited_for = ["§2.3", "§3.3", "§3.5", "§3.6", "§4.1", "§4.2", "§4.4", "§4.5", "§5.1", "§5.2", "§6.4", "Scope"]
+
+[[source]]
+id = "cutkosky2015"
+authors = "Steven Dale Cutkosky"
+title = "Teissier's problem on inequalities of nef divisors over an arbitrary field"
+year = 2013
+arxiv = "1304.1218v1"
+locator_scheme = "theorem"
+locator = "§2.2; Theorem 6.1; Remark 6.2; Corollary 6.3"
+url = "https://arxiv.org/abs/1304.1218v1"
+fetched_from = "https://arxiv.org/pdf/1304.1218v1"
+fetched_at = "2026-11-05T12:01:22Z"
+sha256 = "72161b339f1c6383665266e936a91fc4775de7ee0f47af4cdf1ce503d38f603d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1 (April 2013); numbering of the arXiv version read"
+cited_for = ["§3.1", "§3.2", "§3.4", "§3.5"]
+
+[[source]]
+id = "kleiman2005"
+authors = "Steven L. Kleiman"
+title = "The Picard scheme"
+year = 2005
+arxiv = "math/0504020v1"
+locator_scheme = "theorem"
+locator = "Appendix B: Lemma B.12, Theorem B.27"
+url = "https://arxiv.org/abs/math/0504020v1"
+fetched_from = "https://arxiv.org/pdf/math/0504020v1"
+fetched_at = "2026-11-05T12:01:29Z"
+sha256 = "cc14e62f0ebebb8617777651bbcd08bb7548cb9fe955f3a25bb6491c5f3beeaa"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+version_note = "arXiv v1 (April 2005); arXiv numbering (the published FGA Explained chapter numbers Appendix B as 9.B)"
+cited_for = ["§2.1", "§3.4"]
+
+[[source]]
+id = "stacks-varieties"
+version_note = "Stacks Project chapter PDF, version ed88ff78 (compiled 14 July 2026); chapter-local numbering, e.g. Varieties §45 is online §33.45; tags are stable"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, chapter Varieties"
+year = 2026
+locator_scheme = "tag"
+locator = "Lemma 8.6 (054Q); Lemmas 45.2, 45.5, 45.6 (0BEN, 0BER, 0BES); §45 (0BEL)"
+url = "https://stacks.math.columbia.edu/download/varieties.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/varieties.pdf"
+fetched_at = "2026-11-05T12:03:17Z"
+sha256 = "ed339c312c86721e3f830876da14cabe89a96e83e454a78b7cd355555f4bca45"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["§2.1", "§2.3", "§2.4"]
+
+[[source]]
+id = "stacks-chow"
+version_note = "Stacks Project chapter PDF, version ed88ff78 (compiled 14 July 2026); chapter-local numbering, e.g. Varieties §45 is online §33.45; tags are stable"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, chapter Chow Homology and Chern Classes"
+year = 2026
+locator_scheme = "tag"
+locator = "Lemma 41.4 (0BFI)"
+url = "https://stacks.math.columbia.edu/download/chow.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/chow.pdf"
+fetched_at = "2026-11-05T12:07:57Z"
+sha256 = "28aaf3c7a76d359c3be56f1c86167ab42fcb40bc35b1ae6ef3b47cb41f9a41f5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["§2.2"]
+
+[[source]]
+id = "stacks-morphisms"
+version_note = "Stacks Project chapter PDF, version ed88ff78 (compiled 14 July 2026); chapter-local numbering, e.g. Varieties §45 is online §33.45; tags are stable"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, chapter Morphisms of Schemes"
+year = 2026
+locator_scheme = "tag"
+locator = "Lemma 6.7 (056B); Lemma 26.16 (081I); Lemma 38.7 (0892); Definition 52.8 (02NY)"
+url = "https://stacks.math.columbia.edu/download/morphisms.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/morphisms.pdf"
+fetched_at = "2026-11-05T12:14:41Z"
+sha256 = "0bebe1d93baa7e4e99cb4f36fe50c7bcb6094772b8a2f760885a492892eca75f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["§1.1", "§1.2", "§1.4", "§2.4"]
+
+[[source]]
+id = "stacks-constructions"
+version_note = "Stacks Project chapter PDF, version ed88ff78 (compiled 14 July 2026); chapter-local numbering, e.g. Varieties §45 is online §33.45; tags are stable"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, chapter Constructions of Schemes"
+year = 2026
+locator_scheme = "tag"
+locator = "Lemma 13.1 (01NE)"
+url = "https://stacks.math.columbia.edu/download/constructions.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/constructions.pdf"
+fetched_at = "2026-11-05T12:28:05Z"
+sha256 = "8f70bb66f5bec27649fd70e68e60266fa97e7b56d043410c0c8fbc35c1f2ff4d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-05"
+cited_for = ["§6.1"]

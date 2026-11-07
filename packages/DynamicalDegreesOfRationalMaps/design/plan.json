@@ -1,0 +1,1527 @@
+{
+ "roadmap": "DynamicalDegreesOfRationalMaps",
+ "title": "Dynamical degrees of rational maps",
+ "parent": null,
+ "summary": "Graphs and topological degrees of dominant rational maps between projective varieties over an arbitrary field; Euler-characteristic intersection numbers with the positivity package over an arbitrary field (Kleiman, Siu, Hodge inequality, Khovanskii-Teissier, Siu for products); degrees deg_k(f; L, M) with model independence, positivity, normalization and field-extension invariance, sub-multiplicativity and comparison; dynamical degrees, log-concavity, birational and field-extension invariance, algebraic entropy; projective-space and affine-space examples (forms, morphisms, Cremona, Fibonacci, Frobenius, polynomial maps).",
+ "baseline": {
+  "mathlib": "f6090c7095e1e56b3464c1daba5f24631f1290d2",
+  "tauceti": "358314d4ab97483df4fc4cb8adcc02e74a8d9f5a"
+ },
+ "layers": [
+  {
+   "key": "1",
+   "title": "Function fields and the graph of a dominant rational map",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "definition",
+     "name": "RationalMap.functionFieldPullback / RationalMap.topologicalDegree",
+     "statement": "For a dominant K-rational map f : X ⤏ Y of varieties over K, f^* : K(Y) -> K(X) is the K-algebra map induced by RationalMap.fromFunctionField f (which hits the generic point of Y); e(f) = Module.finrank over f^*K(Y) of K(X). f |-> f^* is a bijection onto K-algebra maps K(Y) -> K(X); (g∘f)^* = f^*∘g^*; e(f) > 0 iff dim X = dim Y (junk 0 otherwise); e(g∘f) = e(f)e(g) in equal dimension; e(f) = 1 iff f^* is an isomorphism iff f is birational (the rational map of a partial isomorphism over K); then Scheme.Birational X Y holds and f^{-1} has pullback (f^*)^{-1}.",
+     "hypotheses": [
+      "X, Y integral, separated, of finite type over K",
+      "f dominant and over Spec K",
+      "equal dimensions for finiteness and multiplicativity"
+     ],
+     "locator": {
+      "source": "stacks-morphisms",
+      "where": "Definition 52.8 (tag 02NY), line 6046; dinhsibony2005 lines 69-70"
+     },
+     "prerequisites": [
+      "mathlib:AlgebraicGeometry.Scheme.RationalMap.fromFunctionField",
+      "mathlib:AlgebraicGeometry.Scheme.RationalMap.equivFunctionFieldOver",
+      "mathlib:AlgebraicGeometry.Scheme.RationalMap.IsDominant",
+      "mathlib:AlgebraicGeometry.Scheme.functionField",
+      "mathlib:Module.finrank",
+      "mathlib:Module.finrank_mul_finrank",
+      "mathlib:AlgebraicGeometry.Scheme.PartialIso",
+      "mathlib:AlgebraicGeometry.Scheme.PartialIso.IsOver",
+      "mathlib:AlgebraicGeometry.Scheme.PartialIso.symm",
+      "mathlib:AlgebraicGeometry.Scheme.PartialIso.toRationalMap",
+      "tauceti:TauCeti.AlgebraicGeometry.topologicalKrullDim_eq_toNat_trdeg_functionField",
+      "roadmap:SchemeAndStackFoundations §4.16"
+     ],
+     "api": [
+      {
+       "name": "pullback_of_morphism",
+       "role": "compatibility",
+       "statement": "for a dominant morphism the pullback is the stalk map at generic points; for an alteration it is the functionFieldMap of SSF §4.16"
+      },
+      {
+       "name": "pullback_comp",
+       "role": "functoriality",
+       "statement": "(g∘f)^* = f^*∘g^*, id^* = id"
+      },
+      {
+       "name": "pullback_bijective",
+       "role": "characterisation",
+       "statement": "dominant K-rational maps X ⤏ Y correspond bijectively to K-algebra maps K(Y) -> K(X)"
+      },
+      {
+       "name": "topologicalDegree_pos_iff",
+       "role": "finiteness",
+       "statement": "e(f) > 0 iff dim X = dim Y"
+      },
+      {
+       "name": "topologicalDegree_comp",
+       "role": "multiplicativity",
+       "statement": "e(g∘f) = e(f)e(g) when dim X = dim Y = dim Z"
+      },
+      {
+       "name": "topologicalDegree_eq_one_iff",
+       "role": "characterisation",
+       "statement": "in equal dimension, e(f) = 1 iff f^* is an isomorphism iff f is the rational map of a partial isomorphism over K; then f^{-1} has pullback (f^*)^{-1}"
+      }
+     ],
+     "tests": [
+      {
+       "name": "square_map",
+       "kind": "computation",
+       "statement": "z ↦ z^2 on P^1: e = 2 in every characteristic, purely inseparable in characteristic 2"
+      },
+      {
+       "name": "frobenius",
+       "kind": "computation",
+       "statement": "[x_i] ↦ [x_i^p] on P^d in characteristic p: e = p^d (separable degree would give 1)"
+      },
+      {
+       "name": "cremona",
+       "kind": "computation",
+       "statement": "the Cremona involution of P^2 has e = 1"
+      },
+      {
+       "name": "projection_junk",
+       "kind": "degenerate",
+       "statement": "the linear projection P^2 ⤏ P^1 has K(x,y) of transcendence degree one over K(x): e = 0 junk value"
+      },
+      {
+       "name": "constant_nonexample",
+       "kind": "non-example",
+       "statement": "a constant map P^1 -> P^1 is not dominant and has no function-field pullback"
+      },
+      {
+       "name": "square_not_birational",
+       "kind": "non-example",
+       "statement": "z ↦ z^2 on P^1: e = 2, f^* not surjective, the rational map of no partial isomorphism, although Scheme.Birational P^1 P^1 holds through the identity"
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "construction",
+     "name": "RationalMap.graph",
+     "statement": "For a K-rational map f : X ⤏ Y of projective varieties, Γ_f is the scheme-theoretic image of (ι_U, f_U) : U -> X ×_K Y, U = f.domain, with projections π_1, π_2. Γ_f is integral, closed, projective, of dimension dim X, independent of the representative; π_1 is a modification with witness U, π_1^{-1}(U) ≅ U; π_2 ∘ γ_f = f_U; f dominant implies π_2 surjective; equal dimensions make π_2 an alteration of generic degree e(f); morphisms give π_1 an isomorphism; birational inverses swap graphs.",
+     "hypotheses": [
+      "X, Y projective varieties over K",
+      "f a K-rational map; dominant for the statements on π_2",
+      "dim X = dim Y for the alteration statement"
+     ],
+     "locator": {
+      "source": "dinhsibony2005",
+      "where": "lines 45-51; dang2020 lines 21-25; guedj2010 lines 1099-1110; stacks-morphisms Lemma 6.7 (tag 056B), line 488"
+     },
+     "prerequisites": [
+      "mathlib:AlgebraicGeometry.Scheme.RationalMap.domain",
+      "mathlib:AlgebraicGeometry.Scheme.RationalMap.toPartialMap",
+      "mathlib:AlgebraicGeometry.Scheme.Hom.image",
+      "mathlib:AlgebraicGeometry.Scheme.Hom.imageι",
+      "mathlib:AlgebraicGeometry.Scheme.Hom.toImage",
+      "mathlib:AlgebraicGeometry.IsProper",
+      "mathlib:AlgebraicGeometry.IsDominant",
+      "mathlib:AlgebraicGeometry.Scheme.PartialIso.symm",
+      "target:1.1",
+      "roadmap:SchemeAndStackFoundations §0.7",
+      "roadmap:SchemeAndStackFoundations §4.11",
+      "roadmap:SchemeAndStackFoundations §4.16",
+      "roadmap:StableReduction Layer 2"
+     ],
+     "api": [
+      {
+       "name": "graph_isIntegral",
+       "role": "structure",
+       "statement": "Γ_f is integral, closed in X ×_K Y, projective, of dimension dim X"
+      },
+      {
+       "name": "graph_eq_of_rep",
+       "role": "independence",
+       "statement": "every representative partial map has scheme-theoretic image Γ_f"
+      },
+      {
+       "name": "isModification_fst",
+       "role": "structure",
+       "statement": "π_1 is a modification with witness U and π_1^{-1}(U) ≅ U"
+      },
+      {
+       "name": "isAlteration_snd",
+       "role": "structure",
+       "statement": "for f dominant with dim X = dim Y, π_2 is an alteration of generic degree e(f)"
+      },
+      {
+       "name": "graph_hom",
+       "role": "compatibility",
+       "statement": "for a morphism g, π_1 is an isomorphism and π_2∘π_1^{-1} = g; Γ_id is the diagonal"
+      },
+      {
+       "name": "graph_symm",
+       "role": "compatibility",
+       "statement": "for birational f, the exchange of factors maps Γ_f onto Γ_{f^{-1}}"
+      }
+     ],
+     "tests": [
+      {
+       "name": "identity_diagonal",
+       "kind": "degenerate",
+       "statement": "Γ_id is the diagonal"
+      },
+      {
+       "name": "square_map_graph",
+       "kind": "computation",
+       "statement": "z ↦ z^2: Γ ≅ P^1 and π_2 has generic degree 2"
+      },
+      {
+       "name": "cremona_graph",
+       "kind": "computation",
+       "statement": "Cremona of P^2: domain misses three points; Γ is the blow-up at them; π_1 has line fibres there"
+      },
+      {
+       "name": "projection_not_alteration",
+       "kind": "non-example",
+       "statement": "projection P^2 ⤏ P^1: π_2 has P^1 fibres, not an alteration"
+      },
+      {
+       "name": "constant_not_surjective",
+       "kind": "non-example",
+       "statement": "constant map: Γ = P^1 × {pt}, π_2 not surjective"
+      }
+     ]
+    },
+    {
+     "id": "1.3",
+     "kind": "construction",
+     "name": "RationalMap.compositeCorrespondence",
+     "statement": "For dominant f : X ⤏ Y and g : Y ⤏ Z between projective varieties of the same dimension d, W_{f,g} = Γ_{(f, g∘f)} ⊆ X × Y × Z is an integral projective variety of dimension d; (q_X,q_Y) : W -> Γ_f and (q_X,q_Z) : W -> Γ_{g∘f} are proper birational; (q_Y,q_Z) : W -> Γ_g is proper, surjective, generically finite of degree e(f).",
+     "hypotheses": [
+      "X, Y, Z projective varieties of the same dimension",
+      "f, g dominant K-rational maps"
+     ],
+     "locator": {
+      "source": "dang2020",
+      "where": "Theorem 5.2.1 proof, lines 1285-1334 (graph Γ and diagram (5.1))"
+     },
+     "prerequisites": [
+      "mathlib:AlgebraicGeometry.Scheme.RationalMap.comp",
+      "mathlib:AlgebraicGeometry.Scheme.RationalMap.comp_assoc",
+      "mathlib:AlgebraicGeometry.Scheme.Hom.image",
+      "target:1.1",
+      "target:1.2",
+      "roadmap:SchemeAndStackFoundations §4.16"
+     ],
+     "api": [
+      {
+       "name": "compositeCorrespondence_toGraph",
+       "role": "structure",
+       "statement": "(q_X,q_Y) and (q_X,q_Z) are proper birational onto Γ_f and Γ_{g∘f}"
+      },
+      {
+       "name": "compositeCorrespondence_toGraph_snd",
+       "role": "structure",
+       "statement": "(q_Y,q_Z) is proper surjective generically finite of degree e(f) onto Γ_g"
+      },
+      {
+       "name": "rationalMap_prod",
+       "role": "constructor",
+       "statement": "(a, b) : X ⤏ Y ×_K Z on the intersection of domains"
+      }
+     ],
+     "tests": [
+      {
+       "name": "cremona_square",
+       "kind": "computation",
+       "statement": "σ∘σ = id: W_{σ,σ} -> diagonal birational, (q_Y,q_Z) of degree 1"
+      },
+      {
+       "name": "square_map_square",
+       "kind": "computation",
+       "statement": "f = g = z ↦ z^2: (q_Y,q_Z) has degree 2 = e(f), not 4"
+      },
+      {
+       "name": "nondominant_excluded",
+       "kind": "non-example",
+       "statement": "for non-dominant f Mathlib's composition is undefined and W is not formed"
+      }
+     ]
+    },
+    {
+     "id": "1.4",
+     "kind": "theorem",
+     "name": "RationalMap.graph_normalization / RationalMap.graph_baseChange",
+     "statement": "Normalization: for ν : X̃ -> X and f̃ = ν^{-1}∘f∘ν, ν×ν maps Γ_{f̃} properly and birationally onto Γ_f, and (f^n)~ = f̃^n. Field extension: (Γ_f)_{K'} is the scheme-theoretic image of γ_f ×_K K'; for X, Y geometrically integral, f_{K'} is dominant, e(f_{K'}) = e(f), (g∘f)_{K'} = g_{K'}∘f_{K'}, Γ_{f_{K'}} = (Γ_f)_{K'}.",
+     "hypotheses": [
+      "X projective variety, f dominant self-map for the normalization part",
+      "K'/K any field extension",
+      "X, Y geometrically integral for the statements on f_{K'}"
+     ],
+     "locator": {
+      "source": "stacks-morphisms",
+      "where": "Lemma 26.16 (tag 081I), line 2198; truong2020 §6.3, line 1529"
+     },
+     "prerequisites": [
+      "mathlib:AlgebraicGeometry.Scheme.PartialIso",
+      "mathlib:AlgebraicGeometry.Scheme.PartialIso.symm",
+      "mathlib:AlgebraicGeometry.Scheme.Hom.image",
+      "target:1.1",
+      "target:1.2",
+      "roadmap:SchemeAndStackFoundations §0.11",
+      "roadmap:SchemeAndStackFoundations §0.20",
+      "roadmap:SchemeAndStackFoundations §0.30"
+     ],
+     "api": [
+      {
+       "name": "graph_normalization",
+       "role": "compatibility",
+       "statement": "ν×ν : Γ_{f̃} -> Γ_f proper birational"
+      },
+      {
+       "name": "graph_baseChange",
+       "role": "compatibility",
+       "statement": "(Γ_f)_{K'} = image of γ_f ×_K K'; equals Γ_{f_{K'}} when geometrically integral"
+      },
+      {
+       "name": "topologicalDegree_baseChange",
+       "role": "compatibility",
+       "statement": "e(f_{K'}) = e(f)"
+      }
+     ],
+     "tests": [
+      {
+       "name": "real_complex_line",
+       "kind": "non-example",
+       "statement": "P^1_C over R: base change of Γ_id is two diagonals, not a graph of an integral rational map"
+      },
+      {
+       "name": "cremona_Q_C",
+       "kind": "compatibility",
+       "statement": "Cremona over Q base-changes to Cremona over C with e = 1"
+      },
+      {
+       "name": "cusp_normalization",
+       "kind": "degenerate",
+       "statement": "cuspidal cubic with normalization P^1: the lift of id is id"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "Intersection numbers over a field",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "theorem",
+     "name": "intersectionNumber_eq_sum_components",
+     "statement": "For X proper over K, Z ⊆ X closed of dimension r with r-dimensional components Z_i of generic multiplicity m_i and line bundles L_1..L_r: (L_1⋯L_r·Z) = Σ m_i (L_1⋯L_r·Z_i).",
+     "hypotheses": [
+      "X proper over K",
+      "dim Z = r"
+     ],
+     "locator": {
+      "source": "stacks-varieties",
+      "where": "Lemmas 45.2 and 45.6 (tags 0BEN, 0BES), lines 4716 and 4784; kleiman2005 Lemma B.12, line 3624"
+     },
+     "prerequisites": [
+      "roadmap:CyclotomicClassGroupsAndStickelberger §4.3",
+      "roadmap:SchemeAndStackFoundations §2.6"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "double_point",
+       "kind": "computation",
+       "statement": "Spec K[ε]/(ε^2) ⊆ P^1: χ = 2 = 2·1"
+      },
+      {
+       "name": "line_plus_point",
+       "kind": "degenerate",
+       "statement": "line ∪ point in P^2, r = 1: (O(1)·Z) = 1"
+      },
+      {
+       "name": "two_lines",
+       "kind": "computation",
+       "statement": "V(xy) ⊆ P^2: (O(1)·Z) = 2 = 1 + 1"
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "theorem",
+     "name": "intersectionNumber_eq_chowDegree",
+     "statement": "For X proper over K and Z ⊆ X closed of dimension r: (L_1⋯L_r·Z) = deg(c_1(L_1) ∩ ⋯ ∩ c_1(L_r) ∩ [Z]_r).",
+     "hypotheses": [
+      "X proper over K",
+      "dim Z = r"
+     ],
+     "locator": {
+      "source": "stacks-chow",
+      "where": "Lemma 41.4 (tag 0BFI), line 3995"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "roadmap:CyclotomicClassGroupsAndStickelberger §4.3",
+      "roadmap:SchemeAndStackFoundations §3.3",
+      "roadmap:SchemeAndStackFoundations §4.12",
+      "roadmap:SchemeAndStackFoundations §5.1",
+      "roadmap:SchemeAndStackFoundations §5.2",
+      "roadmap:SchemeAndStackFoundations §5.3",
+      "roadmap:StableReduction Layer 2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "plane",
+       "kind": "computation",
+       "statement": "(O(1)^2) on P^2 is 1 = deg(h^2 ∩ [P^2])"
+      },
+      {
+       "name": "quadric",
+       "kind": "computation",
+       "statement": "on P^1×P^1: (O(1,0)·O(0,1)) = 1 and (O(1,0)^2) = 0 from χ(O(n1,n2)) = (n1+1)(n2+1)"
+      },
+      {
+       "name": "surface_rr",
+       "kind": "compatibility",
+       "statement": "on smooth projective surfaces Riemann-Roch gives D1·D2 as the n1n2 coefficient"
+      }
+     ]
+    },
+    {
+     "id": "2.3",
+     "kind": "construction",
+     "name": "realIntersectionForm",
+     "statement": "The symmetric R-multilinear extension of (L_1,…,L_r) ↦ (L_1⋯L_r)_X to Pic(X) ⊗ R, with linear pullback; projection formula and field-extension invariance extend; nef real classes and real polarizations are defined.",
+     "hypotheses": [
+      "X proper over K of dimension ≤ r"
+     ],
+     "locator": {
+      "source": "dangfavre2021",
+      "where": "§1.3, lines 436-443 (real classes ω); stacks-varieties Lemma 45.5 (tag 0BER), line 4778"
+     },
+     "prerequisites": [
+      "roadmap:CyclotomicClassGroupsAndStickelberger §4.3",
+      "tauceti:TauCeti.AlgebraicGeometry.LineBundleClass"
+     ],
+     "api": [
+      {
+       "name": "realIntersectionForm_symm",
+       "role": "structure",
+       "statement": "symmetric and multilinear, agreeing with integral numbers"
+      },
+      {
+       "name": "realIntersectionForm_pullback",
+       "role": "projection formula",
+       "statement": "(p^*ω_1⋯p^*ω_r)_Y = deg(Y -> p(Y))(ω_1⋯ω_r·p(Y)), 0 if dimension drops"
+      },
+      {
+       "name": "realIntersectionForm_baseChange",
+       "role": "compatibility",
+       "statement": "invariant under extension of the field"
+      }
+     ],
+     "tests": [
+      {
+       "name": "irrational_coefficient",
+       "kind": "computation",
+       "statement": "√2·O(1,0) + O(0,1) on P^1×P^1 has square 2√2"
+      },
+      {
+       "name": "negative_scaling",
+       "kind": "degenerate",
+       "statement": "(-O(1)) on P^1 is -1, so negative coefficients leave the nef cone"
+      },
+      {
+       "name": "sum_of_nonbig",
+       "kind": "computation",
+       "statement": "O(1,0) + O(0,1) is a real polarization with square 2 though neither summand is big"
+      }
+     ]
+    },
+    {
+     "id": "2.4",
+     "kind": "theorem",
+     "name": "reduction_to_algClosed",
+     "statement": "For V integral projective over K of dimension r, with normalization Ṽ, K' = H^0(Ṽ, O), Ω an algebraic closure of K' and W = (Ṽ ×_{K'} Ω)_red: K' is finite over K and algebraically closed in K(Ṽ), Ṽ is geometrically irreducible over K', W is an integral projective Ω-variety with [Ṽ_Ω] = m[W]; there is c_V = [K':K]·m > 0 with (L_1⋯L_r)_{V/K} = c_V (L_1|_W⋯L_r|_W)_{W/Ω} for all line bundles; ample pulls back to ample.",
+     "hypotheses": [
+      "V integral projective over K"
+     ],
+     "locator": {
+      "source": "stacks-varieties",
+      "where": "Lemma 8.6 (tag 054Q), line 691; stacks-morphisms Lemma 38.7 (tag 0892), line 3862"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.3",
+      "roadmap:CyclotomicClassGroupsAndStickelberger §4.3",
+      "roadmap:SchemeAndStackFoundations §0.20",
+      "roadmap:SchemeAndStackFoundations §0.30",
+      "roadmap:StableReduction Layer 2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "complex_line_over_R",
+       "kind": "computation",
+       "statement": "P^1_C over R: K' = C, m = 1, c_V = 2, (O(1))_{V/R} = 2"
+      },
+      {
+       "name": "pointless_conic",
+       "kind": "computation",
+       "statement": "x^2+y^2+z^2 over R: c_V = 1, (O(1)) = 2 on V and W"
+      },
+      {
+       "name": "imperfect_line",
+       "kind": "computation",
+       "statement": "x^2 + t y^2 over F_2(t): integral, not normal at [0:0:1] (cotangent dimension 2); normalization P^1_{K'} with K' = K(√t), H^0(V,O) = K, m = 1, c_V = 2, χ(O_V(n)) = 2n+1, (O(1))_V = 2 = 2·1; base change to K' is the double line with the same value"
+      },
+      {
+       "name": "pinched_nonexample",
+       "kind": "non-example",
+       "statement": "P^1_C over R with i, -i pinched: H^0 = R but not geometrically irreducible over R; normalization needed"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "Positivity over an arbitrary field",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "definition",
+     "name": "LineBundle.IsNef",
+     "statement": "On a projective K-scheme, L is nef if (L·C) ≥ 0 for every integral closed curve C (on a projective variety this is ArakelovGeometryAndAbelianHeightsPartII §0.1's nefness). Ample implies nef; nef is stable under sums, positive multiples, restriction and pullback; big and nef pulls back to big and nef along generically finite surjective maps of equal dimension with ((p^*L)^d) = deg(p)(L^d); nefness is invariant under field extension; nefness passes to W of §2.4.",
+     "hypotheses": [
+      "X projective over K"
+     ],
+     "locator": {
+      "source": "cutkosky2015",
+      "where": "§2.2, lines 274-287 (nef classes over an arbitrary field); the definition is ArakelovGeometryAndAbelianHeightsPartII §0.1"
+     },
+     "prerequisites": [
+      "roadmap:ArakelovGeometryAndAbelianHeightsPartII §0.1",
+      "roadmap:CyclotomicClassGroupsAndStickelberger §4.3",
+      "target:2.2",
+      "target:2.3",
+      "target:2.4",
+      "roadmap:SchemeAndStackFoundations §3.3",
+      "gap:numerical-nef-big-transfer"
+     ],
+     "api": [
+      {
+       "name": "isNef_of_ample",
+       "role": "constructor",
+       "statement": "ample line bundles are nef"
+      },
+      {
+       "name": "isNef_pullback",
+       "role": "functoriality",
+       "statement": "p^*L is nef for every morphism p of projective K-schemes"
+      },
+      {
+       "name": "isNef_restrict",
+       "role": "functoriality",
+       "statement": "restrictions of nef line bundles to closed subschemes are nef"
+      },
+      {
+       "name": "isBigNef_pullback",
+       "role": "functoriality",
+       "statement": "big and nef pulls back to big and nef along generically finite surjective maps of equal dimension, with ((p^*L)^d) = deg(p)(L^d)"
+      },
+      {
+       "name": "isNef_baseChange_iff",
+       "role": "compatibility",
+       "statement": "for every projective K-scheme, L nef iff L_{K'} nef; the forward direction on an integral X is gap:numerical-nef-big-transfer, the forward direction in general (through the irreducible components) and the converse (through §2.1 and field-extension compatibility) are proved here"
+      },
+      {
+       "name": "isNef_reduction",
+       "role": "compatibility",
+       "statement": "nef on V implies nef pullback to W of §2.4"
+      }
+     ],
+     "tests": [
+      {
+       "name": "complex_line_base_change",
+       "kind": "computation",
+       "statement": "P^1_C over R with L = O(1): L_C nef on P^1_C ⊔ P^1_C (degree 1 on each component), converse computes (L·X) = 2 = 1 + 1; the line y = tx in A^2_{K(t)} dominates A^2_K, so the supplied statement is needed on integral X of every dimension"
+      },
+      {
+       "name": "P1_nef",
+       "kind": "characterisation",
+       "statement": "O(a) on P^1 is nef iff a ≥ 0; O(a,b) on P^1×P^1 iff a, b ≥ 0"
+      },
+      {
+       "name": "nef_not_ample",
+       "kind": "non-example",
+       "statement": "O(1,0) on P^1×P^1 is nef, not ample (degree 0 on {p}×P^1)"
+      },
+      {
+       "name": "blowup_bignef",
+       "kind": "computation",
+       "statement": "pullback of O(1) to the blow-up of P^2 at a point: square 1, degree 0 on E"
+      },
+      {
+       "name": "not_nef",
+       "kind": "non-example",
+       "statement": "O(1,-1) has degree -1 on {p}×P^1"
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "theorem",
+     "name": "intersectionNumber_nonneg_of_isNef / isAmple_add_of_isNef",
+     "statement": "X projective over K, Z ⊆ X closed of dimension r, D_1..D_r nef (line bundles or nef real classes): (D_1⋯D_r·Z) ≥ 0. Over an algebraically closed field: D nef and H ample imply D + H ample.",
+     "hypotheses": [
+      "X projective over K",
+      "D_i nef",
+      "algebraic closedness of K for nef-plus-ample"
+     ],
+     "locator": {
+      "source": "lazarsfeld2004",
+      "where": "Theorem 1.4.9 and Corollary 1.4.10 (uncertified); cutkosky2015 §2.2 lines 274-287"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.3",
+      "target:2.4",
+      "target:3.1",
+      "roadmap:SchemeAndStackFoundations §4.15",
+      "roadmap:CyclotomicClassGroupsAndStickelberger §4.3",
+      "roadmap:StableReduction Layer 2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "quadric_values",
+       "kind": "computation",
+       "statement": "(O(1,0)^2) = 0 ≥ 0, (O(1,0)·O(0,1)) = 1"
+      },
+      {
+       "name": "negative_square",
+       "kind": "non-example",
+       "statement": "(O(1,-1)^2) = -2 < 0 and O(1,-1) is not nef"
+      },
+      {
+       "name": "nef_plus_ample",
+       "kind": "computation",
+       "statement": "O(1,0) + O(1,1) = O(2,1) ample; O(1,0) alone nef not ample"
+      },
+      {
+       "name": "blowup",
+       "kind": "computation",
+       "statement": "on Bl_p P^2: (π^*O(1)·E) = 0 ≥ 0; π^*O(3) - E ample"
+      }
+     ]
+    },
+    {
+     "id": "3.3",
+     "kind": "theorem",
+     "name": "siu_inequality",
+     "statement": "V integral projective of dimension r ≥ 1, A, B nef line bundles with (A^r) > 0, C_1..C_{r-1} nef: (A^r)(B·C) ≤ r (A^{r-1}·B)(A·C); a nef A with (A^r) > 0 is big; extends to nef real classes.",
+     "hypotheses": [
+      "V integral projective over K",
+      "A, B, C_i nef",
+      "(A^r) > 0"
+     ],
+     "locator": {
+      "source": "dang2020",
+      "where": "Proposition 3.4.1 and Remark 3.4.3, lines 840-869; lazarsfeld2004 Theorem 2.2.15; dangfavre2021 Theorem 1.2, line 434"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "target:2.3",
+      "target:3.2",
+      "roadmap:ArakelovGeometryAndAbelianHeightsPartII §0.3",
+      "roadmap:CyclotomicClassGroupsAndStickelberger §4.3",
+      "tauceti:AlgebraicGeometry.Scheme.IdealSheafData.IsEffectiveCartier"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "quadric_equality",
+       "kind": "computation",
+       "statement": "A = O(1,1), B = O(1,0), C = O(0,1): 2 ≤ 2"
+      },
+      {
+       "name": "curve_case",
+       "kind": "degenerate",
+       "statement": "r = 1: both sides (A)(B)"
+      },
+      {
+       "name": "nonnef_B",
+       "kind": "non-example",
+       "statement": "B = O(1,-1), A = O(1,1), C = O(0,1): 2 > 0"
+      }
+     ]
+    },
+    {
+     "id": "3.4",
+     "kind": "theorem",
+     "name": "hodge_inequality_surface",
+     "statement": "S integral projective surface over K, H any line bundle with (H^2) > 0, D any line bundle: (D·H)^2 ≥ (D^2)(H^2). No positivity of H is assumed; the route derives the index theorem for H from the ample one of SchemeAndStackFoundations §5.10 by an integer combination xH + yD orthogonal to an ample class.",
+     "hypotheses": [
+      "S integral projective surface",
+      "(H^2) > 0"
+     ],
+     "locator": {
+      "source": "kleiman2005",
+      "where": "Theorem B.27, line 3803; cutkosky2015 lines 994-1003"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "target:2.3",
+      "target:2.4",
+      "roadmap:SchemeAndStackFoundations §4.13",
+      "roadmap:SchemeAndStackFoundations §4.19",
+      "roadmap:SchemeAndStackFoundations §5.10",
+      "roadmap:StableReduction Layer 2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "quadric",
+       "kind": "computation",
+       "statement": "H = O(1,1): D = O(1,-1) gives 0 ≥ -4; D = H gives 4 = 4"
+      },
+      {
+       "name": "cone",
+       "kind": "computation",
+       "statement": "quadric cone, H = D = O(1): 4 = 2·2"
+      },
+      {
+       "name": "negative_H",
+       "kind": "non-example",
+       "statement": "blow-up of P^2 at two points, H = E_1, D = E_2: 0 < 1"
+      },
+      {
+       "name": "nonnef_H",
+       "kind": "computation",
+       "statement": "blow-up of P^2 at a point, H = 2L + E (not nef: H·E = -1, H^2 = 3): D = E gives 1 ≥ -3, D = L gives 4 ≥ 3"
+      }
+     ]
+    },
+    {
+     "id": "3.5",
+     "kind": "theorem",
+     "name": "khovanskii_teissier",
+     "statement": "V integral projective of dimension d ≥ 2, A, B, C_1..C_{d-2} nef (line bundles or nef real classes): (A·B·C)^2 ≥ (A^2·C)(B^2·C); hence s_k = (A^k B^{d-k}) satisfies s_k^2 ≥ s_{k-1}s_{k+1}.",
+     "hypotheses": [
+      "V integral projective over K",
+      "all classes nef",
+      "d ≥ 2"
+     ],
+     "locator": {
+      "source": "cutkosky2015",
+      "where": "Theorem 6.1 and Corollary 6.3, lines 983-1033; lazarsfeld2004 Theorem 1.6.1, Corollary 1.6.3; guedj2010 line 1180"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.3",
+      "target:2.4",
+      "target:3.1",
+      "target:3.2",
+      "target:3.4",
+      "roadmap:LefschetzPencilsAndVanishingCycles §5.1",
+      "roadmap:CyclotomicClassGroupsAndStickelberger §4.3",
+      "roadmap:StableReduction Layer 2",
+      "tauceti:AlgebraicGeometry.Scheme.IdealSheafData.IsEffectiveCartier"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "quadric",
+       "kind": "computation",
+       "statement": "O(1,0), O(0,1): 1 ≥ 0; O(2,1), O(1,1): 9 ≥ 8"
+      },
+      {
+       "name": "projective_space",
+       "kind": "degenerate",
+       "statement": "aH, bH on P^d: equality"
+      },
+      {
+       "name": "disjoint_planes",
+       "kind": "non-example",
+       "statement": "P^2 ⊔ P^2 with (O(2),O(1)), (O(1),O(2)): 16 < 25"
+      }
+     ]
+    },
+    {
+     "id": "3.6",
+     "kind": "theorem",
+     "name": "siu_inequality_products",
+     "statement": "V integral projective of dimension r ≥ 1, 1 ≤ i ≤ r, nef A_1..A_i, B, C_1..C_{r-i} with (B^r) > 0: (B^r)(A_1⋯A_i·C) ≤ (r-i+1)^i (A_1⋯A_i·B^{r-i})(B^i·C). Consequently nef A, B with positive top powers have all (A^k B^{r-k}) > 0.",
+     "hypotheses": [
+      "V integral projective over K",
+      "all classes nef",
+      "(B^r) > 0"
+     ],
+     "locator": {
+      "source": "dang2020",
+      "where": "Theorem 3, line 141; Theorem 3.4.4 and proof, lines 871-883; dangfavre2021 Theorem 1.2, lines 427-433"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.3",
+      "target:2.4",
+      "target:3.1",
+      "target:3.2",
+      "target:3.3",
+      "roadmap:LefschetzPencilsAndVanishingCycles §5.1",
+      "roadmap:CyclotomicClassGroupsAndStickelberger §4.3",
+      "roadmap:StableReduction Layer 2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "product_of_lines",
+       "kind": "computation",
+       "statement": "(P^1)^3, B = h1+h2+h3, A1 = h1, A2 = h2, C = h3: 6 ≤ 8 (equality 6 = 6 with binom(3,2))"
+      },
+      {
+       "name": "boundary_i",
+       "kind": "degenerate",
+       "statement": "i = r equality; i = 1 is §3.3"
+      },
+      {
+       "name": "reducible_nonexample",
+       "kind": "non-example",
+       "statement": "P^2 ⊔ P^2, B = (O(1),O(2)), A1 = C = (O(1),O): 5 > 2"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "Degrees of dominant rational maps",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "definition",
+     "name": "RationalMap.mixedDegree",
+     "statement": "deg(f; L_1..L_{d-k} | M_1..M_k) = (π_1^*L_1⋯π_1^*L_{d-k}·π_2^*M_1⋯π_2^*M_k)_{Γ_f}; deg_k(f; L, M); deg_{k,ω}(f) = deg_k(f; ω, ω). Model independence with factor e; product formula on X×Y; formula through f^* = π_{1*}(c_1(π_2^*M)…∩[Γ_f]); multilinearity.",
+     "hypotheses": [
+      "X, Y projective varieties of the same dimension d ≥ 1",
+      "f dominant",
+      "0 ≤ k ≤ d"
+     ],
+     "locator": {
+      "source": "dangfavre2021",
+      "where": "§1.3, lines 436-443 and footnote 4, lines 452-453; dang2020 lines 21-25; dinhsibony2005 lines 61-63; russakovskiishiffman1997 lines 499-505; fulton1998 Theorem 1.4 and Proposition 2.5 (uncertified, by locator)"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:2.2",
+      "target:2.3",
+      "roadmap:CyclotomicClassGroupsAndStickelberger §4.3",
+      "roadmap:SchemeAndStackFoundations §5.2",
+      "roadmap:SchemeAndStackFoundations §5.3"
+     ],
+     "api": [
+      {
+       "name": "mixedDegree_model",
+       "role": "model independence",
+       "statement": "for Γ' with q_1 generically finite of degree e and q_2 = f∘q_1, the numbers on Γ' are e·deg"
+      },
+      {
+       "name": "mixedDegree_prod",
+       "role": "compatibility",
+       "statement": "deg equals the numerical intersection of pr_1^*L, pr_2^*M along Γ_f in X×Y"
+      },
+      {
+       "name": "mixedDegree_chow",
+       "role": "compatibility",
+       "statement": "deg = deg(c_1(L)^{d-k} ∩ f^*(M^k)) with f^* = π_{1*}(c_1(π_2^*M)^k ∩ [Γ_f])"
+      },
+      {
+       "name": "mixedDegree_multilinear",
+       "role": "structure",
+       "statement": "multilinear, symmetric within each group"
+      }
+     ],
+     "tests": [
+      {
+       "name": "identity",
+       "kind": "degenerate",
+       "statement": "deg_k(id; L, M) = (L^{d-k}M^k)_X"
+      },
+      {
+       "name": "square_map",
+       "kind": "computation",
+       "statement": "z ↦ z^2 on P^1: deg_0 = 1, deg_1 = 2; model q_1 = f gives factor e = 2"
+      },
+      {
+       "name": "cremona_product",
+       "kind": "computation",
+       "statement": "Cremona of P^2: (pr_1^*H·pr_2^*H·Γ_σ) = 2"
+      }
+     ]
+    },
+    {
+     "id": "4.2",
+     "kind": "theorem",
+     "name": "mixedDegree_values / mixedDegree_pos",
+     "statement": "deg_0(f; L, M) = (L^d); deg_d(f; L, M) = e(f)(M^d); for a morphism deg_k = (L^{d-k}(f^*M)^k); f^*ω ≅ qω with (ω^d) ≠ 0 gives deg_{k,ω} = q^k(ω^d) and e(f) = q^d; integer for line bundles; nef gives ≥ 0 and monotonicity; big and nef (or real polarizations) give deg_k > 0 for all k.",
+     "hypotheses": [
+      "X, Y projective varieties of dimension d ≥ 1",
+      "f dominant",
+      "L, M nef/big as stated"
+     ],
+     "locator": {
+      "source": "dangfavre2021",
+      "where": "lines 436-443 and footnote 5, line 454; russakovskiishiffman1997 lines 506-511"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.2",
+      "target:2.3",
+      "target:3.1",
+      "target:3.2",
+      "target:3.6",
+      "target:4.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "cremona",
+       "kind": "computation",
+       "statement": "degrees (1, 2, 1)"
+      },
+      {
+       "name": "frobenius",
+       "kind": "computation",
+       "statement": "deg_{k,H}(F) = p^k, e(F) = p^d"
+      },
+      {
+       "name": "nef_not_big",
+       "kind": "non-example",
+       "statement": "P^1×P^1, id, ω = O(1,0): deg_1 = 0"
+      },
+      {
+       "name": "real_polarization",
+       "kind": "computation",
+       "statement": "ω = O(1,0)+O(0,1), id: deg_1 = 2"
+      }
+     ]
+    },
+    {
+     "id": "4.3",
+     "kind": "theorem",
+     "name": "mixedDegree_normalization / mixedDegree_baseChange",
+     "statement": "deg_k(f̃; ν^*L, ν^*M) = deg_k(f; L, M); for K'/K, deg_k(f; L, M) is the K'-number on (Γ_f)_{K'} with its fundamental cycle, and equals deg_k(f_{K'}; L_{K'}, M_{K'}) when X, Y are geometrically integral.",
+     "hypotheses": [
+      "X, Y projective varieties",
+      "f dominant",
+      "geometric integrality for f_{K'}"
+     ],
+     "locator": {
+      "source": "truong2020",
+      "where": "§6.3, lines 1529-1533; dang2020 lines 18-20"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "target:2.1",
+      "target:2.3",
+      "target:3.1",
+      "target:4.1",
+      "roadmap:CyclotomicClassGroupsAndStickelberger §4.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "complex_line",
+       "kind": "computation",
+       "statement": "P^1_C over R, id, O(1): 2 over R = 1 + 1 over C"
+      },
+      {
+       "name": "cusp",
+       "kind": "computation",
+       "statement": "cuspidal cubic: ν^*O(1) = O(3), deg_0 = 3 on both sides"
+      },
+      {
+       "name": "cremona_fields",
+       "kind": "compatibility",
+       "statement": "Cremona over Q and C: (1, 2, 1)"
+      }
+     ]
+    },
+    {
+     "id": "4.4",
+     "kind": "theorem",
+     "name": "mixedDegree_comp_le",
+     "statement": "f_1 : X_1 ⤏ X_2, f_2 : X_2 ⤏ X_3 dominant, equal dimension d ≥ 1, L_j nef with L_2 big and nef (or a real polarization): deg_k(f_2∘f_1; L_1, L_3) ≤ ((d-k+1)^k/(L_2^d)) deg_k(f_1; L_1, L_2) deg_k(f_2; L_2, L_3).",
+     "hypotheses": [
+      "X_j projective varieties of dimension d ≥ 1",
+      "f_j dominant",
+      "L_1, L_3 nef, L_2 big and nef"
+     ],
+     "locator": {
+      "source": "dang2020",
+      "where": "Theorem 1 (i), lines 27-30; Theorem 5.2.1, lines 1271-1358; dangfavre2021 Theorem 1.3, lines 448-451; truong2020 Theorem 1.1 (1), lines 143-158; dinhsibony2005 Proposition 6, lines 245-247"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.3",
+      "target:3.1",
+      "target:3.6",
+      "target:4.1",
+      "target:4.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "square_map",
+       "kind": "computation",
+       "statement": "4 ≤ 1·2·2 equality on P^1"
+      },
+      {
+       "name": "cremona",
+       "kind": "computation",
+       "statement": "1 ≤ 2·2·2 = 8"
+      },
+      {
+       "name": "morphisms",
+       "kind": "computation",
+       "statement": "(ab)^k ≤ (d-k+1)^k a^k b^k"
+      },
+      {
+       "name": "top_degree",
+       "kind": "degenerate",
+       "statement": "k = d equality, e.g. 2p = p·2 for Frobenius then squaring on P^1"
+      }
+     ]
+    },
+    {
+     "id": "4.5",
+     "kind": "theorem",
+     "name": "mixedDegree_comparison / mixedDegree_conj",
+     "statement": "For real polarizations ω, ω' on X there is C ≥ 1 with C^{-1}deg_{k,ω}(f) ≤ deg_{k,ω'}(f) ≤ C deg_{k,ω}(f) for all dominant f; for birational φ : X ⤏ Y the same holds between deg_{k,ω_X}(f) and deg_{k,ω_Y}(φ∘f∘φ^{-1}), and (φ∘f∘φ^{-1})^n = φ∘f^n∘φ^{-1}.",
+     "hypotheses": [
+      "X, Y projective varieties of dimension d ≥ 1",
+      "ω, ω' real polarizations",
+      "φ birational"
+     ],
+     "locator": {
+      "source": "dang2020",
+      "where": "Theorem 1 (ii), lines 31-41; dangfavre2021 Theorem 1.3, lines 457-460; dinhsibony2005 Corollaire 7, lines 256-263"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:2.3",
+      "target:3.2",
+      "target:4.2",
+      "target:4.4",
+      "mathlib:AlgebraicGeometry.Scheme.PartialIso.symm",
+      "mathlib:AlgebraicGeometry.Scheme.RationalMap.comp_assoc"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "swap",
+       "kind": "computation",
+       "statement": "swap of P^1×P^1: deg_1 = 2 for O(1,1), 5 for O(2,1); C = 9"
+      },
+      {
+       "name": "curve_case",
+       "kind": "degenerate",
+       "statement": "d = 1: deg_{1,ω} = e(f)(ω) exactly"
+      },
+      {
+       "name": "cremona_conj",
+       "kind": "computation",
+       "statement": "linear conjugate of Cremona: deg_1 = 2"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "Dynamical degrees and algebraic entropy",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "definition",
+     "name": "RationalMap.dynamicalDegree",
+     "statement": "λ_k(f) = lim_n deg_{k,ω}(f^n)^{1/n}; the limit exists and equals inf_{n ≥ 1}(C_k(ω) deg_{k,ω}(f^n))^{1/n} with C_k(ω) = (d-k+1)^k/(ω^d).",
+     "hypotheses": [
+      "X projective variety of dimension d ≥ 1",
+      "f dominant self-map",
+      "ω a real polarization",
+      "0 ≤ k ≤ d"
+     ],
+     "locator": {
+      "source": "dangfavre2021",
+      "where": "lines 461-465; dang2020 lines 42-46; dinhsibony2005 Corollaire 7, lines 256-259; silverman2014 Proposition 7, lines 383-413"
+     },
+     "prerequisites": [
+      "target:4.2",
+      "target:4.4",
+      "target:4.5",
+      "mathlib:Subadditive",
+      "mathlib:Subadditive.tendsto_lim",
+      "mathlib:Subadditive.lim",
+      "mathlib:Subadditive.lim_le_div",
+      "mathlib:AlgebraicGeometry.Scheme.RationalMap.comp",
+      "mathlib:AlgebraicGeometry.Scheme.RationalMap.comp_assoc"
+     ],
+     "api": [
+      {
+       "name": "dynamicalDegree_tendsto",
+       "role": "existence",
+       "statement": "deg_{k,ω}(f^n)^{1/n} -> λ_k(f)"
+      },
+      {
+       "name": "dynamicalDegree_eq_iInf",
+       "role": "characterisation",
+       "statement": "λ_k(f) = inf_n (C_k(ω) deg_{k,ω}(f^n))^{1/n}"
+      }
+     ],
+     "tests": [
+      {
+       "name": "morphism",
+       "kind": "computation",
+       "statement": "morphism of P^d of degree a: λ_k = a^k; for 1 ≤ k ≤ d-1 the infimum is not attained at n = 1 (value (d-k+1)^k a^k there), for k = 0 and k = d the sequence is constant and it is attained"
+      },
+      {
+       "name": "cremona",
+       "kind": "computation",
+       "statement": "deg_1(σ^n) alternates 2, 1: λ_1 = 1"
+      },
+      {
+       "name": "fibonacci",
+       "kind": "computation",
+       "statement": "fib(n+2)^{1/n} -> golden ratio"
+      }
+     ]
+    },
+    {
+     "id": "5.2",
+     "kind": "theorem",
+     "name": "dynamicalDegree_properties",
+     "statement": "λ_k(f) ∈ [1, ∞); independent of ω; λ_k(f^m) = λ_k(f)^m; λ_0 = 1; λ_d = e(f); λ_k^2 ≥ λ_{k-1}λ_{k+1}; λ_k ≤ λ_1^k.",
+     "hypotheses": [
+      "X projective variety of dimension d ≥ 1",
+      "f dominant"
+     ],
+     "locator": {
+      "source": "dang2020",
+      "where": "lines 42-46; dangfavre2021 lines 464-467; guedj2010 lines 1136-1140 and Théorème 2.4 (a), line 1180"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:3.5",
+      "target:4.2",
+      "target:4.5",
+      "target:5.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "fibonacci",
+       "kind": "computation",
+       "statement": "(1, golden ratio, 1), golden ratio^2 ≈ 2.618 ≥ 1"
+      },
+      {
+       "name": "frobenius",
+       "kind": "computation",
+       "statement": "λ_k = p^k, λ_d = p^d = e"
+      },
+      {
+       "name": "cremona_square",
+       "kind": "computation",
+       "statement": "Cremona λ_k = 1; squaring map (1, 2)"
+      }
+     ]
+    },
+    {
+     "id": "5.3",
+     "kind": "theorem",
+     "name": "dynamicalDegree_invariance",
+     "statement": "λ_k(φ∘f∘φ^{-1}) = λ_k(f) for birational φ; λ_k(f̃) = λ_k(f); λ_k(f_{K'}) = λ_k(f) for X geometrically integral, and the cycle-level formula in general.",
+     "hypotheses": [
+      "X projective variety",
+      "φ birational to a projective variety",
+      "geometric integrality for f_{K'}"
+     ],
+     "locator": {
+      "source": "truong2020",
+      "where": "Theorem 1.1 (2), lines 159-164; §6.3, line 1529; dang2020 lines 35-46; dinhsibony2005 Corollaire 7"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "target:4.3",
+      "target:4.5",
+      "target:5.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "cremona_conj",
+       "kind": "computation",
+       "statement": "linear conjugate of Cremona: λ_1 = 1"
+      },
+      {
+       "name": "cusp",
+       "kind": "degenerate",
+       "statement": "cuspidal cubic, f = id: λ = 1 on X and P^1"
+      },
+      {
+       "name": "complex_line",
+       "kind": "compatibility",
+       "statement": "P^1_C over R, id: λ_1 = 1 over R and C"
+      }
+     ]
+    },
+    {
+     "id": "5.4",
+     "kind": "definition",
+     "name": "RationalMap.algebraicEntropy",
+     "statement": "h_alg(f) = log max_k λ_k(f) ≥ 0; invariant under birational conjugacy, normalization and field extension (geometrically integral); h_alg(f^n) = n h_alg(f); log e(f) ≤ h_alg(f) ≤ d log λ_1(f); the maximizing indices form an interval.",
+     "hypotheses": [
+      "X projective variety of dimension d ≥ 1",
+      "f dominant"
+     ],
+     "locator": {
+      "source": "dinhsibony2005",
+      "where": "Théorème 1, lines 33-37; guedj2010 Théorème 2.4, lines 1178-1181"
+     },
+     "prerequisites": [
+      "target:5.2",
+      "target:5.3"
+     ],
+     "api": [
+      {
+       "name": "algebraicEntropy_nonneg",
+       "role": "structure",
+       "statement": "h_alg ≥ 0"
+      },
+      {
+       "name": "algebraicEntropy_pow",
+       "role": "structure",
+       "statement": "h_alg(f^n) = n h_alg(f)"
+      },
+      {
+       "name": "algebraicEntropy_bounds",
+       "role": "bounds",
+       "statement": "log e(f) ≤ h_alg(f) ≤ d log λ_1(f)"
+      }
+     ],
+     "tests": [
+      {
+       "name": "morphism",
+       "kind": "computation",
+       "statement": "morphism of P^d of degree a: d log a"
+      },
+      {
+       "name": "cremona",
+       "kind": "degenerate",
+       "statement": "0"
+      },
+      {
+       "name": "fibonacci",
+       "kind": "computation",
+       "statement": "log golden ratio ≈ 0.4812, attained at k = 1 only"
+      },
+      {
+       "name": "frobenius",
+       "kind": "computation",
+       "statement": "d log p"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "6",
+   "title": "Projective space and affine space",
+   "targets": [
+    {
+     "id": "6.1",
+     "kind": "theorem",
+     "name": "projectiveSpace_rationalMap_forms",
+     "statement": "Forms F_0..F_d of a common degree, not all zero, define a unique K-rational map of P^d; every K-rational map of P^d is given by forms without common factor, unique up to a scalar, of degree deg f, with domain the complement of V(F) (codimension ≥ 2); composition is substitution divided by the gcd, deg(g∘f) ≤ deg f·deg g with equality if f or g is a morphism.",
+     "hypotheses": [
+      "K a field",
+      "d ≥ 1"
+     ],
+     "locator": {
+      "source": "stacks-constructions",
+      "where": "Lemma 13.1 (tag 01NE), line 1267; silverman2014 lines 350-357; guedj2010 lines 1145-1147"
+     },
+     "prerequisites": [
+      "mathlib:AlgebraicGeometry.Proj",
+      "mathlib:MvPolynomial.homogeneousSubmodule",
+      "mathlib:MvPolynomial.gradedAlgebra",
+      "mathlib:MvPolynomial.uniqueFactorizationMonoid",
+      "mathlib:AlgebraicGeometry.Scheme.RationalMap.equivFunctionFieldOver",
+      "mathlib:AlgebraicGeometry.Scheme.RationalMap.comp",
+      "roadmap:SchemeAndStackFoundations §0.3",
+      "roadmap:StableReduction Layer 2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "binary_forms",
+       "kind": "compatibility",
+       "statement": "d = 1 agrees with ArithmeticDynamics §0.18 and §0.26"
+      },
+      {
+       "name": "cremona_forms",
+       "kind": "computation",
+       "statement": "(x1x2, x0x2, x0x1) reduced; composite (x0x1x2)(x0, x1, x2)"
+      },
+      {
+       "name": "common_factor",
+       "kind": "non-example",
+       "statement": "(x0^2, x0x1, x0x2) defines the identity, degree 1 not 2"
+      }
+     ]
+    },
+    {
+     "id": "6.2",
+     "kind": "theorem",
+     "name": "projectiveSpace_degree_formulas",
+     "statement": "For f given by reduced forms of degree a ≥ 1, dominant: deg_{1,H}(f) = a; deg_{k+1,H} ≤ a·deg_{k,H} so deg_{k,H} ≤ a^k; equality for morphisms; for morphisms deg_{k,H}(f^n) = a^{nk}, λ_k = a^k, e = a^d; λ_1(f) = lim (deg f^n)^{1/n}; deg_{1,H}(g∘f) ≤ deg_{1,H}(f)deg_{1,H}(g).",
+     "hypotheses": [
+      "f dominant self-map of P^d given by reduced forms of degree a ≥ 1"
+     ],
+     "locator": {
+      "source": "russakovskiishiffman1997",
+      "where": "Lemma 4.4, lines 516-541; Lemma 4.6, lines 582-583; lines 506-514; guedj2010 Exemple 2.2; silverman2014 lines 350-357, (3) line 387"
+     },
+     "prerequisites": [
+      "target:3.2",
+      "target:4.1",
+      "target:4.2",
+      "target:5.1",
+      "target:5.2",
+      "target:6.1",
+      "roadmap:CyclotomicClassGroupsAndStickelberger §4.3",
+      "tauceti:AlgebraicGeometry.Scheme.IdealSheafData.IsEffectiveCartier",
+      "roadmap:ArithmeticDynamics §0.18",
+      "roadmap:ArithmeticDynamics §0.26"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "P1",
+       "kind": "compatibility",
+       "statement": "d = 1: deg_{1,H} = deg f of ArithmeticDynamics §0.18 and λ_1 = deg f = e"
+      },
+      {
+       "name": "cremona_strict",
+       "kind": "computation",
+       "statement": "Cremona of P^2: deg_2 = 1 < 4 = a^2, δ_2 = a^2 - 3"
+      },
+      {
+       "name": "frobenius",
+       "kind": "computation",
+       "statement": "deg_{k,H} = p^k"
+      },
+      {
+       "name": "nonreduced",
+       "kind": "non-example",
+       "statement": "(x0^2, x0x1, x0x2): deg_{1,H} = 1 ≠ 2"
+      }
+     ]
+    },
+    {
+     "id": "6.3",
+     "kind": "example",
+     "name": "projectiveSpace_standard_examples",
+     "statement": "Cremona σ on P^d, d ≥ 2: σ∘σ = id, deg_{1,H}(σ) = d, deg_{1,H}(σ^2) = 1 < d^2, e = 1, λ_k = 1, h_alg = 0. Fibonacci map [yz : xy : z^2]: f^n = [x^{fib(n-1)}y^{fib n}z^{fib n} : x^{fib n}y^{fib(n+1)} : z^{fib(n+2)}], deg_{1,H}(f^n) = fib(n+2), λ_1 = golden ratio, λ_2 = 1, h_alg = log golden ratio. Frobenius: λ_k = p^k, λ_d = e = p^d.",
+     "hypotheses": [
+      "d ≥ 2 for the Cremona involution",
+      "characteristic p for Frobenius"
+     ],
+     "locator": {
+      "source": "silverman2014",
+      "where": "Example 5, lines 358-372; guedj2010 Exemple 2.5, lines 1272-1282; russakovskiishiffman1997 lines 542-552; truong2020 §6.4, lines 1542-1544"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:4.2",
+      "target:5.1",
+      "target:5.2",
+      "target:5.3",
+      "target:5.4",
+      "target:6.1",
+      "target:6.2",
+      "mathlib:Nat.fib",
+      "mathlib:Real.goldenRatio"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "fibonacci_n2",
+       "kind": "computation",
+       "statement": "[xyz : xy^2 : z^3], degree 3 = fib 4; n = 3: degree 5"
+      },
+      {
+       "name": "cremona_P3",
+       "kind": "computation",
+       "statement": "deg_1(σ) = 3, deg_1(σ^2) = 1"
+      },
+      {
+       "name": "frobenius_p2",
+       "kind": "computation",
+       "statement": "p = 2, d = 1: deg_1 = 2 = e"
+      }
+     ]
+    },
+    {
+     "id": "6.4",
+     "kind": "theorem",
+     "name": "affineSpace_polynomialMap",
+     "statement": "For F : A^d -> A^d dominant with a = max deg F_i: the extension [x_0^a : x_0^a F_i(x/x_0)] has reduced forms of degree a, restricts to F on A^d; deg_{1,H}(f) = a; λ_d(f) = e(f) = [K(x) : K(F)]; extensions compose; proper F is finite and surjective.",
+     "hypotheses": [
+      "F_1..F_d algebraically independent over K"
+     ],
+     "locator": {
+      "source": "dangfavre2021",
+      "where": "lines 177-180; silverman2014 Example 6, lines 373-380"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:5.2",
+      "target:6.1",
+      "target:6.2",
+      "mathlib:AlgebraicGeometry.IsFinite.iff_isProper_and_isAffineHom",
+      "mathlib:AlgebraicGeometry.IsAffineHom"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "square_first",
+       "kind": "computation",
+       "statement": "(x^2, y): a = e = 2, λ_1 = 2, λ_2 = 2, base point [0:0:1]"
+      },
+      {
+       "name": "henon",
+       "kind": "computation",
+       "statement": "(y, x + y^2): λ_1 = 2, λ_2 = 1"
+      },
+      {
+       "name": "silverman_A3",
+       "kind": "computation",
+       "statement": "(y, z, x + yz): degrees 2, 3, 5, λ_1 = golden ratio, λ_3 = 1"
+      },
+      {
+       "name": "not_proper",
+       "kind": "non-example",
+       "statement": "(x, xy): empty fibre over (0, 1), not proper"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "CyclotomicClassGroupsAndStickelberger",
+   "sections": [
+    "§4.3"
+   ],
+   "what": "numerical intersections on proper schemes over a field: polynomiality, symmetry, additivity, projection formula, Cartier restriction, ample positivity, field-extension compatibility"
+  },
+  {
+   "roadmap": "ArakelovGeometryAndAbelianHeightsPartII",
+   "sections": [
+    "§0.1",
+    "§0.3"
+   ],
+   "what": "geometric nefness; volume, bigness, Hilbert-Samuel for nef, Siu's inequality vol(L-M) ≥ L^d - d L^{d-1}M"
+  },
+  {
+   "roadmap": "LefschetzPencilsAndVanishingCycles",
+   "sections": [
+    "§5.1"
+   ],
+   "what": "Bertini irreducibility for the generic linear section"
+  },
+  {
+   "roadmap": "SchemeAndStackFoundations",
+   "sections": [
+    "§0.3",
+    "§0.7",
+    "§0.11",
+    "§0.20",
+    "§0.30",
+    "§2.6",
+    "§3.3",
+    "§4.11",
+    "§4.12",
+    "§4.13",
+    "§4.15",
+    "§4.16",
+    "§4.19",
+    "§5.1",
+    "§5.2",
+    "§5.3",
+    "§5.10"
+   ],
+   "what": "Proj and twisting sheaves, dimension theory, field descent, normalization, coherent cohomology and Serre vanishing, curve degrees, modifications, Chow's lemma, regular=smooth, Nakai-Moishezon over algebraically closed fields, alterations, de Jong, Chow groups and first Chern classes, Hodge index and Riemann-Roch on smooth surfaces"
+  },
+  {
+   "roadmap": "StableReduction",
+   "sections": [
+    "Layer 2"
+   ],
+   "what": "ampleness, projective morphisms, tensor powers, global generation"
+  },
+  {
+   "roadmap": "ArithmeticDynamics",
+   "sections": [
+    "§0.18",
+    "§0.26"
+   ],
+   "what": "rational self-maps of P^1 by binary forms and their scheme endomorphisms (Check of §6.2)"
+  }
+ ],
+ "consumers": [
+  {
+   "roadmap": "DynamicalDegreesOfRationalMaps, Part II",
+   "what": "numerical cycle spaces N^k over an arbitrary field, spectral description of λ_k, relative dynamical degrees and product formula"
+  },
+  {
+   "roadmap": "arithmetic degrees and canonical heights of rational self-maps of P^N (continuing ArithmeticDynamics)",
+   "what": "λ_1, §6.2 and sub-multiplicativity"
+  },
+  {
+   "roadmap": "spectral interpretations of dynamical degrees (Dang-Favre)",
+   "what": "deg_{k,ω}, comparison of polarizations, λ_1 and λ_2"
+  },
+  {
+   "roadmap": "complex dynamics (entropy bounds, invariant measures)",
+   "what": "h_alg and log-concavity"
+  }
+ ],
+ "gaps": [
+  {
+   "slug": "numerical-nef-big-transfer",
+   "title": "nefness under extension of the ground field",
+   "neededBy": [
+    "3.1",
+    "3.2",
+    "3.3",
+    "3.4",
+    "3.5",
+    "3.6"
+   ],
+   "detail": "The field-extension part of the contract StableReductionPartII records for SchemeAndStackFoundations under the same name, in its forward direction on a projective integral K-scheme. §3.1 derives from it the converse and the statement for every projective K-scheme, and uses it to transport nefness to the integral variety over an algebraically closed field of §2.4.",
+   "needs": "For a projective integral K-scheme X, a line bundle L on X and a field extension K'/K, if (L · C) ≥ 0 for every integral closed curve C ⊆ X, then (L_{K'} · C') ≥ 0 for every integral closed curve C' ⊆ X_{K'}.",
+   "supplier": "SchemeAndStackFoundations",
+   "section": "§5.3"
+  }
+ ]
+}
