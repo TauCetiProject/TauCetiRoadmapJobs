@@ -1,0 +1,159 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ComplexComparisonPartII"
+
+[[source]]
+id = "ega4-4"
+authors = "A. Grothendieck, J. Dieudonné"
+title = "Éléments de géométrie algébrique IV: Étude locale des schémas et des morphismes de schémas, quatrième partie"
+year = 1967
+venue = "Publ. Math. IHÉS 32 (1967), 5–361"
+locator_scheme = "equation"
+locator = "(16.8.1)"
+url = "https://www.numdam.org/item/PMIHES_1967__32__5_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1967__32__5_0.pdf"
+fetched_at = "2026-11-07T12:13:03Z"
+sha256 = "b4277fb99c6edf8feec5b01f54368e4b8521bcd52871316c0edf6ff4ae69389e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["C5.1"]
+
+[[source]]
+id = "schroer-enriques"
+authors = "Stefan Schröer"
+title = "There is no Enriques surface over the integers"
+year = 2020
+venue = "Ann. of Math. 197 (2023), 1--63"
+arxiv = "2004.07025v3"
+locator_scheme = "theorem"
+locator = "Lemma 1.1"
+url = "https://arxiv.org/abs/2004.07025v3"
+fetched_from = "https://arxiv.org/pdf/2004.07025v3"
+fetched_at = "2026-11-07T12:13:14Z"
+sha256 = "ae6481f25627867473ba40db3b08e5f4b861de8aa103204eefc5ad1123a46d61"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v3"
+cited_for = ["C3.2d"]
+
+[[source]]
+id = "sga1"
+authors = "Alexander Grothendieck, Michèle Raynaud"
+title = "Revêtements étales et groupe fondamental (SGA 1)"
+year = 2002
+arxiv = "math/0206203v2"
+locator_scheme = "theorem"
+locator = "Exposé XII, Théorème 5.1"
+url = "https://arxiv.org/abs/math/0206203v2"
+fetched_from = "https://arxiv.org/pdf/math/0206203v2"
+fetched_at = "2026-11-07T12:13:44Z"
+sha256 = "8e64218d356456c534eebf996940f0f957e43b54f1a080241debe12cbaf60d3c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v2"
+cited_for = ["C-1.2", "C1.9", "C6.2"]
+
+[[source]]
+id = "kleiman-picard"
+authors = "Steven L. Kleiman"
+title = "The Picard scheme"
+year = 2005
+arxiv = "math/0504020v1"
+locator_scheme = "theorem"
+locator = "Propositions 5.10, 5.20"
+url = "https://arxiv.org/abs/math/0504020v1"
+fetched_from = "https://arxiv.org/pdf/math/0504020v1"
+fetched_at = "2026-11-07T12:13:52Z"
+sha256 = "cc14e62f0ebebb8617777651bbcd08bb7548cb9fe955f3a25bb6491c5f3beeaa"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["C3.2f"]
+
+[[source]]
+id = "raynaud-picard"
+authors = "Michel Raynaud"
+title = "Spécialisation du foncteur de Picard"
+year = 1970
+venue = "Publ. Math. IHÉS 38 (1970), 27–76"
+locator_scheme = "theorem"
+locator = "Proposition 6.2.1"
+url = "https://www.numdam.org/article/PMIHES_1970__38__27_0.pdf"
+fetched_from = "https://www.numdam.org/article/PMIHES_1970__38__27_0.pdf"
+fetched_at = "2026-11-07T12:13:54Z"
+sha256 = "fdba4b96e9f3fa3eeb158868217b95ffd4172f128148a70013115666cf04cf92"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["C3.2d"]
+
+[[source]]
+id = "artin-approximation"
+authors = "Michael Artin"
+title = "Algebraic approximation of structures over complete local rings"
+year = 1969
+venue = "Publ. Math. IHÉS 36 (1969), 23–58"
+locator_scheme = "theorem"
+locator = "Corollary 2.6"
+url = "https://www.numdam.org/item/PMIHES_1969__36__23_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1969__36__23_0.pdf"
+fetched_at = "2026-11-07T12:13:55Z"
+sha256 = "38beaf58d5c557675c3783b6f25a68cfb1bbdbec84882e996f9d7d4b4cc6b434"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["C-1.3"]
+
+[[source]]
+id = "deligne-hodge2"
+authors = "Pierre Deligne"
+title = "Théorie de Hodge II"
+year = 1971
+venue = "Publ. Math. IHÉS 40 (1971), 5–57"
+locator_scheme = "equation"
+locator = "(3.1.2)"
+url = "https://www.numdam.org/item/PMIHES_1971__40__5_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1971__40__5_0.pdf"
+fetched_at = "2026-11-07T12:14:03Z"
+sha256 = "748edefb44fded8af67869abfed87062d66977d25b5d12f7d014f1810a063c3f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["C-1.4"]
+
+[[source]]
+id = "sga4"
+authors = "M. Artin, A. Grothendieck, J.-L. Verdier"
+title = "Théorie des topos et cohomologie étale des schémas (SGA 4)"
+year = 1972
+venue = "Lecture Notes in Math. 269, 270, 305; retyped edition"
+locator_scheme = "theorem"
+locator = "Exposé XVI, Théorème 4.1"
+url = "https://www.normalesup.org/~forgogozo/SGA4/tomes/SGA4.pdf"
+fetched_from = "https://www.normalesup.org/~forgogozo/SGA4/tomes/SGA4.pdf"
+fetched_at = "2026-11-07T12:14:46Z"
+sha256 = "872f57995f67e6dc1dfe29f043d31fa145f42389143b692d1c9d7241e3165b46"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["C6.3", "C6.4", "C6.5"]
+
+[[source]]
+id = "hatcher-at"
+authors = "Allen Hatcher"
+title = "Algebraic Topology"
+year = 2002
+venue = "Cambridge University Press"
+locator_scheme = "section"
+locator = "§3.H"
+url = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_at = "2026-11-07T12:15:20Z"
+sha256 = "bebb3032bf9021b956da3bd070eb6c67dc662cf849be9cdf6679f677560e5618"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["C6.1"]
