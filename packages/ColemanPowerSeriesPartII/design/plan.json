@@ -3272,44 +3272,55 @@
     }
   ],
   "gaps": [
-    {
-      "id": "G1",
-      "title": "Height-two universal norms over ramified finite bases",
-      "neededBy": [
-        "ColemanPowerSeriesPartII:AU.2/formal-norm-vanishing"
-      ],
-      "detail": "Hazewinkel Theorem1.3 was read with its proof, but assumes an absolutely unramified base. Supply a valid ramified finite-base/cofinality estimate forcing every coordinate of lim_N F(m_(Ψ_n)) and lim_N F(m_(Θ_n)) to vanish. Rubin Proposition4.5 states the vanishing at Φ and cites Hazewinkel; that alone does not justify all finite coordinates. A uniform filtration depth tending to infinity at each fixed ramified layer would close this gap. Lead recorded by the review: Θ_∞ and Ψ_∞ are Galois p-adic Lie extensions with infinite inertia, hence deeply ramified (Fesenko 1998, §2.5 with Proposition 2.3, via Sen's theorem), and for a deeply ramified field Fesenko's Theorem 1.1(4) gives H¹(Gal(F′/F),M_F′)=0 for every finite F′. Coates–Greenberg (Invent. Math. 124, 1996, not read here) derive from this the vanishing of H¹ of formal-group points over deeply ramified fields; that would give the direct-limit Kummer defect vanishing needed in AU.2 directly, without the inverse-limit statement. Source issue E15 records the citation gap in Rubin and BKO."
-    },
-    {
-      "id": "G2",
-      "title": "Original height-two reciprocity proof and dual-exponential normalization",
-      "neededBy": [
-        "ColemanPowerSeriesPartII:AU.2/wiles-pairing",
-        "ColemanPowerSeriesPartII:AU.2/wiles-dual-exponential"
-      ],
-      "detail": "The BKO trace formula and Rubin Theorem5.3 were read. Wiles 1978, Higher explicit reciprocity laws, Annals107,235–254 (DOI10.2307/1971143) original proof was not obtained. Kato1993 ChapterII Theorem2.1.7 is not cleared in the supplied library and was not read. Supply a lawful original proof or a complete accessible replacement for height-two Lubin–Tate reciprocity, with arithmetic Artin sign, π=−p basis, π^(−m−1−k) trace formula and its character dual-exponential comparison. The height-one Coates–Wiles formula is not a replacement."
-    },
-    {
-      "id": "G3",
-      "title": "Supersingular finite-field counts not yet owned",
-      "neededBy": [
-        "ColemanPowerSeriesPartII:AU.5/supersingular-auxiliary",
-        "ColemanPowerSeriesPartII:AU.5/moduli-etale",
-        "ColemanPowerSeriesPartII:AU.5/generic-supersingular-count",
-        "ColemanPowerSeriesPartII:AU.5/exceptional-supersingular-count",
-        "ColemanPowerSeriesPartII:AU.2/formal-kummer-duality"
-      ],
-      "detail": "Deuring's supersingular j-count, Schoof's F_(p²) counts N(t) with twists, existence of a supersingular j in F_p and the j=0,1728 criteria are cited through Tau Ceti EllipticCurves Layer 3, which stops at the ordinary/supersingular dichotomy and the Hasse bound. The accepted BKO extraction routes them to Elliptic curves, Part II (design #3398), whose stages do not exist yet. Request R18 and the second restructure entry record the target; until then the input is unowned."
-    },
-    {
-      "id": "G4",
-      "title": "Early nonordinary CM special-value inputs not yet owned",
-      "neededBy": [
-        "ColemanPowerSeriesPartII:AU.4/early-cm-interface"
-      ],
-      "detail": "The zeta classes with Kato's dual-exponential formula, the canonical-character root number and period, the auxiliary prime ℓ and Finis's unit theorem at the inert prime are anchored at AutomorphicPadicLFunctions L3, which excludes nonordinary CM types. The accepted BKO extraction routes them to the nonordinary CM continuation (design #3350), whose stages do not exist yet. Request R3 and the first restructure entry record the target; until then the input is unowned."
-    }
-  ],
+  {
+    "slug": "quadratic-iwasawa-twist",
+    "supplier": "PadicMeasuresIwasawaAlgebras",
+    "section": "1.7, 4.2–4.5",
+    "needs": "For O the integers of an unramified quadratic p-adic field and Γ=G⁺×G⁻≃ℤ_p², supply the continuous O-coefficient coordinates, character evaluations, κ⁻¹-twist automorphism and its closed coordinate quotients, compatible with finite coefficient extension."
+  },
+  {
+    "slug": "ramified-height-two-norms",
+    "supplier": "LubinTateFormalModulesAndQuasiCanonicalLifts",
+    "section": "LT.9, formal-trace",
+    "needs": "For the height-two module F and every fixed finite layer of Ψ_∞ or Θ_∞, supply a formal-norm filtration estimate whose depth tends to infinity up the tower, including when that fixed layer is ramified over ℚ_p."
+  },
+  {
+    "slug": "formal-kummer-limit-adjunction",
+    "supplier": "ArithmeticGaloisDuality",
+    "section": "D7.6, local abelian-variety duality",
+    "needs": "Supply compatibility of local abelian-variety duality with restriction, corestriction and finite Kummer images, and with the adjoint of the transported O-action, sufficient to identify the formal Kummer defect dual with the inverse limit of formal norms in both specified towers."
+  },
+  {
+    "slug": "height-two-explicit-reciprocity",
+    "supplier": "PadicHodgeRegulators",
+    "section": "L1, exponential and dual exponential",
+    "needs": "Supply the height-two Lubin–Tate reciprocity comparison for the actual Kummer class with arithmetic Artin convention, π=−p Tate basis and differential λ′(0)=1, including the factor π^(−n−1) in the finite-character dual-exponential sum and the modulo-O trace formula of §2.6."
+  },
+  {
+    "slug": "supersingular-trace-counts",
+    "supplier": "EllipticCurves",
+    "section": "Layer 3, elliptic curves over finite fields",
+    "needs": "Supply Deuring’s supersingular j-count with the j=0 and j=1728 criteria, existence of a supersingular j in 𝔽_p, and the 𝔽_(p²) trace/twist classification showing that every nonexceptional supersingular j has a scalar-Frobenius representative."
+  },
+  {
+    "slug": "composite-genus-formula",
+    "supplier": "ModularCurvesPartII",
+    "section": "5.10 and generic genus comparison",
+    "needs": "For arbitrary composite N prime to p, supply the full Γ₀(N) genus formula 2g−2=μ/6−ν₂/2−2ν₃/3−ν_∞, with the cusp and elliptic-point counts giving μ=N∏_(ℓ∣N)(1+1/ℓ), compatibly with the smooth integral modular model."
+  },
+  {
+    "slug": "integral-hecke-point-relation",
+    "supplier": "ModularCurvesPartII",
+    "section": "9.1, 9.9, 13.1–13.2 and 16.6–16.8",
+    "needs": "Supply the good-reduction p-isogeny correspondence on those composite mixed-level models, its p+1 marked neighbours and the point-valued modular-quotient identity f(T_p z)=a_p(E)f(z), including conductor-zero and conductor-one boundary orbits."
+  },
+  {
+    "slug": "good-prime-manin-unit",
+    "supplier": "EllipticCurveModularity",
+    "section": "R29.5",
+    "needs": "For an optimal strong Weil curve of conductor N and any prime p∤N, supply the p-unit property of its Manin constant, compatible with its integral parametrization and optimal isogeny-class replacement."
+  }
+],
   "coverage": [
     {
       "stageId": "ColemanPowerSeriesPartII:AU.0",
