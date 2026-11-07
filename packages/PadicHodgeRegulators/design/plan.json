@@ -1,30 +1,6 @@
 {
   "gaps": [
     {
-      "slug": "dagger-syntomic-filtration",
-      "supplier": "CohomologyComparisonsPartII",
-      "section": "§§2.1–2.3",
-      "needs": "For smooth affine schemes over a complete mixed-characteristic DVR with perfect residue field, supply integer-weight Huber–Kings dagger-tube syntomic cohomology and its Chern-compatible comparison with compactification-filtered rigid cohomology, an equivalence at points and on smooth proper models via derived analytic descent."
-    },
-    {
-      "slug": "rigid-negative-weights",
-      "supplier": "CohomologyComparisonsPartII",
-      "section": "§§2.1–2.3",
-      "needs": "Extend the compactification-filtered fibre and its functorial product/comparison diagram to integer weights n<0 using Fⁿ=F⁰ and the same p⁻ⁿφ."
-    },
-    {
-      "slug": "normalized-syntomic-boundary",
-      "supplier": "CohomologyComparisonsPartII",
-      "section": "§§3.4,5.2–5.3",
-      "needs": "For quasi-compact formal semistable schemes, r≥1, identify the rational divided boundary with the Bloch–Kato sign and p⁻ʳ times the undivided boundary, with the degree range and proper exponential square of README §4.6."
-    },
-    {
-      "slug": "semistable-period-descent",
-      "supplier": "CohomologyComparisonsPartII",
-      "section": "§§5.1–5.3",
-      "needs": "Identify semistable extension complexes and uniformizer changes over finite semistable realization fields with base-field potentially semistable coordinates, compatibly with restriction and normalized trace."
-    },
-    {
       "slug": "completed-bloch-comparison",
       "supplier": "KTheoryFiniteLocalFields",
       "section": "§§6.6–6.7",
