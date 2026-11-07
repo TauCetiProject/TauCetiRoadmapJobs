@@ -8,7 +8,7 @@ title = "Mathematical Methods in Quantum Mechanics, with Applications to Schröd
 year = 2009
 venue = "Graduate Studies in Mathematics 99, American Mathematical Society"
 locator_scheme = "section"
-locator = "§3.3, §6.1, §7.1, §9.2, Ch. 12"
+locator = "§2.3 (Theorems 2.12–2.13), §3.3 (Lemmas 3.14–3.16, 3.19, (3.83)–(3.85)), Theorem 4.10, Corollary 4.11, Lemma 6.3, Theorem 6.4, Lemma 6.17, Theorem 7.8, Lemmas 7.9 and 7.11, Theorem 10.2, §12.1 (Lemma 12.1, Theorem 12.2)"
 url = "https://www.mat.univie.ac.at/~gerald/ftp/book-schroe/schroe.pdf"
 fetched_from = "https://www.mat.univie.ac.at/~gerald/ftp/book-schroe/schroe.pdf"
 fetched_at = "2026-11-05T00:43:56Z"
@@ -16,8 +16,8 @@ sha256 = "8dc8de0b58aa0a3fedfe594a345f9b5875322e5526ea581cb640a98d55b82818"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-05"
-version_note = "Author-hosted online edition (GSM 99, 2009); theorem numbers of the fetched text: Lemmas 3.14–3.15, 3.19, (3.85), Theorem 6.4, Theorem 7.8, Lemma 7.9, Theorem 10.2, Lemma 6.17."
-cited_for = ["Layer 1", "Layer 3"]
+version_note = "Author-hosted online edition (GSM 99, 2009); the theorem numbers and line locators are those of the fetched text. The printed lower bound in Theorem 6.4 (6.3) has the denominator a − 1 where the resolvent argument of its proof gives 1 − a; the roadmap states the corrected form."
+cited_for = ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "2.1", "2.2", "2.3", "3.4", "3.9", "3.10", "4.1", "4.2", "4.3", "4.4"]
 
 [[source]]
 id = "bms02"
@@ -27,7 +27,7 @@ year = 2002
 doi = "10.1070/RM2002v057n04ABEH000532"
 arxiv = "math/0201231v3"
 locator_scheme = "theorem"
-locator = "Section 2.1, Corollary 2.10"
+locator = "§2.1 (standing connectedness assumption; minimal operator as the closure from C_c^∞, maximal operator as its adjoint), Theorem 2.3, Theorem 2.7, Corollary 2.10, Remark 2.12"
 url = "https://arxiv.org/abs/math/0201231v3"
 fetched_from = "https://arxiv.org/pdf/math/0201231v3"
 fetched_at = "2026-11-05T00:44:01Z"
@@ -35,8 +35,8 @@ sha256 = "28e5ce3be552637742704c510d363f837f977b4f3ff09c13ec8d60950e9a06cd"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-version_note = "arXiv v3 is the version read; Theorem 1.1 and Corollary 1.3 of the arXiv text; check against the Annals numbering before citing the published version."
-cited_for = ["Layer 2"]
+version_note = "arXiv v3 is the version read; §2, Theorem 2.3, Corollary 2.10 and Remark 2.12 of the arXiv text; check against the Russian Math. Surveys numbering before citing the published version."
+cited_for = ["3.2", "3.3", "3.6"]
 
 [[source]]
 id = "strichartz83"
@@ -51,7 +51,7 @@ url = "https://www.sciencedirect.com/science/article/pii/0022123683900903"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Layer 2"]
+cited_for = ["3.6"]
 
 [[source]]
 id = "chernoff73"
@@ -66,7 +66,7 @@ url = "https://www.sciencedirect.com/science/article/pii/0022123673900037"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Layer 2"]
+cited_for = ["3.6"]
 
 [[source]]
 id = "kps26"
@@ -76,7 +76,7 @@ year = 2026
 venue = "Annals of Mathematics 203 (2026), no. 2, 349–470"
 arxiv = "2010.05881v3"
 locator_scheme = "theorem"
-locator = "Theorem 1.1"
+locator = "(1.1)–(1.6) and Theorem 1.1"
 url = "https://arxiv.org/abs/2010.05881v3"
 fetched_from = "https://arxiv.org/pdf/2010.05881v3"
 fetched_at = "2026-11-05T00:48:04Z"
@@ -84,8 +84,8 @@ sha256 = "dc0ef8c1e44224a78fba41ec549754ded32f5ba4dff59a949a66d1d1ad2630a9"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-version_note = "arXiv v3 (dated 2 May 2025) is the version read; its text layer is partly OCR. Theorem 1.1 of the arXiv text is the main theorem; check against the Annals numbering before citing the published version."
-cited_for = ["Layer 3"]
+version_note = "arXiv v3 (dated 2 May 2025) is the version read; its text layer is OCR (the conjugation bar in (1.3) is lost in the OCR; the reality of V is stated in the text). Theorem 1.1 of the arXiv text is the main theorem; check against the Annals numbering before citing the published version."
+cited_for = ["4.5", "Layer 4 Examples"]
 
 [[source]]
 id = "hm23"
@@ -95,7 +95,7 @@ year = 2023
 venue = "Annals of Mathematics 198 (2023), no. 2, 791–824"
 arxiv = "2107.05292v3"
 locator_scheme = "theorem"
-locator = "Theorem 1.1 and Corollary 1.3"
+locator = "Introduction (line 39–47), Theorem 1.1, Corollary 1.3"
 url = "https://arxiv.org/abs/2107.05292v3"
 fetched_from = "https://arxiv.org/pdf/2107.05292v3"
 fetched_at = "2026-11-05T00:48:13Z"
@@ -104,7 +104,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v3 is the version read; Theorem 1.1 and Corollary 1.3 of the arXiv text; check against the Annals numbering before citing the published version."
-cited_for = ["Layer 2"]
+cited_for = ["3.7", "Worked examples"]
 
 [[source]]
 id = "kato76"
@@ -114,12 +114,12 @@ year = 1976
 venue = "Grundlehren 132, 2nd ed., Springer 1976; Classics in Mathematics reprint 1995"
 doi = "10.1007/978-3-642-66282-9"
 locator_scheme = "theorem"
-locator = "Ch. V §4.1 Theorem 4.3 (Kato–Rellich); Ch. X §4.4 Theorem 4.4 (Kato–Rosenblum)"
+locator = "Ch. V §4.1 (Kato–Rellich and the lower bound); Ch. X §4.4 (Kato–Rosenblum)"
 url = "https://doi.org/10.1007/978-3-642-66282-9"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Layer 1", "Layer 3"]
+cited_for = ["2.3", "1.9"]
 
 [[source]]
 id = "cfks87"
@@ -134,7 +134,7 @@ url = "https://doi.org/10.1007/978-3-540-77522-5"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Layer 3"]
+cited_for = ["4.4"]
 
 [[source]]
 id = "lp80"
@@ -144,7 +144,7 @@ year = 1980
 venue = "Bulletin of the American Mathematical Society (N.S.) 2, 261–295"
 doi = "10.1090/S0273-0979-1980-14735-7"
 locator_scheme = "theorem"
-locator = "Theorem 2.1, Corollary 2.2, §§4–7"
+locator = "§2: (2.8)–(2.10) (x-independent waves, s = log y, v = u/√y) and (2.15)–(2.17) (zero Fourier coefficient on a cusp), Theorem 2.1, Corollary 2.2; §§4–7"
 url = "https://www.ams.org/journals/bull/1980-02-02/S0273-0979-1980-14735-7/S0273-0979-1980-14735-7.pdf"
 fetched_from = "https://www.ams.org/journals/bull/1980-02-02/S0273-0979-1980-14735-7/S0273-0979-1980-14735-7.pdf"
 fetched_at = "2026-11-05T00:49:24Z"
@@ -152,7 +152,7 @@ sha256 = "7729c0d956f5b6bf1b0f0ccf80888a787c8c76d06f600fede7d852215b4e2ac3"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["Layer 2"]
+cited_for = ["3.10", "Motivation for a future roadmap"]
 
 [[source]]
 id = "gaffney54"
@@ -167,7 +167,7 @@ url = "https://doi.org/10.2307/1969703"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (JSTOR); cited by its locator without the text"
-cited_for = ["Layer 2"]
+cited_for = ["3.5", "3.6"]
 
 [[source]]
 id = "rs1"
@@ -176,11 +176,11 @@ title = "Methods of Modern Mathematical Physics I: Functional Analysis"
 year = 1980
 venue = "Academic Press, revised and enlarged edition"
 locator_scheme = "section"
-locator = "§VII.2 (the spectral measures μ_ψ and the decomposition H = H_pp ⊕ H_ac ⊕ H_sing), §VIII.3 (the spectral theorem for unbounded self-adjoint operators)"
+locator = "§VII.2 (the spectral measures μ_ψ and the decomposition into pure point, absolutely continuous and singular parts)"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Layer 1"]
+cited_for = ["1.1"]
 
 [[source]]
 id = "rs2"
@@ -189,11 +189,11 @@ title = "Methods of Modern Mathematical Physics II: Fourier Analysis, Self-Adjoi
 year = 1975
 venue = "Academic Press"
 locator_scheme = "theorem"
-locator = "Theorem X.12 (Kato–Rellich) in §X.2; Ch. IX (Sobolev spaces H^s and the domain of −Δ); the examples of §X.2 on −Δ + V"
+locator = "Ch. IX (Sobolev spaces and the domain of −Δ); §X.1 (essential self-adjointness examples: −Δ on ℝⁿ minus a point, limit-circle potentials); §X.2 and Theorem X.12 (Kato–Rellich)"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Layer 3"]
+cited_for = ["2.3", "3.6", "3.9", "4.1", "4.4"]
 
 [[source]]
 id = "rs3"
@@ -202,11 +202,11 @@ title = "Methods of Modern Mathematical Physics III: Scattering Theory"
 year = 1979
 venue = "Academic Press"
 locator_scheme = "theorem"
-locator = "§XI.3, the Kato–Rosenblum theorem on trace-class perturbations (Theorem XI.8 in the authors' numbering; verify against the text)"
+locator = "§XI.3, Theorems XI.7 (Pearson) and XI.8 (Kato–Rosenblum)"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Layer 1"]
+cited_for = ["1.9"]
 
 [[source]]
 id = "grigoryan09"
@@ -215,11 +215,11 @@ title = "Heat Kernel and Analysis on Manifolds"
 year = 2009
 venue = "AMS/IP Studies in Advanced Mathematics 47"
 locator_scheme = "chapter"
-locator = "Ch. 4 (the Dirichlet Laplacian: minimal and maximal operators, H¹ and the Friedrichs realisation), Ch. 11 (essential self-adjointness of the Laplacian on a complete manifold)"
+locator = "Ch. 3–4 (the Laplacian, Green formula, minimal and maximal operators, H¹ and the Dirichlet Laplacian), Ch. 11 (essential self-adjointness on complete manifolds)"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Layer 2"]
+cited_for = ["3.1", "3.4", "3.5", "3.6"]
 
 [[source]]
 id = "chavel84"
@@ -232,7 +232,7 @@ locator = "Ch. I (the Laplacian on compact manifolds, the spectral theorem for t
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Layer 2"]
+cited_for = ["3.8"]
 
 [[source]]
 id = "iwaniec02"
@@ -245,7 +245,7 @@ locator = "Ch. 4 (the spectral theorem, discrete part), Ch. 7 (the spectral theo
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Layer 2"]
+cited_for = ["3.10", "Motivation for a future roadmap"]
 
 [[source]]
 id = "lp76"
@@ -260,4 +260,40 @@ url = "https://doi.org/10.1515/9781400881567"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Layer 2"]
+cited_for = ["Motivation for a future roadmap"]
+
+[[source]]
+id = "rosenblum57"
+authors = "Marvin Rosenblum"
+title = "Perturbation of the continuous spectrum and unitary equivalence"
+year = 1957
+venue = "Pacific Journal of Mathematics 7 (1957), no. 1, 997–1010"
+doi = "10.2140/pjm.1957.7.997"
+locator_scheme = "theorem"
+locator = "Theorem 1.6 (trace-class perturbation of purely absolutely continuous operators) and its proof"
+url = "https://msp.org/pjm/1957/7-1/pjm-v7-n1-p18-s.pdf"
+fetched_from = "https://msp.org/pjm/1957/7-1/pjm-v7-n1-p18-s.pdf"
+fetched_at = "2026-11-06T01:55:34Z"
+sha256 = "8506abefd951f314efd17db6f6afaea0bd40cfd1bdb880a071a5b9b33ee740a2"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["1.8", "1.9"]
+
+[[source]]
+id = "kato57"
+authors = "Tosio Kato"
+title = "Perturbation of continuous spectra by trace class operators"
+year = 1957
+venue = "Proceedings of the Japan Academy 33 (1957), no. 5, 260–264"
+doi = "10.3792/pja/1195525063"
+locator_scheme = "theorem"
+locator = "Theorem 1, Lemma 2.1 and inequalities (2.6)–(2.11)"
+url = "https://www.jstage.jst.go.jp/article/pjab1945/33/5/33_5_260/_pdf/-char/en"
+fetched_from = "https://www.jstage.jst.go.jp/article/pjab1945/33/5/33_5_260/_pdf/-char/en"
+fetched_at = "2026-11-06T01:55:48Z"
+sha256 = "12ce9d67ed67d096f82b55a6ef7b778a83c16d5e2f020d4946d58112f3f93fe5"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["1.8", "1.9"]
