@@ -1,0 +1,1863 @@
+{
+ "roadmap": "Varifolds",
+ "title": "varifolds",
+ "parent": null,
+ "summary": "General theory of k-varifolds on open subsets of smooth Riemannian manifolds, in the generality of Allard and Simon's Chapter 8: Grassmann bundle in projection form, varifold carrier and convergence, rectifiable and integral varifolds, push-forward and blow-ups, first variation and its Riesz decomposition, comparison of first variations under change of metric, smooth and embedded comparisons, Euclidean and intrinsic Riemannian monotonicity, densities, constancy, Allard's rectifiability theorem, compactness for rectifiable and integral varifolds under C^2 convergence of metrics, varifold tangents and tangent cones, regular and singular sets, and the comparison with GeometricCurrents G6's auxiliary varifold.",
+ "baseline": {
+  "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+  "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
+ },
+ "layers": [
+  {
+   "key": "1",
+   "title": "The Grassmann bundle and the varifold carrier",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "definition",
+     "name": "Varifolds.grassmannian",
+     "statement": "For a finite-dimensional real inner product space E and 0 <= k <= dim E, G(E,k) is the set of self-adjoint idempotent continuous linear maps of E with k-dimensional range, with the operator-norm metric; S -> P_S is a bijection from k-dimensional subspaces onto G(E,k).",
+     "hypotheses": [
+      "E finite-dimensional real inner product space",
+      "0 <= k <= dim E"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "§38, line 7295-7300"
+     },
+     "prerequisites": [
+      "mathlib:IsStarProjection",
+      "mathlib:Submodule.starProjection",
+      "mathlib:isStarProjection_iff_eq_starProjection_range"
+     ],
+     "api": [
+      {
+       "name": "isCompact",
+       "role": "structure",
+       "statement": "G(E,k) is compact; every element has norm at most 1, equal to 1 when k >= 1."
+      },
+      {
+       "name": "complement",
+       "role": "structure",
+       "statement": "P -> 1 - P is a homeomorphism G(E,k) -> G(E, dim E - k); tr P = k."
+      },
+      {
+       "name": "isometry action",
+       "role": "functoriality",
+       "statement": "a linear isometry U gives the homeomorphism P -> U P U^{-1}, functorial in U."
+      },
+      {
+       "name": "tangential trace",
+       "role": "evaluation",
+       "statement": "P -> tr(P A) is continuous and linear with |tr(P A)| <= k ||A||."
+      },
+      {
+       "name": "image plane",
+       "role": "continuity",
+       "statement": "for injective L the projection onto L(range P) depends continuously on (L,P)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "dist lines",
+       "kind": "computation",
+       "statement": "||P_{l_theta} - P_{l_0}|| = |sin theta| for lines of R^2; perpendicular lines are at distance 1 (Frobenius would give sqrt 2)."
+      },
+      {
+       "name": "degenerate ranks",
+       "kind": "degenerate",
+       "statement": "G(E,0) = {0} and G(E,dim E) = {1}."
+      },
+      {
+       "name": "idempotent non-example",
+       "kind": "non-example",
+       "statement": "[[1,t],[0,0]] is idempotent, not self-adjoint, so not in G(R^2,1); including such maps would destroy compactness."
+      },
+      {
+       "name": "rank",
+       "kind": "characterisation",
+       "statement": "diag(1,1,0) lies in G(R^3,2), not in G(R^3,1), and has trace 2."
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "construction",
+     "name": "Varifolds.GrassmannBundle",
+     "statement": "G_k(W) is the set of pairs (x,P) with x in W and P in G(T_xM,k) for g_x, topologised as a subspace of the total space of the endomorphism bundle; pi(x,P) = x. It is homeomorphic over W to GeometricCurrents G6's unoriented Grassmann bundle via S -> P_S; pi is proper with fibres G(T_xM,k).",
+     "hypotheses": [
+      "(M,g) smooth Riemannian, Hausdorff, second countable, boundaryless",
+      "W open in M"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "§38, line 7301-7305"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "roadmap:GeometricCurrents G6",
+      "mathlib:IsRiemannianManifold"
+     ],
+     "api": [
+      {
+       "name": "proper projection",
+       "role": "structure",
+       "statement": "pi is continuous, open and proper; G_k(K) is compact for compact K; G_k(W) is locally compact, Hausdorff, second countable, metrizable."
+      },
+      {
+       "name": "trivialisation",
+       "role": "structure",
+       "statement": "an orthonormal frame on U gives G_k(U) = U x G(R^N,k) over U; G_k(W') is open for open W'."
+      },
+      {
+       "name": "G6 comparison",
+       "role": "compatibility",
+       "statement": "S -> (x,P_S) is a homeomorphism from G6's bundle onto G_k(W) commuting with projections."
+      },
+      {
+       "name": "isometries",
+       "role": "functoriality",
+       "statement": "an isometry f induces (x,P) -> (f x, df P df^{-1})."
+      },
+      {
+       "name": "change of metric",
+       "role": "compatibility",
+       "statement": "for metrics g,h the canonical homeomorphism sends P^g_S to P^h_S; identity for h = c^2 g."
+      }
+     ],
+     "tests": [
+      {
+       "name": "lines of R^2",
+       "kind": "computation",
+       "statement": "G_1(W) = W x RP^1 for W open in R^2."
+      },
+      {
+       "name": "degenerate",
+       "kind": "degenerate",
+       "statement": "k = 0 and k = N give bundles identified with W."
+      },
+      {
+       "name": "metric dependence",
+       "kind": "non-example",
+       "statement": "for h = diag(1,4) and u = (1,1) the h-projection sends e_1 to u/5, the Euclidean one to u/2."
+      },
+      {
+       "name": "compact sphere",
+       "kind": "characterisation",
+       "statement": "G_1(S^2) is compact although TS^2 is nontrivial."
+      }
+     ]
+    },
+    {
+     "id": "1.3",
+     "kind": "definition",
+     "name": "Varifolds.Varifold",
+     "statement": "A k-varifold on W is a Radon measure V on G_k(W); its weight is pi_*V, its mass V(G_k(W)), its support the support of the weight; V restricted to A is V on G_k(A).",
+     "hypotheses": [
+      "W open in M"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "§38, line 7308-7317"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "mathlib:MeasureTheory.Measure.map",
+      "mathlib:MeasureTheory.Measure.ext_of_integral_eq_on_compactlySupported",
+      "mathlib:MeasureTheory.Measure.Regular.of_sigmaCompactSpace_of_isLocallyFiniteMeasure"
+     ],
+     "api": [
+      {
+       "name": "cone",
+       "role": "structure",
+       "statement": "varifolds form a cone; Dirac varifolds have Dirac weights."
+      },
+      {
+       "name": "ext",
+       "role": "extensionality",
+       "statement": "varifolds agreeing on all compactly supported continuous functions are equal."
+      },
+      {
+       "name": "weight integral",
+       "role": "evaluation",
+       "statement": "integral of phi against the weight equals integral of phi o pi against V."
+      },
+      {
+       "name": "carried by support",
+       "role": "structure",
+       "statement": "V(G_k(W minus spt||V||)) = 0."
+      },
+      {
+       "name": "restriction",
+       "role": "functoriality",
+       "statement": "restriction to open sets is transitive, local and commutes with weights."
+      }
+     ],
+     "tests": [
+      {
+       "name": "weight not determining",
+       "kind": "non-example",
+       "statement": "horizontal and vertical lifts of H^1 on the x-axis have equal weights and differ on chi(x) tr(P diag(1,0))."
+      },
+      {
+       "name": "mass of a line",
+       "kind": "computation",
+       "statement": "the horizontal lift of H^1 on the x-axis has mass 2 on the unit disc."
+      },
+      {
+       "name": "degenerate",
+       "kind": "degenerate",
+       "statement": "V restricted to the empty set is 0; spt of a Dirac varifold at x is {x}."
+      }
+     ]
+    },
+    {
+     "id": "1.4",
+     "kind": "definition",
+     "name": "Varifolds.Varifold.Tendsto",
+     "statement": "V_j -> V when the integrals of every compactly supported continuous function on G_k(W) converge; every sequence with locally bounded mass has a convergent subsequence.",
+     "hypotheses": [
+      "W open in M"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "§4.4 line 1038-1045; §38 line 7336-7338"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "roadmap:GeometricCurrents G6",
+      "tauceti:TauCeti.isCompact_closure_of_isTightMeasureSet_of_mass_le"
+     ],
+     "api": [
+      {
+       "name": "weights",
+       "role": "compatibility",
+       "statement": "convergence of varifolds implies convergence of weights."
+      },
+      {
+       "name": "portmanteau",
+       "role": "characterisation",
+       "statement": "lim sup on compact sets <= limit; lim inf on open sets >= limit; convergence on continuity sets."
+      },
+      {
+       "name": "local bound",
+       "role": "structure",
+       "statement": "a convergent sequence has locally bounded mass."
+      },
+      {
+       "name": "compactness",
+       "role": "structure",
+       "statement": "locally bounded mass implies a convergent subsequence (G6 Radon compactness)."
+      },
+      {
+       "name": "locality",
+       "role": "functoriality",
+       "statement": "convergence commutes with restriction to open sets and is local."
+      }
+     ],
+     "tests": [
+      {
+       "name": "moving Dirac",
+       "kind": "computation",
+       "statement": "delta_{(1/j,P)} -> delta_{(0,P)}."
+      },
+      {
+       "name": "escaping mass",
+       "kind": "degenerate",
+       "statement": "delta_{(j e_1,P)} -> 0 on R^N; masses 1, limit 0."
+      },
+      {
+       "name": "alternating planes",
+       "kind": "non-example",
+       "statement": "alternating horizontal and vertical lifts of the same weight have no limit."
+      },
+      {
+       "name": "unbounded mass",
+       "kind": "non-example",
+       "statement": "j delta_{(0,P)} has no convergent subsequence."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "Rectifiable and integral varifolds",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "definition",
+     "name": "Varifolds.HasApproxTangentSpace",
+     "statement": "A Radon measure mu on W has approximate tangent space T with multiplicity theta in (0,inf) at x when lambda^{-k} mu(exp_x(lambda .)) -> theta H^k on T vaguely; if this holds mu-a.e., the set of such points is countably k-rectifiable and mu = theta H^k restricted to it, and conversely.",
+     "hypotheses": [
+      "mu Radon on W",
+      "0 <= k <= N"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "11.4-11.9, line 2276-2374"
+     },
+     "prerequisites": [
+      "roadmap:GeometricMeasureTheory G2",
+      "roadmap:GeometricCurrents G2",
+      "mathlib:Besicovitch.ae_tendsto_rnDeriv",
+      "roadmap:HopfRinow Layer 2",
+      "tauceti:TauCeti.CountablyRectifiable"
+     ],
+     "api": [
+      {
+       "name": "criterion",
+       "role": "characterisation",
+       "statement": "a.e. approximate tangent spaces imply mu = theta H^k on a countably rectifiable set (Simon 11.8)."
+      },
+      {
+       "name": "converse",
+       "role": "characterisation",
+       "statement": "theta H^k on a countably rectifiable set has approximate tangent spaces a.e."
+      },
+      {
+       "name": "chart comparison",
+       "role": "compatibility",
+       "statement": "mu has (T,theta) at x iff phi_* mu has (dphi_x T, theta / J_T dphi_x) at phi(x)."
+      },
+      {
+       "name": "uniqueness",
+       "role": "structure",
+       "statement": "approximate tangent space and multiplicity are unique."
+      }
+     ],
+     "tests": [
+      {
+       "name": "line",
+       "kind": "computation",
+       "statement": "H^1 on the x-axis has multiplicity 1; 2 H^1 has multiplicity 2; since mu(x + lambda B_1(0)) = 2 lambda on L, a lambda^{-k+1} normalisation would give multiplicity 0 and a lambda^{-k-1} normalisation would give 2/lambda -> inf (divergent blow-ups)."
+      },
+      {
+       "name": "Lebesgue",
+       "kind": "non-example",
+       "statement": "Lebesgue measure on R^2 with k = 1 has no approximate tangent line."
+      },
+      {
+       "name": "Dirac",
+       "kind": "degenerate",
+       "statement": "delta_0 with k = 1 has blow-up mass lambda^{-1} -> inf."
+      },
+      {
+       "name": "chart scaling",
+       "kind": "compatibility",
+       "statement": "for phi = 2 id, phi_* H^1 on L = 1/2 H^1 on L, multiplicity 1/2."
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "definition",
+     "name": "Varifolds.rectifiableVarifold",
+     "statement": "v(Gamma,theta) integrates 1_A(x,T_x Gamma) theta dH^k over Gamma; rectifiable varifolds are those of this form and integral ones have integer theta a.e.",
+     "hypotheses": [
+      "Gamma countably k-rectifiable, H^k-measurable",
+      "theta > 0 locally H^k-integrable"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "15.1-15.5 line 2861-2897; 38 line 7318-7326"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:2.1",
+      "roadmap:GeometricMeasureTheory G2",
+      "roadmap:GeometricCurrents G2",
+      "tauceti:TauCeti.CountablyRectifiable"
+     ],
+     "api": [
+      {
+       "name": "weight",
+       "role": "evaluation",
+       "statement": "||v(Gamma,theta)|| = theta H^k on Gamma; mass is the integral of theta."
+      },
+      {
+       "name": "null modification",
+       "role": "extensionality",
+       "statement": "v is unchanged by H^k-null changes of Gamma and theta."
+      },
+      {
+       "name": "additivity",
+       "role": "structure",
+       "statement": "sums and restrictions of rectifiable varifolds."
+      },
+      {
+       "name": "characterisation",
+       "role": "characterisation",
+       "statement": "V rectifiable iff its weight is theta H^k on a rectifiable set and V lifts it by tangent planes."
+      },
+      {
+       "name": "k = 0",
+       "role": "degenerate",
+       "statement": "v(Gamma,theta) = sum theta(x) delta_{(x,0)} for countable Gamma."
+      }
+     ],
+     "tests": [
+      {
+       "name": "half multiplicity",
+       "kind": "computation",
+       "statement": "v(L,1/2) is rectifiable, not integral."
+      },
+      {
+       "name": "countable set",
+       "kind": "degenerate",
+       "statement": "for k >= 1 and countable Gamma, v = 0."
+      },
+      {
+       "name": "Lebesgue lift",
+       "kind": "non-example",
+       "statement": "Lebesgue measure lifted with a constant line is not rectifiable."
+      },
+      {
+       "name": "crossing lines",
+       "kind": "computation",
+       "statement": "v(L1 u L2,1) = v(L1,1) + v(L2,1)."
+      }
+     ]
+    },
+    {
+     "id": "2.3",
+     "kind": "definition",
+     "name": "Varifolds.submanifoldVarifold",
+     "statement": "[Sigma] = v(Sigma,1) for a C^1 embedded k-submanifold Sigma of W with locally finite area; its tangent planes are the classical ones and its weight is the Riemannian volume of Sigma.",
+     "hypotheses": [
+      "Sigma C^1 embedded k-submanifold of W, H^k(Sigma cap K) < inf for compact K"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "line 2861-2867"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "roadmap:GeometricMeasureTheory G2",
+      "roadmap:GeometricCurrents G2",
+      "tauceti:TauCeti.riemannianVolume"
+     ],
+     "api": [
+      {
+       "name": "tangent planes",
+       "role": "evaluation",
+       "statement": "the approximate tangent plane is T_x Sigma at every point."
+      },
+      {
+       "name": "weight",
+       "role": "compatibility",
+       "statement": "weight equals the Riemannian volume of Sigma with the induced metric."
+      },
+      {
+       "name": "support",
+       "role": "structure",
+       "statement": "spt is the closure of Sigma in W; disjoint unions add."
+      }
+     ],
+     "tests": [
+      {
+       "name": "circle",
+       "kind": "computation",
+       "statement": "the unit circle gives mass 2 pi."
+      },
+      {
+       "name": "half-line",
+       "kind": "degenerate",
+       "statement": "the open half-line has support the closed half-line."
+      },
+      {
+       "name": "figure eight",
+       "kind": "non-example",
+       "statement": "the figure-eight image is not embedded, so [.] is undefined, while v(image,1) exists."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "Push-forward, blow-ups and tangent spaces",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "construction",
+     "name": "Varifolds.Varifold.pushforward",
+     "statement": "For f: W -> W' of class C^1, proper on spt||V||, f_#V(A) = integral of 1_A(f x, df_x S) J_S f(x) dV(x,S), with J_S f = normDet(df_x restricted to S).",
+     "hypotheses": [
+      "f C^1",
+      "f proper on spt||V||"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "39.1 line 7443-7454; 15.6-15.7 line 2903-2933"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "target:2.2",
+      "mathlib:LinearMap.normDet",
+      "roadmap:GeometricMeasureTheory G2",
+      "roadmap:GeometricCurrents G2"
+     ],
+     "api": [
+      {
+       "name": "weight formula",
+       "role": "evaluation",
+       "statement": "||f_#V||(A) = integral over pi^{-1} f^{-1} A of J_S f dV; spt ||f_#V|| subset f(spt ||V||)."
+      },
+      {
+       "name": "functoriality",
+       "role": "functoriality",
+       "statement": "id_# = id and (h o f)_# = h_# f_# (chain rule for J)."
+      },
+      {
+       "name": "isometry",
+       "role": "compatibility",
+       "statement": "for isometries J = 1 and f_# is the measure push-forward."
+      },
+      {
+       "name": "mass bound",
+       "role": "structure",
+       "statement": "||f_#V||(A) <= (sup ||df||)^k ||V||(f^{-1}A)."
+      },
+      {
+       "name": "continuity",
+       "role": "continuity",
+       "statement": "f_# preserves convergence on sets where f is uniformly proper."
+      },
+      {
+       "name": "rectifiable",
+       "role": "characterisation",
+       "statement": "f_# v(Gamma,theta) = v(f(Gamma+), fibre sum of theta); integral to integral."
+      }
+     ],
+     "tests": [
+      {
+       "name": "homothety",
+       "kind": "computation",
+       "statement": "f = 2 id maps v([0,1]x{0},1) to v([0,2]x{0},1) of mass 2."
+      },
+      {
+       "name": "projection",
+       "kind": "degenerate",
+       "statement": "f(y) = (y1,0) kills a vertical segment: f_#V = 0."
+      },
+      {
+       "name": "fold",
+       "kind": "computation",
+       "statement": "t -> t^2 maps v([-1,1],1) to v([0,1],2)."
+      },
+      {
+       "name": "non-proper",
+       "kind": "non-example",
+       "statement": "collapsing infinitely many vertical segments gives infinite mass: properness is needed."
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "construction",
+     "name": "Varifolds.Varifold.blowUp",
+     "statement": "V_{x,lambda} = (eta_{x,lambda})_# V in E and (lambda^{-1} exp_x^{-1})_# (V on a normal ball) on M, a varifold on (T_xM, g_x).",
+     "hypotheses": [
+      "lambda > 0",
+      "normal ball of x inside W"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "38.1 line 7336-7338; 19.3 line 3407-3413"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "roadmap:HopfRinow Layer 1",
+      "roadmap:HopfRinow Layer 2"
+     ],
+     "api": [
+      {
+       "name": "scaling law",
+       "role": "evaluation",
+       "statement": "||V_{x,lambda}||(A) = lambda^{-k} ||V||(x + lambda A) in E; composition of dilations."
+      },
+      {
+       "name": "normal coordinates",
+       "role": "compatibility",
+       "statement": "||V_{x,lambda}||(B_rho(0)) = lambda^{-k}(1+o(1)) ||V||(B_{lambda rho}(x))."
+      },
+      {
+       "name": "continuity",
+       "role": "continuity",
+       "statement": "V -> V_{x,lambda} preserves convergence, sums, restriction."
+      }
+     ],
+     "tests": [
+      {
+       "name": "segment",
+       "kind": "computation",
+       "statement": "v([0,1]x{0},1) blows up to v([0,1/lambda]x{0},1) of mass 1/lambda."
+      },
+      {
+       "name": "line through x",
+       "kind": "degenerate",
+       "statement": "a line through x is fixed by all blow-ups."
+      },
+      {
+       "name": "great circle",
+       "kind": "compatibility",
+       "statement": "on S^2 a great circle through x has ||V_{x,lambda}||(B_rho(0)) = 2 rho exactly."
+      },
+      {
+       "name": "missing factor",
+       "kind": "non-example",
+       "statement": "omitting lambda^{-k} would keep the mass of a segment constant."
+      }
+     ]
+    },
+    {
+     "id": "3.3",
+     "kind": "definition",
+     "name": "Varifolds.Varifold.HasTangentSpace",
+     "statement": "V has tangent space T with multiplicity theta at x when V_{x,lambda} -> theta v(T,1); fibre measures nu^x disintegrate V over its weight; if tangent spaces with multiplicity exist ||V||-a.e. then V = v(Gamma,theta) (first rectifiability theorem).",
+     "hypotheses": [
+      "V varifold on W"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "38.1-38.4 line 7333-7440"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.2",
+      "target:3.2",
+      "mathlib:MeasureTheory.Measure.condKernel",
+      "mathlib:Besicovitch.vitaliFamily",
+      "mathlib:Besicovitch.ae_tendsto_measure_inter_div_of_measurableSet",
+      "mathlib:Vitali.vitaliFamily",
+      "mathlib:VitaliFamily.ae_tendsto_average"
+     ],
+     "api": [
+      {
+       "name": "weight tangent",
+       "role": "compatibility",
+       "statement": "a tangent space of V is an approximate tangent space of ||V|| (Simon 38.2)."
+      },
+      {
+       "name": "fibre measures",
+       "role": "structure",
+       "statement": "x -> nu^x probability measures with V = integral of delta_x x nu^x d||V||; ball averages converge a.e. (E, Besicovitch) and at ||V||-a.e. point of the positive finite density set D (M, Vitali family on the geodesic density points of D)."
+      },
+      {
+       "name": "first rectifiability",
+       "role": "characterisation",
+       "statement": "a.e. tangent spaces imply V = v(Gamma,theta) (Simon 38.3)."
+      },
+      {
+       "name": "converse",
+       "role": "characterisation",
+       "statement": "rectifiable varifolds have tangent spaces a.e."
+      }
+     ],
+     "tests": [
+      {
+       "name": "crossing lines",
+       "kind": "non-example",
+       "statement": "two crossing lines have no tangent space at 0 but one elsewhere."
+      },
+      {
+       "name": "Lebesgue lift",
+       "kind": "degenerate",
+       "statement": "Lebesgue measure with a constant line has blow-up masses pi lambda -> 0: no tangent space."
+      },
+      {
+       "name": "vertical lift",
+       "kind": "non-example",
+       "statement": "the vertical lift of H^1 on an axis has weight tangents but no varifold tangent space."
+      },
+      {
+       "name": "line",
+       "kind": "computation",
+       "statement": "nu^x = delta_{P_L} for v(L,1)."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "The first variation",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "definition",
+     "name": "Varifolds.Varifold.firstVariation",
+     "statement": "div_S X = tr(P_S nabla X) with the Levi-Civita connection; deltaV(X) = integral of div_S X dV for C^1 compactly supported X; t -> ||(phi_t)_# V||(K) is differentiable with derivative deltaV(X) at 0 for the flow phi_t of X and compact K containing spt X.",
+     "hypotheses": [
+      "X C^1 with compact support in W",
+      "K compact, spt X subset K"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "39.2 line 7455-7473; 9.1-9.3 line 1860-1956"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:3.1",
+      "mathlib:CovariantDerivative.leviCivitaConnection",
+      "tauceti:TauCeti.globalFlow",
+      "tauceti:TauCeti.contMDiff_globalFlow_uncurry",
+      "tauceti:TauCeti.isCompleteVectorField_of_isCompact_of_eq_zero_off",
+      "tauceti:TauCeti.Manifold.divergence"
+     ],
+     "api": [
+      {
+       "name": "linearity and bound",
+       "role": "structure",
+       "statement": "deltaV is linear in X, additive in V, |deltaV(X)| <= k ||V||(K) sup |nabla X|."
+      },
+      {
+       "name": "locality",
+       "role": "structure",
+       "statement": "deltaV(X) = 0 if X vanishes on an open set containing spt||V|| cap spt X; restriction to open sets."
+      },
+      {
+       "name": "continuity",
+       "role": "continuity",
+       "statement": "V_j -> V implies deltaV_j(X) -> deltaV(X)."
+      },
+      {
+       "name": "degenerate dimensions",
+       "role": "degenerate",
+       "statement": "delta = 0 for k = 0; deltaV(X) = integral of div X for k = N."
+      },
+      {
+       "name": "derivative of mass",
+       "role": "characterisation",
+       "statement": "the flow derivative formula (Simon 39, Agnoletto Prop 2.6)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "circle dilation",
+       "kind": "computation",
+       "statement": "for the unit circle and X = psi y, deltaV(X) = 2 pi = d/dt 2 pi e^t at 0."
+      },
+      {
+       "name": "normal translation",
+       "kind": "computation",
+       "statement": "a normal translation field has zero first variation on a line."
+      },
+      {
+       "name": "volume",
+       "kind": "compatibility",
+       "statement": "for k = N and V = vol, deltaV = 0 (divergence theorem)."
+      },
+      {
+       "name": "support dependence",
+       "kind": "non-example",
+       "statement": "the vertical lift of H^1 on an axis has deltaV(X) != 0 for some X vanishing on the support."
+      }
+     ]
+    },
+    {
+     "id": "4.2",
+     "kind": "definition",
+     "name": "Varifolds.Varifold.IsStationary",
+     "statement": "V is stationary if deltaV = 0; V has locally bounded first variation if |deltaV(X)| <= C_K sup|X| for spt X subset K; then ||deltaV|| is Radon with the open-set sup formula and is lower semicontinuous under convergence.",
+     "hypotheses": [
+      "V varifold on W"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "39.3 line 7474-7486; 40.7(1) line 7580-7583"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "target:4.3"
+     ],
+     "api": [
+      {
+       "name": "extension",
+       "role": "structure",
+       "statement": "deltaV extends to continuous compactly supported fields."
+      },
+      {
+       "name": "support",
+       "role": "structure",
+       "statement": "spt ||deltaV|| subset spt ||V||; deltaV(X) depends only on X on spt||V||; subadditivity, homogeneity, restriction."
+      },
+      {
+       "name": "lower semicontinuity",
+       "role": "continuity",
+       "statement": "||deltaV||(U) <= lim inf ||deltaV_j||(U); stationarity passes to limits."
+      }
+     ],
+     "tests": [
+      {
+       "name": "line",
+       "kind": "computation",
+       "statement": "a line is stationary; the unit circle has ||delta|| = H^1 on it."
+      },
+      {
+       "name": "vertical lift",
+       "kind": "non-example",
+       "statement": "the vertical lift of H^1 on an axis is not of locally bounded first variation."
+      },
+      {
+       "name": "constant plane",
+       "kind": "degenerate",
+       "statement": "Lebesgue measure with a constant line and the volume (k = N) are stationary."
+      }
+     ]
+    },
+    {
+     "id": "4.3",
+     "kind": "theorem",
+     "name": "Varifolds.rieszRepresentation_vectorField",
+     "statement": "A linear functional L on compactly supported continuous vector fields on W with local sup bounds is integration of a unit field eta against a unique Radon measure ||L||, with ||L||(U) = sup{L(X): |X| <= 1, spt X subset U}.",
+     "hypotheses": [
+      "local bounds sup{L(X): |X| <= 1, spt X subset K} < inf for compact K"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "4.1-4.2 line 857-882"
+     },
+     "prerequisites": [
+      "tauceti:TauCeti.RealRMK.posPart",
+      "tauceti:TauCeti.RealRMK.negPart",
+      "tauceti:TauCeti.RealRMK.integral_rieszMeasure_posPart_sub_integral_rieszMeasure_negPart",
+      "mathlib:RealRMK.rieszMeasure",
+      "mathlib:MeasureTheory.Measure.rnDeriv"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "Dirac",
+       "kind": "computation",
+       "statement": "L(X) = <X(0),v> gives |v| delta_0 and eta = v/|v|."
+      },
+      {
+       "name": "cancellation",
+       "kind": "degenerate",
+       "statement": "two cancelling terms give ||L|| = 0."
+      },
+      {
+       "name": "Euclidean norm",
+       "kind": "non-example",
+       "statement": "L(X) = integral of X^1 + X^2 gives sqrt 2 Lebesgue, not 2 Lebesgue."
+      }
+     ]
+    },
+    {
+     "id": "4.4",
+     "kind": "theorem",
+     "name": "Varifolds.Varifold.firstVariation_eq_riesz",
+     "statement": "For locally bounded first variation, deltaV(X) = -integral <H_V,X> d||V|| + integral <eta_V,X> d sigma_V with H_V in L^1_loc, sigma_V = ||deltaV|| on a ||V||-null set, |eta_V| = 1; stationary iff H_V = 0 and sigma_V = 0; isometry and dilation laws.",
+     "hypotheses": [
+      "V of locally bounded first variation in W"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "39.3-39.4 line 7486-7509"
+     },
+     "prerequisites": [
+      "target:4.2",
+      "target:4.3",
+      "mathlib:MeasureTheory.Measure.rnDeriv",
+      "mathlib:MeasureTheory.Measure.singularPart"
+     ],
+     "api": [
+      {
+       "name": "uniqueness",
+       "role": "structure",
+       "statement": "H_V, sigma_V, eta_V unique a.e."
+      },
+      {
+       "name": "bounded mean curvature",
+       "role": "characterisation",
+       "statement": "|H_V| <= Lambda and sigma_V = 0 iff |deltaV(X)| <= Lambda integral |X| d||V||."
+      },
+      {
+       "name": "dilations",
+       "role": "functoriality",
+       "statement": "delta(V_{x,lambda})(Y) = lambda^{1-k} deltaV(Y o eta), H scales by lambda."
+      }
+     ],
+     "tests": [
+      {
+       "name": "half hyperplane",
+       "kind": "computation",
+       "statement": "H = 0, sigma = H^{N-2} on the edge, eta = -e_1."
+      },
+      {
+       "name": "variable multiplicity",
+       "kind": "non-example",
+       "statement": "v(L,1+y_1^2) has tangential H = (theta'/theta) e_1."
+      },
+      {
+       "name": "sphere",
+       "kind": "compatibility",
+       "statement": "H_{[S^k]} = -k x; dilated circle has |H| = lambda/R."
+      }
+     ]
+    },
+    {
+     "id": "4.5",
+     "kind": "theorem",
+     "name": "Varifolds.firstVariation_metric_comparison",
+     "statement": "For metrics g,h on a chart Omega, compact K and V for g, |delta_h V^h(X) - delta_g V(X)| <= C(||h-g||_{C^0} sup|DX| + ||h-g||_{C^1} sup|X|) ||V||(K); in normal coordinates the blow-ups V_{x,lambda} satisfy |delta_{g_x} V_{x,lambda}(Y)| <= lambda^{1-k}||deltaV||(B_{lambda R}(x)) sup|Y| + C lambda (sup|Y| + sup|DY|) lambda^{-k} ||V||(B_{lambda R}(x)).",
+     "hypotheses": [
+      "g,h smooth metrics on Omega",
+      "bounds Lambda_0 on |g|,|g^-1|,|h|,|h^-1|,|Dg| on K",
+      "spt X subset K"
+     ],
+     "locator": {
+      "source": "AgnolettoCorreaHoyosDaSilvaNardulli2025",
+      "where": "line 1788-1810 (replaced step); Simon1983 line 7336-7338"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:3.2",
+      "target:4.1",
+      "roadmap:HopfRinow Layer 2",
+      "mathlib:CovariantDerivative.leviCivitaConnection"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "conformal constant",
+       "kind": "computation",
+       "statement": "h = c^2 g gives |c^k - 1| |delta_g V(X)|."
+      },
+      {
+       "name": "derivative term",
+       "kind": "non-example",
+       "statement": "a Dirac varifold and X = psi A y show the sup|DX| term is necessary."
+      },
+      {
+       "name": "great circle",
+       "kind": "compatibility",
+       "statement": "blow-ups of a great circle on S^2 are lines with zero Euclidean first variation."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "Smooth submanifolds and embedded ambient manifolds",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "theorem",
+     "name": "Varifolds.firstVariation_submanifold",
+     "statement": "For a C^2 embedded k-submanifold Sigma closed in W with locally finite area, delta[Sigma](X) = -k integral <H_Sigma,X> dH^k with H_Sigma the averaged mean curvature; [Sigma] is stationary iff Sigma is minimal; agrees with R5a.2 for smooth Sigma.",
+     "hypotheses": [
+      "1 <= k <= N",
+      "Sigma C^2 embedded, closed in W, locally finite area"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "9.3, 9.5(2) line 1950-1973; 16.6(1) line 2979-2988"
+     },
+     "prerequisites": [
+      "target:2.3",
+      "target:4.4",
+      "roadmap:RiemannianGeometry R5a",
+      "roadmap:RiemannianGeometry R5a.2",
+      "tauceti:TauCeti.Manifold.integral_divergence_eq_zero",
+      "tauceti:MeasureTheory.integral_divergence_eq_zero"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "unit sphere",
+       "kind": "computation",
+       "statement": "H_{[S^k]} = -k x; both sides give k H^k(S^k) for X = psi x."
+      },
+      {
+       "name": "great sphere",
+       "kind": "compatibility",
+       "statement": "a great k-sphere of S^N is stationary."
+      },
+      {
+       "name": "half hyperplane",
+       "kind": "non-example",
+       "statement": "minimal but not closed in R^N: sigma != 0."
+      },
+      {
+       "name": "top dimension",
+       "kind": "degenerate",
+       "statement": "[W] is stationary for k = N."
+      }
+     ]
+    },
+    {
+     "id": "5.2",
+     "kind": "theorem",
+     "name": "Varifolds.firstVariation_inclusion",
+     "statement": "For M subset R^L embedded with second fundamental form B_M, W open in M closed in U open in R^L: delta(iota_# V)(X) = deltaV(X^T) - integral <X, tr_S B_M> dV; locally bounded first variation transfers both ways, H_{iota_# V} = H_V + integral tr_S B_M d nu^x, sigma and eta unchanged; rectifiability, integrality and densities preserved.",
+     "hypotheses": [
+      "M smooth embedded in R^L with induced metric",
+      "U open, U cap M = W, W closed in U"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "9.6 line 2005-2016; 16.4 line 2954-2971; 41.2(3) line 7675-7682"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:3.3",
+      "target:4.4",
+      "roadmap:RiemannianGeometry R5a",
+      "roadmap:GeometricCurrents G2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "great sphere",
+       "kind": "computation",
+       "statement": "a great k-sphere in S^N has H_{iota_#} = -k x."
+      },
+      {
+       "name": "affine M",
+       "kind": "degenerate",
+       "statement": "B_M = 0 gives delta(iota_# V)(X) = deltaV(X^T)."
+      },
+      {
+       "name": "zero",
+       "kind": "degenerate",
+       "statement": "V = 0 and k = 0 give 0 = 0."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "6",
+   "title": "Monotonicity, densities and constancy",
+   "targets": [
+    {
+     "id": "6.1",
+     "kind": "theorem",
+     "name": "Varifolds.monotonicity_identity",
+     "statement": "For V of locally bounded first variation in W subset E, x in W, 0 < sigma < rho < rho_0 <= dist(x, E minus W): rho^{-k}||V||(B_rho) - sigma^{-k}||V||(B_sigma) = integral over the annulus of r^{-k-2}|P_{S perp}(y-x)|^2 dV - integral_sigma^rho t^{-k-1} deltaV(1_{B_t}(y-x)) dt; with ||deltaV|| <= Lambda||V|| on balls, e^{Lambda rho} rho^{-k}||V||(B_rho) is non-decreasing; stationary identity and weighted identity.",
+     "hypotheses": [
+      "1 <= k <= N",
+      "V locally bounded first variation",
+      "0 < rho_0 <= dist(x, E minus W)"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "17.2-17.6 line 3016-3076; 40.1-40.4 line 7513-7547"
+     },
+     "prerequisites": [
+      "target:4.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "tilted line",
+       "kind": "computation",
+       "statement": "for y_2 = a, both sides equal 2 sqrt(rho^2 - a^2)/rho."
+      },
+      {
+       "name": "circle",
+       "kind": "computation",
+       "statement": "for the unit circle at 0: 2 pi/rho = 2 pi - 2 pi(1 - 1/rho); a plus sign fails."
+      },
+      {
+       "name": "plane",
+       "kind": "degenerate",
+       "statement": "a plane through x has constant ratio omega_k times multiplicity."
+      }
+     ]
+    },
+    {
+     "id": "6.2",
+     "kind": "theorem",
+     "name": "Varifolds.monotonicity_riemannian",
+     "statement": "For V of locally bounded first variation in W subset M, x in W, kappa >= 0, B_{rho_0}(x) a normal ball in W with sectional curvature <= kappa and sqrt(kappa) rho_0 <= pi/2: sigma^{-k}||V||(Bbar_sigma) <= rho^{-k}||V||(Bbar_rho) + integral_sigma^rho t^{-k}(||deltaV||(Bbar_t) + k sqrt(kappa) ||V||(Bbar_t)) dt; with a ratio bound Lambda, e^{(Lambda + k sqrt kappa) rho} rho^{-k} ||V||(Bbar_rho) is non-decreasing.",
+     "hypotheses": [
+      "1 <= k <= N",
+      "normal ball",
+      "sectional curvature <= kappa",
+      "sqrt(kappa) rho_0 <= pi/2"
+     ],
+     "locator": {
+      "source": "Scharrer2022",
+      "where": "Lemma 2.7 line 823-854; Lemma 3.3 line 1120-1127; Remark 3.4 line 1184-1203"
+     },
+     "prerequisites": [
+      "target:4.4",
+      "roadmap:RiemannianGeometry R4 item 1",
+      "roadmap:HopfRinow Layer 2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "flat",
+       "kind": "compatibility",
+       "statement": "kappa = 0, M = E gives 6.1's inequality without the |P_perp|^2 term."
+      },
+      {
+       "name": "great circle",
+       "kind": "computation",
+       "statement": "on S^2 a great circle has constant ratio 2; (1 - x cot x)/x = 2/pi at pi/2."
+      },
+      {
+       "name": "radius bound",
+       "kind": "non-example",
+       "statement": "at sqrt(kappa) r = pi the comparison factor is -inf."
+      }
+     ]
+    },
+    {
+     "id": "6.3",
+     "kind": "definition",
+     "name": "Varifolds.density",
+     "statement": "Theta^k(mu,x) = lim mu(B_rho(x))/(omega_k rho^k); for locally bounded first variation it exists ||V||-a.e., everywhere under bounded mean curvature without boundary; it is measurable, upper semicontinuous in x and under convergence when ||deltaV|| <= Lambda||V||, and >= 1 on the support for rectifiable V with Theta >= 1 a.e.",
+     "hypotheses": [
+      "V locally bounded first variation in W"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "17.8-17.9 line 3119-3152; 40.5 line 7550-7565"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "target:3.3",
+      "target:4.4",
+      "target:6.1",
+      "target:6.2",
+      "mathlib:HasBesicovitchCovering",
+      "mathlib:Besicovitch.ae_tendsto_rnDeriv"
+     ],
+     "api": [
+      {
+       "name": "existence",
+       "role": "structure",
+       "statement": "exists where the first-variation ratio is bounded; a.e. in general."
+      },
+      {
+       "name": "measurability",
+       "role": "structure",
+       "statement": "Theta is ||V||-measurable."
+      },
+      {
+       "name": "usc in x",
+       "role": "continuity",
+       "statement": "Theta(x) >= lim sup Theta(y) under ||deltaV|| <= Lambda ||V||."
+      },
+      {
+       "name": "usc under convergence",
+       "role": "continuity",
+       "statement": "Theta(V,x) >= lim sup Theta(V_j,x_j) under uniform Lambda."
+      },
+      {
+       "name": "lower bound",
+       "role": "structure",
+       "statement": "Theta >= 1 on spt for rectifiable V with Theta >= 1 a.e."
+      }
+     ],
+     "tests": [
+      {
+       "name": "circle",
+       "kind": "computation",
+       "statement": "Theta = 1 on the circle, 0 elsewhere."
+      },
+      {
+       "name": "crossing lines",
+       "kind": "non-example",
+       "statement": "Theta(0) = 2, nearby 1: not lower semicontinuous."
+      },
+      {
+       "name": "triple junction",
+       "kind": "computation",
+       "statement": "Theta(0) = 3/2."
+      },
+      {
+       "name": "step multiplicity",
+       "kind": "non-example",
+       "statement": "without sigma_V = 0 usc fails: Theta(0) = 3/2 < 2."
+      },
+      {
+       "name": "half multiplicity",
+       "kind": "degenerate",
+       "statement": "v(L,1/2) has Theta = 1/2."
+      }
+     ]
+    },
+    {
+     "id": "6.4",
+     "kind": "theorem",
+     "name": "Varifolds.constancy",
+     "statement": "If V is stationary in W and spt||V|| subset Sigma, a connected C^2 embedded k-submanifold of W, then V = theta_0 [Sigma] for a constant theta_0 >= 0, and Sigma is closed in W if V != 0.",
+     "hypotheses": [
+      "V stationary in W",
+      "Sigma connected C^2 embedded k-submanifold",
+      "spt||V|| subset Sigma"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "41.1-41.2 line 7664-7732"
+     },
+     "prerequisites": [
+      "target:2.3",
+      "target:3.3",
+      "target:4.2",
+      "target:6.3",
+      "roadmap:GeometricCurrents G1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "line",
+       "kind": "computation",
+       "statement": "v(L,3) has theta_0 = 3."
+      },
+      {
+       "name": "disconnected",
+       "kind": "non-example",
+       "statement": "two parallel lines with multiplicities 1 and 2 are stationary: connectedness is needed."
+      },
+      {
+       "name": "top dimension",
+       "kind": "degenerate",
+       "statement": "stationary N-varifolds on connected W are multiples of the volume."
+      }
+     ]
+    },
+    {
+     "id": "6.5",
+     "kind": "theorem",
+     "name": "Varifolds.spt_subset_convexHull",
+     "statement": "If V on E has compact support and is stationary in E minus K for compact K, then spt||V|| lies in the convex hull of K; for K empty, V = 0.",
+     "hypotheses": [
+      "spt||V|| compact",
+      "V stationary in E minus K",
+      "K compact"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "19.1-19.2 line 3373-3400"
+     },
+     "prerequisites": [
+      "target:4.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "segment",
+       "kind": "computation",
+       "statement": "a segment is stationary off its endpoints and lies in their hull."
+      },
+      {
+       "name": "circle",
+       "kind": "non-example",
+       "statement": "the unit circle is not stationary off {0}; the conclusion fails accordingly."
+      },
+      {
+       "name": "Dirac",
+       "kind": "degenerate",
+       "statement": "delta_{(0,P)} is stationary off {0} and lies in {0}."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "7",
+   "title": "Varifold tangents, rectifiability and compactness",
+   "targets": [
+    {
+     "id": "7.1",
+     "kind": "theorem",
+     "name": "Varifolds.density_ge_one_of_tendsto",
+     "statement": "For metrics g_i -> g in C^2 on compacts and varifolds V_i -> V with lim inf ||delta_{g_i}V_i||(U) finite and Theta_{g_i} >= 1 outside sets of vanishing mass: V has locally bounded first variation, ||delta V||(U) <= lim inf, and Theta_g(||V||,.) >= 1 a.e.",
+     "hypotheses": [
+      "g_i -> g in C^2 on compact sets",
+      "lim inf ||delta V_i||(U) < inf",
+      "density bound outside B_i with ||V_i||(B_i cap K) -> 0"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "40.6 line 7566-7660"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:1.4",
+      "target:4.2",
+      "target:4.5",
+      "target:6.2",
+      "target:6.3",
+      "mathlib:HasBesicovitchCovering"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "half-density segments",
+       "kind": "non-example",
+       "statement": "i segments of length 1/(2i): Theta = 1, ||deltaV_i|| = 2i -> inf, limit density 1/2."
+      },
+      {
+       "name": "constant half",
+       "kind": "non-example",
+       "statement": "1/2 v(L,1) shows the density hypothesis is necessary."
+      },
+      {
+       "name": "varying metrics",
+       "kind": "compatibility",
+       "statement": "(1+1/i)^2 e lines converge to the Euclidean line with Theta = 1."
+      }
+     ]
+    },
+    {
+     "id": "7.2",
+     "kind": "definition",
+     "name": "Varifolds.Varifold.varTan",
+     "statement": "For x with Theta^k(||V||,x) finite and rho^{1-k}||deltaV||(B_rho(x)) -> 0, VarTan(V,x) is the nonempty compact set of limits of V_{x,lambda_j}; each is stationary in (T_xM,g_x) with dilation-invariant weight of ball mass Theta omega_k rho^k.",
+     "hypotheses": [
+      "V of locally bounded first variation near x",
+      "Theta^k(||V||,x) exists and is finite",
+      "rho^{1-k}||deltaV||(B_rho(x)) -> 0"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "42.1-42.3 line 7733-7774; 19.3 line 3414-3450"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "target:3.2",
+      "target:4.5",
+      "target:6.1",
+      "target:6.3"
+     ],
+     "api": [
+      {
+       "name": "nonempty compact",
+       "role": "structure",
+       "statement": "VarTan(V,x) is nonempty and compact."
+      },
+      {
+       "name": "stationary",
+       "role": "characterisation",
+       "statement": "each C is stationary in (T_xM,g_x)."
+      },
+      {
+       "name": "weight",
+       "role": "evaluation",
+       "statement": "||C||(B_rho(0)) = Theta omega_k rho^k and ||C||(lambda A) = lambda^k ||C||(A)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "two planes",
+       "kind": "computation",
+       "statement": "VarTan = {V}, Theta = 2."
+      },
+      {
+       "name": "triple junction",
+       "kind": "computation",
+       "statement": "VarTan = {V}, Theta = 3/2."
+      },
+      {
+       "name": "zero density",
+       "kind": "degenerate",
+       "statement": "Lebesgue measure with a constant line has VarTan = {0}."
+      },
+      {
+       "name": "great circle",
+       "kind": "compatibility",
+       "statement": "on S^2, VarTan = {v(T_x C,1)}."
+      }
+     ]
+    },
+    {
+     "id": "7.3",
+     "kind": "theorem",
+     "name": "Varifolds.isRectifiable_of_density_pos",
+     "statement": "A varifold of locally bounded first variation in W subset M with Theta^k(||V||,x) > 0 for ||V||-a.e. x is rectifiable, V = v(Gamma, Theta).",
+     "hypotheses": [
+      "locally bounded first variation",
+      "Theta > 0 a.e."
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "42.4-42.5 line 7775-7881; Agnoletto2025 Theorem 2.32 line 1796-1798"
+     },
+     "prerequisites": [
+      "target:3.3",
+      "target:4.5",
+      "target:6.1",
+      "target:6.3",
+      "target:6.4",
+      "target:7.1",
+      "target:7.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "zero density",
+       "kind": "non-example",
+       "statement": "Lebesgue measure with a constant line is stationary, Theta = 0, not rectifiable."
+      },
+      {
+       "name": "triple junction",
+       "kind": "computation",
+       "statement": "rectifiable with theta = 1 off the junction."
+      },
+      {
+       "name": "vertical lift",
+       "kind": "non-example",
+       "statement": "positive density but no locally bounded first variation, not rectifiable."
+      }
+     ]
+    },
+    {
+     "id": "7.4",
+     "kind": "theorem",
+     "name": "Varifolds.compactness_rectifiable",
+     "statement": "For metrics g_i -> g in C^2 and rectifiable V_i with locally bounded masses and first variations and Theta >= 1 outside vanishing sets, a subsequence converges to a rectifiable V with locally bounded first variation, Theta >= 1 a.e., ||deltaV|| <= lim inf; stationarity passes to the limit.",
+     "hypotheses": [
+      "g_i -> g in C^2",
+      "sup (||V_i||(U) + ||delta V_i||(U)) < inf",
+      "density bound"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "42.7 line 7882-7898"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "target:7.1",
+      "target:7.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "zigzags",
+       "kind": "non-example",
+       "statement": "unbounded first variation; limit with planes at +-45 degrees is not rectifiable."
+      },
+      {
+       "name": "shrinking circles",
+       "kind": "degenerate",
+       "statement": "masses 2 pi/i -> 0, limit 0."
+      },
+      {
+       "name": "parallel lines",
+       "kind": "computation",
+       "statement": "y_2 = 1/i converges to the x-axis."
+      }
+     ]
+    },
+    {
+     "id": "7.5",
+     "kind": "theorem",
+     "name": "Varifolds.multiplicity_lemma",
+     "statement": "For delta in (0,1), Lambda >= 1 there is epsilon such that every integral varifold W on B_3(0) for a metric h with ||h - e||_{C^2} <= epsilon satisfying Simon's mass, first-variation and tilt hypotheses has, outside a set of measure <= delta, fibre density sums over the slab |q| < epsilon at most (1+delta)(omega_k 2^k)^{-1}||W||(B_2(x)) + delta.",
+     "hypotheses": [
+      "W integral on B_3(0)",
+      "||h - e||_{C^2(B_3)} <= epsilon",
+      "mass <= Lambda, ||delta_h W|| <= epsilon, tilt <= epsilon"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "42.9-42.10 line 7986-8151"
+     },
+     "prerequisites": [
+      "target:4.5",
+      "target:6.1",
+      "target:6.2",
+      "target:6.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "plane with multiplicity",
+       "kind": "computation",
+       "statement": "m v(R^k x {0},1): fibre sum m <= (1+delta) m + delta."
+      },
+      {
+       "name": "two sheets",
+       "kind": "computation",
+       "statement": "two parallel planes at height +-epsilon/2: fibre sum 2."
+      },
+      {
+       "name": "tilted plane",
+       "kind": "non-example",
+       "statement": "large tilt violates the hypotheses."
+      }
+     ]
+    },
+    {
+     "id": "7.6",
+     "kind": "theorem",
+     "name": "Varifolds.compactness_integral",
+     "statement": "In 7.4, if the V_i are integral then the limit is integral.",
+     "hypotheses": [
+      "hypotheses of 7.4",
+      "V_i integral"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "42.8 line 7899-7985"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:3.3",
+      "target:4.5",
+      "target:7.4",
+      "target:7.5",
+      "mathlib:HasBesicovitchCovering"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "adding lines",
+       "kind": "computation",
+       "statement": "v(L,1) + v(L_i,1) -> v(L,2)."
+      },
+      {
+       "name": "half multiplicity",
+       "kind": "non-example",
+       "statement": "1/2 v(L,1) is rectifiable, not integral."
+      },
+      {
+       "name": "half-density segments",
+       "kind": "non-example",
+       "statement": "limit 1/2 v(segment) not integral; first variations unbounded."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "8",
+   "title": "Tangent cones",
+   "targets": [
+    {
+     "id": "8.1",
+     "kind": "theorem",
+     "name": "Varifolds.varTan_isCone",
+     "statement": "If moreover rho^{-k}||V||({Theta < 1} cap B_rho(x)) -> 0, every C in VarTan(V,x) is rectifiable and invariant under all dilations about 0.",
+     "hypotheses": [
+      "hypotheses of 7.2",
+      "rho^{-k}||V||({Theta<1} cap B_rho(x)) -> 0"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "42.6 line 7793-7805"
+     },
+     "prerequisites": [
+      "target:4.5",
+      "target:7.1",
+      "target:7.2",
+      "target:7.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "cones",
+       "kind": "computation",
+       "statement": "two planes and the triple junction are their own tangent cones."
+      },
+      {
+       "name": "half multiplicity",
+       "kind": "non-example",
+       "statement": "1/2 v(L,1) fails the hypothesis yet has a rectifiable cone tangent."
+      },
+      {
+       "name": "step multiplicity",
+       "kind": "degenerate",
+       "statement": "rho^{1-k}||deltaV||(B_rho(0)) = 1: 7.2's hypothesis fails."
+      }
+     ]
+    },
+    {
+     "id": "8.2",
+     "kind": "theorem",
+     "name": "Varifolds.varTan_integral",
+     "statement": "For integral V of locally bounded first variation and x as in 7.2, every C in VarTan(V,x) is an integral stationary cone; for integral stationary V this holds at every point of W.",
+     "hypotheses": [
+      "V integral",
+      "locally bounded first variation",
+      "x as in 7.2"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "42.6 line 7793-7805; 42.8 line 7899-7912"
+     },
+     "prerequisites": [
+      "target:6.3",
+      "target:7.2",
+      "target:7.6",
+      "target:8.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "smooth minimal surface",
+       "kind": "computation",
+       "statement": "tangent cones are tangent planes with multiplicity 1."
+      },
+      {
+       "name": "two planes",
+       "kind": "computation",
+       "statement": "integral cone of density 2."
+      },
+      {
+       "name": "quadratic cone",
+       "kind": "compatibility",
+       "statement": "C_{p,q} is its own tangent cone at 0."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "9",
+   "title": "Regular sets, invariance, currents and acceptance statements",
+   "targets": [
+    {
+     "id": "9.1",
+     "kind": "definition",
+     "name": "Varifolds.Varifold.regularSet",
+     "statement": "x in spt||V|| is C^r-regular if spt||V|| is a C^r embedded k-submanifold near x; reg^r V and sing^r V = spt minus reg^r V.",
+     "hypotheses": [
+      "r in {1,2,...} u {inf}"
+     ],
+     "locator": {
+      "source": "AgnolettoCorreaHoyosDaSilvaNardulli2025",
+      "where": "Definition 1.2 line 89-92; Simon2023 line 73-83"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:3.1",
+      "target:6.4"
+     ],
+     "api": [
+      {
+       "name": "open/closed",
+       "role": "structure",
+       "statement": "reg^r open in spt, sing^r closed in W; reg^inf subset reg^{r'} subset reg^r for r <= r'."
+      },
+      {
+       "name": "diffeomorphism invariance",
+       "role": "functoriality",
+       "statement": "C^r diffeomorphisms map reg^r and sing^r to those of f_#V."
+      },
+      {
+       "name": "locality",
+       "role": "structure",
+       "statement": "reg^r of a restriction is reg^r V cap W'."
+      },
+      {
+       "name": "constant multiplicity",
+       "role": "characterisation",
+       "statement": "stationary V is a constant multiple of [spt] near points of reg^2."
+      }
+     ],
+     "tests": [
+      {
+       "name": "crossing lines",
+       "kind": "computation",
+       "statement": "sing^r = {0} for all r."
+      },
+      {
+       "name": "|t|^{3/2} graph",
+       "kind": "non-example",
+       "statement": "0 in reg^1 minus reg^2."
+      },
+      {
+       "name": "zero",
+       "kind": "degenerate",
+       "statement": "V = 0 has empty reg and sing; 1/2 v(L,1) has reg = L."
+      },
+      {
+       "name": "quadratic cone",
+       "kind": "computation",
+       "statement": "sing^r C_{p,q} = {0}."
+      }
+     ]
+    },
+    {
+     "id": "9.2",
+     "kind": "theorem",
+     "name": "Varifolds.locality_isometry_invariance",
+     "statement": "Every notion of Layers 1-8 commutes with restriction to open subsets and with push-forward by isometries; Euclidean dilations preserve stationarity, rectifiability, integrality, regular sets, densities and varifold tangents and scale H, ||deltaV||, sigma.",
+     "hypotheses": [
+      "W' open in W",
+      "f isometry"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "39.1 line 7443-7454"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:3.1",
+      "target:4.4",
+      "target:6.3",
+      "target:7.2",
+      "target:9.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "rotation",
+       "kind": "computation",
+       "statement": "rotating crossing lines keeps Theta(0) = 2."
+      },
+      {
+       "name": "restriction",
+       "kind": "degenerate",
+       "statement": "restricting the circle to an arc keeps H and gives no boundary inside."
+      },
+      {
+       "name": "dilation",
+       "kind": "computation",
+       "statement": "dilated circle has |H| = lambda/R and density 1."
+      }
+     ]
+    },
+    {
+     "id": "9.3",
+     "kind": "theorem",
+     "name": "Varifolds.auxiliaryVarifold_eq",
+     "statement": "For a locally integral k-current T with carrier Gamma_T and integer multiplicity theta_T, GeometricCurrents G6's auxiliary varifold is v(Gamma_T,|theta_T|) with weight ||T||; G6's first variation, density, monotonicity and tangent cones are those of this roadmap evaluated on it; local minimizers give stationary varifolds.",
+     "hypotheses": [
+      "T locally integral k-current on W"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "line 7253-7293"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:2.2",
+      "target:4.4",
+      "target:6.3",
+      "target:7.2",
+      "target:8.2",
+      "roadmap:GeometricCurrents G1",
+      "roadmap:GeometricCurrents G2",
+      "roadmap:GeometricCurrents G5",
+      "roadmap:GeometricCurrents G6"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "plane",
+       "kind": "computation",
+       "statement": "oriented plane with multiplicity 2 gives v(P,2); orientation reversal gives the same."
+      },
+      {
+       "name": "cancellation",
+       "kind": "non-example",
+       "statement": "[[P]] + (-[[P]]) = 0 has varifold 0, unlike v(P,1) + v(P,1)."
+      },
+      {
+       "name": "curve",
+       "kind": "compatibility",
+       "statement": "a closed curve's varifold has H = curvature vector."
+      }
+     ]
+    },
+    {
+     "id": "9.4",
+     "kind": "example",
+     "name": "Varifolds.acceptance_statements",
+     "statement": "Simon's theorem (warped metric g on R^{n+m+l}, smooth hypersurface Sigma with [Sigma] stationary for g and sing^inf [Sigma] = {0} x {0} x K) and Edelen-Spolaor's theorem for n >= 8 (stationary integral varifolds converging to a multiplicity-one cone-singular varifold have at most one singular point of the same type in B_{1/2}) are statable in this roadmap's notions; they are not targets.",
+     "hypotheses": [
+      "n >= 3, m >= 2, n+m >= 8, l >= 1, K closed (Simon)",
+      "n >= 8, p+q = n-1 (Edelen-Spolaor)"
+     ],
+     "locator": {
+      "source": "Simon2023",
+      "where": "Theorem 1.1 line 84-96; Theorem 3.7 line 432-441; EdelenSpolaor2023 Theorem 1.4 line 104-135"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "target:2.2",
+      "target:2.3",
+      "target:3.1",
+      "target:4.2",
+      "target:6.3",
+      "target:7.2",
+      "target:8.2",
+      "target:9.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "notions defined",
+       "kind": "compatibility",
+       "statement": "each notion used is defined in Layers 1-9."
+      },
+      {
+       "name": "empty K",
+       "kind": "degenerate",
+       "statement": "K empty gives sing^inf [Sigma] empty."
+      },
+      {
+       "name": "cone itself",
+       "kind": "computation",
+       "statement": "V_i = C_{p,q} satisfies the second conclusion with y_i = 0."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "GeometricMeasureTheory",
+   "sections": [
+    "G2"
+   ],
+   "what": "Approximate tangent planes of Euclidean rectifiable sets, tangential differentiation, area formula (countable rectifiability itself is TauCeti.CountablyRectifiable at the pin)."
+  },
+  {
+   "roadmap": "GeometricCurrents",
+   "sections": [
+    "G1",
+    "G2",
+    "G5",
+    "G6"
+   ],
+   "what": "Distributional constancy criterion; rectifiable sets and H^k on manifolds with chart comparison, integral currents and mass measures; local minimizers; unoriented Grassmann bundle with compactness and Radon compactness, auxiliary varifold of an integral current."
+  },
+  {
+   "roadmap": "RiemannianGeometry",
+   "sections": [
+    "R4 item 1",
+    "R5a",
+    "R5a.2"
+   ],
+   "what": "Hessian comparison for the distance function; immersion geometry and second fundamental form; averaged mean curvature and first volume variation."
+  },
+  {
+   "roadmap": "HopfRinow",
+   "sections": [
+    "Layer 0",
+    "Layer 1",
+    "Layer 2"
+   ],
+   "what": "Riemannian distance, exponential map, normal balls, Gauss lemma, local distance identity."
+  }
+ ],
+ "consumers": [
+  {
+   "roadmap": "GeometricCurrents",
+   "what": "Comparison theorem 9.3 identifies G6's auxiliary varifold; runs in the supplier direction (GeometricCurrents does not consume this roadmap)."
+  },
+  {
+   "roadmap": "Varifolds, Part II (future)",
+   "what": "Allard's regularity theorem, Euclidean and intrinsic Riemannian."
+  },
+  {
+   "roadmap": "future min-max, Brakke flow, stable regularity and cluster interface regularity roadmaps",
+   "what": "use the carrier, first variation, monotonicity and compactness."
+  }
+ ],
+ "gaps": []
+}
