@@ -1,0 +1,3149 @@
+{
+ "roadmap": "HyperbolicDynamicsAndThermodynamicFormalism",
+ "title": "Hyperbolic dynamics and thermodynamic formalism",
+ "parent": null,
+ "summary": "Pressure, variational principles, equilibrium states and Bowen's uniqueness criterion for maps and flows on compact spaces; hyperbolic sets, invariant manifolds and local product structure; Bowen's theorem, the Bowen-Ruelle theorem, Bowen-Margulis measures and the SRB theorem for C^2 Anosov flows and attractors.",
+ "baseline": {
+  "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+  "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
+ },
+ "layers": [
+  {
+   "key": "1",
+   "title": "Bowen balls, topological entropy and the dynamical hypotheses",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "definition",
+     "name": "Dynamics.bowenBall",
+     "statement": "For a map T of a pseudometric space, d_n(x,y) = max_{0<=k<n} d(T^k x, T^k y) (0 for n = 0) and B_n(x,eps) is the open d_n-ball; for a flow g, d_t(x,y) = sup_{0<=s<=t} d(g^s x, g^s y) and B_t(x,eps) is the open d_t-ball.",
+     "hypotheses": [
+      "X a pseudometric space",
+      "T : X -> X, or g : Flow R X"
+     ],
+     "locator": {
+      "source": "BowenRuelle1975",
+      "where": "lines 99-101 (closed balls, k in [0,n]); ClimenhagaThompson2016 lines 175-177"
+     },
+     "prerequisites": [
+      "mathlib:Dynamics.dynEntourage",
+      "mathlib:Dynamics.mem_ball_dynEntourage",
+      "mathlib:Flow"
+     ],
+     "api": [
+      {
+       "name": "bowenBall_eq_ball_dynEntourage",
+       "role": "compatibility",
+       "statement": "B_n(x,eps) is the ball at x of Dynamics.dynEntourage T {d < eps} n."
+      },
+      {
+       "name": "bowenBall_zero",
+       "role": "evaluation",
+       "statement": "B_0(x,eps) = univ and B_1(x,eps) = ball x eps."
+      },
+      {
+       "name": "bowenBall_antitone",
+       "role": "structure",
+       "statement": "B_{n+1}(x,eps) is contained in B_n(x,eps); the balls increase with eps."
+      },
+      {
+       "name": "mapsTo_bowenBall",
+       "role": "functoriality",
+       "statement": "T maps B_{n+1}(x,eps) into B_n(Tx,eps); an L-Lipschitz semiconjugacy maps B^S_n(x,eps) into B^T_n(hx, L eps)."
+      },
+      {
+       "name": "flow_bowenBall_comparison",
+       "role": "compatibility",
+       "statement": "For t > 0 on a compact metric space, B_{nt}(x,eps) is contained in the g^t-ball B_n(x,eps), and the g^t-ball B_n(x,delta) is contained in B_{nt}(x,eps) for delta a uniform-continuity modulus on [0,t] x X."
+      },
+      {
+       "name": "gammaSet_isClosed",
+       "role": "structure",
+       "statement": "For a homeomorphism, Gamma_eps(x) is the intersection over n of T^{-n} B_{2n+1}(T^n x, eps) with closed balls; it is closed, and compact when X is compact."
+      }
+     ],
+     "tests": [
+      {
+       "name": "rotation_ball",
+       "kind": "computation",
+       "statement": "For a rotation of R/Z, B_n(x,eps) is the eps-ball for every n >= 1."
+      },
+      {
+       "name": "doubling_ball",
+       "kind": "computation",
+       "statement": "For the doubling map and eps = 1/8, B_n(0,1/8) is the arc of half-width 2^(-n-2): 1/8 at n = 1, 1/16 at n = 2."
+      },
+      {
+       "name": "ball_zero_univ",
+       "kind": "degenerate",
+       "statement": "At n = 0 the Bowen ball is the whole space, matching coverMincard at time zero equal to 1 on a nonempty set."
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "definition",
+     "name": "Dynamics.openCoverEntropy",
+     "statement": "h_cov(T) is the supremum over finite open covers U of lim (1/n) log N(U^n), U^n the join of T^{-k}U over k < n and N the least subcover cardinality; for a nonempty compact Hausdorff space with its uniformity, h_cov(T) = Dynamics.coverEntropy T univ.",
+     "hypotheses": [
+      "X nonempty compact Hausdorff",
+      "T continuous"
+     ],
+     "locator": {
+      "source": "BowenGroupEndomorphisms1971",
+      "where": "lines 110-114; Walters1982 Chapter 7"
+     },
+     "prerequisites": [
+      "mathlib:Dynamics.coverEntropy",
+      "mathlib:Dynamics.coverMincard",
+      "mathlib:Dynamics.IsDynCoverOf",
+      "target:1.1"
+     ],
+     "api": [
+      {
+       "name": "openCoverEntropy_eq_coverEntropy",
+       "role": "compatibility",
+       "statement": "On a nonempty compact Hausdorff space h_cov(T) equals Dynamics.coverEntropy T univ."
+      },
+      {
+       "name": "card_join_le",
+       "role": "structure",
+       "statement": "N((U v V)^n) <= N(U^n) N(V^n); refining the cover increases the rate."
+      },
+      {
+       "name": "openCoverEntropy_conj",
+       "role": "functoriality",
+       "statement": "h_cov is a conjugacy invariant and does not increase under factors."
+      }
+     ],
+     "tests": [
+      {
+       "name": "identity_zero",
+       "kind": "degenerate",
+       "statement": "The identity has N(U^n) = N(U), so h_cov = 0."
+      },
+      {
+       "name": "full_shift_logk",
+       "kind": "computation",
+       "statement": "The full shift on k symbols with the cylinder cover has N(U^n) = k^n, entropy log k."
+      },
+      {
+       "name": "single_cover_nonexample",
+       "kind": "non-example",
+       "statement": "The trivial cover {X} gives 0 for the full shift; the supremum over covers is required."
+      }
+     ]
+    },
+    {
+     "id": "1.3",
+     "kind": "theorem",
+     "name": "Dynamics.coverEntropy_iterate",
+     "statement": "coverEntropy (T^[k]) univ = k * coverEntropy T univ for k >= 1 and uniformly continuous T; for a homeomorphism of a compact Hausdorff space, coverEntropy T.symm univ = coverEntropy T univ.",
+     "hypotheses": [
+      "X uniform space",
+      "T uniformly continuous",
+      "k >= 1"
+     ],
+     "locator": {
+      "source": "BowenGroupEndomorphisms1971",
+      "where": "Proposition 4(i), lines 115-123; Walters1982 Chapter 7 for inverses"
+     },
+     "prerequisites": [
+      "mathlib:Dynamics.coverEntropy",
+      "mathlib:Dynamics.IsDynCoverOf",
+      "mathlib:Dynamics.IsDynNetIn",
+      "mathlib:Dynamics.coverEntropy_eq_iSup_netEntropyEntourage",
+      "target:1.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "shift_square",
+       "kind": "computation",
+       "statement": "The full shift squared has entropy 2 log k."
+      },
+      {
+       "name": "k_zero_empty",
+       "kind": "degenerate",
+       "statement": "On the empty space both sides are bottom only for k >= 1; k = 0 is excluded."
+      },
+      {
+       "name": "cat_inverse",
+       "kind": "computation",
+       "statement": "The cat automorphism and its inverse both have entropy log((3+sqrt5)/2)."
+      }
+     ]
+    },
+    {
+     "id": "1.4",
+     "kind": "definition",
+     "name": "Flow.topEntropy",
+     "statement": "h_top(g) = coverEntropy (g 1) univ; on a nonempty compact Hausdorff space coverEntropy (g t) univ = |t| h_top(g) for all real t (0 * oo = 0; on the empty space both sides are bot for t != 0 only), and on a compact metric space h_top(g) is the flow separated-set growth rate (separated = pairwise disjoint open d_T-balls).",
+     "hypotheses": [
+      "X nonempty compact Hausdorff uniform (compact metric for the separated form)",
+      "g continuous flow"
+     ],
+     "locator": {
+      "source": "BowenGroupEndomorphisms1971",
+      "where": "Proposition 21, lines 487-495; BowenRuelle1975 lines 174, 182-189"
+     },
+     "prerequisites": [
+      "mathlib:Dynamics.coverEntropy",
+      "mathlib:Flow.toHomeomorph",
+      "target:1.1",
+      "target:1.3"
+     ],
+     "api": [
+      {
+       "name": "topEntropy_time",
+       "role": "evaluation",
+       "statement": "On a nonempty compact Hausdorff space coverEntropy (g t) univ = |t| h_top(g) for every real t, with 0 * oo = 0."
+      },
+      {
+       "name": "topEntropy_reverse",
+       "role": "structure",
+       "statement": "The reversed flow has the same entropy."
+      },
+      {
+       "name": "topEntropy_separated",
+       "role": "compatibility",
+       "statement": "On a compact metric space h_top(g) = lim_eps limsup_T (1/T) log of the maximal (T,eps)-separated cardinality."
+      }
+     ],
+     "tests": [
+      {
+       "name": "periodic_orbit_zero",
+       "kind": "degenerate",
+       "statement": "The flow on a periodic orbit has entropy 0."
+      },
+      {
+       "name": "suspension_log2",
+       "kind": "computation",
+       "statement": "The constant-roof suspension of the full two-shift has h_top = log 2 and h(g^2) = 2 log 2."
+      },
+      {
+       "name": "sampling_nonexample",
+       "kind": "non-example",
+       "statement": "Sampling the flow at times kT/n for fixed n does not give the flow entropy per unit time."
+      }
+     ]
+    },
+    {
+     "id": "1.5",
+     "kind": "definition",
+     "name": "Dynamics.IsExpansive",
+     "statement": "A homeomorphism T of a metric space is expansive with constant c > 0 if distinct x, y have some n in Z with d(T^n x, T^n y) > c.",
+     "hypotheses": [
+      "X metric space",
+      "T homeomorphism"
+     ],
+     "locator": {
+      "source": "ClimenhagaThompson2016",
+      "where": "lines 1687-1690"
+     },
+     "prerequisites": [
+      "mathlib:Dynamics.coverEntropy",
+      "mathlib:Dynamics.coverEntropyEntourage",
+      "target:1.1"
+     ],
+     "api": [
+      {
+       "name": "isExpansive_iff_gamma",
+       "role": "characterisation",
+       "statement": "Expansive with constant c iff Gamma_c(x) = {x} for all x."
+      },
+      {
+       "name": "isExpansive_uniform",
+       "role": "structure",
+       "statement": "On a compact space, for every eps there is N with d(x,y) < eps whenever d(T^n x,T^n y) <= c for |n| <= N (BowenPeriodicPoints1971 Lemma 2.4)."
+      },
+      {
+       "name": "isExpansive_iterate",
+       "role": "functoriality",
+       "statement": "Expansivity passes to T^{-1} and to T^k, k != 0, and is metric-independent on compact spaces."
+      },
+      {
+       "name": "coverEntropy_eq_scale",
+       "role": "evaluation",
+       "statement": "T is entropy-expansive at scale eps when coverEntropy T (Phi_eps x) = 0 for all x (two-sided Gamma_eps for homeomorphisms of compact spaces, BowenEntropyExpansive1972 Corollary 2.3). An entropy-expansive map of a compact metric space has finite entropy, equal to coverEntropyEntourage T univ {d <= eps} (BowenEntropyExpansive1972 Theorem 2.4; the entropy at a fixed scale is finite by itineraries through a finite cover). An expansive homeomorphism is entropy-expansive at every eps < c, so h_top(T) < oo equals the entropy at any {d <= eps}, eps < c, and there are finitely many points of each period."
+      }
+     ],
+     "tests": [
+      {
+       "name": "full_shift_expansive",
+       "kind": "computation",
+       "statement": "The full shift with d = 2^(-N) is expansive with c = 1/2."
+      },
+      {
+       "name": "rotation_not_expansive",
+       "kind": "non-example",
+       "statement": "An irrational rotation is not expansive."
+      },
+      {
+       "name": "finite_identity",
+       "kind": "degenerate",
+       "statement": "The identity of a finite set is expansive; the identity of [0,1] is not."
+      },
+      {
+       "name": "identity_interval_entropy_expansive",
+       "kind": "degenerate",
+       "statement": "The identity of [0,1] is entropy-expansive at every scale but not expansive: finiteness of entropy holds for the wider class, finiteness of periodic points needs expansivity."
+      }
+     ]
+    },
+    {
+     "id": "1.6",
+     "kind": "definition",
+     "name": "Flow.IsExpansive",
+     "statement": "A continuous flow is Bowen-Walters expansive if for every eta > 0 there is eps > 0 such that d(g^t x, g^{s(t)} y) <= eps for all t, for a continuous s with s(0) = 0, implies y = g^u x with |u| <= eta.",
+     "hypotheses": [
+      "X metric space",
+      "g continuous flow"
+     ],
+     "locator": {
+      "source": "BowenWalters1972",
+      "where": "definition of expansive flow; ClimenhagaThompson2016 lines 359-362"
+     },
+     "prerequisites": [
+      "mathlib:Flow",
+      "mathlib:Dynamics.coverEntropy",
+      "target:1.1",
+      "target:1.4",
+      "target:1.5"
+     ],
+     "api": [
+      {
+       "name": "gamma_subset_orbitSegment",
+       "role": "characterisation",
+       "statement": "Gamma_eps(x) is contained in g^{[-eta,eta]} x (ClimenhagaThompson2016 lines 356-366)."
+      },
+      {
+       "name": "fixedPoints_isolated",
+       "role": "structure",
+       "statement": "Fixed points of an expansive flow are isolated."
+      },
+      {
+       "name": "timeMap_entropyExpansive",
+       "role": "compatibility",
+       "statement": "Every time-t map is entropy-expansive (BowenEntropyExpansive1972 Example 1.6); hence on a compact metric space h_top(g) = coverEntropy (g 1) univ < oo by 1.5's finiteness theorem applied to g^1, and every h(g^t) is finite by 1.4."
+      },
+      {
+       "name": "topEntropy_lt_top",
+       "role": "finiteness",
+       "statement": "A Bowen-Walters expansive flow on a compact metric space has finite topological entropy."
+      },
+      {
+       "name": "isExpansive_reverse",
+       "role": "functoriality",
+       "statement": "Preserved by reversal and rescaling."
+      }
+     ],
+     "tests": [
+      {
+       "name": "periodic_orbit_expansive",
+       "kind": "computation",
+       "statement": "The flow on a periodic orbit is expansive."
+      },
+      {
+       "name": "linear_irrational_not",
+       "kind": "non-example",
+       "statement": "The irrational linear flow on the 2-torus is not expansive."
+      },
+      {
+       "name": "identity_flow",
+       "kind": "degenerate",
+       "statement": "The identity flow of the circle is not expansive; of a finite set it is."
+      }
+     ]
+    },
+    {
+     "id": "1.7",
+     "kind": "definition",
+     "name": "Dynamics.IsTopologicallyMixing",
+     "statement": "A map is topologically mixing if for nonempty open U, V there is N with T^n U meeting V for all n >= N; a flow if there is t0 with g^t U meeting V for t >= t0.",
+     "hypotheses": [
+      "X topological space",
+      "T continuous, or g a flow"
+     ],
+     "locator": {
+      "source": "BowenRuelle1975",
+      "where": "line 165, footnote 2; BCS2022 lines 43-44"
+     },
+     "prerequisites": [
+      "mathlib:AddAction.IsTopologicallyTransitive",
+      "mathlib:Flow.fromIter",
+      "mathlib:Flow.toAddAction"
+     ],
+     "api": [
+      {
+       "name": "mixing_transitive",
+       "role": "compatibility",
+       "statement": "Mixing implies AddAction.IsTopologicallyTransitive for the corresponding flow."
+      },
+      {
+       "name": "mixing_iterate",
+       "role": "structure",
+       "statement": "A homeomorphism is mixing iff some (every) power is mixing."
+      },
+      {
+       "name": "flow_mixing_iff_time",
+       "role": "characterisation",
+       "statement": "A flow is mixing iff one (every) time-t map, t > 0, is mixing."
+      }
+     ],
+     "tests": [
+      {
+       "name": "full_shift_mixing",
+       "kind": "computation",
+       "statement": "The full shift is mixing."
+      },
+      {
+       "name": "rotation_not_mixing",
+       "kind": "non-example",
+       "statement": "An irrational rotation and the swap of two points are transitive and not mixing."
+      },
+      {
+       "name": "suspension_not_mixing",
+       "kind": "non-example",
+       "statement": "The constant-roof suspension is never mixing."
+      }
+     ]
+    },
+    {
+     "id": "1.8",
+     "kind": "definition",
+     "name": "Dynamics.HasWeakSpecification",
+     "statement": "Weak specification: for every delta > 0 there is tau such that any finite family of orbit segments is delta-shadowed by one orbit with gluing times at most tau (maps and flows).",
+     "hypotheses": [
+      "X compact metric",
+      "T homeomorphism, or g continuous flow"
+     ],
+     "locator": {
+      "source": "ClimenhagaThompson2016",
+      "where": "lines 1661-1669 (maps), lines 295-303 (flows)"
+     },
+     "prerequisites": [
+      "mathlib:AddAction.IsTopologicallyTransitive",
+      "target:1.1"
+     ],
+     "api": [
+      {
+       "name": "strong_imp_weak",
+       "role": "structure",
+       "statement": "Strong specification implies weak specification."
+      },
+      {
+       "name": "weak_imp_transitive",
+       "role": "characterisation",
+       "statement": "Weak specification of a nonempty system implies transitivity."
+      },
+      {
+       "name": "weakSpec_conj",
+       "role": "functoriality",
+       "statement": "Invariant under topological conjugacy of compact systems."
+      },
+      {
+       "name": "tail_spec",
+       "role": "compatibility",
+       "statement": "For flows, tail specification at all scales gives the tail property used by ClimenhagaThompson2016 Lemma 2.10."
+      }
+     ],
+     "tests": [
+      {
+       "name": "swap_weak_not_strong",
+       "kind": "computation",
+       "statement": "The swap of two points has weak specification with tau = 1 but no strong specification."
+      },
+      {
+       "name": "full_shift_strong",
+       "kind": "computation",
+       "statement": "The full shift has strong specification with gap about 2m at scale 2^(-m)."
+      },
+      {
+       "name": "disjoint_union_nonexample",
+       "kind": "non-example",
+       "statement": "A disjoint union of two full shifts has no weak specification."
+      }
+     ]
+    },
+    {
+     "id": "1.9",
+     "kind": "definition",
+     "name": "Dynamics.HasBowenProperty",
+     "statement": "phi has the Bowen property for T if there are eps > 0 and K with |S_n phi(x) - S_n phi(y)| <= K for y in B_n(x,eps); for a flow with orbit integrals over [0,t] and y in B_t(x,eps).",
+     "hypotheses": [
+      "X compact metric",
+      "phi continuous"
+     ],
+     "locator": {
+      "source": "ClimenhagaThompson2016",
+      "where": "Definition 2.6, lines 333-339; Definition 5.3, lines 1680-1682"
+     },
+     "prerequisites": [
+      "mathlib:birkhoffSum",
+      "target:1.1"
+     ],
+     "api": [
+      {
+       "name": "bowen_vectorSpace",
+       "role": "structure",
+       "statement": "Bowen potentials form a vector space containing the constants; smaller scales keep K."
+      },
+      {
+       "name": "coboundary_bowen",
+       "role": "constructor",
+       "statement": "psi o T - psi is Bowen with K = 4 sup|psi|."
+      },
+      {
+       "name": "flowCoboundary_bowen",
+       "role": "constructor",
+       "statement": "L_g psi is Bowen with K = 4 sup|psi| for psi differentiable along the flow with continuous derivative."
+      }
+     ],
+     "tests": [
+      {
+       "name": "constant_bowen",
+       "kind": "degenerate",
+       "statement": "A constant potential is Bowen with K = 0."
+      },
+      {
+       "name": "coordinate_bowen",
+       "kind": "computation",
+       "statement": "On the full two-shift x -> x_0 is Bowen at eps = 1/2 with K = 0."
+      },
+      {
+       "name": "harmonic_nonexample",
+       "kind": "non-example",
+       "statement": "phi(x) = 1/m (m least index >= 1 with x_m = 1) is continuous but not Bowen: harmonic sums diverge."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "Pressure",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "definition",
+     "name": "Dynamics.pressure",
+     "statement": "Z_n(phi,U) = sup over finite (n,U)-separated sets s of sum_{x in s} exp(S_n phi(x)); P_T(phi) = sup over entourages U of expGrowthSup (n -> Z_n(phi,U)) in EReal.",
+     "hypotheses": [
+      "X uniform space",
+      "T : X -> X",
+      "phi : X -> R"
+     ],
+     "locator": {
+      "source": "Misiurewicz1976",
+      "where": "lines 88-102, equations (1)-(3); Walters1982 Section 9.1; BowenRuelle1975 lines 161-173"
+     },
+     "prerequisites": [
+      "mathlib:Dynamics.IsDynNetIn",
+      "mathlib:Dynamics.netMaxcard",
+      "mathlib:Dynamics.coverEntropy_eq_iSup_netEntropyEntourage",
+      "mathlib:ExpGrowth.expGrowthSup",
+      "mathlib:birkhoffSum",
+      "target:1.1"
+     ],
+     "api": [
+      {
+       "name": "pressure_zero",
+       "role": "compatibility",
+       "statement": "P_T(0) = Dynamics.coverEntropy T univ."
+      },
+      {
+       "name": "pressure_metric",
+       "role": "characterisation",
+       "statement": "On a metric space P_T(phi) = lim_eps limsup (1/n) log Z_n(phi,eps)."
+      },
+      {
+       "name": "pressure_basis",
+       "role": "structure",
+       "statement": "The supremum may be taken along a basis of the uniformity."
+      },
+      {
+       "name": "pressure_empty",
+       "role": "evaluation",
+       "statement": "P = bottom on the empty space; P >= inf phi on a nonempty space."
+      }
+     ],
+     "tests": [
+      {
+       "name": "point_pressure",
+       "kind": "degenerate",
+       "statement": "On a one-point space P(phi) = phi(pt)."
+      },
+      {
+       "name": "finite_identity_max",
+       "kind": "computation",
+       "statement": "For the identity of an m-point space P(phi) = max phi."
+      },
+      {
+       "name": "shift_constant",
+       "kind": "computation",
+       "statement": "For the full shift on k symbols P(c) = log k + c."
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "theorem",
+     "name": "Dynamics.pressure_eq_spanning_eq_openCover",
+     "statement": "On a nonempty compact Hausdorff space with continuous T and phi, the separated-set, spanning-set and open-cover pressures coincide.",
+     "hypotheses": [
+      "X nonempty compact Hausdorff",
+      "T, phi continuous"
+     ],
+     "locator": {
+      "source": "Walters1982",
+      "where": "Section 9.1; Misiurewicz1976 lines 96-102"
+     },
+     "prerequisites": [
+      "mathlib:Dynamics.IsDynCoverOf",
+      "mathlib:Dynamics.coverMincard",
+      "target:1.2",
+      "target:2.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "zero_potential",
+       "kind": "compatibility",
+       "statement": "For phi = 0 the three forms are the entropies of 1.2."
+      },
+      {
+       "name": "finite_identity",
+       "kind": "computation",
+       "statement": "For the identity of an m-point space all forms give max phi."
+      },
+      {
+       "name": "inf_nonexample",
+       "kind": "non-example",
+       "statement": "Using inf instead of sup over atoms gives min phi for the single cover of a two-point identity."
+      }
+     ]
+    },
+    {
+     "id": "2.3",
+     "kind": "theorem",
+     "name": "Dynamics.pressure_properties",
+     "statement": "For continuous T on a nonempty compact Hausdorff space: P(0) = h_top; h_top + min phi <= P(phi) <= h_top + max phi; monotone; P(phi + c) = P(phi) + c; 1-Lipschitz and convex when h_top < oo; P(phi + psi o T - psi) = P(phi); P_{T^k}(S_k phi) = k P_T(phi); conjugacy invariance.",
+     "hypotheses": [
+      "X nonempty compact Hausdorff",
+      "T, phi, psi continuous",
+      "k >= 1"
+     ],
+     "locator": {
+      "source": "Walters1982",
+      "where": "Theorem 9.7 (first four items), Theorem 9.8 (power rule and conjugacy invariance); BowenRuelle1975 line 174"
+     },
+     "prerequisites": [
+      "mathlib:Dynamics.coverEntropy",
+      "target:1.3",
+      "target:2.1",
+      "target:2.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "lipschitz_sharp",
+       "kind": "computation",
+       "statement": "P(c) - P(0) = c on the full two-shift."
+      },
+      {
+       "name": "coboundary_shift",
+       "kind": "computation",
+       "statement": "Adding x_1 - x_0 to 0 on the full two-shift keeps P = log 2."
+      },
+      {
+       "name": "power_rule",
+       "kind": "computation",
+       "statement": "On the full two-shift with phi = x_0, the square has pressure 2 log(1+e)."
+      }
+     ]
+    },
+    {
+     "id": "2.4",
+     "kind": "definition",
+     "name": "Flow.pressure",
+     "statement": "P_g(F) = lim_eps limsup_T (1/T) log Z_T(F,eps), Z_T the sup over (T,eps)-separated sets of sum exp of orbit integrals; theorem: P_g(F) = P_{g^1}(F_1), P_{g^t}(F_t) = t P_g(F) for t > 0, P_g(0) = h_top(g).",
+     "hypotheses": [
+      "X compact metric",
+      "g continuous flow",
+      "F continuous"
+     ],
+     "locator": {
+      "source": "BowenRuelle1975",
+      "where": "lines 182-192"
+     },
+     "prerequisites": [
+      "mathlib:Flow",
+      "mathlib:Flow.reverse",
+      "target:1.1",
+      "target:1.4",
+      "target:2.1",
+      "target:2.3"
+     ],
+     "api": [
+      {
+       "name": "flowPressure_eq_timeOne",
+       "role": "characterisation",
+       "statement": "P_g(F) = P_{g^1}(F_1)."
+      },
+      {
+       "name": "flowPressure_add_const",
+       "role": "evaluation",
+       "statement": "P_g(F + c) = P_g(F) + c; monotone, 1-Lipschitz, convex when h_top finite."
+      },
+      {
+       "name": "flowPressure_coboundary",
+       "role": "structure",
+       "statement": "P_g(F + L_g psi) = P_g(F)."
+      },
+      {
+       "name": "flowPressure_reverse",
+       "role": "functoriality",
+       "statement": "The reversed flow has the same pressure; independence of the metric."
+      }
+     ],
+     "tests": [
+      {
+       "name": "constant_potential",
+       "kind": "computation",
+       "statement": "P_g(c) = h_top(g) + c."
+      },
+      {
+       "name": "periodic_orbit_average",
+       "kind": "computation",
+       "statement": "On a periodic orbit of period p, P_g(F) is the orbit average."
+      },
+      {
+       "name": "rescaling_nonexample",
+       "kind": "non-example",
+       "statement": "For g'(t) = g(2t), P_{g'}(2F) = 2P_g(F) while using F gives 2P_g(F/2)."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "Invariant measures and measure entropy",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "definition",
+     "name": "Dynamics.invariantMeasures",
+     "statement": "M(T) = probability measures preserved by T; M(g) = probability measures preserved by every g^t; flow ergodicity is ErgodicVAdd R X mu for Flow.toAddAction.",
+     "hypotheses": [
+      "T measurable, or g a flow"
+     ],
+     "locator": {
+      "source": "BowenRuelle1975",
+      "where": "lines 157-159"
+     },
+     "prerequisites": [
+      "mathlib:MeasureTheory.MeasurePreserving",
+      "mathlib:MeasureTheory.exists_measurePreserving_probabilityMeasure",
+      "mathlib:MeasureTheory.ProbabilityMeasure",
+      "mathlib:Ergodic.iff_mem_extremePoints",
+      "mathlib:ErgodicVAdd",
+      "mathlib:Flow.toAddAction"
+     ],
+     "api": [
+      {
+       "name": "invariantMeasures_convex",
+       "role": "structure",
+       "statement": "M(T) is convex and nonempty with a regular member on compact Hausdorff spaces."
+      },
+      {
+       "name": "invariantMeasures_compact",
+       "role": "structure",
+       "statement": "On a compact metric space M(T) is compact in ProbabilityMeasure X; its extreme points are the ergodic measures."
+      },
+      {
+       "name": "flowInvariant_average",
+       "role": "constructor",
+       "statement": "M(g) = mu in M(g^1) invariant under g^s for s in [0,1]; averaging sends M(g^1) into M(g)."
+      },
+      {
+       "name": "flowErgodic_extreme",
+       "role": "characterisation",
+       "statement": "Flow-ergodic measures are the extreme points of M(g)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "swap_unique",
+       "kind": "computation",
+       "statement": "For the swap of two points M(T) = {(delta_a + delta_b)/2}."
+      },
+      {
+       "name": "rotation_haar",
+       "kind": "computation",
+       "statement": "For an irrational rotation M(T) = {Haar}."
+      },
+      {
+       "name": "periodic_flow_nonexample",
+       "kind": "non-example",
+       "statement": "For a periodic orbit of period p, M(g) is one measure while M(g^p) contains all point masses of the orbit."
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "theorem",
+     "name": "Dynamics.measureEntropy_mix",
+     "statement": "For finite partitions P, Q: h_mu(T,P) <= h_mu(T,Q) + H_mu(P|Q), from the chain rule applied to n-fold joins (H(P^n) <= H(Q^n) + sum_{i<n} H(T^{-i}P | T^{-i}Q) = H(Q^n) + n H(P|Q)) with monotonicity of conditional entropy under refinement of the conditioning (Jensen) and invariance of mu; h_{p mu + (1-p) nu}(T) = p h_mu(T) + (1-p) h_nu(T) for mu, nu in M(T); and h_mu(T, xi) >= integral of h_{mu_x}(T, xi) for a measurable family with integral mu.",
+     "hypotheses": [
+      "T measurable",
+      "mu, nu in M(T)",
+      "0 <= p <= 1"
+     ],
+     "locator": {
+      "source": "Walters1982",
+      "where": "Theorem 4.12 (conditional inequality), Theorem 8.1 (affinity)"
+     },
+     "prerequisites": [
+      "roadmap:GeometryOfNumbersAndQuadraticArithmetic §4.2",
+      "roadmap:ArithmeticDynamics §2.6",
+      "target:3.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "two_point_identity",
+       "kind": "degenerate",
+       "statement": "Mixtures for the identity of two points have entropy 0 though partition entropy log 2 at n = 1."
+      },
+      {
+       "name": "bernoulli_mixture",
+       "kind": "computation",
+       "statement": "Mixture of Bernoulli(1/2) and Bernoulli(1/3,2/3) has entropy about 0.6648, less than 0.6792 for Bernoulli(5/12,7/12)."
+      },
+      {
+       "name": "trivial_weights",
+       "kind": "degenerate",
+       "statement": "p = 0, 1 or nu = mu give the trivial identity."
+      },
+      {
+       "name": "conditional_inequality_shift",
+       "kind": "computation",
+       "statement": "Bernoulli(1/2) on the two-shift: P = x_0 partition, Q trivial gives log 2 <= 0 + log 2 (equality); P = (x_0,x_1), Q = x_0 gives log 2 <= log 2 + log 2 with H(P|Q) = log 2, and without the conditional term the inequality log 2 <= 0 would be false."
+      }
+     ]
+    },
+    {
+     "id": "3.3",
+     "kind": "theorem",
+     "name": "Dynamics.measureEntropy_eq_lim_fine",
+     "statement": "For continuous T on a compact metric space and mu in M(T): h_mu(T, xi_k) -> h_mu(T) when diam xi_k -> 0; h_mu(T) is the sup over finite partitions with null boundaries; refining by iterates does not change the rate.",
+     "hypotheses": [
+      "X compact metric",
+      "T continuous",
+      "mu in M(T)"
+     ],
+     "locator": {
+      "source": "Walters1982",
+      "where": "Theorem 8.3"
+     },
+     "prerequisites": [
+      "roadmap:ArithmeticDynamics §2.6",
+      "roadmap:ArithmeticDynamics §2.7",
+      "roadmap:GeometryOfNumbersAndQuadraticArithmetic §4.2",
+      "mathlib:MeasureTheory.Measure.Regular",
+      "target:3.1",
+      "target:3.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "bernoulli_fine",
+       "kind": "computation",
+       "statement": "Coordinate partitions on [-k,k] give rate log 2 for Bernoulli(1/2)."
+      },
+      {
+       "name": "identity_zero",
+       "kind": "degenerate",
+       "statement": "For the identity every rate is 0."
+      },
+      {
+       "name": "trivial_partition",
+       "kind": "non-example",
+       "statement": "The trivial partition has rate 0; diameters must tend to 0."
+      }
+     ]
+    },
+    {
+     "id": "3.4",
+     "kind": "theorem",
+     "name": "Dynamics.IsExpansive.upperSemicontinuous_measureEntropy",
+     "statement": "For an expansive homeomorphism with constant c of a compact metric space, h_mu(T) = h_mu(T, xi) for every mu in M(T) and partition of diameter < c, and mu -> h_mu(T) is upper semicontinuous on M(T) and bounded by h_top < oo.",
+     "hypotheses": [
+      "X compact metric",
+      "T expansive homeomorphism with constant c"
+     ],
+     "locator": {
+      "source": "Walters1982",
+      "where": "Theorem 8.2; ClimenhagaThompson2016 Theorem 3.2, lines 504-509; BowenEntropyExpansive1972 Theorem 3.5, lines 297-299"
+     },
+     "prerequisites": [
+      "mathlib:MeasureTheory.ProbabilityMeasure.tendsto_measure_of_null_frontier_of_tendsto",
+      "mathlib:UpperSemicontinuous",
+      "roadmap:ArithmeticDynamics §2.7",
+      "target:1.5",
+      "target:3.1",
+      "target:3.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "shift_generator",
+       "kind": "computation",
+       "statement": "On the full two-shift the partition by x_{-1},x_0,x_1 (diameter 1/4) has rate H(p) for Bernoulli(p)."
+      },
+      {
+       "name": "periodic_measures",
+       "kind": "non-example",
+       "statement": "Periodic orbit measures of entropy 0 converge to Bernoulli(1/2) of entropy log 2: not lower semicontinuous."
+      },
+      {
+       "name": "identity_interval",
+       "kind": "degenerate",
+       "statement": "The identity of [0,1] is not expansive but all entropies vanish."
+      }
+     ]
+    },
+    {
+     "id": "3.5",
+     "kind": "theorem",
+     "name": "Flow.IsExpansive.upperSemicontinuous_measureEntropy",
+     "statement": "For a Bowen-Walters expansive flow on a compact metric space there is eps > 0 with h_mu(g^1) = h_mu(g^1, xi) for mu in M(g^1) and d_1-diameter of xi < eps; mu -> h_mu(g^1) is upper semicontinuous on M(g).",
+     "hypotheses": [
+      "X compact metric",
+      "g Bowen-Walters expansive"
+     ],
+     "locator": {
+      "source": "ClimenhagaThompson2016",
+      "where": "Theorem 3.2 and Propositions 3.3-3.4, lines 504-535; BowenEntropyExpansive1972 Example 1.6"
+     },
+     "prerequisites": [
+      "roadmap:ArithmeticDynamics §2.7",
+      "target:1.6",
+      "target:3.1",
+      "target:3.2",
+      "target:3.3",
+      "target:3.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "periodic_orbit",
+       "kind": "degenerate",
+       "statement": "For a periodic orbit M(g) is one measure of entropy 0."
+      },
+      {
+       "name": "suspension_log2",
+       "kind": "computation",
+       "statement": "The product measure on the suspension of the two-shift has h(g^1) = log 2."
+      },
+      {
+       "name": "irrational_linear",
+       "kind": "non-example",
+       "statement": "The irrational linear flow is not expansive; all entropies are 0."
+      }
+     ]
+    },
+    {
+     "id": "3.6",
+     "kind": "theorem",
+     "name": "Flow.measureEntropy_timeMap",
+     "statement": "For a continuous flow on a compact metric space and mu in M(g), h_mu(g^t) = |t| h_mu(g^1) for all real t (0 * oo = 0).",
+     "hypotheses": [
+      "X compact metric",
+      "g continuous flow",
+      "mu in M(g)"
+     ],
+     "locator": {
+      "source": "BowenRuelle1975",
+      "where": "lines 409-411 and 225-227 (Abramov's formula); ClimenhagaThompson2016 line 588"
+     },
+     "prerequisites": [
+      "roadmap:GeometryOfNumbersAndQuadraticArithmetic §4.2",
+      "roadmap:ArithmeticDynamics §2.7",
+      "target:3.1",
+      "target:3.2",
+      "target:3.3"
+     ],
+     "api": [
+      {
+       "name": "flowEntropy",
+       "role": "definition",
+       "statement": "h_mu(g) := h_mu(g^1)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "roof_two",
+       "kind": "computation",
+       "statement": "Constant roof 2 over Bernoulli(1/2): h(g^2) = log 2, h(g^1) = (log 2)/2."
+      },
+      {
+       "name": "periodic_orbit",
+       "kind": "degenerate",
+       "statement": "Every time-t map of a periodic orbit flow has entropy 0."
+      },
+      {
+       "name": "negative_time",
+       "kind": "non-example",
+       "statement": "h(g^{-1}) = h(g^1); without |t| the formula would give negative entropy."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "Variational principles and equilibrium states",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "theorem",
+     "name": "Dynamics.measureEntropy_add_integral_le_pressure",
+     "statement": "For continuous T on a nonempty compact Hausdorff uniform space, continuous phi and regular mu in M(T): h_mu(T) + integral phi <= P_T(phi).",
+     "hypotheses": [
+      "X nonempty compact Hausdorff",
+      "T, phi continuous",
+      "mu regular in M(T)"
+     ],
+     "locator": {
+      "source": "Misiurewicz1976",
+      "where": "Part I, lines 125-200"
+     },
+     "prerequisites": [
+      "roadmap:GeometryOfNumbersAndQuadraticArithmetic §4.2",
+      "roadmap:ArithmeticDynamics §2.6",
+      "mathlib:MeasureTheory.Measure.Regular",
+      "target:2.1",
+      "target:3.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "bernoulli_bound",
+       "kind": "computation",
+       "statement": "H(p) <= log 2 with equality only at p = 1/2."
+      },
+      {
+       "name": "two_point",
+       "kind": "computation",
+       "statement": "Identity of two points, phi(a) = 1, phi(b) = 0, midpoint: free energy 1/2 <= 1."
+      },
+      {
+       "name": "compat_AD",
+       "kind": "compatibility",
+       "statement": "For phi = 0 on compact metric spaces this is ArithmeticDynamics 2.7's inequality."
+      }
+     ]
+    },
+    {
+     "id": "4.2",
+     "kind": "theorem",
+     "name": "Dynamics.pressure_eq_iSup_freeEnergy",
+     "statement": "P_T(phi) = sup over regular mu in M(T) of h_mu(T) + integral phi, for continuous T and phi on a nonempty compact Hausdorff uniform space.",
+     "hypotheses": [
+      "X nonempty compact Hausdorff",
+      "T, phi continuous"
+     ],
+     "locator": {
+      "source": "Misiurewicz1976",
+      "where": "lines 119-121 and Part II; Walters1982 Theorem 9.10; BowenRuelle1975 lines 176-178"
+     },
+     "prerequisites": [
+      "mathlib:MeasureTheory.ProbabilityMeasure",
+      "mathlib:MeasureTheory.Measure.exists_regular_eq_of_compactSpace",
+      "mathlib:MeasureTheory.ProbabilityMeasure.tendsto_measure_of_null_frontier_of_tendsto",
+      "roadmap:GeometryOfNumbersAndQuadraticArithmetic §4.2",
+      "roadmap:ArithmeticDynamics §2.7",
+      "target:2.1",
+      "target:2.2",
+      "target:3.1",
+      "target:4.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "bernoulli_maximiser",
+       "kind": "computation",
+       "statement": "On the full shift with phi(x_0) the maximiser is Bernoulli with weights e^phi(a)/sum, value log sum e^phi."
+      },
+      {
+       "name": "finite_identity",
+       "kind": "computation",
+       "statement": "For the identity of a finite set the supremum is max phi."
+      },
+      {
+       "name": "regularity_metric",
+       "kind": "compatibility",
+       "statement": "On compact metric spaces every Borel probability is regular."
+      }
+     ]
+    },
+    {
+     "id": "4.3",
+     "kind": "theorem",
+     "name": "Dynamics.topEntropy_eq_iSup_ergodic",
+     "statement": "h_top(T) = sup over regular mu in M(T) of h_mu(T); on compact metric spaces both suprema may be taken over ergodic measures.",
+     "hypotheses": [
+      "X nonempty compact Hausdorff (metric for the ergodic statement)",
+      "T continuous"
+     ],
+     "locator": {
+      "source": "Walters1982",
+      "where": "Theorem 8.6 and Corollary 8.6.1; BCS2022 lines 45-51"
+     },
+     "prerequisites": [
+      "roadmap:ArithmeticDynamics §2.7",
+      "target:3.1",
+      "target:4.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "shift_attained",
+       "kind": "computation",
+       "statement": "The full shift on k symbols attains log k at the uniform Bernoulli measure."
+      },
+      {
+       "name": "identity",
+       "kind": "degenerate",
+       "statement": "The identity has h_top = 0."
+      },
+      {
+       "name": "nonergodic_mixture",
+       "kind": "non-example",
+       "statement": "Fixed point union two-shift: the half-half mixture has (log 2)/2 < log 2."
+      }
+     ]
+    },
+    {
+     "id": "4.4",
+     "kind": "definition",
+     "name": "Dynamics.IsEquilibriumState",
+     "statement": "mu in M(T) with h_mu(T) + integral phi = P_T(phi); a measure of maximal entropy is an equilibrium state of 0.",
+     "hypotheses": [
+      "X compact metric",
+      "T, phi continuous"
+     ],
+     "locator": {
+      "source": "BowenRuelle1975",
+      "where": "lines 180-181; BCS2022 Definition 1.1, lines 54-55"
+     },
+     "prerequisites": [
+      "target:2.3",
+      "target:3.1",
+      "target:4.2"
+     ],
+     "api": [
+      {
+       "name": "isEquilibriumState_add_const",
+       "role": "structure",
+       "statement": "ES(phi + c) = ES(phi); ES(phi + psi o T - psi) = ES(phi)."
+      },
+      {
+       "name": "isEquilibriumState_iff_max",
+       "role": "characterisation",
+       "statement": "ES(phi) is the set of maximisers of the free energy on M(T)."
+      },
+      {
+       "name": "isEquilibriumState_conj",
+       "role": "functoriality",
+       "statement": "Equilibrium states are transported by conjugacies."
+      }
+     ],
+     "tests": [
+      {
+       "name": "two_point_delta",
+       "kind": "computation",
+       "statement": "Identity of two points with phi(a) = 1, phi(b) = 0: ES = {delta_a}; phi = 0: every measure."
+      },
+      {
+       "name": "swap",
+       "kind": "degenerate",
+       "statement": "For the swap the unique invariant measure is the equilibrium state of every phi."
+      },
+      {
+       "name": "fixed_point_nonexample",
+       "kind": "non-example",
+       "statement": "The point mass at a fixed point of the two-shift is not a measure of maximal entropy."
+      }
+     ]
+    },
+    {
+     "id": "4.5",
+     "kind": "theorem",
+     "name": "Dynamics.equilibriumStates_structure",
+     "statement": "ES(phi) is a convex face of M(T); its extreme points are its ergodic members; mu-almost every ergodic component of mu in ES(phi) is in ES(phi).",
+     "hypotheses": [
+      "X nonempty compact metric",
+      "T continuous",
+      "h_top(T) < oo",
+      "phi continuous"
+     ],
+     "locator": {
+      "source": "Walters1982",
+      "where": "Theorem 9.13; BCS2022 line 56"
+     },
+     "prerequisites": [
+      "mathlib:Ergodic.iff_mem_extremePoints",
+      "roadmap:ArithmeticDynamics §2.7",
+      "target:3.2",
+      "target:4.1",
+      "target:4.2",
+      "target:4.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "two_shifts_segment",
+       "kind": "computation",
+       "statement": "Disjoint union of two two-shifts: ES(0) is a segment with ergodic endpoints."
+      },
+      {
+       "name": "identity_interval",
+       "kind": "computation",
+       "statement": "Identity of [0,1], phi = -(x-1/2)^2: ES = {delta_{1/2}}."
+      },
+      {
+       "name": "components_only_es",
+       "kind": "non-example",
+       "statement": "The midpoint of delta_a, delta_b for phi(a)=1, phi(b)=0 is not an equilibrium state though delta_a is."
+      }
+     ]
+    },
+    {
+     "id": "4.6",
+     "kind": "theorem",
+     "name": "Dynamics.exists_isEquilibriumState",
+     "statement": "If mu -> h_mu(T) is upper semicontinuous on M(T) as a [0,oo]-valued function (X nonempty compact metric), ES(phi) is nonempty and compact for every continuous phi, with no finiteness of h_top(T) assumed: an upper semicontinuous function on a nonempty compact set attains its supremum also when it is oo; in particular for expansive homeomorphisms.",
+     "hypotheses": [
+      "X nonempty compact metric",
+      "T continuous",
+      "entropy upper semicontinuous on M(T)"
+     ],
+     "locator": {
+      "source": "Walters1982",
+      "where": "Theorem 8.2 and Theorem 9.13(iv); BowenRuelle1975 lines 178-179"
+     },
+     "prerequisites": [
+      "mathlib:UpperSemicontinuous",
+      "mathlib:MeasureTheory.ProbabilityMeasure",
+      "target:3.1",
+      "target:3.4",
+      "target:4.2",
+      "target:4.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "shift_mme",
+       "kind": "computation",
+       "statement": "The full shift has the uniform Bernoulli measure as measure of maximal entropy."
+      },
+      {
+       "name": "buzzi_nonexistence",
+       "kind": "non-example",
+       "statement": "C^r diffeomorphisms with no MME exist for finite r (Buzzi2014 Corollary 1)."
+      },
+      {
+       "name": "identity_interval",
+       "kind": "degenerate",
+       "statement": "Identity of [0,1]: ES(phi) is the set of measures on argmax phi."
+      },
+      {
+       "name": "infinite_entropy_case",
+       "kind": "degenerate",
+       "statement": "When h_top = oo, P = oo and ES(phi) is the set of measures of infinite entropy, nonempty and closed under upper semicontinuity; finiteness was redundant."
+      }
+     ]
+    },
+    {
+     "id": "4.7",
+     "kind": "theorem",
+     "name": "Dynamics.newhouse_upperSemicontinuous",
+     "statement": "Input stated without proof: for a C^infty map of a compact C^infty manifold, mu -> h_mu(f) is upper semicontinuous on M(f); hence equilibrium states and measures of maximal entropy exist. Proof outside the roadmap.",
+     "hypotheses": [
+      "M compact C^infty manifold",
+      "f C^infty"
+     ],
+     "locator": {
+      "source": "Newhouse1989",
+      "where": "Theorem 1; BCS2022 lines 59-60; Buzzi2014 lines 25-27"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:4.6"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "toral_consistent",
+       "kind": "compatibility",
+       "statement": "Hyperbolic toral automorphisms are C^infty and expansive; 3.4 agrees."
+      },
+      {
+       "name": "finite_r_fails",
+       "kind": "non-example",
+       "statement": "For finite r the conclusion fails (Buzzi2014)."
+      },
+      {
+       "name": "identity_manifold",
+       "kind": "degenerate",
+       "statement": "The identity has all entropies zero."
+      }
+     ]
+    },
+    {
+     "id": "4.8",
+     "kind": "definition",
+     "name": "Flow.IsEquilibriumState",
+     "statement": "mu in M(g) with h_mu(g^1) + integral F = P_g(F); theorem: P_g(F) = sup over mu in M(g) of h_mu(g^1) + integral F.",
+     "hypotheses": [
+      "X compact metric",
+      "g continuous flow",
+      "F continuous"
+     ],
+     "locator": {
+      "source": "BowenRuelle1975",
+      "where": "lines 192-201; TsujiiZhang2023 Definition 3.5, lines 485-495"
+     },
+     "prerequisites": [
+      "mathlib:ErgodicVAdd",
+      "mathlib:Flow.toAddAction",
+      "target:2.4",
+      "target:3.1",
+      "target:3.2",
+      "target:3.3",
+      "target:3.5",
+      "target:4.1",
+      "target:4.2",
+      "target:4.5"
+     ],
+     "api": [
+      {
+       "name": "flowPressure_eq_iSup",
+       "role": "characterisation",
+       "statement": "Variational principle for flows."
+      },
+      {
+       "name": "flowES_structure",
+       "role": "structure",
+       "statement": "ES_g(F) convex with flow-ergodic extreme points; nonempty compact under upper semicontinuity, in particular for expansive flows."
+      },
+      {
+       "name": "flowES_add_const",
+       "role": "evaluation",
+       "statement": "ES_g(F + c) = ES_g(F)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "periodic_orbit",
+       "kind": "computation",
+       "statement": "On a periodic orbit the time measure is the equilibrium state of every F."
+      },
+      {
+       "name": "suspension_mme",
+       "kind": "computation",
+       "statement": "The suspension of the two-shift has the product measure as MME."
+      },
+      {
+       "name": "timeone_nonexample",
+       "kind": "non-example",
+       "statement": "Maximising over M(g^1) gives non-flow-invariant point masses on a period-1 orbit."
+      }
+     ]
+    },
+    {
+     "id": "4.9",
+     "kind": "theorem",
+     "name": "Flow.isEquilibriumState_timeChange",
+     "statement": "For t > 0 and mu in M(g): mu in ES_g(F) iff mu is an equilibrium state of F_t for g^t; ES_{g_a}(aF) = ES_g(F); F' = F + c + L_g psi gives P' = P + c and ES' = ES.",
+     "hypotheses": [
+      "X compact metric",
+      "g continuous flow",
+      "h_top(g) < oo",
+      "F continuous",
+      "psi continuous, differentiable along g with continuous derivative"
+     ],
+     "locator": {
+      "source": "BowenRuelle1975",
+      "where": "lines 213-219 and 409-413; TsujiiZhang2023 lines 106-109"
+     },
+     "prerequisites": [
+      "target:2.4",
+      "target:3.6",
+      "target:4.8"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "coboundary_integral",
+       "kind": "computation",
+       "statement": "On a periodic orbit the integral of L_g psi over a period is 0."
+      },
+      {
+       "name": "suspension_shift",
+       "kind": "computation",
+       "statement": "F = 1 and 1 + L_g psi have the same equilibrium state, pressure log 2 + 1."
+      },
+      {
+       "name": "invariance_needed",
+       "kind": "non-example",
+       "statement": "On a period-1 orbit point masses are equilibrium states of F_1 for g^1 but not in M(g)."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "Bowen's uniqueness criterion",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "definition",
+     "name": "Dynamics.IsGibbs",
+     "statement": "mu in M(T) is Gibbs for phi at scale eps with constant K if K^{-1} <= mu(B_n(x,eps)) exp(n P - S_n phi(x)) <= K for all x, n >= 1; flows: the lower bound for t >= 1.",
+     "hypotheses": [
+      "X compact metric",
+      "T homeomorphism or g flow",
+      "P finite"
+     ],
+     "locator": {
+      "source": "BowenRuelle1975",
+      "where": "Proposition 3.1(d), lines 218-222; Theorem 3.3, lines 272-277; ClimenhagaThompson2016 Lemma 4.16 and Proposition 6.17"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.5",
+      "target:2.3",
+      "target:3.1"
+     ],
+     "api": [
+      {
+       "name": "gibbs_pos_open",
+       "role": "structure",
+       "statement": "Gibbs at arbitrarily small scales implies positivity on nonempty open sets."
+      },
+      {
+       "name": "gibbs_isEquilibriumState",
+       "role": "compatibility",
+       "statement": "Gibbs below an expansivity constant implies equilibrium state."
+      },
+      {
+       "name": "gibbs_equivalent",
+       "role": "characterisation",
+       "statement": "If T is expansive and eps is below an expansivity constant, two Gibbs measures for phi at scale eps are mutually absolutely continuous with bounded densities (Gibbs bounds pass to smaller scales by uniform expansivity, BowenPeriodicPoints1971 Lemma 2.4; Vitali covering by two-sided Bowen balls, which shrink to points); equal if one is ergodic (BowenPeriodicPoints1971 Lemma 6.4)."
+      },
+      {
+       "name": "gibbs_cohomologous",
+       "role": "functoriality",
+       "statement": "Gibbs for phi iff for phi + c, iff for phi + psi o T - psi with adjusted K."
+      }
+     ],
+     "tests": [
+      {
+       "name": "bernoulli_gibbs",
+       "kind": "computation",
+       "statement": "Uniform Bernoulli on the two-shift is Gibbs with K = 4 at eps = 1/2."
+      },
+      {
+       "name": "swap_gibbs",
+       "kind": "degenerate",
+       "statement": "The swap's invariant measure is Gibbs."
+      },
+      {
+       "name": "delta_nonexample",
+       "kind": "non-example",
+       "statement": "A fixed-point mass on the two-shift is not Gibbs."
+      },
+      {
+       "name": "identity_interval_nonexample",
+       "kind": "nonexample",
+       "statement": "Identity of [0,1], phi = 0, eps = 1: every invariant measure is Gibbs with K = 1 and delta_0, delta_1 are mutually singular; expansivity is needed for equivalence."
+      }
+     ]
+    },
+    {
+     "id": "5.2",
+     "kind": "theorem",
+     "name": "Dynamics.existsUnique_isEquilibriumState_of_expansive_specification",
+     "statement": "X nonempty compact metric, T expansive homeomorphism with weak specification, phi continuous Bowen: unique equilibrium state, ergodic, Gibbs at small scales, positive on nonempty open sets.",
+     "hypotheses": [
+      "X nonempty compact metric",
+      "T expansive homeomorphism",
+      "weak specification",
+      "phi continuous with the Bowen property"
+     ],
+     "locator": {
+      "source": "ClimenhagaThompson2016",
+      "where": "Theorem 5.5, lines 1717-1724; Proposition 6.16; Lemma 6.13; Proposition 6.17"
+     },
+     "prerequisites": [
+      "target:1.5",
+      "target:1.8",
+      "target:1.9",
+      "target:3.4",
+      "target:4.2",
+      "target:4.5",
+      "target:4.6",
+      "target:5.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "bernoulli",
+       "kind": "computation",
+       "statement": "Full shift, phi(x_0): Bernoulli weights e^phi/sum."
+      },
+      {
+       "name": "swap_ergodic_not_mixing",
+       "kind": "degenerate",
+       "statement": "The swap: ergodic, not mixing."
+      },
+      {
+       "name": "union_nonexample",
+       "kind": "non-example",
+       "statement": "Two disjoint shifts: no weak specification, ES(0) a segment."
+      }
+     ]
+    },
+    {
+     "id": "5.3",
+     "kind": "theorem",
+     "name": "Flow.existsUnique_isEquilibriumState_of_expansive_specification",
+     "statement": "X nonempty compact metric, g Bowen-Walters expansive flow with weak specification, phi continuous Bowen: unique equilibrium state, flow-ergodic, lower Gibbs bound at small scales, positive on nonempty open sets.",
+     "hypotheses": [
+      "X nonempty compact metric",
+      "g expansive flow",
+      "weak specification",
+      "phi continuous Bowen for g"
+     ],
+     "locator": {
+      "source": "ClimenhagaThompson2016",
+      "where": "Theorem A, lines 140-147; Proposition 4.19; Lemma 4.16; Proposition 4.15"
+     },
+     "prerequisites": [
+      "target:1.6",
+      "target:1.8",
+      "target:1.9",
+      "target:3.5",
+      "target:4.8",
+      "target:5.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "suspension_nonmixing",
+       "kind": "computation",
+       "statement": "Constant-roof suspension of the two-shift: unique MME, not mixing."
+      },
+      {
+       "name": "periodic_orbit",
+       "kind": "degenerate",
+       "statement": "Periodic orbit: time measure for every potential."
+      },
+      {
+       "name": "identity_two_points",
+       "kind": "non-example",
+       "statement": "Identity flow of two points: no weak specification, every measure is an MME."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "6",
+   "title": "Abstract hyperbolic dynamics",
+   "targets": [
+    {
+     "id": "6.1",
+     "kind": "definition",
+     "name": "Dynamics.HasHyperbolicLocalProductStructure",
+     "statement": "A homeomorphism of a compact metric space has hyperbolic local product structure if (A2) W^s_delta(x) meets W^u_delta(z) when d(x,z) < e(delta) and (A3) local stable/unstable sets contract exponentially forward/backward; Axiom A* adds (A1) dense periodic points.",
+     "hypotheses": [
+      "X compact metric",
+      "f homeomorphism"
+     ],
+     "locator": {
+      "source": "BowenPeriodicPoints1971",
+      "where": "lines 66-83"
+     },
+     "prerequisites": [
+      "target:1.1"
+     ],
+     "api": [
+      {
+       "name": "bracket",
+       "role": "constructor",
+       "statement": "For small delta the intersection is a single point [x,z], continuous, [x,x] = x, f[x,z] = [fx,fz]."
+      },
+      {
+       "name": "hlps_inv_iterate",
+       "role": "functoriality",
+       "statement": "f^{-1} (s and u exchanged) and f^k (rate lambda^k) have the structure."
+      },
+      {
+       "name": "hlps_biLipschitz",
+       "role": "structure",
+       "statement": "Invariant under bi-Lipschitz change of metric."
+      }
+     ],
+     "tests": [
+      {
+       "name": "full_shift",
+       "kind": "computation",
+       "statement": "Full two-shift: W^s_{1/2}(x) = {y_i = x_i, i >= 0}, c = 1, lambda = 1/2, bracket by coordinates; Axiom A*."
+      },
+      {
+       "name": "finite_identity",
+       "kind": "degenerate",
+       "statement": "The identity of a finite set satisfies Axiom A*."
+      },
+      {
+       "name": "rotation_nonexample",
+       "kind": "non-example",
+       "statement": "Irrational rotation and identity of the circle fail (A3)."
+      }
+     ]
+    },
+    {
+     "id": "6.2",
+     "kind": "theorem",
+     "name": "Dynamics.HasHyperbolicLocalProductStructure.expansive_shadowing_closing",
+     "statement": "Hyperbolic local product structure implies: expansive with constant delta*; shadowing of pseudo-orbits by points, unique when 2 beta <= delta*; closing lemma; transitive implies dense periodic points (Axiom A*).",
+     "hypotheses": [
+      "X compact metric",
+      "f homeomorphism with hyperbolic local product structure"
+     ],
+     "locator": {
+      "source": "BowenPeriodicPoints1971",
+      "where": "Lemma 2.3, lines 96-97; 2.5, lines 101-104; proof of 2.10, lines 171-200; Bowen1975 Chapter 3; KatokHasselblatt1995 Section 18.1"
+     },
+     "prerequisites": [
+      "target:1.5",
+      "target:6.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "shift_shadowing",
+       "kind": "computation",
+       "statement": "On the full shift the shadowing point reads off zeroth symbols; closing repeats the first m symbols."
+      },
+      {
+       "name": "finite_identity",
+       "kind": "degenerate",
+       "statement": "Pseudo-orbits of the identity of a finite set are constant."
+      },
+      {
+       "name": "rotation_nonexample",
+       "kind": "non-example",
+       "statement": "The irrational rotation has unshadowed pseudo-orbits and no periodic points."
+      },
+      {
+       "name": "shift_large_beta",
+       "kind": "nonexample",
+       "statement": "On the two-shift (diameter 1, delta* = 1/2) with beta = 1 every point shadows every pseudo-orbit; uniqueness needs 2 beta <= delta*."
+      }
+     ]
+    },
+    {
+     "id": "6.3",
+     "kind": "theorem",
+     "name": "Dynamics.AxiomAStar.spectralDecomposition_specification",
+     "statement": "Axiom A*: spectral decomposition into cyclically permuted closed pieces with C-dense return maps; strong specification for C-dense f; transitive f has weak specification at every scale and h_top > 0 unless X is finite.",
+     "hypotheses": [
+      "X compact metric",
+      "f satisfies Axiom A*"
+     ],
+     "locator": {
+      "source": "BowenPeriodicPoints1971",
+      "where": "2.6-2.10, lines 105-168; Remark 4.4, lines 421-426"
+     },
+     "prerequisites": [
+      "target:1.7",
+      "target:1.8",
+      "target:6.1",
+      "target:6.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "swap_two_pieces",
+       "kind": "computation",
+       "statement": "The swap has two pieces fixed by f^2; weak not strong specification."
+      },
+      {
+       "name": "shift_one_piece",
+       "kind": "computation",
+       "statement": "The full shift is C-dense with one piece."
+      },
+      {
+       "name": "union_nonexample",
+       "kind": "non-example",
+       "statement": "Two disjoint shifts: permutation not a cycle, not transitive."
+      }
+     ]
+    },
+    {
+     "id": "6.4",
+     "kind": "theorem",
+     "name": "Dynamics.HasHyperbolicLocalProductStructure.hasBowenProperty_of_holder",
+     "statement": "With hyperbolic local product structure, every Hoelder potential has the Bowen property, with K = 2C(c delta)^theta/(1 - lambda^theta).",
+     "hypotheses": [
+      "X compact metric",
+      "f with hyperbolic local product structure",
+      "phi Hoelder (HolderWith C theta, theta > 0)"
+     ],
+     "locator": {
+      "source": "ClimenhagaThompson2016",
+      "where": "lines 341-342; Bowen1975 Chapter 1"
+     },
+     "prerequisites": [
+      "mathlib:HolderWith",
+      "target:1.9",
+      "target:6.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "coordinate_lipschitz",
+       "kind": "computation",
+       "statement": "x -> x_0 on the two-shift is Lipschitz and Bowen with K = 0."
+      },
+      {
+       "name": "constant",
+       "kind": "degenerate",
+       "statement": "Constants are Hoelder and Bowen with K = 0."
+      },
+      {
+       "name": "harmonic_not_holder",
+       "kind": "non-example",
+       "statement": "The non-Bowen potential of 1.9 is not Hoelder."
+      }
+     ]
+    },
+    {
+     "id": "6.5",
+     "kind": "definition",
+     "name": "Flow.HasHyperbolicLocalProductStructure",
+     "statement": "A continuous flow without fixed points on a compact metric space has hyperbolic local product structure if (F2) nearby x, z have a unique small v with W^s_delta(g^v x) meeting W^u_delta(z) and (F3) strong stable/unstable sets contract exponentially.",
+     "hypotheses": [
+      "X compact metric",
+      "g continuous flow without fixed points"
+     ],
+     "locator": {
+      "source": "BowenRuelle1975",
+      "where": "lines 96-108 and 303-307; FH2019 Part II"
+     },
+     "prerequisites": [
+      "mathlib:Flow",
+      "mathlib:Flow.reverse",
+      "target:1.1"
+     ],
+     "api": [
+      {
+       "name": "flow_bracket",
+       "role": "constructor",
+       "statement": "Bracket [x,z] and time shift v continuous, equivariant."
+      },
+      {
+       "name": "flow_hlps_reverse",
+       "role": "functoriality",
+       "statement": "Reversal exchanges W^s, W^u; rescaling multiplies kappa."
+      },
+      {
+       "name": "weak_stable_transversal",
+       "role": "structure",
+       "statement": "Nearby z lies in W^u_delta of the point [x,z] of W^cs_delta(x)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "suspension",
+       "kind": "computation",
+       "statement": "Constant-roof suspension of the two-shift: bracket at matched heights, v the height difference."
+      },
+      {
+       "name": "periodic_orbit",
+       "kind": "degenerate",
+       "statement": "On a periodic orbit W^s and W^u are points and z = g^v x."
+      },
+      {
+       "name": "linear_nonexample",
+       "kind": "non-example",
+       "statement": "The irrational linear flow fails (F3)."
+      }
+     ]
+    },
+    {
+     "id": "6.6",
+     "kind": "theorem",
+     "name": "Flow.HasHyperbolicLocalProductStructure.expansive_closing_specification",
+     "statement": "Hyperbolic local product structure implies Bowen-Walters expansivity and closing; transitive flows have dense periodic orbits and weak specification at every scale.",
+     "hypotheses": [
+      "X compact metric",
+      "g with hyperbolic local product structure"
+     ],
+     "locator": {
+      "source": "BowenEntropyExpansive1972",
+      "where": "Example 1.6*, lines 134-135; BowenWalters1972; FH2019 Part II; KatokHasselblatt1995 Section 18.1"
+     },
+     "prerequisites": [
+      "target:1.6",
+      "target:1.7",
+      "target:1.8",
+      "target:6.5"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "suspension_weak_spec",
+       "kind": "computation",
+       "statement": "The suspension has weak specification with gaps in [0, tau0 + 1] but integer periods."
+      },
+      {
+       "name": "periodic_orbit",
+       "kind": "degenerate",
+       "statement": "Periodic orbit: dense periodic orbit, gaps at most one period."
+      },
+      {
+       "name": "two_orbits_nonexample",
+       "kind": "non-example",
+       "statement": "Two disjoint periodic orbits: not transitive, no weak specification."
+      }
+     ]
+    },
+    {
+     "id": "6.7",
+     "kind": "theorem",
+     "name": "Flow.HasHyperbolicLocalProductStructure.hasBowenProperty_of_holder",
+     "statement": "With hyperbolic local product structure, every Hoelder potential has the Bowen property for the flow.",
+     "hypotheses": [
+      "X compact metric",
+      "g with hyperbolic local product structure",
+      "phi Hoelder"
+     ],
+     "locator": {
+      "source": "BowenRuelle1975",
+      "where": "Appendix, Lemma A.2, lines 681-701; ClimenhagaThompson2016 lines 341-342"
+     },
+     "prerequisites": [
+      "mathlib:HolderWith",
+      "target:1.9",
+      "target:6.5"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "constant",
+       "kind": "degenerate",
+       "statement": "Constants are Bowen with K = 0."
+      },
+      {
+       "name": "suspension_potential",
+       "kind": "computation",
+       "statement": "A potential of the zeroth symbol, Lipschitz in height, is Bowen on the suspension."
+      },
+      {
+       "name": "coboundary_independent",
+       "kind": "compatibility",
+       "statement": "L_g psi is Bowen by 1.9 without hyperbolicity."
+      }
+     ]
+    },
+    {
+     "id": "6.8",
+     "kind": "theorem",
+     "name": "Dynamics.existsUnique_isEquilibriumState_of_hyperbolic",
+     "statement": "(a) transitive homeomorphism with hyperbolic local product structure and Hoelder phi: unique, ergodic, Gibbs, fully supported equilibrium state; unique MME, h_top > 0 unless X finite. (b) same for transitive flows with flow-ergodicity and lower Gibbs bound.",
+     "hypotheses": [
+      "X nonempty compact metric",
+      "f or g transitive with hyperbolic local product structure",
+      "phi Hoelder"
+     ],
+     "locator": {
+      "source": "BowenPeriodicPoints1971",
+      "where": "8.1, lines 749-750; Remark 4.4, lines 421-426; ClimenhagaThompson2016 Theorem 5.5 and Theorem A"
+     },
+     "prerequisites": [
+      "target:5.2",
+      "target:5.3",
+      "target:6.2",
+      "target:6.3",
+      "target:6.4",
+      "target:6.6",
+      "target:6.7"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "bernoulli",
+       "kind": "computation",
+       "statement": "Full shift, phi(x_0): the Bernoulli measure of 5.2."
+      },
+      {
+       "name": "swap_finite",
+       "kind": "degenerate",
+       "statement": "The swap: h_top = 0, unique measure."
+      },
+      {
+       "name": "periodic_orbit_flow",
+       "kind": "degenerate",
+       "statement": "Periodic orbit: time measure, entropy 0."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "7",
+   "title": "Hyperbolic sets and their linear theory",
+   "targets": [
+    {
+     "id": "7.1",
+     "kind": "definition",
+     "name": "Manifold.IsHyperbolicSet",
+     "statement": "Compact Lambda with f(Lambda) = Lambda is hyperbolic for a C^1 diffeomorphism and a continuous Riemannian metric if there are C > 0, 0 < lambda < 1 and invariant complementary E^s_x, E^u_x with |Df^n v| <= C lambda^n |v| on E^s and |Df^{-n} v| <= C lambda^n |v| on E^u; f is Anosov if M is compact and hyperbolic.",
+     "hypotheses": [
+      "M finite-dimensional smooth manifold without boundary",
+      "f : Diffeomorph I I M M 1",
+      "g : Bundle.ContinuousRiemannianMetric on TM",
+      "Lambda compact, f(Lambda) = Lambda"
+     ],
+     "locator": {
+      "source": "Smale1967",
+      "where": "Part I, Section 1.3, lines 381-473; KatokHasselblatt1995 Section 6.4"
+     },
+     "prerequisites": [
+      "mathlib:Diffeomorph",
+      "mathlib:mfderiv",
+      "mathlib:Bundle.ContinuousRiemannianMetric"
+     ],
+     "api": [
+      {
+       "name": "isHyperbolicSet_subset",
+       "role": "structure",
+       "statement": "Closed invariant subsets and finite unions of hyperbolic sets are hyperbolic."
+      },
+      {
+       "name": "isHyperbolicSet_fixedPoint_iff",
+       "role": "characterisation",
+       "statement": "{p} is hyperbolic iff Df_p has no eigenvalue of modulus 1."
+      },
+      {
+       "name": "isHyperbolicSet_conj",
+       "role": "functoriality",
+       "statement": "Invariant under C^1 conjugacy."
+      }
+     ],
+     "tests": [
+      {
+       "name": "diag_saddle",
+       "kind": "computation",
+       "statement": "{0} is hyperbolic for diag(2,1/2) with E^s the second axis, C = 1, lambda = 1/2; not for diag(2,1)."
+      },
+      {
+       "name": "identity_nonexample",
+       "kind": "non-example",
+       "statement": "The identity has no nonempty hyperbolic set in positive dimension."
+      },
+      {
+       "name": "lambda_one_excluded",
+       "kind": "degenerate",
+       "statement": "lambda = 1 must be excluded or every isometry qualifies."
+      }
+     ]
+    },
+    {
+     "id": "7.2",
+     "kind": "definition",
+     "name": "Flow.IsHyperbolicSet",
+     "statement": "Compact invariant Lambda is hyperbolic for a C^1 flow if X has no zero on Lambda and TM = E^s + RX + E^u invariant with |Dg^t v| <= C e^{-kappa t}|v| on E^s, |Dg^{-t} v| <= C e^{-kappa t}|v| on E^u for t >= 0; g is Anosov if M is compact and hyperbolic.",
+     "hypotheses": [
+      "M smooth manifold",
+      "g C^1 flow",
+      "continuous Riemannian metric",
+      "Lambda compact invariant"
+     ],
+     "locator": {
+      "source": "BowenRuelle1975",
+      "where": "lines 10-18; FH2019 Part II"
+     },
+     "prerequisites": [
+      "mathlib:Flow",
+      "mathlib:mfderiv",
+      "mathlib:Bundle.ContinuousRiemannianMetric"
+     ],
+     "api": [
+      {
+       "name": "flowHyperbolic_subset",
+       "role": "structure",
+       "statement": "Closed invariant subsets are hyperbolic; Dg^t X = X o g^t, |X| bounded above and below."
+      },
+      {
+       "name": "periodicOrbit_hyperbolic_iff",
+       "role": "characterisation",
+       "statement": "A periodic orbit is hyperbolic iff the return map on T/RX has no eigenvalue of modulus 1."
+      },
+      {
+       "name": "flowHyperbolic_conj",
+       "role": "functoriality",
+       "statement": "Invariant under C^1 conjugacy of flows."
+      }
+     ],
+     "tests": [
+      {
+       "name": "constant_field_nonexample",
+       "kind": "non-example",
+       "statement": "The constant field on the 2-torus is not Anosov."
+      },
+      {
+       "name": "suspended_saddle",
+       "kind": "computation",
+       "statement": "The suspended saddle diag(2,1/2) is a hyperbolic periodic orbit with kappa = log 2."
+      },
+      {
+       "name": "zero_excluded",
+       "kind": "degenerate",
+       "statement": "A hyperbolic zero of the generator is excluded."
+      }
+     ]
+    },
+    {
+     "id": "7.3",
+     "kind": "theorem",
+     "name": "Manifold.IsHyperbolicSet.of_metric",
+     "statement": "Hyperbolicity is independent of the continuous Riemannian metric, with constants (C K1 K2, lambda), K1, K2 the norm-ratio bounds over Lambda; same for flows.",
+     "hypotheses": [
+      "Lambda compact hyperbolic for one continuous metric",
+      "another continuous metric"
+     ],
+     "locator": {
+      "source": "KatokHasselblatt1995",
+      "where": "Section 6.4; BowenRuelle1975 lines 412-413"
+     },
+     "prerequisites": [
+      "mathlib:Bundle.ContinuousRiemannianMetric",
+      "mathlib:Continuous.inner_bundle",
+      "target:7.1",
+      "target:7.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "scaling",
+       "kind": "computation",
+       "statement": "Scaling the metric by 4 gives K1 K2 = 1."
+      },
+      {
+       "name": "gram_metric",
+       "kind": "computation",
+       "statement": "Gram matrix (2 1;1 1) at the saddle: K1 K2 = (3+sqrt5)/2."
+      },
+      {
+       "name": "noncompact_nonexample",
+       "kind": "non-example",
+       "statement": "On a noncompact orbit an unbounded metric ratio can destroy the constant."
+      }
+     ]
+    },
+    {
+     "id": "7.4",
+     "kind": "theorem",
+     "name": "Manifold.IsHyperbolicSet.stable_eq",
+     "statement": "E^s_x = {v : |Df^n v| -> 0} = {v : sup_n |Df^n v| < oo}; E^u backward; splittings are unique; for flows E^s = decaying vectors and E^s + RX = bounded vectors.",
+     "hypotheses": [
+      "Lambda hyperbolic",
+      "x in Lambda"
+     ],
+     "locator": {
+      "source": "KatokHasselblatt1995",
+      "where": "Section 6.4; FH2019 Part II"
+     },
+     "prerequisites": [
+      "target:7.1",
+      "target:7.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "saddle_vectors",
+       "kind": "computation",
+       "statement": "For diag(2,1/2): (1,1) is unbounded, (0,1) decays."
+      },
+      {
+       "name": "flow_direction",
+       "kind": "computation",
+       "statement": "The flow direction is bounded, not decaying."
+      },
+      {
+       "name": "rotation_nonexample",
+       "kind": "non-example",
+       "statement": "For a rotation all vectors are bounded and none decays."
+      }
+     ]
+    },
+    {
+     "id": "7.5",
+     "kind": "theorem",
+     "name": "Manifold.IsHyperbolicSet.isClosed_stableBundle",
+     "statement": "The stable (and unstable) bundle is closed in TM over Lambda, dimensions are locally constant, and projections are uniformly bounded.",
+     "hypotheses": [
+      "Lambda hyperbolic"
+     ],
+     "locator": {
+      "source": "KatokHasselblatt1995",
+      "where": "Section 6.4; BowenRuelle1975 line 13"
+     },
+     "prerequisites": [
+      "mathlib:Bundle.ContinuousRiemannianMetric",
+      "target:7.1",
+      "target:7.2",
+      "target:7.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "toral_constant",
+       "kind": "computation",
+       "statement": "For toral automorphisms the splitting is constant."
+      },
+      {
+       "name": "saddle_sink",
+       "kind": "computation",
+       "statement": "Saddle union sink: dim E^s takes values 1 and 2."
+      },
+      {
+       "name": "degenerating_family",
+       "kind": "non-example",
+       "statement": "diag(1+t, 1/(1+t)) as t -> 0: rates degenerate and closedness is not uniform."
+      }
+     ]
+    },
+    {
+     "id": "7.6",
+     "kind": "theorem",
+     "name": "Manifold.IsHyperbolicSet.exists_adaptedMetric",
+     "statement": "For lambda < lambda' < 1 there is a continuous Riemannian metric with |Df v| <= lambda'|v| on E^s and |Df^{-1} v| <= lambda'|v| on E^u over Lambda (C = 1); for flows with kappa' < kappa and all t >= 0.",
+     "hypotheses": [
+      "M compact",
+      "Lambda hyperbolic with rate lambda (or kappa)"
+     ],
+     "locator": {
+      "source": "BowenRuelle1975",
+      "where": "lines 19-24; KatokHasselblatt1995 Section 6.4"
+     },
+     "prerequisites": [
+      "mathlib:Bundle.ContinuousRiemannianMetric",
+      "roadmap:DifferentialGeometry Layer 12",
+      "target:7.1",
+      "target:7.2",
+      "target:7.5"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "saddle_adapted",
+       "kind": "computation",
+       "statement": "The Euclidean metric is adapted for diag(2,1/2)."
+      },
+      {
+       "name": "sasaki",
+       "kind": "computation",
+       "statement": "Curvature -1 surface: Sasaki metric adapted with C = 1, kappa = 1."
+      },
+      {
+       "name": "jordan_block",
+       "kind": "non-example",
+       "statement": "The Jordan block (1/2 1;0 1/2) shows the rate itself cannot be kept."
+      }
+     ]
+    },
+    {
+     "id": "7.7",
+     "kind": "theorem",
+     "name": "Manifold.IsHyperbolicSet.inv_iterate_reverse",
+     "statement": "Hyperbolic sets of f are hyperbolic for f^{-1} (swap) and f^k (rate lambda^k); for flows, for the reversal (swap) and rescaling (a kappa); inverses and reversals of Anosov systems are Anosov; time-t maps of Anosov flows are not Anosov.",
+     "hypotheses": [
+      "Lambda hyperbolic"
+     ],
+     "locator": {
+      "source": "KatokHasselblatt1995",
+      "where": "Section 6.4; FH2019 Part II"
+     },
+     "prerequisites": [
+      "mathlib:Flow.reverse",
+      "target:7.1",
+      "target:7.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "cat_inverse",
+       "kind": "computation",
+       "statement": "The inverse cat matrix has exchanged eigenvalues."
+      },
+      {
+       "name": "square_rate",
+       "kind": "computation",
+       "statement": "f^2 for diag(2,1/2) has rate 1/4."
+      },
+      {
+       "name": "timeone_nonexample",
+       "kind": "non-example",
+       "statement": "The time-1 map of a suspension fixes |X| and is not Anosov."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "8",
+   "title": "Invariant manifolds and local product structure",
+   "targets": [
+    {
+     "id": "8.1",
+     "kind": "theorem",
+     "name": "Manifold.hadamardPerron",
+     "statement": "Uniform Hadamard-Perron for sequences f_n = (A_n x + g_n, B_n y + h_n) with |A_n^{-1}| <= mu^{-1}, |B_n| <= lambda, mu > max(1,lambda), small C^1 nonlinearities: unique invariant family of C^1 graphs over E^u with expansion and growth characterisation; stable family by inverses.",
+     "hypotheses": [
+      "mu > max(1, lambda)",
+      "C^1 norms of g_n, h_n below delta0"
+     ],
+     "locator": {
+      "source": "ClimenhagaPesin2016",
+      "where": "Theorem 11.1 and Remark 11.2, lines 1822-1843; KatokHasselblatt1995 Theorem 6.2.8"
+     },
+     "prerequisites": [
+      "mathlib:ContractingWith",
+      "mathlib:fderiv"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "linear",
+       "kind": "computation",
+       "statement": "For linear maps the graphs are E^u, expansion mu."
+      },
+      {
+       "name": "dominated",
+       "kind": "compatibility",
+       "statement": "lambda >= 1 allowed: strong unstable manifolds for dominated splittings."
+      },
+      {
+       "name": "equal_rates_nonexample",
+       "kind": "non-example",
+       "statement": "For the identity every line is invariant: uniqueness fails when mu = lambda."
+      }
+     ]
+    },
+    {
+     "id": "8.2",
+     "kind": "theorem",
+     "name": "Manifold.IsHyperbolicSet.localStableManifold",
+     "statement": "For a hyperbolic set of a C^r diffeomorphism, W^s_eps(x) is an embedded C^r disc tangent to E^s_x with exponential contraction, continuous in x; symmetric for W^u.",
+     "hypotheses": [
+      "f C^r diffeomorphism, r >= 1",
+      "Lambda hyperbolic"
+     ],
+     "locator": {
+      "source": "KatokHasselblatt1995",
+      "where": "Section 6.4; ClimenhagaPesin2016 Theorem 11.1"
+     },
+     "prerequisites": [
+      "mathlib:Diffeomorph",
+      "mathlib:mfderiv",
+      "mathlib:extChartAt",
+      "target:7.1",
+      "target:7.5",
+      "target:7.6",
+      "target:8.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "toral_segment",
+       "kind": "computation",
+       "statement": "For toral automorphisms W^s_eps is an eigenline segment."
+      },
+      {
+       "name": "timeone_nonexample",
+       "kind": "non-example",
+       "statement": "For a time-one map the set contains an orbit segment."
+      },
+      {
+       "name": "fixed_point",
+       "kind": "degenerate",
+       "statement": "At diag(2,1/2) the local stable manifold is the second-axis segment."
+      }
+     ]
+    },
+    {
+     "id": "8.3",
+     "kind": "theorem",
+     "name": "Flow.IsHyperbolicSet.localStrongStableManifold",
+     "statement": "For a hyperbolic set of a C^r flow, strong stable discs tangent to E^s with contraction, weak stable discs tangent to E^s + RX, and unstable analogues, continuous in x.",
+     "hypotheses": [
+      "g C^r flow, r >= 1",
+      "Lambda hyperbolic"
+     ],
+     "locator": {
+      "source": "BowenRuelle1975",
+      "where": "lines 96-108; Appendix A.1, lines 643-652; FH2019 Part II"
+     },
+     "prerequisites": [
+      "mathlib:Flow",
+      "mathlib:mfderiv",
+      "target:6.5",
+      "target:7.2",
+      "target:7.5",
+      "target:7.6",
+      "target:8.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "suspension_discs",
+       "kind": "computation",
+       "statement": "Suspension of a toral automorphism: stable segment at fixed height."
+      },
+      {
+       "name": "horocycles",
+       "kind": "computation",
+       "statement": "Curvature -1 surface: stable horocycle arcs."
+      },
+      {
+       "name": "convergence_needed",
+       "kind": "non-example",
+       "statement": "Without convergence the set contains the orbit segment."
+      }
+     ]
+    },
+    {
+     "id": "8.4",
+     "kind": "theorem",
+     "name": "Manifold.IsHyperbolicSet.hasHyperbolicLocalProductStructure",
+     "statement": "Locally maximal hyperbolic sets (Lambda = intersection of f^n U) of C^1 diffeomorphisms have hyperbolic local product structure (A2, A3) for f restricted to Lambda.",
+     "hypotheses": [
+      "f C^1 diffeomorphism",
+      "Lambda hyperbolic and locally maximal"
+     ],
+     "locator": {
+      "source": "BowenPeriodicPoints1971",
+      "where": "lines 73-80; KatokHasselblatt1995 Sections 6.4 and 18.4"
+     },
+     "prerequisites": [
+      "target:6.1",
+      "target:7.1",
+      "target:8.2"
+     ],
+     "api": [
+      {
+       "name": "IsLocallyMaximal",
+       "role": "definition",
+       "statement": "Lambda is the intersection of f^n(U) over n in Z for an open U containing Lambda."
+      }
+     ],
+     "tests": [
+      {
+       "name": "anosov_lm",
+       "kind": "computation",
+       "statement": "Anosov: Lambda = M with U = M."
+      },
+      {
+       "name": "periodic_orbit",
+       "kind": "degenerate",
+       "statement": "A hyperbolic periodic orbit is locally maximal."
+      },
+      {
+       "name": "homoclinic_nonexample",
+       "kind": "non-example",
+       "statement": "{p} union a homoclinic orbit in a horseshoe is not locally maximal; brackets leave it."
+      }
+     ]
+    },
+    {
+     "id": "8.5",
+     "kind": "theorem",
+     "name": "Flow.IsHyperbolicSet.hasHyperbolicLocalProductStructure",
+     "statement": "Locally maximal hyperbolic sets of C^1 flows have hyperbolic local product structure (F2, F3).",
+     "hypotheses": [
+      "g C^1 flow",
+      "Lambda hyperbolic and locally maximal"
+     ],
+     "locator": {
+      "source": "BowenRuelle1975",
+      "where": "lines 25-34 and 96-108; FH2019 Part II"
+     },
+     "prerequisites": [
+      "target:6.5",
+      "target:7.2",
+      "target:8.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "anosov_flow",
+       "kind": "computation",
+       "statement": "Anosov flows: Lambda = M."
+      },
+      {
+       "name": "suspension_bracket",
+       "kind": "computation",
+       "statement": "Suspension of a toral automorphism: toral bracket at matched heights."
+      },
+      {
+       "name": "periodic_orbit",
+       "kind": "degenerate",
+       "statement": "Hyperbolic periodic orbit: W^s = W^u = point."
+      }
+     ]
+    },
+    {
+     "id": "8.6",
+     "kind": "theorem",
+     "name": "Manifold.IsAnosov.stable_ne_bot",
+     "statement": "(a) Anosov diffeomorphism with E^s_x = 0 or E^u_x = 0: the component of x is a point. (b) Anosov flow with E^s_x = 0 or E^u_x = 0: the component of x is a 1-dimensional periodic orbit.",
+     "hypotheses": [
+      "M compact",
+      "f Anosov diffeomorphism or g Anosov flow"
+     ],
+     "locator": {
+      "source": "KatokHasselblatt1995",
+      "where": "Section 6.4; FH2019 Part II"
+     },
+     "prerequisites": [
+      "tauceti:TauCeti.riemannianVolume",
+      "tauceti:TauCeti.chartRiemannianVolume_pos",
+      "tauceti:TauCeti.riemannianVolume_restrict_source",
+      "target:7.1",
+      "target:7.2",
+      "target:7.5",
+      "target:8.2",
+      "target:8.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "cat_dims",
+       "kind": "computation",
+       "statement": "The cat map has dim E^s = dim E^u = 1."
+      },
+      {
+       "name": "circle_flow",
+       "kind": "degenerate",
+       "statement": "The flow on one periodic orbit has E^s = E^u = 0, dim 1."
+      },
+      {
+       "name": "sink_nonexample",
+       "kind": "non-example",
+       "statement": "A hyperbolic sink is a hyperbolic set with E^u = 0 but not Anosov."
+      }
+     ]
+    },
+    {
+     "id": "8.7",
+     "kind": "theorem",
+     "name": "Manifold.IsHyperbolicSet.holder_unstableBundle",
+     "statement": "For C^2 (or C^{1+alpha}) diffeomorphisms or flows, E^s and E^u are Hoelder continuous on Lambda in charts.",
+     "hypotheses": [
+      "f or g of class C^2",
+      "Lambda hyperbolic"
+     ],
+     "locator": {
+      "source": "BowenRuelle1975",
+      "where": "line 362; KatokHasselblatt1995 Section 19.1"
+     },
+     "prerequisites": [
+      "mathlib:HolderWith",
+      "target:7.1",
+      "target:7.2",
+      "target:7.5",
+      "target:8.2",
+      "target:8.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "toral_constant",
+       "kind": "computation",
+       "statement": "Toral automorphisms: constant bundles."
+      },
+      {
+       "name": "horocyclic_smooth",
+       "kind": "computation",
+       "statement": "Curvature -1 surface: smooth bundles."
+      },
+      {
+       "name": "c1_nonexample",
+       "kind": "non-example",
+       "statement": "For C^1 systems the bundles are only continuous in general."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "9",
+   "title": "Examples",
+   "targets": [
+    {
+     "id": "9.1",
+     "kind": "construction",
+     "name": "Manifold.toralAutomorphism",
+     "statement": "For an integer matrix A with det A = +-1 and no eigenvalue of modulus 1, f_A on (R/Z)^n is an analytic Anosov diffeomorphism with constant splitting, topologically mixing, with h_top = sum over |lambda| > 1 of log|lambda|; Haar measure is Bowen's measure.",
+     "hypotheses": [
+      "A integer n x n, det A = +-1",
+      "no eigenvalue of modulus 1"
+     ],
+     "locator": {
+      "source": "Smale1967",
+      "where": "Part I, Section 1.3, lines 381-473; BowenGroupEndomorphisms1971 Theorem 15 and Corollary 16; BowenPeriodicPoints1971 Proposition 7.1"
+     },
+     "prerequisites": [
+      "tauceti:AddCircle.instIsManifold",
+      "tauceti:TauCeti.catMap",
+      "mathlib:Diffeomorph",
+      "target:1.3",
+      "target:1.7",
+      "target:7.1"
+     ],
+     "api": [
+      {
+       "name": "toral_lift",
+       "role": "evaluation",
+       "statement": "The lift is A; Df_A = A; f_{AB} = f_A o f_B."
+      },
+      {
+       "name": "toral_local_manifolds",
+       "role": "structure",
+       "statement": "Local manifolds are eigenline segments; the bracket is linear."
+      },
+      {
+       "name": "toral_haar",
+       "role": "compatibility",
+       "statement": "Haar measure is invariant, ergodic, of maximal entropy."
+      }
+     ],
+     "tests": [
+      {
+       "name": "cat_map",
+       "kind": "computation",
+       "statement": "Cat matrix: eigenvalues 2.618, 0.382, h_top = log((3+sqrt5)/2) ~ 0.9624, E^u spanned by (1,(sqrt5-1)/2)."
+      },
+      {
+       "name": "shear_nonexample",
+       "kind": "non-example",
+       "statement": "(1 1;0 1) is not Anosov, entropy 0."
+      },
+      {
+       "name": "rotation_matrix",
+       "kind": "degenerate",
+       "statement": "(0 -1;1 0) has finite order and no splitting; n = 1 impossible."
+      }
+     ]
+    },
+    {
+     "id": "9.2",
+     "kind": "theorem",
+     "name": "Manifold.IsAnosov.suspension_isAnosov",
+     "statement": "Suspensions of C^r Anosov diffeomorphisms on the smooth mapping torus are Anosov flows (not mixing for constant roof); time changes of Anosov flows by positive C^r functions are Anosov; suspensions under positive C^r roofs are Anosov.",
+     "hypotheses": [
+      "phi C^r Anosov diffeomorphism of compact N",
+      "h positive C^r"
+     ],
+     "locator": {
+      "source": "FH2019",
+      "where": "Part II; KatokHasselblatt1995 Chapter 17; BowenRuelle1975 lines 119-133 and 60-61"
+     },
+     "prerequisites": [
+      "tauceti:TauCeti.SmoothMappingTorus",
+      "tauceti:TauCeti.SmoothMappingTorus.flow",
+      "tauceti:TauCeti.SmoothMappingTorus.flow_one_mk",
+      "tauceti:TauCeti.SmoothMappingTorus.contMDiff_uncurry_flow",
+      "roadmap:DifferentialGeometry Layer 3",
+      "target:1.4",
+      "target:1.7",
+      "target:7.1",
+      "target:7.2",
+      "target:7.4",
+      "target:7.5"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "cat_suspension_entropy",
+       "kind": "computation",
+       "statement": "Constant-roof suspension of the cat map: h_top = log((3+sqrt5)/2)."
+      },
+      {
+       "name": "speedup",
+       "kind": "computation",
+       "statement": "Speed 2 doubles the entropy."
+      },
+      {
+       "name": "integer_periods",
+       "kind": "non-example",
+       "statement": "Constant roof 1: integer periods, not mixing."
+      }
+     ]
+    },
+    {
+     "id": "9.3",
+     "kind": "theorem",
+     "name": "Manifold.geodesicFlow_isAnosov",
+     "statement": "The geodesic flow of a compact Riemannian manifold of negative sectional curvature, dim >= 2, restricted to the unit tangent bundle is a C^infty Anosov flow; with K <= -a^2 the rate is a; E^s, E^u are stable and unstable perpendicular Jacobi fields.",
+     "hypotheses": [
+      "M compact, no boundary, dim >= 2",
+      "all sectional curvatures negative"
+     ],
+     "locator": {
+      "source": "FH2019",
+      "where": "Part II; KatokHasselblatt1995 Chapter 17"
+     },
+     "prerequisites": [
+      "tauceti:TauCeti.Manifold.contMDiffOn_maximalIntegralCurve_geodesicSpray",
+      "tauceti:TauCeti.Manifold.isGeodesicallyCompleteAt_of_compactSpace",
+      "tauceti:TauCeti.Manifold.IsGeodesicCurveOn.norm_curveVelocityWithin_eq",
+      "roadmap:RiemannianGeometry R1",
+      "roadmap:RiemannianGeometry R2",
+      "roadmap:RiemannianGeometry R4",
+      "roadmap:TangentialBordism §2.3",
+      "gap:sphere-bundle-embedding",
+      "gap:connection-map-jacobi-derivative",
+      "target:7.2",
+      "target:7.3",
+      "target:7.7"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "curvature_minus_one",
+       "kind": "computation",
+       "statement": "Curvature -1 surface: |Dg^t xi| = e^t |xi| on E^u, C = 1, kappa = 1."
+      },
+      {
+       "name": "flat_nonexample",
+       "kind": "non-example",
+       "statement": "Flat torus: affine Jacobi fields, not Anosov."
+      },
+      {
+       "name": "sphere_nonexample",
+       "kind": "non-example",
+       "statement": "Round sphere: periodic geodesic flow, entropy 0."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "10",
+   "title": "Basic sets and the Bowen-Ruelle theorem",
+   "targets": [
+    {
+     "id": "10.1",
+     "kind": "definition",
+     "name": "Manifold.IsBasicSet",
+     "statement": "A basic set is a nonempty locally maximal hyperbolic set on which the diffeomorphism or flow is transitive; an attractor is a basic set with a neighbourhood U, g^t U in U for t >= T0, Lambda = intersection of g^t U; its basin is the set of points asymptotic to Lambda.",
+     "hypotheses": [
+      "f C^1 diffeomorphism or g C^1 flow",
+      "Lambda nonempty"
+     ],
+     "locator": {
+      "source": "BowenRuelle1975",
+      "where": "lines 25-34"
+     },
+     "prerequisites": [
+      "target:6.2",
+      "target:6.6",
+      "target:7.1",
+      "target:7.2",
+      "target:8.4",
+      "target:8.5"
+     ],
+     "api": [
+      {
+       "name": "basicSet_periodic_dense",
+       "role": "structure",
+       "statement": "Periodic points are dense in a basic set."
+      },
+      {
+       "name": "anosov_basicSet",
+       "role": "constructor",
+       "statement": "A transitive Anosov system on a nonempty compact manifold is a basic set Lambda = M and an attractor with basin M."
+      },
+      {
+       "name": "basicSet_inv",
+       "role": "functoriality",
+       "statement": "Basic sets of f are basic for f^{-1}; of g for the reversal; basins are open."
+      }
+     ],
+     "tests": [
+      {
+       "name": "periodic_orbit",
+       "kind": "degenerate",
+       "statement": "A hyperbolic periodic orbit is a basic set; an attractor iff E^u = 0."
+      },
+      {
+       "name": "two_points_nonexample",
+       "kind": "non-example",
+       "statement": "Two hyperbolic fixed points: locally maximal, not transitive."
+      },
+      {
+       "name": "cat_suspension",
+       "kind": "computation",
+       "statement": "Suspension of the cat map: Lambda = M, attractor with basin M."
+      },
+      {
+       "name": "empty_set_excluded",
+       "kind": "nonexample",
+       "statement": "The empty set is vacuously hyperbolic, locally maximal and transitive but has no invariant measure; nonemptiness excludes it."
+      }
+     ]
+    },
+    {
+     "id": "10.2",
+     "kind": "theorem",
+     "name": "Manifold.IsBasicSet.existsUnique_equilibriumState",
+     "statement": "Bowen's theorem: a Hoelder potential on a basic set of a C^1 diffeomorphism has a unique equilibrium state, ergodic, Gibbs, positive on relatively open sets, unchanged by phi + c + psi o f - psi; in particular for transitive Anosov diffeomorphisms.",
+     "hypotheses": [
+      "f C^1 diffeomorphism of compact M",
+      "Lambda basic set (nonempty)",
+      "phi Hoelder on Lambda"
+     ],
+     "locator": {
+      "source": "Bowen1975",
+      "where": "Chapter 4, Theorem 4.1; ClimenhagaThompson2016 Theorem 5.5"
+     },
+     "prerequisites": [
+      "target:4.4",
+      "target:6.8",
+      "target:8.4",
+      "target:9.1",
+      "target:10.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "cat_haar",
+       "kind": "computation",
+       "statement": "Cat map, phi = 0: Haar measure, entropy log((3+sqrt5)/2)."
+      },
+      {
+       "name": "cat_geometric",
+       "kind": "computation",
+       "statement": "Cat map, constant geometric potential: Haar, pressure 0."
+      },
+      {
+       "name": "fixed_point",
+       "kind": "degenerate",
+       "statement": "One-point basic set: the point mass."
+      }
+     ]
+    },
+    {
+     "id": "10.3",
+     "kind": "theorem",
+     "name": "Flow.IsBasicSet.existsUnique_equilibriumState",
+     "statement": "Bowen-Ruelle: a Hoelder F on a basic set of a C^1 flow has a unique equilibrium state nu_{g,F}, flow-ergodic, positive on relatively open sets, lower Gibbs bound, unchanged by F + c + L_g psi, equilibrium for g^t and F_t, invariant under rescaling; in particular transitive Anosov flows.",
+     "hypotheses": [
+      "g C^1 flow on compact M",
+      "Lambda basic set (nonempty)",
+      "F Hoelder on Lambda"
+     ],
+     "locator": {
+      "source": "BowenRuelle1975",
+      "where": "Theorem 3.3, lines 272-277; Proposition 3.1, lines 213-222; TsujiiZhang2023 lines 106-109 and 485-495"
+     },
+     "prerequisites": [
+      "target:1.6",
+      "target:4.9",
+      "target:6.6",
+      "target:6.8",
+      "target:8.5",
+      "target:9.2",
+      "target:10.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "cat_suspension_mme",
+       "kind": "computation",
+       "statement": "Suspension of the cat map, F = 0: product measure."
+      },
+      {
+       "name": "periodic_orbit",
+       "kind": "degenerate",
+       "statement": "Periodic orbit: time measure, P the orbit average."
+      },
+      {
+       "name": "shift_by_five",
+       "kind": "computation",
+       "statement": "F + 5 + L_g psi: same state, pressure + 5."
+      }
+     ]
+    },
+    {
+     "id": "10.4",
+     "kind": "theorem",
+     "name": "Flow.IsBasicSet.existsUnique_maxEntropy",
+     "statement": "Unique measure of maximal entropy (Bowen-Margulis) on basic sets of C^1 flows, ergodic and fully supported, with positive entropy unless Lambda is one periodic orbit; Bowen's measure for diffeomorphisms (positive entropy unless finite); Haar for toral automorphisms.",
+     "hypotheses": [
+      "Lambda basic set (nonempty) of a C^1 flow or diffeomorphism"
+     ],
+     "locator": {
+      "source": "BowenRuelle1975",
+      "where": "Remark 3.4, lines 324-325, and lines 77-78; BowenPeriodicPoints1971 Remark 4.4 and Proposition 7.1"
+     },
+     "prerequisites": [
+      "target:6.3",
+      "target:9.1",
+      "target:10.2",
+      "target:10.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "cat_haar",
+       "kind": "computation",
+       "statement": "Cat map: Haar, entropy > 0."
+      },
+      {
+       "name": "periodic_orbit_exception",
+       "kind": "degenerate",
+       "statement": "Periodic orbit: entropy 0, time measure."
+      },
+      {
+       "name": "hyperbolic_surface",
+       "kind": "computation",
+       "statement": "Curvature -1 surface: Liouville measure, entropy 1."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "11",
+   "title": "SRB measures of C^2 flows",
+   "targets": [
+    {
+     "id": "11.1",
+     "kind": "definition",
+     "name": "Flow.geometricPotential",
+     "statement": "lambda_t(x) = |det Dg^t : E^u_x -> E^u_{g^t x}| in orthonormal bases; phi^u(x) = -d/dt log lambda_t(x) at t = 0.",
+     "hypotheses": [
+      "g C^2 flow",
+      "Lambda hyperbolic"
+     ],
+     "locator": {
+      "source": "BowenRuelle1975",
+      "where": "Section 4, lines 346-358"
+     },
+     "prerequisites": [
+      "mathlib:mfderiv",
+      "mathlib:Bundle.ContinuousRiemannianMetric",
+      "target:7.2",
+      "target:7.5",
+      "target:8.7"
+     ],
+     "api": [
+      {
+       "name": "unstableJacobian_cocycle",
+       "role": "structure",
+       "statement": "lambda_{t+s}(x) = lambda_t(g^s x) lambda_s(x); integral of phi^u over [0,T] = -log lambda_T."
+      },
+      {
+       "name": "geometricPotential_holder",
+       "role": "structure",
+       "statement": "phi^u is continuous and Hoelder (BowenRuelle1975 Lemma 4.1)."
+      },
+      {
+       "name": "geometricPotential_metric",
+       "role": "compatibility",
+       "statement": "Changing the metric changes phi^u by L_g psi; rescaling time multiplies phi^u."
+      }
+     ],
+     "tests": [
+      {
+       "name": "hyperbolic_surface",
+       "kind": "computation",
+       "statement": "Curvature -1 surface: lambda_t = e^t, phi^u = -1."
+      },
+      {
+       "name": "cat_suspension",
+       "kind": "computation",
+       "statement": "Suspension of the cat map: phi^u = -log((3+sqrt5)/2), P(phi^u) = 0."
+      },
+      {
+       "name": "sign_convention",
+       "kind": "non-example",
+       "statement": "The opposite sign would give P(phi^u) = 2 h_top in the cat example."
+      }
+     ]
+    },
+    {
+     "id": "11.2",
+     "kind": "theorem",
+     "name": "Flow.IsHyperbolicSet.boundedDistortion",
+     "statement": "For a hyperbolic set of a C^2 flow and theta > 0 there is eps with e^{-theta} <= Jac(Dg^T|E*)/lambda_T(x) <= e^theta for y eps-shadowing x up to time T and E* tangent to a disc close to the unstable disc through y.",
+     "hypotheses": [
+      "g C^2 flow",
+      "Lambda hyperbolic",
+      "theta > 0"
+     ],
+     "locator": {
+      "source": "BowenRuelle1975",
+      "where": "Appendix, Lemmas A.2-A.4, lines 681-739"
+     },
+     "prerequisites": [
+      "target:6.7",
+      "target:7.6",
+      "target:8.3",
+      "target:8.7",
+      "target:11.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "linear_flow",
+       "kind": "computation",
+       "statement": "Suspension of a toral automorphism: ratio bounded by the cone opening."
+      },
+      {
+       "name": "bowen_property_case",
+       "kind": "compatibility",
+       "statement": "For E* = E^u_y this is the Bowen property of phi^u."
+      },
+      {
+       "name": "c1_nonexample",
+       "kind": "non-example",
+       "statement": "Without C^2 the ratio can be unbounded."
+      }
+     ]
+    },
+    {
+     "id": "11.3",
+     "kind": "theorem",
+     "name": "Flow.IsHyperbolicSet.volumeLemma",
+     "statement": "(a) c_eps^{-1} <= m(B_x(eps,T)) lambda_T(x) <= c_eps for x in Lambda, T > 0; (b) m(B_y(delta,T)) >= d m(B_x(eps,T)) for y in B_x(eps,T); m the Riemannian volume.",
+     "hypotheses": [
+      "g C^2 flow on compact M",
+      "Lambda hyperbolic",
+      "m = riemannianVolume"
+     ],
+     "locator": {
+      "source": "BowenRuelle1975",
+      "where": "Lemmas 4.2-4.3, lines 364-375; Appendix A.5-A.6, lines 740-808"
+     },
+     "prerequisites": [
+      "mathlib:MeasureTheory.lintegral_image_eq_lintegral_abs_det_fderiv_mul",
+      "tauceti:TauCeti.riemannianVolume",
+      "tauceti:TauCeti.riemannianVolume_restrict_source",
+      "tauceti:TauCeti.chartRiemannianVolume",
+      "target:8.3",
+      "target:11.1",
+      "target:11.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "cat_suspension_box",
+       "kind": "computation",
+       "statement": "Suspension of the cat map: box volume times lambda_T ~ eps^3."
+      },
+      {
+       "name": "hyperbolic_surface",
+       "kind": "computation",
+       "statement": "Curvature -1 surface: volume decays like e^{-T}."
+      },
+      {
+       "name": "T_zero",
+       "kind": "degenerate",
+       "statement": "At T = 0 small balls have volume bounded above and below."
+      }
+     ]
+    },
+    {
+     "id": "11.4",
+     "kind": "theorem",
+     "name": "Flow.IsBasicSet.pressure_geometricPotential",
+     "statement": "(a) P(g|Lambda, phi^u) = limsup (1/T) log m(B_Lambda(eps,T)) <= 0; (b) if W^s_Lambda(eps) has positive volume (attractors, Anosov), P = 0 and h_{mu+}(g^1) = -integral phi^u d mu+.",
+     "hypotheses": [
+      "g C^2 flow on compact M",
+      "Lambda basic set (nonempty)"
+     ],
+     "locator": {
+      "source": "BowenRuelle1975",
+      "where": "Proposition 4.4, lines 377-407"
+     },
+     "prerequisites": [
+      "target:2.4",
+      "target:10.1",
+      "target:10.3",
+      "target:11.1",
+      "target:11.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "cat_suspension",
+       "kind": "computation",
+       "statement": "Suspension of the cat map: P(phi^u) = 0, mu+ product measure."
+      },
+      {
+       "name": "hyperbolic_surface",
+       "kind": "computation",
+       "statement": "Curvature -1 surface: h_top = 1."
+      },
+      {
+       "name": "saddle_orbit",
+       "kind": "non-example",
+       "statement": "A saddle periodic orbit has P(phi^u) = -(1/p) log lambda_p < 0."
+      }
+     ]
+    },
+    {
+     "id": "11.5",
+     "kind": "theorem",
+     "name": "Flow.IsBasicSet.srb",
+     "statement": "For an attractor of a C^2 flow, m-almost every point of the basin is generic for mu+ = nu_{g,phi^u}; for transitive C^2 Anosov flows mu+ is the unique invariant probability whose generic points have positive (full) volume and the only absolutely continuous invariant probability.",
+     "hypotheses": [
+      "g C^2 flow on compact M",
+      "Lambda attractor (a nonempty basic set) with basin W^s_Lambda"
+     ],
+     "locator": {
+      "source": "BowenRuelle1975",
+      "where": "Theorem 5.1, lines 421-469; Remark 5.2, lines 470-472"
+     },
+     "prerequisites": [
+      "roadmap:ProbabilisticAndMetricNumberTheory §4.1",
+      "tauceti:TauCeti.riemannianVolume",
+      "target:3.1",
+      "target:10.1",
+      "target:10.3",
+      "target:11.3",
+      "target:11.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "hyperbolic_surface",
+       "kind": "computation",
+       "statement": "Curvature -1 surface: Bowen-Margulis = SRB = Liouville."
+      },
+      {
+       "name": "cat_suspension_volume",
+       "kind": "computation",
+       "statement": "Suspension of the cat map: mu+ is the normalised volume."
+      },
+      {
+       "name": "uniqueness_generic",
+       "kind": "characterisation",
+       "statement": "Two measures with positive-volume generic sets coincide."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "GeometryOfNumbersAndQuadraticArithmetic",
+   "sections": [
+    "§4.2"
+   ],
+   "what": "partition entropy API and measureEntropy, conditionalPartitionEntropy, entropy_inverse"
+  },
+  {
+   "roadmap": "ProbabilisticAndMetricNumberTheory",
+   "sections": [
+    "§4.1"
+   ],
+   "what": "birkhoff_pointwise and birkhoff_pointwise_ergodic"
+  },
+  {
+   "roadmap": "ArithmeticDynamics",
+   "sections": [
+    "§2.6",
+    "§2.7"
+   ],
+   "what": "sup over finite partitions and conditional inequality; conditional entropy, SMB, h_mu <= coverEntropy, null-boundary partitions, ergodic decomposition with entropy integration"
+  },
+  {
+   "roadmap": "DifferentialGeometry",
+   "sections": [
+    "Layer 3",
+    "Layer 12"
+   ],
+   "what": "toFlow and completeness on compact manifolds; smooth Riemannian metrics"
+  },
+  {
+   "roadmap": "RiemannianGeometry",
+   "sections": [
+    "R1",
+    "R2",
+    "R4"
+   ],
+   "what": "sectional curvature, Jacobi fields, Rauch and Riccati comparison, Cartan-Hadamard"
+  },
+  {
+   "roadmap": "TangentialBordism",
+   "sections": [
+    "§2.3"
+   ],
+   "what": "sphere bundles as smooth manifolds"
+  }
+ ],
+ "consumers": [
+  {
+   "roadmap": "ArithmeticDynamicsPartII",
+   "what": "general definition of measures of maximal entropy (4.4)"
+  },
+  {
+   "roadmap": "GeometricTopology",
+   "what": "Anosov diffeomorphisms and hyperbolic toral automorphisms (7.1, 9.1)"
+  },
+  {
+   "roadmap": "TaubesGromov",
+   "what": "the cat matrix as a hyperbolic toral automorphism (9.1)"
+  }
+ ],
+ "gaps": [
+  {
+   "slug": "sphere-bundle-embedding",
+   "title": "Unit sphere bundle as an embedded submanifold",
+   "neededBy": [
+    "9.3"
+   ],
+   "detail": "TangentialBordism §2.3 supplies sphere bundles as smooth manifolds compared with the literal subsets; the geodesic-flow example needs the inclusion into the total space to be a smooth embedding so that the restricted geodesic flow is smooth.",
+   "needs": "The unit sphere bundle of a smooth Riemannian vector bundle as a closed smooth submanifold of the total space, with smooth inclusion and smooth corestriction.",
+   "supplier": "TangentialBordism",
+   "section": "§2.3 (B1.5)"
+  },
+  {
+   "slug": "connection-map-jacobi-derivative",
+   "title": "Connection map and the Jacobi-field derivative of the geodesic flow",
+   "neededBy": [
+    "9.3"
+   ],
+   "detail": "RiemannianGeometry R2 supplies Jacobi fields and variations through geodesics but not the connection map of the Levi-Civita connection, the horizontal-vertical splitting of T(TM), or the identification of the derivative of the geodesic flow with the Jacobi-field map; proposed as RiemannianGeometry, Part II.",
+   "needs": "For a smooth Riemannian manifold with its Levi-Civita connection: the connection map K : T(TM) -> TM, the horizontal-vertical splitting of T_v(TM) identified with T_x M + T_x M, and, for v in TM, xi in T_v(TM) with components (w, w') and t in the domain of the geodesic of v, D(geodesic flow at time t)_v xi = (J(t), D_t J(t)) where J is the Jacobi field along that geodesic with J(0) = w, D_t J(0) = w'.",
+   "supplier": "RiemannianGeometry",
+   "section": "proposed Part II: connection map and Jacobi derivative of the geodesic flow"
+  }
+ ]
+}
