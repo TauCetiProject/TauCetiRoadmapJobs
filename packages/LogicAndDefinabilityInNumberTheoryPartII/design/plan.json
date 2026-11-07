@@ -3520,66 +3520,16 @@
   ],
   "gaps": [
     {
-      "id": "LogicAndDefinabilityInNumberTheoryPartII/G-DIM",
-      "title": "Published fixed-dimension proof identification",
-      "neededBy": [
-        "LogicAndDefinabilityInNumberTheoryPartII:FG.0/dimension-definability"
-      ],
-      "detail": "Poonen Theorem 2.3,p.4 identifies Pop 2002 Theorem 1.5(3). The accessible 2001 arXiv v1 has different numbering and only pp.1–5 were inspected. Acquire/collate the final proof and identify the degree-sensitive diagonal-form dimension test. The target is stated, not source-closed."
+      "slug": "biinterpretation-homotopy",
+      "needs": "Definable homotopy of interpretations of one structure in another and parametric bi-interpretability (interpretations in both directions whose two composites are definably homotopic to the identity interpretations), with closure under composition.",
+      "supplier": "LogicAndDefinabilityInNumberTheory",
+      "section": "§0.2"
     },
     {
-      "id": "LogicAndDefinabilityInNumberTheoryPartII/G-PO",
-      "title": "Elliptic and degree-three inputs to uniform predicates",
-      "neededBy": [
-        "LogicAndDefinabilityInNumberTheoryPartII:FG.0/char-zero-constants",
-        "LogicAndDefinabilityInNumberTheoryPartII:FG.0/positive-global-subfields",
-        "LogicAndDefinabilityInNumberTheoryPartII:FG.0/relative-independence"
-      ],
-      "detail": "Poonen §§3–5 and Appendix A were independently read. Remaining external proof leaves are Moret–Bailly’s elliptic constancy theorem at p.4, the ordinary elliptic point-count and Albanese-twist inputs at pp.6–10, and the degree-three anisotropy descent used in characteristic two. Q2.5/transcendental-ci already owns all-degree C_i ascent; obtain its exact degree-three application receipt rather than planning that theory again. Route only the remaining elliptic/Albanese and cubic descent extensions to their existing owners. These external proof receipts are not claimed source-closed."
-    },
-    {
-      "id": "LogicAndDefinabilityInNumberTheoryPartII/G-RUM",
-      "title": "Primary uniform arithmetic and sequence decoding proofs",
-      "neededBy": [
-        "LogicAndDefinabilityInNumberTheoryPartII:FG.0/global-arithmetic-formulas",
-        "LogicAndDefinabilityInNumberTheoryPartII:FG.6/dimension-one-coding",
-        "LogicAndDefinabilityInNumberTheoryPartII:FG.0/char-zero-constants",
-        "LogicAndDefinabilityInNumberTheoryPartII:FG.0/constant-definability"
-      ],
-      "detail": "Rumely 1980 Introduction I–III is identified in the author-uploaded copy and its use is checked against Poonen Theorem 2.2 and AKNS Lemmas 3.7–3.8. The valuation, integer-ring, polynomial-ring and Gödel decoding proofs,especially p.211,are not read in full. AMS PDF access returned HTTP403; the author-copy download link and CiteSeer retrieval did not return a usable PDF during acquisition. Preserve the uniformity and all-fibers contracts when acquiring the primary text."
-    },
-    {
-      "id": "LogicAndDefinabilityInNumberTheoryPartII/G-ALT",
-      "title": "Prime-to-two alteration proof leaf",
-      "neededBy": [
-        "LogicAndDefinabilityInNumberTheoryPartII:FG.2/nice-detection"
-      ],
-      "detail": "The proof of Proposition 3.4 requires a generically finite regular proper alteration of odd degree over a henselian non-dyadic global DVR,with the model and divisor compatibility used after restriction. The generic alteration target in AdicCoefficientsAndComparisons permits degree divisible by two and is insufficient. Keep the routed PrimeToDegreeAlterations direction as the canonical owner; acquire the ILO/Gabber proof and exact hypothesis package,then add its accepted layer receipt. This missing source contract is not replaced by a resolution axiom in characteristic different from two."
-    },
-    {
-      "id": "LogicAndDefinabilityInNumberTheoryPartII/G-LOW",
-      "title": "Surface/norm and adapted-base audit in dimension two",
-      "neededBy": [
-        "LogicAndDefinabilityInNumberTheoryPartII:FG.4/curve-symbol-inputs",
-        "LogicAndDefinabilityInNumberTheoryPartII:FG.4/small-dimension-families"
-      ],
-      "detail": "Pop 2017 §§2A–5B pp.2093–2110 was read and the shifted-stabilizer recipe decomposed. Audit the original Kato 1986 Corollary p.145 and prime-index reduced-norm theorem, plus the adapted smooth global-base argument cited by DP Remark4.4. The n=3 characteristic-two branch is required. The recipe’s parameters must retain every nonzero H-subgroup and good-base condition; no black-box conclusion is used as its own premise."
-    },
-    {
-      "id": "LogicAndDefinabilityInNumberTheoryPartII/G-QFA",
-      "title": "Arithmetic standardness coding in QFA",
-      "neededBy": [
-        "LogicAndDefinabilityInNumberTheoryPartII:FG.7/qfa-transfer"
-      ],
-      "detail": "AKNS Proposition2.28 and Lemmas2.29–2.30 pp.20–21 were read. Lemma2.29 cites Nies Claim7.15 for its uniform finite-sequence/term coding and standardness argument. Acquire a cleared/public proof or supply a checked independent proof; do not read an uncleared book copy. The total-inverse language bridge in this roadmap is separately explicit and does not discharge that coding lemma."
-    },
-    {
-      "id": "LogicAndDefinabilityInNumberTheoryPartII/G-UPSTREAM",
-      "title": "Preordering supplier receipt absent from atlas",
-      "neededBy": [
-        "LogicAndDefinabilityInNumberTheoryPartII:FG.4/niceness-definability"
-      ],
-      "detail": "RealAlgebraicGeometry current main Layer1 already owns the preordering-extension theorem. Record its current-roadmap reference in upstreamNotes and obtain the accepted atlas receipt on synchronization. This is a dependency-record gap, not new mathematical work or permission to duplicate it."
+      "slug": "function-field-cyclic-hasse-norm",
+      "needs": "The cyclic Hasse norm theorem for global function fields: in a cyclic extension L/K of global function fields an element of Kˣ is a norm from L exactly when it is a local norm at every place of K.",
+      "supplier": "ArithmeticGaloisDuality",
+      "section": "§R02.3.2"
     }
   ],
   "upstreamNotes": [
