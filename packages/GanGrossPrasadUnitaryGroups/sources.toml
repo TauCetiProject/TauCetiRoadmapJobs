@@ -340,3 +340,20 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-07"
 cited_for = ["4.4"]
+
+[[source]]
+id = "debacker-homogeneity-intro"
+authors = "Stephen DeBacker"
+title = "Homogeneity for reductive p-adic groups: an introduction"
+year = 2009
+version_note = "Author-page copy of the Ottawa lecture notes (Fields Institute Monographs 26, 2009); theorem numbers, pages and line locators are those of this copy"
+locator_scheme = "theorem"
+locator = "Theorem 2.2.1"
+url = "https://websites.umich.edu/~smdbackr//MATH/fields.pdf"
+fetched_from = "https://websites.umich.edu/~smdbackr//MATH/fields.pdf"
+fetched_at = "2026-11-07T11:45:33Z"
+sha256 = "8847049dd6110ba8cf616e5076e019d5e04fac17d0412e75fcc0bfe6cc13674e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["3.3a"]
