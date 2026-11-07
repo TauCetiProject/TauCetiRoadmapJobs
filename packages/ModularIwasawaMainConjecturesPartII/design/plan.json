@@ -2477,7 +2477,14 @@
     }
   ],
   "requests": [],
-  "gaps": [],
+  "gaps": [
+    {
+      "slug": "height-one-explicit-reciprocity",
+      "needs": "Kato's generalized explicit reciprocity law in relative height one: for a p-divisible group over the integers of a finite extension of Q_p with an action of O_𝔭 of relative O_𝔭-height one, the dual exponential of the cup product of the Kummer class of a norm-compatible unit system in its torsion tower with a power of the Tate-module basis equals the value at the torsion points of the logarithmic derivatives of its Coleman power series (Kato 2004, proof of Proposition 15.9, pp. 258-259).",
+      "supplier": "PadicHodgeRegulators",
+      "section": "§1.4"
+    }
+  ],
   "inheritedObligations": [
     {
       "roadmapId": "CMAllPrimeMainConjectures",
