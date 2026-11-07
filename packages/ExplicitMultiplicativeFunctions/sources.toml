@@ -9,12 +9,12 @@ year = 1983
 venue = "Arkiv för Matematik 21"
 doi = "10.1007/BF02384300"
 locator_scheme = "theorem"
-locator = "Lemma 2"
+locator = "Lemmas 1 and 2, pp. 48–50"
 url = "https://doi.org/10.1007/BF02384300"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Layer 7"]
+cited_for = ["Layer 5.2", "Layer 7.3"]
 
 [[source]]
 id = "hurst2018"
@@ -80,7 +80,7 @@ venue = "The Ramanujan Journal 56"
 doi = "10.1007/s11139-020-00333-3"
 arxiv = "1911.07369v1"
 locator_scheme = "theorem"
-locator = "Theorems 1 and 2"
+locator = "Theorems 1 and 2; inequality (14) and the constant F₁ of §2"
 url = "https://arxiv.org/abs/1911.07369v1"
 fetched_from = "https://arxiv.org/pdf/1911.07369v1"
 fetched_at = "2026-11-05T21:10:03Z"
@@ -89,7 +89,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v1"
-cited_for = ["Layer 7"]
+cited_for = ["Layer 0.7", "Layer 5.2", "Layer 7.5"]
 
 [[source]]
 id = "trudgian2015"
@@ -150,7 +150,7 @@ venue = "The Ramanujan Journal 69"
 doi = "10.1007/s11139-025-01290-5"
 arxiv = "2508.06764v2"
 locator_scheme = "section"
-locator = "Sections 6.1-6.2, Tables 16-18"
+locator = "Sections 6.1-6.5, Tables 12-18 (λ(k) for 2 ≤ k ≤ 100 and the maximisers)"
 url = "https://arxiv.org/abs/2508.06764v2"
 fetched_from = "https://arxiv.org/pdf/2508.06764v2"
 fetched_at = "2026-11-05T21:09:19Z"
@@ -278,7 +278,7 @@ title = "Quelques inégalités effectives entre des fonctions arithmétiques usu
 year = 2008
 arxiv = "0803.1109v1"
 locator_scheme = "theorem"
-locator = "Theorems 1-2 (bounds for σ(n)/n)"
+locator = "Théorème 2 (σ(n)/n ≤ 2.59790… log log(3τ(n)) for n ≥ 2, and the e^γ form); Définition 1; Lemmes 7 and 9; Théorème 3 (cited, not planned)"
 url = "https://arxiv.org/abs/0803.1109v1"
 fetched_from = "https://arxiv.org/pdf/0803.1109v1"
 fetched_at = "2026-11-05T21:08:32Z"
@@ -287,7 +287,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v1"
-cited_for = ["Layer 9"]
+cited_for = ["Layer 0.7", "Layer 9"]
 
 [[source]]
 id = "ramare2015mc"
@@ -296,7 +296,7 @@ title = "Explicit estimates on several summatory functions involving the Moebius
 year = 2015
 venue = "Mathematics of Computation 84, 1359-1387"
 locator_scheme = "theorem"
-locator = "Theorems 1.1-1.6 and Corollaries"
+locator = "Theorems 1.1-1.19, Corollaries 1.3, 1.6, 1.10; Lemmas 1.9, 2.1-2.4, 3.2"
 url = "https://ramare-olivier.github.io/Maths/mcom2914.pdf"
 fetched_from = "https://ramare-olivier.github.io/Maths/mcom2914.pdf"
 fetched_at = "2026-11-05T21:08:34Z"
@@ -304,6 +304,7 @@ sha256 = "dc266dce8eba0af1b920a58b03b948f30178c5a9c4c735b0858f5cd177265b96"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-05"
+version_note = "author offprint of the published paper; three thresholds of Theorem 1.2 and Corollary 1.3 are corrected in the roadmap by computation (1/20 from 3355, 1/65 from 96018, 1/100 from 1419); Theorems 1.5, 1.7, 1.8 as corrected by ramare2015corr; the middle coefficient of Lemma 3.2 is restated as 5 − 4γ"
 cited_for = ["Layers 1-3"]
 
 [[source]]
@@ -313,7 +314,7 @@ title = "From explicit estimates for the primes to explicit estimates for the Mo
 year = 2013
 venue = "Acta Arithmetica 157, 365-379"
 locator_scheme = "theorem"
-locator = "Theorems 1.1-1.2"
+locator = "Theorem 1.1; Corollaries 1.2–1.4; Lemmas 4.1–4.7, 5.1–5.2, 6.1–6.4, 7.1–7.2, 8.1 and 9.1"
 url = "https://ramare-olivier.github.io/Maths/ElementaryConversion-11.pdf"
 fetched_from = "https://ramare-olivier.github.io/Maths/ElementaryConversion-11.pdf"
 fetched_at = "2026-11-05T21:08:35Z"
@@ -321,7 +322,7 @@ sha256 = "a73711ba98a3eb5cc4dc11510d2ebad04547a0ec9c9112baae0392d8e83c346a"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["Layer 1; Layer 2"]
+cited_for = ["Layer 0.7; Layer 1; Layer 2"]
 
 [[source]]
 id = "akhileshRamare2017"
@@ -347,7 +348,7 @@ title = "Explicit upper bounds for the remainder term in the divisor problem"
 year = 2012
 venue = "Mathematics of Computation 81, 1025-1051"
 locator_scheme = "theorem"
-locator = "Theorem 1.1; Corollary 2.2"
+locator = "Theorems 1.1-1.2; Corollary 2.2 (constant term read as γ² − 2γ₁); Lemma 3.1"
 url = "https://hal.science/hal-02572796/document"
 fetched_from = "https://hal.science/hal-02572796/document"
 fetched_at = "2026-11-05T21:17:44Z"
@@ -381,7 +382,7 @@ title = "On Šnirel'man's constant"
 year = 1995
 venue = "Annali della Scuola Normale Superiore di Pisa, Classe di Scienze (4) 22, 645-706"
 locator_scheme = "theorem"
-locator = "Lemmas 3.2 and 3.3, Section 3"
+locator = "Lemmas 3.2 and 3.3 and the reading of h after Lemma 3.3, Section 3, pp. 656–658"
 url = "https://www.numdam.org/item/ASNSP_1995_4_22_4_645_0.pdf"
 fetched_from = "https://www.numdam.org/item/ASNSP_1995_4_22_4_645_0.pdf"
 fetched_at = "2026-11-05T21:10:06Z"
@@ -389,7 +390,8 @@ sha256 = "f245f39de4d16c25a3452d351c519fc854738e19e6511383eafea9e29337b588"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["Layer 0; Layer 5"]
+version_note = "image scan; the displays of Lemma 3.2 are read from an OCR re-extraction of the cached PDF; the weighted variant is restated with leading coefficient 2AH(0)"
+cited_for = ["Layer 0.3", "Layer 0.6", "Layer 5.1", "Layer 5.2"]
 
 [[source]]
 id = "ramare2019bcp"
@@ -398,7 +400,7 @@ title = "Explicit average orders: news and problems"
 year = 2019
 venue = "Banach Center Publications 118, 153-176"
 locator_scheme = "theorem"
-locator = "Theorems 3.1-3.2, Corollaries 3.3-3.4"
+locator = "Theorems 1.1, 3.1–3.2, 4.1 and 8.1; Corollaries 3.3–3.4; Lemmas 8.2, 9.2 and 9.3"
 url = "https://hal.science/hal-02585977/document"
 fetched_from = "https://hal.science/hal-02585977/document"
 fetched_at = "2026-11-05T21:17:45Z"
@@ -406,7 +408,7 @@ sha256 = "b3e28f5ac1427b0090a68f23310479bbee135be31acb2f48a046d77595acc65b"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["Layer 7"]
+cited_for = ["Layer 0.7", "Layer 7.1", "Layer 7.2"]
 
 [[source]]
 id = "trevino2015ijnt"
@@ -416,7 +418,7 @@ title = "The Burgess inequality and the least k-th power non-residue"
 year = 2014
 arxiv = "1412.3062v2"
 locator_scheme = "theorem"
-locator = "Lemmas 2 and 3"
+locator = "Lemmas 2 and 3 with their proofs"
 url = "https://arxiv.org/abs/1412.3062v2"
 fetched_from = "https://arxiv.org/pdf/1412.3062v2"
 fetched_at = "2026-11-05T21:12:27Z"
@@ -425,7 +427,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v2"
-cited_for = ["Layer 7"]
+cited_for = ["Layer 0.7", "Layer 2.5", "Layer 7.7"]
 
 [[source]]
 id = "bermentRamare2012"
@@ -434,7 +436,7 @@ title = "Ordre moyen d'une fonction arithmétique par la méthode de convolution
 year = 2012
 venue = "Revue de la filière mathématiques (RMS) 122, 1-15"
 locator_scheme = "section"
-locator = "Section 2 (the comparison theorem)"
+locator = "Sections 4-5 (the convolution method, expository)"
 url = "https://ramare-olivier.github.io/Maths/MethodeDeConvolution-6.pdf"
 fetched_from = "https://ramare-olivier.github.io/Maths/MethodeDeConvolution-6.pdf"
 fetched_at = "2026-11-05T21:12:28Z"
@@ -536,7 +538,7 @@ title = "Some explicit estimates for the Möbius function"
 year = 2015
 venue = "Journal of Integer Sequences 18, Article 15.11.1"
 locator_scheme = "theorem"
-locator = "Theorem 1.1; Proposition 3"
+locator = "Theorem 1 (a)-(b); Theorem 2; Proposition 3"
 url = "https://cs.uwaterloo.ca/journals/JIS/VOL18/Bordelles2/bordelles21.pdf"
 fetched_from = "https://cs.uwaterloo.ca/journals/JIS/VOL18/Bordelles2/bordelles21.pdf"
 fetched_at = "2026-11-05T21:18:55Z"
@@ -553,7 +555,7 @@ title = "Fonction sommatoire de la fonction de Möbius 3. Majorations asymptotiq
 year = 1995
 venue = "Journal de Théorie des Nombres de Bordeaux 7, 407-433"
 locator_scheme = "theorem"
-locator = "Théorème 1"
+locator = "Théorème 1 (the 1/4345 bound restated); Théorème 2, (4.6); its Corollaire; Théorème 3"
 url = "https://jtnb.centre-mersenne.org/item/JTNB_1995__7_2_407_0.pdf"
 fetched_from = "https://jtnb.centre-mersenne.org/item/JTNB_1995__7_2_407_0.pdf"
 fetched_at = "2026-11-05T21:18:55Z"
@@ -561,7 +563,8 @@ sha256 = "9d6f666dceea2a04fa32190a2d3715566993593d6b7384a2f40a643a2a4afe1f"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["Layer 1"]
+version_note = "scan; the displayed formulas are read from an OCR re-extraction of the cached PDF"
+cited_for = ["Layer 1.3", "Layer 1.4"]
 
 [[source]]
 id = "nicolasRobin1983"
@@ -587,7 +590,7 @@ title = "The error term for the squarefree integers"
 year = 1966
 venue = "Canadian Mathematical Bulletin 9, 303-306"
 locator_scheme = "theorem"
-locator = "Theorem"
+locator = "Inequalities (4), (8) and (9)"
 url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/AE3E0660B97BC4138798E9B72C5E01EC/S0008439500052887a.pdf/error_term_for_the_squarefree_integers.pdf"
 fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/AE3E0660B97BC4138798E9B72C5E01EC/S0008439500052887a.pdf/error_term_for_the_squarefree_integers.pdf"
 fetched_at = "2026-11-05T21:18:56Z"
@@ -595,7 +598,7 @@ sha256 = "d5c88362964d7cfb76acb25a77e4a37f7254e6f736105537d2bacd221cfe2a47"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["Layer 7"]
+cited_for = ["Layer 0.5", "Layer 1.2", "Layer 2.5", "Layer 7.1"]
 
 [[source]]
 id = "cipu2015"
@@ -604,7 +607,7 @@ title = "Further remarks on Diophantine quintuples"
 year = 2015
 venue = "Acta Arithmetica 168, 201-219"
 locator_scheme = "theorem"
-locator = "Lemma 4.3"
+locator = "Lemma 4.2 (a)–(d) and Lemma 4.3"
 url = "https://www.impan.pl/shop/publication/transaction/download/product/82042"
 fetched_from = "https://www.impan.pl/shop/publication/transaction/download/product/82042"
 fetched_at = "2026-11-05T21:19:01Z"
@@ -612,7 +615,7 @@ sha256 = "22937ca602e3ee34f5748a3a24d833cc82c0672feb590f053ec150d38e4715ec"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["Layer 7"]
+cited_for = ["Layer 7.1", "Layer 7.6"]
 
 [[source]]
 id = "vanlalngaia2017"
@@ -621,7 +624,7 @@ title = "Explicit Mertens sums"
 year = 2017
 venue = "Integers 17, Paper A11"
 locator_scheme = "theorem"
-locator = "Theorem 5"
+locator = "Theorem 5, p. 3 (tilted products); Theorem 9 (the corrected ψ̃ estimate); Corollary 1 and Theorem 4"
 url = "https://zenodo.org/records/10636070"
 fetched_from = "https://zenodo.org/records/10636070/files/r11.pdf"
 fetched_at = "2026-11-05T21:19:03Z"
@@ -629,7 +632,8 @@ sha256 = "822cbc5f6b4bdfcca89f5d977d98da9a060354ed0772845feb6d2dbc3a662c59"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["Layer 8"]
+version_note = "the cached extraction has a garbled font encoding; statements read from an OCR re-extraction of the cached PDF"
+cited_for = ["Layer 8.2", "Scope", "supplier contract gap:psi-tilde-explicit", "supplier contract gap:mertens-reciprocal-cubic"]
 
 [[source]]
 id = "granvilleRamare1996"
@@ -747,7 +751,7 @@ locator = "p. 51 (τ_3(n) ≤ n^{1.59141 log 3/log log n})"
 url = ""
 licence_class = "none"
 status = "uncertified"
-version_note = "thesis, no legal online copy found; cited by its locator without the text"
+version_note = "thesis, no legal online copy found; cited by its locator without the text; Teo (teo2026, line 105) reports that the value λ(3) does not appear in the thesis, so Layer 9.2 cites Teo's Table 13 for k = 3"
 cited_for = ["Layer 9"]
 
 [[source]]
@@ -785,7 +789,7 @@ title = "A new estimate for the sum M(x) = Σ_{n≤x} μ(n)"
 year = 1967
 venue = "Acta Arithmetica 13, 49-59"
 locator_scheme = "theorem"
-locator = "Theorem 1"
+locator = "Inequalities (4) and (5) of the introduction, (5) as corrected by macleod1969errata; §§2–3"
 url = "http://matwbn.icm.edu.pl/ksiazki/aa/aa13/aa1314.pdf"
 fetched_from = "https://matwbn.icm.edu.pl/ksiazki/aa/aa13/aa1314.pdf"
 fetched_at = "2026-11-05T21:22:46Z"
@@ -870,7 +874,7 @@ title = "Estimation de la fonction de Tchebychef θ sur le k-ième nombre premie
 year = 1983
 venue = "Acta Arithmetica 42, 367-389"
 locator_scheme = "theorem"
-locator = "Théorème 11 (ω(n) ≤ 1.3841 log n/log log n)"
+locator = "Théorème 11 (ω(n) ≤ 1.3841 log n/log log n); Théorème 6"
 url = "http://matwbn.icm.edu.pl/ksiazki/aa/aa42/aa4242.pdf"
 fetched_from = "https://matwbn.icm.edu.pl/ksiazki/aa/aa42/aa4242.pdf"
 fetched_at = "2026-11-05T21:27:21Z"
@@ -878,7 +882,7 @@ sha256 = "018d5d94f97388289c667a31d2c6b05b022968168d214300095491476e707fcb"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["Layer 9"]
+cited_for = ["Layer 0.7", "Layer 9"]
 
 [[source]]
 id = "bordelles2002"
