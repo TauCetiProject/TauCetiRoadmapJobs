@@ -99,3 +99,22 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 cited_for = ["4.2b Swan-constancy criterion"]
+
+[[source]]
+id = "rs96"
+authors = "Zeev Rudnick and Peter Sarnak"
+title = "Zeros of principal L-functions and random matrix theory"
+year = 1996
+venue = "Duke Mathematical Journal 81"
+doi = "10.1215/S0012-7094-96-08115-6"
+locator_scheme = "section"
+locator = "Appendix §5.2, (5.4)–(5.14), Lemma 5.1 and the subsequent nonnegativity deduction, manuscript pp. 52–55"
+url = "https://empslocal.ex.ac.uk/people/staff/mrwatkin/zeta/rudnick-sarnak.pdf"
+fetched_from = "https://empslocal.ex.ac.uk/people/staff/mrwatkin/zeta/rudnick-sarnak.pdf"
+fetched_at = "2026-11-07T10:45:40Z"
+sha256 = "393cd6ad3a61036070ed7b86113de5dd1bb033b47eec8998fb9597bb091c13c7"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "Institutional manuscript (60 pages); the appendix section, equation and page numbering of the fetched text, which is the version read. Published in Duke Mathematical Journal 81 (1996), 269–322."
+cited_for = ["2.0 local self-pair positivity"]
