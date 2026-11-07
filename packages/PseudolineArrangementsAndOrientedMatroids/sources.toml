@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PseudolineArrangementsAndOrientedMatroids"
+
+[[source]]
+id = "ahos2013"
+authors = "Gabriela Araujo-Pardo, Isabel Hubard, Deborah Oliveros, Egon Schulte"
+title = "Colorful Polytopes and Graphs"
+year = 2012
+arxiv = "1203.5175v1"
+locator_scheme = "theorem"
+locator = "Theorem 3.1"
+url = "https://arxiv.org/abs/1203.5175v1"
+fetched_from = "https://arxiv.org/pdf/1203.5175v1"
+fetched_at = "2026-11-07T10:46:42Z"
+sha256 = "469e9a3ea98c051244ee6f4acdae6ffdb9f346b1dc349087878596b37767ec59"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v1"
+cited_for = ["9.6"]
