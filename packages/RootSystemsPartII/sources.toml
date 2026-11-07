@@ -35,7 +35,6 @@ cited_for = ["2.1–2.3, 3.1–3.4, 4.1–4.3"]
 
 [[source]]
 id = "KZ25"
-version_note = "All numbering and pages refer to the 63-page revised author preprint l-indep_v2.pdf, not the published article."
 authors = "Mark Kisin and Rong Zhou"
 title = "Independence of ℓ for Frobenius conjugacy classes attached to abelian varieties"
 year = 2025
@@ -48,4 +47,22 @@ sha256 = "cc6383505c39b40bd450c76de28218382b7b1216fe7999c098fc78c5a1d24d3b"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
+version_note = "All numbering and pages refer to the 63-page revised author preprint l-indep_v2.pdf, not the published article."
 cited_for = ["3.1–3.4, 4.1–4.4"]
+
+[[source]]
+id = "Milne17"
+authors = "J. S. Milne"
+title = "Algebraic Groups: The Theory of Group Schemes of Finite Type over a Field"
+year = 2017
+version_note = "Locators and pages refer to the author copy iAG2017.pdf of the Cambridge Studies in Advanced Mathematics 170 edition; printed page N is PDF page N + 12."
+locator_scheme = "theorem"
+locator = "C.23, p. 612; Proposition C.55, p. 625"
+url = "https://www.jmilne.org/math/Books/iAG2017.pdf"
+fetched_from = "https://www.jmilne.org/math/Books/iAG2017.pdf"
+fetched_at = "2026-11-07T12:20:44Z"
+sha256 = "503f1a7d511632af05541c52fb2bf6fc36f5a75b0323f2f9110f03dcce11fd67"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+cited_for = ["3.3"]
