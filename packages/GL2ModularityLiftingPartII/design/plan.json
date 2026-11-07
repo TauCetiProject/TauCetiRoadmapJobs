@@ -3798,7 +3798,11 @@
         "GL2ModularityLiftingPartII:D1.7/scalar-multiplicity-two",
         "GL2ModularityLiftingPartII:D1.7/multiplicity-one-and-quotients"
       ],
-      "detail": "At x≡1 mod p with a ramified nonsplit self-extension of an unramified residual character, the determinant-normalizing ψ^{-1/2} twist can identify two distinct conductor-minimal characteristic-zero automorphic lifts (the ψ and ψ^{-1} choices). Thus the printed fixed-determinant generic-fibre map in Theorem 4.8, p. 363, need not be injective. To obtain the unrestricted multiplicity-two theorem, construct the conductor≤1 local deformation ring with variable p-primary inertial determinant over the local diamond algebra, patch that ring/module with its matching types, and prove its Cohen–Macaulay type is still three after the global parameter quotient. The source proves none of these repairs. D1.7 gives the matched restricted version and the general theorem as an unresolved target. Extraction lead: PAPER-CALEGARI-GERAGHTY-18/E85; this plan does not certify the general statement."
+      "detail": "The norm-one ramified self-extension requires a conductor-at-most-one local family with variable p-primary inertial determinant and matching types. Its global integral type-three conclusion is a separate deliverable, gap:scalar-variable-global-type at GL2ModularityLifting; no such global result follows from the local ring at p or a generic-fibre identification.",
+      "slug": "scalar-variable-determinant",
+      "supplier": "LocalGaloisDeformationRings",
+      "section": "2.19, 6.18",
+      "needs": "Provide the conductor-at-most-one local deformation family with variable p-primary inertial determinant over its diamond algebra at a ramified unramified-character self-extension of norm one, and its matching local types for the global type-three comparison."
     },
     {
       "title": "Gap O — localized 3-primary orbifold homology",
@@ -3809,7 +3813,11 @@
         "GL2ModularityLiftingPartII:D1.10/minimal-bianchi-rt",
         "GL2ModularityLiftingPartII:D1.10/minimal-semistable-bianchi-lifting"
       ],
-      "detail": "At p=3 the fixed arithmetic levels can have order-three stabilizers; group/orbifold H₃ is not zero merely because the coarse quotient is a noncompact three-manifold. Prove the 3-primary Farrell/stabilizer homology vanishes at the selected residual ideals and establish the resulting localized boundary/duality package compatibly at all Taylor–Wiles levels. A possible approach is to identify its Hecke systems as induced from F(ζ₃), then use the absolute irreducibility after restriction hypothesis; that identification is not proved here. Non-Eisensteinness alone does not exclude irreducible induced systems, and the fixed Γ₀ Taylor–Wiles levels need not admit the required torsion-free replacement. Results here use p≥5 or this additional package. Extraction lead: PAPER-CALEGARI-GERAGHTY-18/E116."
+      "detail": "The p = 3 conclusions assume H₃(3), localized residue-field degree-three homology vanishing at every base and diamond level. CG18 does not establish this hypothesis; this gap requests its proof. Boundary vanishing is a separate non-neat boundary contract for every p ≥ 3.",
+      "slug": "localized-three-primary-stabilizers",
+      "supplier": "ArithmeticLocallySymmetricSpaces",
+      "section": "ALS.0.8, ALS.4, ALS.5a.6, ALS.6.2",
+      "needs": "Establish hypothesis H₃(3): for p = 3 unramified in imaginary quadratic F, at every level Y₀(Q) and Y_Δ(Q) of ArithmeticLocallySymmetricSpaces ALS.0.10(iv) and every non-Eisenstein m associated to ρ̄ with ρ̄ restricted to G_(F(ζ₃)) absolutely irreducible, H₃(Y_?(Q),k)_m = 0, where ? is 0 or Δ."
     },
     {
       "title": "Gap P — integral minimal type at Bianchi principal primes",
@@ -3819,7 +3827,113 @@
         "GL2ModularityLiftingPartII:D1.10/minimal-bianchi-rt",
         "GL2ModularityLiftingPartII:D1.10/bianchi-generic-rank"
       ],
-      "detail": "The printed Γ_p(v^{a(barρ)}) level at type P contains nonminimal inertial lifts. Its correction needs both local type selection and a compatible integral homology model: for ψ²≠1 use the half-conductor ψ character type, and for ψ²=1 use the ψ∘det twisted spherical type. Supply the integral projector/local-system construction, base-change and duality, compatibility with the auxiliary covers and Hecke correspondences, and Conjecture A on these exact spaces. Local characteristic-zero newvector calculations alone do not give that package. This pass proves the no-P Bianchi formulation conditionally on Conjecture A, and states the corrected general one with this explicit input. Extraction leads: PAPER-CALEGARI-GERAGHTY-18/E106,E121."
+      "detail": "The printed Γ_p(v^{a(barρ)}) level at type P contains nonminimal inertial lifts. Its correction needs both local type selection and a compatible integral homology model: for ψ²≠1 use the half-conductor ψ character type, and for ψ²=1 use the ψ∘det twisted spherical type. Supply the integral projector/local-system construction, base-change and duality, compatibility with the auxiliary covers and Hecke correspondences, and Conjecture A on these exact spaces. Local characteristic-zero newvector calculations alone do not give that package. This pass proves the no-P Bianchi formulation conditionally on Conjecture A, and states the corrected general one with this explicit input. Extraction leads: PAPER-CALEGARI-GERAGHTY-18/E106,E121.",
+      "slug": "integral-principal-types",
+      "supplier": "ArithmeticLocallySymmetricSpaces",
+      "section": "ALS.1, ALS.3, ALS.5a, ALS.6",
+      "needs": "Provide the integral Bianchi minimal principal-type coefficient model for the half-conductor or twisted spherical selectors, with arbitrary coefficient change, Hecke, diamond-cover descent and duality, on which the all-level Conjecture A hypothesis can be imposed."
+    },
+    {
+      "slug": "conductor-rigidified-descent",
+      "supplier": "AlgebraicModularFormsAndSerreWeights",
+      "section": "R15.1",
+      "needs": "Provide coherent conductor-level descent through common fine rigidifications with Hodge coefficients and finite and K/O coefficients."
+    },
+    {
+      "slug": "diamond-cover-cartan-leray",
+      "supplier": "AlgebraicModularFormsAndSerreWeights",
+      "section": "R15.1",
+      "needs": "Provide Hecke-compatible Cartan–Leray descent and its Pontryagin-dual Tor edge maps for compactified p-power diamond covers with Hodge coefficients over finite quotients and K/O."
+    },
+    {
+      "slug": "minimal-torsion-bad-hecke",
+      "supplier": "AlgebraicModularFormsAndSerreWeights",
+      "section": "R15.2",
+      "needs": "Provide the integral bad-prime U action on the conductor-minimal Hasse subquotient, compatible with invariant-line Frobenius and the zero-invariant newvector case, over every finite coefficient quotient."
+    },
+    {
+      "slug": "taylor-wiles-sets",
+      "supplier": "GlobalGaloisDeformations",
+      "section": "5.2, 5.6–5.8",
+      "needs": "Provide CG18 Propositions 3.3 and 5.2 auxiliary sets of exactly q dual-Selmer-killing distinct-root primes for these unramified-at-p rational and imaginary-quadratic problems, including p=3 under the cyclotomic absolute-irreducibility hypothesis."
+    },
+    {
+      "slug": "defect-one-presentations",
+      "supplier": "GlobalGaloisDeformations",
+      "section": "3.6–3.7, R04.6",
+      "needs": "Provide the CG18 Propositions 3.2 and 5.1 tangent equality or inequality and q−1-variable presentations for the CG18 Definition 3.1 minimal problem over ℚ unramified at p and the CG18 §5.1 minimal problem over imaginary quadratic F, with the dual adjoint Tate twist and diamond augmentation quotient."
+    },
+    {
+      "slug": "rational-minimal-conditions",
+      "supplier": "LocalGaloisDeformationRings",
+      "section": "2.1–2.5, 2.19, 4.1",
+      "needs": "Provide the CG18 Definition 3.1 local minimal deformation conditions over ℚ, including invariant-direct-summand minimality on every Artinian coefficient quotient."
+    },
+    {
+      "slug": "bianchi-local-types",
+      "supplier": "LocalGaloisDeformationRings",
+      "section": "2.1–2.5, 2.19, 4.1",
+      "needs": "Provide the absolute Bianchi S/P/M/H conditions with finite-flat precedence on every Artinian quotient, including the conductor-compatible Steinberg quotient at norm −1."
+    },
+    {
+      "slug": "integral-ordinary-hasse",
+      "supplier": "AutomorphicGaloisRepresentations",
+      "section": "5.1, 6.8–6.9, 6.12",
+      "needs": "Provide the high-weight p-anaemic arithmetic Hecke representation and chosen ordinary triangular characters on the finite Hasse subquotients, with the unramified quotient eigenvalue and exact minimal/type conditions over the whole image including nilpotents."
+    },
+    {
+      "slug": "scalar-conductor-comparison",
+      "supplier": "GL2ModularityLifting",
+      "section": "3.7, 4.1–4.2",
+      "needs": "Provide the conductor-specific global ordinary eigenvalue-adorned weight-two deformation presentation, its numerical relation bound and generic-fibre Hecke component comparison for each character φ, with the unipotent quotient at ramified Steinberg primes x ≡ −1 mod p and the minimal conditions of LocalGaloisDeformationRings §§2.1–2.5, 2.19 at the other primes away from p, including the matching variable-inertial-determinant presentation and component comparison in the nonharmless self-extension case."
+    },
+    {
+      "slug": "jacobian-residual-isotypy",
+      "supplier": "SerreWeightAndLevelOptimisation",
+      "section": "3.10–3.12",
+      "needs": "Provide annihilation of J₁(N*)[p^∞]_m by the Cayley–Hamilton ideal of its Hecke-valued determinant at the full conductor-minimal non-Eisenstein ideal m, compatibly with the good-reduction Eichler–Shimura relation of ModularCurvesPartII §17.2."
+    },
+    {
+      "slug": "carayol-diamond-quotient",
+      "supplier": "SerreWeightAndLevelOptimisation",
+      "section": "3.10–3.12",
+      "needs": "Provide the Carayol diamond-quotient comparison with p≠3 and the Q(√−3)-induction exclusion."
+    },
+    {
+      "slug": "principal-local-selectors",
+      "supplier": "GL2AutomorphicRepresentationsAndTransfer",
+      "section": "R16.2, R16.3, R16.6.5",
+      "needs": "Provide the half-conductor ψ(a/d) selector for ψ²≠1 and the quadratic ψ∘det spherical selector for ψ²=1, with integral lattices and exact prime-to-p diamond multiplicities at the Bianchi P/M/H levels."
+    },
+    {
+      "slug": "bianchi-classical-dictionary",
+      "supplier": "GL2AutomorphicRepresentationsAndTransfer",
+      "section": "R16.6.5–R16.6.6",
+      "needs": "Provide the coefficient-field-compatible Bianchi degree-one cuspidal homology dictionary at the exact finite type spaces with arithmetic Frobenius and bad local-factor normalizations, retaining each local invariant-space dimension."
+    },
+    {
+      "slug": "selected-root-residual-only",
+      "supplier": "AutomorphyLiftingBeyondTaylorWiles",
+      "section": "BT.3/lemma-9-6",
+      "needs": "Provide the n = 2 selected-root comparison of BT.3/lemma-9-6 for Taylor–Wiles sets with p > 2 and distinct residual roots assuming only the residual part (i) of B^gal, with no Hecke-valued lift from part (ii)."
+    },
+    {
+      "slug": "non-neat-bianchi-boundary",
+      "supplier": "ArithmeticLocallySymmetricSpaces",
+      "section": "ALS.4",
+      "needs": "For p ≥ 3 unramified in imaginary quadratic F, at the non-neat projective levels Y₀(Q), Y_Δ(Q) of ArithmeticLocallySymmetricSpaces ALS.0.10(iv), prove localized boundary homology vanishing in all degrees and the ordinary-to-Borel–Moore homology isomorphism for every p-power quotient Δ and finitely generated O[Δ]-module μ at a non-Eisenstein ideal associated to an absolutely irreducible residual representation, without a Hecke-valued Galois lift or the general hypothesis ♠."
+    },
+    {
+      "slug": "vexing-norm-twist-selector",
+      "supplier": "GL2AutomorphicRepresentationsAndTransfer",
+      "section": "R16.2.11, R16.3.9",
+      "needs": "Provide the norm-twist extension of the conductor-minimal CDT full-compact selector for every vexing character θ=θ₀(λ∘Norm), with a(θ₀/θ₀^σ)=a(θ₀), a stable integral lattice for the inflation of Θ(θ₀) tensored by λ∘det on GL₂(Z/x^n Z) with n=max(a(θ₀),a(λ)), the contragredient section convention, and multiplicity one exactly for the fixed minimal inertia type."
+    },
+    {
+      "slug": "scalar-variable-global-type",
+      "supplier": "GL2ModularityLifting",
+      "section": "3.7, 4.1–4.2",
+      "needs": "For p ≥ 3 and an odd absolutely irreducible modular rational residual representation, unramified at p with scalar Frobenius and twist-minimal away from p, prove that the matching ordinary eigenvalue-adorned global quotient for the conductor-at-most-one variable-inertial-determinant family at every nonharmless norm-one ramified unramified-character self-extension is finite flat Cohen–Macaulay of type three under full support on its specified characteristic-zero automorphic components, including verification of the O-Tor-independent local Cohen–Macaulay factors and the numerical relation bound making the global relations, framing parameters and π a system of parameters."
     }
   ],
   "sourceVersions": [
