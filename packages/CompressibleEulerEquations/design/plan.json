@@ -1,0 +1,1846 @@
+{
+ "roadmap": "CompressibleEulerEquations",
+ "title": "Compressible Euler equations, symmetric hyperbolic systems and maximal developments",
+ "parent": null,
+ "summary": "The barotropic and full compressible Euler systems with a general equation of state on the Galilean carrier ℝ × ℝⁿ (partially periodic carriers as Λ-periodic lifts); quasilinear symmetric hyperbolic systems with the Euler symmetrisers; the acoustical form, Lipschitz causal curves of sound-cone fields and future domains of dependence; Hᵏ_Λ calculus (Gagliardo–Nirenberg, Moser, mollifiers); Friedrichs energy estimates; local uniqueness on lenses and on domains of dependence; local well-posedness in Hᵏ_Λ, k > n/2 + 1; developments, maximal common developments, maximal developments (non-unique in general, with an explicit counterexample), existence of developments, and nullity of the regular boundary of every maximal development.",
+ "baseline": {
+  "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+  "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
+ },
+ "layers": [
+  {
+   "key": "1",
+   "title": "Equations of state and the Euler systems",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "definition",
+     "name": "CompressibleEuler.BarotropicEOS",
+     "statement": "A barotropic equation of state is an open interval I ⊆ (0,∞) and p : ℝ → ℝ smooth on I with p′ > 0 on I; its sound speed is c(ρ) = √(p′ ρ). A (full) equation of state is an open 𝒪 ⊆ (0,∞) × ℝ and P smooth on 𝒪 with ∂_ρP > 0 on 𝒪; its sound speed is √(∂_ρP).",
+     "hypotheses": [
+      "I open interval contained in (0,∞)",
+      "p smooth on I",
+      "p′ > 0 on I",
+      "for the full law: 𝒪 open in (0,∞) × ℝ, P smooth on 𝒪, ∂_ρP > 0"
+     ],
+     "locator": {
+      "source": "ChristodoulouMiao2014",
+      "where": "line 606, eq. (1.24); AbbresciaSpeck2022 lines 165–170, eq. (1.3); LuoYu2023a line 88"
+     },
+     "prerequisites": [
+      "mathlib:ContDiffOn",
+      "mathlib:Real.sqrt"
+     ],
+     "api": [
+      {
+       "name": "soundSpeed_pos",
+       "role": "positivity",
+       "statement": "the sound speed is smooth and strictly positive on I (on 𝒪) and c² = p′ (c² = ∂_ρP)"
+      },
+      {
+       "name": "toFull",
+       "role": "comparison",
+       "statement": "a barotropic law on I is a full law on I × ℝ independent of s with the same sound speed; every slice ρ ↦ P(ρ, s₀) on an open interval J with J × {s₀} ⊆ 𝒪 is a barotropic law"
+      },
+      {
+       "name": "polytropic",
+       "role": "instance",
+       "statement": "p = k₀ρ^γ with k₀ > 0, γ ≥ 1 is a barotropic law on (0,∞) with c² = k₀γρ^{γ−1}; P = k₀e^sρ^γ is a full law with c² = k₀γe^sρ^{γ−1}"
+      }
+     ],
+     "tests": [
+      {
+       "name": "sqrt_not_derivative",
+       "kind": "computation",
+       "statement": "p = ρ²/2 gives c(4) = 2; the wrong definition c = p′ gives 4"
+      },
+      {
+       "name": "unit_sound_speed",
+       "kind": "computation",
+       "statement": "p = ρ² at ρ = 1/2 gives c = 1"
+      },
+      {
+       "name": "chaplygin",
+       "kind": "characterisation",
+       "statement": "p = −A/ρ (A > 0) is an equation of state with negative pressure and c = √A/ρ; a definition demanding p > 0 wrongly rejects it"
+      },
+      {
+       "name": "negative_slope",
+       "kind": "non-example",
+       "statement": "p = −ρ² has p′ = −2ρ < 0 on (0,∞) and is rejected; its symbol would have non-real speeds"
+      },
+      {
+       "name": "ideal_gas",
+       "kind": "computation",
+       "statement": "P = e^sρ² at (1,0): ∂_ρP = 2, ∂_sP = 1, c = √2"
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "definition",
+     "name": "CompressibleEuler.IsBarotropicSolution",
+     "statement": "A classical barotropic solution on a domain or open set D ⊆ ℝ × E is a pair (ρ, v) of C¹ maps on D with ρ(D) ⊆ I satisfying ∂_tρ + v·∇ρ = −ρ div v and ∂_tv + (v·∇)v = −ρ⁻¹∇(p ∘ ρ) on D (derivatives within D).",
+     "hypotheses": [
+      "(I, p) barotropic equation of state",
+      "D a domain (relatively open in a half-space) or open",
+      "ρ, v C¹ on D (ContDiffOn within D)",
+      "ρ(D) ⊆ I"
+     ],
+     "locator": {
+      "source": "ChristodoulouMiao2014",
+      "where": "lines 488 and 529, eqs. (1.4), (1.10); LuoYu2023a line 84, eq. (1.1); AbbresciaSpeck2022 lines 158–164"
+     },
+     "prerequisites": [
+      "mathlib:ContDiffOn",
+      "mathlib:fderivWithin",
+      "target:1.1"
+     ],
+     "api": [
+      {
+       "name": "constant",
+       "role": "constructor",
+       "statement": "constant states (ρ₀, v₀) with ρ₀ ∈ I are solutions on ℝ × E"
+      },
+      {
+       "name": "expanding",
+       "role": "constructor",
+       "statement": "ρ = ρ₀(1+t)^{−n}, v = x/(1+t) is a solution on every open subset of (−1,∞) × E where ρ ∈ I, for every equation of state"
+      },
+      {
+       "name": "restrict_translate",
+       "role": "functoriality",
+       "statement": "restrictions to smaller domains and Λ-translates of solutions are solutions"
+      }
+     ],
+     "tests": [
+      {
+       "name": "expanding_values",
+       "kind": "computation",
+       "statement": "n = 1, t = 1: ρ = ρ₀/2, v = x/2, ∂_tρ = −ρ₀/4 = −∂_x(ρv), and ∂_tv + v∂_xv = −x/4 + x/4 = 0"
+      },
+      {
+       "name": "not_solution",
+       "kind": "non-example",
+       "statement": "(ρ, v) = (1 + t, 0) fails the continuity equation: ∂_tρ = 1 ≠ 0"
+      },
+      {
+       "name": "boost_rule",
+       "kind": "characterisation",
+       "statement": "boosting the expanding flow (n = 1) by w = 1 with ṽ = (Rv + w) ∘ φ⁻¹ gives a solution; the wrong rule ṽ = v ∘ φ⁻¹ leaves the residual −w/(1+t) = −1/2 at t = 1"
+      },
+      {
+       "name": "constant_degenerate",
+       "kind": "degenerate",
+       "statement": "the constant state solves both equations with all derivatives zero"
+      }
+     ]
+    },
+    {
+     "id": "1.2.1",
+     "kind": "theorem",
+     "name": "CompressibleEuler.isBarotropicSolution_iff_conservative",
+     "statement": "A C¹ pair (ρ, v) on D with ρ(D) ⊆ I is a classical barotropic solution iff ∂_tρ + div(ρv) = 0 and ∂_t(ρvⁱ) + Σⱼ∂ⱼ(ρvⁱvʲ) + ∂ᵢ(p ∘ ρ) = 0 on D.",
+     "hypotheses": [
+      "ρ > 0 on D (from ρ(D) ⊆ I ⊆ (0,∞))",
+      "ρ, v C¹ on D"
+     ],
+     "locator": {
+      "source": "ChristodoulouMiao2014",
+      "where": "lines 481–529, eqs. (1.2)–(1.10)"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "mathlib:fderivWithin"
+     ]
+    },
+    {
+     "id": "1.2.2",
+     "kind": "theorem",
+     "name": "CompressibleEuler.isBarotropicSolution_galilean",
+     "statement": "For w ∈ E, a linear isometry R of E and a ∈ ℝ × E, with φ(t,x) = (t + a₀, Rx + tw + a′), the pair (ρ ∘ φ⁻¹, (Rv + w) ∘ φ⁻¹) is a classical barotropic solution on φ(D) iff (ρ, v) is one on D.",
+     "hypotheses": [
+      "w ∈ E",
+      "R a linear isometry of E",
+      "a = (a₀, a′)"
+     ],
+     "locator": {
+      "source": "ChristodoulouMiao2014",
+      "where": "lines 818–822 (Galilean invariance)"
+     },
+     "prerequisites": [
+      "target:1.2"
+     ]
+    },
+    {
+     "id": "1.3",
+     "kind": "definition",
+     "name": "CompressibleEuler.IsSolution",
+     "statement": "A classical solution of the full system on D is a triple (ρ, v, s) of C¹ maps with (ρ, s)(D) ⊆ 𝒪 satisfying Bρ = −ρ div v, Bv = −ρ⁻¹∇(P(ρ,s)), Bs = 0 with B = ∂_t + v·∇.",
+     "hypotheses": [
+      "(𝒪, P) equation of state",
+      "ρ, v, s C¹ on D",
+      "(ρ, s)(D) ⊆ 𝒪"
+     ],
+     "locator": {
+      "source": "ChristodoulouMiao2014",
+      "where": "lines 833–838, eqs. (2.1)–(2.3); AbbresciaSpeck2022 lines 158–160, eqs. (1.1a)–(1.1c)"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.2",
+      "mathlib:ContDiffOn"
+     ],
+     "api": [
+      {
+       "name": "ofBarotropic",
+       "role": "comparison",
+       "statement": "a barotropic solution with a constant entropy s₀ is a full solution for P(ρ,s) = p(ρ)"
+      },
+      {
+       "name": "conservative",
+       "role": "characterisation",
+       "statement": "equivalent to the conservative form of mass and momentum with P(ρ,s) and ∂_t(ρs) + div(ρsv) = 0"
+      },
+      {
+       "name": "galilean",
+       "role": "functoriality",
+       "statement": "Galilean transformations act as in 1.2.2 with s ∘ φ⁻¹"
+      }
+     ],
+     "tests": [
+      {
+       "name": "static_entropy_wave",
+       "kind": "computation",
+       "statement": "P = e^sρ², n = 1, s = x, ρ = e^{−x/2}, v = 0: P(ρ,s) = 1 and (ρ, 0, x) is a stationary non-barotropic solution"
+      },
+      {
+       "name": "missing_entropy_term",
+       "kind": "non-example",
+       "statement": "a momentum equation keeping only ρ⁻¹∂_ρP∂_xρ gives −e^{x/2} ≠ 0 on the static entropy wave"
+      },
+      {
+       "name": "reduction",
+       "kind": "compatibility",
+       "statement": "s₀ = 0 turns P = e^sρ² into p = ρ², with sound speed √(2ρ) in both descriptions"
+      },
+      {
+       "name": "entropy_not_transported",
+       "kind": "non-example",
+       "statement": "(ρ, v, s) = (1, 0, t) fails Bs = 0"
+      }
+     ]
+    },
+    {
+     "id": "1.3.1",
+     "kind": "theorem",
+     "name": "CompressibleEuler.isSolution_constantEntropy",
+     "statement": "If (ρ, v, s) is a classical full solution and s ≡ s₀ on D then (ρ, v) is a barotropic solution for ρ ↦ P(ρ, s₀) on each open interval J with J × {s₀} ⊆ 𝒪 containing ρ(D), and conversely. If (ρ, v, s) is a classical solution on a slab [t₀, t₁) × E with v bounded on [t₀, t₂] × E for every t₂ < t₁ and s = s₀ on Σ_{t₀}, then s ≡ s₀.",
+     "hypotheses": [
+      "for propagation: v bounded on each [t₀,t₂] × E",
+      "s = s₀ on Σ_{t₀}"
+     ],
+     "locator": {
+      "source": "ChristodoulouMiao2014",
+      "where": "lines 530–544 (adiabatic condition, isentropic motion)"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "mathlib:IsPicardLindelof.exists_eq_forall_mem_Icc_hasDerivWithinAt",
+      "mathlib:ODE_solution_unique_of_mem_Icc"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "Symmetric hyperbolic systems and the Euler symmetrisers",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "definition",
+     "name": "SymmetricHyperbolic.QuasilinearSystem",
+     "statement": "A quasilinear symmetric hyperbolic system of size N in n space dimensions: an open G ⊆ ℝ^N, smooth A⁰,…,Aⁿ : G → symmetric N×N real matrices with A⁰(U) positive definite for all U ∈ G, and smooth F : G → ℝ^N. A classical solution on D is a C¹ map U : D → G with A⁰(U)∂_tU + Σᵢ Aⁱ(U)∂ᵢU = F(U). The symbol is σ(U;ζ) = ζ₀A⁰(U) + Σ ζᵢAⁱ(U); a round cone (c, w), c > 0, dominates at U when σ(U;ζ) is positive semidefinite for every ζ with ζ₀ + w·ζ′ ≥ c|ζ′|.",
+     "hypotheses": [
+      "G open",
+      "A^μ smooth with symmetric values",
+      "A⁰ positive definite on G",
+      "F smooth"
+     ],
+     "locator": {
+      "source": "Majda1984",
+      "where": "Ch. 2, §2.1; Friedrichs1954 pp. 345–392; Dafermos2016 Ch. V, §5.1; Christodoulou2019 lines 124–126"
+     },
+     "prerequisites": [
+      "mathlib:Matrix.PosDef",
+      "mathlib:Matrix.PosSemidef",
+      "mathlib:Matrix.IsHermitian",
+      "mathlib:ContDiffOn"
+     ],
+     "api": [
+      {
+       "name": "symbol_dt",
+       "role": "evaluation",
+       "statement": "σ(U; dt) = A⁰(U) is positive definite and σ is linear in ζ"
+      },
+      {
+       "name": "dominates_mono",
+       "role": "monotonicity",
+       "statement": "if (c,w) dominates at U and c′ ≥ c + |w′ − w| then (c′,w′) dominates at U"
+      },
+      {
+       "name": "exists_maxSpeed",
+       "role": "structure",
+       "statement": "for compact K ⊆ G and w ∈ E there is M > 0 with (M, w) dominating at every U ∈ K"
+      },
+      {
+       "name": "isClosed_dominates",
+       "role": "structure",
+       "statement": "the set of states at which a fixed (c,w) dominates is closed in G"
+      },
+      {
+       "name": "exists_dominatingConeMap",
+       "role": "structure",
+       "statement": "there is a continuous κ : G → (0,∞) × E with κ(U) dominating at U, e.g. (1 + λ(U), 0) with λ(U) the largest root of det(Σωᵢ Aⁱ(U) − λA⁰(U)) over unit ω"
+      },
+      {
+       "name": "ofSymmetriser",
+       "role": "constructor",
+       "statement": "multiplying ∂_tU + Mⁱ(U)∂ᵢU = f(U) by a smooth positive definite S with S Mⁱ symmetric gives a system with the same C¹ solutions"
+      }
+     ],
+     "tests": [
+      {
+       "name": "transport",
+       "kind": "computation",
+       "statement": "∂_tu + 3∂_xu = 0: (1,3) dominates, (1,0) does not (ζ = (1,−1): cone condition 1 ≥ 1 holds, symbol 1 − 3 = −2)"
+      },
+      {
+       "name": "wave_system",
+       "kind": "computation",
+       "statement": "first-order wave system: symbol eigenvalues ζ₀ ± |ζ′|, ζ₀; (1,0) dominates, (1/2,0) does not (eigenvalue −1/2 at ζ = (1/2, e₁))"
+      },
+      {
+       "name": "cauchy_riemann",
+       "kind": "non-example",
+       "statement": "A¹ = [[0,−1],[1,0]] is not symmetric, so the elliptic Cauchy–Riemann system is not an instance"
+      },
+      {
+       "name": "indefinite_A0",
+       "kind": "non-example",
+       "statement": "A⁰ = diag(1,−1) is rejected"
+      }
+     ]
+    },
+    {
+     "id": "2.1.1",
+     "kind": "theorem",
+     "name": "SymmetricHyperbolic.QuasilinearSystem.difference_bound",
+     "statement": "If U₁, U₂ are classical solutions on D with values in a compact K ⊆ G and |∂U₂| ≤ L on D, then |A⁰(U₁)∂_tW + Σᵢ Aⁱ(U₁)∂ᵢW| ≤ C(K,L)|W| on D for W = U₁ − U₂.",
+     "hypotheses": [
+      "values in compact K ⊆ G",
+      "|∂U₂| ≤ L on D"
+     ],
+     "locator": {
+      "source": "Majda1984",
+      "where": "Ch. 2, §2.3 (uniqueness argument)"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "mathlib:ContDiffOn"
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "construction",
+     "name": "CompressibleEuler.barotropicSystem",
+     "statement": "The barotropic Euler system on G = I × E: A⁰ = diag(c²/ρ², 1,…,1), Aⁱ = vⁱA⁰ + (c²/ρ)(e₀eᵢᵀ + eᵢe₀ᵀ), F = 0.",
+     "hypotheses": [
+      "(I, p) barotropic equation of state"
+     ],
+     "locator": {
+      "source": "Majda1984",
+      "where": "Ch. 2, §2.1 (compressible Euler as a symmetric hyperbolic system)"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:2.1"
+     ],
+     "api": [
+      {
+       "name": "isSymmetricHyperbolic",
+       "role": "structure",
+       "statement": "the data form a quasilinear symmetric hyperbolic system"
+      },
+      {
+       "name": "acousticalCone",
+       "role": "evaluation",
+       "statement": "U ↦ (c(U), v(U)) is continuous and dominating"
+      }
+     ],
+     "tests": [
+      {
+       "name": "speeds_numeric",
+       "kind": "computation",
+       "statement": "n = 1, ρ = 1, c = 2, v = 3: A⁰ = diag(4,1), A¹ = [[12,4],[4,3]], det(A¹ − λA⁰) = 4(λ−1)(λ−5)"
+      },
+      {
+       "name": "wrong_weight",
+       "kind": "non-example",
+       "statement": "A⁰ = I gives A¹ = [[3,1],[4,3]], not symmetric"
+      },
+      {
+       "name": "constant_state",
+       "kind": "degenerate",
+       "statement": "at a constant state the system is constant-coefficient with speeds v·ω, v·ω ± c"
+      }
+     ]
+    },
+    {
+     "id": "2.2.1",
+     "kind": "construction",
+     "name": "CompressibleEuler.fullSystem",
+     "statement": "The full Euler system on G = {(ρ,v,s) : (ρ,s) ∈ 𝒪} with A⁰ = S, Aⁱ = S Mⁱ, F = 0, where Mⁱ are the material-form coefficient matrices and S = [[∂_ρP/ρ, 0, ∂_sP/ρ],[0, ρI, 0],[∂_sP/ρ, 0, 1 + (∂_sP)²/(ρ∂_ρP)]].",
+     "hypotheses": [
+      "(𝒪, P) equation of state"
+     ],
+     "locator": {
+      "source": "Majda1984",
+      "where": "Ch. 2, §2.1"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:2.1"
+     ],
+     "api": [
+      {
+       "name": "S_posDef",
+       "role": "structure",
+       "statement": "S is positive definite on G and S Mⁱ is symmetric"
+      },
+      {
+       "name": "barotropic_block",
+       "role": "comparison",
+       "statement": "for ∂_sP = 0 the (ρ,v) block of S is ρ times the barotropic A⁰"
+      }
+     ],
+     "tests": [
+      {
+       "name": "posdef_numeric",
+       "kind": "computation",
+       "statement": "P = e^sρ², n = 1 at (1,0): S = [[2,0,1],[0,1,0],[1,0,3/2]], leading minors 2, 2, 2"
+      },
+      {
+       "name": "uncorrected_d",
+       "kind": "non-example",
+       "statement": "replacing 3/2 by 1/2 makes det S = 0"
+      },
+      {
+       "name": "no_entropy_coupling",
+       "kind": "degenerate",
+       "statement": "for ∂_sP = 0 the entropy decouples as Bs = 0 with weight 1"
+      }
+     ]
+    },
+    {
+     "id": "2.2.2",
+     "kind": "theorem",
+     "name": "CompressibleEuler.isSolution_iff_symmetric",
+     "statement": "A C¹ state with values in G is a classical barotropic (full) Euler solution iff it is a classical solution of the barotropic (full) symmetric system.",
+     "hypotheses": [
+      "values in G"
+     ],
+     "locator": {
+      "source": "Majda1984",
+      "where": "Ch. 2, §2.1"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:1.3",
+      "target:2.2",
+      "target:2.2.1"
+     ]
+    },
+    {
+     "id": "2.2.3",
+     "kind": "theorem",
+     "name": "CompressibleEuler.symbol_spectrum",
+     "statement": "For ζ′ ≠ 0 the roots of det(σ(U;ζ) − λA⁰(U)) are ζ₀ + v·ζ′ (multiplicity n−1 barotropic, n full) and ζ₀ + v·ζ′ ± c|ζ′|; σ(U;ζ) ≥ 0 iff ζ₀ + v·ζ′ ≥ c|ζ′|, > 0 iff strict; singular iff |ζ₀ + v·ζ′| = c|ζ′|, or ζ₀ + v·ζ′ = 0 when that root has positive multiplicity (barotropic with n ≥ 2; full for every n); (c′,w) dominates at U iff c′ ≥ c(U) + |v − w|.",
+     "hypotheses": [
+      "U ∈ G",
+      "ζ′ ≠ 0 for the spectrum"
+     ],
+     "locator": {
+      "source": "Majda1984",
+      "where": "Ch. 2, §2.1; Dafermos2016 Ch. V, §5.1"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "target:2.2.1",
+      "mathlib:Matrix.det"
+     ],
+     "tests": [
+      {
+       "name": "multiplicity_zero",
+       "kind": "non-example",
+       "statement": "n = 1, barotropic, (ρ,v) = (1,3), c = 2, ζ = (−3,1): ζ₀ + vζ₁ = 0 but σ = [[0,4],[4,0]], det −16, nonsingular; g⁻¹(ζ,ζ) = 1, not null"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "Sound cones, causal curves and domains of dependence",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "definition",
+     "name": "AcousticalGeometry.acousticalForm",
+     "statement": "For c > 0, v ∈ E: g((τ,ξ),(τ′,ξ′)) = −c²ττ′ + (ξ − τv)·(ξ′ − τ′v) on ℝ × E, its inverse g⁻¹(ζ,η) = −c⁻²(ζ₀ + v·ζ′)(η₀ + v·η′) + ζ′·η′, and B = (1, v).",
+     "hypotheses": [
+      "c > 0",
+      "v ∈ E"
+     ],
+     "locator": {
+      "source": "ChristodoulouMiao2014",
+      "where": "lines 672–676, eqs. (1.39)–(1.40); LuoYu2023a line 95; LukSpeck2018 lines 1999–2008"
+     },
+     "prerequisites": [
+      "mathlib:Matrix.det",
+      "mathlib:QuadraticForm.equivalent_signType_weighted_sum_squared"
+     ],
+     "api": [
+      {
+       "name": "inverse",
+       "role": "structure",
+       "statement": "the Gram matrices of g and g⁻¹ are inverse; det g = −c²"
+      },
+      {
+       "name": "signature",
+       "role": "structure",
+       "statement": "(τ,ξ) ↦ (cτ, ξ − τv) carries g to −τ² + |ξ|²"
+      },
+      {
+       "name": "causal_iff",
+       "role": "characterisation",
+       "statement": "g(X,X) ≤ 0 iff |ξ − τv| ≤ c|τ|; nonzero causal vectors have τ ≠ 0; future (τ > 0) iff g(B,X) < 0; g(B,B) = −c²"
+      },
+      {
+       "name": "covector_classification",
+       "role": "characterisation",
+       "statement": "ζ future causal iff ζ₀ + v·ζ′ ≥ c|ζ′|; ker ζ spacelike/null/timelike iff |ζ₀ + v·ζ′| >, =, < c|ζ′|"
+      },
+      {
+       "name": "galilean",
+       "role": "functoriality",
+       "statement": "g_{c,v}((τ, ξ+τw),(τ′, ξ′+τ′w)) = g_{c,v−w}((τ,ξ),(τ′,ξ′))"
+      }
+     ],
+     "tests": [
+      {
+       "name": "gram_numeric",
+       "kind": "computation",
+       "statement": "n = 2, c = 2, v = (1,0): Gram [[−3,−1,0],[−1,1,0],[0,0,1]], det −4, g(B,B) = −4, (1,3,0) null, (1,4,0) has g = 5, g⁻¹(dt,dt) = −1/4"
+      },
+      {
+       "name": "unshifted_form",
+       "kind": "non-example",
+       "statement": "−c²dt² + |dx|² gives g(B,B) = −3 at that state"
+      },
+      {
+       "name": "null_covector",
+       "kind": "computation",
+       "statement": "ζ = (−3,1,0) is null and past with (1,3,0) in its kernel"
+      },
+      {
+       "name": "boost",
+       "kind": "compatibility",
+       "statement": "boost by w = v sends (1,3,0) to (1,2,0), null for g_{2,0}"
+      }
+     ]
+    },
+    {
+     "id": "3.1.1",
+     "kind": "theorem",
+     "name": "CompressibleEuler.symbol_posDef_iff_futureTimelike",
+     "statement": "For a state U of either Euler system, σ(U;ζ) is positive definite iff ζ is future timelike for g_U⁻¹, positive semidefinite iff ζ is future causal, and singular iff ζ is g_U⁻¹-null or, when the root ζ₀ + v·ζ′ of 2.2.3 has positive multiplicity (barotropic with n ≥ 2, full for every n), ζ₀ + v·ζ′ = 0.",
+     "hypotheses": [
+      "U ∈ G"
+     ],
+     "locator": {
+      "source": "ChristodoulouMiao2014",
+      "where": "lines 864–872; Christodoulou2019 lines 134–138"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:2.2.3"
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "definition",
+     "name": "AcousticalGeometry.IsCausalCurve",
+     "statement": "For a sound-cone field (c, v) (continuous, c > 0) on D ⊆ ℝ × E, a causal curve is x : J → E on an interval J, locally Lipschitz, with graph in D and |ẋ(t) − v(t,x(t))| ≤ c(t,x(t)) for almost every t ∈ J.",
+     "hypotheses": [
+      "c : D → (0,∞) continuous",
+      "v : D → E continuous",
+      "J an interval"
+     ],
+     "locator": {
+      "source": "Minguzzi2019",
+      "where": "lines 1359–1363, Theorem 2.12; Chrusciel2011 line 534, §2.3; MinguzziCone2019 lines 1735–1740"
+     },
+     "prerequisites": [
+      "mathlib:LocallyLipschitzOn",
+      "mathlib:LipschitzOnWith.ae_differentiableWithinAt_of_mem"
+     ],
+     "api": [
+      {
+       "name": "restrict_concat",
+       "role": "constructor",
+       "statement": "restrictions are causal; curves on [a,b], [b,d] agreeing at b concatenate"
+      },
+      {
+       "name": "covariance",
+       "role": "functoriality",
+       "statement": "translations, Λ-translations and Galilean boosts carry causal curves to causal curves of the transformed field"
+      },
+      {
+       "name": "lipschitz_bound",
+       "role": "structure",
+       "statement": "on a compact piece of graph in K the curve is Lipschitz with constant sup_K(|v| + c)"
+      }
+     ],
+     "tests": [
+      {
+       "name": "static_examples",
+       "kind": "computation",
+       "statement": "field (1,0), n = 1: t/2 causal, 2t not, |t| on [−1,1] causal with a corner"
+      },
+      {
+       "name": "cantor",
+       "kind": "non-example",
+       "statement": "x = 10·Cantor has ẋ = 0 a.e. but x(1) − x(0) = 10 > ∫c = 1; a definition without the Lipschitz condition admits it"
+      },
+      {
+       "name": "material_curve",
+       "kind": "computation",
+       "statement": "field (1,x): eᵗ causal (ẋ = v), e^{3t} not (|ẋ − v| = 2e^{3t} > 1)"
+      }
+     ]
+    },
+    {
+     "id": "3.2.1",
+     "kind": "theorem",
+     "name": "AcousticalGeometry.isCausalCurve_iff_integral",
+     "statement": "A continuous x : J → E with graph in D is causal iff |x(t) − x(s) − ∫ₛᵗ v(r,x(r))dr| ≤ ∫ₛᵗ c(r,x(r))dr for all s ≤ t in J.",
+     "hypotheses": [
+      "x continuous with graph in D",
+      "c, v continuous on D"
+     ],
+     "locator": {
+      "source": "Minguzzi2019",
+      "where": "lines 1359–1374"
+     },
+     "prerequisites": [
+      "target:3.2",
+      "mathlib:LipschitzOnWith.absolutelyContinuousOnInterval",
+      "mathlib:AbsolutelyContinuousOnInterval.integral_deriv_eq_sub"
+     ]
+    },
+    {
+     "id": "3.2.2",
+     "kind": "theorem",
+     "name": "AcousticalGeometry.exists_causal_segment",
+     "statement": "If D is a domain, p ∈ D with t_p > t₀ and |u − v(p)| < c(p), then x(t) = x_p + (t − t_p)u is causal on [t_p − δ, t_p] for some δ > 0; similarly forward.",
+     "hypotheses": [
+      "D relatively open in H_{t₀}",
+      "|u − v(p)| < c(p)"
+     ],
+     "locator": {
+      "source": "Chrusciel2011",
+      "where": "line 534, §2.3"
+     },
+     "prerequisites": [
+      "target:3.2"
+     ]
+    },
+    {
+     "id": "3.2.3",
+     "kind": "theorem",
+     "name": "AcousticalGeometry.limit_curve",
+     "statement": "Causal curves with graphs in a compact K ⊆ D are equi-Lipschitz and those on a common [a,b] have a uniformly convergent subsequence with causal limit; if D is a domain, p_m → p and x_m end at p_m on [a_m, t_{p_m}] with a_m → a < t_p, a subsequence converges locally uniformly on an interval J ∋ t_p with inf J = a′ ≥ a to a causal curve ending at p, past-inextendible in D if a′ > a.",
+     "hypotheses": [
+      "D a domain",
+      "p_m → p in D"
+     ],
+     "locator": {
+      "source": "Minguzzi2019",
+      "where": "line 1917, §2.11; Chrusciel2011 line 1352, §2.6"
+     },
+     "prerequisites": [
+      "target:3.2",
+      "target:3.2.1",
+      "mathlib:BoundedContinuousFunction.arzela_ascoli"
+     ]
+    },
+    {
+     "id": "3.2.4",
+     "kind": "theorem",
+     "name": "AcousticalGeometry.isCausalCurve_of_piecewiseC1",
+     "statement": "If γ = (γ⁰, γ′) : [α,β] → D is piecewise C¹ with every one-sided tangent a nonzero future causal vector of g_{c(γ),v(γ)}, then γ⁰ is strictly increasing and γ′ ∘ (γ⁰)⁻¹ is a causal curve on [γ⁰(α), γ⁰(β)]; conversely C¹ causal curves have C¹ graphs with future causal tangents.",
+     "hypotheses": [
+      "γ piecewise C¹",
+      "tangents nonzero future causal"
+     ],
+     "locator": {
+      "source": "Minguzzi2019",
+      "where": "lines 1359–1363, Theorem 2.12"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:3.2"
+     ]
+    },
+    {
+     "id": "3.3",
+     "kind": "definition",
+     "name": "AcousticalGeometry.futureDomainOfDependence",
+     "statement": "For a sound-cone field on D ⊆ H_{t₀}: past causal curves in D ending at p; extension; past-inextendible (no proper extension in D); causal past J⁻_D(p); D⁺_D(S) = points p ∈ D such that every past-inextendible causal curve in D ending at p meets S.",
+     "hypotheses": [
+      "D ⊆ H_{t₀}",
+      "S ⊆ D"
+     ],
+     "locator": {
+      "source": "Minguzzi2019",
+      "where": "lines 3576–3582, Definition 3.1, Remark 3.2; MinguzziCone2019 lines 1737–1740; Chrusciel2011 lines 1169, 1843; BarGinouxPfaffle2007 line 1006; HawkingEllis1973 §6.5"
+     },
+     "prerequisites": [
+      "target:3.2",
+      "mathlib:zorn_le_nonempty₀"
+     ],
+     "api": [
+      {
+       "name": "subset",
+       "role": "structure",
+       "statement": "S ⊆ D⁺_D(S); D⁺_D is monotone; D⁺_D(S) ∩ Σ_{t₀} = S for S ⊆ Σ_{t₀} ∩ D"
+      },
+      {
+       "name": "exists_inextendible",
+       "role": "constructor",
+       "statement": "every past causal curve in D ending at p has a past-inextendible extension"
+      },
+      {
+       "name": "pastClosed_restrict",
+       "role": "functoriality",
+       "statement": "if J⁻_D(q) ⊆ D′ for q ∈ D′ ⊆ D then J⁻_{D′} = J⁻_D on D′ and D⁺_D(S) ∩ D′ ⊆ D⁺_{D′}(S ∩ D′)"
+      },
+      {
+       "name": "invariance",
+       "role": "functoriality",
+       "statement": "Λ-invariance, translations and Galilean boosts"
+      }
+     ],
+     "tests": [
+      {
+       "name": "constant_ball",
+       "kind": "computation",
+       "statement": "field (c₀,v₀), S = B(0,R): D⁺ = {|x − tv₀| < R − c₀t}"
+      },
+      {
+       "name": "half_space",
+       "kind": "computation",
+       "statement": "S = {x¹ > 0}: D⁺ = {x¹ > (v₀¹ + c₀)t}"
+      },
+      {
+       "name": "closed_domain",
+       "kind": "non-example",
+       "statement": "closed D = {|x| ≤ 1 + t}, S = [−1,1] gives D⁺_D(S) = D; relatively open D = {|x| < 1 + t}, S = (−1,1) gives {|x| < 1 − t}"
+      },
+      {
+       "name": "expanding_flow",
+       "kind": "computation",
+       "statement": "p = ρ²/2, ρ₀ = 1, S = (−1,1): D⁺ = {|x| < 2√(1+t) − (1+t)}, closing at t = 3"
+      }
+     ]
+    },
+    {
+     "id": "3.3.1",
+     "kind": "theorem",
+     "name": "AcousticalGeometry.isCompact_causalPast",
+     "statement": "If D is a domain, S ⊆ Σ_{t₀} and p ∈ D⁺_D(S), every past-inextendible causal curve in D ending at p is defined on [t₀, t_p], J⁻_D(p) is compact and J⁻_D(p) ∩ Σ_{t₀} ⊆ S.",
+     "hypotheses": [
+      "D relatively open in H_{t₀}",
+      "S ⊆ Σ_{t₀}"
+     ],
+     "locator": {
+      "source": "Minguzzi2019",
+      "where": "line 1917, §2.11 (limit curve theorems, the classical form of the compactness); proved here for open domains along the limit-curve route of 3.2.3"
+     },
+     "prerequisites": [
+      "target:3.3",
+      "target:3.2.3"
+     ]
+    },
+    {
+     "id": "3.3.2",
+     "kind": "theorem",
+     "name": "AcousticalGeometry.isOpen_futureDomainOfDependence",
+     "statement": "If moreover S is relatively open in Σ_{t₀}, D⁺_D(S) is a domain, q ↦ J⁻_D(q) is upper semicontinuous on it, and D⁺_{D⁺_D(S)}(S) = D⁺_D(S).",
+     "hypotheses": [
+      "D a domain",
+      "S relatively open in Σ_{t₀}"
+     ],
+     "locator": {
+      "source": "Minguzzi2019",
+      "where": "line 3718, Proposition 3.16, eq. (3.1) (openness, classical analogue for closed achronal S); MinguzziCone2019 lines 1737–1740, Definition 2.17 (the notion); the open-S statements are proved here along the limit-curve route of 3.2.3"
+     },
+     "prerequisites": [
+      "target:3.3.1",
+      "target:3.2.3"
+     ]
+    },
+    {
+     "id": "3.3.3",
+     "kind": "theorem",
+     "name": "AcousticalGeometry.futureDomainOfDependence_slab",
+     "statement": "If D = [t₀,t₁) × E and c, |v| are bounded on [t₀,t₂] × E for every t₂ < t₁, every past causal curve extends to [t₀, t_p], D⁺_D(S) is the set of p all of whose causal curves on [t₀,t_p] start in S, and D⁺_D(Σ_{t₀}) = D.",
+     "hypotheses": [
+      "c and |v| bounded on [t₀,t₂] × E for each t₂ < t₁"
+     ],
+     "locator": {
+      "source": "BarGinouxPfaffle2007",
+      "where": "line 1006, Definition 1.3.5 (the notion); proved here from the integral characterisation 3.2.1 and the boundedness hypothesis"
+     },
+     "prerequisites": [
+      "target:3.3",
+      "target:3.2.2"
+     ],
+     "tests": [
+      {
+       "name": "unbounded_field",
+       "kind": "non-example",
+       "statement": "field (1, x²) on [0,1) × ℝ: x(s) = 1/(1/4 − s) through (1/2, −4) escapes as s ↓ 1/4, so D⁺(Σ₀) ≠ D"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "Sobolev spaces on partially periodic carriers",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "definition",
+     "name": "PeriodicSobolev.H",
+     "statement": "For a discrete additive subgroup Λ ⊆ E and k ∈ ℕ: Hᵏ_Λ(E;ℝ^N) is the space of Λ-periodic u ∈ L²_loc with weak derivatives ∂^αu ∈ L²_loc (|α| ≤ k) and Σ_{|α|≤k} ∫_F |∂^αu|² < ∞ for a measurable fundamental domain F, with this norm.",
+     "hypotheses": [
+      "Λ discrete additive subgroup of E",
+      "k ∈ ℕ"
+     ],
+     "locator": {
+      "source": "AbbresciaSpeck2022",
+      "where": "lines 149–152 and 176–179 (H³ data on ℝ × 𝕋²)"
+     },
+     "prerequisites": [
+      "tauceti:TauCeti.HasWeakFDerivOn",
+      "tauceti:TauCeti.Wkp",
+      "tauceti:MeasureTheory.Lp.memSobolev_natCast_iff_exists_wkp_value_eq",
+      "mathlib:TemperedDistribution.MemSobolev"
+     ],
+     "api": [
+      {
+       "name": "hilbert",
+       "role": "structure",
+       "statement": "independent of F; a real Hilbert space; translations isometric; ∂ᵢ bounded Hᵏ⁺¹_Λ → Hᵏ_Λ; integration by parts on F"
+      },
+      {
+       "name": "eq_wkp",
+       "role": "comparison",
+       "statement": "for Λ = 0 coordinates are values of TauCeti.Wkp volume ⊤ 2 k with equivalent norms, equal exactly for k ≤ 1 (the Wkp norm uses operator norms on TauCeti.IteratedGradient above order 1); equivalently MemSobolev k 2"
+      },
+      {
+       "name": "localise",
+       "role": "structure",
+       "statement": "u ↦ (χ_Λ ∘ π_V)u is bounded Hᵏ_Λ → Hᵏ(E) with u = Σ_λ τ_λ((χ_Λ ∘ π_V)u) and equivalent norms"
+      }
+     ],
+     "tests": [
+      {
+       "name": "L2_case",
+       "kind": "degenerate",
+       "statement": "Λ = 0, k = 0 gives L²(E;ℝ^N)"
+      },
+      {
+       "name": "constant_rank",
+       "kind": "non-example",
+       "statement": "1 ∈ Hᵏ_Λ for Λ = (2πℤ)^n with norm² (2π)^n, but not for Λ = 0 or Λ_cyl"
+      },
+      {
+       "name": "cylinder_gaussian",
+       "kind": "computation",
+       "statement": "n = 2, Λ_cyl: ‖e^{−(x¹)²}cos x²‖² = √(π/2)·π; cos x² ∉ H⁰_Λ"
+      },
+      {
+       "name": "torus_comparison",
+       "kind": "compatibility",
+       "statement": "cos x on 2πℤ: norm² 2π here versus (1+4π²)/2 for the unit-period torus norm; equivalent, not equal"
+      },
+      {
+       "name": "wkp_norm_k2",
+       "kind": "non-example",
+       "statement": "n = 2, k = 2, u = e^{−|x|²}: Hessian −2I at 0, operator norm 2 versus multi-index ℓ² norm 2√2; H²_Λ and Wkp norms of u differ, equivalent; equal for k = 1"
+      },
+      {
+       "name": "circle_comparison",
+       "kind": "compatibility",
+       "statement": "n = 1, Λ = 2πℤ, k = 1: cos x has TauCeti.CircleSobolev 1 ℂ norm² 2 and H¹_Λ norm² 2π; the constant 1 has 1 and 2π; ratios π and 2π differ, so equivalent but not proportional"
+      }
+     ]
+    },
+    {
+     "id": "4.2",
+     "kind": "theorem",
+     "name": "PeriodicSobolev.embedding",
+     "statement": "If 2k > n + 2j, every u ∈ Hᵏ_Λ has a Cʲ representative with sup_{|α|≤j}‖∂^αu‖_∞ ≤ C‖u‖_{Hᵏ_Λ}, derivatives tending to 0 orthogonally to span Λ; ‖u‖_{Hʲ_Λ} ≤ C‖u‖^{1−j/k}_{L²_Λ}‖u‖^{j/k}_{Hᵏ_Λ}; if u_m → u in L²_Λ with ‖u_m‖_{Hᵏ_Λ} ≤ M then u ∈ Hᵏ_Λ with norm ≤ M.",
+     "hypotheses": [
+      "2k > n + 2j for the embedding",
+      "0 ≤ j ≤ k for interpolation"
+     ],
+     "locator": {
+      "source": "LukNotes",
+      "where": "line 1210, Theorem 5.5; Majda1984 Ch. 2, §2.1"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "tauceti:TauCeti.Wkp.toZeroAtInfty",
+      "tauceti:TemperedDistribution.MemSobolev.exists_zeroAtInftyContinuousMap_ae_eq",
+      "tauceti:TauCeti.exists_norm_le_hasWeakLineDerivOn_of_frequently_eLpNorm_inv_mul_sub_le"
+     ],
+     "tests": [
+      {
+       "name": "gaussian_bound",
+       "kind": "computation",
+       "statement": "e^{−x²} on ℝ: ‖u‖² = ‖u′‖² = √(π/2), sup|u| = 1 ≤ √(π/2)"
+      },
+      {
+       "name": "critical_log",
+       "kind": "non-example",
+       "statement": "n = 2, k = 1: cut-off log log(1 + 1/|x|) ∈ H¹ is unbounded"
+      },
+      {
+       "name": "interpolation_exponents",
+       "kind": "computation",
+       "statement": "j=1, k=2, e^{−x²}: ‖u‖²_{H¹} = 2√(π/2) ≤ √5·√(π/2); exponents (2/3,1/3) refuted by dilation (λ^{1/2} versus λ^{1/6})"
+      }
+     ]
+    },
+    {
+     "id": "4.3",
+     "kind": "theorem",
+     "name": "PeriodicSobolev.gagliardoNirenberg",
+     "statement": "For u ∈ L^∞ ∩ Hᵏ_Λ and 0 ≤ i ≤ k: ‖Dⁱu‖_{L^{2k/i}_Λ} ≤ C‖u‖_∞^{1−i/k}‖u‖_{Hᵏ_Λ}^{i/k} (homogeneous form with ‖Dᵏu‖ for Λ = 0).",
+     "hypotheses": [
+      "u ∈ L^∞ ∩ Hᵏ_Λ",
+      "0 ≤ i ≤ k"
+     ],
+     "locator": {
+      "source": "Nirenberg1959",
+      "where": "line 318, Lecture II, Theorem, inequality (2.2), p. 125"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "target:4.2",
+      "tauceti:TauCeti.HasWeakLineDerivOn.contDiffOn_smul",
+      "tauceti:TauCeti.HasWeakFDerivOn.contDiffOn_smul",
+      "tauceti:TauCeti.HasWeakLineDerivOn.lipschitzOnWith_smul"
+     ],
+     "tests": [
+      {
+       "name": "scaling",
+       "kind": "characterisation",
+       "statement": "both sides scale as λ^{i − ni/(2k)} under u(λx); L^{k/i} does not"
+      }
+     ]
+    },
+    {
+     "id": "4.3.1",
+     "kind": "theorem",
+     "name": "PeriodicSobolev.moser_product_commutator",
+     "statement": "For |α| ≤ k: ‖∂^α(fg)‖ ≤ C(‖f‖_∞‖g‖_{Hᵏ_Λ} + ‖f‖_{Hᵏ_Λ}‖g‖_∞); Hᵏ_Λ is an algebra for 2k > n; for 1 ≤ |α| ≤ k: ‖∂^α(fg) − f∂^αg‖ ≤ C(‖∇f‖_∞‖g‖_{Hᵏ⁻¹_Λ} + ‖∇f‖_{Hᵏ⁻¹_Λ}‖g‖_∞).",
+     "hypotheses": [
+      "f, g ∈ L^∞ ∩ Hᵏ_Λ"
+     ],
+     "locator": {
+      "source": "LukNotes",
+      "where": "line 1616, Lemma 6.9; Majda1984 Ch. 2, §2.1"
+     },
+     "prerequisites": [
+      "target:4.3"
+     ],
+     "tests": [
+      {
+       "name": "L2_not_algebra",
+       "kind": "non-example",
+       "statement": "|x|^{−n/3} on the unit ball is in L² but its square is not"
+      }
+     ]
+    },
+    {
+     "id": "4.3.2",
+     "kind": "theorem",
+     "name": "PeriodicSobolev.moser_composition",
+     "statement": "For Φ smooth on open G ⊆ ℝ^N, compact K ⊆ G, Ū ∈ K and u with values in K and u − Ū ∈ Hᵏ_Λ: Φ(u) − Φ(Ū) ∈ Hᵏ_Λ with ‖Φ(u) − Φ(Ū)‖_{Hᵏ_Λ} ≤ C(Φ,K,k)‖u − Ū‖_{Hᵏ_Λ}, and u ↦ Φ(u) is continuous in Hᵏ_Λ.",
+     "hypotheses": [
+      "Φ smooth on G",
+      "values of u in compact K",
+      "Ū ∈ K"
+     ],
+     "locator": {
+      "source": "LukNotes",
+      "where": "line 1612, Lemma 6.8; Majda1984 Ch. 2, §2.1"
+     },
+     "prerequisites": [
+      "target:4.3",
+      "target:4.3.1"
+     ],
+     "tests": [
+      {
+       "name": "square",
+       "kind": "computation",
+       "statement": "Φ(u) = u², k = 1: ‖2uu′‖ ≤ 2‖u‖_∞‖u′‖"
+      }
+     ]
+    },
+    {
+     "id": "4.4",
+     "kind": "construction",
+     "name": "PeriodicSobolev.mollify",
+     "statement": "J_εu = φ_ε ⋆ u with φ ∈ C_c^∞(E) even, nonnegative, ∫φ = 1, φ_ε = ε^{−n}φ(·/ε).",
+     "hypotheses": [
+      "φ even, nonnegative, compactly supported, smooth, ∫φ = 1",
+      "ε > 0"
+     ],
+     "locator": {
+      "source": "Majda1984",
+      "where": "Ch. 2, §2.1 (Friedrichs mollifiers); Friedrichs1954"
+     },
+     "prerequisites": [
+      "mathlib:MeasureTheory.convolution",
+      "mathlib:ContDiffBump",
+      "target:4.1",
+      "tauceti:TauCeti.Wkp.normedBumpL",
+      "tauceti:TauCeti.Wkp.norm_normedBumpL_le_one",
+      "tauceti:TauCeti.Wkp.lowerOrder_normedBumpL",
+      "tauceti:TauCeti.Wkp.iteratedGradient_normedBumpL",
+      "tauceti:TauCeti.Wkp.tendsto_normedBumpL",
+      "tauceti:TauCeti.Wkp.dense_contDiff_representatives"
+     ],
+     "api": [
+      {
+       "name": "bounds",
+       "role": "structure",
+       "statement": "preserves Λ-periodicity; ‖J_εu‖_{Hᵏ} ≤ ‖u‖_{Hᵏ}; symmetric for the L²_Λ pairing; commutes with ∂ᵢ; J_εu → u in Hᵏ_Λ (for Λ = 0 these are TauCeti.Wkp.norm_normedBumpL_le_one, lowerOrder_normedBumpL, iteratedGradient_normedBumpL and tendsto_normedBumpL at p = 2)"
+      },
+      {
+       "name": "gain_loss",
+       "role": "structure",
+       "statement": "‖J_εu‖_{Hᵏ⁺¹} ≤ Cε^{−1}‖u‖_{Hᵏ}; for k ≥ 1, ‖J_εu − u‖_{Hᵏ⁻¹} ≤ Cε‖u‖_{Hᵏ}"
+      },
+      {
+       "name": "friedrichs_lemma",
+       "role": "structure",
+       "statement": "‖J_ε(a∂ᵢu) − a∂ᵢJ_εu‖_{L²_Λ} ≤ C(‖a‖_∞ + Lip a)‖u‖_{L²_Λ}, tending to 0 strongly"
+      }
+     ],
+     "tests": [
+      {
+       "name": "constants",
+       "kind": "computation",
+       "statement": "J_ε fixes constants; the scaling φ(·/ε) would multiply them by εⁿ"
+      },
+      {
+       "name": "cosine",
+       "kind": "computation",
+       "statement": "J_ε cos(mx) = φ̂(εm)cos(mx); the ε^{−1} gain is attained at m ≈ 1/ε"
+      },
+      {
+       "name": "linear_coefficient",
+       "kind": "degenerate",
+       "statement": "for a = x on ℝ the commutator is ψ′ ⋆ u with ‖ψ′‖_{L¹} = ∫|φ + wφ′| independent of ε"
+      },
+      {
+       "name": "loss_needs_k_ge_one",
+       "kind": "non-example",
+       "statement": "k = 0: ‖J_ε cos(mx) − cos(mx)‖₂ = |1 − φ̂(εm)|‖cos(mx)‖₂ → ‖cos(mx)‖₂ as m → ∞, exceeding Cε‖cos(mx)‖₂ once Cε < 1; for k = 1 the bound holds since |1 − φ̂(η)| ≤ |η|∫|y|φ"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "Energy estimates for linear symmetric hyperbolic systems",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "definition",
+     "name": "SymmetricHyperbolic.LinearOperator",
+     "statement": "A linear symmetric hyperbolic operator LW = A⁰∂_tW + Σᵢ Aⁱ∂ᵢW + BW on [0,T] × E with Λ-periodic coefficients, A^μ C¹ with bounded derivatives and symmetric values, A⁰ ≥ λ₀I (λ₀ > 0), B continuous bounded; its energy E(t) = ∫_F ⟨A⁰W, W⟩.",
+     "hypotheses": [
+      "A^μ symmetric, C¹, bounded derivatives",
+      "A⁰ ≥ λ₀I, λ₀ > 0",
+      "B continuous and bounded"
+     ],
+     "locator": {
+      "source": "Friedrichs1954",
+      "where": "pp. 345–392; Majda1984 Ch. 2, §2.1"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "mathlib:Matrix.PosDef"
+     ],
+     "api": [
+      {
+       "name": "energy_equiv",
+       "role": "structure",
+       "statement": "λ₀‖W‖² ≤ E ≤ sup‖A⁰‖‖W‖²"
+      },
+      {
+       "name": "time_reverse",
+       "role": "functoriality",
+       "statement": "t ↦ T − t gives a linear symmetric hyperbolic operator with A⁰ unchanged"
+      }
+     ],
+     "tests": [
+      {
+       "name": "transport",
+       "kind": "computation",
+       "statement": "A⁰ = 1, A¹ = a, B = 0: W = W₀(x − at), E constant"
+      },
+      {
+       "name": "damping_sign",
+       "kind": "computation",
+       "statement": "A⁰ = I, Aⁱ = 0, B = bI: E(t) = e^{−2bt}E(0); a sign error gives e^{2bt}"
+      },
+      {
+       "name": "jordan_block",
+       "kind": "non-example",
+       "statement": "A¹ = [[0,1],[0,0]]: ‖W(t)‖ grows like t‖f′‖, no L² estimate"
+      }
+     ]
+    },
+    {
+     "id": "5.1.1",
+     "kind": "theorem",
+     "name": "SymmetricHyperbolic.LinearOperator.energy_identity",
+     "statement": "For W ∈ C¹([0,T];L²_Λ) ∩ C([0,T];H¹_Λ): dE/dt = ∫_F⟨(∂_tA⁰ + Σ∂ᵢAⁱ − B − Bᵀ)W,W⟩ + 2∫_F⟨LW,W⟩, and ‖W(t)‖ ≤ Ce^{Ct}(‖W(0)‖ + ∫₀ᵗ‖LW‖).",
+     "hypotheses": [
+      "W ∈ C¹([0,T];L²_Λ) ∩ C([0,T];H¹_Λ)"
+     ],
+     "locator": {
+      "source": "Friedrichs1954",
+      "where": "pp. 345–392; LukNotes line 679, Proposition 4.1"
+     },
+     "prerequisites": [
+      "target:5.1",
+      "tauceti:TauCeti.le_mul_exp_of_le_add_mul_integral"
+     ]
+    },
+    {
+     "id": "5.2",
+     "kind": "theorem",
+     "name": "SymmetricHyperbolic.weighted_energy",
+     "statement": "If χ ≥ 0 is Lipschitz, Λ-periodic, with χ(t,·) supported in a set compact modulo Λ, W is C¹ near {χ > 0}, ∂_tχA⁰ + Σ∂ᵢχAⁱ ≤ 0 a.e. on {χ > 0} and |LW| ≤ C₁|W| there, then E_χ(t) = ∫_Fχ⟨A⁰W,W⟩ ≤ e^{Ct}E_χ(0).",
+     "hypotheses": [
+      "χ Lipschitz, nonnegative, Λ-periodic",
+      "characteristic-monotone a.e. on {χ > 0}",
+      "|LW| ≤ C₁|W| on {χ > 0}"
+     ],
+     "locator": {
+      "source": "LukNotes",
+      "where": "line 724, Proposition 4.4; Majda1984 Ch. 2, §2.3"
+     },
+     "prerequisites": [
+      "target:5.1",
+      "target:2.1.1",
+      "mathlib:LipschitzOnWith.ae_differentiableWithinAt_of_mem",
+      "tauceti:TauCeti.le_mul_exp_of_le_add_mul_integral"
+     ],
+     "tests": [
+      {
+       "name": "steep_cone_fails",
+       "kind": "non-example",
+       "statement": "transport a = 1, χ = (1 − |x| − t/2)₊ is not monotone and u = f(x − t) with supp f ⊆ (−2,−1) has E_χ(0) = 0 < E_χ(0.9)"
+      },
+      {
+       "name": "sound_cone_equality",
+       "kind": "computation",
+       "statement": "Euler constant state: χ = (R − |x − tv₀| − c₀t)₊ gives ∂_tχ + v₀·∇χ + c₀|∇χ| = 0"
+      }
+     ]
+    },
+    {
+     "id": "5.3",
+     "kind": "theorem",
+     "name": "SymmetricHyperbolic.Hk_estimate",
+     "statement": "For U with values in compact K, U − Ū ∈ C([0,T];Hᵏ_Λ) ∩ C¹([0,T];Hᵏ⁻¹_Λ), 2k > n + 2, and W in the same class with A⁰(U)∂_tW + ΣAⁱ(U)∂ᵢW = f: dE_k/dt ≤ C(K)(1 + ‖∂_tU‖_∞ + ‖U − Ū‖_{Hᵏ_Λ})E_k + C(K)E_k^{1/2}‖f‖_{Hᵏ_Λ}; when U solves the system with F(Ū) = 0, d/dt E_k(U − Ū) ≤ C(K)(1 + ‖∇U‖_∞)E_k(U − Ū).",
+     "hypotheses": [
+      "2k > n + 2",
+      "values of U in compact K ⊆ G",
+      "F(Ū) = 0 for the tame estimate"
+     ],
+     "locator": {
+      "source": "Majda1984",
+      "where": "Ch. 2, §§2.1–2.2; LukNotes line 1620, Theorem 6.10"
+     },
+     "prerequisites": [
+      "target:4.2",
+      "target:4.3.1",
+      "target:4.3.2",
+      "target:5.1.1"
+     ],
+     "tests": [
+      {
+       "name": "burgers_tame",
+       "kind": "computation",
+       "statement": "Burgers: d/dt‖u‖² = 0 and d/dt‖u_x‖² = −∫u_x³ ≤ ‖u_x‖_∞‖u_x‖²"
+      }
+     ]
+    },
+    {
+     "id": "5.4",
+     "kind": "theorem",
+     "name": "SymmetricHyperbolic.linear_existence",
+     "statement": "For coefficients with A^μ − Ā^μ, B ∈ C([0,T];Hᵏ_Λ), A⁰ − Ā⁰ ∈ C¹([0,T];Hᵏ⁻¹_Λ) (so ∂_tA⁰ is bounded, 2(k−1) > n), A⁰ ≥ λ₀I, 2k > n + 2, W₀ ∈ Hᵏ_Λ and f ∈ C([0,T];Hᵏ_Λ) there is a unique W ∈ C([0,T];Hᵏ_Λ) ∩ C¹([0,T];Hᵏ⁻¹_Λ) with LW = f, W(0) = W₀, obeying the estimate dE_k/dt ≤ C E_k + C E_k^{1/2}‖f‖_{Hᵏ_Λ} of 5.3 with C depending on λ₀, ‖∂_tA⁰‖_∞, sup_t ‖A^μ − Ā^μ‖_{Hᵏ_Λ} and sup_t ‖B‖_{Hᵏ_Λ}.",
+     "hypotheses": [
+      "2k > n + 2",
+      "A⁰ ≥ λ₀I",
+      "coefficients in Ā + C([0,T];Hᵏ_Λ)",
+      "A⁰ − Ā⁰ ∈ C¹([0,T];Hᵏ⁻¹_Λ)"
+     ],
+     "locator": {
+      "source": "Majda1984",
+      "where": "Ch. 2, §2.1 (linear existence); Kato1975 Theorem I; LukNotes line 1158, Theorem 5.3"
+     },
+     "prerequisites": [
+      "target:4.4",
+      "target:5.1.1",
+      "target:5.3",
+      "target:4.2",
+      "mathlib:IsPicardLindelof",
+      "mathlib:IsPicardLindelof.exists_eq_forall_mem_Icc_hasDerivWithinAt"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "6",
+   "title": "Local uniqueness and domains of dependence",
+   "targets": [
+    {
+     "id": "6.1",
+     "kind": "definition",
+     "name": "SymmetricHyperbolic.LensFunction",
+     "statement": "A lens function on [t₁,t₂] × E is a Lipschitz Λ-periodic φ with {φ(t,·) > 0} relatively compact modulo Λ; its lens L_φ = {φ > 0}, its base L_φ ∩ Σ_{t₁}; φ is spacelike for a solution U when σ(U; dφ) ≤ 0 a.e. on L_φ (for Euler: ∂_tφ + v·∇φ + c|∇φ| ≤ 0).",
+     "hypotheses": [
+      "φ Lipschitz and Λ-periodic",
+      "slices relatively compact modulo Λ"
+     ],
+     "locator": {
+      "source": "Majda1984",
+      "where": "Ch. 2, §2.3"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:3.1"
+     ],
+     "api": [
+      {
+       "name": "min",
+       "role": "constructor",
+       "statement": "the minimum (intersection) and the maximum (union) of two lens functions spacelike for U are lens functions spacelike for U"
+      },
+      {
+       "name": "movingCone",
+       "role": "constructor",
+       "statement": "the periodised moving cone max_{λ∈Λ}(R − |x − λ − x₀ − (t−t₁)w| − M(t−t₁)) is a lens function (Lipschitz, Λ-periodic, slices relatively compact modulo Λ; the single cone when Λ = 0; disjoint translates when 2R is below the least nonzero norm of Λ), spacelike for U₁ when (M,w) dominates at U₁ on the lens, since a.e. its differential is that of a term attaining the maximum"
+      }
+     ],
+     "tests": [
+      {
+       "name": "sound_cone_null",
+       "kind": "computation",
+       "statement": "constant Euler state: R − |x − tv₀| − c₀t is spacelike with equality"
+      },
+      {
+       "name": "static_vs_moving",
+       "kind": "computation",
+       "statement": "n = 1, v₀ = 3, c₀ = 1: static cone needs M ≥ 4, moving cone (w = 3) M ≥ 1"
+      },
+      {
+       "name": "steep_lens",
+       "kind": "non-example",
+       "statement": "transport a = 1, φ = 1 − |x| − t/2 is not spacelike for x < 0"
+      },
+      {
+       "name": "single_cone_not_periodic",
+       "kind": "non-example",
+       "statement": "n = 1, Λ = 2πℤ, t = t₁: the single cone takes R at x₀ and R − 2π at x₀ + 2π, so it is not Λ-periodic; its periodisation takes R at both"
+      }
+     ]
+    },
+    {
+     "id": "6.1.1",
+     "kind": "theorem",
+     "name": "SymmetricHyperbolic.eq_on_lens",
+     "statement": "If U₁, U₂ are classical solutions of the same quasilinear symmetric hyperbolic system on a relatively open set containing the closure of L_φ, φ is spacelike for U₁, and U₁ = U₂ on the base, then U₁ = U₂ on L_φ.",
+     "hypotheses": [
+      "φ spacelike for U₁ (only U₁'s cones)",
+      "U₁ = U₂ on the base"
+     ],
+     "locator": {
+      "source": "Majda1984",
+      "where": "Ch. 2, §2.3; LukNotes line 724, Proposition 4.4; EperonReallSbierski2019 line 1178, Proposition 4.63; BarGinouxPfaffle2007 lines 3664–3668"
+     },
+     "prerequisites": [
+      "target:6.1",
+      "target:5.2",
+      "target:2.1.1"
+     ]
+    },
+    {
+     "id": "6.2",
+     "kind": "theorem",
+     "name": "SymmetricHyperbolic.eq_on_causalPast",
+     "statement": "Given a continuous dominating cone map κ, a domain D, a classical solution U₁ on D with field κ ∘ U₁, S ⊆ D relatively open in Σ_{t₀}, a relatively open O ⊆ H_{t₀} and a classical solution U₂ on O with U₁ = U₂ on S ∩ O: for p ∈ D⁺_D(S) with J⁻_D(p) ⊆ O, U₁ = U₂ on J⁻_D(p).",
+     "hypotheses": [
+      "κ continuous and dominating at every state",
+      "J⁻_D(p) ⊆ O",
+      "U₁ = U₂ on S ∩ O"
+     ],
+     "locator": {
+      "source": "Majda1984",
+      "where": "Ch. 2, §2.3; ChristodoulouMiao2014 lines 872–878; EperonReallSbierski2019 lines 1178–1189"
+     },
+     "prerequisites": [
+      "target:3.3.1",
+      "target:6.1.1",
+      "target:2.2.3"
+     ],
+     "tests": [
+      {
+       "name": "constant_state",
+       "kind": "computation",
+       "statement": "p = ρ²/2, constant (1,0), data agreeing on (−2,2): agreement on {|x| < 2 − t}, e.g. at (1/2,1.4)"
+      },
+      {
+       "name": "past_not_contained",
+       "kind": "non-example",
+       "statement": "in the counter-flow of 8.2.4 the solutions agree on S and differ at (2,0), where J⁻ of one leaves the other domain"
+      }
+     ]
+    },
+    {
+     "id": "6.2.1",
+     "kind": "theorem",
+     "name": "SymmetricHyperbolic.eq_on_slab",
+     "statement": "Two classical solutions on [t₀,t₁) × E with the same data on Σ_{t₀} and bounded cone fields on each [t₀,t₂] × E agree.",
+     "hypotheses": [
+      "bounded cone fields on compact time ranges"
+     ],
+     "locator": {
+      "source": "Majda1984",
+      "where": "Ch. 2, §2.3"
+     },
+     "prerequisites": [
+      "target:6.2",
+      "target:3.3.3"
+     ]
+    }
+   ]
+  },
+  {
+   "key": "7",
+   "title": "Local well-posedness",
+   "targets": [
+    {
+     "id": "7.1",
+     "kind": "theorem",
+     "name": "SymmetricHyperbolic.localWellPosedness",
+     "statement": "For a quasilinear symmetric hyperbolic system, Ū ∈ G with F(Ū) = 0, a period group Λ, 2k > n + 2, a compact K ⊆ G and M > 0, there is T(M,K) > 0 such that every U₀ with U₀ − Ū ∈ Hᵏ_Λ, ‖U₀ − Ū‖ ≤ M and U₀(E) ⊆ K has a unique Λ-periodic classical solution U on [0,T] × E with U − Ū ∈ C([0,T];Hᵏ_Λ) ∩ C¹([0,T];Hᵏ⁻¹_Λ); it is unique among classical solutions with bounded cone fields, depends continuously on the data in C([0,T];Hᵏ_Λ), and persists in Hᵏ′_Λ for k′ > k on the same maximal interval.",
+     "hypotheses": [
+      "F(Ū) = 0",
+      "2k > n + 2",
+      "U₀(E) ⊆ K compact ⊆ G",
+      "‖U₀ − Ū‖_{Hᵏ_Λ} ≤ M"
+     ],
+     "locator": {
+      "source": "Kato1975",
+      "where": "Theorem I; Majda1984 Ch. 2, Theorem 2.1; Dafermos2016 Ch. V, Theorem 5.1.1; LukNotes line 1239, Theorem 6.1"
+     },
+     "prerequisites": [
+      "target:5.4",
+      "target:5.3",
+      "target:5.1.1",
+      "target:4.2",
+      "target:6.2.1"
+     ],
+     "tests": [
+      {
+       "name": "source_at_infinity",
+       "kind": "non-example",
+       "statement": "F ≡ 1, Ū = 0: u = u₀ + t leaves Ū + L² for t > 0, so F(Ū) = 0 is needed"
+      },
+      {
+       "name": "constant_data",
+       "kind": "degenerate",
+       "statement": "U₀ ≡ Ū gives the constant solution with T* = ∞"
+      }
+     ]
+    },
+    {
+     "id": "7.1.1",
+     "kind": "theorem",
+     "name": "SymmetricHyperbolic.continuation",
+     "statement": "If the maximal time T* is finite then ∫₀^{T*}‖∇U(t)‖_∞dt = ∞ or the closure of U([0,T*) × E) is not a compact subset of G.",
+     "hypotheses": [
+      "hypotheses of 7.1"
+     ],
+     "locator": {
+      "source": "Majda1984",
+      "where": "Ch. 2, §2.2 (continuation principle); LukNotes line 1620, Theorem 6.10"
+     },
+     "prerequisites": [
+      "target:7.1",
+      "target:5.3",
+      "tauceti:TauCeti.le_mul_exp_of_le_add_mul_integral"
+     ],
+     "tests": [
+      {
+       "name": "burgers_blowup",
+       "kind": "computation",
+       "statement": "u₀ = −e^{−x²}: min u₀′ = −√2e^{−1/2}, T* = e^{1/2}/√2 ≈ 1.1658, values in [−1,0], ∫‖u_x‖_∞ = ∞"
+      }
+     ]
+    },
+    {
+     "id": "7.2",
+     "kind": "theorem",
+     "name": "CompressibleEuler.localWellPosedness",
+     "statement": "For a barotropic law (I,p), a period group Λ, 2k > n + 2, a background (ρ₀,v₀) ∈ I × E and data with ρ̄ − ρ₀, v̄ − v₀ ∈ Hᵏ_Λ and ρ_* ≤ ρ̄ ≤ ρ^* for [ρ_*,ρ^*] ⊆ I: there are T > 0 and a unique Λ-periodic classical solution on [t₀, t₀+T] × E with (ρ − ρ₀, v − v₀) ∈ C(Hᵏ_Λ) and ρ ≥ ρ_*/2, depending continuously on the data; if the maximal time is finite then ∫‖∇(ρ,v)‖_∞ = ∞ or the closure of the range of ρ is not compact in I. The full system is analogous with s̄ − s₀ ∈ Hᵏ_Λ and (ρ̄,s̄) in a compact subset of 𝒪.",
+     "hypotheses": [
+      "[ρ_*, ρ^*] ⊆ I",
+      "2k > n + 2",
+      "ρ̄ − ρ₀, v̄ − v₀ ∈ Hᵏ_Λ"
+     ],
+     "locator": {
+      "source": "AbbresciaSpeck2022",
+      "where": "lines 172–179; ChristodoulouMiao2014 lines 866–868; LuoYu2023a lines 82–95; Majda1984 Ch. 2"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "target:2.2.1",
+      "target:2.2.2",
+      "target:7.1",
+      "target:7.1.1"
+     ],
+     "tests": [
+      {
+       "name": "simple_wave_blowup",
+       "kind": "computation",
+       "statement": "p = ρ³/3, ρ̄ = 1 + e^{−x²}/2, v̄ = ρ̄ − 1: v − ρ ≡ −1, v + ρ solves Burgers, T* = e^{1/2}/√2, ρ ∈ [1, 3/2]"
+      },
+      {
+       "name": "cylinder_symmetry",
+       "kind": "compatibility",
+       "statement": "on Λ_cyl, n = 2, data independent of x² give solutions independent of x²"
+      },
+      {
+       "name": "sobolev_threshold",
+       "kind": "computation",
+       "statement": "n = 3: k = 3 gives 2k = 6 > 5 (the H³ setting of Abbrescia–Speck); k = 2 gives 4 < 5 and is excluded"
+      }
+     ]
+    },
+    {
+     "id": "7.3",
+     "kind": "theorem",
+     "name": "SymmetricHyperbolic.localWellPosedness_uniformlyLocal",
+     "statement": "If G contains the segments [Ū,U] for U ∈ K and sup_y‖χ(·−y)(U₀ − Ū)‖_{Hᵏ(E)} ≤ M with U₀(E) ⊆ K, there are T(M,K) > 0 and a unique classical solution on [0,T] × E with bounded uniformly local Hᵏ norm; it commutes with translations fixing U₀, so periodic data give periodic solutions.",
+     "hypotheses": [
+      "segments [Ū,U] ⊆ G for U ∈ K",
+      "uniformly local Hᵏ bound M",
+      "2k > n + 2"
+     ],
+     "locator": {
+      "source": "Kato1975",
+      "where": "Theorem I"
+     },
+     "prerequisites": [
+      "target:7.1",
+      "target:6.2",
+      "target:2.1"
+     ],
+     "tests": [
+      {
+       "name": "counterflow_data",
+       "kind": "computation",
+       "statement": "ρ̄ = 1/2, v̄ = 2 on x ≤ −1 and −2 on x ≥ 1 (p = ρ²) is uniformly local but not in Ū + H¹ for any constant Ū"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "8",
+   "title": "Developments and maximal developments",
+   "targets": [
+    {
+     "id": "8.1",
+     "kind": "definition",
+     "name": "CompressibleEuler.InitialDataSet",
+     "statement": "An initial data set: t₀ ∈ ℝ, a period group Λ, a Λ-invariant open S ⊆ E and Λ-periodic C¹ data Ū : S → G of either Euler system.",
+     "hypotheses": [
+      "S open and Λ-invariant",
+      "Ū C¹ and Λ-periodic with values in G"
+     ],
+     "locator": {
+      "source": "ChristodoulouMiao2014",
+      "where": "lines 864–872"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:1.3"
+     ],
+     "api": [
+      {
+       "name": "transform",
+       "role": "functoriality",
+       "statement": "Galilean boosts, spacetime translations and Λ-translations act on data sets"
+      }
+     ],
+     "tests": [
+      {
+       "name": "ball_data",
+       "kind": "computation",
+       "statement": "constant (ρ₀,v₀) on B(0,R)"
+      },
+      {
+       "name": "empty",
+       "kind": "degenerate",
+       "statement": "S = ∅ is a data set"
+      },
+      {
+       "name": "half_space",
+       "kind": "computation",
+       "statement": "constant data on {x¹ > 0}"
+      }
+     ]
+    },
+    {
+     "id": "8.1.1",
+     "kind": "definition",
+     "name": "CompressibleEuler.IsDevelopment",
+     "statement": "A development of a data set is (D,U): D ⊆ H_{t₀} a Λ-invariant domain with D ∩ Σ_{t₀} = {t₀} × S, U a Λ-periodic classical solution on D with U(t₀,·) = Ū on S, and D = D⁺_D({t₀} × S) for the acoustical cone field of U. (D₁,U₁) ≤ (D₂,U₂) iff D₁ ⊆ D₂ and U₂ = U₁ on D₁; compatible iff U₁ = U₂ on D₁ ∩ D₂.",
+     "hypotheses": [
+      "D relatively open in H_{t₀}",
+      "Λ-invariance and periodicity"
+     ],
+     "locator": {
+      "source": "ChristodoulouMiao2014",
+      "where": "lines 864–880; Christodoulou2019 lines 130–138; LuoYu2023b lines 417–419 and line 910, Definition 2.13; BarGinouxPfaffle2007 line 1006; EperonReallSbierski2019 lines 1129–1144"
+     },
+     "prerequisites": [
+      "target:8.1",
+      "target:3.3",
+      "target:2.2"
+     ],
+     "api": [
+      {
+       "name": "partialOrder",
+       "role": "structure",
+       "statement": "≤ is a partial order on developments of fixed data"
+      },
+      {
+       "name": "truncate",
+       "role": "constructor",
+       "statement": "a Λ-invariant subdomain D′ with D′ ∩ Σ_{t₀} = {t₀} × S and J⁻_D(q) ⊆ D′ for q ∈ D′ gives a development below (D,U); time truncations are examples"
+      },
+      {
+       "name": "empty",
+       "role": "degenerate",
+       "statement": "S = ∅ forces (∅, ∅)"
+      },
+      {
+       "name": "pastClosed_of_le",
+       "role": "structure",
+       "statement": "if (D,U) ≤ (D′,U′) then J⁻_{D′}(p) ⊆ D for every p ∈ D"
+      }
+     ],
+     "tests": [
+      {
+       "name": "constant_ball",
+       "kind": "computation",
+       "statement": "{|x − v₀(t−t₀)| < R − c₀(t−t₀)} with the constant state is a development"
+      },
+      {
+       "name": "too_wide",
+       "kind": "non-example",
+       "statement": "{|x| < 1 + t} with constant data on (−1,1), c = 1, is not a development"
+      },
+      {
+       "name": "timelike_boundary",
+       "kind": "non-example",
+       "statement": "{|x| < 1 − t/2} is not a development"
+      },
+      {
+       "name": "expanding",
+       "kind": "computation",
+       "statement": "{|x| < 2√(1+t) − (1+t)} with the expanding flow (p = ρ²/2, ρ₀ = 1) is a development"
+      }
+     ]
+    },
+    {
+     "id": "8.2",
+     "kind": "theorem",
+     "name": "CompressibleEuler.maximalCommonDevelopment",
+     "statement": "For developments (D₁,U₁), (D₂,U₂) of the same data, W₁₂ = {p ∈ D₁ : J⁻_{D₁}(p) ⊆ D₂} carries U₁ = U₂, equals W₂₁, is a development, and is the largest development below both; in particular D₁ ⊆ D₂ implies (D₁,U₁) ≤ (D₂,U₂).",
+     "hypotheses": [
+      "same data set"
+     ],
+     "locator": {
+      "source": "EperonReallSbierski2019",
+      "where": "lines 1232–1240 (maximal common development, Step 1 of Theorem 4.64); Proposition 4.63 at line 1178"
+     },
+     "prerequisites": [
+      "target:8.1.1",
+      "target:6.2",
+      "target:3.3.2"
+     ]
+    },
+    {
+     "id": "8.2.1",
+     "kind": "theorem",
+     "name": "CompressibleEuler.development_sSup",
+     "statement": "Two developments are compatible iff W₁₂ = D₁ ∩ D₂ iff they have a common upper bound; the union of a pairwise compatible family with the glued solution is a development and its least upper bound.",
+     "hypotheses": [
+      "pairwise compatible family"
+     ],
+     "locator": {
+      "source": "ChristodoulouMiao2014",
+      "where": "lines 878–880"
+     },
+     "prerequisites": [
+      "target:8.2",
+      "target:3.3"
+     ]
+    },
+    {
+     "id": "8.2.2",
+     "kind": "theorem",
+     "name": "CompressibleEuler.exists_maximal_development",
+     "statement": "Every development lies below a maximal development.",
+     "hypotheses": [
+      "a development exists"
+     ],
+     "locator": {
+      "source": "EperonReallSbierski2019",
+      "where": "line 1011, Remark 3.56"
+     },
+     "prerequisites": [
+      "target:8.2.1",
+      "mathlib:zorn_le_nonempty₀"
+     ]
+    },
+    {
+     "id": "8.2.3",
+     "kind": "theorem",
+     "name": "CompressibleEuler.maximal_development_unique_of_global",
+     "statement": "If the data extend to a Λ-periodic classical solution U_* on H_{t₀}, every development lies below (D⁺_{H_{t₀}}({t₀} × S), U_*), which is the unique maximal development.",
+     "hypotheses": [
+      "a classical solution on all of H_{t₀} extending the data"
+     ],
+     "locator": {
+      "source": "EperonReallSbierski2019",
+      "where": "line 1342, Corollary 4.69 (globally defined solutions are unique)"
+     },
+     "prerequisites": [
+      "target:6.2",
+      "target:3.3.2",
+      "target:8.2"
+     ]
+    },
+    {
+     "id": "8.2.4",
+     "kind": "example",
+     "name": "CompressibleEuler.counterflow_not_unique",
+     "statement": "For n = 1, p = ρ², S = (−∞,−1) ∪ (1,∞) with data (1/2, 2) and (1/2, −2), the developments T_L ∪ (T_R ∩ {t < 1}) and (T_L ∩ {t < 1}) ∪ T_R with T_L = {x < −1 + t}, T_R = {x > 1 − t} are incompatible (velocities 2 and −2 at (2,0)); there are at least two maximal developments.",
+     "hypotheses": [
+      "n = 1",
+      "p = ρ²",
+      "c = 1 at ρ = 1/2"
+     ],
+     "locator": {
+      "source": "EperonReallSbierski2019",
+      "where": "line 767, Theorem 3.45; AbbresciaSpeck2022 lines 408–414"
+     },
+     "prerequisites": [
+      "target:8.2",
+      "target:8.2.2",
+      "target:3.3"
+     ],
+     "tests": [
+      {
+       "name": "towers",
+       "kind": "computation",
+       "statement": "v − c = 1 and v + c = −1 give T_L = {x < −1 + t}, T_R = {x > 1 − t}, overlapping for t > 1"
+      },
+      {
+       "name": "common_part",
+       "kind": "computation",
+       "statement": "W₁₂ = D₁ ∩ D₂ ∩ {t < 1}"
+      }
+     ]
+    },
+    {
+     "id": "8.3",
+     "kind": "theorem",
+     "name": "CompressibleEuler.exists_development",
+     "statement": "If the data extend to data U₀ on E satisfying 7.2 (or 7.3) with solution U on O = [t₀, t₀+T) × E, then (D⁺_O({t₀} × S), U) is a development, the largest contained in O; developments from two extensions are compatible and coincide below the smaller time.",
+     "hypotheses": [
+      "extension satisfying 7.2 or 7.3"
+     ],
+     "locator": {
+      "source": "ChristodoulouMiao2014",
+      "where": "lines 866–872; AbbresciaSpeck2022 lines 175–179; LuoYu2023b lines 417–419"
+     },
+     "prerequisites": [
+      "target:7.2",
+      "target:7.3",
+      "target:3.3.2",
+      "target:6.2",
+      "target:8.2"
+     ],
+     "tests": [
+      {
+       "name": "half_space_constant",
+       "kind": "computation",
+       "statement": "constant data on {x¹ > 0}: development {x¹ > (v₀¹ + c₀)(t − t₀)}"
+      }
+     ]
+    },
+    {
+     "id": "8.3.1",
+     "kind": "theorem",
+     "name": "CompressibleEuler.slab_le_maximal",
+     "statement": "For full Cauchy data S = E with slab solution (O, U), every development is compatible with (O, U), so every maximal development contains O.",
+     "hypotheses": [
+      "S = E",
+      "hypotheses of 8.3"
+     ],
+     "locator": {
+      "source": "AbbresciaSpeck2022",
+      "where": "lines 79–83"
+     },
+     "prerequisites": [
+      "target:8.3",
+      "target:8.2.1",
+      "target:8.2"
+     ]
+    },
+    {
+     "id": "8.4",
+     "kind": "theorem",
+     "name": "CompressibleEuler.boundary_futureCausal",
+     "statement": "For a development (D,U), q ∈ ∂D with t(q) > t₀, N open ∋ q and φ ∈ C¹(N) with dφ(q) ≠ 0 and D ∩ N = {φ < 0}: if the acoustical field extends continuously to q with c(q) > 0 then ∂_tφ(q) + v(q)·∇φ(q) ≥ c(q)|∇φ(q)|.",
+     "hypotheses": [
+      "D ∩ N = {φ < 0}",
+      "dφ(q) ≠ 0",
+      "continuous extension of (c,v) to q, c(q) > 0"
+     ],
+     "locator": {
+      "source": "Christodoulou2019",
+      "where": "lines 131–138"
+     },
+     "prerequisites": [
+      "target:8.1.1",
+      "target:3.1",
+      "target:3.2.2"
+     ],
+     "tests": [
+      {
+       "name": "truncation_spacelike",
+       "kind": "computation",
+       "statement": "D ∩ {t < T}: φ = t − T gives 1 > 0, strict"
+      },
+      {
+       "name": "timelike_excluded",
+       "kind": "non-example",
+       "statement": "{|x| < 1 − t/2}, c = 1: ∂_tφ = 1/2 < 1"
+      }
+     ]
+    },
+    {
+     "id": "8.4.1",
+     "kind": "theorem",
+     "name": "CompressibleEuler.boundary_null_of_maximal",
+     "statement": "If moreover (D,U) is maximal and U extends to a classical solution Ũ on N (periodically on Λ-translates), then ∂_tφ(q) + ṽ(q)·∇φ(q) = c̃(q)|∇φ(q)| and ∇φ(q) ≠ 0: ∂D is null for the acoustical form of Ũ at q.",
+     "hypotheses": [
+      "(D,U) maximal",
+      "classical extension Ũ on N",
+      "hypotheses of 8.4"
+     ],
+     "locator": {
+      "source": "Christodoulou2019",
+      "where": "lines 131–138; ChristodoulouMiao2014 lines 880–886; LuoYu2023b lines 417–419"
+     },
+     "prerequisites": [
+      "target:8.4",
+      "target:6.1",
+      "target:3.2.1",
+      "target:8.2.1"
+     ],
+     "tests": [
+      {
+       "name": "ball_null",
+       "kind": "computation",
+       "statement": "constant state on B(0,R): ∂_tφ + v₀·∇φ = c₀ = c₀|∇φ|"
+      },
+      {
+       "name": "expanding_null",
+       "kind": "computation",
+       "statement": "expanding flow at (1, 2√2 − 2): 1 − 1/√2 + √2 − 1 = 1/√2 = c|∂_xφ|"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "suppliers": [],
+ "consumers": [
+  {
+   "roadmap": "CompressibleEulerEquationsPartII",
+   "what": "characteristic data on null hypersurfaces, acoustical eikonal functions, null-geodesic ruling of the regular boundary (8.4) when C² with C^{1,1} metric; consumes 3.1, 3.3, 6.2, 8.1–8.4"
+  },
+  {
+   "roadmap": "ShockFormation",
+   "what": "portions of maximal developments of Hᵏ data (Christodoulou, Speck, Luk–Speck, Abbrescia–Speck, shock development) stated against 7.2 and 8.2–8.4"
+  },
+  {
+   "roadmap": "RarefactionWaves",
+   "what": "Luo–Yu: domains of dependence of half-space data and their null boundaries (8.3, 8.4)"
+  },
+  {
+   "roadmap": "LorentzianGeometryPartII",
+   "what": "identification of the domain of dependence here with the general low-regularity one"
+  },
+  {
+   "roadmap": "RelativisticFluids",
+   "what": "quasilinear symmetric hyperbolic well-posedness (7.1) and domain-of-dependence uniqueness (6.2)"
+  }
+ ],
+ "gaps": []
+}

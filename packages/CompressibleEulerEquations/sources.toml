@@ -12,6 +12,7 @@ locator = "Ch. 1–2"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6000#issuecomment-6645264885"
+cited_for = ["8.1", "Downstream consumers"]
 
 [[source]]
 id = "HawkingEllis1973"
@@ -24,6 +25,7 @@ locator = "§6.5"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6000#issuecomment-6645264885"
+cited_for = ["3.3"]
 
 [[source]]
 id = "Friedrichs1954"
@@ -36,6 +38,7 @@ locator = "pp. 345–392"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6000#issuecomment-6645264885"
+cited_for = ["2.1", "4.4", "5.1"]
 
 [[source]]
 id = "ONeill1983"
@@ -47,6 +50,7 @@ locator = "Ch. 14"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6000#issuecomment-6645264885"
+cited_for = ["References"]
 
 [[source]]
 id = "ChristodoulouMiao2014"
@@ -55,7 +59,7 @@ title = "Compressible Flow and Euler's Equations"
 year = 2014
 arxiv = "1212.2867v2"
 locator_scheme = "section"
-locator = "§1.1, §1.3, §2.1.2"
+locator = "§1.1–§1.3 (eqs. (1.4), (1.10), (1.24), (1.39)–(1.40)); §2.1.1; §2.1.2 (lines 864–886)"
 url = "https://arxiv.org/abs/1212.2867v2"
 fetched_from = "https://arxiv.org/pdf/1212.2867v2"
 fetched_at = "2026-11-05T01:47:28Z"
@@ -64,7 +68,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v2 read; locators (sections, equation numbers, page numbers) are to the arXiv version; published as Surveys of Modern Mathematics 9, International Press 2014"
-cited_for = ["Final targets 4, 6, 8"]
+cited_for = ["1.1", "1.2", "1.3", "3.1", "3.3", "6.2", "7.2", "8.1", "8.2", "8.3", "8.4"]
 
 [[source]]
 id = "Christodoulou2019"
@@ -73,7 +77,7 @@ title = "The Shock Development Problem"
 year = 2019
 arxiv = "1705.00828v1"
 locator_scheme = "section"
-locator = "Prologue; §1.1, §1.3, §1.5"
+locator = "Prologue (lines 121–162)"
 url = "https://arxiv.org/abs/1705.00828v1"
 fetched_from = "https://arxiv.org/pdf/1705.00828v1"
 fetched_at = "2026-11-05T01:47:46Z"
@@ -82,7 +86,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v1 read; locators (Prologue pages, section numbers) are to the arXiv version; published as EMS Monographs in Mathematics, EMS 2019"
-cited_for = ["Final targets 4, 6, 8"]
+cited_for = ["2.1", "3.1", "8.1", "8.4"]
 
 [[source]]
 id = "Speck2016"
@@ -100,7 +104,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v1 read; locators are to the arXiv version; published as Mathematical Surveys and Monographs 214, AMS 2016"
-cited_for = ["Consumers"]
+cited_for = ["Downstream consumers"]
 
 [[source]]
 id = "LukSpeck2018"
@@ -109,7 +113,7 @@ title = "Shock formation in solutions to the $2D$ compressible Euler equations i
 year = 2018
 arxiv = "1610.00737v1"
 locator_scheme = "section"
-locator = "§1.1, §3.3, §3.5"
+locator = "Definition 3.3, eqs. (3.3.10a)–(3.3.10b)"
 url = "https://arxiv.org/abs/1610.00737v1"
 fetched_from = "https://arxiv.org/pdf/1610.00737v1"
 fetched_at = "2026-11-05T01:48:05Z"
@@ -118,7 +122,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v1 read; locators (section and equation numbers) are to the arXiv version; published in Invent. Math. 214 (2018), 1–169"
-cited_for = ["Final targets 4, 8"]
+cited_for = ["3.1", "Conventions", "Downstream consumers"]
 
 [[source]]
 id = "AbbresciaSpeck2022"
@@ -127,7 +131,7 @@ title = "The emergence of the singular boundary from the crease in $3D$ compress
 year = 2022
 arxiv = "2207.07107v1"
 locator_scheme = "section"
-locator = "§1.2"
+locator = "§1 (lines 79–83, 408–414); §1.2 (lines 147–179)"
 url = "https://arxiv.org/abs/2207.07107v1"
 fetched_from = "https://arxiv.org/pdf/2207.07107v1"
 fetched_at = "2026-11-05T01:48:16Z"
@@ -136,7 +140,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v1"
-cited_for = ["Final targets 2, 7"]
+cited_for = ["1.1", "1.2", "1.3", "4.1", "7.2", "8.2", "8.3"]
 
 [[source]]
 id = "LuoYu2023a"
@@ -145,7 +149,7 @@ title = "On the stability of multi-dimensional rarefaction waves I: the energy e
 year = 2025
 arxiv = "2302.09714v2"
 locator_scheme = "section"
-locator = "§1, §1.4"
+locator = "§1, eq. (1.1) and the acoustical metric (lines 82–95)"
 url = "https://arxiv.org/abs/2302.09714v2"
 fetched_from = "https://arxiv.org/pdf/2302.09714v2"
 fetched_at = "2026-11-05T01:52:50Z"
@@ -154,7 +158,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v2 read (OCR text); locators are to the arXiv version; published in Ann. of Math. 202 (2025), no. 2, 631–752"
-cited_for = ["Final targets 4, 8"]
+cited_for = ["1.1", "1.2", "3.1", "7.2"]
 
 [[source]]
 id = "LuoYu2023b"
@@ -163,7 +167,7 @@ title = "On the stability of multi-dimensional rarefaction waves II: existence o
 year = 2025
 arxiv = "2305.06308v2"
 locator_scheme = "theorem"
-locator = "§1.4.2; Theorem 3; Definition 2.13"
+locator = "§1.4.2 (lines 417–419); Definition 2.13"
 url = "https://arxiv.org/abs/2305.06308v2"
 fetched_from = "https://arxiv.org/pdf/2305.06308v2"
 fetched_at = "2026-11-05T01:56:45Z"
@@ -172,7 +176,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v2 read (OCR text); locators are to the arXiv version; published in Ann. of Math. 202 (2025), no. 2, 753–855"
-cited_for = ["Final targets 6, 7, 8"]
+cited_for = ["3.3", "8.1", "8.3", "8.4"]
 
 [[source]]
 id = "BarGinouxPfaffle2007"
@@ -182,7 +186,7 @@ year = 2007
 venue = "ESI Lectures in Mathematics and Physics, European Mathematical Society Publishing House, ISBN 978-3-03719-037-1, March 2007, Softcover"
 arxiv = "0806.1036v1"
 locator_scheme = "theorem"
-locator = "Definition 1.3.5; Theorems 3.2.11–3.2.12"
+locator = "Definition 1.3.5; Theorem 3.2.11"
 url = "https://arxiv.org/abs/0806.1036v1"
 fetched_from = "https://arxiv.org/pdf/0806.1036v1"
 fetched_at = "2026-11-05T01:56:51Z"
@@ -191,7 +195,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v1 read; locators are to the arXiv version; published as ESI Lectures in Mathematics and Physics, EMS 2007"
-cited_for = ["Final targets 3, 5"]
+cited_for = ["3.3", "6.1", "8.1"]
 
 [[source]]
 id = "Chrusciel2011"
@@ -200,7 +204,7 @@ title = "Elements of causality theory"
 year = 2011
 arxiv = "1110.6706v1"
 locator_scheme = "section"
-locator = "§2.3, §2.5, §2.9, §2.10"
+locator = "§2.3, §2.5, §2.6, §2.9"
 url = "https://arxiv.org/abs/1110.6706v1"
 fetched_from = "https://arxiv.org/pdf/1110.6706v1"
 fetched_at = "2026-11-05T01:56:56Z"
@@ -209,7 +213,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v1"
-cited_for = ["Final targets 4, 5"]
+cited_for = ["3.2", "3.3"]
 
 [[source]]
 id = "MinguzziCone2019"
@@ -220,7 +224,7 @@ venue = "Rev. Math. Phys. 31 (2019) 1930001"
 doi = "10.1142/S0129055X19300012"
 arxiv = "1709.06494v4"
 locator_scheme = "theorem"
-locator = "Definition 2.17; Theorem 2.32"
+locator = "Definition 2.17 (§2.9)"
 url = "https://arxiv.org/abs/1709.06494v4"
 fetched_from = "https://arxiv.org/pdf/1709.06494v4"
 fetched_at = "2026-11-05T01:57:03Z"
@@ -229,7 +233,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v4 read; locators are to the arXiv version; published in Rev. Math. Phys. 31 (2019), 1930001"
-cited_for = ["Final targets 4, 5, 8"]
+cited_for = ["3.2", "3.3"]
 
 [[source]]
 id = "Minguzzi2019"
@@ -239,7 +243,7 @@ year = 2019
 venue = "Living Rev. Relativ. 22 (2019), art. 3"
 doi = "10.1007/s41114-019-0019-x"
 locator_scheme = "section"
-locator = "§2.2 (Lipschitz causal curves); Definition 3.1 and Remark 3.2 (domains of dependence)"
+locator = "Theorem 2.12, Remark 2.13 (§2.2); §2.11 (limit curves); Definition 3.1, Remark 3.2; Proposition 3.16, eq. (3.1) (§3.1)"
 url = "https://inspirehep.net/files/7a575d682fd15aaad8463a778fac1609"
 fetched_from = "https://inspirehep.net/files/7a575d682fd15aaad8463a778fac1609"
 fetched_at = "2026-11-05T01:57:08Z"
@@ -247,7 +251,7 @@ sha256 = "0fe164b293c9697d6f1dd24ae329d7e7087b5655b910b53ab3425eb96ee9588d"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["Final targets 4, 5"]
+cited_for = ["3.2", "3.3"]
 
 [[source]]
 id = "Kato1975"
@@ -262,7 +266,7 @@ url = "https://doi.org/10.1007/BF00280740"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Final targets 1, 2, 7"]
+cited_for = ["5.4", "7.1", "7.3", "8.3"]
 
 [[source]]
 id = "Majda1984"
@@ -272,12 +276,12 @@ year = 1984
 venue = "Applied Mathematical Sciences"
 doi = "10.1007/978-1-4612-1116-7"
 locator_scheme = "chapter"
-locator = "Ch. 2 (§2.1–2.3, Theorem 2.1)"
+locator = "Ch. 2 (§§2.1–2.3, Theorem 2.1)"
 url = "https://doi.org/10.1007/978-1-4612-1116-7"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Final targets 1, 2, 3, 7"]
+cited_for = ["2.1", "2.2", "4.2", "4.3", "4.4", "5.1", "5.2", "5.3", "5.4", "6.1", "6.2", "7.1", "7.2", "8.3"]
 
 [[source]]
 id = "Dafermos2016"
@@ -292,4 +296,57 @@ url = "https://doi.org/10.1007/978-3-662-49451-6"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Final targets 1, 2"]
+cited_for = ["2.1", "2.2", "7.1"]
+
+[[source]]
+id = "EperonReallSbierski2019"
+authors = "Felicity C. Eperon, Harvey S. Reall, Jan J. Sbierski"
+title = "Predictability of subluminal and superluminal wave equations"
+year = 2019
+doi = "10.1007/s00220-019-03428-1"
+arxiv = "1802.03020v2"
+locator_scheme = "theorem"
+locator = "Theorem 3.45; Remark 3.56; Proposition 4.63; Theorem 4.64 and its proof; Corollaries 4.68–4.69; Theorem 4.82"
+url = "https://arxiv.org/abs/1802.03020v2"
+fetched_from = "https://arxiv.org/pdf/1802.03020v2"
+fetched_at = "2026-11-06T02:32:22Z"
+sha256 = "d3f51fac6e34eacb110d91cc039eb5aacabf1fea37c73c3a2ecaeaac81650739"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+version_note = "arXiv v2 (February 2019) read; published Comm. Math. Phys. 368 (2019), 585–626, with the same numbering of the cited results"
+cited_for = ["6.1", "6.2", "8.1", "8.2", "8.4"]
+
+[[source]]
+id = "LukNotes"
+authors = "Jonathan Luk"
+title = "Introduction to nonlinear wave equations"
+year = 2016
+version_note = "lecture notes on the author's Stanford page; no date is printed in the text, the year is the creation date (October 2016) recorded in the PDF read; locators are to that copy"
+locator_scheme = "theorem"
+locator = "Proposition 4.1; Proposition 4.4; Theorem 5.3; Theorem 5.5; Theorem 6.1; Lemmas 6.8–6.9; Theorem 6.10"
+url = "https://web.stanford.edu/~jluk/NWnotes.pdf"
+fetched_from = "https://web.stanford.edu/~jluk/NWnotes.pdf"
+fetched_at = "2026-11-06T02:32:24Z"
+sha256 = "417568e157b57efdebfb7cdb4c615bcb3f7ad16bd2fe6244788bb5bed8920abd"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["4.2", "4.3", "5.1", "5.2", "5.3", "5.4", "6.1", "7.1"]
+
+[[source]]
+id = "Nirenberg1959"
+authors = "L. Nirenberg"
+title = "On elliptic partial differential equations"
+year = 1959
+venue = "Annali della Scuola Normale Superiore di Pisa, Classe di Scienze (3) 13 (1959), 115–162"
+locator_scheme = "page"
+locator = "Lecture II, Theorem and inequality (2.2), p. 125"
+url = "http://www.numdam.org/item/ASNSP_1959_3_13_2_115_0/"
+fetched_from = "https://www.numdam.org/item/ASNSP_1959_3_13_2_115_0.pdf"
+fetched_at = "2026-11-06T02:32:25Z"
+sha256 = "cd76d6de19f77a7f27d44909c2c00cafbb5fb165a6587b4ff8d86dd13ff7eb3e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-06"
+cited_for = ["4.3"]
