@@ -1,0 +1,630 @@
+{
+  "roadmap": "AmenableTracesOnCStarAlgebras",
+  "title": "Amenable traces on C*-algebras",
+  "parent": null,
+  "summary": "Tracial states of arbitrary C*-algebras with their GNS data, completely positive contractions into matrix algebras measured by the normalized trace and its 2-norm, and the amenable, quasidiagonal and uniform amenable traces: the Connes–Kirchberg characterization by hypertraces, the minimal norm on A ⊙ Aᵒᵖ and completely positive extensions into π_τ(A)'', Connes's Følner condition, the injectivity characterization of uniform amenable traces, the nuclear and exact theorems, faces and permanence, the finite-dimensional, commutative, AF and group examples, quasidiagonal traces versus quasidiagonal algebras, and the necessity half of the AF-embedding theorem.",
+  "baseline": {"mathlib": "f6090c7095e1e56b3464c1daba5f24631f1290d2", "tauceti": "358314d4ab97483df4fc4cb8adcc02e74a8d9f5a"},
+  "layers": [
+    {"key": "1", "title": "Tracial states, their GNS data and the matrix trace",
+     "targets": [
+      {"id": "1.1", "kind": "definition", "name": "IsTracialState",
+       "statement": "A tracial state of a C*-algebra A is a state τ : A →P[ℂ] ℂ (norm one) with τ(ab) = τ(ba) for all a, b ∈ A; T(A) is the set of tracial states with the weak-star topology of S(A).",
+       "hypotheses": ["A a NonUnitalCStarAlgebra with PartialOrder and StarOrderedRing"],
+       "locator": {"source": "tikuisis-white-winter2017", "where": "§1, line 359"},
+       "prerequisites": ["roadmap:VonNeumannAlgebras V0", "mathlib:PositiveContinuousLinearMap", "mathlib:PositiveContinuousLinearMap.ofReal_opNorm_eq_map_one"],
+       "api": [
+        {"name": "ext / coercion", "role": "extensionality", "statement": "Two tracial states with equal values are equal; membership is the conjunction of the state and trace conditions."},
+        {"name": "polarization criterion", "role": "characterisation", "statement": "A state is tracial iff τ(a*a) = τ(aa*) for all a."},
+        {"name": "unitary invariance", "role": "characterisation", "statement": "For unital A a state is tracial iff τ(uau*) = τ(a) for all unitaries u."},
+        {"name": "convexity", "role": "structure", "statement": "Convex combinations of tracial states are tracial states."},
+        {"name": "closure and compactness", "role": "structure", "statement": "T(A) is weak-star closed in S(A), compact for nonzero unital A."},
+        {"name": "pullback", "role": "functoriality", "statement": "For a star homomorphism ι : A → B and τ ∈ T(B), τ ∘ ι is a tracial positive functional, a tracial state when it has norm one (ι unital or surjective)."}
+       ],
+       "tests": [
+        {"name": "vector state not tracial", "kind": "non-example", "statement": "On M_2, x ↦ x₁₁ takes 1 at e₁₂e₂₁ and 0 at e₂₁e₁₂."},
+        {"name": "unnormalized trace", "kind": "non-example", "statement": "Tr on M_2 is tracial and positive of norm 2, not a state."},
+        {"name": "segment", "kind": "computation", "statement": "T(ℂ ⊕ ℂ) is the segment of t·pr₁ + (1 − t)·pr₂."},
+        {"name": "B(ℓ²)", "kind": "non-example", "statement": "B(ℓ²) has no tracial state: τ(1) = τ(s₁s₁*) + τ(s₂s₂*) = 2τ(1)."},
+        {"name": "c₀", "kind": "degenerate", "statement": "T(c₀) is not weak-star compact: δ_n → 0 ∉ T(c₀)."}
+       ]},
+      {"id": "1.2", "kind": "construction", "name": "traceKernel",
+       "statement": "For τ ∈ T(A), N_τ = {a : τ(a*a) = 0} is a closed two-sided ideal equal to ker π_τ; τ̇(π_τ(a)) = τ(a) is a faithful tracial state of π_τ(A); on a simple C*-algebra every tracial state is faithful.",
+       "hypotheses": ["τ ∈ T(A)"],
+       "locator": {"source": "brown2006", "where": "Proposition 3.5.8, line 1338 (notation τ̇)"},
+       "prerequisites": ["target:1.1", "mathlib:PositiveLinearMap.GNS", "mathlib:PositiveLinearMap.gnsNonUnitalStarAlgHom", "mathlib:CStarAlgebra.approximateUnit"],
+       "api": [
+        {"name": "isTwoSidedIdeal", "role": "structure", "statement": "N_τ is a closed two-sided ideal."},
+        {"name": "eq_ker_gns", "role": "compatibility", "statement": "N_τ = ker π_τ."},
+        {"name": "faithful iff", "role": "characterisation", "statement": "τ faithful iff τ(a*a) > 0 for a ≠ 0 iff π_τ injective."},
+        {"name": "descended trace", "role": "construction", "statement": "τ̇ is a faithful tracial state of π_τ(A) with τ̇ ∘ π_τ = τ."},
+        {"name": "simple ⇒ faithful", "role": "theorem", "statement": "On a C*-simple algebra every tracial state is faithful."}
+       ],
+       "tests": [
+        {"name": "ℂ ⊕ ℂ", "kind": "computation", "statement": "N_{pr₁} = 0 ⊕ ℂ; the midpoint trace has N = 0."},
+        {"name": "M_n faithful", "kind": "computation", "statement": "tr_n(x*x) = n⁻¹Σ|x_ij|² vanishes only at 0."},
+        {"name": "one-sided vector state", "kind": "non-example", "statement": "For ω(x) = x₁₁ on M_2, {a : ω(a*a) = 0} contains e₁₂ but not e₁₂e₂₁: a left ideal only."},
+        {"name": "Toeplitz", "kind": "non-example", "statement": "Every tracial state of the Toeplitz algebra kills the compacts, so none is faithful."}
+       ]},
+      {"id": "1.3", "kind": "construction", "name": "tracialState_unitization",
+       "statement": "Every τ ∈ T(A) extends uniquely to τ̃ ∈ T(Ã), τ̃(a + λ1) = τ(a) + λ; τ̃ is faithful when τ is faithful and A has no unit. For a closed ideal I ⊆ A every τ ∈ T(I) has a unique state extension to A, which is tracial.",
+       "hypotheses": ["τ ∈ T(A)", "for faithfulness: A has no two-sided unit", "for the ideal statement: I a closed two-sided ideal of A"],
+       "locator": {"source": "tikuisis-white-winter2017", "where": "Remark 1.5 (ii)–(iii), lines 456–461; brown2006 Propositions 3.5.10 and 3.5.12, lines 1423, 1469"},
+       "prerequisites": ["target:1.1", "target:1.2", "roadmap:VonNeumannAlgebras V0", "roadmap:VonNeumannAlgebras V1", "roadmap:VonNeumannAlgebras V4", "mathlib:Unitization.instCStarAlgebra", "mathlib:CStarAlgebra.approximateUnit"],
+       "api": [
+        {"name": "unitization_apply", "role": "evaluation", "statement": "τ̃(a + λ1) = τ(a) + λ."},
+        {"name": "unitization_unique", "role": "universal property", "statement": "Every state of Ã restricting to τ equals τ̃."},
+        {"name": "faithful transfer", "role": "theorem", "statement": "τ faithful and A without unit implies τ̃ faithful."},
+        {"name": "ideal extension", "role": "construction", "statement": "Unique tracial extension from a closed ideal."}
+       ],
+       "tests": [
+        {"name": "c₀ ⊆ c", "kind": "computation", "statement": "τ = Σ 2^{-n}δ_n on c₀ gives τ̃(x) = Σ 2^{-n}x_n on c, faithful."},
+        {"name": "unital ℂ", "kind": "non-example", "statement": "For A = ℂ, Ã ≅ ℂ ⊕ ℂ and τ̃ = first coordinate is not faithful."},
+        {"name": "half extension", "kind": "degenerate", "statement": "x ↦ x_1/2 + (lim x)/2 restricts to δ_1/2 on c₀, of norm 1/2, so it does not contradict uniqueness."}
+       ]},
+      {"id": "1.4", "kind": "construction", "name": "gnsTraceData",
+       "statement": "For unital A and τ ∈ T(A): Ω = 1̂ is cyclic for π_τ(A) and separating for M_τ = π_τ(A)''; τ''(x) = ⟪Ω, xΩ⟫ is a faithful normal tracial state of M_τ with τ'' ∘ π_τ = τ; π_τᵒᵖ(bᵒᵖ)ĉ = (cb)^ = Jπ_τ(b*)Jĉ defines a unital star homomorphism of Aᵒᵖ commuting with π_τ with π_τᵒᵖ(Aᵒᵖ)'' = JM_τJ = M_τ'; μ_τ(a ⊗ bᵒᵖ) = τ(ab) is the vector functional of π_τ × π_τᵒᵖ at Ω.",
+       "hypotheses": ["A unital", "τ ∈ T(A)"],
+       "locator": {"source": "brown2006", "where": "Chapter 2, lines 378–384; §3.1, lines 793–801"},
+       "prerequisites": ["target:1.2", "target:1.3", "roadmap:VonNeumannAlgebras V0", "roadmap:VonNeumannAlgebras V1", "roadmap:VonNeumannAlgebras V4", "roadmap:VonNeumannAlgebras V6", "mathlib:PositiveLinearMap.GNS", "mathlib:PositiveLinearMap.gnsStarAlgHom"],
+       "api": [
+        {"name": "cyclic_separating", "role": "structure", "statement": "Ω cyclic for π_τ(A) and for π_τᵒᵖ(Aᵒᵖ), separating for M_τ."},
+        {"name": "vectorTrace", "role": "construction", "statement": "τ'' faithful normal tracial on M_τ extending τ."},
+        {"name": "rightRep_apply", "role": "evaluation", "statement": "π_τᵒᵖ(bᵒᵖ)ĉ = (cb)^."},
+        {"name": "commutant", "role": "compatibility", "statement": "π_τᵒᵖ(Aᵒᵖ)'' = JM_τJ = M_τ'."},
+        {"name": "tensorFunctional_apply", "role": "evaluation", "statement": "μ_τ(a ⊗ bᵒᵖ) = τ(ab)."}
+       ],
+       "tests": [
+        {"name": "M_n", "kind": "computation", "statement": "μ_{tr_n}(e₁₂ ⊗ e₂₁ᵒᵖ) = 1/n; π_τᵒᵖ is right multiplication."},
+        {"name": "ℂ ⊕ ℂ, pr₁", "kind": "degenerate", "statement": "L² = ℂ, M_τ = ℂ, ker π_τ = 0 ⊕ ℂ."},
+        {"name": "C[0,1]", "kind": "compatibility", "statement": "M_τ = L∞[0,1], J complex conjugation, JM_τJ = M_τ'."},
+        {"name": "convention", "kind": "non-example", "statement": "π_τᵒᵖ(e₁₂ᵒᵖ)ê₁₁ = ê₁₂ while the conjugate-linear b ↦ Jπ_τ(b)J sends ê₁₁ to 0."}
+       ]},
+      {"id": "1.5", "kind": "definition", "name": "matrixTrace",
+       "statement": "On M_k = CStarMatrix (Fin k) (Fin k) ℂ, tr_k = k⁻¹·Matrix.trace and ‖x‖₂ = tr_k(x*x)^{1/2}; for k ≥ 1 tr_k is the unique tracial state; ‖·‖₂ is a norm with ‖x*‖₂ = ‖x‖₂, ‖xy‖₂ ≤ ‖x‖‖y‖₂, ‖xy‖₂ ≤ ‖x‖₂‖y‖, ‖x‖₂ ≤ ‖x‖, |tr_k x| ≤ ‖x‖₂, ‖x − cxc‖₂ ≤ 2‖x‖‖c − 1‖₂ for positive contractions c; M_k ⊗ M_kᵒᵖ ≅ B(L²(M_k, tr_k)) with vector state tr_k(xy).",
+       "hypotheses": ["k ∈ ℕ; uniqueness for k ≥ 1"],
+       "locator": {"source": "brown2006", "where": "Chapter 2, lines 403–406; Lemma 2.7, line 530; proof of Theorem 3.1.6, lines 864–874"},
+       "prerequisites": ["target:1.1", "roadmap:VonNeumannAlgebras V3", "roadmap:CStarAlgebras C5.1", "mathlib:CStarMatrix", "mathlib:Matrix.trace", "mathlib:Matrix.trace_mul_comm", "mathlib:Matrix.frobenius_norm_def"],
+       "api": [
+        {"name": "matrixTrace_unique", "role": "characterisation", "statement": "tr_k is the only tracial state of M_k (k ≥ 1)."},
+        {"name": "twoNorm inequalities", "role": "estimates", "statement": "The five inequalities and the c-estimate."},
+        {"name": "block additivity", "role": "structure", "statement": "tr_{k+l}(x ⊕ y) = (k tr_k x + l tr_l y)/(k + l)."},
+        {"name": "tensor multiplicativity", "role": "structure", "statement": "tr_{kl}(x ⊗ y) = tr_k(x)tr_l(y) and ‖x ⊗ y‖₂ = ‖x‖₂‖y‖₂."},
+        {"name": "bimodule identification", "role": "compatibility", "statement": "x ⊗ yᵒᵖ ↦ (z ↦ xzy) is an isometric star isomorphism onto B(L²(M_k))."}
+       ],
+       "tests": [
+        {"name": "e₁₁", "kind": "computation", "statement": "‖e₁₁‖₂ = k^{-1/2}, ‖e₁₁‖ = 1; the unnormalized trace gives ‖1‖₂ = k^{1/2} > 1."},
+        {"name": "product bound attained", "kind": "computation", "statement": "x = e₁₂, y = e₂₁ in M_2: ‖xy‖₂ = 2^{-1/2} = ‖x‖‖y‖₂, while ‖x‖₂‖y‖₂ = 1/2."},
+        {"name": "k = 0", "kind": "degenerate", "statement": "M_0 = 0, tr_0 = 0 is not a state; uniqueness needs k ≥ 1."},
+        {"name": "Frobenius comparison", "kind": "compatibility", "statement": "‖x‖₂ = k^{-1/2}‖x‖_F with Matrix.frobenius_norm_def."}
+       ]},
+      {"id": "1.6", "kind": "theorem", "name": "exists_unital_embedding_trace_approx",
+       "statement": "For a finite-dimensional C*-algebra B with tracial state γ and δ > 0 there are n and a unital injective star homomorphism ρ : B → M_n with |γ(x) − tr_n(ρ(x))| ≤ δ‖x‖. For unital A, τ ∈ T(A) and a unital finite-dimensional C*-subalgebra B ⊆ A there is a conditional expectation Φ_B : A → B with τ ∘ Φ_B = τ.",
+       "hypotheses": ["B finite-dimensional, γ ∈ T(B), δ > 0", "for Φ_B: A unital, B ⊆ A unital finite-dimensional C*-subalgebra"],
+       "locator": {"source": "brown2006", "where": "Lemmas 2.4 and 2.5, lines 466 and 486"},
+       "prerequisites": ["target:1.1", "target:1.5", "roadmap:VonNeumannAlgebras V3", "roadmap:VonNeumannAlgebras V13a"],
+       "api": [],
+       "tests": [
+        {"name": "rational weights", "kind": "computation", "statement": "γ = (1/3, 2/3) on ℂ²: ρ(a, b) = diag(a, b, b), exact."},
+        {"name": "zero weight", "kind": "degenerate", "statement": "γ = (1, 0): multiplicities (N, 1) give error 2/(N + 1)."},
+        {"name": "junk division", "kind": "non-example", "statement": "On ℂ³ with τ = (1/2, 1/2, 0), B = {(a, a, b)}, the faithful-case formula with 0⁻¹ = 0 kills (0, 0, 1); the correct Φ_B averages the first two coordinates."}
+       ]},
+      {"id": "1.7", "kind": "theorem", "name": "closedConvexHull_eq_stateSpace_of_norming",
+       "statement": "For unital A, if 𝒮 ⊆ S(A) satisfies ‖a‖ = sup_{σ∈𝒮}|σ(a)| for self-adjoint a, the weak-star closed convex hull of 𝒮 is S(A); in particular finite-rank density states with rational eigenvalues are weak-star dense in S(B(H)).",
+       "hypotheses": ["A unital", "𝒮 norming for the self-adjoint part"],
+       "locator": {"source": "brown2006", "where": "Lemma 2.8, line 558; proof of Theorem 3.1.6, line 827"},
+       "prerequisites": ["roadmap:VonNeumannAlgebras V0", "roadmap:VonNeumannAlgebras V13b.SpatialNorm", "mathlib:geometric_hahn_banach_closed_point"],
+       "api": [],
+       "tests": [
+        {"name": "coordinates", "kind": "computation", "statement": "{pr₁, pr₂} norms ℂ² and its hull is the segment."},
+        {"name": "one coordinate", "kind": "non-example", "statement": "{pr₁} fails at a = (0, 1) and its hull is not S(ℂ²)."},
+        {"name": "vector states", "kind": "compatibility", "statement": "tr_2 is the average of the vector states at e₁, e₂."}
+       ]}
+     ]},
+    {"key": "2", "title": "Completely positive contractions into matrix algebras",
+     "targets": [
+      {"id": "2.1", "kind": "construction", "name": "cpcMatrix_operations",
+       "statement": "Block sums of c.p.c. maps into M_{k_j} are c.p.c. into M_{Σk_j}; compressions T ↦ V*TV by isometries and T ↦ PTP by nonzero finite-rank projections are normal u.c.p. with tr(φ_P(T)) = Tr(TP)/Tr(P); for nonzero unital A every c.p.c. φ : A → M_k factors as φ = hψh with h = φ(1)^{1/2} and ψ u.c.p.; if tr_k φ(1) ≥ 1 − δ then ‖ψ(x) − φ(x)‖₂ ≤ 2‖x‖δ^{1/2} and ‖ψ(ab) − ψ(a)ψ(b)‖₂ ≤ ‖φ(ab) − φ(a)φ(b)‖₂ + 6‖a‖‖b‖δ^{1/2}; the norm version compresses to the spectral projection of φ(1) for [1/2, 1].",
+       "hypotheses": ["φ c.p.c.", "A nonzero unital for the factorization", "δ ≤ 1/8 and ‖φ(1)‖ > 2δ (for instance tr_k φ(1) > 2δ) for the norm version"],
+       "locator": {"source": "brown2006", "where": "Lemma 2.7, lines 514–555"},
+       "prerequisites": ["target:1.5", "roadmap:CStarAlgebras C4.1", "mathlib:CompletelyPositiveMap", "mathlib:CStarMatrix", "mathlib:IsStarProjection"],
+       "api": [
+        {"name": "blockSum", "role": "construction", "statement": "Block sum of c.p.c. maps with block-weighted trace."},
+        {"name": "compression", "role": "construction", "statement": "Normal u.c.p. compressions with trace formula."},
+        {"name": "choiEffros factorization", "role": "structure", "statement": "φ = hψh with ψ u.c.p."},
+        {"name": "unitalization estimates", "role": "estimates", "statement": "2-norm and norm versions."}
+       ],
+       "tests": [
+        {"name": "half identity", "kind": "computation", "statement": "φ = id/2 on M_2: h = 2^{-1/2}, ψ = id, ‖ψ(x) − φ(x)‖₂ = ‖x‖₂/2."},
+        {"name": "support term", "kind": "non-example", "statement": "φ(a) = diag(a₁, 0) on ℂ²: dropping ω(a)(1 − p) leaves a non-unital map."},
+        {"name": "norm unitalization", "kind": "computation", "statement": "φ(1) = diag(1, 1/100): Q = e₁₁ and ψ maps into M_1."},
+        {"name": "block weights", "kind": "computation", "statement": "k₁ = 1, k₂ = 3 give weights 1/4 and 3/4."}
+       ]},
+      {"id": "2.2", "kind": "definition", "name": "multiplicativityDefect",
+       "statement": "For c.p.c. φ : A → M_k, d₂(φ, a) = tr_k(φ(a*a) − φ(a)*φ(a)) and d_∞(φ, a) = ‖φ(a*a) − φ(a)*φ(a)‖; for a net (φ_i), D₂ = {a : d₂(φ_i, a) → 0 and d₂(φ_i, a*) → 0} and D_∞ analogously.",
+       "hypotheses": ["φ, φ_i c.p.c. into matrix algebras"],
+       "locator": {"source": "brown2006", "where": "Lemma 3.1.5, line 759; proof of Theorem 3.1.6, lines 841–850"},
+       "prerequisites": ["target:1.5", "roadmap:CStarAlgebras C4.1", "roadmap:CStarAlgebras C4.2"],
+       "api": [
+        {"name": "defect_nonneg", "role": "estimates", "statement": "0 ≤ d₂(φ, a) ≤ d_∞(φ, a)."},
+        {"name": "product estimates", "role": "estimates", "statement": "‖φ(ab) − φ(a)φ(b)‖₂ ≤ ‖a‖d₂(φ, b)^{1/2} and ≤ ‖b‖d₂(φ, a*)^{1/2}; same in norm with d_∞."},
+        {"name": "seminorm laws", "role": "structure", "statement": "d^{1/2} subadditive, product rule d(ab)^{1/2} ≤ ‖b‖d(a)^{1/2} + ‖a‖d(b)^{1/2}, Lipschitz |d(a)^{1/2} − d(b)^{1/2}| ≤ ‖a − b‖."},
+        {"name": "asymptotic domain", "role": "structure", "statement": "D₂ and D_∞ are C*-subalgebras; a ∈ D₂ gives asymptotic multiplicativity against every b on both sides."},
+        {"name": "generating-set criterion", "role": "theorem", "statement": "Asymptotic multiplicativity on (s, s*), (s*, s) for s in a set S with S ∪ S* generating A implies it on all of A."}
+       ],
+       "tests": [
+        {"name": "compression to e₁₁", "kind": "computation", "statement": "φ(x) = x₁₁, a = e₁₂, b = e₂₁: defect 1 and bound 1, attained."},
+        {"name": "trace as map", "kind": "computation", "statement": "φ = tr_n: d₂(φ, e₁₂) = 1/n, d₂(φ, u) = 1 for a fixed-point-free permutation matrix."},
+        {"name": "Toeplitz compressions", "kind": "non-example", "statement": "Compressions of C(𝕋) to degree < n: d₂(φ_n, z̄) = 1/n → 0, d_∞ = 1, so D₂ = C(𝕋) ≠ D_∞."},
+        {"name": "star homomorphisms", "kind": "degenerate", "statement": "A star homomorphism has all defects zero."}
+       ]},
+      {"id": "2.3", "kind": "theorem", "name": "compression_commutator_identity",
+       "statement": "For a nonzero finite-rank projection P and T ∈ B(H): ‖PT − TP‖_HS²/Tr(P) = d₂(φ_P, T) + d₂(φ_P, T*) and ‖PT − TP‖² = max(d_∞(φ_P, T), d_∞(φ_P, T*)).",
+       "hypotheses": ["P nonzero finite-rank projection"],
+       "locator": {"source": "brown2006", "where": "Lemma 2.1, line 413"},
+       "prerequisites": ["target:2.1", "target:2.2", "mathlib:IsStarProjection"],
+       "api": [],
+       "tests": [
+        {"name": "2×2", "kind": "computation", "statement": "P = e₁₁, T = e₁₂: both sides 1."},
+        {"name": "P = 1", "kind": "degenerate", "statement": "On finite-dimensional H both sides vanish."},
+        {"name": "shift", "kind": "computation", "statement": "M_z on L²(𝕋) with P_n: ‖[M_z, P_n]‖_HS² = 2, operator norm 1."}
+       ]},
+      {"id": "2.4", "kind": "construction", "name": "ozawaMatrixMap",
+       "statement": "For positive finite-rank h with Tr h = 1 and rational eigenvalues p_j/q, φ(T) = P(T ⊗ 1)P on H ⊗ ℂ^q, P onto span{v_j ⊗ w_r : r ≤ p_j}, is a normal u.c.p. map B(H) → M_q with tr_q ∘ φ = Tr(h ·) and tr_q(φ(uu*) − φ(u)φ(u)*) ≤ 2‖uhu* − h‖₁^{1/2} for unitaries u.",
+       "hypotheses": ["h ≥ 0 finite rank, Tr h = 1, eigenvalues in ℚ"],
+       "locator": {"source": "brown2006", "where": "Lemma 3.1.4, line 662; Proposition 3.1.3, line 613"},
+       "prerequisites": ["target:2.1", "target:2.2", "roadmap:VonNeumannAlgebras V13b", "mathlib:IsStarProjection"],
+       "api": [
+        {"name": "trace identity", "role": "evaluation", "statement": "tr_q ∘ φ = Tr(h ·)."},
+        {"name": "defect bound", "role": "estimates", "statement": "Unitary defect at most 2‖uhu* − h‖₁^{1/2}."},
+        {"name": "normality", "role": "structure", "statement": "φ is normal on B(H)."}
+       ],
+       "tests": [
+        {"name": "rank one", "kind": "computation", "statement": "h = vv*: defect 1 − c², bound 2(2(1 − c²)^{1/2})^{1/2}."},
+        {"name": "half identity", "kind": "degenerate", "statement": "h = 1/2 on ℂ²: φ = id, defect and bound 0."},
+        {"name": "min versus max", "kind": "non-example", "statement": "h = diag(1/3, 2/3): with max(p_i, p_j) the value tr_3(φ(e₁₂)φ(e₂₁)) = 2/3 would exceed tr_3 φ(e₁₁) = 1/3, violating Schwarz."}
+       ]},
+      {"id": "2.5", "kind": "construction", "name": "cpcMatrix_bidualExtension",
+       "statement": "For c.p.c. φ : A → M_k the bitranspose φ** : A** → M_k is the unique weak-star continuous extension, completely positive and contractive, with tr_k ∘ φ** = (tr_k ∘ φ)**; ‖ω**‖ = ‖ω‖ for ω ∈ A*.",
+       "hypotheses": ["φ c.p.c."],
+       "locator": {"source": "brown2006", "where": "proof of Theorem 3.2.2, lines 993–999"},
+       "prerequisites": ["roadmap:CStarAlgebras C2.8", "roadmap:CStarAlgebras C5.2", "roadmap:VonNeumannAlgebras V1", "roadmap:VonNeumannAlgebras V4"],
+       "api": [
+        {"name": "extends", "role": "evaluation", "statement": "φ**(a) = φ(a) for a ∈ A."},
+        {"name": "normal", "role": "structure", "statement": "φ** is weak-star continuous and c.p.c."},
+        {"name": "trace compatibility", "role": "compatibility", "statement": "tr_k ∘ φ** = (tr_k ∘ φ)** and ‖ω**‖ = ‖ω‖."}
+       ],
+       "tests": [
+        {"name": "c₀", "kind": "computation", "statement": "δ_1** = x ↦ x_1 on ℓ∞; x_1 + lim_U x_n also extends δ_1 but has norm 2 and is not normal."},
+        {"name": "compacts", "kind": "compatibility", "statement": "A = K(ℓ²): the vector state at e₀ extends to the same vector state on B(ℓ²)."},
+        {"name": "ℂ", "kind": "degenerate", "statement": "A = ℂ: φ** = φ."}
+       ]}
+     ]},
+    {"key": "3", "title": "Amenable, quasidiagonal and uniform amenable traces",
+     "targets": [
+      {"id": "3.1", "kind": "definition", "name": "IsAmenableTrace",
+       "statement": "τ ∈ T(A) is amenable if for every finite F ⊆ A and ε > 0 there are k and a c.p.c. φ : A → M_k with ‖φ(ab) − φ(a)φ(b)‖₂ < ε and |tr_k φ(a) − τ(a)| < ε for a, b ∈ F.",
+       "hypotheses": ["τ ∈ T(A)"],
+       "locator": {"source": "brown2006", "where": "Theorem 3.1.6 (2), line 807; Proposition 3.5.10 (1), line 1426; Definition 3.1.1, line 589"},
+       "prerequisites": ["target:1.1", "target:1.5", "mathlib:CompletelyPositiveMap", "mathlib:CStarMatrix"],
+       "api": [
+        {"name": "monotone", "role": "structure", "statement": "A witness for (F, ε) serves for F′ ⊆ F and ε′ ≥ ε."},
+        {"name": "starEquiv invariance", "role": "functoriality", "statement": "Invariant under star isomorphisms."},
+        {"name": "net form", "role": "characterisation", "statement": "Equivalent to a net of approximants with defects → 0 and traces → τ pointwise (target 3.5)."}
+       ],
+       "tests": [
+        {"name": "M_n", "kind": "computation", "statement": "φ = id recovers tr_n with zero defect; an unnormalized-trace definition would exclude tr_n."},
+        {"name": "CAR", "kind": "non-example", "statement": "τ_CAR is amenable though the CAR algebra has no nonzero finite-dimensional representation; a star-homomorphism definition would give AT(CAR) = ∅."},
+        {"name": "C*_r(F₂)", "kind": "non-example", "statement": "AT(C*_r(F₂)) = ∅ although T contains the faithful canonical trace."},
+        {"name": "zero algebra", "kind": "degenerate", "statement": "T(0) = AT(0) = ∅."}
+       ]},
+      {"id": "3.2", "kind": "definition", "name": "IsQuasidiagonalTrace",
+       "statement": "τ ∈ T(A) is quasidiagonal if the condition of 3.1 holds with ‖φ(ab) − φ(a)φ(b)‖ < ε in operator norm.",
+       "hypotheses": ["τ ∈ T(A)"],
+       "locator": {"source": "brown2006", "where": "Definition 3.3.1, line 1078; tikuisis-white-winter2017 Definition 1.2, line 376"},
+       "prerequisites": ["target:1.1", "target:1.5", "mathlib:CompletelyPositiveMap"],
+       "api": [
+        {"name": "toAmenable", "role": "structure", "statement": "Quasidiagonal traces are amenable."},
+        {"name": "c.p.c./u.c.p.", "role": "characterisation", "statement": "For unital A the approximants may be u.c.p. (target 3.6)."},
+        {"name": "faithful ⇒ quasidiagonal algebra", "role": "theorem", "statement": "Target 8.3."}
+       ],
+       "tests": [
+        {"name": "roots of unity", "kind": "computation", "statement": "Lebesgue measure on C(𝕋) is recovered by evaluations at n-th roots of unity, exactly multiplicative."},
+        {"name": "compressions", "kind": "non-example", "statement": "The trigonometric compressions are 2-norm but not norm asymptotically multiplicative (defect 1)."},
+        {"name": "Toeplitz", "kind": "non-example", "statement": "The Toeplitz algebra has quasidiagonal traces, none faithful, and is not quasidiagonal."}
+       ]},
+      {"id": "3.3", "kind": "definition", "name": "IsUniformAmenableTrace",
+       "statement": "τ ∈ T(A) is uniform amenable if for every finite F and ε > 0 there are k and a c.p.c. φ : A → M_k with ‖φ(ab) − φ(a)φ(b)‖₂ < ε for a, b ∈ F and ‖tr_k ∘ φ − τ‖_{A*} < ε.",
+       "hypotheses": ["τ ∈ T(A)"],
+       "locator": {"source": "brown2006", "where": "Definition 3.2.1, line 953"},
+       "prerequisites": ["target:1.1", "target:1.5", "mathlib:CompletelyPositiveMap"],
+       "api": [
+        {"name": "toAmenable", "role": "structure", "statement": "Uniform amenable traces are amenable."},
+        {"name": "injectivity criterion", "role": "characterisation", "statement": "Target 5.4."},
+        {"name": "norm closed", "role": "structure", "statement": "UAT(A) is convex and norm closed."}
+       ],
+       "tests": [
+        {"name": "finite-dimensional", "kind": "computation", "statement": "Lemma 2.5 embeddings give norm approximation on finite-dimensional algebras."},
+        {"name": "distance 2", "kind": "non-example", "statement": "Root-of-unity approximants of Lebesgue measure are at A*-distance 2, so they do not witness uniform amenability."},
+        {"name": "C*(F₂)", "kind": "non-example", "statement": "The regular trace of C*(F₂) is amenable but not uniform amenable."}
+       ]},
+      {"id": "3.4", "kind": "definition", "name": "AdmitsFaithfulAmenableTrace",
+       "statement": "A admits a faithful amenable trace if some τ ∈ AT(A) is faithful.",
+       "hypotheses": [],
+       "locator": {"source": "schafhauser2020", "where": "Introduction, lines 69–75"},
+       "prerequisites": ["target:1.2", "target:3.1"],
+       "api": [
+        {"name": "starEquiv invariance", "role": "functoriality", "statement": "Invariant under star isomorphisms."},
+        {"name": "subalgebras of simple AF", "role": "theorem", "statement": "Target 8.5."}
+       ],
+       "tests": [
+        {"name": "C(X)", "kind": "computation", "statement": "A full-support probability measure on compact metric X is a faithful amenable trace."},
+        {"name": "C*_r(F₂)", "kind": "non-example", "statement": "No amenable trace at all."},
+        {"name": "zero algebra", "kind": "degenerate", "statement": "Fails: no tracial state."},
+        {"name": "Toeplitz", "kind": "non-example", "statement": "No faithful tracial state."}
+       ]},
+      {"id": "3.5", "kind": "theorem", "name": "isAmenableTrace_iff_exists_net",
+       "statement": "Each of the three properties is equivalent to the existence of a net of c.p.c. approximants with the defects and trace errors tending to 0; for separable A, of a sequence.",
+       "hypotheses": ["τ ∈ T(A)", "for sequences: A separable"],
+       "locator": {"source": "brown2006", "where": "Theorem 3.1.6 (2), line 807 (sequences); brown-ozawa2008 Ch. 6 (nets)"},
+       "prerequisites": ["target:3.1", "target:3.2", "target:3.3", "mathlib:TopologicalSpace.SeparableSpace"],
+       "api": [], "tests": []},
+      {"id": "3.6", "kind": "theorem", "name": "isAmenableTrace_iff_ucp",
+       "statement": "For nonzero unital A the approximants of each property may be taken u.c.p.",
+       "hypotheses": ["A nonzero unital"],
+       "locator": {"source": "brown2006", "where": "Lemma 2.7, line 514"},
+       "prerequisites": ["target:2.1", "target:3.1", "target:3.2", "target:3.3"],
+       "api": [], "tests": []},
+      {"id": "3.7", "kind": "theorem", "name": "isAmenableTrace_iff_finiteDimensional",
+       "statement": "The definitions are unchanged if M_k with tr_k is replaced by a finite-dimensional C*-algebra B with tracial state γ and the 2-norm by ‖·‖_{2,γ}.",
+       "hypotheses": [],
+       "locator": {"source": "brown2006", "where": "footnote 13, line 1250; proof of Proposition 3.5.1, lines 1235–1261"},
+       "prerequisites": ["target:1.6", "target:3.1", "target:3.2", "target:3.3"],
+       "api": [], "tests": []},
+      {"id": "3.8", "kind": "theorem", "name": "isAmenableTrace_unitization_iff",
+       "statement": "τ ∈ AT(A) iff τ̃ ∈ AT(Ã), and likewise for AT_QD and UAT.",
+       "hypotheses": ["τ ∈ T(A)"],
+       "locator": {"source": "brown2006", "where": "Proposition 3.5.10, line 1423"},
+       "prerequisites": ["target:1.3", "target:2.1", "target:3.1", "target:3.2", "target:3.3", "roadmap:CStarAlgebras C4.1"],
+       "api": [], "tests": [
+        {"name": "c₀", "kind": "computation", "statement": "δ_1 on c₀ and δ_1 on c share the approximant x ↦ x_1."}
+       ]},
+      {"id": "3.9", "kind": "theorem", "name": "amenableTrace_inclusions_convex_closed",
+       "statement": "AT_QD(A) ⊆ AT(A), UAT(A) ⊆ AT(A); the three sets are convex; AT and AT_QD are weak-star closed in T(A) and UAT is norm closed in A*.",
+       "hypotheses": [],
+       "locator": {"source": "brown2006", "where": "§3.5, line 1201; Proposition 3.5.1, line 1218"},
+       "prerequisites": ["target:2.1", "target:3.5", "target:3.7"],
+       "api": [], "tests": [
+        {"name": "segment", "kind": "computation", "statement": "AT = AT_QD = UAT = T(ℂ ⊕ ℂ)."},
+        {"name": "UAT not weak-star closed", "kind": "non-example", "statement": "brown2006 Remark 4.1.7: residually finite non-amenable groups."}
+       ]},
+      {"id": "3.10", "kind": "theorem", "name": "isAmenableTrace_comp",
+       "statement": "For a star homomorphism ι : A → B and τ ∈ AT(B) (resp. AT_QD, UAT) with τ ∘ ι a state, τ ∘ ι ∈ AT(A) (resp. AT_QD, UAT); faithful when τ is faithful and ι injective.",
+       "hypotheses": ["ι star homomorphism", "‖τ ∘ ι‖ = 1"],
+       "locator": {"source": "brown2006", "where": "Propositions 3.5.5 and 3.5.6, lines 1306 and 1312; schafhauser2020 lines 69–70"},
+       "prerequisites": ["target:1.1", "target:1.2", "target:3.1", "target:3.2", "target:3.3"],
+       "api": [], "tests": [
+        {"name": "CAR factor", "kind": "computation", "statement": "M_2 → CAR unital: pullback tr_2."},
+        {"name": "corner", "kind": "non-example", "statement": "M_3 → M_4 corner: tr_4 ∘ ι = (3/4)tr_3 is not a state."},
+        {"name": "evaluation", "kind": "computation", "statement": "q(f) = f(1) on C(𝕋): δ_1 quasidiagonal, not faithful."}
+       ]},
+      {"id": "3.11", "kind": "theorem", "name": "isAmenableTrace_tensor",
+       "statement": "For τ ∈ AT(A), γ ∈ AT(B), τ ⊗ γ ∈ AT(A ⊗min B); likewise for AT_QD and UAT.",
+       "hypotheses": [],
+       "locator": {"source": "brown2006", "where": "Proposition 3.5.7, line 1317"},
+       "prerequisites": ["target:1.5", "target:2.2", "target:3.5", "roadmap:CStarAlgebras C5.1", "roadmap:CStarAlgebras C5.2"],
+       "api": [], "tests": [
+        {"name": "matrices", "kind": "computation", "statement": "tr_k ⊗ tr_l = tr_{kl}."},
+        {"name": "C*_r(F₂) ⊗ M_2", "kind": "non-example", "statement": "τ_{F₂} ⊗ tr_2 is not amenable: its pullback along x ↦ x ⊗ 1 is τ_{F₂}."}
+       ]}
+     ]},
+    {"key": "4", "title": "Hypertraces and the Connes–Kirchberg theorem",
+     "targets": [
+      {"id": "4.1", "kind": "definition", "name": "IsHypertrace",
+       "statement": "For a faithful unital representation π : A → B(H) and τ ∈ T(A), a hypertrace is a state ψ of B(H) with ψ ∘ π = τ and ψ(π(u)Tπ(u)*) = ψ(T) for all unitaries u ∈ A and T ∈ B(H).",
+       "hypotheses": ["A unital", "π faithful unital representation"],
+       "locator": {"source": "brown2006", "where": "Definition 3.1.1, line 589; connes1976 Theorem 5.1 (background)"},
+       "prerequisites": ["target:1.1", "mathlib:CStarAlgebra.exists_sum_four_unitary"],
+       "api": [
+        {"name": "commutation form", "role": "characterisation", "statement": "Unitary invariance iff ψ(π(a)T) = ψ(Tπ(a)) for all a."},
+        {"name": "representation independence", "role": "theorem", "statement": "Target 4.2."},
+        {"name": "closed convex", "role": "structure", "statement": "Hypertraces form a weak-star closed convex set."}
+       ],
+       "tests": [
+        {"name": "M_n", "kind": "computation", "statement": "M_n ⊆ B(ℂⁿ): the only hypertrace is tr_n."},
+        {"name": "scalars", "kind": "degenerate", "statement": "ℂ1 ⊆ B(H): every state of B(H) is a hypertrace."},
+        {"name": "non-hypertrace", "kind": "non-example", "statement": "ψ′(T) = (T₁₁ + T₂₂ + T₁₂ + T₂₁)/2 restricts to (1/2, 1/2) on the diagonal of M_2 but ψ′(e₁₁e₁₂) ≠ ψ′(e₁₂e₁₁)."},
+        {"name": "C*_r(F₂)", "kind": "non-example", "statement": "No tracial state of C*_r(F₂) has a hypertrace on ℓ²(F₂)."}
+       ]},
+      {"id": "4.2", "kind": "theorem", "name": "isHypertrace_of_rep_independent",
+       "statement": "If (π, τ) has a hypertrace then so has (ρ, τ) for every faithful unital representation ρ.",
+       "hypotheses": ["π, ρ faithful unital representations"],
+       "locator": {"source": "brown2006", "where": "Proposition 3.1.2, line 595"},
+       "prerequisites": ["target:4.1", "roadmap:VonNeumannAlgebras V13a", "roadmap:CStarAlgebras C4.1"],
+       "api": [], "tests": []},
+      {"id": "4.3", "kind": "theorem", "name": "isAmenableTrace_of_hypertrace",
+       "statement": "If A ⊆ B(H) is a unital C*-subalgebra and ψ a hypertrace for the inclusion, then for every finite F ⊆ A and ε > 0 there is a normal u.c.p. Φ : B(H) → M_q whose restriction to A is ε-multiplicative in 2-norm on F and recovers ψ|_A within ε on F; hence ψ|_A ∈ AT(A), with normal approximants when A is a von Neumann algebra.",
+       "hypotheses": ["A ⊆ B(H) unital", "ψ hypertrace"],
+       "locator": {"source": "brown2006", "where": "proof of Theorem 3.1.6 (1) ⇒ (2), lines 817–850"},
+       "prerequisites": ["target:1.7", "target:2.2", "target:2.4", "target:4.1", "roadmap:BanachSpaceTheory B1", "mathlib:CStarAlgebra.exists_sum_four_unitary"],
+       "api": [], "tests": [
+        {"name": "M_n", "kind": "computation", "statement": "h = n⁻¹·1 and Ozawa's map is id."},
+        {"name": "diagonal", "kind": "computation", "statement": "ψ = diag weights (1/3, 2/3): restricted Ozawa map (a, b) ↦ diag(a, b, b)."}
+       ]},
+      {"id": "4.4", "kind": "theorem", "name": "tensorFunctional_minBounded_of_amenable",
+       "statement": "If τ ∈ AT(A) then |μ_τ(x)| ≤ ‖x‖_min on A ⊙ Aᵒᵖ.",
+       "hypotheses": ["A unital"],
+       "locator": {"source": "brown2006", "where": "proof of Theorem 3.1.6 (2) ⇒ (3), lines 851–880"},
+       "prerequisites": ["target:1.4", "target:1.5", "target:3.6", "roadmap:CStarAlgebras C5.1", "roadmap:CStarAlgebras C5.2"],
+       "api": [], "tests": []},
+      {"id": "4.5", "kind": "theorem", "name": "bimoduleRep_minBounded_iff",
+       "statement": "μ_τ is min-bounded iff π_τ × π_τᵒᵖ : A ⊙ Aᵒᵖ → B(L²(A,τ)) is min-bounded.",
+       "hypotheses": ["A unital"],
+       "locator": {"source": "brown2006", "where": "proof of Theorem 3.1.6 (3) ⇒ (4), lines 881–884"},
+       "prerequisites": ["target:1.4", "roadmap:VonNeumannAlgebras V0", "roadmap:CStarAlgebras C5.1"],
+       "api": [], "tests": []},
+      {"id": "4.6", "kind": "theorem", "name": "exists_ucp_extension_of_bimoduleRep_bounded",
+       "statement": "If π_τ × π_τᵒᵖ is min-bounded then for every faithful unital A ⊆ B(H) there is a u.c.p. Φ : B(H) → π_τ(A)'' with Φ|_A = π_τ; and such a Φ yields the hypertrace τ'' ∘ Φ.",
+       "hypotheses": ["A unital"],
+       "locator": {"source": "brown2006", "where": "proof of Theorem 3.1.6 (4) ⇒ (5) ⇒ (1), lines 885–894"},
+       "prerequisites": ["target:1.4", "roadmap:VonNeumannAlgebras V13a", "roadmap:VonNeumannAlgebras V13b.SpatialNorm", "roadmap:CStarAlgebras C4.1"],
+       "api": [], "tests": []},
+      {"id": "4.7", "kind": "theorem", "name": "isAmenableTrace_tfae",
+       "statement": "For unital A and τ ∈ T(A) the following are equivalent: τ ∈ AT(A); every faithful unital representation has a hypertrace; some does; μ_τ is min-bounded on A ⊙ Aᵒᵖ; π_τ × π_τᵒᵖ is min-bounded; for every faithful unital A ⊆ B(H) a u.c.p. Φ : B(H) → π_τ(A)'' extends π_τ; for some such representation. For nonunital A, τ ∈ AT(A) iff τ̃ satisfies these on Ã.",
+       "hypotheses": ["A unital (nonunital through Ã)", "τ ∈ T(A)"],
+       "locator": {"source": "brown2006", "where": "Theorem 3.1.6, line 804, with footnote 2, line 819"},
+       "prerequisites": ["target:3.8", "target:4.2", "target:4.3", "target:4.4", "target:4.5", "target:4.6", "roadmap:VonNeumannAlgebras V0"],
+       "api": [], "tests": [
+        {"name": "M_n", "kind": "computation", "statement": "All conditions hold for tr_n with ψ = tr_n and Φ = id."},
+        {"name": "ℂ ⊕ ℂ", "kind": "computation", "statement": "pr₁: Φ(T) = T₁₁ and μ((a, b) ⊗ (c, d)ᵒᵖ) = ac."},
+        {"name": "C*_r(F₂)", "kind": "non-example", "statement": "All fail for τ_{F₂}; the left-right regular representation is not min-bounded."}
+       ]},
+      {"id": "4.8", "kind": "definition", "name": "IsFoelnerNet",
+       "statement": "For a unital C*-subalgebra A ⊆ B(H) and τ ∈ T(A), a Følner net for τ is a net of nonzero finite-rank projections P_i with ‖aP_i − P_ia‖_HS/‖P_i‖_HS → 0 and Tr(aP_i)/Tr(P_i) → τ(a) for all a ∈ A.",
+       "hypotheses": ["A ⊆ B(H) unital"],
+       "locator": {"source": "brown2006", "where": "Theorem 3.1.7 (3), line 904"},
+       "prerequisites": ["target:1.1", "mathlib:IsStarProjection"],
+       "api": [
+        {"name": "amenable of Følner", "role": "theorem", "statement": "A Følner net makes τ amenable (target 4.9)."},
+        {"name": "subnet", "role": "structure", "statement": "Subnets of Følner nets are Følner nets."}
+       ],
+       "tests": [
+        {"name": "C(𝕋)", "kind": "computation", "statement": "Trigonometric projections: exact trace, commutator (2/n)^{1/2}."},
+        {"name": "diagonal ℂ²", "kind": "non-example", "statement": "τ = (1/3, 2/3) on the diagonal of M_2 has no Følner net (rank-one commutator 2/3)."},
+        {"name": "M_n", "kind": "degenerate", "statement": "P = 1 is a Følner net for tr_n."}
+       ]},
+      {"id": "4.9", "kind": "theorem", "name": "isAmenableTrace_iff_foelner",
+       "statement": "A Følner net for τ implies τ ∈ AT(A); conversely if A and H are separable and A ∩ K(H) = 0, every amenable τ has a Følner sequence.",
+       "hypotheses": ["A ⊆ B(H) unital", "converse: A, H separable, A ∩ K(H) = 0"],
+       "locator": {"source": "brown2006", "where": "Theorem 3.1.7 (1) ⇔ (3), line 897; Theorem 2.2, line 429"},
+       "prerequisites": ["target:2.3", "target:3.6", "target:4.7", "target:4.8", "roadmap:CStarAlgebras C8.2", "mathlib:TopologicalSpace.SeparableSpace"],
+       "api": [], "tests": []},
+      {"id": "4.10", "kind": "theorem", "name": "isAmenableTrace_iff_injective",
+       "statement": "For a von Neumann algebra M ⊆ B(H) with a faithful normal tracial state τ, τ is an amenable trace of the C*-algebra M iff M is injective, and then τ has normal approximants. For every unital A and τ ∈ T(A), injectivity of π_τ(A)'' implies τ ∈ AT(A).",
+       "hypotheses": ["τ faithful normal tracial state of M"],
+       "locator": {"source": "brown2006", "where": "Theorem 3.2.2 (5) ⇒ (1), line 1035; schafhauser2020 lines 82–84"},
+       "prerequisites": ["target:4.3", "target:4.7", "roadmap:VonNeumannAlgebras V4", "roadmap:VonNeumannAlgebras V5", "roadmap:VonNeumannAlgebras V6", "roadmap:VonNeumannAlgebras V13a", "roadmap:VonNeumannAlgebras V13b"],
+       "api": [], "tests": [
+        {"name": "L(F₂)", "kind": "non-example", "statement": "L(F₂) is not injective, so its trace is not amenable."},
+        {"name": "L∞[0,1]", "kind": "computation", "statement": "Abelian, injective, trace amenable."}
+       ]}
+     ]},
+    {"key": "5", "title": "Uniform amenability, injectivity, nuclearity and exactness",
+     "targets": [
+      {"id": "5.1", "kind": "definition", "name": "IsWeaklyNuclear",
+       "statement": "A c.p.c. map θ : A → M into a von Neumann algebra is weakly nuclear if there are nets of c.p.c. α_i : A → M_{n_i} and β_i : M_{n_i} → M with β_i(α_i(a)) → θ(a) ultraweakly for every a.",
+       "hypotheses": ["M a von Neumann algebra"],
+       "locator": {"source": "brown2006", "where": "Theorem 3.2.2 (6), line 990"},
+       "prerequisites": ["roadmap:VonNeumannAlgebras V1", "roadmap:CStarAlgebras C6.1", "mathlib:CompletelyPositiveMap"],
+       "api": [
+        {"name": "of nuclear", "role": "compatibility", "statement": "Nuclear maps (CStarAlgebras C6.1) are weakly nuclear."},
+        {"name": "composition", "role": "functoriality", "statement": "Closed under composition with c.p.c. maps on the domain and normal c.p.c. maps on the range."},
+        {"name": "Lance criterion", "role": "theorem", "statement": "Target 5.3."}
+       ],
+       "tests": [
+        {"name": "B(ℓ²)", "kind": "non-example", "statement": "id of B(ℓ²) is weakly nuclear but not nuclear."},
+        {"name": "regular representation of F₂", "kind": "non-example", "statement": "Not weakly nuclear into L(F₂), which is not injective."},
+        {"name": "matrices", "kind": "degenerate", "statement": "id of M_n is weakly nuclear with n_i = n."}
+       ]},
+      {"id": "5.2", "kind": "theorem", "name": "commutingRange_cpc",
+       "statement": "For c.p.c. β : M_n → M, [y_kl] ↦ Σ β(e_kl)y_kl is a c.p.c. map M_n(M') → B(H).",
+       "hypotheses": ["M ⊆ B(H) von Neumann algebra"],
+       "locator": {"source": "brown2006", "where": "proof of Theorem 3.2.2 (6) ⇒ (5), lines 1041–1045"},
+       "prerequisites": ["roadmap:CStarAlgebras C5.2", "mathlib:CompletelyPositiveMap"],
+       "api": [], "tests": [
+        {"name": "commutation needed", "kind": "non-example", "statement": "β = id on M_2 with y_kl = e_lk gives 2·1 from the flip of norm 1."}
+       ]},
+      {"id": "5.3", "kind": "theorem", "name": "injective_of_isWeaklyNuclear",
+       "statement": "If π : A → B(H) is a representation of a unital C*-algebra and π : A → π(A)'' is weakly nuclear, then π(A)'' is injective.",
+       "hypotheses": ["A unital (nonunital through Ã)"],
+       "locator": {"source": "brown2006", "where": "proof of Theorem 3.2.2 (6) ⇒ (5), lines 1038–1048"},
+       "prerequisites": ["target:5.1", "target:5.2", "roadmap:CStarAlgebras C4.1", "roadmap:CStarAlgebras C5.2", "roadmap:VonNeumannAlgebras V13a", "roadmap:VonNeumannAlgebras V13b.SpatialNorm", "roadmap:VonNeumannAlgebras V13b"],
+       "api": [], "tests": []},
+      {"id": "5.4", "kind": "theorem", "name": "isUniformAmenableTrace_tfae",
+       "statement": "For τ ∈ T(A) the following are equivalent: τ ∈ UAT(A); π_τ(A)'' is injective; π_τ : A → π_τ(A)'' is weakly nuclear; τ'' is an amenable trace of the C*-algebra π_τ(A)''; for separable A also π_τ(A)'' hyperfinite.",
+       "hypotheses": ["τ ∈ T(A)", "hyperfiniteness clause: A separable"],
+       "locator": {"source": "brown2006", "where": "Theorem 3.2.2, line 973"},
+       "prerequisites": ["target:1.4", "target:2.2", "target:2.5", "target:3.7", "target:3.9", "target:4.10", "target:5.3", "roadmap:CStarAlgebras C2.8", "roadmap:VonNeumannAlgebras V1", "roadmap:VonNeumannAlgebras V4", "roadmap:VonNeumannAlgebras V13b", "roadmap:BanachSpaceTheory B1"],
+       "api": [], "tests": [
+        {"name": "C*(F₂)", "kind": "non-example", "statement": "Regular trace amenable, L(F₂) not injective, so not uniform amenable."},
+        {"name": "arc averages", "kind": "computation", "statement": "φ_n(f) = diag(n∫_{I_k} f) has tr_n ∘ φ_n = Lebesgue exactly."}
+       ]},
+      {"id": "5.5", "kind": "theorem", "name": "tracialState_isUniformAmenable_of_nuclear",
+       "statement": "If A is nuclear then T(A) = AT(A) = UAT(A), and π(A)'' is injective for every representation π.",
+       "hypotheses": ["A nuclear"],
+       "locator": {"source": "brown2006", "where": "Theorem 4.2.1, line 1707"},
+       "prerequisites": ["target:3.8", "target:5.3", "target:5.4", "roadmap:CStarAlgebras C6.1", "roadmap:CStarAlgebras C6.5"],
+       "api": [], "tests": [
+        {"name": "K(ℓ²)", "kind": "degenerate", "statement": "T(K(ℓ²)) = ∅: vacuous."},
+        {"name": "non-nuclear", "kind": "non-example", "statement": "C*_r(F₂) has T ≠ AT; C*(F₂) has AT ≠ UAT."}
+       ]},
+      {"id": "5.6", "kind": "theorem", "name": "isAmenableTrace_tfae_of_exact",
+       "statement": "If A is exact and τ ∈ T(A): τ ∈ AT(A) iff τ ∈ UAT(A) iff π_τ : A → π_τ(A)'' is nuclear iff π_τ(A)'' is injective; for separable A also iff π_τ(A)'' is hyperfinite.",
+       "hypotheses": ["A exact"],
+       "locator": {"source": "brown2006", "where": "Corollary 4.3.6, line 1925; kirchberg1993 §3 (uncertified)"},
+       "prerequisites": ["target:3.9", "target:4.7", "target:5.3", "target:5.4", "roadmap:CStarAlgebras C6.1", "roadmap:CStarAlgebras C7.1"],
+       "api": [], "tests": [
+        {"name": "C*_r(F₂)", "kind": "computation", "statement": "Exact; τ_{F₂} not amenable and L(F₂) not injective."},
+        {"name": "C*(F₂)", "kind": "non-example", "statement": "Not exact; regular trace amenable with L(F₂) not injective."}
+       ]}
+     ]},
+    {"key": "6", "title": "Faces, normalized restrictions, quotients and ideals",
+     "targets": [
+      {"id": "6.1", "kind": "theorem", "name": "gns_subrep_of_dominated",
+       "statement": "For unital A, τ, γ ∈ T(A) and s > 0 with sτ ≤ γ, there are P ∈ π_γ(A)' and a unitary U : PL²(A,γ) → L²(A,τ) intertwining Pπ_γ with π_τ; π_τ(A)'' ≅ π_γ(A)''P.",
+       "hypotheses": ["sτ ≤ γ"],
+       "locator": {"source": "brown2006", "where": "Lemma 3.5.2, line 1274"},
+       "prerequisites": ["target:1.4", "roadmap:CStarAlgebras C4.2", "roadmap:VonNeumannAlgebras V0", "roadmap:VonNeumannAlgebras V2"],
+       "api": [], "tests": [
+        {"name": "ℂ²", "kind": "computation", "statement": "γ = (1/2, 1/2), τ = (1, 0), s = 1/2: P = e₁₁."},
+        {"name": "not dominated", "kind": "non-example", "statement": "γ = (1, 0), τ = (0, 1): no s > 0."}
+       ]},
+      {"id": "6.2", "kind": "theorem", "name": "isAmenableTrace_face",
+       "statement": "AT(A) and UAT(A) are faces of T(A).",
+       "hypotheses": [],
+       "locator": {"source": "brown2006", "where": "Propositions 3.5.3 and 3.5.4, lines 1283 and 1291"},
+       "prerequisites": ["target:1.3", "target:3.8", "target:4.7", "target:5.4", "target:6.1", "roadmap:VonNeumannAlgebras V2", "roadmap:VonNeumannAlgebras V13a"],
+       "api": [], "tests": [
+        {"name": "C*_r(F₂) ⊕ ℂ", "kind": "computation", "statement": "AT = {χ ∘ pr₂}, a one-point face."},
+        {"name": "M_2 ⊕ M_2", "kind": "computation", "statement": "The whole segment is amenable."}
+       ]},
+      {"id": "6.3", "kind": "theorem", "name": "isAmenableTrace_normalized_comp",
+       "statement": "For a star homomorphism ι : A → B and τ ∈ AT(B) (resp. UAT(B)) with c = ‖τ ∘ ι‖ > 0, c⁻¹·τ ∘ ι ∈ AT(A) (resp. UAT(A)); faithful when τ faithful and ι injective.",
+       "hypotheses": ["c > 0"],
+       "locator": {"source": "brown2006", "where": "Proposition 3.5.11, line 1452 (ideals)"},
+       "prerequisites": ["target:1.3", "target:3.8", "target:3.10", "target:6.2", "mathlib:Unitization.starLift"],
+       "api": [], "tests": [
+        {"name": "corner", "kind": "computation", "statement": "M_3 ⊆ M_4: c = 3/4, normalized tr_3."},
+        {"name": "c = 0", "kind": "degenerate", "statement": "λ ↦ (0, λ) with τ = pr₁: nothing to normalize."}
+       ]},
+      {"id": "6.4", "kind": "theorem", "name": "isAmenableTrace_descend",
+       "statement": "For τ ∈ T(A) and B = π_τ(A): τ ∈ UAT(A) implies τ̇ ∈ UAT(B); τ ∈ AT(A) and a c.p.c. splitting of π_τ : A → B imply τ̇ ∈ AT(B).",
+       "hypotheses": ["for AT: a c.p.c. splitting σ of π_τ"],
+       "locator": {"source": "brown2006", "where": "Proposition 3.5.8 (1)–(2), line 1338"},
+       "prerequisites": ["target:1.2", "target:4.7", "target:5.4", "roadmap:VonNeumannAlgebras V13a"],
+       "api": [], "tests": [
+        {"name": "C*(F₂) → C*_r(F₂)", "kind": "non-example", "statement": "Regular trace amenable, descended τ_{F₂} not: the splitting hypothesis is needed."}
+       ]},
+      {"id": "6.5", "kind": "theorem", "name": "isAmenableTrace_extend_from_ideal",
+       "statement": "For a closed ideal I ⊆ A and τ ∈ AT(I) (resp. UAT(I)) the unique tracial extension to A is in AT(A) (resp. UAT(A)).",
+       "hypotheses": ["I closed two-sided ideal"],
+       "locator": {"source": "brown2006", "where": "Proposition 3.5.12, line 1469"},
+       "prerequisites": ["target:1.3", "target:2.2", "target:3.8", "target:5.4", "roadmap:VonNeumannAlgebras V13a"],
+       "api": [], "tests": [
+        {"name": "K ⊆ B(ℓ²)", "kind": "degenerate", "statement": "T(K) = ∅: vacuous."}
+       ]}
+     ]},
+    {"key": "7", "title": "Examples: finite-dimensional, commutative, AF and group algebras",
+     "targets": [
+      {"id": "7.1", "kind": "theorem", "name": "tracialState_isQuasidiagonal_of_commutative",
+       "statement": "Every tracial state of a finite-dimensional or commutative C*-algebra is quasidiagonal and uniform amenable.",
+       "hypotheses": ["A finite-dimensional or commutative"],
+       "locator": {"source": "brown2006", "where": "Lemma 2.5, line 486; Theorem 4.2.1, line 1707"},
+       "prerequisites": ["target:1.6", "target:3.8", "target:3.9", "target:5.5", "roadmap:CStarAlgebras C6.5", "mathlib:gelfandStarTransform", "mathlib:RealRMK.rieszMeasure", "mathlib:PartitionOfUnity"],
+       "api": [], "tests": [
+        {"name": "Riemann sums", "kind": "computation", "statement": "C[0,1], f(x) = x: tr_n φ_n(f) = (n + 1)/(2n) → 1/2."},
+        {"name": "M_2 ⊕ ℂ", "kind": "computation", "statement": "diag(x, λ, λ) recovers (1/2)tr_2 ⊕ (1/2) exactly."}
+       ]},
+      {"id": "7.2", "kind": "theorem", "name": "tracialState_isQuasidiagonal_of_isAF",
+       "statement": "A nonzero unital AF algebra has a tracial state; every tracial state of an AF algebra is quasidiagonal and uniform amenable; the unique tracial state of a UHF algebra is faithful, quasidiagonal and uniform amenable.",
+       "hypotheses": ["IsAF"],
+       "locator": {"source": "brown2006", "where": "§3.4, line 1192; Lemmas 2.4–2.5"},
+       "prerequisites": ["target:1.2", "target:1.6", "target:3.8", "roadmap:CStarAlgebras C2.1", "roadmap:CStarClassification §2.1", "roadmap:CStarClassification §3.5", "roadmap:VonNeumannAlgebras V0"],
+       "api": [], "tests": [
+        {"name": "CAR", "kind": "computation", "statement": "tr_{2^n} ∘ φ_n = τ_CAR exactly with φ_n the slice expectation."},
+        {"name": "K(ℓ²)", "kind": "degenerate", "statement": "Nonunital AF with no tracial state."}
+       ]},
+      {"id": "7.3", "kind": "construction", "name": "canonicalTrace",
+       "statement": "For a discrete group Γ, τ_Γ(x) = ⟪δ_e, xδ_e⟫ is a faithful tracial state of C*_r(Γ) whose GNS data are (ℓ²(Γ), δ_e, λ), with π_{τ_Γ}(C*_r(Γ))'' = L(Γ).",
+       "hypotheses": ["Γ discrete group"],
+       "locator": {"source": "brown2006", "where": "§4.1, lines 1506–1514; schafhauser2020 lines 103–105"},
+       "prerequisites": ["target:1.1", "target:1.2", "roadmap:OperatorAlgebraDynamics D2"],
+       "api": [
+        {"name": "canonicalTrace_lambda", "role": "evaluation", "statement": "τ_Γ(λ_g) = 1 if g = e and 0 otherwise."},
+        {"name": "faithful", "role": "structure", "statement": "τ_Γ is D2's faithful expectation for coefficients ℂ."},
+        {"name": "GNS", "role": "compatibility", "statement": "GNS of τ_Γ is the regular representation."}
+       ],
+       "tests": [
+        {"name": "ℤ", "kind": "computation", "statement": "τ_ℤ(λ_n) = ∫ z^n dm: Lebesgue measure on C(𝕋)."},
+        {"name": "finite", "kind": "compatibility", "statement": "Γ finite: τ_Γ = |Γ|⁻¹ Tr on ℓ²(Γ)."},
+        {"name": "trivial", "kind": "degenerate", "statement": "Γ = {e}: C*_r = ℂ and τ = id."},
+        {"name": "wrong vector", "kind": "non-example", "statement": "x ↦ ⟪δ_g, xδ_e⟫ for g ≠ e is not even positive: it takes 1 at λ_g and 0 at 1."}
+       ]},
+      {"id": "7.4", "kind": "theorem", "name": "amenable_tfae_reducedGroupCStar",
+       "statement": "For a discrete group Γ the following are equivalent: Γ amenable; T(C*_r Γ) = AT = UAT; AT(C*_r Γ) ≠ ∅; τ_Γ ∈ AT; τ_Γ ∈ UAT; L(Γ) injective. In particular C*_r(F₂) has no amenable trace.",
+       "hypotheses": ["Γ discrete group"],
+       "locator": {"source": "brown2006", "where": "Proposition 4.1.1, line 1515; Corollary 4.1.2, line 1539"},
+       "prerequisites": ["target:4.7", "target:5.4", "target:5.5", "target:7.3", "roadmap:OperatorAlgebraDynamics D2", "roadmap:AmenableGroups Layer 2", "roadmap:AmenableGroups Layer 3", "mathlib:FreeGroup"],
+       "api": [], "tests": [
+        {"name": "translation convention", "kind": "computation", "statement": "λ_1 M_{δ_0} λ_1* = M_{δ_1} on ℓ²(ℤ)."},
+        {"name": "F₂", "kind": "non-example", "statement": "AT(C*_r(F₂)) = ∅."}
+       ]}
+     ]},
+    {"key": "8", "title": "Quasidiagonality and subalgebras of simple AF algebras",
+     "targets": [
+      {"id": "8.1", "kind": "theorem", "name": "exists_isQuasidiagonalTrace_of_isQuasidiagonal",
+       "statement": "A nonzero unital C*-algebra that is quasidiagonal in the sense of CStarAlgebras C8.1 has a quasidiagonal tracial state; every weak-star cluster point of normalized compressed traces of a faithful quasidiagonal representation is one.",
+       "hypotheses": ["A nonzero unital", "IsQuasidiagonal A"],
+       "locator": {"source": "brown2006", "where": "Proposition 3.3.2, lines 1097–1121; tikuisis-white-winter2017 Proposition 1.4, line 418"},
+       "prerequisites": ["target:2.1", "target:2.3", "target:3.6", "target:3.9", "roadmap:CStarAlgebras C8.1", "roadmap:CStarAlgebras C8.3", "roadmap:VonNeumannAlgebras V0"],
+       "api": [], "tests": [
+        {"name": "SO₂", "kind": "non-example", "statement": "Quasidiagonal, nonunital, no tracial state."},
+        {"name": "Toeplitz", "kind": "non-example", "statement": "Not quasidiagonal but has quasidiagonal traces."}
+       ]},
+      {"id": "8.2", "kind": "theorem", "name": "state_tendsto_comp_ucp_of_isQuasidiagonal",
+       "statement": "For a nonzero unital quasidiagonal A every state is a weak-star limit of σ_i ∘ φ_i with φ_i u.c.p. into M_{k_i}, norm-asymptotically multiplicative, and σ_i states; a sequence for separable A.",
+       "hypotheses": ["A nonzero unital quasidiagonal"],
+       "locator": {"source": "brown2006", "where": "Proposition 4.3.7, line 1952"},
+       "prerequisites": ["target:1.7", "target:2.1", "target:8.1", "roadmap:CStarAlgebras C8.3"],
+       "api": [], "tests": [
+        {"name": "δ_1 on C(𝕋)", "kind": "computation", "statement": "δ_1 = δ_{e₁} ∘ φ_n for root-of-unity evaluations."},
+        {"name": "traces cannot replace states", "kind": "non-example", "statement": "brown2006 Corollary 4.3.8: an RFD exact algebra with a non-amenable trace."}
+       ]},
+      {"id": "8.3", "kind": "theorem", "name": "isQuasidiagonal_of_faithful_isQuasidiagonalTrace",
+       "statement": "A separable C*-algebra with a faithful quasidiagonal trace is quasidiagonal; for countable Γ, if τ_Γ is quasidiagonal then C*_r(Γ) is quasidiagonal.",
+       "hypotheses": ["A separable", "τ faithful quasidiagonal"],
+       "locator": {"source": "brown2006", "where": "proof of Proposition 4.1.3, lines 1554–1566; tikuisis-white-winter2017 Proposition 1.4, line 431, Remark 1.5 (iii), line 461"},
+       "prerequisites": ["target:1.2", "target:3.5", "target:7.3", "roadmap:CStarAlgebras C5.4", "roadmap:CStarAlgebras C8.3"],
+       "api": [], "tests": [
+        {"name": "Toeplitz", "kind": "non-example", "statement": "No faithful quasidiagonal trace and not quasidiagonal."},
+        {"name": "ℂ ⊕ ℂ", "kind": "computation", "statement": "Constant faithful approximant (a, b) ↦ diag(a, b)."}
+       ]},
+      {"id": "8.4", "kind": "theorem", "name": "amenable_of_isQuasidiagonal_reducedGroupCStar",
+       "statement": "If C*_r(Γ) is quasidiagonal then Γ is amenable.",
+       "hypotheses": ["Γ discrete group"],
+       "locator": {"source": "brown2006", "where": "lines 1541–1549"},
+       "prerequisites": ["target:3.9", "target:7.4", "target:8.1"],
+       "api": [], "tests": [
+        {"name": "F₂", "kind": "non-example", "statement": "C*_r(F₂) is not quasidiagonal."}
+       ]},
+      {"id": "8.5", "kind": "theorem", "name": "subalgebra_simple_AF_admitsFaithfulAmenableTrace",
+       "statement": "Let B be a simple unital AF algebra and A ⊆ B a nonzero C*-subalgebra. Then A is separable and exact, and for every τ_B ∈ T(B) the normalized restriction c⁻¹·τ_B|_A (c = ‖τ_B|_A‖ > 0) is a faithful uniform amenable trace; if ι : A → B is an injective star homomorphism with τ_B ∘ ι a state, τ_B ∘ ι is a faithful amenable trace.",
+       "hypotheses": ["B simple, unital, IsAF", "A ≠ 0"],
+       "locator": {"source": "schafhauser2020", "where": "Introduction, lines 69–70; Theorem A, line 75 (necessity)"},
+       "prerequisites": ["target:1.2", "target:3.10", "target:6.3", "target:7.2", "roadmap:CStarAlgebras C6.5", "roadmap:CStarAlgebras C7.1", "roadmap:CStarClassification §2.1"],
+       "api": [], "tests": [
+        {"name": "corner", "kind": "computation", "statement": "M_3 ⊆ M_4 ⊆ CAR: restriction (3/4)tr_3, normalized tr_3."},
+        {"name": "C(𝕋) in CAR", "kind": "computation", "statement": "Binary expansion pushes the Bernoulli measure to Lebesgue measure."},
+        {"name": "C*_r(F₂)", "kind": "non-example", "statement": "Separable, exact, faithful trace, no amenable trace: not a subalgebra of a simple unital AF algebra."},
+        {"name": "A = 0", "kind": "degenerate", "statement": "Excluded: no tracial state."}
+       ]}
+     ]}
+  ],
+  "suppliers": [
+    {"roadmap": "CStarAlgebras", "sections": ["C2.1", "C2.8", "C4.1", "C4.2", "C5.1", "C5.2", "C5.4", "C6.1", "C6.5", "C7.1", "C8.1", "C8.2", "C8.3", "C9.1", "C9.7"], "what": "Completely positive maps, Kadison–Schwarz, multiplicative domains, Stinespring and Radon–Nikodym, tensor products, nuclear maps, exactness with nuclear embeddability, quasidiagonal algebras with Voiculescu's criterion and compression step, state extension, the bidual, the positive unital extension operator on C(X) for compact metrizable X (a Check of 6.4)."},
+    {"roadmap": "VonNeumannAlgebras", "sections": ["V0", "V1", "V2", "V3", "V4", "V5", "V6", "V13a", "V13b.SpatialNorm", "V13b"], "what": "States and GNS, Kaplansky density, corners, finite-dimensional algebras, normality, tracial states, the standard form with J, Arveson and Tomiyama, injectivity, the spatial norm, semidiscreteness, the commutant theorem, Powers–Størmer, injective iff hyperfinite."},
+    {"roadmap": "CStarClassification", "sections": ["§2.1", "§3.5"], "what": "IsAF with its unitization criterion and unital presentations; UHF algebras simple with unique trace."},
+    {"roadmap": "OperatorAlgebraDynamics", "sections": ["D2"], "what": "Reduced group C*-algebras, the canonical faithful expectation, nuclearity for amenable groups."},
+    {"roadmap": "AmenableGroups", "sections": ["Layer 2", "Layer 3"], "what": "Amenability of discrete groups by invariant means on bounded functions; non-amenability of F₂."},
+    {"roadmap": "BanachSpaceTheory", "sections": ["B1"], "what": "Weak and norm closures of convex sets agree; Mazur's lemma."}
+  ],
+  "consumers": [
+    {"roadmap": "CStarClassification, Part II", "what": "Schafhauser's AF-embedding theorem: faithful amenable traces (3.4) and the necessity half (8.5)."},
+    {"roadmap": "quasidiagonality roadmap (Tikuisis–White–Winter)", "what": "Quasidiagonal traces (3.2), the nuclear theorem (5.5) and faithful quasidiagonal traces (8.3)."},
+    {"roadmap": "FactorRigidity", "what": "Passage from amenable and uniform amenable traces to injective tracial von Neumann algebras (4.10, 5.4)."},
+    {"roadmap": "TemperleyLiebOperatorAlgebras", "what": "Tracial states of its AF towers (Layer 1, 7.2)."},
+    {"roadmap": "NoncommutativeIntegration", "what": "Tracial GNS data (1.4)."},
+    {"roadmap": "OperatorAlgebraDynamics, Part II", "what": "Tracial state spaces as β = 0 KMS states and group algebra examples (Layer 1, 7.4)."},
+    {"roadmap": "FreeProbability, Part II", "what": "Tracial state spaces of C*-probability spaces (Layer 1)."}
+  ],
+  "gaps": []
+}
