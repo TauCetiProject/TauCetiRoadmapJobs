@@ -10,7 +10,7 @@ venue = "Annals of Mathematics, July 2021, Vol. 194, No. 1 (July 2021), pp. 163-
 doi = "10.4007/annals.2021.194.1.3"
 arxiv = "1912.07973v4"
 locator_scheme = "theorem"
-locator = "Definition 1.1, Theorem 1.2, Definition 2.1, Proposition 5.2, Theorem 5.6, Theorem 7.1"
+locator = "Definition 1.1, Theorem 1.2, (1.4)-(1.21), Definition 2.1, Definitions 3.1-3.2, Lemma 3.3, (3.7), (3.11), Proposition 5.1, (5.2)-(5.10), Lemma 5.7, Section 7 (Theorem 7.1, Proposition 7.2)"
 url = "https://arxiv.org/abs/1912.07973v4"
 fetched_from = "https://arxiv.org/pdf/1912.07973v4"
 fetched_at = "2026-11-04T16:37:48Z"
@@ -19,7 +19,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v4"
-cited_for = ["final targets", "reachable random fields", "Griffiths-Simon class", "infrared bound"]
+cited_for = ["0.1", "0.2", "1.1", "1.2", "1.4", "2.1", "2.2", "3.4", "3.5", "3.6", "4.1", "4.3", "4.4", "5.1", "5.4", "6.1", "6.2", "6.3", "6.4", "7.1", "7.2", "7.3", "8.1", "8.2"]
 
 [[source]]
 id = "griffiths-simon-1973"
@@ -34,7 +34,7 @@ url = "https://doi.org/10.1007/BF01645626"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled at Springer; the open Project Euclid copy (euclid.cmp/1103859251) refuses automated fetching, so cited by its locator without the text"
-cited_for = ["single-site measures"]
+cited_for = ["2.3"]
 
 [[source]]
 id = "aizenman-1982"
@@ -44,12 +44,12 @@ year = 1982
 venue = "Communications in Mathematical Physics 86 (1982), 1–48"
 doi = "10.1007/BF01205659"
 locator_scheme = "page"
-locator = "Part I (random current representation, tree diagram bound)"
+locator = "Parts I and II (random current representation, Gaussian inequality, triviality for d > 4)"
 url = "https://doi.org/10.1007/BF01205659"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled at Springer; the open Project Euclid copy (euclid.cmp/1103921614) refuses automated fetching, so cited by its locator without the text"
-cited_for = ["infrared bound, correlation inequalities"]
+cited_for = ["3.5", "8.1", "8.2"]
 
 [[source]]
 id = "frohlich-simon-spencer-1976"
@@ -64,7 +64,7 @@ url = "https://doi.org/10.1007/BF01608557"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled at Springer; the open Project Euclid copy (euclid.cmp/1103900151) refuses automated fetching, so cited by its locator without the text"
-cited_for = ["infrared bound"]
+cited_for = ["5.3", "5.4", "5.5"]
 
 [[source]]
 id = "frohlich-1982"
@@ -74,7 +74,7 @@ year = 1982
 venue = "Nuclear Physics B 200 (1982), no. 2, 281–296"
 doi = "10.1016/0550-3213(82)90088-8"
 locator_scheme = "page"
-locator = "p. 281"
+locator = "lattice set-up (lines 51-111), main inequality (lines 103-115), free lattice field (lines 266-269)"
 url = "https://repo-archives.ihes.fr/FONDS_IHES/I_Prepublications/FROHLICH/1981-2002/P_81_41/P_81_41.pdf"
 fetched_from = "https://repo-archives.ihes.fr/FONDS_IHES/I_Prepublications/FROHLICH/1981-2002/P_81_41/P_81_41.pdf"
 fetched_at = "2026-11-04T16:40:10Z"
@@ -83,7 +83,7 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "text read is the IHES preprint P/81/41 (1981), an OCR scan whose displayed equations are partly missing; equation numbers may differ from the published Nuclear Physics B version"
-cited_for = ["triviality", "Lebowitz inequality", "scaling limits in d > 4"]
+cited_for = ["1.5", "3.5", "7.4", "8.1"]
 
 [[source]]
 id = "friedli-velenik-2017"
@@ -93,12 +93,12 @@ year = 2017
 venue = "Cambridge University Press"
 doi = "10.1017/9781316882603"
 locator_scheme = "chapter"
-locator = "Chapter 3"
+locator = "Section 3.6 (correlation inequalities), Chapter 10 (reflection positivity)"
 url = "https://doi.org/10.1017/9781316882603"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text. The authors' free preprint page (www.unige.ch/~velenik/smbook/) and the Geneva open archive refuse automated fetching, so no text was read."
-cited_for = ["Ising model, Gibbs states, correlation inequalities"]
+cited_for = ["3.1", "3.3", "5.2"]
 
 [[source]]
 id = "glimm-jaffe-1987"
@@ -107,12 +107,12 @@ title = "Quantum Physics: A Functional Integral Point of View, 2nd ed."
 year = 1987
 doi = "10.1007/978-1-4612-4728-9"
 locator_scheme = "chapter"
-locator = "Chapters 4, 6 and 8"
+locator = "Chapters 4 and 6"
 url = "https://doi.org/10.1007/978-1-4612-4728-9"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["lattice approximation, correlation inequalities", "Gaussian measures and random fields", "lattice fields and their limits"]
+cited_for = ["3.1", "3.3", "6.1", "6.3", "7.4"]
 
 [[source]]
 id = "fernandez-frohlich-sokal-1992"
@@ -126,7 +126,7 @@ url = "https://doi.org/10.1007/978-3-662-02866-7"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["correlation inequalities", "random walk representations"]
+cited_for = ["3.5"]
 
 [[source]]
 id = "duminilcopin-2017-lectures"
@@ -135,7 +135,7 @@ title = "Lectures on the Ising and Potts models on the hypercubic lattice"
 year = 2017
 arxiv = "1707.00520v1"
 locator_scheme = "section"
-locator = "Section 1.1, Theorem 1.6, Corollary 1.7, Corollary 1.9, Theorem 1.12"
+locator = "Corollary 1.9"
 url = "https://arxiv.org/abs/1707.00520v1"
 fetched_from = "https://arxiv.org/pdf/1707.00520v1"
 fetched_at = "2026-11-04T16:42:10Z"
@@ -144,7 +144,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v1"
-cited_for = ["Ising model, correlation inequalities, infinite-volume Gibbs states, infrared bound"]
+cited_for = ["4.2"]
 
 [[source]]
 id = "peled-spinka-2017"
@@ -153,7 +153,7 @@ title = "Lectures on the Spin and Loop $O(n)$ Models"
 year = 2017
 arxiv = "1708.00058v3"
 locator_scheme = "section"
-locator = "Theorems 2.1 and 2.3, Section 2.7 (Propositions 2.14–2.16, (46), (50), (52))"
+locator = "Theorems 2.1, 2.3, 2.13, Lemma 2.4, Propositions 2.14-2.16, Corollary 2.17, (43)-(53)"
 url = "https://arxiv.org/abs/1708.00058v3"
 fetched_from = "https://arxiv.org/pdf/1708.00058v3"
 fetched_at = "2026-11-04T16:42:30Z"
@@ -162,7 +162,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v3"
-cited_for = ["reflection positivity and the infrared bound"]
+cited_for = ["1.3", "3.1", "3.2", "4.1", "5.1", "5.2", "5.3", "5.4", "5.5"]
 
 [[source]]
 id = "sokal-1982"
@@ -171,7 +171,7 @@ title = "An alternate constructive approach to the φ⁴₃ quantum field theory
 year = 1982
 venue = "Annales de l'I.H.P. Physique théorique 37 (1982), no. 4, 317–398"
 locator_scheme = "section"
-locator = "Section 2.2, (2.20)–(2.32), Proposition 2.1, Section 2.3, Lemma 2.2"
+locator = "Section 2.2 ((2.20)-(2.30), items (a)-(l)), Proposition 2.1, Section 2.3, Lemma 2.2, Section 3.1"
 url = "http://www.numdam.org/item/AIHPA_1982__37_4_317_0/"
 fetched_from = "https://www.numdam.org/item/AIHPA_1982__37_4_317_0.pdf"
 fetched_at = "2026-11-04T16:44:22Z"
@@ -179,7 +179,7 @@ sha256 = "46597fd3bb94fb9809f979ca018df04ff43a304519c27603f60f63ecde54e51a"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
-cited_for = ["lattice phi^4 measures, correlation inequalities, infrared bound"]
+cited_for = ["1.1", "1.2", "1.5", "3.1", "3.2", "3.3", "3.5", "3.6", "3.7", "4.1", "4.2", "4.3", "4.4", "7.3", "7.4"]
 
 [[source]]
 id = "simon-2020-twelve-tales"
@@ -189,7 +189,7 @@ year = 2020
 doi = "10.1063/5.0056008"
 arxiv = "2011.12335v2"
 locator_scheme = "section"
-locator = "Section 3 (pp. 24–25), Section 5 (Theorem 5.1, (5.17)–(5.22))"
+locator = "Section 3 (pp. 24-25, (3.8)), Section 5 ((5.14)-(5.22))"
 url = "https://arxiv.org/abs/2011.12335v2"
 fetched_from = "https://arxiv.org/pdf/2011.12335v2"
 fetched_at = "2026-11-04T16:44:29Z"
@@ -198,7 +198,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v2"
-cited_for = ["correlation inequalities, Griffiths-Simon class, infrared bounds"]
+cited_for = ["0.2", "1.5", "2.1", "2.3", "3.1", "5.3", "5.4", "5.5", "7.4"]
 
 [[source]]
 id = "simon-1974"
@@ -208,9 +208,9 @@ year = 1974
 venue = "Princeton Series in Physics, Princeton University Press"
 doi = "10.1515/9781400868087"
 locator_scheme = "chapter"
-locator = "Chapters I–IV"
+locator = "Chapter I (Gaussian random processes)"
 url = "https://doi.org/10.1515/9781400868087"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Euclidean fields, lattice approximation, correlation inequalities"]
+cited_for = ["6.1", "6.3"]

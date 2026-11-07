@@ -1,0 +1,1924 @@
+{
+ "roadmap": "ConstructiveFieldTheoryPhi4",
+ "title": "Constructive scalar field theory on the lattice: phi^4, Ising and their scaling limits",
+ "parent": null,
+ "summary": "Single-site measures (phi^4, Gaussian, Ising) and the Griffiths-Simon class; finite-volume Gibbs measures of ferromagnetic pair interactions; Griffiths, FKG, random-current, Lebowitz, Gaussian, Simon-Lieb and Messager-Miracle-Sole inequalities; the free-boundary infinite-volume state, two-point function, susceptibility and critical point; reflection positivity, Gaussian domination and the infrared bound on the torus with Ising long-range order in d >= 3; random fields indexed by test functions, Schwinger functions, Gaussian fields and Wick's law; reachable random fields and the reachability of the Gaussian free field; and the marginal triviality statements of Aizenman and Duminil-Copin in d >= 4 as summit statements.",
+ "baseline": {
+  "mathlib": "f6090c7095e1e56b3464c1daba5f24631f1290d2",
+  "tauceti": "358314d4ab97483df4fc4cb8adcc02e74a8d9f5a"
+ },
+ "layers": [
+  {
+   "key": "0",
+   "title": "Single-site measures",
+   "targets": [
+    {
+     "id": "0.1",
+     "kind": "definition",
+     "name": "IsAdmissible",
+     "statement": "A Borel probability measure rho on R is admissible if exp(c*phi^2) is rho-integrable for every real c; evenness of rho is Mathlib's MeasureTheory.Measure.IsNegInvariant (rho.neg = rho).",
+     "hypotheses": [
+      "rho a probability measure on R"
+     ],
+     "locator": {
+      "source": "aizenman-duminilcopin-2021",
+      "where": "(2.2), line 384, and lines 1007-1010"
+     },
+     "prerequisites": [
+      "mathlib:ProbabilityTheory.integrableExpSet",
+      "mathlib:MeasureTheory.Measure.IsNegInvariant",
+      "mathlib:MeasureTheory.Measure.pi"
+     ],
+     "api": [
+      {
+       "name": "isAdmissible_iff_integrableExpSet",
+       "role": "compatibility",
+       "statement": "rho is admissible iff integrableExpSet (fun phi => phi^2) rho = univ."
+      },
+      {
+       "name": "integrable_exp_quadratic",
+       "role": "lemma",
+       "statement": "Admissible rho integrates exp(c phi^2 + h phi) for all real c, h, hence every polynomial."
+      },
+      {
+       "name": "closure",
+       "role": "lemma",
+       "statement": "Admissibility is preserved by scaling phi -> s phi, finite convex combinations and tilting by exp(a phi^2 + h phi) with renormalisation."
+      },
+      {
+       "name": "pi_exp_sum_sq",
+       "role": "lemma",
+       "statement": "For finite V, the integral of exp(c sum_x phi_x^2) against rho^{tensor V} equals (integral of exp(c phi^2))^|V| < infinity."
+      },
+      {
+       "name": "of_bounded_support / of_superquadratic_density",
+       "role": "constructor",
+       "statement": "Bounded support, or a density bounded by C exp(-psi) with psi(phi)/phi^2 -> infinity, implies admissible."
+      },
+      {
+       "name": "of_exp_pow",
+       "role": "constructor",
+       "statement": "If integral of exp(|phi|^alpha) is finite for some alpha > 2 then rho is admissible."
+      },
+      {
+       "name": "odd_moment_eq_zero",
+       "role": "lemma",
+       "statement": "An even measure with finite n-th absolute moment has zero n-th moment for n odd."
+      }
+     ],
+     "tests": [
+      {
+       "name": "dirac_admissible",
+       "kind": "computation",
+       "statement": "delta_a is admissible with integral of exp(c phi^2) equal to exp(c a^2); it is even iff a = 0."
+      },
+      {
+       "name": "gaussian_not_admissible",
+       "kind": "non-example",
+       "statement": "N(0,1) is not admissible: integral of exp(phi^2/2) is infinite; for two sites with J = 1 the partition function diverges."
+      },
+      {
+       "name": "cauchy_not_admissible",
+       "kind": "non-example",
+       "statement": "The Cauchy law has no second moment and is not admissible; the law with density proportional to exp(-phi^2 log(1+phi^2)) is admissible but fails Aizenman-Duminil-Copin (2.2) for every alpha > 2."
+      },
+      {
+       "name": "biased_ising_not_even",
+       "kind": "non-example",
+       "statement": "(2 delta_{-1} + delta_1)/3 is admissible but not even (mean -1/3)."
+      }
+     ]
+    },
+    {
+     "id": "0.2",
+     "kind": "definition",
+     "name": "phi4Measure",
+     "statement": "For lambda > 0 and b real, rho_{lambda,b} has density exp(-lambda phi^4 + b phi^2)/z_{lambda,b} with respect to Lebesgue measure, z_{lambda,b} = integral of exp(-lambda phi^4 + b phi^2) in (0, infinity).",
+     "hypotheses": [
+      "lambda > 0",
+      "b real"
+     ],
+     "locator": {
+      "source": "aizenman-duminilcopin-2021",
+      "where": "(1.12), line 145"
+     },
+     "prerequisites": [
+      "mathlib:integral_gaussian",
+      "mathlib:Real.Gamma",
+      "target:0.1"
+     ],
+     "api": [
+      {
+       "name": "isProbabilityMeasure",
+       "role": "instance",
+       "statement": "rho_{lambda,b} is a probability measure with continuous positive density."
+      },
+      {
+       "name": "isNegInvariant / isAdmissible",
+       "role": "lemma",
+       "statement": "rho_{lambda,b} is even and admissible."
+      },
+      {
+       "name": "map_smul",
+       "role": "lemma",
+       "statement": "For s > 0 the image of rho_{lambda,b} under phi -> s phi is rho_{lambda s^-4, b s^-2}."
+      },
+      {
+       "name": "moment_two_mul_zero",
+       "role": "lemma",
+       "statement": "integral of phi^{2k} d rho_{lambda,0} = lambda^{-k/2} Gamma((2k+1)/4)/Gamma(1/4)."
+      },
+      {
+       "name": "tendsto_ising",
+       "role": "lemma",
+       "statement": "rho_{lambda,2 lambda} converges weakly to the Ising measure as lambda -> infinity, with sup_{lambda>=1} of integral exp(c phi^2) finite for every c."
+      }
+     ],
+     "tests": [
+      {
+       "name": "second_moment_b_zero",
+       "kind": "computation",
+       "statement": "integral phi^2 d rho_{lambda,0} = Gamma(3/4)/(Gamma(1/4) sqrt(lambda)) ~ 0.338/sqrt(lambda); integral phi^4 = 1/(4 lambda)."
+      },
+      {
+       "name": "double_well",
+       "kind": "characterisation",
+       "statement": "rho_{1,2} has density maxima at +-1 and a local minimum at 0; b > 0 is a double well."
+      },
+      {
+       "name": "sign_convention",
+       "kind": "compatibility",
+       "statement": "The Gaussian member rho_{0,-1/2} (lambda = 0, b < 0) is gaussianReal 0 1; the opposite sign convention would need b = +1/2."
+      },
+      {
+       "name": "ising_no_density",
+       "kind": "non-example",
+       "statement": "The Ising measure is not absolutely continuous, so density-based identities do not apply to it."
+      }
+     ]
+    },
+    {
+     "id": "0.2.1",
+     "kind": "definition",
+     "name": "isingMeasure",
+     "statement": "The Ising measure is (delta_{-1} + delta_1)/2 on R; for b < 0 the Gaussian single-site measure gamma_b = rho_{0,b} is gaussianReal 0 (1/(2|b|)).",
+     "hypotheses": [],
+     "locator": {
+      "source": "aizenman-duminilcopin-2021",
+      "where": "(1.16)-(1.17), lines 222-230"
+     },
+     "prerequisites": [
+      "mathlib:ProbabilityTheory.gaussianReal",
+      "target:0.1"
+     ],
+     "api": [
+      {
+       "name": "isNegInvariant / isAdmissible",
+       "role": "lemma",
+       "statement": "rho_I is even and admissible."
+      },
+      {
+       "name": "gamma_eq_gaussianReal",
+       "role": "compatibility",
+       "statement": "For b < 0, the probability measure with density proportional to exp(b phi^2) is gaussianReal 0 (1/(2|b|))."
+      },
+      {
+       "name": "gamma_not_admissible",
+       "role": "lemma",
+       "statement": "gamma_b is even and not admissible."
+      }
+     ],
+     "tests": [
+      {
+       "name": "ising_moments",
+       "kind": "computation",
+       "statement": "integral phi^{2k} d rho_I = 1 and odd moments vanish."
+      },
+      {
+       "name": "gamma_half",
+       "kind": "computation",
+       "statement": "gamma_{-1/2} = gaussianReal 0 1."
+      },
+      {
+       "name": "gamma_fails_admissible",
+       "kind": "non-example",
+       "statement": "integral of exp(|b| phi^2) d gamma_b is infinite."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "1",
+   "title": "Finite-volume lattice measures",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "definition",
+     "name": "gibbsMeasure",
+     "statement": "For a finite type V, a symmetric J : V -> V -> R and a probability measure rho on R, H_{V,J}(phi) = -(1/2) sum_{x != y} J_{xy} phi_x phi_y, Z_{V,J}(rho) = integral of exp(-H) d rho^{tensor V} in (0, infinity], the triple is stable if Z < infinity, and mu_{V,J,rho} = Z^{-1} exp(-H) rho^{tensor V}.",
+     "hypotheses": [
+      "V finite",
+      "J symmetric (diagonal ignored)",
+      "rho probability measure on R"
+     ],
+     "locator": {
+      "source": "aizenman-duminilcopin-2021",
+      "where": "(1.11)-(1.12), lines 139-147; also sokal-1982 lines 392-400"
+     },
+     "prerequisites": [
+      "mathlib:MeasureTheory.Measure.pi",
+      "mathlib:MeasureTheory.Measure.withDensity",
+      "target:0.1"
+     ],
+     "api": [
+      {
+       "name": "isProbabilityMeasure_of_stable",
+       "role": "instance",
+       "statement": "mu is a probability measure when the triple is stable."
+      },
+      {
+       "name": "stable_of_admissible",
+       "role": "lemma",
+       "statement": "If rho is admissible every coupling is stable: -H <= (1/2)||J|| sum phi_x^2."
+      },
+      {
+       "name": "gibbsMeasure_zero",
+       "role": "lemma",
+       "statement": "For J = 0, mu = rho^{tensor V}; for V a point, mu = rho; for V empty, mu is the Dirac measure and Z = 1."
+      },
+      {
+       "name": "gibbsMeasure_decouple",
+       "role": "lemma",
+       "statement": "If J vanishes between V1 and V2 then mu is the product of the two Gibbs measures and Z factorises."
+      },
+      {
+       "name": "map_relabel",
+       "role": "lemma",
+       "statement": "For a bijection e : W -> V the image of mu_{V,J,rho} under phi -> phi o e is mu_{W, J o (e x e), rho}."
+      },
+      {
+       "name": "tilt",
+       "role": "lemma",
+       "statement": "Tilting rho by exp(a phi^2) equals adding a sum_x phi_x^2 to -H."
+      }
+     ],
+     "tests": [
+      {
+       "name": "two_site_ising",
+       "kind": "computation",
+       "statement": "Two Ising sites: Z = cosh J and <sigma_x sigma_y> = tanh J (ordered-pair convention would give tanh 2J)."
+      },
+      {
+       "name": "three_site_ising",
+       "kind": "computation",
+       "statement": "Three sites, all pairs coupled with J: Z = (e^{3J} + 3e^{-J})/4, <sigma_1 sigma_2> = (e^{3J} - e^{-J})/(e^{3J} + 3e^{-J}), negative for J < 0."
+      },
+      {
+       "name": "gaussian_unstable",
+       "kind": "non-example",
+       "statement": "Two sites, single-site N(0,1), J = 1: Z = infinity, the triple is unstable."
+      },
+      {
+       "name": "empty_volume",
+       "kind": "degenerate",
+       "statement": "V empty: Z = 1 and mu is the Dirac measure at the empty configuration."
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "theorem",
+     "name": "gibbsMeasure_integrable_and_symmetric",
+     "statement": "For admissible rho, finite V and any coupling J: every polynomial and every exp(sum h_x phi_x + c sum phi_x^2) is mu-integrable; every bijection g of V with J_{gx,gy} = J_{xy} preserves mu; for even rho, mu is invariant under phi -> -phi and <phi_A> = 0 for |A| odd.",
+     "hypotheses": [
+      "rho admissible",
+      "V finite",
+      "J symmetric"
+     ],
+     "locator": {
+      "source": "aizenman-duminilcopin-2021",
+      "where": "(1.17), line 230; sokal-1982 lines 405-409"
+     },
+     "prerequisites": [
+      "target:0.1",
+      "target:1.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "chain_reflection",
+       "kind": "computation",
+       "statement": "Ising chain {0,1,2}, J01 = J12 = J: <s0 s1> = <s1 s2> = tanh J, <s0 s2> = tanh^2 J."
+      },
+      {
+       "name": "non_automorphism",
+       "kind": "non-example",
+       "statement": "J01 != J12 breaks the reflection: tanh J01 != tanh J12."
+      },
+      {
+       "name": "non_even",
+       "kind": "non-example",
+       "statement": "(delta_0 + delta_1)/2 on one site: <phi> = 1/2, so the spin flip needs evenness."
+      }
+     ]
+    },
+    {
+     "id": "1.3",
+     "kind": "theorem",
+     "name": "hasDerivAt_gibbs_coupling",
+     "statement": "For admissible rho, finite V and measurable F with |F| <= C(1 + sum phi_x^2)^k, J -> <F>_{V,J,rho} is C^1 on symmetric couplings with d<F>/dJ_{xy} = <F phi_x phi_y> - <F><phi_x phi_y> (x != y, symmetric direction).",
+     "hypotheses": [
+      "rho admissible",
+      "F measurable of polynomial growth",
+      "x != y"
+     ],
+     "locator": {
+      "source": "peled-spinka-2017",
+      "where": "lines 519-526"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.2",
+      "mathlib:hasDerivAt_integral_of_dominated_loc_of_deriv_le"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "two_site_derivative",
+       "kind": "computation",
+       "statement": "d/dJ tanh J = 1 - tanh^2 J = <(s_x s_y)^2> - <s_x s_y>^2."
+      },
+      {
+       "name": "derivative_at_zero",
+       "kind": "degenerate",
+       "statement": "At J = 0 and even rho, d<phi_x phi_y>/dJ_xy = (integral phi^2 d rho)^2, which is 1 for Ising."
+      },
+      {
+       "name": "diagonal_direction",
+       "kind": "non-example",
+       "statement": "The derivative along a diagonal entry J_xx is 0; including the diagonal would give (1/2)<F; phi_x^2>."
+      }
+     ]
+    },
+    {
+     "id": "1.4",
+     "kind": "theorem",
+     "name": "tendsto_gibbs_of_tendsto_singleSite",
+     "statement": "If rho_k -> rho weakly and sup_k integral exp(c phi^2) d rho_k < infinity for every c, then rho is admissible and for every finite V, coupling J and continuous F of polynomial growth, Z_{V,J}(rho_k) -> Z_{V,J}(rho) and <F>_{V,J,rho_k} -> <F>_{V,J,rho}; mu_{V,J,rho_k} -> mu_{V,J,rho} weakly.",
+     "hypotheses": [
+      "rho_k -> rho weakly",
+      "uniform exponential-square bounds"
+     ],
+     "locator": {
+      "source": "aizenman-duminilcopin-2021",
+      "where": "lines 1984-1985 and 2020-2022 (continuity used without proof)"
+     },
+     "prerequisites": [
+      "target:0.1",
+      "target:1.1",
+      "target:1.2",
+      "mathlib:MeasureTheory.ProbabilityMeasure.tendsto_iff_tendsto_charFun",
+      "mathlib:MeasureTheory.ProbabilityMeasure.tendsto_iff_forall_integral_tendsto"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "uniform_bound_needed",
+       "kind": "non-example",
+       "statement": "rho_k = (1 - e^{-k}) delta_0 + (1/2)e^{-k}(delta_k + delta_{-k}) -> delta_0 but Z(rho_k) >= e^{k^2 - 2k}/4 -> infinity for two sites with J = 1, while Z(delta_0) = 1."
+      },
+      {
+       "name": "hard_limit",
+       "kind": "computation",
+       "statement": "rho_{lambda,2lambda} -> rho_I with uniform bounds, so two-site <phi_x phi_y> -> tanh J."
+      },
+      {
+       "name": "J_zero",
+       "kind": "degenerate",
+       "statement": "For J = 0 the statement is weak convergence of finite products."
+      }
+     ]
+    },
+    {
+     "id": "1.5",
+     "kind": "theorem",
+     "name": "gibbsMeasure_gaussian",
+     "statement": "For b < 0 and a coupling J on finite V: (V,J,gamma_b) is stable iff 2|b| I - J0 is positive definite (J0 = J with zero diagonal), and then mu = multivariateGaussian 0 (2|b| I - J0)^{-1}. For nearest-neighbour J = 1 on V_R and b = -(d + mu^2/2), mu >= 0, the triple is stable, the covariance is (mu^2 - Delta_R)^{-1} with Delta_R the Dirichlet Laplacian, non-decreasing in R, converging to G_mu(x-y) = (2 pi)^{-d} integral e^{ip(x-y)}/(E(p) + mu^2) dp for mu > 0 (all d) and mu = 0 (d >= 3).",
+     "hypotheses": [
+      "b < 0",
+      "J symmetric",
+      "for the limit: mu > 0, or mu = 0 and d >= 3"
+     ],
+     "locator": {
+      "source": "frohlich-1982",
+      "where": "lines 266-269; simon-2020-twelve-tales (3.8) lines 960-975; sokal-1982 footnote lines 394-396"
+     },
+     "prerequisites": [
+      "target:0.2.1",
+      "target:1.1",
+      "mathlib:ProbabilityTheory.multivariateGaussian",
+      "mathlib:ProbabilityTheory.charFun_multivariateGaussian"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "one_site",
+       "kind": "degenerate",
+       "statement": "One site, J = 0: mu = N(0, 1/(2|b|)) = gamma_b."
+      },
+      {
+       "name": "two_site_gaussian",
+       "kind": "computation",
+       "statement": "Two sites, J of either sign: stable iff |J| < 2|b| (det = 4b^2 - J^2, negative for J = -3|b|); <phi_x phi_y> = J/(4b^2 - J^2), <phi_x^2> = 2|b|/(4b^2 - J^2)."
+      },
+      {
+       "name": "one_dim_green",
+       "kind": "computation",
+       "statement": "d = 1: G_mu(0) = 1/(mu sqrt(4 + mu^2)), diverging as mu -> 0."
+      },
+      {
+       "name": "massless_low_dim",
+       "kind": "non-example",
+       "statement": "d = 2, mu = 0: the Dirichlet Green function at the origin diverges as R -> infinity."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "The Griffiths-Simon class",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "definition",
+     "name": "isingBlockMeasure",
+     "statement": "For N in N, a ferromagnetic coupling K on Fin N and weights q in [0,infinity)^N, rho_{N,K,q} is the law of sum_n q_n sigma_n under mu_{Fin N, K, rho_I}.",
+     "hypotheses": [
+      "K ferromagnetic",
+      "q_n >= 0"
+     ],
+     "locator": {
+      "source": "aizenman-duminilcopin-2021",
+      "where": "Definition 2.1(1), lines 363-373; Figure 1, lines 377-382; weights nonnegative as used at line 2031"
+     },
+     "prerequisites": [
+      "target:0.2.1",
+      "target:1.1",
+      "mathlib:MeasureTheory.Measure.map"
+     ],
+     "api": [
+      {
+       "name": "isNegInvariant / finite support / isAdmissible",
+       "role": "lemma",
+       "statement": "rho_{N,K,q} is even, finitely supported in [-sum q, sum q], admissible."
+      },
+      {
+       "name": "degenerate_cases",
+       "role": "lemma",
+       "statement": "N = 0 or q = 0 gives delta_0; N = 1, q = (s) gives (delta_{-s} + delta_s)/2."
+      },
+      {
+       "name": "independent_sum",
+       "role": "lemma",
+       "statement": "The law of a sum of independent Ising-block variables is an Ising-block measure."
+      },
+      {
+       "name": "blockSpin_representation",
+       "role": "theorem",
+       "statement": "For finite V, ferromagnetic J and rho = rho_{N,K,q}, mu_{V,J,rho} is the image of mu_{V x Fin N, Jtilde, rho_I} under sigma -> (sum_n q_n sigma_{x,n})_x with Jtilde = K within blocks and J_{xy} q_n q_m between blocks."
+      }
+     ],
+     "tests": [
+      {
+       "name": "griffiths_trick",
+       "kind": "computation",
+       "statement": "N = 2, q = (1/2,1/2), K12 = (ln 2)/2 gives the uniform measure on {-1,0,1}."
+      },
+      {
+       "name": "mixed_signs",
+       "kind": "non-example",
+       "statement": "q = (1,-1), coupling K: law (1-eps) delta_0 + (eps/2)(delta_2 + delta_{-2}) with eps = 1/(1+e^{2K}); for K > (ln 2)/2, eps < 1/3 and the single-site Lebowitz inequality fails."
+      },
+      {
+       "name": "block_two_site",
+       "kind": "compatibility",
+       "statement": "V = {x,y}, J, N = 1, q = (s): <phi_x phi_y> = s^2 tanh(J s^2), equal to the direct computation."
+      },
+      {
+       "name": "trivial_block",
+       "kind": "degenerate",
+       "statement": "q = 0 gives delta_0."
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "definition",
+     "name": "GriffithsSimonClass",
+     "statement": "rho is in the Griffiths-Simon class if there are Ising-block measures rho_k -> rho weakly and alpha > 2 with sup_k integral exp(|phi|^alpha) d rho_k < infinity.",
+     "hypotheses": [],
+     "locator": {
+      "source": "aizenman-duminilcopin-2021",
+      "where": "Definition 2.1(2) and (2.2), lines 374-386 (growth required uniformly along the sequence here)"
+     },
+     "prerequisites": [
+      "target:0.1",
+      "target:1.4",
+      "target:2.1"
+     ],
+     "api": [
+      {
+       "name": "isingBlock_mem",
+       "role": "constructor",
+       "statement": "Every Ising-block measure is in the class; so are rho_I, delta_0, uniform on {-1,0,1}."
+      },
+      {
+       "name": "mem_even_admissible",
+       "role": "lemma",
+       "statement": "Members are even, admissible and satisfy integral exp(|phi|^alpha) < infinity (Aizenman-Duminil-Copin (2.2))."
+      },
+      {
+       "name": "closure",
+       "role": "lemma",
+       "statement": "Closed under phi -> s phi and under weak limits with a common growth bound."
+      },
+      {
+       "name": "gibbs_limit",
+       "role": "lemma",
+       "statement": "For finite V and ferromagnetic J, mu_{V,J,rho} is the weak limit of block-spin Ising images, moments converge (1.4)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "gaussian_excluded",
+       "kind": "non-example",
+       "statement": "N(0,1) is a weak limit of Ising-block measures (CLT) but integral exp(|phi|^alpha) dN(0,1) = infinity for alpha > 2."
+      },
+      {
+       "name": "lebowitz_test",
+       "kind": "non-example",
+       "statement": "(1-eps) delta_0 + (eps/2)(delta_1 + delta_{-1}) with eps < 1/3 is even admissible but not in the class (fails integral phi^4 <= 3 (integral phi^2)^2)."
+      },
+      {
+       "name": "phi4_member",
+       "kind": "compatibility",
+       "statement": "Every phi^4 measure is a member (2.3); gamma_b is not."
+      }
+     ]
+    },
+    {
+     "id": "2.3",
+     "kind": "theorem",
+     "name": "phi4Measure_mem_griffithsSimon",
+     "statement": "For lambda > 0 and b real, rho_{lambda,b} is in the Griffiths-Simon class: with c = (12 lambda)^{-1/4} and g_N = 1 + 2 b c^2 N^{-1/2}, the law rho_N of c N^{-3/4} sum_{n<=N} sigma_n under the Ising measure on Fin N with K_nm = g_N/N converges weakly to rho_{lambda,b} and sup_N integral exp(|phi|^alpha) d rho_N < infinity for alpha in (2,4).",
+     "hypotheses": [
+      "lambda > 0",
+      "b real",
+      "N large enough that g_N > 0"
+     ],
+     "locator": {
+      "source": "griffiths-simon-1973",
+      "where": "pp. 145-164; also aizenman-duminilcopin-2021 lines 392-406, simon-2020-twelve-tales lines 1019-1030"
+     },
+     "prerequisites": [
+      "target:0.2",
+      "target:2.1",
+      "target:2.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "entropy_coefficients",
+       "kind": "computation",
+       "statement": "I(m) = sum_k m^{2k}/(2k(2k-1)) has coefficients 1/2 and 1/12, matching lambda = 1/(12 c^4)."
+      },
+      {
+       "name": "clt_scaling",
+       "kind": "non-example",
+       "statement": "Scaling N^{-1/2} with fixed g < 1 gives N(0, 1/(1-g)), not in the class."
+      },
+      {
+       "name": "sign_regimes",
+       "kind": "characterisation",
+       "statement": "b > 0 gives g_N > 1 (supercritical Curie-Weiss, double well); b < 0 needs N > 4 b^2 c^4."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "Correlation inequalities in finite volume",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "theorem",
+     "name": "griffiths_inequalities",
+     "statement": "For finite V, ferromagnetic J and even admissible rho: <phi_A> >= 0 and <phi_A phi_B> >= <phi_A><phi_B> for all multi-indices A, B.",
+     "hypotheses": [
+      "J >= 0",
+      "rho even and admissible"
+     ],
+     "locator": {
+      "source": "peled-spinka-2017",
+      "where": "Theorems 2.1 and 2.3, lines 334 and 515; Lemma 2.4, line 535; sokal-1982 (2.20)-(2.21) lines 414-415; glimm-jaffe-1987 Ch. 4"
+     },
+     "prerequisites": [
+      "target:0.1",
+      "target:1.1",
+      "target:1.2"
+     ],
+     "api": [
+      {
+       "name": "ginibre_lemma",
+       "role": "lemma",
+       "statement": "For even admissible rho and m, n in N, double integral of (x+y)^m (x-y)^n d rho d rho >= 0; multivariate form by factorisation."
+      }
+     ],
+     "tests": [
+      {
+       "name": "two_site",
+       "kind": "computation",
+       "statement": "<s_x s_y> = tanh J >= 0 and <s_x s_y; s_x s_y> = 1 - tanh^2 J >= 0."
+      },
+      {
+       "name": "non_even",
+       "kind": "non-example",
+       "statement": "(2 delta_{-1} + delta_1)/3, J = 0: <phi_x> = -1/3 < 0."
+      },
+      {
+       "name": "antiferro",
+       "kind": "non-example",
+       "statement": "J < 0: <s_x s_y> = tanh J < 0."
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "theorem",
+     "name": "griffiths_monotone",
+     "statement": "For even admissible rho: <phi_A>_{V,J} <= <phi_A>_{V,J'} for ferromagnetic J <= J'; <phi_A>_{V,J} <= <phi_A>_{V',J'} for V subset V', J' ferromagnetic restricting to J, A supported in V.",
+     "hypotheses": [
+      "rho even admissible",
+      "J, J' ferromagnetic"
+     ],
+     "locator": {
+      "source": "peled-spinka-2017",
+      "where": "lines 519-532; sokal-1982 lines 400-405"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.3",
+      "target:3.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "chain",
+       "kind": "computation",
+       "statement": "Chain 0-1-2: <s0 s2> = tanh J01 tanh J12, non-decreasing in both."
+      },
+      {
+       "name": "volume",
+       "kind": "degenerate",
+       "statement": "V = {0,2} uncoupled: <s0 s2> = 0 <= tanh^2 J."
+      },
+      {
+       "name": "non_even_volume",
+       "kind": "non-example",
+       "statement": "rho = (2 delta_{-1} + delta_1)/3: adding a coupled site moves <phi_0> from -1/3 to -3e^J/(5e^J + 4e^{-J}) < -1/3."
+      }
+     ]
+    },
+    {
+     "id": "3.3",
+     "kind": "theorem",
+     "name": "fkg_gibbs",
+     "statement": "For finite V, ferromagnetic J, admissible rho and bounded measurable coordinatewise non-decreasing F, G: <FG> >= <F><G>; also for polynomially bounded non-decreasing F, G.",
+     "hypotheses": [
+      "J >= 0",
+      "rho admissible"
+     ],
+     "locator": {
+      "source": "sokal-1982",
+      "where": "(2.25), line 423; glimm-jaffe-1987 Ch. 4"
+     },
+     "prerequisites": [
+      "target:0.1",
+      "target:1.1",
+      "target:1.2",
+      "mathlib:fkg"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "lattice_gas",
+       "kind": "computation",
+       "statement": "(delta_0 + delta_1)/2, two sites: <n_x n_y> - <n_x><n_y> = (e^J - 1)/(3 + e^J)^2 >= 0 iff J >= 0."
+      },
+      {
+       "name": "reverse",
+       "kind": "characterisation",
+       "statement": "F increasing, G decreasing reverses the inequality: F = s_x, G = -s_y gives -tanh J <= 0."
+      },
+      {
+       "name": "harris",
+       "kind": "degenerate",
+       "statement": "J = 0: Harris's inequality; one site, F = G = phi: Var >= 0."
+      }
+     ]
+    },
+    {
+     "id": "3.4",
+     "kind": "definition",
+     "name": "Current",
+     "statement": "For finite V and ferromagnetic J: a current is n from unordered pairs of distinct sites to N; sources dn = {x : sum_y n_xy odd}; weight w_J(n) = prod J_xy^{n_xy}/n_xy!; F_B = currents n admitting m <= n with dm = B.",
+     "hypotheses": [
+      "J >= 0"
+     ],
+     "locator": {
+      "source": "aizenman-duminilcopin-2021",
+      "where": "Definitions 3.1-3.2 and (3.2), lines 421-471"
+     },
+     "prerequisites": [
+      "target:0.2.1",
+      "target:1.1"
+     ],
+     "api": [
+      {
+       "name": "weight_summable",
+       "role": "lemma",
+       "statement": "sum_n w_J(n) = prod exp(J_xy)."
+      },
+      {
+       "name": "random_current_representation",
+       "role": "theorem",
+       "statement": "Z <sigma_A> = sum_{dn = A} w_J(n), Z = sum_{dn = empty} w_J(n) ((3.3)-(3.5), lines 429-448)."
+      },
+      {
+       "name": "switching_lemma",
+       "role": "theorem",
+       "statement": "sum_{dn1=A,dn2=B} F(n1+n2) w w = sum_{dn1=A Delta B, dn2=empty} F(n1+n2) w w 1[n1+n2 in F_B] for F >= 0 (Lemma 3.3, line 474)."
+      },
+      {
+       "name": "ratio_formula",
+       "role": "lemma",
+       "statement": "<sigma_A><sigma_B> = <sigma_{A Delta B}> P^{A Delta B, empty}[n1 + n2 in F_B] ((3.7), line 500)."
+      },
+      {
+       "name": "sources_even",
+       "role": "lemma",
+       "statement": "dn = A requires |A| even; each source is joined to another source by a positive path."
+      }
+     ],
+     "tests": [
+      {
+       "name": "two_site_currents",
+       "kind": "computation",
+       "statement": "Even n: cosh J = Z; odd n: sinh J; ratio tanh J."
+      },
+      {
+       "name": "switching_two_site",
+       "kind": "computation",
+       "statement": "A = B = {x,y}, F = 1: left sinh^2 J, right cosh^2 J - 1."
+      },
+      {
+       "name": "no_factorial",
+       "kind": "non-example",
+       "statement": "Dropping 1/n! gives sum J^n = 1/(1-J), divergent for J >= 1."
+      }
+     ]
+    },
+    {
+     "id": "3.5",
+     "kind": "theorem",
+     "name": "lebowitz_gaussian_simonLieb",
+     "statement": "Ising, finite V, ferromagnetic J: (i) <sigma_x1...sigma_x2n> <= sum_j <sigma_x1 sigma_xj><prod_{i != 1,j} sigma_xi> for distinct sites; (ii) Gaussian inequality <sigma_x1...sigma_x2n> <= sum over pairings of products of two-point functions (repetitions allowed), n = 2 is Lebowitz U4 <= 0; (iii) Simon-Lieb <s0 sy>_V <= sum_{u in Lambda, v notin Lambda} <s0 su>_Lambda J_uv <sv sy>_V. The same for phi with rho in the Griffiths-Simon class; corollaries <(sum t_x phi_x)^{2n}> <= (2n-1)!! <(sum t_x phi_x)^2>^n for t >= 0 and integral phi^{2n} d rho <= (2n-1)!! (integral phi^2 d rho)^n.",
+     "hypotheses": [
+      "J >= 0",
+      "Ising spins, or rho in the Griffiths-Simon class",
+      "0 in Lambda subset V, y in V minus Lambda for (iii)"
+     ],
+     "locator": {
+      "source": "aizenman-duminilcopin-2021",
+      "where": "(3.11), line 520; Lemma 5.7, line 1314; footnote 5, line 1342; lines 1996-2002; sokal-1982 (2.23)-(2.24) lines 419-422"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.4",
+      "target:2.1",
+      "target:2.2",
+      "target:3.1",
+      "target:3.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "single_site_lebowitz",
+       "kind": "computation",
+       "statement": "rho_I: 1 <= 3; rho_{lambda,0}: 1/(4 lambda) <= 3 Gamma(3/4)^2/(Gamma(1/4)^2 lambda) ~ 0.3427/lambda; Gaussian: equality."
+      },
+      {
+       "name": "class_needed",
+       "kind": "non-example",
+       "statement": "(3/4) delta_0 + (1/8)(delta_1 + delta_{-1}): integral phi^4 = 1/4 > 3/16."
+      },
+      {
+       "name": "simon_lieb_chain",
+       "kind": "computation",
+       "statement": "Chain 0-1-2, Lambda = {0}: tanh^2 J <= J tanh J."
+      },
+      {
+       "name": "repeated_sites",
+       "kind": "degenerate",
+       "statement": "(x,x,y,y): 1 <= 1 + 2 tanh^2 J."
+      }
+     ]
+    },
+    {
+     "id": "3.6",
+     "kind": "theorem",
+     "name": "messager_miracleSole",
+     "statement": "Finite V, even admissible rho, ferromagnetic J, involution R of V with fixed set V0 and V minus V0 = V+ disjoint-union V-, R(V+) = V-, J_{Rx,Ry} = J_xy and J_xy >= J_{x,Ry} for distinct x, y in V+: for multi-indices A, B supported in V+ union V0, <phi_A phi_B> >= <phi_A phi_{R(B)}>. The hypotheses hold for nearest-neighbour J on R-invariant V and R a coordinate reflection in x_i = a (a in Z/2) or a diagonal reflection in x_i +- x_j = a (a in Z).",
+     "hypotheses": [
+      "rho even admissible",
+      "J >= 0",
+      "R-invariance and J_xy >= J_{x,Ry}"
+     ],
+     "locator": {
+      "source": "aizenman-duminilcopin-2021",
+      "where": "(5.2), lines 1023-1032; sokal-1982 (2.29)-(2.30) lines 436-444 and Remark lines 455-466"
+     },
+     "prerequisites": [
+      "target:0.1",
+      "target:1.1",
+      "target:1.2",
+      "target:3.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "open_chain",
+       "kind": "computation",
+       "statement": "{0,1,2,3}, R(x) = 3-x: tanh J >= tanh^2 J and 1 >= tanh^3 J."
+      },
+      {
+       "name": "crossing_stronger",
+       "kind": "non-example",
+       "statement": "Only J02 = J13 = K: <s0 s1> = 0 < tanh K = <s0 s2>."
+      },
+      {
+       "name": "site_reflection",
+       "kind": "computation",
+       "statement": "{-1,0,1}, R(x) = -x: <s1^2> = 1 >= tanh^2 J."
+      }
+     ]
+    },
+    {
+     "id": "3.7",
+     "kind": "theorem",
+     "name": "phi4_ibp_and_uniform_bounds",
+     "statement": "(a) For lambda > 0, b real, finite V, coupling J, x in V: 4 lambda <phi_x^4> = 1 + 2b <phi_x^2> + sum_{y != x} J_xy <phi_x phi_y> under mu_{V,J,rho_{lambda,b}}, and <d_x F> = <F (4 lambda phi_x^3 - 2b phi_x - sum_y J_xy phi_y)>. (b) max_x <phi_x^2> <= M = [(2b_+ + ||J||) + sqrt((2b_+ + ||J||)^2 + 16 lambda)]/(8 lambda), uniformly in V. (c) For rho in the Griffiths-Simon class, ferromagnetic J and t >= 0: <exp(sum t_x phi_x)> <= exp(<(sum t_x phi_x)^2>/2), and <exp(a|phi_x|)> <= 2 exp(a^2 <phi_x^2>/2).",
+     "hypotheses": [
+      "lambda > 0 for (a)-(b)",
+      "rho in the Griffiths-Simon class and J >= 0 for (c)"
+     ],
+     "locator": {
+      "source": "sokal-1982",
+      "where": "Section 3.1, lines 846-853; item (j), lines 434-435"
+     },
+     "prerequisites": [
+      "target:0.2",
+      "target:1.1",
+      "target:1.2",
+      "target:2.3",
+      "target:3.5"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "single_site_ibp",
+       "kind": "computation",
+       "statement": "One site, J = 0, b = 0: <phi^4> = 1/(4 lambda), matching 0.2."
+      },
+      {
+       "name": "bound_value",
+       "kind": "computation",
+       "statement": "M(lambda,0,0) = 1/(2 sqrt lambda) >= 0.338/sqrt lambda."
+      },
+      {
+       "name": "newman_fails_outside",
+       "kind": "non-example",
+       "statement": "(3/4) delta_0 + (1/8)(delta_1 + delta_{-1}): at a = 2, 1.691 > e^{1/2} = 1.649; for Ising cosh a <= e^{a^2/2}."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "The free-boundary infinite-volume state",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "definition",
+     "name": "freeCorrelation",
+     "statement": "For translation-invariant finite-range ferromagnetic J on Z^d, even admissible rho and a finitely supported multi-index A: <phi_A>_{J,rho} = lim_R <phi_A>_{V_R,J,rho} in [0, infinity], a non-decreasing limit.",
+     "hypotheses": [
+      "J translation invariant, finite range, J >= 0",
+      "rho even admissible"
+     ],
+     "locator": {
+      "source": "sokal-1982",
+      "where": "lines 400-411; peled-spinka-2017 lines 527-532; aizenman-duminilcopin-2021 lines 231-233"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:3.1",
+      "target:3.2",
+      "target:3.5"
+     ],
+     "api": [
+      {
+       "name": "exhaustion_independent",
+       "role": "lemma",
+       "statement": "Any increasing exhaustion of Z^d by finite sets gives the same limit."
+      },
+      {
+       "name": "symmetries",
+       "role": "lemma",
+       "statement": "Translation invariance, invariance under elements of W_d preserving J, vanishing for |A| odd."
+      },
+      {
+       "name": "inequalities_pass",
+       "role": "lemma",
+       "statement": "Griffiths I, II and, for the Griffiths-Simon class, Lebowitz, Gaussian and Simon-Lieb hold in the limit."
+      },
+      {
+       "name": "monotone_J",
+       "role": "lemma",
+       "statement": "Non-decreasing in J."
+      },
+      {
+       "name": "finite_of_uniform",
+       "role": "lemma",
+       "statement": "Finite if all even single-site moments are bounded uniformly in R and x."
+      }
+     ],
+     "tests": [
+      {
+       "name": "ising_chain",
+       "kind": "computation",
+       "statement": "d = 1 Ising: <s0 sx> = tanh^{|x|} J for all R >= |x|, so the limit is tanh^{|x|} J."
+      },
+      {
+       "name": "other_exhaustion",
+       "kind": "compatibility",
+       "statement": "W_n = {-n,...,2n} gives the same limits."
+      },
+      {
+       "name": "trivial",
+       "kind": "degenerate",
+       "statement": "rho = delta_0: all limits 0; J = 0: products of single-site moments."
+      }
+     ]
+    },
+    {
+     "id": "4.2",
+     "kind": "construction",
+     "name": "infiniteVolumeLaw",
+     "statement": "Under sup_R sup_{x in V_R} <exp(a|phi_x|)>_{V_R} < infinity for some a > 0: finite-dimensional laws under mu_{V_R} converge weakly; there is a unique probability measure mu_{J,rho} on R^{Z^d} with these marginals, moments <phi_A>_{J,rho}, invariant under translations, J-preserving W_d and phi -> -phi, independent of the exhaustion. The condition holds for bounded-support rho, for phi^4 measures, and for Griffiths-Simon rho with uniformly bounded <phi_x^2>.",
+     "hypotheses": [
+      "uniform exponential moment condition"
+     ],
+     "locator": {
+      "source": "sokal-1982",
+      "where": "(a)-(b), lines 405-409; duminilcopin-2017-lectures Corollary 1.9, line 549"
+     },
+     "prerequisites": [
+      "target:3.7",
+      "target:4.1",
+      "mathlib:isCompact_closure_of_isTightMeasureSet",
+      "mathlib:MeasureTheory.Measure.ext_of_charFun",
+      "mathlib:ProbabilityTheory.tendstoInDistribution_iff_tendstoInDistribution_inner",
+      "mathlib:MeasureTheory.IsProjectiveMeasureFamily",
+      "tauceti:TauCeti.Measure.exists_isProjectiveLimit_of_countable",
+      "tauceti:TauCeti.Measure.ext_of_forall_integral_pow_eq_of_exists_integrable_exp"
+     ],
+     "api": [
+      {
+       "name": "marginal",
+       "role": "lemma",
+       "statement": "Finite-dimensional marginals of mu_{J,rho} are the weak limits."
+      },
+      {
+       "name": "moments",
+       "role": "lemma",
+       "statement": "integral phi_A d mu_{J,rho} = <phi_A>_{J,rho}."
+      },
+      {
+       "name": "invariance",
+       "role": "lemma",
+       "statement": "Translation, symmetry and spin-flip invariance."
+      }
+     ],
+     "tests": [
+      {
+       "name": "ising_markov",
+       "kind": "computation",
+       "statement": "d = 1 Ising: stationary two-state Markov chain with P(same) = (1 + tanh J)/2."
+      },
+      {
+       "name": "J_zero",
+       "kind": "compatibility",
+       "statement": "J = 0: mu = Measure.infinitePi rho."
+      },
+      {
+       "name": "determinacy_needed",
+       "kind": "non-example",
+       "statement": "Without exponential moments, moment convergence does not identify limits (log-normal and its Stieltjes perturbations share moments)."
+      }
+     ]
+    },
+    {
+     "id": "4.3",
+     "kind": "definition",
+     "name": "twoPointFunction",
+     "statement": "S_{rho,J}(x) = <phi_0 phi_x>_{J,rho} in [0, infinity]; chi(rho,J) = sum_x S(x) in [0,infinity]; beta_c(rho,J) = sup{beta >= 0 : chi(rho, beta J) < infinity} in [0, infinity].",
+     "hypotheses": [
+      "J translation invariant finite range ferromagnetic",
+      "rho even admissible"
+     ],
+     "locator": {
+      "source": "aizenman-duminilcopin-2021",
+      "where": "(5.1), lines 1017-1020; sokal-1982 line 470 and Proposition 2.1, line 574"
+     },
+     "prerequisites": [
+      "target:3.5",
+      "target:4.1"
+     ],
+     "api": [
+      {
+       "name": "basic",
+       "role": "lemma",
+       "statement": "S >= 0, S(-x) = S(x), S(x) <= S(0) when finite, S positive definite."
+      },
+      {
+       "name": "monotone_beta",
+       "role": "lemma",
+       "statement": "S and chi non-decreasing in beta; {beta : chi < infinity} is an interval containing 0; chi(rho,0) = integral phi^2."
+      },
+      {
+       "name": "simon_lieb",
+       "role": "lemma",
+       "statement": "For Griffiths-Simon rho: S(y) <= sum_{u in Lambda, v notin Lambda} <phi_0 phi_u>_Lambda J_uv S(y - v)."
+      },
+      {
+       "name": "truncated_susceptibility",
+       "role": "definition",
+       "statement": "chi_L = sum_{x in Lambda_L} S(x)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "ising_chain_chi",
+       "kind": "computation",
+       "statement": "d = 1 Ising: chi = (1+t)/(1-t), beta_c = infinity."
+      },
+      {
+       "name": "trivial",
+       "kind": "degenerate",
+       "statement": "rho = delta_0: chi = 0, beta_c = infinity; J = 0: chi = integral phi^2."
+      },
+      {
+       "name": "high_temperature",
+       "kind": "computation",
+       "statement": "Ising Z^d: Simon-Lieb with Lambda = {0} gives chi <= 1/(1 - 2dJ), so beta_c >= 1/(2dJ)."
+      }
+     ]
+    },
+    {
+     "id": "4.4",
+     "kind": "theorem",
+     "name": "twoPoint_axis_monotone",
+     "statement": "For nearest-neighbour J >= 0 on Z^d and even admissible rho: the reflection inequality holds in infinite volume for coordinate and diagonal reflections; S(n e_i) non-increasing in n >= 0; S((||x||_inf,0)) >= S(x) >= S((||x||_1,0)); S(x) >= S(y) when ||y||_inf >= d ||x||_inf.",
+     "hypotheses": [
+      "J nearest-neighbour ferromagnetic",
+      "rho even admissible"
+     ],
+     "locator": {
+      "source": "aizenman-duminilcopin-2021",
+      "where": "Proposition 5.1, line 1040; (5.3)-(5.4), lines 1044-1049"
+     },
+     "prerequisites": [
+      "target:3.6",
+      "target:4.1",
+      "target:4.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "ising_chain",
+       "kind": "computation",
+       "statement": "d = 1: tanh^n J non-increasing."
+      },
+      {
+       "name": "d2_leading_order",
+       "kind": "computation",
+       "statement": "d = 2: S((1,0)) ~ t, S((1,1)) ~ 2t^2, S((2,0)) ~ t^2."
+      },
+      {
+       "name": "J_zero",
+       "kind": "degenerate",
+       "statement": "J = 0: S = <phi^2> at 0, 0 elsewhere."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "Reflection positivity and the infrared bound on the torus",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "definition",
+     "name": "periodicGibbs",
+     "statement": "On T_L = (Z/2LZ)^d, L >= 1: J^per_xy = J #{(j,+-) : y = x +- e_j}; mu^per_{L,J,rho} = mu_{T_L, J^per, rho}; S^_L(p) = sum_x e^{ip.x} <phi_0 phi_x>^per for p in (pi/L)Z^d cap (-pi,pi]^d.",
+     "hypotheses": [
+      "L >= 1",
+      "J > 0",
+      "rho admissible"
+     ],
+     "locator": {
+      "source": "aizenman-duminilcopin-2021",
+      "where": "(5.5)-(5.8), lines 1058-1084; peled-spinka-2017 lines 1283-1284"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.2",
+      "mathlib:ZMod.dft"
+     ],
+     "api": [
+      {
+       "name": "invariance",
+       "role": "lemma",
+       "statement": "Invariant under translations of T_L, W_d, and phi -> -phi for even rho."
+      },
+      {
+       "name": "fourier_positive",
+       "role": "lemma",
+       "statement": "S^_L(p) = |T_L|^{-1} <|sum phi_x e^{-ipx}|^2> >= 0, real and even."
+      },
+      {
+       "name": "diagonalise",
+       "role": "lemma",
+       "statement": "sum_x sum_j (phi_x - phi_{x+e_j})^2 = |T_L|^{-1} sum_p E(p) |phi^(p)|^2."
+      }
+     ],
+     "tests": [
+      {
+       "name": "L1_torus",
+       "kind": "computation",
+       "statement": "L = 1, d = 1: coupling 2J, <s0 s1> = tanh 2J, S^(0) = 1 + tanh 2J, S^(pi) = 1 - tanh 2J."
+      },
+      {
+       "name": "four_cycle",
+       "kind": "computation",
+       "statement": "L = 2, d = 1: <s0 s1> = (t + t^3)/(1 + t^4), not t."
+      },
+      {
+       "name": "symbol",
+       "kind": "degenerate",
+       "statement": "E vanishes only at p = 0; E((pi,...,pi)) = 4d."
+      }
+     ]
+    },
+    {
+     "id": "5.2",
+     "kind": "theorem",
+     "name": "reflectionPositive_and_chessboard",
+     "statement": "Reflection positivity of mu^per through vertex hyperplanes and (J >= 0) edge hyperplanes: <f conj(f o R)> >= 0 for bounded measurable f of one half; chessboard estimate |<prod f_v(phi_v)>|^{|T_L|} <= prod_w <prod_v f_w(phi_v)>.",
+     "hypotheses": [
+      "rho admissible",
+      "J >= 0"
+     ],
+     "locator": {
+      "source": "peled-spinka-2017",
+      "where": "Propositions 2.14-2.16, lines 1328, 1385, 1490; Corollary 2.17"
+     },
+     "prerequisites": [
+      "target:0.1",
+      "target:1.1",
+      "target:5.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "two_site_rp",
+       "kind": "computation",
+       "statement": "L = 1, d = 1: matrix proportional to [[e^{2J}, e^{-2J}],[e^{-2J}, e^{2J}]], PSD iff J >= 0."
+      },
+      {
+       "name": "trivial_chessboard",
+       "kind": "degenerate",
+       "statement": "All f_v = 1: equality."
+      },
+      {
+       "name": "product",
+       "kind": "degenerate",
+       "statement": "J = 0: |E f|^2 >= 0."
+      }
+     ]
+    },
+    {
+     "id": "5.3",
+     "kind": "theorem",
+     "name": "gaussianDomination",
+     "statement": "Z(h) <= Z(0) for all h on T_L, Z(h) = integral exp(-(J/2) sum_x sum_j (phi_x + h_x - phi_{x+e_j} - h_{x+e_j})^2) prod rho~(d phi_x), rho~ = e^{dJ phi^2} rho; equivalently <exp(J (phi, Delta h))> <= exp(-(J/2)(h, Delta h)).",
+     "hypotheses": [
+      "rho admissible",
+      "J >= 0",
+      "L >= 1"
+     ],
+     "locator": {
+      "source": "peled-spinka-2017",
+      "where": "(43)-(48), lines 1563-1632; simon-2020-twelve-tales (5.19)-(5.21) lines 1529-1546; frohlich-simon-spencer-1976"
+     },
+     "prerequisites": [
+      "target:0.1",
+      "target:1.1",
+      "target:5.1",
+      "target:5.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "two_site_gd",
+       "kind": "computation",
+       "statement": "L = 1, d = 1 Ising: Z ~ 2e^{-Ju^2} + e^{-J(2+u)^2} + e^{-J(2-u)^2}, second derivative at 0 is -4J + e^{-4J}(32J^2 - 4J) <= 0."
+      },
+      {
+       "name": "lebesgue_equality",
+       "kind": "compatibility",
+       "statement": "Lebesgue a-priori measure: Z(h) = Z(0) for all h."
+      },
+      {
+       "name": "constant_h",
+       "kind": "degenerate",
+       "statement": "h constant: Z(h) = Z(0)."
+      }
+     ]
+    },
+    {
+     "id": "5.4",
+     "kind": "theorem",
+     "name": "infraredBound",
+     "statement": "For p in Lambda*_L minus {0}: E(p) S^_L(p) <= 1/J; J <(phi, -Delta h)^2> <= (h, -Delta h) for real h; sum rule <phi_0^2> = |T_L|^{-1} sum_p S^_L(p); for d >= 3, |T_L|^{-1} sum_{p != 0} 1/E(p) -> I_d = (2 pi)^{-d} integral dp/E(p).",
+     "hypotheses": [
+      "rho admissible (not necessarily even)",
+      "J > 0"
+     ],
+     "locator": {
+      "source": "peled-spinka-2017",
+      "where": "(49)-(52), lines 1686-1741; aizenman-duminilcopin-2021 (5.8)-(5.10) lines 1080-1091 (constant corrected); simon-2020-twelve-tales (5.17), (5.22)"
+     },
+     "prerequisites": [
+      "target:5.1",
+      "target:5.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "two_site_ir",
+       "kind": "computation",
+       "statement": "L = 1, d = 1 Ising: 4J(1 - tanh 2J) <= 1, max ~0.557 near 2J ~ 0.64; the constant 1/(4J) printed in Aizenman-Duminil-Copin (5.9) fails at J = 0.375 (1.46 vs 0.67)."
+      },
+      {
+       "name": "gaussian_sharp",
+       "kind": "compatibility",
+       "statement": "Gaussian torus field: E(p) S^(p) = E(p)/(2(|b| - dJ) + J E(p)) -> 1/J as |b| -> dJ."
+      },
+      {
+       "name": "sum_rule_two_site",
+       "kind": "computation",
+       "statement": "(1/2)((1+t) + (1-t)) = 1 = <s0^2>."
+      }
+     ]
+    },
+    {
+     "id": "5.5",
+     "kind": "theorem",
+     "name": "longRangeOrder_ising",
+     "statement": "For d >= 3, Ising, J > 0: liminf_L <(|T_L|^{-1} sum_x sigma_x)^2>^per >= 1 - I_d/J; for admissible rho, liminf_L (|T_L|^{-1} S^_L(0) - <phi_0^2>^per_L) >= -I_d/J.",
+     "hypotheses": [
+      "d >= 3",
+      "J > 0"
+     ],
+     "locator": {
+      "source": "peled-spinka-2017",
+      "where": "Theorem 2.13, lines 1207-1222, and (53), line 1766; simon-2020-twelve-tales (5.15)-(5.18)"
+     },
+     "prerequisites": [
+      "target:5.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "watson",
+       "kind": "computation",
+       "statement": "I_3 = W/2 ~ 0.2527 with Watson's integral W ~ 0.5055 (= G(0)/6, G(0) ~ 1.516)."
+      },
+      {
+       "name": "low_dim",
+       "kind": "non-example",
+       "statement": "d = 1, 2: I_d = infinity, no conclusion; the d = 1 chain has no long-range order."
+      },
+      {
+       "name": "weak_coupling",
+       "kind": "degenerate",
+       "statement": "J <= I_d: the bound is vacuous."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "6",
+   "title": "Random fields, Schwinger functions and Gaussian fields",
+   "targets": [
+    {
+     "id": "6.1",
+     "kind": "definition",
+     "name": "RandomField",
+     "statement": "A random field on R^d over (Omega, P) is T : C_c(R^d) -> Omega -> R, each T_f measurable, with T_{af+bg} = a T_f + b T_g P-a.s. for all f, g, a, b; its law is the image of P on R^{C_c(R^d)} (product sigma-algebra); equality up to finite-dimensional distributions is equality of laws.",
+     "hypotheses": [
+      "d >= 1"
+     ],
+     "locator": {
+      "source": "aizenman-duminilcopin-2021",
+      "where": "(1.4), line 56, and footnote 2, lines 183-187; glimm-jaffe-1987 Ch. 6"
+     },
+     "prerequisites": [
+      "roadmap:StochasticCalculus §1.1",
+      "mathlib:CompactlySupportedContinuousMap",
+      "mathlib:ProbabilityTheory.map_eq_iff_forall_finset_map_restrict_eq",
+      "mathlib:MeasureTheory.IsProjectiveMeasureFamily",
+      "mathlib:MeasureTheory.IsProjectiveLimit.unique"
+     ],
+     "api": [
+      {
+       "name": "law_eq_iff_fdd",
+       "role": "lemma",
+       "statement": "Equal laws iff all finite-dimensional laws agree; an equivalence relation."
+      },
+      {
+       "name": "realise",
+       "role": "construction",
+       "statement": "A projective, linear family nu_F on R^F is the fdd family of a random field, unique up to fdd (canonical coordinates under the StochasticCalculus §1.1 limit)."
+      },
+      {
+       "name": "transport",
+       "role": "lemma",
+       "statement": "For linear l : C_c -> C_c, (T_{l f}) is a random field (W_d, translations, dilations); negatives, scalar multiples, independent sums."
+      }
+     ],
+     "tests": [
+      {
+       "name": "zero_and_deterministic",
+       "kind": "computation",
+       "statement": "T = 0 and T_f = integral f h (h locally integrable) are random fields with Dirac fdd laws."
+      },
+      {
+       "name": "white_noise",
+       "kind": "compatibility",
+       "statement": "White noise with E[T_f T_g] = integral fg exists (6.3)."
+      },
+      {
+       "name": "absolute_value",
+       "kind": "non-example",
+       "statement": "T_f = |integral f| is not linear: T_{-f} = T_f."
+      }
+     ]
+    },
+    {
+     "id": "6.2",
+     "kind": "definition",
+     "name": "schwingerFunction",
+     "statement": "For a random field with all moments, M_n(f_1..f_n) = E[prod T_{f_i}]; a locally integrable S_n on (R^d)^n with M_n = integral S_n prod f_i(x_i) dx is an n-point Schwinger function; decay (1.10): for every eps > 0 there is r with |S_2(x,y)| <= eps for a.e. |x - y| >= r.",
+     "hypotheses": [
+      "T has all moments"
+     ],
+     "locator": {
+      "source": "aizenman-duminilcopin-2021",
+      "where": "(1.5)-(1.6), lines 59-76; (1.10), line 126"
+     },
+     "prerequisites": [
+      "target:6.1",
+      "mathlib:ae_eq_zero_of_integral_contDiff_smul_eq_zero"
+     ],
+     "api": [
+      {
+       "name": "moment_multilinear",
+       "role": "lemma",
+       "statement": "M_n symmetric, multilinear, depends only on the law."
+      },
+      {
+       "name": "schwinger_ae_unique",
+       "role": "theorem",
+       "statement": "Two n-point Schwinger functions agree a.e."
+      },
+      {
+       "name": "symmetric_ae / positive",
+       "role": "lemma",
+       "statement": "Schwinger functions are a.e. symmetric; integral f S_2 f = E[T_f^2] >= 0."
+      },
+      {
+       "name": "decay_null_set",
+       "role": "lemma",
+       "statement": "(1.10) is invariant under null modifications and equivalent to pointwise decay of a representative."
+      }
+     ],
+     "tests": [
+      {
+       "name": "deterministic_field",
+       "kind": "computation",
+       "statement": "T_f = integral f h: S_n = prod h(x_i); for h = exp(-|x|^2), S_2 <= exp(-|x-y|^2/2) satisfies (1.10); for h = 1 it fails."
+      },
+      {
+       "name": "white_noise_no_S2",
+       "kind": "non-example",
+       "statement": "White noise has no S_2: it would vanish a.e. off the diagonal, contradicting E[T_f^2] = integral f^2."
+      },
+      {
+       "name": "gff_kernel",
+       "kind": "compatibility",
+       "statement": "The GFF of 7.4 has S_2 = G_m(x-y)/C_m(1_Q,1_Q); in d = 1, G_m = e^{-m|x|}/(2m)."
+      }
+     ]
+    },
+    {
+     "id": "6.3",
+     "kind": "construction",
+     "name": "gaussianProcessOfKernel",
+     "statement": "For any type I and symmetric positive semidefinite K : I -> I -> R there is a centred process X with IsGaussianProcess and E[X_i X_j] = K(i,j), unique in law; if I is a real vector space and K bilinear, X is a.s. linear; hence for PSD symmetric bilinear C on C_c(R^d) a centred Gaussian random field with covariance C exists, unique up to fdd.",
+     "hypotheses": [
+      "K symmetric positive semidefinite"
+     ],
+     "locator": {
+      "source": "aizenman-duminilcopin-2021",
+      "where": "lines 77-89; glimm-jaffe-1987 Ch. 6"
+     },
+     "prerequisites": [
+      "target:6.1",
+      "roadmap:StochasticCalculus §1.1",
+      "mathlib:ProbabilityTheory.multivariateGaussian",
+      "mathlib:ProbabilityTheory.measurePreserving_restrict₂_multivariateGaussian",
+      "mathlib:ProbabilityTheory.IsGaussianProcess",
+      "mathlib:MeasureTheory.Measure.ext_of_charFun"
+     ],
+     "api": [
+      {
+       "name": "covariance_determines",
+       "role": "lemma",
+       "statement": "A centred Gaussian process is determined in law by its covariance."
+      },
+      {
+       "name": "linear_images",
+       "role": "lemma",
+       "statement": "Linear images of Gaussian fields are Gaussian."
+      },
+      {
+       "name": "centred",
+       "role": "lemma",
+       "statement": "E[X_i] = 0."
+      }
+     ],
+     "tests": [
+      {
+       "name": "bivariate",
+       "kind": "computation",
+       "statement": "I = Fin 2, K = [[1,r],[r,1]], |r| <= 1: bivariate normal with correlation r."
+      },
+      {
+       "name": "non_psd",
+       "kind": "non-example",
+       "statement": "K = [[1,2],[2,1]]: Var(X1 - X2) = -2, no process."
+      },
+      {
+       "name": "brownian",
+       "kind": "compatibility",
+       "statement": "K = min(s,t) on [0,infinity): Mathlib's BrownianReal.projectiveFamily marginals; integral fg on C_c gives white noise."
+      }
+     ]
+    },
+    {
+     "id": "6.4",
+     "kind": "theorem",
+     "name": "isGaussianProcess_iff_wick",
+     "statement": "A random field with all moments and E[T_f] = 0 is a generalised Gaussian process iff M_{2n+1} = 0 and M_{2n} = sum over pairings of products of M_2; if moreover S_2 exists then S_{2n} = G_n[S_2] and odd Schwinger functions vanish.",
+     "hypotheses": [
+      "all moments finite",
+      "centred"
+     ],
+     "locator": {
+      "source": "aizenman-duminilcopin-2021",
+      "where": "(1.7), lines 81-86"
+     },
+     "prerequisites": [
+      "target:6.2",
+      "target:6.3",
+      "roadmap:StandardDistributions §5.3",
+      "tauceti:TauCeti.Measure.ext_of_forall_integral_pow_eq_of_exists_integrable_exp",
+      "mathlib:ProbabilityTheory.IsGaussian",
+      "mathlib:MeasureTheory.Measure.ext_of_charFun"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "fourth_moment",
+       "kind": "computation",
+       "statement": "M_4(f,f,f,f) = 3 M_2(f,f)^2."
+      },
+      {
+       "name": "random_sign",
+       "kind": "non-example",
+       "statement": "T_f = eps integral f h: M_4 = (integral fh)^4 != 3 (integral fh)^4."
+      },
+      {
+       "name": "centring_needed",
+       "kind": "non-example",
+       "statement": "T_f = integral fh + W_f is Gaussian but M_1 != 0 violates Wick's law as stated."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "7",
+   "title": "Reachable random fields",
+   "targets": [
+    {
+     "id": "7.1",
+     "kind": "definition",
+     "name": "rescaledLatticeField",
+     "statement": "T_{f,L,Sigma}(phi) = Sigma^{-1/2} sum_{x in V} f(x/L) phi_x for L >= 1, f : R^d -> R, finite V subset Z^d, Sigma >= 0; block variance Sigma^(R)_L(rho,J) = <(sum_{x in Lambda_L} phi_x)^2>_{V_R,J,rho} for R >= L.",
+     "hypotheses": [
+      "L >= 1",
+      "R >= L"
+     ],
+     "locator": {
+      "source": "aizenman-duminilcopin-2021",
+      "where": "(1.14)-(1.15), lines 157-166"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.2",
+      "target:3.2"
+     ],
+     "api": [
+      {
+       "name": "linear",
+       "role": "lemma",
+       "statement": "Linear in f and phi; depends on f only on L^{-1}V."
+      },
+      {
+       "name": "hyperoctahedral",
+       "role": "lemma",
+       "statement": "T_{f o g} (phi) = T_f(phi o g^{-1}) for g in W_d and g-invariant V; equivalently T_f(phi o g) = T_{f o g^{-1}}(phi)."
+      },
+      {
+       "name": "covariance",
+       "role": "lemma",
+       "statement": "<T_f T_g> = Sigma^{-1} sum f(x/L) g(y/L) <phi_x phi_y>."
+      },
+      {
+       "name": "indicator_normalised",
+       "role": "lemma",
+       "statement": "<T_{1_Q,L,Sigma}^2>_{V_R} = 1 for Sigma = Sigma^(R)_L > 0."
+      },
+      {
+       "name": "blockVariance_monotone",
+       "role": "lemma",
+       "statement": "Sigma^(R)_L non-decreasing in R for even admissible rho, J >= 0; zero only for rho = delta_0."
+      }
+     ],
+     "tests": [
+      {
+       "name": "independent_spins",
+       "kind": "computation",
+       "statement": "J = 0, Ising: Sigma = (2L+1)^d and <T_f^2> -> 2^{-d} integral f^2."
+      },
+      {
+       "name": "chain_block_variance",
+       "kind": "computation",
+       "statement": "d = 1, L = R = 1, Ising: Sigma = 3 + 4t + 2t^2."
+      },
+      {
+       "name": "delta_zero",
+       "kind": "degenerate",
+       "statement": "rho = delta_0: Sigma = 0 and T = 0 by the junk convention."
+      },
+      {
+       "name": "hyperoctahedral_direction",
+       "kind": "non-example",
+       "statement": "d = 2, L = 1, Sigma = 1, V = {0, +-e_1, +-e_2}, g the rotation (x_1, x_2) -> (-x_2, x_1), f = 1_{e_1}: T_{f o g}(phi) = phi_{-e_2} = T_f(phi o g^{-1}); the identity with g on both sides would give phi_{e_2}, differing for phi = 1_{e_2}."
+      }
+     ]
+    },
+    {
+     "id": "7.2",
+     "kind": "definition",
+     "name": "IsReachable",
+     "statement": "A reachability scheme: rho_n in C, J_n >= 0, L_n -> infinity, R_{n,m} >= L_n with R_{n,m} -> infinity in m, each nearest-neighbour triple stable; it converges if for every finite F subset C_c(R^d) the laws of (T^{n,m}_f)_{f in F} converge weakly in m to nu^n_F and nu^n_F -> nu_F in n; a random field is C-reachable if its fdd laws are the nu_F of a convergent scheme.",
+     "hypotheses": [
+      "C a set of probability measures on R",
+      "d >= 1"
+     ],
+     "locator": {
+      "source": "aizenman-duminilcopin-2021",
+      "where": "Definition 1.1, lines 167-179; footnote 2, lines 183-187"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.5",
+      "target:6.1",
+      "target:7.1",
+      "mathlib:MeasureTheory.ProbabilityMeasure"
+     ],
+     "api": [
+      {
+       "name": "mono_class",
+       "role": "lemma",
+       "statement": "C subset C' implies C-reachable implies C'-reachable."
+      },
+      {
+       "name": "stability",
+       "role": "lemma",
+       "statement": "Automatic for admissible members; for gamma_b the positivity condition of 1.5, true for b <= -d J_n."
+      }
+     ],
+     "tests": [
+      {
+       "name": "white_noise_reachable",
+       "kind": "computation",
+       "statement": "rho_n = rho_I, J_n = 0: white noise with covariance 2^{-d} integral fg."
+      },
+      {
+       "name": "delta_zero_class",
+       "kind": "degenerate",
+       "statement": "C = {delta_0}: only the zero field."
+      },
+      {
+       "name": "telegraph",
+       "kind": "non-example",
+       "statement": "d = 1, rho_I, tanh J_n = e^{-c/L_n}: the random telegraph field kappa^{-1/2} integral f X is reachable and non-Gaussian."
+      }
+     ]
+    },
+    {
+     "id": "7.3",
+     "kind": "theorem",
+     "name": "reachable_structure",
+     "statement": "Every convergent scheme has a reachable field, unique up to fdd (limits projective and linear); if C consists of even measures, Phi and -Phi have the same law and existing odd moments vanish; reachable fields are W_d-invariant; E[T_f(Phi)^2] <= liminf_n liminf_m <(T^{n,m}_f)^2>.",
+     "hypotheses": [
+      "convergent reachability scheme"
+     ],
+     "locator": {
+      "source": "aizenman-duminilcopin-2021",
+      "where": "lines 172-179; sokal-1982 Lemma 2.2, lines 710-721"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:6.1",
+      "target:7.1",
+      "target:7.2",
+      "mathlib:MeasureTheory.ProbabilityMeasure.tendsto_iff_forall_integral_tendsto"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "d1_reflection",
+       "kind": "computation",
+       "statement": "d = 1: T_{f(-.)} has the law of T_f; for the telegraph field this is reversibility."
+      },
+      {
+       "name": "non_even_class",
+       "kind": "non-example",
+       "statement": "C = {(delta_0+delta_1)/2}, J = 0: reachable field T_f = 2^{-d} integral f, not symmetric."
+      },
+      {
+       "name": "strict_variance",
+       "kind": "characterisation",
+       "statement": "rho_n = (1-p_n) rho_I + (p_n/2)(delta_{a_n} + delta_{-a_n}), p_n = |Lambda_{L_n}|^{-2}, a_n^2 = 1/p_n: lattice variances -> 2^{-d} integral f^2, limit variance 2^{-d-1} integral f^2."
+      }
+     ]
+    },
+    {
+     "id": "7.4",
+     "kind": "definition",
+     "name": "gffCovariance",
+     "statement": "C_m(f,g) = integral conj(F f(xi)) F g(xi) / (4 pi^2 |xi|^2 + m^2) d xi (Mathlib Fourier transform), finite and PSD for m > 0 (all d) and m = 0 (d >= 3); the Gaussian free field of mass m is the centred Gaussian random field with covariance C_m(f,g)/C_m(1_Q,1_Q).",
+     "hypotheses": [
+      "m > 0, or m = 0 and d >= 3"
+     ],
+     "locator": {
+      "source": "sokal-1982",
+      "where": "Section 2.3, lines 620-721; frohlich-1982 lines 266-269; glimm-jaffe-1987 Ch. 6"
+     },
+     "prerequisites": [
+      "target:6.3",
+      "mathlib:Real.fourier_eq"
+     ],
+     "api": [
+      {
+       "name": "psd",
+       "role": "lemma",
+       "statement": "C_m is symmetric, positive semidefinite and finite on C_c(R^d)."
+      },
+      {
+       "name": "position_space",
+       "role": "lemma",
+       "statement": "For m > 0, C_m(f,g) = integral integral f(x) G_m(x-y) g(y) with G_m the continuum Green function, locally integrable."
+      },
+      {
+       "name": "normalisation_finite",
+       "role": "lemma",
+       "statement": "0 < C_m(1_Q,1_Q) < infinity."
+      }
+     ],
+     "tests": [
+      {
+       "name": "d1_kernel",
+       "kind": "computation",
+       "statement": "d = 1: C_m(f,g) = integral integral f(x) e^{-m|x-y|}/(2m) g(y); C_m(1_Q,1_Q) = 2/m^2 - (1 - e^{-2m})/m^3."
+      },
+      {
+       "name": "massless_d1",
+       "kind": "non-example",
+       "statement": "d = 1, m -> 0: C_m(1_Q,1_Q) ~ 2/m diverges."
+      },
+      {
+       "name": "d4_singularity",
+       "kind": "computation",
+       "statement": "d = 4: G_m(x) ~ 1/(4 pi^2 |x|^2) near 0, locally integrable on R^4."
+      }
+     ]
+    },
+    {
+     "id": "7.4.1",
+     "kind": "theorem",
+     "name": "gff_reachable",
+     "statement": "For d >= 1 and m > 0, and for d >= 3 and m = 0, the Gaussian free field of mass m is reachable from {gamma_b : b < 0} with J_n = 1, b_n = -(d + m^2/(2 L_n^2)), arbitrary L_n -> infinity and R_{n,m} -> infinity.",
+     "hypotheses": [
+      "m > 0, or m = 0 and d >= 3"
+     ],
+     "locator": {
+      "source": "sokal-1982",
+      "where": "Section 2.3 and Lemma 2.2, lines 620-721; frohlich-1982 lines 266-269; simon-2020-twelve-tales lines 960-975"
+     },
+     "prerequisites": [
+      "target:1.5",
+      "target:6.3",
+      "target:7.2",
+      "target:7.3",
+      "target:7.4",
+      "mathlib:ProbabilityTheory.charFun_multivariateGaussian",
+      "mathlib:MeasureTheory.ProbabilityMeasure.tendsto_iff_tendsto_charFun"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "lattice_normalisation",
+       "kind": "computation",
+       "statement": "<(T^{n,m}_{1_Q})^2> = 1 for all n, m."
+      },
+      {
+       "name": "dirichlet_kernel",
+       "kind": "compatibility",
+       "statement": "The transform of 1_Q on the lattice is a product of Dirichlet kernels converging to prod 2 sin(q_j)/q_j."
+      },
+      {
+       "name": "d4_instance",
+       "kind": "characterisation",
+       "statement": "In d = 4 the field has S_2 satisfying (1.10), a non-vacuous instance of Layer 8's hypotheses from the Gaussian class."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "8",
+   "title": "Marginal triviality",
+   "targets": [
+    {
+     "id": "8.1",
+     "kind": "theorem",
+     "name": "marginalTriviality",
+     "statement": "For d >= 4 and C = {rho_{lambda,b} : lambda > 0, b real} union {rho_I}: every C-reachable random field with a two-point Schwinger function satisfying (1.10) is a generalised Gaussian process (IsGaussianProcess).",
+     "hypotheses": [
+      "d >= 4",
+      "Phi C-reachable",
+      "S_2 exists and satisfies (1.10)"
+     ],
+     "locator": {
+      "source": "aizenman-duminilcopin-2021",
+      "where": "Theorem 1.2, line 190, with (1.10), line 126 (d = 4); lines 122-128 citing aizenman-1982 and frohlich-1982 lines 112-115 (d >= 5)"
+     },
+     "prerequisites": [
+      "target:0.2",
+      "target:6.2",
+      "target:6.3",
+      "target:7.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "telegraph_d1",
+       "kind": "non-example",
+       "statement": "d = 1: the telegraph field is {rho_I}-reachable with S_2 = e^{-c|u-v|}/kappa satisfying (1.10) and is bounded, hence not Gaussian: d >= 4 cannot be dropped."
+      },
+      {
+       "name": "white_noise_excluded",
+       "kind": "degenerate",
+       "statement": "White noise (J_n = 0) has no S_2, so the hypothesis is a genuine restriction; it is Gaussian anyway."
+      },
+      {
+       "name": "gff_consistent",
+       "kind": "compatibility",
+       "statement": "The d = 4 GFF satisfies the field hypotheses with single-site measures outside C and is Gaussian."
+      }
+     ]
+    },
+    {
+     "id": "8.2",
+     "kind": "theorem",
+     "name": "marginalTriviality_griffithsSimon",
+     "statement": "For d >= 4 and C the Griffiths-Simon class of 2.2: every C-reachable random field with a two-point Schwinger function satisfying (1.10) is a generalised Gaussian process.",
+     "hypotheses": [
+      "d >= 4",
+      "Phi reachable from the Griffiths-Simon class",
+      "S_2 exists and satisfies (1.10)"
+     ],
+     "locator": {
+      "source": "aizenman-duminilcopin-2021",
+      "where": "Section 7, lines 1979-1985; Theorem 7.1, line 2006; Proposition 7.2, lines 2014-2017 (d = 4); aizenman-1982 (d >= 5)"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "target:6.2",
+      "target:6.3",
+      "target:7.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "implies_8_1",
+       "kind": "compatibility",
+       "statement": "8.2 implies 8.1 since rho_I and phi^4 measures are in the class and reachability is monotone in C."
+      },
+      {
+       "name": "telegraph",
+       "kind": "non-example",
+       "statement": "The d = 1 telegraph field shows d >= 4 is needed, as rho_I is in the class."
+      },
+      {
+       "name": "gaussian_outside",
+       "kind": "non-example",
+       "statement": "gamma_b is not in the class, so 7.4.1 is not an instance of 8.2."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "StochasticCalculus",
+   "sections": [
+    "§1.1"
+   ],
+   "what": "Kolmogorov extension for an arbitrary index set of standard Borel coordinates: existence and uniqueness of the projective limit of a projective family of probability measures (used for random fields indexed by C_c(R^d) and Gaussian processes with prescribed kernel)."
+  },
+  {
+   "roadmap": "StandardDistributions",
+   "sections": [
+    "§5.3"
+   ],
+   "what": "Wick-Isserlis mixed-moment formula for centred multivariate Gaussian vectors with positive semidefinite covariance."
+  }
+ ],
+ "consumers": [
+  {
+   "roadmap": "ConstructiveFieldTheoryPhi4PartII",
+   "what": "Proofs of the summit statements: random current intersection estimates, tree diagram and improved tree diagram bounds, spectral representation, identification of boundary conditions below beta_c, sliding-scale infrared bound, uniform local integrability; consumes Layers 3-7."
+  },
+  {
+   "roadmap": "RelativisticQuantumFieldTheory",
+   "what": "Schwinger functions of reachable fields as candidate Osterwalder-Schrader data; comparison of its d = 4 massive Euclidean covariance with C_m of 7.4."
+  }
+ ],
+ "gaps": []
+}
