@@ -16,3 +16,111 @@ licence_class = "answered-by:CBirkbeck"
 status = "certified"
 accessed = "2026-11-04"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/505#issuecomment-6632676908"
+cited_for = ["6.12", "8.7"]
+
+[[source]]
+id = "CT20"
+authors = "Gaëtan Chenevier, Olivier Taïbi"
+title = "Discrete series multiplicities for classical groups over Z and level 1 algebraic cusp forms"
+year = 2020
+venue = "Publications Mathématiques de l'IHÉS 131"
+doi = "10.1007/s10240-020-00115-z"
+locator_scheme = "theorem"
+locator = "Theorems 1-7, Corollary 1; Propositions 2.2, 2.5, 3.7, 4.1, 4.4, 5.12, 5.14; Corollaries 2.3, 2.9, 5.10, 5.13, 5.15; Lemmas 2.6, 2.8, 4.3, 5.5-5.9; equations (1.4.1)-(1.4.5), (2.3.1)-(2.3.7), (2.4.1)-(2.4.5), (5.1.1)-(5.1.4), (5.2.1)-(5.2.12), (5.5.2)"
+url = "https://hal.science/hal-02265675v1"
+fetched_from = "https://hal.science/hal-02265675/document"
+fetched_at = "2026-11-04T16:57:39Z"
+sha256 = "e46c950435cd46d10b04ba4d3611e1950ba4cab330211910fe9d15e0e05ede56"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["Layers 1-8"]
+version_note = "HAL hal-02265675v1 (accepted manuscript of the IHES paper); section, equation and statement numbers are those of this version, in which the statements of sections 5.3-5.5 are numbered one lower than in the published version (Corollary 5.10 here is 5.11 there)"
+
+[[source]]
+id = "CT19a"
+authors = "Gaëtan Chenevier, Olivier Taïbi"
+title = "Siegel modular forms of weight 13 and the Leech lattice"
+year = 2019
+arxiv = "1907.08781v1"
+locator_scheme = "theorem"
+locator = "Theorems 1-2; Facts 1.1-1.2; Lemmas 1.3, 2.1, 2.3, 2.4; Propositions 1.4, 2.2, 3.7, 3.13, 4.1, 4.2; Definition 1.5; Corollary 4.3; Theorem 4.4; formula (1)"
+url = "https://arxiv.org/abs/1907.08781v1"
+fetched_from = "https://arxiv.org/pdf/1907.08781v1"
+fetched_at = "2026-11-04T16:57:44Z"
+sha256 = "38e2e76048f7c31b5796039a39add872c0958a07c70fbea9fc08eb12653eb566"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v1"
+cited_for = ["8.3", "8.4", "8.5", "8.6", "8.10"]
+
+[[source]]
+id = "CL14"
+authors = "Gaëtan Chenevier, Jean Lannes"
+title = "Formes automorphes et voisins de Kneser des réseaux de Niemeier"
+year = 2014
+arxiv = "1409.7616v2"
+locator_scheme = "theorem"
+locator = "Introduction section 3 and Theoremes D, E, F; Table I.2; III; V sections 1, 2, 4.1; VII section 1 and Corollaire 3.5; IX Lemme 3.15, Proposition 3.17, Lemme 3.36, Proposition 3.38; Table C.5"
+url = "https://arxiv.org/abs/1409.7616v2"
+fetched_from = "https://arxiv.org/pdf/1409.7616v2"
+fetched_at = "2026-11-04T16:57:58Z"
+sha256 = "ee20dcf191d37290a74c79c4b15d9fbfe5c2b3673bd6c53283ff44d19762708d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v2"
+cited_for = ["2.2", "2.4", "5.2", "5.3", "6.3", "6.4", "6.5", "6.6", "6.7", "6.8", "6.9", "6.11", "8.1", "7.9"]
+
+[[source]]
+id = "Tai17"
+authors = "Olivier Taïbi"
+title = "Dimensions of spaces of level one automorphic forms for split classical groups using the trace formula"
+year = 2017
+venue = "Annales scientifiques de l'École normale supérieure 50"
+doi = "10.24033/asens.2321"
+locator_scheme = "theorem"
+locator = "Section 3.2; Theorems 3.3.3-3.3.5 (section 3.3.4); section 4.1.2; Theorem 4.2.3 and Corollary 4.2.4 (section 4.2.2)"
+url = "https://www.numdam.org/item/10.24033/asens.2321.pdf"
+fetched_from = "https://www.numdam.org/item/10.24033/asens.2321.pdf"
+fetched_at = "2026-11-04T16:58:19Z"
+sha256 = "1d81643d7b37ba26127d5d55360fa928757f2d9e9d6dbc4ff89e6489ed924c65"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+cited_for = ["3.1", "3.3", "3.15", "3.16", "4.2", "4.3", "4.17"]
+
+[[source]]
+id = "Mil02"
+authors = "Stephen D. Miller"
+title = "The Highest-Lowest Zero and other Applications of Positivity"
+year = 2001
+arxiv = "math/0112196v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.6"
+url = "https://arxiv.org/abs/math/0112196v1"
+fetched_from = "https://arxiv.org/pdf/math/0112196v1"
+fetched_at = "2026-11-04T17:08:26Z"
+sha256 = "b1b7814095474694c998fa5e1fe67b772a367f772d9238cd9595277f653c4dbb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-04"
+version_note = "arXiv v1"
+cited_for = ["2.19"]
+
+[[source]]
+id = "KT87"
+authors = "Kazuhiko Koike, Itaru Terada"
+title = "Young-diagrammatic methods for the representation theory of the classical groups of type Bn, Cn, Dn"
+year = 1987
+venue = "Journal of Algebra 107"
+doi = "10.1016/0021-8693(87)90099-8"
+locator_scheme = "page"
+locator = "pp. 466-511 (determinantal formulas for characters of symplectic and orthogonal groups, as used in CT20 sections 1.4 and 3.1)"
+url = "https://doi.org/10.1016/0021-8693(87)90099-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.10"]
+

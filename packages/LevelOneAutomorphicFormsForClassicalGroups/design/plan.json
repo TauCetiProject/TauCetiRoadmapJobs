@@ -5586,115 +5586,52 @@
   ],
   "gaps": [
     {
-      "id": "LevelOneAutomorphicFormsForClassicalGroups/G-intrinsic-carriers",
-      "title": "Native automorphic and Siegel carriers at the pin",
-      "detail": "The pinned libraries lack the adelic cuspidal, Arthur-packet, Siegel and higher-theta carriers. AF/ML/B/MP requests specify those inputs. They are not represented by arbitrary Prop fields in the suggested file. LO.1 and all spectral end theorems await those native interfaces.",
-      "neededBy": [
-        "LevelOneAutomorphicFormsForClassicalGroups:LO.1/pi-alg",
-        "LevelOneAutomorphicFormsForClassicalGroups:LO.3/level-one-multiplicity",
-        "LevelOneAutomorphicFormsForClassicalGroups:LO.7/scalar-table"
-      ]
+      "slug": "sp2g-lowest-weight-modules",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "6.8",
+      "needs": "For every dominant k = (k_1 >= ... >= k_g >= 0), the irreducible unitary lowest-weight module rho_k of Sp_2g(R) with lowest K-type of highest weight k, the Enright-Howe-Wallach criterion that it exists exactly when k_g >= g - u - v/2 (u = #{i : k_i = k_g}, v = #{i : k_i = k_g + 1}), its infinitesimal character 0, +-(k_i - i), and its identification with the holomorphic discrete series when k_g > g."
     },
     {
-      "id": "LevelOneAutomorphicFormsForClassicalGroups/G-arthur-foundations",
-      "title": "Arthur foundations and real-packet comparisons",
-      "detail": "ML.0’s dependency gate is not closed by citing CT20. The general classification, local packet identifications and canonical pairings are imported obligations. Tai17 and CT20 provide the specialized sign recipes, whose translation to that interface is a target.",
-      "neededBy": [
-        "LevelOneAutomorphicFormsForClassicalGroups:LO.3/level-one-multiplicity",
-        "LevelOneAutomorphicFormsForClassicalGroups:LO.3/packet-ep-contribution"
-      ]
+      "slug": "siegel-adelic-lift",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "7.2a",
+      "needs": "The Sp_2g analogue of the GL_2 adelic-lift predicate at level one: square-integrable vector-valued Siegel modular forms of weight k for Sp_2g(Z) correspond to (g,K)-homomorphisms from rho_k into the square-integrable automorphic forms of Sp_2g fixed by Sp_2g(Zhat), compatibly with Hecke operators, with cusp forms going to cuspidal automorphic forms."
     },
     {
-      "id": "LevelOneAutomorphicFormsForClassicalGroups/G-scalar-certificates",
-      "title": "Materialized complete candidate and interval manifests",
-      "detail": "No proof-bearing CN manifests for the one-class cover and a documented two-class cover (paper count 265; raw two-class database count 269), 1256 weight-24 exclusions, GRH exclusions or every vanishing row were produced in this design. Each needs complete-domain, safe-cutoff, scalar-enclosure and strict-negativity witnesses bound by content hashes. Exact exploratory recomputation is distinguished from Lean certification. Include the 27 repeated-weight GL₄ exclusions for odd 1≤w≤53 at ℓ=5, using the full known GL₂ eigenform set rather than the erroneous zero-or-one shortcut.",
-      "neededBy": [
-        "LevelOneAutomorphicFormsForClassicalGroups:LO.5/classification-certificates",
-        "LevelOneAutomorphicFormsForClassicalGroups:LO.5/weight23-cover",
-        "LevelOneAutomorphicFormsForClassicalGroups:LO.5/grh-weight23",
-        "LevelOneAutomorphicFormsForClassicalGroups:LO.2/repeated-weight-gl4-vanishing"
-      ]
+      "slug": "gross-volume-rationality",
+      "supplier": "AutomorphicSpectralTheory",
+      "section": "6.17",
+      "needs": "For the centralizer H of a finite-order semisimple element of a split classical group over Q, with Euler-Poincare measure at infinity and measures giving the integral maximal compact subgroups volume one at finite places, the rationality of the volume of H(Q)\\H(A) through Gross's motive of H and the values of its Artin L-functions at non-positive critical integers."
     },
     {
-      "id": "LevelOneAutomorphicFormsForClassicalGroups/G-exceptional-selfdual",
-      "title": "The additional exceptional self-dual two-class certificate",
-      "detail": "At U_exc=I₁+I₇+I₁₃+I₁₇+I₂₁+2I₂₃, produce δ=1,m=2, ℓ=31/4 with known classes {1,Δ₂₁,Sym²Δ₁₁,Δ₂₃,₇}; rationalize a nonnegative negative vector and certify its strict interval margin. This fills the omitted source step without incorrectly removing U_exc from V.",
-      "neededBy": [
-        "LevelOneAutomorphicFormsForClassicalGroups:LO.5/repeated-top-pair"
-      ]
+      "slug": "same-type-pair-root-number",
+      "supplier": "ModularityAndLanglandsExtensions",
+      "section": "3.4",
+      "needs": "For unitary self-dual cuspidal representations pi of GL_n(A_Q) and pi' of GL_m(A_Q) of the same type (both orthogonal or both symplectic), the global root number epsilon(1/2, pi x pi') equals 1 (Arthur, Theorem 1.5.3(b))."
     },
     {
-      "id": "LevelOneAutomorphicFormsForClassicalGroups/G-mass-certificates",
-      "title": "Exact mass systems and comparison to intrinsic coefficients",
-      "detail": "Materialize each vanishing-row manifest, full-column-rank witness, rational solution and independent substitution checks. For Sp₁₆ add proof-bearing easy orbital values and the 766-column hard system. A checksum of the author archive certifies provenance, not the mass theorem.",
-      "neededBy": [
-        "LevelOneAutomorphicFormsForClassicalGroups:LO.4/coarse-mass-tables",
-        "LevelOneAutomorphicFormsForClassicalGroups:LO.4/refined-mass-tables",
-        "LevelOneAutomorphicFormsForClassicalGroups:LO.4/sp16-masses"
-      ]
+      "slug": "boecherer-theta-image",
+      "supplier": "MetaplecticAutomorphicForms",
+      "section": "6.14",
+      "needs": "Boecherer's criterion (Boecherer 1989, Theorem 5): a Siegel cusp eigenform F of weight k = n/2 + nu for Sp_2g(Z) lies in the image of the theta map with pluriharmonic coefficients of determinant weight nu from even unimodular lattices of rank n exactly when gamma_g^k(s) C_g(n/2 + s, nu) L(n/2 - g + 2s, F, St) / omega_g(n/2 + 2s) has a finite nonzero value at s = 0."
     },
     {
-      "id": "LevelOneAutomorphicFormsForClassicalGroups/G-orbital-originals",
-      "title": "Original centralizer-volume and local-orbital arguments",
-      "detail": "The relevant Tai17 reduction and EP sections were read, but not all original orbital references or Gross’s motive proof. AS.6/GN.3 must supply the exact measures, local-density algorithms and qualified non-positive critical special-value rationality. The SO₃ calibration checks one normalization and does not replace those proofs.",
-      "neededBy": [
-        "LevelOneAutomorphicFormsForClassicalGroups:LO.4/mass-rationality",
-        "LevelOneAutomorphicFormsForClassicalGroups:LO.4/trace-formula",
-        "LevelOneAutomorphicFormsForClassicalGroups:LO.4/sp16-masses"
-      ]
+      "slug": "integral-spinor-norm-units",
+      "supplier": "GeometryOfNumbersAndQuadraticArithmetic",
+      "section": "2.4",
+      "needs": "For p = 2 and every regular quadratic form q on Z_2^n (nondegenerate, or of odd rank with unit half-discriminant), the spinor norm of every element of SO(q)(Z_2) lies in the image of Z_2^x in Q_2^x/Q_2^x2, proved by lifting to GSpin(q)(Z_2); for p odd GeometryOfNumbersAndQuadraticArithmetic 2.4.2 already supplies it."
     },
     {
-      "id": "LevelOneAutomorphicFormsForClassicalGroups/G-character-determinants",
-      "title": "Koike–Terada determinant proof",
-      "detail": "The exact character formulas were read in CT19b code and checked on their elementary specializations; the original Koike–Terada 1987 article was not read. Establish the determinant identities from the imported Weyl/symmetric-function theorem or obtain the stated LH supplier result before using the fast evaluator as a proof.",
-      "neededBy": [
-        "LevelOneAutomorphicFormsForClassicalGroups:LO.4/torsion-character-evaluation"
-      ]
+      "slug": "split-orthogonal-regular-form",
+      "supplier": "ReductiveGroups",
+      "section": "Layer 9",
+      "needs": "The identification of the pinned Chevalley-Demazure group schemes of types B_n and D_n over Z with the special orthogonal group schemes of the regular forms x_1 x_2n + ... + x_n x_(n+1) and x_1 x_(2n+1) + ... + x_n x_(n+2) + x_(n+1)^2, compatible with points over Z_2."
     },
     {
-      "id": "LevelOneAutomorphicFormsForClassicalGroups/G-lattice-completeness",
-      "title": "Current upstream lattice completeness boundary",
-      "detail": "Current IntegralLattices contains E₈ uniqueness and the rank-16/rank-24 reference constructions, not both required exhaustive classifications. Rank-16 completeness belongs to OrthogonalTamagawaAndLatticeMass 7I; GN.3/current-owner extension must deliver rank-24 completeness and rootless Leech uniqueness.",
-      "neededBy": [
-        "LevelOneAutomorphicFormsForClassicalGroups:LO.6/lattice-spectrum-input",
-        "LevelOneAutomorphicFormsForClassicalGroups:LO.8/leech-invariants"
-      ]
-    },
-    {
-      "id": "LevelOneAutomorphicFormsForClassicalGroups/G-boecherer-original",
-      "title": "Original hypotheses of Böcherer’s image criterion",
-      "detail": "The entire three-page companion verification was read. The original 1989 Theorem 5 was not. MP.6 must verify its complete hypotheses and compare normalizations in precisely the five applications. This gap concerns the imported image criterion; the five order calculations have separate explicit targets.",
-      "neededBy": [
-        "LevelOneAutomorphicFormsForClassicalGroups:LO.6/boecherer-criterion",
-        "LevelOneAutomorphicFormsForClassicalGroups:LO.8/five-theta-orders"
-      ]
-    },
-    {
-      "id": "LevelOneAutomorphicFormsForClassicalGroups/G-finite-leech-data",
-      "title": "Exact Golay, automorphism and Leech embedding witnesses",
-      "detail": "Reuse the current native binary Golay code and its proven weight enumerator; materialize the additional group certificates for oriented subset orbits and the averaged exterior character. Obtain the full lattice proofs of CT19a Proposition 2.2 and Proposition 3.13 from GN.3, including residue-form type, surjective stabilizer maps and the kernels of orders 3 and 10. The source’s intermediate §3 proof was only partly read in this design.",
-      "neededBy": [
-        "LevelOneAutomorphicFormsForClassicalGroups:LO.8/leech-invariants",
-        "LevelOneAutomorphicFormsForClassicalGroups:LO.8/leech-alternating-forms",
-        "LevelOneAutomorphicFormsForClassicalGroups:LO.8/direct-leech-nonvanishing"
-      ]
-    },
-    {
-      "id": "LevelOneAutomorphicFormsForClassicalGroups/G-rank16-harmonic",
-      "title": "The rank-sixteen harmonic invariant calculation",
-      "detail": "CT20 states the two-dimensional source and its two parameters briefly. The actual H_{5,8,16} invariant matrices and Hecke decomposition must be supplied and checked; target dimension one does not imply source dimension two.",
-      "neededBy": [
-        "LevelOneAutomorphicFormsForClassicalGroups:LO.8/rank16-harmonic-source"
-      ]
-    },
-    {
-      "id": "LevelOneAutomorphicFormsForClassicalGroups/G-lattice-eigensystems",
-      "title": "The 24 compact eigenspaces and degree certificates",
-      "detail": "The public CL theorem, degree arguments and all Table C.5 rows were read. Implementation still needs exact neighbour matrices, distinct eigenvalues, comparison of eigenparameters and proof-bearing first-occurrence coefficients. Import the established low-genus basis result without making its proof depend on the new LO.7 classification.",
-      "neededBy": [
-        "LevelOneAutomorphicFormsForClassicalGroups:LO.6/small-lattice-eigenparameters",
-        "LevelOneAutomorphicFormsForClassicalGroups:LO.8/low-weight-theta-surjectivity"
-      ]
+      "slug": "conway-group-average-charpoly",
+      "supplier": "CFSGBasicProperties",
+      "section": "P2-L",
+      "needs": "The average characteristic polynomial of Conway's group O(Leech) on Leech tensor Q, (1/|O(Leech)|) sum over gamma in O(Leech) of det(t - gamma) = t^24 + t^16 + t^12 + t^8 + 1, from the conjugacy classes of O(Leech) and the character of its 24-dimensional representation."
     }
   ],
   "requests": [
