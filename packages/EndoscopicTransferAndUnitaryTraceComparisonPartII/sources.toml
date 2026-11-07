@@ -17,7 +17,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "Every section, theorem and page locator uses arXiv:1911.07907v3 pagination; Annals 201 (2025), 551–645 has different pagination."
-cited_for = ["FJ.0/symmetric-representation", "FJ.0/contractions", "FJ.0/quotients", "FJ.0/regular-invertible", "FJ.0/torsor", "FJ.0/fibre-integration", "FJ.0/relative-orbital-integral", "FJ.0/pushforward", "FJ.0/orbital-comparison", "FJ.1/relative-datum", "FJ.1/matching-factor", "FJ.1/kappa-orbital-integral", "FJ.1/smooth-transfer", "FJ.1/nonsingular-transfer", "FJ.2/hermitian-spherical-module", "FJ.2/base-change-compatibility", "FJ.2/spherical-fourier", "FJ.3/pure-form-orbit-torsor", "FJ.3/generalized-nilpotent-integral", "FJ.3/germ-inversion", "FJ.3/lie-parabolic-descent", "FJ.3/augmented-to-endoscopic", "FJ.3/weil-orbital-sum", "FJ.3/group-to-augmented", "FJ.4/contraction-sign-comparison", "FJ.4/spherical-pushforward", "FJ.4/product-group-contraction", "FJ.4/rank-shifted-fundamental-lemma", "FJ.4/augmented-fundamental-lemma", "FJ.4/cyclic-endoscopic-transfer", "FJ.4/contracted-lattice-function", "FJ.4/degree-hecke-identities", "FJ.4/graded-transfer", "FJ.4/unit-fundamental-lemma", "FJ.5/full-spherical-extension", "Scope and ownership", "Exact supplier contracts", "Source corrections E01–E13"]
+cited_for = ["§0.1", "§0.2", "§0.3", "§0.4", "§0.5", "§0.6", "§0.7", "§0.8", "§0.9", "§1.1", "§1.2", "§1.3", "§1.4", "§1.5", "§2.1", "§2.2", "§2.3", "§3.1", "§3.2", "§3.3", "§3.4", "§3.6", "§3.7", "§3.8", "§4.1", "§4.2", "§4.3", "§4.4", "§4.5", "§4.6", "§4.7", "§4.8", "§4.9", "§4.10", "§5.1", "Scope and ownership", "Exact supplier contracts", "Source corrections E01–E13, E15–E16"]
 
 [[source]]
 id = "Leslie19"
@@ -35,7 +35,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2"
-cited_for = ["FJ.0/torsor", "FJ.0/fibre-integration", "FJ.0/pushforward", "FJ.1/nonsingular-transfer", "Scope and ownership", "Exact supplier contracts"]
+cited_for = ["§0.5", "§0.6", "§0.8", "§1.5", "Scope and ownership", "Exact supplier contracts"]
 
 [[source]]
 id = "Xiao18"
@@ -53,7 +53,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1"
-cited_for = ["FJ.3/pure-form-orbit-torsor", "FJ.3/generalized-nilpotent-integral", "FJ.3/germ-inversion", "FJ.3/factor-descent-comparison", "Exact supplier contracts", "Source corrections E11, E12, E14"]
+cited_for = ["§3.1", "§3.2", "§3.3", "§3.5", "Exact supplier contracts", "Source corrections E11, E12, E14"]
 
 [[source]]
 id = "BP21"
@@ -71,7 +71,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "Every page and theorem locator uses arXiv:1901.02653v3 pagination, rather than the published Duke 170 (2021) pagination."
-cited_for = ["FJ.3/weil-orbital-sum", "FJ.3/group-to-augmented", "Exact supplier contracts"]
+cited_for = ["§3.7", "§3.8", "Exact supplier contracts"]
 
 [[source]]
 id = "Hironaka99"
@@ -87,6 +87,6 @@ sha256 = "8889093dd918ea04ffd946a91a24435d7647d60189ff0738d35b052fefc5e84c"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["FJ.2/spherical-fourier"]
+cited_for = ["§2.3"]
 doi = "10.2969/jmsj/05130553"
 version_note = "Publisher J-STAGE scan, recognised by OCR; all locators use printed JMSJ pages (printed page = PDF page + 552)."
