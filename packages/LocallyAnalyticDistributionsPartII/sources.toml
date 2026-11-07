@@ -1,0 +1,197 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LocallyAnalyticDistributionsPartII"
+
+[[source]]
+id = "FU24"
+authors = "Weibo Fu"
+title = "Sharp bounds for multiplicities of Bianchi modular forms"
+year = 2022
+arxiv = "2201.11190v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.5"
+url = "https://arxiv.org/abs/2201.11190v2"
+fetched_from = "https://arxiv.org/pdf/2201.11190v2"
+fetched_at = "2026-10-26T20:34:44Z"
+sha256 = "d71e9d3f8d3a1217743c3ba72c9a9630981f054ecefd943ff4edb4879b842614"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["§0.2", "§0.3", "§1.1", "§2.2", "§2.4", "§3.6", "§3.7", "§3.10", "§4.1", "§4.2", "§4.3", "§4.4", "§4.5", "§4.6", "§4.7", "§4.8", "§4.10", "§4.11", "§4.14", "§5.1", "§5.2", "Source corrections"]
+
+[[source]]
+id = "ST03"
+authors = "Peter Schneider, Jeremy Teitelbaum"
+title = "Algebras of p-adic distributions and admissible representations"
+year = 2002
+doi = "10.1007/s00222-002-0284-1"
+arxiv = "math/0206056v1"
+locator_scheme = "theorem"
+locator = "Theorem 4.10"
+url = "https://arxiv.org/abs/math/0206056v1"
+fetched_from = "https://arxiv.org/pdf/math/0206056v1"
+fetched_at = "2026-10-26T20:34:50Z"
+sha256 = "e8a60a25f246692b048789235fb8efaf6d44ae65fdbb7cc738c8caeae67efcd5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["Conventions", "§1.2", "§4.1", "§4.6", "Source corrections", "gap:frechet-stein-general", "gap:radius-algebras"]
+
+[[source]]
+id = "ST02"
+authors = "Peter Schneider, Jeremy Teitelbaum"
+title = "Locally analytic distributions and p-adic representation theory, with applications to GL_2"
+year = 1999
+arxiv = "math/9912073v1"
+locator_scheme = "theorem"
+locator = "Proposition 3.7"
+url = "https://arxiv.org/abs/math/9912073v1"
+fetched_from = "https://arxiv.org/pdf/math/9912073v1"
+fetched_at = "2026-10-26T20:34:56Z"
+sha256 = "d6be98b86167e6bc9374892d0a688e141ad599601c64b8113ea003e7f60e5ead"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["Conventions", "§1.1", "§1.2", "§1.3", "§2.5", "§4.3"]
+
+[[source]]
+id = "ST02B"
+authors = "Peter Schneider, Jeremy Teitelbaum"
+title = "Banach space representations and Iwasawa theory"
+year = 2000
+arxiv = "math/0005066v1"
+locator_scheme = "theorem"
+locator = "Theorem 3.5"
+url = "https://arxiv.org/abs/math/0005066v1"
+fetched_from = "https://arxiv.org/pdf/math/0005066v1"
+fetched_at = "2026-10-26T20:35:02Z"
+sha256 = "28dfe78dc1fcbe908641523a17ee1fdec5f330494dfdd5e4a48ac7b181c78747"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["§5.2", "supplier contract PadicLocalLanglandsForGL2Qp §0.1"]
+
+[[source]]
+id = "AW13"
+authors = "K. Ardakov, S. J. Wadsley"
+title = "On irreducible representations of compact $p$-adic analytic groups"
+year = 2011
+arxiv = "1102.2606v3"
+locator_scheme = "theorem"
+locator = "Theorem 10.4"
+url = "https://arxiv.org/abs/1102.2606v3"
+fetched_from = "https://arxiv.org/pdf/1102.2606v3"
+fetched_at = "2026-10-26T20:35:09Z"
+sha256 = "26529781720bd85a81918cbf38190d8adbb1e57e0903416c706486eb16339323"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["§0.1", "§1.2", "§2.1", "§2.4", "§3.1", "§3.2", "§3.3", "§3.4", "§3.5", "§3.6", "§3.7", "§3.8", "§3.9", "§4.11", "§5.2"]
+
+[[source]]
+id = "AW14"
+authors = "Konstantin Ardakov, Simon Wadsley"
+title = "Verma modules for Iwasawa algebras are faithful"
+year = 2013
+arxiv = "1308.5104v1"
+locator_scheme = "theorem"
+locator = "Theorem 5.4"
+url = "https://arxiv.org/abs/1308.5104v1"
+fetched_from = "https://arxiv.org/pdf/1308.5104v1"
+fetched_at = "2026-10-26T20:35:14Z"
+sha256 = "596596c0adbf0fd46405c2cd73629cd86c510b6c35fe4807eff3e9675e3eac76"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["§0.3", "§3.5", "§4.12", "§4.13", "§4.14", "Source corrections"]
+
+[[source]]
+id = "AB07"
+authors = "Konstantin Ardakov, Kenneth A. Brown"
+title = "Primeness, semiprimeness and localisation in Iwasawa algebras"
+year = 2004
+arxiv = "math/0412401v1"
+locator_scheme = "theorem"
+locator = "Lemma 5.4"
+url = "https://arxiv.org/abs/math/0412401v1"
+fetched_from = "https://arxiv.org/pdf/math/0412401v1"
+fetched_at = "2026-10-26T20:35:20Z"
+sha256 = "841687a17766ad7ccb0aafcc78abcfe5c2e1fac5ddb6514877ca5faba489cf2a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["§4.9"]
+
+[[source]]
+id = "SCHM13"
+authors = "Tobias Schmidt"
+title = "Verma modules over p-adic Arens-Michael envelopes of reductive Lie algebras"
+year = 2010
+arxiv = "1008.3897v2"
+locator_scheme = "theorem"
+locator = "Proposition 3.2.3"
+url = "https://arxiv.org/abs/1008.3897v2"
+fetched_from = "https://arxiv.org/pdf/1008.3897v2"
+fetched_at = "2026-10-26T20:35:26Z"
+sha256 = "8024d84c358897cc180428c0e3421cf5397b48b4220008227718e9f1639ea0b9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v2"
+cited_for = ["§2.5"]
+
+[[source]]
+id = "BCGP25"
+authors = "George Boxer, Frank Calegari, Toby Gee, Vincent Pilloni"
+title = "Modularity theorems for abelian surfaces"
+year = 2025
+arxiv = "2502.20645v1"
+locator_scheme = "theorem"
+locator = "Definition 2.2.31"
+url = "https://arxiv.org/abs/2502.20645v1"
+fetched_from = "https://arxiv.org/pdf/2502.20645v1"
+fetched_at = "2026-10-26T20:35:37Z"
+sha256 = "51d7eacca6eae394943f09ab72dfe09ee9aa6da27f563be8237c416e5da4e95c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v1"
+cited_for = ["§2.5", "Source corrections"]
+
+[[source]]
+id = "KOH07"
+authors = "Jan Kohlhaase"
+title = "Invariant distributions on p-adic analytic groups"
+year = 2007
+version_note = "author's copy; §1.4 summarises Frommer, Münster SFB 478 preprint 265 (2003)"
+locator_scheme = "section"
+locator = "§1.4"
+url = "https://www.esaga.uni-due.de/f/jan.kohlhaase/Kohlhaase_Invariant_Distributions.pdf"
+fetched_from = "https://www.esaga.uni-due.de/f/jan.kohlhaase/Kohlhaase_Invariant_Distributions.pdf"
+fetched_at = "2026-10-26T20:35:43Z"
+sha256 = "61681026a5ddbbad31361aa470dd2911cae708aaa2ee03400f39aa3a6f4400b2"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["§2.2", "§2.3"]
+
+[[source]]
+id = "SCH11"
+authors = "Peter Schneider"
+title = "p-Adic Lie Groups"
+year = 2011
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-3-642-21147-8"
+locator_scheme = "theorem"
+locator = "Theorem 28.3"
+url = "https://doi.org/10.1007/978-3-642-21147-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["§0.1", "§3.2"]
