@@ -1,0 +1,75 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LocalGaloisDeformationRingsPartII"
+
+[[source]]
+id = "BHHMS23"
+authors = "Christophe Breuil, Florian Herzig, Yongquan Hu, Stefano Morra, Benjamin Schraen"
+title = "Gelfand-Kirillov dimension and mod p cohomology for GL2"
+year = 2020
+venue = "Invent. Math. 234 (2023), no. 1, 1-128"
+arxiv = "2009.03127v7"
+locator_scheme = "theorem"
+locator = "Definitions 2.3.1, 2.3.3, 2.3.4, 3.1.1, 3.1.4, 3.1.6, 3.1.8, 3.2.1, 3.2.4, 3.2.5; Remarks 2.3.5, 2.3.6, 4.2.5; Propositions 2.4.3, 3.1.5, 3.1.7, 3.1.9, 3.2.7, 4.2.1, 4.3.1, 4.3.3; Lemmas 3.2.3, 3.2.6, 3.2.8, 3.3.1, 4.1.1, 4.1.2, 4.2.3, 4.2.4, 4.3.2, 8.1.2; Corollaries 3.2.9, 4.2.6; Tables 1-5 and Figure 2, pp. 41-45; Theorem 8.3.9 proof, pp. 101-102"
+url = "https://arxiv.org/abs/2009.03127v7"
+fetched_from = "https://arxiv.org/pdf/2009.03127v7"
+fetched_at = "2026-10-26T21:07:14Z"
+sha256 = "8f06c68bbb85aa3d13420181197167b3ce9158dc117e96da6299718765f99e7a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v7"
+cited_for = ["0.1", "0.2", "0.3", "0.4", "0.5", "1.1", "1.2", "1.3", "1.4", "2.1", "2.2", "2.3", "3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8", "3.9", "4.1", "4.2", "4.3", "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "6.1", "6.2", "6.3", "7.1", "7.2", "7.3", "7.4", "7.5"]
+
+[[source]]
+id = "GHLS17"
+authors = "Toby Gee, Florian Herzig, Tong Liu, David Savitt"
+title = "Potentially crystalline lifts of certain prescribed types"
+year = 2015
+venue = "Documenta Math. 22 (2017), 397-422"
+arxiv = "1506.01050v3"
+locator_scheme = "theorem"
+locator = "Theorem D; Theorem 3.1.5"
+url = "https://arxiv.org/abs/1506.01050v3"
+fetched_from = "https://arxiv.org/pdf/1506.01050v3"
+fetched_at = "2026-10-26T21:07:24Z"
+sha256 = "a216ee78611548869ea2211c7ee7808e6c3ec627aea78d90216e39c0497e3a85"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+version_note = "arXiv v3"
+cited_for = ["5.6", "gap:ghls-existence"]
+
+[[source]]
+id = "Elkik73"
+authors = "Renée Elkik"
+title = "Solutions d'équations à coefficients dans un anneau hensélien"
+year = 1973
+venue = "Ann. Sci. École Norm. Sup. (4) 6 (1973), 553-603"
+doi = "10.24033/asens.1258"
+locator_scheme = "page"
+locator = "§0.2 and Lemme 1, pp. 555–557"
+url = "https://www.numdam.org/item/10.24033/asens.1258.pdf"
+fetched_from = "https://www.numdam.org/item/10.24033/asens.1258.pdf"
+fetched_at = "2026-10-26T21:07:27Z"
+sha256 = "74ddbf6a04ca9fb4e6b9ef0da537231045a293d56242571749cda079349d40c5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["5.5"]
+
+[[source]]
+id = "Hamann75"
+authors = "Eloise Hamann"
+title = "On power-invariance"
+year = 1975
+venue = "Pacific J. Math. 61 (1975), no. 1, 153-159"
+locator_scheme = "theorem"
+locator = "Theorem 4, pp. 155–156"
+url = "https://msp.org/pjm/1975/61-1/pjm-v61-n1-p17-p.pdf"
+fetched_from = "https://msp.org/pjm/1975/61-1/pjm-v61-n1-p17-p.pdf"
+fetched_at = "2026-10-26T21:07:41Z"
+sha256 = "29b601cf166b3c8c9771a1e57e659b77f8b731f61fca6d484db8900cedd52931"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-10-26"
+cited_for = ["6.3", "gap:power-invariance"]

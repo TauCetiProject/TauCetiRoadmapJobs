@@ -3030,7 +3030,68 @@
       ]
     }
   ],
-  "gaps": [],
+  "gaps": [
+    {
+      "slug": "kummer-tower-tame-quotient",
+      "supplier": "LocalFieldsRamification",
+      "section": "Layer 4",
+      "needs": "for finite `K/ℚ_p` and the Kummer tower `K∞` of a compatible system of `p`-power roots of a uniformiser, the composite `G_{K∞} → G_K → G_K/P_K` is surjective with kernel `G_{K∞} ∩ P_K`, so that restriction identifies the tame quotients and preserves a chosen Frobenius lift."
+    },
+    {
+      "slug": "fundamental-character-artin",
+      "supplier": "PadicLocalLanglandsForGL2Qp",
+      "section": "§0.3",
+      "needs": "for finite `K/ℚ_p` with residue field `𝔽_q` and the arithmetically normalized Artin map of ClassFieldTheory Layer 7, the niveau-`f` fundamental character satisfies `ω_f(Art_K(u)) = σ₀(ū)^{−1}` for every `u ∈ 𝒪_K^×`, equivalently `σ₀(ū)` for the geometric normalization."
+    },
+    {
+      "slug": "tame-types-unramified",
+      "supplier": "PadicLocalLanglandsForGL2Qp",
+      "section": "§4.4",
+      "needs": "for `K/ℚ_p` unramified of degree `f` and a tame inertial type `τ ≅ τ(s,μ+η)` with `μ` 1-deep, the type `σ(τ)` of `GL₂(𝒪_K)` with its occurrence property, its identification with the inflation of the Deligne–Lusztig representation `R_s(μ)` of `GL₂(𝔽_q)` in the normalization of BHHMS23 §2.2 (pp. 13–14), the twist rule `σ(τ ⊗ χ) ≅ σ(τ) ⊗ (χ ∘ det)` and a lattice-independent semisimplified reduction `σ̄(τ)`."
+    },
+    {
+      "slug": "relative-monodromy-criterion",
+      "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheory",
+      "section": "§R07.4.6",
+      "needs": "for a `p`-adically complete `𝒪`-flat `𝒪`-algebra `R` topologically of finite type and a Kisin module of height `≤ h` over `𝔖_{L′,R}` with tame descent data, the relative open-disc ring `𝒪^rig_R = lim_n R⟦u′, (u′)^n/p⟧[1/p]` with its Frobenius, base change along continuous maps of such `R`, and the theorem that the monodromy derivation of 2.1 preserves `𝔐^rig` exactly when every specialization of `V*(𝔐[1/p])` at a finite `E`-algebra point extends to a potentially crystalline `G_K`-representation of the descent type with weights in `[0,h]`, compatibly with the potentially crystalline quotient of `LocalGaloisDeformationRings` §3.5."
+    },
+    {
+      "slug": "kummer-restriction-invariants",
+      "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheory",
+      "section": "§R07.4.24",
+      "needs": "for a finite-dimensional continuous `𝔽`-representation `W` of `G_K` that becomes upper triangular over an unramified extension `K′/K` of degree prime to `p` with `H⁰(G_{K′}, (W|_{G_{K′}})^ss ⊗ ω^{−1}) = 0`, the restriction `H⁰(G_K, W) → H⁰(G_{K∞}, W)` is bijective (BHHMS23, Lemma 3.2.8 and its source LLHLM23, Lemma 7.2.10(3))."
+    },
+    {
+      "slug": "rank-two-descent-kisin-modules",
+      "supplier": "LocalGaloisDeformationRings",
+      "section": "§6.9",
+      "needs": "the §6.9 construction in rank two for `K′/K` of degree `r ∈ {1,2}` and every height `h`, over every complete Noetherian local `𝒪`-algebra `R` with residue field `𝔽`: the category `Y^{[0,h],τ}(R)` of rank-two Kisin modules with descent of type `τ`, eigenbases, `T*_dd`, coefficient base change and the eigenbasis transformation law, together with the Hodge-bound subfunctor `Y^{≤λ,τ}` and its minor criterion on `𝒪`-flat `p`-complete `R` (the `i × i` minors of the Frobenius matrix are divisible by `(v+p)` to the sum of the `i` smallest entries of `λ_j`)."
+    },
+    {
+      "slug": "ghls-existence",
+      "supplier": "LocalGaloisDeformationRings",
+      "section": "§8.10",
+      "needs": "GHLS17 Theorem D (Theorem 3.1.5): for `K/ℚ_p` unramified, `p ∤ n` and `r̄ : G_K → GL_n(𝔽̄_p)` with a crystalline lift of some extended Fontaine–Laffaille weight `F`, if `F` is a Jordan–Hölder factor of `σ(λ,τ)` then `r̄` has a potentially crystalline lift of type `(λ,τ)`; together with the crystalline extended-Fontaine–Laffaille lift of `ρ̄` in every 3-deep weight of `W(ρ̄)` for semisimple rank-two `ρ̄`, and the dictionary translating GHLS17's `HT(ε) = −1`, dual Galois representations and highest weights to `HT(ε) = +1`, so that the criterion becomes BHHMS23 equation (26), p. 32."
+    },
+    {
+      "slug": "deligne-lusztig-reduction",
+      "supplier": "ModpRepresentationsOfGL2OverLocalFields",
+      "section": "MP.3, translation-map",
+      "needs": "for `ν ∈ η + Λ_R` and `μ − sw^{−1}ν − η` 1-deep, the Jordan–Hölder constituents of the reduction of the Deligne–Lusztig representation `R_{sw^{−1}}(μ − sw^{−1}ν)` of `GL₂(𝔽_q)` are the weights `F(t_{μ−η}(sw^{−1}(ω − ν̄)))` for `ω ∈ Σ`, each with multiplicity one, in MP.3's translation coordinates (BHHMS23, Proposition 2.4.3, p. 16)."
+    },
+    {
+      "slug": "regular-local-factorial",
+      "supplier": "DeformationAndDerivedPatchingAlgebra",
+      "section": "§3.2",
+      "needs": "the Auslander–Buchsbaum theorem that a regular local ring is a unique factorization domain, in particular `𝒪⟦x₁,…,x_n⟧` for a complete discrete valuation ring `𝒪`."
+    },
+    {
+      "slug": "power-invariance",
+      "supplier": "DeformationAndDerivedPatchingAlgebra",
+      "section": "§1.11",
+      "needs": "Hamann's theorem that a local ring is power-invariant (`A⟦X⟧ ≅ B⟦X⟧` implies `A ≅ B`; Hamann75, Theorem 4, pp. 155–156), its iteration to finitely many variables, and for complete local `𝔽`-algebras with residue field `𝔽` the coefficient-field correction making the resulting isomorphism `𝔽`-linear."
+    }
+  ],
   "sourceIssues": [
     {
       "id": "LocalGaloisDeformationRingsPartII/E1",
