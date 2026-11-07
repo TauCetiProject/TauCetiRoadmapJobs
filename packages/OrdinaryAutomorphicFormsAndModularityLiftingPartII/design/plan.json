@@ -2134,7 +2134,7 @@
       "title": "Lower bound on the components of the dyadic flag-image ring",
       "supplier": "LocalGaloisDeformationRings",
       "section": "§6.24 The flag image ring for trivial residual representation",
-      "needs": "For v | 2 and any residual ρ̄|G_{F_ṽ} with a stable full flag, every irreducible component of Spec R^△_v has dimension at least 1 + n² + [F_ṽ:ℚ₂]n(n+1)/2.",
+      "needs": "For v | 2 and any residual ρ̄|G_{F_ṽ} with a stable full flag, every irreducible component of Spec R^△_v has dimension at least 1 + n² + [F_ṽ:ℚ₂]n(n+1)/2, and every irreducible component of Spec R^△_v/ϖ lies on an irreducible component of Spec R^△_v on which the torsion subgroup of I^{ab}_{F_ṽ}(2)^n acts, through Λ_v, by the trivial character.",
       "detail": "§6.24 gives the dimension only for trivial residual representation and [F_ṽ:ℚ_p] > n(n−1)/2 + 1; BCGP25 Lemma 5.7.7 is applied at the unprepared field (p. 139). Ger19 Lemma 3.2.3 (lines 1582–1587) gives the bound at closed points of the generic fibre of the flag scheme and is a route.",
       "neededBy": [
         "OrdinaryAutomorphicFormsAndModularityLiftingPartII:OL.2/ordinary-dimension-bound"
@@ -2167,7 +2167,7 @@
       "slug": "hilbert-siegel-hida-module-free",
       "title": "The ordinary Hilbert–Siegel Hida module is finite free over the weight algebra",
       "supplier": "AutomorphicBundles",
-      "section": "Layer B5: Hecke action and Fourier expansions",
+      "section": "Layer 12: Hecke action and Fourier expansions",
       "needs": "For F⁺ totally real with p > 2 split completely, the Hida module M¹ of BCGP21 §§7.8–7.9 with I = ∅ (and its variant M^χ with characters χ_v at a finite set R of places prime to p), built from the ordinary part of coherent H⁰ of Hilbert–Siegel varieties of prime-to-p level, finite free over Λ_{GSp₄,F⁺} with the action of the prime-to-p Hecke operators.",
       "detail": "AutomorphicBundles Layer B5 constructs geometric Hecke operators on classical sections (B5.10–B5.12) in four settings: determinant-weight and vector-coefficient good-prime PEL models, prime-to-p ramified Hilbert models and the characteristic-zero classical Siegel comparison; it states nothing specific to Hilbert–Siegel varieties and no ordinary Hida theory. No roadmap on main, earlier in the merge order or among the open roadmap pull requests owns higher Hida theory on Hilbert–Siegel varieties; AutomorphicBundles is the closest earlier owner of coherent automorphic forms with Hecke action, and an extension in its direction would be AutomorphicBundles, Part II.",
       "neededBy": [
@@ -2180,7 +2180,7 @@
       "slug": "hilbert-siegel-taylor-wiles-coinvariants",
       "title": "Taylor–Wiles variants of the Hilbert–Siegel Hida module",
       "supplier": "AutomorphicBundles",
-      "section": "Layer B5: Hecke action and Fourier expansions",
+      "section": "Layer 12: Hecke action and Fourier expansions",
       "needs": "For a set Q of Taylor–Wiles places with group Δ_Q, the variants M^{1,Q} and M^{χ,Q} at the auxiliary level, finite free over Λ_{GSp₄,F⁺}[Δ_Q] with Hecke action and Δ_Q-coinvariants isomorphic to M¹ and M^χ (WHI22 Propositions 7.5–7.6).",
       "detail": "AutomorphicBundles Layer B5 constructs geometric Hecke operators on classical sections (B5.10–B5.12) in four settings: determinant-weight and vector-coefficient good-prime PEL models, prime-to-p ramified Hilbert models and the characteristic-zero classical Siegel comparison; it states nothing specific to Hilbert–Siegel varieties and no ordinary Hida theory. No roadmap on main, earlier in the merge order or among the open roadmap pull requests owns higher Hida theory on Hilbert–Siegel varieties; AutomorphicBundles is the closest earlier owner of coherent automorphic forms with Hecke action, and an extension in its direction would be AutomorphicBundles, Part II.",
       "neededBy": [
@@ -2192,7 +2192,7 @@
       "slug": "hilbert-siegel-ordinary-classicality",
       "title": "Classicality for the ordinary Hilbert–Siegel Hecke algebra",
       "supplier": "AutomorphicBundles",
-      "section": "Layer B5: Hecke action and Fourier expansions",
+      "section": "Layer 12: Hecke action and Fourier expansions",
       "needs": "Every ℚ̄_p-point of the Hecke algebra acting on M¹ above a Zariski-dense set of arithmetic weights of Λ_{GSp₄,F⁺} is the Hecke eigensystem of an ordinary cuspidal automorphic representation of GSp₄(𝔸_{F⁺}) of large regular weight (BCGP21 §7.9).",
       "detail": "AutomorphicBundles Layer B5 constructs geometric Hecke operators on classical sections (B5.10–B5.12) in four settings: determinant-weight and vector-coefficient good-prime PEL models, prime-to-p ramified Hilbert models and the characteristic-zero classical Siegel comparison; it states nothing specific to Hilbert–Siegel varieties and no ordinary Hida theory. No roadmap on main, earlier in the merge order or among the open roadmap pull requests owns higher Hida theory on Hilbert–Siegel varieties; AutomorphicBundles is the closest earlier owner of coherent automorphic forms with Hecke action, and an extension in its direction would be AutomorphicBundles, Part II.",
       "neededBy": [
