@@ -3403,74 +3403,22 @@
   ],
   "gaps": [
     {
-      "id": "MT",
-      "title": "Mixed Tate and framed-period suppliers",
-      "detail": "Requests MT-1, MT-2 and HODGE are precise new extensions; their existing Tannakian, geometric-motive and mixed-variation nodes do not provide these carriers or theorems. Source routes are recorded, but the Deligne–Goncharov construction and canonical-period proof have not been decomposed here. Realization and primitive-image conclusions remain contingent on these requests. Existing PS.9 mixed-Tate-Q/MT(Z) and three-puncture path constructions and NC.2 realization groups are imported; only the field/puncture/tangent extension is requested. The reduced cyclic coalgebra and its special-derivation comparison are linear algebra and are not part of this gap (E04 fixes their scope).",
-      "neededBy": [
-        "ZagierConjecturePolylogarithms:Z.3/motivic-correlator",
-        "ZagierConjecturePolylogarithms:Z.3/hodge-correlator",
-        "ZagierConjecturePolylogarithms:Z.3/correlator-realization",
-        "ZagierConjecturePolylogarithms:Z.5/canonical-period-four",
-        "ZagierConjecturePolylogarithms:Z.6/all-cycle-regulator-image",
-        "ZagierConjecturePolylogarithms:Z.3/correlator-basepoint-change"
-      ]
+      "slug": "trilog-specialization-closure",
+      "needs": "For every one-parameter family over F(t) of admissible parameters of the coordinate 22-term trilogarithm relation, the specialization at t=0 of the relation, with symbols specialized by the valuation-zero rule, lies in the relation subgroup R₃(F) of trilogGroup F.",
+      "supplier": "Polylogarithms",
+      "section": "§3.1"
     },
     {
-      "id": "FLAG-SIGNS",
-      "title": "Sign certificate for the flag/configuration comparison",
-      "detail": "GR §7.1 changes the bicomplex signs without recording the conversion. Inside the dual weight-four Bigrassmannian complex the squares of GR §10 hold with the total differential D=∂+p and GR's alternating face signs, including the degree-eight cancellation of configuration-identities. The remaining certificate is the sign comparison of the flag map t_• of Theorem 7.1 with D=∂+p and with the simplicial differential of the flag complex, including any row or degree sign adapter.",
-      "neededBy": [
-        "ZagierConjecturePolylogarithms:Z.4/flag-comparison"
-      ]
+      "slug": "mixed-tate-number-fields",
+      "needs": "For every number field F, the neutral Tannakian heart MT(F) with its graded fibre functor, Ext¹(ℚ(0),ℚ(n)) ≃ K_{2n−1}(F)⊗ℚ through PS.3.0, vanishing Ext² between Tate objects, the primitive part of the weight-n motivic Lie coalgebra identified with K_{2n−1}(F)⊗ℚ, and the Hodge realization to framed mixed Hodge–Tate structures whose period on Ext¹ is the Beilinson regulator.",
+      "supplier": "PeriodsAndSpecialValues",
+      "section": "PS.9.8–PS.9.9"
     },
     {
-      "id": "C8-SQUARE",
-      "title": "Degree-eight configuration identities",
-      "detail": "Give finite symbolic certificates for R₇³∂+R₇²p=0 on C₈(3) in Λ²b₂(3,8) (the B₃⊗U part vanishes trivially) and for R₇²∂=0 on C₈(2) in Λ²b₂(2,8). GR Lemma 7.9 claims instead that the Λ²B₂ part of R₇³∂ vanishes by itself, which is false (E05). The review confirmed both identities numerically with two independent Bloch–Wigner functionals, including the ratio −9 between the two C₈(3) contributions; a numerical check is not a proof. The descent of δ to G₄ depends on the first identity.",
-      "neededBy": [
-        "ZagierConjecturePolylogarithms:Z.4/configuration-identities"
-      ]
-    },
-    {
-      "id": "LIFT",
-      "title": "Field-defined regularized Grassmannian lift",
-      "detail": "Supply the F-defined tangential path construction, endpoint regularization, constants, independence and two nine-term descent for the motivic Grassmannian lift; prove its full cobracket is the normalized scissors expression. G09 establishes integrable symbols and geometric Hodge–Tate variations over a rational complex variety; it does not alone prove this stronger F-valued lift. GR §9.3 sketches this passage. See E03.",
-      "neededBy": [
-        "ZagierConjecturePolylogarithms:Z.5/grassmannian-symbol",
-        "ZagierConjecturePolylogarithms:Z.5/generic-chern-cocycle"
-      ]
-    },
-    {
-      "id": "RES",
-      "title": "SNC closure and residue/current signs",
-      "detail": "Prove that every flag coefficient, correcting term, residue lift and required simplicial pullback has a finite admissible SNC support; give the uniformizer/current incidence sign certificate. Parent P.5/r-form-differential itself records a general sign gap, so it cannot be treated as a fully checked chain-map input. Restriction to smooth SNC support avoids singular transfers and the general H homotopy but still requires this closure proof.",
-      "neededBy": [
-        "ZagierConjecturePolylogarithms:Z.5/normal-crossing-diagram",
-        "ZagierConjecturePolylogarithms:Z.5/current-regulator-four",
-        "ZagierConjecturePolylogarithms:Z.5/chern-residue-extension"
-      ]
-    },
-    {
-      "id": "SUPPLIERS",
-      "title": "Remaining homological, scissors and regulator adapters",
-      "detail": "Requests P3-SPEC, SCISSORS, HOM, DELIGNE and SCALE require extensions beyond the statements actually read in their supplier packets. In particular projective-only Deligne comparison does not cover BGL, Bo=2Be in a Tate coordinate does not by itself give the real L₄ π³ adapter, and P.3 leaves the degenerate cases of its 22-term relation unproved. These obligations must be discharged before closure of Z.1 and Z.4–Z.6.",
-      "neededBy": [
-        "ZagierConjecturePolylogarithms:Z.1/trilogarithm-reduction",
-        "ZagierConjecturePolylogarithms:Z.4/flag-resolution",
-        "ZagierConjecturePolylogarithms:Z.5/scissors-group",
-        "ZagierConjecturePolylogarithms:Z.5/scissors-trilogarithm-map",
-        "ZagierConjecturePolylogarithms:Z.5/current-regulator-four",
-        "ZagierConjecturePolylogarithms:Z.5/chern-regulator-normalization",
-        "ZagierConjecturePolylogarithms:Z.6/kappa-regulator"
-      ]
-    },
-    {
-      "id": "IND",
-      "title": "Every-family statement in the inductive presentation",
-      "detail": "Inherited from P.4/cycle-obstruction and weight-four-determinant-lifting. The explicit theorem is the endpoint of this proof plan; pushing its constructed cycles proves inductive existence, while the arbitrary inductive-cycle period claim remains conditional on ω=0 or a direct image theorem. No explicit/inductive B₃ or B₄ isomorphism is assumed.",
-      "neededBy": [
-        "ZagierConjecturePolylogarithms:Z.6/presentation-and-frontier"
-      ]
+      "slug": "punctured-line-path-torsors",
+      "needs": "For every number field F and finite S ⊂ ℙ¹(F), the unipotent motivic fundamental groupoid of ℙ¹∖S in MT(F) with tangential base points at S, its path torsors and Betti, de Rham and Hodge realizations, its Lie algebra identified with the free Lie algebra on the puncture loops modulo their sum, and the special-derivation action of the motivic Lie algebra.",
+      "supplier": "PeriodsAndSpecialValues",
+      "section": "PS.9.10"
     }
   ],
   "sourceIssues": [
