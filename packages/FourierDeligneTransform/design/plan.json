@@ -1,0 +1,1945 @@
+{
+ "roadmap": "FourierDeligneTransform",
+ "title": "The Fourier–Deligne transform",
+ "parent": null,
+ "summary": "Kernel transforms, trace functions, Lang-torsor character sheaves (Artin–Schreier and Kummer), and the ℓ-adic Fourier–Deligne transform on vector bundles over 𝔽_p-schemes: FT_! = FT_*, inversion, duality, functoriality, Plancherel, trace identity and Frobenius exchange, perverse t-exactness, and on the affine line the types of simple perverse sheaves, Fourier sheaves, the Kummer/Gauss-sum transform, Laumon's local monodromy and the local Fourier transforms with their tame values.",
+ "baseline": {
+  "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+  "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
+ },
+ "layers": [
+  {
+   "key": "0",
+   "title": "Additive characters and the finite Fourier transform",
+   "targets": [
+    {
+     "id": "0.1",
+     "kind": "definition",
+     "name": "AddChar.IsNondegenerate",
+     "statement": "An additive character ψ : 𝔽_p → Λ^× of a commutative ring Λ is nondegenerate when ψ(1) − 1 is a unit of Λ.",
+     "hypotheses": [
+      "Λ commutative ring",
+      "p prime"
+     ],
+     "locator": {
+      "source": "KL85",
+      "where": "Appendice (2.4), KL85 lines 442–446 (local case)"
+     },
+     "prerequisites": [
+      "mathlib:AddChar",
+      "mathlib:AddChar.IsPrimitive"
+     ],
+     "api": [
+      {
+       "name": "IsNondegenerate.sub_one_isUnit",
+       "role": "evaluation",
+       "statement": "ψ(a) − 1 is a unit for every a ∈ 𝔽_p^×."
+      },
+      {
+       "name": "IsNondegenerate.isUnit_p",
+       "role": "structure",
+       "statement": "p is a unit of Λ and Φ_p(ψ(1)) = 0."
+      },
+      {
+       "name": "IsNondegenerate.inv",
+       "role": "constructor",
+       "statement": "ψ^{−1} and a ↦ ψ(c a), c ∈ 𝔽_p^×, are nondegenerate."
+      },
+      {
+       "name": "IsNondegenerate.map",
+       "role": "functoriality",
+       "statement": "For a ring map h : Λ → Λ', h ∘ ψ is nondegenerate."
+      },
+      {
+       "name": "isNondegenerate_iff_forall_maximal",
+       "role": "characterisation",
+       "statement": "For finite Λ, ψ is nondegenerate iff its reduction modulo every maximal ideal is nontrivial."
+      },
+      {
+       "name": "IsNondegenerate.isPrimitive",
+       "role": "compatibility",
+       "statement": "For nonzero Λ, a nondegenerate character is AddChar.IsPrimitive (ψ(a) − 1 a unit, hence ψ(a) ≠ 1, for a ≠ 0)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "nondeg_Z7",
+       "kind": "computation",
+       "statement": "Λ = ℤ/7, p = 3, ψ(1) = 2: ψ(1) − 1 = 1 is a unit and ψ(0) + ψ(1) + ψ(2) = 7 ≡ 0."
+      },
+      {
+       "name": "nondeg_product_nonexample",
+       "kind": "non-example",
+       "statement": "Λ = ℤ/7 × ℤ/7, ψ(1) = (2, 1): nontrivial but ψ(1) − 1 = (1, 0) is not a unit and Σψ = (0, 3) ≠ 0."
+      },
+      {
+       "name": "nondeg_none_Z5",
+       "kind": "degenerate",
+       "statement": "Λ = ℤ/5, p = 3: (ℤ/5)^× has no element of order 3, so no nondegenerate character exists."
+      },
+      {
+       "name": "nondeg_Z49",
+       "kind": "computation",
+       "statement": "Λ = ℤ/49, p = 3, ψ(1) = 18: 18³ = 5832 ≡ 1 and 17 is a unit mod 49."
+      },
+      {
+       "name": "nondeg_zero_ring",
+       "kind": "non-example",
+       "statement": "Λ = 0: ψ(1) − 1 = 0 is a unit, so the unique character is nondegenerate, but it is trivial and not AddChar.IsPrimitive; the primitivity clause needs Λ ≠ 0."
+      }
+     ]
+    },
+    {
+     "id": "0.1.1",
+     "kind": "theorem",
+     "name": "AddChar.IsNondegenerate.sum_trace_mul_eq_ite",
+     "statement": "For a nondegenerate ψ, a finite field k of characteristic p and y ∈ k, Σ_{x ∈ k} ψ(Tr_{k/𝔽_p}(x y)) = |k| if y = 0 and 0 otherwise; when Spec Λ is connected (in particular nonempty), every additive character of k into Λ^× is x ↦ ψ(Tr(c x)) for a unique c ∈ k.",
+     "hypotheses": [
+      "ψ nondegenerate",
+      "k finite field of characteristic p",
+      "Spec Λ connected (classification clause only)"
+     ],
+     "locator": {
+      "source": "KL85",
+      "where": "Appendice (2.4), KL85 lines 442–446 (nontriviality of ψ in the local case); LAU87 (0.2), LAU87 lines 144–149, for the classification of ℚ̄_ℓ-valued characters of 𝔽_q; the orthogonality over a general commutative ring is this roadmap's own, proved by multiplying by ψ(Tr(x_0 y)) − 1"
+     },
+     "prerequisites": [
+      "target:0.1",
+      "mathlib:FiniteField.trace_to_zmod_nondegenerate",
+      "mathlib:Algebra.trace",
+      "tauceti:Submodule.sum_addChar_dotProduct"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "0.2",
+     "kind": "definition",
+     "name": "finiteFourier",
+     "statement": "For a finite-dimensional vector space W over a finite field k of characteristic p, Λ and nondegenerate ψ, 𝔉_ψ : (W → Λ) → (Module.Dual k W → Λ), (𝔉_ψ t)(w') = Σ_{w ∈ W} t(w) ψ(Tr_{k/𝔽_p} w'(w)).",
+     "hypotheses": [
+      "ψ nondegenerate",
+      "W finite-dimensional over finite k"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "(1.2.1), LAU87 lines 383–388"
+     },
+     "prerequisites": [
+      "target:0.1",
+      "target:0.1.1",
+      "mathlib:Module.Dual",
+      "tauceti:Submodule.sum_addChar_dotProduct"
+     ],
+     "api": [
+      {
+       "name": "finiteFourier_linear",
+       "role": "structure",
+       "statement": "𝔉_ψ is Λ-linear."
+      },
+      {
+       "name": "finiteFourier_indicator_zero",
+       "role": "evaluation",
+       "statement": "𝔉_ψ of the indicator of 0 is the constant 1; of the constant 1 is |W| times the indicator of 0."
+      },
+      {
+       "name": "finiteFourier_indicator_subspace",
+       "role": "evaluation",
+       "statement": "𝔉_ψ of the indicator of a subspace U is |U| times the indicator of U^⊥."
+      },
+      {
+       "name": "finiteFourier_baseChange",
+       "role": "functoriality",
+       "statement": "For k ⊂ k', 𝔉 on W ⊗ k' uses ψ ∘ Tr_{k'/𝔽_p}."
+      },
+      {
+       "name": "finiteFourier_eq_dft",
+       "role": "compatibility",
+       "statement": "For Λ = ℂ, k = 𝔽_p, W = ZMod p, ψ = ZMod.stdAddChar: 𝔉_ψ Φ (k) = ZMod.dft Φ (−k)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "ff_F3_Z7",
+       "kind": "computation",
+       "statement": "W = 𝔽_3, Λ = ℤ/7, ψ(1) = 2, t = 1_{1}: 𝔉t = (1, 2, 4); 𝔉𝔉t(2) = 17 ≡ 3 = |W| t(−2), 𝔉𝔉t(1) = 21 ≡ 0."
+      },
+      {
+       "name": "ff_zero_space",
+       "kind": "degenerate",
+       "statement": "W = 0: 𝔉_ψ is the identity and |W| = 1."
+      },
+      {
+       "name": "ff_degenerate_nonexample",
+       "kind": "non-example",
+       "statement": "With ψ(1) = (2,1) into ℤ/7 × ℤ/7 the second component of 𝔉 is t ↦ Σ t, not injective for |W| > 1."
+      },
+      {
+       "name": "ff_dft_sign",
+       "kind": "compatibility",
+       "statement": "For N = p = 3 and Φ = 1_{1}: ZMod.dft Φ k = stdAddChar(−k) while 𝔉Φ(k) = stdAddChar(k)."
+      },
+      {
+       "name": "ff_subspace_code_orthogonality",
+       "kind": "compatibility",
+       "statement": "W = 𝔽_3² with the dot product, Λ = ℤ/7, ψ(1) = 2, U = span(1, 1): 𝔉_ψ(1_U) is 3 on U^⊥ = {(0,0), (1,2), (2,1)} and 0 elsewhere, as Tau Ceti's Submodule.sum_addChar_dotProduct gives for C = U; at (1, 1) ∈ U ∖ U^⊥ the value is ψ(0) + ψ(2) + ψ(1) = 7 ≡ 0, not |U| = 3."
+      }
+     ]
+    },
+    {
+     "id": "0.2.1",
+     "kind": "theorem",
+     "name": "finiteFourier_inversion",
+     "statement": "Inversion 𝔉^{W^∨}(𝔉^W t)(w) = |W| t(−w); Plancherel Σ_{w'} 𝔉t_1(w') 𝔉t_2(w') = |W| Σ_w t_1(w) t_2(−w); convolution 𝔉(t_1 * t_2) = 𝔉t_1 · 𝔉t_2; 𝔉(f_! t) = 𝔉(t) ∘ f^∨ for linear f; translation 𝔉(t(· − e)) = ψ(Tr(·(e))) 𝔉t; 𝔉_{ψ^{−1}} t = 𝔉_ψ t ∘ [−1].",
+     "hypotheses": [
+      "ψ nondegenerate"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "function forms of (1.2.2.1)–(1.2.2.8), LAU87 lines 401–471"
+     },
+     "prerequisites": [
+      "target:0.2",
+      "target:0.1.1"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  },
+  {
+   "key": "1",
+   "title": "Kernel transforms and trace functions",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "construction",
+     "name": "kernelTransform",
+     "statement": "For S qcqs, torsion Λ, X, Y separated finitely presented over S, 𝒦 ∈ D⁺(X ×_S Y, Λ) of finite Tor amplitude and a ∈ ℤ, Φ_𝒦 : D⁺(X, Λ) → D⁺(Y, Λ), Φ_𝒦(K) = Rp_{Y!}(p_X^*K ⊗^L 𝒦)[a], a triangulated functor.",
+     "hypotheses": [
+      "S qcqs",
+      "X, Y separated finitely presented over S",
+      "𝒦 of finite Tor amplitude"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "Proposition (1.2.2.9), LAU87 lines 472–474, and BRY86 Proposition 9.4 1), BRY86 lines 3449–3450 and 3460, for base change of the Fourier kernel, proved by proper base change; BRY86 Définition 9.1, BRY86 line 3394, for the Fourier kernel as the motivating instance; SGA 4 XVII 5.4.3 as recalled at LAU87 lines 459–461 for Künneth; kernel transforms at this generality are this roadmap's own"
+     },
+     "prerequisites": [
+      "roadmap:EtaleCohomologyFoundations §0.8",
+      "roadmap:EtaleCohomologyFoundations §§G.1–G.3",
+      "roadmap:EtaleCohomologyFoundations §F.1",
+      "roadmap:EnhancedDerivedSheaves §§0.1–0.4",
+      "gap:projection-formula-qcqs"
+     ],
+     "api": [
+      {
+       "name": "kernelTransform_map",
+       "role": "functoriality",
+       "statement": "A morphism of kernels induces a natural transformation, and triangles of kernels give triangles of functors."
+      },
+      {
+       "name": "kernelTransform_graph",
+       "role": "evaluation",
+       "statement": "The graph kernel (id, f)_!Λ gives Rf_!; the kernel (g, id)_!Λ gives g^*."
+      },
+      {
+       "name": "kernelTransform_tensor",
+       "role": "evaluation",
+       "statement": "Tensoring the kernel by p_Y^*M gives Φ(−) ⊗^L M."
+      },
+      {
+       "name": "kernelTransform_baseChange_comp",
+       "role": "structure",
+       "statement": "Base-change isomorphisms satisfy identity and composition laws."
+      }
+     ],
+     "tests": [
+      {
+       "name": "kt_identity",
+       "kind": "degenerate",
+       "statement": "X = Y = S, 𝒦 = Λ_S, a = 0: Φ is the identity."
+      },
+      {
+       "name": "kt_compact_vs_ordinary",
+       "kind": "non-example",
+       "statement": "S = Spec k̄, X = 𝔸¹_S, Y = S, 𝒦 = Λ: Φ(Λ) = Λ(−1)[−2], whereas Rp_{Y*} would give Λ."
+      },
+      {
+       "name": "kt_tor_nonexample",
+       "kind": "non-example",
+       "statement": "Λ = ℤ/4, 𝒦 = ℤ/2 on a geometric point: Φ(ℤ/2) has cohomology ℤ/2 in all degrees ≤ 0 and leaves D⁺."
+      },
+      {
+       "name": "kt_graph_closed",
+       "kind": "computation",
+       "statement": "For i : {0} → 𝔸¹ the graph kernel sends Λ to i_*Λ and the transposed one sends Λ_{𝔸¹} to Λ."
+      }
+     ]
+    },
+    {
+     "id": "1.1.1",
+     "kind": "theorem",
+     "name": "kernelTransform_baseChange",
+     "statement": "For g : S' → S, g_Y^* Φ_𝒦(K) ≅ Φ_{𝒦'}(g_X^* K) with 𝒦' the pullback of 𝒦; and the relative Künneth isomorphism R(f ×_S g)_!(K ⊠_S L) ≅ Rf_!K ⊠_S Rg_!L for L of finite Tor amplitude.",
+     "hypotheses": [
+      "S qcqs",
+      "𝒦, L of finite Tor amplitude"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "Proposition (1.2.2.9), LAU87 lines 472–474, and BRY86 Proposition 9.4 1), BRY86 lines 3449–3450 and 3460 (base change of the Fourier kernel, by proper base change); SGA 4 XVII 5.4.3 as recalled at LAU87 lines 459–461 (Künneth)"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "roadmap:EtaleCohomologyFoundations §F.2.1",
+      "roadmap:EtaleCohomologyFoundations §0.8",
+      "gap:projection-formula-qcqs"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "1.2",
+     "kind": "construction",
+     "name": "kernelComp",
+     "statement": "For 𝒦 ∈ D⁺(X ×_S Y) and 𝒦' ∈ D⁺(Y ×_S Z) of finite Tor amplitude, 𝒦' ∘ 𝒦 = Rp_{XZ!}(p_{XY}^*𝒦 ⊗^L p_{YZ}^*𝒦') with shift a + a', and the composition isomorphism c : Φ_{𝒦'} ∘ Φ_𝒦 ≅ Φ_{𝒦'∘𝒦}.",
+     "hypotheses": [
+      "S qcqs",
+      "kernels of finite Tor amplitude"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "pattern of LAU87 lines 413–417 and 440–444"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.1.1",
+      "roadmap:EtaleCohomologyFoundations §0.8",
+      "roadmap:EnhancedDerivedSheaves §§0.1–0.4",
+      "gap:projection-formula-qcqs"
+     ],
+     "api": [
+      {
+       "name": "kernelComp_torAmplitude",
+       "role": "structure",
+       "statement": "𝒦' ∘ 𝒦 has finite Tor amplitude and commutes with base change."
+      },
+      {
+       "name": "kernelComp_graph",
+       "role": "evaluation",
+       "statement": "𝒦 ∘ Γ_g = (g × id)^*𝒦 and Γ_h ∘ 𝒦 = R(id × h)_!𝒦."
+      },
+      {
+       "name": "kernelComp_assoc_pentagon",
+       "role": "structure",
+       "statement": "The associator of composite kernels satisfies the pentagon identity."
+      }
+     ],
+     "tests": [
+      {
+       "name": "kc_graphs",
+       "kind": "compatibility",
+       "statement": "Graph kernels compose to the graph kernel of the composite and c is the composition isomorphism of EtaleCohomologyFoundations §0.8."
+      },
+      {
+       "name": "kc_unit",
+       "kind": "degenerate",
+       "statement": "For 𝒦 = Δ_!Λ the left unitor composed with c is the identity of Φ_{𝒦'}."
+      },
+      {
+       "name": "kc_shift_sign",
+       "kind": "computation",
+       "statement": "Φ_{Λ[1]} composed with itself is [2], with the Koszul sign of exchanging shifts."
+      }
+     ]
+    },
+    {
+     "id": "1.2.1",
+     "kind": "theorem",
+     "name": "kernelComp_coherence",
+     "statement": "The composition isomorphisms are natural in both kernels, associative for three composable kernels (compatible with the associator of kernels), unital for Δ_!Λ on either side, and compatible with base change along every S' → S.",
+     "hypotheses": [
+      "S qcqs",
+      "kernels of finite Tor amplitude"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "lines 413–417 and 440–444, the proofs of (1.2.2.1) and (1.2.2.4), which compose a Fourier kernel with a Fourier or a graph kernel by proper base change and the projection formula; the coherence statements are this roadmap's own"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "roadmap:EtaleCohomologyFoundations §0.8",
+      "roadmap:EnhancedDerivedSheaves §§0.1–0.4",
+      "gap:projection-formula-qcqs"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "1.3",
+     "kind": "theorem",
+     "name": "kernelTransform_ctf",
+     "statement": "For Noetherian S, finite Λ with characteristic invertible on S and 𝒦 ∈ Dᵇ_ctf(X ×_S Y), Φ_𝒦 preserves Dᵇ_ctf, 𝒦' ∘ 𝒦 ∈ Dᵇ_ctf, and Φ_𝒦 commutes with derived change of coefficients.",
+     "hypotheses": [
+      "S Noetherian",
+      "Λ finite, char Λ invertible on S"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "(0.5), LAU87 lines 172–182"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "roadmap:EtaleCohomologyFoundations §F.1",
+      "roadmap:EtaleCohomologyFoundations §F.2.4",
+      "roadmap:EtaleCohomologyFoundations §F.2.7",
+      "roadmap:EtaleCohomologyFoundations §F.3"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "1.4",
+     "kind": "definition",
+     "name": "traceFunction",
+     "statement": "For X separated of finite type over 𝔽_q, finite Λ of characteristic prime to p and K ∈ Dᵇ_ctf(X, Λ), t_{K,n}(x) = L(Frob_x, K_x̄), the Lefschetz number of geometric Frobenius on the perfect complex K_x̄, for x ∈ X(𝔽_{qⁿ}).",
+     "hypotheses": [
+      "X separated finite type over 𝔽_q",
+      "K ∈ Dᵇ_ctf"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "(1.1.1), LAU87 lines 242–247"
+     },
+     "prerequisites": [
+      "roadmap:EtaleCohomologyFoundations §F.10.1",
+      "roadmap:EtaleCohomologyFoundations §F.10.2",
+      "roadmap:EtaleCohomologyFoundations §F.10.3"
+     ],
+     "api": [
+      {
+       "name": "traceFunction_triangle",
+       "role": "structure",
+       "statement": "Additive in distinguished triangles; t_{K[1]} = −t_K."
+      },
+      {
+       "name": "traceFunction_tensor",
+       "role": "structure",
+       "statement": "t_{K ⊗^L L} = t_K · t_L and t_{f^*K} = t_K ∘ f."
+      },
+      {
+       "name": "traceFunction_twist",
+       "role": "evaluation",
+       "statement": "t_{Λ(m), n} = q^{−nm}."
+      },
+      {
+       "name": "traceFunction_baseExtension",
+       "role": "functoriality",
+       "statement": "Over X ⊗ 𝔽_{q^m}, the level-n trace function is t_{K, mn}."
+      }
+     ],
+     "tests": [
+      {
+       "name": "tf_point_twist",
+       "kind": "computation",
+       "statement": "On Spec 𝔽_q, Λ(−1)[−2] has t = q and Λ[1] has t = −1; arithmetic Frobenius would give q^{−1}."
+      },
+      {
+       "name": "tf_skyscraper_fubini",
+       "kind": "computation",
+       "statement": "t_{i_*Λ} is the indicator of 0 and the Fubini sum over 𝔸¹ gives q = t_{RΓ_c}."
+      },
+      {
+       "name": "tf_perfect_complex",
+       "kind": "non-example",
+       "statement": "K = [ℤ/4 —2→ ℤ/4] on a point: t = 0 although H⁰ = H¹ = ℤ/2, where a trace on cohomology is undefined."
+      }
+     ]
+    },
+    {
+     "id": "1.4.1",
+     "kind": "theorem",
+     "name": "traceFunction_lowerShriek",
+     "statement": "t_{Rf_!K, n}(y) = Σ_{f(x) = y} t_{K,n}(x) for separated f of finite type; hence t_{Φ_𝒦K,n}(y) = (−1)^a Σ_x t_{K,n}(x) t_{𝒦,n}(x, y); with realization to O_E and E.",
+     "hypotheses": [
+      "K, 𝒦 ∈ Dᵇ_ctf"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "(1.1.1.0)–(1.1.1.4), LAU87 lines 248–262"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "target:1.1",
+      "roadmap:InverseGaloisAndArithmeticFundamentalGroups §IG.0.T2",
+      "roadmap:InverseGaloisAndArithmeticFundamentalGroups §IG.0.T3"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "Character sheaves",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "construction",
+     "name": "langTorsor",
+     "statement": "For G smooth connected commutative of finite type over 𝔽_q with q-Frobenius F and A = G(𝔽_q), the Lang map L = F − id : G → G as a finite étale A-torsor for translation.",
+     "hypotheses": [
+      "G smooth connected commutative finite type over 𝔽_q"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "Exemple (1.1.3), LAU87 lines 299–309"
+     },
+     "prerequisites": [
+      "roadmap:ReductiveGroupsPartII §RG2.3.7",
+      "roadmap:SchemeAndStackFoundations §0.29",
+      "roadmap:EtaleCohomologyFoundations §F.0.2",
+      "mathlib:CategoryTheory.GrpObj"
+     ],
+     "api": [
+      {
+       "name": "langTorsor_natural",
+       "role": "functoriality",
+       "statement": "For φ : G → G', L_{G'} ∘ φ = φ ∘ L_G, so pushout along φ|_A is pullback along φ."
+      },
+      {
+       "name": "langTorsor_norm",
+       "role": "structure",
+       "statement": "Fⁿ − id = (F − id)(1 + ⋯ + F^{n−1}) maps the qⁿ-Lang torsor to the q-Lang torsor, inducing the norm."
+      },
+      {
+       "name": "norm_surjective",
+       "role": "structure",
+       "statement": "The norm G(𝔽_{qⁿ}) → G(𝔽_q) is surjective."
+      },
+      {
+       "name": "langTorsor_frobenius",
+       "role": "structure",
+       "statement": "L commutes with F."
+      }
+     ],
+     "tests": [
+      {
+       "name": "lang_Ga",
+       "kind": "computation",
+       "statement": "G = 𝔾_a: L(t) = t^q − t, kernel 𝔽_q; q = 3, x = 1: arithmetic Frobenius sends t to t + 1."
+      },
+      {
+       "name": "lang_Gm",
+       "kind": "computation",
+       "statement": "G = 𝔾_m: L(t) = t^{q−1}, kernel μ_{q−1}."
+      },
+      {
+       "name": "lang_disconnected",
+       "kind": "non-example",
+       "statement": "Constant ℤ/2: F = id and L = 0 is not surjective."
+      },
+      {
+       "name": "lang_trivial",
+       "kind": "degenerate",
+       "statement": "G = 0: L is the identity of a point."
+      }
+     ]
+    },
+    {
+     "id": "2.1.1",
+     "kind": "theorem",
+     "name": "langTorsor_isTorsor",
+     "statement": "L is étale (dL = −id), surjective (its image is an open subgroup; RG2.3.7 on points) with kernel the constant group A, hence a finite étale A-torsor; for x ∈ G(𝔽_{qⁿ}), Frob_x acts on L^{−1}(x)(𝔽̄_q) by translation by −N(x).",
+     "hypotheses": [
+      "G smooth connected commutative finite type over 𝔽_q"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "LAU87 lines 306–309"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "roadmap:ReductiveGroupsPartII §RG2.3.7",
+      "roadmap:SchemeAndStackFoundations §0.29",
+      "mathlib:FiniteField.norm_surjective"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "2.2",
+     "kind": "definition",
+     "name": "characterSheaf",
+     "statement": "For χ : A → Λ^×, ℒ_χ is the torsor–character sheaf of the Lang torsor with χ^{−1}, i.e. the χ-isotypic part of L_*Λ for (a·s)(t) = s(t + a); ℒ_χ(f) = f^*ℒ_χ for f : X → G.",
+     "hypotheses": [
+      "G as in 2.1",
+      "Λ finite (or O_E)"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "(1.1.3), LAU87 lines 310–312 and (1.1.3.6), LAU87 lines 338–339"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.1.1",
+      "gap:torsor-character-sheaf",
+      "roadmap:EtaleCohomologyFoundations §F.0.2"
+     ],
+     "api": [
+      {
+       "name": "characterSheaf_lisse",
+       "role": "structure",
+       "statement": "ℒ_χ is lisse of rank one with monodromy through A."
+      },
+      {
+       "name": "characterSheaf_rigid_mult",
+       "role": "structure",
+       "statement": "Rigidification at 0 and m^*ℒ_χ ≅ pr_1^*ℒ_χ ⊗ pr_2^*ℒ_χ, compatible, associative and commutative."
+      },
+      {
+       "name": "characterSheaf_tensor_dual",
+       "role": "evaluation",
+       "statement": "ℒ_χ ⊗ ℒ_χ' ≅ ℒ_{χχ'}, ℒ_χ^∨ ≅ ℒ_{χ^{−1}} ≅ [−1]^*ℒ_χ, ℒ_1 ≅ Λ."
+      },
+      {
+       "name": "characterSheaf_baseExtension",
+       "role": "functoriality",
+       "statement": "ℒ_χ|_{G ⊗ 𝔽_{qⁿ}} ≅ ℒ_{χ∘N}; φ^*ℒ_χ' ≅ ℒ_{χ'∘φ}."
+      },
+      {
+       "name": "characterSheaf_add",
+       "role": "evaluation",
+       "statement": "ℒ_χ(f + g) ≅ ℒ_χ(f) ⊗ ℒ_χ(g)."
+      },
+      {
+       "name": "characterSheaf_frobenius",
+       "role": "structure",
+       "statement": "Canonical F^*ℒ_χ ≅ ℒ_χ."
+      },
+      {
+       "name": "characterSheaf_translate",
+       "role": "evaluation",
+       "statement": "t_a^*ℒ_χ ≅ ℒ_χ ⊗ π^*(line with Frobenius χ(a)) for a ∈ A."
+      }
+     ],
+     "tests": [
+      {
+       "name": "cs_convention_F3",
+       "kind": "computation",
+       "statement": "G = 𝔾_a over 𝔽_3, Λ = ℤ/7, ψ(1) = 2: Frob_1 acts by 2, not ψ(−1) = 4."
+      },
+      {
+       "name": "cs_quadratic_kummer",
+       "kind": "computation",
+       "statement": "G = 𝔾_m over 𝔽_5, Λ = ℤ/3, quadratic χ: the sheaf of t² = x, traces +1 at 1, 4 and −1 at 2, 3."
+      },
+      {
+       "name": "cs_trivial",
+       "kind": "degenerate",
+       "statement": "χ = 1: ℒ_1 constant, whereas L_*Λ has rank |A|."
+      }
+     ]
+    },
+    {
+     "id": "2.3",
+     "kind": "theorem",
+     "name": "characterSheaf_trace",
+     "statement": "For x ∈ G(𝔽_{qⁿ}), Frob_x acts on ℒ_χ by χ(N_{𝔽_{qⁿ}/𝔽_q}(x)); t_{ℒ_χ(f), n} = χ ∘ N ∘ f.",
+     "hypotheses": [
+      "G as in 2.1"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "(1.1.3.3), LAU87 lines 328–330; (1.1.3.5), LAU87 lines 332–335"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "target:2.1.1",
+      "target:1.4"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "2.4",
+     "kind": "theorem",
+     "name": "characterSheaf_cohomology_eq_zero",
+     "statement": "If the elements χ(a) − 1, a ∈ A, generate the unit ideal, then RΓ_c(G_{𝔽̄_q}, ℒ_χ) = 0 and RΓ(G_{𝔽̄_q}, ℒ_χ) = 0; hence Σ_{x ∈ G(𝔽_{qⁿ})} χ(N x) = 0.",
+     "hypotheses": [
+      "G as in 2.1",
+      "(χ(a) − 1)_a generate the unit ideal"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "(1.1.3.4), LAU87 lines 330–331"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "target:2.3",
+      "roadmap:EtaleCohomologyFoundations §F.2.4",
+      "roadmap:EtaleCohomologyFoundations §F.2.6",
+      "roadmap:EtaleCohomologyFoundations §F.2.7",
+      "roadmap:EtaleCohomologyFoundations §F.3",
+      "roadmap:InverseGaloisAndArithmeticFundamentalGroups §IG.0.T2"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "2.5",
+     "kind": "definition",
+     "name": "artinSchreierSheaf",
+     "statement": "For nondegenerate ψ : 𝔽_p → Λ^×, ℒ_ψ is the character sheaf of 𝔾_{a,𝔽_p}; for an 𝔽_p-scheme X and f ∈ Γ(X, O_X), ℒ_ψ(f) = f^*ℒ_ψ.",
+     "hypotheses": [
+      "ψ nondegenerate"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "LAU87 lines 343–345 and 370–371; KATZ01 lines 426–440"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "target:2.4",
+      "target:0.1",
+      "roadmap:SchemeAndStackFoundations §2.9",
+      "roadmap:SchemeAndStackFoundations §2.11"
+     ],
+     "api": [
+      {
+       "name": "artinSchreierSheaf_add",
+       "role": "evaluation",
+       "statement": "ℒ_ψ(f + g) ≅ ℒ_ψ(f) ⊗ ℒ_ψ(g); ℒ_ψ(0) ≅ Λ."
+      },
+      {
+       "name": "artinSchreierSheaf_smul",
+       "role": "evaluation",
+       "statement": "ℒ_ψ(c f) ≅ ℒ_{ψ(c·)}(f) for c ∈ 𝔽_p."
+      },
+      {
+       "name": "artinSchreierSheaf_coboundary",
+       "role": "evaluation",
+       "statement": "ℒ_ψ(f^p) ≅ ℒ_ψ(f) and ℒ_ψ(f^p − f) ≅ Λ."
+      },
+      {
+       "name": "artinSchreierSheaf_trace",
+       "role": "evaluation",
+       "statement": "Over 𝔽_q: ℒ_ψ on 𝔾_{a,𝔽_q} is the character sheaf of ψ ∘ Tr; t(x) = ψ(Tr_{𝔽_{qⁿ}/𝔽_p} f(x))."
+      },
+      {
+       "name": "artinSchreierSheaf_pullback_dual",
+       "role": "functoriality",
+       "statement": "g^*ℒ_ψ(f) ≅ ℒ_ψ(f ∘ g); ℒ_ψ(f)^∨ ≅ ℒ_ψ(−f)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "as_zero_and_p",
+       "kind": "degenerate",
+       "statement": "ℒ_ψ(0) = Λ; ℒ_ψ(x^p) ≅ ℒ_ψ(x) has Swan 1 at ∞, not p."
+      },
+      {
+       "name": "as_trace_F9",
+       "kind": "computation",
+       "statement": "Over 𝔽_9, p = 3: t_{ℒ_ψ(x)}(i) = ψ(0) = 1, t(1) = ψ(2)."
+      },
+      {
+       "name": "as_coboundary_equal_traces",
+       "kind": "characterisation",
+       "statement": "ℒ_ψ(x² − x) ≅ ℒ_ψ(x² − x³) on 𝔸¹_{𝔽_3}; traces agree on all 𝔽_{3ⁿ}."
+      }
+     ]
+    },
+    {
+     "id": "2.6",
+     "kind": "definition",
+     "name": "kummerSheaf",
+     "statement": "Over a field k with |μ_N(k)| = N, N invertible, for χ : μ_N(k) → Λ^×, ℒ_χ is the torsor–character sheaf of [N] : 𝔾_m → 𝔾_m with χ^{−1}; ℒ_χ(g) = g^*ℒ_χ for g ∈ Γ(X, O_X^×); over 𝔽_q with N = q − 1 it is the character sheaf of 𝔾_m.",
+     "hypotheses": [
+      "k field",
+      "N invertible in k with |μ_N(k)| = N"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "Remarque (1.1.3.7), LAU87 lines 349–367"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "gap:torsor-character-sheaf",
+      "roadmap:SchemeAndStackFoundations §2.9",
+      "roadmap:SchemeAndStackFoundations §2.11",
+      "roadmap:EtaleCohomologyFoundations §F.3a"
+     ],
+     "api": [
+      {
+       "name": "kummerSheaf_mul",
+       "role": "evaluation",
+       "statement": "ℒ_χ(gh) ≅ ℒ_χ(g) ⊗ ℒ_χ(h); ℒ_χ ⊗ ℒ_χ' ≅ ℒ_{χχ'}; ℒ_1 ≅ Λ."
+      },
+      {
+       "name": "kummerSheaf_divisibility",
+       "role": "functoriality",
+       "statement": "Compatibility with N | N' through ζ ↦ ζ^{N'/N}; [d]^*ℒ_χ ≅ ℒ_{χ^d}."
+      },
+      {
+       "name": "kummerSheaf_tame",
+       "role": "structure",
+       "statement": "Tamely ramified at 0 and ∞ with inertia through the tame character."
+      },
+      {
+       "name": "kummerSheaf_jshriek",
+       "role": "evaluation",
+       "statement": "If χ(ζ) − 1 is a unit, RΓ_c(𝔾_{m,k̄}, ℒ_χ) = 0 and j_!ℒ_χ ≅ Rj_*ℒ_χ."
+      }
+     ],
+     "tests": [
+      {
+       "name": "ks_F5",
+       "kind": "compatibility",
+       "statement": "k = 𝔽_5, N = 4: the Kummer cover is the Lang torsor of 𝔾_m."
+      },
+      {
+       "name": "ks_trivial_nonexample",
+       "kind": "non-example",
+       "statement": "Trivial χ: (Rj_*Λ)_0 has H⁰ = Λ and H¹ = Λ(−1), so j_!Λ ≠ Rj_*Λ."
+      },
+      {
+       "name": "ks_complex_sign",
+       "kind": "computation",
+       "statement": "k = ℂ, N = 2, Λ = ℤ/3, sign χ: χ(−1) − 1 = 1 is a unit and j_!ℒ_χ = Rj_*ℒ_χ."
+      }
+     ]
+    },
+    {
+     "id": "2.7.1",
+     "kind": "theorem",
+     "name": "HenselianTrait.completion_ramification",
+     "statement": "For a henselian discrete valuation ring R with fraction field K and perfect residue field of characteristic p, and its completion K̂, restriction Gal(K̂^sep/K̂) → Gal(K^sep/K) is an isomorphism carrying inertia and wild inertia onto those of the trait Spec R and G_{K̂}^u onto G_K^u for every u ≥ 0 (upper numbering of G_K from the lower numbering on O_L for finite Galois L/K); breaks, break decompositions and Swan conductors of G_K-representations are those of ArithmeticGaloisRepresentations §3.1 through it. K̂/K need not be separable.",
+     "hypotheses": [
+      "R henselian discrete valuation ring",
+      "residue field perfect of characteristic p"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "(2.1.1), LAU87 lines 680–688 (R between k{π} and k[[π]], ramification taken from the completion); proof by the finite étale equivalence and density of O_L in O_{L̂}"
+     },
+     "prerequisites": [
+      "roadmap:AdicEtaleGeometry §A1.0.5",
+      "roadmap:EtaleCohomologyFoundations §F.3a",
+      "roadmap:ArithmeticGaloisRepresentations §3.1",
+      "mathlib:IsKrasner.of_completeSpace"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "completion_artinSchreier",
+       "kind": "computation",
+       "statement": "R = k{π}, R̂ = k[[π]]: α^p − α = π^{−m}, p ∤ m, has upper jump m over k((π)) and hence over K."
+      },
+      {
+       "name": "completion_nonExcellent",
+       "kind": "boundary",
+       "statement": "R the henselization of the valuation ring of k(π, f^p) ⊂ k((π)), f transcendental over k(π): K̂/K inseparable (f ∈ K̂), restriction still an isomorphism."
+      },
+      {
+       "name": "completion_nonHenselian",
+       "kind": "non-example",
+       "statement": "R = k[π]_(π), p odd: K(√(1 + π)) splits over K̂, so restriction is not onto."
+      }
+     ]
+    },
+    {
+     "id": "2.7",
+     "kind": "theorem",
+     "name": "artinSchreierSheaf_line",
+     "statement": "For k perfect of characteristic p, f ∈ k[x] of degree d ≥ 1 prime to p and ψ nondegenerate: ℒ_ψ(f) is lisse on 𝔸¹, totally wild at ∞ with single break d and Swan d; H⁰_c = H²_c = 0, H¹_c free of rank d − 1, H¹_c → H¹ an isomorphism; for lisse F with breaks < d at ∞ and field coefficients, F ⊗ ℒ_ψ(f) has all breaks d, H²_c = 0 and H¹_c of rank (d − 1) rank F.",
+     "hypotheses": [
+      "k perfect of characteristic p",
+      "deg f = d ≥ 1, p ∤ d",
+      "ψ nondegenerate"
+     ],
+     "locator": {
+      "source": "KATZ01",
+      "where": "Lecture II, KATZ01 lines 441–460"
+     },
+     "prerequisites": [
+      "target:2.7.1",
+      "target:2.5",
+      "target:2.4",
+      "roadmap:ArithmeticGaloisRepresentations §3.1",
+      "roadmap:ArithmeticGaloisRepresentations §3.7",
+      "roadmap:EtaleDualityAndPerverseSheaves §5.2",
+      "roadmap:EtaleCohomologyFoundations §F.3"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "The Fourier–Deligne transform on a vector bundle",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "construction",
+     "name": "fourierKernel",
+     "statement": "For S an 𝔽_p-scheme and E finite locally free of rank r, the pairing ⟨ , ⟩ : V(E) ×_S V(E^∨) → 𝔾_{a,S} (the identity of End E) and the kernel ℒ_ψ⟨ , ⟩ = ⟨ , ⟩^*ℒ_ψ.",
+     "hypotheses": [
+      "S over 𝔽_p",
+      "E finite locally free of constant rank r"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "(1.2.1), LAU87 lines 372–377; KL85 lines 365–371"
+     },
+     "prerequisites": [
+      "roadmap:AlgebraicVectorBundles §L1A (Layer 4, relative Spec)",
+      "roadmap:AlgebraicVectorBundles §L2B (Layer 7, geometric vector bundles)",
+      "tauceti:TauCeti.AlgebraicGeometry.FiniteLocallyFreeSheaf.dual",
+      "tauceti:TauCeti.AlgebraicGeometry.FiniteLocallyFreeSheaf.evalIso",
+      "target:2.5"
+     ],
+     "api": [
+      {
+       "name": "fourierKernel_add",
+       "role": "structure",
+       "statement": "(s × id)^*ℒ_ψ⟨,⟩ ≅ p_13^*ℒ_ψ⟨,⟩ ⊗ p_23^*ℒ_ψ⟨,⟩, and symmetrically."
+      },
+      {
+       "name": "fourierKernel_transpose",
+       "role": "functoriality",
+       "statement": "(f × id)^*ℒ_ψ⟨,⟩_2 ≅ (id × f^∨)^*ℒ_ψ⟨,⟩_1 for linear f."
+      },
+      {
+       "name": "fourierKernel_zero",
+       "role": "evaluation",
+       "statement": "Restriction to σ(S) ×_S V' and V ×_S σ'(S) is Λ."
+      },
+      {
+       "name": "fourierKernel_baseChange",
+       "role": "functoriality",
+       "statement": "Compatible with base change S' → S."
+      },
+      {
+       "name": "fourierKernel_bidual",
+       "role": "compatibility",
+       "statement": "Under evalIso, the kernel of E^∨ is the transpose of that of E."
+      }
+     ],
+     "tests": [
+      {
+       "name": "fk_rank_one",
+       "kind": "computation",
+       "statement": "E = O_S: the pairing is x x' on 𝔸²_S."
+      },
+      {
+       "name": "fk_rank_zero",
+       "kind": "degenerate",
+       "statement": "r = 0: V = V' = S and the kernel is Λ_S."
+      },
+      {
+       "name": "fk_not_pullback",
+       "kind": "non-example",
+       "statement": "ℒ_ψ(x x') is not a pullback from either factor of 𝔸¹ × 𝔸¹."
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "definition",
+     "name": "fourierDeligne",
+     "statement": "FT_ψ = FT_{ψ,!} : D⁺(V, Λ) → D⁺(V', Λ), FT_ψ(K) = Rpr'_!(pr^*K ⊗ ℒ_ψ⟨ , ⟩)[r], and FT_{ψ,*}(K) = Rpr'_*(pr^*K ⊗ ℒ_ψ⟨ , ⟩)[r] with the forget-supports map.",
+     "hypotheses": [
+      "S qcqs over 𝔽_p",
+      "E of constant rank r",
+      "Λ finite, ψ nondegenerate"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "Définition (1.2.1.1), LAU87 lines 378–382; KL85 (2.1.1)–(2.1.2), KL85 lines 372–377"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:3.1",
+      "roadmap:EtaleCohomologyFoundations §0.8"
+     ],
+     "api": [
+      {
+       "name": "fourierDeligne_triangulated",
+       "role": "structure",
+       "statement": "Triangulated; commutes with shifts and twists."
+      },
+      {
+       "name": "fourierDeligne_projection",
+       "role": "evaluation",
+       "statement": "FT(K ⊗ π^*M) ≅ FT(K) ⊗ π'^*M for M of finite Tor amplitude."
+      },
+      {
+       "name": "fourierDeligne_scale",
+       "role": "evaluation",
+       "statement": "FT_{ψ(c·)} ≅ [c]^* FT_ψ; FT_{ψ^{−1}} ≅ [−1]^* FT_ψ."
+      },
+      {
+       "name": "fourierDeligne_zeroSection",
+       "role": "evaluation",
+       "statement": "FT(σ_*M) ≅ π'^*M[r]."
+      },
+      {
+       "name": "fourierDeligne_eq_kernelTransform",
+       "role": "compatibility",
+       "statement": "FT_ψ is the kernel transform with kernel ℒ_ψ⟨,⟩ and shift r."
+      }
+     ],
+     "tests": [
+      {
+       "name": "ft_rank_zero",
+       "kind": "degenerate",
+       "statement": "r = 0: FT is the identity."
+      },
+      {
+       "name": "ft_delta",
+       "kind": "computation",
+       "statement": "On 𝔸¹_{𝔽_q}: FT(i_{0*}Λ) = Λ[1], trace −1 everywhere = −Σ δ_0(x)ψ(x x')."
+      },
+      {
+       "name": "ft_trivial_character",
+       "kind": "non-example",
+       "statement": "Trivial ψ: FT(K) = π'^*Rπ_!K[r]."
+      }
+     ]
+    },
+    {
+     "id": "3.3",
+     "kind": "theorem",
+     "name": "projective_line_ula_artinSchreier",
+     "statement": "The projection ℙ¹ ×_{𝔽_p} 𝔸¹ → ℙ¹ is universally locally acyclic relative to (j × 1)_!ℒ_ψ(x y), and the strict-local comparison maps stay isomorphisms after tensoring with any Λ-module.",
+     "hypotheses": [
+      "ψ nondegenerate"
+     ],
+     "locator": {
+      "source": "KL85",
+      "where": "Théorème (2.4.4), KL85 lines 567–568; LAU87 Théorème (1.3.1.2), LAU87 lines 526–529"
+     },
+     "prerequisites": [
+      "target:2.5",
+      "roadmap:EtaleCohomologyFoundations §F.2.3",
+      "roadmap:EtaleCohomologyFoundations §F.2.2",
+      "roadmap:EtaleCohomologyFoundations §F.0.4",
+      "roadmap:SchemeAndStackFoundations §2.11"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "3.3.1",
+     "kind": "theorem",
+     "name": "fourierDeligne_lowerShriek_iso_lowerStar",
+     "statement": "For every qcqs 𝔽_p-scheme S, E and K ∈ D⁺(V, Λ), FT_{ψ,!}(K) → FT_{ψ,*}(K) is an isomorphism.",
+     "hypotheses": [
+      "S qcqs over 𝔽_p",
+      "ψ nondegenerate"
+     ],
+     "locator": {
+      "source": "KL85",
+      "where": "Théorème (2.4.1), KL85 lines 447–449, proof lines 450–554; LAU87 Théorème (1.3.1.1), LAU87 lines 521–525"
+     },
+     "prerequisites": [
+      "target:3.3",
+      "target:3.2",
+      "roadmap:EtaleCohomologyFoundations §0.7",
+      "roadmap:EtaleCohomologyFoundations §F.2.2",
+      "roadmap:EtaleCohomologyFoundations §F.0.4"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "3.4",
+     "kind": "theorem",
+     "name": "fourierKernel_lowerShriek",
+     "statement": "Rpr_!ℒ_ψ⟨ , ⟩ ≅ σ_*Λ(−r)[−2r] on V, and FT_ψ(π^*M[r]) ≅ σ'_*M(−r) for M ∈ D⁺(S, Λ).",
+     "hypotheses": [
+      "ψ nondegenerate"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "Proposition (1.2.2.2), LAU87 lines 419–432"
+     },
+     "prerequisites": [
+      "target:3.2",
+      "target:2.4",
+      "roadmap:EtaleCohomologyFoundations §0.9",
+      "roadmap:EtaleCohomologyFoundations §0.7",
+      "roadmap:EtaleCohomologyFoundations §F.2.1",
+      "gap:projection-formula-qcqs"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "3.4.1",
+     "kind": "construction",
+     "name": "fourierDeligne_inversion",
+     "statement": "The natural isomorphism ι_K : FT^{V'}_ψ(FT^V_ψ K) ≅ [−1]^*K(−r), compatible with base change; FT_ψ is an equivalence with quasi-inverse [−1]^*FT^{V'}_ψ(−)(r); Rπ'_!FT_ψ(K) ≅ σ^*K(−r)[−r] and σ'^*FT_ψ(K) ≅ Rπ_!K[r].",
+     "hypotheses": [
+      "S qcqs over 𝔽_p",
+      "ψ nondegenerate"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "Théorème (1.2.2.1), Corollaires (1.2.2.3), (1.2.2.5), LAU87 lines 401–449"
+     },
+     "prerequisites": [
+      "target:3.4",
+      "target:3.3.1",
+      "roadmap:EtaleCohomologyFoundations §F.2.1",
+      "roadmap:EtaleCohomologyFoundations §F.2.7",
+      "gap:projection-formula-qcqs"
+     ],
+     "api": [
+      {
+       "name": "inversion_baseChange",
+       "role": "functoriality",
+       "statement": "ι commutes with base change S' → S."
+      },
+      {
+       "name": "inversion_equivalence",
+       "role": "structure",
+       "statement": "FT_{ψ^{−1}} ∘ FT_ψ ≅ (−r)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "inv_delta",
+       "kind": "computation",
+       "statement": "r = 1: FT(FT(i_{0*}Λ)) = i_{0*}Λ(−1), trace q = 𝔉𝔉δ_0(0)."
+      },
+      {
+       "name": "inv_trivial_nonexample",
+       "kind": "non-example",
+       "statement": "Trivial ψ: FT(FT(i_{0*}Λ)) = Λ_{𝔸¹}(−1)."
+      },
+      {
+       "name": "inv_sign",
+       "kind": "computation",
+       "statement": "FT(FT(i_{a*}Λ)) ≅ i_{(−a)*}Λ(−1); without [−1]^* the support would be a ≠ −a for p odd."
+      }
+     ]
+    },
+    {
+     "id": "3.5",
+     "kind": "theorem",
+     "name": "fourierDeligne_duality",
+     "statement": "For S Noetherian, K ∈ Dᵇ_ctf(V) and M ∈ D⁺(S): RHom(FT_ψ K, π'^!M) ≅ FT_{ψ^{−1}}(RHom(K, π^!M))(r); D_{V'/S}FT_ψ ≅ FT_{ψ^{−1}} D_{V/S}(r); over a field D FT_ψ ≅ FT_{ψ^{−1}} D (r).",
+     "hypotheses": [
+      "S Noetherian over 𝔽_p",
+      "K ∈ Dᵇ_ctf"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "Théorème (1.3.2.1), Corollaire (1.3.2.2), LAU87 lines 553–565; KL85 (2.1.5)(ii), KL85 lines 390–391"
+     },
+     "prerequisites": [
+      "target:3.3.1",
+      "target:3.4.1",
+      "roadmap:EtaleCohomologyFoundations §F.5",
+      "roadmap:EtaleCohomologyFoundations §F.6",
+      "gap:smooth-exceptional-pullback",
+      "roadmap:EtaleDualityAndPerverseSheaves §2.7"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "3.6",
+     "kind": "theorem",
+     "name": "fourierDeligne_functoriality",
+     "statement": "Base change g'^*FT ≅ FT g^* and FT Rg_{V!} ≅ Rg_{V'!} FT; for linear f : E_1 → E_2, FT(Rf_!K) ≅ f^{∨*}FT(K)[r_2 − r_1]; external products; FT(K_1 * K_2) ≅ FT K_1 ⊗ FT K_2[−r]; Plancherel Rπ'_!(FT K_1 ⊗ FT K_2) ≅ Rπ_!(K_1 ⊗ [−1]^*K_2)(−r); FT(Λ_{V(F)}[s]) ≅ Λ_{V(F^⊥)}(−s)[r − s]; FT(τ_{e*}K) ≅ FT(K) ⊗ ℒ_ψ⟨e, ·⟩; in every characteristic [2]^*FT(ℒ_ψ(q)) ≅ ℒ_ψ(−q') ⊗ π'^*Rπ_!ℒ_ψ(q)[r]; m^*K ≅ M ⊠ L induces m'^*FT(K) ≅ M ⊠ FT(L).",
+     "hypotheses": [
+      "S qcqs over 𝔽_p",
+      "ψ nondegenerate"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "(1.2.2.4)–(1.2.2.9), (1.2.3.1)–(1.2.3.5), LAU87 lines 435–518; KL85 (2.1.5)(i), KL85 lines 388–389"
+     },
+     "prerequisites": [
+      "target:3.4.1",
+      "target:1.2",
+      "target:1.1.1",
+      "roadmap:EtaleCohomologyFoundations §F.2.1",
+      "roadmap:EtaleCohomologyFoundations §F.2.7",
+      "gap:projection-formula-qcqs"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "3.7",
+     "kind": "theorem",
+     "name": "fourierDeligne_coefficients",
+     "statement": "For Noetherian S, FT preserves Dᵇ_ctf; FT_{h∘ψ}(Λ' ⊗^L K) ≅ Λ' ⊗^L FT_ψ(K); for O_E the levelwise transform of a normalized system is normalized, and the E, ℚ̄_ℓ transforms are realizations, with §§3.3–3.6 transported.",
+     "hypotheses": [
+      "S Noetherian",
+      "ψ nondegenerate (resp. nontrivial into O_E)"
+     ],
+     "locator": {
+      "source": "KL85",
+      "where": "Appendice (2.4), KL85 lines 438–441"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:3.6",
+      "roadmap:EtaleCohomologyFoundations §F.4.1",
+      "roadmap:EtaleCohomologyFoundations §F.4.5",
+      "roadmap:EtaleCohomologyFoundations §F.4.6"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "3.8",
+     "kind": "theorem",
+     "name": "fourierDeligne_traceFunction",
+     "statement": "For S separated of finite type over 𝔽_q and K ∈ Dᵇ_ctf(V): t_{FT K, n}(e') = (−1)^r Σ_{e ∈ V_s(𝔽_{qⁿ})} t_{K,n}(e) ψ(Tr⟨e, e'⟩), with the trace forms of inversion, convolution and Plancherel.",
+     "hypotheses": [
+      "S separated finite type over 𝔽_q",
+      "K ∈ Dᵇ_ctf"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "Théorème (1.2.1.2), LAU87 lines 389–391"
+     },
+     "prerequisites": [
+      "target:1.4.1",
+      "target:3.2",
+      "target:0.2",
+      "roadmap:InverseGaloisAndArithmeticFundamentalGroups §IG.0.T2",
+      "roadmap:InverseGaloisAndArithmeticFundamentalGroups §IG.0.T3"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "3.8.1",
+     "kind": "construction",
+     "name": "fourierDeligne_frobeniusExchange",
+     "statement": "For S = S_0 ⊗ 𝔽̄_q and F = F_{V_0} × id, a canonical natural isomorphism F^*FT_ψ(K) ≅ FT_ψ(F^*K), compatible with powers of F and base change, so FT carries pairs (K, φ : F^*K ≅ K) to such pairs, recovering the descent datum of FT(K_0) for descended K.",
+     "hypotheses": [
+      "S_0 over 𝔽_q"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "(1.2.2.9), LAU87 lines 472–474, with (0.9), LAU87 lines 212–226"
+     },
+     "prerequisites": [
+      "target:3.6",
+      "roadmap:EtaleCohomologyFoundations §F.0.4",
+      "roadmap:EtaleCohomologyFoundations §F.10.2",
+      "roadmap:EtaleCohomologyFoundations §F.10.2b",
+      "roadmap:SchemeAndStackFoundations §0.29",
+      "tauceti:AlgebraicGeometry.Scheme.Hom.qPowerFrobenius_baseChange"
+     ],
+     "api": [
+      {
+       "name": "frobExchange_comp",
+       "role": "structure",
+       "statement": "Compatible with composition F^{m+n} = F^m F^n."
+      },
+      {
+       "name": "frobExchange_descended",
+       "role": "compatibility",
+       "statement": "For K = K_0 descended, the induced structure is the descent datum of FT(K_0)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "fe_point",
+       "kind": "degenerate",
+       "statement": "S_0 = Spec 𝔽_q, r = 0: the exchange is the identity."
+      },
+      {
+       "name": "fe_trace",
+       "kind": "computation",
+       "statement": "r = 1, K = Λ_{𝔸¹}: the transported Frobenius on FT(K)_{0'} = Λ(−1)[−1] has trace −q."
+      },
+      {
+       "name": "fe_moves_points",
+       "kind": "non-example",
+       "statement": "S_0 = 𝔸¹: F moves points of S, so the exchange is not the identity on underlying complexes."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "Perverse t-exactness",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "theorem",
+     "name": "fourierDeligne_tExact",
+     "statement": "Over a field k of characteristic p, FT_ψ : Dᵇ_c(V) → Dᵇ_c(V') is t-exact for the middle perversity (finite Λ with nondegenerate ψ, O_E, E, ℚ̄_ℓ), and for O_E also for p⁺.",
+     "hypotheses": [
+      "k field of characteristic p",
+      "S = Spec k"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "Théorème (1.3.2.3), LAU87 lines 566–575; KL85 (2.1.5)(iii), KL85 lines 392–393"
+     },
+     "prerequisites": [
+      "target:3.3.1",
+      "target:3.5",
+      "target:3.7",
+      "roadmap:EtaleDualityAndPerverseSheaves §2.7",
+      "roadmap:EtaleCohomologyFoundations §F.8"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "4.2",
+     "kind": "theorem",
+     "name": "fourierDeligne_pervEquiv",
+     "statement": "FT_ψ restricts to an equivalence Perv(V) → Perv(V') with quasi-inverse [−1]^*FT^{V'}_ψ(−)(r), on both hearts for O_E, compatible with duality, sending simple objects to simple objects for field coefficients.",
+     "hypotheses": [
+      "k field of characteristic p"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "Théorème (1.3.2.3), Corollaire (1.3.2.4), LAU87 lines 566–577"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "target:3.4.1"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "The transform on the affine line",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "definition",
+     "name": "perverseLocalInvariants",
+     "statement": "For perverse K on a smooth connected curve X and a closed point x: rk(K) the rank of H^{−1}(K) at the generic point, rk_x(K) = dim H^{−1}(K_x̄) − dim H⁰(K_x̄), sw_x(K) Swan conductor of H^{−1}(K_{η̄_x}) (through 2.7.1), a_x(K) = rk(K) + sw_x(K) − rk_x(K).",
+     "hypotheses": [
+      "k perfect of characteristic p",
+      "Λ coefficient field",
+      "X smooth connected curve over k"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "(2.2.1), LAU87 lines 842–855 (with signs changed)"
+     },
+     "prerequisites": [
+      "roadmap:ArithmeticGaloisRepresentations §3.1",
+      "roadmap:EtaleDualityAndPerverseSheaves §2.10",
+      "target:2.7.1"
+     ],
+     "api": [
+      {
+       "name": "localInvariants_additive",
+       "role": "structure",
+       "statement": "rk, rk_x, sw_x, a_x are additive on short exact sequences of perverse sheaves."
+      },
+      {
+       "name": "localInvariants_baseExtension",
+       "role": "functoriality",
+       "statement": "For finite k'/k inside k̄ and a connected component X' of X ⊗ k', the pullback of K has generic rank rk(K) and the same rk_x, sw_x, a_x at points over x."
+      },
+      {
+       "name": "localInvariants_middle",
+       "role": "evaluation",
+       "statement": "For j_{!*}F[1]: a_x = 0 on U and rk_x = dim F^{I_x} off U."
+      }
+     ],
+     "tests": [
+      {
+       "name": "li_skyscraper",
+       "kind": "computation",
+       "statement": "i_{x*}Λ on ℙ¹: rk = 0, rk_x = −1, a_x = 1, χ = 1 = 1 − 2·0; the unsigned formula would give −1."
+      },
+      {
+       "name": "li_artinSchreier",
+       "kind": "computation",
+       "statement": "j_!ℒ_ψ(x)[1]: rk = 1, sw_∞ = 1, a_∞ = 2, χ = 2 − 2 = 0."
+      },
+      {
+       "name": "li_kummer",
+       "kind": "computation",
+       "statement": "j_!ℒ_χ[1] at 0: sw = 0, rk_0 = 0, a_0 = 1."
+      },
+      {
+       "name": "li_disconnected_nonexample",
+       "kind": "non-example",
+       "statement": "X = ℙ¹ ⊔ ℙ¹, K = Λ[1] ⊔ 0: χ = −2 but the right side is −4 or 0; X = ℙ¹_{𝔽_{q²}} over 𝔽_q (C = 2, g = 0), K = Λ[1]: −4 on both sides."
+      }
+     ]
+    },
+    {
+     "id": "5.1.1",
+     "kind": "theorem",
+     "name": "perverseLocalInvariants_eulerPoincare",
+     "statement": "a_x(K) ≥ rk(K) − rk_x(K) ≥ 0, with a_x(K) = 0 iff K[−1] is lisse at x iff rk_x(K) = rk(K); for X projective χ(X_{k̄}, K) = Σ_x deg(x) a_x(K) − χ(X_{k̄}) rk(K), χ(X_{k̄}) = C(2 − 2g) with C the number of components of X_{k̄} and g their common genus.",
+     "hypotheses": [
+      "X smooth connected curve over perfect k",
+      "K perverse"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "(2.2.1), Lemme (2.2.1.1), Théorème (2.2.1.2), LAU87 lines 839–875"
+     },
+     "prerequisites": [
+      "target:5.1",
+      "roadmap:EtaleDualityAndPerverseSheaves §5.2",
+      "roadmap:EtaleDualityAndPerverseSheaves §2.10"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "5.1.2",
+     "kind": "theorem",
+     "name": "swan_tensor_slopeOne",
+     "statement": "Slope decomposition and s(V) = Σ λ r(V_λ); for L of rank one and Swan one, s(V ⊗ L) = r(V_{[0,1[}) + s(V_1 ⊗ L) + s(V_{]1,∞[}) with s(V_1 ⊗ L) ≤ r(V_1); ℒ_ψ(a/π) has slope one; for k algebraically closed and V ≠ 0 purely of slope one, some a ∈ k makes V ⊗ ℒ_ψ(a/π) have a nonzero part of slope < 1. Route of the last clause, with K = k((π)) and G^u the upper ramification subgroups of G_K: G^1/G^{1+} is abelian of exponent p, so it suffices that every character θ of it is ℒ_ψ(b/π)|_{G^1} for some b ∈ k. θ factors through H^1 = Gal(L/L_0) for a finite Galois L/K with group H, H^{1+} = 1 and L_0 = L^{H^1}; with m = ψ_{L_0/K}(1) (Herbrand function), G^1 = G_{L_0}^m and G^{1+} = G_{L_0}^{m+}, so θ = ℒ_ψ(w) for a class w ∈ L_0/℘(L_0) of break ≤ m. In L_0 = k((ϖ_0)), every class has a representative that is integral or of pole order prime to p, two representatives with poles of order prime to p have the same pole order, and such a pole makes the class nontrivial (pinned Tau Ceti statements at the ϖ_0-adic place), and the termwise reduced representative is the roadmap's own; the coefficient c(b) of ϖ_0^{−m} in the reduced representative of the class of b/π is injective and additive in b, with c(b)^{p^N} an additive polynomial in b, hence a monomial and onto k; choosing c(b) equal to the coefficient of w leaves w − [b/π] of break < m, trivial on G_{L_0}^m = G^1.",
+     "hypotheses": [
+      "henselian trait of equal characteristic p, perfect residue field (no excellence assumed)"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "(2.1.2.4)–(2.1.2.8), LAU87 lines 735–804"
+     },
+     "prerequisites": [
+      "target:2.7.1",
+      "roadmap:ArithmeticGaloisRepresentations §3.1",
+      "roadmap:ArithmeticGaloisRepresentations §3.7",
+      "roadmap:RamificationOfCompleteDiscretelyValuedFields §3a.1",
+      "roadmap:RamificationOfCompleteDiscretelyValuedFields §4a.1",
+      "roadmap:RamificationOfCompleteDiscretelyValuedFields §4a.2",
+      "tauceti:TauCeti.additiveHilbert90",
+      "tauceti:TauCeti.ContCohomology.DiscreteShortExact.longExact_exact₁",
+      "tauceti:TauCeti.ContCohomology.DiscreteShortExact.longExact_exact₃",
+      "tauceti:TauCeti.ContCohomology.H1EquivOfSmulEqSelf",
+      "tauceti:TauCeti.ContCohomology.explicitH1AddEquivContinuousCohomology",
+      "tauceti:TauCeti.Place.exists_reduced_artinSchreier_representative",
+      "tauceti:TauCeti.ord_reduced_artinSchreier_representative_eq",
+      "tauceti:TauCeti.ne_pow_sub_self_of_exists_reduced_artinSchreier_pole",
+      "mathlib:ContinuousCohomology.zeroIso",
+      "roadmap:EtaleCohomologyFoundations §F.3a",
+      "target:2.7"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "twist_slopeHalf_untwist",
+       "kind": "computation",
+       "statement": "k = 𝔽̄_p, W of rank 2 purely of slope 1/2, b ≠ 0: V = W ⊗ ℒ_ψ(b/π) is purely of slope one and a = −b returns W, of slope 1/2."
+      },
+      {
+       "name": "twist_nonClosed_nonexample",
+       "kind": "non-example",
+       "statement": "k = 𝔽_p, c ∈ 𝔽_{p²} ∖ 𝔽_p, V induced from ℒ_ψ(c/π) on the unramified quadratic extension: purely of slope one, and for every a ∈ 𝔽_p both characters ℒ_ψ((c + a)/π), ℒ_ψ((c^p + a)/π) of V ⊗ ℒ_ψ(a/π) have slope one; algebraic closure of k is needed."
+      },
+      {
+       "name": "artinSchreier_reduced_poleOrder",
+       "kind": "computation",
+       "statement": "k = 𝔽̄_3, L_0 = k((t)), u = t^{−6} + t^{−4} + t^{−2} (pole order 6): w = t^{−2} gives the reduced t^{−4} + 2t^{−2}; z = t^{−2} + t^{−1} gives t^{−4} − t^{−3} + 2t^{−2} + t^{−1}, pole order 4 again, reducing to t^{−4} + 2t^{−2}; break 4, not the naive 6."
+      }
+     ]
+    },
+    {
+     "id": "5.2",
+     "kind": "theorem",
+     "name": "simplePerverse_types_fourier",
+     "statement": "Every simple perverse sheaf on A is of exactly one type (T1) i_{s*}F, (T2) (pr_A)_*(ℒ_ψ(x s') ⊗ pr_{s'}^*F')[1], (T3) j_{!*}F[1] with no geometric subquotient ℒ_ψ(x a'); FT exchanges (T1) and (T2'), (T3) and (T3'), with FT(i_{s*}F) ≅ (pr_{A'})_*(ℒ_ψ(s x') ⊗ pr_s^*F)[1] and FT of (T2) at s' ≅ [−1]^*i'_{s'*}F'(−1).",
+     "hypotheses": [
+      "k perfect",
+      "Λ coefficient field"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "(1.4.2) and Théorème (1.4.2.1), LAU87 lines 609–638"
+     },
+     "prerequisites": [
+      "target:4.2",
+      "target:3.4.1",
+      "roadmap:EtaleDualityAndPerverseSheaves §2.10"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "5.3",
+     "kind": "definition",
+     "name": "fourierSheaf",
+     "statement": "Elementary sheaves (H⁰_c = 0, H²_c(ℱ ⊗ ℒ_ψ(t x)) = 0 for all t), Fourier sheaves (middle extension, H⁰ = H²_c = 0 after every twist ℒ_ψ(t x)), irreducible Fourier sheaves, and NFT_ψ(ℱ) = R¹pr'_!(pr^*ℱ ⊗ ℒ_ψ(x x')).",
+     "hypotheses": [
+      "k perfect",
+      "Λ coefficient field"
+     ],
+     "locator": {
+      "source": "ESDE",
+      "where": "(7.3.3)–(7.3.6), ESDE lines 7235–7276"
+     },
+     "prerequisites": [
+      "target:3.2",
+      "target:5.2"
+     ],
+     "api": [
+      {
+       "name": "fourierSheaf_dual",
+       "role": "structure",
+       "statement": "Middle-extension duals, translates and twists by ℒ_ψ(a x) of Fourier sheaves are Fourier."
+      },
+      {
+       "name": "fourierSheaf_nft",
+       "role": "evaluation",
+       "statement": "For Fourier ℱ, NFT(ℱ) is the only cohomology sheaf of FT(ℱ[1])[−1], with stalk H¹_c(ℱ ⊗ ℒ_ψ(a x)) at a."
+      },
+      {
+       "name": "fourierSheaf_typeT3",
+       "role": "compatibility",
+       "statement": "ℱ irreducible Fourier ⇒ ℱ[1] simple of type (T3); over k̄ conversely."
+      }
+     ],
+     "tests": [
+      {
+       "name": "fs_constant_nonexample",
+       "kind": "non-example",
+       "statement": "Λ_{𝔸¹} is not elementary (H²_c ≠ 0 at t = 0); ℒ_ψ(x) is neither elementary nor Fourier (t = −1); j_!(ℒ_χ|_{𝔸¹ ∖ {0,1}}) for nontrivial Kummer χ is elementary but not Fourier (stalk 0 at 1 against Λ for j_*j^*)."
+      },
+      {
+       "name": "fs_quadratic",
+       "kind": "computation",
+       "statement": "ℒ_ψ(x²), p odd: Fourier, NFT = ℒ_ψ(−x'²/4) ⊗ H¹_c line."
+      },
+      {
+       "name": "fs_kummer",
+       "kind": "computation",
+       "statement": "j_!ℒ_χ: Fourier with NFT = j'_!ℒ_{χ^{−1}} ⊗ G(χ, ψ), generic rank 1 = a_0."
+      }
+     ]
+    },
+    {
+     "id": "5.3.1",
+     "kind": "theorem",
+     "name": "naiveFourier_fourierSheaf",
+     "statement": "For elementary ℱ: FT(ℱ[1]) ≅ NFT(ℱ)[1], NFT(ℱ) elementary, NFT(NFT ℱ) ≅ [−1]^*ℱ(−1); Fourier ↦ Fourier with D NFT(ℱ) ≅ NFT([−1]^*Dℱ)(1); irreducible Fourier ↦ irreducible Fourier; over 𝔽_q, t_{NFT ℱ} = −𝔉_ψ(t_ℱ).",
+     "hypotheses": [
+      "k perfect",
+      "Λ coefficient field"
+     ],
+     "locator": {
+      "source": "ESDE",
+      "where": "Théorème (7.3.8), ESDE lines 7297–7310"
+     },
+     "prerequisites": [
+      "target:5.3",
+      "target:3.4.1",
+      "target:3.5",
+      "target:3.8"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "5.4",
+     "kind": "definition",
+     "name": "gaussSumLine",
+     "statement": "G(χ, ψ) = H¹_c(𝔾_{m,k̄}, ℒ_χ ⊗ ℒ_ψ(x)) with its Gal(k̄/k)-action, for χ a character of μ_N(k) with χ(ζ) − 1 a unit.",
+     "hypotheses": [
+      "k perfect",
+      "Λ coefficient field",
+      "χ nontrivial"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "Proposition (1.4.3.2), LAU87 lines 656–667"
+     },
+     "prerequisites": [
+      "target:2.6",
+      "target:2.5"
+     ],
+     "api": [
+      {
+       "name": "gaussSumLine_baseChange",
+       "role": "functoriality",
+       "statement": "Commutes with extension of k and is functorial in Λ."
+      },
+      {
+       "name": "gaussSumLine_scale",
+       "role": "evaluation",
+       "statement": "G(χ, ψ(c·)) ≅ G(χ, ψ) ⊗ ℒ_χ(c)^{−1}."
+      },
+      {
+       "name": "gaussSumLine_dual",
+       "role": "structure",
+       "statement": "G(χ, ψ)^∨ ≅ G(χ^{−1}, ψ^{−1})(1)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "gs_trace_witness",
+       "kind": "computation",
+       "statement": "Over 𝔽_q, t_{FT(j_!ℒ_χ[1])}(x') = χ^{−1}(x') g(χ, ψ) = (−χ^{−1}(x'))(−g)."
+      },
+      {
+       "name": "gs_product",
+       "kind": "compatibility",
+       "statement": "G(χ,ψ) ⊗ G(χ^{−1},ψ) has Frobenius χ(−1) q, matching gaussSum_mul_gaussSum_eq_card and mul_gaussSum_inv_eq_gaussSum."
+      },
+      {
+       "name": "gs_F5_F11",
+       "kind": "computation",
+       "statement": "q = 5, Λ = 𝔽_11, ψ(1) = 3, quadratic χ: g ≡ 4 and g² ≡ 5 = χ(−1)·5."
+      }
+     ]
+    },
+    {
+     "id": "5.4.1",
+     "kind": "theorem",
+     "name": "fourierDeligne_kummer",
+     "statement": "H^i_c(𝔾_{m,k̄}, ℒ_χ ⊗ ℒ_ψ(x)) = 0 for i ≠ 1, G(χ, ψ) has rank one, over 𝔽_q Frob acts on it by −Σ_{x ∈ 𝔽_q^×} χ(x)ψ(Tr x), and FT(j_!ℒ_χ[1]) ≅ j'_!ℒ_{χ^{−1}}[1] ⊗ G(χ, ψ).",
+     "hypotheses": [
+      "k perfect",
+      "χ(ζ) − 1 a unit"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "Lemme (1.4.3.1), Proposition (1.4.3.2), LAU87 lines 651–678"
+     },
+     "prerequisites": [
+      "target:5.4",
+      "target:3.6",
+      "target:3.8",
+      "target:5.2",
+      "roadmap:EtaleDualityAndPerverseSheaves §5.2"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "5.5",
+     "kind": "theorem",
+     "name": "fourierDeligne_localMonodromy",
+     "statement": "For perverse K on A with K' = FT(K): rk(K') = Σ_s deg(s)a_s(K) + s(F_{∞,]1,∞[}) − r(F_{∞,]1,∞[}); rk_{s'}(K') = rk(K') − r(F_{∞,1}) + s(F_{∞,1} ⊗ ℒ_ψ(x s')) for s' ≠ 0'; rk_{0'}(K') = rk(K') − r(F_{∞,[0,1[}) + s(F_{∞,[0,1[}); the lisse-locus criterion; vanishing cycles at finite s' and at ∞'; the exact sequence 0 → H⁰_c(A_{k̄}, K) → F'_{η̄_{0'}} → R^{−1}Φ_{0'}(K') → H¹_c(A_{k̄}, K) → 0.",
+     "hypotheses": [
+      "k perfect",
+      "Λ coefficient field",
+      "K perverse on A"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "(2.3.1.1)–(2.3.3.1), LAU87 lines 933–1034"
+     },
+     "prerequisites": [
+      "target:3.3",
+      "target:3.4.1",
+      "target:4.2",
+      "target:5.1.1",
+      "target:5.1.2",
+      "target:5.2",
+      "roadmap:LefschetzPencilsAndVanishingCycles §§0.3–0.7",
+      "roadmap:EtaleCohomologyFoundations §F.2.1",
+      "roadmap:EtaleCohomologyFoundations §F.3a"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "5.5.1",
+     "kind": "theorem",
+     "name": "naiveFourier_wildLisse_equiv",
+     "statement": "NFT_ψ restricts to an autoequivalence of the category of lisse sheaves on A all of whose breaks at ∞ exceed 1, with quasi-inverse [−1]^*NFT_ψ(−)(1).",
+     "hypotheses": [
+      "k perfect",
+      "Λ coefficient field"
+     ],
+     "locator": {
+      "source": "ESDE",
+      "where": "§7.8 Class (1), ESDE lines 7877–7889; KATZ01 lines 888–893"
+     },
+     "prerequisites": [
+      "target:5.3.1",
+      "target:5.5",
+      "target:5.1.2",
+      "target:2.7"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "5.6",
+     "kind": "definition",
+     "name": "localFourierTransform",
+     "statement": "For henselian traits T, T' of equal characteristic p with residue field k and uniformizers π, π', the functors 𝔉^{(0,∞')}, 𝔉^{(∞,0')}, 𝔉^{(∞,∞')} : 𝒢 → 𝒢' given by the vanishing cycles for pr' : T ×_k T' → T' of pr^*(V_!) ⊗ ℒ_ψ(π/π'), ⊗ ℒ_ψ(π'/π), ⊗ ℒ_ψ(1/(ππ')) at the point over (t, η̄'), with 𝔉(V) the degree-one cohomology.",
+     "hypotheses": [
+      "k perfect",
+      "Λ coefficient field",
+      "T, T' henselian traits over k with residue field k (not necessarily excellent)"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "Définition (2.4.2.3), LAU87 lines 1091–1100"
+     },
+     "prerequisites": [
+      "roadmap:LefschetzPencilsAndVanishingCycles §§0.3–0.5",
+      "roadmap:EtaleCohomologyFoundations §F.3a",
+      "target:2.5"
+     ],
+     "api": [
+      {
+       "name": "localFourier_triangulated",
+       "role": "structure",
+       "statement": "Triangulated at the level of complexes; commutes with unramified twists."
+      },
+      {
+       "name": "localFourier_baseChange",
+       "role": "functoriality",
+       "statement": "Commutes with extension of k and change of Λ."
+      },
+      {
+       "name": "localFourier_scale",
+       "role": "evaluation",
+       "statement": "ψ ↦ ψ(c·) composes with π' ↦ c^{−1}π' for (0,∞'), (∞,∞') and π' ↦ cπ' for (∞,0')."
+      }
+     ],
+     "tests": [
+      {
+       "name": "lf_trivial_inf0",
+       "kind": "computation",
+       "statement": "𝔉^{(∞,0')}(Λ) = Λ(−1), from FT(Λ[1]) = i_{0'*}Λ(−1)."
+      },
+      {
+       "name": "lf_kummer_0inf",
+       "kind": "computation",
+       "statement": "𝔉^{(0,∞')}(V_χ) = V'_χ ⊗ G(χ, ψ); χ^{−1} would contradict the trace witness of 5.4."
+      },
+      {
+       "name": "lf_infinf_tame_zero",
+       "kind": "degenerate",
+       "statement": "𝔉^{(∞,∞')} vanishes on tame modules."
+      }
+     ]
+    },
+    {
+     "id": "5.6.1",
+     "kind": "theorem",
+     "name": "localFourierTransform_globalComparison",
+     "statement": "Comparison with global vanishing cycles (shift 2) for K ≅ V_![1] near 0 or ≅ V[1] near ∞, in particular R^{−1}Φ_{0'}(K') ≅ 𝔉^{(∞,0')}(F_∞) in the sequence at 0' of 5.5; concentration in degree 1 for V that are local monodromies of perverse sheaves on A, hence for all tame V when k is finite; compatibility with extension of k.",
+     "hypotheses": [
+      "k perfect",
+      "Λ coefficient field",
+      "T, T' henselian traits over k with residue field k (not necessarily excellent)"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "Lemme (2.4.2.1), Proposition (2.4.2.2), (2.5.2), LAU87 lines 1063–1090 and 1157–1165; Proposition (2.3.2.1)(iii), LAU87 lines 993–995"
+     },
+     "prerequisites": [
+      "target:5.6",
+      "target:5.5",
+      "roadmap:LefschetzPencilsAndVanishingCycles §§0.3–0.7",
+      "roadmap:LefschetzPencilsAndVanishingCycles §1.1"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "5.6.2",
+     "kind": "theorem",
+     "name": "localFourierTransform_tame",
+     "statement": "𝔉^{(0,∞')}(Λ) = Λ, 𝔉^{(∞,0')}(Λ) = Λ(−1), 𝔉^{(∞,∞')}(Λ) = 0; for nontrivial Kummer V_χ = ℒ_χ(π), 𝔉^{(0,∞')}(V_χ) ≅ V'_χ ⊗ G(χ, ψ), 𝔉^{(∞,0')}(V_χ) ≅ V'_χ ⊗ G(χ^{−1}, ψ), 𝔉^{(∞,∞')}(V_χ) = 0. Hence for K = j_!F[1] with F_∞ unramified, 0 → H¹_c(A_{k̄}, j_!F) → F'_{η̄_{0'}} → F_∞(−1) → H²_c(A_{k̄}, j_!F) → 0.",
+     "hypotheses": [
+      "k perfect",
+      "Λ coefficient field",
+      "χ nontrivial"
+     ],
+     "locator": {
+      "source": "LAU87",
+      "where": "Proposition (2.5.3.1), LAU87 lines 1170–1182; LAU87 lines 2620–2628"
+     },
+     "prerequisites": [
+      "target:5.6.1",
+      "target:5.4.1",
+      "target:3.6",
+      "target:5.5"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "EtaleCohomologyFoundations",
+   "sections": [
+    "§§G.1–G.3",
+    "§0.7",
+    "§0.8",
+    "§0.9",
+    "§§F.0.1–F.0.4",
+    "§F.1",
+    "§§F.2.1–F.2.7",
+    "§F.3",
+    "§F.3a",
+    "§§F.4.1–F.4.6",
+    "§F.5",
+    "§F.6",
+    "§F.8",
+    "§§F.10.1–F.10.3"
+   ],
+   "what": "compactifications and Rf_!, base change, local acyclicity, Künneth and projection formula on Noetherian bases, finiteness, traits and tame character, adic realization, f^! and duality, smooth purity and trace, field perverse t-structure, Frobenius and perfect-complex traces"
+  },
+  {
+   "roadmap": "EnhancedDerivedSheaves",
+   "sections": [
+    "§§0.1–0.4"
+   ],
+   "what": "enhancement, tensor–Hom and coherent derived functors"
+  },
+  {
+   "roadmap": "SchemeAndStackFoundations",
+   "sections": [
+    "§0.29",
+    "§2.9",
+    "§2.11"
+   ],
+   "what": "scheme Frobenius; 𝔾_a, 𝔾_m, μ_n; Kummer and Artin–Schreier sequences, finite pushforward"
+  },
+  {
+   "roadmap": "AlgebraicVectorBundles",
+   "sections": [
+    "§L1A (Layer 4, relative Spec)",
+    "§L2B (Layer 7, geometric vector bundles)"
+   ],
+   "what": "relative Spec, geometric vector bundles and duals"
+  },
+  {
+   "roadmap": "ReductiveGroupsPartII",
+   "sections": [
+    "§RG2.3.7"
+   ],
+   "what": "Lang's theorem"
+  },
+  {
+   "roadmap": "AdicEtaleGeometry",
+   "sections": [
+    "§A1.0.5"
+   ],
+   "what": "finite étale algebras unchanged under henselian completion, for the Galois group of a henselian trait and its completion"
+  },
+  {
+   "roadmap": "RamificationOfCompleteDiscretelyValuedFields",
+   "sections": [
+    "§3a.1",
+    "§4a.1",
+    "§4a.2"
+   ],
+   "what": "lower ramification groups and their graded pieces, the absolute upper filtration, ψ_{L/K} and the open-subgroup identity G_K^u ∩ G_L = G_L^{ψ_{L/K}(u)}, for the slope-one twisting lemma"
+  },
+  {
+   "roadmap": "ArithmeticGaloisRepresentations",
+   "sections": [
+    "§3.1",
+    "§3.7"
+   ],
+   "what": "breaks, Swan conductors, Artin–Schreier characters over complete fields (transported to henselian traits by 2.7.1)"
+  },
+  {
+   "roadmap": "InverseGaloisAndArithmeticFundamentalGroups",
+   "sections": [
+    "§IG.0.T2",
+    "§IG.0.T3"
+   ],
+   "what": "finite and rational Grothendieck–Lefschetz trace formulas"
+  },
+  {
+   "roadmap": "LefschetzPencilsAndVanishingCycles",
+   "sections": [
+    "§0.3",
+    "§0.5",
+    "§0.6",
+    "§0.7",
+    "§0.8",
+    "§1.1"
+   ],
+   "what": "nearby and vanishing cycles over henselian traits; local monodromy theorem"
+  },
+  {
+   "roadmap": "EtaleDualityAndPerverseSheaves",
+   "sections": [
+    "§2.7",
+    "§2.10",
+    "§5.2"
+   ],
+   "what": "smooth-pullback exactness, perverse Artin vanishing, simple perverse sheaves, curve Euler–Poincaré with Swan conductors"
+  }
+ ],
+ "consumers": [
+  {
+   "roadmap": "CharacterSumsOverFiniteFields",
+   "what": "can import artinSchreierSheaf, kummerSheaf with their traces and the Gauss-sum line (§§2.3, 2.5–2.6, 5.4) for the trace-function reading of its §3.6, background there, which names ℒ_ψ, ℒ_χ with the normalization ψ(Tr x), χ(N x) and the eigenvalue −g(χ, ψ)"
+  },
+  {
+   "roadmap": "SheafConvolutionOnAbelianVarieties",
+   "what": "can import kernel transforms and the composition coherence of kernels (§§1.1–1.2); it builds its convolution Ra_!(K ⊠ L) and its coherence from EtaleCohomologyFoundations §0.8 and describes convolution as the transform with the difference kernel"
+  },
+  {
+   "roadmap": "CongruenceSpectralGap",
+   "what": "can import the weight-free part of its additive-character-sheaf contract (§§2.2–2.5), stated against DeligneWeightsAndPurity, whose weight-zero clause stays there"
+  }
+ ],
+ "gaps": [
+  {
+   "slug": "torsor-character-sheaf",
+   "title": "Rank-one lisse sheaves from finite étale torsors and characters",
+   "neededBy": [
+    "2.2",
+    "2.6"
+   ],
+   "detail": "For a finite étale A-torsor P → X under a finite group A and χ : A → Λ^×, the sheaf P ×^A Λ(χ) with its isotypic-part description, monodromy through lisseMonodromyEquiv, tensor compatibility, functoriality in A, pullback and coefficient change, with no invertibility of |A|.",
+   "needs": "The contracted-product construction of a rank-one lisse sheaf from a finite étale torsor and a character, with its basic API.",
+   "supplier": "EtaleCohomologyFoundations",
+   "section": "§F.0.3 (rank-one lisse sheaves from torsors and characters)"
+  },
+  {
+   "slug": "projection-formula-qcqs",
+   "title": "Projection formula for Rf_! on D⁺ over qcqs bases",
+   "neededBy": [
+    "1.1",
+    "1.1.1",
+    "1.2",
+    "1.2.1",
+    "3.4",
+    "3.4.1",
+    "3.6"
+   ],
+   "detail": "For separated finitely presented f between qcqs schemes and torsion Λ, Rf_!(B ⊗^L f^*A) ≅ Rf_!B ⊗^L A for A ∈ D⁺(Y), B ∈ D⁺(X) with one of them of finite Tor amplitude, natural and compatible with composition and base change. On Noetherian bases for Dᵇ_ctf objects this is §F.2.7.",
+   "needs": "The compact-support projection formula on bounded-below torsion complexes over qcqs bases with one factor of finite Tor amplitude.",
+   "supplier": "EtaleCohomologyFoundations",
+   "section": "§0.8 and §F.5 (projection formula of the six-operation structure)"
+  },
+  {
+   "slug": "smooth-exceptional-pullback",
+   "title": "Exceptional pullback and internal Hom under smooth morphisms over Noetherian bases",
+   "neededBy": [
+    "3.5"
+   ],
+   "detail": "For smooth separated finitely presented f of relative dimension d between Noetherian schemes with char Λ invertible: f^!M ≅ f^*M(d)[2d] for M ∈ D⁺(Y), and f^*RHom(K, M) ≅ RHom(f^*K, f^*M) for K ∈ Dᵇ_c(Y). Over separated finite-type schemes over a field this is EtaleDualityAndPerverseSheaves §2.7.",
+   "needs": "Smooth purity for an arbitrary bounded-below complex and smooth base change for internal Hom with constructible source, over Noetherian bases.",
+   "supplier": "EtaleCohomologyFoundations",
+   "section": "§F.6 (smooth purity)"
+  }
+ ]
+}

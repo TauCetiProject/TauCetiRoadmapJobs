@@ -8,7 +8,7 @@ title = "Transformation de Fourier, constantes d'équations fonctionnelles et co
 year = 1987
 venue = "Publ. Math. IHÉS 65, 131–210"
 locator_scheme = "section"
-locator = "§1.1 (1.1.1)–(1.1.3.7); §1.2 (1.2.1.1)–(1.2.3.5); §1.3 (1.3.1.1)–(1.3.2.4); §1.4 (1.4.2.1), (1.4.3.2); §2.3 (2.3.1.1)–(2.3.3.1); §2.4 (2.4.2.3), (2.4.3); §2.5 (2.5.3.1); §4 (4.1.3)–(4.4)"
+locator = "§0 (0.1)–(0.9); §1.1 (1.1.1)–(1.1.3.7); §1.2 (1.2.1.1)–(1.2.3.5); §1.3 (1.3.1.1)–(1.3.2.4); §1.4 (1.4.1)–(1.4.3.2); §2.1 (2.1.1), (2.1.2.4)–(2.1.5); §2.2 (2.2.1)–(2.2.2.2); §2.3 (2.3.1.1)–(2.3.3.1); §2.4 (2.4.1)–(2.4.3); §2.5 (2.5.2)–(2.5.3.1); §4.4"
 url = "https://www.numdam.org/item/PMIHES_1987__65__131_0/"
 fetched_from = "https://www.numdam.org/item/PMIHES_1987__65__131_0.pdf"
 fetched_at = "2026-11-06T16:58:23Z"
@@ -16,7 +16,7 @@ sha256 = "c666e214ae586651b9f171f6a39d755e58f96379970ffa98bafb2d9be591fc8e"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
-cited_for = ["Final targets T1–T9", "Consumers (DeligneWeightsAndPurity Layer 6)", "Scope"]
+cited_for = ["0.1.1", "0.2", "0.2.1", "1.1", "1.1.1", "1.2", "1.2.1", "1.3", "1.4", "1.4.1", "2.1", "2.1.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7.1", "3.1", "3.2", "3.3", "3.3.1", "3.4", "3.4.1", "3.5", "3.6", "3.8", "3.8.1", "4.1", "4.2", "5.1", "5.1.1", "5.1.2", "5.2", "5.4", "5.4.1", "5.5", "5.6", "5.6.1", "5.6.2", "Scope", "Conventions"]
 
 [[source]]
 id = "WII"
@@ -25,7 +25,7 @@ title = "La conjecture de Weil. II"
 year = 1980
 venue = "Publ. Math. IHÉS 52, 137–252"
 locator_scheme = "section"
-locator = "Théorème (1.5.1); Lemme (1.8.1); Théorème (1.8.4); Théorème (3.2.3)"
+locator = "Théorème (3.2.3)"
 url = "https://www.numdam.org/item/PMIHES_1980__52__137_0/"
 fetched_from = "https://www.numdam.org/item/PMIHES_1980__52__137_0.pdf"
 fetched_at = "2026-11-06T16:58:31Z"
@@ -33,7 +33,7 @@ sha256 = "b06eea61bf9cb2b596c162f5befcf85d1be69828910a6107c8aa3a99c4afcc71"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
-cited_for = ["Consumers (DeligneWeightsAndPurity Layer 6)", "Scope"]
+cited_for = ["Scope (boundary: the curve estimate belongs to DeligneWeightsAndPurity)"]
 
 [[source]]
 id = "KL85"
@@ -42,7 +42,7 @@ title = "Transformation de Fourier et majoration de sommes exponentielles"
 year = 1985
 venue = "Publ. Math. IHÉS 62, 145–202"
 locator_scheme = "section"
-locator = "§1.2 (relative perversity); §2.1 (2.1.1)–(2.1.5); Appendice 2.4, Théorème (2.4.1) and Théorème (2.4.4); §2.2 Théorème (2.2.1)"
+locator = "§2.1 (2.1.1)–(2.1.5); §2.2 Théorème (2.2.1); Scholie (2.3.1); Appendice (2.4), Théorème (2.4.1), Lemme (2.4.2), Remarque (2.4.3), Théorème (2.4.4); §1.2 (scope boundary)"
 url = "https://www.numdam.org/item/PMIHES_1985__62__145_0/"
 fetched_from = "https://www.numdam.org/item/PMIHES_1985__62__145_0.pdf"
 fetched_at = "2026-11-06T16:58:32Z"
@@ -51,7 +51,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "the scan carries two page numberings; locators use theorem numbers"
-cited_for = ["Final targets T3–T6", "Scope"]
+cited_for = ["0.1", "0.1.1", "3.1", "3.2", "3.3", "3.3.1", "3.5", "3.6", "3.7", "4.1", "Scope", "Conventions"]
 
 [[source]]
 id = "BRY86"
@@ -60,7 +60,7 @@ title = "Transformations canoniques, dualité projective, théorie de Lefschetz,
 year = 1986
 venue = "Astérisque 140–141, 3–134"
 locator_scheme = "chapter"
-locator = "Ch. IX (La transformation de Fourier-Deligne, d'après Katz et Laumon), p. 103ff; Ch. X, p. 113ff"
+locator = "Ch. IX (La transformation de Fourier-Deligne, d'après Katz et Laumon), Définition 9.1 and Proposition 9.4 1), p. 103ff"
 url = "https://www.numdam.org/item/AST_1986__140-141__3_0/"
 fetched_from = "https://www.numdam.org/item/AST_1986__140-141__3_0.pdf"
 fetched_at = "2026-11-06T16:58:36Z"
@@ -68,7 +68,7 @@ sha256 = "9e049e267f590be66150a9424a42bf335c685796bd3acb130120d0e453540a81"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
-cited_for = ["Final targets T3–T6"]
+cited_for = ["1.1", "1.1.1"]
 
 [[source]]
 id = "LAU96"
@@ -96,7 +96,7 @@ year = 2001
 venue = "Adv. Math. 160 (2001), 81–132"
 doi = "10.1006/aima.2000.1979"
 locator_scheme = "section"
-locator = "Lecture I (Target Theorem and its Corollary); Lecture II (the Artin–Schreier sheaf and the auxiliary sheaf); Lecture IV, Step 1"
+locator = "Lecture II (the Artin–Schreier sheaf, Swan conductor and Euler–Poincaré count); Lecture IV, Step 1"
 url = "https://web.math.princeton.edu/~nmk/arizona34.pdf"
 fetched_from = "https://web.math.princeton.edu/~nmk/arizona34.pdf"
 fetched_at = "2026-11-06T16:59:18Z"
@@ -105,7 +105,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "author's AWS 2000 lecture notes, the version published in Adv. Math.; locators use lecture and statement names"
-cited_for = ["Final targets T2, T8", "Consumers (DeligneWeightsAndPurity Layer 6)", "Risks"]
+cited_for = ["2.2", "2.5", "2.7", "5.5.1", "Conventions"]
 
 [[source]]
 id = "ESDE"
@@ -114,7 +114,7 @@ title = "Exponential Sums and Differential Equations"
 year = 1990
 venue = "Annals of Mathematics Studies 124"
 locator_scheme = "section"
-locator = "§7.3 (7.3.1)–(7.3.8); §7.4; §7.8 Class (1)"
+locator = "§7.3 (7.3.1)–(7.3.8); §7.8 Class (1)"
 url = "https://web.math.princeton.edu/~nmk/wholebookcorrms.pdf"
 fetched_from = "https://web.math.princeton.edu/~nmk/wholebookcorrms.pdf"
 fetched_at = "2026-11-06T16:59:24Z"
@@ -123,7 +123,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "author's corrected manuscript; chapter-local page numbering"
-cited_for = ["Final targets T8", "Scope"]
+cited_for = ["5.3", "5.3.1", "5.5.1"]
 
 [[source]]
 id = "SGA45-ST"
@@ -133,12 +133,12 @@ year = 1977
 venue = "Cohomologie étale (SGA 4½), Lecture Notes in Math. 569, 168–232"
 doi = "10.1007/bfb0091523"
 locator_scheme = "equation"
-locator = "(4.3), (4.20); the Lang-torsor construction recalled in LAU87 (1.1.3)"
+locator = "the Lang-torsor construction recalled in LAU87 Exemple (1.1.3); (4.3); (4.20)"
 url = "https://doi.org/10.1007/bfb0091523"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Final targets T2, T9"]
+cited_for = ["2.1", "2.4", "2.6", "5.4"]
 
 [[source]]
 id = "KW01"
@@ -148,9 +148,9 @@ year = 2001
 venue = "Ergebnisse der Mathematik und ihrer Grenzgebiete (3) 42, Springer"
 doi = "10.1007/978-3-662-04576-3"
 locator_scheme = "chapter"
-locator = "Ch. I (weights and the Fourier-transform proof of the curve estimate); Ch. III (perverse sheaves and the transform)"
+locator = "Ch. III (perverse sheaves and the l-adic Fourier transform)"
 url = "https://doi.org/10.1007/978-3-662-04576-3"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Final targets T6", "Consumers (DeligneWeightsAndPurity Layer 6)"]
+cited_for = ["4.1"]
