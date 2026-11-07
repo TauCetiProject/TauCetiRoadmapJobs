@@ -1,0 +1,1901 @@
+{
+ "roadmap": "SchattenClassesAndSchurMultipliers",
+ "title": "Schatten classes and Schur multipliers",
+ "parent": null,
+ "summary": "Schur multipliers on the Schatten classes of L2(Omega, mu) for sigma-finite (Omega, mu): the Schatten scale with its compact endpoint and completely bounded maps by amplification; Hilbert-Schmidt kernels; S_M(A) = T_{M k_A} with its S_p and cb norms, duality and interpolation; conditional expectations of symbols; the Schur product theorem and the Grothendieck-Haagerup characterisation; Lafforgue-de la Salle's atomless and continuous-symbol theorems; Fourier-Schur transference on R^n; operator-valued and matrix BMO with its interpolation with S_2; the Hormander-Mikhlin-Schur theorem ||S_M||_{S_p} = ||S_M||_{cb,p} <= C_n p^2/(p-1) |||M|||_HMS.",
+ "baseline": {
+  "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+  "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
+ },
+ "layers": [
+  {
+   "key": "1",
+   "title": "The Schatten scale with its compact endpoint",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "definition",
+     "name": "SchattenClasses.schattenGauge",
+     "statement": "For 1 <= p < infinity, S_p(H) is the finite-gauge submodule of TauCeti.OperatorIdealFamily.schatten C p with gauge (sum a_n(A)^p)^(1/p); S_infinity(H) is the compactOperator submodule with the operator norm. The extended gauge ||X||_p in [0, infinity] of a bounded X is the Schatten gauge for p < infinity, and for p = infinity the operator norm if X is compact and infinity otherwise.",
+     "hypotheses": [
+      "H, K complex Hilbert spaces",
+      "p in [1, infinity] (ENNReal)"
+     ],
+     "locator": {
+      "source": "lafforgue-delasalle-2011",
+      "where": "lines 174-179; cgpt-2023 lines 209-214"
+     },
+     "prerequisites": [
+      "tauceti:TauCeti.OperatorIdealFamily.schatten",
+      "tauceti:TauCeti.OperatorIdealFamily.gauge_schatten",
+      "tauceti:TauCeti.OperatorIdealFamily.gauge_schatten_le_of_le",
+      "tauceti:TauCeti.OperatorIdealFamily.lowerSemicontinuous_gauge_schatten",
+      "tauceti:TauCeti.OperatorIdealFamily.schatten_isComplete",
+      "mathlib:compactOperator",
+      "mathlib:IsCompactOperator",
+      "roadmap:OperatorIdeals OI-A12",
+      "roadmap:OperatorIdeals OI-A23",
+      "roadmap:OperatorIdeals OI-A25",
+      "roadmap:OperatorIdeals OI-A27",
+      "roadmap:OperatorIdeals OI-A28",
+      "roadmap:OperatorIdeals OI-A29",
+      "roadmap:OperatorIdeals OI-A30",
+      "roadmap:OperatorIdeals OI-A38",
+      "roadmap:OperatorIdeals OI-A39",
+      "roadmap:OperatorIdeals OI-A40",
+      "roadmap:NoncommutativeIntegration §1.3",
+      "roadmap:NoncommutativeIntegration §1.5"
+     ],
+     "api": [
+      {
+       "name": "schattenGauge_mono",
+       "role": "monotonicity",
+       "statement": "for 1 <= p <= q <= infinity and bounded X, ||X||_q <= ||X||_p; S_p is contained in S_q contractively, in particular S_p is in S_infinity for p < infinity"
+      },
+      {
+       "name": "finiteRank_dense",
+       "role": "density",
+       "statement": "finite-rank operators lie in every S_p and are dense in S_p for p < infinity and in S_infinity"
+      },
+      {
+       "name": "schattenGauge_adjoint_comp",
+       "role": "ideal laws",
+       "statement": "||X*||_p = ||X||_p, ||V X W||_p <= ||V|| ||X||_p ||W||, ||U X U*||_p = ||X||_p for an isometry U"
+      },
+      {
+       "name": "schattenGauge_lsc",
+       "role": "lower semicontinuity",
+       "statement": "the extended gauge is lower semicontinuous for the operator norm and S_p is complete"
+      },
+      {
+       "name": "schattenGauge_le_liminf_compress",
+       "role": "strong lower semicontinuity",
+       "statement": "if finite-rank projections P_alpha increase strongly to 1 then ||X||_p <= liminf ||P_alpha X P_alpha||_p for every bounded X"
+      }
+     ],
+     "tests": [
+      {
+       "name": "diag_harmonic",
+       "kind": "computation",
+       "statement": "diag(1/(j+1)) on l2(N): ||.||_2^2 = pi^2/6, compact, ||.||_1 = infinity"
+      },
+      {
+       "name": "identity_not_compact",
+       "kind": "non-example",
+       "statement": "identity of l2(N): ||1||_p = infinity for every p including p = infinity (not compact), whereas the OperatorIdeals p = infinity family gives 1; on C^d, ||1||_p = d^(1/p), ||1||_infinity = 1"
+      },
+      {
+       "name": "rank_one_projection",
+       "kind": "degenerate",
+       "statement": "rank-one projection e: a_0 = 1, a_n = 0 for n >= 1, ||e||_p = 1 for all p; a one-based index would give 0"
+      },
+      {
+       "name": "zero_space",
+       "kind": "degenerate",
+       "statement": "on the zero space every gauge is 0"
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "theorem",
+     "name": "SchattenClasses.schattenGauge_eq_iSup_trace",
+     "statement": "For every bounded X on H and 1 <= p < infinity, ||X||_p = sup { |Tr(X B)| : B finite rank, ||B||_{p'} <= 1 } in [0, infinity] (for p = 1 the condition is ||B|| <= 1); and ||X|| = sup { |Tr(X B)| : B finite rank, ||B||_1 <= 1 }. In particular a bounded operator with bounded pairings lies in S_p.",
+     "hypotheses": [
+      "H complex Hilbert space",
+      "X bounded"
+     ],
+     "locator": {
+      "source": "caspers-delasalle-2015",
+      "where": "lines 638-642 (the bilinear trace duality <A,B> = Tr(AB) between S_p and S_p'); the case X in S_p is NoncommutativeIntegration §2.1 (Lp-Lq duality with the norming element) read through its §1.5, restricted to the dense finite-rank operators of target 1.1; the case X not in S_p (both sides infinite) is this roadmap's, by compressions and the lower semicontinuity of 1.1; lafforgue-delasalle-2011 line 400, estimate (9) in the proof of Lemma 1.11, is the form used by 3.3 and 5.2"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "roadmap:VonNeumannAlgebras V4.Core",
+      "roadmap:NoncommutativeIntegration §1.4",
+      "roadmap:NoncommutativeIntegration §1.5",
+      "roadmap:NoncommutativeIntegration §2.1"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "1.3",
+     "kind": "theorem",
+     "name": "SchattenClasses.interpolation_finiteRank",
+     "statement": "Let 1 <= p0, p1 <= infinity, 0 < theta < 1, 1/p_theta = (1-theta)/p0 + theta/p1, and T linear from finite-rank operators on H to bounded operators on K with ||T A||_{p_j} <= C_j ||A||_{p_j} for finite-rank A (||.||_infinity the operator norm). Then ||T A||_{p_theta} <= C0^(1-theta) C1^theta ||A||_{p_theta} for finite-rank A.",
+     "hypotheses": [
+      "H, K complex Hilbert spaces",
+      "C0, C1 >= 0"
+     ],
+     "locator": {
+      "source": "lafforgue-delasalle-2011",
+      "where": "Remark 1.4, lines 246-252; cgpt-2023 line 486"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "roadmap:NoncommutativeIntegration §1.5",
+      "roadmap:NoncommutativeIntegration §2.3",
+      "roadmap:NoncommutativeIntegration §2.5",
+      "roadmap:NoncommutativeIntegration §2.6"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "1.4",
+     "kind": "definition",
+     "name": "SchattenClasses.cbNorm",
+     "statement": "For a linear map T : S_2(H) -> S_2(K) and m >= 1, the amplification T^(m) acts entrywise on S_2(H^m) (H^m = WithLp 2 (Fin m -> H)). ||T||_p = sup { ||T A||_p : A in S_2(H), ||A||_p <= 1 } in [0, infinity], and ||T||_{cb,p} = sup_m ||T^(m)||_p.",
+     "hypotheses": [
+      "H, K complex Hilbert spaces",
+      "p in [1, infinity]"
+     ],
+     "locator": {
+      "source": "lafforgue-delasalle-2011",
+      "where": "§1.1, lines 183-190, equation (2); cgpt-2023 lines 217-219"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.2",
+      "target:1.3",
+      "mathlib:WithLp",
+      "mathlib:CStarMatrix",
+      "roadmap:CStarAlgebras C1.6",
+      "roadmap:CStarAlgebras C3.2",
+      "roadmap:NoncommutativeIntegration §2.6"
+     ],
+     "api": [
+      {
+       "name": "cbNorm_ge",
+       "role": "comparison",
+       "statement": "||T^(1)||_p = ||T||_p and m -> ||T^(m)||_p is nondecreasing, so ||T||_p <= ||T||_{cb,p}"
+      },
+      {
+       "name": "cbNorm_comp",
+       "role": "composition",
+       "statement": "||S o T||_{cb,p} <= ||S||_{cb,p} ||T||_{cb,p}; seminorm in [0, infinity]"
+      },
+      {
+       "name": "cbNorm_conj",
+       "role": "compressions",
+       "statement": "A -> V A W has cb norm <= ||V|| ||W||; A -> U A U* is a complete isometry for an isometry U"
+      },
+      {
+       "name": "cbNorm_dual",
+       "role": "duality",
+       "statement": "if Tr(T(A) B) = Tr(A T#(B)) on S_2 then ||T||_p = ||T#||_{p'} and ||T||_{cb,p} = ||T#||_{cb,p'}"
+      },
+      {
+       "name": "cbNorm_interpolation",
+       "role": "interpolation",
+       "statement": "log ||T^(m)||_p and log ||T||_{cb,p} are convex in 1/p"
+      },
+      {
+       "name": "cbNorm_stabilisation",
+       "role": "stabilisation",
+       "statement": "T (x) id on S_2(H (x) L) has p-norm ||T^(d)||_p for dim L = d finite and ||T||_{cb,p} for infinite-dimensional L"
+      },
+      {
+       "name": "cbNorm_eq_cstar",
+       "role": "compatibility",
+       "statement": "at p = infinity, ||T||_{cb,infinity} is the CStarAlgebras C3.2 cb norm of the extension K(H) -> K(K)"
+      }
+     ],
+     "tests": [
+      {
+       "name": "transpose_cb",
+       "kind": "computation",
+       "statement": "transpose on M_n (n >= 2): ||t||_infinity = 1, ||t||_{cb,infinity} = n (flip unitary to n times a rank-one projection), ||t||_{cb,2} = 1, ||t||_{cb,1} = n; the first-amplification definition returns 1"
+      },
+      {
+       "name": "unitary_conjugation",
+       "kind": "compatibility",
+       "statement": "A -> U A U* has cb norm 1 for every p"
+      },
+      {
+       "name": "diagonal_projection",
+       "kind": "computation",
+       "statement": "A -> E11 A E11 + E22 A E22 on M_2 has cb norm 1 for every p (average of conjugations by diag(1,1) and diag(1,-1))"
+      },
+      {
+       "name": "zero_space_cb",
+       "kind": "degenerate",
+       "statement": "on the zero space every norm is 0"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "Hilbert-Schmidt kernels on sigma-finite measure spaces",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "construction",
+     "name": "SchattenClasses.kernel",
+     "statement": "For sigma-finite (Omega, mu), (Omega', nu), the kernel operator k -> T_k of AutomorphicSpectralTheory §0.8 is onto S_2(L2(nu), L2(mu)); hence k -> T_k is a unitary L2(mu x nu) = S_2(L2(nu), L2(mu)), and the kernel k_A of A in S_2 is the inverse image of A.",
+     "hypotheses": [
+      "(Omega, mu), (Omega', nu) sigma-finite measure spaces"
+     ],
+     "locator": {
+      "source": "lafforgue-delasalle-2011",
+      "where": "lines 226-232; reed-simon-1-1980 §VI.6"
+     },
+     "prerequisites": [
+      "gap:sigma-finite-hilbert-schmidt-kernels",
+      "roadmap:AutomorphicSpectralTheory §0.8",
+      "roadmap:OperatorIdeals OI-B32",
+      "roadmap:OperatorIdeals OI-B36",
+      "roadmap:OperatorIdeals OI-B41",
+      "roadmap:OperatorIdeals OI-C01",
+      "roadmap:OperatorIdeals OI-C13",
+      "mathlib:MeasureTheory.Measure.prod",
+      "mathlib:MeasureTheory.integral_prod"
+     ],
+     "api": [
+      {
+       "name": "kernel_operator",
+       "role": "inverse",
+       "statement": "T_{k_A} = A and k_{T_k} = k"
+      },
+      {
+       "name": "kernel_isometry",
+       "role": "isometry",
+       "statement": "A -> k_A is linear with ||k_A||_{L2} = ||A||_2 and <k_A, k_B> = Tr(A* B)"
+      },
+      {
+       "name": "kernel_finite",
+       "role": "compatibility",
+       "statement": "for finite index sets with counting measure k_A(i, j) = <delta_i, A delta_j>"
+      },
+      {
+       "name": "kernel_ae",
+       "role": "classes",
+       "statement": "kernels equal off a null set give the same operator"
+      }
+     ],
+     "tests": [
+      {
+       "name": "kernel_matrix_unit",
+       "kind": "computation",
+       "statement": "on {1,2} with counting measure the kernel 1_{(1,2)} gives E12 (E12 delta_2 = delta_1); the transposed convention gives E21"
+      },
+      {
+       "name": "kernel_min",
+       "kind": "computation",
+       "statement": "on [0,1], k = min(x,y): eigenvalues ((j+1/2) pi)^(-2), sum of squares (16/pi^4)(pi^4/96) = 1/6 = ||k||_{L2}^2; k = 1 gives the projection onto constants with ||T_1||_2 = 1"
+      },
+      {
+       "name": "identity_no_kernel",
+       "kind": "non-example",
+       "statement": "the identity of L2([0,1]) is not Hilbert-Schmidt; the indicator of the null diagonal would produce 0"
+      },
+      {
+       "name": "zero_measure_kernel",
+       "kind": "degenerate",
+       "statement": "for the zero measure all spaces are zero"
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "theorem",
+     "name": "SchattenClasses.kernel_calculus",
+     "statement": "For A in S_2(L2(nu), L2(mu)), B in S_2(L2(lambda), L2(nu)), u in L2(mu), v in L2(nu), f in Linf(mu), g in Linf(nu): k_{u (x) v*}(x,y) = u(x) conj v(y); k_{A*}(y,x) = conj k_A(x,y); AB in S_1 with k_{AB}(x,z) = int k_A(x,y) k_B(y,z) dnu(y) a.e.; k_{D_f A D_g}(x,y) = f(x) k_A(x,y) g(y); and Tr(A C) = int int k_A(x,y) k_C(y,x) for C in S_2(L2(mu), L2(nu)).",
+     "hypotheses": [
+      "sigma-finite measure spaces"
+     ],
+     "locator": {
+      "source": "lafforgue-delasalle-2011",
+      "where": "Remark 1.2, line 239; reed-simon-1-1980 §VI.6"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "gap:sigma-finite-hilbert-schmidt-kernels",
+      "roadmap:AutomorphicSpectralTheory §0.9",
+      "roadmap:AutomorphicSpectralTheory §0.10",
+      "roadmap:VonNeumannAlgebras V4.Core",
+      "mathlib:MeasureTheory.integral_prod"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "2.3",
+     "kind": "definition",
+     "name": "SchattenClasses.transpose",
+     "statement": "With J the complex conjugation f -> conj f on L2(Omega, mu), the transpose of a bounded A is A^T = J A* J.",
+     "hypotheses": [
+      "(Omega, mu) sigma-finite"
+     ],
+     "locator": {
+      "source": "lafforgue-delasalle-2011",
+      "where": "lines 226-230 (the bilinear identification of S_2(L2(X)) with L2(X x X) through int f g, under which A^T is the flip k_A(y,x)); Remark 1.3, line 244 (duality of a multiplier with its transpose); pisier-grothendieck-2012 Remark 13.4, line 2086 (transposition on M_n is isometric with cb norm n)"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:2.1",
+      "target:2.2",
+      "roadmap:OperatorIdeals OI-A30",
+      "roadmap:VonNeumannAlgebras V4.Core"
+     ],
+     "api": [
+      {
+       "name": "transpose_laws",
+       "role": "algebra",
+       "statement": "A -> A^T is linear, involutive, (AB)^T = B^T A^T, (A*)^T = (A^T)*, D_f^T = D_f"
+      },
+      {
+       "name": "transpose_singularValue",
+       "role": "isometry",
+       "statement": "a_n(A^T) = a_n(A); ||A^T||_p = ||A||_p; A^T compact iff A compact"
+      },
+      {
+       "name": "kernel_transpose",
+       "role": "kernel",
+       "statement": "k_{A^T}(x,y) = k_A(y,x) for A in S_2"
+      },
+      {
+       "name": "trace_transpose",
+       "role": "trace",
+       "statement": "Tr(A^T) = Tr(A) for A in S_1, so Tr(A^T B^T) = Tr(AB)"
+      },
+      {
+       "name": "transpose_matrix",
+       "role": "compatibility",
+       "statement": "for finite index sets A^T is Matrix.transpose"
+      }
+     ],
+     "tests": [
+      {
+       "name": "transpose_linear",
+       "kind": "computation",
+       "statement": "(i E12)^T = i E21 while (i E12)* = -i E21"
+      },
+      {
+       "name": "transpose_norm",
+       "kind": "computation",
+       "statement": "A = [[1,1],[0,0]] and A^T = [[1,0],[1,0]] both have singular values sqrt 2, 0"
+      },
+      {
+       "name": "transpose_multiplication",
+       "kind": "non-example",
+       "statement": "D_i^T = D_i while D_i* = D_{-i}"
+      }
+     ]
+    },
+    {
+     "id": "2.4",
+     "kind": "theorem",
+     "name": "SchattenClasses.kernel_change",
+     "statement": "Change of measure: for sigma-finite nu << mu with h = dnu/dmu, U g = sqrt h g is an isometry L2(nu) -> L2(mu) with U* f = f / sqrt h, k^mu_{U A U*}(x,y) = sqrt h(x) k^nu_A(x,y) sqrt h(y), and A -> U A U* is a complete isometry on every S_p. Isomorphisms: for a measure-preserving measurable bijection phi with measurable inverse, k_{C_phi A C_phi*}(x,y) = k_A(phi x, phi y). Sub-sigma-algebras: for A in B with mu sigma-finite on A, V : L2(A) -> L2(B) is an isometry with adjoint the conditional expectation, iota(A) = V A V* and P(B) = V* B V are complete contractions, iota completely isometric, P o iota = id, k_{iota A} = k_A, k_{P B} = E[k_B | A x A]. The same on Omega x Fin m.",
+     "hypotheses": [
+      "sigma-finite measures; for sub-sigma-algebras, mu sigma-finite on the smaller one"
+     ],
+     "locator": {
+      "source": "lafforgue-delasalle-2011",
+      "where": "lines 346-349 and 366-381"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "target:2.1",
+      "target:2.2",
+      "gap:sigma-finite-hilbert-schmidt-kernels",
+      "mathlib:MeasureTheory.Measure.rnDeriv",
+      "mathlib:MeasureTheory.MeasurePreserving",
+      "mathlib:MeasureTheory.lpMeas",
+      "mathlib:MeasureTheory.condExpL2",
+      "mathlib:MeasureTheory.condExp"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "Schur multipliers",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "definition",
+     "name": "SchattenClasses.schurMultiplier",
+     "statement": "For sigma-finite (Omega, mu) and M in Linf(Omega x Omega, mu x mu), the Schur multiplier S_M : S_2(L2(mu)) -> S_2(L2(mu)) is S_M(A) = T_{M k_A}.",
+     "hypotheses": [
+      "(Omega, mu) sigma-finite",
+      "M in Linf(mu x mu)"
+     ],
+     "locator": {
+      "source": "lafforgue-delasalle-2011",
+      "where": "lines 226-238; cgpt-2023 lines 220-226"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.2",
+      "mathlib:MeasureTheory.Lp",
+      "mathlib:MeasureTheory.Measure.prod"
+     ],
+     "api": [
+      {
+       "name": "schurMultiplier_norm_two",
+       "role": "norm",
+       "statement": "S_M is bounded linear on S_2 with norm ||M||_{Linf(mu x mu)}"
+      },
+      {
+       "name": "schurMultiplier_congr",
+       "role": "classes",
+       "statement": "S_M depends only on the a.e. class of M and M -> S_M is injective"
+      },
+      {
+       "name": "schurMultiplier_elementary",
+       "role": "elementary symbols",
+       "statement": "for M(x,y) = f(x) g(y), S_M(A) = D_f A D_g"
+      },
+      {
+       "name": "schurMultiplier_bimodule",
+       "role": "bimodularity",
+       "statement": "S_M(D_f A D_g) = D_f S_M(A) D_g"
+      },
+      {
+       "name": "schurMultiplier_one",
+       "role": "unit",
+       "statement": "S_1 = id, S_0 = 0"
+      }
+     ],
+     "tests": [
+      {
+       "name": "hadamard_two",
+       "kind": "computation",
+       "statement": "on {1,2}, M = [[1,2],[3,4]] gives [[a,2b],[3c,4d]] and ||S_M||_{S2->S2} = 4 attained at E22"
+      },
+      {
+       "name": "volterra",
+       "kind": "computation",
+       "statement": "on [0,1], M = 1_{x<y} and A the projection onto constants: S_M(A) is g -> int_x^1 g with ||.||_2^2 = 1/2"
+      },
+      {
+       "name": "diagonal_null",
+       "kind": "non-example",
+       "statement": "on [0,1] the symbol 1_{x=y} is 0 a.e. so S_M = 0"
+      },
+      {
+       "name": "zero_measure_mult",
+       "kind": "degenerate",
+       "statement": "for the zero measure S_M = 0 and ||M||_inf = 0"
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "theorem",
+     "name": "SchattenClasses.schurMultiplier_algebra",
+     "statement": "S_{MN} = S_M S_N, S_{M+N} = S_M + S_N, S_{cM} = c S_M, S_1 = id; the adjoint of S_M for the Hilbert-Schmidt inner product Tr(A* B) is S_{conj M}; ||S_M||_{S2->S2} = ||M||_inf; hence M -> S_M is an isometric unital *-homomorphism from Linf(mu x mu) with pointwise conjugation into B(S_2). Moreover S_M(A)* = S_{Mtilde}(A*) with Mtilde(x,y) = conj M(y,x), and S_M(A)^T = S_{M^t}(A^T).",
+     "hypotheses": [
+      "(Omega, mu) sigma-finite",
+      "M, N in Linf(mu x mu)"
+     ],
+     "locator": {
+      "source": "lafforgue-delasalle-2011",
+      "where": "lines 230-232 and 267-268; cgpt-2023 lines 224-226"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "target:2.3",
+      "target:3.1"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "3.3",
+     "kind": "theorem",
+     "name": "SchattenClasses.schurMultiplier_norm_eq",
+     "statement": "For 1 <= p <= infinity, ||S_M||_p (target 1.4) equals the supremum over finite-rank A with ||A||_p <= 1 and equals sup |Tr(S_M(A) B)| over finite-rank A, B with ||A||_p <= 1, ||B||_{p'} <= 1; S_2 cap S_p is dense in S_p (in S_infinity at p = infinity) so a finite norm gives a unique bounded extension S_p -> S_p; ||S_{f(x)g(y)}||_p <= ||f||_inf ||g||_inf; if M_k -> M a.e. with sup ||M_k||_inf < infinity then ||S_M||_p <= liminf ||S_{M_k}||_p (and for cb norms); the norms depend only on the a.e. class.",
+     "hypotheses": [
+      "(Omega, mu) sigma-finite",
+      "M in Linf(mu x mu)",
+      "p in [1, infinity]"
+     ],
+     "locator": {
+      "source": "lafforgue-delasalle-2011",
+      "where": "lines 233-238, 397-413, 433-438; cgpt-2023 lines 226-229"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.2",
+      "target:1.4",
+      "target:2.2",
+      "target:3.1"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "3.4",
+     "kind": "theorem",
+     "name": "SchattenClasses.schurMultiplier_finite",
+     "statement": "For a finite type iota with counting measure: L2(iota) = EuclideanSpace C iota, S_2 = Matrix iota iota C (via Matrix.toEuclideanCLM), k_A(i,j) = A i j, S_M(A) = M hadamard A, ||S_M||_p is the norm of A -> M hadamard A for TauCeti.UnitarilyInvariantSeminorm.schatten at exponent p, and the amplified symbol M_m is the Kronecker product of M with the all-ones m x m matrix.",
+     "hypotheses": [
+      "iota finite type with counting measure"
+     ],
+     "locator": {
+      "source": "lafforgue-delasalle-2011",
+      "where": "lines 213-218; pisier-grothendieck-2012 lines 767-772"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:3.3",
+      "mathlib:Matrix.hadamard",
+      "mathlib:Matrix.toEuclideanCLM",
+      "mathlib:Matrix.kroneckerMap",
+      "tauceti:TauCeti.UnitarilyInvariantSeminorm.schatten"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "3.5",
+     "kind": "definition",
+     "name": "SchattenClasses.schurMultiplier_cbNorm",
+     "statement": "For m >= 1 the amplified symbol M_m(x,i,y,j) = M(x,y) on Omega x Fin m with mu x counting measure, and ||S_M||_{cb,p} = sup_m ||S_{M_m}||_p in [0, infinity].",
+     "hypotheses": [
+      "(Omega, mu) sigma-finite",
+      "M in Linf(mu x mu)",
+      "p in [1, infinity]"
+     ],
+     "locator": {
+      "source": "lafforgue-delasalle-2011",
+      "where": "Lemma 1.5, line 254; cgpt-2023 lines 217-219"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "target:2.4",
+      "target:3.3",
+      "roadmap:VonNeumannAlgebras V2.RectangularL2"
+     ],
+     "api": [
+      {
+       "name": "cbNorm_eq_amplification",
+       "role": "compatibility",
+       "statement": "S_{M_m} is the amplification (S_M)^(m) of target 1.4 through L2(Omega x Fin m) = L2(Omega)^m, so ||S_M||_{cb,p} is the cb norm of target 1.4"
+      },
+      {
+       "name": "norm_le_cbNorm",
+       "role": "comparison",
+       "statement": "||S_M||_p <= ||S_M||_{cb,p}; m -> ||S_{M_m}||_p nondecreasing"
+      },
+      {
+       "name": "cbNorm_two",
+       "role": "p = 2",
+       "statement": "||S_M||_{cb,2} = ||S_M||_2 = ||M||_inf"
+      },
+      {
+       "name": "cbNorm_mul",
+       "role": "submultiplicativity",
+       "statement": "||S_{MN}||_{cb,p} <= ||S_M||_{cb,p} ||S_N||_{cb,p}"
+      }
+     ],
+     "tests": [
+      {
+       "name": "cb_identity",
+       "kind": "compatibility",
+       "statement": "M = 1: S_{M_m} is the identity of S_2(H^m); the alternative M(x,y) delta_ij gives the block-diagonal pinching, not the amplification of the identity"
+      },
+      {
+       "name": "cb_twobytwo",
+       "kind": "computation",
+       "statement": "M = [[1,2],[2,1]] = (3/2) J - (1/2) v v^T with v = (1,-1): ||S_M||_infinity = ||S_M||_{cb,infinity} = 2"
+      },
+      {
+       "name": "cb_zero_measure",
+       "kind": "degenerate",
+       "statement": "for the zero measure all norms are 0"
+      }
+     ]
+    },
+    {
+     "id": "3.6",
+     "kind": "theorem",
+     "name": "SchattenClasses.schurMultiplier_stabilisation",
+     "statement": "With M_inf(x,i,y,j) = M(x,y) on Omega x N: ||S_M||_{cb,p} = ||S_{M_inf}||_{cb,p} = ||S_{M_inf}||_p. For sigma-finite (Omega', nu) and M'(x,w,y,w') = M(x,y): ||S_{M'}||_{cb,p} = ||S_M||_{cb,p}, ||S_{M'}||_p = ||S_M||_{cb,p} when L2(nu) is infinite-dimensional and = ||S_{M_d}||_p when it has dimension d. At p = infinity ||S_M||_{cb,infinity} is the CStarAlgebras C3.2 cb norm of S_M on K(H).",
+     "hypotheses": [
+      "(Omega, mu), (Omega', nu) sigma-finite"
+     ],
+     "locator": {
+      "source": "lafforgue-delasalle-2011",
+      "where": "Lemma 1.5, line 254; Remark 1.6, line 262"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "target:3.5",
+      "roadmap:VonNeumannAlgebras V2.RectangularL2",
+      "roadmap:CStarAlgebras C3.2"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "3.7",
+     "kind": "theorem",
+     "name": "SchattenClasses.schurMultiplier_invariance",
+     "statement": "For the norms and the cb norms: invariance under measure-preserving isomorphisms; for sigma-finite nu << mu the norms for nu are at most those for mu, equal for equivalent measures; restriction to E x E does not increase them; ||S_{M^t}||_p = ||S_{conj M}||_p = ||S_M||_p, likewise for cb norms.",
+     "hypotheses": [
+      "sigma-finite measures"
+     ],
+     "locator": {
+      "source": "lafforgue-delasalle-2011",
+      "where": "Lemma 1.9, line 342; lines 339-341"
+     },
+     "prerequisites": [
+      "target:2.3",
+      "target:2.4",
+      "target:3.2",
+      "target:3.5"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "Duality and interpolation",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "theorem",
+     "name": "SchattenClasses.schurMultiplier_dual",
+     "statement": "Tr(S_M(A) B) = Tr(A S_{M^t}(B)) for A, B in S_2; hence ||S_M||_p = ||S_{M^t}||_{p'} = ||S_M||_{p'} and ||S_M||_{cb,p} = ||S_{M^t}||_{cb,p'} = ||S_M||_{cb,p'} for every 1 <= p <= infinity.",
+     "hypotheses": [
+      "(Omega, mu) sigma-finite",
+      "M in Linf(mu x mu)"
+     ],
+     "locator": {
+      "source": "lafforgue-delasalle-2011",
+      "where": "Remark 1.3, line 244; Remark 1.2, line 239"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "target:2.2",
+      "target:3.2",
+      "target:3.7"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "4.2",
+     "kind": "theorem",
+     "name": "SchattenClasses.schurMultiplier_interpolation",
+     "statement": "For 1 <= p0, p1 <= infinity, ||S_M||_{p_theta} <= ||S_M||_{p0}^(1-theta) ||S_M||_{p1}^theta and the same for cb norms; if |1/p - 1/2| <= |1/q - 1/2| then ||S_M||_p <= ||S_M||_q and ||S_M||_{cb,p} <= ||S_M||_{cb,q}; in particular ||M||_inf = ||S_M||_2 <= ||S_M||_p <= ||S_M||_infinity, and ||S_M||_p <= ||S_M||_q for 2 <= p <= q <= infinity.",
+     "hypotheses": [
+      "(Omega, mu) sigma-finite",
+      "M in Linf(mu x mu)"
+     ],
+     "locator": {
+      "source": "lafforgue-delasalle-2011",
+      "where": "Remark 1.4, lines 246-252 (interpolation identity with p and q exchanged in the source, line 249)"
+     },
+     "prerequisites": [
+      "target:1.3",
+      "target:1.4",
+      "target:4.1"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "4.3",
+     "kind": "theorem",
+     "name": "SchattenClasses.schurMultiplier_weakStar",
+     "statement": "If ||S_M||_infinity < infinity there is a unique weak-* continuous map on B(H) = S_1(H)* agreeing with S_M on S_2: the adjoint of S_{M^t} on S_1, of norm ||S_M||_infinity, bimodular over Linf(mu), multiplicative in the symbol, with cb norm ||S_M||_{cb,infinity} in CStarAlgebras C3.2.",
+     "hypotheses": [
+      "(Omega, mu) sigma-finite",
+      "||S_M||_infinity finite"
+     ],
+     "locator": {
+      "source": "caspers-delasalle-2015",
+      "where": "lines 28-34; cgpt-2023 lines 89-93"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "target:3.2",
+      "target:3.5",
+      "target:4.1",
+      "roadmap:VonNeumannAlgebras V4.Core",
+      "roadmap:CStarAlgebras C3.2"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "Conditional expectations of symbols",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "theorem",
+     "name": "SchattenClasses.schurMultiplier_condExp_le",
+     "statement": "For sigma-algebras A in B on Omega with mu sigma-finite on A and phi in Linf(B x B): ||E[phi | A x A]||_{S_p(L2(A))} <= ||phi||_{S_p(L2(B))} and the same for cb norms; and Tr(S_phi(iota A) iota B) = Tr(S_{E[phi|A x A]}(A) B) for A, B in S_2(L2(A)).",
+     "hypotheses": [
+      "A subset B sigma-algebras",
+      "mu sigma-finite on A",
+      "p in [1, infinity]"
+     ],
+     "locator": {
+      "source": "lafforgue-delasalle-2011",
+      "where": "Lemma 1.10, line 363; proof lines 366-381; lines 404-413"
+     },
+     "prerequisites": [
+      "target:2.4",
+      "target:3.3",
+      "target:3.5",
+      "mathlib:MeasureTheory.condExp"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "5.2",
+     "kind": "theorem",
+     "name": "SchattenClasses.schurMultiplier_martingale",
+     "statement": "For a directed family (B_alpha) of sub-sigma-algebras, mu sigma-finite on each, generating B, and f in Linf(B x B) with f_alpha = E[f | B_alpha x B_alpha]: ||f||_{S_p(L2(B))} = sup_alpha ||f_alpha||_{S_p(L2(B_alpha))}, the net nondecreasing; the same for cb norms.",
+     "hypotheses": [
+      "directed family generating B",
+      "mu sigma-finite on each B_alpha"
+     ],
+     "locator": {
+      "source": "lafforgue-delasalle-2011",
+      "where": "Lemma 1.11, line 383; Remark 1.12, line 393"
+     },
+     "prerequisites": [
+      "target:3.3",
+      "target:3.5",
+      "target:5.1",
+      "mathlib:MeasureTheory.lpMeas",
+      "mathlib:MeasureTheory.condExpL2"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "5.3",
+     "kind": "theorem",
+     "name": "SchattenClasses.schurMultiplier_cbNorm_sigmaAlgebra",
+     "statement": "For phi in Linf(A x A): ||phi||_{cb, S_p(L2(A))} = ||phi||_{cb, S_p(L2(B))}; hence ||E[phi | A x A]||_{cb, S_p(L2(B))} <= ||phi||_{cb, S_p(L2(B))} for phi in Linf(B x B).",
+     "hypotheses": [
+      "A subset B sigma-algebras",
+      "mu sigma-finite on A"
+     ],
+     "locator": {
+      "source": "lafforgue-delasalle-2011",
+      "where": "Lemma 1.13, line 415; proof lines 419-439"
+     },
+     "prerequisites": [
+      "target:3.3",
+      "target:3.5",
+      "target:3.7",
+      "target:5.1",
+      "mathlib:MeasureTheory.Integrable.tendsto_ae_condExp",
+      "mathlib:ContinuousLinearMap.comp_condExp_comm"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  },
+  {
+   "key": "6",
+   "title": "Positive symbols and the Grothendieck-Haagerup characterisation",
+   "targets": [
+    {
+     "id": "6.1",
+     "kind": "theorem",
+     "name": "SchattenClasses.schurProduct",
+     "statement": "For a finite type iota and M in Matrix iota iota C the following are equivalent: M is positive semidefinite; A -> M hadamard A is positive; it is completely positive (CompletelyPositiveMap on CStarMatrix iota iota C). When they hold, ||S_M||_p = ||S_M||_{cb,p} = max_j M(j,j) for every 1 <= p <= infinity (0 for empty iota).",
+     "hypotheses": [
+      "iota finite type"
+     ],
+     "locator": {
+      "source": "horn-johnson-topics-1991",
+      "where": "Ch. 5 (uncertified); paulsen-2002 Ch. 3 and Ch. 8 (uncertified); pisier-grothendieck-2012 lines 767-772"
+     },
+     "prerequisites": [
+      "target:3.4",
+      "target:3.5",
+      "target:4.1",
+      "target:4.2",
+      "mathlib:Matrix.PosSemidef.hadamard",
+      "mathlib:Matrix.PosSemidef.kronecker",
+      "mathlib:CompletelyPositiveMap",
+      "mathlib:CStarMatrix"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "6.2",
+     "kind": "definition",
+     "name": "SchattenClasses.haagerupNorm",
+     "statement": "||M||_H = inf { ||xi||_{Linf(mu;K)} ||eta||_{Linf(mu;K)} } over separable complex Hilbert spaces K and strongly measurable xi, eta : Omega -> K with M(x,y) = <xi(x), eta(y)> for mu x mu-a.e. (x,y); inf of the empty set is infinity.",
+     "hypotheses": [
+      "(Omega, mu) sigma-finite",
+      "M in Linf(mu x mu)"
+     ],
+     "locator": {
+      "source": "lafforgue-delasalle-2011",
+      "where": "Theorem 1.7, lines 274-278; cgpt-2023 lines 89-93; pisier-grothendieck-2012 (3.9), line 656"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "mathlib:lp",
+      "mathlib:MeasureTheory.AEStronglyMeasurable",
+      "mathlib:MeasureTheory.eLpNorm"
+     ],
+     "api": [
+      {
+       "name": "haagerupNorm_lp",
+       "role": "single carrier",
+       "statement": "the infimum is unchanged when K is restricted to l2(N)"
+      },
+      {
+       "name": "haagerupNorm_laws",
+       "role": "norm laws",
+       "statement": "depends only on the class; ||M||_inf <= ||M||_H; subadditive; submultiplicative under pointwise products; ||M^t||_H = ||conj M||_H = ||M||_H; ||f (x) g||_H = ||f||_inf ||g||_inf"
+      },
+      {
+       "name": "haagerupNorm_invariance",
+       "role": "invariance",
+       "statement": "invariant under equivalent measures and measure-preserving isomorphisms"
+      },
+      {
+       "name": "haagerupNorm_attained",
+       "role": "finite index sets",
+       "statement": "for finite iota the infimum is attained with dim K <= 2 |iota|"
+      }
+     ],
+     "tests": [
+      {
+       "name": "haagerup_twobytwo",
+       "kind": "computation",
+       "statement": "[[1,2],[2,1]]: xi_j = (sqrt(3/2), v_j/sqrt 2), eta_k = (sqrt(3/2), -v_k/sqrt 2), v = (1,-1): <xi_j, eta_k> = M(j,k), ||xi_j||^2 = ||eta_k||^2 = 2, so ||M||_H = 2"
+      },
+      {
+       "name": "haagerup_constant_N",
+       "kind": "non-example",
+       "statement": "constant 1 on N with counting measure: ||1||_H = 1 (K = C); the variant with L2 norms of xi, eta gives infinity"
+      },
+      {
+       "name": "haagerup_diagonal",
+       "kind": "computation",
+       "statement": "1_{i=j} on N: xi_i = eta_i = e_i gives ||.||_H = 1"
+      }
+     ]
+    },
+    {
+     "id": "6.3",
+     "kind": "theorem",
+     "name": "SchattenClasses.grothendieckHaagerup_finite",
+     "statement": "For a finite type iota and M in Matrix iota iota C: ||S_M||_infinity = ||S_M||_{cb,infinity} = ||S_M||_1 = ||S_M||_{cb,1} = ||M||_H, the infimum attained.",
+     "hypotheses": [
+      "iota finite type"
+     ],
+     "locator": {
+      "source": "pisier-grothendieck-2012",
+      "where": "Proposition 3.3, line 781; Remark 13.4, line 2086; (3.9)-(3.10), lines 656-665; Remark 23.4, line 3541; Lemma 23.1, line 3439"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "target:3.4",
+      "target:3.5",
+      "target:4.1",
+      "target:6.2",
+      "mathlib:geometric_hahn_banach_point_closed"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "6.4",
+     "kind": "theorem",
+     "name": "SchattenClasses.grothendieckHaagerup",
+     "statement": "For sigma-finite (Omega, mu) and M in Linf(mu x mu): ||S_M||_infinity = ||S_M||_{cb,infinity} = ||S_M||_1 = ||S_M||_{cb,1} = ||M||_H in [0, infinity].",
+     "hypotheses": [
+      "(Omega, mu) sigma-finite",
+      "M in Linf(mu x mu)"
+     ],
+     "locator": {
+      "source": "lafforgue-delasalle-2011",
+      "where": "Theorem 1.7, line 274; proof lines 286-337; cgpt-2023 lines 89-94"
+     },
+     "prerequisites": [
+      "target:3.7",
+      "target:4.1",
+      "target:5.1",
+      "target:6.2",
+      "target:6.3",
+      "roadmap:VonNeumannAlgebras V13b",
+      "roadmap:BanachSpaceTheory B4.0",
+      "mathlib:MeasureTheory.Integrable.tendsto_ae_condExp",
+      "mathlib:ContinuousLinearMap.comp_condExp_comm"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  },
+  {
+   "key": "7",
+   "title": "Atomless measure spaces",
+   "targets": [
+    {
+     "id": "7.1",
+     "kind": "definition",
+     "name": "SchattenClasses.Atomless",
+     "statement": "A measure mu is atomless when no set is an atom in the sense of MeasureTheory.Measure.IsAtom (measurable, positive measure, every measurable subset null or of full measure).",
+     "hypotheses": [
+      "mu a measure on a measurable space"
+     ],
+     "locator": {
+      "source": "lafforgue-delasalle-2011",
+      "where": "lines 487-488 (atoms of positive measure)"
+     },
+     "prerequisites": [
+      "tauceti:MeasureTheory.Measure.IsAtom",
+      "tauceti:MeasureTheory.Measure.exists_subset_measure_eq_of_nullSingleton",
+      "mathlib:MeasureTheory.NullSingletonClass"
+     ],
+     "api": [
+      {
+       "name": "atom_finite",
+       "role": "finiteness",
+       "statement": "a sigma-finite atom has finite measure; atomlessness of sigma-finite measures is invariant under equivalence, measure-preserving isomorphisms, restriction, and products with sigma-finite measures"
+      },
+      {
+       "name": "sierpinski",
+       "role": "intermediate values",
+       "statement": "if mu is atomless, A measurable with mu(A) < infinity and 0 <= t <= mu(A), there is a measurable B in A with mu(B) = t; hence equal-measure n-partitions"
+      },
+      {
+       "name": "atomless_iff_nullSingleton",
+       "role": "compatibility",
+       "statement": "on a standard Borel space a sigma-finite measure is atomless iff it has null singletons"
+      }
+     ],
+     "tests": [
+      {
+       "name": "lebesgue_atomless",
+       "kind": "computation",
+       "statement": "Lebesgue measure on [0,1] is atomless; counting measure on {1,2} has atoms {1}, {2}; delta_0 + Lebesgue has the atom {0}"
+      },
+      {
+       "name": "cocountable",
+       "kind": "non-example",
+       "statement": "the countable-cocountable measure on an uncountable set has null singletons (NullSingletonClass) but the whole space is an atom"
+      },
+      {
+       "name": "zero_measure_atomless",
+       "kind": "degenerate",
+       "statement": "the zero measure is atomless"
+      }
+     ]
+    },
+    {
+     "id": "7.2",
+     "kind": "theorem",
+     "name": "SchattenClasses.schurMultiplier_condExp_equalMass",
+     "statement": "Let A in B be finite sigma-algebras on Omega and mu a finite measure on B such that every minimal nonempty set of A is a union of minimal nonempty sets of B of equal measure. Then ||E[phi | A x A]||_{S_p(L2(B))} <= ||phi||_{S_p(L2(B))} for every B x B-measurable phi and 1 <= p <= infinity.",
+     "hypotheses": [
+      "A subset B finite sigma-algebras",
+      "mu finite",
+      "equal-mass refinement"
+     ],
+     "locator": {
+      "source": "lafforgue-delasalle-2011",
+      "where": "Lemma 1.17, line 489; proof lines 493-501"
+     },
+     "prerequisites": [
+      "target:3.7",
+      "target:5.1"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "7.3",
+     "kind": "theorem",
+     "name": "SchattenClasses.schurMultiplier_norm_eq_cbNorm_of_atomless",
+     "statement": "For an atomless sigma-finite (Omega, mu), every M in Linf(mu x mu) and every 1 <= p <= infinity: ||S_M||_p = ||S_M||_{cb,p}.",
+     "hypotheses": [
+      "(Omega, mu) sigma-finite",
+      "mu atomless (no IsAtom set)"
+     ],
+     "locator": {
+      "source": "lafforgue-delasalle-2011",
+      "where": "Theorem 1.18, line 505; proof lines 508-520; cgpt-2023 line 231"
+     },
+     "prerequisites": [
+      "target:3.6",
+      "target:3.7",
+      "target:5.1",
+      "target:5.2",
+      "target:7.1",
+      "target:7.2"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  },
+  {
+   "key": "8",
+   "title": "Continuous symbols on Radon measure spaces",
+   "targets": [
+    {
+     "id": "8.1",
+     "kind": "theorem",
+     "name": "SchattenClasses.exists_finitelySupported_approx",
+     "statement": "For a finite Radon measure mu on a locally compact Hausdorff space X there is a net of finitely supported measures sum c_i delta_{x_i} with c_i >= 0 and x_i in supp mu such that int F d(mu_alpha x mu_alpha) -> int F d(mu x mu) for every continuous compactly supported F on X x X and int f dmu_alpha -> int f dmu for every continuous compactly supported f on X.",
+     "hypotheses": [
+      "X locally compact Hausdorff, Borel",
+      "mu finite, IsFiniteMeasureOnCompacts, InnerRegularCompactLTTop"
+     ],
+     "locator": {
+      "source": "lafforgue-delasalle-2011",
+      "where": "lines 555-559"
+     },
+     "prerequisites": [
+      "mathlib:MeasureTheory.Measure.support",
+      "mathlib:MeasureTheory.IsFiniteMeasureOnCompacts",
+      "mathlib:MeasureTheory.Measure.InnerRegularCompactLTTop"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "8.2",
+     "kind": "theorem",
+     "name": "SchattenClasses.schurMultiplier_continuous",
+     "statement": "Let X be locally compact Hausdorff, mu a sigma-finite Radon measure, M : X x X -> C continuous, 1 <= p <= infinity, C a finite real >= 0. Then M is mu x mu-essentially bounded with ||S_M||_p <= C iff for every finite Sigma in supp mu the matrix multiplier (M(s,t))_{s,t in Sigma} on S_p(l2(Sigma)) has norm <= C; the same for cb norms. Hence the norms depend only on supp mu, and if supp mu has no isolated point then ||S_M||_p = ||S_M||_{cb,p}.",
+     "hypotheses": [
+      "X locally compact Hausdorff, Borel",
+      "mu sigma-finite Radon",
+      "M continuous"
+     ],
+     "locator": {
+      "source": "lafforgue-delasalle-2011",
+      "where": "Theorem 1.19, line 524; proof lines 535-588; cgpt-2023 lines 232-237; caspers-delasalle-2015 Theorem 3.1, line 282"
+     },
+     "prerequisites": [
+      "target:3.3",
+      "target:3.6",
+      "target:3.7",
+      "target:5.1",
+      "target:8.1",
+      "mathlib:MeasureTheory.Measure.support",
+      "mathlib:MeasureTheory.MemLp.exists_hasCompactSupport_eLpNorm_sub_le"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  },
+  {
+   "key": "9",
+   "title": "Toeplitz symbols and Fourier-Schur transference on R^n",
+   "targets": [
+    {
+     "id": "9.1",
+     "kind": "definition",
+     "name": "SchattenClasses.toeplitzSymbol",
+     "statement": "For m in Linf(R^n), the Toeplitz symbol M_m(x,y) = m(x - y) as a class in Linf(R^n x R^n) (well defined since (x,y) -> (x - y, y) is measure preserving).",
+     "hypotheses": [
+      "n >= 1",
+      "m in Linf(R^n), Lebesgue measure"
+     ],
+     "locator": {
+      "source": "cgpt-2023",
+      "where": "lines 59-66; caspers-delasalle-2015 lines 28-30; lafforgue-delasalle-2011 Notation 2.1, line 597"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:3.3",
+      "target:3.7",
+      "target:6.4",
+      "mathlib:MeasureTheory.MeasurePreserving"
+     ],
+     "api": [
+      {
+       "name": "toeplitzSymbol_algebra",
+       "role": "algebra",
+       "statement": "||M_m||_inf = ||m||_inf; M_{m1 m2} = M_{m1} M_{m2}; (M_m)^t = M_{m(-.)}; conj M_m = M_{conj m}"
+      },
+      {
+       "name": "toeplitz_covariance",
+       "role": "covariance",
+       "statement": "S_{M_m} commutes with conjugation by translations and modulations; S_{M_{m(.-t)}}(A) = V_t^{-1} S_{M_m}(V_t A) for V_t f = f(. + t), so symbol translates have the same norms; dilations preserve the norms"
+      },
+      {
+       "name": "toeplitz_mollify",
+       "role": "mollification",
+       "statement": "for a probability density rho, ||S_{M_{m*rho}}||_{(cb),p} <= ||S_{M_m}||_{(cb),p}"
+      }
+     ],
+     "tests": [
+      {
+       "name": "toeplitz_character",
+       "kind": "computation",
+       "statement": "m = e_a: S_{M_m}(A) = D_{e_a} A D_{e_a}*, norm and cb norm 1"
+      },
+      {
+       "name": "toeplitz_cos",
+       "kind": "computation",
+       "statement": "m = cos(2 pi <a,.>): xi(x) = eta(x) = (e_a(x), e_{-a}(x))/sqrt 2 gives <xi(x),eta(y)> = cos(2 pi <a, x - y>), so ||S_{M_m}||_infinity = 1"
+      },
+      {
+       "name": "toeplitz_null",
+       "kind": "non-example",
+       "statement": "m = 1_{0} is 0 a.e., so S_{M_m} = 0"
+      }
+     ]
+    },
+    {
+     "id": "9.2",
+     "kind": "definition",
+     "name": "SchattenClasses.fourierMultiplier_cbNorm",
+     "statement": "For k >= 1, T_m^(k) is MeasureTheory.Lp.fourierMultiplierCLM F_k m on L2(R^n; F_k), F_k the k x k matrices with the Hilbert-Schmidt inner product; ||T_m^(k)||_p = sup { ||T_m^(k) f||_{Lp(S_p^k)} : f in L2(R^n; F_k), ||f||_{Lp(S_p^k)} <= 1 } with the pointwise norm TauCeti.UnitarilyInvariantSeminorm.schatten; ||T_m||_p = ||T_m^(1)||_p and ||T_m||_{cb,p} = sup_k ||T_m^(k)||_p.",
+     "hypotheses": [
+      "n >= 1",
+      "m in Linf(R^n)",
+      "p in [1, infinity]"
+     ],
+     "locator": {
+      "source": "cgpt-2023",
+      "where": "lines 60-74 and 250-251; caspers-delasalle-2015 lines 26-41; lafforgue-delasalle-2011 (3), lines 193-199"
+     },
+     "prerequisites": [
+      "tauceti:MeasureTheory.Lp.fourierMultiplierCLM",
+      "tauceti:MeasureTheory.Lp.norm_fourierMultiplierCLM_le",
+      "tauceti:MeasureTheory.Lp.tendsto_fourierMultiplierCLM_apply",
+      "tauceti:TauCeti.UnitarilyInvariantSeminorm.schatten",
+      "mathlib:MeasureTheory.Lp.fourierTransformₗᵢ",
+      "mathlib:MeasureTheory.eLpNorm"
+     ],
+     "api": [
+      {
+       "name": "fourierMultiplier_two",
+       "role": "p = 2",
+       "statement": "||T_m||_{cb,2} = ||T_m||_2 = ||m||_inf"
+      },
+      {
+       "name": "fourierMultiplier_cb_ge",
+       "role": "comparison",
+       "statement": "||T_m||_p <= ||T_m||_{cb,p}; k -> ||T_m^(k)||_p nondecreasing"
+      },
+      {
+       "name": "fourierMultiplier_modulation",
+       "role": "symmetries",
+       "statement": "T_m(e_s f) = e_s T_{m(.+s)} f; R T_m R = T_{m(-.)} for the reflection R; dilations preserve norms"
+      },
+      {
+       "name": "fourierMultiplier_dual",
+       "role": "duality",
+       "statement": "||T_m||_{(cb),p} = ||T_m||_{(cb),p'} since the transpose of T_m for int tr(f g) is T_{m(-.)}"
+      },
+      {
+       "name": "fourierMultiplier_mollify",
+       "role": "mollification and semicontinuity",
+       "statement": "||T_{m*rho}||_{(cb),p} <= ||T_m||_{(cb),p}; norms lower semicontinuous under boundedly a.e. convergent symbols"
+      }
+     ],
+     "tests": [
+      {
+       "name": "fourier_character",
+       "kind": "computation",
+       "statement": "m = e_a: T_m f = f(. + a), a complete isometry; the opposite convention gives f(. - a)"
+      },
+      {
+       "name": "fourier_cos",
+       "kind": "computation",
+       "statement": "m = cos(2 pi <a,.>): T_m = (V_a + V_{-a})/2, norm 1 at p = 1 (nonnegative f) and at most 1 for every p"
+      },
+      {
+       "name": "fourier_trivial",
+       "kind": "degenerate",
+       "statement": "m = 1: all norms 1; m = 0: all norms 0"
+      }
+     ]
+    },
+    {
+     "id": "9.3",
+     "kind": "construction",
+     "name": "SchattenClasses.folnerCompression",
+     "statement": "For g in L2(R^n; F_k) and bounded measurable F of positive measure, Lambda_F(g) is the Hilbert-Schmidt operator on L2(F) (x) C^k with kernel 1_F(s) (F^{-1} g)(s - t) 1_F(t). Then ||Lambda_F(g)||_p <= |F|^(1/p) ||g||_{Lp(S_p^k)} for g in L1 cap Linf; |Q_R|^{-1} Tr(Lambda_{Q_R}(g) Lambda_{Q_R}(h)) -> int tr(g h); ||g||_{Lp(S_p^k)} <= liminf |Q_R|^{-1/p} ||Lambda_{Q_R}(g)||_p for g in L2, with equality and a limit for g in L1 cap Linf; and Lambda_F(F(m F^{-1} g)) = S_{M_m}(Lambda_F(g)).",
+     "hypotheses": [
+      "n >= 1",
+      "Q_R = [-R, R]^n",
+      "p in [1, infinity]"
+     ],
+     "locator": {
+      "source": "caspers-delasalle-2015",
+      "where": "Theorem 5.1, line 529; Theorem 5.2, line 543"
+     },
+     "prerequisites": [
+      "target:3.5",
+      "target:4.1",
+      "target:9.1",
+      "roadmap:NoncommutativeIntegration §1.4",
+      "roadmap:NoncommutativeIntegration §1.5",
+      "roadmap:NoncommutativeIntegration §2.6",
+      "mathlib:MeasureTheory.Lp.fourierTransformₗᵢ"
+     ],
+     "api": [
+      {
+       "name": "folner_upper",
+       "role": "upper bound",
+       "statement": "||Lambda_F(g)||_p <= |F|^(1/p) ||g||_p"
+      },
+      {
+       "name": "folner_pairing",
+       "role": "pairing",
+       "statement": "|Q_R|^{-1} Tr(Lambda(g) Lambda(h)) -> int tr(g h)"
+      },
+      {
+       "name": "folner_lower",
+       "role": "asymptotic isometry",
+       "statement": "||g||_p <= liminf |Q_R|^{-1/p} ||Lambda_{Q_R}(g)||_p"
+      },
+      {
+       "name": "folner_intertwine",
+       "role": "intertwining",
+       "statement": "Lambda_F(F(m F^{-1} g)) = S_{M_m}(Lambda_F(g))"
+      }
+     ],
+     "tests": [
+      {
+       "name": "folner_sinc",
+       "kind": "computation",
+       "statement": "n = 1, g = 1_{[-1/2,1/2]}: Lambda_F(g) >= 0 and ||Lambda_F(g)||_1 = |F| (F^{-1}g)(0) = |F| = |F| ||g||_1"
+      },
+      {
+       "name": "folner_two",
+       "kind": "computation",
+       "statement": "||Lambda_F(g)||_2^2 = int |g check(u)|^2 |F cap (F+u)| du <= |F| ||g||_2^2: normalisation |F|^(1/2); |F|^{-1} would give 0 in the limit"
+      },
+      {
+       "name": "folner_translate",
+       "kind": "compatibility",
+       "statement": "Lambda_F(g(. - a)) = D_{e_a} Lambda_F(g) D_{e_a}*"
+      }
+     ]
+    },
+    {
+     "id": "9.4",
+     "kind": "theorem",
+     "name": "SchattenClasses.fourierSide_approxIdentity",
+     "statement": "For 1 <= p <= infinity there are f_R in L2 cap Lp, g_R in L2 cap Lp' with ||f_R||_p = ||g_R||_{p'} = 1, nonnegative even Fourier transforms and int (T_m f_R) g_R -> m(0) for every bounded m continuous at 0. Hence for m bounded continuous, s_1..s_N in R^n, a in S_p^N(S_p^k), b in S_{p'}^N(S_{p'}^k): |sum_{ij} m(s_i - s_j) tr(a_ij b_ji)| <= ||T_m||_{cb,p} ||a||_p ||b||_{p'}.",
+     "hypotheses": [
+      "n >= 1",
+      "p in [1, infinity]"
+     ],
+     "locator": {
+      "source": "caspers-delasalle-2015",
+      "where": "Lemma 4.1, line 449 (locally compact groups, 1 < p < infinity with p/p' rational; on R^n explicit Gaussians give every 1 <= p <= infinity, with the L1-normalised Gaussian the narrower one at p = infinity and the wider one at p = 1); Theorem 4.2 proof lines 494-522"
+     },
+     "prerequisites": [
+      "target:9.2",
+      "mathlib:MeasureTheory.Lp.fourierTransformₗᵢ"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "9.5",
+     "kind": "theorem",
+     "name": "SchattenClasses.fourierSchurTransference",
+     "statement": "For every m in Linf(R^n) and 1 <= p <= infinity: ||S_{M_m}||_{cb,p} = ||T_m||_{cb,p}; moreover ||S_{M_m}||_p <= ||T_m||_{cb,p} and ||T_m||_p <= ||S_{M_m}||_p.",
+     "hypotheses": [
+      "n >= 1",
+      "m in Linf(R^n)",
+      "p in [1, infinity]"
+     ],
+     "locator": {
+      "source": "cgpt-2023",
+      "where": "(FS), lines 71-72; caspers-delasalle-2015 Theorem 4.2 (line 485), Theorem 5.2 (line 543), Corollary 5.3 (line 626); neuwirth-ricard-2011 Theorem 2.7, line 516"
+     },
+     "prerequisites": [
+      "target:3.3",
+      "target:4.2",
+      "target:8.2",
+      "target:9.1",
+      "target:9.2",
+      "target:9.3",
+      "target:9.4",
+      "mathlib:ContDiffBump.ae_convolution_tendsto_right_of_locallyIntegrable"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  },
+  {
+   "key": "10",
+   "title": "Operator-valued and matrix BMO",
+   "targets": [
+    {
+     "id": "10.1",
+     "kind": "definition",
+     "name": "SchattenClasses.bmoColumn",
+     "statement": "For f : R^n -> S_2(H) locally square integrable, ||f||_{BMO^c} = sup over cubes Q of || avg_Q |f(z) - f_Q|^2 dz ||^(1/2) (operator norm, |g|^2 = g* g); ||f||_{BMO^r} = ||f*||_{BMO^c}; ||f||_BMO = max. The same on the torus UnitAddTorus (Fin n) with cubes of side at most 1.",
+     "hypotheses": [
+      "H complex Hilbert space",
+      "n >= 1"
+     ],
+     "locator": {
+      "source": "cgpt-2023",
+      "where": "lines 246-263; mei-2007 lines 96-110"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "mathlib:MeasureTheory.Lp",
+      "mathlib:UnitAddTorus"
+     ],
+     "api": [
+      {
+       "name": "bmo_seminorm",
+       "role": "seminorm",
+       "statement": "seminorm vanishing on constants"
+      },
+      {
+       "name": "bmo_inf_constants",
+       "role": "constants",
+       "statement": "avg_Q |f - alpha|^2 = avg_Q |f - f_Q|^2 + |f_Q - alpha|^2, so the infimum over constants is attained at f_Q"
+      },
+      {
+       "name": "bmo_le_sup",
+       "role": "L-infinity bound",
+       "statement": "operator Jensen |avg g|^2 <= avg |g|^2, hence ||f||_{BMO^c} <= ess sup ||f(z)||"
+      },
+      {
+       "name": "bmo_invariance",
+       "role": "invariance",
+       "statement": "translations, dilations, reflection, and f -> U f V with unitaries"
+      },
+      {
+       "name": "bmo_vector",
+       "role": "vector form",
+       "statement": "||f||_{BMO^c} = sup_{||h|| <= 1} ||f(.) h||_{BMO(R^n; H)}"
+      },
+      {
+       "name": "bmo_dyadic",
+       "role": "dyadic comparison",
+       "statement": "for mean-zero f on the torus, sup_k ||E_k |f - E_{k-1} f|^2||^(1/2) <= 2^(n/2) ||f||_{BMO^c(T^n)}"
+      }
+     ],
+     "tests": [
+      {
+       "name": "bmo_column_row",
+       "kind": "computation",
+       "statement": "f = sum_{k=1}^N r_k E_{k1} with Rademacher-type r_k on T: on Q = T the column quantity is sqrt N and the row quantity is 1"
+      },
+      {
+       "name": "bmo_indicator",
+       "kind": "computation",
+       "statement": "f = 1_{[0,1/2)} e on T: on Q = T, avg |f - f_Q|^2 = e/4, value 1/2; unnormalised integrals would grow with the cube"
+      },
+      {
+       "name": "bmo_constant",
+       "kind": "degenerate",
+       "statement": "constants have seminorm 0; z -> U_z has column seminorm <= 1"
+      }
+     ]
+    },
+    {
+     "id": "10.2",
+     "kind": "definition",
+     "name": "SchattenClasses.matrixBMO",
+     "statement": "For A in S_2(L2(R^n)), pi(A)(z) = U_z A U_z* with U_z multiplication by e^{2 pi i <z, x>}; ||A||_{BMO_c} = ||pi(A)||_{BMO^c(R^n)}, ||A||_{BMO_r} = ||A*||_{BMO_c}, ||A||_BMO = max.",
+     "hypotheses": [
+      "n >= 1"
+     ],
+     "locator": {
+      "source": "cgpt-2023",
+      "where": "lines 264-285"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:10.1",
+      "mathlib:MeasureTheory.Lp"
+     ],
+     "api": [
+      {
+       "name": "pi_hom",
+       "role": "homomorphism",
+       "statement": "pi is multiplicative and *-preserving with ||pi(A)(z)||_p = ||A||_p"
+      },
+      {
+       "name": "matrixBMO_le",
+       "role": "L-infinity bound",
+       "statement": "||A||_BMO <= ||A||"
+      },
+      {
+       "name": "matrixBMO_norm",
+       "role": "definiteness",
+       "statement": "||.||_BMO is a norm on S_2 (a Hilbert-Schmidt operator commuting with all U_z is 0)"
+      },
+      {
+       "name": "matrixBMO_invariance",
+       "role": "invariance",
+       "statement": "pi(D_u A D_v) = D_u pi(A) D_v; translations, modulations, unitary dilations and reflection preserve ||.||_BMO"
+      },
+      {
+       "name": "pi_schur",
+       "role": "compatibility",
+       "statement": "pi(S_M A)(z) = S_M(pi(A)(z))"
+      }
+     ],
+     "tests": [
+      {
+       "name": "matrixBMO_dilation",
+       "kind": "computation",
+       "statement": "U_z D_t = D_t U_{z/t}, so pi(D_t A D_t*)(z) = D_t pi(A)(z/t) D_t*"
+      },
+      {
+       "name": "matrixBMO_translation",
+       "kind": "computation",
+       "statement": "tau_a U_z = e^{-2 pi i <z,a>} U_z tau_a, so pi(tau_a A tau_a*) = tau_a pi(A) tau_a*"
+      },
+      {
+       "name": "matrixBMO_wrong_model",
+       "kind": "non-example",
+       "statement": "pi'(A)(z) = U_z A has column seminorm ||A|| for every A, so it reproduces the operator norm"
+      }
+     ]
+    },
+    {
+     "id": "10.3",
+     "kind": "construction",
+     "name": "SchattenClasses.periodisation",
+     "statement": "m_k(x) = floor(8^k x) in Z^n, p_k = 8^{-k} m_k, pi_k(A)(s) = W_{k,s} A W_{k,s}* with W_{k,s} multiplication by e^{2 pi i <s, m_k(x)>}, J_k the Schur multiplier with symbol 1_{|x-y| >= 2^{-k}}. Then ||pi_k(B)||_{Lp(Linf(T^n) (x) B(L2))} = ||B||_p; pi_k J_k = J_k pi_k and pi_k(J_k B) has mean zero when 4^k >= sqrt n; for 4^k >= 4 sqrt n, ||pi_k J_k(A)||_{BMO^c(T^n)} <= ||pi J_k(A)||_{BMO^c(R^n)} + C_n 2^{-k} ||J_k A||_2 (and rows); ||A - J_k A||_2 -> 0 and ||A||_p <= liminf ||J_k A||_p.",
+     "hypotheses": [
+      "n >= 1",
+      "k large as stated"
+     ],
+     "locator": {
+      "source": "cgpt-2023",
+      "where": "lines 348-378; Lemma 1.3, line 379, proof lines 380-454; line 506"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:3.1",
+      "target:10.1",
+      "target:10.2",
+      "roadmap:NoncommutativeIntegration §4.4"
+     ],
+     "api": [
+      {
+       "name": "pi_k_isometry",
+       "role": "isometry",
+       "statement": "||pi_k(B)(s)||_p = ||B||_p and the Bochner Lp norm equals ||B||_p"
+      },
+      {
+       "name": "pi_k_meanZero",
+       "role": "mean zero",
+       "statement": "for 4^k >= sqrt n, int pi_k(J_k B)(s) ds = 0"
+      },
+      {
+       "name": "periodisation_bmo",
+       "role": "Lemma 1.3",
+       "statement": "the BMO comparison on the torus"
+      },
+      {
+       "name": "J_k_limit",
+       "role": "limit",
+       "statement": "||A - J_k A||_2 -> 0 and ||A||_p <= liminf ||J_k A||_p"
+      }
+     ],
+     "tests": [
+      {
+       "name": "periodisation_threshold",
+       "kind": "non-example",
+       "statement": "n = 2, k = 0: x = (0.05,0.05), y = (0.95,0.95) in the unit cube with |x - y| = 0.9 sqrt 2 >= 1: J_0 keeps the entry while m_0(x) - m_0(y) = 0, so the mean-zero property fails at k = 0"
+      },
+      {
+       "name": "periodisation_one_dim",
+       "kind": "degenerate",
+       "statement": "n = 1, k = 0: a kernel in [0,1)^2 has frequencies 0 and is killed by J_0"
+      },
+      {
+       "name": "periodisation_rank_one",
+       "kind": "computation",
+       "statement": "u (x) v* with u, v in grid cubes labelled a, b: pi_k(u (x) v*)(s) = e^{2 pi i <s, a - b>} u (x) v*, mean zero iff a != b"
+      }
+     ]
+    },
+    {
+     "id": "10.4",
+     "kind": "theorem",
+     "name": "SchattenClasses.matrixBMO_interpolation",
+     "statement": "There is C_n such that for 2 <= p < infinity and Psi(z) = sum_j e^{delta z^2 + lambda_j z} A_j (finitely many A_j in S_2(L2(R^n)), delta >= 0, lambda_j real): ||Psi(2/p)||_p <= C_n p max(sup_t ||Psi(it)||_BMO, sup_t ||Psi(1+it)||_2). Operator form: if T : S_2 -> S_2 with ||T A||_2 <= C_2 ||A||_2 and ||T A||_BMO <= C_inf ||A|| for finite-rank A, then ||T A||_p <= C_n p C_inf^(1-2/p) C_2^(2/p) ||A||_p.",
+     "hypotheses": [
+      "n >= 1",
+      "2 <= p < infinity"
+     ],
+     "locator": {
+      "source": "cgpt-2023",
+      "where": "Theorem 1.1, line 313; (1.1) and proof lines 485-539; Lemma 1.2, line 326"
+     },
+     "prerequisites": [
+      "target:10.1",
+      "target:10.2",
+      "target:10.3",
+      "roadmap:NoncommutativeIntegration §4.4",
+      "gap:semifinite-martingale-bmo-interpolation"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  },
+  {
+   "key": "11",
+   "title": "Hormander-Mikhlin-Schur multipliers",
+   "targets": [
+    {
+     "id": "11.1",
+     "kind": "definition",
+     "name": "SchattenClasses.hmsNorm",
+     "statement": "For sigma_n = floor(n/2) + 1 and M of class C^{sigma_n} on {x != y} in R^n x R^n: |||M|||_HMS = sum_{k=0}^{sigma_n} ess sup_{x != y} |x - y|^k (||D_x^k M(x,y)|| + ||D_y^k M(x,y)||) in [0, infinity], with Frechet derivatives (iteratedFDeriv).",
+     "hypotheses": [
+      "n >= 1",
+      "ContDiffOn R sigma_n M {x != y}"
+     ],
+     "locator": {
+      "source": "cgpt-2023",
+      "where": "Theorem A, lines 149-154"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "mathlib:iteratedFDeriv",
+      "mathlib:ContDiffOn"
+     ],
+     "api": [
+      {
+       "name": "hms_sup",
+       "role": "bound",
+       "statement": "||M||_inf <= |||M|||/2; M defines a class in Linf"
+      },
+      {
+       "name": "hms_symmetry",
+       "role": "symmetry",
+       "statement": "|||M^t||| = |||conj M||| = |||Mtilde||| = |||M|||; invariant under M(t x + a, t y + a), t > 0, and common orthogonal changes of variables"
+      },
+      {
+       "name": "hms_toeplitz",
+       "role": "Toeplitz",
+       "statement": "|||M_m||| = 2 sum_{k <= sigma_n} sup_xi |xi|^k ||D^k m(xi)||"
+      },
+      {
+       "name": "hms_multiindex",
+       "role": "equivalence",
+       "statement": "comparable to the multi-index form with constants depending on n"
+      }
+     ],
+     "tests": [
+      {
+       "name": "hms_sign",
+       "kind": "computation",
+       "statement": "n = 1, M = sign(x - y): |||M||| = 2"
+      },
+      {
+       "name": "hms_phi",
+       "kind": "computation",
+       "statement": "n = 1, M = phi(x - y), phi(xi) = xi/sqrt(1 + xi^2): |||M||| = 2 + 4/(3 sqrt 3), same for phi(t xi)"
+      },
+      {
+       "name": "hms_sin",
+       "kind": "non-example",
+       "statement": "M = sin x_1: |||M||| = infinity while ||S_M||_p = 1"
+      },
+      {
+       "name": "hms_order",
+       "kind": "computation",
+       "statement": "sigma_1 = 1, sigma_2 = 2, sigma_3 = 2, sigma_4 = 3"
+      }
+     ]
+    },
+    {
+     "id": "11.2",
+     "kind": "construction",
+     "name": "SchattenClasses.twistedFourierMultiplier",
+     "statement": "For bounded measurable N, the column-twisted multiplier on L2(R^n; S_2(L2(R^n))) is the Fourier multiplier in z with symbol N(x, xi) on the entry (x,y), and the row-twisted one has symbol N(xi, y); M_c(x,xi) = M(x, x - xi), M_r(xi,y) = M(y - xi, y). Norm <= ||N||_inf; right (left) module map with the column (row) L2 bound; localised intertwining: T^c_{M_c}(pi(A) 1_{Q_R}) - avg_Q -> pi(S_M A) - avg_Q in L2(Q; S_2) as R -> infinity, and the row analogue.",
+     "hypotheses": [
+      "n >= 1",
+      "N bounded measurable; M as in 11.1 for the intertwining"
+     ],
+     "locator": {
+      "source": "cgpt-2023",
+      "where": "(2.2) lines 572-582; (2.5) lines 595-608; (2.8)-(2.9) lines 704-718; lines 668-680"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:10.2",
+      "target:11.3",
+      "mathlib:MeasureTheory.Lp.fourierTransformₗᵢ"
+     ],
+     "api": [
+      {
+       "name": "twisted_norm",
+       "role": "L2 bound",
+       "statement": "||T^c_N f|| <= ||N||_inf ||f||"
+      },
+      {
+       "name": "twisted_module",
+       "role": "module map",
+       "statement": "T^c_N(f E) = (T^c_N f) E and the column bound ||int |T^c_N f|^2||^(1/2) <= ||N||_inf ||int |f|^2||^(1/2)"
+      },
+      {
+       "name": "twisted_intertwine",
+       "role": "intertwining",
+       "statement": "localised T^c_{M_c}(pi(A)) = pi(S_M A) modulo constants on every cube"
+      }
+     ],
+     "tests": [
+      {
+       "name": "twisted_toeplitz",
+       "kind": "compatibility",
+       "statement": "Toeplitz M_m: M_c = m(xi) independent of x, the ordinary multiplier T_m entrywise with T_m e_{x-y} = m(x-y) e_{x-y}"
+      },
+      {
+       "name": "twisted_identity",
+       "kind": "degenerate",
+       "statement": "N = 1 gives the identity"
+      },
+      {
+       "name": "twisted_row_function",
+       "kind": "computation",
+       "statement": "M(x,y) = f(x): T^c_{M_c} is left multiplication by D_f and S_M(A) = D_f A"
+      }
+     ]
+    },
+    {
+     "id": "11.3",
+     "kind": "theorem",
+     "name": "SchattenClasses.littlewoodPaley_uniform",
+     "statement": "With psi_j(xi) = phi(2^{-j} xi) - phi(2^{1-j} xi), N(x,.) of class C^{sigma_n} off 0 with B = sup_x sum_{k <= sigma_n} sup_xi |xi|^k ||D^k_xi N(x,xi)|| finite and k_j(x,.) = F^{-1}(psi_j N(x,.)): int |s|^{2 sigma_n} |k_j(x,s)|^2 ds <= C_n B^2 2^{j(n - 2 sigma_n)}, int |grad k_j|^2 <= C_n ||N||_inf^2 2^{j(n+2)}, int |s|^{2 sigma_n} |grad k_j|^2 <= C_n B^2 2^{j(n + 2 - 2 sigma_n)}.",
+     "hypotheses": [
+      "n >= 1",
+      "N as stated"
+     ],
+     "locator": {
+      "source": "cgpt-2023",
+      "where": "(2.12) line 770; (2.13) line 793; lines 866-894, 967-972, 995-1015"
+     },
+     "prerequisites": [
+      "mathlib:MeasureTheory.Lp.fourierTransformₗᵢ",
+      "mathlib:iteratedFDeriv",
+      "tauceti:ContDiffBump.exists_norm_iteratedFDeriv_littlewoodPaleyPiece_le"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "11.4",
+     "kind": "theorem",
+     "name": "SchattenClasses.schurMultiplier_bmo_endpoint",
+     "statement": "For M as in 11.1 and A in S_2(L2(R^n)): ||S_M A||_{BMO_c} <= C_n (sum_{k <= sigma_n} ess sup |x - y|^k ||D_y^k M||) ||A|| and ||S_M A||_{BMO_r} <= C_n (sum ess sup |x - y|^k ||D_x^k M||) ||A||; hence ||S_M A||_BMO <= C_n |||M|||_HMS ||A||.",
+     "hypotheses": [
+      "n >= 1",
+      "|||M||| finite"
+     ],
+     "locator": {
+      "source": "cgpt-2023",
+      "where": "(2.1) line 570; (2.3)-(2.4) line 591; (2.6)-(2.7) lines 629-634; steps 3-5, lines 628-1041"
+     },
+     "prerequisites": [
+      "target:10.1",
+      "target:10.2",
+      "target:11.1",
+      "target:11.2",
+      "target:11.3"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "11.5",
+     "kind": "theorem",
+     "name": "SchattenClasses.hormanderMikhlinSchur",
+     "statement": "There is C_n such that for 1 < p < infinity and M of class C^{sigma_n} on {x != y} with |||M|||_HMS finite: ||S_M||_{S_p(L2(R^n)) -> S_p(L2(R^n))} = ||S_M||_{cb,p} <= C_n (p^2/(p-1)) |||M|||_HMS.",
+     "hypotheses": [
+      "n >= 1",
+      "1 < p < infinity",
+      "M in C^{sigma_n}(R^{2n} \\ diagonal)"
+     ],
+     "locator": {
+      "source": "cgpt-2023",
+      "where": "Theorem A, lines 149-154; step 1, lines 565-571; Remark 2.1, line 1042; grafakos-classical-2014 Theorem 6.2.7 (uncertified)"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:3.3",
+      "target:4.1",
+      "target:7.3",
+      "target:10.4",
+      "target:11.1",
+      "target:11.4"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "OperatorTheory/OperatorIdeals",
+   "sections": [
+    "OI-A12",
+    "OI-A23",
+    "OI-A25",
+    "OI-A26",
+    "OI-A27",
+    "OI-A28",
+    "OI-A29",
+    "OI-A30",
+    "OI-A38",
+    "OI-A39",
+    "OI-A40",
+    "OI-B29",
+    "OI-B30",
+    "OI-B32",
+    "OI-B33",
+    "OI-B34",
+    "OI-B35",
+    "OI-B36",
+    "OI-B37",
+    "OI-B38",
+    "OI-B39",
+    "OI-B40",
+    "OI-B41",
+    "OI-B76",
+    "OI-B77",
+    "OI-B78",
+    "OI-B79",
+    "OI-B80",
+    "OI-B81",
+    "OI-B82",
+    "OI-B83",
+    "OI-B84",
+    "OI-B85",
+    "OI-B86",
+    "OI-B87",
+    "OI-B88",
+    "OI-C01",
+    "OI-C13",
+    "OI-C14"
+   ],
+   "what": "Approximation numbers, finite-rank approximability and compactness, adjoint invariance, localisation on finite-dimensional subspaces; trace-class, Hilbert-Schmidt and Schatten families with inclusions; the Hilbert-Schmidt column model (implemented in Tau Ceti as TauCeti.OperatorIdealFamily.*)."
+  },
+  {
+   "roadmap": "VonNeumannAlgebras",
+   "sections": [
+    "V4.Core",
+    "V2.RectangularL2",
+    "V13b"
+   ],
+   "what": "The canonical trace with cyclicity, rank-one formulas and B(H) = S_1(H)*; L2(mu) (x) L2(nu) = L2(mu x nu); the Hilbert-space ultraproduct of a sequence of Hilbert spaces."
+  },
+  {
+   "roadmap": "NoncommutativeIntegration",
+   "sections": [
+    "§1.3",
+    "§1.4",
+    "§1.5",
+    "§2.1",
+    "§2.3",
+    "§2.5",
+    "§2.6",
+    "§4.4",
+    "Part II (gap semifinite-martingale-bmo-interpolation)"
+   ],
+   "what": "Finite-rank density, Hoelder, Lp(B(H),Tr) = S_p, Lp-Lq duality, the complex method with regularisation, interpolation of semifinite Lp couples, noncommutative Riesz-Thorin, Bochner Lp(Omega; Lp(N)); the semifinite martingale BMO interpolation inequality is requested of its Part II."
+  },
+  {
+   "roadmap": "AutomorphicSpectralTheory",
+   "sections": [
+    "§0.8",
+    "§0.9",
+    "§0.10"
+   ],
+   "what": "The L2 kernel operator with kernel_apply, kernel_unique, kernel_norm; the complex trace; kernel_trace_diagonal; requested at the generality of arbitrary sigma-finite measure spaces (gap sigma-finite-hilbert-schmidt-kernels)."
+  },
+  {
+   "roadmap": "CStarAlgebras",
+   "sections": [
+    "C1.6",
+    "C3.2"
+   ],
+   "what": "The C*-algebra of compact operators; completely bounded maps of operator spaces (comparison at p = infinity)."
+  },
+  {
+   "roadmap": "BanachSpaceTheory",
+   "sections": [
+    "B4.0"
+   ],
+   "what": "Bochner density of a vector measure of bounded variation in a reflexive space (Radon-Nikodym representation of L1(mu) -> K)."
+  }
+ ],
+ "consumers": [
+  {
+   "roadmap": "SchattenClassesAndSchurMultipliersPartII",
+   "what": "Proposed: Sobolev form of the Hormander-Mikhlin-Schur theorem (cgpt-2023 Theorem A'), Calderon-Torchinsky variants, divided differences of alpha-Hoelder functions and Arazy's conjecture, discrete and Lie-group formulations; consumes Layers 3, 4, 7, 10, 11."
+  },
+  {
+   "roadmap": "OperatorLipschitzFunctionsAndDoubleOperatorIntegrals",
+   "what": "Proposed: Schur multipliers with divided-difference symbols on spectral measure spaces (potapov-sukochev-2011 Theorems 1 and 7); consumes Layers 2-4 and 11."
+  },
+  {
+   "roadmap": "ApproximationPropertiesBySchurMultipliers",
+   "what": "Proposed: Lafforgue-de la Salle §2 onwards, the constants Lambda^Schur_{p,cb}; consumes Layers 3-8."
+  },
+  {
+   "roadmap": "FourierMultipliersOnGroupVonNeumannAlgebras",
+   "what": "Proposed: Neuwirth-Ricard and Caspers-de la Salle transference beyond R^n; consumes Layers 3, 8, 9."
+  },
+  {
+   "roadmap": "NoncommutativeGeometry",
+   "what": "N3 and N5 Schatten bounds for commutators; Layers 1, 3, 6."
+  }
+ ],
+ "gaps": [
+  {
+   "slug": "sigma-finite-hilbert-schmidt-kernels",
+   "title": "Hilbert-Schmidt kernel operators on arbitrary sigma-finite measure spaces",
+   "neededBy": [
+    "2.1",
+    "2.2",
+    "2.4"
+   ],
+   "detail": "AutomorphicSpectralTheory §0.8 states the kernel operator T_K, kernel_apply, kernel_unique and kernel_norm on sigma-finite standard Borel spaces with separable L2, and §0.10 the trace formula Tr(T_1 T_2) = int int K_1(x,y) K_2(y,x). Layers 2, 5 and 7 need them for arbitrary sigma-finite measure spaces, including sub-sigma-algebras of a standard Borel space, which are not standard Borel. A route without countable orthonormal bases: VonNeumannAlgebras V2.RectangularL2 composed with the unitary S_2(L2(nu), L2(mu)) = L2(mu) (x) conj(L2(nu)) of V4.Core, identified with the integral formula on rank-one kernels and extended by continuity.",
+   "needs": "For arbitrary sigma-finite measure spaces (X, mu) and (Y, nu), with no standard Borel or separability hypothesis: the kernel operator T_K : L2(Y, nu) -> L2(X, mu), T_K f(x) = int K(x, y) f(y) dnu(y) for almost every x, of every K in L2(mu x nu), with K -> T_K a linear embedding of L2(mu x nu) into the bounded operators, isometric for the Hilbert-Schmidt norm: ||T_K||_HS = ||K||_2 (§0.8: kernel_apply, kernel_unique, kernel_norm), and Tr(T_1 T_2) = int int K_1(x, y) K_2(y, x) dmu(x) dmu(y) for K_1, K_2 in L2(mu x mu) (§0.10, first assertion).",
+   "supplier": "AutomorphicSpectralTheory",
+   "section": "§0.8 (and §0.10)"
+  },
+  {
+   "slug": "semifinite-martingale-bmo-interpolation",
+   "title": "Interpolation between semifinite operator-valued martingale BMO and L2 with constant O(p)",
+   "neededBy": [
+    "10.4"
+   ],
+   "detail": "For N semifinite, a filtration (F_k) of a probability space with F_0 trivial generating F, M = Linf(Omega) (x) N with trace int (x) tau_N, E_k = E[.|F_k] (x) id, E_{-1} = 0, ||f||_{BMO_c} = sup_k ||E_k |f - E_{k-1} f|^2||^(1/2), BMO_r via f*, BMO = max: there is an absolute C such that for 2 <= p < infinity and every Psi(z) = sum_j e^{delta z^2 + lambda_j z} f_j (f_j in L2 cap M of mean zero, delta >= 0, lambda_j real), ||Psi(2/p)||_p <= C p max(sup_t ||Psi(it)||_BMO, sup_t ||Psi(1+it)||_2). Sources: cgpt-2023 Lemma 1.4 (lines 471-484) for the dyadic filtration of T^n with N = B(L2(R^n)); mei-2007 Lemma 6.1 (line 3218) for semifinite operator-valued dyadic filtrations with equivalent norms; musat-2003 Theorem 3.1 (uncertified); jrwz-2020 (uncertified) for the order O(1/(q-1)) of the Burkholder-Gundy constant. NoncommutativeIntegration owns finite-tracial H1-BMO duality (§8.4) and Burkholder-Gundy with constants depending only on p (§7.3); the semifinite operator-valued version with the sharp order is in its direction.",
+   "needs": "For a semifinite von Neumann algebra (N, tau_N), a probability space (Omega, F, P) with a filtration (F_k)_{k >= 0}, F_0 trivial, generating F, the algebra M = Linf(Omega) (x) N with the trace int (x) tau_N, E_k = E[. | F_k] (x) id_N and E_{-1} = 0: the norms ||f||_{BMO_c} = sup_{k >= 0} ||E_k |f - E_{k-1} f|^2||^{1/2}, ||f||_{BMO_r} = ||f*||_{BMO_c} and ||f||_BMO = max(||f||_{BMO_c}, ||f||_{BMO_r}) on L2(M) cap M, and an absolute constant C such that ||Psi(2/p)||_{Lp(M)} <= C p max(sup_t ||Psi(it)||_BMO, sup_t ||Psi(1 + it)||_{L2(M)}) for every 2 <= p < infinity and every Psi(z) = sum_j e^{delta z^2 + lambda_j z} f_j on the strip 0 <= Re z <= 1 with finitely many f_j in L2(M) cap M, E_0 f_j = 0, delta >= 0 and lambda_j real.",
+   "supplier": "NoncommutativeIntegration",
+   "section": "Part II (proposed), extending §7.3 and §8.4"
+  }
+ ]
+}

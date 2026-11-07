@@ -18,8 +18,8 @@ sha256 = "ee1e04fee473f23256b84035487734920c5dc76913254fce001f442b80330135"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-version_note = "arXiv v3"
-cited_for = ["Schur multipliers on S_p, plain versus cb norm, finite restrictions"]
+version_note = "arXiv v3; locators cite its line numbers and its theorem numbering; the Duke version was not compared"
+cited_for = ["1.1", "1.2", "1.3", "1.4", "2.1", "2.2", "2.3", "2.4", "3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "4.1", "4.2", "5.1", "5.2", "5.3", "6.2", "6.4", "7.1", "7.2", "7.3", "8.1", "8.2", "9.1", "9.2"]
 
 [[source]]
 id = "cgpt-2023"
@@ -36,8 +36,8 @@ sha256 = "e843da3983775c4aa886d59c6ef3c01da11415ba9d52de2bd00e8d7a647bea57"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-version_note = "arXiv v4"
-cited_for = ["Hörmander–Mikhlin–Schur theorem"]
+version_note = "arXiv v4; locators cite its line numbers and numbering"
+cited_for = ["1.1", "1.3", "1.4", "3.1", "3.2", "3.3", "3.5", "4.3", "6.2", "6.4", "7.3", "8.2", "9.1", "9.2", "9.5", "10.1", "10.2", "10.3", "10.4", "11.1", "11.2", "11.3", "11.4", "11.5"]
 
 [[source]]
 id = "potapov-sukochev-2011"
@@ -55,7 +55,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v3"
-cited_for = ["Schur multipliers and double operator integrals on S_p"]
+cited_for = ["Downstream consumers: operator-Lipschitz functions and double operator integrals"]
 
 [[source]]
 id = "pisier-grothendieck-2012"
@@ -74,7 +74,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v3"
-cited_for = ["bounded and completely bounded Schur multipliers, Haagerup characterisation"]
+cited_for = ["2.3", "3.4", "6.1", "6.2", "6.3"]
 
 [[source]]
 id = "caspers-delasalle-2015"
@@ -94,7 +94,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v2"
-cited_for = ["Fourier–Schur transference for amenable groups on L^p and S_p"]
+cited_for = ["1.2", "4.3", "8.2", "9.1", "9.2", "9.3", "9.4", "9.5"]
 
 [[source]]
 id = "neuwirth-ricard-2011"
@@ -112,7 +112,7 @@ sha256 = "7d34cd55b6e40608ab686e16793784def14c6c5111144e5274d36d5981088fb8"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["transfer of Fourier multipliers into Schur multipliers on S_p"]
+cited_for = ["9.5"]
 
 [[source]]
 id = "pisier-similarity-2001"
@@ -127,7 +127,7 @@ url = "https://doi.org/10.1007/b55674"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Schur multipliers and Grothendieck's inequality"]
+cited_for = ["6.3"]
 
 [[source]]
 id = "grafakos-classical-2014"
@@ -142,7 +142,7 @@ url = "https://doi.org/10.1007/978-1-4939-1194-3"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Hörmander–Mikhlin multiplier theorem; Riesz–Thorin Theorem 1.3.4"]
+cited_for = ["11.5"]
 
 [[source]]
 id = "simon-trace-ideals-2005"
@@ -157,7 +157,7 @@ url = "https://doi.org/10.1090/surv/120"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["singular values, trace class and Hilbert–Schmidt operators, the classes S_p, Hölder's inequality, trace duality"]
+cited_for = ["1.1"]
 
 [[source]]
 id = "gohberg-krein-1969"
@@ -172,7 +172,7 @@ url = "https://doi.org/10.1090/mmono/018"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["the classes S_p"]
+cited_for = ["1.1"]
 
 [[source]]
 id = "reed-simon-1-1980"
@@ -185,7 +185,7 @@ locator = "§VI.6"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["trace class and Hilbert–Schmidt operators, integral operators with L² kernels"]
+cited_for = ["2.1", "2.2"]
 
 [[source]]
 id = "paulsen-2002"
@@ -200,7 +200,7 @@ url = "https://doi.org/10.1017/CBO9780511546631"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Schur products and the Schur product theorem; Haagerup's characterisation of completely bounded Schur multipliers"]
+cited_for = ["6.1", "6.3"]
 
 [[source]]
 id = "horn-johnson-topics-1991"
@@ -215,4 +215,53 @@ url = "https://doi.org/10.1017/CBO9780511840371"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["the Hadamard product and Schur's product theorem"]
+cited_for = ["6.1"]
+
+[[source]]
+id = "mei-2007"
+authors = "Tao Mei"
+title = "Operator Valued Hardy Spaces"
+year = 2007
+venue = "Mem. Amer. Math. Soc. 188 (2007), no. 881"
+arxiv = "math/0311160v3"
+locator_scheme = "theorem"
+locator = "Lemma 6.1"
+url = "https://arxiv.org/abs/math/0311160v3"
+fetched_from = "https://arxiv.org/pdf/math/0311160v3"
+fetched_at = "2026-11-07T01:27:37Z"
+sha256 = "a4293efe0750c68d1a56da3370f9f8b899dabf4a53727030a55f3b87d3434dfe"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-07"
+version_note = "arXiv v3 read (2005); locators cite its line numbers and its numbering; published as Mem. Amer. Math. Soc. 188 (2007), no. 881, numbering not compared"
+cited_for = ["10.1", "10.4"]
+
+[[source]]
+id = "musat-2003"
+authors = "M. Musat"
+title = "Interpolation between non-commutative BMO and non-commutative Lp-spaces"
+year = 2003
+venue = "Journal of Functional Analysis 202"
+doi = "10.1016/s0022-1236(03)00099-5"
+locator_scheme = "theorem"
+locator = "Theorem 3.1"
+url = "https://doi.org/10.1016/s0022-1236(03)00099-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text; theorem number as cited in mei-2007 lines 3229-3230"
+cited_for = ["10.4"]
+
+[[source]]
+id = "jrwz-2020"
+authors = "Y. Jiao, N. Randrianantoanina, L. Wu, D. Zhou"
+title = "Square Functions for Noncommutative Differentially Subordinate Martingales"
+year = 2020
+venue = "Communications in Mathematical Physics 374"
+doi = "10.1007/s00220-019-03391-x"
+locator_scheme = "section"
+locator = "the order 1/(q-1) of the noncommutative Burkholder-Gundy constant as q -> 1, as cited by cgpt-2023 lines 483-484"
+url = "https://doi.org/10.1007/s00220-019-03391-x"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["10.4"]
