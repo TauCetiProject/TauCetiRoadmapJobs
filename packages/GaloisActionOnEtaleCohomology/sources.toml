@@ -9,12 +9,12 @@ year = 1996
 venue = "Aspects of Mathematics"
 doi = "10.1007/978-3-663-09991-8"
 locator_scheme = "theorem"
-locator = "Proposition 2.3.10; Section 2.4; Corollary 2.8.3; Section 3.8; Theorem 7.5.3"
+locator = "Proposition 2.3.10; Corollary 2.4.6; Corollary 2.8.3; Section 3.8; Proposition 6.1.1"
 url = "https://doi.org/10.1007/978-3-663-09991-8"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Scope; Final targets 3, 4, 6, 7"]
+cited_for = ["2.1", "2.3", "4.2", "4.4"]
 
 [[source]]
 id = "huber1994"
@@ -29,7 +29,7 @@ url = "https://doi.org/10.1007/BF02571959"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Scope (adic spaces locally of finite type, fibre products)"]
+cited_for = ["Conventions (rigid K-spaces, fibre products)"]
 
 [[source]]
 id = "scholze2013"
@@ -49,7 +49,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v2 read; Theorem 5.1 on page 28 of the arXiv version"
-cited_for = ["Final target 7"]
+cited_for = ["4.4"]
 
 [[source]]
 id = "berkovich1993"
@@ -58,7 +58,7 @@ title = "Étale cohomology for non-Archimedean analytic spaces"
 year = 1993
 venue = "Publications Mathématiques de l'IHÉS 78, 5-161"
 locator_scheme = "theorem"
-locator = "Theorem 7.1.1; Corollary 7.5.4"
+locator = "Theorem 7.1.1; Corollary 7.4.4; Corollary 7.5.4"
 url = "https://www.numdam.org/item/PMIHES_1993__78__5_0.pdf"
 fetched_from = "https://www.numdam.org/item/PMIHES_1993__78__5_0.pdf"
 fetched_at = "2026-11-04T20:59:54Z"
@@ -66,7 +66,7 @@ sha256 = "bd864c89ed8b6e8f27a90f459837221549db75afa75554ab51414e17771066af"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
-cited_for = ["Final target 6"]
+cited_for = ["4.2", "4.4"]
 
 [[source]]
 id = "sga4half"
@@ -81,7 +81,7 @@ url = "https://doi.org/10.1007/BFb0091516"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Final targets 1, 7 (scheme side)"]
+cited_for = ["1.4", "2.6"]
 
 [[source]]
 id = "milneLEC"
@@ -98,7 +98,7 @@ sha256 = "ac4f122f371d38a44c58c296b7dbf88081d89d2de2334070bff3606771c01077"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
-cited_for = ["Final targets 1, 6, 7 (scheme side)"]
+cited_for = ["1.4", "2.2", "2.6", "3.1", "4.2", "4.4"]
 
 [[source]]
 id = "stacks03N1"
@@ -107,7 +107,7 @@ title = "The Stacks Project, chapter Étale Cohomology (Tag 03N1)"
 year = 2026
 venue = "stacks.math.columbia.edu"
 locator_scheme = "tag"
-locator = "03QQ; 03QW; 03Q9"
+locator = "03Q9 (Theorem 53.1); 03QW (Section 56); 03QQ (Section 59, Example 59.3)"
 url = "https://stacks.math.columbia.edu/download/etale-cohomology.pdf#nameddest=03N1"
 fetched_from = "https://stacks.math.columbia.edu/download/etale-cohomology.pdf#nameddest=03N1"
 fetched_at = "2026-11-04T21:00:06Z"
@@ -115,7 +115,7 @@ sha256 = "71b2eb78422e599bedadb929b22812daac27c0c35510b880acb6c4489a5ea363"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
-cited_for = ["Final targets 1, 4 (scheme side)"]
+cited_for = ["Conventions", "0.3", "1.4", "2.2", "2.4", "4.1"]
 
 [[source]]
 id = "serreGC1997"
@@ -130,7 +130,7 @@ url = "https://doi.org/10.1007/978-3-642-59141-9"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Final target 5 (continuous cohomology, discrete modules)"]
+cited_for = ["2.5", "3.2"]
 
 [[source]]
 id = "zavyalov2025"
@@ -150,7 +150,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v3 read; theorem numbers (1.1.4, 5.4.2, 5.4.4) and page 78 are those of the arXiv version, to be checked against the Annals pagination"
-cited_for = ["Final targets 4, 8"]
+cited_for = ["1.3", "2.3", "4.1"]
 
 [[source]]
 id = "dejongvanderput1996"
@@ -167,7 +167,7 @@ sha256 = "34a0f015eafeb3f418bca39378206aea0d1935acb2529ccc1d1913136a2217d4"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-04"
-cited_for = ["Final targets 2, 3, 4"]
+cited_for = ["0.1", "0.2", "0.3", "1.1", "1.2", "1.3", "2.1", "2.3", "2.5", "3.2"]
 
 [[source]]
 id = "hansenzavyalov2023"
@@ -185,4 +185,4 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v2"
-cited_for = ["Consumers; Final target 7"]
+cited_for = ["3.1", "3.3", "4.3", "4.4"]

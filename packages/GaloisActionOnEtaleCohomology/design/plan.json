@@ -1,0 +1,1312 @@
+{
+ "roadmap": "GaloisActionOnEtaleCohomology",
+ "title": "The Galois action on étale cohomology of geometric fibres",
+ "parent": null,
+ "summary": "Constructs the action ρ(σ) = c_σ ∘ σ_X^* of the absolute Galois group on étale and pro-étale cohomology of geometric fibres of rigid spaces over any complete non-archimedean field and of schemes over any field, with the identification G_K ≅ Aut_cont(C/K), functoriality, discreteness, the dictionary with higher direct images to the base point, the Hochschild–Serre E_2 term, agreement with the scheme adic action and Frobenius conventions, ℓ-adic and rational coefficients as continuous representations, equivariant twisting, equivariant comparison for proper schemes, and the passage from finiteness to finitely generated and finite-dimensional representations.",
+ "baseline": {
+  "mathlib": "f6090c7095e1e56b3464c1daba5f24631f1290d2",
+  "tauceti": "358314d4ab97483df4fc4cb8adcc02e74a8d9f5a"
+ },
+ "layers": [
+  {
+   "key": "0",
+   "title": "The Galois group and the completed algebraic closure",
+   "targets": [
+    {
+     "id": "0.1",
+     "kind": "construction",
+     "name": "completedAlgClosure",
+     "statement": "For K complete for a nontrivial non-archimedean rank-one absolute value (any characteristic), K̄ = AlgebraicClosure K with the spectral norm and C = UniformSpace.Completion K̄: K^sep = SeparableClosure K is dense in C; C is algebraically closed; (C, 𝒪_C) is a geometric field pair and ξ_C : Spa(C,𝒪_C) → Spa(K,𝒪_K) is a geometric point; Spa(C,𝒪_C) ∼ lim_L Spa(L,𝒪_L) over finite subextensions L of K^sep/K is a colimit-presented tilde-limit.",
+     "hypotheses": [
+      "K a NontriviallyNormedField, CompleteSpace, IsUltrametricDist",
+      "any characteristic, any value group"
+     ],
+     "locator": {
+      "source": "dejongvanderput1996",
+      "where": "§3.6, page 36, line 1477"
+     },
+     "prerequisites": [
+      "mathlib:spectralNorm.normedField",
+      "mathlib:spectralNorm_extends",
+      "mathlib:spectralNorm_unique",
+      "mathlib:UniformSpace.Completion",
+      "mathlib:SeparableClosure",
+      "mathlib:Polynomial.exists_roots_norm_sub_lt_of_norm_coeff_sub_lt",
+      "mathlib:IsAlgClosed.of_denseRange",
+      "roadmap:PadicDifferentialEquationsAndRigidCohomology §RD.0.33",
+      "roadmap:ClassicalAdicEtaleCohomology §1.5",
+      "roadmap:ClassicalAdicEtaleCohomology §7.1",
+      "roadmap:AdicEtaleGeometry A1.7"
+     ],
+     "api": [
+      {
+       "name": "sepClosure_dense",
+       "role": "structure",
+       "statement": "K^sep is dense in K̄ and in C (separable approximations X^{p^e} − tX − b, continuity of roots)"
+      },
+      {
+       "name": "isAlgClosed",
+       "role": "structure",
+       "statement": "C is algebraically closed in every characteristic"
+      },
+      {
+       "name": "geometricPoint",
+       "role": "compatibility",
+       "statement": "ξ_C is an AdicSpace.GeometricPoint of Spa(K,𝒪_K)"
+      },
+      {
+       "name": "tildeLimit",
+       "role": "structure",
+       "statement": "Spa(C,𝒪_C) ∼ lim_L Spa(L,𝒪_L), colimit-presented, with finite-stage detection 𝒪_L ∩ ϖ^n𝒪_{K^sep} = ϖ^n𝒪_L"
+      }
+     ],
+     "tests": [
+      {
+       "name": "padic",
+       "kind": "compatibility",
+       "statement": "for K = ℚ_p, C is PadicComplex p up to the isometric ℚ_p-isomorphism AlgebraicClosure ℚ_p ≅ PadicAlgCl p"
+      },
+      {
+       "name": "charp",
+       "kind": "computation",
+       "statement": "for K = 𝔽_p((t)), t^{1/p} ∉ K^sep is the limit of roots of X^p − sX − t as s → 0, and C is algebraically closed although IsAlgClosed.of_denseRange (CharZero) does not apply"
+      },
+      {
+       "name": "algclosed",
+       "kind": "degenerate",
+       "statement": "if K is algebraically closed, K̄ = K = C and ξ_C = id"
+      },
+      {
+       "name": "not_complete",
+       "kind": "non-example",
+       "statement": "K̄ itself is not complete for K = ℚ_p; Spa(K̄) is not a geometric point in the sense of AdicEtaleGeometry A1.7"
+      },
+      {
+       "name": "norm_unique",
+       "kind": "non-example",
+       "statement": "on ℚ_p(√p) the norm max(|a|,|b|) gives |√p| = 1 ≠ p^{-1/2} and is excluded by uniqueness of the power-multiplicative extension"
+      }
+     ]
+    },
+    {
+     "id": "0.2",
+     "kind": "theorem",
+     "name": "galoisCompletionEquiv",
+     "statement": "For σ ∈ G_K = Field.absoluteGaloisGroup K, σ̂ := UniformSpace.Completion.map σ is the unique continuous extension of σ to C, an isometric K-algebra automorphism preserving 𝒪_C and 𝔪_C; σ ↦ σ̂ is a group isomorphism G_K ≅ Aut_cont(C/K); the action map G_K × C → C is jointly continuous for the Krull topology; it is compatible with restriction to G_L for finite L ⊆ K̄ and with change of algebraic closure (τ̂ σ̂ τ̂⁻¹ = (τστ⁻¹)^).",
+     "hypotheses": [
+      "K as in 0.1"
+     ],
+     "locator": {
+      "source": "dejongvanderput1996",
+      "where": "§3.6, page 36, line 1479"
+     },
+     "prerequisites": [
+      "target:0.1",
+      "mathlib:Field.absoluteGaloisGroup",
+      "mathlib:spectralNorm_eq_of_equiv",
+      "mathlib:spectralNorm_unique",
+      "mathlib:UniformSpace.Completion.map",
+      "mathlib:UniformSpace.Completion.map_unique",
+      "mathlib:UniformSpace.Completion.map_comp",
+      "mathlib:UniformSpace.Completion.map_id",
+      "mathlib:IntermediateField.fixingSubgroup_isOpen"
+     ],
+     "api": [
+      {
+       "name": "map_mul",
+       "role": "structure",
+       "statement": "(στ)^ = σ̂ ∘ τ̂, 1̂ = id"
+      },
+      {
+       "name": "isometry",
+       "role": "structure",
+       "statement": "|σ̂ x| = |x|; σ̂(𝒪_C) = 𝒪_C"
+      },
+      {
+       "name": "surjective",
+       "role": "characterisation",
+       "statement": "every continuous K-algebra endomorphism of C is some σ̂"
+      },
+      {
+       "name": "continuous_action",
+       "role": "structure",
+       "statement": "G_K × C → C jointly continuous"
+      },
+      {
+       "name": "restrict",
+       "role": "compatibility",
+       "statement": "for finite L ⊆ K̄ and σ ∈ G_L the extension over L equals the extension over K"
+      },
+      {
+       "name": "conj",
+       "role": "compatibility",
+       "statement": "change of algebraic closure conjugates σ̂"
+      }
+     ],
+     "tests": [
+      {
+       "name": "identity",
+       "kind": "degenerate",
+       "statement": "1̂ = id_C"
+      },
+      {
+       "name": "sqrt3",
+       "kind": "computation",
+       "statement": "for K = ℚ_3 and σ(√3) = −√3, σ̂ ≠ id"
+      },
+      {
+       "name": "padic_period_rings",
+       "kind": "compatibility",
+       "statement": "for K/ℚ_p finite, σ̂ is PadicPeriodRings §1.1 completedGaloisAction after the isometry of 0.1"
+      },
+      {
+       "name": "discontinuous",
+       "kind": "non-example",
+       "statement": "discontinuous field automorphisms of ℂ_p are not in Aut_cont(ℂ_p/ℚ_p)"
+      },
+      {
+       "name": "charp_insep",
+       "kind": "computation",
+       "statement": "for K = 𝔽_p((t)), σ̂ fixes t^{1/p}"
+      }
+     ]
+    },
+    {
+     "id": "0.3",
+     "kind": "theorem",
+     "name": "geometricPointAutEquiv",
+     "statement": "Every morphism a : Spa(C,𝒪_C) → Spa(C,𝒪_C) with ξ_C ∘ a = ξ_C is Spa(σ̂) for a unique σ ∈ G_K, and σ ↦ Spa(σ̂) is an anti-isomorphism of G_K onto these automorphisms; on étale neighbourhoods (Spa(L,𝒪_L), v̄) of ξ_C, precomposition with Spa(σ̂) is postcomposition of the embedding L → C with σ. This fixes the Galois action on stalks: σ sends (V, v̄) to (V, v̄ ∘ Spa(σ̂)).",
+     "hypotheses": [
+      "K as in 0.1"
+     ],
+     "locator": {
+      "source": "stacks03N1",
+      "where": "§56, Tag 03QW, line 3966"
+     },
+     "prerequisites": [
+      "target:0.1",
+      "target:0.2",
+      "roadmap:ClassicalAdicEtaleCohomology §7.1",
+      "roadmap:AdicEtaleGeometry A1.7"
+     ],
+     "api": [
+      {
+       "name": "anti_mul",
+       "role": "structure",
+       "statement": "Spa((στ)^) = Spa(τ̂) ∘ Spa(σ̂)"
+      },
+      {
+       "name": "stalk_action_left",
+       "role": "structure",
+       "statement": "the induced action on stalks is a left action"
+      }
+     ],
+     "tests": [
+      {
+       "name": "quadratic",
+       "kind": "computation",
+       "statement": "for L = K(√a), the nontrivial class swaps the two embeddings"
+      },
+      {
+       "name": "cubic",
+       "kind": "non-example",
+       "statement": "for L/K cyclic cubic, σ sends τ₀ to g∘τ₀; the opposite convention gives g⁻¹∘τ₀ and a right action"
+      },
+      {
+       "name": "trivial",
+       "kind": "degenerate",
+       "statement": "for K = C the only automorphism is the identity"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "1",
+   "title": "The action on cohomology",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "construction",
+     "name": "coverAutAction",
+     "statement": "In the settings (a) analytic étale sites of locally strongly sheafy analytic adic spaces, (b) pro-étale sites of locally noetherian analytic adic spaces, (c) small étale sites of schemes: for p : Y → X, an automorphism a of Y with p ∘ a = p, a ring Λ and M ∈ D⁺(X_τ, Λ), define c_a : a^{-1}p^{-1}M ≅ p^{-1}M from the pseudofunctor coherence and p ∘ a = p, and a^♮ := H^i(c_a) ∘ a^* on H^i(Y, p^{-1}M) and RΓ(Y, p^{-1}M).",
+     "hypotheses": [
+      "p ∘ a = p",
+      "M bounded below"
+     ],
+     "locator": {
+      "source": "dejongvanderput1996",
+      "where": "§3.6, lines 1481–1488"
+     },
+     "prerequisites": [
+      "roadmap:AdicEtaleGeometry A1.6",
+      "roadmap:AdicSpacesPartIV R4",
+      "roadmap:ClassicalAdicEtaleCohomology §1.1",
+      "roadmap:ClassicalAdicEtaleCohomology §1.3",
+      "roadmap:SchemeAndStackFoundations §1.10",
+      "roadmap:SchemeAndStackFoundations §2.1",
+      "roadmap:EnhancedDerivedSheaves §0.3",
+      "roadmap:EnhancedDerivedSheaves §0.4",
+      "roadmap:EtaleCohomologyFoundations §F.1"
+     ],
+     "api": [
+      {
+       "name": "comp",
+       "role": "structure",
+       "statement": "(a∘b)^♮ = b^♮ ∘ a^♮ and id^♮ = id (cocycle identity for c)"
+      },
+      {
+       "name": "degree_zero",
+       "role": "evaluation",
+       "statement": "for ℱ = h_V with V étale over X, H⁰(Y,p^{-1}h_V) = Hom_X(Y,V) and a^♮(s) = s ∘ a"
+      },
+      {
+       "name": "linear_natural",
+       "role": "functoriality",
+       "statement": "Λ-linear, natural in M, compatible with change of coefficients"
+      },
+      {
+       "name": "delta",
+       "role": "functoriality",
+       "statement": "commutes with connecting maps of distinguished triangles"
+      },
+      {
+       "name": "base_change",
+       "role": "functoriality",
+       "statement": "for g : X′ → X, (a × id)^♮ ∘ g_Y^* = g_Y^* ∘ a^♮"
+      },
+      {
+       "name": "cup",
+       "role": "structure",
+       "statement": "a^♮(x ∪ y) = a^♮x ∪ a^♮y for the cup product from EnhancedDerivedSheaves §§0.3–0.4 (EtaleCohomologyFoundations §F.1 on schemes)"
+      },
+      {
+       "name": "galois_cover",
+       "role": "compatibility",
+       "statement": "for a finite étale Galois cover with group G, g ↦ (g⁻¹)^♮ is the G-module structure in the Hochschild–Serre spectral sequences of ClassicalAdicEtaleCohomology §1.3(a) and SchemeAndStackFoundations §2.15"
+      }
+     ],
+     "tests": [
+      {
+       "name": "mu_n",
+       "kind": "computation",
+       "statement": "X = Spa(K,𝒪_K), Y = Spa(C,𝒪_C), a = Spa(σ̂), ℱ = μ_n: a^♮(ζ) = σ(ζ); (a⁻¹)^♮ would give σ⁻¹(ζ)"
+      },
+      {
+       "name": "swap",
+       "kind": "computation",
+       "statement": "X a point, Y = X ⊔ X, a the swap: a^♮ swaps the coordinates of ℤ²; a = id gives id"
+      },
+      {
+       "name": "empty",
+       "kind": "degenerate",
+       "statement": "Y = ∅: all groups vanish"
+      },
+      {
+       "name": "order",
+       "kind": "characterisation",
+       "statement": "on H⁰(Spa(L ⊗_K C), ℤ) = ℤ^{Gal(L/K)} for L/K Galois with group S₃ (K = ℚ_2, splitting field of T³ − 2), σ, τ ∈ G_K restricting to s of order 2 and r of order 3, a = Spa(id_L ⊗ σ̂), b = Spa(id_L ⊗ τ̂): (a∘b)^♮ = b^♮∘a^♮ sends δ_1 to δ_{rs}, the wrong order a^♮∘b^♮ sends it to δ_{sr} ≠ δ_{rs}; a cyclic extension (abelian group) does not separate the orders"
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "construction",
+     "name": "rigidGaloisAction",
+     "statement": "For a rigid K-space X and σ ∈ G_K, σ_X := id_X × Spa(σ̂) : X_C → X_C satisfies pr_C ∘ σ_X = pr_C, (στ)_X = τ_X ∘ σ_X, 1_X = id, and for X ≠ ∅, σ ≠ 1 is not a morphism over Spa(C,𝒪_C). For M ∈ D⁺(X_ét, Λ), ρ(σ) := (σ_X)^♮ is a left action of G_K on H^i(X_C, M_C) and RΓ(X_C, M_C) by Λ-linear automorphisms; the same on pro-étale cohomology of pullbacks of objects of D⁺(X_proét, Λ), and H^i(X_C,ét, M_C) ≅ H^i(X_C,proét, ν^*M_C) is ρ-equivariant.",
+     "hypotheses": [
+      "X locally of finite type over Spa(K,𝒪_K)",
+      "Λ any ring"
+     ],
+     "locator": {
+      "source": "dejongvanderput1996",
+      "where": "§3.6, page 36, lines 1481–1488"
+     },
+     "prerequisites": [
+      "target:0.2",
+      "target:1.1",
+      "roadmap:AdicSpacesPartII §R0.7",
+      "roadmap:AdicEtaleGeometry A1.6",
+      "roadmap:AdicSpacesPartIV R4",
+      "roadmap:ClassicalAdicEtaleCohomology §1.1",
+      "roadmap:ClassicalAdicEtaleCohomology §1.3"
+     ],
+     "api": [
+      {
+       "name": "over_X",
+       "role": "structure",
+       "statement": "pr_C ∘ σ_X = pr_C; σ_X is an automorphism over X with inverse (σ⁻¹)_X"
+      },
+      {
+       "name": "right_action",
+       "role": "structure",
+       "statement": "(στ)_X = τ_X ∘ σ_X"
+      },
+      {
+       "name": "not_over_C",
+       "role": "characterisation",
+       "statement": "q ∘ σ_X = Spa(σ̂) ∘ q; not over Spa(C) if X ≠ ∅ and σ ≠ 1"
+      },
+      {
+       "name": "left_action",
+       "role": "structure",
+       "statement": "ρ(στ) = ρ(σ)ρ(τ), ρ(1) = id, Λ-linear"
+      },
+      {
+       "name": "proetale",
+       "role": "compatibility",
+       "statement": "pro-étale version and ν-compatibility"
+      }
+     ],
+     "tests": [
+      {
+       "name": "point_mu_n",
+       "kind": "computation",
+       "statement": "X = Spa(K,𝒪_K), ℱ = μ_n: ρ(σ)ζ = σ(ζ)"
+      },
+      {
+       "name": "permutation",
+       "kind": "computation",
+       "statement": "X = Spa(L,𝒪_L): σ_X maps component τ to σ⁻¹∘τ and ρ(σ)δ_τ = δ_{σ∘τ}; σ ↦ ρ(σ⁻¹) is not a homomorphism for an S₃-extension"
+      },
+      {
+       "name": "trivial",
+       "kind": "degenerate",
+       "statement": "K = C: ρ trivial; X = ∅: all groups vanish"
+      },
+      {
+       "name": "abelian_pullback",
+       "kind": "non-example",
+       "statement": "H⁰(Spa(C), pr^{-1}𝒪_{X_ét}) = K^sep for X = Spa(K,𝒪_K), not C (module pullback would give C)"
+      }
+     ]
+    },
+    {
+     "id": "1.3",
+     "kind": "theorem",
+     "name": "rigidGaloisAction_functorial",
+     "statement": "ρ commutes with (a) pullback along morphisms g : X′ → X of rigid K-spaces, (b) maps induced by morphisms in D⁺(X_ét, Λ), (c) connecting maps of short exact sequences of sheaves of Λ-modules, (d) cup products; (e) for finite L ⊆ K̄ (not necessarily separable), (X_L)_C = X_C and the G_L-action is the restriction of ρ; (f) for a K-isomorphism τ : K̄ → K̄′, id × Spa(τ̂⁻¹) intertwines ρ′(τστ⁻¹) with ρ(σ).",
+     "hypotheses": [
+      "X, X′ rigid K-spaces",
+      "M, N ∈ D⁺(X_ét, Λ)"
+     ],
+     "locator": {
+      "source": "dejongvanderput1996",
+      "where": "§3.6, page 36"
+     },
+     "prerequisites": [
+      "target:0.2",
+      "target:1.1",
+      "target:1.2",
+      "roadmap:EnhancedDerivedSheaves §0.3",
+      "roadmap:EnhancedDerivedSheaves §0.4",
+      "roadmap:ClassicalAdicEtaleCohomology §1.1",
+      "roadmap:ClassicalAdicEtaleCohomology §1.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "conj_self",
+       "kind": "degenerate",
+       "statement": "in (f) with K̄′ = K̄ and τ ∈ G_K, id_X × Spa(τ̂⁻¹) = (τ⁻¹)_X induces ρ(τ⁻¹) = ρ(τ)⁻¹ and the statement is ρ(τ)⁻¹ρ(τστ⁻¹)ρ(τ) = ρ(σ); with ρ(τ) in its place it would read ρ(σ) = ρ(τ²στ⁻²), false for non-commuting σ, τ"
+      },
+      {
+       "name": "kummer",
+       "kind": "computation",
+       "statement": "Kummer sequence on Spa(K): H⁰ gives 0 → μ_n(C) → (K^sep)^× → (K^sep)^× → 0 of discrete modules"
+      },
+      {
+       "name": "purely_inseparable",
+       "kind": "degenerate",
+       "statement": "L = K(t^{1/p}) over 𝔽_p((t)): G_L = G_K and the actions agree"
+      }
+     ]
+    },
+    {
+     "id": "1.4",
+     "kind": "construction",
+     "name": "schemeGaloisAction",
+     "statement": "For a scheme X over a field k and σ ∈ G_k, σ_X := id_X × Spec(σ|_{k^sep}) on X_{k^sep} and ρ(σ) := (σ_X)^♮ on H^i(X_{k^sep}, M) for M ∈ D⁺(X_ét, Λ): a left action by Λ-linear automorphisms with the functoriality of 1.3; the pullback H^i(X_{k^sep}, M) → H^i(X_{k̄}, M) is an equivariant isomorphism; compatible with extensions k ⊆ k′.",
+     "hypotheses": [
+      "k any field",
+      "Λ any ring"
+     ],
+     "locator": {
+      "source": "milneLEC",
+      "where": "§12, page 81; §17, page 114"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "roadmap:SchemeAndStackFoundations §0.23a",
+      "roadmap:SchemeAndStackFoundations §1.10",
+      "roadmap:SchemeAndStackFoundations §2.1",
+      "roadmap:EtaleCohomologyFoundations §F.0.4",
+      "roadmap:EtaleCohomologyFoundations §F.1",
+      "mathlib:SeparableClosure",
+      "mathlib:AlgebraicClosure"
+     ],
+     "api": [
+      {
+       "name": "left_action",
+       "role": "structure",
+       "statement": "(στ)_X = τ_X ∘ σ_X, ρ left action"
+      },
+      {
+       "name": "sep_vs_alg",
+       "role": "compatibility",
+       "statement": "equivariant iso H^i(X_{k^sep},K) ≅ H^i(X_{k̄},K)"
+      },
+      {
+       "name": "field_change",
+       "role": "functoriality",
+       "statement": "equivariant for G_{k′} → G_k"
+      }
+     ],
+     "tests": [
+      {
+       "name": "real",
+       "kind": "computation",
+       "statement": "k = ℝ, n = 4: complex conjugation sends i to −i on H⁰(Spec ℂ, μ_4)"
+      },
+      {
+       "name": "frobenius",
+       "kind": "computation",
+       "statement": "k = 𝔽_q: arithmetic Frobenius acts on μ_{ℓ^n}(k^sep) by ζ ↦ ζ^q"
+      },
+      {
+       "name": "permutation",
+       "kind": "computation",
+       "statement": "X = Spec k′: ρ(σ)δ_τ = δ_{σ∘τ} on ℤ^{Hom_k(k′,k^sep)}"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "Discreteness, the dictionary and Hochschild–Serre",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "theorem",
+     "name": "rigidGaloisAction_colimit",
+     "statement": "For X a qcqs rigid K-space and M ∈ D⁺(X_ét, Λ) (any abelian sheaf, no torsion hypothesis), the pullbacks induce colim_L H^i(X_L, M_L) ≅ H^i(X_C, M_C) over finite subextensions L of K^sep/K, intertwining ρ with the maps σ_L^♮ : H^i(X_L) → H^i(X_{σL}); G_L fixes the image of H^i(X_L, M_L); hence every element has open stabiliser and H^i(X_C, M_C) is a discrete G_K-module.",
+     "hypotheses": [
+      "X quasi-compact and quasi-separated"
+     ],
+     "locator": {
+      "source": "dejongvanderput1996",
+      "where": "Corollary 3.7.5 and proof, page 39, lines 1594–1605"
+     },
+     "prerequisites": [
+      "target:0.1",
+      "target:0.2",
+      "target:1.1",
+      "target:1.2",
+      "roadmap:ClassicalAdicEtaleCohomology §1.5",
+      "roadmap:AdicEtaleGeometry A1.14",
+      "mathlib:continuousSMul_iff_stabilizer_isOpen",
+      "roadmap:ProfiniteCohomology Layer 0"
+     ],
+     "api": [
+      {
+       "name": "equivariant",
+       "role": "compatibility",
+       "statement": "ρ(σ) ∘ pr_{C/L}^* = pr_{C/σL}^* ∘ σ_L^♮"
+      },
+      {
+       "name": "fixed",
+       "role": "structure",
+       "statement": "G_L acts trivially on the image of H^i(X_L)"
+      },
+      {
+       "name": "discrete",
+       "role": "structure",
+       "statement": "H^i(X_C,M_C) = ⋃_L H^i(X_C,M_C)^{G_L}, a discrete G_K-module"
+      }
+     ],
+     "tests": [
+      {
+       "name": "point",
+       "kind": "compatibility",
+       "statement": "X = Spa(K,𝒪_K): the colimit is the stalk ℱ_{ξ_C}"
+      },
+      {
+       "name": "not_qc",
+       "kind": "non-example",
+       "statement": "K = ℚ_p, ℓ ≠ p, X = ⊔_m Spa(K) with μ_{ℓ^m} on the m-th component: the compatible system of roots in ∏_m μ_{ℓ^m}(C) has non-open stabiliser ker χ_ℓ"
+      },
+      {
+       "name": "structure_sheaf",
+       "kind": "non-example",
+       "statement": "for 𝒪_{X_ét} as abelian sheaf on Spa(K) the colimit is K^sep, not C"
+      },
+      {
+       "name": "separable_index",
+       "kind": "degenerate",
+       "statement": "for K = 𝔽_p((t)) only separable L are needed since C is the completion of K^sep"
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "theorem",
+     "name": "schemeGaloisAction_colimit",
+     "statement": "For X a qcqs k-scheme and M ∈ D⁺(X_ét, Λ), colim_L H^i(X_L, M) ≅ H^i(X_{k^sep}, M) over finite subextensions L of k^sep/k, compatibly with ρ; G_L fixes the image of H^i(X_L, M); H^i(X_{k^sep}, M) is a discrete G_k-module.",
+     "hypotheses": [
+      "X quasi-compact and quasi-separated"
+     ],
+     "locator": {
+      "source": "stacks03N1",
+      "where": "Theorem 53.1, Tag 03Q9, line 3733"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.4",
+      "roadmap:SchemeAndStackFoundations §2.15",
+      "roadmap:ProfiniteCohomology Layer 0"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "point",
+       "kind": "degenerate",
+       "statement": "X = Spec k: H⁰ = ℱ_{k^sep}, higher groups vanish"
+      },
+      {
+       "name": "not_qc",
+       "kind": "non-example",
+       "statement": "X = ⊔_m Spec ℚ with μ_{ℓ^m} on the m-th component: non-open stabiliser ker χ_ℓ"
+      }
+     ]
+    },
+    {
+     "id": "2.3",
+     "kind": "theorem",
+     "name": "higherDirectImage_galoisModule",
+     "statement": "For f : X → Spa(K,𝒪_K) a qcqs rigid K-space and M ∈ D⁺(X_ét, Λ): under the equivalence of sheaves of Λ-modules on Spa(K,𝒪_K)_ét with discrete Λ[G_K]-modules (stalk at ξ_C, action of 0.3), R^i f_* M corresponds to (H^i(X_C, M_C), ρ), naturally in M and compatibly with connecting maps. Consequently Hom(R^i f_*ℱ, R^j f_*𝒢) ≅ Hom_{Λ[G_K]}(H^i(X_C,ℱ_C), H^j(X_C,𝒢_C)); morphisms R^i f_*ℱ → Λ give G_K-invariant linear forms; base change along g : X′ → X corresponds to g_C^*.",
+     "hypotheses": [
+      "X quasi-compact and quasi-separated"
+     ],
+     "locator": {
+      "source": "dejongvanderput1996",
+      "where": "Theorem 3.7.3, page 38, lines 1571–1587"
+     },
+     "prerequisites": [
+      "target:0.3",
+      "target:2.1",
+      "roadmap:ClassicalAdicEtaleCohomology §1.1",
+      "roadmap:ClassicalAdicEtaleCohomology §1.5",
+      "roadmap:ClassicalAdicEtaleCohomology §9.7"
+     ],
+     "api": [
+      {
+       "name": "hom_bijection",
+       "role": "characterisation",
+       "statement": "sheaf morphisms between higher direct images = ρ-equivariant maps"
+      },
+      {
+       "name": "invariant_forms",
+       "role": "structure",
+       "statement": "maps to Λ give invariant linear forms"
+      },
+      {
+       "name": "base_change",
+       "role": "functoriality",
+       "statement": "base change corresponds to g_C^*"
+      }
+     ],
+     "tests": [
+      {
+       "name": "induced",
+       "kind": "computation",
+       "statement": "X = Spa(L,𝒪_L): f_*ℤ ↔ ℤ[G_K/G_L] with left regular action"
+      },
+      {
+       "name": "trace",
+       "kind": "compatibility",
+       "statement": "the trace t_X of ClassicalAdicEtaleCohomology §9.7 satisfies t_X∘ρ(σ) = t_X; for ℙ¹_K, t_X(c₁(𝒪(1))) = 1 with c₁ invariant"
+      },
+      {
+       "name": "convention",
+       "kind": "non-example",
+       "statement": "X = Spa(K), μ_n: both sides μ_n(C) with ζ ↦ σ(ζ); the stalk rule v̄ ↦ v̄∘Spa(σ̂⁻¹) is a right action"
+      }
+     ]
+    },
+    {
+     "id": "2.4",
+     "kind": "theorem",
+     "name": "schemeHigherDirectImage_galoisModule",
+     "statement": "For f : X → Spec k qcqs and M ∈ D⁺(X_ét, Λ), under SchemeAndStackFoundations §2.15's equivalence (stalk at Spec k^sep, action of Stacks 03QW), R^i f_* M corresponds to (H^i(X_{k^sep}, M), ρ), with the consequences of 2.3.",
+     "hypotheses": [
+      "f quasi-compact and quasi-separated"
+     ],
+     "locator": {
+      "source": "stacks03N1",
+      "where": "Theorem 53.1 (Tag 03Q9) line 3733; §56 (Tag 03QW) line 3963; §59 (Tag 03QQ) line 4216"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "target:2.2",
+      "roadmap:SchemeAndStackFoundations §2.1",
+      "roadmap:SchemeAndStackFoundations §2.15"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "induced",
+       "kind": "computation",
+       "statement": "X = Spec k′, k′/k finite separable: f_*ℤ ↔ ℤ[G_k/G_{k′}]"
+      },
+      {
+       "name": "real",
+       "kind": "computation",
+       "statement": "k = ℝ, X = Spec ℂ: f_*μ_4 ↔ μ_4(ℂ)², conjugation = swap composed with ζ ↦ ζ̄"
+      }
+     ]
+    },
+    {
+     "id": "2.5",
+     "kind": "theorem",
+     "name": "hochschildSerre_galois",
+     "statement": "For X qcqs (rigid over K, resp. scheme over k) and ℱ a sheaf of Λ-modules, the Leray spectral sequence of X → Spa(K,𝒪_K) (resp. Spec k) becomes E_2^{p,q} = H^p_cont(G_K, (H^q(X_C, ℱ_C), ρ)) ⇒ H^{p+q}(X, ℱ), natural in ℱ, with edge map pr_C^* : H^n(X,ℱ) → H^n(X_C,ℱ_C)^{G_K}; for rigid X it agrees from E_2 on with ClassicalAdicEtaleCohomology §1.3(b) for the pro-finite-étale G_K-torsor X_{K^sep} → X, whose G_K-module structure on H^q(X_{K^sep}, ν^*ℱ) ≅ H^q(X_C, ℱ_C) is ρ.",
+     "hypotheses": [
+      "X quasi-compact and quasi-separated"
+     ],
+     "locator": {
+      "source": "dejongvanderput1996",
+      "where": "Corollary 3.7.5, page 39"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.2",
+      "target:2.3",
+      "target:2.4",
+      "roadmap:ClassicalAdicEtaleCohomology §1.1",
+      "roadmap:ClassicalAdicEtaleCohomology §1.3",
+      "roadmap:SchemeAndStackFoundations §2.2",
+      "roadmap:SchemeAndStackFoundations §2.15",
+      "roadmap:AdicEtaleGeometry A1.14",
+      "roadmap:ProfiniteCohomology Layer 0",
+      "roadmap:ProfiniteCohomology Layer 1",
+      "roadmap:ProfiniteCohomology Layer 10"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "point",
+       "kind": "degenerate",
+       "statement": "X = Spa(K): collapses to H^p_cont(G_K, ℱ_{ξ_C})"
+      },
+      {
+       "name": "shapiro",
+       "kind": "computation",
+       "statement": "X = Spa(L): E_2 concentrated in q = 0, Shapiro gives H^p(G_L, ℱ_{ξ_C})"
+      },
+      {
+       "name": "direction",
+       "kind": "non-example",
+       "statement": "K = ℚ_2, μ_5: H²(Spa ℚ_2, μ_5) ≅ Br(ℚ_2)[5] ≅ ℤ/5 = H²(G, μ_5) with ζ ↦ σ(ζ); with ζ ↦ σ⁻¹(ζ) (= ℤ/5(−1)) local duality gives 0 since 2² ≢ 1 mod 5"
+      }
+     ]
+    },
+    {
+     "id": "2.6",
+     "kind": "theorem",
+     "name": "schemeGaloisAction_eq_adicFunctoriality",
+     "statement": "For X locally Noetherian over k, ℓ invertible in k and coefficient descent data (M_n) in EtaleCohomologyFoundations §F.4.1's category, the finite level H^i(X_{k^sep}, M_n) of §F.4.6's continuous G_k-action is ρ, compatibly with reductions. For k = 𝔽_q, ρ(φ) of the arithmetic Frobenius is the inverse of §F.10.2's geometric Frobenius on H^i(X_{k̄}, M_n), using F_{X/k} × id = F_{X_{k̄}} ∘ φ_X⁻¹.",
+     "hypotheses": [
+      "X locally Noetherian",
+      "ℓ invertible in k",
+      "descent data over k"
+     ],
+     "locator": {
+      "source": "sga4half",
+      "where": "Arcata; Rapport §§1–2"
+     },
+     "prerequisites": [
+      "target:1.4",
+      "roadmap:EtaleCohomologyFoundations §F.0.4",
+      "roadmap:EtaleCohomologyFoundations §F.4.1",
+      "roadmap:EtaleCohomologyFoundations §F.4.6",
+      "roadmap:EtaleCohomologyFoundations §F.10.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "mu",
+       "kind": "computation",
+       "statement": "X = Spec 𝔽_q, μ_{ℓ^n}: ρ(φ) = ×q, geometric Frobenius ×q⁻¹, composite id"
+      },
+      {
+       "name": "constant",
+       "kind": "degenerate",
+       "statement": "finite constant sheaf of a geometric point: both actions trivial"
+      },
+      {
+       "name": "P1",
+       "kind": "compatibility",
+       "statement": "H²(ℙ¹_{k̄}, ℤ/ℓ^n) = ℤ/ℓ^n(−1): ρ(φ) = q⁻¹, geometric Frobenius q, matching §F.10.2b's geometric trace q"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "Adic and rational coefficients",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "definition",
+     "name": "adicCohomology",
+     "statement": "For a rigid K-space X, a prime ℓ and j ∈ ℤ (j = 0 if ℓ = char K), with T_j = (ℤ/ℓ^n(j))_n: the naive group H^i(X_C, ℤ_ℓ(j)) := lim_n H^i(X_C, ℤ/ℓ^n(j)) with the inverse-limit topology of discrete groups and action lim_n ρ; the continuous group H^i_cont(X_C, ℤ_ℓ(j)) := H^i(X_C, Rlim_n (T_j)_C) = H^i(Rlim_n RΓ(X_C, ℤ/ℓ^n(j))) with action (σ_X)^♮ via σ_X^{-1}Rlim ≅ Rlim σ_X^{-1} and levelwise c_σ.",
+     "hypotheses": [
+      "ℓ invertible in K when j ≠ 0"
+     ],
+     "locator": {
+      "source": "hansenzavyalov2023",
+      "where": "proof of Theorem 3.3.2, page 39, line 1706"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.2",
+      "target:1.3",
+      "roadmap:ClassicalAdicEtaleCohomology §1.3",
+      "roadmap:ClassicalAdicEtaleCohomology §1.4",
+      "roadmap:EnhancedDerivedSheaves §0.3",
+      "roadmap:DerivedModuleAlgebra §1.T.1"
+     ],
+     "api": [
+      {
+       "name": "left_action",
+       "role": "structure",
+       "statement": "both actions are left actions by ℤ_ℓ-linear automorphisms"
+      },
+      {
+       "name": "milnor",
+       "role": "structure",
+       "statement": "equivariant exact 0 → lim¹ H^{i−1}(ℤ/ℓ^n(j)) → H^i_cont → H^i → 0; equality under Mittag–Leffler"
+      },
+      {
+       "name": "reduction",
+       "role": "structure",
+       "statement": "RΓ_cont ⊗^L ℤ/ℓ^m ≅ RΓ(X_C, ℤ/ℓ^m(j)) equivariantly; Bockstein sequences"
+      },
+      {
+       "name": "proetale",
+       "role": "compatibility",
+       "statement": "for K ⊇ ℚ_p, ℓ = p: H^i_cont ≅ H^i(X_{C,proét}, Ẑ_p(j)) equivariantly"
+      },
+      {
+       "name": "restriction",
+       "role": "compatibility",
+       "statement": "for finite L ⊆ K̄, groups of X_L = groups of X with restricted action"
+      }
+     ],
+     "tests": [
+      {
+       "name": "point_twist",
+       "kind": "computation",
+       "statement": "X = Spa(K), j = 1: H⁰ = lim μ_{ℓ^n}(C) = ℤ_ℓ(1) along ℓ-th power maps, action by χ_ℓ"
+      },
+      {
+       "name": "empty",
+       "kind": "degenerate",
+       "statement": "X = ∅: all groups vanish"
+      },
+      {
+       "name": "product",
+       "kind": "computation",
+       "statement": "X = ⊔_m Spa(K): naive H⁰(X_C, ℤ_ℓ) = ∏_m ℤ_ℓ with the ℓ-adic (inverse-limit) topology, open subgroups ℓ^n ∏_m ℤ_ℓ, strictly finer than the product topology and not compact (∏_m ℤ/ℓ is an infinite discrete quotient); not finitely generated"
+      },
+      {
+       "name": "lim1",
+       "kind": "non-example",
+       "statement": "the tower (ℤ, ×ℓ) has lim¹ = ℤ_ℓ/ℤ ≠ 0: naive and continuous groups are distinct constructions"
+      },
+      {
+       "name": "charp",
+       "kind": "degenerate",
+       "statement": "ℓ = char K = p, X closed disc: H¹(X_C, ℤ/p) = C⟨T⟩/{g^p − g} infinite; no ℤ/p(1)"
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "theorem",
+     "name": "adicCohomology_continuous",
+     "statement": "For X qcqs, the action G_K × H^i(X_C, ℤ_ℓ(j)) → H^i(X_C, ℤ_ℓ(j)) is jointly continuous; H^i(X_C, ℤ_ℓ(j)) is an object of Mathlib's TopRep ℤ_ℓ G_K; if it is finite free with the ℓ-adic topology it is a ContinuousRep G_K ℤ_ℓ (EtaleCohomologyFoundations §F.4.0); the maps of 1.3 are continuous and equivariant in the limit.",
+     "hypotheses": [
+      "X quasi-compact and quasi-separated"
+     ],
+     "locator": {
+      "source": "serreGC1997",
+      "where": "Chapter I, §2"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:3.1",
+      "mathlib:TopRep",
+      "roadmap:ProfiniteCohomology Layer 0",
+      "roadmap:ProfiniteCohomology Layer 1",
+      "roadmap:EtaleCohomologyFoundations §F.4.0",
+      "roadmap:ArithmeticGaloisRepresentations §1.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "cyclotomic",
+       "kind": "computation",
+       "statement": "X = Spa(K), j = 1: the action is TauCeti.continuousLocalCyclotomicCharacter ℓ K"
+      },
+      {
+       "name": "joint",
+       "kind": "non-example",
+       "statement": "ℤ_ℓ^× acting on discrete ℚ_ℓ: continuous operators, not jointly continuous"
+      },
+      {
+       "name": "not_qc",
+       "kind": "non-example",
+       "statement": "X = ⊔_m Spa(K(μ_{ℓ^m})), K = ℚ_p, ℓ ≠ p: an element of H⁰(X_C, ℤ/ℓ) has stabiliser G_{K(μ_{ℓ^∞})}, not open"
+      }
+     ]
+    },
+    {
+     "id": "3.3",
+     "kind": "definition",
+     "name": "rationalCohomology",
+     "statement": "For a ℤ_ℓ-module A as in 3.2, A ⊗ ℚ_ℓ has the topology in which the image of A is an open subgroup with its quotient topology; H^i(X_C, ℚ_ℓ(j)) := H^i(X_C, ℤ_ℓ(j)) ⊗_{ℤ_ℓ} ℚ_ℓ with the induced action, an object of TopRep ℚ_ℓ G_K; for finitely generated H^i(X_C, ℤ_ℓ(j)) it is finite-dimensional with its Hausdorff vector-space topology and a ContinuousRep G_K ℚ_ℓ.",
+     "hypotheses": [
+      "X quasi-compact and quasi-separated"
+     ],
+     "locator": {
+      "source": "hansenzavyalov2023",
+      "where": "proof of Theorem 3.3.2, page 39, line 1706"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:3.2",
+      "mathlib:TopRep",
+      "roadmap:EtaleCohomologyFoundations §F.4.0"
+     ],
+     "api": [
+      {
+       "name": "functorial",
+       "role": "functoriality",
+       "statement": "functorial for the maps of 3.2"
+      },
+      {
+       "name": "fg",
+       "role": "characterisation",
+       "statement": "finite-dimensional ContinuousRep when the integral group is finitely generated"
+      }
+     ],
+     "tests": [
+      {
+       "name": "torsion",
+       "kind": "degenerate",
+       "statement": "ℤ_ℓ/ℓ ⊗ ℚ_ℓ = 0"
+      },
+      {
+       "name": "twist",
+       "kind": "computation",
+       "statement": "ℤ_ℓ(1) ⊗ ℚ_ℓ = ℚ_ℓ(1), character χ_ℓ"
+      },
+      {
+       "name": "product",
+       "kind": "non-example",
+       "statement": "(∏_ℕ ℤ_ℓ) ⊗ ℚ_ℓ is a proper subspace of ∏_ℕ ℚ_ℓ"
+      },
+      {
+       "name": "discrete",
+       "kind": "non-example",
+       "statement": "with the discrete topology the cyclotomic action on ℚ_ℓ(1) is not jointly continuous"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "Twists, comparison and finiteness",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "theorem",
+     "name": "galoisAction_twist",
+     "statement": "For n invertible in K, Λ a ℤ/n-algebra, ℱ a sheaf of Λ-modules and j ∈ ℤ: (μ_n(C))_{X_C} ≅ (μ_n)_C canonically, intertwining c_σ with σ on μ_n(C); H^i(X_C, ℱ(j)_C) ≅ H^i(X_C, ℱ_C) ⊗_Λ Λ(j)(C) is G_K-equivariant; for ℓ invertible in K the ℤ_ℓ, continuous and ℚ_ℓ versions hold with the Tate twist of ArithmeticGaloisRepresentations §1.2; the same on schemes; an arithmetic Frobenius lift acts on ℤ_ℓ(1) by q.",
+     "hypotheses": [
+      "n invertible in K"
+     ],
+     "locator": {
+      "source": "stacks03N1",
+      "where": "Example 59.3, line 4241"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:1.3",
+      "target:1.4",
+      "target:3.1",
+      "target:3.3",
+      "roadmap:ClassicalAdicEtaleCohomology §1.4",
+      "roadmap:EtaleCohomologyFoundations §F.0.3",
+      "roadmap:EtaleCohomologyFoundations §F.4.6",
+      "roadmap:ArithmeticGaloisRepresentations §1.2",
+      "tauceti:TauCeti.PadicTateTwist",
+      "tauceti:TauCeti.IsArithFrobeniusLift.coe_localCyclotomicCharacter"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "coordinate",
+       "kind": "computation",
+       "statement": "replacing ζ by ζ^u multiplies the coordinate of a fixed element of 𝔽_p(1) by u⁻¹; the canonical isomorphism needs no choice"
+      },
+      {
+       "name": "P1",
+       "kind": "computation",
+       "statement": "H²(ℙ¹_C, ℤ/n(1)) = ℤ/n trivial, H²(ℙ¹_C, ℤ/n) = ℤ/n(−1)"
+      },
+      {
+       "name": "trivial",
+       "kind": "degenerate",
+       "statement": "j = 0 gives the identity; n = 1 all groups vanish"
+      },
+      {
+       "name": "elliptic",
+       "kind": "non-example",
+       "statement": "H¹(E_C, ℤ/n) has determinant χ_n⁻¹; the wrong twist gives χ_n³, differing at Frobenius for n = 7, K = ℚ_2 (4 vs 1 mod 7)"
+      }
+     ]
+    },
+    {
+     "id": "4.2",
+     "kind": "theorem",
+     "name": "properComparison_equivariant",
+     "statement": "For a proper K-scheme Y, Λ torsion and M ∈ D⁺(Y_ét, Λ), Huber's comparison for Spa(C,𝒪_C) → Spec K gives H^i(Y_{K^sep}, M) ≅ (R^i f_*M)_{Spec C} ≅ H^i((Y^an)_C, M^an); it is G_K-equivariant (scheme action on the left, ρ on the right) by naturality in Spa(C,𝒪_C) over Spec K, and factors through the equivariant isomorphisms H^i(Y_{K̄}, M) ≅ H^i(Y_C, M) (proper base change) and H^i(Y_C, M) ≅ H^i((Y^an)_C, M^an).",
+     "hypotheses": [
+      "Y proper over K",
+      "Λ torsion"
+     ],
+     "locator": {
+      "source": "berkovich1993",
+      "where": "Theorem 7.1.1, page 128, line 4584; Corollary 7.5.4, page 150, line 5339"
+     },
+     "prerequisites": [
+      "target:0.3",
+      "target:1.1",
+      "target:1.2",
+      "target:1.4",
+      "target:2.4",
+      "roadmap:EtaleCohomologyFoundations §F.2.1",
+      "roadmap:ClassicalAdicEtaleCohomology §8.2",
+      "roadmap:AdicSpacesPartII §R1.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "finite",
+       "kind": "computation",
+       "statement": "Y = Spec L: Λ^{Hom_K(L,K̄)} with left regular action on all sides"
+      },
+      {
+       "name": "curve",
+       "kind": "compatibility",
+       "statement": "smooth proper curve: H¹(−, μ_n) = J[n] on each side via Kummer and GAGA"
+      },
+      {
+       "name": "P1",
+       "kind": "computation",
+       "statement": "Y = ℙ¹: H² = ℤ/n(−1), arithmetic Frobenius acts by q⁻¹; p-torsion allowed"
+      },
+      {
+       "name": "empty",
+       "kind": "degenerate",
+       "statement": "Y = ∅: all groups vanish"
+      }
+     ]
+    },
+    {
+     "id": "4.3",
+     "kind": "theorem",
+     "name": "finiteness_toContinuousRep",
+     "statement": "For X qcqs rigid, ℓ prime, j ∈ ℤ (j = 0 if ℓ = char K), i ≥ 0: (a) H^i(X_C, ℤ/ℓ) finite ⇒ all H^i(X_C, ℤ/ℓ^n(j)) finite; (b) H^{i−1}, H^i(X_C, ℤ/ℓ) finite ⇒ H^i_cont = H^i(X_C, ℤ_ℓ(j)), finitely generated, inverse-limit topology = ℓ-adic; (c) under (b) the torsion-free quotient is a ContinuousRep G_K ℤ_ℓ and H^i(X_C, ℚ_ℓ(j)) a finite-dimensional ContinuousRep G_K ℚ_ℓ; (d) vanishing of H^q(X_C, ℤ/ℓ) for q > N gives vanishing of the ℤ/ℓ^n(j), ℤ_ℓ(j), ℚ_ℓ(j) groups for q > N and of H^q_cont for q > N+1 (and q = N+1 when H^N(X_C, ℤ/ℓ) is finite).",
+     "hypotheses": [
+      "X quasi-compact and quasi-separated"
+     ],
+     "locator": {
+      "source": "hansenzavyalov2023",
+      "where": "proof of Theorem 3.3.2, page 39, lines 1706–1709"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:3.2",
+      "target:3.3",
+      "target:4.1",
+      "roadmap:DerivedModuleAlgebra §1.T.1",
+      "roadmap:EtaleCohomologyFoundations §F.4.0",
+      "roadmap:ArithmeticGaloisRepresentations §1.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "point",
+       "kind": "degenerate",
+       "statement": "X = Spa(K): H⁰ = ℤ_ℓ(j), higher groups vanish"
+      },
+      {
+       "name": "torsion",
+       "kind": "non-example",
+       "statement": "Enriques surface analytified, char K = 0, ℓ = 2: H²(X_C, ℤ_2) has torsion ℤ/2, not a ContinuousRep"
+      },
+      {
+       "name": "milnor_top",
+       "kind": "non-example",
+       "statement": "in degree N+1 the continuous group is lim¹ H^N, nonzero for infinite non-ML towers"
+      },
+      {
+       "name": "open_disc",
+       "kind": "non-example",
+       "statement": "open unit disc, ℓ = p residue characteristic: hypothesis of (a) fails, H¹(X_C, ℤ_p) not finitely generated"
+      }
+     ]
+    },
+    {
+     "id": "4.4",
+     "kind": "theorem",
+     "name": "finiteness_instances",
+     "statement": "For a rigid K-space X of dimension d, the hypotheses of 4.3 with N = 2d hold when (a) X smooth proper and ℓ invertible in 𝒪_K; (b) X smooth proper, char K = 0, ℓ = p the residue characteristic; (c) X = Y^an for a proper K-scheme Y and ℓ invertible in K; (d) X proper and ℓ invertible in 𝒪_K (ClassicalAdicEtaleCohomology §11.1 when X_C is locally algebraically of finite type over Spa(C,𝒪_C); the gap proper-rigid-finiteness for the remaining proper X). Hence the finite levels are finite, H^i(X_C, ℤ_ℓ(j)) is finitely generated, H^i(X_C, ℚ_ℓ(j)) is a finite-dimensional continuous G_K-representation, all vanishing for i > 2d.",
+     "hypotheses": [
+      "one of (a)–(d)"
+     ],
+     "locator": {
+      "source": "scholze2013",
+      "where": "Theorem 5.1, page 28, line 1279 (case (b)); berkovich1993 Corollary 7.4.4, page 143 (case (a))"
+     },
+     "prerequisites": [
+      "target:4.2",
+      "target:4.3",
+      "roadmap:ClassicalAdicEtaleCohomology §8.4",
+      "roadmap:ClassicalAdicEtaleCohomology §9.7",
+      "roadmap:ClassicalAdicEtaleCohomology §11.1",
+      "roadmap:AInfCohomology §AI.3.1",
+      "roadmap:EtaleCohomologyFoundations §F.3",
+      "gap:proper-rigid-finiteness"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "projective",
+       "kind": "computation",
+       "statement": "ℙ^d: H^{2m} = ℤ_ℓ(−m) for 0 ≤ m ≤ d, odd groups 0"
+      },
+      {
+       "name": "charp",
+       "kind": "degenerate",
+       "statement": "ℓ = char K: no case applies; no finiteness claimed"
+      },
+      {
+       "name": "unipotence",
+       "kind": "non-example",
+       "statement": "quasi-unipotence of inertia (Hansen–Zavyalov 3.3.1–3.3.2) is not claimed"
+      },
+      {
+       "name": "disc",
+       "kind": "non-example",
+       "statement": "closed disc, ℓ = p, char K = 0: H¹ infinite; properness is used"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "AdicEtaleGeometry",
+   "sections": [
+    "A1.1",
+    "A1.6",
+    "A1.7",
+    "A1.14"
+   ],
+   "what": "strongly sheafy rings, étale sites and base change, geometric points, descent along separable algebraic extensions and the pro-finite-étale object X_{K^sep}"
+  },
+  {
+   "roadmap": "AdicSpacesPartII",
+   "sections": [
+    "§R0.6",
+    "§R0.7",
+    "§R1.1",
+    "§R1.2"
+   ],
+   "what": "morphisms locally of finite type, fibre products, rigid spaces, scheme–adic fibre products"
+  },
+  {
+   "roadmap": "AdicSpacesPartIV",
+   "sections": [
+    "R4"
+   ],
+   "what": "pro-étale site functoriality"
+  },
+  {
+   "roadmap": "ClassicalAdicEtaleCohomology",
+   "sections": [
+    "§1.1",
+    "§1.3",
+    "§1.4",
+    "§1.5",
+    "§7.1",
+    "§8.2",
+    "§8.4",
+    "§9.7",
+    "§11.1"
+   ],
+   "what": "analytic sheaf theory, the field equivalence, Leray and Hochschild–Serre, twists, tilde-limits, colimit theorem and stalk formula, geometric field pairs, proper algebraic comparison, vanishing above 2d, smooth proper finiteness and trace, finiteness for qcqs spaces locally algebraically of finite type"
+  },
+  {
+   "roadmap": "SchemeAndStackFoundations",
+   "sections": [
+    "§0.23a",
+    "§1.10",
+    "§2.1",
+    "§2.2",
+    "§2.15"
+   ],
+   "what": "topological invariance, small étale site functoriality, cohomology pullback and higher direct images, Leray, sheaves on a field, limits, Hochschild–Serre"
+  },
+  {
+   "roadmap": "EtaleCohomologyFoundations",
+   "sections": [
+    "§F.0.3",
+    "§F.0.4",
+    "§F.1",
+    "§F.2.1",
+    "§F.3",
+    "§F.4.0",
+    "§F.4.1",
+    "§F.4.6",
+    "§F.10.2"
+   ],
+   "what": "twists, topological invariance, cohomology and cup products, proper base change, finiteness, ContinuousRep, adic systems and their continuous action, Frobenius bridge"
+  },
+  {
+   "roadmap": "ProfiniteCohomology",
+   "sections": [
+    "Layer 0",
+    "Layer 1",
+    "Layer 10"
+   ],
+   "what": "discrete modules, TopRep carrier, continuous cohomology in all degrees"
+  },
+  {
+   "roadmap": "EnhancedDerivedSheaves",
+   "sections": [
+    "§0.3",
+    "§0.4"
+   ],
+   "what": "derived tensor, derived limits, functor coherence (cup products, Rlim)"
+  },
+  {
+   "roadmap": "DerivedModuleAlgebra",
+   "sections": [
+    "§1.T.1"
+   ],
+   "what": "lim, lim¹, Mittag–Leffler, Milnor sequence"
+  },
+  {
+   "roadmap": "ArithmeticGaloisRepresentations",
+   "sections": [
+    "§1.1",
+    "§1.2"
+   ],
+   "what": "continuous representations and Tate twists"
+  },
+  {
+   "roadmap": "AInfCohomology",
+   "sections": [
+    "§AI.3.1"
+   ],
+   "what": "finiteness of 𝔽_p-cohomology of smooth proper rigid spaces over C ⊇ ℚ_p"
+  },
+  {
+   "roadmap": "PadicDifferentialEquationsAndRigidCohomology",
+   "sections": [
+    "§RD.0.33"
+   ],
+   "what": "completion of an algebraically closed non-archimedean field is algebraically closed in every characteristic"
+  },
+  {
+   "roadmap": "PadicPeriodRings",
+   "sections": [
+    "§1.1",
+    "§2"
+   ],
+   "what": "the p-adic special cases, used in Checks"
+  }
+ ],
+ "consumers": [
+  {
+   "roadmap": "PadicHodgeTheory",
+   "what": "§2.7 and Layer 8: continuous G_K-structure on H^i(X_C, ℤ_p), ℚ_p; applies 4.3 to its singular proper finiteness"
+  },
+  {
+   "roadmap": "WeightsInEtaleCohomology",
+   "what": "§§1.7–1.8, Layer 2: rational adic cohomology of geometric fibres with Galois action, twists, Frobenius normalisation (1.4, 2.6, 3.2–3.3, 4.1)"
+  },
+  {
+   "roadmap": "CohomologyComparisons",
+   "what": "Galois action in comparison isomorphisms (2.3, 3.1, 4.2)"
+  },
+  {
+   "roadmap": "CstConjectureForDaggerVarieties",
+   "what": "Galois action on p-adic étale cohomology (2.3, 3.1)"
+  },
+  {
+   "roadmap": "PadicHodgeTheoryPartII",
+   "what": "as PadicHodgeTheory"
+  },
+  {
+   "roadmap": "CohomologyComparisonsPartII",
+   "what": "as CohomologyComparisons"
+  },
+  {
+   "roadmap": "ClassicalAdicEtaleCohomologyPartII",
+   "what": "§§5.3–5.9, §7.5: meaning of Galois-equivariant in Poincaré duality and field invariance (2.3, 3.1, 4.1)"
+  },
+  {
+   "roadmap": "BunGAndNewtonStrata",
+   "what": "action on H^i(X_C, −) (1.2, 1.3)"
+  },
+  {
+   "roadmap": "ProetaleCohomologyOfPAdicCurvesAndTowers",
+   "what": "G_K-actions on cohomology of spaces over finite extensions of ℚ_p (1.2, 1.3)"
+  },
+  {
+   "roadmap": "GaloisSectionsPadicPeriodMaps",
+   "what": "continuous Galois representations on geometric cohomology"
+  },
+  {
+   "roadmap": "EllipticCurveModularityPartII",
+   "what": "through WeightsInEtaleCohomology and ArithmeticGaloisRepresentations"
+  },
+  {
+   "roadmap": "AbelianSurfacesModularity",
+   "what": "through WeightsInEtaleCohomology and ArithmeticGaloisRepresentations"
+  }
+ ],
+ "gaps": [
+  {
+   "slug": "proper-rigid-finiteness",
+   "title": "Finiteness of prime-to-residue cohomology of proper rigid spaces",
+   "neededBy": [
+    "4.4"
+   ],
+   "detail": "ClassicalAdicEtaleCohomology §9.7 proves finiteness of H^i(X, L) for proper smooth rigid X over an algebraically closed complete rank-one C and n invertible in 𝒪_C (Berkovich 7.4.4). §11.1 proves finiteness for qcqs X locally algebraically of finite type over C (Huber, Proposition 6.1.1), with constructible coefficients killed by n prime to the residue characteristic. Case (d) of 4.4 needs the same for proper X that need not be smooth; the gap is the proper spaces without a locally algebraically finite-type presentation.",
+   "needs": "Finiteness of H^i(X, ℤ/n) for every proper rigid space X over an algebraically closed complete rank-one field C and every n invertible in 𝒪_C, without smoothness.",
+   "supplier": "ClassicalAdicEtaleCohomology",
+   "section": "§9.7"
+  }
+ ]
+}
