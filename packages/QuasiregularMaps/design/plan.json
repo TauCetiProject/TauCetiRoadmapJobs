@@ -1904,7 +1904,7 @@
       "slug": "sobolev-maps-class",
       "title": "The continuous Sobolev class W^{1,p}_loc(M, N)",
       "detail": "Chartwise class of continuous maps for 1 <= p <= ∞, independent of the atlases; restriction to open submanifolds; locality for open covers; independent of the metrics; C¹ maps belong for every p with Df = mfderiv f a.e.",
-      "needs": "SobolevMapsBetweenManifolds must provide the chartwise class W^{1,p}_loc(M, N) of continuous maps with chart independence, restriction, locality and the C¹ case.",
+      "needs": "For continuous maps between Hausdorff, second countable, boundaryless manifolds and `1 ≤ p ≤ ∞`, the chartwise class `W^{1,p}_loc(M, N)`, independent of the atlases and of the metrics, closed under restriction to open submanifolds, local for open covers, and containing every `C¹` map with `Df = mfderiv f` almost everywhere.",
       "supplier": "SobolevMapsBetweenManifolds",
       "section": "T2 and Scope item 3",
       "neededBy": [
@@ -1921,7 +1921,7 @@
       "slug": "sobolev-maps-weak-differential",
       "title": "The weak differential Df and null sets",
       "detail": "The a.e.-unique chart-measurable field Df(x) : T_xM -> T_f(x)N with its chart formula; chartwise TauCeti.IsNullSet null sets coincide with TauCeti.riemannianVolume null sets for every continuous metric.",
-      "needs": "SobolevMapsBetweenManifolds must provide the a.e.-unique weak differential Df with its chart formula and the agreement of chartwise and Riemannian null sets.",
+      "needs": "For `f ∈ W^{1,p}_loc(M, N)`, the almost-everywhere unique, chart-measurable weak differential `Df(x) : T_xM → T_{f(x)}N` with its chart formula, and the agreement of chartwise `TauCeti.IsNullSet` null sets with the null sets of `TauCeti.riemannianVolume` for every continuous metric.",
       "supplier": "SobolevMapsBetweenManifolds",
       "section": "T2 and Scope item 2",
       "neededBy": [
@@ -1935,7 +1935,7 @@
       "slug": "sobolev-maps-norm",
       "title": "The operator norm ‖Df‖",
       "detail": "Measurability of x ↦ ‖Df(x)‖ and, for maps with representatives in W^{1,1}_loc, membership in W^{1,p}_loc iff ‖Df‖ ∈ L^p_loc(M).",
-      "needs": "SobolevMapsBetweenManifolds must provide the measurable operator norm ‖Df‖ with its L^p_loc characterisation of the class.",
+      "needs": "For Riemannian `M` and `N`, the measurability of `x ↦ ‖Df(x)‖` and, for continuous `f` with local representatives in `W^{1,1}_loc`, the equivalence of `f ∈ W^{1,p}_loc(M, N)` with `‖Df‖ ∈ L^p_loc(M)`, with `‖Df‖` changed only by bounded factors under uniformly comparable metrics.",
       "supplier": "SobolevMapsBetweenManifolds",
       "section": "T3 and Scope item 4",
       "neededBy": [
@@ -1948,7 +1948,7 @@
       "slug": "sobolev-maps-jacobian",
       "title": "The oriented Jacobian of linear maps and of Sobolev maps",
       "detail": "J(A) with A^*(o_W.volumeForm) = J(A)·o_V.volumeForm; multiplicativity; sign under reversal of one orientation; |J(A)| = normDet(A); J = det for endomorphisms; Hadamard |J(A)| <= ‖A‖ⁿ; J_f = J(Df) a.e. measurable, |J_f| <= ‖Df‖ⁿ, J_f ∈ L¹_loc for p >= n.",
-      "needs": "SobolevMapsBetweenManifolds must provide the oriented Jacobian J(A) of linear maps with its multiplicativity, sign law, normDet comparison and Hadamard inequality, and the Jacobian J_f of Sobolev maps.",
+      "needs": "For oriented inner product spaces of one dimension `n`, the oriented Jacobian `J(A)` with `A^*(o_W.volumeForm) = J(A) · o_V.volumeForm`, multiplicative, negated by reversing one orientation, with `|J(A)| = normDet(A) ≤ ‖A‖ⁿ` and `J(A) = det A` for endomorphisms; and, for `f ∈ W^{1,p}_loc(M, N)` between oriented Riemannian `n`-manifolds, the measurable Jacobian `J_f = J(Df)` almost everywhere, with `|J_f| ≤ ‖Df‖ⁿ` and `J_f ∈ L¹_loc(M)` when `p ≥ n`.",
       "supplier": "SobolevMapsBetweenManifolds",
       "section": "T4 and Scope item 5",
       "neededBy": [
@@ -1971,7 +1971,7 @@
       "slug": "sobolev-maps-chain-rules",
       "title": "Chain rules with C¹ factors on manifolds",
       "detail": "Precomposition with C¹ local diffeomorphisms (null preimages of null sets) and postcomposition of continuous Sobolev maps with C¹ maps, each with the a.e. chain rule and no bound on the C¹ factor.",
-      "needs": "SobolevMapsBetweenManifolds must provide the manifold chain rules for precomposition with C¹ local diffeomorphisms and postcomposition with C¹ maps.",
+      "needs": "For a `C¹` local diffeomorphism `θ : M' → M`, `f ∘ θ ∈ W^{1,p}_loc(M', N)` with `D(f ∘ θ)(y) = Df(θ y) ∘ dθ_y` almost everywhere and null preimages of null sets, and for a `C¹` map `g : N → P`, `g ∘ f ∈ W^{1,p}_loc(M, P)` with `D(g ∘ f)(x) = dg_{f(x)} ∘ Df(x)` almost everywhere, with no bound on `dθ` or `dg`.",
       "supplier": "SobolevMapsBetweenManifolds",
       "section": "T1 (a)-(b) and Scope item 3",
       "neededBy": [
@@ -1983,7 +1983,7 @@
       "slug": "sobolev-maps-euclidean",
       "title": "The Euclidean case of the class",
       "detail": "For Ω ⊆ E open and N = E with identity charts and flat metrics: membership iff continuity and a TauCeti.HasWeakFDerivOn derivative Du with ‖Du‖ ∈ L^p_loc; Df = Du and J_f = det Du a.e. for one orientation on both sides.",
-      "needs": "SobolevMapsBetweenManifolds must provide the Euclidean local vector-valued class and its compatibility with the manifold class, including J_f = det Du.",
+      "needs": "For an open `Ω` of an `n`-dimensional real inner product space `E` with identity charts and flat metrics, `f ∈ W^{1,p}_loc(Ω, E)` if and only if `f` is continuous on `Ω` with a `TauCeti.HasWeakFDerivOn` derivative `Du` such that `‖Du‖ ∈ L^p_loc(Ω)`, and then `Df = Du` almost everywhere and, for one orientation on both sides, `J_f = det Du` almost everywhere.",
       "supplier": "SobolevMapsBetweenManifolds",
       "section": "T1 and T6",
       "neededBy": [
@@ -1995,7 +1995,7 @@
       "slug": "orientation-descent",
       "title": "Descent of orientations to orbit spaces",
       "detail": "For a group acting freely, properly discontinuously by smooth orientation-preserving diffeomorphisms on an oriented connected manifold X, X/Γ has a unique orientation for which the orbit projection is orientation preserving at every point. DifferentialGeometry Layer 2 plans pullback orientations and the orientation double cover, not this descent; proposed for DifferentialGeometry, Part II.",
-      "needs": "DifferentialGeometry must provide the descent of an orientation to the orbit space of a free, properly discontinuous, orientation-preserving action.",
+      "needs": "For a group `Γ` acting freely, properly discontinuously and by smooth orientation-preserving diffeomorphisms on an oriented manifold `X`, the unique orientation of the orbit space `X/Γ` for which the orbit projection is orientation preserving at every point.",
       "supplier": "DifferentialGeometry",
       "section": "Layer 2 (missing section; proposed DifferentialGeometry, Part II)",
       "neededBy": [

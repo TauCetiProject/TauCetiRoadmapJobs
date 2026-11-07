@@ -19,7 +19,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v2 read; its numbering (Theorem 1.1, (1.1), Corollary 1.2, Proposition 2.1, Theorem 2.2, Appendix B) is the one cited; the Annals version was not checked"
-cited_for = ["2.1", "2.8", "4.1", "4.2", "6.1", "6.2", "6.3", "6.4", "7.1", "7.2", "7.3", "7.4", "7.5", "7.6", "Downstream consumers"]
+cited_for = ["2.1", "2.8", "2.9", "4.1", "4.2", "6.1", "6.2", "6.3", "6.4", "7.1", "7.2", "7.3", "7.4", "7.5", "7.6", "Downstream consumers"]
 
 [[source]]
 id = "Prywes2019"
