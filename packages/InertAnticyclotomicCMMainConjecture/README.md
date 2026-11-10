@@ -19,7 +19,7 @@ The general objects below have these owners; the targets here are their applicat
 - The local theory is AnticyclotomicLocalUnits: §0.1's conductor parity, §§0.5, 1.2–1.5's anticyclotomic local-unit module V∞*, its Coates–Wiles derivatives and signed unit modules, §2.4's anticyclotomic Kummer pairing, §§3.1–3.2's character logarithms and signed formal points, §3.6's signed annihilators, §§4.2–4.4's projected CM class at a nontrivial auxiliary character and its reciprocity values (the trivial-auxiliary-character instance, which those sections do not state, is §2.1 here, with its values in §2.2), §8.2's integral signed decomposition, §8.4's nonvanishing of matching-parity derivatives of signed generators and §8.5's finite signed Kummer images. No second signed point space, trace-defined parity condition or local-unit decomposition is planned here. Section 0.5 differs from AnticyclotomicLocalUnits §1.5 in one clause: it characterises the R-extended signed modules by scalar derivatives through embeddings into ℂ_p, after the integral decomposition, rather than by tensor-valued derivatives before it.
 - The early CM theory is NonordinaryCMSpecialValues: NCM.0's integral CM period and dual-Tate dictionary, NCM.1's normalised elliptic-unit classes, reciprocity and period change, NCM.2's inert Frobenius, semilocal splitting and CM–Lubin–Tate comparison, NCM.3's twisted root numbers and forced central zeros, and NCM.5's correct-sign central nonvanishing. ComplexMultiplicationAndExplicitReciprocity §4.1 supplies the CM Hecke character and its one-dimensional Tate components with their Frobenius identities, and §4.3 the canonical Gross characters, their attachment to CM curves over H and good reduction away from the discriminant. The elliptic-unit Euler system over the two-variable tower and Rubin's two-variable theorem at a non-split prime are stated by none of the roadmaps this one may consume. They are requested from NonordinaryCMSpecialValues below as supplier gaps, because that roadmap already owns the normalised elliptic-unit classes they extend.
 - Selmer data, propagation of local conditions, Pontryagin duals with the contragredient action, dual Selmer structures, Poitou–Tate for Selmer groups, Iwasawa cohomology, descent, classical restriction control, Iwasawa duality with the involution and degree-one specialisation are SelmerIwasawaCohomology §§2.1–2.6, 2.10, 2.13, 2.19, 3.0, 3.1, 3.3 and 3.10–3.12. Their general discrete carrier is TauCetiRoadmap.EllipticCurves Layer 7. Continuous cochains, descent along open subgroups, local and global duality, Poitou–Tate and the Euler characteristic are ArithmeticGaloisDuality §§R02.2.2–R02.2.3, R02.4.2–R02.4.4 and D7.7.1–D7.7.2. The module of Euler systems and weak Leopoldt from an Euler system are EulerSystemsAndKolyvaginSystems §§2.2, 8.11 and 8.25.
-- Characteristic ideals and divisors, their multiplicativity, pseudo-isomorphism invariance, semilinear transport, base change and restriction of scalars to ℤ_p⟦T⟧ are PadicMeasuresIwasawaAlgebras §4.6; Weierstrass preparation and the cyclotomic elements are §4.3, the Iwasawa coordinate §4.5, and completed group algebras with coefficient extension §1.7. The completed group algebra and its compact-module action are already in Tau Ceti (`TauCeti.completedGroupAlgebra`, `TauCeti.IsCompactModule.completedGroupAlgebraModule`). Module length and its behaviour under surjections and residue-field restriction are already in Mathlib (`Module.length`, `Module.length_le_of_surjective`, `IsLocalRing.length_restrictScalars`, `Module.length_eq_finrank`), as are cyclotomic polynomials (`Polynomial.cyclotomic`, `Polynomial.cyclotomic_prime_pow_mul_X_pow_sub_one`).
+- Characteristic ideals and divisors, with their multiplicativity in short exact sequences, invariance under pseudo-isomorphism, semilinear transport along ring isomorphisms and the cyclic-quotient formula, are already in Tau Ceti (`TauCeti.Iwasawa.charIdeal`, `TauCeti.Iwasawa.charDivisor`, `TauCeti.Iwasawa.charIdeal_eq_mul_of_exact`, `TauCeti.Iwasawa.IsPseudoIsomorphism.charIdeal_eq`, `LinearEquiv.charIdeal_eq_comap`, `TauCeti.Iwasawa.charIdeal_quotient_span_singleton`). Their base change along finite extensions of coefficient rings and restriction of scalars to ℤ_p⟦T⟧ are PadicMeasuresIwasawaAlgebras §4.6; Weierstrass preparation and the cyclotomic elements are §4.3, the Iwasawa coordinate §4.5, and completed group algebras with coefficient extension §1.7. The completed group algebra and its compact-module action are already in Tau Ceti (`TauCeti.completedGroupAlgebra`, `TauCeti.IsCompactModule.completedGroupAlgebraModule`). Module length and its behaviour under surjections and residue-field restriction are already in Mathlib (`Module.length`, `Module.length_le_of_surjective`, `IsLocalRing.length_restrictScalars`, `Module.length_eq_finrank`), as are cyclotomic polynomials (`Polynomial.cyclotomic`, `Polynomial.cyclotomic_prime_pow_mul_X_pow_sub_one`).
 - Lubin–Tate formal modules, their division towers and the local anticyclotomic fields Ψ_n are LubinTateFormalModulesAndQuasiCanonicalLifts LT.0–LT.2 and LT.8, as used by AnticyclotomicLocalUnits. Formal groups, invariant differentials, finite-field Frobenius, reduction and the Selmer carrier are TauCetiRoadmap.EllipticCurves Layers 1, 3, 4 and 7. Local and global reciprocity, existence and ray class fields are TauCetiRoadmap.ClassFieldTheory Layers 6 and 11–13.
 
 ## Conventions
@@ -28,9 +28,9 @@ Fix a prime p≥5 and an imaginary quadratic field K in which p is inert and p�
 
 A *Gross datum* consists of an algebraic Hecke character φ of K of infinity type (1,0), with conductor f prime to p, φ((α))=α for α≡1 modulo f, and φ(ā)=conjugate(φ(a)); a CM elliptic curve E over H with End_H(E)=O_K whose Hecke character is φ∘N_(H/K) (a Q-curve in the sense of Gross), with good reduction at every place above p; a Weierstrass model of E over the integers of H smooth at 𝔭 with invariant differential ω; and Ω∈ℂ× whose multiple ΩO_K is the period lattice of (E,ω) (NonordinaryCMSpecialValues NCM.0/cm-period; ComplexMultiplicationAndExplicitReciprocity §4.3). Put ε=W(φ)∈{+1,−1}, the root number of L(φ,s), identified with the sign ε∈{+,−}.
 
-Let Φ=K_p, the unramified quadratic extension of ℚ_p, O its ring of integers, π=−p, and F the Lubin–Tate formal O-module for π, with normalised logarithm λ, as in AnticyclotomicLocalUnits (Conventions). Let L/Φ be a finite extension inside ℂ_p containing the values of the p-adic avatar φ_p:G_K→L×, R its ring of integers, T=R(φ_p) the free rank-one R-module on which G_K acts by φ_p, V_T=T⊗_R L and W=V_T/T=T⊗_O Φ/O. Write T′=Hom_(ℤ_p)(W,μ_(p^∞)) for the Cartier-dual lattice; under the coefficient trace it is the inverse-different twist of Hom_R(T,R)(1), and it is never identified with T without a stated comparison (SelmerIwasawaCohomology §2.13).
+Let Φ=K_p, the unramified quadratic extension of ℚ_p, O its ring of integers, π=−p, and F the Lubin–Tate formal O-module for π, with normalised logarithm λ, as in AnticyclotomicLocalUnits (Conventions). Let L/Φ be a finite extension inside ℂ_p containing the values of the p-adic avatar φ_p:G_K→L×, R its ring of integers, ϖ_R a uniformiser of R and e=e(R/O) the ramification index of R over O, so that πR=ϖ_R^eR; T=R(φ_p) the free rank-one R-module on which G_K acts by φ_p, V_T=T⊗_R L and W=V_T/T=T⊗_O Φ/O. Write T′=Hom_(ℤ_p)(W,μ_(p^∞)) for the Cartier-dual lattice; under the coefficient trace it is the inverse-different twist of Hom_R(T,R)(1), and it is never identified with T without a stated comparison (SelmerIwasawaCohomology §2.13).
 
-Let K∞/K be the anticyclotomic ℤ_p-extension, K_n its layer of degree pⁿ, Γ⁻=Gal(K∞/K) with topological generator γ, Γ_n=Γ⁻^(pⁿ), and K̃∞/K the ℤ_p²-extension with Γ=Gal(K̃∞/K)=Γ⁺×Γ⁻, the eigenspaces of complex conjugation. Put Λ_R=R⟦Γ⁻⟧, identified with R⟦T⟧ by γ↦1+T (PadicMeasuresIwasawaAlgebras §4.5), and Λ_(2)=R⟦Γ⟧. Λ_R is a two-dimensional regular local ring, hence a noetherian normal unique factorisation domain, and characteristic ideals over it are those of PadicMeasuresIwasawaAlgebras §4.6; every characteristic-ideal identity in this roadmap is integral and retains the prime (π).
+Let K∞/K be the anticyclotomic ℤ_p-extension, K_n its layer of degree pⁿ, Γ⁻=Gal(K∞/K) with topological generator γ, Γ_n=Γ⁻^(pⁿ), and K̃∞/K the ℤ_p²-extension with Γ=Gal(K̃∞/K)=Γ⁺×Γ⁻, the eigenspaces of complex conjugation. Put Λ_R=R⟦Γ⁻⟧, identified with R⟦T⟧ by γ↦1+T (PadicMeasuresIwasawaAlgebras §4.5), and Λ_(2)=R⟦Γ⟧. Λ_R is a two-dimensional regular local ring, hence a noetherian normal unique factorisation domain, and characteristic ideals and divisors over it are Tau Ceti's `TauCeti.Iwasawa.charIdeal` and `TauCeti.Iwasawa.charDivisor`. The only height-one prime of Λ_R containing p is the vertical prime (ϖ_R), and (π)=(ϖ_R)^e is prime exactly when e=1. Every characteristic-ideal identity in this roadmap is integral and retains its p-primary part, the power of (ϖ_R) dividing it. The μ-invariant of a finitely generated torsion Λ_R-module is the exponent of (ϖ_R) in its characteristic ideal, so Λ_R/(ϖ_R) has μ-invariant 1 and Λ_R/(π) has μ-invariant e.
 
 For a finite continuous character χ:Γ⁻→ℚ̄_p×, its conductor exponent is c(χ)=0 if χ=1 and c(χ)=r+1 if χ has exact order p^r, r≥1; Ξ⁺ and Ξ⁻ are the characters of even and odd conductor exponent (AnticyclotomicLocalUnits §0.1). A character of exact order p^r factors through Gal(K_n/K) for every n≥r; the source's indexing by the conductor uses the deeper layer n=c(χ). Unit signs kill the opposite parity and point signs kill the same parity:
 
@@ -56,7 +56,11 @@ Use `Module.length` (Mathlib/RingTheory/Length.lean), the length of a module as 
 
 ### From Tau Ceti
 
-Use `TauCeti.completedGroupAlgebra` (TauCeti/Topology/Algebra/Group/Profinite/CompletedGroupAlgebra/Basic.lean) for Λ_R and Λ_(2), and `TauCeti.IsCompactModule.completedGroupAlgebraModule` from Module.lean in that directory for the completed action on compact Hausdorff modules, under its compact-module and continuous-action hypotheses. The carrier does not assert compactness for an arbitrary coefficient ring; here R is a complete discrete valuation ring with finite residue field. The pinned 2-descent groups `WeierstrassCurve.Affine.selmerGroup₂` (TauCeti/AlgebraicGeometry/EllipticCurve/MordellWeil/SelmerGroup.lean) and `WeierstrassCurve.Affine.selmerGroupA` (SelmerGroupA.lean in that directory, the 2-Selmer group of the étale algebra of the curve) are, like Mathlib's S-unit Selmer group, not the p-primary Galois-cohomological Selmer carrier used here.
+Use `TauCeti.completedGroupAlgebra` (TauCeti/Topology/Algebra/Group/Profinite/CompletedGroupAlgebra/Basic.lean) for Λ_R and Λ_(2), and `TauCeti.IsCompactModule.completedGroupAlgebraModule` from Module.lean in that directory for the completed action on compact Hausdorff modules, under its compact-module and continuous-action hypotheses. The carrier does not assert compactness for an arbitrary coefficient ring; here R is a complete discrete valuation ring with finite residue field.
+
+Use `TauCeti.Iwasawa.charDivisor` (TauCeti/RingTheory/Iwasawa/Char/Divisor.lean), the divisor Σ_𝔭 length_(A_𝔭)(M_𝔭)[𝔭] over the height-one primes 𝔭 of A, and `TauCeti.Iwasawa.charIdeal` (TauCeti/RingTheory/Iwasawa/Char/Ideal.lean), the product of those primes raised to their multiplicities. Both are defined for every module over a commutative ring and carry their intended meaning for finitely generated torsion modules over a noetherian ring. In the same file, `TauCeti.Iwasawa.charIdeal_eq_mul_of_exact` gives char(N)=char(M)·char(P) for a short exact sequence 0→M→N→P→0 over a noetherian ring with N finitely generated and torsion; `TauCeti.Iwasawa.IsPseudoIsomorphism.charIdeal_eq` gives invariance under pseudo-isomorphism; `LinearEquiv.charIdeal_eq_comap` gives char_A(N)=σ⁻¹(char_B(M)) for a σ-semilinear equivalence N≃M along a ring isomorphism σ:A→B, with no noetherian hypothesis; and `TauCeti.Iwasawa.charIdeal_quotient_span_singleton` gives char(A/(f))=(f) for f≠0 over a noetherian factorial domain A. Λ_R meets these hypotheses: R is regular local by Mathlib's `IsRegularLocalRing` instance for local principal ideal domains (Mathlib/RingTheory/RegularLocalRing/Defs.lean), and `TauCeti.PowerSeries.isRegularLocalRing` and `TauCeti.PowerSeries.ringKrullDim_of_isDiscreteValuationRing` (TauCeti/RingTheory/RegularLocalRing/PowerSeries.lean) make R⟦T⟧ regular local of dimension two, and `TauCeti.IsRegularLocalRing.uniqueFactorizationMonoid` (TauCeti/RingTheory/RegularLocalRing/UniqueFactorization.lean) makes it factorial. These files contain no base change along R→R′, no restriction of scalars and no comparison of the multiplicity at a character prime with an order of vanishing; those are the PadicMeasuresIwasawaAlgebras contracts below.
+
+The pinned 2-descent groups `WeierstrassCurve.Affine.selmerGroup₂` (TauCeti/AlgebraicGeometry/EllipticCurve/MordellWeil/SelmerGroup.lean) and `WeierstrassCurve.Affine.selmerGroupA` (SelmerGroupA.lean in that directory, the 2-Selmer group of the étale algebra of the curve) are, like Mathlib's S-unit Selmer group, not the p-primary Galois-cohomological Selmer carrier used here.
 
 ### From TauCetiRoadmap.AnticyclotomicLocalUnits
 
@@ -88,11 +92,11 @@ Use §2.2 for the module of Euler systems, §8.11 for Rubin's condition (*) at c
 
 ### From TauCetiRoadmap.PadicMeasuresIwasawaAlgebras
 
-Use §1.7 for the completed group algebra and coefficient extension, §4.3 for Weierstrass preparation over R⟦T⟧ and the cyclotomic elements ξ_j=Φ_(p^j)(1+T) with their product formula, §4.5 for the Iwasawa coordinate, and §4.6 for `charIdeal`, `charDivisor`, multiplicativity in short exact sequences, invariance under pseudo-isomorphism, the semilinear transport `charIdeal_comap_of_semilinearEquiv`, base change along finite free O→O′ and restriction of scalars from O⟦T⟧ to ℤ_p⟦T⟧ by the norm.
+Use §1.7 for the completed group algebra and coefficient extension, §4.3 for Weierstrass preparation over R⟦T⟧ and the cyclotomic elements ξ_j=Φ_(p^j)(1+T) with their product formula, §4.5 for the Iwasawa coordinate, and §4.6 for base change of characteristic ideals along finite free O→O′ and restriction of scalars from O⟦T⟧ to ℤ_p⟦T⟧ by the norm, both statements about the Tau Ceti characteristic ideal of the contract above.
 
 What PadicMeasuresIwasawaAlgebras must provide (gap:restriction-of-scalars-finite-extension): For a finite extension R/O of complete discrete valuation rings with finite residue fields and a finitely generated torsion R⟦T⟧-module M with char(M)=(f), the characteristic ideal of M as an O⟦T⟧-module is generated by the norm of f, the determinant of multiplication by f on the finite free O⟦T⟧-module R⟦T⟧, extending §4.6's restriction of scalars from the base ℤ_p to an arbitrary base O.
 
-What PadicMeasuresIwasawaAlgebras must provide (gap:character-prime-multiplicity): For R as above, a finite character ρ of Γ≅ℤ_p with values in a finite extension of Frac(R), and the height-one prime P_ρ=ker(R⟦Γ⟧→ρ(R⟦Γ⟧)), the coefficient of P_ρ in charDivisor(M) of a finitely generated torsion module M equals the order of vanishing at T=ρ(γ)−1 of a generator of char(M), P_ρ being generated by the minimal polynomial of ρ(γ)−1 over Frac(R), which has simple roots.
+What PadicMeasuresIwasawaAlgebras must provide (gap:character-prime-multiplicity): For R as above, a finite character ρ of Γ≅ℤ_p with values in a finite extension of Frac(R), and the height-one prime P_ρ=ker(R⟦Γ⟧→ρ(R⟦Γ⟧)), the coefficient of P_ρ in the characteristic divisor `TauCeti.Iwasawa.charDivisor` of a finitely generated torsion module M equals the order of vanishing at T=ρ(γ)−1 of a generator of char(M), P_ρ being generated by the minimal polynomial of ρ(γ)−1 over Frac(R), which has simple roots.
 
 ### From TauCetiRoadmap.EllipticCurves
 
@@ -126,7 +130,7 @@ Its API consists of the following facts on these carriers and with these hypothe
 **Checks.**
 
 - For K=ℚ(√−23), the reduced forms of discriminant −23 are (1,1,6),(2,1,3),(2,−1,3), so h_K=3, and −23≡2 modulo 5 is not a square modulo 5, so p=5 is inert and 5∤3. A datum over this K, with E defined over the cubic field H and not over K, is admitted; an extra class-number-one condition would wrongly reject it.
-- An ordinary-reduction hypothesis (p split in K) cannot be an argument: for p inert the CM curve has supersingular reduction at 𝔭 and Frobenius φ((p))=−p (NonordinaryCMSpecialValues NCM.2/inert-frobenius), whose trace over ℚ is 0.
+- An ordinary-reduction hypothesis (p split in K) cannot be an argument: for p inert the CM curve has supersingular reduction at 𝔭 and Frobenius φ((p))=−p (NonordinaryCMSpecialValues NCM.2/inert-frobenius). The residue field at 𝔭 has p² elements, and the characteristic polynomial of this Frobenius on the Tate module is (X−φ((p)))(X−conjugate(φ((p))))=(X+p)², of trace −2p, which is −10 at p=5. The trace 0 is that of the Frobenius at p of a model over ℚ (a_p=0), a different Frobenius over the field with p elements.
 - After R→R′ the discrete module is T⊗_R R′⊗_O Φ/O, of R′-corank one. The quotient (T⊗_R L′)/T of the larger vector space by the old lattice is not torsion when L′≠L, since it surjects onto the nonzero L-vector space (T⊗_R L′)/(T⊗_R L), so it cannot be the discrete module.
 
 *Needs:* NonordinaryCMSpecialValues NCM.0/cm-period, NCM.2/inert-frobenius; ComplexMultiplicationAndExplicitReciprocity §§4.1, 4.3; TauCetiRoadmap.EllipticCurves Layer 1.
@@ -189,7 +193,7 @@ A route is as follows. Tensor AnticyclotomicLocalUnits §8.2's integral direct s
 
 - A nonzero coefficient divisible by p is detected: a_s=p has a_s(χ⁻¹)=p≠0 at every χ. A criterion by reduction modulo p would declare pv_s to lie in the opposite module.
 - The series a=T has a single zero, at T=0, which is the trivial character; vanishing of the specialisations at the trivial character alone does not force a=0, while vanishing at the infinitely many characters of Ξ^(−s) does.
-- On a basis vector of V_R⁺ at the trivial character, δ(v_+) is a unit of O by AnticyclotomicLocalUnits §8.4 and δ_1(v_+)=(1+p⁻¹)δ(v_+), which is 6δ(v_+)/5 at p=5; on V_R⁻ both are 0.
+- On a Λ_R-basis v_+ of V_R⁺ at the trivial character, δ(v_+) is a unit of R. For a basis extended from a Λ_O-basis of V∞*,+ it is a unit of O by AnticyclotomicLocalUnits §8.4. Two Λ_R-bases differ by u∈Λ_R×, and δ(uv_+)=u(1)δ(v_+) with u(1)∈R×. So the value need not lie in O: for R=O[√π] and the unit u=1+√π, δ(uv_+)=(1+√π)δ(v_+). In every case δ_1=(1+p⁻¹)δ on a basis vector; for uv_+ at p=5 this gives δ_1(uv_+)=6(1+√π)δ(v_+)/5. On V_R⁻ both derivatives are 0.
 
 *Needs:* AnticyclotomicLocalUnits §§1.3, 1.5, 8.2, 8.4; PadicMeasuresIwasawaAlgebras §§1.7, 4.3.
 
@@ -221,7 +225,7 @@ Its API consists of the following facts on these carriers and with these hypothe
 **Checks.**
 
 - At n=0, A_0⁺=0 and A_0⁻=F(Φ) (AnticyclotomicLocalUnits §3.2), so L_0⁺=0 and L_0⁻ is the full ordinary Kummer image of F(Φ)⊗Φ/O⊗R, of R-corank one; reversing the point signs reverses these values.
-- A point y∈F(Ψ_n) supported on a single character χ∈Ξ^s has λ_χ(y)≠0 and its Kummer class is outside L_n^s; a point supported on χ∈Ξ^(−s) has class in L_n^s.
+- A Kummer class is attached to a tensor y⊗a with a∈Φ/O, not to a point alone. Take R=O and n=0, and let Q generate F(Φ), which is free of rank one over O. Then Q⊗π⁻¹ is nonzero in F(Φ)⊗Φ/O, so its Kummer image is nonzero and lies outside L_0⁺=0. By contrast [π]Q⊗π⁻¹=Q⊗1=0 although λ([π]Q)=πλ(Q)≠0, so a nonzero logarithm does not by itself give a nonzero class. In general F(Ψ_n)/A_n^s is a free O-module because A_n^s is saturated, and the class of y⊗π^(−j), j≥1, lies in L_n^s exactly when the image of y in F(Ψ_n)/A_n^s is divisible by π^j. A point with λ_χ(y)≠0 for some χ∈Ξ^s has nonzero image there, so y⊗π^(−j) leaves L_n^s once j exceeds the π-adic valuation of that image. A point with λ_χ(y)=0 for every χ∈Ξ^s lies in A_n^s, and every y⊗a then lies in L_n^s.
 - For a point y∈A_n^s and n≤m, restriction of its Kummer class is the class of y viewed in F(Ψ_m), whereas corestriction from m to n corresponds to the formal trace, which multiplies λ_1 of a base point by p^(m−n); interchanging the two maps sends a base point of logarithm a at level 1 to pa rather than a.
 
 *Needs:* §0.3; §0.4; AnticyclotomicLocalUnits §§3.2, 8.5; SelmerIwasawaCohomology §2.13; ArithmeticGaloisDuality §D7.7.1.
@@ -250,7 +254,7 @@ A route is as follows. E has integral j-invariant and so potentially good reduct
 
 - At a good place v with q=Nv, the invariants of V_T are zero because the Frobenius eigenvalue α has |α|=√q≠1, and those of V_T^∨(1) are zero because q/α has absolute value √q≠1; at q=4, for instance, √q=2.
 - The integral group need not vanish. At a good place v, W is unramified and divisible, so H¹ of the unramified quotient vanishes and H¹((K_n)_v,W) is the group of Frobenius invariants of W(−1); it is nonzero exactly when α≡q modulo the maximal ideal of R, where α is the Frobenius eigenvalue on T and q=Nv. The statement asserts vanishing only rationally.
-- At a bad place where E acquires good reduction over an extension of degree e, the argument uses injectivity of restriction on V_T-coefficients, valid because e is invertible in ℚ_p; on W-coefficients restriction can have kernel of exponent dividing e, so no integral vanishing is claimed.
+- At a bad place where E acquires good reduction over an extension of degree d_v, the argument uses injectivity of restriction on V_T-coefficients, valid because d_v is invertible in ℚ_p; on W-coefficients restriction can have kernel of exponent dividing d_v, so no integral vanishing is claimed.
 
 *Needs:* §0.1; ComplexMultiplicationAndExplicitReciprocity §4.1; TauCetiRoadmap.EllipticCurves Layers 3, 4; ArithmeticGaloisDuality §§R02.2.3, R02.4.2, R02.4.4.
 
@@ -314,31 +318,31 @@ Use the R-extended signed decomposition of §0.5 and the supplied projected CM c
 
 ### 2.1 The primitive elliptic-unit class
 
-Define ξ=ξ(E,Ω)∈V_R as the image in V_R=V∞*⊗_O R of the norm-compatible family of normalised elliptic-unit classes of moduli f pⁿ, n≥0, with no auxiliary prime (NonordinaryCMSpecialValues NCM.1/normalized-zeta-class), under the composite of the arrows of AnticyclotomicLocalUnits §4.2 with its auxiliary ring class field L_r replaced by K, so that no character evaluation occurs: the CM coefficient untwist, corestriction to H(E[p^(n+1)]), localisation at the primes above p, augmentation of R[Gal(H/K)], projection to Δ-invariants and the Kummer comparison. This is the trivial-auxiliary-character member of the family of projected classes, which AnticyclotomicLocalUnits §4.2 states for nontrivial ν only; it is defined here for every inert CM datum of the Conventions. Retain the norm-compatible global class whose localisation it is (BKO21 §3.0.2, pp.952–953, the composite defining ξ_ν read with ν trivial, Proposition 3.3, p.953, and §6.0.1, p.961).
+Define ξ=ξ(E,Ω)∈V_R as the image in V_R=V∞*⊗_O R of the norm-compatible family of normalised elliptic-unit classes of moduli f p^(n+1), n≥0, with no auxiliary prime (NonordinaryCMSpecialValues NCM.1/normalized-zeta-class), under the composite of the arrows of AnticyclotomicLocalUnits §4.2 with its auxiliary ring class field L_r replaced by K, so that no character evaluation occurs: the CM coefficient untwist, corestriction to H(E[p^(n+1)]), localisation at the primes above p, augmentation of R[Gal(H/K)], projection to Δ-invariants and the Kummer comparison. This is the trivial-auxiliary-character member of the family of projected classes, which AnticyclotomicLocalUnits §4.2 states for nontrivial ν only; it is defined here for every inert CM datum of the Conventions. Retain the norm-compatible global class whose localisation it is (BKO21 §3.0.2, pp.952–953, the composite defining ξ_ν read with ν trivial, Proposition 3.3, p.953, and §6.0.1, p.961).
 
-A route is as follows. The modulus f pⁿ is admissible for NonordinaryCMSpecialValues NCM.1/normalized-zeta-class, whose moduli are supported on f, p and at most one auxiliary split prime. Apply the arrows of AnticyclotomicLocalUnits §4.2 in order with L_r=K, so that the group-ring identification and the evaluation arrow are identities, with coefficients R by that section's compatibility with coefficient extension; the composite is Gal(Φ∞/Φ₀)-equivariant for the identification of §0.2. Keep the global elliptic-unit class and its local projection in the comparison diagram of §3.1.
+A route is as follows. Each modulus f p^(n+1) is admissible for NonordinaryCMSpecialValues NCM.1/normalized-zeta-class, whose moduli are supported on f, p and at most one auxiliary split prime. Apply the arrows of AnticyclotomicLocalUnits §4.2 in order with L_r=K, so that the group-ring identification and the evaluation arrow are identities, with coefficients R by that section's compatibility with coefficient extension; the composite is Gal(Φ∞/Φ₀)-equivariant for the identification of §0.2. Keep the global elliptic-unit class and its local projection in the comparison diagram of §3.1.
 
 Its API consists of the following facts on these carriers and with these hypotheses.
 
-- ξ is the image of the normalised classes of moduli f pⁿ under the composite above, with the true conductor f and coefficients R; corestriction in the p-tower corresponds to the norm of the unit coordinates, so ξ lies in the inverse limit V_R.
+- ξ is the image of the normalised classes of moduli f p^(n+1) under the composite above, with the true conductor f and coefficients R; corestriction in the p-tower corresponds to the norm of the unit coordinates, so ξ lies in the inverse limit V_R.
 - ξ is the localisation, under §§0.2 and 3.3, of a specified element of the global module C of §3.1.
 - Coefficient extension R→R′ sends ξ for R to ξ for R′.
 - Replacing (ω,Ω) by (vω,vΩ) with v a unit at 𝔭 multiplies ξ by the unit recorded in NonordinaryCMSpecialValues NCM.1/period-change, leaving the ideal Λ_Rξ unchanged.
 
 **Checks.**
 
-- The moduli f pⁿ carry no auxiliary prime and the ring class field is H, so the class has conductor f; a construction that forces an extra factor p into the modulus changes δ(ξ) by the Euler factor 1−φ̄(𝔭)/N𝔭=1+p⁻¹, which is 6/5 at p=5, and is not this class.
+- The moduli f p^(n+1) carry no auxiliary prime and the ring class field is H, so the class has conductor f. Once p divides the modulus, raising its exponent by one only shifts the cofinal indexing and leaves ξ and δ(ξ) unchanged: corestriction at fixed prime support carries the class of modulus f p^(n+2) to that of modulus f p^(n+1) with no Euler factor (NonordinaryCMSpecialValues NCM.1/normalized-zeta-class), so dropping the first term of the family and recovering it by corestriction gives the same family. The factor 1+p⁻¹, which is 6/5 at p=5, relates the two derivatives δ_1(ξ)=(1+p⁻¹)δ(ξ) of this one class; it is not a change of class.
 - ξ may lie in πV_R^ε: primitivity refers to the conductor of the L-function, not to indivisibility in the Λ_R-lattice.
 - A local vector with the expected derivatives is not by itself the localisation of an element of C; the global class is part of the data.
-- With L_r=K the group ring R[Gal(L_r/K)] is R and the evaluation arrow is the identity; building the composite instead from moduli f l pⁿ containing an auxiliary split prime l=λλ̄ prime to 6pf, and augmenting over Gal(L_r/K), gives a class whose δ is, by NonordinaryCMSpecialValues NCM.1/elliptic-reciprocity at the ray level K(f l pⁿ), L(φ̄,1)/Ω times the Euler factors (1−φ̄(λ)/Nλ)(1−φ̄(λ̄)/Nλ̄); these are nonzero since |φ̄(λ)|=√Nλ, and the class is not ξ.
+- With L_r=K the group ring R[Gal(L_r/K)] is R and the evaluation arrow is the identity; building the composite instead from moduli f l p^(n+1) containing an auxiliary split prime l=λλ̄ prime to 6pf, and augmenting over Gal(L_r/K), gives a class whose δ is, by NonordinaryCMSpecialValues NCM.1/elliptic-reciprocity at the ray level K(f l p^(n+1)), L(φ̄,1)/Ω times the Euler factors (1−φ̄(λ)/Nλ)(1−φ̄(λ̄)/Nλ̄); these are nonzero since |φ̄(λ)|=√Nλ, and the class is not ξ.
 
 *Needs:* §0.1; §0.2; §0.5; AnticyclotomicLocalUnits §4.2; NonordinaryCMSpecialValues NCM.1/normalized-zeta-class, NCM.1/period-change.
 
 ### 2.2 Special values of the primitive class
 
-The primitive class satisfies δ(ξ)=L(φ̄,1)/Ω and δ_χ(ξ)=L(φ̄χ,1)/Ω for every nontrivial finite character χ of Γ⁻, with the fixed embeddings ι_∞ and ι_p identifying both sides as algebraic numbers. Since χ is ramified at 𝔭 and unramified at the primes dividing f, no Euler factor is omitted on the right; at the trivial character δ_1(ξ)=(1+p⁻¹)L(φ̄,1)/Ω is the value with the Euler factor at p deleted (BKO21 Proposition 3.3, p.953, and §6.0.1, p.961). BKO21 prints the right-hand side as L(φχ,1)/Ω at both places; its inverse covariance δ_χ(x^β)=χ(β)⁻¹δ_χ(x) (§2, p.949) and its interpolation formula L_p(χ)=L(φχ,1)/(Ω·δ_(χ⁻¹)(v_ε)) (§6.0.1, p.961) force the value δ_χ(ξ)=L(φχ⁻¹,1)/Ω=L(φ̄χ,1)/Ω, the form used here, in NonordinaryCMSpecialValues NCM.1/elliptic-reciprocity and in AnticyclotomicLocalUnits §4.4.
+The primitive class satisfies δ(ξ)=L(φ̄,1)/Ω and δ_χ(ξ)=L(φ̄χ,1)/Ω for every nontrivial finite character χ of Γ⁻, with the fixed embeddings ι_∞ and ι_p identifying both sides as algebraic numbers. Since χ is ramified at 𝔭 and unramified at the primes dividing f, no Euler factor is omitted on the right; at the trivial character δ_1(ξ)=(1+p⁻¹)L(φ̄,1)/Ω is the value with the Euler factor at p deleted (BKO21 Proposition 3.3, p.953, and §6.0.1, p.961).
 
-A route is as follows. Follow AnticyclotomicLocalUnits §4.4, which states these values for the projected classes at nontrivial ν, as the template. NonordinaryCMSpecialValues NCM.1/elliptic-reciprocity at the ray level K(f pⁿ), with g=f, gives the χ-weighted sum of the localised dual exponentials of the classes of §2.1 as Ω⁻¹L_(pf)(φ̄χ,1)·ω, and Wiles reciprocity in dual-exponential form (AnticyclotomicLocalUnits §4.3, stated for every element of U∞*⊗_O R) identifies the χ-weighted semilocal sum for the projected class ξ with δ_χ(ξ)·ω. The deleted primes are those dividing f and p; the local factor of φ̄χ at each prime dividing f is 1 because φ̄χ is ramified there, and so is the factor at p for nontrivial χ. At χ=1 use δ_1=(1+p⁻¹)δ from AnticyclotomicLocalUnits §1.4, with φ̄((p))=−p, so that L_(pf)(φ̄,1)=(1+p⁻¹)L(φ̄,1).
+A route is as follows. Follow AnticyclotomicLocalUnits §4.4, which states these values for the projected classes at nontrivial ν, as the template. NonordinaryCMSpecialValues NCM.1/elliptic-reciprocity at the ray level K(f p^(n+1)), with g=f, gives the χ-weighted sum of the localised dual exponentials of the classes of §2.1 as Ω⁻¹L_(pf)(φ̄χ,1)·ω, and Wiles reciprocity in dual-exponential form (AnticyclotomicLocalUnits §4.3, stated for every element of U∞*⊗_O R) identifies the χ-weighted semilocal sum for the projected class ξ with δ_χ(ξ)·ω. The deleted primes are those dividing f and p; the local factor of φ̄χ at each prime dividing f is 1 because φ̄χ is ramified there, and so is the factor at p for nontrivial χ. At χ=1 use δ_1=(1+p⁻¹)δ from AnticyclotomicLocalUnits §1.4, with φ̄((p))=−p, so that L_(pf)(φ̄,1)=(1+p⁻¹)L(φ̄,1).
 
 **Checks.**
 
@@ -379,7 +383,7 @@ Its API consists of the following facts on these carriers and with these hypothe
 
 - The coordinate of v_ε is 1 and that of πv_ε is π, so the definition detects a nonunit lattice index; the coordinate of 0 is 0, which §2.3 excludes for ξ.
 - For ξ=a·v and the basis v′=u·v, the coordinate is u⁻¹a; with a=T and u=1+T this is T/(1+T), which generates (T).
-- If a∈R⟦T⟧ does not have coefficients in O, the coordinate lies in Λ_R and is not replaced by an element of Λ_O; for R ramified over O of degree e, the coordinate π_R of π_R·v has (π_R)^e=(π) up to a unit.
+- If a∈R⟦T⟧ does not have coefficients in O, the coordinate lies in Λ_R and is not replaced by an element of Λ_O; for R/O of ramification index e, the coordinate ϖ_R of ϖ_R·v generates (ϖ_R), with (ϖ_R)^e=(π), so for e≥2 the coordinate ideal is strictly larger than (π).
 
 *Needs:* §2.3; §0.5; `Module.Basis`; `Ideal.span_singleton_mul_left_unit`.
 
@@ -481,15 +485,15 @@ A route is as follows. Nonzero localisation of an elliptic-unit class (§2.3 wit
 
 Over Λ_R, S_rel/C is a finitely generated torsion module and char(X_str)=char(S_rel/C). The input is Rubin's two-variable theorem at a non-split prime in its class-group and unit form, with equality on the χ-parts nontrivial on the decomposition group of p; an equality after inverting p, a cyclotomic specialisation or a split-prime form is not a substitute. In the passage to the anticyclotomic line the same specialisation correction divisor occurs on both sides and cancels (AHII05 Proposition 3.3(ii) and its proof, p.615; RUB91 §4, Theorem 4.1(ii) and Remark (2), pp.36–37; AHI06 Lemma 2.4.5 and Corollary 2.4.6, pp.1028–1029, Propositions 2.4.15–2.4.16, pp.1032–1033).
 
-A route is as follows. Take K₀=H(E[p]); then p∤[K₀:K], because [H:K]=h_K is prime to p and [K₀:H]=p²−1 by the Lubin–Tate description of E[p] over H_𝔭=Φ, and p∤#μ(H). The character of Gal(K₀/K) cut out by the avatar restricts to the Lubin–Tate character of Gal(Φ(F[π])/Φ), which is nontrivial on the decomposition group of p. Apply the supplied two-variable theorem (gap:inert-two-variable-main-conjecture) on that χ-part. For p non-split the modules X∞ and U∞/C̄∞ are not torsion (RUB91 Remark (2), p.37), so no equality between them is used. Translate through the twisting dictionary of AHI06 Lemma 2.4.5 and Corollary 2.4.6, redone for the φ-component over R: it identifies the two-variable strict Selmer dual with the twisted χ-part of A∞ and S_rel/C with that of Ē∞/C̄∞ through Rubin's sequence (5) (RUB91 p.36). At the inert prime the differences between unramified and locally trivial classes, and between units and p-units, are modules induced from the decomposition group of p, whose χ-parts vanish. Specialise along γ⁺−1, carry the kernels, cokernels and Tor terms of SelmerIwasawaCohomology §§3.3, 3.10 into both characteristic formulas, and show the correction divisors agree before cancelling (AHI06 Propositions 2.4.15–2.4.16 explain the mechanism at an ordinary prime). Apply multiplicativity over Λ_R, including at (π).
+A route is as follows. Take K₀=H(E[p]); then p∤[K₀:K], because [H:K]=h_K is prime to p and [K₀:H]=p²−1 by the Lubin–Tate description of E[p] over H_𝔭=Φ, and p∤#μ(H). The character of Gal(K₀/K) cut out by the avatar restricts to the Lubin–Tate character of Gal(Φ(F[π])/Φ), which is nontrivial on the decomposition group of p. Apply the supplied two-variable theorem (gap:inert-two-variable-main-conjecture) on that χ-part. For p non-split the modules X∞ and U∞/C̄∞ are not torsion (RUB91 Remark (2), p.37), so no equality between them is used. Translate through the twisting dictionary of AHI06 Lemma 2.4.5 and Corollary 2.4.6, redone for the φ-component over R: it identifies the two-variable strict Selmer dual with the twisted χ-part of A∞ and S_rel/C with that of Ē∞/C̄∞ through Rubin's sequence (5) (RUB91 p.36). At the inert prime the differences between unramified and locally trivial classes, and between units and p-units, are modules induced from the decomposition group of p, whose χ-parts vanish. Specialise along γ⁺−1, carry the kernels, cokernels and Tor terms of SelmerIwasawaCohomology §§3.3, 3.10 into both characteristic formulas, and show the correction divisors agree before cancelling (AHI06 Propositions 2.4.15–2.4.16 explain the mechanism at an ordinary prime). Apply multiplicativity over Λ_R (`TauCeti.Iwasawa.charIdeal_eq_mul_of_exact`), including at the vertical prime (ϖ_R).
 
 **Checks.**
 
-- A factor π^μ in char(S_rel/C) cannot be discarded: over Λ_R the module Λ_R/(π) has characteristic ideal (π)≠Λ_R, although it vanishes after inverting p.
+- A factor ϖ_R^μ in char(S_rel/C) cannot be discarded: over Λ_R the module Λ_R/(π) has characteristic ideal (π)=(ϖ_R)^e≠Λ_R and μ-invariant e, although it vanishes after inverting p.
 - At p=5 the tame degree [Φ(F[π]):Φ]=24 is prime to 5, and the Lubin–Tate character of the inertia group is a faithful character of order 24, nontrivial on the decomposition group, so Rubin's equality applies on this χ-part; on the trivial χ-part the theorem gives only a divisibility.
 - The comparison uses no consequence of this roadmap's signed results: the signed modules enter only in §4.4.
 
-*Needs:* §3.4; §3.1; §3.2; SelmerIwasawaCohomology §§3.3, 3.10; PadicMeasuresIwasawaAlgebras §4.6 (`charIdeal_mul_of_exact`); NonordinaryCMSpecialValues (gap:inert-two-variable-main-conjecture).
+*Needs:* §3.4; §3.1; §3.2; SelmerIwasawaCohomology §§3.3, 3.10; `TauCeti.Iwasawa.charIdeal_eq_mul_of_exact`; NonordinaryCMSpecialValues (gap:inert-two-variable-main-conjecture).
 
 ### Examples
 
@@ -497,7 +501,7 @@ For K=ℚ(√−23) and p=5, K₀=H(E[5]) has degree 3·24=72 over K, prime to 5
 
 ### Dependencies
 
-The subsection *Needs:* lines give the internal dependencies. External inputs: NonordinaryCMSpecialValues NCM.1/elliptic-reciprocity, NCM.3/forced-central-zero (gap:elliptic-unit-euler-system, gap:inert-two-variable-main-conjecture); EulerSystemsAndKolyvaginSystems §§2.2, 8.11, 8.25; SelmerIwasawaCohomology §§2.19, 3.0, 3.1, 3.3, 3.10, 3.12, 3.16; ArithmeticGaloisDuality §§R02.4.2, R02.4.3; AnticyclotomicLocalUnits §§2.4, 3.6; PadicMeasuresIwasawaAlgebras §4.6.
+The subsection *Needs:* lines give the internal dependencies. External inputs: NonordinaryCMSpecialValues NCM.1/elliptic-reciprocity, NCM.3/forced-central-zero (gap:elliptic-unit-euler-system, gap:inert-two-variable-main-conjecture); EulerSystemsAndKolyvaginSystems §§2.2, 8.11, 8.25; SelmerIwasawaCohomology §§2.19, 3.0, 3.1, 3.3, 3.10, 3.12, 3.16; ArithmeticGaloisDuality §§R02.4.2, R02.4.3; AnticyclotomicLocalUnits §§2.4, 3.6; PadicMeasuresIwasawaAlgebras §4.6; `TauCeti.Iwasawa.charIdeal_eq_mul_of_exact`.
 
 ## Layer 4: Global duality and the integral main conjecture
 
@@ -515,7 +519,7 @@ A route is as follows. Apply Poitou–Tate for Selmer groups (SelmerIwasawaCohom
 
 **Checks.**
 
-- The localisation S_rel→H/H^s need not be surjective; its cokernel is the kernel of X_s→X_str, which is nonzero for s=−ε (§4.4).
+- The localisation S_rel→H/H^s need not be surjective; its cokernel is the kernel of X_s→X_str. For s=−ε, where H/H^(−ε)≃H^ε by §3.3, the cokernel is H^ε/loc(S_rel), which may be zero or nonzero: in the lattice model loc(S_rel)=H^ε it is 0, and in the model loc(S_rel)=T·H^ε it is Λ_R/(T). The sequence identifies the cokernel; it does not force it to be nonzero.
 - For s=ε the sequence specialises at the base layer and R=O to the finite-level sequence of SelmerIwasawaCohomology §2.19 with Σ−Σ_0 the place 𝔭; at n=0 the plus local condition is 0 and the strict and plus Selmer groups coincide, so the first and last terms of the finite-level sequence agree.
 - The final map is induced by inclusion of discrete Selmer groups and is surjective because the inclusion is injective and Pontryagin duality is exact; a map in the other direction would have the wrong variance.
 
@@ -547,7 +551,7 @@ A route is as follows. From the two-variable rank one and the rank one of its sp
 - The involution γ↦γ⁻¹ sends T to (1+T)⁻¹−1=−T+T²−⋯, so it preserves (T) but sends (T−a) for a nonzero a in the maximal ideal to an ideal generated by T−a′ with a′=(1+a)⁻¹−1≠a; dropping the involution without the symmetry argument changes such factors.
 - Every finite and pseudo-null error has a named destination: over Λ_R a finite module has characteristic ideal Λ_R, so it is harmless for characteristic ideals but is retained in the exact sequences.
 
-*Needs:* §3.4; §3.2; §4.1; SelmerIwasawaCohomology §§3.3, 3.12; PadicMeasuresIwasawaAlgebras §4.6.
+*Needs:* §3.4; §3.2; §4.1; SelmerIwasawaCohomology §§3.3, 3.12; PadicMeasuresIwasawaAlgebras §4.6; `TauCeti.Iwasawa.IsPseudoIsomorphism.charIdeal_eq`; `LinearEquiv.charIdeal_eq_comap`.
 
 ### 4.4 The opposite signed characteristic ideal
 
@@ -563,10 +567,10 @@ A route is as follows. For the second identity, which is the one the main conjec
 **Checks.**
 
 - In the model H^ε=Λ_R, S_ε=S_rel=(T)⊂Λ_R, C=(T²) and X_str with char (T): the second identity gives char(X_(−ε))=(T)·(T)=(T²)=char(Λ_R/(T²)), consistent with the two exact sequences; replacing loc(C) by S_ε would give (T) instead.
-- Every height-one prime is counted, including (π): with C=πS_ε the factor char(S_ε/C)=(π) appears in char(X_(−ε)) and is lost by any identity proved after inverting p.
+- Every height-one prime is counted, including the vertical prime (ϖ_R): with C=πS_ε the factor char(S_ε/C)=(π)=(ϖ_R)^e appears in char(X_(−ε)), with multiplicity e at (ϖ_R), and is lost by any identity proved after inverting p.
 - The second identity uses §3.5 and not §4.3; the first uses both. A route through §4.3 is not needed for the main conjecture.
 
-*Needs:* §4.2; §3.5; §3.3; PadicMeasuresIwasawaAlgebras §4.6 (`charIdeal_mul_of_exact`); for identity 1 also §4.3.
+*Needs:* §4.2; §3.5; §3.3; `TauCeti.Iwasawa.charIdeal_eq_mul_of_exact`; for identity 1 also §4.3.
 
 ### 4.5 The localised global lattice and the primitive class
 
@@ -580,13 +584,13 @@ A route is as follows. Transport the localised classes loc(c_a) through §3.3 an
 - Restriction of scalars from Λ_R to Λ_O multiplies degrees: for R/O of degree d and f with coefficients in O, the Λ_O-characteristic ideal of Λ_R/(f) is (f^d), not (f).
 - Agboola–Howard's interpolation pairs χ with δ_χ(v_ε), the one used here pairs χ with δ_(χ⁻¹)(v_ε); for a character of order 5 these evaluate the generator at ζ and at ζ⁴, which differ unless the generator is invariant under the involution.
 
-*Needs:* §3.3; §3.1; §2.5; §2.4; §2.2; AnticyclotomicLocalUnits §4.3; NonordinaryCMSpecialValues NCM.1/elliptic-reciprocity, NCM.1/period-change; PadicMeasuresIwasawaAlgebras §4.6 (`charIdeal_quotient_span`, `charIdeal_comap_of_semilinearEquiv`).
+*Needs:* §3.3; §3.1; §2.5; §2.4; §2.2; AnticyclotomicLocalUnits §4.3; NonordinaryCMSpecialValues NCM.1/elliptic-reciprocity, NCM.1/period-change; `TauCeti.Iwasawa.charIdeal_quotient_span_singleton`; `LinearEquiv.charIdeal_eq_comap`.
 
 ### 4.6 The inert anticyclotomic CM main conjecture
 
 For an inert CM datum, X_(−ε) is a finitely generated torsion Λ_R-module and char_(Λ_R)(X_(−ε))=(L_p(φ,Ω,v_ε)) as an integral ideal of Λ_R. The theorem allows E to be defined only over H, with p≥5 inert in K, p∤h_K and the standing CM and good-reduction conditions; it does not assume that E descends to K or that 2 splits in K. The ideal is unchanged by unit changes of v_ε and of the integral differential, and compatible finite coefficient extension R→R′ carries the identity over Λ_R to the identity over Λ_(R′). Restriction of scalars to Λ_O replaces (L_p) by its norm (BKO21 Theorem 6.1 and its proof, p.962).
 
-A route is as follows. Combine §4.4(2) with §4.5. Keep Λ_R fixed through both identifications, including at the prime (π). Base change uses PadicMeasuresIwasawaAlgebras §4.6's base change along finite free O→O′, transported to R→R′, and restriction of scalars uses the supplier contract below.
+A route is as follows. Combine §4.4(2) with §4.5. Keep Λ_R fixed through both identifications, including at the vertical prime (ϖ_R). Base change uses PadicMeasuresIwasawaAlgebras §4.6's base change along finite free O→O′, transported to R→R′, and restriction of scalars uses the supplier contract below.
 
 **Checks.**
 
@@ -598,11 +602,11 @@ A route is as follows. Combine §4.4(2) with §4.5. Keep Λ_R fixed through both
 
 ### Examples
 
-Let ε=+, so the torsion module is X_−. If the localised family loc(C) generates Λ_R·L_p·v_+ and L_p=T, then H^+/loc(C)≃Λ_R/(T), the strict dual and the quotient H^+/S_+ have characteristic ideals whose product is (T), and X_− has characteristic ideal (T). If instead L_p=π, then X_− has characteristic ideal (π): its μ-invariant over Λ_R is 1, invisible after inverting p.
+Let ε=+, so the torsion module is X_−. If the localised family loc(C) generates Λ_R·L_p·v_+ and L_p=T, then H^+/loc(C)≃Λ_R/(T), the strict dual and the quotient H^+/S_+ have characteristic ideals whose product is (T), and X_− has characteristic ideal (T). If instead L_p=π, then X_− has characteristic ideal (π)=(ϖ_R)^e: its μ-invariant over Λ_R is e, which is 1 for R=O and 2 for R=O[√π], and it is invisible after inverting p. The μ-invariant 1 over a ramified R belongs to L_p=ϖ_R.
 
 ### Dependencies
 
-The subsection *Needs:* lines give the internal dependencies. External inputs: SelmerIwasawaCohomology §§2.19, 3.1, 3.3, 3.11, 3.12; ArithmeticGaloisDuality §R02.4.3; AnticyclotomicLocalUnits §4.3; NonordinaryCMSpecialValues NCM.1/elliptic-reciprocity, NCM.1/period-change; PadicMeasuresIwasawaAlgebras §4.6 (gap:restriction-of-scalars-finite-extension).
+The subsection *Needs:* lines give the internal dependencies. External inputs: SelmerIwasawaCohomology §§2.19, 3.1, 3.3, 3.11, 3.12; ArithmeticGaloisDuality §R02.4.3; AnticyclotomicLocalUnits §4.3; NonordinaryCMSpecialValues NCM.1/elliptic-reciprocity, NCM.1/period-change; PadicMeasuresIwasawaAlgebras §4.6 (gap:restriction-of-scalars-finite-extension); `TauCeti.Iwasawa.charIdeal_eq_mul_of_exact`; `TauCeti.Iwasawa.IsPseudoIsomorphism.charIdeal_eq`; `LinearEquiv.charIdeal_eq_comap`; `TauCeti.Iwasawa.charIdeal_quotient_span_singleton`.
 
 ## Layer 5: Finite-level signed and strict control
 
@@ -635,17 +639,18 @@ Its API consists of the following facts on these carriers and with these hypothe
 
 ### 5.2 Signed local control
 
-Assume E is defined over K. For s∈{+,−} and n≥0 the restriction map L_n^s→L_∞^s[ω_n^s] is injective with finite cokernel. All statements use the Kummer images of §1.1 and the coefficient ring R (AHII05 Lemma 5.1 and its proof, pp.618–619).
+Assume E is defined over K. For s∈{+,−} and n≥0 the restriction map L_n^s→L_∞^s[ω_n^s] is an isomorphism. All statements use the Kummer images of §1.1 and the coefficient ring R (AHII05 Lemma 5.1 and its proof, pp.618–619, which give injectivity and, under Rubin's conjecture in the form of AHII05 Conjecture 3.5, p.615, a finite cokernel; that conjecture is the integral splitting H=H⁺⊕H⁻ of §3.3).
 
-A route is as follows. H⁰(Ψ∞,W)=0 by the tame argument of §3.3; coefficient extension creates no invariants. Inflation–restriction gives injectivity. The R-corank of L_n^s is the R-rank of Λ_R/ω_n^s, by the logarithm and the normal basis theorem (`IsGalois.normalBasis`) applied to F(Ψ_n)⊗Φ≃Φ[Gal(Ψ_n/Φ)]. The R-corank of L_∞^s[ω_n^s] is also the R-rank of Λ_R/ω_n^s, because the dual of L_∞^s is H/H^s, free of rank one by §3.3. Equal coranks and injectivity give a finite cokernel.
+A route is as follows. H⁰(Ψ∞,W)=0 by the tame argument of §3.3; coefficient extension creates no invariants. Inflation–restriction gives injectivity. The R-corank of L_n^s is the R-rank of Λ_R/ω_n^s, by the logarithm and the normal basis theorem (`IsGalois.normalBasis`) applied to F(Ψ_n)⊗Φ≃Φ[Gal(Ψ_n/Φ)]. The Pontryagin dual of L_∞^s is H/H^s, free of rank one by §3.3, so the dual of L_∞^s[ω_n^s] is Λ_R/(ι(ω_n^s)); here ι(ω_n^s) is a unit multiple of ω_n^s, because Φ_(p^k)(γ⁻¹)=γ^(−φ(p^k))Φ_(p^k)(γ) and γ⁻¹−1=−γ⁻¹(γ−1). As ω_n^s(1+T) is a distinguished polynomial, Weierstrass division (PadicMeasuresIwasawaAlgebras §4.3) makes Λ_R/(ω_n^s) free over R of rank deg ω_n^s. Hence L_∞^s[ω_n^s] is R-cofree of the same corank as L_n^s, and in particular divisible. Equal coranks and injectivity make the cokernel finite; it is a quotient of a divisible module, hence divisible, and a finite divisible module is zero.
 
 **Checks.**
 
 - The proof needs the tame field: the pro-p property of Gal(Ψ∞/Φ) alone says nothing about W[π], whereas G_Φ acts on W[π]≃F[π]⊗R through the cyclic group Gal(Φ(F[π])/Φ) of order p²−1, which is 24 at p=5, without nonzero fixed vectors, and that group meets Gal(Ψ∞/Φ) trivially.
 - At n=1 and s=+, ω_1⁺=1, so L_∞⁺[1]=0 and L_1⁺=0: the plus condition at level 1 is zero because every character through level 1 has even conductor.
-- The cokernel is finite, not zero in general; surjectivity over R is not asserted.
+- The cokernel vanishes. At p=5 and n=2 both sides have R-corank 20 for s=+ and 5 for s=−, the degrees of Φ_25(γ) and (γ−1)Φ_5(γ). A finite quotient Q of the divisible target killed by ϖ_R^k satisfies Q=ϖ_R^kQ=0.
+- The integral freeness of H/H^s in §3.3 is what excludes a nonzero cokernel. If the dual of L_∞^− were the rank-one ideal 𝔪=(ϖ_R,T), which is not free, then at n=0, where ω_0⁻=T, the dual of L_∞^−[T] would be 𝔪/T𝔪≃R⊕R/ϖ_R, the class of T being nonzero and killed by ϖ_R. The divisible image of L_0^− would miss the finite part, so the cokernel would be finite and nonzero. This is the bounded error that AHII05 Lemma 5.1 allows without Rubin's conjecture.
 
-*Needs:* §5.1; §1.1; §3.3; SelmerIwasawaCohomology §3.11; ArithmeticGaloisDuality §R02.2.2; `IsGalois.normalBasis`.
+*Needs:* §5.1; §1.1; §3.3; SelmerIwasawaCohomology §3.11; ArithmeticGaloisDuality §R02.2.2; PadicMeasuresIwasawaAlgebras §4.3; `IsGalois.normalBasis`.
 
 ### 5.3 Signed Selmer control
 
@@ -656,7 +661,7 @@ A route is as follows. Compare global localisation kernels by inflation–restri
 **Checks.**
 
 - The kernel on the dual side corresponds to the cokernel of the injective discrete map, so the dual map is surjective; the reverse direction would claim injectivity of a map with a possibly nonzero finite kernel.
-- At a place v|f the local error W^(I_v) is finite because every proper R-submodule of L/R is π^(−k)R/R for some k; rational vanishing of H¹ away from p (§1.3) is a different fact and does not bound these integral errors.
+- At a place v|f the local error W^(I_v) is finite because every proper R-submodule of L/R is ϖ_R^(−k)R/R for some k≥0; rational vanishing of H¹ away from p (§1.3) is a different fact and does not bound these integral errors.
 - At n=0 and s=+, ω_0⁺=1, so both sides are zero; at n=0 and s=−, ω_0⁻=γ−1 and the statement compares the Γ⁻-coinvariants of X_− with the dual of Sel_−(K,W)=Sel(K,W).
 
 *Needs:* §5.2; §1.4; §1.5; SelmerIwasawaCohomology §§3.3, 3.11.
@@ -679,7 +684,7 @@ A route is as follows. Use ω_n⁺ω_n⁻=γ^(pⁿ)−1, which kills Sel(K_n,W) 
 
 Let A be a commutative local ring with residue field κ and M an A-module. Then dim_κ(κ⊗_A M)≤length_A(M) in ℕ∞. In particular, for a finitely generated torsion Λ_R-module X and a finite character ρ of Γ⁻ with values in L_ρ, applied to the discrete valuation ring A=(Λ_R)_(P_ρ), whose residue field is the field L(ρ) generated by the values of ρ, dim_(L(ρ))(X⊗_(Λ_R,ρ)L(ρ))≤length_A(X_(P_ρ))=ord_ρ char(X). If a generator f of char(X) is a unit multiple of an element of Λ_O, then ord_ρ f=ord_(ρ⁻¹) f (BKO21 proof of Theorem 6.2, pp.962–963).
 
-A route is as follows. κ⊗_A M is an A-module quotient of M, so its A-length is at most that of M (`Module.length_le_of_surjective`). Its A-length equals its κ-length (`IsLocalRing.length_restrictScalars` with B=κ), which is its κ-dimension (`Module.length_eq_finrank`, or ∞ when infinite). Λ_R is regular local of dimension two, so its localisation at the height-one prime P_ρ is a discrete valuation ring with residue field Frac(Λ_R/P_ρ)=L(ρ), and X⊗κ(P_ρ) is the specialisation at ρ. The length of X_(P_ρ) is the coefficient of P_ρ in charDivisor(X), which is ord_ρ char(X) by the supplier contract with PadicMeasuresIwasawaAlgebras (gap:character-prime-multiplicity). For the last assertion, an automorphism of Φ(μ_(p^r)) over Φ sends ρ(γ) to ρ(γ)⁻¹, because Φ/ℚ_p is unramified and so Gal(Φ(μ_(p^r))/Φ)≃(ℤ/p^r)×, and it fixes the coefficients of f.
+A route is as follows. κ⊗_A M is an A-module quotient of M, so its A-length is at most that of M (`Module.length_le_of_surjective`). Its A-length equals its κ-length (`IsLocalRing.length_restrictScalars` with B=κ), which is its κ-dimension (`Module.length_eq_finrank`, or ∞ when infinite). Λ_R is regular local of dimension two, so its localisation at the height-one prime P_ρ is a discrete valuation ring with residue field Frac(Λ_R/P_ρ)=L(ρ), and X⊗κ(P_ρ) is the specialisation at ρ. The length of X_(P_ρ) is the coefficient of P_ρ in `TauCeti.Iwasawa.charDivisor` of X, which is ord_ρ char(X) by the supplier contract with PadicMeasuresIwasawaAlgebras (gap:character-prime-multiplicity). For the last assertion, an automorphism of Φ(μ_(p^r)) over Φ sends ρ(γ) to ρ(γ)⁻¹, because Φ/ℚ_p is unramified and so Gal(Φ(μ_(p^r))/Φ)≃(ℤ/p^r)×, and it fixes the coefficients of f.
 
 **Checks.**
 
@@ -687,7 +692,7 @@ A route is as follows. κ⊗_A M is an A-module quotient of M, so its A-length i
 - For M=κ², dimension and length are both 2.
 - For X=Λ_R/(g²) with g the minimal polynomial of ρ(γ)−1, the specialisation has dimension 1 and ord_ρ char(X)=2. For R ramified with μ_p⊂L, the coefficient automorphism need not invert ρ(γ), so ord_ρ and ord_(ρ⁻¹) are kept apart for a general R-coefficient generator.
 
-*Needs:* `Module.length`; `Module.length_le_of_surjective`; `IsLocalRing.length_restrictScalars`; `Module.length_eq_finrank`; PadicMeasuresIwasawaAlgebras §4.6 (gap:character-prime-multiplicity).
+*Needs:* `Module.length`; `Module.length_le_of_surjective`; `IsLocalRing.length_restrictScalars`; `Module.length_eq_finrank`; `TauCeti.Iwasawa.charDivisor`; PadicMeasuresIwasawaAlgebras §4.6 (gap:character-prime-multiplicity).
 
 ### 5.6 Strict specialisation inequality
 
@@ -713,7 +718,7 @@ At p=5, n=2 and ε=+: ω_2⁺=Φ_25(γ) vanishes at the twenty characters of exa
 
 ### Dependencies
 
-The subsection *Needs:* lines give the internal dependencies. External inputs: AnticyclotomicLocalUnits §3.1; PadicMeasuresIwasawaAlgebras §§4.3, 4.6 (gap:character-prime-multiplicity); SelmerIwasawaCohomology §§2.5–2.6, 3.3, 3.11; ArithmeticGaloisDuality §R02.2.2; `IsGalois.normalBasis`; `Polynomial.cyclotomic`; `Polynomial.cyclotomic_prime_pow_mul_X_pow_sub_one`; `Module.length`; `Module.length_le_of_surjective`; `IsLocalRing.length_restrictScalars`; `Module.length_eq_finrank`.
+The subsection *Needs:* lines give the internal dependencies. External inputs: AnticyclotomicLocalUnits §3.1; PadicMeasuresIwasawaAlgebras §§4.3, 4.6 (gap:character-prime-multiplicity); `TauCeti.Iwasawa.charDivisor`; SelmerIwasawaCohomology §§2.5–2.6, 3.3, 3.11; ArithmeticGaloisDuality §R02.2.2; `IsGalois.normalBasis`; `Polynomial.cyclotomic`; `Polynomial.cyclotomic_prime_pow_mul_X_pow_sub_one`; `Module.length`; `Module.length_le_of_surjective`; `IsLocalRing.length_restrictScalars`; `Module.length_eq_finrank`.
 
 ## Layer 6: Finite-character CM rank bounds
 
@@ -731,7 +736,7 @@ A route is as follows. Use §4.1 with s=−ε and the torsion of X_(−ε) (§4.
 - At a character ρ with ord_ρ f=1 and ord_ρ g=2, the orders are 1≤3.
 - For R ramified with μ_p⊂L and a generator not extended from Λ_O, ord_ρ and ord_(ρ⁻¹) can differ, so the equality is asserted only when R=O.
 
-*Needs:* §4.1; §4.2; §4.6; §5.5; PadicMeasuresIwasawaAlgebras §4.6 (`charIdeal_mul_of_exact`).
+*Needs:* §4.1; §4.2; §4.6; §5.5; `TauCeti.Iwasawa.charIdeal_eq_mul_of_exact`.
 
 ### 6.2 The one-dimensional CM local correction
 
@@ -786,11 +791,11 @@ Let ε=+ and χ have exact order 5 at p=5. Then χ∈Ξ⁺ and the Mordell–Wei
 
 ### Dependencies
 
-The subsection *Needs:* lines give the internal dependencies. External inputs: PadicMeasuresIwasawaAlgebras §4.6 (`charIdeal_mul_of_exact`); `IsGalois.normalBasis`; TauCetiRoadmap.EllipticCurves Layer 7.
+The subsection *Needs:* lines give the internal dependencies. External inputs: `TauCeti.Iwasawa.charIdeal_eq_mul_of_exact`; `IsGalois.normalBasis`; TauCetiRoadmap.EllipticCurves Layer 7.
 
 ## Downstream consumers
 
-ModularIwasawaMainConjecturesPartII imports Layers 0–6: the inert CM datum and tower dictionary, the signed Kummer conditions and Selmer modules, Rubin's integral p-adic L-function with its interpolation, the global elliptic-unit module and strict comparison, the duality sequence and main conjecture, and the control and rank bounds. Consumers of the main conjecture use the integral ideal over Λ_R with its (π)-part; consumers of the rank bounds use the additional hypothesis that E is defined over K.
+ModularIwasawaMainConjecturesPartII imports Layers 0–6: the inert CM datum and tower dictionary, the signed Kummer conditions and Selmer modules, Rubin's integral p-adic L-function with its interpolation, the global elliptic-unit module and strict comparison, the duality sequence and main conjecture, and the control and rank bounds. Consumers of the main conjecture use the integral ideal over Λ_R with its p-primary part at (ϖ_R); consumers of the rank bounds use the additional hypothesis that E is defined over K.
 
 ## Worked examples
 

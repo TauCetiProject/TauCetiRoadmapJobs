@@ -12,9 +12,9 @@ so the file states nothing; the headline theorems and what each one lacks are li
   the signed Selmer groups of the CM avatar over the anticyclotomic ℤ_p-tower, the Lubin–Tate
   formal module with its signed formal points and character logarithms, the anticyclotomic
   local-unit module with its Coates–Wiles derivatives and the primitive elliptic-unit class
-  (which define Rubin's p-adic L-function), Gross Q-curves with their p-adic avatars, and
-  characteristic ideals of modules over R⟦Γ⁻⟧. The pins have Hecke characters, continuous
-  cohomology and the completed group algebra, but none of these other carriers; the pinned
+  (which define Rubin's p-adic L-function), and Gross Q-curves with their p-adic avatars. The
+  pins have Hecke characters, continuous cohomology, the completed group algebra and the
+  characteristic ideal `TauCeti.Iwasawa.charIdeal`, but none of these other carriers; the pinned
   Selmer groups are the 2-descent groups `WeierstrassCurve.Affine.selmerGroup₂` and
   `WeierstrassCurve.Affine.selmerGroupA` and Mathlib's S-unit group
   `IsDedekindDomain.selmerGroup`, none of which is the p-primary Galois-cohomological Selmer
@@ -23,8 +23,8 @@ so the file states nothing; the headline theorems and what each one lacks are li
   strict and opposite signed Selmer modules. It lacks the same signed Selmer carriers and the
   compact corestriction limits with their Cartier-dual local conditions.
 * Layer 4 (§4.4): the opposite signed characteristic formula char(X_(−ε)) = char(H^ε/loc C).
-  It lacks the signed Selmer carriers, the all-auxiliary elliptic-unit module and
-  characteristic ideals over R⟦Γ⁻⟧.
+  It lacks the signed Selmer carriers and the all-auxiliary elliptic-unit module; the
+  characteristic ideal itself is the pinned `TauCeti.Iwasawa.charIdeal`.
 * Layer 6 (§6.4): the finite-character CM rank bounds (BKO21 Theorem 6.2). It lacks the
   rational p-adic Selmer group of V_pE over the anticyclotomic layers, χ-isotypic parts of
   Mordell–Weil groups with CM coefficients, and Rubin's p-adic L-function, whose order of
