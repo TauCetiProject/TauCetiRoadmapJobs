@@ -17,7 +17,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v2"
-cited_for = ["§0.2", "§0.3", "§1.1", "§2.2", "§2.4", "§3.6", "§3.7", "§3.10", "§4.1", "§4.2", "§4.3", "§4.4", "§4.5", "§4.6", "§4.7", "§4.8", "§4.10", "§4.11", "§4.14", "§5.1", "§5.2", "Source corrections"]
+cited_for = ["Summary", "Scope and ownership", "Conventions", "§0.1", "§0.2", "§0.3", "Layer 0 Examples", "§1.1", "§1.3", "§2.1", "§2.2", "§2.3", "§2.4", "§3.3", "§3.4", "§3.5", "§3.6", "§3.7", "§3.9", "§3.10", "Layer 3 Examples", "§4.1", "§4.2", "§4.3", "§4.4", "§4.5", "§4.6", "§4.7", "§4.8", "§4.9", "§4.10", "§4.11", "§4.12", "§4.14", "§5.1", "§5.2", "Layer 5 Examples", "Downstream consumers", "Source corrections"]
 
 [[source]]
 id = "ST03"
@@ -36,7 +36,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v1"
-cited_for = ["Conventions", "§1.2", "§4.1", "§4.6", "Source corrections", "gap:frechet-stein-general", "gap:radius-algebras"]
+cited_for = ["Scope and ownership", "§0.1", "§1.2", "§4.1", "§4.3", "§4.6", "§4.7", "§4.8", "Source corrections", "gap:frechet-stein-general", "gap:radius-algebras"]
 
 [[source]]
 id = "ST02"
@@ -72,7 +72,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v1"
-cited_for = ["§5.2", "supplier contract PadicLocalLanglandsForGL2Qp §0.1"]
+cited_for = ["Scope and ownership", "§5.2", "supplier contract PadicLocalLanglandsForGL2Qp §0.1"]
 
 [[source]]
 id = "AW13"
@@ -90,7 +90,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v3"
-cited_for = ["§0.1", "§1.2", "§2.1", "§2.4", "§3.1", "§3.2", "§3.3", "§3.4", "§3.5", "§3.6", "§3.7", "§3.8", "§3.9", "§4.11", "§5.2"]
+cited_for = ["Summary", "§0.1", "§1.2", "§2.1", "§2.4", "§3.1", "§3.2", "§3.3", "§3.4", "§3.5", "§3.6", "§3.7", "§3.8", "§3.9", "Layer 3 Examples", "§4.11", "§5.2", "Source corrections"]
 
 [[source]]
 id = "AW14"
@@ -108,7 +108,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v1"
-cited_for = ["§0.3", "§3.5", "§4.12", "§4.13", "§4.14", "Source corrections"]
+cited_for = ["Summary", "§0.3", "§3.5", "§3.6", "§4.12", "§4.13", "§4.14", "Source corrections"]
 
 [[source]]
 id = "AB07"
@@ -126,7 +126,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v1"
-cited_for = ["§4.9"]
+cited_for = ["§4.9", "Source corrections"]
 
 [[source]]
 id = "SCHM13"
@@ -144,7 +144,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v2"
-cited_for = ["§2.5"]
+cited_for = ["§2.5", "Source corrections"]
 
 [[source]]
 id = "BCGP25"
@@ -162,7 +162,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v1"
-cited_for = ["§2.5", "Source corrections"]
+cited_for = ["Conventions", "§2.5", "Source corrections"]
 
 [[source]]
 id = "KOH07"
@@ -194,7 +194,7 @@ url = "https://doi.org/10.1007/978-3-642-21147-8"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["§0.1", "§3.2"]
+cited_for = ["Scope and ownership", "§0.1", "§3.2"]
 
 [[source]]
 id = "FROM03"
@@ -233,7 +233,8 @@ resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6488#i
 
 [[source]]
 id = "DG70"
-title = "Michel Demazure Pierre Gabriel Groupes Algebriques 1970"
+authors = "Michel Demazure, Pierre Gabriel"
+title = "Groupes algébriques. Tome I"
 year = 1970
 locator_scheme = "section"
 locator = "II §6.1.5"

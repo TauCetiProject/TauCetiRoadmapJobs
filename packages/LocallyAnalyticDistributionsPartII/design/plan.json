@@ -4363,7 +4363,7 @@
  "gaps": [
   {
    "slug": "frechet-stein-general",
-   "needs": "State the Fréchet–Stein notion and the coadmissible-module theory of §0.1 for an arbitrary left and two-sided K-Fréchet–Stein algebra, not only D(H,L): Theorems A and B, the base-change isomorphism, flatness of the Banach stages, the abelian category of coadmissible modules with its closedness criterion and strictness of maps, closedness of finitely generated left ideals, Fréchet–Stein quotients by closed two-sided ideals with A/I ≅ lim A_n/A_nI, and restriction along maps of Fréchet–Stein algebras (Schneider–Teitelbaum 2003, §3, Corollaries 3.1–3.5, Lemma 3.6, Proposition 3.7, Lemma 3.8).",
+   "needs": "State the Fréchet–Stein notion and the coadmissible-module theory of §0.1 for an arbitrary left and two-sided K-Fréchet–Stein algebra, not only D(H,L): Theorems A and B, the base-change isomorphism, flatness of the Banach stages, the abelian category of coadmissible modules with its closedness criterion and strictness of maps, closedness of finitely generated left ideals, Fréchet–Stein quotients by closed two-sided ideals with A/I ≅ lim A_n/A_nI, and, for a continuous unital homomorphism A → B of Fréchet–Stein algebras with B coadmissible as a left A-module, that a left B-module is coadmissible over B iff it is coadmissible over A (Schneider–Teitelbaum 2003, §3, Corollaries 3.1–3.5, Lemma 3.6, Proposition 3.7, Lemma 3.8).",
    "supplier": "PadicLocalLanglandsForGL2Qp",
    "section": "§0.1"
   },
@@ -4372,6 +4372,12 @@
    "needs": "For a compact group H with a finite-rank p-valuation and ordered basis satisfying Schneider–Teitelbaum's (HYP), construct the Banach radius algebras of §0.1 as the completions D_r(H,L) of D(H,L) for the coordinate norms ‖Σ d_α b^α‖_r = sup |d_α| r^{τ_α}, 1/p ≤ r < 1, with the unique coefficient expansion, submultiplicativity, basis independence, the c₀ description and the spaces D_{<r}, the graded-ring, multiplicativity and noetherianity theorems (Schneider–Teitelbaum 2003, §4, Lemma 4.1–Theorem 4.5, Remark 4.6), the statement that the D_r with r ∈ p^ℚ ∩ (1/p,1) are the stages of the Fréchet–Stein presentation of §0.1, and that a uniform group with the valuation ω_U of NoncommutativeAndEquivariantIwasawa §0.7 satisfies (HYP) for odd p.",
    "supplier": "PadicLocalLanglandsForGL2Qp",
    "section": "§0.1"
+  },
+  {
+   "slug": "reductive-centre-split",
+   "needs": "For a finite-dimensional reductive Lie algebra g = z ⊕ [g, g] over a field F of characteristic zero, give U(g) ≅ S(z) ⊗ U([g, g]) and Z(U(g)) ≅ S(z) ⊗ Z(U([g, g])), prove that Z(U(g)) is a finitely generated F-algebra, and, for a Cartan subalgebra t = z ⊕ t′ with t′ triangularizable on [g, g] and a base of its roots, construct the reductive Harish-Chandra projection Z(U(g)) → S(t), the restriction to the centre of the projection of U(g) onto U(t) along n̄U(g) + U(g)n, as the F-algebra homomorphism id_{S(z)} ⊗ TauCeti.hcProjection whose translate by −ρ takes values in S(t)^W.",
+   "supplier": "LieHighestWeight",
+   "section": "Layer 9"
   }
  ],
  "sourceIssues": [
