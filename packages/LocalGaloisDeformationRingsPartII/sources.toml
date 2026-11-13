@@ -9,7 +9,7 @@ year = 2020
 venue = "Invent. Math. 234 (2023), no. 1, 1-128"
 arxiv = "2009.03127v7"
 locator_scheme = "theorem"
-locator = "Definitions 2.3.1, 2.3.3, 2.3.4, 3.1.1, 3.1.4, 3.1.6, 3.1.8, 3.2.1, 3.2.4, 3.2.5; Remarks 2.3.5, 2.3.6, 4.2.5; Propositions 2.4.3, 3.1.5, 3.1.7, 3.1.9, 3.2.7, 4.2.1, 4.3.1, 4.3.3; Lemmas 3.2.3, 3.2.6, 3.2.8, 3.3.1, 4.1.1, 4.1.2, 4.2.3, 4.2.4, 4.3.2, 8.1.2; Corollaries 3.2.9, 4.2.6; Tables 1-5 and Figure 2, pp. 41-45; Theorem 8.3.9 proof, pp. 101-102"
+locator = "Definitions 2.3.1, 2.3.3, 2.3.4, 3.1.1, 3.1.4, 3.1.6, 3.1.8, 3.2.1, 3.2.4, 3.2.5; Remarks 2.3.5, 2.3.6, 2.4.5, 3.1.2, 3.1.3, 3.2.2, 4.2.5; Propositions 2.4.3, 3.1.5, 3.1.7, 3.1.9, 3.2.7, 4.2.1, 4.3.1, 4.3.3; Lemmas 3.2.3, 3.2.6, 3.2.8, 3.3.1, 4.1.1, 4.1.2, 4.2.3, 4.2.4, 4.3.2, 8.1.2; Corollaries 3.2.9, 4.2.6; Tables 1-5 and Figure 2, pp. 41-45; Theorem 8.3.9 proof, pp. 101-102"
 url = "https://arxiv.org/abs/2009.03127v7"
 fetched_from = "https://arxiv.org/pdf/2009.03127v7"
 fetched_at = "2026-10-26T21:07:14Z"
@@ -18,7 +18,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v7"
-cited_for = ["0.1", "0.2", "0.3", "0.4", "0.5", "1.1", "1.2", "1.3", "1.4", "2.1", "2.2", "2.3", "3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8", "3.9", "4.1", "4.2", "4.3", "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "6.1", "6.2", "6.3", "7.1", "7.2", "7.3", "7.4", "7.5"]
+cited_for = ["0.1", "0.2", "0.3", "0.4", "0.5", "1.1", "1.2", "1.3", "1.4", "2.1", "2.2", "2.3", "3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8", "3.9", "3.10", "4.1", "4.2", "4.3", "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "6.1", "6.2", "6.3", "7.1", "7.2", "7.3", "7.4", "7.5"]
 
 [[source]]
 id = "GHLS17"
@@ -73,3 +73,76 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-26"
 cited_for = ["6.3", "gap:power-invariance"]
+
+[[source]]
+id = "LLHLM18"
+authors = "Daniel Le, Bao V. Le Hung, Brandon Levin, Stefano Morra"
+title = "Potentially crystalline deformation rings and Serre weight conjectures: shapes and shadows"
+year = 2015
+venue = "Invent. Math. 212 (2018), no. 1, 1-107"
+arxiv = "1512.06380v3"
+locator_scheme = "theorem"
+locator = "§2.3, p. 23; Definition 3.8 and Proposition 3.9, p. 29; Lemmas 3.10-3.11, pp. 29-31; Proposition 3.12, p. 31; Proposition 5.3; §5.1 and Theorem 5.6, p. 48; Proposition 5.11 and Theorem 5.12, p. 53; Theorem 6.14"
+url = "https://arxiv.org/abs/1512.06380v3"
+fetched_from = "https://arxiv.org/pdf/1512.06380v3"
+fetched_at = "2026-11-10T21:13:52Z"
+sha256 = "ecbc88963f953a8ed126db53a8fbf9b969839e6557e5de4190fd9f72acf8000b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v3; the numbering of the cited statements agrees with BHHMS23's citations of the published version"
+cited_for = ["2.1", "2.2", "3.7", "3.8", "3.10", "5.7", "7.3", "gap:kummer-restriction-invariants", "gap:rank-two-descent-kisin-modules"]
+
+[[source]]
+id = "LLHL19"
+authors = "Daniel Le, Bao V. Le Hung, Brandon Levin"
+title = "Weight elimination in Serre-type conjectures"
+year = 2016
+venue = "Duke Math. J. 168, no. 13 (2019), 2433-2506"
+doi = "10.1215/00127094-2019-0015"
+arxiv = "1610.04819v4"
+locator_scheme = "theorem"
+locator = "Proposition 2.2.16, p. 14; §3.1 and Proposition 3.1.2, p. 16; Proposition 3.2.9 and Remark 3.2.10, pp. 20-21; Proposition 3.2.22, Definition 3.2.23 and Remark 3.2.25, pp. 25-26"
+url = "https://arxiv.org/abs/1610.04819v4"
+fetched_from = "https://arxiv.org/pdf/1610.04819v4"
+fetched_at = "2026-11-10T21:18:02Z"
+sha256 = "c976fac5c200cb175ca0462f3575d934410b6e07850e729ac97a55a06bf76e10"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v4"
+cited_for = ["0.4", "1.3", "1.4", "3.3", "3.4", "4.2"]
+
+[[source]]
+id = "LLHLM23"
+authors = "Daniel Le, Bao V. Le Hung, Brandon Levin, Stefano Morra"
+title = "Local models for Galois deformation rings and applications"
+year = 2020
+venue = "Invent. Math. 231 (2023), no. 3, 1277-1488"
+arxiv = "2007.05398v2"
+locator_scheme = "theorem"
+locator = "Definitions 5.1.1, 5.1.3 and 5.1.6, pp. 74-75; Proposition 7.1.3, p. 98; Lemma 7.2.10(1)-(2), p. 107"
+url = "https://arxiv.org/abs/2007.05398v2"
+fetched_from = "https://arxiv.org/pdf/2007.05398v2"
+fetched_at = "2026-11-10T21:18:46Z"
+sha256 = "3cdae0b192d3ba8d75391fbd2bf40264e23c9d9c69d536ad30b50dddda0d61af"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v2; Remark 5.1.4, equation (5.4), Proposition 7.1.3 and Lemma 7.2.10 carry the numbers BHHMS23 cites for the published version"
+cited_for = ["2.1", "3.7", "gap:kummer-restriction-invariants", "gap:rank-two-descent-kisin-modules"]
+
+[[source]]
+id = "Kisin06"
+authors = "Mark Kisin"
+title = "Crystalline representations and F-crystals"
+year = 2006
+venue = "Algebraic geometry and number theory, Progr. Math. 253, Birkhäuser (2006), 459-496"
+doi = "10.1007/978-0-8176-4532-8_7"
+locator_scheme = "theorem"
+locator = "Corollary 1.3.15"
+url = "https://doi.org/10.1007/978-0-8176-4532-8_7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.1"]
