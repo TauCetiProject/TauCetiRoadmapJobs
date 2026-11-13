@@ -5625,7 +5625,7 @@
       "slug": "split-orthogonal-regular-form",
       "supplier": "ReductiveGroups",
       "section": "Layer 9",
-      "needs": "The identification of the pinned Chevalley-Demazure group schemes of types B_n and D_n over Z with the special orthogonal group schemes of the regular forms x_1 x_2n + ... + x_n x_(n+1) and x_1 x_(2n+1) + ... + x_n x_(n+2) + x_(n+1)^2, compatible with points over Z_2."
+      "needs": "The identification of the pinned Chevalley-Demazure group schemes of types B_n and D_n over Z with the special orthogonal group schemes of the regular forms x_1 x_(2n+1) + ... + x_n x_(n+2) + x_(n+1)^2 (rank 2n+1) and x_1 x_2n + ... + x_n x_(n+1) (rank 2n) respectively, compatible with points over Z_2."
     },
     {
       "slug": "conway-group-average-charpoly",

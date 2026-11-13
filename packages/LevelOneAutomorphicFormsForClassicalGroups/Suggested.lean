@@ -5,7 +5,7 @@ public import TauCeti.LinearAlgebra.IntegralLattice.Even
 public import TauCeti.LinearAlgebra.IntegralLattice.Unimodular
 public import TauCeti.LinearAlgebra.IntegralLattice.Signature
 public import TauCeti.LinearAlgebra.IntegralLattice.Norm
-public import TauCeti.LinearAlgebra.IntegralLattice.Isometry.Group
+public import TauCeti.LinearAlgebra.IntegralLattice.Isometry.Basic
 
 /-!
 # Level-one automorphic forms for classical groups: target signatures
@@ -30,7 +30,7 @@ Stated here:
 Not statable at the pins, with the missing carrier:
 
 * the computability of `dim S_k(Sp_{2g}(ℤ))` for `g ≤ 8` and `k_g > g` (README §7.3), the
-  twenty-nine nonscalar and thirty-two scalar eigenparameter rows in weight at most 13
+  twenty-nine nonscalar and thirty-two scalar eigenparameters in weight at most 13
   (§§7.8–7.9), the four weight-13 forms (§7.10), the Eichler basis theorem in weights 4, 8, 12
   (§8.1), the harmonic theta realizations and the alternating theta isomorphism (§§8.8, 8.10), and
   the stable dimensions, stable Siegel operator and stable theta isomorphism (§§8.12–8.14): Siegel
@@ -41,6 +41,11 @@ Not statable at the pins, with the missing carrier:
   Riemann hypothesis (§§5.3–5.10), Miller's vanishing (§2.19), the repeated-weight `PGL₄` vanishing
   (§2.21) and the Stark–Odlyzko cone inequality (§2.7): cuspidal automorphic representations of
   `GL_m` over the adèles and their Rankin–Selberg `L`-functions are absent;
+* the triangular relation `EP(G; λ) = κ(G, λ) N⊥(w(λ)) + R(G, λ)` between level-one
+  Euler–Poincaré characteristics and self-dual cuspidal counts (§3.16), with the packet
+  contributions it rests on (§3.15): the square-integrable automorphic spectrum of
+  `G(ℚ)\G(𝔸)` and its `(𝔤, K)`-cohomology with coefficients, global Arthur parameters with their
+  real packets, and the counts `N⊥` of level-one cuspidal representations of `PGL_m` are absent;
 * the masses of torsion classes of `SO_d` (`d ≤ 17`) and `Sp_{2n}` (`n ≤ 8`) (§§4.13–4.18): the
   elliptic part of Arthur's `L²`-Lefschetz trace formula and its orbital integrals are absent;
 * the exact value `±n_g e_g` of the `Q_g`-Fourier coefficient of the Leech theta series (§8.6):
@@ -105,10 +110,11 @@ def invariantAlternatingForms {V : Type*} [AddCommGroup V] [Module ℚ V]
     change r • ω (fun i => e (v i)) = r • ω v
     rw [hω e v]
 
-/-- The Fourier coefficient at the matrix `T` of the theta series
-`Σ_{x ∈ Lᵍ} ω(x) exp(πi tr(Gram(x) τ))` attached to an alternating `g`-form `ω`: the sum of
-`ω(x)` over the `g`-tuples `x` of lattice vectors with Gram matrix `T` (README §8.6). For a
-positive definite lattice the summation set is finite. -/
+/-- The Fourier coefficient at `T/2`, indexed here by its integral Gram matrix `T`, of the theta
+series `Σ_{x ∈ Lᵍ} ω(x) exp(πi tr(Gram(x) τ)) = Σ_{x ∈ Lᵍ} ω(x) exp(2πi tr((Gram(x)/2) τ))`
+attached to an alternating `g`-form `ω`: the sum of `ω(x)` over the `g`-tuples `x` of lattice
+vectors with Gram matrix `T` (README §8.6). For a positive definite lattice the summation set is
+finite. -/
 noncomputable def thetaCoefficient {V : Type*} [AddCommGroup V] [Module ℚ V]
     (L : IntegralLattice V) {g : ℕ} (ω : V [⋀^Fin g]→ₗ[ℚ] ℚ)
     (T : Matrix (Fin g) (Fin g) ℚ) : ℚ :=
