@@ -4269,13 +4269,13 @@
       "slug": "holonomic-specializability",
       "needs": "For a holonomic D_X-module on a smooth complex variety and a smooth hypersurface x = 0, the existence of a good V_0 D_X-lattice with a nonzero Bernstein–Sato polynomial for the Euler operator on its graded quotient, also after graph embedding of a regular function, and the rationality of its roots for regular holonomic modules with quasi-unipotent monodromy.",
       "supplier": "SpringerResolutionAndCharacteristicCycles",
-      "section": "Layer H (holonomic-modules, regular-holonomic)"
+      "section": "§§9.1, 9.4, 9.7"
     },
     {
       "slug": "regular-holonomic-stability",
-      "needs": "Stability of the bounded derived category with regular holonomic cohomology under f_+, f_!, f^†, duality, external product and restriction to the diagonal, for algebraic maps of smooth complex varieties.",
+      "needs": "Stability of the bounded derived category with regular holonomic cohomology under f_+, f_!, arbitrary f^†, external product and restriction to the diagonal, with the corresponding composition, adjunction and duality comparisons for algebraic maps of smooth complex varieties; duality, smooth pullback and intermediate extension are supplied by §9.7.",
       "supplier": "SpringerResolutionAndCharacteristicCycles",
-      "section": "Layer H (transfer-and-duality, regular-holonomic)"
+      "section": "§§9.1, 9.7"
     },
     {
       "slug": "toric-normal-fan",
@@ -4291,9 +4291,21 @@
     },
     {
       "slug": "blowup-exceptional-divisor",
-      "needs": "For the blow-up π : X̃ → X of a smooth variety over a field along a smooth closed subvariety Z of pure codimension c ≥ 2, with ideal I and normal bundle N_{Z/X} = (I/I²)^∨, the smoothness of X̃, the identification of the exceptional divisor E = π⁻¹(Z) with the projective bundle P(N_{Z/X}) = Proj(Sym(I/I²)) over Z, and O_X̃(−E)|_E = O_E(1), so that the normal line of E in X̃ is O_E(−1).",
+      "needs": "For the blow-up π : X̃ → X of a smooth variety over a field along a smooth closed subvariety Z of pure codimension c ≥ 2, the smoothness of X̃ over that field.",
       "supplier": "SchemeAndStackFoundations",
       "section": "§5.5"
+    },
+    {
+      "slug": "rational-complex-local-system-dictionary",
+      "needs": "For Λ = ℚ or ℂ and a locally path-connected semilocally simply connected space S, an equivalence between locally constant sheaves of finite-dimensional Λ-vector spaces and the finite-dimensional-value full subcategory of TauCeti.LocalCoefficientSystem Λ S, identifying stalks with values and path transport with native transport, naturally under pullback.",
+      "supplier": "ComplexComparisonPartII",
+      "section": "§C6.1"
+    },
+    {
+      "slug": "normal-semigroup-cohen-macaulay",
+      "needs": "For every field k and every finitely generated additive submonoid S of a finite free abelian group that is saturated in the group it generates, the monoid algebra k[S] is Cohen–Macaulay (Hochster's theorem).",
+      "supplier": "GroebnerGeometry",
+      "section": "§G2"
     }
   ],
   "restructure": [
