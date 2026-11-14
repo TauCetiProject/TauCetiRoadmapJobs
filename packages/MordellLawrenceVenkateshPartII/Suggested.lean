@@ -29,10 +29,18 @@ Headline theorems that are not statable at the pins:
   (README §7.6) and its finiteness clause (README §7.7): they need primitive middle cohomology of
   a family, its geometric monodromy group and its Hodge numbers, none of which exist at the pins.
 * Shafarevich finiteness for smooth ample hypersurfaces in abelian varieties (README §§10.6,
-  10.9, 10.10; Lawrence–Sawin, Theorem 9.2, Corollary 9.3, Theorems 9.4–9.6): Tau Ceti has
-  abelian varieties over a field (`TauCeti.AlgebraicGeometry.AbelianVariety`), but neither
-  library has ample line bundles or divisors, numerical classes of divisors, abelian schemes
-  over a ring of `S`-integers, or the good-reduction condition on the closure of a divisor.
+  10.9, 10.10; Lawrence–Sawin, Theorem 9.2, Corollary 9.3, Theorems 9.4–9.6). Tau Ceti has
+  abelian varieties over a field (`TauCeti.AlgebraicGeometry.AbelianVariety`), ample
+  line-bundle classes (`TauCeti.AlgebraicGeometry.LineBundleClass.IsAmple`), Cartier divisors on
+  an integral scheme with their effectivity (`TauCeti.AlgebraicGeometry.Scheme.CartierDivisor`,
+  `TauCeti.AlgebraicGeometry.Scheme.CartierDivisor.IsEffective`) and intersection numbers of a
+  line-bundle class with a curve (`TauCeti.AlgebraicGeometry.LineBundleClass.intersectionNumber`);
+  Mathlib has smooth morphisms and scheme-theoretic images. What is missing is the arithmetic
+  model: neither library has abelian schemes over a base other than a field, so neither the
+  good reduction of `A` outside `S` (an abelian scheme over `O_K[S⁻¹]` with generic fibre `A`)
+  nor the smoothness of the closure of a divisor in that model can be formed. Numerical
+  equivalence classes of divisors and the top self-intersection `φⁿ`, which fixes the class and
+  the exceptional degrees in dimension 3, are not at the pins either.
 * The Frobenius-centralizer point-count bound (README §7.8; Lawrence–Venkatesh, Lemma 12.1,
   corrected): it needs Frobenius eigenvalues on primitive middle étale cohomology.
 -/
