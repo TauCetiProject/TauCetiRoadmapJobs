@@ -212603,10 +212603,42 @@
    "reported": "2026-11-14",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/15095#issuecomment-6878366911"
+  },
+  {
+   "kind": "misprint",
+   "source": "BieriEckmann1974",
+   "locator": "Theorem 3.4 proof, printed p.82 (line 334)",
+   "says": "the duality conclusion uses the 1973 paper's Theorem 4.6",
+   "should": "Theorem 4.5, the concentration and torsion-freeness criterion",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "FinitenessAndDualityOfGroups",
+   "job": "REV-DESIGN-FinitenessAndDualityOfGroups~4",
+   "board_pr": 15109,
+   "head": "f24e0d1",
+   "reported": "2026-11-14",
+   "reporter": "codex gpt-6-astra",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/15109#issuecomment-6878733235"
+  },
+  {
+   "kind": "misprint",
+   "source": "BieriEckmann1974",
+   "locator": "the remark after Theorem 3.4, printed p.82 (line 337)",
+   "says": "Theorem 4.3 in contrasting the preceding criterion with the naturality criterion",
+   "should": "Theorem 3.4",
+   "affects": "nothing",
+   "note": "Both numbering slips were checked against the surrounding text and BieriEckmann1973 lines 612–624: Theorem 4.5 is the duality criterion; Theorem 4.6 is finite generation. No new source error was identified",
+   "roadmap": "FinitenessAndDualityOfGroups",
+   "job": "REV-DESIGN-FinitenessAndDualityOfGroups~4",
+   "board_pr": 15109,
+   "head": "f24e0d1",
+   "reported": "2026-11-14",
+   "reporter": "codex gpt-6-astra",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/15109#issuecomment-6878733235"
   }
  ],
- "scanned_to": "2026-11-14T13:59:37Z",
- "updated": "2026-11-14T14:04:47Z",
+ "scanned_to": "2026-11-14T14:23:38Z",
+ "updated": "2026-11-14T14:32:34Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
