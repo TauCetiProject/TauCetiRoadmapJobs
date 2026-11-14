@@ -43,7 +43,6 @@ id = "egno"
 authors = "Pavel Etingof, Shlomo Gelaki, Dmitri Nikshych, Victor Ostrik"
 title = "Tensor Categories"
 year = 2015
-version_note = "Author final version; printed page numbering"
 locator_scheme = "section"
 locator = "2.3, 2.10, 3.2–3.3, 4.7, 4.14, 7.21, 9.2–9.3"
 url = "https://math.mit.edu/~etingof/egnobookfinal.pdf"
@@ -53,6 +52,7 @@ sha256 = "a40d076197b666d8b3b231ac59748a95f9b311d49ce57f4024c0da8308796db3"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-14"
+version_note = "Author final version; printed page numbering"
 cited_for = ["Layers 0–11"]
 
 [[source]]
@@ -146,3 +146,22 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["Pivotal structure provenance"]
+
+[[source]]
+id = "eno04"
+authors = "Pavel Etingof, Dmitri Nikshych, Viktor Ostrik"
+title = "An analogue of Radford's S^4 formula for finite tensor categories"
+year = 2004
+venue = "International Mathematics Research Notices 54 (2004), 2915--2933."
+arxiv = "math/0404504v1"
+locator_scheme = "theorem"
+locator = "Theorem 3.3, Theorem 7.3, Corollary 7.6"
+url = "https://arxiv.org/abs/math/0404504v1"
+fetched_from = "https://arxiv.org/pdf/math/0404504v1"
+fetched_at = "2026-11-14T11:54:55Z"
+sha256 = "5ef465bdf2c0ed7764fb262778c63b599cdb65a13d04ba79ba444d1a2f0d3645"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-14"
+version_note = "arXiv v1"
+cited_for = ["6.7, 6.8"]
