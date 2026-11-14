@@ -6556,7 +6556,7 @@
       "slug": "ramified-hermitian-densities",
       "supplier": "GeometryOfNumbersAndQuadraticArithmetic",
       "section": "§3.2",
-      "needs": "§3.2 extended to ramified quadratic F/F₀ of odd residue characteristic, namely the local density Den(M,L), its vanishing when χ(M) ≠ χ(L), its interpolation polynomials in X = q^(−s) for the trace-dual hyperbolic lattices of the exotic setting and in X = q^(−2k) for the hermitian-sharp hyperbolic plane of the Krämer setting, and their finite overlattice expansions.",
+      "needs": "§3.2 extended to ramified quadratic F/F₀ of odd residue characteristic, namely the local density Den(M,L), its vanishing whenever L ⊗ F admits no isometric embedding into M ⊗ F (in particular for nondegenerate M and L of equal rank with χ(M) ≠ χ(L); for rank(M) > rank(L) different signs do not force vanishing), its interpolation polynomials in X = q^(−s) for the trace-dual hyperbolic lattices of the exotic setting and in X = q^(−2k) for the hermitian-sharp hyperbolic plane of the Krämer setting, and their finite overlattice expansions.",
       "neededBy": [
         "6.1",
         "6.3",
@@ -6567,8 +6567,8 @@
     {
       "slug": "nonaffine-formal-filtration-product",
       "supplier": "SchemeKTheoryOperationsPartII",
-      "section": "FK.2",
-      "needs": "FK.2 extended so that on a regular locally noetherian formal scheme exhausted by quasi-compact opens, such as a unitary Rapoport–Zink space, the codimension filtration on supported K₀ is rationally multiplicative for the supported cup product, compatibly with the noetherian exhaustion.",
+      "section": "§2.4",
+      "needs": "§2.4 extended so that on a regular locally noetherian formal scheme exhausted by quasi-compact opens, such as a unitary Rapoport–Zink space, the codimension filtration on supported K₀ is rationally multiplicative for the supported cup product, compatibly with the noetherian exhaustion.",
       "neededBy": [
         "0.6",
         "1.1",
@@ -6589,7 +6589,7 @@
       "slug": "jr-afl-local-inputs",
       "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
       "section": "Layers 2 and 4",
-      "needs": "for an unramified quadratic extension of p-adic fields of odd residue characteristic, the passage from the GL_n(F₀)-group formulation, with the space X_n of invertible hermitian matrices on the unitary side, and the augmented Lie-algebra formulation of EndoscopicTransferAndUnitaryTraceComparisonPartII §§4.4–4.5, and from the matching, η-twisted orbital distributions and smooth transfer that that roadmap requests from EndoscopicTransferAndUnitaryTraceComparison, to Zhang's formulations on S_n = {γ ∈ GL_n(F) : γγ̄ = 1} under GL_(n−1)(F₀) and on S_(n−1) × (F₀^(n−1) ⊕ (F₀^(n−1))*) under GL_(n−1)(F₀): regular semisimple matching with U(V_n) under U(V_(n−1)) and with U(V_(n−1)) × V_(n−1), the transfer factors ω(γ) = η̃(det(γ)^(−⌊n/2⌋)·det(γ^i e)_(i=0)^(n−1)) and ω(γ,u′) = η̃(det(γ)^(−⌊(n−1)/2⌋)·det(γ^i u₁)_(i=0)^(n−2)), smooth transfer compatible with the partial Fourier transform, and the Jacquet–Rallis fundamental lemma for the unit test functions in both of Zhang's versions for every residue cardinality q, including q ≤ n.",
+      "needs": "for an unramified quadratic extension of p-adic fields of odd residue characteristic, the passage from the GL_n(F₀)-group formulation, with the space X_n of invertible hermitian matrices on the unitary side, and the augmented Lie-algebra formulation of EndoscopicTransferAndUnitaryTraceComparisonPartII §§4.4–4.5, and from the matching, η-twisted orbital distributions and smooth transfer that that roadmap requests from EndoscopicTransferAndUnitaryTraceComparison, to Zhang's formulations on S_n = {γ ∈ GL_n(F) : γγ̄ = 1} under GL_(n−1)(F₀) and on S_(n−1) × (F₀^(n−1) ⊕ (F₀^(n−1))*) under GL_(n−1)(F₀): regular semisimple matching with U(V_n) under U(V_(n−1)) and with U(V_(n−1)) × V_(n−1), the transfer factors ω(γ) = η̃(det(γ)^(−⌊n/2⌋)·det(γ^i e)_(i=0)^(n−1)) and ω(γ,u′) = η̃(det(γ)^(−⌊(n−1)/2⌋)·det(γ^i u₁)_(i=0)^(n−2)) with the natural unramified extension η̃(x) = (−1)^(v_F(x)) of η, smooth transfer compatible with the partial Fourier transform, and the Jacquet–Rallis fundamental lemma for the unit test functions in both of Zhang's versions for every residue cardinality q, including q ≤ n, in the form that the unit function transfers to the pair whose component on the nonsplit unitary group is zero, so that its normalized orbital integrals vanish at the regular semisimple elements matching the nonsplit group.",
       "neededBy": [
         "9.3",
         "9.5",

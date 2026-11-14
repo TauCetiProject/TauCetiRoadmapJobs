@@ -29,7 +29,7 @@ venue = "Annals of Mathematics 193 (2021)"
 doi = "10.4007/annals.2021.193.3.5"
 arxiv = "1909.02697v3"
 locator_scheme = "theorem"
-locator = "Theorem 15.1; Conjectures 3.2, 3.8; Theorem 14.6; Lemma 13.6"
+locator = "Theorem 15.1; Conjectures 2.3, 3.2, 3.8; (2.12)-(2.17); Theorem 14.6; Lemma 13.6"
 url = "https://arxiv.org/abs/1909.02697v3"
 fetched_from = "https://arxiv.org/pdf/1909.02697v3"
 fetched_at = "2026-10-26T23:03:44Z"
@@ -38,7 +38,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v3; section, theorem and equation numbers agree with the published version"
-cited_for = ["9.1-9.7", "10.1", "11.1-11.5", "12.1-12.9", "14.1-14.7"]
+cited_for = ["9.1-9.8", "10.1", "11.1-11.5", "12.1-12.11", "14.1-14.6"]
 
 [[source]]
 id = "LRZ"
@@ -131,7 +131,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v4; the published numbering may differ, locators use arXiv v4"
-cited_for = ["12.3", "12.9", "14.1"]
+cited_for = ["12.3", "12.11", "14.1"]
 
 [[source]]
 id = "Lusztig76"
@@ -212,7 +212,7 @@ title = "Relative unitary RZ-spaces and the Arithmetic Fundamental Lemma"
 year = 2016
 arxiv = "1611.06520v2"
 locator_scheme = "theorem"
-locator = "Corollary 9.9"
+locator = "Corollary 9.9 (pp. 39-40); Definition 1.7 (p. 4); Theorem 1.12 (p. 5)"
 url = "https://arxiv.org/abs/1611.06520v2"
 fetched_from = "https://arxiv.org/pdf/1611.06520v2"
 fetched_at = "2026-11-10T21:06:15Z"
@@ -220,17 +220,17 @@ sha256 = "1df1463952e54d98a6fe4c63ae04ec46ae03dc54648d841a53f3aae64af4fb97"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-10"
-version_note = "arXiv v2"
-cited_for = ["9.7"]
+version_note = "arXiv v2; page locators use its pagination"
+cited_for = ["9.7", "9.8"]
 
 [[source]]
 id = "GS19"
-authors = "Luis E. Garcia"
+authors = "Luis E. Garcia, Siddarth Sankaran"
 title = "Green forms and the arithmetic Siegel-Weil formula"
 year = 2019
 arxiv = "1808.09313v1"
 locator_scheme = "equation"
-locator = "(1.19)"
+locator = "Theorem 1.1.2 and (1.1.19), p. 5; Theorem 1.1.1, p. 4; Example 2.6.3, p. 22"
 url = "https://arxiv.org/abs/1808.09313v1"
 fetched_from = "https://arxiv.org/pdf/1808.09313v1"
 fetched_at = "2026-11-10T21:06:40Z"
@@ -238,7 +238,7 @@ sha256 = "f5c26a130c329111ee1e8844116701f09f0a98e5e5c9f1a55c87ac53f40053f9"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-10"
-version_note = "arXiv v1"
+version_note = "arXiv v1 (2018), 86 pages; theorem and equation numbers and pages are those of v1, where the equation LZ cites as (1.19) is numbered (1.1.19)"
 cited_for = ["13.7"]
 
 [[source]]
@@ -246,8 +246,10 @@ id = "Liu11a"
 authors = "Yifeng Liu"
 title = "Arithmetic theta lifting and L-derivatives for unitary groups, I"
 year = 2011
+venue = "Algebra & Number Theory 5 (2011), no. 7, 849-921"
+doi = "10.2140/ant.2011.5.849"
 locator_scheme = "theorem"
-locator = "Proposition 4.5; Theorem 4.17"
+locator = "Proposition 3.2 (p. 873); Remark 3.3, Corollary 3.4 and Theorem 3.5 (p. 874); Lemma 3.6 and (3-7) (pp. 876-877); Proposition 4.5 (p. 889); Theorem 4.17 (p. 905)"
 url = "https://msp.org/ant/2011/5-7/ant-v5-n7-p01-p.pdf"
 fetched_from = "https://msp.org/ant/2011/5-7/ant-v5-n7-p01-p.pdf"
 fetched_at = "2026-11-10T21:07:15Z"
@@ -255,4 +257,175 @@ sha256 = "0f192ff6a6d62085a4eb122db8e9c45cf20b42e744eaf2a9ce9d26a67d6e7166"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-10"
-cited_for = ["13.7"]
+version_note = "publisher open copy; page locators are the printed journal pages"
+cited_for = ["12.7", "13.7", "12.6b"]
+
+[[source]]
+id = "KR11"
+authors = "Stephen Kudla, Michael Rapoport"
+title = "Special cycles on unitary Shimura varieties I. Unramified local theory"
+year = 2011
+venue = "Inventiones Mathematicae 184 (2011)"
+arxiv = "0804.0600v2"
+locator_scheme = "theorem"
+locator = "Lemma 6.5 (p. 33); Definition 6.6 (p. 34); Proposition 8.1 (p. 36)"
+url = "https://arxiv.org/abs/0804.0600v2"
+fetched_from = "https://arxiv.org/pdf/0804.0600v2"
+fetched_at = "2026-11-10T22:38:41Z"
+sha256 = "cb1cfd648f1c628d1fbf8e9cf2ae0107d7fa6982c74f6d9f0dec2cd7b57de6d2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v2 (2011), 51 pages; page locators use its pagination; written for F0 = Q_p"
+cited_for = ["1.3"]
+
+[[source]]
+id = "BHKRY"
+authors = "Jan Hendrik Bruinier, Benjamin Howard, Stephen S. Kudla, Michael Rapoport, Tonghai Yang"
+title = "Modularity of generating series of divisors on unitary Shimura varieties"
+year = 2020
+venue = "Astérisque 421 (2020)"
+arxiv = "1702.07812v3"
+locator_scheme = "theorem"
+locator = "Theorem A (p. 3); §1.5 (pp. 11-12); Remark 2.1.2 (p. 15); Proposition 4.2.2 and Theorem 4.2.3 (p. 68); Theorem 5.3.1 (pp. 76-77); Theorem 5.3.3 (p. 78); §7.2 (p. 100); Theorems 7.2.1, 7.2.3, 7.2.4 (pp. 101-102); (7.3.3) (p. 104)"
+url = "https://arxiv.org/abs/1702.07812v3"
+fetched_from = "https://arxiv.org/pdf/1702.07812v3"
+fetched_at = "2026-11-11T00:44:13Z"
+sha256 = "c2e5861730ee8fa744bb36567b1412f65e044ee8f78d9619e6e26265d89791a6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+version_note = "arXiv v3 (2020); page locators use its pagination"
+cited_for = ["12.4", "12.5", "12.7", "14.5"]
+
+[[source]]
+id = "Zha12"
+authors = "Wei Zhang"
+title = "On arithmetic fundamental lemmas"
+year = 2012
+venue = "Inventiones mathematicae 188 (2012), 197-252"
+doi = "10.1007/s00222-011-0348-1"
+locator_scheme = "theorem"
+locator = "Conjecture 2.9 and §2.2 (p. 210); Theorem 2.10 (p. 211); Remark 11 (p. 245); Theorem 5.5 (p. 250)"
+url = "https://math.mit.edu/~wz2113/math/online/AFL.pdf"
+fetched_from = "https://math.mit.edu/~wz2113/math/online/AFL.pdf"
+fetched_at = "2026-11-11T00:53:46Z"
+sha256 = "1124eeaf782aae7cc046f8541358e9368c1d83e6d0f5a641a11a99046aea8612"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-11"
+version_note = "author copy of the published article, with the journal pagination"
+cited_for = ["9.8", "14.5"]
+
+[[source]]
+id = "Bor99"
+authors = "Richard E. Borcherds"
+title = "The Gross-Kohnen-Zagier theorem in higher dimensions"
+year = 1999
+venue = "Duke Mathematical Journal 97 (1999), no. 2, 219-233; correction 105 (2000), 183-184"
+arxiv = "alg-geom/9710002v3"
+locator_scheme = "theorem"
+locator = "Theorem 3.1 (p. 5); Theorem 4.1 (pp. 7-8); Lemmas 4.3-4.4 (pp. 8-9); Theorem 4.5 (p. 9)"
+url = "https://arxiv.org/abs/alg-geom/9710002v3"
+fetched_from = "https://arxiv.org/pdf/alg-geom/9710002v3"
+fetched_at = "2026-11-11T00:52:25Z"
+sha256 = "0a7a76a69aa2532534b72d97a1bb9fad89cab8167f1449dad0363510feb2fc5d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+version_note = "arXiv v3 (2000); page locators use its pagination"
+cited_for = ["12.5", "12.6a"]
+
+[[source]]
+id = "Bor98"
+authors = "Richard E. Borcherds"
+title = "Automorphic forms with singularities on Grassmannians"
+year = 1998
+venue = "Invent. Math. 132, 491-562 (1998)"
+doi = "10.1007/s002220050232"
+arxiv = "alg-geom/9609022v2"
+locator_scheme = "theorem"
+locator = "§6 and Theorem 6.2 (p. 24); Theorem 13.3 (p. 48)"
+url = "https://arxiv.org/abs/alg-geom/9609022v2"
+fetched_from = "https://arxiv.org/pdf/alg-geom/9609022v2"
+fetched_at = "2026-11-11T00:55:19Z"
+sha256 = "f0e76c70f57e63bb145b36ca97635312bb906787f4c521015acc03781c7702ba"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+version_note = "arXiv v2 (1997); page locators use its pagination, which differs from the journal"
+cited_for = ["12.4", "12.5", "12.6a"]
+
+[[source]]
+id = "ES"
+authors = "Stephan Ehlen, Siddarth Sankaran"
+title = "On two arithmetic theta lifts"
+year = 2018
+venue = "Compositio Mathematica 154 (2018)"
+arxiv = "1607.06545v2"
+locator_scheme = "theorem"
+locator = "Theorem 3.6 (p. 27); Theorem 4.13 (p. 36)"
+url = "https://arxiv.org/abs/1607.06545v2"
+fetched_from = "https://arxiv.org/pdf/1607.06545v2"
+fetched_at = "2026-11-11T04:16:55Z"
+sha256 = "8536b6583fd1deb2e17e17be3ce6bc71e4195078c4d007246c64a17e369bc730"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+version_note = "arXiv v2; page locators use its pagination"
+cited_for = ["12.7"]
+
+[[source]]
+id = "YZZ09"
+authors = "Xinyi Yuan, Shou-Wu Zhang, Wei Zhang"
+title = "The Gross-Kohnen-Zagier theorem over totally real fields"
+year = 2009
+venue = "Compositio Mathematica 145 (2009), 1147-1162"
+doi = "10.1112/S0010437X08003734"
+locator_scheme = "theorem"
+locator = "Theorem 1.3 (p. 1150); Proposition 3.1 (pp. 1157-1158); §4.1 (pp. 1158-1159)"
+url = "https://archive.ymsc.tsinghua.edu.cn/pacm_download/355/9138-GKZ.pdf"
+fetched_from = "https://archive.ymsc.tsinghua.edu.cn/pacm_download/355/9138-GKZ.pdf"
+fetched_at = "2026-11-11T04:17:17Z"
+sha256 = "e9b686d8cf4be822c45eed63a6fdff024099abbc163a91f920c3403fb9b5f82b"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-11"
+version_note = "published version with the journal pagination"
+cited_for = ["12.6a", "12.7"]
+
+[[source]]
+id = "KM90"
+authors = "Stephen S. Kudla, John J. Millson"
+title = "Intersection numbers of cycles on locally symmetric spaces and Fourier coefficients of holomorphic modular forms in several complex variables"
+year = 1990
+venue = "Publications mathematiques de l'IHES 71 (1990), 121-172"
+locator_scheme = "theorem"
+locator = "Theorem 2 (p. 126); Theorem 3 (p. 127)"
+url = "http://www.numdam.org/item/PMIHES_1990__71__121_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1990__71__121_0.pdf"
+fetched_at = "2026-11-11T04:17:25Z"
+sha256 = "10fb9322b4e24c502ed69580e5b16167d6b96b7a4c28caf5fc1a77daff2cb44c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+version_note = "published version (Numdam), journal pagination"
+cited_for = ["12.6a", "12.6b"]
+
+[[source]]
+id = "VZ84"
+authors = "David A. Vogan, Gregg J. Zuckerman"
+title = "Unitary representations with nonzero cohomology"
+year = 1984
+venue = "Compositio Mathematica 53 (1984), 51-90"
+locator_scheme = "theorem"
+locator = "Theorem 8.1 (p. 88)"
+url = "http://www.numdam.org/item/CM_1984__53_1_51_0/"
+fetched_from = "https://www.numdam.org/item/CM_1984__53_1_51_0.pdf"
+fetched_at = "2026-11-11T04:17:31Z"
+sha256 = "ccaaf5ad243ccb85d3db629ff7677ca5b80b7e2d71e502d21fa1b773863b78a4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+version_note = "published version (Numdam), journal pagination"
+cited_for = ["12.6a", "12.6b"]

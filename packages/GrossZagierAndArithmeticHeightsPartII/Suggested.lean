@@ -17,10 +17,11 @@ The headline theorems are:
 * the Kudla–Rapoport identity for Krämer models (He–Li–Shi–Yang, Theorem 1.3; README §8.7);
 * the unramified and the modified arithmetic Siegel–Weil formulas (Li–Zhang, Theorem 15.5.1;
   He–Li–Shi–Yang, Theorems 10.1–10.2; README §§13.8, 13.10);
-* the modularity of the CM intersection series over `ℚ` (Zhang, §9.1 and Corollary 10.4;
-  README §12.7);
+* the modularity of the CM intersection series over `ℚ` for hermitian spaces of dimension
+  `n ≥ 3` (Zhang, §9.1 and Corollary 10.4, with the Borcherds products of Bruinier–Howard–
+  Kudla–Rapoport–Yang; README §12.9);
 * the arithmetic fundamental lemma for strongly regular semisimple elements over `ℚ_p` with
-  `p ≥ n` (Zhang, Theorem 15.1; README §14.6).
+  `p ≥ n` (Zhang, Theorem 15.1; README §14.5).
 
 None of them is statable at the pins, so this file states no theorem:
 
