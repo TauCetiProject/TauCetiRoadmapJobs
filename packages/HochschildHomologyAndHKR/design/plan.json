@@ -703,7 +703,7 @@
      "id": "4.1",
      "kind": "construction",
      "name": "HochschildHKR.envModule",
-     "statement": "With Aᵉ = A ⊗[k] Aᵐᵒᵖ, bimodules are left Aᵉ-modules via TensorProduct.Algebra.module, (a⊗op b)·m = a m b, giving a k-linear equivalence with ModuleCat Aᵉ; A is an object of ModuleCat Aᵉ; a bimodule is a right Aᵉ-module by m·(a⊗op b)=b m a.",
+     "statement": "With Aᵉ = A ⊗[k] Aᵐᵒᵖ, bimodules are left Aᵉ-modules via TensorProduct.Algebra.module, (a⊗op b)·m = a m b, giving a k-linear equivalence with ModuleCat Aᵉ; A is an object of ModuleCat Aᵉ through Mathlib's instModuleTensorProductMop; a bimodule is a right Aᵉ-module by m·(a⊗op b)=b m a.",
      "hypotheses": [
       "k a commutative ring",
       "A a ring with Algebra k A"
@@ -716,6 +716,7 @@
       "mathlib:Algebra.TensorProduct",
       "mathlib:MulOpposite",
       "mathlib:TensorProduct.Algebra.module",
+      "mathlib:instModuleTensorProductMop",
       "mathlib:ModuleCat",
       "tauceti:TauCeti.BalancedTensorProduct"
      ],
@@ -856,8 +857,11 @@
       "mathlib:CategoryTheory.ProjectiveResolution.extMk",
       "mathlib:CategoryTheory.ProjectiveResolution.extMk_surjective",
       "mathlib:CategoryTheory.ProjectiveResolution.extMk_eq_zero_iff",
-      "mathlib:ModuleCat.Algebra.instLinear",
-      "tauceti:CategoryTheory.ProjectiveResolution.extLinearEquiv"
+      "mathlib:CategoryTheory.ProjectiveResolution.add_extMk",
+      "mathlib:CategoryTheory.ProjectiveResolution.smul_extMk",
+      "mathlib:CategoryTheory.ProjectiveResolution.extLinearEquivCohomologyClass",
+      "mathlib:CategoryTheory.Abelian.Ext.linearEquiv₀",
+      "mathlib:ModuleCat.Algebra.instLinear"
      ],
      "api": [],
      "tests": []
@@ -1026,9 +1030,12 @@
      },
      "prerequisites": [
       "mathlib:CategoryTheory.Abelian.Ext.comp",
+      "mathlib:CategoryTheory.Abelian.Ext.comp_hom",
       "mathlib:CategoryTheory.ProjectiveResolution.extMk",
+      "mathlib:CategoryTheory.ProjectiveResolution.extMk_hom",
       "mathlib:CategoryTheory.ProjectiveResolution.extMk_comp_mk₀",
-      "tauceti:CategoryTheory.ProjectiveResolution.isoExt_hom_comp_homologyMap"
+      "mathlib:CategoryTheory.ProjectiveResolution.mk₀_comp_extMk",
+      "mathlib:CategoryTheory.ProjectiveResolution.Hom"
      ],
      "api": [],
      "tests": []
@@ -1274,7 +1281,7 @@
       {
        "name": "antisym_dual_numbers",
        "kind": "non-example",
-       "statement": "For R=k[x]/(x²), flat not smooth, Ω²=0 while HH₂(R,R)≠0: ε^cl₂ not surjective."
+       "statement": "For R=k[x]/(x²) with k a nonzero field, R is flat but not smooth, Ω²=0 while HH₂(R,R)≠0: ε^cl₂ not surjective (for k=0 everything is 0 and ε^cl₂ is onto)."
       },
       {
        "name": "antisym_zero",
@@ -1338,7 +1345,7 @@
       {
        "name": "eval_symmetric_needed",
        "kind": "non-example",
-       "statement": "For R=k[x] and the bimodule k with x acting by 1 on the left and 0 on the right, δm(x)=m≠0 while the transpose of b kills r↦r·m, so the chain-level identification needs symmetric M."
+       "statement": "For R=k[x] and the bimodule k with x acting by 1 on the left and 0 on the right, δm(x)=m, nonzero for m≠0 (e.g. k=ℤ, m=1), while the transpose of b₁=0 kills r↦r·m, so the chain-level identification needs symmetric M; at m=0 both are 0."
       },
       {
        "name": "eval_kx",
@@ -1355,42 +1362,44 @@
     {
      "id": "7.2",
      "kind": "theorem",
-     "name": "HochschildHKR.kronecker_bijective_of_projective_homology",
-     "statement": "For a chain complex X of projective R-modules indexed by ℕ and n with H_i(X) projective for all i<n, the Kronecker map H^i(Hom_R(X,M))→Hom_R(H_i(X),M) is bijective for every R-module M and every i≤n.",
+     "name": "HochschildHKR.evalPairing_bijective_of_projective_homology",
+     "statement": "For a commutative k-algebra R with every C_j(R,R)=R⊗[k]R^{⊗j} a projective R-module (e.g. R projective over k) and n with HH_j(R,R) a projective R-module for every j<n, the evaluation pairing h_i: HH^i(R,M)→Hom_R(HH_i(R,R),M) of 7.1 is bijective for every R-module M and every i≤n; every h_i is bijective when every HH_j(R,R) is projective. Proof: transport of Tau Ceti TauCeti.ChainComplex.kronecker_bijective_of_projective_homology_lt for C_•(R,R) in ModuleCat R through 7.1; the generic complex statement is not restated.",
      "hypotheses": [
-      "R a commutative ring",
-      "X : ChainComplex (ModuleCat R) ℕ with every X_i projective",
-      "H_i(X) projective for i < n",
+      "k a commutative ring",
+      "R a commutative ring with Algebra k R",
+      "Module.Projective R (C_j(R,R)) for every j",
+      "Module.Projective R (HH_j(R,R)) for every j < n",
+      "M an R-module",
       "i ≤ n"
      ],
      "locator": {
       "source": "HKR62",
-      "where": "Lemma 4.1, lines 301–330; AV20 Proposition 1.2, lines 70–74"
+      "where": "Lemma 4.1, lines 301–330"
      },
      "prerequisites": [
-      "tauceti:TauCeti.ChainComplex.kronecker",
-      "tauceti:TauCeti.ChainComplex.kronecker_surjective_of_isSplitMono",
-      "tauceti:TauCeti.ChainComplex.extToHomology",
-      "tauceti:TauCeti.ChainComplex.exact_extToHomology_kronecker",
-      "mathlib:CategoryTheory.Abelian.Ext.eq_zero_of_projective",
-      "mathlib:Module.Projective"
+      "target:1.5",
+      "target:7.1",
+      "tauceti:TauCeti.ChainComplex.kronecker_bijective_of_projective_homology_lt",
+      "tauceti:TauCeti.ChainComplex.kronecker_bijective_of_projective_homology",
+      "mathlib:ModuleCat.projective_of_categoryTheory_projective",
+      "mathlib:Module.Projective.tensorProduct"
      ],
      "api": [],
      "tests": [
       {
-       "name": "kronecker_Z2",
-       "kind": "non-example",
-       "statement": "Over ℤ, X = (ℤ --2--> ℤ): H₀=ℤ/2, H¹(Hom(X,ℤ))=ℤ/2 but Hom(H₁,ℤ)=0, so degree one fails without projective H₀."
-      },
-      {
-       "name": "kronecker_deg0",
-       "kind": "degenerate",
-       "statement": "In degree 0 the map is always bijective: H⁰(Hom(X,M))=Hom(X₀/B₀,M)."
-      },
-      {
-       "name": "kronecker_acyclic",
+       "name": "evalPairing_bij_kx",
        "kind": "computation",
-       "statement": "For R --id--> R both sides vanish."
+       "statement": "R=k[x]: HH₀=R, HH₁=R·[1⊗x], HH_j=0 (j≥2) are free, so every h_i is bijective; h₁(∂_x)([1⊗x])=1 carries HH¹(R,R)=R·[∂_x] onto Hom_R(R·[1⊗x],R)=R."
+      },
+      {
+       "name": "evalPairing_bij_Fp_Z",
+       "kind": "compatibility",
+       "statement": "k=ℤ, R=𝔽_p (not ℤ-projective): every C_j=𝔽_p is 𝔽_p-free, HH₀=𝔽_p, HH_j=0 (j≥1); for an 𝔽_p-space M, C^i=M with δ^i=0 (i even), id (i odd), so HH⁰=M, HH^i=0 (i≥1): every h_i bijective; the hypothesis is on the terms, not k-projectivity."
+      },
+      {
+       "name": "evalPairing_dual_numbers",
+       "kind": "non-example",
+       "statement": "k=ℚ, R=ℚ[x]/(x²): the periodic resolution (x⊗1−1⊗x, x⊗1+1⊗x) gives HH₁(R,R)=R/(x) (not projective), HH₂(R,R)=xR; for M=ℚ=R/(x), HH²(R,ℚ)=ℚ and Hom_R(xR,ℚ)=ℚ but h₂(f)(x·e₂)=x·f(e₂)=0, so h₂=0. Over 𝔽₂ every HH_j(R,R)=R is free and every h_i is bijective."
       }
      ]
     },
@@ -1609,7 +1618,8 @@
       "mathlib:Module.FinitePresentation",
       "mathlib:Algebra.FormallySmooth.projective_kaehlerDifferential",
       "mathlib:exteriorPower.instFinite",
-      "tauceti:exteriorPower.instProjective"
+      "tauceti:exteriorPower.instProjective",
+      "tauceti:TauCeti.ChainComplex.kronecker_bijective_of_projective_homology"
      ],
      "api": [
       {
@@ -1668,7 +1678,10 @@
      "prerequisites": [
       "mathlib:MvPolynomial",
       "mathlib:Algebra.TensorProduct",
-      "mathlib:RingTheory.Sequence.IsWeaklyRegular"
+      "mathlib:RingTheory.Sequence.IsWeaklyRegular",
+      "mathlib:LinearEquiv.isWeaklyRegular_congr'",
+      "mathlib:MvPolynomial.span_X_image_eq_ker_aeval_ite_mem",
+      "tauceti:MvPolynomial.isWeaklyRegular_map_X"
      ],
      "api": [],
      "tests": [
@@ -1704,20 +1717,29 @@
      },
      "prerequisites": [
       "target:4.1",
+      "target:4.5",
       "target:8.1",
       "roadmap:DerivedModuleAlgebra §0.K.1",
-      "mathlib:CategoryTheory.ProjectiveResolution"
+      "mathlib:CategoryTheory.ProjectiveResolution",
+      "mathlib:CategoryTheory.ProjectiveResolution.isoLeftDerivedObj",
+      "mathlib:CategoryTheory.Abelian.Ext.linearEquiv₀",
+      "tauceti:TauCeti.koszulComplex",
+      "tauceti:TauCeti.koszulComplex.homologyZeroEquivSpan",
+      "tauceti:TauCeti.koszulComplex.exactAt_of_isWeaklyRegular",
+      "tauceti:TauCeti.zeroEquiv_koszulDifferential_zero",
+      "tauceti:TauCeti.oneEquiv_koszulDifferential_one",
+      "tauceti:CategoryTheory.ProjectiveResolution.extLinearEquiv"
      ],
      "api": [
       {
        "name": "HochschildHKR.koszul_d",
        "role": "evaluation",
-       "statement": "d(e_i)=t_i and d(e_i∧e_j)=t_i e_j − t_j e_i."
+       "statement": "d(e_i)=t_i and d(e_i∧e_j)=t_i e_j − t_j e_i (at the pin TauCeti.zeroEquiv_koszulDifferential_zero and TauCeti.oneEquiv_koszulDifferential_one with φ(e_i)=t_i)."
       },
       {
        "name": "HochschildHKR.koszul_tor_ext",
        "role": "structure",
-       "statement": "Tor_j^{Rᵉ}(R,R) ≅ ⋀^j R^m and Ext^j_{Rᵉ}(R,R) ≅ ⋀^j(R^m)^*."
+       "statement": "Tor_j^{Rᵉ}(R,R) ≅ ⋀^j R^m and Ext^j_{Rᵉ}(R,R) ≅ ⋀^j(R^m)^*: R⊗_{Rᵉ}K has zero differential, so Tor_j is its term (isoLeftDerivedObj); Hom_{Rᵉ}(K,R) has zero differential, so both vanishing hypotheses of Tau Ceti extLinearEquiv hold and Ext^j=Hom_{Rᵉ}(K_j,R) for j≥1, Ext⁰=Hom_{Rᵉ}(R,R)=R by Ext.linearEquiv₀."
       },
       {
        "name": "HochschildHKR.koszul_natural",
@@ -1760,7 +1782,8 @@
       "target:4.2",
       "target:8.2",
       "mathlib:CategoryTheory.ProjectiveResolution",
-      "tauceti:CategoryTheory.ProjectiveResolution.isoExt_hom_comp_homologyMap"
+      "mathlib:CategoryTheory.ProjectiveResolution.homotopyEquiv",
+      "mathlib:CategoryTheory.ProjectiveResolution.liftHomotopy"
      ],
      "api": [
       {
@@ -1811,6 +1834,7 @@
       "where": "lines 268–279 (the Koszul-resolution computation inside the proof of Theorem 3.1; Theorem 3.1 itself, line 210, assumes Noetherian regular rings); Ginz05 Lemma 9.3.1, line 2187; Loday98 §3.2; Weibel94 §9.4"
      },
      "prerequisites": [
+      "target:4.3",
       "target:4.4",
       "target:4.5",
       "target:6.2",
@@ -1822,7 +1846,9 @@
       "target:8.3",
       "mathlib:MvPolynomial.pderiv",
       "mathlib:CategoryTheory.ProjectiveResolution.isoLeftDerivedObj",
-      "tauceti:CategoryTheory.ProjectiveResolution.isoExt_hom_comp_homologyMap"
+      "mathlib:CategoryTheory.Functor.mapHomotopyEquiv",
+      "mathlib:Homotopy.op",
+      "mathlib:HomotopyEquiv.toHomologyIso"
      ],
      "api": [],
      "tests": []
@@ -1887,7 +1913,7 @@
    "sections": [
     "§0.K.1"
    ],
-   "what": "Koszul complex of a finite sequence in a commutative ring and its acyclicity for weakly regular sequences."
+   "what": "Koszul complex of a finite sequence in a commutative ring and its acyclicity for weakly regular sequences; at the pin this is Tau Ceti's TauCeti.koszulComplex with TauCeti.koszulComplex.homologyZeroEquivSpan and TauCeti.koszulComplex.exactAt_of_isWeaklyRegular, consumed by 8.2."
   },
   {
    "roadmap": "EulerSystemsAndKolyvaginSystems",

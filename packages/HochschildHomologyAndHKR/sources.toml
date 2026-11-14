@@ -17,7 +17,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v1"
-cited_for = ["§6.4", "§7.2", "§7.5", "§7.6"]
+cited_for = ["§6.4", "§7.5", "§7.6"]
 
 [[source]]
 id = "Loday98"

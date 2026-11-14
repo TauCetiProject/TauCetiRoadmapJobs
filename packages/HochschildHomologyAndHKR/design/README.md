@@ -48,8 +48,8 @@ This roadmap owns:
   resulting Gerstenhaber homotopy formula and graded commutativity of `HH^•(A,A)`, and the
   description of the antisymmetrisation and projection maps of RefinedTraceMethods §1.9 on the
   classical complex (Layer 6);
-- the duality between cochains and chains of a commutative algebra, the duality lemma for
-  complexes of projective modules with projective homology, the identification of
+- the duality between cochains and chains of a commutative algebra, the bijectivity of the
+  evaluation pairing below the first non-projective Hochschild homology group, the identification of
   `exteriorPower.pairingDual` on a finite projective module with the exterior-bidual evaluation
   of EulerSystemsAndKolyvaginSystems §6.1, polyvector fields `T^n_{R/k} = ⋀^n_R Der_k(R)`, the
   determinant cocycle, the unnormalised and normalised HKR maps, the canonical HKR map and the
@@ -97,8 +97,18 @@ commutative algebras), `KaehlerDifferential` with `KaehlerDifferential.linearMap
 `ExteriorAlgebra.exteriorPower` with `exteriorPower.pairingDual` and its bijectivity for finite
 free modules, `exteriorPower.instFinite`, `Algebra.Smooth`, `Abelian.Ext` with its computation
 from projective resolutions, `Functor.leftDerived`, the Dold–Kan normalisation of simplicial
-objects, `TrivSqZeroExt`; Tau Ceti's `TauCeti.BalancedTensorProduct`, the Kronecker map and
-universal coefficient sequence (`TauCeti.ChainComplex.kronecker`), `TauCeti.derivationLieAlgebra`
+objects, `TrivSqZeroExt`, the algebra `A` as a module over `A ⊗[k] Aᵐᵒᵖ`
+(`instModuleTensorProductMop`); Tau Ceti's weak regularity of distinct polynomial variables over
+every commutative ring (`MvPolynomial.isWeaklyRegular_map_X`), its Koszul complex
+`TauCeti.koszulComplex` (the formalisation of DerivedModuleAlgebra §0.K.1) with the zeroth
+homology of a finite sequence (`TauCeti.koszulComplex.homologyZeroEquivSpan`) and acyclicity for
+weakly regular sequences (`TauCeti.koszulComplex.exactAt_of_isWeaklyRegular`),
+`TauCeti.BalancedTensorProduct`, the Kronecker map
+(`TauCeti.ChainComplex.kronecker`) and its bijectivity in degree `n` for a complex of projectives
+indexed by `ℕ` whose homology is projective below `n`
+(`TauCeti.ChainComplex.kronecker_bijective_of_projective_homology_lt`, and
+`TauCeti.ChainComplex.kronecker_bijective_of_projective_homology` in every degree when all
+homology is projective), `TauCeti.derivationLieAlgebra`
 with `TauCeti.innerDerivation`, the projectivity of exterior powers of projective modules
 (`exteriorPower.instProjective`), the bimodule cofaces `TauCeti.hochschildBimoduleCoface` with
 their coface identities, the Hochschild coboundary `TauCeti.hochschildBimoduleCoboundary` with
@@ -259,16 +269,37 @@ canonical map, and the determinant map is identified as `n!` times it.
 - **Tensor algebra.** `TensorProduct`, `PiTensorProduct` with `PiTensorProduct.lift`,
   `TensorPower.mulEquiv`, `MultilinearMap`, `Algebra.TensorProduct`, `MulOpposite`,
   `TensorProduct.Algebra.module` (a `Module (A ⊗[R] B) M` from commuting actions; not an instance),
+  `instModuleTensorProductMop` (`Mathlib/Algebra/Azumaya/Defs.lean`: that structure on `A` itself,
+  `Module (A ⊗[R] Aᵐᵒᵖ) A`, for every commutative `R` and `R`-algebra `A`; an abbreviation, not an
+  instance) with `AlgHom.mulLeftRight_apply` (`a ⊗ op b` acts on `A` by `x ↦ a x b`, the convention
+  of §4.1),
   `Module.Projective.tensorProduct` (`Mathlib/Algebra/Module/Projective.lean`: `M ⊗[R₀] N` is
   `R`-projective for `M` projective over `R` and `N` projective over `R₀`), `Module.Flat`.
 - **Ext, Tor and derived functors.** `CategoryTheory.ProjectiveResolution`,
   `CategoryTheory.Abelian.Ext` with `CategoryTheory.Abelian.Ext.comp` (the Yoneda product), the
   instance `HasExt.{v} (ModuleCat.{v} R)` of `Mathlib/Algebra/Category/ModuleCat/Ext/HasExt.lean`
   (for `Small.{v} R`), `CategoryTheory.ProjectiveResolution.extMk`,
-  `CategoryTheory.ProjectiveResolution.extMk_surjective` and
-  `CategoryTheory.ProjectiveResolution.extMk_eq_zero_iff` (`Mathlib/CategoryTheory/Abelian/Projective/Ext.lean`:
-  every class of `Ext X Y n` comes from a cocycle on a projective resolution, with the
-  coboundaries identified), `CategoryTheory.Functor.leftDerived` with
+  `CategoryTheory.ProjectiveResolution.extMk_surjective`,
+  `CategoryTheory.ProjectiveResolution.extMk_eq_zero_iff`,
+  `CategoryTheory.ProjectiveResolution.add_extMk`, `CategoryTheory.ProjectiveResolution.smul_extMk`
+  and `CategoryTheory.ProjectiveResolution.extLinearEquivCohomologyClass`
+  (`Mathlib/CategoryTheory/Abelian/Projective/Ext.lean`: for any projective resolution `P` of `X`,
+  every class of `Ext X Y n` is `P.extMk f` for a cocycle `f : P_n → Y`, additively and linearly
+  in `f`, and in degree `n = p + 1` it vanishes exactly when `f` factors through `d : P_n → P_p`;
+  the linear equivalence of `Ext X Y n` with the degree-`n` cohomology classes of `P` holds in
+  every degree, with no condition on the differentials of `P`),
+  `CategoryTheory.ProjectiveResolution.extMk_hom`, `CategoryTheory.ProjectiveResolution.extMk_comp_mk₀`
+  and `CategoryTheory.ProjectiveResolution.mk₀_comp_extMk` (the class as a shifted morphism in the
+  derived category, and its composition with a degree-zero class on either side, the one on the
+  left through a morphism of resolutions `CategoryTheory.ProjectiveResolution.Hom`),
+  `CategoryTheory.Abelian.Ext.comp_hom`, `CategoryTheory.Abelian.Ext.linearEquiv₀` (`Ext⁰ = Hom`,
+  linearly), `CategoryTheory.ProjectiveResolution.homotopyEquiv` and
+  `CategoryTheory.ProjectiveResolution.liftHomotopy` (two projective resolutions of the same object
+  are homotopy equivalent, and any two lifts of a morphism are homotopic),
+  `CategoryTheory.Functor.mapHomotopyEquiv`, `Homotopy.op` and `HomotopyEquiv.toHomologyIso`
+  (additive functors preserve homotopy equivalences, homotopies pass to opposite complexes, and
+  homotopy equivalences induce isomorphisms on homology),
+  `CategoryTheory.Functor.leftDerived` with
   `CategoryTheory.ProjectiveResolution.isoLeftDerivedObj`, and the scoped instance
   `ModuleCat.Algebra.instLinear` making `ModuleCat S` linear over a commutative `S₀` with
   `Algebra S₀ S`. The group-cohomology identifications `groupCohomologyIsoExt` and the separately
@@ -298,12 +329,17 @@ canonical map, and the determinant map is identified as `n!` times it.
   finite projective module is finite projective, `Mathlib/LinearAlgebra/Dual/Lemmas.lean`), the
   `Module.IsReflexive` instance for finite projective modules (same file) and `Module.evalEquiv`
   (`P ≃ₗ[R] P**` for a reflexive `P`, `Mathlib/LinearAlgebra/Dual/Defs.lean`).
-- **Regular sequences.** `RingTheory.Sequence.IsWeaklyRegular`. Mathlib has no lemma that the
-  differences of two copies of the variables of a polynomial ring form a regular sequence
-  (§8.1).
+- **Regular sequences.** `RingTheory.Sequence.IsWeaklyRegular`,
+  `LinearEquiv.isWeaklyRegular_congr'` (`Mathlib/RingTheory/Regular/RegularSequence.lean`: weak
+  regularity transported along a semilinear equivalence, the sequence mapped by the ring map) and
+  `MvPolynomial.span_X_image_eq_ker_aeval_ite_mem` (`Mathlib/RingTheory/MvPolynomial/Ideal.lean`:
+  the ideal spanned by a set of variables is the kernel of the substitution killing them). Weak
+  regularity of the variables themselves is Tau Ceti's (below); what neither library states is its
+  transport to the differences `t_i = X_i ⊗ 1 − 1 ⊗ X_i` of the two copies of the variables in
+  `R ⊗[k] R`, which is §8.1.
 - Mathlib has no Hochschild complex of an algebra, no derivation into a bimodule over a
   noncommutative algebra, no Koszul complex and no `Tor` over a noncommutative ring; Tau Ceti's
-  bimodule coboundary and bimodule derivations are below.
+  bimodule coboundary, bimodule derivations and Koszul complex are below.
 
 ### From Tau Ceti
 
@@ -315,14 +351,18 @@ canonical map, and the determinant map is identified as `n!` times it.
   (`(M ⊗[k] L) ⊗[A] (N ⊗[k] P) ≃ (M ⊗[A] N) ⊗[k] (L ⊗[k] P)`). It is an ordinary, underived
   tensor product.
 - `TauCeti.ChainComplex.kronecker` (`TauCeti/Algebra/Homology/Kronecker.lean`): the Kronecker map
-  `Hⁱ(Hom(X,Y)) → (Hᵢ(X) ⟶ Y)` for a chain complex in a `k`-linear abelian category, with
-  `TauCeti.ChainComplex.kronecker_homologyπ`, `TauCeti.ChainComplex.kronecker_naturality` and
-  `TauCeti.ChainComplex.kronecker_surjective_of_isSplitMono` (surjective when the cycles are a
-  split subobject); `TauCeti.ChainComplex.extToHomology` and
-  `TauCeti.ChainComplex.exact_extToHomology_kronecker`
-  (`TauCeti/Algebra/Homology/UniversalCoefficient/Basic.lean`): the universal coefficient
-  sequence `0 → Ext¹(H_j(X),Y) → Hⁱ(Hom(X,Y)) → (Hᵢ(X) ⟶ Y) → 0` in degree `i = j + 1`, under the
-  hypotheses that the cycles `Z_i ⟶ X_i` and `Z_j ⟶ X_j` are split and `Z_j` is projective.
+  `Hⁱ(Hom(X,Y)) → (Hᵢ(X) ⟶ Y)` for a chain complex `X` in a `k`-linear abelian category, the
+  source being the cohomology of `ChainComplex.linearYonedaObj`, with
+  `TauCeti.ChainComplex.kronecker_homologyπ` (its value on a cocycle and a cycle) and
+  `TauCeti.ChainComplex.kronecker_naturality`.
+  `TauCeti.ChainComplex.kronecker_bijective_of_projective_homology_lt`
+  (`TauCeti/Algebra/Homology/UniversalCoefficient/Basic.lean`): for `X : ChainComplex C ℕ` with
+  every `X_i` projective and `n ∈ ℕ` with `H_j(X)` projective for every `j < n`, the Kronecker map
+  in degree `n` is bijective for every object `Y`;
+  `TauCeti.ChainComplex.kronecker_bijective_of_projective_homology` (same file): bijective in
+  every degree when every `H_j(X)` is projective. Projectivity is the categorical
+  `CategoryTheory.Projective`, which for `ModuleCat R` follows from `Module.Projective` by
+  Mathlib's instance `ModuleCat.projective_of_categoryTheory_projective`.
 - `TauCeti.hochschildBimoduleCoface`, `TauCeti.hochschildBimoduleCoface_hochschildBimoduleCoface`,
   `TauCeti.hochschildBimoduleCoboundary`, `TauCeti.hochschildBimoduleCoboundary_apply_eq_add_sum_add`,
   `TauCeti.hochschildBimoduleCoboundary_comp_hochschildBimoduleCoboundary`,
@@ -400,10 +440,31 @@ canonical map, and the determinant map is identified as `n!` times it.
   `Z^p/B^p` with the induced bracket (bilinear, graded antisymmetric, Jacobi), and the cochains
   vanishing on words containing a strict unit `e`. The complex has positive arities only: no
   arity-zero cochains, no cup product, no multiple brace, no chains.
-- `CategoryTheory.ProjectiveResolution.extLinearEquiv` and
-  `CategoryTheory.ProjectiveResolution.isoExt_hom_comp_homologyMap`
-  (`TauCeti/Algebra/Homology/Ext/ProjectiveResolution.lean`): computing `Ext` from two resolutions
-  related by a chain map over the identity.
+- `CategoryTheory.ProjectiveResolution.extLinearEquiv`
+  (`TauCeti/Algebra/Homology/Ext/ProjectiveResolution.lean`): for a projective resolution `P` of
+  `X`, an object `Y` and `n ∈ ℕ` such that `d ≫ f = 0` for every `f : P_{n+1} → Y` with
+  `d : P_{n+2} → P_{n+1}`, and `d ≫ g = 0` for every `g : P_n → Y` with `d : P_{n+1} → P_n`, the
+  linear equivalence `Hom(P_{n+1}, Y) ≅ Ext^{n+1}(X, Y)`, `f ↦ P.extMk f`. Both vanishing
+  hypotheses are part of the statement: it identifies a whole term of the `Hom`-complex with `Ext`
+  only where the adjacent differentials die against `Y`, and is used only for the Koszul
+  resolution of §8.2, never for the bar resolution of §4.4 (for `A = k = ℤ` the bar differential
+  `B₂ → B₁` is the identity).
+- `MvPolynomial.isWeaklyRegular_map_X` (`TauCeti/RingTheory/MvPolynomial/RegularSequence.lean`):
+  for every commutative ring `R` and every list `l` of indices without repetition, the variables
+  `X_i`, `i ∈ l`, form a weakly regular sequence in `MvPolynomial σ R`, with no nontriviality
+  hypothesis (the regular version `MvPolynomial.isRegular_map_X` adds `Nontrivial R`). §8.1
+  transports it to the `t_i`.
+- `TauCeti.koszulComplex` (`TauCeti/RingTheory/KoszulComplex/Basic.lean`): for a linear functional
+  `φ : M → B` on a module over a commutative ring `B`, the `ℕ`-indexed chain complex of `B`-modules
+  with terms `⋀[B]^j M` and differential the contraction by `φ`, with
+  `TauCeti.zeroEquiv_koszulDifferential_zero` (the first differential is `φ`),
+  `TauCeti.oneEquiv_koszulDifferential_one` (`u ∧ v ↦ φ(u) v − φ(v) u`),
+  `TauCeti.koszulComplex.homologyZeroEquivSpan` (`H₀ ≅ B/(x₁,…,x_m)` for the functional
+  `Fintype.linearCombination B x` on `B^m`) and `TauCeti.koszulComplex.exactAt_of_isWeaklyRegular`
+  (`TauCeti/RingTheory/KoszulComplex/Regular.lean`: `H_{j+1} = 0` for every `j` when `x` is weakly
+  regular). These are the pinned form of DerivedModuleAlgebra §0.K.1, whose own contract records
+  them; §8.2 applies them to the sequence `t` of §8.1 in `Rᵉ`. Nothing is assumed of them beyond
+  these statements.
 
 ### From TauCetiRoadmap.DGAInfinity
 
@@ -433,7 +494,9 @@ canonical map, and the determinant map is identified as `n!` times it.
 - §0.K.1 (Koszul complex of a finite sequence): for a commutative ring `B` and `x = (x₁,…,x_m)`
   in `B`, the chain complex `K(x)` with `K(x)_j = ⋀^j B^m` and `d₁(v) = Σ x_i v_i`, `H₀(K(x)) = B/(x)`,
   functoriality in the sequence, and acyclicity in positive degrees when `x` is weakly regular, so
-  that `K(x) → B/(x)` is a finite free resolution.
+  that `K(x) → B/(x)` is a finite free resolution. At the pin these clauses are Tau Ceti's
+  `TauCeti.koszulComplex` of `Fintype.linearCombination B x` with the declarations listed under
+  "From Tau Ceti", which §8.2 consumes.
 
 ### From TauCetiRoadmap.EulerSystemsAndKolyvaginSystems
 
@@ -491,12 +554,13 @@ Yoneda product. Layer 6 compares the cochain complex with the pinned positive-ar
 Tau Ceti and DGAInfinity Layer 8, the chain complex with Layer 8's chains and, for flat
 algebras, with the derived chains of KTheoryFiniteLocalFields §4.0 through RefinedTraceMethods
 §1.1, proves Gerstenhaber's homotopy formula through the transported braces, and describes the
-antisymmetrisation of RefinedTraceMethods §1.9 on the classical complex. Layer 7 proves the
-duality lemma, identifies the exterior-power pairing of a finite projective module with the
-exterior-bidual evaluation of EulerSystemsAndKolyvaginSystems §6.1, defines
-polyvector fields and the HKR maps, and proves the cohomological HKR theorem. Layer 8 computes
-the polynomial case from the Koszul resolution; it depends on Layers 1–5, §§6.2 and 6.4(a) and
-§§7.1, 7.4 and 7.5, not on the smooth HKR input of §6.4(d) and §7.6.
+antisymmetrisation of RefinedTraceMethods §1.9 on the classical complex. Layer 7 pairs cochains
+with chains, proves the evaluation pairing bijective below the first non-projective Hochschild
+homology group from Tau Ceti's Kronecker theorem, identifies the exterior-power pairing of a
+finite projective module with the exterior-bidual evaluation of EulerSystemsAndKolyvaginSystems
+§6.1, defines polyvector fields and the HKR maps, and proves the cohomological HKR theorem.
+Layer 8 computes the polynomial case from the Koszul resolution; it depends on Layers 1–5,
+§§6.2 and 6.4(a) and §§7.1, 7.4 and 7.5, not on the smooth HKR input of §6.4(d) and §7.6.
 
 ## Layer 1: Hochschild complexes with bimodule coefficients
 
@@ -904,12 +968,13 @@ as first-order deformations is the special case `M = A` over `k[ε]/ε²` and is
 
 Construct the equivalence between `A`-bimodules (with the conventions above) and `ModuleCat Aᵉ`,
 `Aᵉ = A ⊗[k] Aᵐᵒᵖ`, through `TensorProduct.Algebra.module`, `(a ⊗ op b) · m = a m b`; the bimodule `A`
-as an object of `ModuleCat Aᵉ`; and the right `Aᵉ`-module structure on a bimodule,
+as an object of `ModuleCat Aᵉ`, whose module structure is Mathlib's `instModuleTensorProductMop`
+(the same `TensorProduct.Algebra.module` on `A`); and the right `Aᵉ`-module structure on a bimodule,
 `m · (a ⊗ op b) = b m a`, used for balanced tensor products (Ginz05 §4.2, lines 751–752, and §5.1,
 lines 934–947).
 
 *Needs:* Mathlib `Algebra.TensorProduct`, `MulOpposite`, `TensorProduct.Algebra.module`,
-`ModuleCat`; Tau Ceti `TauCeti.BalancedTensorProduct`.
+`instModuleTensorProductMop`, `ModuleCat`; Tau Ceti `TauCeti.BalancedTensorProduct`.
 
 - Bimodule homomorphisms are exactly `Aᵉ`-linear maps, and the equivalence is `k`-linear.
 - The left and right `Aᵉ`-structures on a bimodule commute with the `k`-structure, and for the
@@ -956,8 +1021,8 @@ lines 747–782; HKR62 lines 414–447; Weibel94 §9.1; Loday98 §1.1).
 
 Prove that `φ ↦ (a₁,…,a_n) ↦ φ(1 ⊗ a₁ ⊗ ⋯ ⊗ a_n ⊗ 1)` is an isomorphism of cochain complexes
 `Hom_{Aᵉ}(B_•(A), M) ≅ C^•(A,M)` over every `k`, natural in `M` (Ginz05 §5.2, lines 1033–1062;
-HKR62 lines 284–298). The differential of the left side is precomposition with `b′`, as in
-`ChainComplex.linearYonedaObj`; no sign is introduced.
+HKR62 lines 480–489, for commutative `A` and `M = A`). The differential of the left side is
+precomposition with `b′`, as in `ChainComplex.linearYonedaObj`; no sign is introduced.
 
 *Needs:* §§1.2, 4.2; Mathlib `ChainComplex.linearYonedaObj`.
 
@@ -968,13 +1033,22 @@ naturally in `M`, where `Ext` is `CategoryTheory.Abelian.Ext` in `ModuleCat Aᵉ
 sends the class of a cocycle `f` to `ProjectiveResolution.extMk` of the corresponding
 homomorphism `B_n(A) → M`. In degree zero it is `M^A ≅ Hom_{Aᵉ}(A,M)` and in degree one it sends a
 derivation `D` to the class of `a₀ ⊗ a₁ ⊗ a₂ ↦ a₀ D(a₁) a₂` (Ginz05 §5.2, lines 984–988; HKR62 lines
-337–351; Weibel94 §9.1; CE56 Chapter IX).
+337–351; Weibel94 §9.1; CE56 Chapter IX). One route: through §4.3, cocycles and coboundaries of
+`C^n(A,M)` are those of `Hom_{Aᵉ}(B_•(A), M)`; `f ↦ extMk f` is additive and `k`-linear
+(`add_extMk`, `smul_extMk`), onto (`extMk_surjective`), and in degree `n ≥ 1` kills exactly the
+coboundaries (`extMk_eq_zero_iff`); in degree zero, where there are no coboundaries, it is
+injective through `extLinearEquivCohomologyClass`, and `CategoryTheory.Abelian.Ext.linearEquiv₀`
+identifies the target with `Hom_{Aᵉ}(A,M) = M^A`. No hypothesis on the differentials of the bar
+complex enters: for `A = k = M = ℤ`, `C¹ = ℤ` with `δ¹ = id`, so the degree-one cocycles are `0`
+and `HH¹ = 0 = Ext¹`, not the whole term `C¹ = ℤ`.
 
 *Needs:* §§4.2–4.3; Mathlib `CategoryTheory.Abelian.Ext`,
 `CategoryTheory.ProjectiveResolution.extMk`, `CategoryTheory.ProjectiveResolution.extMk_surjective`,
-`CategoryTheory.ProjectiveResolution.extMk_eq_zero_iff`, the instance `HasExt.{u}` on
-`ModuleCat.{u}`, `ModuleCat.Algebra.instLinear`; Tau Ceti
-`CategoryTheory.ProjectiveResolution.extLinearEquiv`.
+`CategoryTheory.ProjectiveResolution.extMk_eq_zero_iff`, `CategoryTheory.ProjectiveResolution.add_extMk`,
+`CategoryTheory.ProjectiveResolution.smul_extMk`,
+`CategoryTheory.ProjectiveResolution.extLinearEquivCohomologyClass`,
+`CategoryTheory.Abelian.Ext.linearEquiv₀`, the instance `HasExt.{u}` on `ModuleCat.{u}`,
+`ModuleCat.Algebra.instLinear`.
 
 ### 4.5 Tor over the enveloping algebra and Hochschild homology
 
@@ -1068,11 +1142,15 @@ of `X` and `Q` one of `Y`, let `f : P_p → Y` and `g : Q_q → Z` be cocycles, 
 `Abelian.Ext.comp (P.extMk f) (Q.extMk g) = s(p,q) · P.extMk (f̃_q ≫ g)`, where `s(p,q) ∈ {±1}` is a
 sign depending only on `p` and `q`, fixed by Mathlib's shift conventions for `Abelian.Ext`, with
 `s(p,0) = 1` (CE56 Chapter XI; HKR62 lines 425–431 for the products on `Ext`). The case `q = 0` is
-`CategoryTheory.ProjectiveResolution.extMk_comp_mk₀`.
+`CategoryTheory.ProjectiveResolution.extMk_comp_mk₀`; in general the composite is computed on the
+shifted morphisms of the derived category given by `extMk_hom` and `Ext.comp_hom`, and
+`CategoryTheory.ProjectiveResolution.mk₀_comp_extMk` is the corresponding statement when the
+first class has degree zero and its lift is a morphism of resolutions.
 
-*Needs:* Mathlib `CategoryTheory.Abelian.Ext.comp`, `CategoryTheory.ProjectiveResolution.extMk`,
-`CategoryTheory.ProjectiveResolution.extMk_comp_mk₀`; Tau Ceti
-`CategoryTheory.ProjectiveResolution.isoExt_hom_comp_homologyMap`.
+*Needs:* Mathlib `CategoryTheory.Abelian.Ext.comp`, `CategoryTheory.Abelian.Ext.comp_hom`,
+`CategoryTheory.ProjectiveResolution.extMk`, `CategoryTheory.ProjectiveResolution.extMk_hom`,
+`CategoryTheory.ProjectiveResolution.extMk_comp_mk₀`,
+`CategoryTheory.ProjectiveResolution.mk₀_comp_extMk`, `CategoryTheory.ProjectiveResolution.Hom`.
 
 ### 5.4 The cup product is the Yoneda product
 
@@ -1103,8 +1181,10 @@ negatives of each other (§6.2). For `A = Mat₂(k)` the cohomology algebra is `
 
 ### Dependencies
 
-Layers 1–4; Mathlib graded monoids, direct sums and `Ext` composition; Tau Ceti's comparison of
-resolutions. No roadmap supplier is used.
+Layers 1–4 (Tau Ceti's bimodule coboundary enters only through the cochains of Layer 1); Mathlib
+graded monoids, direct sums, `Ext` composition and the `Ext` classes of cocycles on projective
+resolutions (`extMk` with its composition lemmas and morphisms of resolutions). No Tau Ceti
+declaration is used directly and no roadmap supplier is used.
 
 ## Layer 6: Comparison with the graded and derived carriers
 
@@ -1307,10 +1387,13 @@ antisymmetrised chain `1 ⊗ x ⊗ y − 1 ⊗ y ⊗ x` represents `ε(dx ∧ dy
 
 ### Dependencies
 
-Layers 1–5; the pinned Tau Ceti braces, Gerstenhaber bracket, Hochschild differential and
-positive-arity Hochschild complex (`TauCeti.ReducedTensorWords.brace`,
+Layers 1–5; the pinned Tau Ceti suspension convention and DG algebras
+(`TauCeti.AInfinity.IsSuspension`, `TauCeti.IsDGAlgebra`), braces, Gerstenhaber bracket, Hochschild
+differential and positive-arity Hochschild complex (`TauCeti.ReducedTensorWords.brace`,
 `TauCeti.AInfinityAlgebra.hochschildDifferential`,
-`TauCeti.AInfinityAlgebra.PositiveHochschild.complex`); DGAInfinity Layers 0, 1 and 8;
+`TauCeti.AInfinityAlgebra.PositiveHochschild.complex`); Mathlib's embedding of `ℕ`-indexed chain
+complexes into `ℤ`-indexed cochain complexes (§6.3) and flatness of smooth algebras (§6.4);
+DGAInfinity Layers 0, 1 and 8;
 KTheoryFiniteLocalFields §4.0; RefinedTraceMethods §§1.1 and 1.9; the gap
 smooth-hkr-antisymmetrisation, used only in §6.4(d).
 
@@ -1343,29 +1426,42 @@ evaluation pairing `h_n : HH^n(R,M) → Hom_R(HH_n(R,R), M)` as this isomorphism
 - For `R = k[x]` and `M = R`, `h₁(∂_x)([1 ⊗ x]) = 1`.
 - For `R = k`, both sides vanish in positive degrees and `h₀` is the identity of `M`.
 
-### 7.2 Complexes of projective modules with projective homology
+### 7.2 The evaluation pairing below the first non-projective Hochschild homology
 
-Let `X` be a chain complex of projective `R`-modules indexed by `ℕ` and `n ∈ ℕ` with `H_i(X)`
-projective for every `i < n`. Prove that for every `R`-module `M` and every `i ≤ n`, the Kronecker
-map `H^i(Hom_R(X, M)) → Hom_R(H_i(X), M)` is bijective; in particular it is bijective in every
-degree when all `H_i(X)` are projective (HKR62 Lemma 4.1, lines 301–330; AV20 Proposition 1.2,
-lines 70–74). One route: inductively, the cycles `Z_i` are projective direct summands of `X_i` and
-the boundaries `B_i` are projective direct summands of `Z_i` for `i < n`; then the universal
-coefficient sequence of Tau Ceti applies, and `Ext¹(H_{i−1}(X), M) = 0` by
-`CategoryTheory.Abelian.Ext.eq_zero_of_projective`.
+Let `R` be a commutative `k`-algebra such that every `C_j(R,R) = R ⊗[k] R^{⊗j}` is a projective
+`R`-module for the structure of §1.5 (for instance `R` projective as a `k`-module, by
+`Module.Projective.tensorProduct`), and let `n ∈ ℕ` be such that `HH_j(R,R)` is a projective
+`R`-module for every `j < n`. Prove that for every `R`-module `M` and every `i ≤ n` the evaluation
+pairing `h_i : HH^i(R,M) → Hom_R(HH_i(R,R), M)` of §7.1 is bijective; in particular every `h_i` is
+bijective when every `HH_j(R,R)` is `R`-projective (HKR62 Lemma 4.1, lines 301–330). The
+hypothesis in degree zero is empty and `HH₀(R,R) = R` is free, so `h₀` and `h₁` are always
+bijective under the hypothesis on the terms. The proof is a transport: `h_i` is the isomorphism of
+§7.1 followed by the Kronecker map of `C_•(R,R)` in `ModuleCat R`, whose terms are projective
+objects by `ModuleCat.projective_of_categoryTheory_projective`, and Tau Ceti's
+`TauCeti.ChainComplex.kronecker_bijective_of_projective_homology_lt` in degree `i` applies, since
+`j < i ≤ n` gives `j < n`.
 
-*Needs:* Tau Ceti `TauCeti.ChainComplex.kronecker`,
-`TauCeti.ChainComplex.kronecker_surjective_of_isSplitMono`, `TauCeti.ChainComplex.extToHomology`,
-`TauCeti.ChainComplex.exact_extToHomology_kronecker`; Mathlib
-`CategoryTheory.Abelian.Ext.eq_zero_of_projective`, `Module.Projective`.
+*Needs:* §§1.5, 7.1; Tau Ceti `TauCeti.ChainComplex.kronecker_bijective_of_projective_homology_lt`,
+`TauCeti.ChainComplex.kronecker_bijective_of_projective_homology`; Mathlib
+`ModuleCat.projective_of_categoryTheory_projective`, `Module.Projective.tensorProduct`.
 
 **Checks.**
 
-- Over `R = ℤ`, the complex `ℤ --2--> ℤ` in degrees `1, 0` has `H₀ = ℤ/2`, not projective, and
-  `H¹(Hom(X,ℤ)) = ℤ/2` while `Hom(H₁(X), ℤ) = 0`: the Kronecker map fails to be injective in degree
-  `1`, so the hypothesis on `H₀` is needed.
-- In degree `0` the Kronecker map is always bijective, `H⁰(Hom(X,M)) = Hom(X₀/B₀, M)`.
-- For the acyclic complex `R --id--> R`, both sides vanish in all degrees.
+- For `R = k[x]`, which is `k`-free, `HH₀ = R`, `HH₁ = R·[1 ⊗ x]` and `HH_j = 0` for `j ≥ 2` (the
+  values of §8.4) are all free, so every `h_i` is bijective; for `M = R`, `HH¹(R,R) = R·[∂_x]` is
+  carried to `Hom_R(R·[1 ⊗ x], R) = R` by `h₁(∂_x)([1 ⊗ x]) = 1`, and `HH^i(R,R) = 0 = Hom_R(0, R)`
+  for `i ≥ 2`.
+- The hypothesis is on the terms, not on `k`-projectivity of `R`: for `k = ℤ` and `R = 𝔽_p`, every
+  `C_j(𝔽_p,𝔽_p) = 𝔽_p` is `𝔽_p`-free, `HH₀ = 𝔽_p` and `HH_j = 0` for `j ≥ 1` (§6.4 Checks); for an
+  `𝔽_p`-vector space `M` every `C^i(𝔽_p, M)` is `M` with `δ^i` equal to `0` for even `i` and the
+  identity for odd `i`, so `HH⁰ = M`, `HH^i = 0` for `i ≥ 1`, and every `h_i` is bijective,
+  although `𝔽_p` is not a projective `ℤ`-module.
+- The hypothesis on `HH₁` is needed in degree two: for `k = ℚ` and `R = ℚ[x]/(x²)`, the two-periodic
+  resolution with differentials `x ⊗ 1 − 1 ⊗ x` and `x ⊗ 1 + 1 ⊗ x` gives `HH₁(R,R) = R/(2x) = R/(x)`,
+  not projective, and `HH₂(R,R) = ker(2x) = xR`. For `M = ℚ = R/(x)`, `HH²(R,ℚ) = ℚ` and
+  `Hom_R(xR, ℚ) = ℚ`, but `h₂` sends a cochain `f` to `x·e₂ ↦ x·f(e₂) = 0`, so `h₂ = 0` is neither
+  injective nor surjective. Over `𝔽₂` the same algebra has both differentials `0` after
+  `R ⊗_{Rᵉ} −`, every `HH_j(R,R) = R` is free, and every `h_i` is bijective.
 
 ### 7.3 Exterior powers of finite projective modules
 
@@ -1489,15 +1585,17 @@ deduction of lines 528–546 leading to Theorem 5.2, line 548; Loday98 §3.4, Th
 Weibel94 §9.4, Theorem 9.4.7; AV20 Proposition 1.2, line 70; Ginz05 Theorem 9.1.3, line 2086.)
 One route: `C_n(R,R) = R ⊗_k R^{⊗n}` is a projective `R`-module (§4.2 and
 `Module.Projective.tensorProduct`); `HH_n(R,R) ≅ Ω^n_{R/k}` through `ε^cl_n` (§6.4(d)) is finite
-projective (`exteriorPower.instFinite`, `exteriorPower.instProjective`); §7.2 makes `h_n`
-bijective; §7.4 identifies `Hom_R(Ω^n, R)` with `T^n`; the evaluation formulas of §7.5 identify the
-composite with `Ψ_n` and give (3); multiplicativity of `Ψ` is associativity of `∪`; (5) follows
-from §7.4.
+projective (`exteriorPower.instFinite`, `exteriorPower.instProjective`); §7.2, that is Tau Ceti's
+`TauCeti.ChainComplex.kronecker_bijective_of_projective_homology` transported through §7.1, makes
+`h_n` bijective for every `n`; §7.4 identifies `Hom_R(Ω^n, R)` with `T^n`; the evaluation
+formulas of §7.5 identify the composite with `Ψ_n` and give (3); multiplicativity of `Ψ` is
+associativity of `∪`; (5) follows from §7.4.
 
 *Needs:* §§1.5, 4.2, 5.2, 6.4, 7.1–7.5; gap smooth-hkr-antisymmetrisation (through §6.4(d));
 Mathlib `Algebra.Smooth`, `Algebra.Smooth.flat`, `Module.Projective.tensorProduct`,
 `Module.FinitePresentation`, `Algebra.FormallySmooth.projective_kaehlerDifferential`,
-`exteriorPower.instFinite`; Tau Ceti `exteriorPower.instProjective`.
+`exteriorPower.instFinite`; Tau Ceti `exteriorPower.instProjective`,
+`TauCeti.ChainComplex.kronecker_bijective_of_projective_homology` (through §7.2).
 
 **Checks.**
 
@@ -1526,8 +1624,9 @@ free over `k`), `HH¹(R,R) = R·x∂_x` and `HH^n = 0` for `n ≥ 2`.
 
 ### Dependencies
 
-Layers 1–6; Tau Ceti's Kronecker map, universal coefficient sequence and projectivity of exterior
-powers; Mathlib's exterior powers, duals, Kähler differentials and smoothness;
+Layers 1–6; Tau Ceti's Kronecker map, its bijectivity for complexes of projectives with projective
+homology below the degree, and projectivity of exterior powers; Mathlib's exterior powers, duals,
+Kähler differentials and smoothness;
 EulerSystemsAndKolyvaginSystems §6.1 (the finite-projective exterior-bidual evaluation, §7.3) on
 the carrier of IntegralIwasawaTheory §12.6; through §6.4(d), the gap
 smooth-hkr-antisymmetrisation on RefinedTraceMethods §1.9.
@@ -1539,10 +1638,18 @@ smooth-hkr-antisymmetrisation on RefinedTraceMethods §1.9.
 For `R = MvPolynomial (Fin m) k` over any commutative `k`, prove that the elements
 `t_i = X_i ⊗ 1 − 1 ⊗ X_i` of `Rᵉ = R ⊗[k] R` form a weakly regular sequence and generate the kernel of
 the multiplication map `Rᵉ → R` (HKR62 lines 268–279; Ginz05 Lemma 9.3.1, line 2187). One route:
-`Rᵉ ≅ MvPolynomial (Fin m) R` with the second copy of the variables replaced by `Y_i = 1 ⊗ X_i − X_i ⊗ 1`,
-in which the multiplication map is evaluation at `Y = 0` and the variables form a regular sequence.
+`Rᵉ ≅ MvPolynomial (Fin m) R`, with the first factor `R ⊗ 1` as coefficients and the second copy of
+the variables replaced by `Y_i = 1 ⊗ X_i − X_i ⊗ 1 = −t_i`. Under it the multiplication map is
+evaluation at `Y = 0`, whose kernel is spanned by the `Y_i`
+(`MvPolynomial.span_X_image_eq_ker_aeval_ite_mem` for the set of all variables); Tau Ceti's
+`MvPolynomial.isWeaklyRegular_map_X` makes the `Y_i` weakly regular over the coefficient ring `R`,
+with no nontriviality hypothesis, and `LinearEquiv.isWeaklyRegular_congr'` transports this to `Rᵉ`.
+Replacing each `Y_i` by `t_i = −Y_i` changes neither the ideals `(Y₁,…,Y_j)` nor the kernel of
+multiplication by `Y_{j+1}` on their quotients, so the `t_i` are weakly regular as well.
 
-*Needs:* Mathlib `MvPolynomial`, `Algebra.TensorProduct`, `RingTheory.Sequence.IsWeaklyRegular`.
+*Needs:* Mathlib `MvPolynomial`, `Algebra.TensorProduct`, `RingTheory.Sequence.IsWeaklyRegular`,
+`LinearEquiv.isWeaklyRegular_congr'`, `MvPolynomial.span_X_image_eq_ker_aeval_ite_mem`; Tau Ceti
+`MvPolynomial.isWeaklyRegular_map_X`.
 
 **Checks.**
 
@@ -1560,11 +1667,23 @@ multiplication. Prove that it is a projective resolution of `R` in `ModuleCat R�
 `Hom_{Rᵉ}(K(R), R)` have zero differential (HKR62 lines 268–279, the Koszul resolution in the proof
 of Theorem 3.1; Ginz05 §9.3, lines 2187–2197).
 
-*Needs:* §§4.1, 8.1; DerivedModuleAlgebra §0.K.1 (Koszul complex of a finite sequence);
-Mathlib `CategoryTheory.ProjectiveResolution`.
+*Needs:* §§4.1, 4.5 (for `Tor`), 8.1; DerivedModuleAlgebra §0.K.1 (Koszul complex of a finite
+sequence); Mathlib `CategoryTheory.ProjectiveResolution`,
+`CategoryTheory.ProjectiveResolution.isoLeftDerivedObj`, `CategoryTheory.Abelian.Ext.linearEquiv₀`;
+Tau Ceti `TauCeti.koszulComplex`, `TauCeti.koszulComplex.homologyZeroEquivSpan` (with §8.1,
+`H₀(K(R)) ≅ Rᵉ/(t) ≅ R`), `TauCeti.koszulComplex.exactAt_of_isWeaklyRegular` (with §8.1, `H_j = 0`
+for `j ≥ 1`), `TauCeti.zeroEquiv_koszulDifferential_zero`, `TauCeti.oneEquiv_koszulDifferential_one`,
+`CategoryTheory.ProjectiveResolution.extLinearEquiv`.
 
-- `d(e_i) = t_i` and `d(e_i ∧ e_j) = t_i e_j − t_j e_i`, the sign of §0.K.1's degree `−1` derivation.
-- `Tor_j^{Rᵉ}(R,R) ≅ ⋀^j R^m` and `Ext^j_{Rᵉ}(R,R) ≅ ⋀^j (R^m)^*` as `R`-modules.
+- `d(e_i) = t_i` and `d(e_i ∧ e_j) = t_i e_j − t_j e_i`, the sign of §0.K.1's degree `−1` derivation
+  (at the pin, `TauCeti.zeroEquiv_koszulDifferential_zero` and
+  `TauCeti.oneEquiv_koszulDifferential_one` with `φ(e_i) = t_i`).
+- `Tor_j^{Rᵉ}(R,R) ≅ ⋀^j R^m` and `Ext^j_{Rᵉ}(R,R) ≅ ⋀^j (R^m)^*` as `R`-modules. Since
+  `R ⊗_{Rᵉ} K(R)` has zero differential, `Tor_j` is its degree-`j` term
+  (`isoLeftDerivedObj`); since `Hom_{Rᵉ}(K(R), R)` has zero differential, the two vanishing
+  hypotheses of Tau Ceti's `CategoryTheory.ProjectiveResolution.extLinearEquiv` hold in every
+  degree, so `Ext^j = Hom_{Rᵉ}(K_j, R)` for `j ≥ 1`, and `Ext⁰ = Hom_{Rᵉ}(R, R) = R` by
+  `CategoryTheory.Abelian.Ext.linearEquiv₀`.
 - The construction is natural in the ground ring `k`.
 
 **Checks.**
@@ -1581,8 +1700,9 @@ Construct the chain map `ι : K(R) → B_•(R)` over the identity of `R`,
 homotopy equivalence of projective resolutions (Ginz05 §9.2, lines 2142–2150, for the alternation
 map; HKR62 lines 448–466 for the shuffle product on the bar resolution).
 
-*Needs:* §§4.2, 8.2; Mathlib `CategoryTheory.ProjectiveResolution`; Tau Ceti
-`CategoryTheory.ProjectiveResolution.isoExt_hom_comp_homologyMap`.
+*Needs:* §§4.2, 8.2; Mathlib `CategoryTheory.ProjectiveResolution`,
+`CategoryTheory.ProjectiveResolution.homotopyEquiv`, `CategoryTheory.ProjectiveResolution.liftHomotopy`
+(a chain map over the identity is homotopic to the comparison map, hence a homotopy equivalence).
 
 - `ι` commutes with the augmentations and with the differentials; `R ⊗_{Rᵉ} ι` sends `e_I` to the
   antisymmetrised chain `Σ sgn(σ) 1 ⊗ X_{i_{σ(1)}} ⊗ ⋯ ⊗ X_{i_{σ(j)}}`.
@@ -1616,9 +1736,11 @@ regular sequence of §8.1 and not the Noetherian and regularity hypotheses of th
 statement at line 210; Ginz05 Lemma 9.3.1, line 2187, for a regular sequence in a commutative
 `k`-algebra; Loday98 §3.2, symmetric algebras over any `k`; Weibel94 §9.4).
 
-*Needs:* §§4.4, 4.5, 6.2, 6.4(a), 7.1, 7.4, 7.5, 8.2, 8.3; Mathlib `MvPolynomial.pderiv`,
-`CategoryTheory.ProjectiveResolution.isoLeftDerivedObj`; Tau Ceti
-`CategoryTheory.ProjectiveResolution.isoExt_hom_comp_homologyMap`.
+*Needs:* §§4.3, 4.4, 4.5, 6.2, 6.4(a), 7.1, 7.4, 7.5, 8.2, 8.3; Mathlib `MvPolynomial.pderiv`,
+`CategoryTheory.ProjectiveResolution.isoLeftDerivedObj`, `CategoryTheory.Functor.mapHomotopyEquiv`,
+`Homotopy.op`, `HomotopyEquiv.toHomologyIso` (the homotopy equivalence `ι` of §8.3 stays one after
+`R ⊗_{Rᵉ} −` and, through the opposite category, after `Hom_{Rᵉ}(−, R)`, so the Koszul complexes
+of §8.2 compute `HH_•` and `HH^•` through §§4.3 and 4.5).
 
 ### 8.5 The top degree and the Jacobian determinant
 
@@ -1657,8 +1779,15 @@ Jacobian cocycle of `(X₁, X₂, X₃)` represents `6` times it.
 
 ### Dependencies
 
-Layers 1–7 (§6.4(a) for the antisymmetrisation map, not §6.4(d)); DerivedModuleAlgebra §0.K.1;
-Mathlib's polynomial rings and regular sequences.
+Layers 1–7 (§6.4(a) for the antisymmetrisation map, not §6.4(d)); DerivedModuleAlgebra §0.K.1,
+consumed through its pinned form, Tau Ceti's Koszul complex `TauCeti.koszulComplex` with its
+zeroth homology and its acyclicity for weakly regular sequences (§8.2); Tau Ceti's weak
+regularity of distinct variables `MvPolynomial.isWeaklyRegular_map_X` (§8.1) and
+`CategoryTheory.ProjectiveResolution.extLinearEquiv` (§8.2); Mathlib's polynomial rings and
+partial derivatives, tensor products of algebras, regular sequences with their transport along
+equivalences, projective resolutions, `Ext` in degree zero, left derived functors, and homotopy
+equivalences of resolutions with their images under additive functors and on homology
+(§§8.2–8.4).
 
 ## Downstream consumers
 
