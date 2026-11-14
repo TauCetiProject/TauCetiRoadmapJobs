@@ -4858,7 +4858,7 @@
     },
     {
       "slug": "affinoid-line-bundles",
-      "needs": "the one-variable Tate algebra `K⟨T⟩` over a complete nonarchimedean field is a principal ideal domain, and finite projective modules over a strictly affinoid algebra satisfy effective descent along finite affinoid coverings, so that analytic line bundles on the closed unit disc are trivial.",
+      "needs": "finite projective modules over a strictly affinoid algebra over a complete nonarchimedean field satisfy effective descent along finite affinoid coverings, so that analytic line bundles on an affinoid space are the finite projective rank-one modules over its algebra.",
       "supplier": "TropicalAndBerkovichArithmetic",
       "section": "§§0.17, 0.20"
     }
