@@ -179,12 +179,12 @@ year = 1982
 venue = "Algebraic Geometry (La Rábida 1981), Lecture Notes in Mathematics 961, Springer, 314-491"
 doi = "10.1007/BFb0071291"
 locator_scheme = "page"
-locator = "pp. 585-587 of the volume, as cited by nashModificationNotes2024"
+locator = "pp. 314-491 (the whole article; background only)"
 url = "https://doi.org/10.1007/BFb0071291"
 licence_class = "none"
 status = "uncertified"
-version_note = "paywalled; cited by its locator without the text; the algebraic proof of Nobile's theorem is reproduced in nashModificationNotes2024, Section 2"
-cited_for = ["background: the Nash transform through the Grassmannian of the sheaf of differentials and the algebraic proof of Nobile's theorem, reproduced in nashModificationNotes2024 Section 2"]
+version_note = "paywalled; cited by its article range without the text, as background only. The algebraic proof of Nobile's theorem that nashModificationNotes2024 attributes to Teissier (line 151) cites a different work, its reference 21 (line 742), and is cited in the roadmap through nashModificationNotes2024 Section 2, not through this entry"
+cited_for = ["background (by title and article range only): polar multiplicities and Whitney conditions, the subject of the consumers of the Nash cotangent bundle and the Gauss map named under Downstream consumers"]
 
 [[source]]
 id = "ega1"
@@ -231,7 +231,7 @@ sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-07"
-cited_for = ["§0.3 Lemma 10.140.3 (00TT, line 17618)", "§0.5 Lemma 10.140.4 (00TU, line 17647; its proof, lines 17654-17671, uses no Noetherian hypothesis; injectivity for finitely generated separable residue fields, the isomorphism needing Omega of the residue field to vanish, of dimension the transcendence degree, line 17680) and the proof of Lemma 10.140.5 (00TV, lines 17676-17678)", "§4.2 Lemma 10.131.13 (00RW, line 15590)", "§5.4 Example 10.140.8 (00TY, lines 17720-17726): a regular non-smooth curve over F_p(t)", "Conventions Definition 10.42.1 (030O, line 4671): separable field extensions, not necessarily algebraic", "§0.7 Lemma 10.165.4 (0C30, line 21510): a separable extension is geometrically normal; Lemma 10.165.5 (06DF, line 21516): a geometrically normal algebra tensored with a normal ring is normal"]
+cited_for = ["§0.3 Lemma 10.140.3 (00TT, line 17618)", "Layer 0 Examples: Lemma 10.140.4 (00TU, line 17647), the injectivity of the cotangent-space map for a Noetherian local ring, beside the Noetherian-free bijectivity supplied by Tau Ceti and used in §§4.1 and 4.4", "§4.2 Lemma 10.131.13 (00RW, line 15590)", "§5.4 Example 10.140.8 (00TY, lines 17720-17726): a regular non-smooth curve over F_p(t)", "Conventions Definition 10.42.1 (030O, line 4671): separable field extensions, not necessarily algebraic", "§0.7 Lemma 10.165.4 (0C30, line 21510): a separable extension is geometrically normal; Lemma 10.165.5 (06DF, line 21516): a geometrically normal algebra tensored with a normal ring is normal"]
 
 [[source]]
 id = "alperModuli"

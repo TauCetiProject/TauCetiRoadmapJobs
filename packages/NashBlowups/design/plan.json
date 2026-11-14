@@ -193,48 +193,6 @@
      ]
     },
     {
-     "id": "0.5",
-     "kind": "theorem",
-     "name": "cotangentSpaceEquivKaehler",
-     "statement": "For a local k-algebra (R, m, κ), not necessarily Noetherian, with κ finite separable over k, the map m/m² → κ ⊗_R Ω_{R/k}, a ↦ 1 ⊗ da, is a κ-linear isomorphism; surjectivity holds whenever Ω_{κ/k} = 0.",
-     "hypotheses": [
-      "k a field",
-      "R a local k-algebra (no Noetherian hypothesis)",
-      "κ = R/m finite separable over k"
-     ],
-     "locator": {
-      "source": "stacksAlgebra",
-      "where": "Lemma 10.140.4 (00TU), line 17647, stated for Noetherian R and finitely generated separable κ with a proof (lines 17654–17671) that does not use the Noetherian hypothesis; injectivity holds for such κ, the isomorphism needs Ω_{κ/k} = 0 (dimension trdeg_k κ, line 17680), i.e. κ finite separable; and the exact sequence in the proof of Lemma 10.140.5 (00TV), lines 17676–17678"
-     },
-     "prerequisites": [
-      "mathlib:retractionKerCotangentToTensorEquivSection",
-      "mathlib:KaehlerDifferential.exact_kerCotangentToTensor_mapBaseChange",
-      "mathlib:Algebra.FormallyEtale.of_isSeparable"
-     ],
-     "tests": [
-      {
-       "name": "cotangentSpaceEquivKaehler_line",
-       "kind": "computation",
-       "statement": "R = k[x]_(x): the class of x maps to dx"
-      },
-      {
-       "name": "cotangentSpaceEquivKaehler_field",
-       "kind": "degenerate",
-       "statement": "R = k: both sides are zero"
-      },
-      {
-       "name": "cotangentSpace_inseparable_counterexample",
-       "kind": "non-example",
-       "statement": "k = 𝔽_p(t), R = k[x]_(x^p − t): the nonzero class of x^p − t maps to d(x^p − t) = 0"
-      },
-      {
-       "name": "cotangentSpaceEquivKaehler_nonNoetherian",
-       "kind": "compatibility",
-       "statement": "R = k[x_1, x_2, …] localised at (x_1, x_2, …): x_i ↦ dx_i is an isomorphism of infinite-dimensional spaces; the Noetherian hypothesis is not needed"
-      }
-     ]
-    },
-    {
      "id": "0.6",
      "kind": "theorem",
      "name": "AlgebraicGeometry.smooth_iff_isRegularLocalRing_closedPoints",
@@ -803,6 +761,7 @@
       "where": "proof of Theorem 2, lines 202–203"
      },
      "prerequisites": [
+      "target:0.3",
       "target:2.1",
       "target:2.3",
       "target:2.5"
@@ -811,24 +770,24 @@
       {
        "name": "nashIterate_zero / nashIterate_succ",
        "role": "evaluation",
-       "statement": "X^{(0)} = X and X^{(i+1)} = nashBlowup of X^{(i)}"
+       "statement": "X^{(0)} = X with the identity, X^{(i+1)} = nashBlowup of X^{(i)} with the same d and composite map to X; the j-th iterate of X^{(i)} is X^{(i+j)}"
       },
       {
        "name": "nashIterate_setting",
        "role": "structure",
-       "statement": "every iterate of X in the Setting is in the Setting"
+       "statement": "if X is in the Setting with this d, every iterate X^{(i)} is in the Setting with the same d (2.3)"
       },
       {
        "name": "nashIterationResolves_iff",
        "role": "characterisation",
-       "statement": "NashIterationResolves X d ↔ ∃ i, Smooth (X^{(i)} → Spec k)"
+       "statement": "NashIterationResolves X d ↔ ∃ i, Smooth (X^{(i)} → Spec k); for X in the Setting such an X^{(i)} is smooth of relative dimension d (0.3)"
       }
      ],
      "tests": [
       {
        "name": "nashIterate_smooth",
        "kind": "degenerate",
-       "statement": "X smooth: X^{(i)} ≅ X for all i, resolved at i = 0"
+       "statement": "X smooth over k of relative dimension d: X^{(i)} ≅ X for all i, resolved at i = 0"
       },
       {
        "name": "nashIterate_cusp_char0",
@@ -839,6 +798,11 @@
        "name": "nashIterate_cusp_char2",
        "kind": "non-example",
        "statement": "cusp in characteristic 2: X^{(i)} ≅ X for all i, never resolved"
+      },
+      {
+       "name": "nashIterate_wrong_dimension",
+       "kind": "non-example",
+       "statement": "cusp in characteristic 2 with d = 2: X_sm^{(2)} = ∅, X^{(1)} = ∅ is smooth, so NashIterationResolves X 2 holds while NashIterationResolves X 1 fails; 𝔸² with d = 1 has X^{(1)} = ∅; the iterates are meaningful only for X in the Setting with its own d"
       }
      ]
     }
@@ -877,7 +841,12 @@
       {
        "name": "gauss_cusp",
        "kind": "computation",
-       "statement": "for the cusp Φ(t) = [1 : 3t/2] and the closure is ≅ 𝔸¹"
+       "statement": "for the cusp over a field of characteristic 0 or ≥ 5, Φ(t) = [1 : 3t/2] and the closure of the graph is {(t², t³, [1 : 3t/2])} ≅ 𝔸¹ (3/2 is a unit, the coordinate recovers t; it is 4t in characteristic 5)"
+      },
+      {
+       "name": "gauss_cusp_small_char",
+       "kind": "non-example",
+       "statement": "cusp in characteristic 3: df = 2y dy, Φ constant [1 : 0]; in characteristic 2: df = x² dx, Φ constant [0 : 1]; both graph closures are X × {Φ} ≅ X, the cusp with coordinate ring k[t², t³], consistent with X* ≅ X (2.5)"
       },
       {
        "name": "gauss_affineSpace",
@@ -932,8 +901,9 @@
      "id": "3.3",
      "kind": "theorem",
      "name": "AlgebraicGeometry.nashBlowup_hypersurface",
-     "statement": "For f ∈ k[x_1, …, x_n] with X = V(f) ⊆ 𝔸ⁿ_k reduced, pure of dimension n − 1, with dense smooth locus, X* ≅ Bl_{J_f} X over X, where J_f is the image of (∂f/∂x_1, …, ∂f/∂x_n).",
+     "statement": "For n ≥ 1 and f ∈ k[x_1, …, x_n] with X = V(f) ⊆ 𝔸ⁿ_k reduced, pure of dimension n − 1, with dense smooth locus, X* ≅ Bl_{J_f} X over X, where J_f is the image of (∂f/∂x_1, …, ∂f/∂x_n).",
      "hypotheses": [
+      "1 ≤ n",
       "X = V(f) reduced, pure of dimension n − 1, dense smooth locus"
      ],
      "locator": {
@@ -959,7 +929,12 @@
       {
        "name": "jacobian_xp_yq",
        "kind": "computation",
-       "statement": "x^p − y^q in characteristic p: J = (y^{q−1}) principal, ν an isomorphism, curve singular"
+       "statement": "x^p − y^q in characteristic p with q ≥ 2 and gcd(p, q) = 1: the integral curve t ↦ (t^q, t^p), singular at the origin (f ∈ m²), J = (q y^{q−1}) principal with q a unit, ν an isomorphism; q = 1 gives the smooth line Spec k[x] with J = (1); p | q gives a non-reduced curve"
+      },
+      {
+       "name": "hypersurface_ambient_zero",
+       "kind": "non-example",
+       "statement": "n = 0, f = 0: X = Spec k is reduced, smooth, pure of dimension 0 = n − 1 in ℕ, but J_f = 0, Bl_0 X = ∅ ≠ X* = Spec k; excluded by n ≥ 1. n = 1, f = x_1: J_f = (1), both sides Spec k"
       }
      ]
     }
@@ -973,18 +948,21 @@
      "id": "4.1",
      "kind": "theorem",
      "name": "exists_coordinates_of_kaehler_surjection",
-     "statement": "For a local k-algebra (R, m, κ) and a surjection q : Ω_{R/k} → R^d there are x_1, …, x_d ∈ R and k-derivations ∂_i with ∂_i(x_j) = δ_ij and Ω_{R/k} = (⊕ R dx_j) ⊕ ker q; if κ is finite separable over k the x_j can be taken in m.",
+     "statement": "For a local k-algebra (R, m, κ) and a surjection q : Ω_{R/k} → R^d there are x_1, …, x_d ∈ R and k-derivations ∂_i with ∂_i(x_j) = δ_ij and Ω_{R/k} = (⊕ R dx_j) ⊕ ker q; if κ is separable algebraic over k (Algebra.IsSeparable k κ) the x_j can be taken in m, because m/m² → κ ⊗_R Ω_{R/k} is then bijective (Tau Ceti kerCotangentToTensor_bijective_of_formallyEtale with κ formally étale over k).",
      "hypotheses": [
       "k a field",
       "R local k-algebra",
-      "q surjective"
+      "q surjective",
+      "for the choice in m: Algebra.IsSeparable k κ"
      ],
      "locator": {
       "source": "nashModificationNotes2024",
       "where": "Section 2, lines 194–197, and Section 5, lines 484–501; duarteNunezBetancourt2020 proof of Theorem 3.10, lines 263–268"
      },
      "prerequisites": [
-      "target:0.5",
+      "tauceti:KaehlerDifferential.kerCotangentToTensor_bijective_of_formallyEtale",
+      "mathlib:Algebra.FormallyEtale.of_isSeparable",
+      "mathlib:IsLocalRing.ker_residue",
       "mathlib:Derivation",
       "mathlib:KaehlerDifferential"
      ],
@@ -1003,6 +981,11 @@
        "name": "coordinates_zero",
        "kind": "degenerate",
        "statement": "d = 0: no coordinates, ker q = Ω_{R/k}"
+      },
+      {
+       "name": "coordinates_inseparable_residue",
+       "kind": "non-example",
+       "statement": "k = 𝔽_p(t), R = k[x]_(x^p − t), q(dx) = 1: x_1 = x works, but d(a(x^p − t)) = (x^p − t)da, so no coordinate lies in m; separability of κ is needed for the second clause"
       }
      ]
     },
@@ -1129,13 +1112,14 @@
      },
      "prerequisites": [
       "target:0.3",
-      "target:0.5",
       "target:0.6",
       "target:1.1",
       "target:4.1",
       "target:4.2",
       "target:4.3",
       "roadmap:SchemeAndStackFoundations §0.7",
+      "tauceti:KaehlerDifferential.kerCotangentToTensor_bijective_of_formallyEtale",
+      "mathlib:Algebra.FormallyEtale.of_isSeparable",
       "mathlib:IsRegularLocalRing"
      ],
      "tests": [
@@ -1551,7 +1535,7 @@
      "id": "7.1",
      "kind": "definition",
      "name": "AlgebraicGeometry.normalizedNashIterate",
-     "statement": "Y_0 = X, Y_{i+1} = (Y_i)̄*; NormalizedNashIterationResolves X d means some Y_i → Spec k is smooth; if X is smooth, X^{(i)} ≅ X ≅ Y_i for all i.",
+     "statement": "Y_0 = X, Y_{i+1} = (Y_i)̄* with the same d and composite maps to X; NormalizedNashIterationResolves X d means some Y_i → Spec k is smooth; if X is in the Setting and smooth over k (so smooth of relative dimension d), X^{(i)} ≅ X ≅ Y_i over X for all i.",
      "hypotheses": [
       "k a field",
       "X locally of finite type over k",
@@ -1562,6 +1546,8 @@
       "where": "Introduction, lines 28–32 and 52–55"
      },
      "prerequisites": [
+      "target:0.3",
+      "target:2.5",
       "target:2.7",
       "target:6.1",
       "target:6.4"
@@ -1570,17 +1556,27 @@
       {
        "name": "normalizedNashIterate_zero / _succ",
        "role": "evaluation",
-       "statement": "Y_0 = X, Y_{i+1} = normalizedNashBlowup of Y_i"
+       "statement": "Y_0 = X with the identity, Y_{i+1} = normalizedNashBlowup of Y_i with the same d and composite map to X; the j-th normalised iterate of Y_i is Y_{i+j}"
       },
       {
        "name": "normalizedNashIterate_setting",
        "role": "structure",
-       "statement": "for X in the Setting each Y_i (i ≥ 1) is normal and in the Setting"
+       "statement": "for X in the Setting each Y_i is in the Setting with the same d, and Y_i is normal for i ≥ 1 (6.1); Y_0 = X is normal only when X is"
       },
       {
        "name": "nashIterate_of_smooth / normalizedNashIterate_of_smooth",
        "role": "characterisation",
-       "statement": "X smooth implies X^{(i)} ≅ X ≅ Y_i over X"
+       "statement": "X in the Setting and smooth implies X^{(i)} ≅ X ≅ Y_i over X for all i (2.5, 6.4)"
+      },
+      {
+       "name": "normalizedNashIterationResolves_iff",
+       "role": "characterisation",
+       "statement": "NormalizedNashIterationResolves X d ↔ ∃ i, Smooth (Y_i → Spec k)"
+      },
+      {
+       "name": "normalizedNashIterate_stable",
+       "role": "structure",
+       "statement": "for X in the Setting, if Y_i is smooth then Y_j ≅ Y_i for all j ≥ i; likewise if X^{(i)} is smooth then X^{(j)} ≅ X^{(i)} for all j ≥ i (Y_i is smooth of relative dimension d by 0.3)"
       }
      ],
      "tests": [
@@ -1597,7 +1593,7 @@
       {
        "name": "normalizedIterate_zero",
        "kind": "degenerate",
-       "statement": "Y_0 = X, normal or not"
+       "statement": "Y_0 = X, normal or not: for the cusp in characteristic 2, Y_0 is the non-normal cusp, Y_1 = 𝔸¹ is normal, X^{(1)} is the cusp, three distinct values; normality needs i ≥ 1"
       }
      ]
     },

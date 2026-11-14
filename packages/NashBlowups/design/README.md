@@ -31,9 +31,9 @@ annihilators, Seidenberg's lemma on derivation-stable ideals, coordinates from a
 the differentials, the `p`-monomial operators and the freeness of the Frobenius pushforward of a
 normal local ring; and the interface statements of Layer 0 on Tau Ceti's sheaf of relative
 differentials (the comparison map, base change, closed immersions, the rank on the smooth locus),
-on Grassmannians along a surjection, on cotangent spaces at points with separable residue field, on
-smoothness at closed points and on the normality of the base change of a normal scheme along a
-separable extension of the ground field (§0.7, which no other roadmap states and which §6.3 needs).
+on Grassmannians along a surjection, on smoothness at closed points and on the normality of the base
+change of a normal scheme along a separable extension of the ground field (§0.7, which no other
+roadmap states and which §6.3 needs).
 
 **Supplied elsewhere and cited.** The Grassmannian of locally free rank-`r` quotients of a
 quasi-coherent sheaf of finite type, its universal quotient, classifying maps, base change, properness
@@ -59,7 +59,10 @@ operator on fields of characteristic zero. The sheaf `Ω_{X/R}` of a scheme over
 derivation, quasi-coherence, finite presentation, restriction to open subschemes, finite local freeness and rank
 on smooth schemes, pure dimension, the blowup of a scheme along an ideal sheaf with its universal
 property, exterior powers of sheaves of modules, the reduced-source factorisation through a
-vanishing ideal and the recognition criterion for a relative normalisation are in the pinned Tau Ceti;
+vanishing ideal, the recognition criterion for a relative normalisation and the bijectivity of the
+conormal map `I/I² → S ⊗_P Ω_{P/R}` of a surjection `P → S` onto a formally étale algebra (hence the
+identification of the cotangent space `m/m²` of a local `k`-algebra, Noetherian or not, whose residue
+field `κ` is separable algebraic over `k` with `κ ⊗_R Ω_{R/k}`, used in §§4.1 and 4.4) are in the pinned Tau Ceti;
 the smooth locus, relative normalisation, scheme-theoretic images, the module Grassmannian functor,
 Kähler differentials of algebras and separability of field extensions that need not be algebraic are in
 the pinned Mathlib.
@@ -147,10 +150,12 @@ planned.
   residue field extensions is universally injective.
 - `Module.Grassmannian` (`Mathlib/RingTheory/Grassmannian.lean`, quotient convention).
 - `KaehlerDifferential.tensorKaehlerEquiv` (`Mathlib/RingTheory/Kaehler/TensorProduct.lean`),
-  `KaehlerDifferential.mapBaseChange_surjective` and
-  `KaehlerDifferential.exact_kerCotangentToTensor_mapBaseChange` (`Mathlib/RingTheory/Kaehler/Basic.lean`),
-  `retractionKerCotangentToTensorEquivSection` (`Mathlib/RingTheory/Smooth/Kaehler.lean`), `Derivation`,
-  `Algebra.FormallyEtale` with `Algebra.FormallyEtale.of_isSeparable` (`Mathlib/RingTheory/Etale/Field.lean`), `IsRegularLocalRing`, `IsRegularRing`
+  `KaehlerDifferential.mapBaseChange_surjective` and `KaehlerDifferential.kerCotangentToTensor` (the map
+  `I/I² → B ⊗_A Ω[A⁄R]`, `a ↦ 1 ⊗ da`, for `I` the kernel of `A → B`; `Mathlib/RingTheory/Kaehler/Basic.lean`),
+  `IsLocalRing.ker_residue` (the kernel of the residue map is the maximal ideal;
+  `Mathlib/RingTheory/LocalRing/ResidueField/Basic.lean`), `Derivation`, `Algebra.FormallyEtale` with
+  `Algebra.FormallyEtale.of_isSeparable` (a separable algebraic extension of fields is formally étale;
+  `Mathlib/RingTheory/Etale/Field.lean`), `IsRegularLocalRing`, `IsRegularRing`
   (`Mathlib/RingTheory/RegularLocalRing/Defs.lean`), `frobenius`, `IsIntegrallyClosed`,
   `IsDiscreteValuationRing`, `PerfectField`, `PerfectClosure`, `IsPurelyInseparable`.
 
@@ -191,6 +196,13 @@ planned.
   (`TauCeti/AlgebraicGeometry/Normalization/IsIso.lean`): `normalizationDesc` is an isomorphism iff over every
   affine open `U ⊆ Y` the sections of `T` over the preimage of `U` map injectively into those of `X` with image
   containing every element integral over `Γ(Y, U)`.
+- `KaehlerDifferential.kerCotangentToTensor_bijective_of_formallyEtale`
+  (`TauCeti/RingTheory/Kaehler/Conormal.lean`): for a surjection `P → S` of `R`-algebras with `S` formally étale
+  over `R`, Mathlib's `KaehlerDifferential.kerCotangentToTensor` is bijective; no finiteness or Noetherian
+  hypothesis. For a local `k`-algebra `(R, m, κ)` with `κ` separable algebraic over `k` it applies to `R → κ`,
+  whose kernel is `m` (`IsLocalRing.ker_residue`), with `κ` formally étale over `k` by
+  `Algebra.FormallyEtale.of_isSeparable`: the map `m/m² → κ ⊗_R Ω_{R/k}`, `a ↦ 1 ⊗ da`, is bijective, and the
+  `κ`-linear equivalence used in §§4.1 and 4.4 is this map bundled with its bijectivity.
 
 ### From TauCetiRoadmap.AlgebraicModuliForArithmeticGeometry
 
@@ -381,35 +393,6 @@ Right exactness also keeps `h*E' → h*E` surjective with kernel the image of `h
 
 *Needs:* AlgebraicModuliForArithmeticGeometry §1.3 (`coherentGrassmannian`); Mathlib `IsClosedImmersion`.
 
-### 0.5 Cotangent spaces at points with separable residue field
-
-Prove *cotangentSpaceEquivKaehler*: for a field `k` and a local `k`-algebra `(R, m, κ)`, not necessarily
-Noetherian, whose residue field is finite separable over `k`, the map `m/m² → κ ⊗_R Ω_{R/k}`, `a ↦ 1 ⊗ da`,
-is a `κ`-linear isomorphism (stacksAlgebra, Lemma 10.140.4, tag 00TU, line 17647, for injectivity: it is
-stated for Noetherian `R`, but its proof, lines 17654–17671, replaces `R` by `R/m²` and lifts `κ` into it,
-and uses the Noetherian hypothesis nowhere; the lemma allows any finitely generated separable `κ`, and
-injectivity holds for such `κ` by the same proof, but surjectivity needs `Ω_{κ/k} = 0`, and for such `κ` the
-dimension of `Ω_{κ/k}` is `trdeg_k κ` (line 17680), so the isomorphism is the case of `κ` finite separable; the
-exact sequence in the proof of Lemma 10.140.5, tag 00TV, lines 17676–17678, with `Ω_{κ/k} = 0`, for
-surjectivity). Route: `κ` is formally étale over `k`
-(`Algebra.FormallyEtale.of_isSeparable`), so `R/m² → κ` has a `k`-algebra section; Mathlib's
-`retractionKerCotangentToTensorEquivSection` (for any surjective algebra map, no finiteness hypothesis)
-turns it into a retraction of `m/m² → κ ⊗ Ω_{R/k}`; surjectivity is
-`KaehlerDifferential.exact_kerCotangentToTensor_mapBaseChange` and holds whenever `Ω_{κ/k} = 0`.
-
-**Checks.**
-
-- For `R = k[x]_{(x)}` the map sends the class of `x` to `dx`, a basis on both sides.
-- For `R = k` both sides are zero.
-- For `k = 𝔽_p(t)` and `R = k[x]_{(x^p − t)}`, `κ = k(t^{1/p})` is inseparable and the class of
-  `x^p − t ≠ 0` in `m/m²` maps to `d(x^p − t) = 0`: separability is needed for injectivity.
-- For the non-Noetherian `R = k[x_1, x_2, …]` localised at `(x_1, x_2, …)`, `m/m²` has basis the classes of
-  the `x_i` and `κ ⊗ Ω_{R/k}` has basis the `1 ⊗ dx_i`, and the map is `x_i ↦ dx_i`: an isomorphism of
-  infinite-dimensional `k`-spaces, so a statement requiring `R` Noetherian would be needlessly narrow.
-
-*Needs:* Mathlib `retractionKerCotangentToTensorEquivSection`,
-`KaehlerDifferential.exact_kerCotangentToTensor_mapBaseChange`, `Algebra.FormallyEtale.of_isSeparable`.
-
 ### 0.6 Smoothness at closed points over a perfect field
 
 Prove *smooth_iff_isRegularLocalRing_closedPoints*: for `X` locally of finite type over a perfect field
@@ -467,6 +450,15 @@ normality being local (SchemeAndStackFoundations §0.30).
 For `𝔸¹ → 𝔸²`, `t ↦ (t², t³)`, the comparison map of §0.1 is `dx ↦ 2t dt`, `dy ↦ 3t² dt`. The
 surjection `O² → Ω_{X/k}` for the cusp `X = V(y² − x³) ⊆ 𝔸²` embeds `Gr_1(Ω_{X/k})` in `X × ℙ¹` (§0.4),
 with fibre `ℙ¹` over the origin and a single point elsewhere.
+
+The cotangent-space identification that §§4.1 and 4.4 import from Tau Ceti (Exact supplier contracts,
+`KaehlerDifferential.kerCotangentToTensor_bijective_of_formallyEtale`) needs no Noetherian hypothesis, whereas
+stacksAlgebra, Lemma 10.140.4, tag 00TU, line 17647, states injectivity for Noetherian `R`. For `R = k[x]_{(x)}`
+it sends the class of `x` to `dx`, a basis on both sides; for `R = k` both sides are zero; for the non-Noetherian
+`R = k[x_1, x_2, …]` localised at `(x_1, x_2, …)` it sends the classes of the `x_i`, a basis of `m/m²`, to the
+`1 ⊗ dx_i`, a basis of `κ ⊗_R Ω_{R/k}`. For `k = 𝔽_p(t)` and `R = k[x]_{(x^p − t)}`, whose residue field
+`k(t^{1/p})` is inseparable over `k` (so not formally étale), the class of `x^p − t`, which spans `m/m²`, maps to
+`d(x^p − t) = 0`: the separability hypothesis cannot be dropped.
 
 ### Dependencies
 
@@ -755,16 +747,30 @@ points of `X`, which lie in `X_sm` (§1.1); then §1.5 with the independence of 
 
 Define *nashIterate*: `X^{(0)} = X` and `X^{(i+1)} = (X^{(i)})*` (with the same `d`), with the composite maps
 `X^{(i)} → X` (nobile1975, proof of Theorem 2, lines 202–203). Define *NashIterationResolves* `X d` as
-`∃ i, X^{(i)} → Spec k is smooth`. By §2.3 every iterate of `X` in the Setting is in the Setting.
+`∃ i, X^{(i)} → Spec k is smooth`.
+
+- Evaluation: `X^{(0)} = X` with the identity of `X`, and `X^{(i+1)}` is the Nash blowup of `X^{(i)}` (§2.1, with the
+  same `d`), its map to `X` being `ν` for `X^{(i)}` followed by `X^{(i)} → X`. Consequently the `j`-th iterate of
+  `X^{(i)}` is `X^{(i+j)}`, for all `i`, `j`.
+- Preservation of the Setting: if `X` is in the Setting with this `d`, then every `X^{(i)}` is in the Setting with the
+  same `d` (§2.3, by induction on `i`).
+- Resolution predicate: `NashIterationResolves X d` holds iff `X^{(i)} → Spec k` is smooth for some `i`; for `X` in the
+  Setting, such an `X^{(i)}`, being pure of dimension `d`, is smooth of relative dimension `d` (§0.3).
 
 **Checks.**
 
-- If `X` is smooth then `X^{(i)} ≅ X` for all `i` (§2.5), and the iteration resolves `X` with `i = 0`.
+- If `X` is smooth over `k` of relative dimension `d` then `X^{(i)} ≅ X` for all `i` (§2.1), and the iteration resolves
+  `X` with `i = 0`.
 - The cusp in characteristic `0` is resolved with `i = 1`.
 - The cusp in characteristic `2` has `X^{(i)} ≅ X` for all `i` (§2.5), so the iteration does not resolve it:
   the predicate depends on the characteristic.
+- For the cusp in characteristic `2` with `d = 2` instead of its dimension `1`, `Ω_{X/k}` has rank `1` on `X_sm`, so
+  `X_sm^{(2)} = ∅` and `X^{(1)} = ∅`, which is smooth: `NashIterationResolves X 2` holds although
+  `NashIterationResolves X 1` fails (previous Check). Likewise `𝔸²_k` with `d = 1` has `X^{(1)} = ∅ ≇ 𝔸²`. The
+  predicate and the iterates carry meaning only for `X` in the Setting with its own `d`, which is how Layer 7 uses
+  them.
 
-*Needs:* §§2.1, 2.3, 2.5.
+*Needs:* §§0.3, 2.1, 2.3, 2.5.
 
 ### Examples
 
@@ -793,7 +799,14 @@ maps, and a closed immersion preserves reduced closures. Independence of the emb
 **Checks.**
 
 - For the line `y = 2x` in `𝔸²`, `Φ` is constant with value `[1 : 2]` (the convention witness).
-- For the cusp, `Φ(t) = [1 : 3t/2]` on `X_sm` and the closure of the graph is `{(t², t³, [1 : 3t/2])} ≅ 𝔸¹`.
+- For the cusp `y² = x³` over a field of characteristic `0` or `≥ 5`, `Φ(t) = [1 : 3t/2]` on `X_sm` and the closure of
+  the graph is `{(t², t³, [1 : 3t/2])} ≅ 𝔸¹`: `3/2` is a unit, so the Grassmann coordinate `3t/2` (which is `4t` in
+  characteristic `5`) recovers `t`.
+- For the cusp in characteristic `3`, `df = 2y dy`, so `dy = 0` on `X_sm` (where `y` is a unit) and `Φ` is the
+  constant `[1 : 0]`; in characteristic `2`, `df = x² dx`, so `dx = 0` on `X_sm` and `Φ` is the constant `[0 : 1]`. In
+  both cases the closure of the graph is `X × {Φ} ≅ X`, the cusp, with coordinate ring `k[t², t³]` rather than `k[t]`,
+  in agreement with `X* ≅ X` (§2.5): the formula `[1 : 3t/2]` and the conclusion `≅ 𝔸¹` need characteristic `0` or
+  `≥ 5`.
 - For `X = 𝔸ⁿ` itself, `Φ` is the constant map to the single point of `Gr_n(kⁿ)` and the closure is `X`.
 
 *Needs:* §§0.2, 0.4, 1.2, 2.1; AlgebraicModuliForArithmeticGeometry §1.3.
@@ -824,16 +837,17 @@ denominators of the images of generators by a nonzerodivisor.
   `Bl_I X = X = X*`.
 - For the cusp in characteristic `0`, `I = (y, x²)` (§3.3) and `Bl_I X = 𝔸¹`; in characteristic `2`, `I = (x²)`
   is principal, generated by a nonzerodivisor, and `Bl_I X = X` (`isIso_blowupToBase_iff`).
-- For `I = 0` and `φ = 0`, `φ` is surjective onto `I` but not an isomorphism over `X_sm`, and `Bl_0 X = ∅ ≠ X*`:
-  the isomorphism hypothesis cannot be dropped.
+- For nonempty `X`, `I = 0` and `φ = 0`, `φ` is surjective onto `I` but not an isomorphism over `X_sm`, and
+  `Bl_0 X = ∅ ≠ X*` (the Rees algebra of the zero ideal has no part of positive degree): the isomorphism hypothesis
+  cannot be dropped.
 
 *Needs:* §§1.3, 1.4, 2.1; Tau Ceti `IdealSheafData.blowup`, `blowupToBase`, `blowupLift`, `blowup_hom_ext`,
 `isIso_blowupToBase_iff`, `SheafOfModules.exteriorPower`.
 
 ### 3.3 Hypersurfaces
 
-Prove *nashBlowup_hypersurface*: let `f ∈ k[x_1, …, x_n]` with `X = V(f) ⊆ 𝔸ⁿ_k` reduced, pure of dimension
-`n − 1`, with dense smooth locus, and let `J_f ⊆ O_X` be the image of the ideal `(∂f/∂x_1, …, ∂f/∂x_n)`. Then
+Prove *nashBlowup_hypersurface*: let `n ≥ 1` and `f ∈ k[x_1, …, x_n]` with `X = V(f) ⊆ 𝔸ⁿ_k` reduced, pure of
+dimension `n − 1`, with dense smooth locus, and let `J_f ⊆ O_X` be the image of the ideal `(∂f/∂x_1, …, ∂f/∂x_n)`. Then
 `X* ≅ Bl_{J_f} X` over `X` (nobile1975, Remark 2, lines 129–133; Examples 1 and 2, lines 136–141). Route: the
 map `∧^{n−1} Ω_{X/k} → O_X`, `ω ↦ (df ∧ ω)/(dx_1 ∧ … ∧ dx_n)`, sends
 `dx_1 ∧ … ∧ dx_j^ ∧ … ∧ dx_n ↦ (−1)^{j−1} ∂f/∂x_j`, is well defined because `df ∧ df = 0`, has image `J_f`,
@@ -845,14 +859,22 @@ and is an isomorphism over `X_sm` (a surjection of invertible sheaves there); ap
   origin, `ν` not an isomorphism), `(x²)` in characteristic `2` and `(y)` in characteristic `3` (principal,
   `ν` an isomorphism).
 - Node `xy`: `J_f = (y, x)` is the maximal ideal of the origin and `Bl_{J_f} X = 𝔸¹ ⊔ 𝔸¹`.
-- The curve `x^p − y^q` in characteristic `p` with `q` prime to `p` (castilloDuarteLeytonLiendo2026, lines
-  33–35): `J_f = (q y^{q−1})` is principal, so `ν` is an isomorphism although the curve is singular.
+- The curve `x^p − y^q` in characteristic `p`, with `q ≥ 2` and `gcd(p, q) = 1` (castilloDuarteLeytonLiendo2026,
+  lines 33–35, for distinct primes `p` and `q`; nobile1975, Example 2, lines 140–141, for `q = 2 < p`): it is the
+  integral curve `t ↦ (t^q, t^p)`, singular at the origin (`f ∈ m²`, so the embedding dimension there is `2 > 1`), and
+  `J_f = (q y^{q−1})` is principal, generated by a nonzerodivisor since `q` is a unit, so `ν` is an isomorphism
+  although the curve is singular. For `q = 1` the curve `y = x^p` is the smooth line `Spec k[x]`, with `J_f = (1)`;
+  for `p | q` the polynomial is `(x − y^{q/p})^p` and `X` is not reduced.
+- For `n = 0` and `f = 0`, `X = 𝔸⁰ = Spec k` is reduced and smooth, and pure of dimension `0`, which is the value of
+  `n − 1` under natural subtraction; but the empty family of partial derivatives generates `J_f = 0`, so
+  `Bl_{J_f} X = ∅` (§3.2) while `X* = Spec k` (§2.1): the hypothesis `n ≥ 1` cannot be dropped. For `n = 1` and
+  `f = x_1`, `X = Spec k`, `J_f = (1)` and both sides are `Spec k`.
 
 *Needs:* §§3.2, 0.2; Tau Ceti `IdealSheafData.blowup`.
 
 ### Examples
 
-The cusp in all characteristics through the Jacobian ideal; the node; `x^p = y^q` in characteristic `p`.
+The cusp in all characteristics through the Jacobian ideal; the node; `x^p = y^q` in characteristic `p` with `q ≥ 2` prime to `p`.
 
 ### Dependencies
 
@@ -864,12 +886,15 @@ Layers 0–2; Tau Ceti blowups; AlgebraicModuliForArithmeticGeometry §1.3.
 
 Prove *exists_coordinates_of_kaehler_surjection*: let `k` be a field, `(R, m, κ)` a local `k`-algebra and
 `q : Ω_{R/k} → R^d` a surjection. Then there are `x_1, …, x_d ∈ R` and `k`-derivations `∂_1, …, ∂_d : R → R`
-with `∂_i(x_j) = δ_ij`, such that `Ω_{R/k} = (⊕_j R·dx_j) ⊕ ker q`; if `κ` is finite separable over `k`, the
-`x_j` can be chosen in `m` (nashModificationNotes2024, Section 2, lines 194–197, and Section 5, lines
+with `∂_i(x_j) = δ_ij`, such that `Ω_{R/k} = (⊕_j R·dx_j) ⊕ ker q`; if `κ` is separable algebraic over `k`
+(`Algebra.IsSeparable k κ`; for instance `κ` finite over `k` with `k` of characteristic zero or perfect), the `x_j`
+can be chosen in `m` (nashModificationNotes2024, Section 2, lines 194–197, and Section 5, lines
 484–501; duarteNunezBetancourt2020, proof of Theorem 3.10, lines 263–268). Route: the `q(dr)` generate `R^d`,
 so by Nakayama some `q(dx_j)` reduce to a basis of `κ^d` and are a basis of `R^d`; let `∂_i` be the `i`-th
-coordinate of `q ∘ d` in that basis. For `κ` finite separable, `m/m² → κ ⊗ Ω_{R/k}` is onto (§0.5), so the `x_j`
-may be taken in `m`.
+coordinate of `q ∘ d` in that basis. For `κ` separable algebraic, `κ` is formally étale over `k`
+(`Algebra.FormallyEtale.of_isSeparable`), so Tau Ceti's `KaehlerDifferential.kerCotangentToTensor_bijective_of_formallyEtale`,
+applied to the surjection `R → κ` with kernel `m` (`IsLocalRing.ker_residue`), makes `m/m² → κ ⊗_R Ω_{R/k}`,
+`a ↦ 1 ⊗ da`, bijective, in particular onto; so the `x_j` may be taken in `m`.
 
 **Checks.**
 
@@ -877,8 +902,13 @@ may be taken in `m`.
 - For the cusp in characteristic `3` at the origin, `q(dx) = 1`, `q(dy) = 0`: `x_1 = x`, `∂_1 = ∂/∂x` (well
   defined since `∂(y² − x³) = 0`), and `ker q = R·dy/(y·dy)` is torsion.
 - For `d = 0`, there are no coordinates and `ker q = Ω_{R/k}`.
+- For `k = 𝔽_p(t)`, `R = k[x]_{(x^p − t)}` (residue field `k(t^{1/p})`, inseparable) and `q(dx) = 1`, coordinates
+  exist (`x_1 = x`), but none lies in `m = (x^p − t)`: for `a ∈ R`, `d(a(x^p − t)) = (x^p − t)·da`, so `q(dm) ⊆ m`
+  contains no unit. The separability hypothesis of the second clause cannot be dropped.
 
-*Needs:* §0.5; Mathlib `Derivation`, `KaehlerDifferential`.
+*Needs:* Mathlib `Derivation`, `KaehlerDifferential`; for the choice in `m`, Tau Ceti
+`KaehlerDifferential.kerCotangentToTensor_bijective_of_formallyEtale` and Mathlib `Algebra.FormallyEtale.of_isSeparable`,
+`IsLocalRing.ker_residue`.
 
 ### 4.2 The Lie derivative and stable annihilators
 
@@ -946,8 +976,10 @@ closed field with a proof through completions; the route below avoids completion
    nonzero derivative of smaller degree in it, or be a nonzero constant). So `trdeg_k κ(P) ≥ d`, the closure of
    `P` has dimension `≥ d` (SchemeAndStackFoundations §0.7), and `P` is a minimal prime of `R` (pure dimension
    `d`), contradicting `M_P = T_P = 0` (2). Hence `T = 0` and `Ω_{R/k}` is free of rank `d`.
-5. At a closed point, `κ` is finite separable over `k`, so `dim_κ m/m² = d = dim R` (§0.5,
-   SchemeAndStackFoundations §0.7) and `R` is regular; §0.6 concludes.
+5. At a closed point, `κ` is finite over `k`, hence separable as `k` has characteristic zero, so
+   `m/m² ≅ κ ⊗_R Ω_{R/k} ≅ κ^d` (Tau Ceti `KaehlerDifferential.kerCotangentToTensor_bijective_of_formallyEtale`, with
+   `Algebra.FormallyEtale.of_isSeparable`) and `dim_κ m/m² = d = dim R` (SchemeAndStackFoundations §0.7); so `R` is
+   regular, and §0.6 concludes.
 
 **Checks.**
 
@@ -956,7 +988,9 @@ closed field with a proof through completions; the route below avoids completion
 - Over `𝔽_2` the cusp has a free rank-one quotient (§2.5) and is singular: the characteristic hypothesis is
   needed; the proof fails at step 4, where `(x^p)` is `∂`-stable with non-stable minimal prime (§4.3).
 
-*Needs:* §§0.3, 0.5, 0.6, 1.1, 4.1, 4.2, 4.3; SchemeAndStackFoundations §0.7; Mathlib `IsRegularLocalRing`.
+*Needs:* §§0.3, 0.6, 1.1, 4.1, 4.2, 4.3; SchemeAndStackFoundations §0.7; Tau Ceti
+`KaehlerDifferential.kerCotangentToTensor_bijective_of_formallyEtale`; Mathlib `Algebra.FormallyEtale.of_isSeparable`,
+`IsRegularLocalRing`.
 
 ### 4.5 Nobile's theorem
 
@@ -981,8 +1015,9 @@ For the cusp over `ℚ` at the origin, `Ω = (R dx ⊕ R dy)/(2y dy − 3x² dx)
 
 ### Dependencies
 
-Layers 0–2; SchemeAndStackFoundations §0.7; DiophantineApproximationAndTranscendence §5.6 (the agreement
-bullet of §4.2).
+Layers 0–2; SchemeAndStackFoundations §0.7; Tau Ceti's conormal bijectivity
+`KaehlerDifferential.kerCotangentToTensor_bijective_of_formallyEtale` (§§4.1, 4.4); DiophantineApproximationAndTranscendence
+§5.6 (the agreement bullet of §4.2).
 
 ## Layer 5: normal varieties in positive characteristic
 
@@ -1232,20 +1267,33 @@ Layers 2, 4, 5 and §0.7; AlgebraicModuliForArithmeticGeometry §5.4; Mathlib re
 
 ### 7.1 The normalised iteration
 
-Define *normalizedNashIterate*: `Y_0 = X`, `Y_{i+1} = (Y_i)̄*`, and *NormalizedNashIterationResolves* `X d` as
-`∃ i, Y_i → Spec k is smooth` (castilloDuarteLeytonLiendo2026, Introduction, lines 28–32 and 52–55). By §6.1 every
-`Y_i` with `i ≥ 1` is normal and in the Setting.
+Define *normalizedNashIterate*: `Y_0 = X`, `Y_{i+1} = (Y_i)̄*` (with the same `d`), with the composite maps
+`Y_i → X`, and *NormalizedNashIterationResolves* `X d` as `∃ i, Y_i → Spec k is smooth` (castilloDuarteLeytonLiendo2026,
+Introduction, lines 28–32 and 52–55).
 
-Prove *nashIterate_of_smooth* and *normalizedNashIterate_of_smooth*: if `X` is smooth then `X^{(i)} ≅ X ≅ Y_i` over
-`X` for all `i` (§§2.5, 6.4).
+Prove *nashIterate_of_smooth* and *normalizedNashIterate_of_smooth*: if `X` is in the Setting with this `d` and smooth
+over `k` (so smooth of relative dimension `d`, §0.3), then `X^{(i)} ≅ X ≅ Y_i` over `X` for all `i`, by induction on
+`i` (§2.5 for `ν`; §6.4 for `ν̄`, a smooth `X` being normal).
+
+- Evaluation: `Y_0 = X` with the identity of `X`, and `Y_{i+1}` is the normalised Nash blowup of `Y_i` (§6.1, with
+  the same `d`), its map to `X` being `ν̄` for `Y_i` followed by `Y_i → X`. Consequently the `j`-th normalised
+  iterate of `Y_i` is `Y_{i+j}`.
+- Preservation of the Setting: if `X` is in the Setting with this `d`, then every `Y_i` is in the Setting with the same
+  `d`, and `Y_i` is normal for every `i ≥ 1` (§6.1); `Y_0 = X` is normal only when `X` is.
+- Resolution predicate: `NormalizedNashIterationResolves X d` holds iff `Y_i → Spec k` is smooth for some `i`.
+- Smooth stabilisation: for `X` in the Setting, if `Y_i` is smooth over `k` then `Y_j ≅ Y_i` over `Y_i` for every
+  `j ≥ i` (`Y_i` is pure of dimension `d`, hence smooth of relative dimension `d` by §0.3, and the theorem above
+  applies to it); likewise, if `X^{(i)}` is smooth then `X^{(j)} ≅ X^{(i)}` for every `j ≥ i`.
 
 **Checks.**
 
 - The cusp in characteristic `0`: `Y_1 = 𝔸¹`, resolved at `i = 1`.
 - The cusp in characteristic `2`: `Y_1 = 𝔸¹` is smooth, while every `X^{(i)} ≅ X`.
-- For `i = 0`, `Y_0 = X` whether or not `X` is normal.
+- For `i = 0`, `Y_0 = X` whether or not `X` is normal: for the cusp in characteristic `2`, `Y_0` is the non-normal
+  cusp, `Y_1 = 𝔸¹` is normal and `X^{(1)}` is the cusp again, three different values: the normality bullet needs
+  `i ≥ 1`, and for this cusp the two iterations already differ at index `1`.
 
-*Needs:* §§2.7, 6.1, 6.4.
+*Needs:* §§0.3, 2.5, 2.7, 6.1, 6.4.
 
 ### 7.2 Open subschemes propagate
 
@@ -1326,4 +1374,4 @@ is earlier in the merge order and is not a consumer.
   (`stacksAlgebra`).
 - Background, cited by locator: Hironaka, *On Nash blowing-up* (1983); Spivakovsky, *Sandwiched singularities and
   desingularization of surfaces by normalized Nash transformations*, Ann. of Math. 131 (1990); Semple, Proc. London Math.
-  Soc. (3) 4 (1954); Teissier, *Variétés polaires II*, LNM 961 (1982); Grothendieck–Dieudonné, EGA I (1971), §9.7.
+  Soc. (3) 4 (1954); Teissier, *Variétés polaires II*, LNM 961 (1982), 314–491; Grothendieck–Dieudonné, EGA I (1971), §9.7.
