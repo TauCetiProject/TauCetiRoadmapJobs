@@ -2472,14 +2472,14 @@
   },
   {
    "slug": "flat-kunneth",
-   "title": "Künneth sequence for a complex of flat modules over a ring of global dimension at most one",
+   "title": "Naturality of the two-column Künneth sequence of a complex of flat modules",
    "neededBy": [
     "5.1"
    ],
-   "detail": "Tau Ceti's HomologicalComplex.homologyKunnethShortComplex_shortExact assumes projective cycles and projective quotients by cycles in the second complex, and its splitting split cycles in the first; DerivedModuleAlgebra §0.2 has K-flat replacements and the invariance of tensor products under quasi-isomorphisms but no Künneth sequence. Chains with flat, non-projective coefficients such as ℤ[1/3] are not covered.",
-   "needs": "For a commutative ring R of global dimension at most one and ℕ-indexed chain complexes K, L of R-modules with L flat in every degree, the sequence 0 → ⊕_{p+q=n} H_p(K) ⊗ H_q(L) → Hₙ(K ⊗ L) → ⊕_{p+q=n−1} Tor₁^R(H_p(K), H_q(L)) → 0, first map the cross product, is exact for every n, natural in K and L, and split (not naturally).",
-   "supplier": "DerivedModuleAlgebra",
-   "section": "§0.2"
+   "detail": "SpectralSequencesAndConvergencePartII §4.3 states the Künneth spectral sequence natural in K and L from page 2, its edge map E₂^{0,n} → Hⁿ(K ⊗^L L) the cross product, its abutment Hⁿ(Tot(K ⊗ L)) for a bounded-above complex K of flat modules, and the exact sequence of its two columns when Tor_i = 0 for i ≥ 2, but does not state that this sequence is natural. Target 5.1 states the group-homology Künneth sequence natural in compatible pairs and proves its splitting (not natural) itself, from Tau Ceti's projective replacements and split cycles.",
+   "needs": "For a commutative ring R with Tor^R_i = 0 for i ≥ 2 and complexes K, L of R-modules represented by bounded-above complexes, the two-column exact sequence 0 → ⊕_{i+j=n} Hⁱ(K) ⊗ Hʲ(L) → Hⁿ(K ⊗^L L) → ⊕_{i+j=n+1} Tor^R_1(Hⁱ(K), Hʲ(L)) → 0 of §4.3, whose first map is its edge map, the cross product, is natural in K and L.",
+   "supplier": "SpectralSequencesAndConvergencePartII",
+   "section": "§4.3"
   }
  ]
 }
