@@ -1978,7 +1978,7 @@
  "gaps": [
   {
    "slug": "division-algebra-unitary-base-change",
-   "needs": "For the unitary similitude groups of central division algebras of degree n over a CM field F = F⁺𝒦 with an involution of the second kind (arbitrary signature, every locally isomorphic inner form of the PEL decomposition) and automorphic π with π_∞ cohomological for the trivial representation, an isobaric conjugate self-dual base change Π to GL_1(𝔸_𝒦) × GL_n(𝔸_F) with Π_v ≅ BC_v(π_v) outside the ramification and at ramified places split in 𝒦 where B splits, and Galois representations r_{π,ℓ} of every rank n, unramified at every place of F outside the ramification and ℓ, with Satake Frobenius polynomials and local–global compatibility away from ℓ at those places.",
+   "needs": "For the unitary similitude groups of central division algebras of degree n over a CM field F = F⁺𝒦 with an involution of the second kind (arbitrary signature, every locally isomorphic inner form of the PEL decomposition) and automorphic π with π_∞ cohomological for the trivial representation, an isobaric conjugate self-dual base change Π to GL_1(𝔸_𝒦) × GL_n(𝔸_F) with Π_v ≅ BC_v(π_v) outside the ramification and at ramified places split in 𝒦 where B splits, and Galois representations r_{π,ℓ} of every rank n, unramified at every place of F outside the ramification and ℓ, such that at each such place v the characteristic polynomial of a geometric Frobenius is that of rec(Π⁰_v|det|^{(1−n)/2})(Frob_v), namely ∏_j (X − q_v^{(n−1)/2} x_j) in the Satake parameters x_j of Π⁰_v, with local–global compatibility away from ℓ at those places.",
    "supplier": "AutomorphicGaloisRepresentationsPartII",
    "section": "AG2.2"
   },
@@ -1987,6 +1987,12 @@
    "needs": "For every finite set D of rational primes disjoint from S, a choice of the Hecke character ϖ of 𝒦 extending the quadratic character of 𝒦/ℚ, with the archimedean type of §1.8, Ram_ℚ(ϖ) ⊂ Spl_{F/F⁺} and Ram_ℚ(ϖ) ∩ D = ∅.",
    "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
    "section": "§6.3"
+  },
+  {
+   "slug": "unitary-discrete-local-comparison",
+   "needs": "In the Case 2 setting of CS17 §5.1, for every θ-stable isobaric Π^n⃗ of the spectral expansion (§9.3(1)) with Π = ζ̃_{n⃗,*}(Π^n⃗) = ψ′ ⊗ Π⁰ and Π^{S′} occurring in the S′-unramified alternating Igusa class, the representation r_{Π^{S′},ℓ} = ⊕_i r_i ⊗ ε_i of AG2.2 satisfies WD(r_{Π^{S′},ℓ}|_{Gal(F̄_w/F_w)})^{F-ss} ≅ ι_ℓ⁻¹ rec(Π⁰_w|det|^{(1−n)/2}), monodromy included, at every place w ∤ ℓ of F above a prime split in 𝒦 (in particular at the places 𝔭_i above the auxiliary prime p), with no supercuspidality hypothesis (CS17 Remark 5.5.6).",
+   "supplier": "AutomorphicGaloisRepresentationsPartII",
+   "section": "AG2.7"
   }
  ],
  "restructure": [
