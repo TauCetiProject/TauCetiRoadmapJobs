@@ -276,10 +276,13 @@ to every coefficient representation, to cohomology and to the universe `u`.
   module docstring records the comparison with `groupCohomology` for discrete groups as missing.
 - `Rep.indCoindIso` (`RepresentationTheory/FiniteIndex.lean`): for a subgroup `S ≤ G` of finite
   index and `A : Rep k S`, the isomorphism `Ind_S^G A ≅ Coind_S^G A`. Used in 7.1.
-- `Rep.ihom`, `Rep.quotientToInvariantsFunctor`, `Rep.quotientToCoinvariantsFunctor`, `Rep.res`,
-  `Rep.ofMulAction`, `Rep.ofHom` (`RepresentationTheory/Rep/Basic.lean`): internal Hom, the
-  quotient actions on invariants and coinvariants of a normal subgroup, restriction, permutation
-  representations, and the morphism of representations given by an intertwining map.
+- `Rep.ihom`, `Rep.ofMulAction`, `Rep.ofHom` (`RepresentationTheory/Rep/Basic.lean`): internal
+  Hom, permutation representations, and the morphism of representations given by an intertwining
+  map. `Rep.res` (`RepresentationTheory/Rep/Res.lean`): restriction along a group homomorphism,
+  the object of `Rep.resFunctor`. `Rep.quotientToInvariantsFunctor`
+  (`RepresentationTheory/Invariants.lean`) and `Rep.quotientToCoinvariantsFunctor`
+  (`RepresentationTheory/Coinvariants.lean`): for a normal subgroup `S`, the invariants and the
+  coinvariants of `S` as representations of `G ⧸ S`, in degree `0` only.
 - `Rep.standardComplex` (`RepresentationTheory/Homological/Resolution.lean`): the complex of
   `Rep.standardResolution`, defined as the alternating face map complex of the simplicial object
   of `Rep k G` obtained by applying the monoidal functor `Rep.linearization`
@@ -299,6 +302,11 @@ to every coefficient representation, to cohomology and to the universe `u`.
   `Abelianization`, `AddCircle`, `exteriorPower` (written `⋀[R]^n M`), `commutator` (`⁅⊤, ⊤⁆`),
   `MulAut.conj`,
   `Subgroup.comap`, `Subgroup.subgroupOf`, `Set.BijOn`, `finsum`, `List.TFAE`.
+- `AddCommGroup.primaryComponent` (`GroupTheory/Torsion.lean`): for a commutative additive group
+  `A` and `p : ℕ`, the subgroup of elements `x` with `p ^ k • x = 0` for some `k`
+  (`AddCommGroup.mem_primaryComponent`), the `p`-primary part `A(p)` of the Conventions.
+  `Module.Free` (a module with a basis) and `Nat.factorization` (the exponent of `p` in `|G|`, so
+  that `|G|_p = p ^ (Nat.card G).factorization p`). Used in 8.1 and 8.5.
 - `tateCohomologyFunctor` (`…/TateCohomology/Basic.lean`): Tate cohomology as a functor of the
   coefficients, through which the maps induced by the evaluation `M ⊗ Hom(M, A) ⟶ A` and the unitor
   `M ⊗ ℤ ≅ M` act; `CategoryTheory.ihom` and `CategoryTheory.ihom.ev` for the closed monoidal
@@ -771,9 +779,11 @@ uses it. Define `conjRes M A β g h n`, for a subgroup `A ≤ G`, a group `B` wi
 `Hⁿ(A, Res M) → Hⁿ(B, Res_β M)` of `groupCohomology.map` for the pair consisting of
 `b ↦ g⁻¹β(b)g : B →* A` and `m ↦ g·m`; the latter is equivariant because
 `ρ(g)ρ(g⁻¹β(b)g) = ρ(β(b))ρ(g)`. For `B = gAg⁻¹` and `β` its inclusion it is `c_g`; for `g = 1`
-and `β` the inclusion of a subgroup of `A` it is restriction; in general it is `c_g` followed by
-restriction from `gAg⁻¹` to the image of `β`. *Needs:* Mathlib `groupCohomology.map`, `Rep.res`,
-`Rep.ofHom`.
+and `β` the inclusion of a subgroup of `A` it is restriction. In general it is `c_g` from `A` to
+`gAg⁻¹`, followed by restriction to `β(B) ≤ gAg⁻¹`, followed by the map along the surjection
+`B → β(B)` induced by `β` (with the identity of `M`), since the pair factors through these three
+pairs; when `β` is injective the last map is the identification induced by `B ≃ β(B)`.
+*Needs:* Mathlib `groupCohomology.map`, `Rep.res`, `Rep.ofHom`.
 
 In homology the same data give the map in the other direction, and it is the form in which the
 homological clauses of Layer 7 use conjugation. Define `conjCores M A β g h n`, for `A`, `β`, `g`
@@ -781,8 +791,9 @@ and `h` as above, as the map `Hₙ(B, Res_β M) → Hₙ(A, Res M)` of `groupHom
 consisting of `b ↦ g⁻¹β(b)g : B →* A` and `m ↦ g⁻¹·m`; the latter is equivariant because
 `ρ(g⁻¹)ρ(β(b)) = ρ(g⁻¹β(b)g)ρ(g⁻¹)`. For `g = 1` and `β` the inclusion
 of a subgroup of `A` it is homological corestriction; for `β` injective it is `c_{g⁻¹}` from the
-image of `β` to `g⁻¹β(B)g` followed by corestriction from `g⁻¹β(B)g` to `A`. *Needs:* Mathlib
-`groupHomology.map`, `Rep.res`, `Rep.ofHom`.
+image of `β` to `g⁻¹β(B)g` followed by corestriction from `g⁻¹β(B)g` to `A`, and in general these
+two maps are preceded by the map `Hₙ(B, Res_β M) → Hₙ(β(B), M)` along the surjection
+`B → β(B)` induced by `β`. *Needs:* Mathlib `groupHomology.map`, `Rep.res`, `Rep.ofHom`.
 
 - `c_1` is the identity, and `c_{gh} = c_g ∘ c_h` (after the equality `g(hHh⁻¹)g⁻¹ = (gh)H(gh)⁻¹`).
 - For `g ∈ H`, `c_g` is the identity of `Hⁿ(H, M)`, of `Hₙ(H, M)` and of `Ĥⁿ(H, M)`.
@@ -821,6 +832,18 @@ image of `β` to `g⁻¹β(B)g` followed by corestriction from `g⁻¹β(B)g` to
   fixes `1` while `xg⁻¹ = (23)(132)` sends `1` to `2`, and the permutation representation `ℤ³` of
   `S₃` is faithful. For an involution `g` the two models agree, so this Check needs an element of
   order `3`.
+- `conjRes` along a homomorphism that is not injective: `G = A = ℤ/2`, `B = ℤ/4`, `β` the
+  reduction mod `2`, `g = 1`, trivial `𝔽₂`, degree `2`. The nonzero class of
+  `H²(ℤ/2, 𝔽₂) = 𝔽₂` is that of the carry cocycle, `1` at `(1, 1)` and `0` elsewhere; its pullback
+  to `ℤ/4` is `1` exactly on the four pairs of odd residues, and so is the coboundary of
+  `f(a) = ⌊a/2⌋ mod 2` (`df(1, 1) = f(1) − f(2) + f(1) = 1`, `df(1, 2) = f(2) − f(3) + f(1) = 0`,
+  `df(2, 2) = f(2) − f(0) + f(2) = 0`, `df(3, 3) = f(3) − f(2) + f(3) = 1`). So `conjRes` is zero
+  from `H²(ℤ/2, 𝔽₂) = 𝔽₂` to `H²(ℤ/4, 𝔽₂) = 𝔽₂`, while `c_1` followed by restriction to
+  `β(B) = ℤ/2` is the identity of `𝔽₂`: the map along `ℤ/4 → ℤ/2` is what kills the class. Dually,
+  `conjCores` for the same data is zero from `H₂(ℤ/4, 𝔽₂) = 𝔽₂` to `H₂(ℤ/2, 𝔽₂) = 𝔽₂`, the
+  comparison of the periodic resolutions being multiplication by `2` in degree `2`
+  (`1 + t + t² + t³ ↦ 2(1 + s)`), and in degree `1` it is the isomorphism
+  `ℤ/4 ⊗ 𝔽₂ → ℤ/2 ⊗ 𝔽₂`.
 - `conjCores` with `g ∈ A` and `β` the inclusion of `A` is the identity of `Hₙ(A, M)`: for
   `G = A = ℤ/2` acting on `M = ℤ` by `−1` and `g` the generator, in degree `0` it is `[m] ↦ [−m]`
   on `M_G = ℤ/2`, which is the identity.
@@ -2399,16 +2422,27 @@ and every additive map `Ĥ^{−1−i}(G, M) → Ĥ⁻¹(G, ℚ/ℤ)` is `x ↦ �
 (`tate_duality`). As `G` acts trivially on `ℚ/ℤ`, `Ĥ⁻¹(G, ℚ/ℤ)` is the kernel of multiplication
 by `|G|`, the subgroup `{x ∈ ℚ/ℤ : |G|x = 0} ⊂ ℚ/ℤ`, and `Ĥ^{−1−i}(G, M)` is killed by `|G|`; so
 the statement is the isomorphism `Ĥⁱ(G, M^∨) ≅ Hom(Ĥ^{−1−i}(G, M), ℚ/ℤ)` for all `i ∈ ℤ`.
-Prove that for `M` free as an abelian
-group, cup product into `Ĥ⁰(G, ℤ) = ℤ/|G|` induces `Ĥⁱ(G, Hom(M, ℤ)) ≅ Hom(Ĥ^{−i}(G, M), ℚ/ℤ)`
-(Brown82 Ch. VI §7; CE56 Ch. XII). Route: degree `0` by the exactness of `Hom(−, ℚ/ℤ)`, then
-dimension shifting with Tau Ceti's `cup_δ_of_flat` and `δ_cup_of_leftInverse`; the integral form
-from `0 → Hom(M, ℤ) → Hom(M, ℚ) → M^∨ → 0` (exact for free `M`) and the vanishing of `Ĥ` on the
-uniquely divisible `Hom(M, ℚ)`. For `M = ℤ` and `i ≥ 1`, with `Ĥⁱ(G, ℚ/ℤ) ≅ H^{i+1}(G, ℤ)`, the
-duality is the isomorphism `H^{i+1}(G, ℤ) ≅ Hom(H_i(G, ℤ), ℚ/ℤ)` of K3BlochGroups §5.2.
+Prove the integral form: for `M` free as an
+abelian group (`Module.Free ℤ M`) and `M^* = Hom(M, ℤ)` with the contragredient action, in Lean
+`(ihom M).obj (Rep.trivial ℤ G ℤ)`, the pairing `Ĥ^{−i}(G, M) × Ĥⁱ(G, M^*) → Ĥ⁰(G, ℤ)`, cup
+product followed by the map induced by the evaluation `M ⊗ M^* → ℤ`, is perfect in its second
+variable in the same sense: a class `y` pairing to zero with every `x` is zero, and every additive
+map `Ĥ^{−i}(G, M) → Ĥ⁰(G, ℤ)` is pairing with some `y` (`tate_duality_of_free`). As
+`a mod |G| ↦ a/|G|` identifies `Ĥ⁰(G, ℤ) = ℤ/|G|` with the subgroup of `ℚ/ℤ` killed by `|G|`, and
+`Ĥ^{−i}(G, M)` is killed by `|G|`, this is the isomorphism
+`Ĥⁱ(G, Hom(M, ℤ)) ≅ Hom(Ĥ^{−i}(G, M), ℚ/ℤ)` (Brown82 Ch. VI §7; CE56 Ch. XII). Route: degree `0`
+by the exactness of `Hom(−, ℚ/ℤ)`, then dimension shifting with Tau Ceti's `cup_δ_of_flat` and
+`δ_cup_of_leftInverse`; the integral form from `0 → Hom(M, ℤ) → Hom(M, ℚ) → M^∨ → 0` (exact for
+free `M`, and still exact after `M ⊗ −` as `M` is flat), the vanishing of `Ĥ` on the uniquely
+divisible `Hom(M, ℚ)`, and the compatibility of the cup product with the connecting maps of this
+sequence and of `0 → ℤ → ℚ → ℚ/ℤ → 0`, which carries the integral pairing to the `ℚ/ℤ` pairing up to
+sign. For `M = ℤ` and `i ≥ 1`, with `Ĥⁱ(G, ℚ/ℤ) ≅ H^{i+1}(G, ℤ)`, the
+duality with coefficients `ℚ/ℤ` is the isomorphism `H^{i+1}(G, ℤ) ≅ Hom(H_i(G, ℤ), ℚ/ℤ)` of
+K3BlochGroups §5.2.
 *Needs:* 4.7(a); K3BlochGroups §5.2 for the comparison; Tau Ceti
 `TauCeti.TateCohomology.cup`, `TauCeti.TateCohomology.cup_δ_of_flat`,
-`TauCeti.TateCohomology.δ_cup_of_leftInverse`; ClassFieldTheory Layer 0.
+`TauCeti.TateCohomology.δ_cup_of_leftInverse`; Mathlib `CategoryTheory.ihom.ev`, `Module.Free`;
+ClassFieldTheory Layer 0.
 
 **Checks.**
 
@@ -2418,7 +2452,14 @@ duality is the isomorphism `H^{i+1}(G, ℤ) ≅ Hom(H_i(G, ℤ), ℚ/ℤ)` of K3
   degree-`0` analogue fails, `H¹(G, ℤ) = 0` while `Hom(H₀(G, ℤ), ℚ/ℤ) = ℚ/ℤ`, because `Ĥ⁰` and
   `Ĥ⁻¹` are not `H⁰` and `H₀`.
 - Freeness is used in the integral form: for `G = ℤ/2` and `M = ℤ/2` (not free),
-  `Ĥ⁰(G, Hom(M, ℤ)) = 0` while `Hom(Ĥ⁰(G, ℤ/2), ℚ/ℤ) = ℤ/2`.
+  `Ĥ⁰(G, Hom(M, ℤ)) = 0` while `Hom(Ĥ⁰(G, ℤ/2), ℚ/ℤ) = ℤ/2`; the nonzero additive map
+  `Ĥ⁰(G, ℤ/2) = ℤ/2 → Ĥ⁰(G, ℤ) = ℤ/2` is pairing with no class.
+- The integral pairing for `G = ℤ/3`, `M = ℤ`, `i = 0`: `M^* = ℤ` with trivial action and the
+  pairing `Ĥ⁰(G, ℤ) × Ĥ⁰(G, ℤ) → Ĥ⁰(G, ℤ)` is multiplication in `ℤ/3`, the degree-`0` cup product
+  being the product of invariants modulo norms; so `(1, 1) ↦ 1`, which is `1/3` in `ℚ/ℤ`, and the
+  three additive maps `ℤ/3 → ℤ/3` are pairing with `0, 1, 2`. At `i = 2` both sides are `ℤ/3`
+  (`Ĥ²(G, ℤ) = ℤ/3`, `Ĥ⁻²(G, ℤ) = H₁(G, ℤ) = ℤ/3`), at `i = 1` both are `0`. A pairing taking values
+  in `Ĥ⁻¹(G, ℤ) = 0`, the degree of the `ℚ/ℤ` form, would be zero.
 
 ### 8.2 Finite `p`-groups whose abelian subgroups are cyclic
 
@@ -2524,15 +2565,31 @@ Prove that the following are equivalent (`tfae_periodic_cohomology`): (a) for so
 order `|G|` for some `d ≠ 0`; (c) every abelian subgroup of `G` is cyclic; (d) for every prime `p`,
 every Sylow `p`-subgroup of `G` is cyclic or isomorphic to `QuaternionGroup (2^m)` for some
 `m ≥ 1`, that is, generalised quaternion. Prove the `p`-primary
-form for a prime `p`: (a_p) cup with some `u ∈ Ĥ^d(G, ℤ)`, `d > 0`, is an isomorphism on
-`p`-primary parts; (b_p) `Ĥ^d(G, ℤ)(p)` is cyclic of order `|G|_p` for some `d ≠ 0`; (c_p) every
-abelian `p`-subgroup is cyclic; (d_p) a Sylow `p`-subgroup is cyclic or generalised quaternion
-(Brown82 Ch. VI §9; CE56 Ch. XII; Loh19 §4.3.2, pp. 167–168). Route: (a)⇒(b) from
-`Ĥ⁰(G, ℤ) = ℤ/|G|`; (b)⇒(a) since a generator has an inverse for the perfect pairing of 8.1;
-(a)⇒(c) since restriction of `u` is invertible and `ℤ/p × ℤ/p` is not periodic (5.3); (c)⇔(d) by
-8.2; (d)⇒(b) by 8.4, Swan's theorem of K3BlochGroups §5.2 and 7.2, prime by prime. *Needs:* 5.3,
-7.2, 8.1, 8.2, 8.3, 8.4; K3BlochGroups §5.2; Tau Ceti `TauCeti.TateCohomology.cup_assoc`,
-`TauCeti.TateCohomology.cup_res`.
+form for every prime `p` (`tfae_primary_periodic_cohomology`), with `A(p)` the `p`-primary part of
+the Conventions, in Lean the set `{x | ∃ j, p ^ j • x = 0}`, which is Mathlib's
+`AddCommGroup.primaryComponent`, and `|G|_p = p^{v_p(|G|)}` the largest power of `p` dividing
+`|G|`: (a_p) for some `d > 0` and `u ∈ Ĥ^d(G, ℤ)`, `x ↦ x ∪ u` followed by the
+unitor is a bijection `Ĥⁿ(G, M)(p) → Ĥⁿ⁺ᵈ(G, M)(p)` for every `n ∈ ℤ` and every `M : Rep ℤ G`;
+(b_p) `Ĥ^d(G, ℤ)(p)` is cyclic of order `|G|_p` for some `d ≠ 0`; (c_p) every abelian subgroup of
+`G` that is a `p`-group is cyclic; (d_p) every Sylow `p`-subgroup is cyclic or isomorphic to
+`QuaternionGroup (2^m)` for some `m ≥ 1` (equivalently one is, as they are conjugate). No
+divisibility `p ∣ |G|` is assumed: for `p ∤ |G|` every `p`-primary part and every `p`-subgroup is
+trivial and all four hold (Brown82 Ch. VI §9; CE56 Ch. XII; Loh19 §4.3.2, pp. 167–168). Route:
+(a)⇒(b) from `Ĥ⁰(G, ℤ) = ℤ/|G|`; (b)⇒(a) since a generator has an inverse for the perfect pairing
+of 8.1; (a)⇒(c) since restriction of `u` is invertible and `ℤ/p × ℤ/p` is not periodic (5.3);
+(c)⇔(d) by 8.2; (d)⇒(b) by 8.4, Swan's theorem of K3BlochGroups §5.2 and 7.2, prime by prime. The
+`p`-primary form runs the same route with the idempotent `e_p ∈ ℤ/|G| = Ĥ⁰(G, ℤ)`, `e_p ≡ 1` mod
+`|G|_p` and `e_p ≡ 0` mod `|G|/|G|_p`, in place of `1`: (a_p)⇒(b_p) is (a_p) for `M = ℤ` and
+`n = 0`; for (b_p)⇒(a_p), the integral duality of 8.1 with `M = ℤ` gives `v ∈ Ĥ^{−d}(G, ℤ)` with
+`u ∪ v = e_p` for a generator `u` of `Ĥ^d(G, ℤ)(p)` (replacing `d` by `−d` when `d < 0`, as
+`Ĥ^{−d}(G, ℤ)(p)` is dual to `Ĥ^d(G, ℤ)(p)`), and cup with `e_p` is the identity on `p`-primary
+parts; for (a_p)⇒(c_p), with `v` as above, `res(u) ∪ res(v) = res(e_p) = 1` in
+`Ĥ⁰(A, ℤ) = ℤ/|A|` for an abelian `p`-subgroup `A`, as `|A|` divides `|G|_p`, so the restriction
+of `u` is invertible in `Ĥ*(A, ℤ)` and `A` is cyclic as in (a)⇒(c);
+(c_p)⇔(d_p) by 8.2, as every `p`-subgroup lies in a Sylow `p`-subgroup; (d_p)⇒(b_p) by 8.4, Swan's
+theorem and 7.2 at the prime `p`. *Needs:* 5.3, 7.2, 8.1, 8.2, 8.3, 8.4; K3BlochGroups §5.2; Tau
+Ceti `TauCeti.TateCohomology.cup_assoc`, `TauCeti.TateCohomology.cup_res`; Mathlib
+`AddCommGroup.primaryComponent`, `Nat.factorization`, `IsPGroup`, `Sylow`, `QuaternionGroup`.
 
 **Checks.**
 
@@ -2545,6 +2602,18 @@ abelian `p`-subgroup is cyclic; (d_p) a Sylow `p`-subgroup is cyclic or generali
   `3`-part of `|SL₂(𝔽₉)| = 720`, and violates (c).
 - The trivial group satisfies all four conditions, with every `Ĥⁿ = 0` and `u = 0`; `S₃` satisfies
   them with `d = 4`, and `A₄` fails (c) through `V₄`.
+- The `p`-primary form is not the global one: for `A₄` and `p = 3`, the Sylow `3`-subgroup is
+  cyclic of order `3`, so (c_3) and (d_3) hold, and `Ĥ²(A₄, ℤ) = Hom(A₄, ℚ/ℤ) = Hom(A₄/V₄, ℚ/ℤ) = ℤ/3`
+  is cyclic of order `|A₄|_3 = 3`, so (b_3) holds with `d = 2`; at `p = 2`, (c_2) fails through
+  `V₄`, and so do all four global conditions.
+- No divisibility hypothesis: for `G = ℤ/2` and `p = 3` every `Ĥⁿ(G, M)(3)` is `0`, of order
+  `1 = 3^0 = |G|_3`, every `3`-subgroup is trivial, and all four `p`-primary conditions hold, with
+  any `u`. A version requiring `p ∣ |G|` would exclude this case, and one demanding order `p` instead
+  of `|G|_p` in (b_p) would make (b_3) fail here while (d_3) holds.
+- (b_p) asks for the order `|G|_p` of the `p`-primary part, not of `Ĥ^d(G, ℤ)`: for `S₃` and
+  `p = 3`, `Ĥ⁴(S₃, ℤ) = ℤ/6` has `3`-primary part `ℤ/3` of order `|S₃|_3 = 3`, while
+  `Ĥ¹(S₃, ℤ) = Ĥ³(S₃, ℤ) = 0` and `Ĥ²(S₃, ℤ) = ℤ/2` have `3`-primary part `0`; so `d = 4` is the
+  least positive witness, the `3`-period of 8.4, and no `d` has `Ĥ^d(S₃, ℤ)` itself of order `3`.
 
 ### Examples
 
