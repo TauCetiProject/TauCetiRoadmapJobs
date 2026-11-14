@@ -54,3 +54,39 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-14"
 cited_for = ["RS.3.2", "IG supplier contracts"]
+
+[[source]]
+id = "evw2012"
+authors = "Jordan S. Ellenberg, Akshay Venkatesh, Craig Westerland"
+title = "Homological stability for Hurwitz spaces and the Cohen-Lenstra conjecture over function fields, II"
+year = 2012
+arxiv = "1212.0923v1"
+locator_scheme = "section"
+locator = "§7.3; Example 9.3.2"
+url = "https://arxiv.org/abs/1212.0923v1"
+fetched_from = "https://arxiv.org/pdf/1212.0923v1"
+fetched_at = "2026-11-14T14:55:03Z"
+sha256 = "3cd5624f85450b06f4be8b37d08fb480dde8dc7c68f9a5bd7ffc57c15c04a4e4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-14"
+version_note = "arXiv v1"
+cited_for = ["RS.1.4; RS.6.1"]
+
+[[source]]
+id = "lwzb2024"
+authors = "Yuan Liu, Melanie Matchett Wood, David Zureick-Brown"
+title = "A predicted distribution for Galois groups of maximal unramified extensions"
+year = 2019
+arxiv = "1907.05002v2"
+locator_scheme = "section"
+locator = "§12; Lemma 12.10"
+url = "https://arxiv.org/abs/1907.05002v2"
+fetched_from = "https://arxiv.org/pdf/1907.05002v2"
+fetched_at = "2026-11-14T14:55:43Z"
+sha256 = "7f1e85da49b23f80fc7abe9a68dbc5384ab216dfa5d55cd5e3223ba3268abed9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-14"
+version_note = "arXiv v2"
+cited_for = ["RS.0.3; RS.3; RS.6.1"]
