@@ -103,7 +103,7 @@
       {
        "name": "slanted_metric",
        "kind": "computation",
-       "statement": "Half-plane with g = [[1, a], [a, 1]], |a| < 1: ν_in = (e₀ − a e₁)/√(1 − a²); the coordinate vector e₀ has g(e₀, e₁) = a ≠ 0 and fails orthogonality."
+       "statement": "Half-plane with g = [[1, a], [a, 1]], |a| < 1: ν_in = (e₀ − a e₁)/√(1 − a²). For a ≠ 0 the coordinate vector e₀ has g(e₀, e₁) = a ≠ 0 and fails orthogonality (a = 1/2: ν_in = (2/√3, −1/√3), g(e₀, e₁) = 1/2); at a = 0 the formula returns e₀, then the correct normal."
       },
       {
        "name": "unit_ball",
@@ -556,7 +556,12 @@
       {
        "name": "unit_ball",
        "kind": "computation",
-       "statement": "Unit ball: best constant c = 1."
+       "statement": "Unit ball of ℝⁿ⁺¹, n ≥ 1: best constant c = 1 (II = h, and a unit u ∈ T_q∂M gives 1 ≥ c)."
+      },
+      {
+       "name": "unit_ball_dimension_one",
+       "kind": "degenerate",
+       "statement": "n = 0, M = [−1, 1]: every T_q∂M is zero, II_q(0, 0) = 0 = c h_q(0, 0) for every c > 0 (c = 2, c = 100), so the existence statement holds and there is no largest constant."
       }
      ]
     },
@@ -1215,7 +1220,7 @@
      "id": "4.3.3",
      "kind": "theorem",
      "name": "boundaryDistance_eq_signedDistance",
-     "statement": "For Σ = ∂M (f = ρ): on W' ∩ M, r_{∂M} = d_M(·, ∂M) (intrinsic distance of (M, g_M), Manifold.riemannianEDist); r_{∂M} is a boundary defining function near ∂M with grad = ν_in on ∂M. Normalised defining function: with a smooth ε₁ < ε (constant when ∂M is compact) such that the closed tube E_{∂M}({|r| ≤ ε₁(q)}) is closed in N, W := E_{∂M}({|r| < ε(q)}) and W₁ := E_{∂M}({|r| < ε₁(q)}), there is ρ̂ ∈ C^∞(N) with ρ̂ = r_{∂M} on W₁, ρ̂ = 1 on M ∖ W, ρ̂ = −1 on N ∖ (M ∪ W), ρ̂ between r_{∂M} and 1 on W ∩ M and between r_{∂M} and −1 on W ∖ M; hence M = {ρ̂ ≥ 0}, ∂M = {ρ̂ = 0}, N ∖ M = {ρ̂ < 0}, grad ρ̂ = ν_in on ∂M, and for 0 < ε < 1 every point of {ρ̂ ≥ −ε} ∖ M lies in W with r_{∂M} ≥ −ε. Route: ρ̂ = ψ r_{∂M} + (1 − ψ) s with ψ a cutoff equal to 1 on the closed tube and 0 off W, and s : N → [−1, 1] equal to 1 on M ∖ W₁ and −1 on N ∖ (M ∪ W₁) (both closed since ∂M ⊆ W₁), from exists_contMDiff_zero_iff_one_iff_of_isClosed.",
+     "statement": "For Σ = ∂M (f = ρ): on W' ∩ M, r_{∂M} = d_M(·, ∂M) (intrinsic distance of (M, g_M), Manifold.riemannianEDist); r_{∂M} is a boundary defining function near ∂M with grad = ν_in on ∂M. Normalised defining function: with smooth ε₁ < ε₂ < ε (constant when ∂M is compact) such that the closed tubes E_{∂M}({|r| ≤ ε₁(q)}) and E_{∂M}({|r| ≤ ε₂(q)}) are closed in N (the closed-tube theorem inside W gives ε₂; every smaller positive continuous radius, such as ε₁ = ε₂/2, has a closed tube, the image of a closed subset of the closed ε₂-disc bundle), W := E_{∂M}({|r| < ε(q)}), W₂ := E_{∂M}({|r| < ε₂(q)}) and W₁ := E_{∂M}({|r| < ε₁(q)}), there is ρ̂ ∈ C^∞(N) with ρ̂ = r_{∂M} on W₁, ρ̂ = 1 on M ∖ W, ρ̂ = −1 on N ∖ (M ∪ W), ρ̂ between r_{∂M} and 1 on W ∩ M and between r_{∂M} and −1 on W ∖ M; hence M = {ρ̂ ≥ 0}, ∂M = {ρ̂ = 0}, N ∖ M = {ρ̂ < 0}, grad ρ̂ = ν_in on ∂M, and for 0 < ε < 1 every point of {ρ̂ ≥ −ε} ∖ M lies in W with r_{∂M} ≥ −ε. Route: ρ̂ = ψ r_{∂M} + (1 − ψ) s with ψ : N → [0, 1] a cutoff equal to 1 on the closed ε₁-tube and 0 on the closed set N ∖ W₂, and s : N → [−1, 1] equal to 1 on M ∖ W₁ and −1 on N ∖ (M ∪ W₁) (both closed since ∂M ⊆ W₁), from exists_contMDiff_zero_iff_one_iff_of_isClosed; the support of ψ lies in the closed ε₂-tube, closed in N and contained in W, so ψ r_{∂M} extended by 0 is smooth on the open cover {W, N ∖ closed ε₂-tube} of N.",
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
       "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)",
@@ -1239,12 +1244,17 @@
       {
        "name": "ball",
        "kind": "computation",
-       "statement": "Unit ball: d_M(x, ∂M) = 1 − |x| = r_{∂M}; with ε = 1/2, ε₁ = 1/4, ρ̂ = 1 − |x| on 3/4 < |x| < 5/4, ρ̂ = 1 on |x| ≤ 1/2 and ρ̂ = −1 on |x| ≥ 3/2."
+       "statement": "Unit ball: d_M(x, ∂M) = 1 − |x| = r_{∂M}; with ε = 1/2, ε₂ = 3/8, ε₁ = 1/4, ρ̂ = 1 − |x| on 3/4 < |x| < 5/4, ρ̂ = 1 on |x| ≤ 1/2 and ρ̂ = −1 on |x| ≥ 3/2."
       },
       {
        "name": "sandwich",
        "kind": "compatibility",
        "statement": "On W ∖ M the value ρ̂ is a convex combination of r_{∂M} < 0 and −1, so {ρ̂ ≥ −ε} ∖ M ⊆ {r_{∂M} ≥ −ε} for ε < 1; the unnormalised ψ r_{∂M} + (1 − ψ) ρ has no such bound (4.6's negative control)."
+      },
+      {
+       "name": "cutoff_frontier",
+       "kind": "non-example",
+       "statement": "Closed unit ball, ρ = 1 − |x|², ε = 1: W = {0 < |x| < 2} has the centre 0 on its frontier, where r_{∂M} = 1 − |x| is not smooth; a cutoff only required to vanish off W may equal |x|² near 0, and then ψ r_{∂M} = |x|² − |x|³ is not C³ at 0. With ε₂ = 3/4, ε₁ = 1/2: W₂ = {1/4 < |x| < 7/4}, ψ = 0 for |x| ≤ 1/4, ψ r_{∂M} vanishes near 0 and ρ̂ = s = 1 there."
       }
      ]
     },
@@ -1252,7 +1262,7 @@
      "id": "4.4",
      "kind": "theorem",
      "name": "boundaryNormalCoordinates",
-     "statement": "E = E_{∂M} restricted to {0 ≤ r < ε(q)} is a diffeomorphism onto an open neighbourhood of ∂M in M (a smooth collar), with r = d_M(·, ∂M); on {|r| < ε(q)}, (E*g)((u, a), (u', a')) = a a' + h_r(u, u') with (h_r) a smooth family of metrics on ∂M, h_0 = h; II = −½ ∂_r h_r|_{r=0}.",
+     "statement": "E = E_{∂M} restricted to {0 ≤ r < ε(q)} is a diffeomorphism onto the open neighbourhood W ∩ M of ∂M in M (a smooth collar after r = ε(q)s); there is a smooth η : ∂M → (0, ∞) with η ≤ ε, constant when ∂M is compact, such that E({|r| < η(q)}) ⊆ W' (the distance neighbourhood of 4.3.1/4.3.3), hence r = d_M(·, ∂M) on E({0 ≤ r < η(q)}) (route: the largest admissible half-width m(q) ≤ ε(q) is positive and lower semicontinuous by the tube lemma, and a partition of unity gives smooth 0 < η < m); on {|r| < ε(q)}, (E*g)((u, a), (u', a')) = a a' + h_r(u, u') with (h_r) a smooth family of metrics on ∂M, h_0 = h; II = −½ ∂_r h_r|_{r=0}.",
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
       "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)",
@@ -1266,7 +1276,8 @@
       "target:1.4",
       "target:4.3.2",
       "target:4.3.3",
-      "roadmap:GeometricTopology §1.1"
+      "roadmap:GeometricTopology §1.1",
+      "mathlib:SmoothPartitionOfUnity"
      ],
      "api": [],
      "tests": [
@@ -1284,6 +1295,11 @@
        "name": "dimension_one",
        "kind": "degenerate",
        "statement": "n = 0: E*g = dr²."
+      },
+      {
+       "name": "unequal_strips",
+       "kind": "non-example",
+       "statement": "ℝ², ρ = x(1 − x), M = [0, 1] × ℝ: radii ε = 0.9 on {x = 0} and 0.01 on {x = 1} satisfy the tube, sign and Gauss conclusions of 4.3.2 (disjoint strips (−0.9, 0.9) × ℝ and (0.99, 1.01) × ℝ), but at (0.8, 0) the normal coordinate is 0.8 while d_M(·, ∂M) = 0.2; with η = 0.4 and 0.005 the distance equals r on the smaller half-tube, which omits (0.8, 0)."
       }
      ]
     },
@@ -1482,7 +1498,7 @@
       {
        "name": "exitTime_flow",
        "role": "structure",
-       "statement": "For compact M and unit v with τ < ∞: the geodesic extends to [0, τ], ends on ∂M with μ ≤ 0; for 0 ≤ t ≤ τ(x, v) and (y, w) = φ_t(x, v): τ(y, w) = τ(x, v) − t and τ(y, −w) = τ(x, −v) + t."
+       "statement": "For compact M and (x, v) ∈ SM (unit v, as μ and φ_t require) with τ(x, v) < ∞: the geodesic extends to [0, τ], ends on ∂M with μ ≤ 0; for 0 ≤ t ≤ τ(x, v) and (y, w) = φ_t(x, v) ∈ SM: τ(y, w) = τ(x, v) − t and τ(y, −w) = τ(x, −v) + t."
       },
       {
        "name": "closed_trapped",
@@ -1720,7 +1736,7 @@
       {
        "name": "ball",
        "kind": "computation",
-       "statement": "Unit ball: a = 4(⟨x, v⟩² + 1 − |x|²), Q(r, ·) = (−2⟨x, v⟩ + r)/2."
+       "statement": "Unit ball, on SM (|v| = 1): a = 4(⟨x, v⟩² + 1 − |x|²), Q(r, ·) = (−2⟨x, v⟩ + r)/2."
       }
      ]
     },
@@ -1751,7 +1767,7 @@
       {
        "name": "ball",
        "kind": "computation",
-       "statement": "Unit ball: σ = −2⟨x, v⟩, T = 1 − |x|², d/dt(−2⟨x + tv, v⟩) = −2."
+       "statement": "Unit ball, on SM (|v| = 1): σ = −2⟨x, v⟩, T = 1 − |x|², d/dt(−2⟨x + tv, v⟩) = −2|v|² = −2 (off SM, homogeneity gives −2⟨x, v⟩/|v|² and (1 − |x|²)/|v|², which is why σ and T live on SM)."
       },
       {
        "name": "interval",
@@ -1764,7 +1780,7 @@
      "id": "5.5.1",
      "kind": "theorem",
      "name": "isNonTrapping_of_X_pos",
-     "statement": "For compact M (no convexity hypothesis): if f ∈ C^∞(SM) has Xf > 0 on SM then M is non-trapping, with τ ≤ (max f − min f)/min Xf. Hessian criterion: if u is smooth near M with Hess u positive definite on M, M is non-trapping (f = du(v), Xf = Hess u(v, v)).",
+     "statement": "For compact M (no convexity hypothesis): if f ∈ C^∞(SM) has Xf > 0 on SM then M is non-trapping, and τ(x, v) ≤ (max_SM f − min_SM f)/min_SM Xf for every (x, v) ∈ SM (the extrema exist because SM is compact and contains (x, v); for SM = ∅ there is no point to bound). Hessian criterion: if u is smooth near M with Hess u positive definite on M, M is non-trapping (f = du(v), Xf = Hess u(v, v)).",
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
       "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)",
@@ -1784,12 +1800,12 @@
       {
        "name": "ball_bound",
        "kind": "computation",
-       "statement": "Unit ball, u = |x|²/2: f = ⟨x, v⟩, Xf = 1, τ ≤ 2 = diameter."
+       "statement": "Unit ball, u = |x|²/2: f = ⟨x, v⟩, Xf = |v|² = 1 on SM, τ(x, v) ≤ 2 = diameter for (x, v) ∈ SM."
       },
       {
        "name": "closed_manifold",
        "kind": "non-example",
-       "statement": "Compact M without boundary: no f has Xf > 0 (maximum of f), τ ≡ ∞."
+       "statement": "Nonempty compact M without boundary: SM is nonempty and compact, so Xf = 0 at a maximum of f and no f has Xf > 0; τ ≡ ∞ on SM."
       }
      ]
     },
@@ -1825,7 +1841,12 @@
       {
        "name": "closed_manifold",
        "kind": "degenerate",
-       "statement": "Closed M: all three conditions fail."
+       "statement": "Nonempty closed M (compact, ∂M = ∅): all three conditions fail (Xf = 0 at a maximum of f on the nonempty compact SM, so no Xu equals 1 and no f has Xf > 0; τ ≡ ∞ on SM)."
+      },
+      {
+       "name": "empty_domain",
+       "kind": "degenerate",
+       "statement": "N = ℝ², ρ ≡ −1 (0 a regular value with empty fibre): M = ∅ is compact with vacuously strictly convex boundary, SM = ∅ and C^∞(SM) is a single point; non-trapping, surjectivity of X and ∃ f with Xf > 0 all hold, as the equivalence requires."
       },
       {
        "name": "strictly_convex_trapped",
@@ -1961,7 +1982,7 @@
      "id": "6.1.1",
      "kind": "example",
      "name": "euclideanBall",
-     "statement": "Closed ball B̄(c, R) ⊆ ℝⁿ⁺¹: II = h/R, S = R⁻¹ id, H = 1/R for n ≥ 1, strictly convex, non-trapping, τ(x, v) = −⟨x − c, v⟩ + √(⟨x − c, v⟩² + R² − |x − c|²), τ̃ = −2⟨x − c, v⟩ and α(x, v) = (x − 2⟨x − c, v⟩v, v) on ∂SM, signed distance R − |x − c|.",
+     "statement": "Closed ball B̄(c, R) ⊆ ℝⁿ⁺¹: II = h/R, S = R⁻¹ id, H = 1/R for n ≥ 1, strictly convex, non-trapping, τ(x, v) = −⟨x − c, v⟩ + √(⟨x − c, v⟩² + R² − |x − c|²) for x ∈ B̄(c, R) and |v| = 1, hence by homogeneity (5.2) τ(x, v) = (−⟨x − c, v⟩ + √(⟨x − c, v⟩² + |v|²(R² − |x − c|²)))/|v|² for v ≠ 0 and τ(x, 0) = ∞, τ̃ = −2⟨x − c, v⟩ and α(x, v) = (x − 2⟨x − c, v⟩v, v) on ∂SM, signed distance R − |x − c|.",
      "hypotheses": [
       "Euclidean metric on ℝⁿ⁺¹",
       "R > 0"
@@ -1987,6 +2008,11 @@
        "statement": "R = 1, x = (0, −1): τ = sin θ + |sin θ|."
       },
       {
+       "name": "speed",
+       "kind": "non-example",
+       "statement": "R = 1, x = 0: τ(0, e₁) = 1 equals the unit-speed root, but τ(0, e₁/4) = 4 and τ(0, 0) = ∞ while that root still gives 1 at e₁/4 and at 0, and 4 > diam = 2; the general-speed formula gives (√(1/16))/(1/16) = 4 and the general bound 4 ≤ 2/(1/4) = 8."
+      },
+      {
        "name": "radius_zero",
        "kind": "non-example",
        "statement": "R = 0: {−|x − c|² ≥ 0} = {c} and dρ = −2(x − c) vanishes there; 0 is a critical value and the singleton is not a regular domain."
@@ -1997,7 +2023,7 @@
      "id": "6.1.2",
      "kind": "example",
      "name": "convexEuclideanDomain",
-     "statement": "Every compact regular domain D ⊆ ℝⁿ⁺¹ is non-trapping (Hessian criterion with |x|²/2) with τ ≤ diam D; if D is convex as a set, ∂D is convex; in adapted coordinates D = {x₀ ≥ w(x')} with w(0) = 0, Dw(0) = 0, II_q = D²w(0), so ∂D is strictly convex at q iff D²w(0) is positive definite iff the principal curvatures at q are positive.",
+     "statement": "Every compact regular domain D ⊆ ℝⁿ⁺¹ is non-trapping (Hessian criterion with |x|²/2) with τ(x, v) ≤ diam D for (x, v) ∈ SD (the geodesic is the segment from x to x + τ(x, v)v, both endpoints in D), τ(x, v) ≤ diam D/|v| for v ≠ 0 and τ(x, 0) = ∞; if D is convex as a set, ∂D is convex; in adapted coordinates D = {x₀ ≥ w(x')} with w(0) = 0, Dw(0) = 0, II_q = D²w(0), so ∂D is strictly convex at q iff D²w(0) is positive definite iff the principal curvatures at q are positive.",
      "hypotheses": [
       "Euclidean metric on ℝⁿ⁺¹",
       "D = {ρ ≥ 0} compact regular domain"
@@ -2011,6 +2037,7 @@
       "target:1.5",
       "target:2.1",
       "target:3.1",
+      "target:5.2",
       "target:5.5.1"
      ],
      "api": [],
@@ -2135,9 +2162,10 @@
      "id": "6.4",
      "kind": "example",
      "name": "smallGeodesicBall",
-     "statement": "For boundaryless Hausdorff (N, g) and p ∈ N there is r_p > 0 such that for 0 < R < r_p, d(p, ·)² is smooth on B(p, r_p) with R² regular, and B̄(p, R) is a compact regular domain with strictly convex boundary, non-trapping; r_p uniform over compact sets of centres.",
+     "statement": "For boundaryless Hausdorff second-countable (N, g) and p ∈ N there is r_p > 0 such that for 0 < R < r_p, d(p, ·)² is smooth on B(p, r_p) with R² regular, and B̄(p, R) is a compact regular domain with strictly convex boundary, non-trapping; r_p uniform over compact sets of centres.",
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
+      "N second countable (the standing hypothesis of Layer 5, whose criterion 5.5.1 the route applies, and of SmoothBundlesConnections B6.0)",
       "p ∈ N"
      ],
      "locator": {
