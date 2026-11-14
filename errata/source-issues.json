@@ -212571,10 +212571,42 @@
    "reported": "2026-11-14",
    "reporter": "codex gpt-6-astra",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/15109#issuecomment-6877463840"
+  },
+  {
+   "kind": "misprint",
+   "source": "Hutchinson13",
+   "locator": "Corollary 3.3, proof, printed p. 12 (Hutchinson13 line 518)",
+   "says": "the degrees concerned are those congruent to 3 modulo 3",
+   "should": "congruent to 3 modulo 4, as in its statement",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "CohomologyOfGroups",
+   "job": "REV-PKG-CohomologyOfGroups~5",
+   "board_pr": 15095,
+   "head": "f181f00",
+   "reported": "2026-11-14",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/15095#issuecomment-6878366911"
+  },
+  {
+   "kind": "gap",
+   "source": "MilneCFT",
+   "locator": "Chapter II Remark 3.5, printed p. 81 (MilneCFT line 3813–3817)",
+   "says": "the cyclic period isomorphism is cup product with the class of the normalised character and postpones the proof",
+   "should": "give the proof or a computation",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "CohomologyOfGroups",
+   "job": "REV-PKG-CohomologyOfGroups~5",
+   "board_pr": 15095,
+   "head": "f181f00",
+   "reported": "2026-11-14",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/15095#issuecomment-6878366911"
   }
  ],
- "scanned_to": "2026-11-14T12:46:15Z",
- "updated": "2026-11-14T12:52:24Z",
+ "scanned_to": "2026-11-14T13:59:37Z",
+ "updated": "2026-11-14T14:04:47Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
