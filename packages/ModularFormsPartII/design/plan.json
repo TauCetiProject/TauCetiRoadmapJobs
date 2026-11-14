@@ -3446,7 +3446,7 @@
     },
     {
       "slug": "udc-all-prime-cuspidal-model-of-full-level",
-      "needs": "For N ≥ 1 and a number field K ⊇ Q(μ_N), a regular proper model of X(N)_K over O_K at every prime, including the primes dividing N, with the cusp ∞ extending to a section through the smooth locus, the fibre component through that section, and compatibility with finite extensions of K.",
+      "needs": "For N ≥ 1 and a number field K ⊇ Q(μ_N), the minimal regular model of X(N)_K over O_K (unique for N ≥ 6, where the genus is at least 1; for N ≤ 5, where X(N)_K ≅ P¹_K, a smooth proper model) at every prime, including the primes dividing N, with the cusp ∞ extending to a section through the smooth locus and the component of the smooth locus of each closed fibre through that section.",
       "supplier": "ModularCurvesPartII",
       "section": "Layer 11 (§11.4)"
     },

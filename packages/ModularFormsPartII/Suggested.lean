@@ -11,8 +11,10 @@ Stated here:
 
 * the modular λ function is a covering of `ℂ ∖ {0, 1}` whose fibres are the `Γ(2)`-orbits
   (README §2.2);
-* the nonabelian Ihara lemma for a normal finite-index subgroup of geometric level dividing `N`
-  (README §4.1);
+* the nonabelian Ihara lemma for a normal finite-index subgroup `G` containing every
+  `SL₂(ℤ)`-conjugate of `T^N` (README §4.1); this containment implies that the geometric level of
+  `G`, which only asks for these conjugates to lie in `±G`, divides `N`, and is equivalent to it
+  when `−I ∈ G` but not in general;
 * the unbounded denominators theorem of Calegari–Dimitrov–Tang (README §6.3) and its form for
   algebraic-integer Fourier coefficients (README §6.6);
 * congruence of a component of a vector-valued modular form with an integral Fourier expansion
@@ -31,7 +33,8 @@ Headline theorems that are not statable at the pins:
   continuation of solutions of a linear differential operator and no local monodromy, nor the
   meromorphic-basis condition at a singular point;
 * the arithmetic fundamental-group theorem for the cuspidal smooth model of `X(N)` (README §9.3):
-  the pinned libraries have neither the regular model of `X(N)` over `𝓞_K` nor its cusp section.
+  the pinned libraries have neither the minimal regular model of `X(N)` over `𝓞_K` nor its cusp
+  section.
 -/
 
 namespace TauCetiRoadmap.ModularFormsPartII
@@ -77,9 +80,10 @@ theorem modularLambda_covering :
 
 /-- The nonabelian Ihara lemma (README §4.1; CDT Lemma 4.4.1). Let `N ≥ 3`, let `p ∤ N` be prime,
 and let `G` be a normal finite-index subgroup of `SL₂(ℤ)` containing every `SL₂(ℤ)`-conjugate
-of `T^N`, that is, of geometric level dividing `N`. Write `c(g) = A g A⁻¹` for `A = diag(p, 1)` and
-`g ∈ Γ(N) ∩ Γ₀(p)`. Then every pair of classes of `Γ(N)` modulo `G` is attained as the pair of
-classes of `g` and `c(g)` for one `g ∈ Γ(N) ∩ Γ₀(p)`: the map
+of `T^N`, hence of geometric level dividing `N` (the converse holds when `−I ∈ G`; without `−I`
+the geometric level only puts the conjugates in `±G`). Write `c(g) = A g A⁻¹` for
+`A = diag(p, 1)` and `g ∈ Γ(N) ∩ Γ₀(p)`. Then every pair of classes of `Γ(N)` modulo `G` is
+attained as the pair of classes of `g` and `c(g)` for one `g ∈ Γ(N) ∩ Γ₀(p)`: the map
 `Γ(N) ∩ Γ₀(p) → S × S`, `S = Γ(N)/(G ∩ Γ(N))`, is surjective. -/
 theorem nonabelian_ihara (N p : ℕ) (hN : 3 ≤ N) (hp : p.Prime) (hpN : ¬ p ∣ N)
     (G : Subgroup SL(2, ℤ)) [G.Normal] [G.FiniteIndex]
