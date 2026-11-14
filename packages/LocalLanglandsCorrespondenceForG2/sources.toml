@@ -8,7 +8,7 @@ title = "${\\rm Spin}(7)$ is unacceptable"
 year = 2023
 arxiv = "2303.15897v1"
 locator_scheme = "theorem"
-locator = "Lemma 3.10; Proposition 3.12; Example 1; Proposition 4.7; Corollary 4.8"
+locator = "Lemma 3.10; Proposition 3.12; Example 1; Proposition 4.7; Corollary 4.8; Lemma 5.9; Proposition 5.10; Lemma 8.2; Proposition 8.3; Proposition 8.4"
 url = "https://arxiv.org/abs/2303.15897v1"
 fetched_from = "https://arxiv.org/pdf/2303.15897v1"
 fetched_at = "2026-10-26T20:42:19Z"
@@ -17,7 +17,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v1"
-cited_for = ["0.7", "0.8"]
+cited_for = ["0.6", "0.7", "0.8"]
 
 [[source]]
 id = "GF"
@@ -81,7 +81,7 @@ year = 2023
 venue = "Forum of Mathematics, Pi 11 (2023) e28"
 doi = "10.1017/fmp.2023.27"
 locator_scheme = "theorem"
-locator = "Main Theorem; Lemma 2.4; Propositions 3.1-3.2, 4.1, 5.1-5.2, 6.1, 8.1-8.2; Lemma 8.3; Theorem 9.1; Propositions 10.5, 10.7; Lemma 10.8; Theorems 12.3, 12.6, 12.7"
+locator = "Main Theorem; Lemma 2.4; Propositions 3.1-3.2, 4.1, 5.1-5.2, 6.1, 8.1-8.2; Lemma 8.3; Theorem 9.1; Propositions 10.5, 10.7; Lemma 10.8; Theorem 12.3; Lemmas 12.4-12.5; Theorems 12.6, 12.7"
 url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/2479D805B0F248C91A33671F3A03752E/S2050508623000276a.pdf/local_langlands_conjecture_for_g2.pdf"
 fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/2479D805B0F248C91A33671F3A03752E/S2050508623000276a.pdf/local_langlands_conjecture_for_g2.pdf"
 fetched_at = "2026-10-26T20:42:55Z"
@@ -189,7 +189,7 @@ venue = "Duke Math. J. 166, no. 7 (2017), 1301-1348"
 doi = "10.1215/00127094-0000001X"
 arxiv = "1404.2909v2"
 locator_scheme = "theorem"
-locator = "Lemma A.2; Proposition A.5"
+locator = "Lemma A.2; Proposition A.5; Proposition 4.5 (proof)"
 url = "https://arxiv.org/abs/1404.2909v2"
 fetched_from = "https://arxiv.org/pdf/1404.2909v2"
 fetched_at = "2026-10-26T20:57:53Z"
@@ -198,7 +198,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v2"
-cited_for = ["Exact supplier contracts", "1.5"]
+cited_for = ["Exact supplier contracts", "1.3", "1.5", "2.4"]
 
 [[source]]
 id = "Griess"
