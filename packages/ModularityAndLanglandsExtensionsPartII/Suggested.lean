@@ -16,6 +16,12 @@ pinned Mathlib and Tau Ceti, the headline theorems of the roadmap that are stata
   `L(s, Sym^n f)` converges for `Re s > n(k − 1)/2 + 1` to a function that extends to an entire
   function (README §14.4). It is the consequence of symmetric power functoriality in level one
   that is visible on the classical newforms and Satake parameters of Tau Ceti.
+* `symPowerEulerProduct_entire_of_not_hasQuadraticSelfTwist`: for a newform `f` of any level `N`
+  and weight `k ≥ 2` without a quadratic self-twist (`HasQuadraticSelfTwist`, the non-CM
+  condition) and every `n ≥ 1`, the same Euler product taken over the primes `p ∤ N` converges
+  for `Re s > n(k − 1)/2 + 1` to a function that extends to an entire function (README §14.5). It
+  is the consequence of symmetric power functoriality for every non-CM newform (§14.3) visible on
+  the classical newforms of Tau Ceti.
 
 ## Not statable at the pins
 
@@ -37,13 +43,11 @@ of unitary groups, and Galois deformation and pseudodeformation rings. Hence:
   Galois representations of automorphic representations, deformation rings and patching.
 * `SP_n` over totally real fields (§13.10) lacks Hilbert modular forms and automorphic
   representations of `GL_n` over totally real fields.
-* Symmetric power functoriality for every non-CM newform (§14.3) lacks a CM predicate on
-  newforms: Tau Ceti has no notion of a newform with complex multiplication, and "non-CM" is the
-  hypothesis of the theorem. With such a predicate, its consequence visible at the pins would be
-  statable from `satakeParameters` alone: for a non-CM newform of weight `k ≥ 2` and level `N`,
-  the Euler product of `L(s, Sym^n f)` over the primes not dividing `N` converges for
-  `Re s > n(k − 1)/2 + 1` and extends to an entire function (the omitted factors at `p | N` are
-  inverse polynomials in `p^{−s}`, so they do not affect entireness).
+* Symmetric power functoriality for every non-CM newform (§14.3), as the existence of the
+  automorphic representation `Sym^{n−1} π` of `GL_n(𝔸_ℚ)` with the prescribed local components at
+  every place, lacks automorphic representations of `GL_n(𝔸_ℚ)` and the local Langlands
+  correspondence at the ramified primes; its consequence at the unramified primes is the second
+  statement above.
 -/
 
 @[expose] public section
@@ -59,7 +63,7 @@ noncomputable def symPowerEulerFactor (n : ℕ) (α β x : ℂ) : ℂ :=
   ∏ j ∈ Finset.range (n + 1), (1 - α ^ j * β ^ (n - j) * x)
 
 /-- The Euler factor depends only on the unordered pair `{α, β}`: exchanging the Satake
-parameters reindexes the product by `j ↦ n − j`. This is what makes the statement below
+parameters reindexes the product by `j ↦ n − j`. This is what makes the statements below
 independent of the ordering chosen in `hαβ`. -/
 example (n : ℕ) (α β x : ℂ) : symPowerEulerFactor n α β x = symPowerEulerFactor n β α x := by
   unfold symPowerEulerFactor
@@ -68,6 +72,19 @@ example (n : ℕ) (α β x : ℂ) : symPowerEulerFactor n α β x = symPowerEule
   have hj' : j ≤ n := Nat.lt_succ_iff.mp (Finset.mem_range.mp hj)
   rw [show n + 1 - 1 - j = n - j by omega, show n - (n - j) = j by omega]
   ring
+
+/-- A newform `f` of level `N` **has a quadratic self-twist** when, for some modulus `M > 0`, a
+non-trivial Dirichlet character `ψ` modulo `M` with `ψ² = 1` satisfies `a_p(f) ψ(p) = a_p(f)` at
+every prime `p ∤ N M`. For weight `k ≥ 2` this is the condition that `f` has complex
+multiplication in the sense of Newton–Thorne (nt21 p. 2, footnote 1): the automorphic
+representation `π_f` satisfies `π_f ≅ π_f ⊗ χ` for a quadratic Hecke character `χ` of `ℚ`. One
+direction compares the Hecke eigenvalues of `π_f ⊗ χ` at the primes where both are unramified;
+the other is strong multiplicity one for `GL_2`. -/
+def HasQuadraticSelfTwist {N : ℕ} [NeZero N] {k : ℤ} (f : Newform N k) : Prop :=
+  ∃ M : ℕ, 0 < M ∧ ∃ ψ : DirichletCharacter ℂ M, ψ ≠ 1 ∧ ψ ^ 2 = 1 ∧
+    ∀ p : ℕ, p.Prime → p.Coprime (N * M) →
+      (UpperHalfPlane.qExpansion 1 f.toCuspForm).coeff p * ψ p =
+        (UpperHalfPlane.qExpansion 1 f.toCuspForm).coeff p
 
 /-- **Holomorphy of symmetric power `L`-functions in level one** (README §14.4; Newton–Thorne I,
 Theorem A and its consequence for `Δ`, nt21 p. 2). Let `f` be a normalised Hecke eigenform of
@@ -83,6 +100,27 @@ theorem symPowerEulerProduct_levelOne_entire {k : ℤ} (f : Newform 1 k) (n : �
       ∀ s : ℂ, (n : ℝ) * ((k : ℝ) - 1) / 2 + 1 < s.re →
         HasProd (fun p : Nat.Primes =>
           (symPowerEulerFactor n (α p) (β p) ((p : ℂ) ^ (-s)))⁻¹) (L s) := by
+  sorry
+
+/-- **Holomorphy of symmetric power `L`-functions of non-CM newforms** (README §14.5;
+Newton–Thorne II, Theorem A, nt21b p. 1). Let `f` be a newform of level `N` and weight `k ≥ 2`
+without a quadratic self-twist, with Satake parameters `{α_p, β_p}` at every prime `p ∤ N`, and let
+`n ≥ 1`. Then the Euler product over the primes `p ∤ N` of
+`symPowerEulerFactor n α_p β_p (p^{−s})⁻¹` converges for `Re s > n(k − 1)/2 + 1` to a function
+which extends to an entire function on `ℂ`. The route: `Sym^n π_f` is a cuspidal automorphic
+representation of `GL_{n+1}(𝔸_ℚ)` (§14.3), unramified at every `p ∤ N` with Satake parameters
+`α_p^j β_p^{n−j} p^{−n(k−1)/2}`; its finite `L`-function is entire by Godement–Jacquet, and the
+omitted factors at the primes `p ∣ N` are reciprocals of polynomials in `p^{−s}`, so removing them
+keeps the function entire. The weight bound excludes weight-one forms, whose symmetric powers
+need not be cuspidal, and `1 ≤ n` excludes `ζ(s)`. -/
+theorem symPowerEulerProduct_entire_of_not_hasQuadraticSelfTwist {N : ℕ} [NeZero N] {k : ℤ}
+    (f : Newform N k) (hk : 2 ≤ k) (hf : ¬ HasQuadraticSelfTwist f) (n : ℕ) (hn : 1 ≤ n)
+    (α β : ℕ → ℂ)
+    (hαβ : ∀ p : ℕ, p.Prime → ¬ p ∣ N → f.satakeParameters p = {α p, β p}) :
+    ∃ L : ℂ → ℂ, Differentiable ℂ L ∧
+      ∀ s : ℂ, (n : ℝ) * ((k : ℝ) - 1) / 2 + 1 < s.re →
+        HasProd (fun p : {p : Nat.Primes // ¬ (p : ℕ) ∣ N} =>
+          (symPowerEulerFactor n (α p.1) (β p.1) (((p.1 : ℕ) : ℂ) ^ (-s)))⁻¹) (L s) := by
   sorry
 
 end TauCetiRoadmap.ModularityAndLanglandsExtensionsPartII

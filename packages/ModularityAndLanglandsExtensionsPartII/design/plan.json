@@ -5736,20 +5736,20 @@
   "gaps": [
     {
       "slug": "geometric-weak-primitive-auxiliary-finiteness",
-      "needs": "the finiteness theorem \"Finiteness with an unobstructed auxiliary place\" of §8.20 (Layer 8), which there keeps the strong-primitivity hypotheses of §8.7, in the geometric weak-primitive setting of Newton–Thorne 2026 Proposition 3.9 (nt26 pp. 20–21), applied twice (with and then without an auxiliary Steinberg place), including the comparison of the non-scalar unobstructed auxiliary local ring with the Hecke algebra at auxiliary level.",
+      "needs": "extend §8.16 (Layer 8), retaining the geometric weak-primitivity and all other §8.7 hypotheses, to the two deformation problems in Newton–Thorne 2026 Proposition 3.9 (nt26 pp. 20–21): finiteness first with the extra Steinberg condition at `v_2` and then with that condition replaced by the unrestricted one, without assuming that the cyclotomic restricted residual image has no nontrivial `l`-power quotient; §8.16 already supplies the non-scalar unobstructed auxiliary local/Hecke comparison, and only this hypothesis removal and two-application extension are requested.",
       "supplier": "PotentialAutomorphyInfrastructurePartII",
-      "section": "§8.20 (Layer 8)"
+      "section": "§8.16 (Layer 8)"
     },
     {
       "slug": "dyadic-definite-unitary-forms",
-      "needs": "the Layer 3 constructions for `l = 2` used by Newton–Thorne II §2 and Newton–Thorne 2026 §4 at `p = 2`: algebraic modular forms on the definite unitary group, exactness and group-ring freeness at sufficiently small level, Taylor–Wiles level structures, and the Hecke-valued determinant of the localized Hecke algebra (the `𝒢_n`-valued lift is not needed), together with the potential diagonalizability of two-dimensional potentially Barsotti–Tate representations for `l = 2` in Layer 1 (§1.6).",
+      "needs": "the Layer 3 constructions for `l = 2` used by Newton–Thorne II §2 and Newton–Thorne 2026 §4 at `p = 2`: algebraic modular forms on the definite unitary group, exactness and group-ring freeness at sufficiently small level, Taylor–Wiles level structures, and the Hecke-valued determinant of the localized Hecke algebra (the `𝒢_n`-valued lift is not needed), together with the potential diagonalizability of two-dimensional potentially Barsotti–Tate representations for `l = 2` in Layer 1 (§1.4).",
       "supplier": "PotentialAutomorphyInfrastructurePartII",
-      "section": "Layer 3"
+      "section": "Layer 3 and §1.4"
     },
     {
       "slug": "components-under-field-extension",
       "needs": "in Layer 1, the behaviour of irreducible components of a quasi-separated rigid space over a complete field `E` under extension of the ground field to a finite extension and to `ℂ_p`: every component over `ℂ_p` lies in the base change of a component over `E`, and if there are finitely many components then after a finite extension `E′/E` all components are geometrically irreducible (Conrad, con99 Theorem 3.4.2, internal pp. 26–27).",
-      "supplier": "AdicSpacesPartIIPartII",
+      "supplier": "AdicSpacesPartV",
       "section": "Layer 1"
     },
     {
@@ -5760,9 +5760,9 @@
     },
     {
       "slug": "formal-torus-patching",
-      "needs": "in Layer 6, the formal-group contract used by Newton–Thorne II Propositions 2.8–2.9 and Newton–Thorne 2026 Proposition 4.9 (after Khare–Wintenberger, kw09 Proposition 2.5): a free action of a formal torus `Ĝ_m^γ` on `Sp R′`, an equivariant map `δ` to `Ĝ_m^γ` for the square action with fibre `Sp R = δ^{−1}(1)`, the resulting `Ĝ_m^γ[2]`-torsor `Sp R → Sp R^{inv}` on represented complete-local functors, actions on both patched modules, and transitivity of `Ĝ_m^γ[2](𝒪)` on the components containing a given point; no torsor on `Spec` is inferred from the formal statement.",
+      "needs": "in §5.4 and Layer 6, extend the rank-two free patched torus action of GL2ModularityLifting §§6.1, 6.6 and its determinant-one fibre and torsor of §6.7 and GlobalGaloisDeformations §4.11 to simultaneous patching with the pseudodeformation rings and both modules in Newton–Thorne II Proposition 2.8 and Newton–Thorne 2026 Proposition 4.9 (kw09 Proposition 9.3): assume the supplied compatible free action chunks on cofinal Artinian truncations of `Sp R′_N`, detecting every stabilizer on an Artinian test algebra, square-equivariant determinant maps whose fibre comparison kernels tend to zero, compatible `Ĝ_m^γ[2]`-actions on `Sp P_N` making `Sp R_N → Sp P_N` equivariant, and semilinear `Ĝ_m^γ[2](𝒪)`-actions on both finite-level modules commuting with their scalar and transition maps; retain these actions on `P_∞`, `H_{D,∞}` and `H_{G,∞}` in the simultaneous limit, and prove that if `R′_∞` is an `𝒪`-flat domain then `{±1}^γ` acts transitively on the irreducible components of `Spec R_∞`; the free rank-two action and its torsor are supplied inputs, not conclusions from square-equivariance alone.",
       "supplier": "DeformationAndDerivedPatchingAlgebra",
-      "section": "Layer 6"
+      "section": "§5.4 and Layer 6"
     },
     {
       "slug": "artinian-crystalline-quotients",
@@ -5796,7 +5796,7 @@
     },
     {
       "slug": "iwahori-matsumoto-quasi-split",
-      "needs": "in SR.1.5, the Iwahori–Matsumoto presentation of the Iwahori–Hecke algebra `H(G, B)` for every group with an affine Tits system supplied by ReductiveGroupsPartII §RG2.4.2, with parameters `q_s = [BsB : B]`, in particular for the ramified quasi-split unitary groups `U_{2k+1}`: quadratic relations `(T_s − q_s)(T_s + 1) = 0` and braid relations, over `ℤ` with the positive braid monoid and over `ℤ[q_s^{−1}]` with the braid group.",
+      "needs": "in SR.1.5, for a quasi-split connected reductive group `G` over a non-archimedean local field `F` with the affine Tits system `(G(F)_1, I, N(F)_1, S̃)` of ReductiveGroupsPartII §RG2.4.2 (`I` the Iwahori subgroup of an alcove, the integral points of the connected Bruhat–Tits model, and `G(F)_1` the subgroup generated by the parahoric subgroups), the Iwahori–Matsumoto presentation of `H(G(F)_1, I)` with parameters `q_s = [IsI : I]` (quadratic relations `(T_s − q_s)(T_s + 1) = 0` and braid relations, over `ℤ` with the positive braid monoid and over `ℤ[q_s^{−1}]` with the braid group) and the presentation of `H(G(F), I)` as its crossed product with the length-zero group `Ω`, in particular for the ramified quasi-split unitary groups `U_{2k+1}`, from which §4.8 derives the Hecke algebra of the chamber fixer.",
       "supplier": "SmoothRepresentationsOfLocalGroups",
       "section": "SR.1.5"
     },
