@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-OcneanuRigidity~3",
+    "head": "c198308f3c6106466be0f265db55fe346f664038",
+    "pr": 2316,
+    "folder": "OcneanuRigidity",
+    "date": "2026-11-14",
+    "findings": 13,
+    "blocking": 3,
+    "notes": "incremental re-review of 7 changed lines since b188ea1; verified all 13 previous findings (none repaired), the normGlobalDim family convention and suppliers, computed adversarial witnesses, 16 source locators/context passages, PR description and folder scope. Seeded sample: zero targets supplied. Worker and rerun gates fail tex=11 and target-ids=1; movable dependency check: 244 roadmaps, 2198 edges, 0 problems. Full gate also reports NOT IN ORDER, excluded as a defect by the placement rule. Targeted build and direct elaboration pass; both signatures checked and omitted finiteness headline elaborated. No new finding from the changed passage."
+  }
+}
