@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PerfectoidSpacesPartII~5",
+  "head": "df3fb4498d12f3b76edbf291dc74f7f0a78b8a89",
+  "pr": 2286,
+  "folder": "PerfectoidSpacesPartII",
+  "date": "2026-11-14",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 130 changed lines since 671703e; the previous review raised no finding. Checked: the general Gabber invariance §2.4(5) (proof recomputed; injectivity is shown to be needed), the §3.3 counit annular invariance and its C = B x K Check, regularity-free §3.6(2) and its Lean statement (true without hreg, derived from (3)), the §3.10 construction, faithful flatness and the trace epimorphism for almost Galois extensions §4.1 (GR 2.1.7(ii), PerfectoidSpaces P0.1/P0.11), the §5.12 descent through the frame torsor, and the Huber supplier sentence with its dropped import. Seeded targets in the change: §§2.4, 3.3, 3.10; 12 source locators checked. Two P3 locator findings: R01 §3.6(2) attributed to André A Théorème 4.2.2, which assumes g regular; R02 §4.1 trace epimorphism attributed to Prop 1.9.1 rather than Remarques 1.8.1. Gate: every scanner passed; depcheck 243 roadmaps, 2197 edges, 0 problems; elaboration of a copy with 35 #check: 10 sorry warnings, 0 errors; the PR text is consistent with the head.",
+  "carried": {
+   "from": "df3fb4498d12f3b76edbf291dc74f7f0a78b8a89",
+   "head": "10927a462868f31501d10a81d3437ce90850ebec",
+   "findings": 2,
+   "lines": 26,
+   "folders": [
+    "PerfectoidSpacesPartII"
+   ]
+  }
+ }
+}
