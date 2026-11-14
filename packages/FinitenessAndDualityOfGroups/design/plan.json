@@ -229,12 +229,12 @@
       {
        "name": "rat_colimit",
        "kind": "non-example",
-       "statement": "G = ℚ, M_i = R[ℚ/(1/i!)ℤ]: colim (M_i)^ℚ = 0 but (colim M_i)^ℚ = R, so (b) fails at k = 0."
+       "statement": "G = ℚ, R ≠ 0, n = 1, M_i = R[ℚ/(1/i!)ℤ]: colim (M_i)^ℚ = 0 but (colim M_i)^ℚ = R, so (b) fails at k = 0. Over the zero ring every module here is 0 and the map is 0 → 0, bijective (ℚ is FP_1 over 0)."
       },
       {
        "name": "rat_product",
        "kind": "non-example",
-       "statement": "G = ℚ: (1 − 1/j!)_j in ∏ Rℚ maps to 0 in ∏ R but is not in I·∏ Rℚ, so (e) fails at k = 0."
+       "statement": "G = ℚ, R ≠ 0: (1 − 1/j!)_j in ∏ Rℚ maps to 0 in ∏ R but is not in I·∏ Rℚ, so (e) fails at k = 0. Over the zero ring both products are 0 and the map is 0 → 0, bijective."
       }
      ]
     },
@@ -502,7 +502,7 @@
       {
        "name": "2Z_in_Z",
        "kind": "computation",
-       "statement": "2ℤ ≤ ℤ: both 1."
+       "statement": "2ℤ ≤ ℤ: for R ≠ 0 both sides of (b) are 1; over the zero ring both are 0."
       }
      ]
     },
@@ -614,7 +614,7 @@
       {
        "name": "BS12",
        "kind": "computation",
-       "statement": "BS(1,2): bound max(1, 2) = 2."
+       "statement": "BS(1,2) = HNNExtension ℤ ℤ (2ℤ) (×2): for R ≠ 0 the bound is max(1, 1 + 1) = 2; over the zero ring it is max(0, 0 + 1) = 1 while cd_0 BS(1,2) = 0."
       }
      ]
     },
@@ -750,7 +750,7 @@
       {
        "name": "contractible",
        "kind": "computation",
-       "statement": "F = (R →id R) in degrees 1, 0, H = 1, G = ℤ/2: the tensor induction is contractible of length 2."
+       "statement": "H = 1, G = ℤ/2 = ⟨s⟩, F = (R·x →id R·y) in degrees 1, 0: the tensor induction is R·(x ⊗ x) → RG → R of length 2, with a = x ⊗ y, b = y ⊗ x = s·a, s(x ⊗ x) = −x ⊗ x, d(x ⊗ x) = b − a, da = db = y ⊗ y. It is contractible as an R-complex (h(y ⊗ y) = a, h(a) = 0, h(b) = x ⊗ x), and RG-linearly contractible exactly when 2 ∈ Rˣ: an equivariant h(y ⊗ y) = k(a + b) has boundary 2k·(y ⊗ y). Over ℤ or 𝔽₂ none exists, so 3.1(c) concerns R-linear homotopy equivalences only."
       },
       {
        "name": "H_eq_G",
@@ -1401,7 +1401,7 @@
       {
        "name": "finite_and_free",
        "kind": "characterisation",
-       "statement": "Finite G is PD of dimension 0 over R ≠ 0 iff |G| ∈ Rˣ; free of rank r ≥ 1 is PD iff r = 1."
+       "statement": "Over R ≠ 0: finite G is PD of dimension 0 iff |G| ∈ Rˣ, and free of rank r ≥ 1 is PD iff r = 1. Over the zero ring every group is PD of every dimension (D = 0 is free of rank one over 0)."
       }
      ]
     },
@@ -1558,7 +1558,7 @@
       {
        "name": "trivial_module",
        "kind": "computation",
-       "statement": "|G| ∈ Rˣ, P = R·e: r_P([g]) = 1/|C_G(g)|, not δ_[1]."
+       "statement": "|G| ∈ Rˣ, P = R·e: r_P([g]) = 1/|C_G(g)|; for R ≠ 0 and G ≠ 1 this is not δ_[1] (at g ≠ 1 it is a unit, not 0); for G = 1 or R = 0 the two coincide."
       },
       {
        "name": "restriction",
@@ -2192,7 +2192,7 @@
       {
        "name": "integers",
        "kind": "non-example",
-       "statement": "G = ℤ, trivial R of projective dimension 1 is not Gorenstein projective (CategoryTheory.isGorensteinProjective.ext_eq_zero)."
+       "statement": "G = ℤ, R ≠ 0: the trivial R has projective dimension 1 and is not Gorenstein projective (CategoryTheory.isGorensteinProjective.ext_eq_zero); over the zero ring it is 0, projective."
       }
      ]
     },

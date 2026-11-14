@@ -623,9 +623,11 @@ projective over `R`. *Needs:* 1.1, 1.2; Mathlib `groupCohomologyIsoExt`, `groupH
   as 1.4(a) requires.
 - For `G = ℚ`, `R ≠ 0`, `n = 1`: the system `M_i = R[ℚ/(1/i!)ℤ]` has colimit `R`, each `(M_i)^ℚ` is
   zero (infinite orbits), and `(colim M_i)^ℚ = R`, so (b) fails at `k = 0 < 1`.
-- For `G = ℚ`, (e) fails at `k = 0`: the element `(1 − 1/j!)_j` of `∏_j Rℚ` maps to zero in `∏_j R`
-  but is not in the augmentation ideal times `∏_j Rℚ`, since that would place every `1/j!` in a single
-  finitely generated, hence cyclic, subgroup of `ℚ`.
+- For `G = ℚ` and `R ≠ 0`, (e) fails at `k = 0`: the element `(1 − 1/j!)_j` of `∏_j Rℚ` maps to
+  zero in `∏_j R` but is not in the augmentation ideal times `∏_j Rℚ`, since that would place every
+  `1/j!` in a single finitely generated, hence cyclic, subgroup of `ℚ`. Over the zero ring every
+  module in this Check and the previous one is `0`, both comparison maps are `0 → 0` and bijective,
+  and `ℚ` is indeed of type `FP_1` over `0` (1.4).
 
 ### 1.6 Subgroups of finite index
 
@@ -789,7 +791,7 @@ Tau Ceti `TauCeti.groupCohomology.corestriction`,
 
 - (b) needs `cd_R G < ⊤`: for `G = ℤ/2 × ℤ ⊇ H = 0 × ℤ` over `ℤ`, `cd H = 1` and `cd G = ⊤`.
 - (c) for the same pair over `ℚ`: `[G : H] = 2` is a unit, so `cd_ℚ G ≤ 1`, and `cd_ℚ G = 1`.
-- For `H = 2ℤ ≤ ℤ`, both sides of (b) are `1`.
+- For `H = 2ℤ ≤ ℤ` and `R ≠ 0`, both sides of (b) are `1`; over the zero ring both are `0`.
 
 ### 2.4 Extensions and products
 
@@ -845,7 +847,9 @@ CohomologyOfGroups §3.6.
 - `cd_R (ℤ ∗ ℤ) = 1` for `R ≠ 0`.
 - For `ℤ/4 ∗_{ℤ/2} ℤ/6` over `ℚ` the bound is `max(0, 0, 0 + 1) = 1`, the true value; over `ℤ` it is
   `⊤`.
-- For `BS(1, 2)` the bound is `max(1, 2) = 2`.
+- For `BS(1, 2) = HNNExtension ℤ ℤ (2ℤ) (×2)` and `R ≠ 0` the bound is
+  `max(cd_R ℤ, cd_R ℤ + 1) = max(1, 2) = 2`; over the zero ring it is `max(0, 0 + 1) = 1`, while
+  `cd_0 BS(1, 2) = 0` (2.1).
 
 ### 2.7 Finite subgroups and torsion
 
@@ -937,8 +941,17 @@ by `t_i⁻¹ g t_i ∈ H`, which fixes no basis element unless it is `1`. *Needs
   `d s'(x ⊗ x) − s' d(x ⊗ x) = 2(y ⊗ x − x ⊗ y)`. When `2 ≠ 0` in `R` (for instance `R = ℤ`) this is
   nonzero and the model without the Koszul sign is not a chain map; over `𝔽₂` the two models
   coincide, which is why Tau Ceti's sign-free construction is used only in characteristic two.
-- For `H = 1`, `G = ℤ/2` and `F = (R →id R)` in degrees `1, 0`, which is contractible, the tensor
-  induction is contractible, of length `2 = 1 · 2`.
+- For `H = 1`, `G = ℤ/2 = ⟨s⟩` and the contractible `F = (R·x →id R·y)` in degrees `1, 0`, the
+  tensor induction is `R·(x ⊗ x) → RG → R` in degrees `2, 1, 0`, of length `2 = 1 · 2`: with
+  `a = x ⊗ y` and `b = y ⊗ x = s·a`, degree `1` is free on `a`, `s` acts on `x ⊗ x` by `−1`,
+  `d(x ⊗ x) = b − a` and `da = db = y ⊗ y`. It is contractible as a complex of `R`-modules, as (c)
+  predicts: `h(y ⊗ y) = a`, `h(a) = 0`, `h(b) = x ⊗ x` give `dh + hd = id` in degrees `0, 1, 2`. It
+  has an `RG`-linear contraction exactly when `2` is a unit of `R`: an equivariant `h` sends `y ⊗ y`
+  to an invariant `k(a + b)`, whose boundary is `2k·(y ⊗ y)`, and when `2` is a unit,
+  `h(y ⊗ y) = (a + b)/2`, `h(a) = −(x ⊗ x)/2`, `h(b) = (x ⊗ x)/2` is one. So over `ℤ` or `𝔽₂` the
+  augmentation `RG → R` has no `G`-equivariant section, and although `F ≃ 0` is `RH`-linear here,
+  its tensor induction is not `RG`-linearly contractible: (c) is a statement about `R`-linear
+  homotopy equivalences only.
 - For `H = G` and any `F`, the result is `F`.
 
 ### 3.2 Serre's theorem
@@ -1357,8 +1370,10 @@ the orientation character is `sgn`, because otherwise the true duality for `M = 
 - The Klein bottle group `K = ⟨a, t | t a t⁻¹ = a⁻¹⟩` is a Poincaré duality group of dimension `2`
   over `ℤ` with `w(a) = 1`, `w(t) = −1` (6.5): `H²(K, ℤ) ≅ H₀(K, ℤ_w) = ℤ/2`, while the orientable
   model would give `H₀(K, ℤ) = ℤ`. Over `𝔽₂` it is orientable.
-- A finite group is a Poincaré duality group of dimension `0` over `R ≠ 0` exactly when `|G|` is a
-  unit of `R`; the free group of rank `r ≥ 1` is one (of dimension `1`) exactly when `r = 1`.
+- Over `R ≠ 0`, a finite group is a Poincaré duality group of dimension `0` exactly when `|G|` is a
+  unit of `R`, and the free group of rank `r ≥ 1` is one (of dimension `1`) exactly when `r = 1`.
+  Over the zero ring every group is one of every dimension, its dualizing module `0` being free of
+  rank one over `0` (6.1).
 
 ### 6.5 Subgroups of finite index and extensions
 
@@ -1462,7 +1477,8 @@ projective `R`-module `R ⊗_{RG} P`, its rank when `R` is a field or `ℤ`. *Ne
   as the induction formula requires.
 - For `G` finite with `|G|` a unit and `P = R·e`, `e = |G|⁻¹ Σ_g g` (the trivial module), the rank is
   `r_P([g]) = |[g]|/|G| = 1/|C_G(g)|`; a model that recorded only the rank of `P` over `R` would give
-  `δ_{[1]}`.
+  `δ_{[1]}`, which differs from it when `R ≠ 0` and `G ≠ 1`, since then `1/|C_G(g)|` is a unit, not
+  `0`, at every `g ≠ 1`. For `G = 1`, or over the zero ring, the two coincide.
 - For `H = 1 ≤ G` finite and `P = RG`, `Res P = R^{|G|}` and `r_{Res P}([1]) = |G| = [G : 1] · 1`.
 
 ### 7.2 Characters of projective modules over finite groups
