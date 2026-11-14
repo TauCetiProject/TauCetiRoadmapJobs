@@ -2080,6 +2080,12 @@
    "neededBy": [
     "PadicLocalLanglandsForGL2QpPartII:GR.3/general-central-character"
    ]
+  },
+  {
+   "slug": "continuous-galois-tensor-comparison",
+   "needs": "For X = C⊗_ℚ_p V^∨ with V any finite-dimensional continuous L-representation of G_ℚ_p, supply Hausdorff finite-dimensional continuous H¹ and a strict cohomology model proving H¹(X)⊗̂_L B ≅ H¹(X⊗̂_L B) for trivial Banach L-spaces B, compatible with d and the inverse limits defining the rational Drinfeld function and differential spaces without an extra derived-limit term.",
+   "supplier": "PadicHodgeTheory",
+   "section": "4.4"
   }
  ],
  "requests": [],
