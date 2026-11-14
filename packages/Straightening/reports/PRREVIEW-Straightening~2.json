@@ -1,0 +1,13 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-Straightening~2",
+  "head": "7e04598b8fe81f4af63f379d72f1eaeeb92c7969",
+  "pr": 2270,
+  "folder": "InfinityCategoryTheory/Straightening",
+  "date": "2026-11-14",
+  "findings": 10,
+  "blocking": 3,
+  "notes": "Full re-review. Previous findings: R01, R03, R04, R05, R07 not repaired; R02 repaired with two residues; R06 partly. Gate fails (build=7, imports=3, stray-files=1, tex=1). Seeded sample of 15 sections and all headlines checked: 69 source locators against the texts (HTT 54, Nikolaus-Scholze 9, HA 4, Liu-Zheng 2), 21 library declarations at the pins (9 absent), 229 cross-roadmap section ids resolved (1 unresolved), depcheck 0 problems. A copy of Suggested.lean without the three missing imports and Layer 3 elaborates with sorry the only warning; one-tactic probes close nothing. Ownership overlap with BordismFormalGroups F6.5 and EnhancedDerivedSheaves E0.7, E3.4, E5:abstract.3 on main."
+ }
+}
