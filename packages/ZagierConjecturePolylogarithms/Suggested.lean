@@ -31,7 +31,7 @@ place.
   have no configuration complexes of generic vectors, no Grassmannian group `G₄(F)` and no real
   Deligne cohomology of the simplicial classifying varieties.
 * The maps `K_{8-i}(F)_ℚ → H^i Γ(F,4)` and the comparison of `L₄ ∘ κ` with the Borel regulator:
-  the pins have no higher Quillen K-groups of a number field and no Borel regulator.
+  the pins have no higher Quillen K-groups of a field and no Borel regulator.
 -/
 
 namespace TauCetiRoadmap.ZagierConjecturePolylogarithms

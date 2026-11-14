@@ -3419,6 +3419,12 @@
       "needs": "For every number field F and finite S ⊂ ℙ¹(F), the unipotent motivic fundamental groupoid of ℙ¹∖S in MT(F) with tangential base points at S, its path torsors and Betti, de Rham and Hodge realizations, its Lie algebra identified with the free Lie algebra on the puncture loops modulo their sum, and the special-derivation action of the motivic Lie algebra.",
       "supplier": "PeriodsAndSpecialValues",
       "section": "PS.9.10"
+    },
+    {
+      "slug": "decorated-flag-lengths",
+      "needs": "For every infinite field F, every N ≥ 1 and every flag length 1 ≤ k ≤ N, the augmented complex of generic m-tuples of decorated k-flags in F^N is acyclic before GL_N(F)-coinvariants, and the comparison map from a projective ℚ[GL_N(F)]-resolution of ℚ into it exists, is unique up to chain homotopy, natural in field embeddings and compatible with stabilization GL_N → GL_{N+1}.",
+      "supplier": "Polylogarithms",
+      "section": "§3.4"
     }
   ],
   "sourceIssues": [
