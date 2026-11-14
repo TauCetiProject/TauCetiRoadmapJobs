@@ -17,7 +17,7 @@ sha256 = "bf2a5f2f655fc52f7b4c3c381b176f520af41c274c6ec53e2afe8da91d52efa9"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-04"
-cited_for = ["1.1", "1.4", "1.7", "2.1", "2.3", "2.4", "3.6", "4.2", "4.4", "4.6", "4.7", "4.8", "5.1", "6.5", "6.7", "7.2", "7.3", "7.5", "7.6", "8.3", "8.5", "8.7", "9.2", "10.1", "10.3", "10.4", "11.1", "11.2", "11.3", "11.4", "11.5", "Conventions", "Scope and ownership"]
+cited_for = ["Scope and ownership", "Conventions", "1.1", "2.1", "4.1", "5.1", "6.5", "6.7", "7.2", "7.3", "7.5", "7.6", "8.3", "8.5", "8.7", "9.2", "10.1", "10.3", "10.4", "11.1", "11.2", "11.3", "11.4", "11.5", "11.6"]
 
 [[source]]
 id = "BCS2022"
@@ -26,7 +26,7 @@ title = "Measures of maximal entropy for surface diffeomorphisms"
 year = 2018
 arxiv = "1811.02240v2"
 locator_scheme = "theorem"
-locator = "Definition 1.1, Main Theorem, Corollaries 1.4-1.6"
+locator = "lines 43-44 (topological mixing), Main Theorem, Corollaries 1.4-1.6"
 url = "https://arxiv.org/abs/1811.02240v2"
 fetched_from = "https://arxiv.org/pdf/1811.02240v2"
 fetched_at = "2026-11-04T21:59:59Z"
@@ -35,7 +35,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v2"
-cited_for = ["1.7", "4.3", "4.4", "4.5", "Downstream consumers"]
+cited_for = ["2.1", "Downstream consumers"]
 
 [[source]]
 id = "Walters1982"
@@ -45,12 +45,12 @@ year = 1982
 venue = "Graduate Texts in Mathematics"
 doi = "10.1007/978-1-4612-5775-2"
 locator_scheme = "theorem"
-locator = "Chapter 7; Theorems 4.12, 8.1, 8.2, 8.3, 8.6, 9.7, 9.8, 9.10, 9.13"
+locator = "Theorem 8.2"
 url = "https://doi.org/10.1007/978-1-4612-5775-2"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["1.2", "1.3", "2.1", "2.2", "2.3", "3.2", "3.3", "3.4", "4.2", "4.3", "4.5", "4.6"]
+cited_for = ["3.1"]
 
 [[source]]
 id = "Bowen1975"
@@ -83,7 +83,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v1"
-cited_for = ["4.7", "4.8", "10.3", "Downstream consumers"]
+cited_for = ["4.1", "10.3", "Downstream consumers"]
 
 [[source]]
 id = "FH2019"
@@ -113,7 +113,7 @@ url = "https://doi.org/10.1017/CBO9780511809187"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (Cambridge Core); cited by its locator without the text"
-cited_for = ["6.2", "6.6", "7.1", "7.3", "7.4", "7.5", "7.6", "7.7", "8.1", "8.2", "8.4", "8.6", "8.7", "9.2", "9.3", "11.5"]
+cited_for = ["6.2", "6.6", "7.1", "7.3", "7.4", "7.5", "7.6", "7.7", "8.1", "8.2", "8.4", "8.6", "8.7", "9.2", "9.3", "11.6"]
 
 [[source]]
 id = "Newhouse1989"
@@ -143,7 +143,7 @@ url = "https://doi.org/10.1016/0022-0396(72)90013-7"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["1.6", "6.6"]
+cited_for = ["1.3", "6.6"]
 
 [[source]]
 id = "Misiurewicz1976"
@@ -152,7 +152,7 @@ title = "A short proof of the variational principle for a Z_+^N action on a comp
 year = 1976
 venue = "Astérisque 40 (1976), 147-157"
 locator_scheme = "section"
-locator = "Sections 2-3 (Parts I and II of the proof)"
+locator = "Section 3, statement of the variational principle (lines 119-121)"
 url = "https://www.numdam.org/item/AST_1976__40__147_0/"
 fetched_from = "https://www.numdam.org/item/AST_1976__40__147_0.pdf"
 fetched_at = "2026-11-04T22:09:31Z"
@@ -160,7 +160,7 @@ sha256 = "f7c63ad7ac979e1003ee058ffdde1cdd7a26744d4e1408dd3e12a9a2e793d78a"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
-cited_for = ["2.1", "2.2", "4.1", "4.2"]
+cited_for = ["Scope and ownership"]
 
 [[source]]
 id = "ClimenhagaThompson2016"
@@ -171,7 +171,7 @@ venue = "Adv. Math. 303 (2016), 745-799"
 doi = "10.1016/j.aim.2016.07.029"
 arxiv = "1505.03803v2"
 locator_scheme = "theorem"
-locator = "Theorem A, Theorem 5.5, Theorem 3.2, Propositions 3.3-3.4, Lemma 4.16, Propositions 4.19, 6.16, 6.17"
+locator = "Theorem A, Theorem 5.5, Theorem 3.2, Propositions 3.3-3.4, Proposition 4.15, Lemma 4.16, Proposition 4.19, Lemma 6.13, Propositions 6.16, 6.17"
 url = "https://arxiv.org/abs/1505.03803v2"
 fetched_from = "https://arxiv.org/pdf/1505.03803v2"
 fetched_at = "2026-11-06T00:53:23Z"
@@ -180,7 +180,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv v2"
-cited_for = ["1.1", "1.5", "1.6", "1.8", "1.9", "3.4", "3.5", "3.6", "5.1", "5.2", "5.3", "6.4", "6.7", "10.2", "Conventions", "Scope and ownership"]
+cited_for = ["Scope and ownership", "Conventions", "1.1", "1.2", "1.3", "2.2", "3.1", "5.1", "5.2", "5.3", "6.4", "6.7", "10.2"]
 
 [[source]]
 id = "BowenEntropyExpansive1972"
@@ -190,7 +190,7 @@ year = 1972
 venue = "Transactions of the American Mathematical Society 164 (1972), 323-331"
 doi = "10.1090/S0002-9947-1972-0285689-X"
 locator_scheme = "theorem"
-locator = "Example 1.6, Theorem 2.4, Theorem 3.5"
+locator = "Example 1.6, Corollary 2.3, Theorem 2.4"
 url = "https://www.ams.org/journals/tran/1972-164-00/S0002-9947-1972-0285689-X/S0002-9947-1972-0285689-X.pdf"
 fetched_from = "https://www.ams.org/journals/tran/1972-164-00/S0002-9947-1972-0285689-X/S0002-9947-1972-0285689-X.pdf"
 fetched_at = "2026-11-06T00:54:45Z"
@@ -198,7 +198,7 @@ sha256 = "38e1fc1273a1cd6ea4a2ad32f29b7a9412dfa2ff51522cbeaa7bd7035ede5298"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-06"
-cited_for = ["1.5", "1.6", "3.4", "3.5", "6.6"]
+cited_for = ["1.2", "1.3", "3.1", "6.6"]
 
 [[source]]
 id = "BowenPeriodicPoints1971"
@@ -208,7 +208,7 @@ year = 1971
 venue = "Transactions of the American Mathematical Society 154 (1971), 377-397"
 doi = "10.1090/S0002-9947-1971-0282372-0"
 locator_scheme = "theorem"
-locator = "Axiom A* (Section 2), Lemmas 2.3-2.5, Theorems 2.7 and 2.10, Remark 4.4, Lemma 6.4, Proposition 7.1, 8.1"
+locator = "Axiom A* (Section 2), Lemmas 2.3 and 2.5, Theorems 2.7 and 2.10, Proposition 4.2, Remark 4.4, Proposition 7.1, 8.1"
 url = "https://www.ams.org/journals/tran/1971-154-00/S0002-9947-1971-0282372-0/S0002-9947-1971-0282372-0.pdf"
 fetched_from = "https://www.ams.org/journals/tran/1971-154-00/S0002-9947-1971-0282372-0/S0002-9947-1971-0282372-0.pdf"
 fetched_at = "2026-11-06T00:54:47Z"
@@ -216,7 +216,7 @@ sha256 = "d177e708e65d4a40d764c4ba7e3a421aff4408ac30e8fe26beadf1b25fb0ce71"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-06"
-cited_for = ["1.5", "5.1", "6.1", "6.2", "6.3", "6.5", "6.8", "8.4", "9.1", "10.4", "Scope and ownership"]
+cited_for = ["Scope and ownership", "Conventions", "6.1", "6.2", "6.3", "6.5", "6.8", "8.4", "9.1", "10.4"]
 
 [[source]]
 id = "BowenGroupEndomorphisms1971"
@@ -226,7 +226,7 @@ year = 1971
 venue = "Transactions of the American Mathematical Society 153 (1971), 401-414"
 doi = "10.1090/S0002-9947-1971-0274707-X"
 locator_scheme = "theorem"
-locator = "Proposition 4(i), Theorem 15, Corollary 16, Proposition 21"
+locator = "Theorem 15, Corollary 16"
 url = "https://www.ams.org/journals/tran/1971-153-00/S0002-9947-1971-0274707-X/S0002-9947-1971-0274707-X.pdf"
 fetched_from = "https://www.ams.org/journals/tran/1971-153-00/S0002-9947-1971-0274707-X/S0002-9947-1971-0274707-X.pdf"
 fetched_at = "2026-11-06T00:54:49Z"
@@ -234,7 +234,7 @@ sha256 = "68b8aa71209188f61fb8f925203874447571e73aab99b0aa98a73e4f71bb467a"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-06"
-cited_for = ["1.2", "1.3", "1.4", "9.1"]
+cited_for = ["9.1"]
 
 [[source]]
 id = "Smale1967"
@@ -290,4 +290,19 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv v1"
-cited_for = ["4.6"]
+cited_for = ["Scope and ownership"]
+
+[[source]]
+id = "HirschPalisPughShub1970"
+authors = "M. Hirsch, J. Palis, C. Pugh, M. Shub"
+title = "Neighborhoods of hyperbolic sets"
+year = 1970
+venue = "Inventiones Mathematicae 9"
+doi = "10.1007/BF01404552"
+locator_scheme = "section"
+locator = "Section 5.1"
+url = "https://doi.org/10.1007/BF01404552"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["10.1"]
