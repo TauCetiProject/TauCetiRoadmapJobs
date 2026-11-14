@@ -1,21 +1,20 @@
 # Roadmap: hodge classes for the jacquet–langlands correspondence
 
 **Summary.** This roadmap constructs a rational Hodge class that realises the Jacquet–Langlands
-correspondence between the cohomology of two quaternionic Shimura varieties attached to one
-cuspidal representation of `GL₂(𝔸_F)`, following Ichino and Prasanna (IP23). From a
-four-dimensional Hermitian space it builds the exterior-square construction, a conjugate-linear
-Hodge-star operator `L` on `⋀²U` with `L∘L = vol`, which turns `⋀²U` into a rank-three
-skew-Hermitian space over a quaternion algebra and yields the exceptional isomorphism
-`PGU_E(U) ≃ PGU_B(⋀²U)°`. It then restricts explicit harmonic Kudla–Millson Schwartz forms along
-the block decomposition `U = B₁ ⊥ B₂`, proves that one global theta class pairs nontrivially with
-every archimedean sign vector, identifies the Hecke eigenspace containing that class as purely of
+correspondence between the cohomology of two quaternionic Shimura varieties attached to one cuspidal
+representation of `GL₂(𝔸_F)`. From a four-dimensional Hermitian space it builds the exterior-square
+construction, a conjugate-linear Hodge-star operator `L` on `⋀²U` with `L∘L = vol`, which turns `⋀²U`
+into a rank-three skew-Hermitian space over a quaternion algebra and yields the exceptional
+isomorphism `PGU_E(U) ≃ PGU_B(⋀²U)°`. It then restricts explicit harmonic Kudla–Millson Schwartz forms
+along the block decomposition `U = B₁ ⊥ B₂`, proves that one global theta class pairs nontrivially
+with every archimedean sign vector, identifies the Hecke eigenspace containing that class as purely of
 Hodge type `(d,d)`, and descends a complex invertible correspondence to a rational one by a
 determinant argument. The end theorems are: the existence of an `L`-rational Hodge class
-`ξ₀ ∈ V₁ ⊗_L V₂(d)` inducing an isomorphism of `L`-Hodge structures `V₁ ≃ V₂` between the
-quaternionic multiplicity realizations (IP23, Theorem 3.2(i) and Theorem 12.4(i)); the same class
-chosen fixed in every `ℓ`-adic realization under the degree-`2d` Kottwitz hypothesis, giving
-`G_{F_Σ}`-equivariant isomorphisms for all `ℓ` at once (Theorem 3.2(ii), Theorem 12.4(ii)); and
-the weight-two rational correspondence on `H^{2d}(X₁ × X₂, ℚ)(d)` (Theorem 1).
+`ξ₀ ∈ V₁ ⊗_L V₂(d)` inducing an isomorphism of `L`-Hodge structures `V₁ ≃ V₂` between the quaternionic
+multiplicity realizations (IP23, Theorem 3.2(i) and Theorem 12.4(i)); the same class chosen fixed in
+every `ℓ`-adic realization under the degree-`2d` Kottwitz hypothesis, giving `G_{F_Σ}`-equivariant
+isomorphisms for all `ℓ` at once (Theorem 3.2(ii), Theorem 12.4(ii)); and the weight-two rational
+correspondence on `H^{2d}(X₁ × X₂, ℚ)(d)` (Theorem 1).
 
 ## Scope and ownership
 
@@ -79,10 +78,12 @@ It leaves the following to the named roadmaps and does not state them again.
   §4.7.
 - Global Jacquet–Langlands, strong multiplicity one, cohomological rationality, Hilbert algebraic
   weights, base change, the adjoint lift and quadratic automorphic induction are
-  GL2AutomorphicRepresentationsAndTransfer §§R16.4.4, R16.4.5, R16.6.3, R17.3.1, R17.3.7, R17.3.8,
+  GL2AutomorphicRepresentationsAndTransfer §§R16.4.4, R16.4.5, R16.6.3, R17.3.1, R17.3.5–R17.3.8,
   R17.4.2, R17.4.13 and R17.4.16.
-- Canonical models, reflex norms, finite-level reciprocity, functoriality in the datum and
-  zero-dimensional Shimura varieties are ShimuraVarieties §§4.2, 4.3, 4.9, 6.7, 8.1, 8.5 and 8.6.
+- Finite level maps with their effective quotient actions, canonical models, reflex norms,
+  finite-level reciprocity, functoriality in the datum and zero-dimensional Shimura varieties are
+  ShimuraVarieties §§1.3, 4.2, 4.3, 4.9, 6.7, 8.1, 8.5 and 8.6; neat levels are AdelicAlgebraicGroups
+  §4.3.
   Variations of Hodge structure, the rational Hodge structures of SV4 and Kostant representatives are
   ShimuraData §§3.1, 3.3, 3.10 and 4.3.
 - Weak approximation, ray class groups, finite ideles and Hecke characters are GlobalNumberFields
@@ -131,16 +132,26 @@ never taken to be surjective on `F`-points.
 
 Theta integrals use the convention `θ(f) = ∫ Θ(g,h) f(h) dh`, linear in the automorphic input.
 MetaplecticAutomorphicForms §5.6 integrates the complex conjugate of its input, so its lift of
-`f̄` is used. Locally `θ(τ)` is attached to the maximal `τ^∨`-isotypic quotient of the oscillator,
-as in MetaplecticAutomorphicForms §3.35. In particular the source `τ_v` above `Σ` is
-antiholomorphic of weight `−k_v−1`, and the product in the see-saw has the dual holomorphic weight
-`k_v+1`.
+`f̄` is used. Locally `θ(τ)` is attached to the maximal `τ^∨`-isotypic quotient `Θ(τ) ⊠ τ^∨` of the
+oscillator, the convention of IP23 §7.2 (p. 47). MetaplecticAutomorphicForms §3.4 attaches its lift
+to the maximal `τ`-isotypic quotient instead, so that, locally and globally (`f̄` lies in the
+conjugate of `τ`, which is `τ^∨` for unitary `τ`), `θ(τ)` here is the lift of `τ^∨` there. Its
+§3.35, stated in its own convention, is therefore read here with the input dualized (§3.5); its
+§3.36 restates IP23 Lemma 9.4 in that source's setup, whose convention (IP23, §9.4, p. 59) is the
+one used here, and is read as stated. In particular the source `τ_v` above `Σ` is antiholomorphic of
+weight `−k_v−1`, and its lift is the module `A_{q₁}` with nonzero `(1,1)` cohomology (§3.5); the
+product in the see-saw has the dual holomorphic weight `k_v+1`.
 
 `H_N^+ = {h ∈ B^×(𝔸_F) : Nrd(h) ∈ N(𝔸_E^×)}` is the norm-support subgroup and `H_∞^+` imposes only
 positivity of `Nrd` at real places; finite local norm obstructions distinguish them. The index-two
 statement used for extension by zero is for `𝔸_F^×/(F^× N(𝔸_E^×))`. Normalized traces go to the
-actual image of a finite map of Shimura varieties and are extended by zero; compact averages have
-volume one.
+actual image of a finite map of Shimura varieties, are extended by zero and carry the ratio of the
+volumes of the levels in the effective groups `G(𝔸_f)/Z(ℚ)⁻` of §0.3, `Z(ℚ)⁻` the closure of the
+rational points of the centre, for *rational* Haar measures: a Haar measure on a locally profinite
+group is rational when every compact open subgroup has rational volume, so the ratio is a positive
+rational number; compact averages have volume one. For such a measure on `G(𝔸_f)` and a compact
+open `K`, the rational Hecke algebra `H_ℚ(G(𝔸_f), K)` is the `ℚ`-algebra of `ℚ`-valued `K`-biinvariant
+compactly supported functions under convolution (Wal85, §I.2, p. 124).
 
 Harmonic coefficients are the kernel of trace contraction on symmetric tensors; the symmetric
 bilinear pairing on `Sym^ℓ` sums over all permutations without a factorial denominator, so the
@@ -238,7 +249,9 @@ degree (the Hodge decomposition of IP23, §11.3, p. 85).
 
 ### From TauCetiRoadmap.ShimuraVarieties
 
-§4.2 `TauCeti.Shimura.ReflexNorm`; §4.3 `TauCeti.Shimura.reciprocity_finite_action` (the action of
+§1.3 `TauCeti.Shimura.holomorphic_level_maps` (finite level maps, locally biholomorphic at neat
+target, with the effective image of `K/K′` acting with quotient `Sh_K`); §4.2
+`TauCeti.Shimura.ReflexNorm`; §4.3 `TauCeti.Shimura.reciprocity_finite_action` (the action of
 `r_h(s)` on `T(ℚ)∖T(𝔸_f)/K` factors through `art_E`); §4.9 `TauCeti.Shimura.ReflexNorm.map_full`
 (reflex norms under a torus morphism); §6.7 `TauCeti.Shimura.abelian_canonical`; §8.1 the canonical
 algebraic level tower over the reflex field; §8.5 `CanonicalModel.datum_map_defined_over_compositum`
@@ -277,7 +290,8 @@ the adjoint lift in §8.1.
 ### From TauCetiRoadmap.AdelicAlgebraicGroups
 
 §3.4: arithmetic quotients of anisotropic connected reductive groups are compact; used for the
-exterior isometry group in §§6.4 and 7.1.
+exterior isometry group in §§6.4 and 7.1. §4.3: neat elements and levels, and the existence of neat
+levels inside every compact open subgroup; used for the degree formula of §0.3.
 
 ### From TauCetiRoadmap.ArithmeticGaloisRepresentations
 
@@ -288,12 +302,31 @@ Hodge–Tate weight `+1`; Tate twists `tateTwist` of §1.2.
 
 §R16.1.8 finite Hecke characters with prescribed local components and its finite-quotient extension
 criterion; §R17.3.1 global Jacquet–Langlands `JL_D` with its local-components, central-character and
-inverse clauses; §R17.3.5 quaternionic strong multiplicity one;
-§R17.3.7 coefficient conjugation of global transfer; §R17.3.8 rational-model comparison; §R16.4.4
+inverse clauses; §R17.3.5 quaternionic strong multiplicity one; §R17.3.6 multiplicity one of
+non-one-dimensional discrete series in the discrete spectrum; §R17.3.7 coefficient conjugation of
+global transfer, with `ℚ(π_f) = ℚ(π′_f)`; §R17.3.8 rational-model comparison, which compares given
+`L`-models and does not construct them over `L` itself; §R16.4.4
 strong multiplicity one through agreeing unitary eigensystems off a finite set; §R16.4.5 the field
 `ℚ(π)` and its finite-part rational model; §R16.6.3 Hilbert cohomological algebraic weights
 `k_τ + 2m_τ = w`; §R17.4.2 cyclic base change; §R17.4.13 the adjoint lift `Ad(π) = Sym²π ⊗ ω_π⁻¹`;
 §R17.4.16 quadratic automorphic induction, whose base change is `θ ⊞ θ^σ`.
+
+What GL2AutomorphicRepresentationsAndTransfer must provide (gap:quaternionic-rational-model): for a
+quaternion algebra `D` over a number field `F` and an irreducible admissible representation `π′_f` of
+`D^×(𝔸_{F,f})` with trivial central character, a `D^×(𝔸_{F,f})`-stable model of `π′_f` over every
+subfield `L ⊂ ℂ` containing `ℚ(π′_f)`, unique up to homothety, whose `K`-invariants are, for every
+compact open `K`, the `H_ℚ(D^×(𝔸_{F,f}), K)`-stable `L`-structure of `(π′_f)^K` (rational Hecke
+algebra as in the Conventions), unique up to homothety. Locally, at a place `v` where `D` splits, a
+one-dimensional `π′_v = χ_v∘det` has the model `L` itself, on which `g` acts by
+`χ_v(det g) ∈ ℚ(π′_v)`, and an infinite-dimensional `π′_v` has the model spanned over `L` by the
+translates of a nonzero vector of its newvector line, the one-dimensional space of
+`K₁(𝔭_v^c)`-invariants at its conductor `c`; a one-dimensional `π′_v` with ramified `χ_v` has no
+`K₁(𝔭_v^r)`-invariants for any `r`, so the newvector clause is not applied to it. At a place where
+`D` ramifies the model is spanned over `L` by the translates of a nonzero vector of a line fixed by a
+maximal torus, and there the trivial central character cannot be dropped (Wal85, Lemma I.1, p. 123,
+Lemmas I.2.1–I.2.2, p. 124, whose proof treats dimension one separately, and §II.1 with its remark,
+pp. 147–148; IP23, §3.2, p. 19). This is the case with `L = ℚ(π′_f)` that §R17.3.8 leaves to a finite
+extension.
 
 What GL2AutomorphicRepresentationsAndTransfer must provide (gap:norm-subgroup-restriction): for a
 quaternion algebra `B` over a totally real `F`, a CM extension `E/F` in `B` and the subgroups
@@ -310,10 +343,13 @@ persistence and stable range; §3.16 nonarchimedean conservation relations; §3.
 `quaternionSimilitudeEmbedding` (the dual pair `GU(V)° × B^×` with norm-image multipliers); §3.24
 `quaternionSplitting` (`s_v` with `s_v(zg) = ξ_{E,v}(z)^m s_v(g)` and product one on rational points);
 §§3.25–3.28 doubled and sharp splittings and the quaternionic see-saw; §3.32a the Periods-I splitting
-comparison for `V = B₁ ⊗_E B₂`; §3.33 the Harris–Kudla
+for `V = B₁ ⊗_E B₂` and its comparison with §3.24, which assumes `F` totally real, `E` CM and a real
+place split in both `B₁` and `B₂` (here `d ≥ 1`); §3.33 the Harris–Kudla
 comparison `V† = Ve` for split `B`; §3.34 `similitudeTheta_howe`; §3.35 `theta_realDiscreteSeries`
-(`θ(π)|G° = A_{q₁}(k−2,0,0)` on `SO(4,2)°`, the compact lift of highest weight `(k−2,0,0)` and the
-vanishing opposite compact lift, in the maximal `π`-isotypic convention, dual to IP23's labels);
+(for the holomorphic discrete series `π` of `SL₂(ℝ)` of weight `k+1`, `k ≥ 2`, in that roadmap's
+maximal `π`-isotypic convention: `θ(π)|G° = A_{q₁}(k−2,0,0)` and `θ(π^∨)|G° = A_{q₀}(0,0,k−2)` on
+`SO(4,2)°`; to `O(0,6)`, `θ(π^∨)` is the representation of highest weight `(k−2,0,0)` and
+`θ(π) = 0`; through the dualization of the Conventions these become IP23's labels, as in §3.5);
 §3.36 `theta_quaternionUnramified`; §3.38 `theta_gl2Gso4`; §5.6 `globalThetaLift` (with conjugated
 input); §6.4 `siegelWeil_anisotropic`; §§6.10–6.12 doubling Schwartz map, standard doubling factors,
 `localDoublingZeta` and `thetaPairing_factorization` for orthogonal, symplectic, unitary and
@@ -328,9 +364,10 @@ residue of the global doubling integral at `s = 3/2` related to the theta pairin
 second-term Siegel–Weil identity (IP23, §9.5, Lemmas 9.6–9.8, pp. 61–64).
 
 What MetaplecticAutomorphicForms must provide (gap:quaternionic-shimizu-lift): the global similitude
-theta lift from `B^×` to `GU(B₁ ⊗_E B₂)° ≃ (B₁^× × B₂^×)/F^×` of an irreducible unitary cuspidal
-`σ̄` is `π̄_{B₁} ⊠ π̄_{B₂}` for the Jacquet–Langlands transfers of the transfer `π` of `σ`, and zero
-when either transfer is missing (IP23, proof of Lemma 9.2, p. 58).
+theta lift, formed with the Periods-I splitting of §3.32a, from `B^×` to
+`GU(B₁ ⊗_E B₂)° ≃ (B₁^× × B₂^×)/F^×` of an irreducible unitary cuspidal `σ̄` is `π̄_{B₁} ⊠ π̄_{B₂}`
+for the Jacquet–Langlands transfers of the transfer `π` of `σ`, and zero when either transfer is
+missing (IP23, proof of Lemma 9.2, p. 58).
 
 ### From TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic
 
@@ -401,21 +438,22 @@ is de Rham (the de Rham input of IP23, Remark 11.10, p. 90).
 Layer 0 fixes the target: the realizations of compact Shimura cohomology with automorphic
 coefficients, the reduction to a division algebra `B = B₁·B₂`, the quaternionic multiplicity
 realizations `V₁, V₂` with their archimedean sign lines, and the correspondence operator that turns a
-tensor in `V₁ ⊗ V₂(d)` into a map. Layer 1 builds the conjugate-linear exterior operator on `⋀²U`,
-the quaternion algebra `(E, vol)` and the exceptional isogeny and isomorphism; Layer 2 restricts
-them to the block subgroup of `U = B₁ ⊥ B₂` and assembles the group diagram. Layer 3 localizes the
-diagram (signatures, torus maps, the weight lattice) and records the relative Lie algebra
-cohomology of the archimedean theta modules. Layer 4 builds the harmonic Schwartz forms and proves
-their restriction formulas; Layer 5 turns the group diagram into a diagram of Shimura data with its
-coefficient systems and component character. Layer 6 proves the quaternionic theta identities and
-near-equivalence rigidity, Layer 7 the simultaneous nonvanishing of the restricted theta class for
-all archimedean signs. Layer 8 shows that the rational Hecke eigenspace containing the theta class
-is purely of type `(d,d)`; Layer 9, under the degree-`2d` Kottwitz hypothesis, that its Galois
-action after twist `(d)` is trivial. Layer 10 builds the realization-compatible restriction map,
-proves complex invertibility, puts the component parameter in the Galois-invariant subspace and
-descends to a rational Hodge class. The unconditional Hodge theorem §10.7 does not depend on Layer 9;
-only §10.8 does. Every target's `*Needs:*` line lists what its statement and its stated route use,
-item by item; a different proof is not tied to an unrelated layer.
+tensor in `V₁ ⊗ V₂(d)` into a map. Layer 1 builds the conjugate-linear exterior operator on `⋀²U`, the
+quaternion algebra `(E, vol)` and the exceptional isogeny and isomorphism; Layer 2 restricts them to
+the block subgroup of `U = B₁ ⊥ B₂` and assembles the group diagram. Layer 3 localizes the diagram
+(signatures, torus maps, the weight lattice) and records the relative Lie algebra cohomology of the
+archimedean theta modules. Layer 4 builds the harmonic Schwartz forms and proves their restriction
+formulas; Layer 5 turns the group diagram into a diagram of Shimura data with its coefficient systems
+and component character. Layer 6 proves the quaternionic theta identities and near-equivalence
+rigidity, Layer 7 the simultaneous nonvanishing of the restricted theta class for all archimedean
+signs. Layer 8 shows that the rational Hecke eigenspace containing the theta class is purely of type
+`(d,d)`; Layer 9, under the degree-`2d` Kottwitz hypothesis, that its Galois action after twist `(d)`
+is trivial. Layer 10 builds the realization-compatible restriction map, proves complex invertibility,
+puts the component parameter in the Galois-invariant subspace and descends to a rational Hodge class.
+The see-saw, nonvanishing and descent steps (§§7.4, 7.10, 10.4, 10.6) assume `d ≥ 1`; for `d = 0` the
+end theorems are immediate (§§10.7–10.8). The unconditional Hodge theorem §10.7 does not depend on
+Layer 9; only §10.8 does. Every target's `*Needs:*` line lists what its statement and its stated route
+use, item by item; a different proof is not tied to an unrelated layer.
 
 ## Layer 0: quaternionic realizations and the correspondence target
 
@@ -461,13 +499,19 @@ condition excluding compact `ℚ`-factors of the adjoint group is not imposed in
 Let `(G, X)` be a Shimura datum of abelian type whose Shimura varieties are compact, with reflex
 field `E = E(G,X) ⊂ ℂ`, and let `ρ : G → GL(V)` be a finite-dimensional representation over a number
 field `L ⊂ ℂ` that factors through `G/Z_s`, where `Z_s` is the largest subtorus of the centre that is
-split over `ℝ` but has no subtorus split over `ℚ`. Construct, for every sufficiently small compact
-open `K ⊂ G(𝔸_f)`:
+split over `ℝ` but has no subtorus split over `ℚ`, and assume that the weight cocharacter of
+`(G, X)`, composed with `G → G/Z_s`, is defined over `ℚ` (axiom SV4 of ShimuraData §4.3 for the
+quotient datum; for `G = Res_{F/ℚ}B^×` the weight lands in the centre `Res_{F/ℚ}𝔾_m`, whose
+quotient by `Z_s = ker N_{F/ℚ}` is `𝔾_m`, so this holds). The weight cocharacter is central, so
+`V = ⊕_w V_w` as representations over `L`, where `V_w` is the summand on which `(V, ρ∘h)` has Hodge
+weight `w`. Construct, for every sufficiently small compact open `K ⊂ G(𝔸_f)`:
 
-- the local system `𝕍` of `L`-vector spaces on `Sh_K(ℂ)` attached to `ρ`
-  (ArithmeticLocallySymmetricSpaces §ALS.1.1), underlying a polarizable variation of Hodge structure
-  (ShimuraData §§3.1, 3.3, 4.3), and the pure `L`-Hodge structure on `H^i(Sh_K(ℂ), 𝕍)`
-  (gap:vhs-hodge-decomposition);
+- the local system `𝕍 = ⊕_w 𝕍_w` of `L`-vector spaces on `Sh_K(ℂ)` attached to `ρ`
+  (ArithmeticLocallySymmetricSpaces §ALS.1.1), each `𝕍_w` underlying a polarizable variation of Hodge
+  structure of weight `w` (ShimuraData §§3.1, 3.3, 4.3), and the `L`-Hodge structure
+  `H^i(Sh_K(ℂ), 𝕍) = ⊕_w H^i(Sh_K(ℂ), 𝕍_w)`, whose summand `H^i(Sh_K(ℂ), 𝕍_w)` is pure of weight
+  `i + w` (gap:vhs-hodge-decomposition); `H^i(Sh_K(ℂ), 𝕍)` is pure exactly when the nonzero summands
+  share one weight, in particular when `ρ` has a single weight;
 - for every prime `ℓ`, the étale sheaf `𝕍_ℓ` of `L ⊗ ℚ_ℓ`-modules on the canonical model of
   `Sh_K` over `E`, obtained from a `K`-stable lattice through the canonical tower of
   ShimuraVarieties §8.1;
@@ -504,8 +548,13 @@ de Rham, and finite induction (PadicHodgeTheory §3.3) makes `H^i_et(Sh_K ⊗_E 
 
 - For the trivial representation the realizations are the singular and étale cohomology of the
   canonical model, the object `Hⁱ(X)` of MotivesAndAlgebraicCycles §§2.6–2.7.
-- For `G = Res_{F/ℚ}B^×` with `B` totally definite, `Sh_K` is a finite set: `H^0` is the space of
-  `L`-valued functions on it, of Hodge type `(0,0)`, and `H^i = 0` for `i > 0`.
+- For `G = Res_{F/ℚ}B^×` with `B` totally definite and the trivial cocharacter of §0.1, `Sh_K` is a
+  finite set and `H^i = 0` for `i > 0`; with trivial coefficients `H^0` is the space of `L`-valued
+  functions on it, of Hodge type `(0,0)`.
+- For the torus `T = Res_{ℚ(i)/ℚ}𝔾_m` with `h(z) = z` and `ρ = 1 ⊕ N_{ℚ(i)/ℚ}`, `Z_s = 1` and the
+  weight `r ↦ r⁻¹` lies in the rational subtorus `𝔾_m`; on the finite set `Sh_K`, `H^0` is the sum of
+  a summand of type `(0,0)` and a summand of type `(−1,−1)`, weights `0` and `−2`. It is not pure;
+  each weight summand is.
 - The isotypic part is a multiplicity space, not the whole `Π`-isotypic summand: for
   `dim Π_f^K = r` the summand of `H^i` is `r` copies of it.
 - Replacing `ρ` by its dual exchanges degrees `i` and `2D − i` under Poincaré duality, with the twist
@@ -529,27 +578,84 @@ representation of `H` as in §0.2, viewed on `G` through `f`. Construct the pull
 (ShimuraVarieties §8.5; ArithmeticLocallySymmetricSpaces §ALS.1.8). If `G → H` is surjective with
 central kernel `Z` and `G(𝔸) → H(𝔸)` is surjective, prove that `f^*` identifies the
 `Π_H`-isotypic part with the `Π_G`-isotypic part for the corresponding automorphic representations on
-which `Z` acts trivially. If `G → H` has central kernel but is not surjective on adelic points,
-construct the pushforward `f_*`: for small `K₁, K₂` the map `Sh_{G,K₁} → Sh_{H,K₂}` is finite étale onto
-a union of components, and `f_*` is the trace onto the image extended by zero, multiplied by
-`vol(K₁)/vol(K₂)` (IP23, §2.2.3, pp. 16–17, and Remark 2.2, p. 17).
+which `Z` acts trivially.
+
+For a Shimura datum `(G, X)` with centre `Z`, let `Z(ℚ)⁻` be the closure of `Z(ℚ)` in `Z(𝔸_f)`. It
+acts trivially on the tower: `Z(ℚ)⁻K = Z(ℚ)K` for every compact open `K`, and
+`Sh_K(ℂ) = (G(ℚ)/Z(ℚ))∖X × G(𝔸_f)/Z(ℚ)⁻K` (Mil17, the passage to the limit and Theorem 5.28, p. 65).
+Call `Ḡ = G(𝔸_f)/Z(ℚ)⁻` the *effective group* of the datum, write `K̄` for the image of `K` in it, and
+fix a rational Haar measure on `Ḡ` (Conventions). Rational Haar measures exist and any two differ by
+a factor in `ℚ_{>0}`: for compact opens `K̄, K̄′` of `Ḡ` every Haar measure gives
+`vol(K̄)/vol(K̄′) = [K̄ : K̄ ∩ K̄′]/[K̄′ : K̄ ∩ K̄′]`, so giving one compact open rational volume (for
+instance volume one) makes every volume rational. Prove the degree formula: for a neat compact open
+`K₂ ⊂ G(𝔸_f)` and an open subgroup `K₁ ⊂ K₂`, the map `Sh_{K₁} → Sh_{K₂}` is finite étale of constant degree
+`[K₂ : K₁(K₂ ∩ Z(ℚ))] = [K̄₂ : K̄₁] = vol(K̄₂)/vol(K̄₁)`. *Proof route:* every point over `[x, g]` is
+`[x, gk]` with `k ∈ K₂`; an element `q ∈ G(ℚ) ∩ gK₂g⁻¹` fixing `x` has image in `G^ad(ℝ)` both in a
+compact group and in a discrete arithmetic group, so of finite order, so trivial by neatness; hence
+`q ∈ Z(ℚ) ∩ K₂`, and `[x, gk] = [x, gk′]` exactly when `k ∈ k′(K₂ ∩ Z(ℚ))K₁` (Mil17, Lemma 5.13,
+p. 57; ShimuraVarieties §1.3). When `Z(ℚ)` is discrete in `Z(𝔸_f)` (axiom SV5; Mil17, Theorem 5.26
+and Remark 5.27, p. 64) a neat level meets `Z(ℚ)` trivially and the degree is `[K₂ : K₁]`. For
+`Res_{F/ℚ}B^×` with `[F : ℚ] ≥ 2`, `Z(ℚ) = F^×` is not discrete: every compact open level meets it in
+a subgroup of finite index in `O_F^×`, of rank `[F : ℚ] − 1`, and the degree can be smaller than
+`[K₂ : K₁]`.
+
+If `G → H` is surjective as a morphism of algebraic groups with central kernel, whether or not
+`G(𝔸) → H(𝔸)` is surjective, construct the pushforward `f_*`: for small `K₁, K₂` the map
+`Sh_{G,K₁} → Sh_{H,K₂}` is finite étale onto a union of components, and `f_*` is the covering trace
+onto the image extended by zero, multiplied by `vol(K̄₁)/vol(K̄₂) ∈ ℚ_{>0}` for the fixed rational
+Haar measures on the effective groups `Ḡ` and `H̄` (IP23, §2.2.3, pp. 16–17, and Remark 2.2, p. 17,
+whose Haar measures on `G(𝔸_f)` and `H(𝔸_f)` agree with these at neat levels, up to a constant, when
+both centres satisfy SV5). The measures are rational, as Wal85, §I.2, p. 124, takes them for the
+Hecke algebra: an arbitrary pair of Haar measures multiplies `f_*` by an arbitrary positive real
+number and can move it off the rational structure (Checks). For a morphism of data that is not
+surjective with central kernel only the pullback is constructed.
 
 - `f^*` and `f_*` commute with Hecke operators away from the levels and with every comparison
   isomorphism.
-- The normalized `f_*` does not depend on the levels `K₁, K₂`.
+- `f_*` is a morphism of `M_E^L`: the covering trace preserves the `L`-structure of the Betti
+  realization and commutes with the `ℓ`-adic comparisons, and the volume ratio is a positive
+  rational number. Replacing either rational Haar measure by another multiplies `f_*` by a factor in
+  `ℚ_{>0}`.
+- The normalized `f_*` does not depend on the levels: for `K₁′ ⊂ K₁` and `K₂′ ⊂ K₂` with
+  `f(K₁′) ⊂ K₂′`, the normalized `f_*` at `(K₁, K₂)` equals the normalized `f_*` at `(K₁′, K₂′)`,
+  preceded by pullback from level `K₁` to `K₁′` and followed by the normalized trace of the identity of
+  `H` from level `K₂′` to `K₂`; this follows from the degree formula on the source and transitivity of
+  covering traces on the target.
 - Pullback and normalized trace are functorial for composable morphisms of data.
 
 **Checks.**
 
-- For a level change `K₁ ⊂ K₂` inside one group, `f_*∘f^*` is multiplication by
-  `[K₂ : K₁]·vol(K₁)/vol(K₂) = 1`.
+- For a level change `K₁ ⊂ K₂` inside one group with `K₂` neat, `f_*∘f^*` is multiplication by
+  `[K₂ : K₁(K₂ ∩ Z(ℚ))]·vol(K̄₁)/vol(K̄₂) = 1`.
+- For the torus `T = Res_{ℚ(√2)/ℚ}𝔾_m` with trivial `h` and trivial coefficients, and the principal
+  levels `K(9) ⊂ K(3)` of `Ô^×`, `O = ℤ[√2]` (class number one, so `Sh_{K(N)} = (O/N)^×/im(O^×)`): the
+  unit `ε = 1 + √2` has order `8` in `(O/3)^× = 𝔽₉^×` and order `24` in `(O/9)^×`, of order `72`, with
+  `ε¹² ≡ −1 mod 9`, so the two levels have `1` and `3` points. Both levels are neat, the compact-open
+  index is `72/8 = 9`, and the degree is `3 = [K(3) : K(9)(K(3) ∩ ℚ(√2)^×)]`, the unit `−ε⁴` having
+  image of order `3` in `K(3)/K(9)`. Haar volumes on `T(𝔸_f)` would give `f_*f^* = 3/9 = 1/3`; the
+  effective volumes give `3·(1/3) = 1`. This `T` is the centre of `Res_{F/ℚ}B^×` for `F = ℚ(√2)`.
 - A component of `Sh_{H,K₂}` outside the image receives zero under `f_*`; the trace is not an
   isomorphism induced by a covering.
-- Shrinking `K₁` to a normal subgroup `K₁′` of index `m` multiplies the raw trace by `m` and the
-  volume factor by `1/m`, so the normalized `f_*` is unchanged.
+- Shrinking `K₁` to a normal subgroup `K₁′` with `[K̄₁ : K̄₁′] = m` multiplies the covering trace of a
+  class pulled back from level `K₁` by `m` and the volume factor by `1/m`, so the normalized `f_*` is
+  unchanged; with Haar volumes on `G(𝔸_f)` the volume factor would be `1/[K₁ : K₁′]`, which differs
+  from `1/m` as soon as `K₁ ∩ Z(ℚ) ⊄ K₁′`.
+- Rationality of the measures is needed. Take the projection `𝔾_m × 𝔾_m → 𝔾_m` onto the first
+  factor, both data with trivial cocharacter and reflex field `ℚ` (central kernel, surjective on
+  adeles), and the levels `K(3) × K(3) → K(3)`, `K(3) = ker(Ẑ^× → (ℤ/3)^×)`. Since
+  `𝔸_f^× = ℚ_{>0}·Ẑ^×` and `(ℤ/3)^× = {±1}`, each Shimura set `ℚ^×∖𝔸_f^×/K(3) = Ẑ^×/{±1}K(3)` is
+  one point; `ℚ^×` is discrete in `𝔸_f^×`, so `K̄ ≅ K`, and the covering trace on `H⁰ = ℚ` is the
+  identity. Rational Haar measures giving both levels volume one give `f_*(1) = 1`. A Haar measure on
+  `Ḡ` giving `K̄(3) × K̄(3)` volume `√2`, with volume one for `K̄(3)` on `H̄`, would give
+  `f_*(1) = √2 ∉ ℚ`; normalizing compact averages to volume one does not fix this relative factor.
+- The diagonal map from the datum of a compact Shimura curve to the product datum of its square has
+  trivial, hence central, kernel but is not surjective: its map of Shimura varieties goes from
+  dimension one to dimension two and is not étale onto a union of components. Pullback along it is
+  defined; the normalized trace is not.
 
-*Needs:* §0.2; ShimuraVarieties §8.5; ArithmeticLocallySymmetricSpaces §§ALS.1.8, ALS.3.6;
-MotivesAndAlgebraicCycles §7.15.
+*Needs:* §0.2; ShimuraVarieties §§1.3, 8.5; AdelicAlgebraicGroups §4.3; ArithmeticLocallySymmetricSpaces
+§§ALS.1.8, ALS.3.6 (the covering trace at neat level, whose composite with pullback is the degree of
+the degree formula); MotivesAndAlgebraicCycles §7.15.
 
 ### 0.4 The division-algebra reduction
 
@@ -577,10 +683,18 @@ For Jacquet–Langlands Hodge data let `V_i` be the `L`-rational `π_i`-multipli
 `Hom_{H_ℚ(G_{B_i}(𝔸_f),K)}((π_{i,f})^K(L), H^*(Sh_{B_i,K}, 𝕍_k(L)))` of §0.2, for `K` small, with its
 `ℓ`-adic realizations. Prove that it is independent of `K`, concentrated in cohomological degree `d`
 (IP23 prints `2d` on p. 19; the Shimura variety has dimension `d` and each split place contributes
-degree one), of `L`-dimension `2^d`, pure of weight `d`, an object of `M_{F_Σ}^L`, and self-dual:
+degree one), of `L`-dimension `2^d`, pure of weight `d` (the centre acts trivially on `τ_k`, so
+`τ_k^∨` has the single weight `0` in §0.2), an object of `M_{F_Σ}^L`, and self-dual:
 the coefficient pairing and Poincaré duality give `V_i ≃ V_i^∨(−d)` (IP23, §3.2, pp. 18–19; §12.3,
-p. 98). The `L`-model of `(π_{i,f})^K` is supplied by GL2AutomorphicRepresentationsAndTransfer
-§R17.3.8.
+p. 98). Here `(π_{i,f})^K(L)` is the space of `K`-invariants of a `B_i^×(𝔸_f)`-stable model of `π_{i,f}`
+over `L` itself, unique up to homothety: `π_{i,f}` has trivial central character (§0.1) and
+`ℚ(π_{i,f}) = ℚ(π_f) = L` (GL2AutomorphicRepresentationsAndTransfer §R17.3.7), so
+gap:quaternionic-rational-model applies; equality of rationality fields alone does not give the model
+(§R17.3.8), and `L` is not enlarged. The rank `2^d` is the multiplicity one of `π_i` in the discrete
+spectrum (§R17.3.6) times the dimension of the relative Lie algebra cohomology of `π_{i,∞}`.
+
+- `V_i ⊗_L ℂ` is the space of Hecke maps from `(π_{i,f})^K` to the complex cohomology, so the rank over
+  `L` is computed over `ℂ`.
 
 **Checks.**
 
@@ -588,9 +702,25 @@ p. 98). The `L`-model of `(π_{i,f})^K` is supplied by GL2AutomorphicRepresentat
 - For `d = 0`, `V_i` is a rank-one space in `H⁰` of type `(0,0)`.
 - The rank is `2^d`, not `2^n`: compact factors contribute degree zero and a one-dimensional
   relative Lie algebra cohomology.
+- A field of rationality need not be a field of definition: the two-dimensional irreducible
+  representation of the quaternion group `Q₈` has rational character values `2, −2, 0`, and
+  `i ↦ diag(i, −i)`, `j ↦ [[0, 1], [−1, 0]]` is a model over `ℚ(i)`, but its Frobenius–Schur
+  indicator is `(2·2 + 6·(−2))/8 = −1`, so it has no model over `ℝ`, let alone `ℚ`. Its centre acts by
+  `−1`; the trivial central character of §0.1 is what excludes this obstruction at the places where
+  `B_i` ramifies, so that `V_i` is defined over `L` without enlarging it.
+- A one-dimensional split component has a model but no newvector. Let `χ₃` be the quadratic
+  character of `ℚ₃^×` that is the Legendre symbol on `ℤ₃^×`, and `π₃ = χ₃∘det` on `GL₂(ℚ₃)`. Its
+  central character is `t ↦ χ₃(t²) = 1`, but `diag(−1, 1)` lies in every `K₁(3^r)`, `r ≥ 0`, and acts
+  by `χ₃(−1) = −1`, so `π₃^{K₁(3^r)} = 0`; its model is the line `ℚ`, on which `g` acts by
+  `χ₃(det g) = ±1`. The finite part of the quadratic idele class character of conductor `3`,
+  composed with `det`, is a global instance for `D = M₂(ℚ)`. This is why
+  gap:quaternionic-rational-model gives one-dimensional split components their character line; the
+  components `π_{i,v}` at places where `B_i` splits are those of the cuspidal `π`, infinite-dimensional,
+  and use the newvector line.
 
-*Needs:* §§0.1–0.3; GL2AutomorphicRepresentationsAndTransfer §§R16.4.5, R17.3.1, R17.3.5, R17.3.8;
-AutomorphicFormsOnReductiveGroups §§2.6, 5.4; Tau Ceti `TauCeti.Hodge.HodgeStructureOn.tateTwist`.
+*Needs:* §§0.1–0.3; GL2AutomorphicRepresentationsAndTransfer §§R16.4.5, R17.3.1, R17.3.5, R17.3.6,
+R17.3.7, R17.3.8 and gap:quaternionic-rational-model; AutomorphicFormsOnReductiveGroups §§2.6, 5.4;
+Tau Ceti `TauCeti.Hodge.HodgeStructureOn.tateTwist`.
 
 ### 0.6 Archimedean sign lines
 
@@ -641,10 +771,11 @@ in `H¹` of two Shimura curves over `F`, `B` is ramified at `{𝔭, 𝔮}`, and 
 
 ### Dependencies
 
-GL2AutomorphicRepresentationsAndTransfer §§R16.4.5, R17.3.1, R17.3.5, R17.3.7, R17.3.8;
-MotivesAndAlgebraicCycles §§2.2–2.3, 2.6–2.7, 7.1, 7.15; ArithmeticLocallySymmetricSpaces §§ALS.1.1–
-ALS.1.2, ALS.1.8, ALS.3.3, ALS.3.6, ALS.5b.4; ShimuraData §§3.1, 3.3, 4.3; ShimuraVarieties §§4.3, 6.7,
-8.1, 8.5; ComplexKahlerGeometry §K6.1; ComplexComparisonPartII C6; EtaleCohomologyFoundations §§F.2.1–
+GL2AutomorphicRepresentationsAndTransfer §§R16.4.5, R17.3.1, R17.3.5–R17.3.8 and
+gap:quaternionic-rational-model; MotivesAndAlgebraicCycles §§2.2–2.3, 2.6–2.7, 7.1, 7.15;
+ArithmeticLocallySymmetricSpaces §§ALS.1.1–ALS.1.2, ALS.1.8, ALS.3.3, ALS.3.6, ALS.5b.4; ShimuraData
+§§3.1, 3.3, 4.3; ShimuraVarieties §§1.3, 4.3, 6.7, 8.1, 8.5; AdelicAlgebraicGroups §4.3;
+ComplexKahlerGeometry §K6.1; ComplexComparisonPartII C6; EtaleCohomologyFoundations §§F.2.1–
 F.2.2, F.3; PadicHodgeTheory §§3.3, 8.1; ClassFieldTheory Layer 10; AutomorphicFormsOnReductiveGroups
 §§2.6, 5.4; Tau Ceti `TauCeti.Hodge`.
 
@@ -658,21 +789,31 @@ the right quaternionic action.
 Throughout, `E` is a field with a ring endomorphism `σ`, `U` a finite-dimensional `E`-space and
 `H : U →ₛₗ[σ] U →ₗ[E] E` a sesquilinear form, conjugate-linear in the first variable. `H` is
 *Hermitian* if `H y x = σ (H x y)`; for nonzero Hermitian `H` this forces `σ² = id`, and `F` denotes
-the fixed field. In the applications `E/F` is a quadratic extension of number fields or of local
-fields, or the split étale algebra `F × F` at a split place.
+the fixed field. The zero form on the zero space is Hermitian for every `σ`, so the statements of
+§§1.1–1.2 that call an induced form Hermitian or place a value in `F` assume `σ² = id`; §§1.3–1.4 and
+the point-level identity of §1.7 hold for every `σ`, since in dimension four a nonzero Hermitian form
+forces `σ² = id` and the zero form gives `L = 0`. In the applications `E/F` is a quadratic extension
+of number fields or of local fields, or the split étale algebra `F × F` at a split place.
 
 ### 1.1 Hermitian volume
 
-For `dim_E U = n` and a trivialization `d_U : ⋀ⁿU ≃ E`, the form `H` induces the Hermitian form
-`h(v₁∧…∧v_n, w₁∧…∧w_n) = det[H(v_i, w_j)]` on `⋀ⁿU`. Define `vol(H, d_U) = h(w, w)` for the vector `w`
-with `d_U(w) = 1` (IP23, Definition 5.2, p. 28). For any basis `b` of `U`,
-`vol(H, d_U) = det[H(b_i, b_j)] / (σ(c)·c)` with `c = d_U(b₁ ∧ … ∧ b_n)`.
+For `dim_E U = n` and a trivialization `d_U : ⋀ⁿU ≃ E`, the sesquilinear form `H` induces the
+sesquilinear form `h(v₁∧…∧v_n, w₁∧…∧w_n) = det[H(v_i, w_j)]` on `⋀ⁿU`, Hermitian when `σ² = id` and
+`H` is Hermitian. Define `vol(H, d_U) = h(w, w)` for the vector `w` with `d_U(w) = 1` (IP23,
+Definition 5.2, p. 28). For any basis `b` of `U`, `vol(H, d_U) = det[H(b_i, b_j)] / (σ(c)·c)` with
+`c = d_U(b₁ ∧ … ∧ b_n)`.
 
-- The diagonal formula: if `H` is diagonal in `b` with entries `a_i ∈ F`, then
-  `vol = (∏ a_i)/N(c)`.
-- Rescaling: `vol(H, α d_U) = N(α)⁻¹ vol(H, d_U)` for `α ∈ E^×` (IP23, p. 28).
-- The volume lies in `F`; it is nonzero exactly when `H` is nondegenerate, and then its class in
-  `F^×/N(E^×)` is the discriminant class of `H`.
+- The diagonal formula: if `H` is diagonal in `b` with entries `a_i ∈ E`, then
+  `vol = (∏ a_i)/(σ(c)·c)`.
+- Rescaling: `vol(H, α d_U) = (σ(α)·α)⁻¹ vol(H, d_U)` for `α ∈ E^×`, for every sesquilinear `H`
+  (IP23, p. 28).
+- The volume is nonzero exactly when the Gram matrix `[H(b_i, b_j)]` is invertible.
+- If `σ² = id` and `H` is Hermitian, the volume lies in the fixed field `F` of `σ`, and when it is
+  nonzero its class in `F^×/N(E^×)`, `N(x) = σ(x)·x`, is the discriminant class of `H`. Hermitian
+  symmetry is needed: the Gram matrix of a Hermitian form satisfies `σ(det) = det`, while that of a
+  general sesquilinear form need not. The involution is needed in rank zero, where the volume is
+  `1/(σ(c)·c)` and `σ` fixes it for every trivialization only when `σ² = id`; in positive rank a
+  nonzero Hermitian form forces `σ² = id` and the zero form has volume `0`.
 
 **Checks.**
 
@@ -681,6 +822,15 @@ with `d_U(w) = 1` (IP23, Definition 5.2, p. 28). For any basis `b` of `U`,
 - Scaling `d_U` by `2` divides the volume by `4`; for `diag(1, 2, 1, −5)` it changes from `−10` to
   `−5/2`, not to `−40`.
 - A degenerate Hermitian form has volume `0`.
+- Over `E = ℚ(i)` with complex conjugation, the sesquilinear form `H = diag(i, 1, 1, 1)` is not
+  Hermitian (`H(e₁, e₁) = i` is not fixed by `σ`); with `d_U(e₁∧e₂∧e₃∧e₄) = −1` its volume is
+  `i/(σ(−1)·(−1)) = i`, whose conjugate is `−i`: the volume of a non-Hermitian form need not lie in
+  `F = ℚ`.
+- Rank zero needs `σ² = id`: for `E = ℚ(t)` with the ring endomorphism `σ(t) = t²`, `U = 0`, the zero
+  form (Hermitian) and `d_U(a) = ta` on `⋀⁰U = E`, the induced form is `h(a, b) = σ(a)·b`, so
+  `h(1, t) = t` while `σ(h(t, 1)) = t⁴`, and `vol = σ(t⁻¹)·t⁻¹ = t⁻³` while `σ(vol) = t⁻⁶`. With `σ = id`
+  the same trivialization gives `vol = t⁻²`, fixed; for a quadratic involution `vol = 1/N(c)` lies in
+  `F`.
 
 *Needs:* Mathlib `exteriorPower.pairingDual`, `exteriorPower.ιMulti`, `Matrix.det`,
 `Module.Basis.topVector`, `exteriorPower.isUnit_apply_topVector`; Tau Ceti
@@ -688,9 +838,9 @@ with `d_U(w) = 1` (IP23, Definition 5.2, p. 28). For any basis `b` of `U`,
 
 ### 1.2 The determinant norm identity
 
-For `H` nondegenerate Hermitian of dimension `n` and `g ∈ GU_E(U)` with multiplier `ν(g) ∈ F^×`,
-prove `N_{E/F}(det g) = ν(g)^n`, and that the induced Hermitian form on `⋀^rU` is a similitude for
-`⋀^r g` with multiplier `ν(g)^r` (IP23, Proposition 5.1, pp. 25–26, with (5.1)–(5.3)).
+For `σ² = id`, `H` nondegenerate Hermitian of dimension `n` and `g ∈ GU_E(U)` with multiplier
+`ν(g) ∈ F^×`, prove `N_{E/F}(det g) = ν(g)^n`, and that the induced Hermitian form on `⋀^rU` is a
+similitude for `⋀^r g` with multiplier `ν(g)^r` (IP23, Proposition 5.1, pp. 25–26, with (5.1)–(5.3)).
 
 **Checks.**
 
@@ -751,6 +901,7 @@ for degenerate `H`. For a diagonal form with `d_U(e₁₂₃₄) = −1`, every 
 
 ### 1.5 Exterior skew-pairing identities
 
+Assume that `H` is Hermitian and that `σ` has order two, with fixed field `F` of characteristic zero.
 Choose a trace-zero `i ∈ E^×` and put `b = i·h₂`, the skew-Hermitian `E`-valued form from the induced
 Hermitian form `h₂` on `⋀²U`. For `L` of §1.3 with `J = vol(H, d_U)`, prove `b(Lx, y) = b(Ly, x)` and
 `σ(b(Lx, Ly)) = −J·b(x, y)`; the second follows from the first and `L∘L = J` (IP23, Lemma 5.4 and
@@ -763,15 +914,21 @@ Remark 5.5, pp. 29–30).
 - For a random non-diagonal Hermitian form over `ℚ(i)` with volume `J = −164/5`, both identities
   hold exactly on twenty random pairs of vectors.
 - For the plane of §2.1 with `H = diag(a₁, a₂)`: `b(L₁e₁, e₂) = −i a₁a₂ = −b(L₁e₂, e₁)`.
+- The Hermitian hypothesis is needed: for the non-Hermitian `H = diag(i, 1, 1, 1)` over `ℚ(i)` with
+  `d_U(e₁₂₃₄) = −1`, `L(e₁₂) = −i e₃₄` and `L(e₃₄) = −e₁₂`, so `b(Le₁₂, e₃₄) = −1` while
+  `b(Le₃₄, e₁₂) = 1`.
 
 *Needs:* §1.4.
 
 ### 1.6 The quaternionic exterior space
 
-Put `B = E ⊕ Ej` with `j² = J = vol(H, d_U)`, `αj = jσ(α)` and main involution `*`. On `⋀²U` define
-the right action `x·j = Lx`; it makes `⋀²U` a right `B`-module of rank three. With `b` of §1.5 put
-`⟨x, y⟩ = b(x, y) − J⁻¹ j b(Lx, y)`; prove that it is a nondegenerate `B`-skew-Hermitian form when
-`H` is nondegenerate (IP23, (5.6), p. 30; §5.2, pp. 26–31). For `d′_U = α d_U` one has `L′ = α⁻¹L`,
+Assume that `σ` has order two, with fixed field `F` of characteristic zero, so that `E/F` is a
+quadratic extension (the split étale algebra enters through the localizations of §3.1), and that `H`
+is nondegenerate Hermitian. Then `J = vol(H, d_U)` lies in `F^×` (§1.1). Put `B = E ⊕ Ej` with
+`j² = J`, `αj = jσ(α)` and main involution `*`, a quaternion algebra over `F` because `J ≠ 0`. On
+`⋀²U` define the right action `x·j = Lx`; by §1.4 it makes `⋀²U` a right `B`-module, free of rank
+three. With `b` of §1.5 put `⟨x, y⟩ = b(x, y) − J⁻¹ j b(Lx, y)`; prove that it is a nondegenerate
+`B`-skew-Hermitian form (IP23, (5.6), p. 30; §5.2, pp. 26–31). For `d′_U = α d_U` one has `L′ = α⁻¹L`,
 `J′ = J/N(α)` and `j′ = jα⁻¹ = σ(α)⁻¹j`; the algebra isomorphism is
 `TauCeti.QuaternionAlgebra.normMulEquiv` with `z = σ(α)⁻¹`, and the action and the form are
 transported along it. The algebra `B` is an existing quaternion algebra; this target supplies its
@@ -789,20 +946,24 @@ action and form.
   hold exactly for random vectors and quaternions over `ℚ(i)`.
 - The zero vector pairs to zero with every `y`; nondegeneracy says it is the only such vector.
 - Writing the `j`-term as `−J⁻¹ b(Lx, y) j` instead breaks sesquilinearity in `y`.
+- For the zero form on `ℚ(i)^4`, `J = 0` and `L = 0`: the symbol algebra with `j² = 0` is not a
+  quaternion algebra, right multiplication by `j` has `E`-rank `0` on `⋀²U` but rank `3` on
+  `(E ⊕ Ej)³`, and `J⁻¹` is undefined; nondegeneracy is part of the hypothesis. For the unit diagonal
+  form with `d_U(e₁₂₃₄) = −1`, `J = 1` and `L∘L = id`, so `L` is invertible and `B ≃ M₂(F)`.
 
-*Needs:* §§1.4–1.5; Mathlib `QuaternionAlgebra`; Tau Ceti `TauCeti.QuaternionAlgebra.normMulEquiv`,
+*Needs:* §§1.1, 1.4–1.5; Mathlib `QuaternionAlgebra`; Tau Ceti `TauCeti.QuaternionAlgebra.normMulEquiv`,
 `TauCeti.QuaternionAlgebra.rescaleJEquiv`.
 
 ### 1.7 The exceptional exterior isogeny
 
-Let `GSU_E(U) = {g ∈ GU_E(U) : det_E g = ν(g)²}`. Prove that `g ↦ ⋀²g` is an isogeny of algebraic
-`F`-groups `GSU_E(U) → GU_B(⋀²U)°` with scheme-theoretic kernel `μ₂` and multiplier `ν(g)²` on the
-target (IP23, Proposition 5.6, pp. 30–31). The point-level identity is
-`IsExteriorStar.map_similitude`: for every `E`-linear automorphism `g` with
-`H(gx, gy) = ν·H(x, y)`, `L ∘ ⋀²g = (ν²/det g)·(⋀²g ∘ L)`, for every sesquilinear `H` (IP23, (5.10),
-from (5.7)–(5.9)). *Proof route:* compute the kernel on geometric points and the differential, and
-use connectedness and equal dimension sixteen in characteristic zero; over `F̄` this is the
-identification `Spin₆ ≃ SL₄` of RepresentationTheory/SpinRepresentations Layer 6.
+Under the hypotheses of §1.6 let `GSU_E(U) = {g ∈ GU_E(U) : det_E g = ν(g)²}`. Prove that `g ↦ ⋀²g` is
+an isogeny of algebraic `F`-groups `GSU_E(U) → GU_B(⋀²U)°` with scheme-theoretic kernel `μ₂` and
+multiplier `ν(g)²` on the target (IP23, Proposition 5.6, pp. 30–31). The point-level identity is
+`IsExteriorStar.map_similitude`: for every `E`-linear automorphism `g` with `H(gx, gy) = ν·H(x, y)`,
+`L ∘ ⋀²g = (ν²/det g)·(⋀²g ∘ L)`, for every sesquilinear `H` (IP23, (5.10), from (5.7)–(5.9)).
+*Proof route:* compute the kernel on geometric points and the differential, and use connectedness and
+equal dimension sixteen in characteristic zero; over `F̄` this is the identification `Spin₆ ≃ SL₄` of
+RepresentationTheory/SpinRepresentations Layer 6.
 
 **Checks.**
 
@@ -817,10 +978,10 @@ RepresentationTheory/SpinRepresentations Layer 6.
 
 ### 1.8 The exceptional projective isomorphism
 
-Prove that the exterior construction induces an isomorphism of algebraic `F`-groups
-`PGU_E(U) ≃ PGU_B(⋀²U)°`: for `g ∈ GU_E(U)` choose `β ∈ E^×` with `β/σ(β) = ν(g)²/det g` (Hilbert 90,
-using `N(ν²/det g) = 1` from §1.2) and send `x` to `(⋀²g)(x)β` modulo `F^×`. The class is independent
-of `β` and of the representative of `g` modulo `E^×`, and agrees with §1.7 on `GSU` (IP23,
+Under the hypotheses of §1.6, prove that the exterior construction induces an isomorphism of algebraic
+`F`-groups `PGU_E(U) ≃ PGU_B(⋀²U)°`: for `g ∈ GU_E(U)` choose `β ∈ E^×` with `β/σ(β) = ν(g)²/det g`
+(Hilbert 90, using `N(ν²/det g) = 1` from §1.2) and send `x` to `(⋀²g)(x)β` modulo `F^×`. The class is
+independent of `β` and of the representative of `g` modulo `E^×`, and agrees with §1.7 on `GSU` (IP23,
 Proposition 5.7 and Remarks 5.8–5.9, p. 31). The isomorphism is descended as algebraic groups; no
 surjectivity of the isogeny on `F`-points is inferred.
 
@@ -1093,12 +1254,18 @@ characters along §3.3, and prove that `(k₁, k₂, k₃, k₄) ↦ (k₁+k₃,
 
 ### 3.5 Cohomology of the archimedean theta modules
 
-For even `k ≥ 2`, MetaplecticAutomorphicForms §3.35 identifies the real theta lift of the
-holomorphic discrete series of weight `k + 1` of `SL₂(ℝ)` to `O(4,2)` with `A_{q₁}(k−2, 0, 0)` on
-`SO(4,2)°` (lowest `K`-type `(k, 0, 0)`), the lift of its dual with the holomorphic `A_{q₀}`, and the
-compact lift to `O(0,6)` with the representation of highest weight `(k−2, 0, 0)`, the opposite compact
-lift being zero; IP23 labels its inputs by the dual. Prove that the relative Lie algebra cohomology of
-`A_{q₁}(k−2, 0, 0)` with the harmonic coefficient of degree `k − 2` is one-dimensional in bidegrees
+For even `k ≥ 2` let `D_{k+1}` be the holomorphic discrete series of `SL₂(ℝ)` of weight `k + 1` and
+`D_{k+1}^∨` its dual, the antiholomorphic discrete series of weight `−k − 1`. In the convention of
+this roadmap, where `θ(τ)` is MetaplecticAutomorphicForms' lift of `τ^∨` (Conventions), its §3.35
+gives: the real theta lift of the antiholomorphic `D_{k+1}^∨` to `O(4,2)` restricts to
+`A_{q₁}(k−2, 0, 0)` on `SO(4,2)°` (lowest `K`-type `(k, 0, 0)`), and that of the holomorphic
+`D_{k+1}` to the holomorphic `A_{q₀}(0, 0, k−2)`; the lift of the holomorphic `D_{k+1}` to `O(0,6)`
+is the irreducible representation of highest weight `(k−2, 0, 0)`, and that of `D_{k+1}^∨` is zero.
+These are IP23's labels (§7.2, p. 47, and §§7.2.1–7.2.2, pp. 47–48), which use the same convention.
+A source antiholomorphic above `Σ` and holomorphic elsewhere, as used in §7.1, therefore has nonzero
+local lifts at every real place: `A_{q₁}` above `Σ` and the compact representation elsewhere. Prove
+that the relative Lie algebra cohomology of `A_{q₁}(k−2, 0, 0)` with the harmonic coefficient of
+degree `k − 2` is one-dimensional in bidegrees
 `(1,1)` and `(3,3)`, two-dimensional in `(2,2)` and zero elsewhere (IP23, §§7.2.1–7.2.2, pp. 47–48),
 by the Hermitian bidegree formula of AutomorphicFormsOnReductiveGroups §5.4 with
 `(R₊, R₋) = (1, 1)` and Levi `𝔰𝔬(2) ⊕ 𝔰𝔬(2,2)`, whose compact dual has Poincaré polynomial
@@ -1111,14 +1278,24 @@ by the Hermitian bidegree formula of AutomorphicFormsOnReductiveGroups §5.4 wit
 - The total dimension is four, the Euler characteristic of `ℙ¹ × ℙ¹`.
 - The holomorphic module `A_{q₀}` has cohomology in a single bidegree, so it cannot contribute to
   bidegree `(1,1)`.
+- At `k = 2`, the input that matters is the dual one: the lift of the antiholomorphic `D₃^∨` is
+  `A_{q₁}(0, 0, 0)`, with `dim H^{1,1} = 1`, while the lift of the holomorphic `D₃` is `A_{q₀}(0, 0, 0)`,
+  whose Levi is `𝔨`, so `𝔩 ∩ 𝔭 = 0`, `(R₊, R₋) = (4, 0)` and its cohomology is the single line in
+  bidegree `(4, 0)`: `dim H^{1,1} = 0`. Reading MetaplecticAutomorphicForms' labels without dualizing
+  the input would put the `(1,1)` class on `D₃`.
+- At `k = 2` and the compact place, the lift of the holomorphic `D₃` to `O(0,6)` has highest weight
+  `(0, 0, 0)`, so it is one-dimensional and its relative Lie algebra cohomology is the line `H⁰`;
+  the lift of `D₃^∨` is zero.
 
 *Needs:* §3.4; MetaplecticAutomorphicForms §3.35; AutomorphicFormsOnReductiveGroups §§5.2, 5.4.
 
 ### Examples
 
 For `k = 4`: `l = (2, 0, 0)` gives the torus weight `(1, −1, 1, −1)` and the Borel-dominant weight
-`(1, 1, −1, −1)`; the theta module `A_{q₁}(2, 0, 0)` has lowest `K`-type `(4, 0, 0)` and cohomology
-dimensions `1, 2, 1` in bidegrees `(1,1), (2,2), (3,3)`.
+`(1, 1, −1, −1)`; the lift of the antiholomorphic `D₅^∨`, `A_{q₁}(2, 0, 0)`, has lowest `K`-type
+`(4, 0, 0)` and cohomology dimensions `1, 2, 1` in bidegrees `(1,1), (2,2), (3,3)`, while the lift of
+the holomorphic `D₅` is `A_{q₀}(0, 0, 2)`, with cohomology only in bidegree `(4, 0)`, and its lift to
+`O(0,6)` has highest weight `(2, 0, 0)`.
 
 ### Dependencies
 
@@ -1201,9 +1378,16 @@ pp. 51–52). The first formula carries the factor `2^{−q/2}` relative to Funk
 
 - For `ℓ = 0` the projection is the identity and the coefficient is a scalar.
 - For `p = 0` and `ℓ = 0`, `φ′₀ = φ₀` with `K′`-weight `−m/2`; for `(0, 6)` this is `−3`.
-- For `(p, q) = (4, 2)` and `ℓ = 0` the form has degree two and weight three, matching the
-  antiholomorphic discrete series of weight `−3`, the case `k = 2` of §3.5.
-- The compact formula with `p = 0` is not the empty-sum case of the first formula: that sum is zero.
+- For `(p, q) = (4, 2)` and `ℓ = 0` the form has degree two and `K′`-weight `+3`, so the linear theta
+  integral pairs it with a vector of weight `−3` of the antiholomorphic input `D₃^∨`, whose lift is
+  `A_{q₁}(0, 0, 0)` with its `(1,1)` class, the case `k = 2` of §3.5; against the holomorphic `D₃`,
+  whose lift `A_{q₀}` has no `(1,1)` cohomology, the `U(1)`-integral of the weights `+3` and `+3`
+  vanishes.
+- The compact formula is not the first formula read at `p = 0`. There the index set
+  `{1..0}^q × {1..0}^ℓ` is empty once `q + ℓ > 0`, so that reading gives `0` at `(p, q, ℓ) = (0, 6, 0)`,
+  while the compact formula gives `φ′₀ = 1`. At `(0, 0, 0)`, the zero quadratic space, both index sets
+  consist of the empty tuple, the empty products and the empty wedge are `1`, and both formulas give
+  the constant `1`.
 
 *Needs:* §§4.1–4.2; AutomorphicFormsOnReductiveGroups §5.2.
 
@@ -1246,13 +1430,23 @@ pairing gives the Schwartz function `(x₁ + εix₂)^{ℓ+2} φ₀(x)` (IP23, P
 ### 4.6 The compact Schwartz restriction formula
 
 For signature `(0, 6)`, with the same `V′` and `v^ε = (e₁ + εie₂)^ℓ/ℓ!`, prove that contracting the
-restricted `φ′_ℓ` against `v^ε` gives `(−1)^ℓ (x₁ + εix₂)^ℓ φ₀(x)` (IP23, Proposition 8.2, p. 55). The
-application has `ℓ = k_v − 2` even; the formula keeps the sign for every `ℓ`.
+restricted `φ′_ℓ` against `v^ε` gives `(x₁ + εix₂)^ℓ φ₀(x)` for every `ℓ ≥ 0` (IP23, Proposition 8.2,
+p. 55, which prints an extra factor `(−1)^ℓ`). *Proof route:* by §4.4, and because the harmonic
+projection is orthogonal and `v^ε` is harmonic, the contraction of the restricted `φ′_ℓ` equals that
+of the restricted `φ_ℓ`; the sum over `β ∈ {1, 2, 5, 6}^ℓ` gives
+`Σ_β z_β⟨e_β, v^ε⟩ = (Σ_j ⟨e_j, e₁ + εie₂⟩ z_j)^ℓ = (−1)^ℓ (z₁ + εiz₂)^ℓ`, since `⟨e_j, e_j⟩ = −1`;
+by §4.2 for negative coordinates, `(4πi)^{−ℓ}(z₁ + εiz₂)^ℓ` corresponds to `(−1)^ℓ (x₁ + εix₂)^ℓ φ₀`.
+The two factors `(−1)^ℓ` cancel. The application has `ℓ = k_v − 2` even, where the printed sign is
+`1`.
 
 **Checks.**
 
-- For `ℓ = 1` the result is `−(x₁ + εix₂)φ₀`; for `ℓ = 0` it is `φ₀`.
-- The sign is the negative-coordinate sign of §4.2 raised to the power `ℓ`.
+- At `x = e₁` the contraction equals `e^{−π}` for `ℓ = 0, 1, 2`; a factor `(−1)^ℓ` would give
+  `−e^{−π}` at `ℓ = 1`.
+- For `ℓ = 1`, `φ′₁ = (4πi)⁻¹ Σ_j z_j ⊗ e_j` corresponds to `−Σ_j x_j φ₀ ⊗ e_j` (§4.2), and the
+  coefficient pairing gives `⟨e₁, e₁ + εie₂⟩ = −1`, `⟨e₂, e₁ + εie₂⟩ = −εi`, so the contraction is
+  `(x₁ + εix₂)φ₀`: the sign of the Fock comparison and the sign of the negative definite pairing
+  cancel.
 - The exponent is `ℓ`, not `ℓ + 2`: there is no differential-form factor in the compact case.
 
 *Needs:* §§4.2–4.4.
@@ -1384,7 +1578,7 @@ positive-range Rallis inner product formula.
 Throughout this layer `F` is a number field, `B` a division quaternion algebra over `F` split at every
 archimedean place, `E/F` a quadratic extension embedded in `B`, and the dual pairs, splittings and
 global theta lifts are those of MetaplecticAutomorphicForms §§3.23–3.28 and 5.6, in the convention
-`θ(f) = ∫ Θ f` of the Conventions.
+`θ(f) = ∫ Θ f` of the Conventions; §6.2 uses instead the Periods-I splitting of its §3.32a.
 
 ### 6.1 Toric theta lifting and automorphic induction
 
@@ -1414,22 +1608,28 @@ MetaplecticAutomorphicForms §§3.9, 3.16, 3.23, 3.24, 5.6, 6.13, 6.14; Automorp
 
 Let `B = B₁·B₂` in the Brauer group, `V = B₁ ⊗_E B₂` the two-dimensional skew-Hermitian `B`-space with
 `GU(V)° ≃ (B₁^× × B₂^×)/F^×`, and `σ_i` irreducible unitary cuspidal representations of `B_i^×(𝔸)` with
-the same central character, with transfers `π_i` to `GL₂(𝔸)`. Prove that `θ(σ₁ ⊠ σ₂) = 0` if `π₁ ≠ π₂`,
-and that if `π₁ = π₂` it is the transfer of `π_i` to `B^×(𝔸)`, which exists (IP23, §9.3, pp. 57–58;
-Lemma 9.2, p. 58). *Proof route:* the see-saw identity pairs `θ(σ₁ ⊠ σ₂)` with `f′ ∈ σ̄` against
+the same central character, with transfers `π_i` to `GL₂(𝔸)`. Form `θ(σ₁ ⊠ σ₂)` with the Periods-I
+splitting of MetaplecticAutomorphicForms §3.32a, which is defined on the whole similitude dual pair:
+the lift is defined on the elements of `B^×(𝔸)` whose reduced norm is positive at the real places
+where `B₁` or `B₂` ramifies, and extended to `B^×(𝔸)` by left `B^×(F)`-invariance. Prove that
+`θ(σ₁ ⊠ σ₂) = 0` if `π₁ ≠ π₂`, and that if `π₁ = π₂` it is the transfer of `π_i` to `B^×(𝔸)`, which
+exists (IP23, §9.3, pp. 57–58; Lemma 9.2, p. 58). No condition on `Σ` is imposed and no comparison of
+splittings is used; the splitting of §3.24 enters only in §7.4. *Proof route:* the see-saw identity
+(MetaplecticAutomorphicForms §6.15) for this splitting pairs `θ(σ₁ ⊠ σ₂)` with `f′ ∈ σ̄` against
 `σ₁ ⊠ σ₂` paired with the lift of `σ̄` to `GU(V)°`, which is the quaternionic Shimizu lift
-`π̄_{B₁} ⊠ π̄_{B₂}` (gap:quaternionic-shimizu-lift); the local splittings are those of
-MetaplecticAutomorphicForms §§3.28 and 3.32a.
+`π̄_{B₁} ⊠ π̄_{B₂}` for the same splitting (gap:quaternionic-shimizu-lift).
 
 **Checks.**
 
 - If the two cuspidal transfers differ, every theta period vanishes.
 - `(t, t⁻¹)` acts trivially on `V`, so `σ₁ ⊠ σ₂` descends to `GU(V)°` only with equal central characters.
 - For `B₁ = B₂` the algebra `B` splits and the statement is the classical `GO(4)` Shimizu lift.
+- For `F = ℚ`, `Ram(B₁) = {∞, 2}` and `Ram(B₂) = {∞, 3}` (`d = 0`) the lift is first defined on the
+  `h` with `Nrd(h_∞) > 0`; `B` is ramified exactly at `{2, 3}` and split at `∞`, so `B^×(ℚ)` contains
+  elements of negative reduced norm, and the extension reaches all of `B^×(𝔸)`.
 
 *Needs:* §2.6; GL2AutomorphicRepresentationsAndTransfer §§R16.4.4, R17.3.1;
-MetaplecticAutomorphicForms §§3.23, 3.24, 3.28, 3.32a, 3.38, 5.6, 6.15 and
-gap:quaternionic-shimizu-lift.
+MetaplecticAutomorphicForms §§3.23, 3.32a, 3.38, 5.6, 6.15 and gap:quaternionic-shimizu-lift.
 
 ### 6.3 The backward-lift doubling point
 
@@ -1572,19 +1772,28 @@ The central transformation of the splitting, `s_v(zg) = ξ_{E,v}(z)^m s_v(g)` wi
 Restrict `ξ_τ` to `H̃_B`. For the centre `Z = {(z, α) : z² = N(α)}` use `p(z, α) = z⁻¹α ∈ E¹` and project
 by `∫ ξ_τ(zg)(η∘p)(z) dz` over the compact quotient `Z(G̃)(𝔸)Z(F)∖Z(𝔸)` of volume one; multiply the
 resulting form by `c_η` of §5.3. For `g ∈ G(𝔸)^+` choose `α_g` with `N(α_g) = ν(g)` and evaluate at
-`(g, α_g)` times `η(α_g)`; this is independent of `α_g`. Descend by the normalized trace of §0.3, extend
-by zero off `G(F)G(𝔸)^+` and average over a compact open with volume one (IP23, §10.4, pp. 68–70;
-Remark 2.2, p. 17).
+`(g, α_g)` times `η(α_g)`; this is independent of `α_g`. Descend by the normalized trace of §0.3, with
+the volumes of the levels taken for the fixed rational Haar measures of §0.3 on the effective groups
+(the quotients by the closures of the rational points of the centres), extend by zero off
+`G(F)G(𝔸)^+` and average over a compact open with volume one (IP23, §10.4, pp. 68–70; Remark 2.2,
+p. 17).
 
 - The projected form transforms under the centre by `(η∘p)⁻¹`.
 - The product `ξ_η(g, α_g)η(α_g)` does not depend on `α_g`.
-- Normalized trace and average are compatible with level change; traces go to the actual image,
-  extended by zero.
+- Normalized trace and average are compatible with level change, by the degree formula of §0.3;
+  traces go to the actual image, extended by zero.
+- On cohomology the normalized trace and the average preserve `L`-structures: the volume ratio is
+  in `ℚ_{>0}`, and averaging a `K′`-invariant class over `K ⊃ K′` with volume one is `1/[K : K′]`
+  times the sum of its translates by `K/K′`.
 
 **Checks.**
 
 - For `η = 1` this is projection to central invariants.
 - A `K`-invariant form is unchanged by averaging over `K` with volume one.
+- Replacing the rational Haar measure on one effective group by another multiplies the descended
+  form by a positive rational number; the irrational relative normalization of the negative control
+  of §0.3 would multiply it by `√2`, harmless for the nonvanishing of this layer but not for the
+  rational structure used in §10.3.
 - On an adelic component without a norm lift the unextended formula is not evaluated; the value there
   is zero by extension.
 
@@ -1592,25 +1801,38 @@ Remark 2.2, p. 17).
 
 ### 7.4 The restricted theta see-saw
 
-For the projected and descended form and the vectors `f₁^ε ⊠ f₂^ε` of §7.10, prove that pairing against
-their coefficient and differential factors equals the scalar theta integral of IP23 Lemma 10.2, and
-that the compatible-splitting see-saw rewrites it as the triple-product integral over `H_N^+` of
-`θ_{φ^ε}(f^ε)·θ_{φ₀}(η)·φ`, with the central quotients and measures of IP23 §10.4 and absolute
-convergence from compactness and cuspidality (IP23, Lemma 10.2, p. 71; (10.7), p. 72).
+Assume `d ≥ 1`. For the projected and descended form and the nonzero vectors `f^ε = f₁^ε ⊠ f₂^ε` of
+§7.10, prove that pairing against their coefficient and differential factors equals the scalar theta
+integral of IP23 Lemma 10.2, and that the compatible-splitting see-saw rewrites it as the
+triple-product integral over `H_N^+` of `θ_{φ^ε}(f^ε)·θ_{φ₀}(η)·φ`, with the central quotients and
+measures of IP23 §10.4 and absolute convergence from compactness and cuspidality (IP23, Lemma 10.2,
+p. 71; (10.7), p. 72). In the see-saw the pair attached to `V = B₁ ⊗_E B₂` carries the splitting
+induced from the exterior space (MetaplecticAutomorphicForms §§3.24, 3.28). Because `F` is totally
+real, `E` is CM and `B₁, B₂` split at the real places of `Σ ≠ ∅`, MetaplecticAutomorphicForms §3.32a
+identifies it with the Periods-I splitting on the norm-image group, so `θ_{φ^ε}(f^ε)` is the
+restriction to `H_N^+` of the lift of §6.2 (IP23, §10.2, p. 66; Proposition A.14, p. 113).
 
 **Checks.**
 
 - All signs `ε` use the same finite Schwartz data.
 - The see-saw is equation (10.7), p. 72; equation (10.8) is a later `K`-type identity.
 - Fubini is applied only after convergence and matching central quotients are established.
+- For `F = ℚ`, `Ram(B₁) = {∞, 2}`, `Ram(B₂) = {∞, 3}` and `E = ℚ(i)` (`d = 0`) no real place is split
+  in both algebras, so §3.32a does not apply. The norm-one groups and the two scalar embeddings of
+  MetaplecticAutomorphicForms §§3.30–3.31 reach only the elements `(g₁, g₂, h)` with `Nrd(g₁)` a
+  norm from `E`, while the isometry group of `V`, over which the theta integral runs, contains
+  `[x₁, x₂]` at the place `3` with `Nrd(x₁) = 3` and `Nrd(x₂) = 1/3`, and `3` is not a norm from the
+  unramified quadratic extension `ℚ₃(i)`: a comparison on the norm subgroup alone does not identify
+  the two lifts.
 
-*Needs:* §§4.5, 4.6, 7.3; MetaplecticAutomorphicForms §§3.28, 6.15.
+*Needs:* §§4.5, 4.6, 6.2, 7.3; MetaplecticAutomorphicForms §§3.24, 3.28, 3.32a, 6.15.
 
 ### 7.5 The simultaneous sign theta vectors
 
 For each `ε ∈ {±1}^{Σ_∞}` take the archimedean Schwartz factor `(x₁ + ε_v ix₂)^{k_v} φ₀` above `Σ` and
 `(x₁ + ε_v ix₂)^{k_v−2} φ₀` elsewhere (IP23, (10.4)). Prove that finite Schwartz data can be chosen once
-so that `θ_{φ^ε}(f^ε)` is nonzero for every `ε`, lies in `π_B`, and has minimal weights `+k_v` at `Σ` and
+so that, for the nonzero vectors `f^ε` of §7.10, the lift `θ_{φ^ε}(f^ε)` of §6.2 is nonzero for every
+`ε`, lies in `π_B`, and has minimal weights `+k_v` at `Σ` and
 `−k_v` elsewhere; its archimedean Whittaker coefficient is nonzero and independent of `ε` because the
 exponents are even, so the `f^ε` can be rescaled to give one nonzero automorphic form (IP23, Lemma 10.3
 and (10.9)–(10.12), pp. 73–76).
@@ -1620,6 +1842,8 @@ and (10.9)–(10.12), pp. 73–76).
 - A different finite Schwartz function for each sign is not allowed.
 - The archimedean exponents `k_v` and `k_v − 2` are even, so the sign `ε_v^{k_v}` is `+1`.
 - At `k_v = 2` the factor outside `Σ` is the Gaussian itself.
+- For `f^ε = 0` the lift is `0` for every Schwartz function: the nonvanishing uses the nonzero vectors
+  of §7.10.
 
 *Needs:* §§4.5, 4.6, 6.2, 7.1; AutomorphicSpectralTheory §§0.25–0.26.
 
@@ -1696,14 +1920,20 @@ outside `Σ`; its contragredient is the type required of `τ` in §7.1 (IP23, Le
 
 ### 7.10 Simultaneous nonvanishing of the restriction
 
-Let `f₁^ε ⊠ f₂^ε ∈ π_{B₁} ⊠ π_{B₂}` have weights `±k_v` (opposite on the two factors) at `v ∈ Σ` and
-`±(k_v − 2)` outside `Σ`, the same finite components for all `ε`, and be fixed by a compact open `K`.
-Assume the place `v₀` of §7.6 exists. Prove that there is one choice of `τ`, `φ`, `η` and Schwartz data
-for which the descended theta class pairs nontrivially with every one of the `2^n` sign vectors `f^ε`
-(IP23, Proposition 10.1, pp. 70–71; Lemma 10.8 and §10.9, pp. 77–78). *Proof route:* translate to a
-common connected real quotient; the two nonzero real-analytic restrictions have nonzero product;
-project it on the compact quotient onto a nonzero irreducible summand (AutomorphicSpectralTheory §4.7),
-take `τ` its contragredient and a vector with nonzero period, and use §7.5 for all `ε` at once.
+Assume `d ≥ 1`. For each `ε ∈ {±1}^{Σ_∞}` let `f_i^ε = (⊗_{v∈Σ_∞} f_{i,v}^{ε_v}) ⊗ (⊗_{v finite} f_{i,v})`
+be a nonzero pure tensor in `π_{B_i}`, `i = 1, 2`, whose local factors are all nonzero, such that,
+for the circle `E_v¹ ≃ ℂ¹ ⊂ B_{i,v}^×` given by `E ⊂ B_i`: at `v ∈ Σ` the factors `f_{1,v}^{ε_v}` and
+`f_{2,v}^{ε_v}` have weights `ε_v k_v` and `−ε_v k_v`; at a real `v ∉ Σ` they have weights
+`ε_v(k_v − 2)` and `−ε_v(k_v − 2)` (each such vector is unique up to a nonzero scalar); the finite
+factors `f_{i,v}` do not depend on `ε`; and `f_{1,v} ⊠ f_{2,v}` is fixed by `K_v` for a compact open
+`K = ∏_v K_v` (IP23, §10.5, (10.2)–(10.3), p. 70). Put `f^ε = f₁^ε ⊠ f₂^ε`. Assume the place `v₀` of
+§7.6 exists. Prove that there is one choice of `τ`, `φ`, `η` and Schwartz data for which the
+descended theta class pairs nontrivially with every one of the `2^n` sign vectors `f^ε` (IP23,
+Proposition 10.1, pp. 70–71; Lemma 10.8 and §10.9, pp. 77–78). *Proof route:* by §7.4 the pairing
+is a triple-product integral over `H_N^+`; translate to a common connected real quotient; the two
+nonzero real-analytic restrictions have nonzero product; project it on the compact quotient onto a
+nonzero irreducible summand (AutomorphicSpectralTheory §4.7), take `τ` its contragredient and a
+vector with nonzero period, and use §7.5 for all `ε` at once.
 
 **Checks.**
 
@@ -1711,8 +1941,13 @@ take `τ` its contragredient and a vector with nonzero period, and use §7.5 for
 - For `d = 1` there are two signs at the split place and the statement gives two nonzero pairings for
   one class.
 - The hypothesis at `v₀` is part of the statement; §10.2 shows that a suitable `E` exists.
+- If one factor `f_{1,v}` is zero, every `f^ε` is zero and every pairing is `0` by linearity (§7.2):
+  the vectors must be nonzero, with nonzero local factors.
+- For `d = 0` the statement is not made: §7.4 identifies the two splittings of `B₁ ⊗_E B₂` through
+  MetaplecticAutomorphicForms §3.32a, which needs a real place split in `B₁` and `B₂`; the end
+  theorems for `d = 0` do not use this layer (§§10.7–10.8).
 
-*Needs:* §§7.4, 7.6, 7.9; MetaplecticAutomorphicForms §6.15; AutomorphicSpectralTheory §4.7.
+*Needs:* §§7.4, 7.5, 7.6, 7.9; MetaplecticAutomorphicForms §6.15; AutomorphicSpectralTheory §4.7.
 
 ### Examples
 
@@ -1722,9 +1957,10 @@ all four.
 
 ### Dependencies
 
-Layers 0–6; MetaplecticAutomorphicForms §§3.23, 3.24, 3.28, 5.6, 6.15; AutomorphicSpectralTheory §§0.25–0.26,
-4.7; AdelicAlgebraicGroups §3.4; AutomorphicFormsOnReductiveGroups §§2.6, 4.2; ClassFieldTheory §5.4 and
-Layer 8; GL2AutomorphicRepresentationsAndTransfer §R16.1.8; GlobalNumberFields Layer 9.
+Layers 0–6; MetaplecticAutomorphicForms §§3.23, 3.24, 3.28, 3.32a, 5.6, 6.15;
+AutomorphicSpectralTheory §§0.25–0.26, 4.7; AdelicAlgebraicGroups §3.4;
+AutomorphicFormsOnReductiveGroups §§2.6, 4.2; ClassFieldTheory §5.4 and Layer 8;
+GL2AutomorphicRepresentationsAndTransfer §R16.1.8; GlobalNumberFields Layer 9.
 
 ## Layer 8: the unitary eigenspace and its Hodge type
 
@@ -1825,9 +2061,9 @@ Prove that `H^{2d}(Sh_K, V_k)[Π^S] = H^{d,d}(Sh_K, V_k)[Π^S]` in relative coch
 `v ∈ Σ` contributes degree two through `q₁` and each real place outside `Σ` degree zero (IP23,
 Proposition 11.4 and (11.2), pp. 85–86). *Proof route* (IP23, Remark 11.5, p. 87): by §6.5 every `π`
 with `π_v ≃ Π_v` for almost all `v` is a theta lift `θ(τ′)`; at `v ∈ Σ` the archimedean component is a
-theta lift of a discrete series of weight `k_v + 1` (MetaplecticAutomorphicForms §3.35, with §8.3), hence
-one of `A_{q₀}, A_{q₁}, A_{q₂}`; each split place has degree at least two, so total degree `2d` forces
-degree two, that is `q₁` in bidegree `(1,1)`, at every split place. This is a statement about relative
+theta lift of `D_{k_v+1}` or of its dual (§3.5, read from MetaplecticAutomorphicForms §3.35, with
+§8.3), hence one of `A_{q₀}, A_{q₁}, A_{q₂}`; each split place has degree at least two, so total
+degree `2d` forces degree two, that is `q₁` in bidegree `(1,1)`, at every split place. This is a statement about relative
 cochain bidegrees; the actual Hodge types are §8.7.
 
 **Checks.**
@@ -1836,7 +2072,7 @@ cochain bidegrees; the actual Hodge types are §8.7.
 - For `d = 1` the eigenspace is `H^{1,1}` at the split place tensored with `H⁰` at the compact one.
 - The route does not use a global classification of automorphic representations of `U(2,2)`-forms.
 
-*Needs:* §§0.2, 6.5, 8.2, 8.3, 8.4; MetaplecticAutomorphicForms §3.35; ArithmeticLocallySymmetricSpaces
+*Needs:* §§0.2, 3.5, 6.5, 8.2, 8.3, 8.4; MetaplecticAutomorphicForms §3.35; ArithmeticLocallySymmetricSpaces
 §ALS.5b.4 and gap:compact-matsushima.
 
 ### 8.6 Hodge types of the coefficient-cohomology summands
@@ -2095,13 +2331,16 @@ gap:quaternion-ramification-classification; ClassFieldTheory §5.4.
 ### 10.3 The realization-compatible restriction map
 
 For a level on the exterior variety and a component parameter `c ∈ H⁰(Sh_{H̃_B}, ℚ)`, construct
-`Res_c : H^{2d}(Sh_{G̃_B}, Ṽ)(d) → V₁ ⊗_L V₂(d) ≃ Hom_L(V₁, V₂)` as the composite of: pullback to the block
-subgroup (§0.3); the rational harmonic coefficient projection (§5.4); multiplication by `c`; the
-normalized central trace to the projective quaternionic block group and the level average (§§0.3, 7.3);
-pullback from `G` to `B₁^× × B₂^×`; the `L`-rational `π₁ ⊠ π₂` projector; and contraction with chosen
-`L`-rational finite vectors (IP23, §§12.2.5–12.2.11, pp. 96–98; proof of Theorem 12.4, p. 99). Prove that
-it is `ℚ(k)`-linear in the source and `ℚ`-linear in `c`, with values in the `L`-structure, and that for
-`Gal(ℚ̄/F_Σ)`-invariant `c` it is a morphism in every realization over `F_Σ`.
+`Res_c : H^{2d}(Sh_{G̃_B}, Ṽ)(d) → V₁ ⊗_L V₂(d) ≃ Hom_L(V₁, V₂)` as the composite of: pullback to the
+block subgroup (§0.3); the rational harmonic coefficient projection (§5.4); multiplication by `c`; the
+normalized central trace to the projective quaternionic block group, with the volumes of the levels
+taken for the fixed rational Haar measures of §0.3 on the effective groups, and the level average
+(§§0.3, 7.3); pullback from `G` to `B₁^× × B₂^×`; the `L`-rational `π₁ ⊠ π₂` projector; and
+contraction with chosen nonzero vectors of the `L`-models of §0.5 (IP23, §§12.2.5–12.2.11,
+pp. 96–98; proof of Theorem 12.4, p. 99). Prove that it is `ℚ(k)`-linear in the source and
+`ℚ`-linear in `c`, with values in the `L`-structure, and that for `Gal(ℚ̄/F_Σ)`-invariant `c` it is a
+morphism in every realization over `F_Σ`; the rationality of the Haar measures is what puts the
+normalized trace, and so `Res_c`, in the `L`-structure (§0.3).
 
 - For `c = c_η` its value on `ξ_τ(d)` is the correspondence constructed analytically in Layer 7.
 - `(x, c) ↦ Res_c(x)` is bilinear over `ℚ(k)` after extending the parameter space.
@@ -2113,17 +2352,22 @@ it is `ℚ(k)`-linear in the source and `ℚ`-linear in `c`, with values in the 
 - In the equal-algebra case the diagonal gives the identity of `V₁` (§0.4).
 - Trace to a component outside the image of `Sh_{H̃_B}` contributes zero; it is not an isomorphism
   induced by a surjective covering.
+- With the identity correspondence and the projection of the negative control of §0.3 in place of
+  the central trace, rational Haar measures give the matrix `I`, while the irrational relative
+  normalization there gives `√2·I`, whose entries are not in `ℚ`; another pair of rational Haar
+  measures gives `c·I` with `c ∈ ℚ_{>0}`, which changes neither the `L`-structure nor invertibility.
 
-*Needs:* §§0.3, 0.7, 5.3, 5.4, 7.3; MotivesAndAlgebraicCycles §§2.3, 7.15.
+*Needs:* §§0.3, 0.5, 0.7, 5.3, 5.4, 7.3; GL2AutomorphicRepresentationsAndTransfer
+gap:quaternionic-rational-model; MotivesAndAlgebraicCycles §§2.3, 7.15.
 
 ### 10.4 Invertibility of the theta correspondence
 
-Prove that there are auxiliary data `(E, τ̃, φ, φ̃, η, K, K₁, K₂, v₁, v₂)` for which
-`Res_{c_η}(ξ_τ(d)) : V₁ ⊗ ℂ → V₂ ⊗ ℂ` is an isomorphism; in the sign bases of §0.6 it has a nonzero entry
-on each matching pair of lines and no other entries, so its rank is `2^d` (IP23, Proposition 12.3,
-p. 98). *Proof route:* §10.2 supplies `E` and `v₀`; Matsushima reduces to relative Lie algebra
-cohomology; §7.10 gives the nonzero pairings for every sign; opposite-sign Poincaré duality makes the
-operator diagonal.
+Assume `d ≥ 1` and `B₁ ≄ B₂`. Prove that there are auxiliary data
+`(E, τ̃, φ, φ̃, η, K, K₁, K₂, v₁, v₂)` for which `Res_{c_η}(ξ_τ(d)) : V₁ ⊗ ℂ → V₂ ⊗ ℂ` is an
+isomorphism; in the sign bases of §0.6 it has a nonzero entry on each matching pair of lines and no
+other entries, so its rank is `2^d` (IP23, Proposition 12.3, p. 98). *Proof route:* §10.2 supplies `E`
+and `v₀`; Matsushima reduces to relative Lie algebra cohomology; §7.10 gives the nonzero pairings for
+every sign; opposite-sign Poincaré duality makes the operator diagonal.
 
 **Checks.**
 
@@ -2155,15 +2399,15 @@ extension of scalars.
 
 ### 10.6 Rational determinant descent
 
-Let `ℋ` be the theta Hecke space of §8.4, a `ℚ(k)`-space, and `W_ℚ` the space of §10.5, with the finite
-data of §10.3 fixed. Prove: the determinant of `Res_c(x)` in `L`-bases of `V₁, V₂` is a polynomial with
-coefficients in `L` in the coordinates of `x ∈ ℋ` and `c ∈ W_ℚ`, homogeneous of degree `2^d` in each set;
-§10.4 and `c_η ∈ W_ℚ ⊗ ℂ` give a complex point where it is nonzero; hence there are `x ∈ ℋ` and
-`c ∈ W_ℚ` at which it is nonzero (IP23, proof of Theorem 12.4, p. 99). *Proof route:* expand the finitely
-many `L`-coefficients over a `ℚ(k)`-basis of their span and choose a nonzero coordinate polynomial;
-`MvPolynomial.funext` over the infinite field `ℚ(k)` gives `x`, leaving a nonzero polynomial in `c`;
-repeat with a `ℚ`-basis to choose `c`. The resulting tensor `ξ₀ = Res_c(x)` has coefficients in `L`, is a
-Hodge class by §8.8, and is invertible.
+Let `ℋ` be the theta Hecke space of §8.4, a `ℚ(k)`-space, and `W_ℚ` the space of §10.5, with the
+finite data of §10.3 fixed, and assume `d ≥ 1`. Prove: the determinant of `Res_c(x)` in `L`-bases of
+`V₁, V₂` is a polynomial with coefficients in `L` in the coordinates of `x ∈ ℋ` and `c ∈ W_ℚ`,
+homogeneous of degree `2^d` in each set; §10.4 and `c_η ∈ W_ℚ ⊗ ℂ` give a complex point where it is
+nonzero; hence there are `x ∈ ℋ` and `c ∈ W_ℚ` at which it is nonzero (IP23, proof of Theorem 12.4, p.
+99). *Proof route:* expand the finitely many `L`-coefficients over a `ℚ(k)`-basis of their span and
+choose a nonzero coordinate polynomial; `MvPolynomial.funext` over the infinite field `ℚ(k)` gives
+`x`, leaving a nonzero polynomial in `c`; repeat with a `ℚ`-basis to choose `c`. The resulting tensor
+`ξ₀ = Res_c(x)` has coefficients in `L`, is a Hodge class by §8.8, and is invertible.
 
 **Checks.**
 
@@ -2171,8 +2415,9 @@ Hodge class by §8.8, and is invertible.
   over `ℚ(i)/ℚ` is `0`.
 - The argument needs only that `ℚ(k)` and `ℚ` are infinite; the determinant need not have rational
   coefficients.
-- If `d = 0` the determinant is linear in each set of coordinates and the argument reduces to choosing
-  one nonzero rational value.
+- For `d = 1` and `Res_c(x) = diag(x₁c₁, x₂c₂)` the determinant `x₁x₂c₁c₂` is nonzero at
+  `x = (1, 1)`, `c = (1, 1)`, while `x = (1, 0)` kills it for every `c`: the choice of `x` must leave a
+  nonzero polynomial in `c`.
 
 *Needs:* §§8.4, 8.8, 10.3, 10.4, 10.5; Mathlib `MvPolynomial.funext`.
 
@@ -2181,9 +2426,11 @@ Hodge class by §8.8, and is invertible.
 For Jacquet–Langlands Hodge data, prove that there is a class `ξ₀ ∈ V₁ ⊗_L V₂(d)` of Hodge type `(0,0)`
 whose correspondence operator (§0.7) is an isomorphism of `L`-Hodge structures `V₁ ≃ V₂` (IP23,
 Theorem 12.4(i), pp. 98–99; Theorem 3.2(i), p. 20). The theorem is unconditional; it does not assert that
-`ξ₀` is algebraic or absolutely Hodge. *Proof route:* the equal-algebra case is §0.4; otherwise use the
-Hodge part of §10.6 and §0.7. For `d = 0` the realizations are rank-one pure of type `(0,0)` and every
-nonzero `L`-linear map between them is a Hodge isomorphism. Layer 9 is not used.
+`ξ₀` is algebraic or absolutely Hodge. *Proof route:* the equal-algebra case is §0.4. For `d = 0` the
+realizations are rank-one of type `(0,0)`, every nonzero `ξ₀ ∈ V₁ ⊗_L V₂` is a Hodge class, and through
+the self-duality of §0.5 its operator is a nonzero `L`-linear map of rank-one spaces, hence a Hodge
+isomorphism; Layers 6–7 are not used. For `d ≥ 1` use the Hodge part of §10.6 and §0.7. Layer 9 is
+not used.
 
 **Checks.**
 
@@ -2193,7 +2440,8 @@ nonzero `L`-linear map between them is a Hodge isomorphism. Layer 9 is not used.
 - The class is `L`-rational: the only enlargement of coefficients is the `π₁ ⊠ π₂` projection, with
   `L ⊃ ℚ(k)`.
 
-*Needs:* §§0.4, 0.7, 10.6; MotivesAndAlgebraicCycles §7.1.
+*Needs:* §§0.4, 0.5, 0.7, 10.6; GL2AutomorphicRepresentationsAndTransfer §§R17.3.6, R17.3.7 and
+gap:quaternionic-rational-model (the `L`-models of §0.5); MotivesAndAlgebraicCycles §7.1.
 
 ### 10.8 Conditional Hodge–Tate correspondence
 
@@ -2202,8 +2450,10 @@ in `HT(V₁ ⊗_L V₂(d))` (MotivesAndAlgebraicCycles §7.15): a rational Hodge
 `Gal(ℚ̄/F_Σ)`-fixed in every `ℓ`-adic realization, so that the induced isomorphisms
 `V₁ ⊗ ℚ_ℓ ≃ V₂ ⊗ ℚ_ℓ` are `Gal(ℚ̄/F_Σ)`-equivariant for all `ℓ` simultaneously (IP23, §12.1, pp. 93–94;
 Theorem 12.4(ii), pp. 98–99; Theorem 3.2(ii), p. 20). `HT` is the compatible-realization notion, not
-the local `p`-adic Hodge–Tate condition. *Proof route:* the same rational data as §10.6 with `c ∈ W_ℚ`;
-the realization-compatible map of §10.3 and the triviality of §9.5.
+the local `p`-adic Hodge–Tate condition. *Proof route:* for `d = 0` the canonical models are the
+constant ones over `F_Σ = ℚ` (§0.1), so `Gal(ℚ̄/ℚ)` acts trivially on every `ℓ`-adic realization and the
+class of §10.7 lies in `HT` without the hypothesis; for `d ≥ 1` the same rational data as §10.6 with
+`c ∈ W_ℚ`, the realization-compatible map of §10.3 and the triviality of §9.5.
 
 **Checks.**
 
@@ -2211,26 +2461,37 @@ the realization-compatible map of §10.3 and the triviality of §9.5.
 - A class fixed for one `ℓ` only does not give equivariance at the others.
 - Without `K_{2d}(Π)` the statement is not asserted.
 
-*Needs:* §§9.5, 10.3, 10.6, 10.7; MotivesAndAlgebraicCycles §7.15.
+*Needs:* §§0.1, 0.5, 9.5, 10.3, 10.6, 10.7; GL2AutomorphicRepresentationsAndTransfer
+gap:quaternionic-rational-model; MotivesAndAlgebraicCycles §7.15.
 
 ### 10.9 The rational weight-two correspondence
 
 When every `k_v = 2` and `ℚ(π) = ℚ`, prove that the coefficient systems are constant and that the class
-of §10.7 is represented by a Hodge class `ξ ∈ H^{2d}(X₁ × X₂, ℚ)_{π₁⊠π₂}` for suitable levels such that
+of §10.7 is a Hodge class
+`ξ ∈ H^{2d}(X₁ × X₂, ℚ)_{π₁⊠π₂} = H^d(X₁, ℚ)_{π₁} ⊗ H^d(X₂, ℚ)_{π₂}` such that
 `x ↦ p₂,*(ξ(d) ∪ p₁^* x)` is an isomorphism of `ℚ`-Hodge structures `H^d(X₁, ℚ)_{π₁} ≃ H^d(X₂, ℚ)_{π₂}`;
 under `K_{2d}(Π)`, `ξ(d)` is `Gal(ℚ̄/F_Σ)`-invariant in every `ℓ`-adic realization and the induced maps
-are `Gal(ℚ̄/F_Σ)`-isomorphisms (IP23, Theorem 1(i)–(ii) and (1.4)–(1.5), p. 5). The finite-level
-representation factors are kept when passing from multiplicity spaces to isotypic parts.
+are `Gal(ℚ̄/F_Σ)`-isomorphisms (IP23, Theorem 1(i)–(ii) and (1.4)–(1.5), p. 5). Every subscript is the
+multiplicity space of §0.2, so `H^d(X_i, ℚ)_{π_i}` is the realization `V_i` of §0.5, the product
+decomposition is Künneth on multiplicity spaces (IP23, §12.2.10, p. 98), and the map is the operator of
+§0.7. A class at finite level `K₁ × K₂` is obtained by evaluating `ξ` at chosen nonzero vectors of the
+`ℚ`-models of `(π_{1,f})^{K₁}` and `(π_{2,f})^{K₂}`, as in §10.3; no identification of these two finite
+factors, which belong to different groups, is asserted.
 
 **Checks.**
 
 - For real quadratic `F` and `d = 1`, the class lies in `H²(X₁ × X₂, ℚ)(1)` and acts on `H¹`.
 - Every harmonic degree `ℓ_v = k_v − 2` is zero, so the Schwartz forms are the Kudla–Millson forms
   with trivial coefficients.
-- The isotypic part at level `K` is `V_i ⊗ (π_{i,f})^K`; the correspondence is the tensor of §10.7 with
-  the identity on the finite factor.
+- At a finite place split in both algebras where `π_v` is unramified, the Iwahori-fixed and the
+  maximal-compact-fixed vectors of `π_v` have dimensions `2` and `1`. With these local levels and
+  one-dimensional fixed spaces elsewhere, for `d = 1` the full `π_i`-isotypic summands of `H¹` have
+  dimensions `4` and `2`, while both multiplicity spaces have dimension `2`: the theorem is the
+  isomorphism `2 ≃ 2`, and no isomorphism of the full summands is claimed.
 
-*Needs:* §§0.7, 10.7, 10.8; MotivesAndAlgebraicCycles §§2.2–2.3, 2.6–2.7.
+*Needs:* §§0.2, 0.5, 0.7, 10.3, 10.7, 10.8; GL2AutomorphicRepresentationsAndTransfer
+gap:quaternionic-rational-model (the `ℚ`-models of `π_{i,f}`); MotivesAndAlgebraicCycles §§2.2–2.3,
+2.6–2.7.
 
 ### Examples
 
@@ -2240,10 +2501,10 @@ structures of type `(1,0) + (0,1)`, `ℋ` is the `ℚ`-space `H²(Sh, ℚ)[I]` o
 
 ### Dependencies
 
-Layers 0–9; MotivesAndAlgebraicCycles §§2.2–2.3, 2.6–2.7, 7.1, 7.15; ShimuraVarieties §§4.2, 4.3, 4.9, 8.5,
-8.6; GL2AutomorphicRepresentationsAndTransfer §§R16.4.5, R16.6.3, R17.3.1; GlobalNumberFields Layer 1;
-ClassFieldTheory Layer 10 and §5.4; ArithmeticLocallySymmetricSpaces §ALS.5b.4; Mathlib
-`MvPolynomial.funext`.
+Layers 0–9; MotivesAndAlgebraicCycles §§2.2–2.3, 2.6–2.7, 7.1, 7.15; ShimuraVarieties §§4.2, 4.3,
+4.9, 8.5, 8.6; GL2AutomorphicRepresentationsAndTransfer §§R16.4.5, R16.6.3, R17.3.1, R17.3.6, R17.3.7
+and gap:quaternionic-rational-model; GlobalNumberFields Layer 1; ClassFieldTheory Layer 10 and §5.4;
+ArithmeticLocallySymmetricSpaces §ALS.5b.4; Mathlib `MvPolynomial.funext`.
 
 ## Downstream consumers
 
@@ -2293,7 +2554,16 @@ surrounding argument.
 - §2.1, p. 14: an `L`-Hodge structure is read as a rational Hodge structure with `L`-action, since
   complex conjugation does not preserve a nonreal embedding of `L`; in the application `L` is totally
   real.
+- Remark 2.2, p. 17: the volume factor of the normalized pushforward is read in the effective groups
+  `G(𝔸_f)/Z(ℚ)⁻`; with Haar measures on `G(𝔸_f)` itself it depends on the levels as soon as `Z(ℚ)` is
+  not discrete in `Z(𝔸_f)`, which is the case for `Res_{F/ℚ}B^×` whenever `[F : ℚ] ≥ 2` (§0.3). The
+  remark leaves the choice of measures free; for `f_*` to be a morphism of rational structures the
+  measures are read as rational ones, giving compact opens rational volumes, as in Wal85, §I.2,
+  p. 124, since an arbitrary relative normalization multiplies `f_*` by an arbitrary positive real
+  number (§0.3).
 - §3.2, p. 19: the multiplicity realization is concentrated in degree `d`; the page prints `2d`.
+- §3.2, p. 19: the model of `π_{B,f}` over `L` itself rests on the trivial central character, through
+  the division-place case of Wal85, §II.1, pp. 147–148 (§0.5).
 - The rotated diagram, p. 22: the rank-one group on the quaternionic side is `U_B`, as in §2.5.
 - §4.3, p. 24: the component set is not identified with the torus Shimura variety; only the morphism to
   the torus datum and pullback of its functions are used (§§5.2–5.3), since the derived group is not
@@ -2306,6 +2576,13 @@ surrounding argument.
   lacks a closing delimiter.
 - Proof of Theorem 12.4, p. 99: the component parameter is taken in the Galois-invariant subspace
   `W_ℚ` (§10.5), since reciprocity can permute components.
+- Proposition 8.2, p. 55: with the negative-coordinate signs of (8.2) and the pairing of §8.2 on the
+  negative definite space, the two factors `(−1)^ℓ` cancel, and the contraction is
+  `(x₁ + εix₂)^ℓ φ₀` (§4.6); the printed extra factor `(−1)^ℓ` equals `1` for the even `ℓ` of the
+  application.
+- §10.2, p. 66, uses the compatibility of the splittings for `B₁ ⊗_E B₂` for every `Σ`, while
+  Proposition A.14, p. 113, assumes a real place split in both algebras; the see-saw step is used
+  here for `d ≥ 1` (§7.4), and the case `d = 0` of the end theorems is proved directly (§§10.7–10.8).
 
 ## References
 
@@ -2313,3 +2590,11 @@ surrounding argument.
   correspondence*, Forum of Mathematics, Pi 11 (2023), e22, pp. 1–135,
   [doi:10.1017/fmp.2023.20](https://doi.org/10.1017/fmp.2023.20). Locators are to the printed pages
   of the published, open-access version; the arXiv version 1806.10563v2 has different page numbers.
+- [Mil17] J. S. Milne, *Introduction to Shimura varieties*, in Harmonic analysis, the trace formula,
+  and Shimura varieties, Clay Math. Proc. 4 (2005), 265–378; revised 2017,
+  [jmilne.org/math/xnotes/svi.pdf](https://www.jmilne.org/math/xnotes/svi.pdf). The revision keeps the
+  numbering of the published version; page numbers are those of the revision.
+- [Wal85] Jean-Loup Waldspurger, *Quelques propriétés arithmétiques de certaines formes automorphes
+  sur GL(2)*, Compositio Mathematica 54 (1985), 121–171,
+  [numdam CM_1985__54_2_121_0](http://www.numdam.org/item/CM_1985__54_2_121_0/). Page numbers are
+  the printed ones.
