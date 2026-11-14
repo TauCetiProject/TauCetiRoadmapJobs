@@ -8,11 +8,11 @@ The companion [Suggested.lean](Suggested.lean) tests headline statements against
 
 ArithmeticKTheory §§3.1–3.5 supplies arithmetic finite generation and hermitian finiteness; its §3.5 classical ε=−1 case at O=ℤ supplies integral KSp finite generation in every nonnegative degree, using GeometryOfNumbersAndQuadraticArithmetic §6.8a’s classical connective comparison; §§5.2, 6.11, 6.15–6.16 supplies mixed-characteristic descent, cyclotomic H² coinvariant descent, all-integer Adams-sign tables and the ordinary/Bott comparison including the degree-one exception. Its §§7.1–7.5 supplies Bernoulli indexing, regular-prime consequences and conditional arithmetic tables. This Part II starts with geometric classes and their arithmetic action. The tables and the general descent theorem stated by ArithmeticKTheory are imported, rather than restated as new targets. The Picard–Bott and Artin–Bott comparisons here additionally identify specified maps on explicit cyclotomic classes.
 
-GeneralAlgebraicKTheory §§7.1–7.7 owns coherent products, their units and restriction-of-scalars transfer. StableHomotopyKTheory §§4.21–4.27 owns generic symmetric-monoidal group completion, Picard spectra and the symmetric-form plus comparison; the integral alternating-form plus comparison is requested in its classical-symplectic-plus contract below. Its §5.19 owns the 1-truncated spectrum comparison, and §§7.1–7.17, 7.28 own coefficients, completion and safe products. GeneralizedCohomology G2, G3.8 and G5.4–G5.6 owns the spectrum model, Γ-machine, spectral adjunction, Postnikov covers and ku/KU. The two projective and symplectic selected-factor Γ models are specializations of these constructions. ChromaticHomotopyTheory CH.2–CH.3 owns generic periodic self-maps and their telescope comparison. This roadmap owns the specialization to arithmetic KSp and the compatibility of its arithmetic action.
+GeneralAlgebraicKTheory §§7.1–7.7 owns coherent products, their units and restriction-of-scalars transfer. StableHomotopyKTheory §§4.16–4.27 owns generic symmetric-monoidal group completion, including §4.18’s plus comparison for a groupoid with faithful translations and a cofinal sequence, Picard spectra and §4.27’s symmetric-form plus comparison. Its §5.19 owns the 1-truncated spectrum comparison, and §§7.1–7.17, 7.28 own coefficients, completion and safe products. AbelianSchemesAndArithmeticModuli §A5.4 owns the alternating elementary-divisor theorem over ℤ; §1.1 here combines it with §4.18 for unimodular alternating ℤ-forms. GeneralizedCohomology G2, G3.8 and G5.4–G5.6 owns the spectrum model, Γ-machine, spectral adjunction, Postnikov covers and ku/KU. The two projective and symplectic selected-factor Γ models are specializations of these constructions. BordismFormalGroups F6.3 owns periodic self-maps, their common iterates, Adams’ v₁ maps on Moore spectra, the p-power Moore tower and telescopes; GeneralAlgebraicKTheoryPartII §§4.1–4.3 owns telescope and periodic-homotopy conventions and §4.20 the height-one equality ⟨T(1)⟩=⟨K(1)⟩. This roadmap owns the specialization to arithmetic KSp and the compatibility of its arithmetic action.
 
-GeometryOfNumbersAndQuadraticArithmetic §§6.5–6.8a, 6.10a–6.11 and HermitianKTheoryOfPoincareCategories Layers 4–6 own higher Grothendieck–Witt carriers, GW–L comparisons and the integer L-theory inputs. Their generic fiber sequence is used here with skew integer forms and a specified factor-two normalization. ComplexMultiplicationAndExplicitReciprocity §§1.3, 2.1–2.2 owns polarized CM lattices, Serre tensor and the main reciprocity theorem; the coefficient-line formulation and stable Bott-linearity here compare those supplied objects. PELModuli §§M2.4, M3.9, M6.2–M6.3 and AbelianSchemesAndArithmeticModuli §§A5.5, A5.8 own the ppav stack, isomorphism schemes, uniformization and Hodge algebraization. The graded selected-factor Čech model here specializes them.
+GeometryOfNumbersAndQuadraticArithmetic §§6.5–6.8a, 6.10a–6.11 own higher Grothendieck–Witt carriers, the GW–L fundamental square and the integer L-theory inputs. HermitianKTheoryOfPoincareCategories §0.5 owns the classical symplectic group completion, §§4.11 and 6.6 the short symmetric L-groups, §8.1 the classical GW–L fibre sequence for every ring and invertible coefficient module with involution, and §8.3 its splitting after inverting 2. At (ℤ,−ℤ) these are the fibre sequence K(ℤ)_(hC₂)→KSp(ℤ)→τ≥0L and its odd-primary splitting used here; this roadmap adds only the factor-two normalization of the splitting maps (§1.1). ComplexMultiplicationAndExplicitReciprocity §§1.2, 2.1–2.2 owns polarized CM lattices, Serre tensor and the main reciprocity theorem; the coefficient-line formulation and stable Bott-linearity here compare those supplied objects. PELModuli §§M2.4, M3.9, M6.2–M6.3 and AbelianSchemesAndArithmeticModuli §§A5.5, A5.8 own the ppav stack, isomorphism schemes, uniformization and Hodge algebraization. The graded selected-factor Čech model here specializes them.
 
-ClassFieldTheory Layers 11–13 and Chebotarev Layer 10 own Artin reciprocity, full and narrow class fields and prime existence. ArithmeticGaloisDuality R02.1, R02.2, R02.4 owns compact coefficients, Hochschild–Serre and arithmetic duality. EtaleHomotopyTypes EH.5–EH.6 owns Betti/étale realization and its automorphism comparison. BorelRegulators §2.1 concerns the number-field SL regulator and supplies no symplectic stability theorem. The stable symplectic integral calculation and rational Hodge generators belong to §§8.4–8.5 here, together with their arithmetic action. ArithmeticLocallySymmetricSpaces §§ALS.1.5–ALS.1.6, ALS.2.3–ALS.2.4 supplies the finite arithmetic quotient models used for integral finite generation. IntegralIwasawaTheory §§7.4, 12.3 owns Vandiver propagation and arithmetic-weight specialization. GeneralAlgebraicKTheory §§13.8b–13.8c owns the finite-field K-group calculation; KTheoryFiniteLocalFields §§1.1–1.2 owns its finite-coefficient and Bott refinements. SymplecticGeometry, CotangentLagrangian §§C2.0–C2.1 owns the symplectic polar decomposition and unitary deformation retract. None of these theories is reconstructed here.
+ClassFieldTheory Layers 11–13 and Chebotarev Layer 10 own Artin reciprocity, full and narrow class fields and prime existence. ArithmeticGaloisDuality R02.1, R02.2, R02.4 owns compact coefficients, Hochschild–Serre and arithmetic duality. EtaleHomotopyTypes Layers 5–6 own Betti/étale realization and its automorphism comparison. BorelRegulators §2.1 concerns the number-field SL regulator and supplies no symplectic stability theorem. The stable symplectic integral calculation and rational Hodge generators belong to §§8.4–8.5 here, together with their arithmetic action. ArithmeticLocallySymmetricSpaces §§ALS.1.5–ALS.1.6, ALS.2.3–ALS.2.4 supplies the finite arithmetic quotient models used for integral finite generation. IntegralIwasawaTheory §§7.4, 12.3 owns Vandiver propagation and arithmetic-weight specialization. GeneralAlgebraicKTheory §§13.8b–13.8c owns the finite-field K-group calculation; KTheoryFiniteLocalFields §§1.1–1.2 owns its finite-coefficient and Bott refinements. SymplecticGeometry, CotangentLagrangian §§C2.0–C2.1 owns the symplectic polar decomposition and unitary deformation retract. None of these theories is reconstructed here.
 
 Mathlib’s representations, invertible modules, Picard group, number fields, CM conjugation, absolute group homology and undercategories are already in the library. Tau Ceti’s finite-dimensional compatible symplectic structure and arithmetic ideal Artin map are already in the library. Their exact interfaces are listed below; no alternative carriers for them are introduced. The universe of each categorical construction is fixed by an essentially small model, and changing that model induces an equivalence.
 
@@ -50,7 +50,7 @@ What ArithmeticKTheory must provide (gap:full-cyclotomic-h2-descent): Extend §6
 
 ### From TauCetiRoadmap.GeneralAlgebraicKTheory
 
-GeneralAlgebraicKTheory §§7.1–7.7, 13.8b–13.8c. Consume `finiteFieldKGroups`, which identifies K₀(𝔽_ℓ)=ℤ, K₂ᵢ(𝔽_ℓ)=0 and K₂ᵢ₋₁(𝔽_ℓ)≅ℤ/(ℓⁱ−1) for i≥1, through §13.8b’s Brauer-lift comparison. Consume spectrum-level tensor/external products induced by biexact functors, their coherent associativity, symmetry and units, the K₀ tensor comparison, and transfer with its projection formula. Restriction to invertible modules gives the tensor-induced Picard class map. Additive group completion supplies no multiplicative coherence by itself.
+GeneralAlgebraicKTheory §§7.1–7.7, 13.8b–13.8c. Consume §13.8c’s finite-field calculation, which identifies K₀(𝔽_ℓ)=ℤ, K₂ᵢ(𝔽_ℓ)=0 and K₂ᵢ₋₁(𝔽_ℓ)≅ℤ/(ℓⁱ−1) for i≥1, through §13.8b’s Brauer-lift comparison. Consume spectrum-level tensor/external products induced by biexact functors, their coherent associativity, symmetry and units, the K₀ tensor comparison, and transfer with its projection formula. Restriction to invertible modules gives the tensor-induced Picard class map. Additive group completion supplies no multiplicative coherence by itself.
 
 ### From TauCetiRoadmap.SchemeKTheoryOperations
 
@@ -60,9 +60,7 @@ What SchemeKTheoryOperations must provide (gap:duality-transfer): Compare integr
 
 ### From TauCetiRoadmap.StableHomotopyKTheory
 
-StableHomotopyKTheory §§3.20, 3.34–3.37, 4.21–4.27, 5.1–5.19, 7.1–7.17, 7.28. Consume category/classifying-space comparisons, simple-space finite-type theory, the generic symmetric-monoidal group-completion machine, Picard spectra and finite coefficient/Bockstein/Milnor interfaces. The summing-functor Γ model uses selected-factor isomorphisms; at the one-point set it is contractible, and its zeroth Segal map is group completion ℕ→ℤ. Products on unsafe coefficients are obtained only by the supplied compatible maps or iterates.
-
-What StableHomotopyKTheory must provide (gap:classical-symplectic-plus): Identify the group completion of finite free unimodular alternating ℤ-forms under orthogonal sum with a space having component group ℤ by half-rank and identity component BSp∞(ℤ)⁺ at the stable perfect commutator, naturally for the forgetful and hyperbolic maps.
+StableHomotopyKTheory §§3.20, 3.27, 3.34–3.37, 4.16–4.27, 5.1–5.19, 7.1–7.17, 7.28. Consume category/classifying-space comparisons, simple-space finite-type theory, the generic symmetric-monoidal group-completion machine, Picard spectra and finite coefficient/Bockstein/Milnor interfaces. Section 4.18 is consumed for a symmetric monoidal groupoid with faithful translations and a cofinal sequence sₙ₊₁=sₙ⊗aₙ: it gives B(S⁻¹S)≃K₀(S)×B Aut(s∞)⁺, the plus construction taken at the perfect commutator subgroup of the stable automorphism group. Section 4.16 is the based-free linear case and §3.27 the functoriality of plus constructions up to homotopy. Section 4.27 is the symmetric-form case, with J=⟨1⟩⊥⟨−1⟩ and component group ℤ², and is not used for KSp. The summing-functor Γ model uses selected-factor isomorphisms; at the one-point set it is contractible, and its zeroth Segal map is group completion ℕ→ℤ. Products on unsafe coefficients are obtained only by the supplied compatible maps or iterates.
 
 What StableHomotopyKTheory must provide (gap:low-postnikov-finite-type): Provide the p-local H-space Postnikov splitting for positive integral finite-type spectra through degree 2p−3 and the free/cyclic Eilenberg–Mac Lane homology and Bockstein calculations in that range.
 
@@ -80,31 +78,31 @@ SymplecticGeometry, CotangentLagrangian §§C2.0–C2.1. Consume symplectic pres
 
 TopologicalKTheory T4–T5, T7. Consume the numerable complex-bundle and Bott conventions used by GeneralizedCohomology G5.4. Its β_Top=[O(−1)]−1 has ch₁-coordinate −1 on complex-oriented ℂP¹; the arithmetic coordinate is bott=−β_Top, so bott^m=(−1)^mβ_Top^m. The arithmetic Hodge comparison uses the tangent bundle; separately, dualization multiplies its degree-m character by (−1)ᵐ.
 
-### From TauCetiRoadmap.ChromaticHomotopyTheory
+### From TauCetiRoadmap.BordismFormalGroups
 
-ChromaticHomotopyTheory CH.2–CH.3. Consume finite type-one self-maps, telescope independence and the height-one comparison after p-completion. Iteration matches the coefficient tower and cyclotomic character periods. The mod-three case uses maps, without an associative ring structure on its Moore spectrum.
+BordismFormalGroups F6.3. Consume Hopkins–Smith periodicity for finite type-one spectra, the normalization of a power of a v₁ self-map to degree 2a(p−1) with a>0, the common-iterate theorem (for v₁ self-maps v and w of one spectrum there are a,b>0 with vᵃ=wᵇ), the intertwining of a map between type-one spectra with chosen self-maps after equal-degree powers, Adams’ v₁ self-maps of degree 2p−2 on the mod-p Moore spectrum with their K-theory detection, the height-one tower built directly from p-power Moore spectra, the smashing finite localization L₁^f and the telescopes T(n) with independence of their Bousfield class. Iteration matches the coefficient tower and cyclotomic character periods. No ring structure on a Moore spectrum is assumed; the mod-three case uses maps only.
 
-What ChromaticHomotopyTheory must provide (gap:compatible-v1-towers): Provide compatible odd Moore v₁ self-maps and reduction maps after common iteration, telescope independence and their p-completed K(1)-local comparison, including q=3 without an associative Moore product.
+### From TauCetiRoadmap.GeneralAlgebraicKTheoryPartII
+
+GeneralAlgebraicKTheoryPartII §§4.1–4.3, 4.20. Consume the telescope conventions and invariance of a telescope under positive powers of its self-map (§4.1), periodic homotopy groups with their degree-shift isomorphisms (§4.2), the acyclicity criteria, including that derived p-completion is a T(1)-equivalence (§4.3), and the equality of Bousfield classes ⟨T(1)⟩=⟨K(1)⟩ at every prime (§4.20), which identifies telescopic and K(1)-localization at height one.
 
 ### From TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic
 
-GeometryOfNumbersAndQuadraticArithmetic §§6.5–6.8a, 6.10a–6.11. Consume higher skew Grothendieck–Witt spectra, the coherent duality involution, the GW–L fiber sequence and integer L-groups. Use §6.8a’s classical connective comparison for skew forms before applying the skew integer specialization; together with ArithmeticKTheory §3.5 this supplies integral KSp finite generation. The BSp∞(ℤ)⁺ identification is the separate StableHomotopyKTheory classical-symplectic-plus contract.
-
-What GeometryOfNumbersAndQuadraticArithmetic must provide (gap:skew-integer-splitting): Specialize the GW–L fiber sequence to integral skew forms and prove the odd-primary positive-factor splitting with unscaled hyperbolic map H, c_B H=1+ψ⁻¹, and retraction (1/2)c_B.
+GeometryOfNumbersAndQuadraticArithmetic §§6.5–6.8a, 6.10a–6.11. Consume higher skew Grothendieck–Witt spectra, the coherent duality involution, the GW–L fundamental square and §6.10a’s integer L-groups; after the sign-change shift by two, L^s_n(ℤ;−ℤ)[1/2] is ℤ[1/2] for n≡2 mod 4 and 0 otherwise. Use §6.8a’s classical connective comparison for skew forms; together with ArithmeticKTheory §3.5 this supplies integral KSp finite generation. The skew integral fibre sequence and its splitting away from 2 are HermitianKTheoryOfPoincareCategories §§8.1, 8.3 at (ℤ,−ℤ), and the BSp∞(ℤ)⁺ identification is §1.1’s instance of StableHomotopyKTheory §4.18.
 
 ### From TauCetiRoadmap.HermitianKTheoryOfPoincareCategories
 
-HermitianKTheoryOfPoincareCategories Layers 4–6. Consume comparison and surgery interfaces for the supplied Poincaré/Grothendieck–Witt models; GeometryOfNumbersAndQuadraticArithmetic §6.8a performs the classical connective comparison. Integral variants are distinguished before inverting 2.
+HermitianKTheoryOfPoincareCategories §§0.5, 4.11, 6.6, 8.1, 8.3. Section 0.5 identifies the classical group completion GW^(−ev)_cl(R) of (−1)-even forms and shows that these are exactly the skew-symmetric forms vanishing on the diagonal; over ℤ they are the unimodular alternating forms of §1.1. Section 8.1 at R=ℤ and M=ℤ with involution −1 is the fibre sequence K(ℤ)_(hC₂)→KSp(ℤ)→L^short(ℤ;−ℤ)=τ≥0L^gs(ℤ;−ℤ) of connective spectra; its first map is induced by the unscaled hyperbolic functor P↦P⊕P∨, and the induced involution of K_*(ℤ) is ψ⁻¹. Section 4.11 identifies the homotopy of the third term with Ranicki’s short symmetric L-groups, and §6.6 its even groups with Witt groups, ℤ having global dimension one. Section 8.3 gives the natural splitting KSp_*(ℤ)[1/2]≅(K_*(ℤ)[1/2])^(C₂)⊕W_*(ℤ;−ℤ)[1/2]. The normalization of its splitting maps, the hyperbolic inclusion H and the retraction (1/2)c_B, is §1.1’s law c_B H=1+ψ⁻¹. GeometryOfNumbersAndQuadraticArithmetic §6.8a performs the classical connective comparison. Integral variants are distinguished before inverting 2.
 
 ### From TauCetiRoadmap.ComplexMultiplicationAndExplicitReciprocity
 
-ComplexMultiplicationAndExplicitReciprocity §§1.3, 2.1–2.2. Consume polarized lattices in every dimension, faithful CM actions, their classification, Serre tensor and the polarization/reflex reciprocity dictionary. The translating Hermitian line can have negative signatures; only the acting subgroup used for tensor naturality is positive. A CM algebra has degree 2g inside End⁰(A), which need not itself be a field.
+ComplexMultiplicationAndExplicitReciprocity §§1.2, 2.1–2.2. Consume polarized lattices in every dimension, faithful CM actions, their classification, Serre tensor and the polarization/reflex reciprocity dictionary. The translating Hermitian line can have negative signatures; only the acting subgroup used for tensor naturality is positive. A CM algebra has degree 2g inside End⁰(A), which need not itself be a field.
 
 What ComplexMultiplicationAndExplicitReciprocity must provide (gap:cm-arbitrary-automorphism): Provide the arbitrary-automorphism polarized reciprocity dictionary on isometries with conjugation-paired embedding lifts and possibly negative translating signatures, natural for positive-line Serre tensor.
 
 ### From TauCetiRoadmap.AbelianSchemesAndArithmeticModuli
 
-AbelianSchemesAndArithmeticModuli §§A5.5, A5.8. Consume the polarized Hodge equivalence and Siegel universal family with tensor and polarization naturality. A rank-[E:ℚ] CM lattice realizes an abelian variety of dimension [E:ℚ]/2.
+AbelianSchemesAndArithmeticModuli §§A5.4–A5.5, A5.8. Consume §A5.4(1): an alternating form with nonzero determinant on a free ℤ-module of rank 2g has a symplectic basis with elementary divisors d₁|⋯|d_g, d_i>0, and determinant (d₁⋯d_g)²; a unimodular form therefore has every d_i=1. Consume the polarized Hodge equivalence and Siegel universal family with tensor and polarization naturality. A rank-[E:ℚ] CM lattice realizes an abelian variety of dimension [E:ℚ]/2.
 
 ### From TauCetiRoadmap.PELModuli
 
@@ -114,7 +112,7 @@ What PELModuli must provide (gap:ppav-embedding-atlases): Provide the projective
 
 ### From TauCetiRoadmap.EtaleHomotopyTypes
 
-EtaleHomotopyTypes EH.5, EH.6 and G7. Consume Betti realization of simplicial varieties, smooth Čech descent, componentwise graded p-completion, the Betti–étale zigzag and field-automorphism naturality of discrete points. Require finite-dimensional mod-p cohomology in each degree on each connected grade; the grading is retained as a discrete coproduct after completion.
+EtaleHomotopyTypes Layers 5–6. Consume Betti realization of simplicial varieties (§5.2), smooth Čech descent (§5.3a), componentwise graded p-completion (§6.6), the Betti–étale zigzag and its mod-p comparison (§§6.7–6.8) and field-automorphism naturality of discrete points (§6.9). Require finite-dimensional mod-p cohomology in each degree on each connected grade; the grading is retained as a discrete coproduct after completion.
 
 What EtaleHomotopyTypes must provide (gap:graded-moore-realization): Provide a homotopy-coherent realization of the graded ppav Γ-diagrams preserving products, finite Moore smashing before completion at p=3, automorphisms, coefficient reductions and p-adic homotopy limits.
 
@@ -274,16 +272,17 @@ StableHomotopyKTheory §7.1; StableHomotopyKTheory §§7.3–7.4; StableHomotopy
 
 ### 1.1 Betti and Hodge maps
 
-Use StableHomotopyKTheory’s classical-symplectic-plus contract for the group completion of finite free unimodular alternating ℤ-modules, with basepoint component BSp∞(ℤ)⁺, as KSp(ℤ). Define c_B:KSp(ℤ)→K(ℤ) by forgetting the form. Define c_H:KSp(ℤ)→ku using Sp(ℤ)→Sp(ℝ)^top←U^top and the homotopy equivalence on the right. On topological complex K-theory ψ⁻¹ is complex conjugation. Hermitian forms are linear in their first variable; the Hodge complex structure is fixed by the condition that its imaginary Hermitian pairing equals the supplied alternating form. (FGV, §§3.1–3.2, author copy pp. 18–19; FGV line 806.)
+Let S be the groupoid of finite free ℤ-modules with a unimodular alternating form, with isometries as arrows and orthogonal sum as symmetric monoidal product. An alternating integer matrix of odd size has determinant 0, so every object has even rank 2g; by AbelianSchemesAndArithmeticModuli §A5.4 its elementary divisors satisfy (d₁⋯d_g)²=1, so every object is isometric to hᵍ for the standard plane h=H(ℤ), with matrix [[0,1],[−1,0]], and a unique g, its half-rank. Thus π₀S=ℕ by half-rank, Aut(hᵍ)=Sp_(2g)(ℤ), the powers hⁿ form a cofinal sequence, and translations are faithful because f⊥id_h=f′⊥id_h restricts to f=f′. Define KSp(ℤ) as the group completion of S. StableHomotopyKTheory §4.18 identifies it with ℤ×BSp∞(ℤ)⁺, the plus construction taken at the perfect commutator subgroup of Sp∞(ℤ). Over ℤ a skew-symmetric form is alternating, since 2b(x,x)=0 forces b(x,x)=0, so S is also the groupoid of unimodular (−ℤ)-valued symmetric forms of HermitianKTheoryOfPoincareCategories §8.1, and KSp(ℤ) is its GW^s_cl(ℤ;−ℤ), written GW^(−ev)_cl(ℤ) in its §0.5. Define c_B:KSp(ℤ)→K(ℤ) by forgetting the form. Define c_H:KSp(ℤ)→ku using Sp(ℤ)→Sp(ℝ)^top←U^top and the homotopy equivalence on the right. On topological complex K-theory ψ⁻¹ is complex conjugation. Hermitian forms are linear in their first variable; the Hodge complex structure is fixed by the condition that its imaginary Hermitian pairing equals the supplied alternating form. (FGV, §§3.1–3.2, author copy pp. 18–19; FGV line 806.)
 
 The interface has the following laws.
 
 - c_B preserves orthogonal addition and scalar extension.
 - On a positive Hermitian vector space c_H is its unitary class with the stated imaginary-part convention.
-- For unscaled hyperbolic H, c_B H=1+ψ⁻¹; on the positive summand its value is twice the identity.
+- For unscaled hyperbolic H, c_B H=1+ψ⁻¹; on the positive summand its value is twice the identity. Hence, on homotopy groups after inverting 2, (1/2)c_B∘H is the identity of the positive part K^(+). In HermitianKTheoryOfPoincareCategories §8.3’s splitting at (ℤ,−ℤ) the summand (K_*(ℤ)[1/2])^(C₂) is the image of K^(+) under H, with retraction (1/2)c_B and complement ker c_B, which maps isomorphically onto the Witt summand.
+- The identification KSp(ℤ)≃ℤ×BSp∞(ℤ)⁺ is natural for the forgetful functor to finite free ℤ-modules and for the hyperbolic functor P↦P⊕P∨ with form ((x,ξ),(y,η))↦η(x)−ξ(y). On components these are g↦2g and r↦r; on unit components they are the plus constructions of the inclusion Sp∞(ℤ)→GL∞(ℤ) and of A↦diag(A,(Aᵀ)⁻¹).
 - Conjugating the complex structure induces ψ⁻¹ on ku.
 
-One proof route is as follows. Import the KSp carrier and its plus/group-completion equivalence; apply forgetful and scalar-extension functors. Use SymplecticGeometry’s unitary deformation retract and the induced classifying-space comparison to identify the topological symplectic and unitary models. Compare the Hodge structure sign with the existing compatible-form theorem; do not choose a discontinuous arbitrary inverse. (FGV line 806, with the stated supplier contracts.)
+One proof route is as follows. Apply the cofinal plus comparison to S. Both functors carry the cofinal sequence to a cofinal sequence (hⁿ to ℤ²ⁿ, ℤⁿ to hⁿ), so they induce maps of stabilization telescopes; compare these with StableHomotopyKTheory §4.16 on the linear side and use the functoriality of plus constructions. For the splitting maps, (1/2)c_B∘H=p_+ makes the hyperbolic map of HermitianKTheoryOfPoincareCategories §8.1 split injective on homotopy after inverting 2, so its long exact sequence breaks into split short exact sequences with complement ker c_B. Apply forgetful and scalar-extension functors. Use SymplecticGeometry’s unitary deformation retract and the induced classifying-space comparison to identify the topological symplectic and unitary models. Compare the Hodge structure sign with the existing compatible-form theorem; do not choose a discontinuous arbitrary inverse. (FGV line 806, with the stated supplier contracts.)
 
 **Checks.**
 
@@ -293,17 +292,19 @@ One proof route is as follows. Import the KSp carrier and its plus/group-complet
 - The standard alternating plane with matrix [[0,1],[−1,0]] has self-pairing xy−yx=0 and half-rank 1; the zero form has half-rank 0, and orthogonal addition gives 1+1=2. The symmetric form diag(1,−1) instead has self-pairing 1 on (1,0), so its signature pair (1,1) is not an alternating half-rank coordinate. The alternating plane maps to 2 in K₀(ℤ) and 1 in π₀ku.
 - For the real symplectic matrix diag(2,1/2), polar factors are P=diag(2,1/2) and U=1. The contraction P^(1−t)U has endpoints diag(2,1/2) and 1 and determinant 2^(1−t)·2^(t−1)=1 throughout; at genus zero the retract is the point.
 - The two maps are maps of spectra before any Galois action is imposed; c_B is not declared Galois-equivariant on all KSp groups.
+- The alternating form on ℤ² with matrix [[0,2],[−2,0]] has determinant 4 and elementary divisor 2, so it is not an object of S; every alternating 3×3 integer matrix has determinant 0, so S has no object of odd rank. The hyperbolic functor sends ℤ to h and −1∈GL₁(ℤ) to diag(−1,−1)∈Sp₂(ℤ), and the forgetful functor sends h to ℤ², so c_B H([ℤ])=2[ℤ].
 
-*Needs:* SymplecticGeometry, CotangentLagrangian §§C2.0–C2.1; StableHomotopyKTheory §4.27 (gap:classical-symplectic-plus); GeometryOfNumbersAndQuadraticArithmetic §§6.5–6.8a, 6.10a–6.11; GeneralizedCohomology G5.4–G5.6 and TopologicalKTheory T4–T5, T7; `TauCeti.SymplecticForm.exists_compatible`.
+*Needs:* SymplecticGeometry, CotangentLagrangian §§C2.0–C2.1; StableHomotopyKTheory §§3.27, 4.16–4.18; AbelianSchemesAndArithmeticModuli §A5.4; HermitianKTheoryOfPoincareCategories §§0.5, 8.1, 8.3; GeometryOfNumbersAndQuadraticArithmetic §§6.5–6.8a, 6.10a–6.11; GeneralizedCohomology G5.4–G5.6 and TopologicalKTheory T4–T5, T7; `TauCeti.SymplecticForm.exists_compatible`.
 
 ### 1.2 Bott-inverted symplectic K-theory
 
-For q = pⁿ choose a compatible Adams v₁ self-map on the mod-q Moore spectrum, of degree 2pⁿ⁻¹(p−1), or a common positive multiple when coefficient compatibility requires iteration. Let T_q be its telescope and define KSpᵝ(ℤ;ℤ/q) = KSp(ℤ) ∧ T_q, with its ordinary-to-periodic map. Define the p-adic spectrum by the homotopy inverse limit of the coefficient tower. Extend the Betti and Hodge maps to Kᵝ and KU. At q = 3 use iterated self-maps without an associative Moore-ring hypothesis. Generic v₁ maps, telescopes and height-one localization are supplied by ChromaticHomotopyTheory CH.2–CH.3; this is their symplectic specialization. (FGV, Remark 2.8 and §3.6, author copy pp. 11, 22; FGV line 964.)
+For q = pⁿ choose a v₁ self-map of the mod-q Moore spectrum whose degree m is a positive multiple of 2pⁿ⁻¹(p−1). Such a map exists: some power of any v₁ self-map has degree 2a(p−1) with a>0, and its pⁿ⁻¹-th power has degree 2apⁿ⁻¹(p−1); at n=1 Adams’ map of degree 2p−2 is one choice. The choices for pⁿ⁺¹ and pⁿ are made compatible with the reduction S/pⁿ⁺¹→S/pⁿ after common iteration. Let T_q be its telescope and define KSpᵝ(ℤ;ℤ/q) = KSp(ℤ) ∧ T_q, with its ordinary-to-periodic map. Define the p-adic spectrum by the homotopy inverse limit of the coefficient tower. Extend the Betti and Hodge maps to Kᵝ and KU. At q = 3 use iterated self-maps without an associative Moore-ring hypothesis. Periodic self-maps, their common iterates, their intertwining with maps of type-one spectra and telescopes are BordismFormalGroups F6.3, and telescope conventions are GeneralAlgebraicKTheoryPartII §§4.1–4.3; this is their symplectic specialization. (FGV, Remark 2.8 and §3.6, author copy pp. 11, 22; FGV line 964.)
 
 The interface has the following laws.
 
 - The comparison is natural in coefficient reduction and the imported symplectic spectrum.
 - At level q the self-map gives a degree-m periodic equivalence.
+- The period m is divisible by 2pⁿ⁻¹(p−1), so χ_cyc^(m/2) is trivial modulo q and the periodicity preserves the cyclotomic twist.
 - c_H extends to KU and agrees with the connective map in its comparison range.
 - The ℤ_p object is holim_n of the q-level objects, with its Milnor exact sequence.
 
@@ -316,15 +317,15 @@ One proof route is as follows. Import the compatible telescope and change-of-coe
 - The coefficient reduction from pⁿ⁺¹ to p^n intertwines telescope maps after compatible iteration; independently chosen periodicity isomorphisms do not suffice.
 - Finite coefficients admit the stated v₁-periodicity. No fixed-period assertion is made for the inverse-limit ℤ_p groups.
 
-*Needs:* §1.1; StableHomotopyKTheory §§7.1–7.17, 7.28 and ChromaticHomotopyTheory CH.2–CH.3; StableHomotopyKTheory §7.7; GeneralizedCohomology G5.4–G5.6 and TopologicalKTheory T4–T5, T7.
+*Needs:* §1.1; StableHomotopyKTheory §§7.1–7.17, 7.28; BordismFormalGroups F6.3; GeneralAlgebraicKTheoryPartII §§4.1–4.3; StableHomotopyKTheory §7.7; GeneralizedCohomology G5.4–G5.6 and TopologicalKTheory T4–T5, T7.
 
 ### Examples
 
-The symplectic plane gives Betti rank 2 and Hodge rank 1. Its hyperbolic origin has normalized retraction (1/2)·2=1. At q=5 a v₁ period is 8, at q=25 it is 40, so the coefficient tower does not license one fixed period.
+The symplectic plane gives Betti rank 2 and Hodge rank 1. Its hyperbolic origin has normalized retraction (1/2)·2=1. At q=5 Adams’ v₁ period 8 is admissible; at q=25 a period must be a multiple of 2·5·4=40, so the coefficient tower does not license one fixed period.
 
 ### Dependencies
 
-SymplecticGeometry, CotangentLagrangian §§C2.0–C2.1; StableHomotopyKTheory §4.27 (gap:classical-symplectic-plus); GeometryOfNumbersAndQuadraticArithmetic §§6.5–6.8a, 6.10a–6.11; GeneralizedCohomology G5.4–G5.6 and TopologicalKTheory T4–T5, T7; `TauCeti.SymplecticForm.exists_compatible`; StableHomotopyKTheory §§7.1–7.17, 7.28 and ChromaticHomotopyTheory CH.2–CH.3; StableHomotopyKTheory §7.7.
+SymplecticGeometry, CotangentLagrangian §§C2.0–C2.1; StableHomotopyKTheory §§3.27, 4.16–4.18; AbelianSchemesAndArithmeticModuli §A5.4; HermitianKTheoryOfPoincareCategories §§0.5, 8.1, 8.3; GeometryOfNumbersAndQuadraticArithmetic §§6.5–6.8a, 6.10a–6.11; GeneralizedCohomology G5.4–G5.6 and TopologicalKTheory T4–T5, T7; `TauCeti.SymplecticForm.exists_compatible`; StableHomotopyKTheory §§7.1–7.17, 7.28; BordismFormalGroups F6.3; GeneralAlgebraicKTheoryPartII §§4.1–4.3; StableHomotopyKTheory §7.7.
 
 ## Layer 2: CM coefficient lines and prescribed signs
 
@@ -370,7 +371,7 @@ One proof route is as follows. Check perfection of −Tr b against the inverse d
 - For E = ℚ(i), take b(x,y) = (i/2)x·bar(y) on ℤ[i] and the identity CM type. Then −Tr b(1,i) = −1, h(1,1) = 1 and h(1,i) = −i. Thus Im h(1,i) = −1 and the native positive compatible structure is multiplication by −i.
 - Multiplication by 2 on this lattice has determinant 4 and pulls its alternating form back to four times that form; it is an isogeny, not a polarization-preserving arrow.
 
-*Needs:* §2.1; ComplexMultiplicationAndExplicitReciprocity §§2.1–2.2; ComplexMultiplicationAndExplicitReciprocity §1.3; AbelianSchemesAndArithmeticModuli §§A5.5, A5.8; `TauCeti.SymplecticForm.exists_compatible`.
+*Needs:* §2.1; ComplexMultiplicationAndExplicitReciprocity §§2.1–2.2; ComplexMultiplicationAndExplicitReciprocity §1.2; AbelianSchemesAndArithmeticModuli §§A5.5, A5.8; `TauCeti.SymplecticForm.exists_compatible`.
 
 ### 2.3 Split primes with prescribed signs
 
@@ -438,13 +439,13 @@ For ℚ(i), b(x,y)=(i/2)x·bar(y) gives ω(1,i)=−1 and h(1,1)=1. The realized 
 
 ### Dependencies
 
-ComplexMultiplicationAndExplicitReciprocity §§2.1–2.2; `Module.Invertible`; §0.2; ComplexMultiplicationAndExplicitReciprocity §1.3; AbelianSchemesAndArithmeticModuli §§A5.5, A5.8; `TauCeti.SymplecticForm.exists_compatible`; ClassFieldTheory Layer 13; Chebotarev Layer 10; `FractionalIdeal.ringEquivOfRingEquiv`; `FractionalIdeal.dual`; `FractionalIdeal.spanSingleton`.
+ComplexMultiplicationAndExplicitReciprocity §§2.1–2.2; `Module.Invertible`; §0.2; ComplexMultiplicationAndExplicitReciprocity §1.2; AbelianSchemesAndArithmeticModuli §§A5.5, A5.8; `TauCeti.SymplecticForm.exists_compatible`; ClassFieldTheory Layer 13; Chebotarev Layer 10; `FractionalIdeal.ringEquivOfRingEquiv`; `FractionalIdeal.dual`; `FractionalIdeal.spanSingleton`.
 
 ## Layer 3: CM calculations and generation
 
 ### 3.1 CM Bott classes
 
-For (L,b)∈P⁻_(K_q) and k≥1, let z_(L,b)=β_q²ᵏ⁻¹[L,b]∈KSp_(4k−2)(ℤ;ℤ/q). Here β acts through the specified μ_q subgroup of norm-one automorphisms, the unreduced stable nerve of P⁻, and its trace-form map to KSp. Products are supplied as iterated maps at q=3. Tensoring positive lines acts through this stable construction; a class [L,b] is in degree zero and its Bott translate has degree 4k−2. (FGV, §5, equations (5.1)–(5.3), author copy pp. 29; FGV line 1294.)
+For (L,b)∈P⁻_(K_q) and k≥1, let z_(L,b)=β_q²ᵏ⁻¹[L,b]∈KSp_(4k−2)(ℤ;ℤ/q). Here β acts through the specified μ_q subgroup of norm-one automorphisms, the unreduced stable nerve of P⁻, and its trace-form map to KSp. Products are supplied as iterated maps at q=3. Tensoring positive lines acts through this stable construction; a class [L,b] is in degree zero and its Bott translate has degree 4k−2. (FGV, §5, equations (5.1)–(5.3), author copy p. 29; FGV line 1294.)
 
 The interface has the following laws.
 
@@ -501,14 +502,14 @@ Assume p is an odd prime, n≥1 and q=p^n; coefficients Λ_q=ℤ/q. ζ_q=exp(2π
 
 For i≥0 and q odd, (p_+c_B,p_-c_H):KSp_i(ℤ;ℤ/q)≅K_i(ℤ;ℤ/q)^(+)⊕π_i(ku;ℤ/q)^(−), where p_±=(1±ψ⁻¹)/2. In degree 4k−2, k≥1, this is K_(4k−2)(ℤ;ℤ/q)⊕ℤ/q, with the arithmetic term identified with H²_et(ℤ[1/p];μ_q^(⊗2k)). For i>0 the p-adic groups vanish for i≡0,1 mod4, are K_i(ℤ;ℤ_p)⊕ℤ_p for i≡2 mod4, and are K_i(ℤ;ℤ_p) for i≡3 mod4. The direct-sum splitting is an abelian-group assertion, not a Galois-equivariant splitting of the main extension. (FGV, Theorem 3.5, Corollary 3.6 and §3.4, author copy pp. 19–21; FGV line 871.)
 
-One proof route is as follows. Import the Karoubi fiber sequence and odd-primary Witt calculation with the unscaled-H normalization. Compute its Betti–Hodge composite: the hyperbolic part maps by 1+ψ⁻¹, hence by 2 on the positive factor. Use the Hodge-unit calculation to identify the other factor, then pass to the p-adic limit using finite generation. (FGV line 871, with the stated supplier contracts.)
+One proof route is as follows. Specialize HermitianKTheoryOfPoincareCategories §8.1 to (ℤ,−ℤ) and use its §8.3 splitting after inverting 2, with the splitting maps H and (1/2)c_B of §1.1 and the integer Witt groups of GeometryOfNumbersAndQuadraticArithmetic §6.10a. Compute its Betti–Hodge composite: the hyperbolic part maps by 1+ψ⁻¹, hence by 2 on the positive factor. Use the Hodge-unit calculation to identify the other factor, then pass to the p-adic limit using finite generation. (FGV line 871, with the stated supplier contracts.)
 
 **Checks.**
 
 - Degree zero is ℤ/q→ℤ/q via p_+c_B, multiplication by 2 on a symplectic-plane generator, hence an isomorphism for odd q.
 - For p=3 the p-adic degree-three group agrees with K₃(ℤ;ℤ₃)=ℤ/3; the Hodge factor is zero.
 
-*Needs:* §1.1; §3.2; GeometryOfNumbersAndQuadraticArithmetic §§6.5–6.8a, 6.10a–6.11; ArithmeticKTheory §§6.11, 6.15–6.16; GeneralizedCohomology G5.4–G5.6 and TopologicalKTheory T4–T5, T7; StableHomotopyKTheory §§7.9–7.13.
+*Needs:* §1.1; §3.2; GeometryOfNumbersAndQuadraticArithmetic §§6.5–6.8a, 6.10a–6.11; HermitianKTheoryOfPoincareCategories §§8.1, 8.3; ArithmeticKTheory §§6.11, 6.15–6.16; GeneralizedCohomology G5.4–G5.6 and TopologicalKTheory T4–T5, T7; StableHomotopyKTheory §§7.9–7.13.
 
 ### 3.5 CM classes generate symplectic K-theory
 
@@ -531,7 +532,7 @@ One proof route is as follows. Use the Betti–Hodge isomorphism, proved using t
 
 Assume p is an odd prime, n≥1 and q=p^n; coefficients Λ_q=ℤ/q. ζ_q=exp(2πi/q); twists M(j)=μ_q(ℂ)^(⊗j) carry the left action χ_cyc^j; negative powers mean dual tensor powers.
 
-The Betti–Hodge map for KSp^(β) gives KSp^(β)_i(ℤ;ℤ/q)≅K^(β)_i(ℤ;ℤ/q)^(+)⊕π_i(KU;ℤ/q)^(−) for every integer i. For i≥0 it agrees with connective KSp. After p-completion this periodic spectrum is L_(K(1))KSp(ℤ), with the localization comparison specified by ChromaticHomotopyTheory CH.2–CH.3’s telescope contract. The analogous comparison for algebraic K-theory is imported; the exceptional degree-one comparison over ℤ is retained there. (FGV, Corollary 3.10 and Remark 3.11, author copy pp. 22; FGV line 989.)
+The Betti–Hodge map for KSp^(β) gives KSp^(β)_i(ℤ;ℤ/q)≅K^(β)_i(ℤ;ℤ/q)^(+)⊕π_i(KU;ℤ/q)^(−) for every integer i. For i≥0 it agrees with connective KSp. After p-completion this periodic spectrum is L_(K(1))KSp(ℤ), with the localization comparison given by the smashing finite localization of BordismFormalGroups F6.3 and the height-one equality ⟨T(1)⟩=⟨K(1)⟩ of GeneralAlgebraicKTheoryPartII §4.20. The analogous comparison for algebraic K-theory is imported; the exceptional degree-one comparison over ℤ is retained there. (FGV, Corollary 3.10 and Remark 3.11, author copy p. 22; FGV line 989.)
 
 One proof route is as follows. Apply compatible telescopes to the odd-primary splitting. Use the imported connective ku→KU range and arithmetic comparison theorem. Apply the height-one localization comparison, not a formal assertion that every telescope is a K(1)-localization. (FGV line 989, with the stated supplier contracts.)
 
@@ -540,7 +541,7 @@ One proof route is as follows. Apply compatible telescopes to the odd-primary sp
 - At i=−2 the KU-negative factor occurs; it is absent in degree −4.
 - The positive-degree comparison for KSp does not imply that K₁(ℤ)→K₁^(β)(ℤ) is an isomorphism.
 
-*Needs:* §1.2; §3.4; StableHomotopyKTheory §§7.1–7.17, 7.28 and ChromaticHomotopyTheory CH.2–CH.3; ArithmeticKTheory §§5.2, 6.15–6.16.
+*Needs:* §1.2; §3.4; StableHomotopyKTheory §§7.1–7.17, 7.28; BordismFormalGroups F6.3; GeneralAlgebraicKTheoryPartII §§4.1–4.3, 4.20; ArithmeticKTheory §§5.2, 6.15–6.16.
 
 ### Examples
 
@@ -548,7 +549,7 @@ For q=5, k=1, types {1,2} and {−1,2} have Hodge values 3 and 1. Their differen
 
 ### Dependencies
 
-§0.1; §2.1; §2.2; §1.1; GeneralAlgebraicKTheory §§7.1–7.7; GeneralizedCohomology G2.8 (the Γ-machine) and G2.5 (its suspension/infinite-loop adjunction); GeneralizedCohomology G2.1–G2.8 and StableHomotopyKTheory §§5.1–5.19; §2.4; GeneralizedCohomology G5.4–G5.6 and TopologicalKTheory T4–T5, T7; §0.3; §0.4; GeometryOfNumbersAndQuadraticArithmetic §§6.5–6.8a, 6.10a–6.11; ArithmeticKTheory §§6.11, 6.15–6.16; StableHomotopyKTheory §§7.9–7.13; §1.2; StableHomotopyKTheory §§7.1–7.17, 7.28 and ChromaticHomotopyTheory CH.2–CH.3; ArithmeticKTheory §§5.2, 6.15–6.16; ArithmeticKTheory §§3.1–3.5, 7.1–7.5; IntegralIwasawaTheory §12.3 (the Bernoulli nonvanishing contract for the nonzero-kernel Check). The Hodge type-sum calculation precedes the splitting, and CM generation uses both; there is no circular generation argument.
+§0.1; §2.1; §2.2; §1.1; GeneralAlgebraicKTheory §§7.1–7.7; GeneralizedCohomology G2.8 (the Γ-machine) and G2.5 (its suspension/infinite-loop adjunction); GeneralizedCohomology G2.1–G2.8 and StableHomotopyKTheory §§5.1–5.19; §2.4; GeneralizedCohomology G5.4–G5.6 and TopologicalKTheory T4–T5, T7; §0.3; §0.4; GeometryOfNumbersAndQuadraticArithmetic §§6.5–6.8a, 6.10a–6.11; HermitianKTheoryOfPoincareCategories §§8.1, 8.3; ArithmeticKTheory §§6.11, 6.15–6.16; StableHomotopyKTheory §§7.9–7.13; §1.2; StableHomotopyKTheory §§7.1–7.17, 7.28; BordismFormalGroups F6.3; GeneralAlgebraicKTheoryPartII §§4.1–4.3, 4.20; ArithmeticKTheory §§5.2, 6.15–6.16; ArithmeticKTheory §§3.1–3.5, 7.1–7.5; IntegralIwasawaTheory §12.3 (the Bernoulli nonvanishing contract for the nonzero-kernel Check). The Hodge type-sum calculation precedes the splitting, and CM generation uses both; there is no circular generation argument.
 
 ## Layer 4: The ppav realization and arithmetic action
 
@@ -576,14 +577,14 @@ One proof route is as follows. Use the imported ppav stack and split Rosati-self
 
 ### 4.2 Rigidified ppav simplicial model
 
-Rigidify the entire ambient abelian scheme A in A(T), including its basepoint factor A_*, by a projective embedding from the third power of the ample line bundle Δ*L, where L represents the principal polarization correspondence. Let U(T) be the coproduct of the resulting quasi-projective parameter schemes over embedding dimension and Hilbert polynomial. Its Čech nerve 𝒵(T)_r has r+1 embeddings together with compatible polarized isomorphisms of their selected factors commuting with the ℤ^T-action; compatibility with the embeddings is not required. It is a specified coproduct of quasi-projective simplicial schemes over ℚ, graded by dimension vectors. The construction is Γ-functorial through the imported product/rigidification coherence contract; it does not claim the entire unbounded coproduct is one quasi-projective scheme. (FGV, Appendix A.4, the atlas preceding Proposition A.13, author copy pp. 60; FGV line 2773.)
+Rigidify the entire ambient abelian scheme A in A(T), including its basepoint factor A_*, by a projective embedding from the third power of the ample line bundle Δ*L, where L represents the principal polarization correspondence. Let U(T) be the coproduct of the resulting quasi-projective parameter schemes over embedding dimension and Hilbert polynomial. Its Čech nerve 𝒵(T)_r has r+1 embeddings together with compatible polarized isomorphisms of their selected factors commuting with the ℤ^T-action; compatibility with the embeddings is not required. It is a specified coproduct of quasi-projective simplicial schemes over ℚ, graded by dimension vectors. The construction is Γ-functorial through the imported product/rigidification coherence contract; it does not claim the entire unbounded coproduct is one quasi-projective scheme. (FGV, Appendix A.4, the atlas preceding Proposition A.13, author copy p. 60; FGV line 2773.)
 
 The interface has the following laws.
 
 - Faces omit one embedding and compose its adjacent isomorphisms; degeneracies repeat an embedding.
 - Every face and degeneracy preserves the dimension vector, and Γ maps push it forward by summing fibers.
 - Changing projective embedding gives a common atlas refinement and an equivalent realized groupoid.
-- Betti realization computes the analytic ppav stack by EH.5 smooth descent.
+- Betti realization computes the analytic ppav stack by EtaleHomotopyTypes §5.3a smooth descent.
 
 One proof route is as follows. Use the ample polarization line to obtain embeddings on each finite Hilbert-polynomial piece. Take the isomorphism schemes and form the Čech nerve in the smooth stack atlas. Retain the explicit dimension grading and coherent product maps when changing embeddings. (FGV line 2773, with the stated supplier contracts.)
 
@@ -595,24 +596,24 @@ One proof route is as follows. Use the ample polarization line to obtain embeddi
 - For r=0 the nerve is U(T), not a double fiber product; all descent is applied on smooth atlas pieces.
 - For T={*}, embedding only the zero selected factor leaves arbitrary ambient A_* unrigidified. Embedding A gives genuine parameter schemes, while selected-factor arrows still give a contractible nerve.
 
-*Needs:* §4.1; PELModuli §§M1.5, M1.12, M6.2–M6.3, M6.9; PELModuli §§M2.3–M2.4, M2.8–M2.9, M3.9; EtaleHomotopyTypes EH.5 (Betti realization and analytic descent).
+*Needs:* §4.1; PELModuli §§M1.5, M1.12, M6.2–M6.3, M6.9; PELModuli §§M2.3–M2.4, M2.8–M2.9, M3.9; EtaleHomotopyTypes §§5.2, 5.3a (Betti realization and smooth descent).
 
 ### 4.3 Betti model of symplectic K-theory
 
 The analytic ppav stack of genus g is H_g//Sp_(2g)(ℤ), where Siegel space H_g is contractible. Its Betti realization is therefore weakly equivalent to BSp_(2g)(ℤ). Level N≥4 gives a smooth finite-level atlas; quotient singular complexes are compared by weak equivalences, not literal simplicial isomorphisms. For every finite pointed T, Sing_an 𝒵_ℂ(T)≃N SP_T(ℤ) naturally as special Γ-spaces; at S⁰ this is ∐_g BSp_(2g)(ℤ). Applying the existing Segal machine gives KSp(ℤ). (FGV, Appendix A.3–A.4, Proposition A.13, author copy pp. 58–60; FGV line 2786.)
 
-One proof route is as follows. Import polarized complex uniformization and contractibility of Siegel space. Use the level cover and smooth descent to identify the analytic stack quotient. Compare the homology lattice functor on each selected factor and use StableHomotopyKTheory’s classical-symplectic-plus contract. (FGV line 2786, with the stated supplier contracts.)
+One proof route is as follows. Import polarized complex uniformization and contractibility of Siegel space. Use the level cover and smooth descent to identify the analytic stack quotient. Compare the homology lattice functor on each selected factor with the groupoid S of unimodular alternating ℤ-forms of §1.1, whose group completion is KSp(ℤ)≃ℤ×BSp∞(ℤ)⁺. (FGV line 2786, with the stated supplier contracts.)
 
 **Checks.**
 
 - For g=0 the analytic component is a point; for g=1 its homotopy type retains SL₂(ℤ) isotropy. The degree-two class with c_H-image bott=−β_Top pairs to +1 with ch₁(Lie A), and to −1 with ch₁(Lie A∨), as in the Gaussian sign convention.
 - A special Γ-space has Ω-equivalences in levels n≥1. Its zeroth replacement is group completion: N→ℤ on genus components, not an equivalence before completion.
 
-*Needs:* §4.2; StableHomotopyKTheory §4.27 (gap:classical-symplectic-plus); GeneralizedCohomology G2.8; AbelianSchemesAndArithmeticModuli §§A5.5, A5.8; EtaleHomotopyTypes EH.5 (Betti realization and analytic descent); PELModuli §§M2.3–M2.4, M2.8–M2.9, M3.9; GeneralizedCohomology G2.1–G2.8 and StableHomotopyKTheory §§5.1–5.19; StableHomotopyKTheory §§4.21–4.27 and GeneralizedCohomology G2.8.
+*Needs:* §4.2; §1.1 (KSp(ℤ)≃ℤ×BSp∞(ℤ)⁺); GeneralizedCohomology G2.8; AbelianSchemesAndArithmeticModuli §§A5.5, A5.8; EtaleHomotopyTypes §§5.2, 5.3a (Betti realization and smooth descent); PELModuli §§M2.3–M2.4, M2.8–M2.9, M3.9; GeneralizedCohomology G2.1–G2.8 and StableHomotopyKTheory §§5.1–5.19; StableHomotopyKTheory §§4.21–4.27 and GeneralizedCohomology G2.8.
 
 ### 4.4 Galois action on the symplectic spectrum
 
-Algebraic conjugation sends a complex ppav with structure map φ to the same underlying scheme with structure map Spec(σ⁻¹)∘φ, and transports its polarization and arrows. This gives a left Aut(ℂ)-action: σ·(τ·A)=(στ)·A. For an odd prime p, use componentwise graded p-completed étale realization of the ℚ-defined 𝒵(T), with EH.6’s comparison, to obtain a homotopy-coherent Aut(ℂ)-action by spectrum maps on KSp(ℤ)^∧_p and compatible mod-p^n spectra. For p>3 the vanishing of H₁(A_g;𝔽_p) allows the direct finite-type comparison on each genus. For p=3 first smash each connected component, pointed by a rational ppav, with the simply connected Moore space M(ℤ/p^n,2), realize this simplicially, compare, then desuspend twice and pass through the tower. Naturality includes the discrete complex-point map. The action is independent, up to the supplied coherent equivalences, of rigidifications and basepoint choices. (FGV, Appendix A.5 and Remark A.14; Proposition 6.2, author copy pp. 34, 61–62; FGV line 2811.)
+Algebraic conjugation sends a complex ppav with structure map φ to the same underlying scheme with structure map Spec(σ⁻¹)∘φ, and transports its polarization and arrows. This gives a left Aut(ℂ)-action: σ·(τ·A)=(στ)·A. For an odd prime p, use componentwise graded p-completed étale realization of the ℚ-defined 𝒵(T), with the comparison of EtaleHomotopyTypes §§6.7–6.9, to obtain a homotopy-coherent Aut(ℂ)-action by spectrum maps on KSp(ℤ)^∧_p and compatible mod-p^n spectra. For p>3 the vanishing of H₁(A_g;𝔽_p) allows the direct finite-type comparison on each genus. For p=3 first smash each connected component, pointed by a rational ppav, with the simply connected Moore space M(ℤ/p^n,2), realize this simplicially, compare, then desuspend twice and pass through the tower. Naturality includes the discrete complex-point map. The action is independent, up to the supplied coherent equivalences, of rigidifications and basepoint choices. (FGV, Appendix A.5 and Remark A.14; Proposition 6.2, author copy pp. 34, 61–62; FGV line 2811.)
 
 The interface has the following laws.
 
@@ -621,7 +622,7 @@ The interface has the following laws.
 - All coefficient reduction maps and the p-adic limit are equivariant.
 - Complex conjugation satisfies c_B∘c=c_B, using its continuous analytic comparison; this is not asserted for arbitrary σ.
 
-One proof route is as follows. Check finite-dimensional mod-p cohomology separately on each dimension vector; do not p-complete the infinite component set as one object. Apply EH.6 automorphism naturality to discrete points and its Betti comparison. For p=3 use the Moore-smash construction before invoking simple-connectivity. Apply the homotopy-coherent Segal and coefficient-tower interface. Use the graded Moore realization contract for the coherent spectrum action. (FGV line 2811, with the stated supplier contracts.)
+One proof route is as follows. Check finite-dimensional mod-p cohomology separately on each dimension vector; do not p-complete the infinite component set as one object. Apply EtaleHomotopyTypes §6.9 automorphism naturality to discrete points and its §§6.7–6.8 Betti comparison. For p=3 use the Moore-smash construction before invoking simple-connectivity. Apply the homotopy-coherent Segal and coefficient-tower interface. Use the graded Moore realization contract for the coherent spectrum action. (FGV line 2811, with the stated supplier contracts.)
 
 **Checks.**
 
@@ -630,7 +631,7 @@ One proof route is as follows. Check finite-dimensional mod-p cohomology separat
 - At p=3, the genus-one H₁ obstruction prevents direct use of the H¹=0 comparison. Moore smashing must precede it.
 - All q-level actions commute with reduction, so the p-adic action is defined on the spectrum, not merely separately on groups.
 
-*Needs:* §4.3; EtaleHomotopyTypes EH.6 (p-completion and Betti–étale comparison); GeneralizedCohomology G2.8; StableHomotopyKTheory §§7.1–7.17, 7.28 and ChromaticHomotopyTheory CH.2–CH.3.
+*Needs:* §4.3; EtaleHomotopyTypes §§6.6–6.9 (p-completion, Betti–étale comparison and automorphism naturality); GeneralizedCohomology G2.8; StableHomotopyKTheory §§7.1–7.17, 7.28; BordismFormalGroups F6.3; GeneralAlgebraicKTheoryPartII §§4.1–4.3.
 
 ### 4.5 Finite-genus detection of the action
 
@@ -653,7 +654,7 @@ With T={*,a,b}, genus vector (1,2) folds to genus 3, whereas sending b to * sele
 
 ### Dependencies
 
-GeneralizedCohomology G2.8; StableHomotopyKTheory §§4.24–4.25; PELModuli §§M1.5, M1.12, M6.2–M6.3, M6.9; PELModuli §§M2.3–M2.4, M2.8–M2.9, M3.9; AbelianSchemesAndArithmeticModuli §§A5.5, A5.8; EtaleHomotopyTypes EH.5 (Betti realization and analytic descent); StableHomotopyKTheory §4.27 (gap:classical-symplectic-plus); GeneralizedCohomology G2.1–G2.8 and StableHomotopyKTheory §§5.1–5.19; StableHomotopyKTheory §§4.21–4.27 and GeneralizedCohomology G2.8; EtaleHomotopyTypes EH.6 (p-completion and Betti–étale comparison); StableHomotopyKTheory §§7.1–7.17, 7.28 and ChromaticHomotopyTheory CH.2–CH.3; §3.5; §2.2. The coherent Γ/product/coefficient realization contract is required to construct the action before finite-genus surjectivity is used to characterize it.
+GeneralizedCohomology G2.8; StableHomotopyKTheory §§4.24–4.25; PELModuli §§M1.5, M1.12, M6.2–M6.3, M6.9; PELModuli §§M2.3–M2.4, M2.8–M2.9, M3.9; AbelianSchemesAndArithmeticModuli §§A5.5, A5.8; EtaleHomotopyTypes §§5.2, 5.3a (Betti realization and smooth descent); §1.1; GeneralizedCohomology G2.1–G2.8 and StableHomotopyKTheory §§5.1–5.19; StableHomotopyKTheory §§4.21–4.27 and GeneralizedCohomology G2.8; EtaleHomotopyTypes §§6.6–6.9 (p-completion, Betti–étale comparison and automorphism naturality); StableHomotopyKTheory §§7.1–7.17, 7.28; BordismFormalGroups F6.3; GeneralAlgebraicKTheoryPartII §§4.1–4.3; §3.5; §2.2. The coherent Γ/product/coefficient realization contract is required to construct the action before finite-genus surjectivity is used to characterize it.
 
 ## Layer 5: CM reciprocity and relative extensions
 
@@ -670,7 +671,7 @@ One proof route is as follows. Invoke the CM owner’s polarization/reflex recip
 - For σ=c the line (O,−1) changes Φ to its conjugate. A positive translating line would preserve Φ and contradict this case.
 - If the class kernel has a minus element a of order 3, then in the semidirect product c a c⁻¹ = a⁻¹, and (a c a⁻¹) ≠ c. Requiring all lifted embeddings to commute with c would eliminate valid embeddings.
 
-*Needs:* ComplexMultiplicationAndExplicitReciprocity §§2.1–2.2; ComplexMultiplicationAndExplicitReciprocity §1.3; §2.2; §4.4; ClassFieldTheory Layer 11; ClassFieldTheory Layer 13.
+*Needs:* ComplexMultiplicationAndExplicitReciprocity §§2.1–2.2; ComplexMultiplicationAndExplicitReciprocity §1.2; §2.2; §4.4; ClassFieldTheory Layer 11; ClassFieldTheory Layer 13.
 
 ### 5.2 Split extension category
 
@@ -696,7 +697,7 @@ One proof route is as follows. Define the category on existing module and repres
 
 ### 5.3 Relative bar convention comparison
 
-For the relative chain complex C_*(G,H;M)=C_*(G;M)/C_*(H;Res M) imported from R02.2, construct its FGV left-coefficient presentation and comparison. It has C₀=0 and H₁ presented by generators [g]⊗m, linear in m, relations [h]⊗m=0 for h∈H and [gg′]⊗m=[g]⊗g′m+[g′]⊗m. Supply an explicit natural chain equivalence with Mathlib’s inhomogeneous-chain convention, whose differential uses inverse actions, before invoking its groupHomology. The canonical α_univ(g,m)=[g]⊗m is a relative 1-cycle class. (FGV, §7.1, equations (7.5)–(7.8), author copy pp. 38; FGV line 1735.)
+For the relative chain complex C_*(G,H;M)=C_*(G;M)/C_*(H;Res M) imported from R02.2, construct its FGV left-coefficient presentation and comparison. It has C₀=0 and H₁ presented by generators [g]⊗m, linear in m, relations [h]⊗m=0 for h∈H and [gg′]⊗m=[g]⊗g′m+[g′]⊗m. Supply an explicit natural chain equivalence with Mathlib’s inhomogeneous-chain convention, whose differential uses inverse actions, before invoking its groupHomology. The canonical α_univ(g,m)=[g]⊗m is a relative 1-cycle class. (FGV, §7.1, equations (7.5)–(7.8), author copy p. 38; FGV line 1735.)
 
 The interface has the following laws.
 
@@ -741,7 +742,7 @@ For G=C₂, H=1 and the sign module ℤ/5, the relative kernel is ℤ/5 and c(m,
 
 ### Dependencies
 
-ComplexMultiplicationAndExplicitReciprocity §§2.1–2.2; ComplexMultiplicationAndExplicitReciprocity §1.3; §2.2; §4.4; ClassFieldTheory Layer 11; ClassFieldTheory Layer 13; `Representation`; `LinearMap`; `CategoryTheory.Under`; `groupHomology`; `groupHomology.inhomogeneousChains`; ArithmeticGaloisDuality R02.2 (Hochschild–Serre and transgression). 
+ComplexMultiplicationAndExplicitReciprocity §§2.1–2.2; ComplexMultiplicationAndExplicitReciprocity §1.2; §2.2; §4.4; ClassFieldTheory Layer 11; ClassFieldTheory Layer 13; `Representation`; `LinearMap`; `CategoryTheory.Under`; `groupHomology`; `groupHomology.inhomogeneousChains`; ArithmeticGaloisDuality R02.2 (Hochschild–Serre and transgression).
 
 ## Layer 6: Finite universal arithmetic extensions
 
@@ -823,7 +824,7 @@ One proof route is as follows. Use the compact continuous module and completed h
 - For Γ=ℤ_p, H=1 and M=ℤ_p trivial, the completed H₁ is ℤ_p; replacing Γ by a discrete group or forgetting its topology is not the defining construction.
 - Continuity of a ℤ_p-module homomorphism is retained in the categorical statement.
 
-*Needs:* §5.4; ArithmeticGaloisDuality R02.1 (compact coefficients and limits); ArithmeticGaloisDuality R02.2 (Hochschild–Serre and transgression); StableHomotopyKTheory §§7.1–7.17, 7.28 and ChromaticHomotopyTheory CH.2–CH.3.
+*Needs:* §5.4; ArithmeticGaloisDuality R02.1 (compact coefficients and limits); ArithmeticGaloisDuality R02.2 (Hochschild–Serre and transgression); StableHomotopyKTheory §§7.1–7.17, 7.28; BordismFormalGroups F6.3; GeneralAlgebraicKTheoryPartII §§4.1–4.3.
 
 ### 7.2 p-adic universal extension theorem
 
@@ -893,7 +894,7 @@ For the same p,k and a prime ℓ≠p topologically generating ℤ_p×, prove tha
 
 One proof route is as follows. Use the finite generation and rational rank-zero calculation for K_(4k−1)(ℤ), the odd Bott H¹ edge and the ordinary/Bott comparison to obtain finite global H¹. The coefficient sequence ℤ_p(2k)→ℚ_p(2k)→ℚ_p/ℤ_p(2k), with rational H⁰ and H¹ zero, identifies both H¹ groups with the corresponding H⁰ of ℚ_p/ℤ_p(2k). The global image is ℤ_p× and the powers of ℓ are dense in it, so their invariants coincide, with exponent 2k. GeneralAlgebraicKTheory’s Brauer-lift comparison gives the finite-field H¹ edge. Apply the sphere-unit surjectivity contract and this reduction isomorphism. A rational elliptic curve makes the symplectic unit equivariant for the trivial sphere action. (FGV lines 2154–2176, 2190–2194.)
 
-*Needs:* ArithmeticKTheory §§3.1–3.5, 6.15–6.16; GeneralAlgebraicKTheory §§13.8b–13.8c `finiteFieldKGroups`; ArithmeticGaloisDuality R02.1 (continuous coefficients and coefficient exact sequences).
+*Needs:* ArithmeticKTheory §§3.1–3.5, 6.15–6.16; GeneralAlgebraicKTheory §§13.8b–13.8c (the finite-field calculation of §13.8c); ArithmeticGaloisDuality R02.1 (continuous coefficients and coefficient exact sequences).
 
 **Checks.**
 
@@ -907,7 +908,7 @@ One proof route is as follows. Use the finite generation and rational rank-zero 
 
 ### 7.7 Vandiver and conjugation-fixed primes
 
-For q=p^n, the primes of H_q above p form a torsor under Gal(H_q/K_q). After choosing a c-fixed prime, c acts on this torsor by its action on that p-class group. Thus there is exactly one c-fixed prime precisely when its plus part is zero; under the Iwasawa control interface this is equivalent to Vandiver(p). This assertion concerns c-fixed primes. The entire prime set is a singleton only when the full p-class group vanishes, the regular-prime condition. (FGV, Remark 7.9, author copy pp. 44; FGV line 2036.)
+For q=p^n, the primes of H_q above p form a torsor under Gal(H_q/K_q). After choosing a c-fixed prime, c acts on this torsor by its action on that p-class group. Thus there is exactly one c-fixed prime precisely when its plus part is zero; under the Iwasawa control interface this is equivalent to Vandiver(p). This assertion concerns c-fixed primes. The entire prime set is a singleton only when the full p-class group vanishes, the regular-prime condition. (FGV, Remark 7.9, author copy p. 44; FGV line 2036.)
 
 One proof route is as follows. Identify the prime torsor because p is principal and splits in H_q/K_q. Translate c-fixed points to the plus part of the odd p-group. Use the Iwasawa owner’s finite-level/tower Vandiver comparison; retain its hypothesis as a condition, not a theorem for all primes. (FGV line 2036, with the stated supplier contracts.)
 
@@ -925,7 +926,7 @@ For p=3,k=1, the arithmetic K₂ kernel is 0 and c_H identifies KSp₂(ℤ;ℤ�
 
 ### Dependencies
 
-§5.4; ArithmeticGaloisDuality R02.1 (compact coefficients and limits); ArithmeticGaloisDuality R02.2 (Hochschild–Serre and transgression); StableHomotopyKTheory §§7.1–7.17, 7.28 and ChromaticHomotopyTheory CH.2–CH.3; §6.3; StableHomotopyKTheory §§7.9–7.13; ArithmeticKTheory §§3.1–3.5; §4.4; ArithmeticKTheory §§7.1–7.5; §6.1; §5.3; ClassFieldTheory Layer 13; §3.6; §3.4; GeneralAlgebraicKTheory §§13.8b–13.8c; KTheoryFiniteLocalFields §§1.1–1.2; ArithmeticKTheory §§3.1–3.5, 6.15–6.16; Chebotarev Layer 10; IntegralIwasawaTheory §§3.1, 7.4.
+§5.4; ArithmeticGaloisDuality R02.1 (compact coefficients and limits); ArithmeticGaloisDuality R02.2 (Hochschild–Serre and transgression); StableHomotopyKTheory §§7.1–7.17, 7.28; BordismFormalGroups F6.3; GeneralAlgebraicKTheoryPartII §§4.1–4.3; §6.3; StableHomotopyKTheory §§7.9–7.13; ArithmeticKTheory §§3.1–3.5; §4.4; ArithmeticKTheory §§7.1–7.5; §6.1; §5.3; ClassFieldTheory Layer 13; §3.6; §3.4; GeneralAlgebraicKTheory §§13.8b–13.8c; KTheoryFiniteLocalFields §§1.1–1.2; ArithmeticKTheory §§3.1–3.5, 6.15–6.16; Chebotarev Layer 10; IntegralIwasawaTheory §§3.1, 7.4.
 
 ## Layer 8: Integral indecomposables and Hodge characteristic numbers
 
@@ -967,7 +968,7 @@ One proof route is as follows. Use inclusions and projections to obtain a split 
 
 ### 8.3 Low-range integral Hurewicz theorem
 
-Let p be odd and E an integral spectrum with π_i(E) = 0 for i ≤ 0 and finitely generated integral homotopy groups in each degree. Put X = Ω∞E. For 1 ≤ i ≤ 2p−3, prove that the Hurewicz quotient π_i(E) ⊗ ℤ_p → Qᶦⁿᵗ_i(X) is an isomorphism. Ordinary singular ℤ_p-homology is meant. A discrete Eilenberg–Mac Lane spectrum on ℤ_p does not satisfy the integral finite-generation hypothesis. The theorem stops before degree 2p−2, where the first reduced-power extension in a delooping requires a separate argument; no splitting across that extension is asserted. (FGV, Theorem 8.4 and its Postnikov proof, restricted range, author copy pp. 50; FGV line 2295.)
+Let p be odd and E an integral spectrum with π_i(E) = 0 for i ≤ 0 and finitely generated integral homotopy groups in each degree. Put X = Ω∞E. For 1 ≤ i ≤ 2p−3, prove that the Hurewicz quotient π_i(E) ⊗ ℤ_p → Qᶦⁿᵗ_i(X) is an isomorphism. Ordinary singular ℤ_p-homology is meant. A discrete Eilenberg–Mac Lane spectrum on ℤ_p does not satisfy the integral finite-generation hypothesis. The theorem stops before degree 2p−2, where the first reduced-power extension in a delooping requires a separate argument; no splitting across that extension is asserted. (FGV, Theorem 8.4 and its Postnikov proof, restricted range, author copy p. 50; FGV line 2295.)
 
 One proof route is as follows. Use StableHomotopyKTheory §§3.20, 3.34–3.37 and the low Postnikov contract: below 2p−2 the needed delooped truncation splits as an H-space into Eilenberg–MacLane factors. For finite-type cyclic/free integral factors, compute homology and Bocksteins in this range; the quotient is generated by the fundamental class. Apply the product formula and Postnikov homology invariance. Do not extend the H-space splitting across the possible P¹ k-invariant at the endpoint degree 2p−2. (FGV line 2295, with the stated supplier contracts.)
 
@@ -989,7 +990,7 @@ For integral finite generation, use a finite Borel–Serre model at a torsion-fr
 
 **Equivariant Hurewicz quotient.** For p odd and 1≤i≤2p−3, prove that KSp_i(ℤ)⊗ℤ_p→Qᶦⁿᵗ_i(BSp∞(ℤ)) is an isomorphism, equivariant for the arithmetic Aut(ℂ)-action. Apply §8.3 to the finite-type positive connected cover, then transport homology through plus. Spectrum-map naturality and the ppav model determine equivariance. (FGV, Theorem 8.4 and §8, restricted range, author copy pp. 48–50; FGV lines 2237, 2295.)
 
-*Needs:* ArithmeticKTheory §3.5 (integral classical ε=−1 GW finite generation); GeometryOfNumbersAndQuadraticArithmetic §6.8a (classical connective comparison); §8.1; §8.3; §4.4; StableHomotopyKTheory §4.27 (gap:classical-symplectic-plus).
+*Needs:* ArithmeticKTheory §3.5 (integral classical ε=−1 GW finite generation); GeometryOfNumbersAndQuadraticArithmetic §6.8a (classical connective comparison); §8.1; §8.3; §4.4; §1.1 (KSp(ℤ)≃ℤ×BSp∞(ℤ)⁺).
 
 **Hodge pairing.** In even degree i=2m with m≥1 and 2m≤2p−3, put ω=Lie(A)^∨. Prove that ĉh_m(ω)=(−1)^m ch_m(ω)=ch_m(Lie(A)) pairs through Qᶦⁿᵗ_(2m) and agrees with c_H. Here m<p, so the supplied integral lift is available. Use bott=−β_Top for the c_H coordinate. For odd m it evaluates to 1 on a lift with c_H-image bott^m=(−1)^mβ_Top^m; for even m the negative ku summand and the pairing on KSp are zero. The raw ch_m(ω) evaluates as (−1)^m c_H. Primitivity kills products, and the integral lift with its coefficient-Bockstein compatibility kills the enlarged denominator. (FGV, §8, equation (8.2), author copy pp. 48–49; FGV lines 2241–2255.)
 
@@ -1036,7 +1037,7 @@ For S¹×S¹ the positive degree-one indecomposables are ℤ_p² and the degree-
 
 ### Dependencies
 
-ArithmeticLocallySymmetricSpaces §§ALS.0.8, ALS.1.5–ALS.1.6, ALS.2.3–ALS.2.4; StableHomotopyKTheory §§3.20, 3.34–3.37, 7.3–7.4; GeneralizedCohomology G3.8; ArithmeticKTheory §3.5; GeometryOfNumbersAndQuadraticArithmetic §6.8a; AlgebraicTopology Stage 6 (cohomology products and manifold duality); §3.4; §4.4; StableHomotopyKTheory §4.27 (gap:classical-symplectic-plus); GeneralizedCohomology G5.4–G5.6 and TopologicalKTheory T4–T5, T7; §7.4; IntegralIwasawaTheory §12.3 (specialization at arithmetic weights); ArithmeticKTheory §§7.1–7.5; PELModuli §§M1.5, M1.12, M6.2–M6.3, M6.9. The integral finite-type hypotheses and odd partition parts n_j<p put every characteristic-number application degree 2n_j at most 2p−4; the endpoint 2p−2 and the equality p=max n_j are outside these theorem statements.
+ArithmeticLocallySymmetricSpaces §§ALS.0.8, ALS.1.5–ALS.1.6, ALS.2.3–ALS.2.4; StableHomotopyKTheory §§3.20, 3.34–3.37, 7.3–7.4; GeneralizedCohomology G3.8; ArithmeticKTheory §3.5; GeometryOfNumbersAndQuadraticArithmetic §6.8a; AlgebraicTopology Stage 6 (cohomology products and manifold duality); §3.4; §4.4; §1.1; GeneralizedCohomology G5.4–G5.6 and TopologicalKTheory T4–T5, T7; §7.4; IntegralIwasawaTheory §12.3 (specialization at arithmetic weights); ArithmeticKTheory §§7.1–7.5; PELModuli §§M1.5, M1.12, M6.2–M6.3, M6.9. The integral finite-type hypotheses and odd partition parts n_j<p put every characteristic-number application degree 2n_j at most 2p−4; the endpoint 2p−2 and the equality p=max n_j are outside these theorem statements.
 
 ## Downstream consumers
 

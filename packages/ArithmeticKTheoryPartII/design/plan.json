@@ -2366,18 +2366,6 @@
       "section": "G5.4–G5.6"
     },
     {
-      "slug": "skew-integer-splitting",
-      "needs": "Specialize the GW–L fiber sequence to integral skew forms and prove the odd-primary positive-factor splitting with unscaled hyperbolic map H, c_B H=1+ψ⁻¹, and retraction (1/2)c_B.",
-      "supplier": "GeometryOfNumbersAndQuadraticArithmetic",
-      "section": "§§6.8a, 6.10a–6.11"
-    },
-    {
-      "slug": "compatible-v1-towers",
-      "needs": "Provide compatible odd Moore v₁ self-maps and reduction maps after common iteration, telescope independence and their p-completed K(1)-local comparison, including q=3 without an associative Moore product.",
-      "supplier": "ChromaticHomotopyTheory",
-      "section": "CH.2–CH.3"
-    },
-    {
       "slug": "cyclotomic-p-class-fields",
       "needs": "Construct H_q as the fixed field of the prime-to-p subgroup in the supplied cyclotomic Hilbert field, compatibly along the cyclotomic tower, and provide the local-p-split class-field comparison.",
       "supplier": "ClassFieldTheory",
@@ -2393,7 +2381,7 @@
       "slug": "cm-arbitrary-automorphism",
       "needs": "Provide the arbitrary-automorphism polarized reciprocity dictionary on isometries with conjugation-paired embedding lifts and possibly negative translating signatures, natural for positive-line Serre tensor.",
       "supplier": "ComplexMultiplicationAndExplicitReciprocity",
-      "section": "§§1.3, 2.1–2.2"
+      "section": "§§1.2, 2.1–2.2"
     },
     {
       "slug": "relative-homology-edges",
@@ -2435,7 +2423,7 @@
       "slug": "graded-moore-realization",
       "needs": "Provide a homotopy-coherent realization of the graded ppav Γ-diagrams preserving products, finite Moore smashing before completion at p=3, automorphisms, coefficient reductions and p-adic homotopy limits.",
       "supplier": "EtaleHomotopyTypes",
-      "section": "EH.5, EH.6 and G7"
+      "section": "Layers 5–6"
     },
     {
       "slug": "lisse-integral-extension",
@@ -2448,12 +2436,6 @@
       "needs": "Extend §6.11’s top-degree corestriction descent to the full cover K_q/ℚ at every integer twist t, giving H²_et(O′_q,μ_q^(⊗t))_(Gal(K_q/ℚ))≅H²_et(ℤ[1/p],μ_q^(⊗t)) by corestriction.",
       "supplier": "ArithmeticKTheory",
       "section": "§6.11"
-    },
-    {
-      "slug": "classical-symplectic-plus",
-      "needs": "Identify the group completion of finite free unimodular alternating ℤ-forms under orthogonal sum with a space having component group ℤ by half-rank and identity component BSp∞(ℤ)⁺ at the stable perfect commutator, naturally for the forgetful and hyperbolic maps.",
-      "supplier": "StableHomotopyKTheory",
-      "section": "§4.27"
     }
   ],
   "requests": [
