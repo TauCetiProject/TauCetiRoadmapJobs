@@ -271,7 +271,7 @@
      "name": "spectralFunction_concave_elliptic",
      "statement": "For an open convex symmetric Γ and a symmetric C¹ f on Γ: Sym_Γ(E) is convex; if f is concave then F_f is concave on Sym_Γ(E); if ∂_i f > 0 on Γ then ∇F_f(T) is positive definite; if Γ + Γ_n ⊆ Γ, S ∈ Sym_Γ(E) and S ≤ T then T ∈ Sym_Γ(E), and F_f(S) ≤ F_f(T) when ∂_i f ≥ 0 on Γ, with F_f(S) < F_f(T) unless S = T when ∂_i f > 0 on Γ; the same for vectors μ ≤ ν componentwise.",
      "hypotheses": [
-      "Γ open, convex, permutation-invariant",
+      "Γ open, convex, permutation-invariant (the monotonicity clauses need only Γ open and permutation-invariant with Γ + Γ_n ⊆ Γ)",
       "f : Γ → ℝ symmetric and C¹",
       "∂_i f ≥ 0 on Γ for the monotonicity inequality; ∂_i f > 0 on Γ for its strictness clause"
      ],
@@ -360,13 +360,14 @@
      "id": "2.1",
      "kind": "theorem",
      "name": "newton_maclaurin",
-     "statement": "For 1 ≤ k ≤ n: σ_k = λ_i σ_{k−1;i} + σ_{k;i}, ∂σ_k/∂λ_i = σ_{k−1;i}, Σ_i λ_i σ_{k−1;i} = kσ_k; for 0 ≤ k ≤ n: Σ_i σ_{k;i} = (n−k)σ_k and σ_k(λ + te) = Σ_{j=0}^{k} binom(n−j,k−j) σ_j(λ) t^{k−j}; σ_0 = 1 with ∂σ_0/∂λ_i = 0. Newton S_{k−1}S_{k+1} ≤ S_k² on ℝⁿ for 1 ≤ k ≤ n−1, with equality on Γ_n only for equal entries; Maclaurin S_k^{1/k} ≥ S_l^{1/l} on Γ_l for 1 ≤ k ≤ l ≤ n; generalized Newton–Maclaurin.",
+     "statement": "For 1 ≤ k ≤ n: σ_k = λ_i σ_{k−1;i} + σ_{k;i}, ∂σ_k/∂λ_i = σ_{k−1;i}, Σ_i λ_i σ_{k−1;i} = kσ_k; for 0 ≤ k ≤ n: Σ_i σ_{k;i} = (n−k)σ_k and σ_k(λ + te) = Σ_{j=0}^{k} binom(n−j,k−j) σ_j(λ) t^{k−j}; σ_0 = 1 with ∂σ_0/∂λ_i = 0. Newton S_{k−1}S_{k+1} ≤ S_k² on ℝⁿ for 1 ≤ k ≤ n−1, with equality on Γ_n only for equal entries; Maclaurin S_k^{1/k} ≥ S_l^{1/l} on Γ_l for 1 ≤ k ≤ l ≤ n, and by continuity on the closure Γ̄_l, where S_1, …, S_l ≥ 0, in particular for every λ with all λ_i ≥ 0; generalized Newton–Maclaurin (S_r/S_s)^{1/(r−s)} ≤ (S_k/S_l)^{1/(k−l)} on Γ_r for integers 0 ≤ s < r ≤ n, 0 ≤ l < k ≤ r and l ≤ s, with S_0 = 1 (concavity of j ↦ log S_j on {0, …, r} by Newton, and monotonicity of chord slopes; Maclaurin is s = l = 0).",
      "hypotheses": [
       "λ ∈ ℝⁿ",
       "1 ≤ k ≤ n for the recurrence, the derivative identity and the Euler identity",
       "0 ≤ k ≤ n for the sum and shift identities",
       "1 ≤ k ≤ n−1 for Newton",
-      "λ ∈ Γ_l and 1 ≤ k ≤ l ≤ n for Maclaurin"
+      "λ ∈ Γ_l, or λ in its closure (for instance λ_i ≥ 0 for all i), and 1 ≤ k ≤ l ≤ n for Maclaurin",
+      "λ ∈ Γ_r, 0 ≤ s < r ≤ n, 0 ≤ l < k ≤ r and l ≤ s for the generalized Newton–Maclaurin inequality"
      ],
      "locator": {
       "source": "spruck2005",
@@ -401,6 +402,21 @@
        "name": "index_range",
        "kind": "degenerate",
        "statement": "n = 1, k = 1, λ = 1: 1 = 1·1 + 0 and 1 = 1; at k = 0 with natural subtraction they would read 1 = 1·1 + 1 and 0 = 1, so k ≥ 1 is assumed and σ_0 = 1 with derivative 0 is stated separately"
+      },
+      {
+       "name": "generalized_newton_maclaurin_123",
+       "kind": "computation",
+       "statement": "λ = (1,2,3) ∈ Γ_3: (r,s,k,l) = (3,2,2,1) gives 18/11 ≤ 11/6 and (3,1,2,0) gives √3 ≤ (11/3)^{1/2}; at λ = e both sides are 1"
+      },
+      {
+       "name": "generalized_newton_maclaurin_needs_l_le_s",
+       "kind": "non-example",
+       "statement": "(r,s,k,l) = (2,0,2,1) at λ = (1,2,3), with l > s: (11/3)^{1/2} ≈ 1.915 > 11/6 ≈ 1.833, so l ≤ s cannot be dropped"
+      },
+      {
+       "name": "maclaurin_closed_orthant",
+       "kind": "degenerate",
+       "statement": "λ = (1,0,0): S_1 = 1/3 ≥ S_2^{1/2} = 0 ≥ S_3^{1/3} = 0; λ = (1,1,0): 2/3 ≥ (1/3)^{1/2} ≈ 0.577 ≥ 0; λ = (2,2,−1) on the boundary of Γ_2: S_1 = 1 ≥ S_2^{1/2} = 0"
       }
      ]
     },
@@ -439,7 +455,7 @@
       {
        "name": "isHyperbolic_sigma",
        "role": "constructor",
-       "statement": "σ_k is hyperbolic in e"
+       "statement": "for 1 ≤ k ≤ n, σ_k is hyperbolic in e (σ_0 = 1 is the degree-zero positive constant; for k > n, σ_k = 0 is not hyperbolic)"
       },
       {
        "name": "isHyperbolic_roots",
@@ -482,6 +498,11 @@
        "name": "constant_degree_zero",
        "kind": "non-example",
        "statement": "p = 1 satisfies the definition with cone ℝ^N ∋ −a; D_b p = 0 and p^{1/m} is undefined, so the positive-degree conclusions need m ≥ 1"
+      },
+      {
+       "name": "sigma_out_of_range",
+       "kind": "non-example",
+       "statement": "n = 1: σ_1(λ + te) = λ + t has the root −λ and σ_1(e) = 1 > 0, while σ_2 = 0 has σ_2(e) = 0, so the zero polynomial is not hyperbolic and σ_k is taken with 1 ≤ k ≤ n"
       }
      ]
     },
@@ -554,11 +575,12 @@
      "id": "2.2.3",
      "kind": "theorem",
      "name": "garding",
-     "statement": "For p hyperbolic in a of degree m ≥ 1: Γ(p,a) is an open convex cone on which p > 0, p is hyperbolic in every b ∈ Γ(p,a) with the same cone, p^{1/m} is concave on Γ(p,a), and D_b p > 0 on Γ(p,a) for b ∈ Γ(p,a). For symmetric p of degree m ≥ 1 hyperbolic in e the cone contains Γ_n and lies in Γ_1. For 1 ≤ k ≤ n, Γ(σ_k, e) = Γ_k (the inclusion ⊆ by induction on k, with base σ_1(λ + te) = σ_1(λ) + nt), so Γ_k is convex with Γ_n ⊆ Γ_k ⊆ Γ_1, Γ_k ⊆ Γ_{k−1} for 2 ≤ k ≤ n, and σ_k^{1/k} is concave on Γ_k with ∂_i σ_k > 0; on self-adjoint operators T ↦ σ_k(λ(T)) is hyperbolic in Id with cone Sym_{Γ_k}.",
+     "statement": "For p hyperbolic in a of degree m ≥ 1: Γ(p,a) is an open convex cone on which p > 0, p is hyperbolic in every b ∈ Γ(p,a) with the same cone, p^{1/m} is concave on Γ(p,a), and D_b p > 0 on Γ(p,a) for b ∈ Γ(p,a). For symmetric p of degree m ≥ 1 hyperbolic in e the cone is permutation-invariant and lies in Γ_1 (the permutation average of a point x of the cone is (σ_1(x)/n)e, and no −se with s ≥ 0 lies in the cone); it contains Γ_n if and only if every coordinate vector e_i lies in its closure, which symmetry does not force, and under this condition ∂_i p > 0 on Γ(p,e) (h(t) = p(x + te_i)^{1/m} is concave for t ≥ 0, and h'(0) ≤ 0 would make p(x + te_i) bounded on a half-line, hence constant, putting the line x + ℝe_i, on which σ_1 is unbounded below, in the cone; spruck2005 Corollary 2.4 omits the condition). For 1 ≤ k ≤ n, Γ(σ_k, e) = Γ_k (the inclusion ⊆ by induction on k, with base σ_1(λ + te) = σ_1(λ) + nt), so Γ_k is convex with Γ_n ⊆ Γ_k ⊆ Γ_1, Γ_k ⊆ Γ_{k−1} for 2 ≤ k ≤ n, and σ_k^{1/k} is concave on Γ_k with ∂_i σ_k > 0; on self-adjoint operators T ↦ σ_k(λ(T)) is hyperbolic in Id with cone Sym_{Γ_k}.",
      "hypotheses": [
       "p hyperbolic in a",
       "deg p = m ≥ 1",
-      "1 ≤ k ≤ n"
+      "1 ≤ k ≤ n",
+      "e_i in the closure of Γ(p,e) for every i, for the containment of Γ_n and for ∂_i p > 0 when p is symmetric and hyperbolic in e"
      ],
      "locator": {
       "source": "spruck2005",
@@ -569,6 +591,18 @@
       "target:2.2.1",
       "target:2.2.2",
       "target:1.4"
+     ],
+     "tests": [
+      {
+       "name": "symmetric_cone_misses_orthant",
+       "kind": "non-example",
+       "statement": "p = 2xy − 0.9(x² + y²): p(e) = 0.2 and p(x + te) has discriminant 0.76(x_1 − x_2)² ≥ 0; (1, 0.1) ∈ Γ_2 has p = −0.709 and is outside the cone; p(e_1) = −0.9, so e_1 is not in the closure; at (1, 0.7), in the cone with p = 0.059, ∂_x p = −0.4 < 0"
+      },
+      {
+       "name": "symmetric_cone_family",
+       "kind": "characterisation",
+       "statement": "p_c = (x_1 + x_2)² − c(x_1 − x_2)², c > 0: cone {x_1 + x_2 > √c|x_1 − x_2|}; e_1 in the closure ⇔ c ≤ 1 ⇔ Γ_2 ⊆ cone; at c = 1/4, ∂_1 p_c > x_1 + x_2 > 0 on the cone; p_1 = 4x_1x_2; 2xy − 0.9(x² + y²) = p_19/20"
+      }
      ]
     },
     {
@@ -629,12 +663,12 @@
       {
        "name": "isAdmissibleCone_hessianCone",
        "role": "constructor",
-       "statement": "each Γ_k is an admissible cone"
+       "statement": "for 1 ≤ k ≤ n, Γ_k is an admissible cone; Γ_n and Γ_1 are the smallest and the largest"
       },
       {
        "name": "isAdmissibleCone_inter",
        "role": "constructor",
-       "statement": "intersections of admissible cones are admissible"
+       "statement": "the intersection of two, hence of finitely many, admissible cones is admissible (an infinite intersection need not be open)"
       },
       {
        "name": "sum_pos_of_mem",
@@ -646,17 +680,22 @@
       {
        "name": "Gamma1_admissible",
        "kind": "degenerate",
-       "statement": "Γ_1 itself is admissible"
+       "statement": "Γ_1 ⊂ ℝ² is admissible and contains (1, −1/2), coordinate sum 1/2 > 0 with a negative entry"
       },
       {
        "name": "quadrant_shift_not_cone",
        "kind": "non-example",
-       "statement": "{λ : λ_i > −1} is not a cone"
+       "statement": "{λ ∈ ℝ² : λ_i > −1} is open, symmetric and contains Γ_2 but is not admissible: (−1/2, 1) belongs and 3(−1/2, 1) does not, and (−1/2, −1/2) has negative sum"
       },
       {
        "name": "nonconvex_admissible",
        "kind": "characterisation",
-       "statement": "the non-convex cone of 1.5 is admissible, so convexity is a separate hypothesis"
+       "statement": "the non-convex cone of 1.4 is admissible and contains (1, −0.4), (1, 0.1) but not the midpoint (1, −0.15), so convexity is a separate hypothesis; it violates Γ + Γ_n ⊆ Γ at (1, −0.4) + (0.01, 0.25) = (1.01, −0.15)"
+      },
+      {
+       "name": "infinite_intersection_not_open",
+       "kind": "non-example",
+       "statement": "for ε > 0, {λ ∈ ℝ² : λ_1 + λ_2 > 0, λ_i > −ε(λ_1 + λ_2)} is admissible, but the intersection over all ε > 0 is {λ ≥ 0, λ ≠ 0}, which is not open at (1, 0)"
       }
      ]
     },
@@ -1290,7 +1329,7 @@
       {
        "name": "comparison_nonconvex",
        "kind": "non-example",
-       "statement": "the non-convex cone of 1.5 violates Γ + Γ_n ⊆ Γ at (1,−0.4) + (0,0.25)"
+       "statement": "the non-convex cone of 1.4 violates Γ + Γ_n ⊆ Γ at (1, −0.4) + (0.01, 0.25) = (1.01, −0.15); with f = σ_1 on Γ_2 and f = 10σ_1 on the two wedges (an admissible pair), μ = (1, −0.4) ≤ ν = (1.01, 0.1) but f(μ) = 6 > f(ν) = 1.11"
       }
      ]
     },
@@ -1422,10 +1461,10 @@
      "id": "5.3",
      "kind": "theorem",
      "name": "poincare_sobolev",
-     "statement": "On a compact connected Riemannian manifold ‖u − ū‖_{L²} ≤ λ_1^{−1/2} ‖du‖_{L²} for u ∈ H¹; on X of complex dimension n ≥ 2, ‖u‖_{L^{2n/(n−1)}} ≤ C(‖du‖_{L²} + ‖u‖_{L²}).",
+     "statement": "On a compact connected Riemannian manifold ‖u − ū‖_{L²} ≤ λ_1^{−1/2} ‖du‖_{L²} for u ∈ H¹; on X of complex dimension n ≥ 2, ‖u‖_{L^{2n/(n−1)}} ≤ C(‖du‖_{L²} + ‖u‖_{L²}) for every C¹ function u, norms for the Riemannian volume (the pinned Tau Ceti Sobolev inequality at real dimension 2n > 2).",
      "hypotheses": [
       "X compact connected",
-      "n ≥ 2 for Sobolev"
+      "n ≥ 2 and u ∈ C¹ for Sobolev"
      ],
      "locator": {
       "source": "pss2012",
@@ -1433,7 +1472,7 @@
      },
      "prerequisites": [
       "roadmap:ComplexKahlerGeometry K5a",
-      "roadmap:Yamabe Y1.1"
+      "tauceti:TauCeti.Manifold.exists_eLpNorm_le_mul_eLpNorm_mgradient_two_add"
      ],
      "tests": [
       {
@@ -1534,7 +1573,7 @@
      "id": "6.1",
      "kind": "theorem",
      "name": "kahler_curvature_identities",
-     "statement": "For Kähler ω = i g_{k̄j} dz^j∧dz̄^k and ω_φ = i g'_{k̄j} dz^j∧dz̄^k with ω_φ^n = e^F ω^n, Chern connections Γ^l_{jm} = g^{lq̄}∂_j g_{q̄m}, curvature R_{k̄j}^l_m = −∂_k̄Γ^l_{jm}, Ricci R_{k̄j} = −∂_j∂_k̄ log det g, scalar curvature s_ω = g^{jk̄}R_{k̄j}, bisectional curvature B_ω and Λ(ω) = max(0, −inf B_ω); h = g⁻¹g', T = ∇'h·h⁻¹ = Γ' − Γ, S = |T|²_{ω_φ}: (i) Ric(ω_φ) = Ric(ω) − i∂∂̄F; (ii) ∇̄'T = Rm(ω) − Rm(ω_φ); (iii) Δ_{ω_φ} tr h = −s_ω + Δ_ω F + K + G with K = (h⁻¹)^p_m g^{mr̄} R_{r̄p}^j_k h^k_j ≥ −Λ(ω) tr h tr h⁻¹ and G = g'^{pq̄} tr(∇'_p h h⁻¹ ∇'_q̄ h) ≥ 0; (iv) Δ_{ω_φ} log tr h = (−s_ω + Δ_ω F + K)/tr h + Y with Y = G/tr h − |∂ tr h|²_{ω_φ}/(tr h)² ≥ 0; (v) Δ_{ω_φ} S = |∇'T|² + |∇̄'T|² + 2Re⟨Θ, T⟩ − ⟨T, Q(T)⟩ with Θ_j = g'^{pq̄}∇'_p R_{q̄j} − ∇'_j Ric(ω_φ)^♯ and Q(T)(v) = [Ric(ω_φ)^♯, T(v)] − T(Ric(ω_φ)^♯ v). All identities are homogeneous of degree −1 under (ω, ω_φ) ↦ (cω, cω_φ), so pss2012's (i/2)-normalized identities hold verbatim with its density read as e^F.",
+     "statement": "For Kähler ω = i g_{k̄j} dz^j∧dz̄^k and ω_φ = i g'_{k̄j} dz^j∧dz̄^k with ω_φ^n = e^F ω^n, Chern connections Γ^l_{jm} = g^{lq̄}∂_j g_{q̄m}, curvature R_{k̄j}^l_m = −∂_k̄Γ^l_{jm}, Ricci R_{k̄j} = −∂_j∂_k̄ log det g, scalar curvature s_ω = g^{jk̄}R_{k̄j}, bisectional curvature B_ω and Λ(ω) = max(0, −inf B_ω); h = g⁻¹g', T = ∇'h·h⁻¹ = Γ' − Γ, S = |T|²_{ω_φ}: (i) Ric(ω_φ) = Ric(ω) − i∂∂̄F; (ii) ∇̄'T = Rm(ω) − Rm(ω_φ); (iii) Δ_{ω_φ} tr h = −s_ω + Δ_ω F + K + G with K = (h⁻¹)^p_m g^{mr̄} R_{r̄p}^j_k h^k_j ≥ −Λ(ω) tr h tr h⁻¹ and G = g'^{pq̄} tr(∇'_p h h⁻¹ ∇'_q̄ h) ≥ 0; (iv) Δ_{ω_φ} log tr h = (−s_ω + Δ_ω F + K)/tr h + Y with Y = G/tr h − |∂ tr h|²_{ω_φ}/(tr h)² ≥ 0; (v) Δ_{ω_φ} S = |∇'T|² + |∇̄'T|² + 2Re⟨Θ, T⟩ − ⟨T, Q(T)⟩ with Θ_j = g'^{pq̄}∇'_p R_{q̄j} − ∇'_j Ric(ω_φ)^♯ and Q(T)(v) = [Ric(ω_φ)^♯, T(v)] − T(Ric(ω_φ)^♯ v). Under (ω, ω_φ) ↦ (cω, cω_φ), c > 0, each identity is homogeneous: (i) and (ii) of degree 0 (Ricci coefficients, End-valued curvature, ∇̄'T), (iii) and (iv) of degree −1 (s_ω, B_ω, Λ(ω), S, K, G, Y, scalar Laplacians), (v) of degree −2 (Δ_{ω_φ}S, |∇'T|², |∇̄'T|², ⟨Θ,T⟩, ⟨T,Q(T)⟩). pss2012's (i/2)-normalized coefficients are those of (2ω, 2ω_φ), so its identities hold verbatim among coefficients with its density read as e^F; its degree-0 quantities equal ours, its trace-identity terms are half of ours and its Calabi-identity terms a quarter.",
      "hypotheses": [
       "dω = 0",
       "ω_φ Kähler with ω_φ^n = e^F ω^n",
@@ -1559,7 +1598,7 @@
       {
        "name": "ricci_CP1",
        "kind": "computation",
-       "statement": "ω = i∂∂̄ log(1+|z|²) on ℂP¹: Ric(ω) = 2ω, s_ω = 2, B_ω ≡ 2, Λ = 0; relative to 2ω: Ric unchanged, s = 1, B ≡ 1"
+       "statement": "ω = i∂∂̄ log(1+|z|²) on ℂP¹: Ric(ω) = 2ω, s_ω = 2, B_ω ≡ 2, Λ = 0; for 2ω: Ric and the curvature endomorphism unchanged (degree 0), s = 1, B ≡ 1 (degree −1)"
       },
       {
        "name": "hyperbolic_curve",
@@ -1574,7 +1613,12 @@
       {
        "name": "torus_cosine_witness",
        "kind": "computation",
-       "statement": "ℂ/(ℤ+iℤ), g_{1̄1} = 1/2, φ = (a/2π²) cos 2πx, q = 1 − a cos 2πx: at x = 0, Δ_{ω_φ} tr h = Δ_ω F = 2π²a/(1−a), G = 0; at x = 1/4, 0 = −2π²a² + 2π²a²; S = q'²/(2q³), and at x = 0 Δ_{ω_φ} S = 8π⁴a²/(1−a)⁴ = |∇'T|² + |∇̄'T|²; in pss2012's coefficients S = q'²/(4q³)"
+       "statement": "ℂ/(ℤ+iℤ), g_{1̄1} = 1/2, φ = (a/2π²) cos 2πx, q = 1 − a cos 2πx: at x = 0, Δ_{ω_φ} tr h = Δ_ω F = 2π²a/(1−a), G = 0; at x = 1/4, 0 = −2π²a² + 2π²a²; S = q'²/(2q³), and at x = 0 Δ_{ω_φ} S = 8π⁴a²/(1−a)⁴ = |∇'T|² + |∇̄'T|²"
+      },
+      {
+       "name": "torus_doubled_degrees",
+       "kind": "computation",
+       "statement": "same torus with both metrics doubled (g_{1̄1} = 1, g'_{1̄1} = q, also pss2012's coefficients): h, T, F unchanged; S = q'²/(4q³) and Δ_{ω_φ} tr h(0) = π²a/(1−a) are halved (degree −1); Δ_{ω_φ}S(0) = 2π⁴a²/(1−a)⁴ is a quarter (degree −2): at a = 1/2, 32π⁴ becomes 8π⁴, not the 16π⁴ of a uniform degree −1"
       }
      ],
      "api": [
@@ -1622,7 +1666,8 @@
      "prerequisites": [
       "target:3.2",
       "target:5.3",
-      "roadmap:DifferentialGeometry Layer 5"
+      "roadmap:DifferentialGeometry Layer 5",
+      "tauceti:TauCeti.Manifold.exists_eLpNorm_le_mul_eLpNorm_mgradient_two_add"
      ],
      "tests": [
       {
@@ -2061,8 +2106,10 @@
      "prerequisites": [
       "target:3.2",
       "target:3.4.1",
+      "target:3.4.2",
       "target:7.2",
-      "target:8.3"
+      "target:8.3",
+      "mathlib:ConvexOn.map_integral_le"
      ],
      "tests": [
       {
@@ -2086,7 +2133,7 @@
      "id": "8.5",
      "kind": "theorem",
      "name": "gpt_energy_trudinger",
-     "statement": "On compact connected Kähler (X, ω_X), for φ ∈ C² solving f(λ[ω_{X,φ}]) = e^F, sup φ = 0, λ ∈ Γ, with smooth normalized F and structural constant γ: (a) p' ∈ (0,n) ⇒ ∫ exp{c(−φ)^{n/(n−p')}} ω_X^n ≤ C; (b) p' = n ⇒ ∫ exp{c_N(−φ)^N} ω_X^n ≤ C_N for every N > 0; (c) ∫ (−φ)^N e^{nF} ω_X^n ≤ C for N = n/(n−p') when p' ∈ [1,n) and every N when p' = n; constants depending on ω_X, n, p', γ, Ent_{p'}(F), N. The Aleksandrov–Bakelman–Pucci input is PDE §3.2 (C13) in boundary-shifted form, applied on coordinate balls to the C² cutoff Hη with the continuous positive definite real coefficient matrix of tr(G·i∂∂̄·), det a = 4^{−2n}(det Ĝ)².",
+     "statement": "On compact connected Kähler (X, ω_X), for φ ∈ C² solving f(λ[ω_{X,φ}]) = e^F, sup φ = 0, λ ∈ Γ, with smooth normalized F and structural constant γ: (a) p' ∈ (0,n) ⇒ ∫ exp{c(−φ)^{n/(n−p')}} ω_X^n ≤ C; (b) p' = n ⇒ ∫ exp{c_N(−φ)^N} ω_X^n ≤ C_N for every N > 0; (c) ∫ (−φ)^N e^{nF} ω_X^n ≤ C for N = n/(n−p') when p' ∈ [1,n) and every N when p' = n; constants depending on ω_X, n, p', γ, Ent_{p'}(F), N. The Aleksandrov–Bakelman–Pucci input is PDE §3.2 (C13) in boundary-shifted form, applied on coordinate balls to the C² cutoff Hη with the continuous positive definite real coefficient matrix of tr(G·i∂∂̄·), det a = 4^{−2n}(det Ĝ)². (c) follows from (a)–(b) by Jensen's inequality for dμ = V⁻¹e^{nF}ω_X^n: c∫(−φ)^N dμ ≤ log(C/V) + n∫F dμ, with the signed moment bounded by ∫F dμ ≤ Ent_1(F) ≤ 1 + Ent_{p'}(F) for p' ≥ 1 (not by Ent_{p'}(F) itself).",
      "hypotheses": [
       "dω_X = 0",
       "F smooth normalized",
@@ -2098,11 +2145,13 @@
      },
      "prerequisites": [
       "target:1.5",
+      "target:3.4.2",
       "target:5.4.2",
       "target:6.6",
       "target:7.2",
       "roadmap:PDE §3.2 (C13)",
-      "gap:weak-harnack-supersolutions"
+      "gap:weak-harnack-supersolutions",
+      "mathlib:ConvexOn.map_integral_le"
      ],
      "tests": [
       {
@@ -2118,7 +2167,12 @@
       {
        "name": "energy_p_small",
        "kind": "non-example",
-       "statement": "(c) is not claimed for p' < 1"
+       "statement": "(c) is not claimed for p' < 1: the Jensen step uses V⁻¹∫F e^{nF} ≤ 1 + Ent_{p'}(F), from |F| ≤ 1 + |F|^{p'}, which needs p' ≥ 1"
+      },
+      {
+       "name": "signed_moment_not_by_entropy",
+       "kind": "non-example",
+       "statement": "flat ℂ³/ℤ⁶, q = 1 − 0.03 cos 2πx_1, F = (log q)/3 normalized, φ = 0.03(cos 2πx_1 − 1)/(2π²) solves the Monge–Ampère equation with sup φ = 0: V⁻¹∫F e^{3F} ≈ 7.50·10⁻⁵ (> 0.03²/(12·1.03)) exceeds Ent_3(F) ≈ 4.24·10⁻⁷ (< (−log 0.97/3)³), while 1 + Ent_3(F) bounds it"
       }
      ]
     },
@@ -2233,13 +2287,6 @@
    "what": "strong maximum principle with variable coefficients and the Aleksandrov–Bakelman–Pucci estimate (§3.2), weak Harnack inequality for supersolutions with a forcing term (§5.4, gap), interior Schauder estimate for non-divergence equations (§5.6)"
   },
   {
-   "roadmap": "Yamabe",
-   "sections": [
-    "Y1.1"
-   ],
-   "what": "closed-manifold Sobolev inequality"
-  },
-  {
    "roadmap": "DifferentialGeometry",
    "sections": [
     "Layer 0",
@@ -2282,8 +2329,8 @@
     "8.6",
     "8.7"
    ],
-   "detail": "r^{−m}‖u‖_{L¹(B_{2r})} ≤ C(inf_{B_r} u + r^{2−m/q}‖f‖_{L^q(B_{4r})}), q > m/2, for nonnegative weak supersolutions of divergence-form uniformly elliptic equations with bounded measurable coefficients (gilbarg-trudinger2001 Theorem 8.18); used on coordinate balls for −φ with Δ_ω φ ≥ −A on Kähler manifolds; the homogeneous case f = 0 is pinned as TauCeti.PDE.exists_ae_setAverage_rpow_rpow_inv_le_mul_value.",
-   "needs": "the weak Harnack inequality r^{−m}‖u‖_{L¹(B_{2r})} ≤ C(inf_{B_r} u + r^{2−m/q}‖f‖_{L^q(B_{4r})}), q > m/2, for nonnegative weak supersolutions u of divergence-form uniformly elliptic equations Lu ≤ f with bounded measurable coefficients on balls of ℝ^m",
+   "detail": "For r > 0, B_ρ = B(x₀, ρ) ⊂ ℝ^m (m ≥ 1), a measurable on B_{4r} with λ|ξ|² ≤ a^{ij}ξ_iξ_j and |aξ| ≤ Λ|ξ|, f ∈ L^q(B_{4r}) with q finite, q ≥ 1 and q > m/2, and u ∈ H¹(B_{4r}) with u ≥ 0 a.e. and div(a∇u) ≤ f weakly (∫ a^{ij}∂_j u ∂_i v ≥ −∫ f v for all v ∈ H¹_0(B_{4r}), v ≥ 0): r^{−m}‖u‖_{L¹(B_{2r})} ≤ C(ess inf_{B_r} u + r^{2−m/q}‖f‖_{L^q(B_{4r})}) with C = C(m, q, λ, Λ) (gilbarg-trudinger2001 Theorem 8.18). The essential infimum is needed (u = 1 except u(0) = 0 on B_4 ⊂ ℝ²), and q ≥ 1 is needed for m = 1 (u_ε = (x²+ε²)^{1/2} − ε, f_ε = u_ε'' has ‖f_ε‖_{L^{3/4}} → 0 while ‖u_ε‖_{L¹(−2,2)} → 4). Used on coordinate balls for u = −φ with Δ_ω φ ≥ −A on Kähler manifolds (m = 2n, f bounded, u continuous); the homogeneous case f = 0 is pinned as TauCeti.PDE.exists_ae_setAverage_rpow_rpow_inv_le_mul_value, with an a.e. conclusion.",
+   "needs": "the weak Harnack inequality r^{−m}‖u‖_{L¹(B_{2r})} ≤ C(m, q, λ, Λ)·(ess inf_{B_r} u + r^{2−m/q}‖f‖_{L^q(B_{4r})}) for every u ∈ H¹(B_{4r}) with u ≥ 0 a.e. and div(a∇u) ≤ f weakly on a ball B_{4r} ⊂ ℝ^m (m ≥ 1, r > 0), with a measurable and uniformly elliptic with constants λ, Λ, and f ∈ L^q for a finite q with q ≥ 1 and q > m/2",
    "supplier": "PDE",
    "section": "§5.4 (E23)"
   }
