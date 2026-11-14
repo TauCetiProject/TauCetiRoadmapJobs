@@ -6,8 +6,9 @@ Chapter 8 of Simon's lectures: a varifold is an arbitrary Radon measure on the G
 unoriented k-planes, and the analysis is carried out for varifolds of locally bounded first
 variation. It starts from Mathlib's Radon measures, Riesz–Markov–Kakutani theorem, Hausdorff
 measure, norm determinants and Levi-Civita connection, Tau Ceti's flows of compactly supported
-vector fields, signed Riesz representation, Prokhorov theorem, divergence theorem and countably
-rectifiable sets, and the approximate tangent plane, area formula and Grassmann-bundle material of
+vector fields, signed Riesz representation, mass measures of functionals on test functions,
+Prokhorov theorem, Riemannian volume, divergence theorem and countably rectifiable sets, and the
+approximate tangent plane, area formula and Grassmann-bundle material of
 GeometricMeasureTheory and GeometricCurrents. Its end theorems are: the Riesz decomposition of
 the first variation into generalised mean curvature, generalised boundary measure and outward
 co-normal; the monotonicity formula, Euclidean and
@@ -28,15 +29,20 @@ Owned here:
   bundle, the varifold carrier, weight, mass, support, restriction, varifold convergence;
 - approximate tangent spaces of Radon measures on a manifold and the rectifiability criterion for
   measures; rectifiable and integral varifolds v(Γ, θ); the multiplicity-one varifold [Σ] of a C¹
-  embedded submanifold;
+  embedded submanifold and the identification of its weight with the Riemannian volume of Σ
+  (GeometricCurrents G2 identifies the mass of the current of a compact oriented smooth source
+  only);
 - push-forward of varifolds under C¹ maps proper on the support, Euclidean dilations and
   normal-coordinate blow-ups, tangent spaces with multiplicity, fibre measures and the first
   rectifiability theorem;
 - the first variation δV, its characterisation as the derivative of mass along flows, stationarity,
   locally bounded first variation, the Riesz representation theorem for vector fields on W, the
   Riesz decomposition of δV, and the comparison of first variations for two metrics;
-- the first variation of a C² submanifold and its agreement with RiemannianGeometry R5a.2; the
-  intrinsic versus ambient comparison for an embedded submanifold M ⊆ ℝ^L;
+- the second fundamental form and mean curvature of a C² embedded submanifold by the formula of
+  the Conventions (RiemannianGeometry R5a and R5a.2 define them for smooth immersions, and the two
+  agree on smooth submanifolds), the first variation of a C² submanifold and its agreement with
+  RiemannianGeometry R5a.2 for smooth ones; the intrinsic versus ambient comparison for an embedded
+  submanifold M ⊆ ℝ^L;
 - monotonicity (Euclidean and Riemannian), densities, their measurability and upper
   semicontinuity, the constancy theorem and the convex hull property;
 - the semicontinuity of lower density bounds, Allard's rectifiability theorem, the compactness
@@ -65,8 +71,8 @@ Owned elsewhere and cited:
   varifolds and one comparison theorem (9.3) identifying G6's object; nothing G6 states is planned
   again, and GeometricCurrents does not consume this roadmap.
 - Immersion geometry, the second fundamental form B, the averaged mean curvature and the first
-  volume variation of immersions: RiemannianGeometry R5a and R5a.2. The Hessian comparison for the
-  distance function: RiemannianGeometry R4, item 1. Smooth second variation and stability:
+  volume variation of smooth immersions: RiemannianGeometry R5a and R5a.2. The Hessian comparison
+  for the distance function: RiemannianGeometry R4, item 1. Smooth second variation and stability:
   RiemannianGeometry R5b (not used here).
 - The Riemannian distance, the exponential map, normal balls and the Gauss lemma: HopfRinow
   (Completed), Layers 0–2. The divergence of a vector field on a Riemannian manifold and the
@@ -121,10 +127,13 @@ here only as tests of the definitions.
 - **First variation and mean curvature.** `δV(X) = ∫ div_S X(x) dV(x, S)` with
   `div_S X = tr(P_S ∘ ∇X)`, ∇ the Levi-Civita connection. The Riesz decomposition is written
   `δV(X) = −∫ ⟨H_V, X⟩ d‖V‖ + ∫ ⟨η_V, X⟩ dσ_V`, with η_V the outward co-normal. H_V is the trace
-  mean curvature: for a C² submanifold it is k times RiemannianGeometry's averaged mean curvature
-  H = (1/k) tr B, where `B(X, Y) = (∇_X Y)^⊥`. Witnesses: the unit sphere S^k ⊆ ℝ^{k+1} has
-  B = −g·x, averaged H = −x and H_{[S^k]} = −k x; the half hyperplane {x_N = 0, x_1 > 0} of ℝ^N
-  has outward co-normal η = −e_1 along {x_1 = x_N = 0}.
+  mean curvature: for a C² embedded submanifold Σ it is k times the averaged mean curvature
+  H = (1/k) tr B, where `B(X, Y) = (∇_X Y)^⊥` for C¹ tangent fields X, Y of Σ (the tangent fields of
+  a C² submanifold are C¹, and B is then a continuous, symmetric, tensorial normal-valued form); for
+  smooth Σ these are RiemannianGeometry R5a's B and R5a.2's H, which are stated for smooth
+  immersions. Witnesses: the unit sphere S^k ⊆ ℝ^{k+1} has B = −g·x, averaged H = −x and
+  H_{[S^k]} = −k x; the half hyperplane {x_N = 0, x_1 > 0} of ℝ^N has outward co-normal η = −e_1
+  along {x_1 = x_N = 0}.
 - **Regularity classes.** For r ∈ {1, 2, …} ∪ {∞}, reg^r V and sing^r V refer to C^r embedded
   submanifolds; the class is part of every statement that uses them.
 - **Lean carriers.** The Grassmannian of E is the subset of `E →L[ℝ] E` of rank-k elements
@@ -161,9 +170,10 @@ here only as tests of the definitions.
   point), `VitaliFamily.ae_tendsto_average` (`Mathlib/MeasureTheory/Covering/Differentiation.lean`).
 - Hausdorff measure and Jacobians: `MeasureTheory.Measure.euclideanHausdorffMeasure`
   (`Mathlib/Geometry/Euclidean/Volume/Measure.lean`, defined on any extended metric space),
-  `InnerProductSpace.euclideanHausdorffMeasure_eq_volume`, `LinearMap.normDet` and
-  `LinearMap.euclideanHausdorffMeasure_image_eq_normDet_mul_volume`
-  (`Mathlib/Analysis/InnerProductSpace/NormDet.lean`; `normDet` is zero on non-injective maps).
+  `InnerProductSpace.euclideanHausdorffMeasure_eq_volume`, `LinearMap.normDet`,
+  `LinearMap.normDet_comp` and `LinearMap.euclideanHausdorffMeasure_image_eq_normDet_mul_volume`
+  (`Mathlib/Analysis/InnerProductSpace/NormDet.lean`; `normDet` is zero on non-injective maps, and
+  `normDet_comp` says normDet(g ∘ f) = normDet(g restricted to range f) · normDet(f)).
 - Riemannian structure: `IsRiemannianManifold` (`Mathlib/Geometry/Manifold/Riemannian/Basic.lean`),
   `CovariantDerivative.leviCivitaConnection`
   (`Mathlib/Geometry/Manifold/VectorBundle/CovariantDerivative/LeviCivita.lean`, for a C² manifold
@@ -182,6 +192,15 @@ here only as tests of the definitions.
   `TauCeti.RealRMK.integral_rieszMeasure_posPart_sub_integral_rieszMeasure_negPart`
   (`TauCeti/MeasureTheory/Integral/RieszMarkovKakutani/Signed.lean`: an order-bounded functional on
   `C_c(X, ℝ)` is the difference of two Riesz measures).
+- `Distribution.HasLocallyFiniteMass` (`TauCeti/Analysis/Distribution/Mass/Basic.lean`),
+  `Distribution.massMeasure`, `Distribution.massMeasure_preimage_coe` and
+  `Distribution.enorm_apply_le_lintegral_massMeasure`
+  (`TauCeti/Analysis/Distribution/Mass/Measure.lean`): for a real-linear functional T of locally
+  finite mass on F-valued test functions of class C^n (n ∈ ℕ∞; n = 0 gives the compactly supported
+  continuous functions) on an open set Ω of a finite-dimensional normed space, a regular Borel
+  measure ‖T‖ on Ω, finite on compact subsets of Ω, whose value on Ω ∩ U for open U is the supremum
+  of |T φ| over the tests supported in U with ‖φ‖ ≤ 1, and with |T φ| ≤ ∫ ‖φ‖ d‖T‖; it provides no
+  polar density, and the norm is that of F.
 - `TauCeti.isCompact_closure_of_isTightMeasureSet_of_mass_le`
   (`TauCeti/MeasureTheory/Measure/Prokhorov.lean`: a tight set of finite measures of bounded mass
   has compact closure).
@@ -189,7 +208,9 @@ here only as tests of the definitions.
   a compactly supported C¹ vector field on a coordinate space of positive dimension has integrable
   divergence with integral 0).
 - `TauCeti.riemannianVolume` (`TauCeti/Geometry/Manifold/Riemannian/VolumeDensity/Volume.lean`),
-  the orientation-free Riemannian measure.
+  the orientation-free Riemannian measure of a C¹ manifold with a continuous metric (Lindelöf, Borel),
+  and `TauCeti.eq_riemannianVolume_iff` (same file: a measure equals it if and only if its
+  restriction to the source of every preferred chart is the chart volume).
 - `TauCeti.Manifold.divergence` (`TauCeti/Geometry/Manifold/Riemannian/Laplacian.lean`: the trace
   of `CovariantDerivative.leviCivitaConnection` applied to the field, on a C² manifold with a C¹
   metric) and `TauCeti.Manifold.integral_divergence_eq_zero`
@@ -217,9 +238,11 @@ version on rectifiable sets, agreement with classical tangent spaces and Jacobia
   locally finite-mass currents.
 - G2: the manifold/chart comparison for countable k-rectifiability (`TauCeti.CountablyRectifiable`
   for d_g) and approximate tangent planes on a Riemannian manifold, with the comparison of Hᵏ (for
-  d_g) and the chart Hausdorff measures, representation independence under null changes; the mass
-  measure of a smooth submanifold equals its Riemannian volume; integer-rectifiable and locally integral currents, represented by a
-  countably k-rectifiable carrier, an orienting simple k-vector and an integer multiplicity.
+  d_g) and the chart Hausdorff measures, representation independence under null changes; the
+  integration current of a compact oriented smooth source under an isometric embedding, whose mass
+  measure is its Riemannian volume (cited in 2.3 only as the case in which 2.3's weight identity
+  agrees with it); integer-rectifiable and locally integral currents, represented by a countably
+  k-rectifiable carrier, an orienting simple k-vector and an integer multiplicity.
 - G5: local area minimization of integral currents (comparison with T + ∂Q on relatively compact
   variation domains), used only in 9.3.
 - G6: the Grassmann bundle of unoriented k-planes of TM (orientation quotient of the oriented
@@ -235,7 +258,8 @@ version on rectifiable sets, agreement with classical tangent spaces and Jacobia
 - R4, item 1: on a smooth normal-distance domain, the Hessian of the distance function r from a
   point is zero radially and bounded below by `(s_κ'/s_κ)(g − dr ⊗ dr)` where the sectional
   curvature is at most κ (before the first positive zero of s_κ).
-- R5a: the second fundamental form B, the normal connection, S_η, with the pinned signs.
+- R5a: the second fundamental form B, the normal connection, S_η, with the pinned signs, for smooth
+  isometric immersions (5.1 uses the same formula for C² submanifolds as its own convention).
 - R5a.2: the averaged mean curvature, minimality, the first volume variation
   `δVol = ∫ div_M X^⊤ − m⟨H, X^⊥⟩` for compactly supported variations of boundaryless immersions,
   and the sphere/Euclidean mean-curvature dictionary.
@@ -284,8 +308,12 @@ trace of an endomorphism A of E along P is tr(P ∘ A).
   when k ≥ 1).
 - P ↦ 1 − P is a homeomorphism G(E, k) → G(E, dim E − k), the passage to orthogonal complements;
   for P ∈ G(E, k), tr P = k.
-- A linear isometry U : E → F induces the homeomorphism P ↦ U P U⁻¹ of G(E, k) onto G(F, k),
-  functorial in U; in particular the orthogonal group of E acts continuously.
+- A surjective linear isometry U : E → F induces the homeomorphism P ↦ U P U⁻¹ of G(E, k) onto
+  G(F, k), functorial in U; in particular the orthogonal group of E acts continuously. Any linear
+  isometry U : E → F has U*U = 1 and UU* the projection onto range U, and P ↦ U P U* is a
+  homeomorphism of G(E, k) onto the closed subset of G(F, k) of projections whose range lies in
+  range U (the image-plane map below for L = U); for k ≥ 1 this subset is all of G(F, k) only when
+  U is surjective, and for k = 0 both sides are {0}.
 - For each endomorphism A of E, P ↦ tr(P ∘ A) is continuous (indeed linear) on G(E, k), and
   |tr(P ∘ A)| ≤ k‖A‖.
 - For a finite-dimensional real inner product space F, the pairs (L, P) of a linear map L : E → F
@@ -304,6 +332,11 @@ trace of an endomorphism A of E along P is tr(P ∘ A).
 - diag(1, 1, 0) belongs to G(ℝ³, 2) and not to G(ℝ³, 1): the rank condition is on the range, and
   its trace 2 is the dimension.
 - Under the complement map, the line ℓ_0 of ℝ² goes to ℓ_{π/2}, and tr(P_{ℓ_0} ∘ diag(a, b)) = a.
+- The inclusion U : ℝ → ℝ², t ↦ (t, 0), is a linear isometry that is not surjective: G(ℝ, 1) = {1}
+  and U 1 U* = diag(1, 0) = P_{ℓ_0}, so the image misses P_{ℓ_{π/2}} = diag(0, 1) and U⁻¹ does not
+  exist; for a rotation R_φ of ℝ², R_φ P_{ℓ_θ} R_φ⁻¹ = P_{ℓ_{θ+φ}} reaches every line. For k = 0 the
+  same U gives U 0 U* = 0, and G(ℝ, 0) = G(ℝ², 0) = {0}: the image is all of G(ℝ², 0) although U is
+  not surjective, so surjectivity is forced by the image only for k ≥ 1.
 - For L_s = diag(1, s) on ℝ², L_s(ℓ_θ) is spanned by (cos θ, s sin θ): along s = 0, θ → π/2 the image
   line is ℓ_0 and along θ = π/2, s → 0 it is ℓ_{π/2}, so the image-plane projection has no
   continuous extension to (diag(1, 0), P_{ℓ_{π/2}}), where L kills the line. At (diag(1, 0), P_{ℓ_0})
@@ -329,8 +362,9 @@ and π(x, P) = x. For M = E with the flat metric, G_k(W) is W × G(E, k) with th
   (x, P_S) is a homeomorphism onto G_k(W) commuting with the projections; through it G6's
   compactness over compact base regions gives the properness of π, and G6's Radon compactness is
   transported to G_k(W) (used in 1.4).
-- An isometry f from an open set of (M, g) onto an open set of (M', g') induces the homeomorphism
-  (x, P) ↦ (f(x), df_x P df_x⁻¹), functorial in f.
+- An isometry f from an open set of (M, g) onto an open set of (M', g') (a C¹ diffeomorphism with
+  f*g' = g, so that each df_x : T_xM → T_{f(x)}M' is a surjective linear isometry, 1.1) induces the
+  homeomorphism (x, P) ↦ (f(x), df_x P df_x⁻¹), functorial in f.
 - For two Riemannian metrics g, h on W, the canonical homeomorphism G_k^g(W) → G_k^h(W) sends
   (x, P^g_S) to (x, P^h_S) for every subspace S; it is the identity when h = c²g with c > 0
   constant.
@@ -500,20 +534,39 @@ multiplicity one). Σ need not be closed in W.
 - The approximate tangent space of Hᵏ⌞Σ exists at every x ∈ Σ and is the classical tangent space
   T_xΣ; hence [Σ] = ∫_Σ δ_{(x, T_xΣ)} dHᵏ(x).
 - ‖[Σ]‖ = Hᵏ⌞Σ, which is the Riemannian volume `TauCeti.riemannianVolume` of Σ with the induced
-  metric, pushed into W (GeometricCurrents G2's comparison of mass and Riemannian volume).
+  metric, pushed into W (this roadmap). The induced metric of a C¹ submanifold is continuous, and a
+  C¹ manifold with a continuous metric is all `TauCeti.riemannianVolume` needs; Σ may be
+  non-compact and non-orientable.
 - spt‖[Σ]‖ is the closure of Σ in W; [Σ ∪ Σ'] = [Σ] + [Σ'] for disjoint Σ, Σ' whose union is a C¹
   embedded submanifold; for k = N, [W] has weight the Riemannian volume of W.
+
+Route for the weight: by `TauCeti.eq_riemannianVolume_iff` it suffices that the two measures agree
+on the chart sources of Σ, and two measures that agree on the sets of a countable open cover of a
+chart source agree on it, so it suffices to compare them on small chart sources. On such a source,
+inside a chart φ of W, φ(Σ) is the image of the injective C¹ map ψ = φ ∘ (chart of Σ)⁻¹ from an open
+set of ℝ^k, Lipschitz on compact sets. GeometricMeasureTheory G2's area formula (injective case)
+gives the Euclidean Hᵏ of ψ(A) as ∫_A Jψ dt with Jψ = normDet(Dψ); GeometricCurrents G2's chart
+comparison of Hᵏ for d_g with the chart Hausdorff measure multiplies it at y = ψ(t) by the
+Jacobian of the identity of T_yφ(Σ) from the Euclidean inner product to φ_*g; by
+`LinearMap.normDet_comp` the product is √det(ψ^*φ_*g)(t), the density of the chart volume of the
+induced metric. For a compact oriented smooth Σ the identity agrees with GeometricCurrents G2's
+identification of the mass measure of the integration current of Σ with its Riemannian volume.
 
 **Checks.**
 
 - The unit circle of ℝ² gives a varifold of mass 2π with support the circle.
+- For Σ the graph of t ↦ |t|^{3/2} over (−1, 1), closed in W = (−1, 1) × ℝ (C¹ and not C², not
+  compact), the induced metric in the chart t is (1 + (9/4)|t|) dt², continuous and not C¹, and
+  both sides of the weight identity give H¹(Σ) = ∫_{−1}^{1} √(1 + (9/4)|t|) dt = (26√13 − 16)/27 ≈
+  2.879, more than the length 2√2 of the inscribed polygon through (−1, 1), (0, 0), (1, 1); a weight
+  identity proved only for compact or smooth Σ would not reach this Σ.
 - For the open half-line Σ = (0, ∞) × {0} in W = ℝ², spt‖[Σ]‖ = [0, ∞) × {0} ≠ Σ.
 - The image of a figure-eight curve is not an embedded submanifold at its crossing point, so [·] is
   not defined there, while v(image, 1) is a rectifiable varifold whose crossing point is H¹-null.
 
-(Simon1983 line 2861–2867, 1855–1859.) *Needs:* Layer 2.2; GeometricMeasureTheory G2 (agreement
-with C¹ graphs); GeometricCurrents G2 (mass of a smooth submanifold as Riemannian volume); Tau Ceti
-`TauCeti.riemannianVolume`.
+(Simon1983 line 2861–2867, 1855–1859.) *Needs:* Layer 2.2; GeometricMeasureTheory G2 (area formula,
+injective case; agreement with C¹ graphs); GeometricCurrents G2 (chart comparison of Hᵏ); Tau Ceti
+`TauCeti.riemannianVolume`, `TauCeti.eq_riemannianVolume_iff`; Mathlib `LinearMap.normDet_comp`.
 
 ### Examples
 
@@ -541,7 +594,9 @@ frames) (Simon1983 line 7443–7454, 39.1; AgnolettoCorreaHoyosDaSilvaNardulli20
   equality when f is an immersion.
 - id_# V = V, and (h ∘ f)_# V = h_#(f_#V) when f is proper on spt‖V‖ and h on f(spt‖V‖) (chain rule
   J_S(h ∘ f)(x) = J_{df_x S} h(f(x)) · J_S f(x)).
-- For an isometry f, J_S f = 1 and f_#V is the measure push-forward along 1.2's homeomorphism.
+- For an isometry f of W onto W' (1.2), J_S f = 1 and f_#V is the measure push-forward along 1.2's
+  homeomorphism; for an isometric immersion f (each df_x a linear isometry, as for the inclusion of
+  5.2), J_S f = 1 and f_#V is the measure push-forward along (x, P) ↦ (f(x), df_x P df_x*) (1.1).
 - ‖f_#V‖(A) ≤ (sup_{f⁻¹(A) ∩ spt‖V‖} ‖df‖)^k ‖V‖(f⁻¹(A)).
 - If f is proper on a closed set F containing spt‖V_j‖ for all j and spt‖V‖, then V_j → V implies
   f_#V_j → f_#V (the integrand J_S f · (φ ∘ F) extends continuously by 0 to {J = 0}).
@@ -704,7 +759,49 @@ L_X g, with (L_X g)(u, v) = g(∇_u X, v) + g(u, ∇_v X) for the Levi-Civita co
 `TauCeti.contMDiff_globalFlow_uncurry`, `TauCeti.isCompleteVectorField_of_isCompact_of_eq_zero_off`,
 `TauCeti.Manifold.divergence`.
 
-### 4.2 Stationary varifolds and locally bounded first variation
+### 4.2 Riesz representation for vector fields
+
+Let L be a linear functional on the compactly supported continuous vector fields on W such that
+sup{L(X) : |X| ≤ 1, spt X ⊆ K} < ∞ for each compact K ⊆ W. Then there are a unique Radon measure ‖L‖
+on W and a ‖L‖-measurable vector field η with |η| = 1 ‖L‖-a.e. such that L(X) = ∫ ⟨η, X⟩ d‖L‖ for
+all such X, and ‖L‖(U) = sup{L(X) : |X| ≤ 1, spt X ⊆ U} for every open U ⊆ W; η is unique ‖L‖-a.e.
+(Simon1983 line 857–882, 4.1–4.2).
+
+Route: let U ⊆ W be open with a chart φ : U → Ω ⊆ ℝ^N and a g-orthonormal frame e_1, …, e_N. The
+functional T(ψ) = L(Σ_i (ψ^i ∘ φ) e_i) on compactly supported continuous maps ψ : Ω →
+`EuclideanSpace ℝ (Fin N)` (test functions of class C⁰) has locally finite mass
+(`Distribution.HasLocallyFiniteMass`), because |X|_g is the Euclidean norm of the frame components
+of X. The measure ‖L‖ on U is the image under φ⁻¹ of Tau Ceti's `Distribution.massMeasure` of T,
+whose value on each open U' ⊆ Ω is the supremum of |T ψ| over tests with |ψ| ≤ 1 supported in U'
+(`Distribution.massMeasure_preimage_coe`); replacing ψ by −ψ, this is the supremum in the statement.
+The scalar functionals ϕ ↦ L(ϕ e_i) are differences of Riesz measures (`TauCeti.RealRMK.posPart`,
+`TauCeti.RealRMK.negPart`, `RealRMK.rieszMeasure`), each part at most ‖L‖ by the domination |T ψ| ≤
+∫ |ψ| d‖T‖ (`Distribution.enorm_apply_le_lintegral_massMeasure`), and η is the field of their
+densities with respect to ‖L‖ (`Measure.rnDeriv`); the domination gives |η| ≤ 1 and the open-set
+formula gives ∫_{U'} (1 − |η|) d‖L‖ = 0 for relatively compact open U', so |η| = 1 ‖L‖-a.e. What the
+pinned mass measure does not provide is built here: the polar field η and the gluing of the local
+measures and fields over a countable cover of W, by uniqueness.
+
+**Checks.**
+
+- On ℝ^N let L(X) = ⟨X(0), v⟩. For v ≠ 0, ‖L‖ = |v| δ_0 and η(0) = v/|v|; for v = 2e_1 this is
+  ‖L‖ = 2δ_0 and η(0) = e_1. For v = 0, L = 0 and ‖L‖ = 0, and no value of η is determined (every
+  point is ‖L‖-null): η is unique only ‖L‖-a.e., and a formula v/|v| would be 0/0.
+- L(X) = ∫_0^1 X^1(t, 0) dt − ∫_0^1 X^1(t, 0) dt is zero, so ‖L‖ = 0; adding the total variations of
+  the two terms would give 2H¹⌞([0, 1] × {0}).
+- L(X) = ∫ (X^1 + X^2) dy on ℝ² gives ‖L‖ = √2 times Lebesgue measure and η = (e_1 + e_2)/√2: the
+  supremum defining the mass measure on an open U is at most √2 vol(U) by Cauchy–Schwarz and is
+  approached by ψ = χ·(1, 1)/√2 as χ ∈ C_c(U, [0, 1]) increases to 1_U. A coordinatewise total
+  variation, or the same supremum taken with the sup norm of `Fin 2 → ℝ` (which admits
+  ψ = χ·(1, 1)), would give 2 vol(U).
+
+(Simon1983 line 857–882; Federer1969 2.5.) *Needs:* Tau Ceti `Distribution.massMeasure`,
+`Distribution.massMeasure_preimage_coe`, `Distribution.enorm_apply_le_lintegral_massMeasure`,
+`TauCeti.RealRMK.posPart`, `TauCeti.RealRMK.negPart`,
+`TauCeti.RealRMK.integral_rieszMeasure_posPart_sub_integral_rieszMeasure_negPart`; Mathlib
+`RealRMK.rieszMeasure`, `Measure.rnDeriv`.
+
+### 4.3 Stationary varifolds and locally bounded first variation
 
 V is stationary in W when δV(X) = 0 for every C¹ vector field X with compact support in W. V has
 locally bounded first variation in W when for each compact K ⊆ W there is C_K with
@@ -713,7 +810,7 @@ AgnolettoCorreaHoyosDaSilvaNardulli2025 line 264–268). Prove:
 
 - If V has locally bounded first variation, δV extends uniquely to a linear functional on compactly
   supported continuous vector fields with the same local bounds, and the total variation ‖δV‖
-  given by 4.3 is a Radon measure with ‖δV‖(U) = sup{δV(X) : |X| ≤ 1, spt X ⊆ U} for open U ⊆ W.
+  given by 4.2 is a Radon measure with ‖δV‖(U) = sup{δV(X) : |X| ≤ 1, spt X ⊆ U} for open U ⊆ W.
 - spt‖δV‖ ⊆ spt‖V‖; the extended δV(X) depends only on X restricted to spt‖V‖; ‖δ(V + V')‖ ≤
   ‖δV‖ + ‖δV'‖; ‖δ(cV)‖ = c‖δV‖; restriction to open W' gives the restriction of ‖δV‖.
 - Lower semicontinuity: if V_j → V and lim inf_j ‖δV_j‖(U) < ∞ for every open U with compact
@@ -728,33 +825,7 @@ AgnolettoCorreaHoyosDaSilvaNardulli2025 line 264–268). Prove:
 - The Riemannian volume of W (k = N) is stationary; Lebesgue measure on ℝ² lifted with a constant
   line P (k = 1) is stationary, since δV(X) = ∫ tr(P DX) dy = 0 by integration by parts.
 
-(Simon1983 line 7474–7486, 7580–7583.) *Needs:* Layer 4.1, Layer 4.3.
-
-### 4.3 Riesz representation for vector fields
-
-Let L be a linear functional on the compactly supported continuous vector fields on W such that
-sup{L(X) : |X| ≤ 1, spt X ⊆ K} < ∞ for each compact K ⊆ W. Then there are a unique Radon measure ‖L‖
-on W and a ‖L‖-measurable vector field η with |η| = 1 ‖L‖-a.e. such that L(X) = ∫ ⟨η, X⟩ d‖L‖ for
-all such X, and ‖L‖(U) = sup{L(X) : |X| ≤ 1, spt X ⊆ U} for every open U ⊆ W; η is unique ‖L‖-a.e.
-(Simon1983 line 857–882, 4.1–4.2).
-
-Route: on an open set with a g-orthonormal frame e_1, …, e_N, the scalar functionals
-φ ↦ L(φ e_i) are order bounded on `C_c(U, ℝ)` and are differences of Riesz measures
-(`TauCeti.RealRMK.posPart`, `TauCeti.RealRMK.negPart`, `RealRMK.rieszMeasure`); the vector measure
-they form has total variation ‖L‖ on U and polar density η (`Measure.rnDeriv` of the components with
-respect to ‖L‖); uniqueness glues the local constructions over a countable cover.
-
-**Checks.**
-
-- On ℝ^N, L(X) = ⟨X(0), v⟩ gives ‖L‖ = |v| δ_0 and η(0) = v/|v|.
-- L(X) = ∫_0^1 X^1(t, 0) dt − ∫_0^1 X^1(t, 0) dt is zero, so ‖L‖ = 0; adding the total variations of
-  the two terms would give 2H¹⌞([0, 1] × {0}).
-- L(X) = ∫ (X^1 + X^2) dy on ℝ² gives ‖L‖ = √2 times Lebesgue measure and η = (e_1 + e_2)/√2; a
-  coordinatewise total variation would give twice Lebesgue measure.
-
-(Simon1983 line 857–882; Federer1969 2.5.) *Needs:* Tau Ceti `TauCeti.RealRMK.posPart`, `TauCeti.RealRMK.negPart`,
-`TauCeti.RealRMK.integral_rieszMeasure_posPart_sub_integral_rieszMeasure_negPart`; Mathlib
-`RealRMK.rieszMeasure`, `Measure.rnDeriv`.
+(Simon1983 line 7474–7486, 7580–7583.) *Needs:* Layer 4.1, Layer 4.2.
 
 ### 4.4 The Riesz decomposition of the first variation
 
@@ -771,12 +842,14 @@ is unique, η_V is unique σ_V-a.e. H_V is the generalised mean curvature, Z_V a
 - V is stationary in W if and only if H_V = 0 ‖V‖-a.e. and σ_V = 0.
 - |H_V| ≤ Λ ‖V‖-a.e. and σ_V = 0 hold if and only if |δV(X)| ≤ Λ ∫ |X| d‖V‖ for all X; then
   ‖δV‖ ≤ Λ‖V‖.
-- Isometries: for an isometry f, H_{f_#V}(f(x)) = df_x(H_V(x)), σ_{f_#V} = f_*σ_V and η is transported
-  by df.
+- Isometries: for an isometry f of W onto an open W' (1.2), H_{f_#V}(f(x)) = df_x(H_V(x)),
+  σ_{f_#V} = f_*σ_V and η is transported by df. For an isometric embedding into a space of higher
+  dimension this fails (the volume V of M = S¹ has H_V = 0, while its image in ℝ² is the unit circle
+  with H = −x), and 5.2's formula, with its term in B_M, replaces it.
 - Dilations in E: δ(V_{x,λ})(Y) = λ^{1−k} δV(Y ∘ η_{x,λ}), ‖δV_{x,λ}‖(A) = λ^{1−k}‖δV‖(x + λA),
   H_{V_{x,λ}}(η_{x,λ}(y)) = λ H_V(y), σ_{V_{x,λ}}(A) = λ^{1−k} σ_V(x + λA), and η is unchanged.
 
-Route: 4.3 applied to δV, then the Lebesgue decomposition ‖δV‖ = f‖V‖ + σ_V of ‖δV‖ with respect
+Route: 4.2 applied to δV, then the Lebesgue decomposition ‖δV‖ = f‖V‖ + σ_V of ‖δV‖ with respect
 to ‖V‖ (`Measure.rnDeriv`, `Measure.singularPart`, a ‖V‖-null Borel set carrying the singular part);
 put H_V = −f η and η_V = η on Z_V.
 
@@ -822,8 +895,16 @@ onto (B_{r/λ}(0), g̃_λ); for R > 0 and λ < r/R:
 
 **Checks.**
 
-- For h = c²g with c > 0 constant, V^h = c^k V and div^h = div^g, so the left side is
-  |c^k − 1| |δ_g V(X)|, bounded by k|c^k − 1| sup|DX| ‖V‖(K), of the form of the right side.
+- For h = c²g with c > 0 constant, V^h = c^k V and div^h = div^g (the Levi-Civita connection is
+  unchanged), so the left side is |c^k − 1| |δ_g V(X)|. For the flat metric g = e this is at most
+  k|c^k − 1| sup|DX| ‖V‖(K), of the form of the right side.
+- For a non-flat g the connection term cannot be dropped from that bound: on Ω = ℝ (N = k = 1) let
+  g = e^{4t} dt², h = 4g (c = 2), V = δ_{(0,1)}, K = [−1, 1] and X(t) = (1 − t²)² on K, 0 outside.
+  Both metrics have Christoffel symbol 2, so div_g X(0) = X'(0) + 2X(0) = 2, δ_g V(X) = 2 and
+  δ_h V^h(X) = 2·2 = 4: the left side is 2, while k|c^k − 1| sup|DX| ‖V‖(K) = sup|X'| = 8/(3√3) < 2.
+  The derivative-only bound drops the Christoffel term of ∇X = DX + Γ_g X; the general estimate,
+  with its metric-dependent constant and its term ‖h − g‖_{C¹} sup|X|, is unaffected (here
+  ‖h − g‖_{C⁰(K)} = 3e⁴).
 - The term in sup|DX| is necessary: for the Dirac varifold V = δ_{(0,P)} and X(y) = ψ(y) A y
   with ψ = 1 near 0, X(0) = 0 and DX(0) = A, the left side is |tr((J P^h − P^g) A)|, of order
   |h(0) − g(0)| |A|, while sup|X| can be made arbitrarily small relative to |A| by shrinking spt ψ.
@@ -842,7 +923,8 @@ showing that first variations under two metrics differ by a derivative term.
 
 ### Dependencies
 
-Layers 1–3; Tau Ceti flows, signed Riesz representation, `TauCeti.Manifold.divergence` and
+Layers 1–3; Tau Ceti flows, signed Riesz representation, mass measures of test functionals
+(`Distribution.massMeasure`), `TauCeti.Manifold.divergence` and
 `TauCeti.Manifold.integral_divergence_eq_zero`; HopfRinow Layer 2.
 
 ## Layer 5: smooth submanifolds and embedded ambient manifolds
@@ -850,19 +932,23 @@ Layers 1–3; Tau Ceti flows, signed Riesz representation, `TauCeti.Manifold.div
 ### 5.1 The first variation of a C² submanifold
 
 Let 1 ≤ k ≤ N and Σ ⊆ W be a C² embedded k-submanifold, closed in W, with Hᵏ(Σ ∩ K) < ∞ for every
-compact K ⊆ W, and let H_Σ = (1/k) tr B be its averaged mean curvature (RiemannianGeometry R5a,
-R5a.2). Then `δ[Σ](X) = −k ∫_Σ ⟨H_Σ, X⟩ dHᵏ` for every C¹ field X with compact support in W. Hence
-[Σ] has locally bounded first variation, H_{[Σ]} = k H_Σ, σ_{[Σ]} = 0, and [Σ] is stationary in W if
-and only if Σ is minimal (Simon1983 line 1950–1973, 9.3 and 9.5(2); 2979–2988, 16.6(1)). For smooth
-Σ, δ[Σ](X) equals RiemannianGeometry R5a.2's first volume variation of the compactly supported
-variation t ↦ φ_t ∘ ι of the inclusion ι of Σ.
+compact K ⊆ W, let `B(X, Y) = (∇_X Y)^⊥` be its second fundamental form on C¹ tangent fields and
+H_Σ = (1/k) tr B its averaged mean curvature, a continuous normal field on Σ (Conventions; for smooth
+Σ these are RiemannianGeometry R5a's B and R5a.2's H). Then `δ[Σ](X) = −k ∫_Σ ⟨H_Σ, X⟩ dHᵏ` for
+every C¹ field X with compact support in W. Hence [Σ] has locally bounded first variation,
+H_{[Σ]} = k H_Σ, σ_{[Σ]} = 0, and [Σ] is stationary in W if and only if Σ is minimal, H_Σ = 0
+(Simon1983 line 1950–1973, 9.3 and 9.5(2); 2979–2988, 16.6(1)). For smooth Σ, δ[Σ](X) equals
+RiemannianGeometry R5a.2's first volume variation of the compactly supported variation t ↦ φ_t ∘ ι
+of the inclusion ι of Σ.
 
-Route: along Σ, div_{T_xΣ} X = div_Σ X^⊤ − ⟨X, tr B⟩ (differentiate ⟨X^⊥, τ_i⟩ = 0), and
-∫_Σ div_Σ X^⊤ dHᵏ = 0 by the divergence theorem on the boundaryless Σ: X^⊤ is C¹ with compact
-support in Σ because Σ is closed in W, and Hᵏ⌞Σ is the Riemannian volume of Σ (2.3). For smooth Σ
-this is Tau Ceti's `TauCeti.Manifold.integral_divergence_eq_zero` for Σ with its induced metric;
-for C² Σ it is the same identity in C² charts of Σ, by a partition of unity and Tau Ceti's flat
-`MeasureTheory.integral_divergence_eq_zero` applied to the coordinate field times the volume density.
+Route: along Σ, with a local C¹ orthonormal tangent frame τ_1, …, τ_k (Gram–Schmidt applied to the
+coordinate fields of a C² chart), div_{T_xΣ} X = div_Σ X^⊤ − ⟨X, tr B⟩ (differentiate
+⟨X^⊥, τ_i⟩ = 0 along τ_i), and ∫_Σ div_Σ X^⊤ dHᵏ = 0 by the divergence theorem on the boundaryless
+Σ: X^⊤ is C¹ with compact support in Σ because Σ is closed in W, and Hᵏ⌞Σ is the Riemannian volume
+of Σ (2.3). For smooth Σ this is Tau Ceti's `TauCeti.Manifold.integral_divergence_eq_zero` for Σ
+with its induced metric; for C² Σ it is the same identity in C² charts of Σ, by a partition of
+unity and Tau Ceti's flat `MeasureTheory.integral_divergence_eq_zero` applied to the coordinate field
+times the volume density.
 
 **Checks.**
 
@@ -871,12 +957,20 @@ for C² Σ it is the same identity in C² charts of Σ, by a partition of unity 
 - A great k-sphere of the round sphere S^N is totally geodesic, hence stationary in S^N.
 - Closedness in W is necessary: the half hyperplane of 4.4 is minimal but not closed in ℝ^N, and
   σ ≠ 0.
-- Hypersurfaces (k = N − 1) with unit normal ν: tr B = (tr S_ν) ν (R5a: ⟨S_ν X, Y⟩ = ⟨B(X, Y), ν⟩);
-  for the outward normal of S^{N−1}, S_ν = −id and H_{[S^{N−1}]} = −(N − 1) x.
-- For k = N and Σ = W, B = 0 and [W] is stationary, as in 4.2.
+- Hypersurfaces (k = N − 1) with unit normal ν: tr B = (tr S_ν) ν, with S_ν defined by
+  ⟨S_ν X, Y⟩ = ⟨B(X, Y), ν⟩ (R5a's convention for smooth hypersurfaces); for the outward normal of
+  S^{N−1}, S_ν = −id and H_{[S^{N−1}]} = −(N − 1) x.
+- A C² submanifold that is not smooth: Σ the graph of u(t) = |t|^{5/2} over (−1, 1), closed in
+  W = (−1, 1) × ℝ, has u'' = (15/4)|t|^{1/2}, continuous and not differentiable at 0, so Σ is C² and
+  not a smooth submanifold, and R5a does not apply. The Conventions' formula gives
+  B(τ, τ) = u''(1 + u'²)^{−3/2} ν with τ = (1, u')(1 + u'²)^{−1/2} and ν = (−u', 1)(1 + u'²)^{−1/2},
+  continuous and 0 at the origin. For X(y) = φ(y_1)χ(y_2)e_2 with φ ∈ C¹_c((−1, 1)) and χ ∈ C¹_c(ℝ)
+  equal to 1 on [−1, 2], δ[Σ](X) = ∫ φ' u'(1 + u'²)^{−1/2} dt, and integrating by parts this is
+  −∫ φ u''(1 + u'²)^{−3/2} dt = −∫_Σ ⟨tr B, X⟩ dH¹, as 5.1 states with k = 1.
+- For k = N and Σ = W, B = 0 and [W] is stationary, as in 4.3.
 
 (Simon1983 line 1950–1973, 2979–2988.) *Needs:* Layer 2.3, Layer 4.1–4.4; RiemannianGeometry R5a,
-R5a.2; Tau Ceti `TauCeti.Manifold.integral_divergence_eq_zero`,
+R5a.2 (agreement for smooth Σ); Tau Ceti `TauCeti.Manifold.integral_divergence_eq_zero`,
 `MeasureTheory.integral_divergence_eq_zero`.
 
 ### 5.2 Varifolds on an embedded submanifold of Euclidean space
@@ -1000,10 +1094,13 @@ HopfRinow Layer 2.
 
 Let V have locally bounded first variation in W ⊆ M.
 
-- Existence: Θ^k(‖V‖, x) exists and is finite whenever ‖δV‖(B_ρ(x)) ≤ Λ‖V‖(B_ρ(x)) for all small ρ;
-  this holds for ‖V‖-a.e. x ∈ W, so Θ^k(‖V‖, ·) exists ‖V‖-a.e. (and is 0 off spt‖V‖); it holds at
-  every x ∈ W when |H_V| is locally bounded and σ_V = 0, in particular when V is stationary
-  (Simon1983 line 7550–7555, 40.5; AgnolettoCorreaHoyosDaSilvaNardulli2025 line 1680, Theorem 2.30).
+- Existence: Θ^k(‖V‖, x) exists and is finite at every x ∈ W with ‖δV‖(B_ρ(x)) ≤ Λ‖V‖(B_ρ(x)) for
+  all small ρ (6.1, 6.2); this ratio bound holds at every x ∈ W when |H_V| is locally bounded and
+  σ_V = 0, in particular when V is stationary. In E the ratio bound holds at ‖V‖-a.e. x
+  (Besicovitch's differentiation theorem). On M, Θ^k(‖V‖, ·) exists and is finite ‖V‖-a.e. (and is
+  0 off spt‖V‖) by the route below, and the geodesic-ball ratio bound holds at ‖V‖-a.e. x at which
+  Θ^k(‖V‖, x) > 0 (Simon1983 line 7550–7555, 40.5; AgnolettoCorreaHoyosDaSilvaNardulli2025 line
+  1680, Theorem 2.30).
 - Θ^k(‖V‖, ·) is ‖V‖-measurable (Simon1983 line 7556–7565).
 - Upper semicontinuity in x: if ‖δV‖ ≤ Λ‖V‖ on an open set U, then Θ^k(‖V‖, x) ≥ lim sup_{y→x}
   Θ^k(‖V‖, y) for x ∈ U (Simon1983 line 3119–3144, 17.8; AgnolettoCorreaHoyosDaSilvaNardulli2025 line
@@ -1015,11 +1112,18 @@ Let V have locally bounded first variation in W ⊆ M.
   ‖δV‖ ≤ Λ‖V‖ on U, then Θ^k(‖V‖, x) ≥ 1 for every x ∈ spt‖V‖ ∩ U, and ‖V‖(B̄_ρ(x)) ≥
   e^{−(Λ + k√κ)ρ} ω_k ρ^k for the ρ admitted in 6.2 (Simon1983 line 3147–3152, 17.9(1)).
 
-Route for a.e. existence on M: Besicovitch's theorem in charts (Mathlib's finite-dimensional
-`HasBesicovitchCovering`) bounds ‖δV‖ by Λ_x‖V‖ on small chart-Euclidean balls about ‖V‖-a.e. x;
-chart balls and geodesic balls are nested up to a factor c; inserting
-‖δV‖(B̄_t(x)) ≤ Λ_x c^{2k} t^k f(c²t), f(t) = t^{−k}‖V‖(B̄_t(x)), into 6.2 bounds sup_{(0, ρ]} f for small
-ρ and gives lim sup_{σ↓0} f(σ) ≤ lim inf_{ρ↓0} f(ρ).
+Route for a.e. existence on M: Besicovitch's differentiation theorem in a chart
+(`Besicovitch.ae_tendsto_rnDeriv`, for Mathlib's finite-dimensional `HasBesicovitchCovering`) gives,
+for ‖V‖-a.e. x, a Λ_x with ‖δV‖(B̄^ch_s(x)) ≤ Λ_x‖V‖(B̄^ch_s(x)) for small closed chart balls
+B̄^ch_s(x); for a constant c ≥ 1 and small t, B̄_t(x) ⊆ B̄^ch_{ct}(x) ⊆ B̄_{c²t}(x), so with
+f(t) = t^{−k}‖V‖(B̄_t(x)), ‖δV‖(B̄_t(x)) ≤ Λ_x c^{2k} t^k f(c²t). Inserted into 6.2 this gives, for
+0 < σ ≤ σ' < ρ and C = Λ_x c^{2k} + k√κ, f(σ') ≤ f(ρ) + Cρ max(sup_{[σ, ρ]} f, sup_{[ρ, c²ρ]} f); both
+suprema are finite, so for Cρ ≤ 1/2, sup_{[σ, ρ]} f ≤ 2f(ρ) + sup_{[ρ, c²ρ]} f uniformly in σ. Hence f
+is bounded on (0, c²ρ], lim sup_{σ↓0} f(σ) ≤ f(ρ) + Cρ sup_{(0, c²ρ]} f for small ρ, and
+lim sup_{σ↓0} f(σ) ≤ lim inf_{ρ↓0} f(ρ). No geodesic-ball ratio bound is used. If moreover
+Θ^k(‖V‖, x) > 0, then ‖V‖(B̄_{c²r}(x)) ≤ (c^{2k} + 1)‖V‖(B_r(x)) for small r, and the chart bound gives
+‖δV‖(B_r(x)) ≤ Λ_x (c^{2k} + 1)‖V‖(B_r(x)). At a point of density 0 this doubling step can fail
+(Checks below).
 
 **Checks.**
 
@@ -1033,6 +1137,12 @@ chart balls and geodesic balls are nested up to a factor c; inserting
   Θ(y) = 2 for y > 0.
 - v(L, 1/2) satisfies everything except the hypothesis Θ ≥ 1 of the lower bound, and has
   Θ = 1/2 on L.
+- The ratio bound is an almost-everywhere property, and passing from chart balls to geodesic balls
+  needs positive density: V = v(L, θ) on the x-axis of ℝ² with θ(t) = e^{−1/|t|} (t ≠ 0) has
+  σ_V = 0 and ‖δV‖ = |θ'| H¹⌞L, so ‖δV‖(B_ρ(0)) = 2∫_0^ρ t^{−2}e^{−1/t} dt = 2e^{−1/ρ}, while
+  ‖V‖(B_ρ(0)) = 2∫_0^ρ e^{−1/t} dt ≤ 2ρ²e^{−1/ρ} (because (t²e^{−1/t})' ≥ e^{−1/t}). The ratio is at
+  least ρ^{−2} at the ‖V‖-null point 0, where Θ^1(‖V‖, 0) = 0 exists nonetheless, and
+  ‖V‖(B_{2r}(0))/‖V‖(B_r(0)) ≥ (2r)^{−1}e^{1/(3r)} → ∞, so no doubling constant serves at 0.
 
 (Simon1983 line 3119–3152, 7550–7565.) *Needs:* Layer 1.4, Layer 3.3, Layer 4.4, Layer 6.1–6.2;
 Mathlib `HasBesicovitchCovering`, `Besicovitch.ae_tendsto_rnDeriv`.
@@ -1046,11 +1156,19 @@ either V = 0, or Σ is closed in W, Hᵏ(Σ ∩ K) < ∞ for every compact K ⊆
 Route: for a C² function f vanishing on Σ, div_S(f∇f) = |P_S ∇f|² on spt V, so stationarity forces
 P_S ∇f = 0 on spt V; with local defining functions whose gradients span the normal spaces, S = T_xΣ
 on spt V. The density exists everywhere (6.3) and equals 1 for Hᵏ⌞Σ, so V = v(Σ, θ) with
-θ = Θ^k(‖V‖, ·). Stationarity against fields tangent to Σ says that, in a C² chart of Σ, the
-distributional derivatives of θ times the volume density vanish against all test functions, and
-GeometricCurrents G1's constancy criterion makes θ locally constant, hence equal to a constant θ_0 on
-the connected Σ. If θ_0 = 0, V = 0. If θ_0 > 0, Hᵏ⌞Σ = θ_0⁻¹‖V‖ is a Radon measure, so Σ has
-locally finite area, and the closure of Σ in W is spt‖V‖ (2.3), which lies in Σ: Σ is closed in W.
+θ = Θ^k(‖V‖, ·). In a C² chart t = (t_1, …, t_k) of Σ, let w = √det(g_Σ) be the coordinate
+density of the induced metric g_Σ (a positive C¹ function) and θ̃ the multiplicity θ in these
+coordinates, so that ‖V‖ = θ̃ w dt there. For X tangent to Σ with components X^i, div_{T_xΣ} X is the
+divergence of X along (Σ, g_Σ) (the normal part of ∇X does not enter the trace), that is
+w⁻¹ Σ_i ∂_i(w X^i), so stationarity gives ∫ θ̃ Σ_i ∂_i(w X^i) dt = 0. The choice
+X^i = φ/w, the other components 0, for φ ∈ C¹_c of the chart domain (extended to a compactly
+supported C¹ field on W through a C² chart of W in which Σ is a coordinate plane) gives
+∫ θ̃ ∂_i φ dt = 0: the distributional derivatives of θ̃ itself, with respect to coordinate Lebesgue
+measure dt and not to θ̃ w, vanish (Simon1983 line 7720–7732). GeometricCurrents G1's constancy
+criterion makes θ̃ a.e. constant on each connected chart domain, hence θ equal Hᵏ-a.e. to a
+constant θ_0 on the connected Σ. If θ_0 = 0, V = 0. If θ_0 > 0, Hᵏ⌞Σ = θ_0⁻¹‖V‖ is a Radon
+measure, so Σ has locally finite area, and the closure of Σ in W is spt‖V‖ (2.3), which lies in Σ:
+Σ is closed in W.
 
 **Checks.**
 
@@ -1061,13 +1179,18 @@ locally finite area, and the closure of Σ in W is spt‖V‖ (2.3), which lies 
   volume.
 - [half-line] has support in a line Σ but is not a constant multiple of [Σ]; consistently it is not
   stationary (σ = δ_0 at its endpoint).
+- The coordinate multiplicity, not its product with the volume density, is the constant: on
+  W = Σ = ℝ (k = N = 1) with g = e^{2t} dt², the volume density is w = e^t and
+  div_g X = e^{−t}(e^t X)', so V = [W] has δV(X) = ∫ (e^t X)' dt = 0 for compactly supported X and
+  is stationary with θ̃ = 1, while (θ̃ w)' = e^t ≠ 0; a route asking the derivatives of θ̃ w to vanish
+  would exclude this stationary varifold.
 - The graph Σ of t ↦ sin(1/t) over (0, 1) is a connected C² embedded curve in ℝ² of infinite length
   inside B̄_2(0) (its length is at least ∫_0^1 |cos(1/t)| t⁻² dt = ∫_1^∞ |cos u| du = ∞), and it is
   not closed (its closure contains {0} × [−1, 1]). V = 0 is stationary with support in Σ and takes
   the first alternative, and the theorem says it is the only such V; a conclusion "V = θ_0 [Σ] in
   every case" would use [Σ], which 2.3 does not define for this Σ.
 
-(Simon1983 line 7664–7732.) *Needs:* Layer 2.3, Layer 3.3, Layer 4.2, Layer 6.3; GeometricCurrents G1
+(Simon1983 line 7664–7732.) *Needs:* Layer 2.3, Layer 3.3, Layer 4.3, Layer 6.3; GeometricCurrents G1
 (constancy criterion).
 
 ### 6.5 The convex hull property
@@ -1102,13 +1225,15 @@ Layers 1–5; RiemannianGeometry R4 item 1; HopfRinow Layer 2; GeometricCurrents
 ## Layer 7: varifold tangents, rectifiability and compactness
 
 **Standing setting for varying metrics.** g_i and g are smooth Riemannian metrics on W with
-g_i → g in C² on compact subsets (in charts); V_i is a varifold for g_i, regarded on G_k^g(W)
-through 1.2's canonical homeomorphism (which leaves the weights unchanged), and V_i → V there. The
-case g_i = g is the fixed-metric case, and g_i = g = e on W ⊆ E is Simon's setting.
+g_i → g in C² on compact subsets (in charts); each V_i is a varifold for g_i, regarded on G_k^g(W)
+through 1.2's canonical homeomorphism (which leaves the weights unchanged). Convergence of the V_i
+is not part of the setting: 7.1 assumes it and 7.4 produces it along a subsequence. The case
+g_i = g is the fixed-metric case, and g_i = g = e on W ⊆ E is Simon's setting.
 
 ### 7.1 Semicontinuity of lower density bounds
 
-In the standing setting, suppose each V_i has locally bounded g_i-first variation,
+In the standing setting, suppose V_i → V on G_k^g(W), each V_i has locally bounded g_i-first
+variation,
 lim inf_i ‖δ_{g_i} V_i‖(U) < ∞ for every open U with compact closure in W, and
 Θ^k_{g_i}(‖V_i‖, y) ≥ 1 for ‖V_i‖-a.e. y ∈ W ∖ B_i, where ‖V_i‖(B_i ∩ K) → 0 for every compact K ⊆ W.
 Then V has locally bounded g-first variation, ‖δ_g V‖(U) ≤ lim inf_i ‖δ_{g_i} V_i‖(U) for such U, and
@@ -1136,7 +1261,7 @@ bound to V.
 - For g_i = (1 + 1/i)² e on ℝ² and V_i the g_i-varifold of a line with multiplicity 1, Θ_{g_i} = 1 and
   the limit, the Euclidean varifold of the line, has Θ = 1.
 
-(Simon1983 line 7566–7660; Federer1969 2.8 for coverings.) *Needs:* Layer 1.2, Layer 1.4, Layer 4.2, Layer 4.5, Layer 6.2–6.3; Mathlib
+(Simon1983 line 7566–7660; Federer1969 2.8 for coverings.) *Needs:* Layer 1.2, Layer 1.4, Layer 4.3, Layer 4.5, Layer 6.2–6.3; Mathlib
 `HasBesicovitchCovering`.
 
 ### 7.2 Varifold tangents
@@ -1151,9 +1276,16 @@ consists of the limits of (η_{x,λ_j})_#V (Simon1983 line 7733–7774, 42.1–4
 
 Route: 3.2 and 6.3 bound ‖V_{x,λ}‖(B_R(0)) uniformly; 1.4 gives subsequential limits; 4.5's blow-up form
 and the hypothesis on ‖δV‖ give δ_{g_x}C = 0; the mass of C on balls about 0 is the limit of the
-density ratios (3.2); the stationary identity 6.1 for C at 0 forces P_{S^⊥}(y) = 0 C-a.e.; the
-weighted identity 6.1 with h(y) = f(|y|)-type weights gives dilation invariance of the weight, as in
-Simon1983 19.3.
+density ratios (3.2), so ρ^{−k}‖C‖(B_ρ(0)) = ω_k Θ^k(‖V‖, x) for every ρ > 0, and the stationary
+identity 6.1 for C at 0 forces P_{S^⊥}(y) = 0 for C-a.e. (y, S). Dilation invariance of the weight
+uses non-radial tests: for a C¹ function h with compact support in T_xM, the field X(y) = h(y) y
+has div_S X = k h(y) + y·∇h(y) for C-a.e. (y, S), so stationarity gives ∫ (k h + y·∇h) d‖C‖ = 0.
+Applied to y ↦ h(y/λ), this says that λ ↦ λ^{−k} ∫ h(y/λ) d‖C‖(y) has derivative 0 on (0, ∞), so
+the measure A ↦ λ^{−k}‖C‖(λA) has the same integrals as ‖C‖ against C¹, hence against all
+compactly supported continuous functions, and equals ‖C‖
+(`MeasureTheory.Measure.ext_of_integral_eq_on_compactlySupported`). Radial tests h(|y|) give only
+the ball masses, which do not determine the measure (Check below); Simon1983 line 3461–3481 (19.3)
+uses arbitrary homogeneous weights of degree zero for the same step.
 
 **Checks.**
 
@@ -1163,8 +1295,16 @@ Simon1983 19.3.
   line (k = 1, stationary, Θ = 0), VarTan(V, x) = {0}.
 - On the round S², V a great circle through x: V_{x,λ} is the varifold of a diameter of the disc of
   radius r/λ, and VarTan(V, x) = {v(T_xC, 1)}.
+- Ball masses do not give dilation invariance: the measure μ on ℝ² with density
+  1 + ½ sin(log r) cos ϑ with respect to dr dϑ (polar coordinates) has μ(B_ρ(0)) = 2πρ for every ρ,
+  as the weight of a dilation-invariant 1-cone would, but λ⁻¹ ∫_{B_λ(0)} cos ϑ dμ =
+  (π/4)(sin log λ − cos log λ) is −π/4 at λ = 1 and π/4 at λ = e^π. Every radial test gives the
+  value of the invariant measure dr dϑ and the angular test cos ϑ separates them. The theorem is not
+  contradicted: by the stationary identity and the step above, μ is not the weight of any stationary
+  1-varifold on ℝ².
 
-(Simon1983 line 7733–7774, 3414–3450.) *Needs:* Layer 1.4, Layer 3.2, Layer 4.5, Layer 6.1, Layer 6.3.
+(Simon1983 line 7733–7774, 3414–3481.) *Needs:* Layer 1.4, Layer 3.2, Layer 4.5, Layer 6.1, Layer 6.3;
+Mathlib `MeasureTheory.Measure.ext_of_integral_eq_on_compactlySupported`.
 
 ### 7.3 Allard's rectifiability theorem
 
@@ -1175,7 +1315,8 @@ Theorem 2.32).
 
 Route (Simon1983 line 7806–7881): at ‖V‖-a.e. x, (i) Θ(x) ∈ (0, ∞) exists (6.3), (ii) the fibre
 measure ν^x is the limit of ball averages (3.3), (iii) Θ is ‖V‖-approximately continuous at x (the
-Vitali family of 3.3), and (iv) ‖δV‖(B_ρ(x)) ≤ Λ(x)‖V‖(B_ρ(x)) for small ρ. At such x each
+Vitali family of 3.3), and (iv) ‖δV‖(B_ρ(x)) ≤ Λ(x)‖V‖(B_ρ(x)) for small ρ (6.3, at points of
+positive density, which are ‖V‖-almost all points here). At such x each
 C ∈ VarTan(V, x) (7.2) satisfies Θ(‖C‖, y) ≥ Θ(x) for ‖C‖-a.e. y, by 7.1 applied to the rescaled
 varifolds Ṽ_{λ_j} of 4.5 for the metrics g̃_{λ_j} → g_x (divided by (1 − ε)Θ(x)), and so at every
 y ∈ spt‖C‖ (6.3); with ‖C‖(B_ρ(y)) ≤ Θ(x)ω_kρ^k from the weight's form, the identity 6.1 for C at y
@@ -1190,27 +1331,39 @@ AgnolettoCorreaHoyosDaSilvaNardulli2025's proof is not used.
 - The triple junction and v(L, 1/2) are rectifiable, with θ = Θ equal to 1 off the junction and to
   1/2 respectively.
 - The vertical lift of H¹⌞(x-axis) has positive density and is not rectifiable; consistently it does
-  not have locally bounded first variation (4.2).
+  not have locally bounded first variation (4.3).
 
 (Simon1983 line 7775–7881; Allard1972 Section 5.) *Needs:* Layer 3.3, Layer 4.5, Layer 6.1, Layer 6.3–6.4, Layer 7.1–7.2.
 
 ### 7.4 Compactness of rectifiable varifolds
 
-In the standing setting let the V_i be rectifiable with locally bounded g_i-first variation,
-sup_i (‖V_i‖(U) + ‖δ_{g_i}V_i‖(U)) < ∞ for every open U with compact closure in W, and
-Θ^k_{g_i}(‖V_i‖, ·) ≥ 1 ‖V_i‖-a.e. outside sets B_i with ‖V_i‖(B_i ∩ K) → 0 for compact K. Then a
-subsequence converges to a rectifiable varifold V with locally bounded g-first variation,
-Θ^k_g(‖V‖, ·) ≥ 1 ‖V‖-a.e., and ‖δ_g V‖(U) ≤ lim inf ‖δ_{g_i}V_i‖(U); stationarity passes to the limit
-(Simon1983 line 7882–7898, 42.7).
+In the standing setting let (V_i) be any sequence of rectifiable varifolds with locally bounded
+g_i-first variation, sup_i (‖V_i‖(U) + ‖δ_{g_i}V_i‖(U)) < ∞ for every open U with compact closure in
+W, and Θ^k_{g_i}(‖V_i‖, ·) ≥ 1 ‖V_i‖-a.e. outside sets B_i with ‖V_i‖(B_i ∩ K) → 0 for compact K.
+Then there are a strictly increasing sequence i_1 < i_2 < … and a varifold V on G_k^g(W) with
+V_{i_j} → V, and every such subsequential limit V is rectifiable, has locally bounded g-first
+variation and Θ^k_g(‖V‖, ·) ≥ 1 ‖V‖-a.e., and satisfies
+‖δ_g V‖(U) ≤ lim inf_j ‖δ_{g_{i_j}}V_{i_j}‖(U) for every open U with compact closure in W; if every
+V_i is stationary for g_i, V is stationary for g (Simon1983 line 7886–7898, 42.7).
 
-Route: 1.4 for a convergent subsequence, 7.1 for the density bound and the first variation, 7.3 for
-rectifiability.
+Route: 1.4 for a convergent subsequence; 7.1, applied to that subsequence, for the density bound
+and the first variation; 7.3 for rectifiability.
 
 **Checks.**
 
-- Zigzag graphs of slopes ±1 and amplitude 1/i over [0, 1] are integral with Θ = 1, but ‖δV_i‖ is
-  √2 times the number of corners, which tends to ∞; their limit has weight √2 H¹⌞([0, 1] × {0}) and
-  planes at ±45°, so it is not rectifiable: the first variation bound is necessary.
+- The full sequence need not converge: in ℝ² let V_i be the varifold of the line {y_2 = 0} for even
+  i and of {y_2 = 1} for odd i. Each is stationary with Θ = 1 and ‖V_i‖(B_R(0)) ≤ 2R, so the
+  hypotheses hold; a nonnegative test function supported in B_{1/2}(0) × G(ℝ², 1) with integral 1
+  against the first line has integrals alternating between 1 and 0, while the even and odd
+  subsequences converge to two different stationary rectifiable limits. A version assuming V_i → V
+  would not apply to this sequence.
+- Zigzag graphs over [0, 1] with slopes ±1 and amplitude 1/i (i segments of horizontal length 1/i)
+  are integral with Θ = 1 and H = 0 on the segments, but ‖δV_i‖ has an atom of mass √2 at each of
+  the i − 1 interior corners (the two unit co-normals (1, ±1)/√2 there add up to a vector of length
+  √2) and an atom of mass 1 at each endpoint, so ‖δV_i‖(ℝ²) = √2(i − 1) + 2 → ∞; for i = 2, the
+  graph through (0, 0), (1/2, 1/2), (1, 0), it is √2 + 2. Their limit has weight
+  √2 H¹⌞([0, 1] × {0}) and fibre measure ½δ_{P_+} + ½δ_{P_−} for the lines P_± at ±45°, so it is not
+  rectifiable: the first variation bound is necessary.
 - Circles of radius 1/i about 0: masses 2π/i → 0, ‖δV_i‖ = 2π, the limit is 0, which is rectifiable.
 - Varifolds of the lines y_2 = 1/i converge to the varifold of the x-axis, with all first variations 0.
 
@@ -1218,37 +1371,62 @@ rectifiability.
 
 ### 7.5 Allard's multiplicity lemma
 
-Let p and q be the orthogonal projections of ℝ^N onto ℝ^k × {0} and {0} × ℝ^{N−k}. For δ ∈ (0, 1) and
-Λ ≥ 1 there is ε = ε(δ, Λ, k, N) ∈ (0, δ²) such that, for every integral varifold W on the ball B_3(0)
-of ℝ^N for a metric h with ‖h − e‖_{C²(B_3(0))} ≤ ε satisfying the mass, first variation and tilt
-hypotheses of Simon1983 42.9 (mass at most Λ, ‖δ_h W‖ at most ε and ∫ ‖P_S − p‖ dW at most ε on
-B_3(0)), there is a Borel set A ⊆ ℝ^k × {0} of Lebesgue measure at most δ such that for
-x ∈ (B_1(0) ∩ ℝ^k × {0}) ∖ A the sum of Θ^k(‖W‖, y) over the points y ∈ p⁻¹(x) ∩ spt‖W‖ with |q(y)| < ε
-is at most (1 + δ)(ω_k 2^k)⁻¹‖W‖(B_2(x)) + δ (Simon1983 line 7986–8151, 42.9–42.10, for h = e).
+Let p and q be the orthogonal projections of ℝ^N onto ℝ^k × {0} and {0} × ℝ^{N−k}, let B_ρ(y) be
+Euclidean balls, and for a k-plane S let P_S be its Euclidean orthogonal projection. For δ ∈ (0, 1)
+and Λ ≥ 1 there is ε = ε(δ, Λ, k, N) ∈ (0, δ²) with the following property. Let h be a smooth metric
+on B_3(0) ⊆ ℝ^N with ‖h − e‖_{C²(B_3(0))} < ε², and W an integral varifold on B_3(0) for h (regarded
+on B_3(0) × G(ℝ^N, k) through 1.2) with locally bounded h-first variation and
 
-Route: Simon's proof (induction on the number of points of a fibre) uses the first variation only
-through the identity and the weighted identity of 6.1, tested with fields X satisfying
-|DX| ≤ C(1 + ρ/T) on the balls B_ρ used, T the slab width; by 4.5 the metric h adds errors
-Cε(1 + ρ/T)‖W‖(B_ρ), of the same form as the terms Cερ/T already present, and 6.2 replaces the
-Euclidean mass lower bounds.
+`‖W‖(B_3(0)) ≤ Λ,   ‖δ_h W‖(B_3(0)) < ε²,   ∫_{G_k(B_3(0))} ‖P_S − p‖ dW(y, S) < ε²`.
+
+Then there is a Borel set A ⊆ B_1(0) ∩ (ℝ^k × {0}) of k-dimensional Lebesgue measure less than δ
+such that for every x ∈ (B_1(0) ∩ ℝ^k × {0}) ∖ A the sum of Θ^k(‖W‖, y) (the density for h) over the
+points y ∈ p⁻¹(x) ∩ spt‖W‖ with |q(y)| < ε is at most (1 + δ)(ω_k 2^k)⁻¹‖W‖(B_2(x)) + δ. For h = e
+this is Simon1983 line 7991–8000 (42.9, printed p. 250): the thresholds ε² for the first variation
+and for the tilt, and the slab half-width ε, are the source's. The case h ≠ e, with the threshold ε²
+for the metric, is this roadmap's.
+
+Route: Simon's proof (Simon1983 line 8001–8151, 42.10 and the proof of 42.9) has three steps.
+(i) The set of points y at which ‖δW‖(B_ρ(y)) ≤ ε‖W‖(B_ρ(y)) or
+∫_{G_k(B_ρ(y))} ‖P_S − p‖ dW ≤ ερ^k fails for some ρ ∈ (0, 1) has, by Besicovitch's covering theorem,
+‖W‖-measure at most cε⁻¹ times the sum of the two ε²-small quantities, hence at most cε (line
+8014–8046); this is where the squares are used. (ii) At the remaining points the identity and the
+weighted identity of 6.1, with weights f(|q(z − y)|), f = 1 on [0, τ] and f = 0 on [2τ, ∞), bound
+the masses of the slabs U^τ_σ(y) = B_σ(y) ∩ {|q(z − y)| < τ} with errors cεσ/τ (line 8052–8083).
+(iii) An induction on the number of points of a fibre, at slab scale τ comparable to δ² times the
+least vertical separation of the points, concludes (line 8084–8151). For h ≠ e, steps (ii)–(iii)
+are run at each centre y in linear coordinates that make h(y) Euclidean (a linear map within Cε²
+of the identity). On B_ρ(y) the metric then differs from the constant metric h(y) by at most Cε²ρ
+in C⁰ and Cε² in C¹, so by 4.5 the first variation of each test field used (|X| ≤ ρ,
+|DX| ≤ C(1 + ρ/τ)) changes by at most Cε²ρ(1 + ρ/τ)‖W‖(B_ρ(y)). Against the factor ρ^{−k−1} of 6.1,
+and with the mass-ratio bound of 6.2, this integrates over (τ, σ) to at most
+Cε²σ(1 + σ/τ) ≤ 2Cεσ/τ, an error of the source's form. The linear change of coordinates moves
+slabs, projections, balls and densities by factors 1 + O(ε²), which shrinking ε absorbs.
 
 **Checks.**
 
-- W = m v(ℝ^k × {0}, 1)⌞B_3(0) with integer m ≥ 1: tilt 0, δW = 0 in B_3(0), each fibre has the single
-  point x with density m, and the bound m ≤ (1 + δ)m + δ holds with A = ∅.
+- W = m v(ℝ^k × {0}, 1)⌞B_3(0) with integer m ≥ 1 and Λ ≥ m ω_k 3^k, h = e: tilt 0, δW = 0 in B_3(0),
+  ‖W‖(B_2(x)) = m ω_k 2^k, each fibre has the single point x with density m, and the bound
+  m ≤ (1 + δ)m + δ holds with A = ∅.
 - Two parallel planes ℝ^k × {±ε/2} with multiplicity 1: fibre sum 2 and mass ratio about 2.
-- A plane tilted by angle α has tilt excess of order α‖W‖(B_3), so for α large the hypotheses fail;
-  the tilted plane through 0 still satisfies the conclusion, showing that the tilt hypothesis is used
-  for the slab, not for single planes.
+- A plane through 0 tilted by angle α has tilt excess |sin α| ‖W‖(B_3(0)) (the operator-norm
+  distance of 1.1), so the hypotheses fail once |sin α| ‖W‖(B_3(0)) ≥ ε²; the tilted plane through 0
+  still satisfies the conclusion, showing that the tilt hypothesis is used for the slab, not for
+  single planes.
+- Parameter accounting (h = e): if ε = 1/10 (possible only when δ² > 1/10), the hypotheses ask for
+  first variation and tilt below 1/100 while the counted slab is {|q| < 1/10}. Step (i) bounds the
+  exceptional set by cε⁻¹(ε² + ε²) = 2cε = c/5; with unsquared thresholds ε the same bound would be
+  cε⁻¹(ε + ε) = 2c, which does not become small with ε, and the measure bound on A would be lost.
 
 (Simon1983 line 7986–8151.) *Needs:* Layer 4.5, Layer 6.1–6.3.
 
 ### 7.6 Integral compactness
 
-If, in 7.4, the V_i are integral, then the limit V is integral (Simon1983 line 7899–7912, 42.8;
-Allard1972, Section 6).
+If, in 7.4, the V_i are integral, then every subsequential limit V given by 7.4 is integral
+(Simon1983 line 7899–7912, 42.8; Allard1972, Section 6).
 
-Route (Simon1983 line 7916–7985): Besicovitch in charts gives, for ‖V‖-a.e. x, lim inf_i
+Route (Simon1983 line 7916–7985), with the convergent subsequence relabelled V_i: Besicovitch in
+charts gives, for ‖V‖-a.e. x, lim inf_i
 ‖δ_{g_i}V_i‖(B_ρ(x)) ≤ c(x)ρ^k for small ρ; at ‖V‖-a.e. x the varifold V = v(Γ, θ) has tangent space
 T_x with multiplicity θ(x) (7.4, 3.3); in g-normal coordinates at x a diagonal choice λ_i ↓ 0 gives
 integral varifolds W_i for metrics h_i → g_x in C² with W_i → θ(x) v(T_x, 1), first variation → 0 and
@@ -1363,8 +1541,9 @@ Layer 3.1, Layer 6.4.
 Every notion of Layers 1–8 commutes with restriction to an open W' ⊆ W: weight, mass, support,
 convergence, rectifiability and integrality, tangent spaces and fibre measures, δV, ‖δV‖, H_V, σ_V,
 η_V, stationarity and locally bounded first variation, densities, VarTan(V, x) for x ∈ W', and
-reg^r, sing^r. Every notion commutes with push-forward by an isometry f between open subsets of
-Riemannian manifolds, with H, η transported by df; it is independent of charts because no chart
+reg^r, sing^r. Every notion commutes with push-forward by an isometry f of an open subset of a
+Riemannian manifold onto an open subset of another (1.2), with H, η transported by df; it is
+independent of charts because no chart
 enters the definitions. Euclidean dilations preserve stationarity, rectifiability, integrality,
 reg^r and sing^r, satisfy Θ^k(‖V_{x,λ}‖, η_{x,λ}(y)) = Θ^k(‖V‖, y) and VarTan(V_{x,λ}, η_{x,λ}(y)) =
 VarTan(V, y), and scale H_V, ‖δV‖ and σ_V as in 4.4 (this roadmap; Simon1983 line 7443–7454).
@@ -1410,7 +1589,9 @@ ones the literature uses.
 - Simon's theorem (Simon2023 line 84–96, Theorem 1.1, and line 432–441, Theorem 3.7). Let n ≥ 3,
   m ≥ 2, n + m ≥ 8, ℓ ≥ 1 and K ⊆ ℝ^ℓ closed. For every sufficiently small τ ∈ (0, 1) there are a
   smooth f(x, y) on ℝ^n × ℝ^ℓ with sup|f − 1| < τ and sup|D^j f| < C(ℓ, m, n, j)τ for j ≥ 1, and a
-  smooth embedded hypersurface Σ ⊆ ℝ^{n+m+ℓ} with locally finite area, such that for the metric
+  smooth embedded hypersurface Σ ⊆ ℝ^{n+m+ℓ} with locally finite area and Σ = reg^∞[Σ] (Σ is the
+  whole regular set of its closure, Simon's standing convention, Simon2023 line 77–83; then
+  sing^∞[Σ] is the closure of Σ minus Σ), such that for the metric
   g = Σ dx_i² + f(x, y) Σ dξ_j² + Σ dy_k² the varifold [Σ] for g is stationary in (ℝ^{n+m+ℓ}, g) and
   sing^∞[Σ] = {0} × {0} × K. Simon's theorem also asserts strict stability, a second-variation
   statement of RiemannianGeometry R5b's kind, which is not restated here.
@@ -1427,14 +1608,17 @@ ones the literature uses.
 
 **Checks.**
 
-- Each notion used is defined above: [Σ] for a metric (2.3), stationarity for a metric (4.2),
+- Each notion used is defined above: [Σ] for a metric (2.3), stationarity for a metric (4.3),
   sing^∞ (9.1), integral varifolds and multiplicity one (2.2, 6.3), varifold convergence (1.4) and
   tangent cones (7.2, 8.2).
-- In Simon's theorem with K = ∅, sing^∞[Σ] = ∅ and Σ is closed.
+- In Simon's theorem with K = ∅, sing^∞[Σ] = ∅, so the closure of Σ is reg^∞[Σ] = Σ and Σ is
+  closed. The convention Σ = reg^∞[Σ] is what gives closedness: for n = 3, m = 5, ℓ = 1, f = 1 and
+  Σ = (ℝ⁸ × {0}) ∖ {0} in ℝ⁹, [Σ] = [ℝ⁸ × {0}] is stationary with empty singular set, but Σ is not
+  closed; it violates the convention, since reg^∞[Σ] = ℝ⁸ × {0} contains the missing origin.
 - V = v(C_{p,q}, 1) itself, with V_i = V, satisfies the conclusion of the second statement with
   y_i = 0.
 
-*Needs:* Layer 1.4, Layer 2.2–2.3, Layer 3.1, Layer 4.2, Layer 6.3, Layer 7.2, Layer 8.2,
+*Needs:* Layer 1.4, Layer 2.2–2.3, Layer 3.1, Layer 4.3, Layer 6.3, Layer 7.2, Layer 8.2,
 Layer 9.1.
 
 ### Examples
