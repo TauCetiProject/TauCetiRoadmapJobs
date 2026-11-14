@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-OcneanuRigidity~5",
+    "head": "9844900bdca62f87439a622228ac4f6b8ed3a665",
+    "pr": 2316,
+    "folder": "OcneanuRigidity",
+    "date": "2026-11-14",
+    "findings": 4,
+    "blocking": 2,
+    "notes": "Full review. All 6 findings of the previous review are repaired at this head. New: R01 (P1) the comparison scalar of 1.6 is inverted, so the 1.6 Check (1/2) refutes the 1.7 Check (4) on FDRep C S3 (total 3, not 6); R02 (P2) the two module headlines assume Functor.Linear only, which at the pin is map_smul without additivity, while the README's actions are additive in the C-variable; R03 (P3) no Check in 5.4 and 6.6, one in 6.3; R04 (P3) no locator in 6.5 and 8.3, no page for EGNO Example 7.4.10. Checked: the 15 seeded targets; 41 source locators against ENO2005, GHS, EGNO and Ostrik (BarrBeck uncertified); 31 pinned declarations; supplier citations at main and at the open heads of PivotalSpherical and PresentationsOfMonoidalCategories. Gate passes; depcheck 244 roadmaps, 2198 edges, 0 problems; Suggested.lean elaborates with 5 sorry warnings; 15 one-tactic probes fail; the R02 repair elaborates. Adversarial table with computed values, overlap check and source-independence line included."
+  }
+}
