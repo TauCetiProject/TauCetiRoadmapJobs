@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "InfinityTopoi"
+
+[[source]]
+id = "HTT"
+locator_scheme = "theorem"
+locator = "Theorem 6.1.0.6"
+url = "https://www.math.ias.edu/~lurie/papers/HTT.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/HTT.pdf"
+fetched_at = "2026-11-14T11:16:37Z"
+sha256 = "58855f3a0ad6d9c470ded74a38938b9468927592e9ae1209bab6a068e67ede6e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-14"
+cited_for = ["4.4.1"]
