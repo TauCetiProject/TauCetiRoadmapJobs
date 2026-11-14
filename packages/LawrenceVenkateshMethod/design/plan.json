@@ -1,0 +1,499 @@
+{
+  "roadmapId": "LawrenceVenkateshMethod",
+  "protocol": "blueprint-v1",
+  "part": null,
+  "scope": [],
+  "status": "complete",
+  "summary": "The design pass resolves the brief by ownership rather than adding a parallel roadmap. MordellLawrenceVenkatesh owns the curve method, S-unit equation and Mordell proof; its accepted Part II owns the general compatible-system and higher-dimensional arithmetic argument, including Lawrence–Sawin; SheafConvolutionOnAbelianVarieties owns the required convolution monodromy. The sixteen target dispositions below cover the brief and its supporting mechanisms. All are imports. The proposed identifier has zero mathematical stages, pending independent review of the consolidation proposal. Complete means that this design audit is finished, not that any imported proof obligation is closed.",
+  "baseline": {
+    "tauceti": "f790474821cf4256814db967cb154e7af3d0c369",
+    "mathlib": "082e2d37e8b0463410cdb532e111cd43d5a66174",
+    "declarations": [
+      {
+        "ref": "mathlib:Set.unit",
+        "module": "Mathlib.RingTheory.DedekindDomain.SInteger",
+        "provides": "For a Dedekind domain R with fraction field K and a set S of height-one primes, the subgroup of K units having valuation one outside S. Source statement read at the Mathlib pin."
+      },
+      {
+        "ref": "mathlib:Set.unit_valuation_eq_one",
+        "module": "Mathlib.RingTheory.DedekindDomain.SInteger",
+        "provides": "An S-unit has valuation one at each height-one prime outside S; no finiteness conclusion."
+      },
+      {
+        "ref": "mathlib:Set.unitEquivUnitsInteger",
+        "module": "Mathlib.RingTheory.DedekindDomain.SInteger",
+        "provides": "The multiplicative equivalence between the S-unit subgroup and the unit group of the S-integer subalgebra, for the same Dedekind-domain/fraction-field assumptions."
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "LV",
+      "title": "Diophantine problems and p-adic period mappings",
+      "authors": "Brian Lawrence and Akshay Venkatesh",
+      "edition": "arXiv:1807.02721v3 (25 October 2019); published Inventiones mathematicae 221 (2020), 893–999. All LV page locators here use the 76-page preprint.",
+      "url": "https://arxiv.org/pdf/1807.02721v3",
+      "sha256": "e3013516c1123635f0373cd5b623eafa3d816f043ee54760dec724d329bc6b9b",
+      "accessed": "2026-10-19",
+      "readSections": [
+        "Lemma 2.1 and Lemma 2.3, pp. 9–10",
+        "§§3.1–3.5, pp. 15–20",
+        "Theorem 4.1 and beginning of its proof, p. 20",
+        "Proposition 5.3, Theorem 5.4 and its proof, pp. 26–28"
+      ]
+    },
+    {
+      "id": "LS",
+      "title": "The Shafarevich conjecture for hypersurfaces in abelian varieties",
+      "authors": "Brian Lawrence and Will Sawin",
+      "edition": "arXiv:2004.09046v5 (16 October 2025), 121 pages. All LS locators use this preprint.",
+      "url": "https://arxiv.org/pdf/2004.09046v5",
+      "sha256": "5e5f829e2841637de38852bde0d5f0a0b80183e6f9d23b60250cc2be1ee21d97",
+      "accessed": "2026-10-19",
+      "readSections": [
+        "Theorem 1.1 and introduction, p. 1",
+        "Theorem 3.5, p. 21",
+        "Theorem 4.7, Lemmas 4.8–4.9, Corollary 4.10 and Proposition 4.11 statement, pp. 33–37",
+        "Definitions 5.1–5.6 and Remark 5.7, pp. 40–42; Lemma 5.49 and proof, pp. 61–62",
+        "§6.1, Lemmas 6.1–6.3 and Theorem 6.4, pp. 63–67; Definition 6.6 and Lemma 6.8, pp. 68–69",
+        "Theorem 8.17 and proof, pp. 83–84",
+        "§9, pp. 85–88, Theorems 9.2, 9.4–9.6 and Corollary 9.3"
+      ]
+    },
+    {
+      "id": "F",
+      "title": "Endlichkeitssätze für abelsche Varietäten über Zahlkörpern",
+      "authors": "Gerd Faltings",
+      "edition": "Inventiones mathematicae 73 (1983), 349–366; scanned article, printed page locators.",
+      "url": "https://math.uchicago.edu/~drinfeld/Deligne%27s_conjecture_Manin_conf/Faltings_argument/Faltings.pdf",
+      "sha256": "0b7fb3e505d5d63e3e6c5913daf15bd843488e59f80f8d5176b154ac8faa3fc2",
+      "accessed": "2026-10-19",
+      "readSections": [
+        "§3, Lemma 4, p. 357",
+        "§5, Satz 5 and proof, pp. 362–363; Satz 6 statement, p. 363"
+      ]
+    },
+    {
+      "id": "BT",
+      "title": "The Ax–Schanuel conjecture for variations of Hodge structures",
+      "authors": "Benjamin Bakker and Jacob Tsimerman",
+      "edition": "Author manuscript, 13 pages; published Inventiones mathematicae 217 (2019), 77–94. Locators use author PDF pages.",
+      "url": "https://benjamin-bakker.github.io/hodge.ax.schanuel.pdf",
+      "sha256": "38e2c2fa0afeed5d18aca9c8f9284a616afeefee3d33104b43a9b9ed653bb34c",
+      "accessed": "2026-10-19",
+      "readSections": [
+        "§1.2, setup and Theorem 1.1, pp. 1–2"
+      ]
+    }
+  ],
+  "nodes": [],
+  "coverage": [],
+  "gaps": [],
+  "requests": [],
+  "restructure": [
+    {
+      "action": "merge",
+      "roadmaps": [
+        "LawrenceVenkateshMethod",
+        "MordellLawrenceVenkatesh"
+      ],
+      "detail": "Every mathematical target in the new brief already has an owner in the three accepted plans. There is no independent residual stage to design.",
+      "proposal": "Consolidate the proposed LawrenceVenkateshMethod identity into MordellLawrenceVenkatesh as an alternate entry point. Keep all LV.0–LV.11 assignments unchanged. Keep MordellLawrenceVenkateshPartII:M2.0–M2.10 as the existing higher-dimensional extension, and SheafConvolutionOnAbelianVarieties:SC.0–SC.9 as its separate convolution supplier. Do not merge those mathematical owners into the base roadmap, renumber their nodes, create duplicate planets, or change their gaps. The maintainer applies this proposal only after independent review."
+    }
+  ],
+  "disposition": {
+    "kind": "consolidation-proposal",
+    "independentMathematicalScope": false,
+    "newStages": 0,
+    "newDeclarations": 0,
+    "reason": "No existing stages were supplied for this new identifier, and the brief has no target beyond accepted existing owners. Empty stages and nodes deliberately record that result. This is not an independently packageable roadmap or a certificate of mathematical closure.",
+    "reviewRequired": "Confirm the target-to-owner map and approve the consolidation, or identify a genuinely uncovered target before assigning a new stage. No retirement or merge has been applied."
+  },
+  "targetDisposition": [
+    {
+      "id": "global-finiteness",
+      "target": "Faltings finiteness for semisimple Galois representations",
+      "disposition": "import",
+      "statement": "Fix a number field K, a rational prime p, a finite set T of finite places containing the places above p, rank d and a nonnegative integral weight w. Semisimple continuous representations of G_K on Q_p^d, unramified outside T, with integer Frobenius characteristic polynomials and pure weight w at every place outside T, have finitely many isomorphism classes. Use geometric Frobenius for the positive weight convention.",
+      "owners": [
+        "MordellLawrenceVenkatesh:LV.1/faltings-finiteness",
+        "MordellLawrenceVenkatesh:LV.1/frobenius-test-set",
+        "MordellLawrenceVenkatesh:LV.1/weil-polynomials-finite"
+      ],
+      "sources": [
+        {
+          "sourceId": "LV",
+          "locator": "Lemma 2.3, pp. 9–10"
+        }
+      ],
+      "boundary": "Fixed Hodge–Tate weights or a conductor bound alone are not the stated theorem. ArithmeticGaloisRepresentations:R01.5 supplies recognition; the finite-test/Weil-polynomial arithmetic argument is already owned by LV.1."
+    },
+    {
+      "id": "semilinear-linear-algebra",
+      "target": "Semilinear Frobenius centralizers",
+      "disposition": "import",
+      "statement": "For an automorphism sigma of E of finite order e with fixed field F and an invertible sigma-semilinear map phi on a d-dimensional E-space, the F-dimension of its E-linear commuting endomorphisms equals the E-dimension of the centralizer of phi^e and is at most d squared.",
+      "owners": [
+        "MordellLawrenceVenkatesh:LV.0/semilinear-centralizer",
+        "MordellLawrenceVenkatesh:LV.0/semilinear-centralizer-finrank",
+        "MordellLawrenceVenkatesh:LV.0/semilinear-centralizer-unramified"
+      ],
+      "sources": [
+        {
+          "sourceId": "LV",
+          "locator": "Lemma 2.1, p. 9"
+        }
+      ],
+      "boundary": "The first centralizer is an F-vector space. A coefficient-field-linear centralizer of a semilinear map is not silently substituted."
+    },
+    {
+      "id": "good-model-disk",
+      "target": "Families, good models and horizontal transport",
+      "disposition": "import",
+      "statement": "For a smooth proper family with locally free cohomology and Hodge quotients over an S-integer model, choose a good place v above p>2 with K_v/Q_p unramified and an integral basepoint. Horizontal transport on its residue disk identifies the crystalline space and its semilinear Frobenius while the Hodge filtration varies. The abelian-by-finite H^1 setting retains its finite coefficient algebra and polarization; general geometric cohomology belongs to the compatible-system owner.",
+      "owners": [
+        "MordellLawrenceVenkatesh:LV.2/abelian-by-finite-family",
+        "MordellLawrenceVenkatesh:LV.2/good-model",
+        "MordellLawrenceVenkatesh:LV.2/residue-disk",
+        "MordellLawrenceVenkatesh:LV.2/gauss-manin-transport-padic",
+        "MordellLawrenceVenkatesh:LV.2/crystalline-frobenius-on-fibres",
+        "MordellLawrenceVenkateshPartII:M2.0/geometric-cohomology-system",
+        "MordellLawrenceVenkateshPartII:M2.0/crystalline-residue-fibres"
+      ],
+      "sources": [
+        {
+          "sourceId": "LV",
+          "locator": "§§3.1–3.3, pp. 15–17"
+        }
+      ],
+      "boundary": "General smooth-proper cohomology is not reduced without justification to abelian H^1. PadicHodgeTheory and the cohomology-comparison owners provide the geometric comparisons."
+    },
+    {
+      "id": "period-map",
+      "target": "Local p-adic and complex period maps",
+      "disposition": "import",
+      "statement": "Transport the filtration on each fibre back to a fixed cohomology space to obtain a flag-valued analytic map. For abelian-by-finite H^1 its target is the coefficient-algebra Lagrangian flag variety. Its complex counterpart and p-adic counterpart are evaluations of common algebraic-coefficient horizontal power series.",
+      "owners": [
+        "MordellLawrenceVenkatesh:LV.3/padic-period-map",
+        "MordellLawrenceVenkatesh:LV.3/complex-period-map",
+        "MordellLawrenceVenkatesh:LV.3/period-maps-common-series",
+        "MordellLawrenceVenkateshPartII:M2.0/hodge-deligne-system"
+      ],
+      "sources": [
+        {
+          "sourceId": "LV",
+          "locator": "§3.4, pp. 18–19"
+        }
+      ],
+      "boundary": "RelativeFarguesFontaine is not required merely because the word period occurs: these maps use Gauss–Manin transport and crystalline comparison, not relative Fargues–Fontaine modifications."
+    },
+    {
+      "id": "monodromy-density",
+      "target": "Lower bound on the period-image closure",
+      "disposition": "import",
+      "statement": "The complex Zariski closure contains the monodromy orbit of the base filtration. Common power series identify the dimensions of the complex and p-adic closures. Full monodromy gives density in the appropriate Lagrangian period space in the abelian-by-finite setting.",
+      "owners": [
+        "MordellLawrenceVenkatesh:LV.3/period-maps-common-series",
+        "MordellLawrenceVenkatesh:LV.3/padic-period-image-dense"
+      ],
+      "sources": [
+        {
+          "sourceId": "LV",
+          "locator": "Lemmas 3.1–3.3, pp. 18–19"
+        }
+      ],
+      "boundary": "A positive-dimensional period image is not itself a finiteness theorem; the bad arithmetic loci must have smaller dimension."
+    },
+    {
+      "id": "curve-criterion",
+      "target": "From finitely many local types to finite points on a curve",
+      "disposition": "import",
+      "statement": "On a curve residue disk, suppose the relevant field/representation pairs run through finitely many local isomorphism classes. Their filtrations lie in finitely many Frobenius-centralizer orbits. If the dimension of the linear-iterate centralizer is smaller than the period-image closure, the point set is finite. In relative abelian dimension d>=1, full monodromy gives period dimension [L_0:K_v]d(d+1)/2 and centralizer dimension at most 4d^2; local degree at least 8 suffices.",
+      "owners": [
+        "MordellLawrenceVenkatesh:LV.3/padic-period-preimage-finite",
+        "MordellLawrenceVenkatesh:LV.4/finiteness-criterion"
+      ],
+      "sources": [
+        {
+          "sourceId": "LV",
+          "locator": "Proposition 3.4 and proof, pp. 19–20; factorwise application in §6, Lemma 6.2, p. 31"
+        }
+      ],
+      "boundary": "Compact residue disks and convergent restricted series supply the finite-zero step. In higher dimension a proper analytic locus can still be Zariski dense."
+    },
+    {
+      "id": "s-unit",
+      "target": "The S-unit equation over a number field",
+      "disposition": "import",
+      "statement": "For any number field K and finite S containing its archimedean places, the set of t in O_(K,S)^× for which 1-t also lies in O_(K,S)^× is finite. The proof uses the Legendre/Kummer reductions and the curve period criterion.",
+      "owners": [
+        "MordellLawrenceVenkatesh:LV.6/s-unit-theorem"
+      ],
+      "sources": [
+        {
+          "sourceId": "LV",
+          "locator": "Theorem 4.1, p. 20; proof in §4, pp. 20–24"
+        }
+      ],
+      "boundary": "Finite generation of the unit group is already library arithmetic; it does not prove finiteness of solutions of this additive equation. Effective enumeration remains EffectiveDiophantineMethods:ED.2."
+    },
+    {
+      "id": "nonsemisimple-curve",
+      "target": "The abelian-by-finite rational-point criterion",
+      "disposition": "import",
+      "statement": "For a smooth projective geometrically connected curve of genus at least two and a positive-relative-dimension abelian-by-finite family with full monodromy and good S-integer model, a friendly good place v gives finiteness of the rational points whose finite fibre has size_v less than 1/(d+1). The owner supplies the small-orbit definition and the general-position/Hodge-weight argument controlling nonsemisimple fibres.",
+      "owners": [
+        "MordellLawrenceVenkatesh:LV.7/proposition-5-3"
+      ],
+      "sources": [
+        {
+          "sourceId": "LV",
+          "locator": "Proposition 5.3, p. 26, restated p. 28; proof in §6, pp. 28–34"
+        }
+      ],
+      "boundary": "Faltings finiteness applies to semisimplifications; one cannot assume every geometric fibre representation is semisimple to finish this application."
+    },
+    {
+      "id": "mordell",
+      "target": "Mordell via the Kodaira–Parshin family",
+      "disposition": "import",
+      "statement": "For every number field K and smooth projective geometrically connected K-curve Y of genus at least two, Y(K) is finite. The existing proof route constructs Kodaira–Parshin families with full monodromy, chooses a friendly auxiliary place and bounds the small Frobenius orbits uniformly.",
+      "owners": [
+        "MordellLawrenceVenkatesh:LV.8/kodaira-parshin-family",
+        "MordellLawrenceVenkatesh:LV.10/kodaira-parshin-full-monodromy",
+        "MordellLawrenceVenkatesh:LV.11/friendly-auxiliary-place",
+        "MordellLawrenceVenkatesh:LV.11/small-orbit-count",
+        "MordellLawrenceVenkatesh:LV.11/size-bound",
+        "MordellLawrenceVenkatesh:LV.11/faltings-theorem"
+      ],
+      "sources": [
+        {
+          "sourceId": "LV",
+          "locator": "Theorem 5.4 and proof, pp. 26–28; family and monodromy assertions cited there from §§7–8"
+        }
+      ],
+      "boundary": "The other Faltings/Parshin route in HeightsRationalPointsAndObstructions:RP.4 is not a new copy of this proof. This job assigns no additional Mordell node."
+    },
+    {
+      "id": "general-system",
+      "target": "General compatible coefficient systems",
+      "disposition": "import",
+      "statement": "Compatible Betti, etale, filtered de Rham and crystalline realizations, with integral and polarized predicates recorded separately, provide the general geometric coefficient-system language. Arithmetic finiteness for the coefficient normalizer is a separate G-conjugacy target; finite GL-conjugacy classes alone do not discharge it.",
+      "owners": [
+        "MordellLawrenceVenkateshPartII:M2.0/hodge-deligne-system",
+        "MordellLawrenceVenkateshPartII:M2.0/integral-polarized-system",
+        "MordellLawrenceVenkateshPartII:M2.0/geometric-cohomology-system",
+        "MordellLawrenceVenkateshPartII:M2.1/rational-orbit-frobenius-polynomials",
+        "MordellLawrenceVenkateshPartII:M2.2/finite-global-g-types"
+      ],
+      "sources": [
+        {
+          "sourceId": "LS",
+          "locator": "§5, Definitions 5.2–5.5, pp. 40–42; Lemma 5.49, pp. 61–62"
+        }
+      ],
+      "boundary": "The accepted owner records coefficient comparison, rational orbit splitting and disconnected-group descent obligations. They remain there; importing a target does not close them."
+    },
+    {
+      "id": "higher-dimensional-period",
+      "target": "Higher-dimensional period inverse-image non-density",
+      "disposition": "import",
+      "statement": "For a smooth geometrically connected positive-dimensional base with a polarized integral compatible system, the inverse image on a fixed p-adic residue disk of an algebraic subset of the monodromy period orbit of codimension at least the base dimension is not Zariski dense. The existing general arithmetic application works over Q, with Weil restriction for number-field hypersurface parameters.",
+      "owners": [
+        "MordellLawrenceVenkateshPartII:M2.3/complex-period-codimension",
+        "MordellLawrenceVenkateshPartII:M2.3/local-analytic-nullstellensatz",
+        "MordellLawrenceVenkateshPartII:M2.3/padic-period-nondensity"
+      ],
+      "sources": [
+        {
+          "sourceId": "LS",
+          "locator": "Theorem 6.4 and proof, pp. 65–67"
+        }
+      ],
+      "boundary": "This uses Ax–Schanuel (BT Theorem 1.1), not just definability. The owner must combine finitely many affinoid components; a componentwise assertion about an infinite union would be insufficient."
+    },
+    {
+      "id": "balanced-codimension",
+      "target": "Strong balance and nonsemisimple filtration bounds",
+      "disposition": "import",
+      "statement": "The Frobenius action must preserve equal-sized monodromy index classes and each Frobenius orbit must meet at least c such classes. Together with the uniform adjoint Hodge profile and both numerical inequalities of LS Theorem 8.17, this yields non-density of integral points without assuming actual fibres semisimple. With d the base dimension, h^a the adjoint Hodge numbers, t=rank H and T the cumulative adjoint Hodge polygon, the inequalities are sum_(a>0) h^a >= (d+dim H)/c and sum_(a>0) a h^a > T((d+dim H)/c)+T((h^0-t)/2+(d+dim H)/c). The arguments of T must lie in its domain.",
+      "owners": [
+        "MordellLawrenceVenkateshPartII:M2.4/strongly-balanced-monodromy",
+        "MordellLawrenceVenkateshPartII:M2.6/integral-points-nondense"
+      ],
+      "sources": [
+        {
+          "sourceId": "LS",
+          "locator": "Definition 6.6, p. 68; Theorem 8.17, pp. 83–84"
+        }
+      ],
+      "boundary": "The nonsemisimple types and balanced-filtration estimates stay in M2.5–M2.6; the brief does not justify dropping either numerical inequality."
+    },
+    {
+      "id": "convolution-monodromy",
+      "target": "Lawrence–Sawin big monodromy",
+      "disposition": "import",
+      "statement": "For a primitive smooth ample hypersurface in an abelian variety of dimension n>2, convolution supplies a normal classical group in its distinguished representation: SL in the nonsymmetric case, Sp for even n in the inversion-symmetric case, and SO for odd n. Dimension-three exceptional normalized degrees must be excluded. Nonconstant-up-to-translation families then give product monodromy for generic simultaneous character twists, and torsion characters can be chosen uniformly across conjugates for the arithmetic application, choosing their order prime different from the good-reduction residue characteristic.",
+      "owners": [
+        "SheafConvolutionOnAbelianVarieties:SC.6/classical-monodromy",
+        "SheafConvolutionOnAbelianVarieties:SC.7/generic-big-monodromy",
+        "SheafConvolutionOnAbelianVarieties:SC.8/uniform-orbit-monodromy",
+        "MordellLawrenceVenkateshPartII:M2.4/torsion-orbit-strong-balance"
+      ],
+      "sources": [
+        {
+          "sourceId": "LS",
+          "locator": "Theorem 3.5, p. 21; Theorem 4.7, pp. 33–34; Corollary 4.10, pp. 36–37; Lemma 6.8, pp. 68–69"
+        }
+      ],
+      "boundary": "Convolution definitions, quotient categories, fibre functors, representation classification and exceptional-degree combinatorics all remain with SC.0–SC.8. They are not recreated as local period theory."
+    },
+    {
+      "id": "hypersurfaces",
+      "target": "Shafarevich finiteness for hypersurfaces in abelian varieties",
+      "disposition": "import",
+      "statement": "Fix a number field K, an abelian variety A/K of dimension n>=4 with good reduction outside a finite S, and an ample Neron–Severi class phi. Smooth hypersurfaces of class phi with smooth closure in the abelian S-integer model form finitely many A(K)-translation classes. The existing extension also covers n=3: primitive divisors exclude equality with the exceptional normalized degrees, while all divisors require exclusion of divisibility. The n=2 theorem has a separate curve-Shafarevich proof.",
+      "owners": [
+        "MordellLawrenceVenkateshPartII:M2.10/good-reduction-primitive-hypersurface",
+        "MordellLawrenceVenkateshPartII:M2.10/primitive-shafarevich-finiteness",
+        "MordellLawrenceVenkateshPartII:M2.10/stabilizer-isogeny-reduction",
+        "MordellLawrenceVenkateshPartII:M2.10/rational-translation-descent",
+        "MordellLawrenceVenkateshPartII:M2.10/hypersurface-shafarevich-finiteness",
+        "MordellLawrenceVenkateshPartII:M2.10/abelian-surface-hypersurfaces"
+      ],
+      "sources": [
+        {
+          "sourceId": "LS",
+          "locator": "Theorem 1.1, p. 1; Theorem 9.2 and Corollary 9.3, pp. 85–88; Theorems 9.4–9.6, p. 88"
+        }
+      ],
+      "boundary": "The quotient is by translations, not hypersurface isomorphism or literal equality. Weil restriction and dense-open resolution adapters already belong to M2.10. Non-density alone is not the final finiteness argument."
+    },
+    {
+      "id": "original-faltings-input",
+      "target": "Original arithmetic finiteness provenance",
+      "disposition": "import",
+      "statement": "Hermite–Minkowski bounds the extensions of fixed degree unramified outside a finite set. Finitely many Frobenius tests and bounded Weil polynomials then give the arithmetic finiteness input. The original abelian-variety isogeny and Shafarevich statements retain their separate owner.",
+      "owners": [
+        "MordellLawrenceVenkatesh:LV.1/frobenius-test-set",
+        "MordellLawrenceVenkatesh:LV.1/faltings-finiteness",
+        "FaltingsFinitenessAndIsogenyTheorems:R28.5/shafarevich-finiteness"
+      ],
+      "sources": [
+        {
+          "sourceId": "F",
+          "locator": "§3, Lemma 4, p. 357; §5, Satz 5 and proof, pp. 362–363; Satz 6, p. 363"
+        }
+      ],
+      "boundary": "Satz 5 is the abelian-variety isogeny statement; the general representation formulation is LV Lemma 2.3. These are not interchangeable citations."
+    },
+    {
+      "id": "ax-schanuel",
+      "target": "Functional transcendence input for the higher-dimensional branch",
+      "disposition": "import",
+      "statement": "For a pure polarized integral variation on a smooth complex algebraic base, an analytic component of the intersection of the lifted-period graph with an algebraic subset of the base times compact dual, of smaller codimension than the sum of the two expected codimensions, projects into a proper weak Mumford–Tate subvariety.",
+      "owners": [
+        "MordellLawrenceVenkateshPartII:M2.3/complex-period-codimension"
+      ],
+      "sources": [
+        {
+          "sourceId": "BT",
+          "locator": "§1.2, Theorem 1.1, author PDF pp. 1–2"
+        }
+      ],
+      "boundary": "The result used by LS Lemma 6.3 and Theorem 6.4 is stronger than definability. This audit verifies the input statement and its use, not the proof of Ax–Schanuel."
+    }
+  ],
+  "ownershipAudit": [
+    {
+      "roadmapId": "MordellLawrenceVenkatesh",
+      "review": {
+        "status": "accepted",
+        "reviewer": "independent-review-REV-DESIGN-LV~2",
+        "date": "2026-10-06"
+      },
+      "nodes": 146,
+      "gaps": 79,
+      "requests": 76,
+      "stageStatuses": {
+        "MordellLawrenceVenkatesh:LV.0": "planned",
+        "MordellLawrenceVenkatesh:LV.1": "planned",
+        "MordellLawrenceVenkatesh:LV.2": "planned",
+        "MordellLawrenceVenkatesh:LV.3": "planned",
+        "MordellLawrenceVenkatesh:LV.4": "planned",
+        "MordellLawrenceVenkatesh:LV.5": "planned",
+        "MordellLawrenceVenkatesh:LV.6": "planned",
+        "MordellLawrenceVenkatesh:LV.7": "planned",
+        "MordellLawrenceVenkatesh:LV.8": "planned",
+        "MordellLawrenceVenkatesh:LV.9": "planned",
+        "MordellLawrenceVenkatesh:LV.10": "planned",
+        "MordellLawrenceVenkatesh:LV.11": "planned"
+      },
+      "role": "Existing accepted plan; its unresolved obligations are preserved, not certified closed by this audit."
+    },
+    {
+      "roadmapId": "MordellLawrenceVenkateshPartII",
+      "review": {
+        "status": "accepted",
+        "reviewer": "independent-review-REV-DESIGN-MordellLawrenceVenkateshPartII",
+        "date": "2026-10-19"
+      },
+      "nodes": 79,
+      "gaps": 10,
+      "requests": 12,
+      "stageStatuses": {
+        "MordellLawrenceVenkateshPartII:M2.0": "planned",
+        "MordellLawrenceVenkateshPartII:M2.1": "planned",
+        "MordellLawrenceVenkateshPartII:M2.2": "planned",
+        "MordellLawrenceVenkateshPartII:M2.3": "planned",
+        "MordellLawrenceVenkateshPartII:M2.4": "planned",
+        "MordellLawrenceVenkateshPartII:M2.5": "planned",
+        "MordellLawrenceVenkateshPartII:M2.6": "planned",
+        "MordellLawrenceVenkateshPartII:M2.7": "planned",
+        "MordellLawrenceVenkateshPartII:M2.8": "planned",
+        "MordellLawrenceVenkateshPartII:M2.9": "planned",
+        "MordellLawrenceVenkateshPartII:M2.10": "planned"
+      },
+      "role": "Existing accepted plan; its unresolved obligations are preserved, not certified closed by this audit."
+    },
+    {
+      "roadmapId": "SheafConvolutionOnAbelianVarieties",
+      "review": {
+        "status": "accepted",
+        "reviewer": "independent-review-REV-DESIGN-SheafConvolutionOnAbelianVarieties",
+        "date": "2026-10-19"
+      },
+      "nodes": 52,
+      "gaps": 2,
+      "requests": 19,
+      "stageStatuses": {
+        "SheafConvolutionOnAbelianVarieties:SC.0": "planned",
+        "SheafConvolutionOnAbelianVarieties:SC.1": "planned",
+        "SheafConvolutionOnAbelianVarieties:SC.2": "planned",
+        "SheafConvolutionOnAbelianVarieties:SC.3": "planned",
+        "SheafConvolutionOnAbelianVarieties:SC.4": "planned",
+        "SheafConvolutionOnAbelianVarieties:SC.5": "planned",
+        "SheafConvolutionOnAbelianVarieties:SC.6": "planned",
+        "SheafConvolutionOnAbelianVarieties:SC.7": "planned",
+        "SheafConvolutionOnAbelianVarieties:SC.8": "planned",
+        "SheafConvolutionOnAbelianVarieties:SC.9": "planned"
+      },
+      "role": "Existing accepted plan; its unresolved obligations are preserved, not certified closed by this audit."
+    }
+  ],
+  "sourceIssues": [],
+  "upstreamNotes": [
+    {
+      "detail": "Current TauCetiRoadmap main 0d144d044dacebca17b654695b6f1ad58f159b27 and current TauCeti main a91d3aafa8cd3e6bc33dfde0d7677ed0f1625039 were screened read-only. GlobalNumberFields and Chebotarev README documents were read, along with their Suggested prefixes and relevant current modular-period and S-unit declarations. These provide foundational arithmetic, not the LV/LS conclusions. The nine newer roadmap directories and Completed directories were included in the name/target screen. No new mathematical ownership is assigned by that negative screen."
+    },
+    {
+      "detail": "Current TauCeti Set.unit_fg (RingTheory/DedekindDomain/SInteger/Unit.lean) proves finite generation under finite S and finite generation of the empty-set unit group. It is not finiteness of t and 1-t both S-units. Current library evidence is not treated as a pinned baseline citation."
+    }
+  ],
+  "linkAudit": {
+    "proposedIdentifierMatches": 0,
+    "existingOwnerEntriesExamined": 16,
+    "detail": "Screened local link JSON files: no link targets the proposed identifier; fifteen LV prerequisite links and one affine-group overlap were inspected. Their endpoints retain their current owners. No links containing the Part II or convolution identifiers were found. No new stage-edge cycle is introduced because this design assigns no stages."
+  },
+  "implementationStatus": "unchecked"
+}
