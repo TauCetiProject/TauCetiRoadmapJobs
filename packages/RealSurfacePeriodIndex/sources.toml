@@ -39,7 +39,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1"
-cited_for = ["Layer 9"]
+cited_for = ["Layer 5", "Layer 9"]
 
 [[source]]
 id = "BW20"
@@ -59,7 +59,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v3"
-cited_for = ["Layer 4"]
+cited_for = ["Layer 1", "Layer 5", "Layer 6", "Layer 9"]
 
 [[source]]
 id = "EKM"
@@ -67,7 +67,7 @@ authors = "Richard Elman, Nikita Karpenko, Alexander Merkurjev"
 title = "The Algebraic and Geometric Theory of Quadratic Forms"
 year = 2008
 locator_scheme = "theorem"
-locator = "Theorem 17.14; Lemmas 19.4, 19.10; Corollary 36.4; Theorem 37.4; Corollary 37.5; Proposition 37.7; Corollary 37.8; Lemma 38.1; Corollary 38.2; Theorem 97.2; Corollaries 97.5, 97.6; Theorem 97.7; Theorem 98.19; §33"
+locator = "Corollary 17.6; Theorem 17.14; Lemmas 19.4, 19.10; Corollary 36.4; Theorem 37.4; Corollary 37.5; Proposition 37.7; Corollary 37.8; Lemma 38.1; Corollary 38.2; Theorem 97.2; Corollaries 97.5, 97.6; Theorem 97.7; Theorem 98.19; §33; §36 (definition of the u-invariant, p. 161)"
 url = "https://www.math.ucla.edu/~merkurev/Book/Kniga-final/Kniga.pdf"
 fetched_from = "https://www.math.ucla.edu/~merkurev/Book/Kniga-final/Kniga.pdf"
 fetched_at = "2026-10-25T20:22:26Z"
@@ -75,7 +75,7 @@ sha256 = "0b547b09ee83c370a932e2c2117fe1757bb8b342ca0af9d73526b5edffb842e6"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["Layer 0"]
+cited_for = ["Layer 0", "Layer 1"]
 
 [[source]]
 id = "BEC05"
@@ -83,7 +83,7 @@ authors = "Karim Johannes Becher"
 title = "On fields of u-invariant 4"
 year = 2005
 locator_scheme = "section"
-locator = "§§2-3, Theorem 3.1"
+locator = "§2 (definition of the u-invariant, p. 3); §3; Theorem 3.1"
 url = "https://www.math.uni-bielefeld.de/lag/man/154.pdf"
 fetched_from = "https://www.math.uni-bielefeld.de/lag/man/154.pdf"
 fetched_at = "2026-10-25T20:22:27Z"
@@ -99,7 +99,7 @@ authors = "Jean-Louis Colliot-Thélène"
 title = "Algèbres simples centrales sur les corps de fonctions de deux variables (d'après A. J. de Jong)"
 year = 2006
 locator_scheme = "section"
-locator = "§2.2, Proposition 2.2, Theorem 2.5, Proposition 2.6, Theorem 3.14 and proof, Lemma 3.15"
+locator = "§2.2, Proposition 2.2, Proposition 2.3, Theorem 2.5, Proposition 2.6, Theorem 3.14 and proof, Lemma 3.15"
 url = "http://www.numdam.org/item/SB_2004-2005__47__379_0.pdf"
 fetched_from = "https://www.numdam.org/item/SB_2004-2005__47__379_0.pdf"
 fetched_at = "2026-10-25T20:22:41Z"
@@ -125,7 +125,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2"
-cited_for = ["Layer 5", "Layer 6"]
+cited_for = ["Layer 2", "Layer 4", "Layer 6"]
 
 [[source]]
 id = "VOI06"
@@ -278,7 +278,7 @@ url = "https://doi.org/10.1007/978-3-540-30615-3"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Layer 5"]
+cited_for = ["Layer 4"]
 
 [[source]]
 id = "SCH94"
@@ -323,7 +323,7 @@ url = "https://doi.org/10.1007/978-1-4612-0647-7"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Layer 5"]
+cited_for = ["Layer 4"]
 
 [[source]]
 id = "DIM85"

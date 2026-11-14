@@ -25,7 +25,7 @@ Publ. Math. IHÉS 130 (2019)):
 * de Jong's theorem in characteristic zero (README §2.9), `index_eq_orderOf_of_isAlgClosed`;
 * the norm bound over real closed fields (§2.10), `index_dvd_two_mul_orderOf_of_isRealClosed`;
 * Theorem 0.3 (§7.4), `index_eq_orderOf_of_not_isSemireal`;
-* Theorem 0.4 in its birational form (§7.5), `index_eq_orderOf_of_forall_isRealClosed`;
+* Theorem 0.4 in its birational form (§7.6), `index_eq_orderOf_of_forall_isRealClosed`;
 * Theorem 0.12 (§§7.8, 7.10), `not_anisotropic_of_hasZeroTotalSignature` and
   `exists_anisotropic_hasZeroTotalSignature`;
 * Theorem 0.10 (§7.11), `not_anisotropic_of_not_isSemireal`;
@@ -35,7 +35,7 @@ Headline theorems not statable at the pins:
 
 * Theorem 0.4 in its scheme form (classes of `Br(U)` on a smooth real surface `U` vanishing at
   every real point): Mathlib and Tau Ceti have no Brauer group of a scheme and no evaluation of a
-  Brauer class at a real point. Its birational form above is equivalent (README §7.5).
+  Brauer class at a real point. Its birational form above is equivalent (README §7.6).
 * Theorem 0.5 (the topological criterion `ind = per` or `ind = 2 per` for `α ∈ Br(S)`): it needs
   `Br(S)`, the Borel equivariant cohomology `H²_G(S(ℂ), 𝔽₂)`, the real Kummer sequence and the
   canonical real-locus components `[ξ]₁ ∈ H¹(S(ℝ), 𝔽₂)`, none of which is at the pins.
@@ -59,14 +59,14 @@ universe u v
 
 /-! ## Layer 0: real function fields -/
 
-/-- A quadratic form `q` over a field `K` (with `2` invertible) has **zero total signature**: for
-every real closed field `R` with a `K`-algebra structure, the base change `q_R` vanishes on an
-`R`-subspace of `R ⊗[K] V` of half the dimension of `V`. For nondegenerate `q` this says that the
-signature of `q` vanishes at every ordering of `K` (Sylvester's law over the real closure); for
-nonreal `K` it holds for every form. This is the condition in the Elman–Lam u-invariant
-(README §0.6; B19 §0.5, p. 66; EKM §37). -/
+/-- A quadratic form `q` on a finite-dimensional vector space `V` over a field `K` (with `2`
+invertible) has **zero total signature**: for every real closed field `R` with a `K`-algebra
+structure, the base change `q_R` vanishes on an `R`-subspace of `R ⊗[K] V` of half the dimension
+of `V`. For nondegenerate `q` this says that the signature of `q` vanishes at every ordering of
+`K` (Sylvester's law over the real closure); for nonreal `K` it holds for every form. This is the
+condition in the Elman–Lam u-invariant (README §0.6; B19 §0.5, p. 66; EKM §36, p. 161). -/
 def HasZeroTotalSignature {K : Type u} [Field K] [Invertible (2 : K)] {V : Type v}
-    [AddCommGroup V] [Module K V] (q : QuadraticForm K V) : Prop :=
+    [AddCommGroup V] [Module K V] [FiniteDimensional K V] (q : QuadraticForm K V) : Prop :=
   ∀ (R : Type u) [Field R] [IsRealClosed R] [Algebra K R],
     ∃ W : Submodule R (R ⊗[K] V), 2 * Module.finrank R W = Module.finrank K V ∧
       ∀ w ∈ W, q.baseChange R w = 0
@@ -107,7 +107,7 @@ theorem index_eq_orderOf_of_not_isSemireal (K : Type u) [Field K] [Algebra ℝ K
 /-- **Theorem 0.4, birational form.** Let `K` be a finitely generated field extension of `ℝ` of
 transcendence degree `2` and `A` a central simple `K`-algebra whose class becomes trivial over
 every real closed field `R` with a `K`-algebra structure. Then the index of `A` equals the period
-of its class (README §7.5; B19 Theorem 0.4, p. 64, and §6.4, p. 95). -/
+of its class (README §7.6; B19 Theorem 0.4, p. 64, and §6.4, p. 95). -/
 theorem index_eq_orderOf_of_forall_isRealClosed (K : Type u) [Field K] [Algebra ℝ K]
     [Algebra.EssFiniteType ℝ K] (htr : Algebra.trdeg ℝ K = 2) (A : CSA.{u, u} K)
     (hA : ∀ (R : Type u) [Field R] [IsRealClosed R] [Algebra K R],
