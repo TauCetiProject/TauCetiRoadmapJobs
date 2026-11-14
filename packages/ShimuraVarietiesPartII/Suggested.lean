@@ -14,10 +14,13 @@ headline, with the carrier its statement lacks:
   acceptable triple `(G, X, G°)`, `p > 2` and a point `y` of the integral model over `𝔽_q`, there
   is a unique point of `Conj(G)(ℚ)` whose image in `Conj(G)(ℚ_ℓ)` is the geometric `q`-Frobenius
   class of the `G(ℚ_ℓ)`-local system at `y`, for every `ℓ ≠ p`. Lacks integral models of Shimura
-  varieties and their special fibres, the group-valued tower local systems, and the conjugacy
-  quotient of a reductive group: Tau Ceti has reductive groups over a field as finite-type
-  commutative Hopf algebras (`TauCeti.reductiveCommHopfAlgProperty`), but no conjugation
-  coaction, invariant subalgebra or quotient map `χ_G`.
+  varieties and their special fibres and the group-valued tower local systems. Tau Ceti has
+  reductive groups over a field as finite-type commutative Hopf algebras
+  (`TauCeti.reductiveCommHopfAlgProperty`) and their conjugation coaction
+  (`TauCeti.HopfAlgebra.conjugationAlgHom`, whose evaluation at points `g, x` is `g x g⁻¹`), so the
+  class functions are the equalizer of that coaction with the inclusion of the second factor; it
+  lacks finite generation of these invariants and the classification of the quotient's geometric
+  points by semisimple classes, which the comparison of Frobenius classes uses.
 * Integral models of abelian type (Kisin–Pappas–Zhou, Theorem 7.2.21; README §3.8): lacks
   Shimura data of abelian type, Bruhat–Tits parahoric group schemes, integral Shimura models and
   local models.
