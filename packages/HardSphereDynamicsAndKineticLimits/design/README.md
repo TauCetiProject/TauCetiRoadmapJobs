@@ -1,6 +1,6 @@
 # Roadmap: hard-sphere dynamics and kinetic limits
 
-**Summary.** Build the microscopic model of classical kinetic theory: finitely many hard spheres of diameter ε in a flat position space (Euclidean space ℝᵈ or a flat torus ℝᵈ/L), their elastic scattering law, their trajectories, and the almost-everywhere defined hard-sphere flow. The core theorem is Alexander's theorem for finitely many particles: outside a Lebesgue-null set every configuration has a global trajectory with only binary, non-grazing collisions, finitely many in bounded time, and the resulting maps form a measure-preserving group. On this flow the roadmap builds the transport of densities and the weak Liouville equation with specular reflection, marginals and correlation functions, the canonical and grand canonical equilibrium ensembles with their invariance, and the hard-sphere Boltzmann collision operator. It states Lanford's theorem on the Boltzmann–Grad limit as a proposition for the roadmaps that prove it, and proves here its law-of-large-numbers consequence: convergence of the first two correlation functions forces the rescaled empirical measure to concentrate on the Boltzmann solution. Everything rests on Mathlib's Lebesgue change of variables, lattice quotients and Gaussian integrals, and on Tau Ceti's Gaussian densities, strongly continuous groups and empirical measures.
+**Summary.** Build the microscopic model of classical kinetic theory: finitely many hard spheres of diameter ε in a flat position space (Euclidean space ℝᵈ or a flat torus ℝᵈ/L), their elastic scattering law, their trajectories, and the almost-everywhere defined hard-sphere flow. The core theorem is Alexander's theorem for finitely many particles: outside a Lebesgue-null set every configuration has a global trajectory with only binary, non-grazing collisions, finitely many in bounded time, and the resulting maps form a measure-preserving group. On this flow the roadmap builds the transport of densities and the weak Liouville equation with specular reflection, marginals and correlation functions, the canonical and grand canonical equilibrium ensembles with their invariance, and the hard-sphere Boltzmann collision operator. It states Lanford's theorem on the Boltzmann–Grad limit as a proposition for the roadmaps that prove it, and proves here its law-of-large-numbers consequence: convergence of the first two correlation functions forces the rescaled empirical measure to concentrate on the Boltzmann solution. Everything rests on Mathlib's Lebesgue change of variables, lattice quotients and Gaussian integrals, on Tau Ceti's Gaussian densities, strongly continuous groups and empirical measures, and on the flows defined almost everywhere of ClassicalErgodicTheory §3.5.
 
 ## Scope and ownership
 
@@ -9,6 +9,8 @@ This roadmap owns: flat position spaces as quotients of Euclidean space carrying
 Already in the library and consumed, not restated: Lebesgue change of variables for injective differentiable maps, Haar measure on quotients by a lattice and fundamental domains, quotient norms, polar coordinates and the surface measure `MeasureTheory.Measure.toSphere`, Gaussian integrals, `ProbabilityTheory.poissonMeasure`, composition operators on `Lp` (Mathlib); the multivariate Gaussian density, strongly continuous one-parameter groups and the empirical measure of a finite population (Tau Ceti). The multivariate Gaussian density is the material of StandardDistributions, Layer 5, and the strongly continuous group is the material of OneParameterSemigroups; both are cited here through their pinned Tau Ceti declarations.
 
 Left to other roadmaps. The proof of Lanford's theorem (the BBGKY and Boltzmann hierarchies, their Cauchy problems and term-by-term convergence) belongs to a roadmap on the BBGKY hierarchy, which proves the proposition stated in §10.4. The Cauchy problem for the Boltzmann equation, the H theorem and the converse characterisation of collision invariants belong to a roadmap on the Boltzmann equation, which consumes §10.2–10.3. Fluctuations and large deviations of the empirical measure, long-time derivations, infinite hard-sphere systems, short-range potentials, uniform bounds on the number of collisions, and ergodicity of hard-sphere systems are subjects of later roadmaps listed under Downstream consumers. Finite point processes with a density against a Poisson process, Janossy measures and Papangelou intensities on unlabelled point measures are the subject of the PointProcesses roadmap; the grand canonical measure here lives on labelled configurations, where the flow acts, and its image in point measures is not restated. Complex tori as complex Lie groups are owned by ComplexTori; the real flat torus here carries a metric and a measure, not a complex structure. Smooth Hamiltonian flows and Liouville's theorem for smooth vector fields are not used: free transport is a shear, and the measure preservation of the hard-sphere flow is proved directly from the two-body Jacobian.
+
+Flows defined off a null set in general (a measurable flow on a conull carrier extended by the identity, countable disjoint unions of such flows with the sum measure, the transport of densities, point realisation) are ClassicalErgodicTheory §3.5. This roadmap constructs the conull carrier `G`, the trajectory action on it and its measure preservation (Layers 5–7), which are what §3.5 takes as input, and consumes §3.5 items 1, 3 and 4 in §7.2, §7.5, §8.1 and §9.4. Ergodic properties of the flow are not part of this roadmap. The strong continuity of the Koopman group (§7.4) is a target here and not a citation: ClassicalErgodicTheory §0.2 assumes a finite invariant measure and MathematicalBilliards §12.3 a probability space, while `λ_N|𝒟̄` has total mass `q_N · ∞`, infinite already for `N = d = 1` on the unit circle.
 
 Uniqueness of weak solutions of the Liouville equation with specular reflection is not part of this roadmap: the transported density is characterised by its Lagrangian identity (§8.1), which is what every consumer uses.
 
@@ -57,6 +59,7 @@ Every declaration below was read at the pinned Mathlib.
 - `Nat.descFactorial`, `Nat.descFactorial_eq_div` and `Nat.descFactorial_eq_zero_iff_lt` (`Mathlib/Data/Nat/Factorial/Basic.lean`): the falling factorial `n(n − 1)⋯(n − k + 1)`, equal to `n!/(n − k)!` when `k ≤ n` and zero exactly when `n < k`.
 - `Sigma.instMeasurableSpace` (`Mathlib/MeasureTheory/MeasurableSpace/Constructions.lean`) and `MeasureTheory.Measure.sum`: the measurable space and measures on the grand canonical phase space.
 - `Flow` (`Mathlib/Dynamics/Flow.lean`): a jointly continuous action of a topological monoid; the hard-sphere flow is not continuous and is not an instance, while free transport is.
+- `secondCountable_of_proper` (`Mathlib/Topology/MetricSpace/ProperSpace.lean`), `standardBorel_of_polish`, `StandardBorelSpace.prod` and `StandardBorelSpace.pi_countable` (`Mathlib/MeasureTheory/Constructions/Polish/Basic.lean`): a proper metric space is complete and second countable, hence Polish; a Polish space with its Borel σ-algebra is standard Borel, and finite products of standard Borel spaces are standard Borel. So the phase space `Fin N → X × E` is standard Borel, as ClassicalErgodicTheory §3.5 requires.
 
 ### From Tau Ceti
 
@@ -67,9 +70,13 @@ Every declaration below was read at the pinned Tau Ceti.
 - `TauCeti.Probability.empiricalMeasureOfFintype` (`TauCeti/Probability/Process/EmpiricalMeasure.lean`): the probability measure `(1/|κ|) Σ_i δ_{x_i}` of a nonempty finite population.
 - `TauCeti.flowOfLipschitz` (`TauCeti/Dynamics/Flow/OfLipschitz.lean`): the global flow of a globally Lipschitz vector field on a Banach space.
 
-### From other roadmaps
+### From TauCetiRoadmap.ClassicalErgodicTheory — §3.5
 
-No roadmap section is consumed. Every input is a pinned declaration or a target of this roadmap.
+Consumed on a standard Borel space with a σ-finite measure `μ`; a conull flow there is a measurable set `X₀` with `μ(X₀ᶜ) = 0` carrying a jointly measurable `AddAction ℝ X₀` whose time-`t` maps preserve `μ` restricted to `X₀`. The phase spaces here are standard Borel (Mathlib above) and `λ_N`, `λ_N|𝒟̄` and `(1/N!) λ_N|𝒟̄_N` are σ-finite.
+
+- §3.5 item 1 (conull flows): the extension of each time-`t` map by the identity off `X₀` is a jointly measurable family of `μ`-preserving maps satisfying the group law everywhere. Consumed in §7.2.
+- §3.5 item 3 (disjoint unions): for countably many conull flows on `(X_N, μ_N)`, the componentwise flow on `Σ N, X_N` with the sum measure is a conull flow, and a measure on the union is invariant exactly when each of its component restrictions is. Consumed in §7.5 and §9.4.
+- §3.5 item 4 (transport of densities): for a conull flow with identity extension `Φ` and a measurable `W ≥ 0`, `(Φ t)_* (μ.withDensity W) = μ.withDensity (W ∘ Φ (−t))`. Consumed in §8.1.
 
 ## How to read the build
 
@@ -330,7 +337,7 @@ API:
 
 ### 4.3 The collision map and its Jacobian
 
-On the open set `U = {|a| > ε, ⟨a, u⟩ < 0, D > 0}` define the collision map `C(a, u) = (a + τ(u − R_q u), R_q u)`, so that `B_s = S_s ∘ C` on `U ∩ {τ < s}` with `S_s(a, u) = (a + s u, u)`. Prove that `C` is smooth on `U` and that `det DC(a, u) = 1` at every point of `U`. Route: with `w = da + τ du` the differential of `Y + τ U'` (where `(Y, U') = C(a, u)`) is `R_q w`, and the differential of `U'` is `R_q du` plus a term depending only on `w`; in the coordinates `(w, du)` and `(dY + τ dU', dU')`, obtained by shears of determinant 1, the Jacobian is block lower triangular with diagonal blocks `R_q, R_q`, whose determinant is `(det R_q)² = 1` (`Matrix.det_fromBlocks_zero₁₂`). Consequently, for each fixed `s ≥ 0`, the derivative of `(a, u) ↦ B_s(a, u)` with `s` held fixed has determinant 1 on `U ∩ {τ < s}` (statement used in GST2013 line 883; DengHaniMa2024 lines 186–187; BGSS2023 lines 133–137).
+On the open set `U = {|a| > ε, ⟨a, u⟩ < 0, D > 0}` define the collision map `C(a, u) = (a + τ(u − R_q u), R_q u)`, so that `B_s = S_s ∘ C` on `U ∩ {τ < s}` with `S_s(a, u) = (a + s u, u)`. Prove that `C` is smooth on `U` and that `det DC(a, u) = 1` at every point of `U`. Route: with `w = da + τ du` the differential of `Y + τ U'` (where `(Y, U') = C(a, u)`) is `R_q w`, and the differential of `U'` is `R_q du` plus a term depending only on `w`; in the coordinates `(w, du)` and `(dY + τ dU', dU')`, obtained by shears of determinant 1, the Jacobian is block lower triangular with diagonal blocks `R_q, R_q`, whose determinant is `(det R_q)² = 1` (`Matrix.det_fromBlocks_zero₁₂`). Consequently, for each fixed `s ≥ 0`, the derivative of `(a, u) ↦ B_s(a, u)` with `s` held fixed has determinant 1 on `U ∩ {τ < s}` (statement used in GST2013 line 883; DengHaniMa2024 lines 186–187).
 
 **Checks.**
 
@@ -378,11 +385,11 @@ Layers 1–3.
 
 ### 5.1 Trajectories
 
-Define `HardSphere.IsTrajectory ε J Z` for an interval `J ⊆ ℝ` and a path `Z = (X, V) : ℝ → (Fin N → X × E)`: for `t ∈ J`, `Z(t) ∈ 𝒟̄^ε_N`; positions satisfy `x_i(t) = x_i(s) + π(∫_s^t v_i)` for `s ≤ t` in `J`; velocities are right-continuous on `J` and constant off a set of contact times that is finite in every bounded subinterval; at every `t ∈ J` the contact pairs of `X(t)` form a matching and each contact pair is outgoing for `V(t)`; and at every `t ∈ J` other than a least element of `J`, `V(t) = σ_M V(t−)` (GST2013 lines 836–847; BGSS2023 lines 122–131; DengHaniMa2024 lines 140–172).
+Define `HardSphere.IsTrajectory ε J Z` for an interval `J ⊆ ℝ` and a path `Z = (X, V) : ℝ → (Fin N → X × E)`: for `t ∈ J`, `Z(t) ∈ 𝒟̄^ε_N`; positions satisfy `x_i(t) = x_i(s) + π(∫_s^t v_i)` for `s ≤ t` in `J`; velocities are right-continuous within `J` (at each `t ∈ J`, `V(t') → V(t)` as `t' → t` through `J ∩ (t, ∞)`, a vacuous condition at a greatest element of `J`) and constant off a set of contact times that is finite in every bounded subinterval; at every `t ∈ J` the contact pairs of `X(t)` form a matching and each contact pair is outgoing for `V(t)`; and at every `t ∈ J` other than a least element of `J`, `V(t) = σ_M V(t−)`, where `V(t−)` is the left limit within `J` (through `J ∩ (−∞, t)`). The values of `Z` outside `J` are not constrained (GST2013 lines 836–847; BGSS2023 lines 122–131; DengHaniMa2024 lines 140–172).
 
 API:
 
-- Restriction to subintervals, translation in time, and positions continuous with velocities piecewise constant; `V(t−)` exists at every interior point.
+- Restriction to subintervals, translation in time, and positions continuous with velocities piecewise constant; the left limit `V(t−)` within `J` exists at every `t ∈ J` other than a least element of `J`.
 - Conservation: `P(V(t))` and `H(V(t))` are constant on `J`.
 - Free motion between contacts: on an interval free of contact times, `Z(t) = S_{t−s} Z(s)`.
 
@@ -410,7 +417,7 @@ Prove `HardSphere.IsTrajectory.eqOn`: two trajectories on `J` that agree at one 
 
 ### 5.3 Symmetries of trajectories
 
-Prove that trajectories are carried to trajectories by: time translation `t ↦ Z(t + c)`; time reversal `t ↦ ℛ(Z(−t))` on `−J`; relabelling by a permutation of `Fin N`; translation of all positions by `π(c)`; and the Galilean boost `(X(t), V(t)) ↦ (X(t) + π(t c), V(t) + c)` (GST2013 lines 211–215; BGSS2023 lines 184–187).
+Prove that trajectories are carried to trajectories by: time translation `t ↦ Z(t + c)`; time reversal `t ↦ ℛ(Z(−t))` on `−J`; relabelling by a permutation of `Fin N`; translation of all positions by `π(c)`; and the Galilean boost `(X(t), V(t)) ↦ (X(t) + π(t c), V(t) + c)`. The relabelling statement is the indistinguishability of the particles (GST2013 (1.1.1), lines 211–215; BGSS2023 lines 184–187). Time reversal, common translations and boosts are consequences proved here from the definition of §5.1 and the identities of the scattering map and the contact scattering (§2.1: `σ_{−ν} = σ_ν` and Galilean invariance; §3.2: contacts are invariant under common translations; §3.3: `σ_M` is an involution exchanging incoming and outgoing pairs), whose input is the reflection law GST2013 (4.1.1)–(4.1.2), lines 835–847, printed p. 27.
 
 **Checks.**
 
@@ -418,17 +425,19 @@ Prove that trajectories are carried to trajectories by: time translation `t ↦ 
 - A boost by `c = (1, 0)` of the head-on witness gives the collision of velocities `0` and `(1, 0)`, still at time 1.
 - Non-example: `t ↦ (X(−t), −V(−t))` without `σ_M` has left-continuous velocities and is not a trajectory.
 
-*Needs:* §3.3, §5.1.
+*Needs:* §2.1, §3.2, §3.3, §5.1.
 
 ### 5.4 The left-continuous convention
 
-Prove that if `Z` is a trajectory then `t ↦ (X(t), σ_{M(t)} V(t))` has left-continuous velocities, equals `(X(t), V(t−))`, and satisfies the conditions of DengHaniMa2024 Definition 1.1 (lines 154–172); conversely a path satisfying those conditions with locally finite non-grazing matching contacts gives a trajectory by the same map.
+For a trajectory `Z` on `J` write `M(t)` for the contact matching of `X(t)` and `Y(t) = (X(t), σ_{M(t)} V(t))` for `t ∈ J`. Prove: the velocities of `Y` are left-continuous within `J` and constant off the contact times of `Z`; at every `t ∈ J` other than a least element of `J`, `σ_{M(t)} V(t) = V(t−)`, the left limit within `J`; at a least element `t₀` of `J` the incoming state is by definition `Y(t₀) = (X(t₀), σ_{M(t₀)} V(t₀))`, and no left limit of the values of `Z` outside `J` enters; the contact pairs of `X(t)` are incoming for the velocities of `Y(t)`; and at every `t ∈ J` other than a greatest element, the right limit within `J` of the velocities of `Y` is `σ_{M(t)}` applied to the velocities of `Y(t)`. For a trajectory on ℝ the identity `Y(t) = (X(t), V(t−))` therefore holds at every `t`. Conversely, a path on `J` with values in `𝒟̄` on `J`, positions as in §5.1, velocities left-continuous within `J` and constant off a set of contact times finite in every bounded subinterval, whose contact pairs at every time form a matching and are incoming for its velocities, and whose velocities have right limit within `J` equal to `σ_{M(t)}` of their value at every `t ∈ J` other than a greatest element, is carried to a trajectory on `J` by the same map, `σ_M` being an involution. On `X = E` with `d ≥ 2` and `J = [0, ∞)` or `J = [0, T]`, the Euclidean setting of DengHaniMa2024 Definition 1.1 (lines 140–172, on the domain of lines 150–153), `Y` is the hard-sphere dynamics of that definition started from the incoming initial state `Y(0) = (X(0), σ_{M(0)} V(0))`, and a dynamics in the sense of that definition with the properties of the converse comes from a trajectory by the same map.
 
 **Checks.**
 
 - At the head-on witness, the left-continuous state at time 1 is `v_1 = (−1, 0)`, `v_2 = 0`.
 - Off contact times both conventions agree.
 - Applying the map twice returns the right-continuous path, since `σ_M` is an involution.
+- Only the values on `J` count: for `N = 1`, d = 2, `J = [0, 1]`, the path with `x(t) = 0` for all `t`, `V(t) = 0` for `t ≥ 0` and `V(t) = e_1` for `t < 0` is a trajectory on `J`; at `t = 0` the incoming state has velocity `σ_M V(0) = 0`, while the left limit of the path from outside `J` is `e_1`; at every `t ∈ (0, 1]` the velocity `σ_M V(t)` and the left limit within `J` are both 0.
+- The initial datum of DengHaniMa2024 Definition 1.1 is the incoming state: for ε = 1 the outgoing contact state `x_1 = (1, 0)`, `x_2 = 0`, `v_1 = 0`, `v_2 = (−1, 0)` of a trajectory at time 0 corresponds to the datum `v_1 = (−1, 0)`, `v_2 = 0`, which that definition scatters at `0+` back to `0`, `(−1, 0)`; started from the outgoing state itself, that definition would scatter it at `0+` into `(−1, 0)`, `0`, and the spheres would overlap at every small `t > 0`, at distance `1 − t`.
 
 *Needs:* §3.3, §5.1.
 
@@ -482,11 +491,12 @@ For `R > 0` and `0 < δ` with `ε + 4Rδ < ρ`, call a pair of particles at dist
 
 ### 6.3 Iteration
 
-Prove, for `t > 0`, `R > 0`, a bounded `K ⊆ X` and every `δ > 0` with `ε + 4Rδ < ρ`: the set of `Z ∈ 𝒟̄` with positions in `K` and `|V| ≤ R` whose configurations at the times `jδ`, `0 ≤ j < t/δ`, are not all in `S_{δ,R}` has measure at most `C(N, ε, R, K, t) δ`, with `C` independent of δ. Route: by measure preservation of the composed step maps, the measure of those failing at step `j` is the measure of the complement of `S_{δ,R}` among configurations with positions in the `jRδ`-neighbourhood of `K`, which is `O(δ²)` by §6.1; summing `t/δ` steps gives `O(δ)` (GST2013 lines 877–898).
+Prove, for `t > 0`, `R > 0`, a bounded `K ⊆ X` and every `δ > 0` with `ε + 4Rδ < ρ`: the set `F` of `Z ∈ 𝒟̄` with positions in `K` and `|V| ≤ R` that fail a step before time `t`, that is, for which some `j` with `0 ≤ j < t/δ` has `Φ_δ^i Z ∈ S_{δ,R}` for every `i < j` and `Φ_δ^j Z ∉ S_{δ,R}`, has measure at most `C(N, ε, R, K, t) δ`, with `C` independent of δ. Route: let `F_j ⊆ F` be the set failing first at step `j`, and `A_j` the image under `Φ_δ^j` of the configurations `Z ∈ 𝒟̄` with positions in `K` and `|V| ≤ R` that pass the steps `0, …, j − 1` (`Φ_δ^i Z ∈ S_{δ,R}` for `i < j`), so that `Φ_δ^j(F_j) = A_j ∖ S_{δ,R}`. By the injectivity and measure preservation of §6.2, `λ_N(F_j) = λ_N(A_j ∖ S_{δ,R})`. Velocities stay in `{|V| ≤ R}` and each particle moves at most `Rδ` in a step, so `A_j` lies in the set of configurations of `𝒟̄ ∩ {|V| ≤ R}` with positions in the closed `jRδ`-neighbourhood `K_j` of `K`, and `λ_N(F_j)` is at most the measure of the complement of `S_{δ,R}` in that set; this is an upper bound only, since `A_j` can be much smaller than that set. By §6.2 that complement is `I` of §6.1 for `K_j` and `η = 2Rδ` together with a null set, so with `K_t` the closed `Rt`-neighbourhood of `K` (bounded, and containing every `K_j` since `jδ < t`), `λ_N(F_j) ≤ N³ μ_X(K_t)^{N−2} (ω_d((ε + 2Rδ)^d − ε^d))² vol(B^{dN}_R) ≤ C₁ δ²` for `δ ≤ 1`, with `C₁ = N³ μ_X(K_t)^{N−2} (2R d ω_d (ε + 2R)^{d−1})² vol(B^{dN}_R)`. There are `⌈t/δ⌉ ≤ (t + 1)/δ` steps when `δ ≤ 1`, so `λ_N(F) ≤ (t + 1) C₁ δ`; when `δ > 1`, `λ_N(F) ≤ μ_X(K)^N vol(B^{dN}_R) δ`. Take `C` the larger of the two constants (the iteration of GST2013 lines 875–898, where `t/δ` is an integer, line 876).
 
 **Checks.**
 
-- On the unit torus the neighbourhoods of `K` are all of `X` and the constant does not grow with `j`.
+- On the unit torus with `K = X` every neighbourhood `K_j` is `X`, of mass 1, and the constant does not grow with `j`; for `K = {0}` the neighbourhood `K_0 = {0}` has mass 0 while `X` has mass 1, so the neighbourhoods are those of `K`, not all of `X`.
+- The step-`j` bound is an inequality, not an equality: on `E` with d = 1, `N = 3`, ε = R = 1, δ = 2, `t = 3` and `K = {0}`, no configuration of `𝒟̄_3` has all positions in `K`, so `F_1 = ∅` and `λ_N(F_1) = 0`, while the configurations of `𝒟̄_3 ∩ {|V| ≤ 1}` with positions near `(−1.1, 0, 1.1)` lie in `K_1 = [−2, 2]` and in `I` (the middle particle is within `ε + 2Rδ = 5` of both others), a set of positive measure.
 - On `E` with `K = B(0, r)` the neighbourhoods are `B(0, r + jRδ)`, contributing `(r + jRδ)^{d(N−2)}` as in GST2013 line 896.
 - For `N = 2` the bound is 0 apart from the grazing null set.
 
@@ -516,7 +526,7 @@ Layers 4–5.
 
 ### 7.1 The flow
 
-Define `HardSphere.flow ε N t` as the map sending `Z ∈ G` to the value at time `t` of its trajectory and fixing every `Z ∉ G`. Prove `HardSphere.flow_add`: `T_0 = id` and `T_{s+t} = T_s ∘ T_t` for all real `s, t`; each `T_t` is a bijection preserving `G`, `𝒟̄` and their complements; `(t, Z) ↦ T_t Z` is measurable; `t ↦ T_t Z` has continuous positions and right-continuous piecewise constant velocities; `T_t Z = S_t Z` for every `Z ∈ G` whose trajectory has no contact on the closed interval between 0 and `t` (off `G` the flow is the identity, so the membership is needed) (GST2013 line 862; BGSS2023 lines 132–139; DengHaniMa2024 lines 173–178).
+Define `HardSphere.flow ε N t` as the map sending `Z ∈ G` to the value at time `t` of its trajectory and fixing every `Z ∉ G`. Prove `HardSphere.flow_add`: `T_0 = id` and `T_{s+t} = T_s ∘ T_t` for all real `s, t`; each `T_t` is a bijection preserving `G`, `𝒟̄` and their complements; `(t, Z) ↦ T_t Z` is measurable; `t ↦ T_t Z` has continuous positions and right-continuous piecewise constant velocities; `T_t Z = S_t Z` for every `Z ∈ G` whose trajectory has no contact on the closed interval between 0 and `t` (off `G` the flow is the identity, so the membership is needed) (GST2013 line 862; BGSS2023 lines 132–139; DengHaniMa2024 lines 173–178). The group law off `G` is the identity case and needs only the invariance of `G`; that `T_t` is the identity extension of a conull flow in the sense of ClassicalErgodicTheory §3.5 item 1 needs the measure preservation and is proved in §7.2.
 
 **Checks.**
 
@@ -529,19 +539,20 @@ Define `HardSphere.flow ε N t` as the map sending `Z ∈ G` to the value at tim
 
 ### 7.2 Measure preservation
 
-Prove `HardSphere.measurePreserving_flow`: for every `t`, `T_t` is measure preserving for `λ_N` and for `λ_N` restricted to `𝒟̄`. Route: on `G ∩ {|V| ≤ R}` the map `T_t` is, on each set where the configurations at the times `jδ` lie in `S_{δ,R}`, a composition of step maps, which preserve measure by §6.2; these sets exhaust `G` up to a null set (§6.4); off `G`, `T_t` is the identity (GST2013 line 883; DengHaniMa2024 line 186).
+Prove `HardSphere.measurePreserving_flow`: for every `t`, `T_t` is measure preserving for `λ_N` and for `λ_N` restricted to `𝒟̄`. Prove also that the Borel set `G ∪ 𝒟̄ᶜ`, with the trajectory action on `G` and the identity on `𝒟̄ᶜ`, is a conull flow on `(Fin N → X × E, λ_N)` in the sense of ClassicalErgodicTheory §3.5 item 1, and that `G` with the trajectory action is one on `(Fin N → X × E, λ_N|𝒟̄)`; `T_t` is the identity extension of both. Route: on `G ∩ {|V| ≤ R}` the map `T_t` is, on each set where the configurations at the times `jδ` lie in `S_{δ,R}`, a composition of step maps, which preserve measure by §6.2; these sets exhaust `G` up to a null set (§6.4), so the trajectory action preserves `λ_N` restricted to `G`; `G` and `𝒟̄ᶜ` are disjoint invariant Borel sets (§5.5, §6.4, §7.1), the action is jointly measurable (§7.1), and the complement of `G ∪ 𝒟̄ᶜ` is `𝒟̄ ∖ G`, null by §6.4; item 1 then gives that `T_t` preserves `λ_N`, and the same argument with carrier `G` gives `λ_N|𝒟̄` (GST2013 line 883; DengHaniMa2024 line 186).
 
 **Checks.**
 
 - `N = 2` on `E`: preservation reduces to §4.4 in relative coordinates and translation in the centre of mass.
 - The indicator of `𝒟̄` is invariant exactly, since `T_t` preserves `𝒟̄`.
 - Non-example: replacing specular scattering by the totally inelastic rule of §4.4 gives a map that sends the positive-measure set of colliding configurations to a null set, so the scattering law, not only free transport, carries the measure preservation.
+- The carrier for `λ_N` must contain `𝒟̄ᶜ`: on `E` with d = 2, ε = 1 and `N = 2`, the set `𝒟̄ᶜ = {|x_1 − x_2| < 1}` has infinite measure, so `G` alone is not conull for `λ_N`, although it is conull for `λ_N|𝒟̄`. On the unit torus with d = 2, ε = 0.4 and `N = 8`, `𝒟̄ = G = ∅`, the carrier is the whole phase space with the trivial action, and `T_t` is the identity.
 
-*Needs:* §6.2, §6.4, §7.1.
+*Needs:* §5.5, §6.2, §6.4, §7.1, ClassicalErgodicTheory §3.5 (item 1).
 
 ### 7.3 Symmetries and conservation laws
 
-Prove `HardSphere.flow_reversal` (`T_t ∘ ℛ = ℛ ∘ T_{−t}`), equivariance under relabelling, commutation with common translations of positions, and conservation of `P` and `H`, all exactly on the whole phase space (off `G` the flow is the identity and `G` is invariant under ℛ, relabelling and common translations, §5.5, so these identities hold there trivially). Prove Galilean covariance on the good set: for `Z = (X, V) ∈ G`, `c ∈ E` and `t ∈ ℝ`, `T_t(X, V + c) = (X' + π(t c), V' + c)` where `(X', V') = T_t(X, V)`; since `𝒟̄ ∖ G` is null (§6.4), it holds for `λ_N`-almost every `Z ∈ 𝒟̄` (GST2013 lines 211–215; BGSS2023 lines 184–187).
+Prove `HardSphere.flow_reversal` (`T_t ∘ ℛ = ℛ ∘ T_{−t}`), equivariance under relabelling, commutation with common translations of positions, and conservation of `P` and `H`, all exactly on the whole phase space (off `G` the flow is the identity and `G` is invariant under ℛ, relabelling and common translations, §5.5, so these identities hold there trivially). Prove Galilean covariance on the good set: for `Z = (X, V) ∈ G`, `c ∈ E` and `t ∈ ℝ`, `T_t(X, V + c) = (X' + π(t c), V' + c)` where `(X', V') = T_t(X, V)`; since `𝒟̄ ∖ G` is null (§6.4), it holds for `λ_N`-almost every `Z ∈ 𝒟̄`. The relabelling equivariance is the indistinguishability of the particles (GST2013 (1.1.1), lines 211–215; BGSS2023 lines 184–187); the reversal, translation and boost identities and the conservation laws are derived here from the symmetries of trajectories (§5.3), their uniqueness (§5.2) and the conservation along trajectories (§5.1), whose input is the reflection law GST2013 (4.1.1)–(4.1.2), lines 835–847, printed p. 27, with its conservation of momentum and energy GST2013 (2.1.3), lines 396–399.
 
 **Checks.**
 
@@ -550,7 +561,7 @@ Prove `HardSphere.flow_reversal` (`T_t ∘ ℛ = ℛ ∘ T_{−t}`), equivarianc
 - Non-example: rotating velocities alone does not commute with the flow: rotating the head-on witness's velocities by a quarter turn gives `v_1 = (0, −1)`, which never meets particle 2, while the rotated time-3 state has `v_2 = (0, −1)` after a collision.
 - Galilean covariance needs `Z ∈ G`: boosting the grazing state of §7.1 (`x_1 = (2, 1)`, `x_2 = 0`, `v_1 = (−1, 0)`, `v_2 = 0`) by `c = (1, 0)` keeps the relative data, so both states lie outside `G`; `T_1` fixes the boosted state, with positions `(2, 1)`, `0`, whereas the covariance formula would give `(3, 1)`, `(1, 0)`.
 
-*Needs:* §5.3, §6.4, §7.1.
+*Needs:* §5.1–5.3, §6.4, §7.1.
 
 ### 7.4 The Koopman group
 
@@ -559,14 +570,15 @@ For `1 ≤ p < ∞` define the Koopman group `U_t f = f ∘ T_{−t}` on `Lp ℝ
 **Checks.**
 
 - `N = 1` on `E`: `U_t f(x, v) = f(x − t v, v)`, the free transport group.
-- The phase measure is infinite even on a torus, because velocities range over `E`: for `N = d = 1` on the unit circle there is no exclusion, `𝒟̄_1 = X × E` has measure `1 · ∞ = ∞`, and the constant 1 is in no `Lp`, `p < ∞`. The energy cutoff `f = 1_{H ≤ R²/2}` is: for `N = d = 1`, `R = 1`, its `p`-th power integrates to `μ_X(X) · vol([−1, 1]) = 2`, and `U_t f = f` exactly since `H ∘ T_{−t} = H`.
-- Non-example: `p = ∞` is excluded; for `N = 1` the indicator of `{x_1 ∈ B(0, 1)} × {|v_1 − e_1| < 1/2}` satisfies `‖U_t f − f‖_∞ = 1` for all small `t ≠ 0`.
+- For `N ≥ 1` the phase measure `λ_N|𝒟̄` is σ-finite of total mass `q_N · ∞` (with `0 · ∞ = 0`), where `q_N = μ_X^{⊗N}({X : ‖x_i − x_j‖ ≥ ε for i ≠ j})` is the measure of the admissible positions (the normaliser `Z^{can}` of §9.2); for `N = 0` it is the unit mass at the empty configuration. It can be infinite even on a torus, because velocities range over `E`: for `N = d = 1` on the unit circle there is no exclusion, `q_1 = 1`, `𝒟̄_1 = X × E` has measure `1 · ∞ = ∞`, and the constant 1 is in no `Lp`, `p < ∞`. The energy cutoff `f = 1_{H ≤ R²/2}` is: for `N = d = 1`, `R = 1`, its `p`-th power integrates to `μ_X(X) · vol([−1, 1]) = 2`, and `U_t f = f` exactly since `H ∘ T_{−t} = H`.
+- Empty and null position sectors give phase mass 0, not ∞: on the unit torus with d = 2, ε = 0.4 and `N = 8` the hard-core set is empty (§1.4), `q_8 = 0`, the phase measure is 0, `Lp` is the zero space and `U` is the trivial group on it; on the unit circle with ε = 1/3 and `N = 3` the admissible positions are the equally spaced triples, a nonempty set of dimension 1, so again `q_3 = 0` and the phase measure is 0. The mass is infinite exactly when `N ≥ 1` and `q_N > 0`.
+- Non-example: `p = ∞` is excluded. On `X = E`, for `N = 1`, the indicator `f` of `{x_1 ∈ B(0, 1)} × {|v_1 − e_1| < 1/2}` satisfies `‖U_t f − f‖_∞ = 1` for all small `t ≠ 0`, since free transport moves the position cutoff. The position cutoff must be one that transport moves: on the unit circle the ball `B(0, 1)` is all of `X` (every norm there is at most 1/2), so the same indicator depends on the velocity only, is invariant, and gives `‖U_t f − f‖_∞ = 0`.
 
 *Needs:* §7.1, §7.2, Mathlib `MeasureTheory.Lp.compMeasurePreserving`, `MeasureTheory.MemLp.exists_hasCompactSupport_eLpNorm_sub_le`, Tau Ceti `TauCeti.Semigroups.StronglyContinuousGroup`.
 
 ### 7.5 The grand canonical phase space
 
-Define the grand canonical phase space `𝒟^ε = Σ_{N ≥ 0} (Fin N → X × E)` with the componentwise flow and the measure `Λ = Σ_N (1/N!) λ_N` restricted to `𝒟̄_N` on the `N`-th component (BGSS2023 lines 158–166; DengHaniMa2024 lines 199–204). Prove that the componentwise flow is a group action preserving `Λ`, preserving the particle number and fixing the empty configuration.
+Define the grand canonical phase space `𝒟^ε = Σ_{N ≥ 0} (Fin N → X × E)` with the componentwise flow `T_t(N, Z) = (N, T_t Z)` and the measure `Λ = Σ_N (1/N!) λ_N` restricted to `𝒟̄_N` on the `N`-th component (BGSS2023 lines 158–166; DengHaniMa2024 lines 199–204). The spaces `X_N = Fin N → X × E` with `μ_N = (1/N!) λ_N|𝒟̄_N`, carriers `G_N` and the trajectory actions form a countable family of conull flows (§7.2), and `Λ` is their sum measure; the componentwise flow is the identity extension of their disjoint union, so it preserves `Λ` by ClassicalErgodicTheory §3.5 item 3. Prove that the componentwise flow is a group action (componentwise §7.1), preserves the particle number and fixes the empty configuration.
 
 **Checks.**
 
@@ -574,11 +586,11 @@ Define the grand canonical phase space `𝒟^ε = Σ_{N ≥ 0} (Fin N → X × E
 - On the unit torus with ε = 0.4 in d = 2, the components with `N ≥ 8` are `Λ`-null.
 - The `N = 1` component carries `μ_X ⊗ vol` with weight 1.
 
-*Needs:* §7.1, §7.2, Mathlib `Sigma.instMeasurableSpace`, `MeasureTheory.Measure.sum`.
+*Needs:* §7.1, §7.2, Mathlib `Sigma.instMeasurableSpace`, `MeasureTheory.Measure.sum`, ClassicalErgodicTheory §3.5 (item 3).
 
 ### Examples
 
-The flow preserves the σ-finite measure `λ_N|𝒟̄`, which is infinite for `N ≥ 1` on every position space since velocities range over `E`; on the unit torus its restriction to each energy shell `{H ≤ r}` is finite (at most `vol(B^{dN}(0, √(2r)))`) and invariant, while on `E` these restrictions are still infinite. Every function of `P` and `H` is invariant.
+The flow preserves the σ-finite measure `λ_N|𝒟̄`. For `N ≥ 1` its total mass is `q_N · ∞`, with `q_N` the measure of the admissible positions (§7.4): it is 0 when `q_N = 0`, as on the unit torus with d = 2, ε = 0.4 and `N = 8`, and ∞ when `q_N > 0`, as for every `N ≥ 1` on `E` and for `N = 1` on every position space, since velocities range over `E`; for `N = 0` it is 1. On the unit torus its restriction to each energy sublevel `{H ≤ r}`, `r ≥ 0`, has mass `q_N · vol(B^{dN}(0, √(2r))) ≤ vol(B^{dN}(0, √(2r)))`, finite, and is invariant; on `E`, for `N ≥ 1` and `r > 0`, these restrictions are infinite, while for `r = 0` the sublevel `{V = 0}` is null and the restriction is 0. Every function of `P` and `H` is invariant.
 
 ### Dependencies
 
@@ -588,7 +600,7 @@ Layers 5–6.
 
 ### 8.1 Transported densities
 
-For a measurable `W⁰ : (Fin N → X × E) → ℝ` vanishing off `𝒟̄`, define `W(t) = W⁰ ∘ T_{−t}`. Prove: `W(0) = W⁰`; `W(s + t) = W(s) ∘ T_{−t}`; `W(t)` vanishes off `𝒟̄`; `∫ W(t) φ dλ = ∫ W⁰ (φ ∘ T_t) dλ` for measurable `φ` with either side integrable or both functions nonnegative; `‖W(t)‖_p = ‖W⁰‖_p`; `W(t)` is symmetric when `W⁰` is; and `W(t) = U_t W⁰` in `Lp` (BGSS2023 lines 145–157; GST2013 lines 1138–1140; DengHaniMa2024 lines 233–234).
+For a measurable `W⁰ : (Fin N → X × E) → ℝ` vanishing off `𝒟̄`, define `W(t) = W⁰ ∘ T_{−t}`. Prove: `W(0) = W⁰`; `W(s + t) = W(s) ∘ T_{−t}`; `W(t)` vanishes off `𝒟̄`; `∫ W(t) φ dλ = ∫ W⁰ (φ ∘ T_t) dλ` for measurable `φ` with either side integrable or both functions nonnegative; `‖W(t)‖_p = ‖W⁰‖_p`; `W(t)` is symmetric when `W⁰` is; and `W(t) = U_t W⁰` in `Lp` (BGSS2023 lines 145–157; GST2013 lines 1138–1140; DengHaniMa2024 lines 233–234). Route for the duality: for `W⁰ ≥ 0` it is the instance of ClassicalErgodicTheory §3.5 item 4 for the conull flow of §7.2 on `(Fin N → X × E, λ_N)`, `(T_t)_* (λ_N.withDensity W⁰) = λ_N.withDensity (W⁰ ∘ T_{−t})`, integrated against `φ`; the integrable signed case follows by splitting `W⁰` and `φ` into positive and negative parts.
 
 **Checks.**
 
@@ -597,7 +609,7 @@ For a measurable `W⁰ : (Fin N → X × E) → ℝ` vanishing off `𝒟̄`, def
 - A density that is a function of `H` and `P` times the indicator of `𝒟̄` is constant in time.
 - Non-example: `W⁰ ∘ T_t` (the wrong sign) moves mass in the direction `−v` for `N = 1`.
 
-*Needs:* §7.1, §7.2, §7.4.
+*Needs:* §7.1, §7.2, §7.4, ClassicalErgodicTheory §3.5 (item 4).
 
 ### 8.2 The weak Liouville equation with specular reflection
 
@@ -613,7 +625,7 @@ API of the test-function class:
 - `φ(t, Z) = χ(t) ψ(H(V))` is admissible for every `C¹` compactly supported χ and bounded measurable ψ, and the identity reduces to `∫_0^∞ χ' = −χ(0)` times `∫ W⁰ ψ(H)`.
 - On `E` with `N = 1` the identity is the weak form of free transport `∂_t W + ⟨v, ∇_x W⟩ = 0`.
 - The derivative at a collision time need not exist, which is why the fundamental theorem of calculus is applied with the derivative only on the open pieces: for the head-on witness and `φ(t, Z) = χ(t) θ(H(V)) ψ(⟨x_1 − x_2, e_1⟩)` with ψ bounded and smooth with bounded derivative and equal to the identity on `[−10, 10]`, and θ smooth with compact support and equal to 1 near `1/2`, the energy of the witness, the function is admissible (it is bounded; `Lφ = θ(H)(χ'(t) ψ(⟨x_1 − x_2, e_1⟩) + χ(t) ψ'(⟨x_1 − x_2, e_1⟩) ⟨v_1 − v_2, e_1⟩)` is bounded because `|v_1 − v_2|` is bounded where `θ(H) ≠ 0`; σ_M moves no position and preserves `H`), and `t ↦ φ(t, T_t Z)` is `χ(t)(2 − t)` for `0 ≤ t < 1` and `χ(t) t` for `1 ≤ t ≤ 10`: continuous at `t = 1`, with left derivative `χ'(1) − χ(1)` and right derivative `χ'(1) + χ(1)`. The energy cutoff is needed: without θ, at `χ(1) = 1`, `χ'(1) = 0`, `x_1 − x_2 = e_1`, `v_1 = M e_1`, `v_2 = 0` one gets `Lφ(1, Z) = M`, unbounded in `M`.
-- Non-example: `φ = χ(t) θ(H(V)) ⟨v_1, e_1⟩`, with θ as above, is bounded with bounded material derivative `χ'(t) θ(H) ⟨v_1, e_1⟩` but violates the specular condition; for `W⁰` concentrated on configurations with `θ(H) = 1` colliding once at time τ with momentum transfer, the left side equals `χ(τ)(⟨v_1, e_1⟩ − ⟨v_1', e_1⟩) ∫ W⁰ ≠ 0`.
+- Non-example: `φ = χ(t) θ(H(V)) ⟨v_1, e_1⟩`, with χ and θ smooth with compact support, is bounded with bounded material derivative `χ'(t) θ(H) ⟨v_1, e_1⟩` but violates the specular condition, and the identity fails for it. For `Z ∈ G` whose trajectory has exactly one collision on `[0, ∞)`, at a time `τ(Z) > 0`, the computation of the route gives `∫_0^∞ Lφ(t, T_t Z) dt + φ(0, Z) = χ(τ(Z)) θ(H)(⟨v_1, e_1⟩ − ⟨v_1', e_1⟩)` with `v_1'` the velocity of particle 1 after the collision, so the left side is the integral of this jump against `W⁰`, with a collision time that varies with `Z` (the data colliding at one fixed time form a null set, which carries no mass of an `L¹` density). Explicitly, on `E` with d = 1, `N = 2`, ε = 1, let `W⁰` be the uniform probability density on the box `x_2 ∈ (0, 0.01)`, `x_1 − x_2 ∈ (1.99, 2.01)`, `v_1 ∈ (−1.02, −0.98)`, `v_2 ∈ (−0.02, 0.02)`, and take χ = 1 on `[0.9, 1.1]` and θ = 1 on `[0.47, 0.53]`. Each trajectory has one collision, which exchanges `v_1` and `v_2`, at `τ = (x_1 − x_2 − 1)/(v_2 − v_1) ∈ (0.9519, 1.0521)`, and `H ∈ (0.4802, 0.5204)`, so the left side is `∫ W⁰ (v_1 − v_2) = −1 ≠ 0`.
 
 *Needs:* §3.3, §3.4, §7.1, §8.1, Mathlib `intervalIntegral.integral_eq_sub_of_hasDerivAt_of_le`.
 
@@ -626,21 +638,23 @@ For a symmetric `W_N ≥ 0` vanishing off `𝒟̄_N` and `s ≤ N`, define the m
 - On the unit torus with `N = 2`, `0 < ε < 1/2` and `g(x, v) = g̃(v)` independent of position, `W_2 = g ⊗ g · 1_{𝒟̄_2}` has first marginal `g(z_1)(1 − ω_d ε^d) ∫ g̃`.
 - `N = s`: the marginal is `W_N`.
 - Non-example: dropping the indicator gives the first marginal `g(z_1) ∫ g̃` in the same situation, too large by the factor `1/(1 − ω_d ε^d)`; and the second marginal of the hard-core density vanishes at `x_1 = x_2`, while the product does not.
+- The specular inheritance needs the specular condition on `W_N`; symmetry, positivity and support do not give it. On `E` with d = 2, ε = 1 and `s = N = 2`, the density `W = e^{−|v_1|² − |v_2|²} 1_{|v_1| ≤ 1} 1_{|v_2| ≤ 1} 1_{𝒟̄_2}` is symmetric, nonnegative and vanishes off `𝒟̄_2`, and its marginal of order 2 is `W` itself; at a contact with `ν_12 = e_1` and velocities `(0, 0.9)`, `(0.9, 0)` it equals `e^{−1.62} ≈ 0.19790`, while at the scattered velocities `(0.9, 0.9)`, `0` it is 0, since `|(0.9, 0.9)| ≈ 1.2728 > 1`. The Gaussian density `e^{−|v_1|² − |v_2|²} 1_{𝒟̄_2}` satisfies the condition and takes the value `e^{−1.62}` at both states.
 
 *Needs:* §3.1, §3.2.
 
 ### 8.4 Symmetric expectations
 
-Prove: for `s ≤ N`, a symmetric probability density `W_N` on `(Fin N → X × E)` and measurable `h ≥ 0` on `(Fin s → X × E)`, `∫ W_N Σ_{i} h(z_{i_1}, …, z_{i_s}) dλ = N!/(N − s)! ∫ W^{(s)}_N h dλ_s`, the sum over injective `i : Fin s → Fin N`, whose number is the falling factorial `Nat.descFactorial N s = N!/(N − s)!` (GST2013 lines 216–220). The hypothesis `s ≤ N` is needed for the marginal `W^{(s)}_N` to exist; the count `Nat.descFactorial N s` is also correct for `s > N`, where it is 0.
+Prove: for `s ≤ N`, a symmetric measurable `W_N ≥ 0` on `(Fin N → X × E)` and measurable `h ≥ 0` on `(Fin s → X × E)`, `∫ W_N Σ_{i} h(z_{i_1}, …, z_{i_s}) dλ = N!/(N − s)! ∫ W^{(s)}_N h dλ_s`, the sum over injective `i : Fin s → Fin N`, whose number is the falling factorial `Nat.descFactorial N s = N!/(N − s)!`. No normalisation of `W_N` is assumed, since its consumer §9.5 applies it to `W_N(t)`, of total mass `N!` times the probability of `N` particles; and `W^{(s)}_N` is the integral formula of §8.3, which is defined for every measurable `W_N ≥ 0`, the support condition of §8.3 not being used here. This is the fixed-`N` form of the distinct-label identity, the first equality of BGSS2023 (1.1.9), lines 241–266, printed p. 3, with the indicator `δ_{N ≥ n}` at line 249. Route: extend each injective `i` to a permutation of `Fin N` sending `1, …, s` to `i_1, …, i_s`; relabelling preserves `λ_N` (§3.1) and `W_N`, so each of the `Nat.descFactorial N s` terms equals `∫ W_N h(z_1, …, z_s) dλ = ∫ W^{(s)}_N h dλ_s` by Fubini and the definition of the marginal. The hypothesis `s ≤ N` is needed for the marginal `W^{(s)}_N` to exist; the count `Nat.descFactorial N s` is also correct for `s > N`, where it is 0.
 
 **Checks.**
 
-- `s = 1`, `h = 1`: both sides are `N`.
+- `s = 1`, `h = 1`: both sides are `N ∫ W_N`, which is `N` for a probability density.
 - `s = N`: both sides are `N! ∫ W_N h` for symmetric `h`.
-- `s = 2`, `N = 3`, `h = 1`: both sides are `6 = 3 · 2`; a sum over all maps `Fin 2 → Fin 3`, injective or not, would give `9`.
+- `s = 2`, `N = 3`, `h = 1`: both sides are `6 ∫ W_3 = 3 · 2 ∫ W_3`; a sum over all maps `Fin 2 → Fin 3`, injective or not, would give `9 ∫ W_3`.
+- Normalisation is not used: for the one-particle density of §9.3 at ε = 0, μ = 2, `∫ f⁰ = 1`, of total mass `2e^{−2} ≈ 0.27067`, with `N = s = 1` and `h = 1`, both sides are `0.27067`; on the unit torus with d = 2, ε = 0.4 and `N = 8`, the density vanishes and both sides are 0. A statement for probability densities only would cover neither.
 - The count at `s > N`: for `N = 1`, `s = 2` there is no injective map `Fin 2 → Fin 1` and `Nat.descFactorial 1 2 = 0`, whereas `1!/(1 − 2)!` computed with truncated natural subtraction is `1!/0! = 1`.
 
-*Needs:* §8.3, Mathlib `Nat.descFactorial`.
+*Needs:* §3.1, §8.3, Mathlib `Nat.descFactorial`, `MeasureTheory.measurePreserving_piCongrLeft`.
 
 ### Examples
 
@@ -666,15 +680,15 @@ Define `M_{β,u}(v) = (β/2π)^{d/2} exp(−β|v − u|²/2)` for `β > 0`, `u �
 
 ### 9.2 Invariant measures and canonical ensembles
 
-Prove: for every measurable `Φ : ℝ × E → ℝ≥0∞`, the measure with density `Φ(H(V), P(V)) 1_{𝒟̄}(X)` with respect to `λ_N` is invariant under `T_t`. On a position space of finite measure, define the canonical measure `P^{can}_{N,β,u}` with density `Π_i M_{β,u}(v_i) 1_{𝒟̄}(X)/Z^{can}`, where `Z^{can} = μ_X^{⊗N}({X : ‖x_i − x_j‖ ≥ ε})` is the measure of admissible positions, defined when `Z^{can} > 0` (BGSS2023 lines 158–160).
+Prove: for every measurable `Φ : ℝ × E → ℝ≥0∞`, the measure with density `Φ(H(V), P(V)) 1_{𝒟̄}(X)` with respect to `λ_N` is invariant under `T_t`, by the measure preservation of §7.2, the invariance of `𝒟̄` (§7.1) and the exact conservation of `H` and `P` under the flow (§7.3). On a position space of finite measure, define the canonical measure `P^{can}_{N,β,u}` with density `Π_i M_{β,u}(v_i) 1_{𝒟̄}(X)/Z^{can}`, where `Z^{can} = μ_X^{⊗N}({X : ‖x_i − x_j‖ ≥ ε for i ≠ j})` is the measure of admissible positions, defined when `Z^{can} > 0`; prove that it is a probability measure and is invariant under `T_t`, being the case `Φ(H, P) = (β/2π)^{dN/2} exp(−β(2H − 2⟨u, P⟩ + N|u|²)/2)/Z^{can}` of the first statement. The fixed-particle-number (canonical) formalism is that of BGSS2023 lines 158–160, printed p. 2; the invariant densities and the Maxwellian canonical ensemble are derived here from §7.1–7.3 and §9.1.
 
 **Checks.**
 
 - `N = 1` on the unit torus: `Z^{can} = 1` and the canonical measure is `μ_X ⊗ M_{β,u}`.
 - Unit torus, d = 2, ε = 0.4, `N = 8`: `Z^{can} = 0` by §1.4, and the canonical measure is not defined.
-- On `E` the invariant measure `Π_i M(v_i) 1_{𝒟̄}` has infinite mass, so only the unnormalised statement holds there.
+- On `E` with `N ≥ 1` the invariant measure `Π_i M(v_i) 1_{𝒟̄}` has mass `q_N · 1 = ∞`, the admissible positions having infinite measure, so only the unnormalised statement holds there; for `N = 0` it is the unit mass at the empty configuration, a probability measure.
 
-*Needs:* §3.5, §7.2, §9.1.
+*Needs:* §3.5, §7.1, §7.2, §7.3, §9.1.
 
 ### 9.3 Grand canonical measures
 
@@ -697,16 +711,16 @@ API:
 
 ### 9.4 Invariance of the grand canonical measure
 
-Prove `HardSphere.grandCanonical_flow_invariant`: on a position space of finite measure, for `0 < ε < ρ`, `μ > 0`, `c > 0`, `β > 0`, `u ∈ E` and `f⁰(x, v) = c M_{β,u}(v)`, the grand canonical measure is invariant under the componentwise flow. For general `f⁰` the measure is transported by §8.1 componentwise (BGSS2023 lines 479–483 for the Maxwellian equilibrium and its invariant measure, line 3539 for `M(z₁')M(z₂') = M(z₁)M(z₂)`, and lines 267–268 for the transport).
+Prove `HardSphere.grandCanonical_flow_invariant`: on a position space of finite measure, for `0 < ε < ρ`, `μ > 0`, `c > 0`, `β > 0`, `u ∈ E` and `f⁰(x, v) = c M_{β,u}(v)`, the grand canonical measure is invariant under the componentwise flow. For general `f⁰` the measure is transported by §8.1 componentwise (BGSS2023 lines 267–268). The equilibrium `f⁰ = M` and its invariant measure are named in BGSS2023 lines 479–483 and the product identity `M(z₁')M(z₂') = M(z₁)M(z₂)` at BGSS2023 line 3539; the invariance is derived here from §9.2 applied in each component, a measure on the disjoint union being invariant exactly when each of its component restrictions is (ClassicalErgodicTheory §3.5 item 3).
 
 **Checks.**
 
 - On the unit torus with `f⁰ = M_{1,0}` the invariance is the special case `Φ(H, P) = e^{−H}` of §9.2 in each component.
 - Mean velocity `u ≠ 0` is allowed: `Π_i M_{β,u}(v_i) = (β/2π)^{dN/2} exp(−β(2H − 2⟨u, P⟩ + N|u|²)/2)` is a function of `H` and `P`.
 - Non-example: the radial non-Gaussian profile `g(v) = 1_{|v| ≤ 1}` is not invariant: in d = 2 at ν = (1, 0), `v = (0, 0.9)`, `w = (0.9, 0)` gives `g(v)g(w) = 1` and `σ_ν(v, w) = ((0.9, 0.9), 0)` gives `g(0.9, 0.9) g(0) = 0` since `|(0.9, 0.9)| ≈ 1.2728`.
-- Non-example: a position-dependent `f⁰(x, v) = ρ(x) M(v)` with nonconstant ρ is moved by free transport.
+- Non-example: a position-dependent profile is moved by free transport. On the unit circle (d = 1) take `f⁰(x, v) = ρ(x) M_{1,0}(v)` with `ρ(x) = 1 + 0.5 cos(2πx)`: the `N = 1` component of the measure has density `(μ/Z) ρ(x) M(v)` at time 0 and, after the flow for time `t`, `(μ/Z) ρ(x − t v) M(v)`; at `t = 1/4`, `x = 0`, `v = 1` the position factor changes from `ρ(0) = 1.5` to `ρ(−1/4) = 1`, and by continuity the two densities differ on a set of positive measure. Nonconstancy as a function is not enough: `ρ = 1 + 1_{x = 0}` is nonconstant but equal to 1 almost everywhere, so it defines the invariant Maxwellian measure.
 
-*Needs:* §7.5, §8.1, §9.1–9.3.
+*Needs:* §7.5, §8.1, §9.1–9.3, ClassicalErgodicTheory §3.5 (item 3).
 
 ### 9.5 Correlation functions
 
@@ -731,7 +745,7 @@ Prove: for `0 < ε < ρ`, `F_n(0)(Z_n) = (f⁰)^{⊗n}(Z_n) 1_{𝒟̄_n}(Z_n) p_
 
 - `n = 1`: `F_1(0) = f⁰ · P(B(x_1, ε) empty) ≤ f⁰`.
 - On the unit torus with `f⁰ = M_{1,0}`, `‖ρ⁰‖_∞ = 1`; in d = 3 with ε = 0.01 the scaling gives `ε² E[N] ∈ [1 − 0.0419, 1]`.
-- At coinciding positions `x_1 = x_2` the indicator vanishes and `F_2(0) = 0 ≠ f⁰ ⊗ f⁰`: convergence holds only off the diagonal.
+- For the Maxwellian datum `f⁰ = M_{1,0}` on the unit torus, at coinciding positions `x_1 = x_2` the indicator vanishes and `F_2(0) = 0 < M(v_1) M(v_2) = f⁰ ⊗ f⁰(z_1, z_2)` for every ε > 0: convergence holds only off the diagonal. The strict inequality needs a datum that is positive there: for a datum whose velocity density has compact support, at velocities outside that support both `F_2(0)` and `f⁰ ⊗ f⁰` vanish.
 
 *Needs:* §1.4, §8.4, §9.3, §9.5.
 
