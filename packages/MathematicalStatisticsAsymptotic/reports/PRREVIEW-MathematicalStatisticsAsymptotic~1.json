@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-MathematicalStatisticsAsymptotic~1",
+    "head": "9194088312ddcdc57d8337f41ef14e872e277e8d",
+    "pr": 2320,
+    "folder": "MathematicalStatisticsAsymptotic",
+    "date": "2026-11-14",
+    "findings": 31,
+    "blocking": 21,
+    "notes": "Full folder review; 155 computed adversarial rows covering all 103 declarations and README headlines. Fifteen seeded source targets attempted; LMS source text checked, remaining book locators uncertified. Eight locators in two full legal texts checked. Gate FAIL: tex=4, readme-ids-missing=3; targeted build passed. Direct Lean elaboration and 103 signatures passed with 66 sorry warnings; 66 one-tactic probes, none closed. Dependency check: 244 roadmaps, 2198 edges, 0 problems. No worktree changes."
+  }
+}
