@@ -21,15 +21,15 @@ v-site or étale sheaves on it. In detail:
   base change (README VS7.5): lacks decent v-stacks, fine maps, `D_ét(X, Λ)` with its
   symmetric monoidal ∞-categorical enhancement, and Liu–Zheng enhanced operation maps.
 * Dualizable objects of the 2-category of cohomological correspondences `CoCorr_S` are exactly
-  the universally locally acyclic objects (README VS9.9): lacks symmetric monoidal
+  the universally locally acyclic objects (README VS8.9): lacks symmetric monoidal
   bicategories (Mathlib has `CategoryTheory.Bicategory` without a monoidal structure),
   `CoCorr_S`, and universal local acyclicity on Artin v-stacks.
 * The relative Lefschetz–Verdier trace formula for v-stacks, and its consequence that
-  characteristic classes commute with proper pushforward (README VS10.1, VS10.2): lacks
-  `CoCorr_S`, proper nice maps of decent v-stacks and relative dualizing complexes.
-* The Lefschetz trace formula for proper diamonds over `Spd C` (README VS10.3), and the
+  characteristic classes commute with proper pushforward (README VS9.1, VS9.2): lacks
+  `CoCorr_S`, cohomologically proper maps of decent v-stacks and relative dualizing complexes.
+* The Lefschetz trace formula for proper diamonds over `Spd C` (README VS9.3), and the
   compatibility of local terms with base change and with the local terms of perfect schemes
-  (README VS10.6, VS10.8): lack diamonds, `D_ét` and local terms; the scheme side also lacks
+  (README VS9.6, VS9.8): lack diamonds, `D_ét` and local terms; the scheme side also lacks
   cohomological correspondences of étale sheaves on schemes.
 * The characteristic class of an admissible object on the classifying stack `[S/G_S]` of a
   locally pro-p group is its trace distribution (README VS11.4): lacks the classifying v-stack,
