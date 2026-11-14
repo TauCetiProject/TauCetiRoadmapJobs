@@ -7,7 +7,8 @@ The roadmap is `README.md`; this file is not the roadmap. It states the roadmap'
 theorems against the pinned Mathlib and Tau Ceti APIs: Pop's sentences fixing the Kronecker
 dimension, Poonen's characteristic sentence, uniform constant field and uniform algebraic
 dependence, the uniform definability of geometric prime divisors in every Kronecker dimension
-(Dittmann–Pop for dimension at least three, Rumely and Pop below), the single sentence
+(Dittmann–Pop for dimension at least three, Rumely and Pop below), uniform arithmetic
+normalizations, the single sentence
 characterizing a finitely generated integral domain among finitely generated rings
 (Aschenbrenner–Khélif–Naziazeno–Scanlon), and Dittmann–Pop's single sentence characterizing a
 finitely generated field among finitely generated fields.
@@ -18,8 +19,8 @@ The following headline theorems are not statable at the pins:
   (Dittmann–Pop, Theorem 1.2) and of every infinite finitely generated integral domain with `ℤ`
   (AKNS, Theorem 3.1): Mathlib has first-order syntax, semantics and definability but no
   interpretations, homotopies of interpretations or bi-interpretations;
-* the characteristic-two cases of Kronecker dimension above three of the divisor theorem and of
-  the single-sentence theorem: their hypothesis, resolution of singularities above `𝔽₂` (smooth
+* the characteristic-two cases of Kronecker dimension above three of the divisor theorem, the
+  normalization theorem and the single-sentence theorem: their hypothesis, resolution of singularities above `𝔽₂` (smooth
   proper birational models of integral proper `𝔽₂`-varieties and smooth projective compactifications
   with simple normal crossings boundary), has no carrier at the pins. The unconditional cases,
   characteristic different from two or Kronecker dimension at most three, are stated below.
@@ -51,8 +52,7 @@ def IsGeometricPrimeDivisor {K : Type u} [Field K] (O : ValuationSubring K) : Pr
 there is a ring sentence that holds in a finitely generated field exactly when its Kronecker
 dimension is `n` (README §0.8). -/
 theorem exists_sentence_kroneckerDimension_eq (n : ℕ) :
-    ∃ σ : Language.ring.Sentence, ∀ (K : Type u) [Field K] [Field.FG K],
-      letI := FirstOrder.Ring.compatibleRingOfRing K
+    ∃ σ : Language.ring.Sentence, ∀ (K : Type u) [Field K] [Field.FG K] [FirstOrder.Ring.CompatibleRing K],
       (σ.Realize K ↔ kroneckerDimension K = n) := by
   sorry
 
@@ -61,11 +61,9 @@ finitely generated field of characteristic zero and fails in every field of posi
 characteristic (README §0.10). -/
 theorem exists_sentence_charZero :
     ∃ σ : Language.ring.Sentence,
-      (∀ (K : Type u) [Field K] [Field.FG K], ringChar K = 0 →
-        letI := FirstOrder.Ring.compatibleRingOfRing K
+      (∀ (K : Type u) [Field K] [Field.FG K] [FirstOrder.Ring.CompatibleRing K], ringChar K = 0 →
         σ.Realize K) ∧
-      ∀ (K : Type u) [Field K], ringChar K ≠ 0 →
-        letI := FirstOrder.Ring.compatibleRingOfRing K
+      ∀ (K : Type u) [Field K] [FirstOrder.Ring.CompatibleRing K], ringChar K ≠ 0 →
         ¬ σ.Realize K := by
   sorry
 
@@ -73,8 +71,7 @@ theorem exists_sentence_charZero :
 finitely generated field, finite fields included, the set of elements algebraic over the prime
 field (README §0.13). -/
 theorem exists_formula_isAlgebraic_primeField :
-    ∃ φ : Language.ring.Formula (Fin 1), ∀ (K : Type u) [Field K] [Field.FG K],
-      letI := FirstOrder.Ring.compatibleRingOfRing K
+    ∃ φ : Language.ring.Formula (Fin 1), ∀ (K : Type u) [Field K] [Field.FG K] [FirstOrder.Ring.CompatibleRing K],
       ∀ x : K, φ.Realize ![x] ↔ IsAlgebraic (⊥ : Subfield K) x := by
   sorry
 
@@ -82,8 +79,7 @@ theorem exists_formula_isAlgebraic_primeField :
 variables defines, in every finitely generated field, the `n`-tuples that are algebraically
 dependent over the prime field (README §0.14). For `n = 0` the formula is false. -/
 theorem exists_formula_not_algebraicIndependent (n : ℕ) :
-    ∃ φ : Language.ring.Formula (Fin n), ∀ (K : Type u) [Field K] [Field.FG K],
-      letI := FirstOrder.Ring.compatibleRingOfRing K
+    ∃ φ : Language.ring.Formula (Fin n), ∀ (K : Type u) [Field K] [Field.FG K] [FirstOrder.Ring.CompatibleRing K],
       ∀ x : Fin n → K, φ.Realize x ↔ ¬ AlgebraicIndependent (⊥ : Subfield K) x := by
   sorry
 
@@ -96,14 +92,31 @@ whose characteristic is not two or with `d ≤ 3`, every fibre of `φ` is empty 
 geometric prime divisor, and every geometric prime divisor ring is a fibre (README §5.7). -/
 theorem exists_formula_isGeometricPrimeDivisor (d : ℕ) :
     ∃ (m : ℕ) (φ : Language.ring.Formula (Fin (m + 1))),
-      ∀ (K : Type u) [Field K] [Field.FG K], kroneckerDimension K = d →
+      ∀ (K : Type u) [Field K] [Field.FG K] [FirstOrder.Ring.CompatibleRing K],
+        kroneckerDimension K = d →
         (ringChar K ≠ 2 ∨ d ≤ 3) →
-        letI := FirstOrder.Ring.compatibleRingOfRing K
         (∀ y : Fin m → K, {x : K | φ.Realize (Fin.cons x y)} = ∅ ∨
           ∃ O : ValuationSubring K, IsGeometricPrimeDivisor O ∧
             {x : K | φ.Realize (Fin.cons x y)} = O) ∧
         ∀ O : ValuationSubring K, IsGeometricPrimeDivisor O →
           ∃ y : Fin m → K, {x : K | φ.Realize (Fin.cons x y)} = O := by
+  sorry
+
+/-! ## Layer 6: definable finite normalizations -/
+
+/-- **Uniform arithmetic normalization** (Dittmann–Pop, Proposition 5.1 and Remark 5.4):
+for each fixed Kronecker dimension and basis length, one formula defines the integral closure
+of the prime subring adjoined the basis in every finitely generated field of that dimension,
+when the characteristic is not two or the dimension is at most three (README §6.9).
+The basis is over the prime subfield; the integral closure equals the arithmetic normalization
+formed using the constant field, including for inseparable finite extensions. -/
+theorem exists_formula_arithmeticNormalization (d e : ℕ) :
+    ∃ φ : Language.ring.Formula (Fin (e + 1)),
+      ∀ (K : Type u) [Field K] [Field.FG K] [FirstOrder.Ring.CompatibleRing K],
+        kroneckerDimension K = d → (ringChar K ≠ 2 ∨ d ≤ 3) →
+        ∀ T : Fin e → K, IsTranscendenceBasis (⊥ : Subfield K) T →
+        ∀ x : K, φ.Realize (Fin.cons x T) ↔
+          IsIntegral (Subring.closure (Set.range T)) x := by
   sorry
 
 /-! ## Layer 8: single sentences for finitely generated fields -/
@@ -114,8 +127,8 @@ in a finitely generated commutative ring exactly when that ring is isomorphic to
 (README §8.4). -/
 theorem exists_sentence_realize_iff_nonempty_ringEquiv_of_isDomain (B : Type u) [CommRing B]
     [IsDomain B] [Algebra.FiniteType ℤ B] :
-    ∃ σ : Language.ring.Sentence, ∀ (S : Type u) [CommRing S] [Algebra.FiniteType ℤ S],
-      letI := FirstOrder.Ring.compatibleRingOfRing S
+    ∃ σ : Language.ring.Sentence, ∀ (S : Type u) [CommRing S] [Algebra.FiniteType ℤ S]
+      [FirstOrder.Ring.CompatibleRing S],
       (σ.Realize S ↔ Nonempty (S ≃+* B)) := by
   sorry
 
@@ -125,8 +138,7 @@ holds in a finitely generated field `L` exactly when `L ≅ K`; the fields `L` c
 hypothesis (README §8.5). -/
 theorem exists_sentence_realize_iff_nonempty_ringEquiv (K : Type u) [Field K] [Field.FG K]
     (hK : ringChar K ≠ 2 ∨ kroneckerDimension K ≤ 3) :
-    ∃ σ : Language.ring.Sentence, ∀ (L : Type u) [Field L] [Field.FG L],
-      letI := FirstOrder.Ring.compatibleRingOfRing L
+    ∃ σ : Language.ring.Sentence, ∀ (L : Type u) [Field L] [Field.FG L] [FirstOrder.Ring.CompatibleRing L],
       (σ.Realize L ↔ Nonempty (L ≃+* K)) := by
   sorry
 

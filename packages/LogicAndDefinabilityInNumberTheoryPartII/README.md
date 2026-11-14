@@ -6,9 +6,9 @@
 
 This roadmap owns:
 
-- the hypothesis `H_d`, the notion of a geometric prime divisor and the uniform definable families with empty failed fibres (Layer 0); the existence of Albanese varieties over an arbitrary field, which Poonen's twisting arguments need and which no other roadmap states beyond curves (0.8a);
+- the hypothesis `H_d`, the notion of a geometric prime divisor and the uniform definable families with empty failed fibres (Layer 0); the rational Albanese torsor over an arbitrary field needed by Poonen's twisting arguments (0.8a), extending the pointed characteristic-zero existence supplied by ColemanIntegrationPartII §4.0b to unpointed varieties and positive characteristic;
 - Rumely's uniform definitions in global fields, Pop's sentences fixing the Kronecker dimension, Poonen's diagonal-form lemmas, his elliptic constructions, the characteristic sentence, the uniform constant field, uniform algebraic dependence and the uniform family of relatively closed global subfields (Layer 0);
-- the three cohomological local–global principles that no other roadmap states — Kerz–Saito's with `ℤ/2` coefficients over finite fields and henselian discrete valuation rings, Jannsen's in characteristic two, and Kato's two-dimensional principle with prime coefficients — and the reduced-norm test for cubic and quadratic symbols (Layer 1);
+- the three cohomological local–global principles that no other roadmap states — Kerz–Saito's with `ℤ/2` coefficients over finite fields and excellent henselian discrete valuation rings, Jannsen's in characteristic two, and Kato's two-dimensional principle with prime coefficients — and the reduced-norm test for cubic and quadratic symbols (Layer 1);
 - nice Pfister presentations, test presentations and their abundance (Layer 2), prime-divisor detection and the compact limiting detector (Layer 3), anisotropy sets, discrete balls and stabilizers (Layer 4), the uniform divisor formulas in every Kronecker dimension (Layer 5);
 - definable finite normalizations, full geometric flags with an arithmetic terminal place and the height-one intersection theorem for normal Noetherian domains (Layer 6);
 - Aschenbrenner–Khélif–Naziazeno–Scanlon's arithmetic bi-interpretation of infinite finitely generated domains, the fraction-field transfer and the bi-interpretability of infinite finitely generated fields with ℤ (Layer 7);
@@ -17,16 +17,17 @@ This roadmap owns:
 It leaves to named owners, and imports without restating:
 
 - **LogicAndDefinabilityInNumberTheory** §0.1 (interpretations on definable quotients, including quotients by definable ideals), §0.2 (semantics and composition of interpretations), §0.3 (fraction fields as interpreted structures) and §0.4 (arithmetic semantics bridges). Definable homotopy of interpretations and parametric bi-interpretation are requested from its §0.2 as gap:biinterpretation-homotopy.
-- **QuadraticFormInvariantsPartII** §1.1 (quadratic Pfister forms in every characteristic), §1.5 (isotropy equals hyperbolicity), §§3.1 and 3.7–3.9 (coefficient groups, the Pfister invariant, its naturality and the invariant-zero criterion), §§4.1–4.3 (unit reduction, principal-unit and independent-value criteria over henselian fields of arbitrary rank), §5.6 (Tsen–Lang), §5.7 (Kronecker dimension, constant field and its strict drop under nontrivial valuations), §6.3 (Jannsen's Hasse principle for `ℤ/2` coefficients away from characteristic two), §6.5 (Dittmann–Pop's dimension theorem for unit Pfister forms) and §7.2 (patch openness of henselian isotropy loci). The Lean definition `kroneckerDimension` of this roadmap restates the notion of its §5.7 on pinned carriers so that the headline theorems are statable.
-- **LocalFieldsRamificationPartII** §GF.1 (henselization of a valued field, normalization and prolongations) and §GF.5 (composed valuations, coarsenings and the Abhyankar inequality).
-- **AlgebraicModuliForArithmeticGeometry** §7.5 (finite normalization of reduced finite-type algebras with generic étaleness, `ArithmeticCoefficients.valuation_prolongation_integrality` and `ArithmeticCoefficients.root_coefficient_descent`).
-- **AdicCoefficientsAndComparisonsPartII** §PA.6.8 and §PA.6.10 (Gabber's prime-to-ℓ alterations over a one-dimensional base and the odd-degree regular alteration of a projective flat model over a henselian non-dyadic discrete valuation ring).
+- **QuadraticFormInvariantsPartII** §1.1 (quadratic Pfister forms in every characteristic), §1.2 (binary norms of quadratic étale algebras, including the split algebra), §1.5 (isotropy equals hyperbolicity), §§3.1 and 3.7–3.9 (coefficient groups, the Pfister invariant, its naturality and the invariant-zero criterion), §§4.1–4.3 (unit reduction, principal-unit and independent-value criteria over henselian fields of arbitrary rank), §5.6 (Tsen–Lang), §5.7 (Kronecker dimension, constant field and its strict drop under nontrivial valuations), §6.3 (Jannsen's Hasse principle for `ℤ/2` coefficients away from characteristic two), §6.5 (Dittmann–Pop's dimension theorem for unit Pfister forms) and §7.2 (patch openness of henselian isotropy loci). The Lean definition `kroneckerDimension` of this roadmap restates the notion of its §5.7 on pinned carriers so that the headline theorems are statable.
+- **LocalFieldsRamificationPartII** §1.1 (normalization and prolongations), §§1.2–1.3 (henselizations of valuation rings and valued fields), §5.1 (composed valuations), §5.2 (coarsenings) and §5.3 (the Abhyankar inequality).
+- **AlgebraicModuliForArithmeticGeometry** §3.5 (effective descent with a specified ample line bundle and cocycle) and §7.5 (finite normalization of reduced finite-type algebras with generic étaleness, `ArithmeticCoefficients.valuation_prolongation_integrality` and `ArithmeticCoefficients.root_coefficient_descent`).
+- **AdicCoefficientsAndComparisonsPartII** §PA.6.8 and §PA.6.10 (Gabber's prime-to-ℓ alterations over a one-dimensional base and the odd-degree regular alteration of a projective flat model over an excellent henselian non-dyadic discrete valuation ring).
 - **ArithmeticGaloisDuality** §R02.4.4 (cohomological dimension of Galois groups of number fields with restricted ramification) and §R02.3.2 (class formation of a global function field). The cyclic Hasse norm theorem for global function fields is requested from its §R02.3.2 as gap:function-field-cyclic-hasse-norm.
 - **FunctionFieldArithmetic** §5.8 (degree-sensitive Chebotarev for global function fields).
-- **AbelianSchemesAndArithmeticModuli** §§A3.1, A6.5 (isogenies and Poincaré complete reducibility) and **NeronModelsAndSemistableAbelianVarieties** §5.1 (Néron–Ogg–Shafarevich, isogeny invariance of good reduction).
-- **WeilConjectures** WC.5 (*The all-extension Weil estimate*; *Curve RH from the surface bound*).
+- **AbelianSchemesAndArithmeticModuli** §§A1.8, A3.1, A6.5 (Weil extension, isogenies and Poincaré complete reducibility) and **NeronModelsAndSemistableAbelianVarieties** §5.1 (Néron–Ogg–Shafarevich, isogeny invariance of good reduction).
+- **ColemanIntegrationPartII** §4.0b (pointed Albanese existence for smooth geometrically connected varieties in characteristic zero).
+- **WeilConjectures** WC.5, §5.29 (*Curve RH from the surface bound*), for smooth projective curves; **SieveMethodsAndPrimePatterns** §5.4 (*Uniform algebraic point counts*), for affine Lang–Weil estimates and upper bounds for fibres.
 - **LefschetzPencilsAndVanishingCycles** §§3.4–3.5 (existence of Lefschetz pencils and their descent to finite fields), **DeligneWeightsAndPurity** §§7.12 and 7.15, **MotivesAndAlgebraicCycles** §0.5b, **KTheoryFiniteLocalFields** §§3.0–3.0a and **SchemeAndStackFoundations** §§0.12, 0.20, 2.15, as inputs of the local–global principles of Layer 1.
-- On main: **JacobianChallenge** Layer F (the Albanese property of a curve); **AlgebraicCurves** Layers 0, 2, 6 and 12; **Chebotarev** Layer 10; **GlobalNumberFields** Layers 1 and 6; **GlobalQuadraticForms** §5.5; **RealAlgebraicGeometry** Layer 1 (*Ordered real-closure existence*); **ClassFieldTheory** Layers 10 and 13; **EllipticCurves** Layers 1, 3, 4, 5 and 6.
+- On main: **JacobianChallenge** Layer F (the Albanese property of a curve); **AlgebraicCurves** Layers 0, 2, 6 and 12; **Chebotarev** Layer 10; **GlobalNumberFields** Layers 1 and 6; **GlobalQuadraticForms** §5.5; **RealAlgebraicGeometry** Layer 1 (*Ordered real-closure existence*); **ClassFieldTheory** Layers 10 and 13; **EllipticCurves** Layers 0, 1, 3, 4, 5 and 6.
 - Mathlib and Tau Ceti at the pins, as listed in the supplier contracts.
 
 Functional transcendence for Shimura varieties shares only general logic with this roadmap and is not part of it. The ring-theoretic quasi-finite axiomatizability of non-domains (fibre products, nilpotents) is not part of this roadmap; only integral domains and fields are treated.
@@ -39,7 +40,7 @@ Functional transcendence for Shimura varieties shares only general logic with th
 - **Valuations.** Valuations are compared through their rings (`ValuationSubring`) and are written additively with `w(0) = ∞` in prose. Tau Ceti's integer order `TauCeti.Place.ord` takes the junk value `0` at `0`; every translation to it carries a nonzero hypothesis or an explicit zero branch. A *prime divisor* of `K` with `δ(K)` finite is a discrete rank-one valuation `w` with `δ(Kw) = δ(K) − 1`; it is *geometric* if `char Kw = char K` and *arithmetic* otherwise (Dittmann–Pop, §1, p. 2). Henselizations, not completions, are used in all formulas; `K_w` denotes the henselization.
 - **Pfister forms.** For nonzero slots `a = (a_d, …, a₀)` the form `q_a` is Dittmann–Pop's (§3, p. 6): in characteristic different from two `q_a = ⟨⟨a_d⟩⟩ ⊗ ⋯ ⊗ ⟨⟨a₀⟩⟩` with `⟨⟨a⟩⟩ = x² − a y²`; in characteristic two the outer factors `⟨⟨a_i⟩⟩_b = ⟨1, −a_i⟩_b`, `i ≥ 1`, are bilinear and the last factor is the quadratic `x² + xy + a₀ y²`. In the notation of QuadraticFormInvariantsPartII §1.1, `q_a ≅ ⟨⟨a_d, …, a₁⟩⟩_b ⊗ [1, c]` with `c = (1 − a₀)/4` when `2 ≠ 0` and `c = a₀` when `2 = 0`. The form has `2^{d+1}` variables. Pop 2002 and Poonen use the plus convention `⟨⟨a⟩⟩ = x² + a y²`; every statement below quantifies over all slots, so only witnesses change, and each witness names its convention.
 - **Diagonal forms.** For `n ≥ 2`, `⟨a₁, …, a_m⟩_n = Σ a_i x_iⁿ` and `⟨⟨a⟩⟩_n = ⟨1, a, …, a^{n−1}⟩_n`, tensor products being diagonal (Poonen, Appendix A, p. 12). Write `n_K = 3` if `char K = 2` and `n_K = 2` otherwise.
-- **Formulas and uniformity.** Formulas are first-order formulas of Mathlib's `FirstOrder.Language.ring` (symbols `+`, `·`, `−`, `0`, `1`; no inverse symbol), interpreted in a field through `FirstOrder.Ring.compatibleRingOfRing`. A *uniform family* on a class `C` of fields is one formula `Φ(x; y₁, …, y_m)` with a fixed natural number `m`; its fibres are `Φ(K; b) = {x ∈ K : K ⊨ Φ(x; b)}` for `b ∈ K^m`. A family *exhausts* a collection of subsets of each `K ∈ C` when each member is a fibre, and *has empty failed fibres* when every fibre is a member or empty. The intersection of an empty family of subsets of `K` is `K`, a union over an empty family is empty.
+- **Formulas and uniformity.** Formulas are first-order formulas of Mathlib's `FirstOrder.Language.ring` (symbols `+`, `·`, `−`, `0`, `1`; no inverse symbol), interpreted in a field through `FirstOrder.Ring.CompatibleRing`, which identifies the language operations with the field operations; `FirstOrder.Ring.compatibleRingOfRing` supplies this structure for every field. The headline signatures quantify over compatible structures, so none is chosen within a theorem statement. A *uniform family* on a class `C` of fields is one formula `Φ(x; y₁, …, y_m)` with a fixed natural number `m`; its fibres are `Φ(K; b) = {x ∈ K : K ⊨ Φ(x; b)}` for `b ∈ K^m`. A family *exhausts* a collection of subsets of each `K ∈ C` when each member is a fibre, and *has empty failed fibres* when every fibre is a member or empty. The intersection of an empty family of subsets of `K` is `K`, a union over an empty family is empty.
 - **Interpretations.** Interpretations, their semantics and their composition are LogicAndDefinabilityInNumberTheory's (§§0.1–0.2), with parameters; *bi-interpretable* means parametrically bi-interpretable, with both comparison isomorphisms definable (the notion requested as gap:biinterpretation-homotopy). A *finitely generated structure* in a language is one generated by finitely many elements together with the constants.
 - **Universes.** Fields quantified in one statement live in one universe; the class of finitely generated fields of a universe contains a copy of every finitely generated field.
 - **Page numbers.** Dittmann–Pop pages are those of the author version of 27 April 2023 (arXiv v2); Poonen pages and numbering are those of arXiv v1 (in that version the relative dependence lemma is Lemma 5.2); Pop 2002 numbering is arXiv v1 (its Theorem 1.4 is the published theorem Poonen cites as Theorem 2.3's source); Jannsen is cited by the numbering of arXiv v2: its Theorem 0.1 (Kato's conjecture for `n` invertible), Corollary 0.4 (the `ℤ/2` injectivity) and Theorem 0.6 (the finite-field theorem) are Theorem 0.4, Corollary 0.8 and Theorem 0.10 of the published paper, the numbering Dittmann–Pop use; AKNS and Kerz–Saito numbering is that of the arXiv versions listed in the references; Pop 2017 and Rumely pages are the published pages.
@@ -49,12 +50,13 @@ Functional transcendence for Shimura varieties shares only general logic with th
 ### From Mathlib
 
 - Logic: `FirstOrder.Language.ring`, `FirstOrder.Ring.compatibleRingOfRing`, `FirstOrder.Language.Sentence.Realize`, `FirstOrder.Language.Formula.Realize`, `Set.Definable`. Mathlib supplies syntax, semantics and definability with parameters; it has no interpretations, homotopies or bi-interpretations.
-- Fields: `Field.FG` (finitely many generators of the field, not of the ring), `Algebra.trdeg`, `AlgebraicIndependent`, `IsAlgebraic`, `algebraicClosure` (relative algebraic closure as an intermediate field), `ringChar`, `FiniteField.ringEquivOfCardEq` (two finite fields of equal cardinality are isomorphic; it needs `Fintype` instances, which exact-cardinality witnesses supply).
-- Valuations and rings: `ValuationSubring`, `ValuationSubring.ofPrime` (localization of a valuation ring at a prime, the coarsening), `IsDiscreteValuationRing`, `IsLocalRing.ResidueField`, `HenselianLocalRing`, `LocalSubring.exists_le_valuationSubring` (Chevalley extension), `integralClosure`, `IsIntegrallyClosed`, `IsFractionRing`, `Algebra.FiniteType`.
+- Fields: `Field.FG` (finitely many generators of the field, not of the ring), `Algebra.trdeg`, `AlgebraicIndependent`, `IsTranscendenceBasis`, `IsAlgebraic`, `algebraicClosure` (relative algebraic closure as an intermediate field), `ringChar`, `FiniteField.ringEquivOfCardEq` (two finite fields of equal cardinality are isomorphic; it needs `Fintype` instances, which exact-cardinality witnesses supply).
+- Valuations and rings: `ValuationSubring`, `ValuationSubring.ofPrime` (localization of a valuation ring at a prime, the coarsening), `IsDiscreteValuationRing`, `IsLocalRing.ResidueField`, `HenselianLocalRing`, `LocalSubring.exists_le_valuationSubring` (Chevalley extension), `integralClosure`, `IsIntegral`, `Subring.closure`, `IsIntegrallyClosed`, `IsFractionRing`, `Algebra.FiniteType`.
 - Quadratic forms: `QuadraticMap.Anisotropic`; isotropic means not anisotropic.
 
 ### From Tau Ceti
 
+- `AlgebraicGeometry.Scheme.Hom.exists_finite_isSeparable_comp_eq` (`TauCeti/AlgebraicGeometry/Morphisms/Smooth/SeparablePoint.lean`): a nonempty scheme smooth over any field has a point over a finite separable extension.
 - `TauCeti.ValuationSpectrum.patchTopology`, `TauCeti.ValuationSpectrum.compactSpace_patchTopology` and `TauCeti.ValuationSpectrum.isClopen_patchTopology_basicOpen`: for a commutative ring `A` the valuation spectrum `Spv A` with its patch topology is compact and every basic open `{v : v(f) ≤ v(s) ≠ 0}` is clopen. For a field this is the Riemann–Zariski space including the trivial valuation; no rank-one subspace replaces it.
 - `TauCeti.Place`, `TauCeti.Place.integers`, `TauCeti.Place.ord`: a place of a function field `F/k` is a surjective `ℤᵐ⁰`-valued valuation trivial on `k`; its integers form a valuation subring and `ord` is the integer order with `ord 0 = 0`.
 - `TauCeti.Place.exists_ne_zero_forall_mem_ord_eq`: for a finite set of places and integers `r_P` there is a nonzero `g` with `ord_P g = r_P` on that set.
@@ -69,13 +71,15 @@ What LogicAndDefinabilityInNumberTheory must provide (gap:biinterpretation-homot
 
 ### From TauCetiRoadmap.QuadraticFormInvariantsPartII
 
-§1.1 `q_a` as a quadratic Pfister form with the characteristic-dependent last factor; §1.5 isotropic Pfister forms are hyperbolic; §3.1 the groups `H^{i+1}(F) = H^{i+1}(F, ℤ/2(i))`, Kato's group in characteristic two; §3.7 the invariant `e(q_a) ∈ H^{d+1}(F)`; §3.8 its naturality under every field extension (Dittmann–Pop Fact 3.1(2)); §3.9 `q_a` is isotropic exactly when `e(q_a) = 0` (Fact 3.1(1)); §4.1 unit reduction; §4.2 a unit form with a principal-unit outer slot is isotropic (Proposition 3.2(1)); §4.3 the independent-value criterion (Proposition 3.2(2)); §5.6 Tsen–Lang (`C_i` ascent; finite fields are `C₁`); §5.7 the Kronecker dimension, the constant field, invariance under algebraic extensions and the strict drop `δ(Fw) < δ(F)` for nontrivial `w`; §6.3 Jannsen's injectivity `H^{d+2}(F, ℤ/2) → ⊕_v H^{d+2}(F_v, ℤ/2)` for a function field `F` in `d` variables over a global field `k₁` of characteristic different from two that is separably closed in `F`; §6.5 the dimension theorem (Proposition 3.2(3)) with no finite-generation hypothesis; §7.2 for every quadratic form over `F` the set of valuations at whose henselization it is isotropic is patch open (Lemma 3.9(2)).
+§1.1 `q_a` as a quadratic Pfister form with the characteristic-dependent last factor; §1.2 the binary norm of a quadratic étale algebra, with split norm `(u, v) ↦ uv`; §1.5 isotropic Pfister forms are hyperbolic; §3.1 the groups `H^{i+1}(F) = H^{i+1}(F, ℤ/2(i))`, Kato's group in characteristic two; §3.7 the invariant `e(q_a) ∈ H^{d+1}(F)`; §3.8 its naturality under every field extension (Dittmann–Pop Fact 3.1(2)); §3.9 `q_a` is isotropic exactly when `e(q_a) = 0` (Fact 3.1(1)); §4.1 unit reduction; §4.2 a unit form with a principal-unit outer slot is isotropic (Proposition 3.2(1)); §4.3 the independent-value criterion (Proposition 3.2(2)); §5.6 Tsen–Lang (`C_i` ascent; finite fields are `C₁`); §5.7 the Kronecker dimension, the constant field, invariance under algebraic extensions and the strict drop `δ(Fw) < δ(F)` for nontrivial `w`; §6.3 Jannsen's injectivity `H^{d+2}(F, ℤ/2) → ⊕_v H^{d+2}(F_v, ℤ/2)` for a function field `F` in `d` variables over a global field `k₁` of characteristic different from two that is separably closed in `F`; §6.5 the dimension theorem (Proposition 3.2(3)) with no finite-generation hypothesis; §7.2 for every quadratic form over `F` the set of valuations at whose henselization it is isotropic is patch open (Lemma 3.9(2)).
 
 ### From TauCetiRoadmap.LocalFieldsRamificationPartII
 
-§GF.1: henselizations of valued fields and their embeddings under extension and coarsening; for a finite extension, the prolongations of a valuation ring correspond to the maximal ideals of the integral closure. §GF.5: the composed valuation `V ∘ R` as the inverse image of a residue valuation ring, its value-group sequence with convex kernel, recovery of a coarsening as a localization (`ValuationSubring.ofPrime`), and the Abhyankar inequality.
+§1.1: for a finite extension, the prolongations of a valuation ring correspond to the maximal ideals of the integral closure. §§1.2–1.3: henselizations of valuation rings and valued fields, their universal property and embeddings under extension. §5.1: composed valuations as inverse images of residue valuation rings, with their value-group sequence and convex kernel. §5.2: coarsenings as localizations (`ValuationSubring.ofPrime`) and their chain. §5.3: the Abhyankar inequality and finite-height bound. The embedding of a coarser henselization into a finer one uses §§1.3, 5.1–5.2.
 
 ### From TauCetiRoadmap.AlgebraicModuliForArithmeticGeometry
+
+§3.5: `ModuliDescent.polarizedDescentComparison`, effective descent of a proper finitely presented scheme with a relatively ample invertible sheaf along an fppf cover. Both the scheme isomorphism and its lift to the line bundle on the fibre square, their identity laws and their triple cocycles are data. This applies to finite extensions of fields, including inseparable ones with nonreduced fibre squares; invariance of an isomorphism class is insufficient.
 
 §7.5: `arithmetic_normalization_genericallyEtale` (finite normalization of a reduced finite-type algebra over a field or an excellent base in every finite extension, generically étale for separable function-field extensions); `ArithmeticCoefficients.valuation_prolongation_integrality` (the integral closure of an intersection of valuation rings in a finite extension is the intersection of all their prolongations, with no assumption on the fraction field of the intersection); `ArithmeticCoefficients.root_coefficient_descent` (roots with multiplicities in a prolongation give coefficients in the base valuation ring).
 
@@ -92,8 +96,10 @@ What ArithmeticGaloisDuality must provide (gap:function-field-cyclic-hasse-norm)
 ### From the other earlier roadmaps
 
 - FunctionFieldArithmetic §5.8, the degree-sensitive Chebotarev theorem: for a finite Galois extension of global function fields and a conjugacy class compatible with the constant-field Frobenius, places of every large compatible degree with that Frobenius exist; in particular infinitely many places split completely, outside any finite set.
-- AbelianSchemesAndArithmeticModuli §A3.1 (isogenies) and §A6.5 (Poincaré complete reducibility). NeronModelsAndSemistableAbelianVarieties §5.1: the Néron–Ogg–Shafarevich criterion, so that good reduction at a place is invariant under isogeny.
-- WeilConjectures WC.5: *The all-extension Weil estimate* (`#W(𝔽_{qⁿ}) = q^{n dim W}(1 + o(1))` for a geometrically integral variety) and *Curve RH from the surface bound* (the Weil bound for smooth projective curves).
+- AbelianSchemesAndArithmeticModuli §A1.8 (Weil extension: a rational map from a smooth variety to an abelian variety extends, using properness at codimension-one points and the criterion in item (1)), §A3.1 (isogenies) and §A6.5 (Poincaré complete reducibility). NeronModelsAndSemistableAbelianVarieties §5.1: the Néron–Ogg–Shafarevich criterion, so that good reduction at a place is invariant under isogeny.
+- ColemanIntegrationPartII §4.0b: `NaturalIntegration.properAlbanese_exists`, the pointed Albanese of a smooth geometrically connected separated finite-type variety over a characteristic-zero field.
+- WeilConjectures WC.5, §5.29: *Curve RH from the surface bound* (the Weil bound for smooth projective curves).
+- SieveMethodsAndPrimePatterns §5.4: `SieveLangWeil.lang_weil_uniform`. For fixed affine ambient dimension, number of equations and degree bound, a geometrically irreducible affine variety of dimension `r` over `𝔽_Q` has `Q^r + O(Q^{r−1/2})` points; arbitrary fibres of dimension at most `r` with that presentation bound have `O(Q^r)` points, including empty and reducible fibres. Constants depend only on the presentation bounds, hence remain fixed under finite-field extension.
 - LefschetzPencilsAndVanishingCycles §3.4 (existence of Lefschetz pencils after a Veronese embedding) and §3.5 (descent of pencils to a finite field).
 - DeligneWeightsAndPurity §§7.12 and 7.15, MotivesAndAlgebraicCycles §0.5b, KTheoryFiniteLocalFields §3.0 (Milnor symbols, residues, the Bloch–Gabber–Kato isomorphism) and §3.0a (norm residue isomorphism), SchemeAndStackFoundations §§0.12, 0.20 and 2.15: the inputs of Layer 1, used exactly as QuadraticFormInvariantsPartII §6.3 uses them.
 
@@ -105,7 +111,7 @@ What ArithmeticGaloisDuality must provide (gap:function-field-cyclic-hasse-norm)
 - GlobalQuadraticForms §5.5: Hasse–Minkowski isotropy over number fields, with real places; hence a quadratic form of rank at least five over a totally imaginary number field is isotropic, and every sum of squares in a number field is a sum of four squares.
 - RealAlgebraicGeometry Layer 1, *Ordered real-closure existence*: every proper field preordering lies in an ordering; real closures at orderings exist.
 - ClassFieldTheory Layer 10 (the Brauer–Hasse–Noether sequence) and Layer 13 (`cyclicHasseNorm`, the cyclic Hasse norm theorem over number fields).
-- EllipticCurves Layer 1 (the formal group and `Ê(𝔪) ≅ E₁(K)`), Layer 3 (the Hasse bound), Layer 4 (reduction and the filtration `E₁ ⊆ E₀ ⊆ E`), Layer 5 (quadratic twists) and Layer 6 (Mordell–Weil).
+- EllipticCurves Layer 0 (the place at infinity of a Weierstrass curve, with `ord_∞ x = −2` and `ord_∞ y = −3`), Layer 1 (the formal group and `Ê(𝔪) ≅ E₁(K)`; a separable isogeny is unramified, `e = 1`), Layer 3 (the Hasse bound), Layer 4 (reduction and the filtration `E₁ ⊆ E₀ ⊆ E`), Layer 5 (quadratic twists) and Layer 6 (Mordell–Weil).
 
 ## How to read the build
 
@@ -154,7 +160,7 @@ API:
 - On `ℚ(s, t)` the discrete valuation `f ↦ ord_s f(s, eˢ − 1)` has residue field `ℚ` with `δ = 1 ≠ 2`: it is a discrete rank-one valuation that is not a prime divisor, so the dimension clause is not implied by discreteness.
 - The trivial valuation ring `K` is not a discrete valuation ring, so it is never a prime divisor.
 
-*Needs:* 0.1; Mathlib `ValuationSubring`, `IsDiscreteValuationRing`, `IsLocalRing.ResidueField`; LocalFieldsRamificationPartII §GF.5 (the Abhyankar inequality); AlgebraicCurves Layer 0.
+*Needs:* 0.1; Mathlib `ValuationSubring`, `IsDiscreteValuationRing`, `IsLocalRing.ResidueField`; LocalFieldsRamificationPartII §5.3 (the Abhyankar inequality); AlgebraicCurves Layer 0.
 
 ### 0.3 Uniform definable families with empty failed fibres
 
@@ -178,7 +184,7 @@ API:
 
 ### 0.4 Bounded finite extensions as interpreted structures
 
-For a field `K`, a natural number `N` and monic `h ∈ K[X]` of degree at most `N`, the field `K(α)` generated by a root `α` of `h` in an algebraic closure is interpreted in `K`, uniformly in the coefficients of `h`: quantify over a monic factor `g` of `h` of degree `e ≤ N` that has no factorization into monic factors of smaller degree (a finite disjunction over degrees with bounded quantifiers), and interpret `K[X]/(g)` on `K^e` with the structure constants of multiplication by `X` (LogicAndDefinabilityInNumberTheory §0.1, the quotient of a definable ring by a definable ideal; AKNS, Lemma 2.11, p. 13, for the uniform interpretability of finite algebras). Iterating gives the composita `K(α)(β)` of bounded degree. Every ring formula over `K(α)` with parameters from `K` and from `K(α)` translates into a ring formula over `K` in the coordinates.
+For a field `K`, a natural number `N` and monic `h ∈ K[X]` of degree at most `N`, the field `K(α)` generated by a root `α` of `h` in an algebraic closure is interpreted in `K`, uniformly in the coefficients of `h`: quantify over a monic factor `g` of `h` of positive degree `1 ≤ e ≤ N` that is irreducible, equivalently has no factorization into two monic factors of positive smaller degree (a finite disjunction over degrees with bounded quantifiers), and interpret `K[X]/(g)` on `K^e` with the structure constants of multiplication by `X` (LogicAndDefinabilityInNumberTheory §0.1, the quotient of a definable ring by a definable ideal; AKNS, Lemma 2.11, p. 13, for the uniform interpretability of finite algebras). Iterating gives the composita `K(α)(β)` of bounded degree. Every ring formula over `K(α)` with parameters from `K` and from `K(α)` translates into a ring formula over `K` in the coordinates.
 
 API:
 
@@ -189,6 +195,7 @@ API:
 
 **Checks.**
 
+- Over `ℚ`, with `h = X² + 1`, the factor `g = 1` has degree zero and is rejected: its quotient is the zero ring with `0 = 1`. The accepted factor `X² + 1` gives `ℚ(i)`, with two coordinates and `0 ≠ 1`. For `N = 0`, the only monic `h` is `1`, which has no root and no admissible factor, so there is no interpreted field.
 - For `h = X² − X`, the factor `X` gives `K(α) = K`; the unreduced quotient `K[X]/(X² − X) ≅ K × K` is not a field and is never the interpreted object.
 - Over `ℚ`, `X² − X + 1/4 = (X − 1/2)²` gives `K(α) = ℚ`; over `𝔽₂(t)`, `X² + X + t` is irreducible and separable and gives a quadratic field.
 - For `K = ℚ` and `h₁ = X² + 1`, `h₂ = X² + 2`, the compositum has degree four; for `h₂ = X² + 4` it has degree two, so composita are bounded by, not equal to, the product of degrees.
@@ -216,13 +223,17 @@ API:
 
 Prove Poonen's appendix lemmas (Poonen, Appendix A, pp. 12–14):
 
-- (a) *Odd and quadratic descent.* A quadratic form with a nontrivial zero over an odd-degree extension `L/K` has one over `K`, and a cubic form with a nontrivial zero over a quadratic extension has one over `K` (Proposition A.1).
+- (a) *Odd and quadratic descent.* A quadratic form with a nontrivial zero over an odd-degree extension `L/K` has one over `K`, and a cubic form with a nontrivial zero over a quadratic extension, separable or not, has one over `K` (Proposition A.1).
 - (b) *Inseparable descent.* With `n_K = 3` if `char K = 2` and `n_K = 2` otherwise, a form of degree `n_K` with a nontrivial zero over a purely inseparable extension has one over `K` (Corollary A.2).
 - (c) *Isotropy above the dimension.* Let `k` be separably closed, finite, or a number field containing `√−1`, put `ε = 0, 1, 2` respectively, and let `K/k` be finitely generated of transcendence degree `r`. If `n ≥ r + ε` and `m ≥ 2`, then `⟨⟨a₁, …, a_n⟩⟩_{n_k} ⊗ ⟨b₁, …, b_m⟩_{n_k}` has a nontrivial zero over `K` for all nonzero slots (Proposition A.3).
 - (d) *Anisotropy from a uniformizer.* If `v` is a discrete valuation with uniformizer `π` and `q` a diagonal form of degree `n ≥ 2` over the valuation ring whose reduction has no nontrivial zero, then `q ⊗ ⟨⟨π⟩⟩_n` has none over `K` (Lemma A.4).
-- (e) *Anisotropy at a smooth point.* If `x` is a smooth closed point of an integral `k`-variety with function field `K`, `t₁, …, t_m` part of a regular system of parameters at `x`, and `q` a diagonal form of degree `n ≥ 2` over `k` with no nontrivial zero over the residue field `k_x`, then `q ⊗ ⟨⟨t₁, …, t_m⟩⟩_n` has no nontrivial zero over `K` (Lemma A.5).
+- (e) *Anisotropy at a smooth point.* If `x` is a smooth closed point of an integral `k`-variety with function field `K`, `t₁, …, t_m` part of a regular system of parameters at `x`, and `q` a diagonal form of degree `n ≥ 2` over `k` with no nontrivial zero over the residue field `k_x`, then `q ⊗ ⟨⟨t₁, …, t_m⟩⟩_n` has no nontrivial zero over `K` (Lemma A.5). The residue field `k_x` need not be separable over `k`.
 
-For (a) in degree two use Springer's theorem (QuadraticFormInvariantsPartII §2.5); in degree three, a cubic form with a zero `P` over a quadratic extension and its conjugate `P̄` gives a `K`-rational point on the line `PP̄` (third intersection) or `P` itself is rational. For (c), in the separably closed and finite cases `K` is `C_{r+ε}` by Tsen–Lang (QuadraticFormInvariantsPartII §5.6), and the form has `n_k^n · m > n_k^{r+ε}` variables; in the number-field case, `cd₂(k) ≤ 2` (ArithmeticGaloisDuality §R02.4.4, `k` totally imaginary) and `cd₂(K) ≤ cd₂(k) + r` (ClassicalAdicEtaleCohomology §11.2), so every `(r + 3)`-fold Pfister form over `K` has zero invariant and is isotropic (QuadraticFormInvariantsPartII §3.9), and the form contains a multiple of such a Pfister form. For (d), the value of `q(x⃗_j)` is `0 mod n` for nonzero `x⃗_j`, so the summands `π^j q(x⃗_j)` have distinct values modulo `n`. For (e) use the embedding of 0.5 and (d) inductively in the Laurent variables.
+For (a) in degree two use Springer's theorem, which covers inseparable odd-degree extensions (QuadraticFormInvariantsPartII §2.5). In degree three let `L = K(α)` with minimal polynomial `g(Y) = Y² + βY + γ` over `K`, and write a nontrivial zero over `L` as `P = P₀ + αP₁` with `P₀, P₁ ∈ K^N`, `N` the number of variables. If `P₀, P₁` are linearly dependent over `K`, then `P` is a nonzero `L`-multiple of a nonzero vector of `K^N`, which is a zero by homogeneity. Otherwise the binary cubic form `f(X, Y) = q(X P₀ + Y P₁)` over `K` satisfies `f(1, α) = 0`. If `f = 0`, then `P₀` is a zero. If not, `g(Y)` divides `f(1, Y)`, so the homogenized `G(X, Y) = Y² + βXY + γX²` divides `f(X, Y)` with a nonzero linear cofactor `H` over `K`; a nonzero `K`-zero `(x, y)` of `H` gives the zero `x P₀ + y P₁ ≠ 0` of `q`. No second conjugate point is used, so purely inseparable `L` is covered. For (b), the coordinates of a zero generate a finite purely inseparable extension of `K`, a tower of steps of degree `p = char K`; descend one step at a time by (a), by Springer's theorem when `p` is odd (`n_K = 2`) and by the cubic case for an inseparable quadratic step when `p = 2` (`n_K = 3`) (Poonen, proof of Corollary A.2, p. 13).
+
+For (c) in the finite case `k` is `C₁`, `K` is `C_{r+1}` by Tsen–Lang (QuadraticFormInvariantsPartII §5.6), and the form has `n_k^n · m ≥ 2 n_k^{r+1} > n_k^{r+1}` variables. A separably closed `k` need not be `C₀` (see the Checks), so Tsen–Lang is not applied over `k` itself. Let `k̄` be an algebraic closure of `k`, purely inseparable over `k`, and `K′ = K k̄` the compositum in an algebraic closure of `K`. Then `K′` is generated over the `C₀` field `k̄` by generators of `K/k` and has transcendence degree `r` over `k̄`, so it is `C_r` by Tsen–Lang. The form has `n_k^n · m ≥ 2 n_k^r > n_k^r` variables, hence a nontrivial zero over `K′`. Its coordinates generate a finite subextension of `K′/K`, which is purely inseparable because `K′` is generated over `K` by elements purely inseparable over `k`, and (b) descends the zero to `K` (Poonen, proof of Proposition A.3, p. 13). In characteristic zero `k = k̄` and no descent is needed. In the number-field case, `cd₂(k) ≤ 2` (ArithmeticGaloisDuality §R02.4.4, `k` totally imaginary) and `cd₂(K) ≤ cd₂(k) + r` (ClassicalAdicEtaleCohomology §11.2), so every `(r + 3)`-fold Pfister form over `K` has zero invariant and is isotropic (QuadraticFormInvariantsPartII §3.9), and the form contains a multiple of such a Pfister form. For (d), the value of `q(x⃗_j)` is `0 mod n` for nonzero `x⃗_j`, so the summands `π^j q(x⃗_j)` have distinct values modulo `n`.
+
+For (e), the local ring `A = O_{V,x}` is regular because `V` is smooth at `x` (Stacks, Lemma 10.140.3, tag 00TT); extend `t₁, …, t_m` to a regular system of parameters `t₁, …, t_h` of `A`, `h = dim A`. For `0 ≤ j ≤ h` put `A_j = A/(t_{j+1}, …, t_h)` and `F_j = Frac(A_j)`. Each `A_j` is a regular local ring of dimension `j`, hence a domain, with regular parameters the images of `t₁, …, t_j` (Stacks, Lemmas 10.106.2–10.106.3, tags 00NP–00NQ); thus `A_h = A`, `F_h = K` and `A₀ = F₀ = k_x`. For `j ≥ 1`, `A_j/(t_j) = A_{j−1}` is a domain, so `(t_j)` is a prime of `A_j`. The localization `(A_j)_{(t_j)}` is a Noetherian local domain whose maximal ideal is generated by `t_j ≠ 0`, hence a discrete valuation ring with uniformizer `t_j` (Stacks, Lemma 10.119.7, tag 00PD). Its fraction field is `F_j` and its residue field is `F_{j−1}`. Induct on `j`. The form `q ⊗ ⟨⟨t₁, …, t_{j−1}⟩⟩_n` has coefficients in `A_j`. Its reduction modulo `t_j` is the same form over `F_{j−1}`, which is anisotropic by induction, and for `j = 1` by the hypothesis over `k_x`. So (d) shows that `q ⊗ ⟨⟨t₁, …, t_j⟩⟩_n` is anisotropic over `F_j`. At `j = h` this gives anisotropy over `K`. Finally, `q ⊗ ⟨⟨t₁, …, t_m⟩⟩_n` is the subform obtained by setting to zero the variables whose coefficient contains a positive power of some `t_i` with `i > m`. The argument uses neither a coefficient field nor separability of `k_x/k`, whereas the formal coordinates of 0.5 need both. Poonen's proof of Lemma A.5 (p. 14) passes through such an embedding.
 
 **Checks.**
 
@@ -230,8 +241,11 @@ For (a) in degree two use Springer's theorem (QuadraticFormInvariantsPartII §2.
 - (c) fails without `√−1` in the number-field case: over `ℚ`, `⟨⟨1, 1⟩⟩₂ ⊗ ⟨1, 1⟩₂ = 8⟨1⟩` (plus convention) is anisotropic although `n = 2 = r + ε`.
 - (d) needs anisotropy of the reduction: over `ℚ₅`, `⟨1, 1⟩` reduces to an isotropic form (`2² + 1 ≡ 0`), and `⟨1, 1⟩ ⊗ ⟨⟨5⟩⟩₂ = ⟨1, 1, 5, 5⟩` is isotropic.
 - In characteristic two degree three is essential in (b): the quadratic form `x² + t y²` over `𝔽₂(t)` acquires the zero `(√t, 1)` over `𝔽₂(√t)` but has none over `𝔽₂(t)`.
+- (a) covers an inseparable quadratic extension, where a zero has no second conjugate. Over `K = 𝔽₂(s)` and `L = K(r)`, `r² = s`, the cubic `q = X³ + sY²Z` vanishes at `P = (r, 1, r)`, since `r³ + s r = 2 s r = 0`, and `P` is not proportional to a vector of `K³`. With `P₀ = (0, 1, 0)` and `P₁ = (1, 0, 1)`, `f(X, Y) = q(Y, X, Y) = Y(Y² + sX²)`. The quadratic factor is the homogenized minimal polynomial of `r`, and the linear factor `Y` gives the `K`-zero `P₀`, with `q(0, 1, 0) = 0`.
+- A separably closed field need not be `C₀`, which is why the route of (c) passes through `k̄`. For `k = 𝔽₂(s)^sep`, the form `X² + sY²` has two variables and no nontrivial zero over `k`, because `√s` is purely inseparable over `𝔽₂(s)`. In degree `n_k = 3` the conclusion of (c) holds (`r = n = 0`, `m = 2`): `X³ + s` is separable, its derivative `X²` being nonzero at its nonzero roots, so `X³ + sY³` has a nontrivial zero over `k`.
+- (e) covers inseparable residue fields, where 0.5 does not apply. Over `k = 𝔽₂(s)` take `V = 𝔸¹_k` with coordinate `u` and the closed point `x` cut out by `π = u² + s`; then `k_x = 𝔽₂(r)`, `r² = s`, is inseparable over `k`. The form `q = X³ + sY³` reduces to `X³ + r²Y³`, anisotropic over `𝔽₂(r)` because `ord_r(r²) = 2` is not divisible by three. Here `A = O_{V,x}` is a discrete valuation ring with uniformizer `π`, and (d) makes `q ⊗ ⟨⟨π⟩⟩₃` anisotropic over `k(u)`: its three blocks have valuations `0, 1, 2` modulo three.
 
-*Needs:* 0.5; QuadraticFormInvariantsPartII §§2.5, 3.9, 5.6; ArithmeticGaloisDuality §R02.4.4; ClassicalAdicEtaleCohomology §11.2.
+*Needs:* QuadraticFormInvariantsPartII §§2.5, 3.9, 5.6; ArithmeticGaloisDuality §R02.4.4; ClassicalAdicEtaleCohomology §11.2; Stacks, Lemmas 10.106.2–10.106.3 (tags 00NP–00NQ), 10.119.7 (tag 00PD) and 10.140.3 (tag 00TT).
 
 ### 0.7 Rumely's uniform arithmetic of global fields
 
@@ -270,15 +284,20 @@ Route. Let `K′ = K(√−1, ζ₃)`, interpreted by 0.4, and let `n_K` be `3` 
 
 ### 0.8a Albanese varieties over a field
 
-Prove: for a field `L` and a geometrically integral variety `V` over `L` there are an abelian variety `Alb_V` over `L` and, over an algebraic closure `L̄`, a morphism from a dense open subset of `V_{L̄}` to `Alb_{V,L̄}` through which every morphism to an abelian variety factors uniquely up to translation; consequently, if no `L`-simple isogeny factor of `Alb_V` is `L`-isogenous to an elliptic curve `E` over `L`, every `L`-rational map from `V` to `E` is constant (Serre, *Morphismes universels et variété d'Albanese*, Théorème 5, p. 10-10, over an algebraically closed field; Poonen, proof of Lemma 4.7, p. 9). Over `L̄` use Serre's construction; the universal property makes the Galois action on `Alb_{V,L̄}` effective, and Galois descent gives `Alb_V`. A nonconstant `L`-rational map `V ⇢ E` induces a surjective homomorphism `Alb_V → E` over `L`, and Poincaré reducibility makes `E` `L`-isogenous to an `L`-simple factor. The pointed universal property is Tau Ceti's `AbelianVariety.IsAlbanese` predicate; for curves the Albanese is the Jacobian (JacobianChallenge Layer F).
+For a field `L` and a geometrically integral `L`-variety `V`, choose a smooth dense open `U ⊆ V` (Stacks, Lemma 33.25.7, tag 056V). Construct an abelian variety `Alb_V` over `L`, a torsor `P_V` under it and an `L`-morphism `a : U → P_V` universal for `L`-rational maps from `V` to torsors under abelian varieties: every such map factors uniquely through an equivariant morphism `P_V → P` and its associated homomorphism `Alb_V → A`. In particular the construction is independent of the smooth dense open. This is a universal property over `L`; after a separable extension the comparison is an isomorphism, while a purely inseparable extension need give only a purely inseparable isogeny between the Albanese varieties (Wittenberg, Appendix A, Theorem A.1 and its proof, pp. 26–27 of arXiv v2, restricted to abelian targets; Achter–Casalaina-Martin–Vial, Theorem 1.2, Theorems 4.1 and 4.6 of arXiv v3). The morphism takes values in the torsor without a chosen point. With a rational base point the torsor is trivialized and the pointed property is Tau Ceti's `AbelianVariety.IsAlbanese`; the characteristic-zero pointed case is supplied by ColemanIntegrationPartII §4.0b, and the curve case by JacobianChallenge Layer F.
+
+For the remaining cases, construct the universal pointed abelian target over a separable closure by the generating and maximal morphism argument of Wittenberg, Appendix A: finite lifts of a maximal map stay within abelian varieties, and their dimensions are bounded by the algebraically closed universal target of Serre, Théorème 5, p. 10-10. This constructs the object over a separably closed field directly, without descending Serre's geometric object through a purely inseparable extension. Differences of base points give translations on the universal torsor; the induced group isomorphisms are independent of that translation and uniqueness gives the identity and triple cocycles. Spread the object, map and these identifications to a finite Galois extension `L′/L`. Tensor the conjugate pullbacks of an ample line bundle to obtain an ample bundle with the permutation linearization and its line-bundle cocycle. Apply AlgebraicModuliForArithmeticGeometry §3.5 to descend the polarized abelian variety and torsor, with the equivariant map, to `L`. The same supplier handles descent along any finite field extension when the full scheme and ample-bundle datum is given, including all nonreduced overlaps; a Galois action alone is never used for an inseparable extension. Weil extension (AbelianSchemesAndArithmeticModuli §A1.8) identifies rational maps from `V` with morphisms on `U` and proves independence of `U` (Wittenberg, Appendix A, Lemmas A.2–A.3 and the paragraph after their proof, pp. 26–27).
+
+Prove the consequence needed by 0.9 and 0.12: if no `L`-simple isogeny factor of `Alb_V` is `L`-isogenous to an elliptic curve `E/L`, every `L`-rational map `V ⇢ E` is constant (Poonen, proof of Lemma 4.7, p. 9). Indeed a nonconstant map induces a nonzero, hence surjective homomorphism `Alb_V → E`, and Poincaré reducibility gives the forbidden factor. Geometric integrality makes a constant `L`-rational map have value in `E(L)`.
 
 **Checks.**
 
-- `V = ℙⁿ_L`: `Alb_V = 0`, and every rational map to an abelian variety is constant.
-- `V` a smooth projective curve with a rational point: `Alb_V` is its Jacobian, and the universal morphism is the Abel–Jacobi map of JacobianChallenge Layer F.
-- `V = E` an elliptic curve: `Alb_V = E`, and the identity is a nonconstant map, so the criterion correctly gives nothing.
+- `V = ℙⁿ_L`: `Alb_V = 0`, the torsor is `Spec L`, and every rational map to an abelian variety is constant; the criterion has no elliptic factor.
+- For a smooth projective curve with a rational point, the torsor is trivialized and `Alb_V` is its Jacobian. For `V = E`, `Alb_V = E` and the identity induces the identity homomorphism, so the no-factor criterion fails as required.
+- For `L = 𝔽₂(s)` and `L′ = L(α)`, `α² = s`, the algebra `L′ ⊗_L L′` is `L′[ε]/(ε²)`, where `ε = 1 ⊗ α − α ⊗ 1 ≠ 0`. The two scalar images of `α` differ by `ε`, although every automorphism of an algebraic closure over `L` fixes `α`. A scalar multiplication map by `α` therefore fails descent on the fibre square; Galois invariance would miss this failure.
+- For a finite Galois splitting extension, the tensor product of the conjugate ample bundles has the permutation cocycle: for two automorphisms `g, h`, relabeling factors by `g` and then `h` agrees with relabeling by their product, and the identity fixes each factor. Thus the imported polarized descent theorem receives a line-bundle cocycle, not only an invariant polarization class.
 
-*Needs:* JacobianChallenge Layer F; AbelianSchemesAndArithmeticModuli §§A3.1, A6.5 (isogenies and Poincaré complete reducibility); SchemeAndStackFoundations §2.15 (Galois descent along field extensions).
+*Needs:* JacobianChallenge Layer F; ColemanIntegrationPartII §4.0b (characteristic-zero pointed case); AbelianSchemesAndArithmeticModuli §§A1.8, A3.1, A6.5 (Weil extension, isogenies and Poincaré complete reducibility); AlgebraicModuliForArithmeticGeometry §3.5 (`ModuliDescent.polarizedDescentComparison`); Stacks, Lemma 33.25.7 (tag 056V); Tau Ceti `AlgebraicGeometry.Scheme.Hom.exists_finite_isSeparable_comp_eq` (a nonempty smooth variety has a point over a finite separable extension).
 
 ### 0.9 Elliptic inputs in characteristic zero
 
@@ -326,33 +345,41 @@ Let `E` be an ordinary elliptic curve over `𝔽_q`, `R = End_{𝔽_q}(E)` and `
 - (d) there is a universal `c > 0` such that for `E` in Weierstrass form, `z = y/x` and a subgroup `G ≤ E(𝔽_q)` of index `< c q^{1/2}`, every element of `𝔽_q` is `z(g₁) + z(g₂)` with `g_i ∈ G` away from the poles of `z` (Lemma 4.5);
 - (e) for a geometrically integral `𝔽_q`-variety `W` with a smooth morphism `(π₁, π₂) : W → 𝔸¹ × E`, there are a prime `ℓ > 3` and `w ∈ W(𝔽_{q^ℓ})` with `π₁(w) = z(Q₁) + z(Q₂)` for some `Q₁, Q₂ ∈ R · π₂(w)` (Lemma 4.6).
 
-For (a) use Mertens's estimate `Σ_{p ≤ x} 1/p = O(log log x)` and the coprimality of the ideals `(α^ℓ − 1)/(α − 1)` for distinct primes `ℓ`. For (d) apply the Weil bound to the curve `z(P₁) + z(P₂) = t` pulled back along an isogeny with kernel image `G`. For (e) compare `#π(W(𝔽_{q^ℓ}))` (Lang–Weil) with the set of pairs `(t, P)` satisfying the condition (by (a), (b), (d)).
+For (a) use Mertens's estimate `Σ_{p ≤ x} 1/p = O(log log x)` and the coprimality of the ideals `(α^ℓ − 1)/(α − 1)` for distinct primes `ℓ`. For (d) apply the Weil bound to the curve `z(P₁) + z(P₂) = t` pulled back along an isogeny with kernel image `G`. For (e) compare `#π(W(𝔽_{q^ℓ}))` with the set of pairs `(t, P)` satisfying the condition (by (a), (b), (d)). Use SieveMethodsAndPrimePatterns §5.4: a finite disjoint affine stratification of `W` has one dense geometrically integral piece of dimension `r = dim W`, giving `Q^r + O(Q^{r−1/2})` points for `Q = q^ℓ`, while the lower-dimensional pieces contribute `O(Q^{r−1})`. Stratify also the base and the fibres of the fixed morphism; affine presentations of these pieces have bounds independent of the base point and of `ℓ`. Smoothness gives nonempty fibres dimension `r − 2`; the arbitrary-fibre upper bound, including reducible and empty fibres, yields `#π(W(𝔽_Q)) ≥ c₀ Q²` for some `c₀ > 0` and all large `ℓ`. The complementary set of pairs has `o(Q²)` points, so the two sets meet (Poonen, Lemma 4.6, estimates (5)–(7), pp. 8–9).
 
 **Checks.**
 
 - For `E: y² + xy = x³ + 1` over `𝔽₂`, `#E(𝔽₂) = 4`, trace `−1`, odd, so `E` is ordinary; `y² + y = x³` over `𝔽₂` is supersingular (trace `0`) and is excluded from (b).
+- With the displayed ordinary `E/𝔽₂`, `W = 𝔸¹ × E` has `2 · 4 = 8` points, whereas `ℙ¹ × E` has `3 · 4 = 12`. Affine stratification counts the open variety and excludes the four points at infinity; a projective point count would give the wrong value. Empty fibres contribute zero; reducible fibres require the upper bound rather than an irreducible asymptotic.
 - (a) concerns primes `ℓ`; for composite exponents the quotients share factors (`#E(𝔽_q)` divides `#E(𝔽_{q^ℓ})` for every `ℓ`).
 
-*Needs:* EllipticCurves Layers 1 and 3; WeilConjectures WC.5 (*The all-extension Weil estimate*, *Curve RH from the surface bound*); AnalyticNumberTheoryPartI §0.21 (Mertens's second theorem).
+*Needs:* EllipticCurves Layers 1 and 3; WeilConjectures WC.5, §5.29 (*Curve RH from the surface bound*); SieveMethodsAndPrimePatterns §5.4 (`SieveLangWeil.lang_weil_uniform`); AnalyticNumberTheoryPartI §0.21 (Mertens's second theorem).
 
 ### 0.12 Relatively closed global function subfields
 
+For a relatively algebraically closed global subfield `L ⊆ K`, the extension `K/L` is regular, so 0.8a applies to a geometrically integral model. In positive characteristic a global field has p-rank one: if `K/L` were not separable, the degree-p extension `L^{1/p}/L` would cease to be a field after tensoring with `K`, forcing a p-th root of a non-p-th-power of `L` into `K`, contrary to relative algebraic closedness. In characteristic zero separability is automatic (Poonen, proof of Lemma 4.7, p. 9, for the model and Albanese input).
+
 Let `K` be a finitely generated field of characteristic `p > 0` with constant field `κ`, and let `𝓛(K)` be the set of subfields `L ⊆ K` relatively algebraically closed in `K` with `trdeg(L/κ) = 1`, that is, the relatively closed global function subfields. Prove (Poonen, Lemmas 4.7–4.9 and Proposition 4.10, pp. 9–11):
 
-- (a) for `L ∈ 𝓛(K)` and an elliptic curve `E` over `κ` there is `u ∈ L ∖ κ` such that the twist `E_u` of `E_L` by the degree-two étale algebra `L ⊗_{κ(u)} κ(E)` (`κ(u) → κ(E)` sending `u` to the Weierstrass coordinate `x`) is a twist by a field and satisfies `E_u(K) = E_u(L)`: choose a place `v` of `L` of good reduction for the `L`-simple factors of the Albanese of a model of `K/L` (0.8a) and `u` with `v(u) = −1`; then `E_u` has bad reduction at `v`, so it is isogenous to none of them (Lemma 4.7);
-- (b) for `E` ordinary and `c ∈ κˣ ∖ κˣ^{n_K}`, with `U₁ = x(E_u(K)) ∖ {0}` and `U₂` the set of sums `z(Q₁) + z(Q₂)` with `Q_i ∈ E(K_u)` and `x(Q_i) ∈ U₁`, one has `t ∈ L` exactly when `⟨⟨t − u₂, u₁⁻¹⟩⟩_{n_K} ⊗ ⟨1, −c⟩_{n_K}` is isotropic over `K` for all `u₁ ∈ U₁`, `u₂ ∈ U₂` (Lemma 4.8);
-- (c) there is a uniform family containing every member of `𝓛(K)` when `ζ₃ ∈ K` in characteristic two (Lemma 4.9), the Weierstrass coefficients ranging over tuples with nonzero discriminant;
-- (d) there is a uniform family whose members, in every finitely generated field of positive characteristic, are exactly the members of `𝓛(K)`; for finite `K` it is empty (Proposition 4.10): apply (c) to `K(ζ₃)`, intersect with `K` and keep the fields of Kronecker dimension one (0.8).
+- (a) for `L ∈ 𝓛(K)` and an elliptic curve `E` over `κ` in Weierstrass form there is `u ∈ L ∖ κ` such that the twist `E_u` of `E_L` by the degree-two étale algebra `L_u = L ⊗_{κ(u)} κ(E)` (`κ(u) → κ(E)` sending `u` to the Weierstrass coordinate `x`) is a twist by a field and satisfies `E_u(K) = E_u(L)`: choose a place `v` of `L` of good reduction for the `L`-simple factors of the Albanese of a model of `K/L` (0.8a) and `u` with `v(u) = −1`; then `v` ramifies in `L_u`, so `L_u` is a field and `E_u` has bad reduction at `v`, hence is isogenous to none of those factors (Lemma 4.7). Put `K_u = K ⊗_L L_u`, a field because `K/L` is regular, and let `σ` be the nontrivial automorphism of `K_u` over `K`, which restricts to that of `L_u` over `L`. The image of the second Weierstrass coordinate gives a point `ξ = (u, y_u) ∈ E(L_u)`, the generic point of `E` under `κ(E) ⊆ L_u`, with `σξ = −ξ`. Twisting identifies `E_u(F)` with `E(F ⊗_L L_u)^{σ=−1} = {P : σP = −P}` for `F = L, K` (Poonen, p. 9), so `E(K_u)^{σ=−1} = E(L_u)^{σ=−1}`;
+- (b) let `E` be ordinary, `c ∈ κˣ ∖ κˣ^{n_K}` and `z = y/x`. Let `U₁` be the set of nonzero values `z(P)` at points `P ≠ O` of `E(K_u)^{σ=−1}` with `x(P) ≠ 0`, and `U₂ = U₁ + U₁`; both are subsets of `K_u`, not of `K`. Then for `t ∈ K`, `t ∈ L` exactly when `⟨⟨t − b, a⁻¹⟩⟩_{n_K} ⊗ ⟨1, −c⟩_{n_K}` has a nontrivial zero over `K_u` for all `a ∈ U₁` and `b ∈ U₂` (Poonen, Lemma 4.8 and its proof, pp. 9–10, with the two corrections recorded in the Checks). In the coordinates of 0.4 on the degree-two field `K_u`, in which `σ` and the points of `E(K_u)^{σ=−1}` are definable, the right side is a ring formula over `K` in `t`, the Weierstrass coefficients, `u` and `c`;
+- (c) there is a uniform family containing every member of `𝓛(K)` when `ζ₃ ∈ K` in characteristic two (Lemma 4.9): its parameters are the Weierstrass coefficients, ranging over tuples with nonzero discriminant, together with `u` and `c`; its fibre is the set of `t ∈ K` satisfying the test of (b) over the interpreted `K_u`, guarded (0.3) to be empty unless the quadratic polynomial defining `K_u` over `K` is irreducible;
+- (d) there is a uniform family whose members, in every finitely generated field of positive characteristic, are exactly the members of `𝓛(K)`; for finite `K` it is empty (Proposition 4.10): apply (c) to `K(ζ₃)` (interpreted by 0.4), intersect each fibre with `K`, keep the fibres that are subfields of Kronecker dimension one (0.8 relativized to the fibre; a subfield of a finitely generated field is finitely generated), and among these keep those properly contained in no other kept fibre. Every `L ∈ 𝓛(K)` occurs, as `L(ζ₃) ∩ K` with `L(ζ₃) ∈ 𝓛(K(ζ₃))`, and is maximal, because a global subfield containing `L` is algebraic over `L` and so lies in `L`. Conversely a maximal kept fibre `F` lies in its relative algebraic closure, a member of `𝓛(K)` and hence a kept fibre, so the two are equal. The maximality clause is needed because nothing in (c) prevents a fibre at parameters outside the construction from being a global subfield that is not relatively closed.
 
-In (b), constants pass by 0.6(c); a transcendental `t` fails at the point produced by 0.11(e), where `t − u₂` and `u₁⁻¹` are local parameters and `⟨1, −c⟩_{n_K}` is anisotropic over the residue field `𝔽_{q^ℓ}` because `ℓ` is prime to `n_K`; 0.6(e) and 0.6(b) carry anisotropy to `K`.
+In (b), suppose first `t ∈ L`. By (a), `U₁` and `U₂` lie in `L_u`, so every coefficient lies in the global function field `L_u`. Two slots over a field of transcendence degree one over the finite field `κ` give a nontrivial zero over `L_u` by 0.6(c), hence over `K_u`; a vanishing slot `t − b = 0` gives one directly. Now suppose `t ∉ L`, so `t` is transcendental over `L_u`. Through `κ(E) ⊆ L_u`, `κ(E)(t)` is the function field of `𝔸¹ × E`. Choose `M₀ ⊆ K_u` purely transcendental over `κ(E)(t)` with `[K_u : M₀]` finite, and let `M` be the relative separable closure of `M₀` in `K_u`, so that `K_u/M` is purely inseparable. Since `v` ramifies in `L_u`, `κ` is relatively algebraically closed in `L_u`, hence in `K_u` and in `M`. So `M` is the function field of a geometrically integral `κ`-variety `W` which, after shrinking, has a smooth morphism `π : W → 𝔸¹ × E` inducing `κ(E)(t) ⊆ M`. Take `ℓ`, `w`, `(τ, P) = π(w)` and `Q_i = ρ_i(P)` with `ρ_i ∈ R` from 0.11(e); `ρ_i ≠ 0` because `Q_i` is not a pole of `z`. Put `η = F^ℓ − 1`, which is separable and kills `P`, and take `a = z(η(ξ))` and `b = z(ρ₁(ξ)) + z(ρ₂(ξ))`. The endomorphisms are defined over `κ` and commute with `σ`, so these points are anti-invariant. Being images of the generic point under nonzero isogenies, they are not `O` and have `x ≠ 0` and `y ≠ 0`; thus `a ∈ U₁` and `b ∈ U₂`. As functions on `E`, `a = z ∘ η` and `b = z ∘ ρ₁ + z ∘ ρ₂`. Since `ord_O(x) = −2`, `ord_O(y) = −3`, `ord_O(z) = −1` and `η` is étale, `a⁻¹` vanishes to order exactly one at `P`. The function `b` is regular at `P` with value `z(Q₁) + z(Q₂) = τ` in the residue field of `P`, so `t − b` vanishes at `(τ, P)` with `∂(t − b)/∂t = 1`. Hence `t − b` and `a⁻¹` generate the maximal ideal of the closed point `(τ, P)` of `𝔸¹ × E`, and after pullback by the smooth `π` they extend to a regular system of parameters at `w`. The residue field of `w` has degree `1` or `ℓ` over `κ`, prime to `n_K` since `ℓ > 3`. So `c` is not an `n_K`-th power there, and `⟨1, −c⟩_{n_K}` has no nontrivial zero over it. By 0.6(e) the form has no nontrivial zero over `M`, and by 0.6(b) none over the purely inseparable extension `K_u/M`. The conclusion is anisotropy over `K_u`. The form is never descended to `K`: its coefficients `t − b` and `a⁻¹` lie outside `K`.
 
 **Checks.**
 
 - For `K = 𝔽₂(s, t)`, the relative closures of `𝔽₂(s)`, `𝔽₂(t)`, `𝔽₂(s + t)` and `𝔽₂(s t)` are members; `𝔽₂(s²)` is not (its relative closure contains `s`), and `K` itself is not (Kronecker dimension two).
 - In characteristic two the quadratic forms are not usable: every element of a finite field of characteristic two is a square, so `⟨1, −c⟩₂` is isotropic for every constant `c` and no nonsquare `c` exists; with `ζ₃` adjoined a non-cube `c` exists and `⟨1, −c⟩₃` is anisotropic over the residue field, which is why `ζ₃` is adjoined.
 - For finite `K` the family is empty, not `{K}`.
+- The coefficients lie outside `K`. Over `κ = 𝔽₅` take `E : y² = x³ + x + 1`, with nine points and trace `−3`, hence ordinary, and `c = 2`, a nonsquare. Let `L = 𝔽₅(u)` and `K = L(s)`. Then `L_u = L(y_u)` with `y_u² = u³ + u + 1`, a field since the right side has pole order three at infinity. Also `E_u(K) = E_u(L)`, because rational maps from `ℙ¹_L` to `E_u` are constant. Here `z(ξ) + z(ξ) = 2y_u/u` lies in `U₂` but not in `K`, so the test is a form over `K_u`, not over `K`.
+- The sums cannot be cut down to `K`. In the same example, `z` takes values in `y_u K` on anti-invariant points in odd characteristic, so the sums lying in `K` are only `0 = z(ξ) + z(−ξ)`. With `b = 0` and `t = s² ∉ L`, the factor `⟨1, s²⟩` (plus convention) has the zero `(2s, 1)`, since `4s² + s² = 0`. So a test taking its sums in `K`, as Poonen's printed Lemma 4.8 does, would accept `s²`.
+- The corrected test rejects `s²`. Take `P₀ = (2, 1) ∈ E(𝔽₅)`, `η = F − 1`, `a = z(η(ξ))` and `b = 2z(ξ)`. Here `K_u = 𝔽₅(E)(s)` is the function field of `𝔸¹ × E`. At `s = 1`, `P = P₀`: `b = 2 · z(P₀) = 2 · 3 = 1`, `s² − b = 0` with `s`-derivative `2 ≠ 0`, and `a⁻¹` vanishes to order one. Since `⟨1, −2⟩₂` has no nontrivial zero over `𝔽₅`, the form is anisotropic over `K_u`. For `t = u ∈ L` every coefficient lies in `L_u` and the form is isotropic by 0.6(c).
+- The slot must be built from `z`, not `x`: `ord_O(x) = −2` and `ord_O(z) = −1`. With Poonen's `x ∘ η` in place of `z ∘ η`, the inverse slot vanishes to order two at `P`. Then `⟨1, π² e⟩₂ ≅ ⟨1, e⟩₂` for a uniformizer `π` and a unit `e`, and the valuation argument of 0.6(d)–(e) loses a parameter.
+- Maximality in (d) is needed. In `K = 𝔽₄(s, t)` the subfield `𝔽₂(s)` has Kronecker dimension one but is not relatively closed. Were it a kept fibre, the intersection of constant fields in 0.13 would give `𝔽₂` instead of `κ = 𝔽₄`. The maximality clause removes it, since the member `𝔽₄(s)` properly contains it.
 
-*Needs:* 0.3, 0.4, 0.6, 0.8, 0.8a, 0.11; NeronModelsAndSemistableAbelianVarieties §5.1 (Néron–Ogg–Shafarevich, isogeny invariance of good reduction); EllipticCurves Layer 5 (twists); AlgebraicCurves Layer 2.
+*Needs:* 0.3, 0.4, 0.6, 0.8, 0.8a, 0.11; NeronModelsAndSemistableAbelianVarieties §5.1 (Néron–Ogg–Shafarevich, isogeny invariance of good reduction); EllipticCurves Layer 0 (`ord_O x = −2` and `ord_O y = −3`, so `z = y/x` has a simple pole at `O`), Layer 1 (a separable isogeny is unramified) and Layer 5 (twists); AlgebraicCurves Layer 2.
 
 ### 0.13 The constant field of every finitely generated field
 
@@ -377,7 +404,7 @@ In (a), a dependent tuple gives an isotropic form by 0.6(c); for an independent 
 **Checks.**
 
 - In `ℚ(s, t)`, `(s, s²)` is dependent and `(s, t)` is independent; in `𝔽₂(s, t)`, `t` alone is independent over `𝔽₂` while `s² + s` is dependent on `s`, and the cubic forms must detect it.
-- For `n = 1`, (b) is the complement of 0.13 in `K`: a single element is dependent exactly when it is constant.
+- For `n = 1`, (b) is the same subset as 0.13 in `K`: in `ℚ(t)`, `0` gives (dependent, constant) = (true, true), while `t` gives (false, false). A single element is dependent exactly when it is constant.
 - Over a finite field every tuple of positive length is dependent and the empty tuple is independent.
 
 *Needs:* 0.4, 0.6, 0.12, 0.13; Chebotarev Layer 10; FunctionFieldArithmetic §5.8; GlobalQuadraticForms §5.5.
@@ -388,7 +415,7 @@ Prove: there is a uniform family whose members, in every finitely generated fiel
 
 **Checks.**
 
-- For `ℚ(s, t)` the only member is `ℚ`; `ℚ(√2)` is not a subfield, and the global field `ℚ(s)` is not a member (Kronecker dimension two).
+- For `ℚ(s, t)` the only member is `ℚ`; `ℚ(√2)` is not a subfield, and the field `ℚ(s)` is not a member (Kronecker dimension two).
 - In `𝔽₂(s, t)` the global subfield `𝔽₂(s²)` is not relatively closed (its closure contains `s`) and is not a member, while `𝔽₂(s)` is.
 - In `𝔽₉` there are no members.
 
@@ -422,11 +449,11 @@ For the characteristic sentence: in `ℚ(t)`, `C₀` defines `ℚ`, the formula 
 
 ### Dependencies
 
-LogicAndDefinabilityInNumberTheory §§0.1–0.2, 0.4; QuadraticFormInvariantsPartII §§2.5, 3.9, 5.6, 5.7; ArithmeticGaloisDuality §§R02.3.2, R02.4.4 and gap:function-field-cyclic-hasse-norm; ClassicalAdicEtaleCohomology §11.2; LocalFieldsRamificationPartII §GF.5; JacobianChallenge Layer F, AbelianSchemesAndArithmeticModuli §§A3.1, A6.5, NeronModelsAndSemistableAbelianVarieties §5.1; WeilConjectures WC.5; AnalyticNumberTheoryPartI §0.21; FunctionFieldArithmetic §5.8; SchemeAndStackFoundations §0.12; on main AlgebraicCurves Layers 0 and 2, Chebotarev Layer 10, ClassFieldTheory Layer 13, GlobalQuadraticForms §5.5, EllipticCurves Layers 1, 3, 4, 5, 6, JacobianChallenge Layer F; Mathlib `Field.FG`, `Algebra.trdeg`, `algebraicClosure`, `ValuationSubring`, `IsDiscreteValuationRing`, `FirstOrder.Language.ring`, `Set.Definable`.
+LogicAndDefinabilityInNumberTheory §§0.1–0.2, 0.4; QuadraticFormInvariantsPartII §§2.5, 3.9, 5.6, 5.7; ArithmeticGaloisDuality §§R02.3.2, R02.4.4 and gap:function-field-cyclic-hasse-norm; ClassicalAdicEtaleCohomology §11.2; LocalFieldsRamificationPartII §5.3; JacobianChallenge Layer F, ColemanIntegrationPartII §4.0b, AbelianSchemesAndArithmeticModuli §§A1.8, A3.1, A6.5, AlgebraicModuliForArithmeticGeometry §3.5, NeronModelsAndSemistableAbelianVarieties §5.1; WeilConjectures WC.5, §5.29; SieveMethodsAndPrimePatterns §5.4; AnalyticNumberTheoryPartI §0.21; FunctionFieldArithmetic §5.8; SchemeAndStackFoundations §0.12; on main AlgebraicCurves Layers 0 and 2, Chebotarev Layer 10, ClassFieldTheory Layer 13, GlobalQuadraticForms §5.5, EllipticCurves Layers 0, 1, 3, 4, 5, 6, JacobianChallenge Layer F; Mathlib `Field.FG`, `Algebra.trdeg`, `algebraicClosure`, `ValuationSubring`, `IsDiscreteValuationRing`, `FirstOrder.Language.ring`, `Set.Definable`.
 
 ## Layer 1: cohomological local–global principles
 
-The definability of prime divisors rests on local–global principles for the groups `H^{d+1}(K, ℤ/n(d))` of fields of Kronecker dimension `d`, proposed by Kato as higher analogues of the Brauer–Hasse–Noether theorem. Away from characteristic two and relative to a global subfield the principle is Jannsen's, owned by QuadraticFormInvariantsPartII §6.3; this layer states the adapter used here and the three further principles, over a finite field or a henselian discrete valuation ring (Kerz–Saito), in characteristic two (Jannsen) and in Kronecker dimension two with prime coefficients (Kato), together with the reduced-norm test that makes cubic and quadratic symbols first-order.
+The definability of prime divisors rests on local–global principles for the groups `H^{d+1}(K, ℤ/n(d))` of fields of Kronecker dimension `d`, proposed by Kato as higher analogues of the Brauer–Hasse–Noether theorem. Away from characteristic two and relative to a global subfield the principle is Jannsen's, owned by QuadraticFormInvariantsPartII §6.3; this layer states the adapter used here and the three further principles, over a finite field or an excellent henselian discrete valuation ring (Kerz–Saito), in characteristic two (Jannsen) and in Kronecker dimension two with prime coefficients (Kato), together with the reduced-norm test that makes cubic and quadratic symbols first-order.
 
 ### 1.1 Coefficients, residues and detection at codimension one
 
@@ -441,7 +468,7 @@ API:
 
 **Checks.**
 
-- For `d = 1` and `X` the spectrum of the ring of integers of a number field with the real places adjoined, detection is the injectivity part of the Brauer–Hasse–Noether sequence for `Br(K)[2]` (ClassFieldTheory Layer 10); without the real places it fails for `K = ℚ`, since the quaternion algebra `(−1, −1)` ramifies only at `2` and `∞`.
+- For `d = 1` and `X` the spectrum of the ring of integers of a number field with the real places adjoined, detection is the injectivity part of the Brauer–Hasse–Noether sequence for `Br(K)[2]` (ClassFieldTheory Layer 10); without the real places it fails for `K = ℚ(√5)`: the base change of `(−1, −1)` has invariant `1/2` at each of the two real places and zero at every finite place. Indeed `2` is inert (`X² − X − 1` reduces to the irreducible `X² + X + 1`), so its local degree is two and the invariant at `2` becomes `2 · (1/2) = 0` in `ℚ/ℤ`; the other finite invariants were already zero. Over `ℚ` itself the finite invariant at `2` is `1/2`, so that field would not witness failure.
 - For `d = 1` and `X` a smooth proper curve over a finite field, detection is the Brauer–Hasse–Noether injectivity for the global function field.
 - Odd degree is needed for injectivity: `(−1) ∪ (−1) ≠ 0` in `H²(ℚ)` restricts to `0` over `ℚ(i)`, of degree two.
 
@@ -457,16 +484,17 @@ Prove: let `K` be finitely generated of characteristic different from two with `
 - Real places cannot be dropped: for `K = ℚ(x)`, `d = 2`, `α = (−1) ∪ (−1) ∪ (−1) ≠ 0`; at every finite place `α_v` is restricted from `H³(ℚ_p^h) = 0` and vanishes, at the complex place it vanishes, and at the real place it is nonzero because `8⟨1⟩` is anisotropic over `ℝ(x)`.
 - The degree is `d + 1`, not `2`: for `d = 2` the map on `Br(K)[2]` is not injective in general.
 
-*Needs:* 1.1; QuadraticFormInvariantsPartII §6.3; LocalFieldsRamificationPartII §GF.1.
+*Needs:* 1.1; QuadraticFormInvariantsPartII §6.3; LocalFieldsRamificationPartII §§1.1, 1.3.
 
 ### 1.3 Kerz–Saito's principle with `ℤ/2` coefficients
 
-Prove: let `R` be a finite field of odd characteristic, or a henselian discrete valuation ring with finite residue field of characteristic different from two (for instance the valuation ring of the henselization of a global field at a non-dyadic finite place); let `X` be a proper regular flat integral `R`-scheme with function field `K` and `d = dim X > 0`. Then `X` detects in degree `d + 1`: `α ∈ H^{d+1}(K)` vanishes exactly when `α_{w_x} = 0` for every `x ∈ X^{(1)}` (Kerz–Saito, Theorem 8.1 with `Λ = ℤ/2`, `a = d`, `ℓ = 2` invertible on `R`; Dittmann–Pop, Fact 2.2, p. 5). The route is Kerz–Saito's: vanishing of Kato homology with `ℚ₂/ℤ₂` coefficients by weight arguments for the Kato complex and Gabber's prime-to-ℓ alterations, then descent to `ℤ/2` through the norm residue isomorphism.
+Prove: let `R` be a finite field of odd characteristic, or an excellent henselian discrete valuation ring with finite residue field of characteristic different from two (for instance the valuation ring of the henselization of a global field at a non-dyadic finite place, or `𝔽₃[[t]]`); let `X` be a proper regular flat integral `R`-scheme with function field `K` and `d = dim X > 0`. Then `X` detects in degree `d + 1`: `α ∈ H^{d+1}(K)` vanishes exactly when `α_{w_x} = 0` for every `x ∈ X^{(1)}` (Kerz–Saito, Theorem 8.1, p. 37, with `Λ = ℤ/2`, `a = d`, `ℓ = 2` invertible on `R`, under the standing hypothesis of their §1, p. 6, that the base is a field or an excellent Dedekind scheme; Dittmann–Pop, Fact 2.2 and the remark before it that `X` is excellent, p. 5). Excellence is also the hypothesis of the alteration input AdicCoefficientsAndComparisonsPartII §PA.6.8. The route is Kerz–Saito's: vanishing of Kato homology with `ℚ₂/ℤ₂` coefficients by weight arguments for the Kato complex and Gabber's prime-to-ℓ alterations, then descent to `ℤ/2` through the norm residue isomorphism.
 
 **Checks.**
 
 - `R = 𝔽_q`, `q` odd, `X` a smooth proper curve: `d = 1` and the statement is the Brauer–Hasse–Noether injectivity for `Br(𝔽_q(X))[2]`.
-- `d = 1` over a henselian `R`: `X` is the spectrum of a henselian discrete valuation ring `R′`, `X^{(1)}` is its closed point and `K_{w_x} = K`; the statement holds trivially.
+- `d = 1` over an excellent henselian `R`: `X` is the spectrum of a henselian discrete valuation ring `R′`, `X^{(1)}` is its closed point and `K_{w_x} = K`; the statement holds trivially.
+- Henselian with finite residue field does not imply excellent. Take `b ∈ 𝔽₃((t))` transcendental over `𝔽₃(t)`, `F = 𝔽₃(t, b³)`, and the henselization `R` of the valuation ring `F ∩ 𝔽₃[[t]]`, taken inside `𝔽₃((t))`. Then `R` is a henselian discrete valuation ring with residue field `𝔽₃` and completion `𝔽₃[[t]]`. Its fraction field is separable algebraic over `F`, so it does not contain the purely inseparable cube root `b`, whereas the completion does. The generic formal fibre is therefore not geometrically reduced, `R` is not excellent, and it is excluded as a base, as both cited inputs exclude it.
 - Residue characteristic two is excluded: Kerz–Saito's theorem needs `ℓ` invertible on `R`, and Dittmann–Pop only apply it at non-dyadic places (2.2 guarantees that).
 
 *Needs:* 1.1; AdicCoefficientsAndComparisonsPartII §PA.6.8; DeligneWeightsAndPurity §§7.12, 7.15; MotivesAndAlgebraicCycles §0.5b; KTheoryFiniteLocalFields §3.0a; LefschetzPencilsAndVanishingCycles §3.4; SchemeAndStackFoundations §2.15.
@@ -529,7 +557,7 @@ In characteristic two, `𝔽₂(s, t, u)` satisfies `H₃`, has the smooth proje
 
 ### Dependencies
 
-QuadraticFormInvariantsPartII §§3.1, 3.8, 3.9, 6.3; LocalFieldsRamificationPartII §GF.1; AdicCoefficientsAndComparisonsPartII §PA.6.8; DeligneWeightsAndPurity §§7.12, 7.15; MotivesAndAlgebraicCycles §0.5b; KTheoryFiniteLocalFields §§3.0–3.0a; LefschetzPencilsAndVanishingCycles §3.4; SchemeAndStackFoundations §2.15; on main ClassFieldTheory Layer 10; Stacks, chapter *Resolution of Surfaces*; Layer 0 (0.4).
+QuadraticFormInvariantsPartII §§3.1, 3.8, 3.9, 6.3; LocalFieldsRamificationPartII §§1.1, 1.3; AdicCoefficientsAndComparisonsPartII §PA.6.8; DeligneWeightsAndPurity §§7.12, 7.15; MotivesAndAlgebraicCycles §0.5b; KTheoryFiniteLocalFields §§3.0–3.0a; LefschetzPencilsAndVanishingCycles §3.4; SchemeAndStackFoundations §2.15; on main ClassFieldTheory Layer 10; Stacks, chapter *Resolution of Surfaces*; Layer 0 (0.4).
 
 ## Layer 2: nice presentations and anisotropic test forms
 
@@ -553,16 +581,16 @@ API:
 - The tail with `a₁ = 1` is isotropic everywhere and is nice, but every form `q_a` containing it is isotropic and useless as a detector.
 - Niceness is not an isometry invariant: over `ℚ` the tails with `(a₁, a₀) = (21, −1)` and `(7/3, −1)` are isometric (`21 = 9 · 7/3`). The first is nice: `21 > 0`, and `21 ≡ 1 mod 4` is a norm from `ℚ₂(i)`, and no other place triggers. The second is not: `v₃(7/3) = −1` triggers the place `3`, where `7/3`, of odd valuation, is not a norm from the unramified `ℚ₃(i)`.
 
-*Needs:* 0.1, 0.15; QuadraticFormInvariantsPartII §1.1; LocalFieldsRamificationPartII §GF.1; RealAlgebraicGeometry Layer 1.
+*Needs:* 0.1, 0.15; QuadraticFormInvariantsPartII §1.1; LocalFieldsRamificationPartII §1.3; RealAlgebraicGeometry Layer 1.
 
 ### 2.2 Isotropy of two-fold tails and norms
 
-Prove: for a field `F` and `a₀, a₁ ∈ Fˣ`, let `E = F(α₀)` with `α₀` a root of `X² − a₀` (characteristic different from two) or of `X² − X − a₀` (characteristic two). Then `q_{a₁, a₀} ≅ N ⊥ −a₁ N` with `N` the norm form of `E/F`, and `q_{a₁, a₀}` is isotropic over `F` exactly when `α₀ ∈ F` or `a₁ ∈ N_{E/F}(Eˣ)` (Dittmann–Pop, proof of Lemma 3.5, pp. 9–10). The values of a norm form of a quadratic field extension form the group of norms, which is the roundness statement of QuadraticFormInvariantsPartII §1.2.
+Prove: for a field `F` and `a₀, a₁ ∈ Fˣ`, let `A = F[X]/(f)` with `f = X² − a₀` in characteristic different from two and `f = X² − X − a₀` in characteristic two. This is a quadratic étale algebra in both cases. Its binary norm form `N` gives `q_{a₁, a₀} ≅ N ⊥ −a₁ N` (QuadraticFormInvariantsPartII §1.2; Dittmann–Pop, proof of Lemma 3.5, pp. 9–10). For `α₀` a root of `f`, put `E = F(α₀)`. The tail is isotropic exactly when `α₀ ∈ F` or `a₁ ∈ N_{E/F}(Eˣ)`: in the split case `A ≅ F × F` and `N(u, v) = uv` is hyperbolic; in the irreducible case `A ≅ E` and isotropy is the field-norm criterion. In characteristic two the norm in the basis `(1, α₀)` is `x² + xy + a₀y²`, fixing the last-factor convention. The nonzero represented values in the irreducible case form the group of norms, the roundness statement supplied by QuadraticFormInvariantsPartII §1.2.
 
 **Checks.**
 
 - Over `ℚ₃` with `a₀ = −1` (so `E = ℚ₃(i)` unramified) and `a₁ = 3`, `3` is not a norm and `⟨1, 1, −3, −3⟩` is anisotropic; with `a₁ = 2 = 1 + 1` it is isotropic.
-- If `α₀ ∈ F`, `N` is hyperbolic and the tail is isotropic for every `a₁`.
+- For `F = ℚ`, `a₀ = 1`, `a₁ = 2`, the algebra is `A ≅ ℚ × ℚ`, with `N(u, v) = uv`; `N ⊥ −2N` has dimension four and vanishes at the nonzero vector `(1, 0, 0, 0)`. The field `E = ℚ` has a degree-one norm and cannot replace this binary form. More generally a split `A` makes the tail isotropic for every `a₁`.
 - Over `𝔽₂((t))` with `a₀ = 1`, `E` is the unramified quadratic extension, `t` is not a norm and `⟨⟨t⟩⟩_b ⊗ [1, 1]` is anisotropic.
 
 *Needs:* QuadraticFormInvariantsPartII §§1.1, 1.2, 1.5.
@@ -609,7 +637,7 @@ Prove: for every geometric prime divisor `w` of a field with `H_d(K)`, `d ≥ 3`
 - A transcendence basis of `Kw` that is not separating is insufficient in characteristic `p`: in `K = 𝔽_p(s, t, r)` with `w` the `r`-adic valuation, lifting the non-separating basis `(s, t^p)` of `Kw = 𝔽_p(s, t)` gives `k₁ = 𝔽_p(s)`, `u₂ = t^p` and `Kw/k₁(u₂)` purely inseparable of degree `p`; the separating basis `(s, t)` works.
 - For `d = 3` the tuple `u` has one element: in `ℚ(s, t)` with `w` the `t`-adic valuation, `k₁ = ℚ` and `u₂ = s`; in `𝔽_p(s, t, r)` with `w` the `r`-adic valuation, `k₁ = 𝔽_p(s)` and `u₂ = t`.
 
-*Needs:* 0.2, 0.15; LocalFieldsRamificationPartII §§GF.1, GF.5; AlgebraicCurves Layer 6.
+*Needs:* 0.2, 0.15; LocalFieldsRamificationPartII §§1.1, 1.3, 5.3; AlgebraicCurves Layer 6.
 
 ### 2.6 Test presentations over a global base
 
@@ -637,7 +665,7 @@ Let `l/k₁(t₂, …, t_{d−1})` be finite separable with `k₁` global. Prove
 **Checks.**
 
 - All `ε_i` are nonzero because the base is a torus; this is what makes `t_i − ε_i` a unit-shift in 2.6.
-- A finite normalization need not be étale everywhere: for `l = k₁(√t₂)` it ramifies over `t₂ = 0`, which lies outside the torus.
+- A finite normalization need not be étale everywhere: for `k₁ = ℚ` and `l = ℚ(t₂)(√(t₂ − 1))`, the torus point `t₂ = 1` is ramified. Writing `y² = t₂ − 1`, its derivative `2y` vanishes at `y = 0`; on the open `t₂ ≠ 1`, both `y` and `2` are units and the cover is étale. In contrast `y² = t₂` is already étale on the whole torus in characteristic zero.
 - For `l = k₁(t)` itself, `k_ε = k₁` and the embedding is the Taylor expansion at `ε`.
 
 *Needs:* AlgebraicModuliForArithmeticGeometry §7.5 (`arithmetic_normalization_genericallyEtale`); 0.5.
@@ -664,7 +692,7 @@ At a good place `v₁` split in the residue extension, take `a₀` with nonsplit
 
 ### Dependencies
 
-Layer 0 (0.1, 0.2, 0.5, 0.14, 0.15); QuadraticFormInvariantsPartII §§1.1, 1.2, 1.5, 4.3, 6.5; LocalFieldsRamificationPartII §§GF.1, GF.5; AlgebraicModuliForArithmeticGeometry §7.5; FunctionFieldArithmetic §5.8; Tau Ceti `TauCeti.Place.exists_forall_mem_valuation_sub_le_and_forall_mem_integers`; on main Chebotarev Layer 10, GlobalNumberFields Layers 1 and 6, AlgebraicCurves Layers 0 and 6, RealAlgebraicGeometry Layer 1.
+Layer 0 (0.1, 0.2, 0.5, 0.14, 0.15); QuadraticFormInvariantsPartII §§1.1, 1.2, 1.5, 4.3, 6.5; LocalFieldsRamificationPartII §§1.1, 1.3, 5.3; AlgebraicModuliForArithmeticGeometry §7.5; FunctionFieldArithmetic §5.8; Tau Ceti `TauCeti.Place.exists_forall_mem_valuation_sub_le_and_forall_mem_integers`; on main Chebotarev Layer 10, GlobalNumberFields Layers 1 and 6, AlgebraicCurves Layers 0 and 6, RealAlgebraicGeometry Layer 1.
 
 ## Layer 3: prime divisors from compact detecting valuations
 
@@ -675,7 +703,7 @@ Throughout this layer `d ≥ 3`, `H_d(K)` holds and `q_a` has slots `a = (a_d, �
 Prove: if `q_a` is anisotropic over `K` and `k₁`-nice for a global subfield `k₁ ⊆ K`, then there is a prime divisor `w` of `K` such that `q_a` is anisotropic over the henselization `K_w` (Dittmann–Pop, Proposition 3.4(1), pp. 8–9). Route: anisotropy means `e(q_a) ≠ 0` in `H^{d+1}(K)` (1.1).
 
 - If `char K = 2`, choose a smooth projective model over `𝔽₂` and apply 1.4; the resolution hypothesis enters only for `d > 3`, through `H_d`.
-- If `char K ≠ 2`, replace `k₁` by its relative algebraic closure (niceness persists, 2.1) and apply 1.2: some place `v` of `k₁` has `e(q_a)_v ≠ 0`, so the tail is anisotropic over `k₁,v ⊆ K_v`; by niceness `v` is finite and non-dyadic. Let `R` be the henselian valuation ring of `k₁,v` and `X_v` a projective flat `R`-model of `K_v`. AdicCoefficientsAndComparisonsPartII §PA.6.10 gives an odd-degree extension and an odd-degree regular projective alteration `Y → X_v`; restriction to `K̃ = k(Y)` stays nonzero (odd degree, 1.1), so 1.3 over the normalized henselian base gives `x̃ ∈ Y^{(1)}` with `q_a` anisotropic over `K̃_{w̃}`, `w̃ = w_{x̃}`. Its restriction `w` to `K` is discrete of rank one, `Kw ⊆ K̃w̃` is algebraic so `δ(Kw) = d − 1`, and `K_w ⊆ K̃_{w̃}`.
+- If `char K ≠ 2`, replace `k₁` by its relative algebraic closure (niceness persists, 2.1) and apply 1.2: some place `v` of `k₁` has `e(q_a)_v ≠ 0`, so the tail is anisotropic over `k₁,v ⊆ K_v`; by niceness `v` is finite and non-dyadic. Let `R` be the valuation ring of the henselization `k₁,v`, an excellent henselian discrete valuation ring, and `X_v` a projective flat `R`-model of `K_v`. AdicCoefficientsAndComparisonsPartII §PA.6.10 gives an odd-degree extension and an odd-degree regular projective alteration `Y → X_v`; restriction to `K̃ = k(Y)` stays nonzero (odd degree, 1.1), so 1.3 over the normalized base, finite over `R` and hence again an excellent henselian discrete valuation ring, gives `x̃ ∈ Y^{(1)}` with `q_a` anisotropic over `K̃_{w̃}`, `w̃ = w_{x̃}`. Its restriction `w` to `K` is discrete of rank one, `Kw ⊆ K̃w̃` is algebraic so `δ(Kw) = d − 1`, and `K_w ⊆ K̃_{w̃}`.
 
 **Checks.**
 
@@ -683,7 +711,7 @@ Prove: if `q_a` is anisotropic over `K` and `k₁`-nice for a global subfield `k
 - In characteristic two with `d = 3`, for instance `K = 𝔽₂(s, t, u)`, no resolution hypothesis is used.
 - An alteration of even degree, such as a base change to a ramified quadratic extension of `k₁,v`, can kill `e(q_a)`; the odd degree is what keeps restriction injective.
 
-*Needs:* 1.1, 1.2, 1.3, 1.4, 2.1; AdicCoefficientsAndComparisonsPartII §PA.6.10; LocalFieldsRamificationPartII §GF.1; QuadraticFormInvariantsPartII §5.7.
+*Needs:* 1.1, 1.2, 1.3, 1.4, 2.1; AdicCoefficientsAndComparisonsPartII §PA.6.10; LocalFieldsRamificationPartII §§1.1, 1.3; QuadraticFormInvariantsPartII §5.7.
 
 ### 3.2 Parity and bad-place exclusion
 
@@ -737,7 +765,7 @@ In the setting of 3.4 prove `w̃(a_d) > 0` and `w̃(a_d) > N w̃(a_i)` for every
 - A compactness argument on one space cannot use valuations of the different fields `L(α_N)`; restriction to `L` is what places all of them in `Spv L`.
 - For `N = 1` and `d = 3`, the inequalities say `w̃(a₃) > w̃(a₂)`, `w̃(a₃) > w̃(a₁)` and `w̃(a₃) > 0 = w̃(a₀)`.
 
-*Needs:* 3.4; QuadraticFormInvariantsPartII §§4.2, 6.5; LocalFieldsRamificationPartII §GF.1.
+*Needs:* 3.4; QuadraticFormInvariantsPartII §§4.2, 6.5; LocalFieldsRamificationPartII §1.3.
 
 ### 3.6 A patch-compact limiting detector
 
@@ -748,11 +776,11 @@ Under the hypotheses of 3.8 prove: there is a valuation `w_a` on `L`, possibly o
 - The limit is not asserted to be discrete or of rank one: on `ℚ(x, y)` the lexicographic valuation with `w(y) = (1, 0)`, `w(x) = (0, 1)` satisfies `w(y) > N w(x)` for all `N`, and no rank-one valuation does with `w(x) > 0`.
 - Compactness is used in the ambient space `Spv L`; the subspace of discrete rank-one valuations is not patch compact.
 
-*Needs:* 3.1, 3.4, 3.5; QuadraticFormInvariantsPartII §7.2; Tau Ceti `TauCeti.ValuationSpectrum.patchTopology`, `TauCeti.ValuationSpectrum.compactSpace_patchTopology`, `TauCeti.ValuationSpectrum.isClopen_patchTopology_basicOpen`; LocalFieldsRamificationPartII §GF.1.
+*Needs:* 3.1, 3.4, 3.5; QuadraticFormInvariantsPartII §7.2; Tau Ceti `TauCeti.ValuationSpectrum.patchTopology`, `TauCeti.ValuationSpectrum.compactSpace_patchTopology`, `TauCeti.ValuationSpectrum.isClopen_patchTopology_basicOpen`; LocalFieldsRamificationPartII §1.3.
 
 ### 3.7 Coarsening to a divisor trivial on the relative constants
 
-Let `w_a` be as in 3.6 and `𝔭 = {x ∈ O_{w_a} : w_a(a_d) ≤ N w_a(x) for some N > 0}` (with `0 ∈ 𝔭`). Prove: `𝔭` is a prime ideal containing `a_d` and no `a_i`, `i < d`; the coarsening `w_L` with ring `(O_{w_a})_𝔭` (`ValuationSubring.ofPrime`) has `a_d` in its maximal ideal and every `a_i`, `i < d`, a unit; `q_a` is anisotropic over `L_{w_L}`; and `w_L` is trivial on `k₁(t)`, hence on its relative algebraic closure in `L`, so it is a prime divisor of `L` over that field (Dittmann–Pop, Proposition 3.10, Claim 3, p. 13). The coarser henselization embeds in the finer (LocalFieldsRamificationPartII §§GF.1, GF.5). A nontrivial restriction to `k₁` would be a non-dyadic henselian valuation at which the unit tail is anisotropic, contradicting QuadraticFormInvariantsPartII §6.5. A nontrivial restriction to `k₁(t)` would make the relative algebraic closure `F` of `k₁(t)` in `L_{w_L}` a henselian field of Kronecker dimension `d − 1` on which `q_{a_{d−1}, …, a₀}` is a unit form of fold `d`, isotropic over `F` by QuadraticFormInvariantsPartII §6.5 applied to the non-finitely-generated field `F`. A nontrivial valuation of a function field in one variable trivial on its constants is a place (AlgebraicCurves Layer 0).
+Let `w_a` be as in 3.6 and `𝔭 = {x ∈ O_{w_a} : w_a(a_d) ≤ N w_a(x) for some N > 0}` (with `0 ∈ 𝔭`). Prove: `𝔭` is a prime ideal containing `a_d` and no `a_i`, `i < d`; the coarsening `w_L` with ring `(O_{w_a})_𝔭` (`ValuationSubring.ofPrime`) has `a_d` in its maximal ideal and every `a_i`, `i < d`, a unit; `q_a` is anisotropic over `L_{w_L}`; and `w_L` is trivial on `k₁(t)`, hence on its relative algebraic closure in `L`, so it is a prime divisor of `L` over that field (Dittmann–Pop, Proposition 3.10, Claim 3, p. 13). The coarser henselization embeds in the finer (LocalFieldsRamificationPartII §§1.3, 5.1–5.2). A nontrivial restriction to `k₁` would be a non-dyadic henselian valuation at which the unit tail is anisotropic, contradicting QuadraticFormInvariantsPartII §6.5. A nontrivial restriction to `k₁(t)` would make the relative algebraic closure `F` of `k₁(t)` in `L_{w_L}` a henselian field of Kronecker dimension `d − 1` on which `q_{a_{d−1}, …, a₀}` is a unit form of fold `d`, isotropic over `F` by QuadraticFormInvariantsPartII §6.5 applied to the non-finitely-generated field `F`. A nontrivial valuation of a function field in one variable trivial on its constants is a place (AlgebraicCurves Layer 0).
 
 **Checks.**
 
@@ -760,7 +788,7 @@ Let `w_a` be as in 3.6 and `𝔭 = {x ∈ O_{w_a} : w_a(a_d) ≤ N w_a(x) for so
 - The dimension theorem must apply to fields that are not finitely generated, such as `F` above; QuadraticFormInvariantsPartII §6.5 has no finite-generation hypothesis.
 - For the lexicographic example of 3.6 with `a_d = y` and `a_i = x`, `𝔭` consists of the elements whose value has positive first coordinate, and the coarsening is the `y`-adic valuation, in which `x` is a unit.
 
-*Needs:* 3.6; Mathlib `ValuationSubring.ofPrime`; LocalFieldsRamificationPartII §§GF.1, GF.5; QuadraticFormInvariantsPartII §6.5; AlgebraicCurves Layer 0.
+*Needs:* 3.6; Mathlib `ValuationSubring.ofPrime`; LocalFieldsRamificationPartII §§1.3, 5.1–5.2; QuadraticFormInvariantsPartII §6.5; AlgebraicCurves Layer 0.
 
 ### 3.8 Refined geometric prime-divisor detection
 
@@ -782,7 +810,7 @@ The compact detector need not have rank one. Its value on `a_d` dominates every 
 
 ### Dependencies
 
-Layer 0 (0.4, 0.16); Layer 1 (1.1–1.4); Layer 2 (2.1, 2.6); AdicCoefficientsAndComparisonsPartII §PA.6.10; QuadraticFormInvariantsPartII §§4.1, 4.2, 5.7, 6.5, 7.2; LocalFieldsRamificationPartII §§GF.1, GF.5; Tau Ceti valuation spectrum (`TauCeti.ValuationSpectrum.patchTopology` and its compactness and clopen lemmas); Mathlib `ValuationSubring.ofPrime`; on main AlgebraicCurves Layer 0.
+Layer 0 (0.4, 0.16); Layer 1 (1.1–1.4); Layer 2 (2.1, 2.6); AdicCoefficientsAndComparisonsPartII §PA.6.10; QuadraticFormInvariantsPartII §§4.1, 4.2, 5.7, 6.5, 7.2; LocalFieldsRamificationPartII §§1.1–1.3, 5.1–5.3; Tau Ceti valuation spectrum (`TauCeti.ValuationSpectrum.patchTopology` and its compactness and clopen lemmas); Mathlib `ValuationSubring.ofPrime`; on main AlgebraicCurves Layer 0.
 
 ## Layer 4: anisotropy sets and singleton divisors
 
@@ -891,7 +919,7 @@ Prove: `b_a = ⋃_{w ∈ V_a} B_w(a_d)`, and in particular `b_a = ∅` when `V_a
 - `θ` must range over `k_tˣ`, on which every detecting valuation is trivial: with `θ` allowed outside `k_t`, the value of `a_d/θ²` could be negative and `K_θ ⊄ K_w`.
 - For `V_a = {w}` with `w(a_d) = 3`, the identity reads `b_a = 𝔪_w²`.
 
-*Needs:* 3.3, 3.8, 4.1, 4.3, 4.4; QuadraticFormInvariantsPartII §4.2; LocalFieldsRamificationPartII §GF.1.
+*Needs:* 3.3, 3.8, 4.1, 4.3, 4.4; QuadraticFormInvariantsPartII §4.2; LocalFieldsRamificationPartII §1.3.
 
 ### 4.7 The intersection-of-rings identity
 
@@ -925,7 +953,7 @@ For two distinct places `P, Q`, to exclude `x` with negative `P`-order choose `y
 
 ### Dependencies
 
-Layer 0 (0.2, 0.4, 0.15, 0.16); Layer 2 (2.5, 2.6, 2.8); Layer 3 (3.2, 3.3, 3.8); QuadraticFormInvariantsPartII §4.2; LocalFieldsRamificationPartII §GF.1; Tau Ceti `TauCeti.Place`, `TauCeti.Place.ord`, `TauCeti.Place.integers`, `TauCeti.Place.exists_ne_zero_forall_mem_ord_eq`, `TauCeti.Place.exists_ord_eq_neg_and_forall_ne_ord_nonneg`; on main AlgebraicCurves Layers 0 and 12.
+Layer 0 (0.2, 0.4, 0.15, 0.16); Layer 2 (2.5, 2.6, 2.8); Layer 3 (3.2, 3.3, 3.8); QuadraticFormInvariantsPartII §4.2; LocalFieldsRamificationPartII §1.3; Tau Ceti `TauCeti.Place`, `TauCeti.Place.ord`, `TauCeti.Place.integers`, `TauCeti.Place.exists_ne_zero_forall_mem_ord_eq`, `TauCeti.Place.exists_ord_eq_neg_and_forall_ne_ord_nonneg`; on main AlgebraicCurves Layers 0 and 12.
 
 ## Layer 5: uniform formulas for geometric prime divisors
 
@@ -1037,7 +1065,7 @@ For (c), `TauCeti.Place.exists_ord_eq_neg_and_forall_ne_ord_nonneg` gives `f` wi
 - For `n = 2` the hypothesis `μ₄ ⊆ K` is arranged by adjoining `√−1`: over `ℚ(t)` the construction runs in `ℚ(i)(t)` and the place rings are contracted back to `ℚ(t)` by (e).
 - `m` must be prime to `n`: if `n | m` then `P ∉ D_f` and `P` is invisible to `R^f_α`.
 
-*Needs:* 1.5, 1.6, 5.5, 4.5; `TauCeti.Place.exists_ord_eq_neg_and_forall_ne_ord_nonneg`; `TauCeti.Place.exists_ne_zero_forall_mem_ord_eq`; Chebotarev Layer 10; FunctionFieldArithmetic §5.8; AlgebraicCurves Layers 6 and 12; LocalFieldsRamificationPartII §GF.1.
+*Needs:* 1.5, 1.6, 5.5, 4.5; `TauCeti.Place.exists_ord_eq_neg_and_forall_ne_ord_nonneg`; `TauCeti.Place.exists_ne_zero_forall_mem_ord_eq`; Chebotarev Layer 10; FunctionFieldArithmetic §5.8; AlgebraicCurves Layers 6 and 12; LocalFieldsRamificationPartII §§1.1, 1.3.
 
 ### 5.7 Uniform geometric prime divisors in every Kronecker dimension
 
@@ -1064,7 +1092,7 @@ In characteristic two and Kronecker dimension two, the construction of 5.5 uses 
 
 ### Dependencies
 
-Layer 0 (0.3, 0.4, 0.7, 0.8, 0.14, 0.15, 0.16); Layer 1 (1.5, 1.6); Layer 2 (2.1, 2.5, 2.6); Layer 3 (3.3); Layer 4 (4.1, 4.5, 4.7, 4.8); LogicAndDefinabilityInNumberTheory §0.2; LefschetzPencilsAndVanishingCycles §§3.4–3.5; FunctionFieldArithmetic §5.8; LocalFieldsRamificationPartII §GF.1; Tau Ceti `TauCeti.Place.exists_ne_zero_forall_mem_ord_eq`, `TauCeti.Place.exists_ord_eq_neg_and_forall_ne_ord_nonneg`; Mathlib `HenselianLocalRing`; on main RealAlgebraicGeometry Layer 1, GlobalQuadraticForms §5.5, Chebotarev Layer 10, AlgebraicCurves Layers 6 and 12; Stacks, chapter *Resolution of Surfaces*.
+Layer 0 (0.3, 0.4, 0.7, 0.8, 0.14, 0.15, 0.16); Layer 1 (1.5, 1.6); Layer 2 (2.1, 2.5, 2.6); Layer 3 (3.3); Layer 4 (4.1, 4.5, 4.7, 4.8); LogicAndDefinabilityInNumberTheory §0.2; LefschetzPencilsAndVanishingCycles §§3.4–3.5; FunctionFieldArithmetic §5.8; LocalFieldsRamificationPartII §1.3; Tau Ceti `TauCeti.Place.exists_ne_zero_forall_mem_ord_eq`, `TauCeti.Place.exists_ord_eq_neg_and_forall_ne_ord_nonneg`; Mathlib `HenselianLocalRing`; on main RealAlgebraicGeometry Layer 1, GlobalQuadraticForms §5.5, Chebotarev Layer 10, AlgebraicCurves Layers 6 and 12; Stacks, chapter *Resolution of Surfaces*.
 
 ## Layer 6: definable finite normalizations
 
@@ -1128,12 +1156,12 @@ Let `W_T` be the set of geometric prime divisors `w` of `K` with `T ⊆ O_w`. Pr
 
 ### 6.5 Full geometric flags with an arithmetic terminal place
 
-In characteristic zero, a *geometric prime `e`-divisor* of `K` is a valuation `w` trivial on `κ` with value group `ℤ^e` in the lexicographic order; equivalently `w = w₁ ∘ ⋯ ∘ w_e` with `w_e` a geometric prime divisor of `K` and each `w_i` a geometric prime divisor of the residue field of `w_{i+1}` (LocalFieldsRamificationPartII §GF.5; Dittmann–Pop, proof of Proposition 5.1, Case 2, p. 16). Its residue field `κ_w` is a finite extension of `κ`. For a finite place `v` of `κ_w` write `v ∘ w` for the composite valuation. Define `V_T = {v ∘ w : w a geometric prime e-divisor, v a finite place of κ_w, (v ∘ w)(t_i) ≥ 0 for all i}` (Dittmann–Pop, p. 16, where the index set must be read as the geometric prime `e`-divisors, not the rank-one set `W_T`). For `e = 0` the only flag is the trivial valuation and `V_∅` is the set of finite places of `κ`.
+In characteristic zero, a *geometric prime `e`-divisor* of `K` is a valuation `w` trivial on `κ` with value group `ℤ^e` in the lexicographic order; equivalently `w = w₁ ∘ ⋯ ∘ w_e` with `w_e` a geometric prime divisor of `K` and each `w_i` a geometric prime divisor of the residue field of `w_{i+1}` (LocalFieldsRamificationPartII §§5.1–5.2; Dittmann–Pop, proof of Proposition 5.1, Case 2, p. 16). Its residue field `κ_w` is a finite extension of `κ`. For a finite place `v` of `κ_w` write `v ∘ w` for the composite valuation. Define `V_T = {v ∘ w : w a geometric prime e-divisor, v a finite place of κ_w, (v ∘ w)(t_i) ≥ 0 for all i}` (Dittmann–Pop, p. 16, where the index set must be read as the geometric prime `e`-divisors, not the rank-one set `W_T`). For `e = 0` the only flag is the trivial valuation and `V_∅` is the set of finite places of `κ`.
 
 API:
 
 - The residue field of a full geometric flag is finite over `κ`.
-- The composite ring is the inverse image of the terminal valuation ring under the residue map of the flag (LocalFieldsRamificationPartII §GF.5).
+- The composite ring is the inverse image of the terminal valuation ring under the residue map of the flag (LocalFieldsRamificationPartII §5.1).
 - `x ∈ O_{v∘w}` exactly when `x` is integral for the flag and its residue lies in `O_v`.
 - At fixed `e`, the family of composite rings is a fibre family of one formula: residue fields of definable valuation rings are interpreted quotients (LogicAndDefinabilityInNumberTheory §0.1, Dittmann–Pop Fact 5.2), the divisor families of 5.7 are applied `e` times in Kronecker dimensions `e + 1, e, …, 2`, and Rumely's family 0.7(1) gives `v`.
 
@@ -1144,7 +1172,7 @@ API:
 - The rank-one place `s = 1` of `ℚ(s, t)` has residue `ℚ(t)`, not a number field, and is not a full flag.
 - A flag containing `T` need not contain `T` after an arbitrary terminal place is appended; `V_T` tests the composite ring itself.
 
-*Needs:* 0.2, 0.7, 5.7, 6.1; LocalFieldsRamificationPartII §GF.5; LogicAndDefinabilityInNumberTheory §0.1.
+*Needs:* 0.2, 0.7, 5.7, 6.1; LocalFieldsRamificationPartII §§5.1–5.2; LogicAndDefinabilityInNumberTheory §0.1.
 
 ### 6.6 Full flags refine pole-detecting divisors
 
@@ -1179,17 +1207,19 @@ Prove: in characteristic zero `R_T = ⋂_{v∘w ∈ V_T} O_{v∘w}` (Dittmann–
 - `K = ℚ(√5)`, `T = ()`: the prolongations of the `p`-adic places give `ℤ[(1 + √5)/2]`, not `ℤ[√5]`.
 - Using one chosen prolongation per place instead of all would give a larger ring: for `ℚ(i)` and the prime `5 = (2 + i)(2 − i)`, keeping only `2 + i` admits `1/(2 − i)`.
 
-*Needs:* 6.2, 6.7; AlgebraicModuliForArithmeticGeometry §7.5; LocalFieldsRamificationPartII §GF.1.
+*Needs:* 6.2, 6.7; AlgebraicModuliForArithmeticGeometry §7.5; LocalFieldsRamificationPartII §1.1.
 
 ### 6.9 A uniform definable finitely generated normalization
 
-Prove: for each natural number `d` there is a ring formula `ν_d(x; T, c)`, with `T` of the length `trdeg(K/κ)` determined by `d` and the characteristic (a finite case split on the characteristic sentence 0.10(e)), and `c` the fixed-length codes of the definable families used, such that on every finitely generated field with `δ(K) = d` and with `char K ≠ 2`, or `d ≤ 3`, or `RS(𝔽₂)`, and for every transcendence basis `T` of `K` over `κ`, `ν_d` defines `R_T`; and `R_T` is a normal finitely generated ring with fraction field `K` (Dittmann–Pop, Proposition 5.1 and Remark 5.4, pp. 16–17). In positive characteristic `R_T = S_T` (6.4); in characteristic zero use 6.8, interpreting each residue flag and applying 0.7(1) in the terminal number field; for `e = 0` use 0.7(3) directly. The formula is uniform in `T`; it does not choose a transcendence basis, and it never quantifies over polynomials of unbounded degree.
+Prove: for each pair of natural numbers `d, e` there is a ring formula `ν_{d,e}(x; T)` with `e + 1` free variables, the fixed-length codes of the definable families quantified inside the formula, such that on every finitely generated field with `δ(K) = d` and (`char K ≠ 2` or `d ≤ 3` or `RS(𝔽₂)`), and for every length-`e` transcendence basis `T` of `K` over `κ`, `ν_{d,e}` defines `R_T`; and `R_T` is a normal finitely generated ring with fraction field `K` (Dittmann–Pop, Proposition 5.1 and Remark 5.4, pp. 16–17). In positive characteristic `R_T = S_T` (6.4); in characteristic zero use 6.8, interpreting each residue flag and applying 0.7(1) in the terminal number field; for `e = 0` use 0.7(3) directly. The formula is uniform in `T`; it does not choose a transcendence basis, and it never quantifies over polynomials of unbounded degree. The headline `exists_formula_arithmeticNormalization` states its unconditional cases for each fixed `d` and tuple length `e`: over every finitely generated `K` with `δ(K) = d` and (`char K ≠ 2` or `d ≤ 3`), one formula defines the elements integral over `Subring.closure (Set.range T)` for every transcendence basis `T` over the prime subfield. This is exactly `R_T`: the constant field is algebraic over the prime field, so the basis condition agrees with the one over `κ`, and `A[T]` is integral over the prime subring adjoined `T`, giving the same integral closure in `K` in both characteristics (6.1–6.2).
 
 **Checks.**
 
-- In `ℚ(s)`, `ν₂` gives `ℤ[s]`; the geometric intersection alone would give `ℚ[s]`.
-- In `𝔽_q(t)`, `ν₁` gives `𝔽_q[t]`, the place `t = 0` excluding `1/t`.
-- In `ℚ` (`d = 1`, `T = ()`), `ν₁` gives `ℤ`.
+- In `ℚ(s)`, `ν_{2,1}` gives `ℤ[s]`; the geometric intersection alone would give `ℚ[s]`.
+- In `𝔽_q(t)`, `ν_{1,1}` gives `𝔽_q[t]`, the place `t = 0` excluding `1/t`.
+- In `ℚ` (`d = 1`, `T = ()`), `ν_{1,0}` gives `ℤ`: `2` is integral (`X − 2 = 0`) and `1/2` is not, since its `2`-adic value is `−1`.
+- For `K = 𝔽₂(t)` and `T = (t²)`, `t` is integral over `𝔽₂[t²]`, satisfying `X² − t²`, and the normalization is `𝔽₂[t]`; `1/t` is not integral, having `t`-adic value `−1`. Thus the formula includes inseparable finite normalizations.
+- For `K = 𝔽₄` and the empty basis, every element is integral over `𝔽₂`, and the defined ring is all of `𝔽₄`; for a tuple that is not a transcendence basis the headline imposes no condition.
 
 *Needs:* 0.7, 0.10, 5.7, 6.2, 6.4, 6.5, 6.8; LogicAndDefinabilityInNumberTheory §§0.1–0.2.
 
@@ -1203,11 +1233,11 @@ For `ℚ(s, t)`, the flag "`s = 1`, then `t = 1`" has residue `ℚ`; the rank-on
 
 ### Dependencies
 
-Layer 0 (0.1, 0.2, 0.7, 0.10); Layer 2 (2.7); Layer 5 (5.7); AlgebraicModuliForArithmeticGeometry §7.5; LocalFieldsRamificationPartII §§GF.1, GF.5; LogicAndDefinabilityInNumberTheory §§0.1–0.2; Mathlib `integralClosure`, `IsIntegrallyClosed`, `IsDiscreteValuationRing`, `IsFractionRing`, `Algebra.FiniteType`; on main AlgebraicCurves Layer 2, GlobalNumberFields Layer 1; Stacks, tag 031T.
+Layer 0 (0.1, 0.2, 0.7, 0.10); Layer 2 (2.7); Layer 5 (5.7); AlgebraicModuliForArithmeticGeometry §7.5; LocalFieldsRamificationPartII §§1.1–1.3, 5.1–5.3; LogicAndDefinabilityInNumberTheory §§0.1–0.2; Mathlib `integralClosure`, `IsIntegral`, `Subring.closure`, `IsIntegrallyClosed`, `IsDiscreteValuationRing`, `IsFractionRing`, `Algebra.FiniteType`; on main AlgebraicCurves Layer 2, GlobalNumberFields Layer 1; Stacks, tag 031T.
 
 ## Layer 7: bi-interpretability with arithmetic
 
-This layer interprets ℤ in every infinite finitely generated integral domain and every infinite finitely generated field, with definable comparison isomorphisms, following Aschenbrenner–Khélif–Naziazeno–Scanlon (AKNS) and Dittmann–Pop. Interpretations, their semantics and composition are LogicAndDefinabilityInNumberTheory §§0.1–0.2; homotopy and bi-interpretation are the notions requested as gap:biinterpretation-homotopy (AKNS, §2.3, p. 10).
+This layer interprets ℤ in every infinite finitely generated integral domain and every infinite finitely generated field, with definable comparison isomorphisms. Bounded finite-algebra interpretations and the dimension-one arithmetic core (7.1–7.3) produce the definable comparisons for domains (7.4); the fraction-domain presentation (7.5) transfers these to fields (7.6). Interpretations, their semantics and composition are LogicAndDefinabilityInNumberTheory §§0.1–0.2; homotopy and bi-interpretation are the notions requested as gap:biinterpretation-homotopy (AKNS, §2.3, p. 10).
 
 ### 7.1 Interpretation tools for finitely generated rings
 
@@ -1244,13 +1274,14 @@ Prove: every infinite finitely generated integral domain `D` of Krull dimension 
 
 ### 7.3 Finiteness of the arithmetic core
 
-Let `B` be a finitely generated integral domain with fraction field `K`. In characteristic zero put `D = B ∩ κ`; in characteristic `p` choose `t ∈ B` transcendental over `𝔽_p` and put `D = B ∩ L`, `L` the relative algebraic closure of `𝔽_p(t)` in `K`. Prove: `D` is definable in `B` (by 0.14 and 0.13 applied in `K`, interpreted in `B` by LogicAndDefinabilityInNumberTheory §0.3), finitely generated, one-dimensional and Noetherian (AKNS, Lemma 3.6 with Corollary 1.9, pp. 7 and 22). `D` need not be integrally closed; its normalization `D̃` is finite over `D` (`D` is Japanese), the conductor of `D̃/D` contains a nonzero `c ∈ D`, and `D[c⁻¹]` is a Dedekind domain. If `B` is normal, `D` is already normal and Dedekind: an element of `Frac(D)` integral over `D` is integral over `B` and algebraic over the prime field (resp. over `𝔽_p(t)`).
+Let `B` be an infinite finitely generated integral domain with fraction field `K`. In characteristic zero put `D = B ∩ κ`. In characteristic `p` choose `t ∈ B` transcendental over `𝔽_p`, which exists because a finitely generated ring integral over `𝔽_p` is finite, and put `D = B ∩ L`, `L` the relative algebraic closure of `𝔽_p(t)` in `K`. Prove: `D` is definable in `B` (by 0.14 and 0.13 applied in `K`, interpreted in `B` by LogicAndDefinabilityInNumberTheory §0.3), finitely generated, one-dimensional and Noetherian (AKNS, Lemma 3.6 with Corollary 1.9, pp. 7 and 22, and the proof of Theorem 3.1, p. 23, which assumes `B` infinite). `D` need not be integrally closed; its normalization `D̃` is finite over `D` (`D` is Japanese), the conductor of `D̃/D` contains a nonzero `c ∈ D`, and `D[c⁻¹]` is a Dedekind domain. If `B` is normal, `D` is already normal and Dedekind: an element of `Frac(D)` integral over `D` is integral over `B` and algebraic over the prime field (resp. over `𝔽_p(t)`).
 
 **Checks.**
 
 - For `B = ℤ[√5, t]` the core is `ℤ[√5]`, finitely generated and one-dimensional but not integrally closed; AKNS's assertion that the core is "therefore a Dedekind domain" needs the localization at the conductor element `c = 2`.
 - In characteristic `p` the choice of `t` matters: for `B = 𝔽_p[s, t]` and the choice `t`, the core is `𝔽_p[t]`.
 - Two-dimensional subrings need not be finitely generated, which is why the arithmetic dimension one is required (AKNS, remark before Lemma 3.6, p. 22).
+- Finite domains are excluded. In `B = 𝔽₄` every element satisfies `b⁴ = b`, so no element is transcendental over `𝔽₂`, and every subring has Krull dimension zero; there is no one-dimensional core.
 
 *Needs:* 0.13, 0.14, 7.1; LogicAndDefinabilityInNumberTheory §0.3.
 
@@ -1268,19 +1299,19 @@ Prove: every infinite finitely generated integral domain `B` is bi-interpretable
 
 ### 7.5 A field and a definable fraction-domain presentation
 
-Prove: if `R ⊆ K` is a subring definable with parameters and `Frac(R) = K`, then `K` and `R` are bi-interpretable (Dittmann–Pop, proof of the bi-interpretability theorem, p. 17; AKNS, Examples 2.9(4), p. 12). `K` is interpreted in `R` by LogicAndDefinabilityInNumberTheory §0.3 (pairs `(a, b)`, `b ≠ 0`, modulo `ad = bc`); the comparison from `x ∈ K` to its class is the definable total relation `x b = a`, total because `Frac(R) = K`; `R` is interpreted in `K` by its defining formula, and the comparison sends `r` to the class of `(r, 1)`.
+Prove: if `R ⊆ K` is a subring definable with parameters and `Frac(R) = K`, then `K` and `R` are bi-interpretable (Dittmann–Pop, proof of the bi-interpretability theorem, pp. 17–18; AKNS, Examples 2.9(4), p. 13). `K` is interpreted in `R` by LogicAndDefinabilityInNumberTheory §0.3 (pairs `(a, b)`, `b ≠ 0`, modulo `ad = bc`); the comparison from `x ∈ K` to its class is the definable total relation `x b = a`, total because `Frac(R) = K`; `R` is interpreted in `K` by its defining formula, and the comparison sends `r` to the class of `(r, 1)`.
 
 **Checks.**
 
 - For `R = ℤ ⊆ ℚ` the relation `xb = a` is the ordinary fraction presentation.
 - Both comparison maps must be shown definable; interpretations in both directions alone do not suffice.
-- The definition of `R` may use parameters from `K`; for `R_T` of 6.9 they are `T` and the codes.
+- The definition of `R` may use parameters from `K`; for `R_T` of 6.9 they are `T`, with the auxiliary family codes bound inside the formula.
 
 *Needs:* LogicAndDefinabilityInNumberTheory §0.3 and gap:biinterpretation-homotopy; 6.9.
 
 ### 7.6 Bi-interpretability of infinite finitely generated fields
 
-Prove: every infinite finitely generated field `K` is bi-interpretable with ℤ in the ring language, provided `RS(𝔽₂)` holds when `char K = 2` and `δ(K) > 3` (Dittmann–Pop, Theorem 1.2, p. 2, proof pp. 15–17; Remark 4.4, p. 15, for `δ(K) ≤ 2`). An infinite finitely generated field has `δ(K) ≥ 1`. Choose a transcendence basis `T` over `κ`; `R_T` is a definable normal finitely generated domain with fraction field `K` (6.9), infinite, hence bi-interpretable with ℤ (7.4); 7.5 transfers to `K`, and composition (LogicAndDefinabilityInNumberTheory §0.2) concludes. In Kronecker dimensions one and two the divisor formulas are those of 5.7, with no resolution hypothesis in any characteristic. No carrier for interpretations exists in Mathlib, so this theorem is not stated in Lean.
+Prove: every infinite finitely generated field `K` is bi-interpretable with ℤ in the ring language, provided `RS(𝔽₂)` holds when `char K = 2` and `δ(K) > 3` (Dittmann–Pop, Theorem 1.2, p. 2, proof pp. 15–18; Remark 4.4, p. 15, for `δ(K) ≤ 2`). An infinite finitely generated field has `δ(K) ≥ 1`. Choose a transcendence basis `T` over `κ`; `R_T` is a definable normal finitely generated domain with fraction field `K` (6.9), infinite, hence bi-interpretable with ℤ (7.4); 7.5 transfers to `K`, and composition (LogicAndDefinabilityInNumberTheory §0.2) concludes. In Kronecker dimensions one and two the divisor formulas are those of 5.7, with no resolution hypothesis in any characteristic. No carrier for interpretations exists in Mathlib, so this theorem is not stated in Lean.
 
 **Checks.**
 
@@ -1316,7 +1347,7 @@ Prove: if `M` is a finitely generated structure in a finite language and `M` is 
 
 ### 8.2 Total inverse and finite generation
 
-Expand the ring language by a unary symbol `inv` interpreted in a field by `inv(0) = 0` and `inv(x) = x⁻¹` for `x ≠ 0`. Prove: a field is finitely generated as a field (`Field.FG`) exactly when its expansion is finitely generated as a structure; the expansion is definitional on fields (the graph of `inv` is `(x = 0 ∧ y = 0) ∨ xy = 1`); bi-interpretability with ℤ transfers to the expansion; and every sentence of the expanded language is equivalent on fields to a ring sentence, by replacing each `inv`-term with an existentially quantified variable satisfying the graph (Dittmann–Pop, §1, p. 2, and final paragraph, p. 17). A substructure of the expansion is closed under the field operations and `inv`, hence a subfield.
+Expand the ring language by a unary symbol `inv` interpreted in a field by `inv(0) = 0` and `inv(x) = x⁻¹` for `x ≠ 0`. Prove: a field is finitely generated as a field (`Field.FG`) exactly when its expansion is finitely generated as a structure; the expansion is definitional on fields (the graph of `inv` is `(x = 0 ∧ y = 0) ∨ xy = 1`); bi-interpretability with ℤ transfers to the expansion; and every sentence of the expanded language is equivalent on fields to a ring sentence, by replacing each `inv`-term with an existentially quantified variable satisfying the graph (Dittmann–Pop, §1, p. 2, and final paragraph, p. 18). A substructure of the expansion is closed under the field operations and `inv`, hence a subfield.
 
 **Checks.**
 
@@ -1359,7 +1390,7 @@ State `exists_sentence_realize_iff_nonempty_ringEquiv_of_isDomain`: for every fi
 
 ### 8.5 A single field axiom in every characteristic
 
-State `exists_sentence_realize_iff_nonempty_ringEquiv`: for every finitely generated field `K` with `char K ≠ 2` or `δ(K) ≤ 3` there is a sentence `θ_K` of the ring language such that a finitely generated field `L` satisfies `θ_K` exactly when `L ≅ K` (Dittmann–Pop, Theorem 1.1, p. 2, and final paragraph, p. 17). Under `RS(𝔽₂)` the same holds for every finitely generated field of characteristic two; the comparison fields `L` carry no resolution hypothesis in any case. For finite `K` use 8.3. For infinite `K`, 7.6 gives bi-interpretability, 8.2 transfers it to the finitely generated expansion with `inv`, 8.1 gives a sentence there among finitely generated expansions, and eliminating `inv` gives the ring sentence; conjoining the field axioms makes every finitely generated field model an expansion of the right kind.
+State `exists_sentence_realize_iff_nonempty_ringEquiv`: for every finitely generated field `K` with `char K ≠ 2` or `δ(K) ≤ 3` there is a sentence `θ_K` of the ring language such that a finitely generated field `L` satisfies `θ_K` exactly when `L ≅ K` (Dittmann–Pop, Theorem 1.1, p. 2, and final paragraph, p. 18). Under `RS(𝔽₂)` the same holds for every finitely generated field of characteristic two; the comparison fields `L` carry no resolution hypothesis in any case. For finite `K` use 8.3. For infinite `K`, 7.6 gives bi-interpretability, 8.2 transfers it to the finitely generated expansion with `inv`, 8.1 gives a sentence there among finitely generated expansions, and eliminating `inv` gives the ring sentence; conjoining the field axioms makes every finitely generated field model an expansion of the right kind.
 
 **Checks.**
 
@@ -1401,7 +1432,7 @@ The uniform divisor families of 5.7 are the interface for defining subrings of f
 - **pop_eei2** — Florian Pop, *Elementary equivalence versus isomorphism, II*, Algebra & Number Theory 11 (2017), 2091–2111: Theorems 1.1, 1.2, 2.1, §2C, Notation/Remarks 3.1, 3.5, 4.1, 4.4, Lemmas 3.3, 3.6, 4.2, 4.3, 4.6, Key Lemma 4.7, Recipe 5.1, Conclusion 5.2.
 - **pop_eei** — Florian Pop, *Elementary equivalence versus isomorphism*, Inventiones Mathematicae 150 (2002), 385–408; arXiv:math/0109144v1 (numbering cited): Facts 1.1–1.3, Theorem 1.4.
 - **rumely** — Robert S. Rumely, *Undecidability and definability for the theory of global fields*, Transactions of the AMS 262 (1980), 195–217: Introduction I–III, pp. 195–196; §2; p. 211.
-- **kerz_saito** — Moritz Kerz and Shuji Saito, *Cohomological Hasse principle and motivic cohomology for arithmetic schemes*, Publications Mathématiques de l'IHÉS 115 (2012), 123–183; arXiv:1010.5930v3: (0.4), Theorem 8.1.
+- **kerz_saito** — Moritz Kerz and Shuji Saito, *Cohomological Hasse principle and motivic cohomology for arithmetic schemes*, Publications Mathématiques de l'IHÉS 115 (2012), 123–183; arXiv:1010.5930v3: (0.4), §1 (standing hypotheses on the base, p. 6), Theorem 8.1.
 - **jannsen_hasse** — Uwe Jannsen, *Hasse principles for higher-dimensional fields*, Annals of Mathematics 183 (2016), 1–71; arXiv:0910.2803v2 (numbering cited): Theorem 0.1, Corollary 0.4, Theorem 0.6 (Theorem 0.4, Corollary 0.8 and Theorem 0.10 of the published version), Definition 4.18, p. 5.
 - **kato_hasse** — Kazuya Kato, *A Hasse principle for two dimensional global fields*, Journal für die reine und angewandte Mathematik 366 (1986), 142–180: Corollary, p. 145; p. 149.
 - **merkurjev_suslin** — A. S. Merkurjev and A. A. Suslin, *K-cohomology of Severi–Brauer varieties and the norm residue homomorphism*, Izvestiya Akademii Nauk SSSR 46 (1982); Theorem 12.2.
@@ -1409,6 +1440,8 @@ The uniform divisor families of 5.7 are the interface for defining subrings of f
 - **lenstra_cm** — Hendrik W. Lenstra Jr., *Complex multiplication structure of elliptic curves*, Journal of Number Theory 56 (1996), 227–241: Theorem 1(a).
 - **serre_albanese** — Jean-Pierre Serre, *Morphismes universels et variété d'Albanese*, Séminaire Claude Chevalley 4 (1958–1959), exposé 10: Théorème 5, p. 10-10.
 - **waterhouse** — William C. Waterhouse, *Abelian varieties over finite fields*, Annales scientifiques de l'École Normale Supérieure 2 (1969), 521–560: Theorem 4.1.
-- **stacks** — The Stacks project, *Commutative Algebra*: Lemma 10.157.6 (tag 031T), Theorem 10.160.8 (tag 032A), Lemma 10.160.10 (tag 0C0S); chapter *Resolution of Surfaces*.
+- **stacks** — The Stacks project, *Varieties*: Lemma 33.25.7 (tag 056V); *Commutative Algebra*: Lemmas 10.106.2–10.106.3 (tags 00NP–00NQ), Lemma 10.119.7 (tag 00PD), Lemma 10.140.3 (tag 00TT), Lemma 10.157.6 (tag 031T), Theorem 10.160.8 (tag 032A), Lemma 10.160.10 (tag 0C0S); chapter *Resolution of Surfaces*.
 - **cossart_piltant** — Vincent Cossart and Olivier Piltant, *Resolution of singularities of threefolds in positive characteristic II*, Journal of Algebra 321 (2009), 1836–1976; HAL hal-00139445v2 (the pages cited): Theorem of the introduction (resolution of reduced quasi-projective threefolds over a field differentially finite over a perfect field), p. 5.
 
+- **wittenberg_albanese** — Olivier Wittenberg, *On Albanese torsors and the elementary obstruction*, Mathematische Annalen 340 (2008), 805–838; arXiv:math/0611284v2 (numbering and pages cited): Appendix A, Theorem A.1, Lemmas A.2–A.3 and the subsequent descent paragraph, pp. 26–27.
+- **achter_casalaina_vial** — Jeffrey D. Achter, Sebastian Casalaina-Martin and Charles Vial, *A complete answer to Albanese base change for incomplete varieties*, Annales de l'Institut Fourier 76 (2026); arXiv:2210.05017v3 (numbering and pages cited): Example 0.1, Theorem 1.2, Theorems 4.1 and 4.6.

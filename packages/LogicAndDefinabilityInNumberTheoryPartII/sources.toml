@@ -125,7 +125,7 @@ year = 2012
 venue = "Publ. Math. IHÉS 115 (2012), 123–183"
 arxiv = "1010.5930v3"
 locator_scheme = "theorem"
-locator = "(0.4); Theorem 8.1"
+locator = "(0.4); §1, p. 6; Theorem 8.1, p. 37"
 url = "https://arxiv.org/abs/1010.5930v3"
 fetched_from = "https://arxiv.org/pdf/1010.5930v3"
 fetched_at = "2026-10-26T19:56:21Z"
@@ -236,18 +236,18 @@ cited_for = ["0.11"]
 [[source]]
 id = "stacks"
 authors = "The Stacks project authors"
-title = "The Stacks project, Commutative Algebra and Resolution of Surfaces"
+title = "The Stacks project, Commutative Algebra, Varieties and Resolution of Surfaces"
 year = 2026
 locator_scheme = "tag"
-locator = "Lemma 10.157.6 (tag 031T); Theorem 10.160.8 (tag 032A); Lemma 10.160.10 (tag 0C0S); chapter Resolution of Surfaces (tag 0ADX)"
-url = "https://stacks.math.columbia.edu/tag/031T"
-fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=031T"
-fetched_at = "2026-10-26T20:26:42Z"
-sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+locator = "Lemmas 10.106.2–10.106.3 (tags 00NP–00NQ); Lemma 10.119.7 (tag 00PD); Lemma 10.140.3 (tag 00TT); Lemma 10.157.6 (tag 031T); Theorem 10.160.8 (tag 032A); Lemma 10.160.10 (tag 0C0S); Lemma 33.25.7 (tag 056V); chapter Resolution of Surfaces (tag 0ADX)"
+url = "https://stacks.math.columbia.edu/tag/056V"
+fetched_from = "https://stacks.math.columbia.edu/download/varieties.pdf#nameddest=056V"
+fetched_at = "2026-11-10T23:59:06Z"
+sha256 = "ed339c312c86721e3f830876da14cabe89a96e83e454a78b7cd355555f4bca45"
 licence_class = "open-repository"
 status = "certified"
-accessed = "2026-10-26"
-cited_for = ["0.5; 1.4; 1.5; 5.4; 6.3"]
+accessed = "2026-11-10"
+cited_for = ["0.5; 1.4; 1.5; 5.4; 6.3", "0.8a", "0.6"]
 
 [[source]]
 id = "serre_albanese"
@@ -276,7 +276,6 @@ venue = "J. Algebra 321 (2009), no. 7, 1836–1976"
 doi = "10.1016/j.jalgebra.2008.11.030"
 locator_scheme = "theorem"
 locator = "Theorem of the introduction (resolution of reduced quasi-projective threefolds), p. 5 of the HAL version"
-version_note = "HAL hal-00139445v2 (author version of 17 November 2008); the page cited is that of this version"
 url = "https://hal.science/hal-00139445v2"
 fetched_from = "https://hal.science/hal-00139445/document"
 fetched_at = "2026-11-06T05:36:50Z"
@@ -284,4 +283,43 @@ sha256 = "9bbb1e05c945afa537ee35042d4c80d3cac241089623665d02bc7331ae9ffe14"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
+version_note = "HAL hal-00139445v2 (author version of 17 November 2008); the page cited is that of this version"
 cited_for = ["1.4"]
+
+[[source]]
+id = "achter_casalaina_vial"
+authors = "Jeffrey D. Achter, Sebastian Casalaina-Martin, Charles Vial"
+title = "A complete answer to Albanese base change for incomplete varieties"
+year = 2026
+venue = "Annales de l'Institut Fourier 76"
+doi = "10.5802/aif.3721"
+arxiv = "2210.05017v3"
+locator_scheme = "theorem"
+locator = "Example 0.1; Theorem 1.2; Theorems 4.1, 4.6 (arXiv v3)"
+url = "https://arxiv.org/abs/2210.05017v3"
+fetched_from = "https://arxiv.org/pdf/2210.05017v3"
+fetched_at = "2026-11-10T23:47:59Z"
+sha256 = "2d957553d375b913f3d8477332170edee91a45fcb75548ff3b403084867c486f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v3"
+cited_for = ["0.8a"]
+
+[[source]]
+id = "wittenberg_albanese"
+authors = "Olivier Wittenberg"
+title = "On Albanese torsors and the elementary obstruction"
+year = 2008
+arxiv = "math/0611284v2"
+locator_scheme = "theorem"
+locator = "Appendix A, Theorem A.1, Lemmas A.2–A.3 and following descent paragraph, pp. 26–27 (arXiv v2)"
+url = "https://arxiv.org/abs/math/0611284v2"
+fetched_from = "https://arxiv.org/pdf/math/0611284v2"
+fetched_at = "2026-11-10T23:48:46Z"
+sha256 = "930d9241992c2f03e240446a2338845b404fdcc11b4b6ae00fd11153be81c3ba"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-10"
+version_note = "arXiv v2"
+cited_for = ["0.8a"]
