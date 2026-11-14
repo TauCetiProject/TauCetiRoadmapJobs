@@ -36,7 +36,7 @@ sha256 = "087521436778eed56e5bac98f6f2b441bc2898eef35ebba9da1c1575bf00f96a"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
-cited_for = ["1.1", "2", "3", "4", "5.4", "5.6", "5.12", "Corrections to the sources", "Suggested.lean"]
+cited_for = ["1.1", "2", "3", "4", "5.4", "5.6", "5.12", "Exact supplier contracts", "Corrections to the sources", "Suggested.lean"]
 
 [[source]]
 id = "ANDRE18B"
@@ -73,7 +73,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v3"
-cited_for = ["3.9", "4.4", "5.2", "5.11", "Suggested.lean"]
+cited_for = ["3.9", "4.4", "5.2", "5.11", "Exact supplier contracts", "Suggested.lean"]
 
 [[source]]
 id = "SCHOLZE12"
