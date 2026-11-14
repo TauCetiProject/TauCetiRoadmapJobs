@@ -2,7 +2,7 @@
  "roadmap": "CompressibleEulerEquations",
  "title": "Compressible Euler equations, symmetric hyperbolic systems and maximal developments",
  "parent": null,
- "summary": "The barotropic and full compressible Euler systems with a general equation of state on the Galilean carrier ℝ × ℝⁿ (partially periodic carriers as Λ-periodic lifts); quasilinear symmetric hyperbolic systems with the Euler symmetrisers; the acoustical form, Lipschitz causal curves of sound-cone fields and future domains of dependence; Hᵏ_Λ calculus (Gagliardo–Nirenberg, Moser, mollifiers); Friedrichs energy estimates; local uniqueness on lenses and on domains of dependence; local well-posedness in Hᵏ_Λ, k > n/2 + 1; developments, maximal common developments, maximal developments (non-unique in general, with an explicit counterexample), existence of developments, and nullity of the regular boundary of every maximal development.",
+ "summary": "The barotropic and full compressible Euler systems with a general equation of state on the Galilean carrier ℝ × ℝⁿ (partially periodic carriers as Λ-periodic lifts); quasilinear symmetric hyperbolic systems with the Euler symmetrisers; on LorentzianGeometry's acoustical form (§7.3) and its causal curves and domains of dependence in subsets (§12.6): the identification with the Euler symbol, limit curves, compact causal pasts, openness and idempotence of future domains of dependence and slabs; Hᵏ_Λ calculus (Gagliardo–Nirenberg, Moser, mollifiers); Friedrichs energy estimates in Hᵏ_Λ on SymmetricHyperbolicSystems' linear carrier (§1.2); local uniqueness on lenses and on domains of dependence; local well-posedness in Hᵏ_Λ, k > n/2 + 1; developments, maximal common developments, maximal developments (non-unique in general, with an explicit counterexample; unique when the data extend to a classical solution on the whole future half-space), existence of developments, and nullity of the regular boundary of every maximal development.",
  "baseline": {
   "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
   "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
@@ -402,7 +402,7 @@
       {
        "name": "constant_state",
        "kind": "degenerate",
-       "statement": "at a constant state the system is constant-coefficient with speeds v·ω, v·ω ± c"
+       "statement": "at a constant state the system is constant-coefficient; for unit ω its speeds are v·ω ± c and the material speed v·ω with multiplicity n − 1, absent for n = 1 (n = 1, ρ = c = 1, v = 0: speeds −1, 1 only); for n = 2, ρ = c = 1, v = 0, ζ = (0,1,0) the symbol [[0,1,0],[1,0,0],[0,0,0]] is singular (material sheet) although g⁻¹(ζ,ζ) = 1, not null; the full system 2.2.1 has material multiplicity n"
       }
      ]
     },
@@ -507,7 +507,7 @@
      "id": "3.1",
      "kind": "definition",
      "name": "AcousticalGeometry.acousticalForm",
-     "statement": "For c > 0, v ∈ E: g((τ,ξ),(τ′,ξ′)) = −c²ττ′ + (ξ − τv)·(ξ′ − τ′v) on ℝ × E, its inverse g⁻¹(ζ,η) = −c⁻²(ζ₀ + v·ζ′)(η₀ + v·η′) + ζ′·η′, and B = (1, v).",
+     "statement": "The acoustical form of a state: for c > 0, v ∈ E, LorentzianGeometry §7.3's acoustical form on ℝ × Σ with Σ = E Euclidean and constant c, v: g((τ,ξ),(τ′,ξ′)) = −c²ττ′ + (ξ − τv)·(ξ′ − τ′v), inverse g⁻¹(ζ,η) = −c⁻²(ζ₀ + v·ζ′)(η₀ + v·η′) + ζ′·η′, B = (1, v); g_U = g_{c(U),v(U)}. Lorentzian character, g(B,B) = −c², the inverse formula, causal vectors (nonzero, τ ≠ 0, |ξ − τv| ≤ c|τ|) and the orientation [B] are LorentzianGeometry §7.3's; the closed cone g(X,X) ≤ 0 used here adds 0, and future means τ > 0, equivalently g(B,X) < 0.",
      "hypotheses": [
       "c > 0",
       "v ∈ E"
@@ -517,29 +517,21 @@
       "where": "lines 672–676, eqs. (1.39)–(1.40); LuoYu2023a line 95; LukSpeck2018 lines 1999–2008"
      },
      "prerequisites": [
-      "mathlib:Matrix.det",
-      "mathlib:QuadraticForm.equivalent_signType_weighted_sum_squared"
+      "roadmap:LorentzianGeometry §7.3",
+      "roadmap:LorentzianGeometry §6.1",
+      "roadmap:LorentzianGeometry §6.3",
+      "mathlib:Matrix.det"
      ],
      "api": [
       {
-       "name": "inverse",
+       "name": "det_frame",
        "role": "structure",
-       "statement": "the Gram matrices of g and g⁻¹ are inverse; det g = −c²"
-      },
-      {
-       "name": "signature",
-       "role": "structure",
-       "statement": "(τ,ξ) ↦ (cτ, ξ − τv) carries g to −τ² + |ξ|²"
-      },
-      {
-       "name": "causal_iff",
-       "role": "characterisation",
-       "statement": "g(X,X) ≤ 0 iff |ξ − τv| ≤ c|τ| (the zero vector included); nonzero causal vectors have τ ≠ 0; future (τ > 0) iff g(B,X) < 0; g(B,B) = −c²"
+       "statement": "the Gram matrices of g and g⁻¹ are inverse; det g = −c²; (τ,ξ) ↦ (cτ, ξ − τv), of determinant c, carries g to the Minkowski form −τ² + |ξ|² of LorentzianGeometry §6.1 (not stated in its §7.3)"
       },
       {
        "name": "covector_classification",
        "role": "characterisation",
-       "statement": "ζ future causal iff ζ₀ + v·ζ′ ≥ c|ζ′|; for ζ′ ≠ 0, ker ζ is spacelike (g positive definite), null (g degenerate) or timelike (g nondegenerate with exactly one negative square: indefinite for n ≥ 2, negative definite for n = 1) iff |ζ₀ + v·ζ′| >, =, < c|ζ′|"
+       "statement": "ζ future causal (ζ(X) ≥ 0 for future causal X) iff ζ₀ + v·ζ′ ≥ c|ζ′|; future timelike (g⁻¹(ζ,ζ) < 0, ζ(B) > 0) iff ζ₀ + v·ζ′ > c|ζ′|; for ζ ≠ 0, ker ζ is spacelike, null or timelike (indefinite for n ≥ 2, negative definite for n = 1) iff |ζ₀ + v·ζ′| >, =, < c|ζ′| — LorentzianGeometry §6.3's trichotomy evaluated with g⁻¹(ζ,ζ) = −c⁻²(ζ₀ + v·ζ′)² + |ζ′|²"
       },
       {
        "name": "galilean",
@@ -596,7 +588,7 @@
      "id": "3.2",
      "kind": "definition",
      "name": "AcousticalGeometry.IsCausalCurve",
-     "statement": "For a sound-cone field (c, v) (continuous, c > 0) on D ⊆ ℝ × E, a causal curve is x : J → E on an interval J, locally Lipschitz, with graph in D and |ẋ(t) − v(t,x(t))| ≤ c(t,x(t)) for almost every t ∈ J.",
+     "statement": "A sound-cone field on D ⊆ ℝ × E is a pair of continuous maps c : D → (0,∞), v : D → E; its forms g_{c(p),v(p)} with time field B(p) = (1, v(p)) are a TimeOrientedLorentzianFieldOn D (LorentzianGeometry §12.6, §7.3). Its causal curves in D, endpoints and past-inextendibility are §12.6's IsFutureCausalCurveIn and IsPastInextendibleIn; by §12.6 (time functions, the time coordinate) they are, after a change of parameter, time-parametrised: x : J → E on an interval J (a point allowed), locally Lipschitz, with graph in D and |ẋ(t) − v(t,x(t))| ≤ c(t,x(t)) for almost every t ∈ J. Restriction, concatenation and piecewise C¹ curves are LorentzianGeometry §8.2 and §12.6.",
      "hypotheses": [
       "c : D → (0,∞) continuous",
       "v : D → E continuous",
@@ -604,22 +596,21 @@
      ],
      "locator": {
       "source": "Minguzzi2019",
-      "where": "lines 1359–1363, Theorem 2.12; Chrusciel2011 line 534, §2.3; MinguzziCone2019 lines 1735–1740"
+      "where": "lines 1359–1363, Theorem 2.12 (§2.5); Chrusciel2011 line 534, §2.3; MinguzziCone2019 §2.1, lines 680–697, p. 17 (locally absolutely continuous solutions of the inclusion (2.2)) and Remark 2.3, lines 698–718, p. 17 (Lipschitz reparametrisation)"
      },
      "prerequisites": [
+      "roadmap:LorentzianGeometry §7.3",
+      "roadmap:LorentzianGeometry §8.2",
+      "roadmap:LorentzianGeometry §12.6",
+      "target:3.1",
       "mathlib:LocallyLipschitzOn",
       "mathlib:LipschitzOnWith.ae_differentiableWithinAt_of_mem"
      ],
      "api": [
       {
-       "name": "restrict_concat",
-       "role": "constructor",
-       "statement": "restrictions are causal; curves on [a,b], [b,d] agreeing at b concatenate"
-      },
-      {
        "name": "covariance",
        "role": "functoriality",
-       "statement": "translations, Λ-translations and Galilean boosts carry causal curves to causal curves of the transformed field"
+       "statement": "translations, Λ-translations and Galilean boosts carry causal curves to causal curves of the transformed field; a boost changes (c, v) into (c, v + w), so this is not LorentzianGeometry §12.6's covering invariance"
       },
       {
        "name": "lipschitz_bound",
@@ -685,7 +676,7 @@
      "id": "3.2.3",
      "kind": "theorem",
      "name": "AcousticalGeometry.limit_curve",
-     "statement": "Causal curves with graphs in a compact K ⊆ D are equi-Lipschitz and those on a common [a,b] have a uniformly convergent subsequence with causal limit; if D is a domain, p_m → p and x_m end at p_m on [a_m, t_{p_m}] with a_m → a < t_p, a subsequence converges locally uniformly on an interval J ∋ t_p with inf J = a′ ≥ a to a causal curve ending at p, past-inextendible in D if a′ > a.",
+     "statement": "Causal curves with graphs in a compact K ⊆ D are equi-Lipschitz and those on a common [a,b] have a uniformly convergent subsequence with causal limit; if D is a domain, p_m → p and x_m end at p_m on [a_m, t_{p_m}] with a_m → a < t_p, a subsequence converges locally uniformly on an interval J ∋ t_p with inf J = a′ ≥ a to a causal curve ending at p, past-inextendible in D if a′ > a. Differs from LorentzianGeometry §11.4 (curves of a spacetime parametrised by auxiliary complete Riemannian arc length): the field is continuous only on D and the curves are time-parametrised.",
      "hypotheses": [
       "D a domain",
       "p_m → p in D"
@@ -701,28 +692,10 @@
      ]
     },
     {
-     "id": "3.2.4",
-     "kind": "theorem",
-     "name": "AcousticalGeometry.isCausalCurve_of_piecewiseC1",
-     "statement": "If γ = (γ⁰, γ′) : [α,β] → D is piecewise C¹ with every one-sided tangent a nonzero future causal vector of g_{c(γ),v(γ)}, then γ⁰ is strictly increasing and γ′ ∘ (γ⁰)⁻¹ is a causal curve on [γ⁰(α), γ⁰(β)]; conversely C¹ causal curves have C¹ graphs with future causal tangents.",
-     "hypotheses": [
-      "γ piecewise C¹",
-      "tangents nonzero future causal"
-     ],
-     "locator": {
-      "source": "Minguzzi2019",
-      "where": "lines 1359–1363, Theorem 2.12"
-     },
-     "prerequisites": [
-      "target:3.1",
-      "target:3.2"
-     ]
-    },
-    {
      "id": "3.3",
      "kind": "definition",
      "name": "AcousticalGeometry.futureDomainOfDependence",
-     "statement": "For a sound-cone field on D ⊆ H_{t₀}: past causal curves in D ending at p; extension; past-inextendible (no proper extension in D); causal past J⁻_D(p); D⁺_D(S) = points p ∈ D such that every past-inextendible causal curve in D ending at p meets S.",
+     "statement": "For a sound-cone field on D ⊆ H_{t₀}: past causal curves in D ending at p and their extension order; by LorentzianGeometry §12.6 (time functions) past-inextendibility is the absence of a proper extension in D, and D⁺_D(S) is §12.6's futureDomainOfDependenceIn: the p ∈ D such that every past-inextendible past causal curve in D ending at p meets S. S ∩ D ⊆ D⁺_D(S), monotonicity, the slice identity D⁺_D(S) ∩ Σ_{t₀} = S ∩ D, determination for S closed in an open set and covering invariance are LorentzianGeometry §12.6's. The causal past J⁻_D(p) (points of past causal curves in D ending at p) is defined here; LorentzianGeometry defines causal pasts only in a spacetime (§8.3).",
      "hypotheses": [
       "D ⊆ H_{t₀}",
       "S ⊆ D"
@@ -732,19 +705,15 @@
       "where": "lines 3576–3582, Definition 3.1, Remark 3.2 (causal curves); MinguzziCone2019 lines 1737–1740, Definition 2.17; Chrusciel2011 line 1169 (§2.5, inextendible paths) and lines 1843–1848, §2.9 (the timelike variant D⁺_I; line 1859 names the causal variant D⁺_J); BarGinouxPfaffle2007 line 1006; HawkingEllis1973 §6.5"
      },
      "prerequisites": [
+      "roadmap:LorentzianGeometry §12.6",
       "target:3.2",
       "mathlib:zorn_le_nonempty₀"
      ],
      "api": [
       {
-       "name": "subset",
-       "role": "structure",
-       "statement": "S ⊆ D⁺_D(S); D⁺_D is monotone; D⁺_D(S) ∩ Σ_{t₀} = S for S ⊆ Σ_{t₀} ∩ D"
-      },
-      {
        "name": "exists_inextendible",
        "role": "constructor",
-       "statement": "every past causal curve in D ending at p has a past-inextendible extension (zorn_le_nonempty₀ from the given curve; nonempty chains glue)"
+       "statement": "every past causal curve in D ending at p has a past-inextendible extension (zorn_le_nonempty₀ from the given curve; nonempty chains glue); not stated in LorentzianGeometry §12.6"
       },
       {
        "name": "pastClosed_restrict",
@@ -754,7 +723,7 @@
       {
        "name": "invariance",
        "role": "functoriality",
-       "statement": "Λ-invariance, translations and Galilean boosts"
+       "statement": "Λ-invariance of D⁺_D(S) and J⁻_D(p + λ) = J⁻_D(p) + λ, translations and Galilean boosts (Λ-invariance of D⁺_D(S) is also LorentzianGeometry §12.6's covering invariance for ℝ × E → ℝ × E/Λ)"
       }
      ],
      "tests": [
@@ -802,7 +771,7 @@
      "id": "3.3.2",
      "kind": "theorem",
      "name": "AcousticalGeometry.isOpen_futureDomainOfDependence",
-     "statement": "If moreover S is relatively open in Σ_{t₀}, D⁺_D(S) is a domain, q ↦ J⁻_D(q) is upper semicontinuous on it, and D⁺_{D⁺_D(S)}(S) = D⁺_D(S).",
+     "statement": "If moreover S is relatively open in Σ_{t₀}, D⁺_D(S) is a domain, q ↦ J⁻_D(q) is upper semicontinuous on it, and D⁺_{D⁺_D(S)}(S) = D⁺_D(S). LorentzianGeometry §12.6 has no openness statement, and its determination is the identity for S closed in an open U of a manifold without boundary; here S is relatively open in Σ_{t₀} and D relatively open in the half-space.",
      "hypotheses": [
       "D a domain",
       "S relatively open in Σ_{t₀}"
@@ -820,7 +789,7 @@
      "id": "3.3.3",
      "kind": "theorem",
      "name": "AcousticalGeometry.futureDomainOfDependence_slab",
-     "statement": "If D = [t₀,t₁) × E and c, |v| are bounded on [t₀,t₂] × E for every t₂ < t₁, every past causal curve extends to [t₀, t_p], D⁺_D(S) is the set of p all of whose causal curves on [t₀,t_p] start in S, and D⁺_D(Σ_{t₀}) = D.",
+     "statement": "If D = [t₀,t₁) × E and c, |v| are bounded on [t₀,t₂] × E for every t₂ < t₁, every past causal curve extends to [t₀, t_p], D⁺_D(S) is the set of p all of whose causal curves on [t₀,t_p] start in S, and D⁺_D(Σ_{t₀}) = D. LorentzianGeometry §12.6's slab statement is the slice identity only.",
      "hypotheses": [
       "c and |v| bounded on [t₀,t₂] × E for each t₂ < t₁"
      ],
@@ -937,7 +906,8 @@
       "target:4.1",
       "tauceti:TauCeti.Wkp.toZeroAtInfty",
       "tauceti:TemperedDistribution.MemSobolev.exists_zeroAtInftyContinuousMap_ae_eq",
-      "tauceti:TauCeti.exists_norm_le_hasWeakLineDerivOn_of_frequently_eLpNorm_inv_mul_sub_le"
+      "tauceti:TauCeti.exists_norm_le_hasWeakLineDerivOn_of_frequently_eLpNorm_inv_mul_sub_le",
+      "mathlib:MeasureTheory.Lp.fourierTransformₗᵢ"
      ],
      "tests": [
       {
@@ -976,13 +946,14 @@
       "target:4.2",
       "tauceti:TauCeti.HasWeakLineDerivOn.contDiffOn_smul",
       "tauceti:TauCeti.HasWeakFDerivOn.contDiffOn_smul",
-      "tauceti:TauCeti.HasWeakLineDerivOn.lipschitzOnWith_smul"
+      "tauceti:TauCeti.HasWeakLineDerivOn.lipschitzOnWith_smul",
+      "mathlib:Real.young_inequality"
      ],
      "tests": [
       {
        "name": "scaling",
        "kind": "characterisation",
-       "statement": "both sides scale as λ^{i − ni/(2k)} under u(λx); L^{k/i} does not"
+       "statement": "homogeneous Λ = 0 form: under u(λx) both ‖Dⁱu‖_{L^{2k/i}} and ‖u‖_∞^{1−i/k}‖Dᵏu‖_{L²}^{i/k} scale as λ^{i − ni/(2k)}; the wrong L^{k/i} left side scales as λ^{i − ni/k}, ratio λ^{−ni/(2k)}, unbounded as λ → 0 (not as λ → ∞); n = 1, k = 2, i = 1: wrong side λ^{1/2}, right side λ^{3/4}, ratio 2 at λ = 1/16 and 1/2 at λ = 16"
       },
       {
        "name": "order_zero_exponents",
@@ -1018,11 +989,12 @@
      "id": "4.3.2",
      "kind": "theorem",
      "name": "PeriodicSobolev.moser_composition",
-     "statement": "For Φ smooth on open G ⊆ ℝ^N, compact K ⊆ G, Ū ∈ K and u with values in K and u − Ū ∈ Hᵏ_Λ: Φ(u) − Φ(Ū) ∈ Hᵏ_Λ with ‖Φ(u) − Φ(Ū)‖_{Hᵏ_Λ} ≤ C(Φ,K,k)‖u − Ū‖_{Hᵏ_Λ}; for Λ = 0 and k ≥ 1, ‖DᵏΦ(u)‖_{L²} ≤ C(Φ,K,k)‖Dᵏu‖_{L²}; and u ↦ Φ(u) is continuous in Hᵏ_Λ.",
+     "statement": "For Φ smooth on open G ⊆ ℝ^N, compact K ⊆ G, Ū ∈ K and u with values in K and u − Ū ∈ Hᵏ_Λ: Φ(u) − Φ(Ū) ∈ Hᵏ_Λ with ‖Φ(u) − Φ(Ū)‖_{Hᵏ_Λ} ≤ C‖u − Ū‖_{Hᵏ_Λ}; for Λ = 0 and k ≥ 1, ‖DᵏΦ(u)‖_{L²} ≤ C‖Dᵏu‖_{L²}; and u ↦ Φ(u) is continuous in Hᵏ_Λ. C depends on n, k, Λ, K, a δ > 0 with the closed δ-neighbourhood K_δ ⊆ G, and the derivatives of Φ of order ≤ max(1, k) on K_δ; at order 0 it is the secant bound |Φ(a) − Φ(b)| ≤ max(sup_{K_δ}|DΦ|, 2δ⁻¹ sup_K|Φ|)|a − b| for a, b ∈ K.",
      "hypotheses": [
       "Φ smooth on G",
       "values of u in compact K",
-      "Ū ∈ K"
+      "Ū ∈ K",
+      "δ > 0 with closed δ-neighbourhood K_δ of K contained in G"
      ],
      "locator": {
       "source": "LukNotes",
@@ -1042,6 +1014,11 @@
        "name": "order_zero_uncentred",
        "kind": "non-example",
        "statement": "Λ = 0, K = {0}, u = Ū = 0, Φ ≡ 1, k = 0: the uncentred bound ‖Φ(u)‖_{L²} ≤ C‖u‖_{L²} has sides ∞ and 0; the centred bound gives 0 ≤ 0"
+      },
+      {
+       "name": "order_zero_lipschitz",
+       "kind": "non-example",
+       "statement": "Λ = 0, n = N = 1, K = [0,1], Ū = 0, Φ_m(s) = sin(ms), u_m = m⁻¹1_{[0,1]}: sup_K|Φ_m| = 1 (m ≥ 2), ‖u_m‖ = 1/m, ‖Φ_m(u_m) − Φ_m(0)‖ = sin 1 ≈ 0.8415, so the k = 0 constant is ≥ m sin 1 and no bound by sup_K|Φ| alone exists; with Lip Φ_m = m the bound reads sin 1 ≤ 1"
       }
      ]
     },
@@ -1067,18 +1044,25 @@
       "tauceti:TauCeti.Wkp.lowerOrder_normedBumpL",
       "tauceti:TauCeti.Wkp.iteratedGradient_normedBumpL",
       "tauceti:TauCeti.Wkp.tendsto_normedBumpL",
-      "tauceti:TauCeti.Wkp.dense_contDiff_representatives"
+      "tauceti:TauCeti.Wkp.dense_contDiff_representatives",
+      "tauceti:TauCeti.Wkp.translate",
+      "tauceti:TauCeti.Wkp.continuous_translate",
+      "tauceti:TauCeti.Wkp.norm_translate",
+      "tauceti:TauCeti.Wkp.translateLIE",
+      "tauceti:TauCeti.Wkp.lowerOrder_translate",
+      "tauceti:TauCeti.Wkp.iteratedGradient_translate",
+      "mathlib:MeasureTheory.norm_integral_le_integral_norm"
      ],
      "api": [
       {
        "name": "bounds",
        "role": "structure",
-       "statement": "preserves Λ-periodicity; ‖J_εu‖_{Hᵏ} ≤ ‖u‖_{Hᵏ}; symmetric for the L²_Λ pairing; commutes with ∂ᵢ; J_εu → u in Hᵏ_Λ (for Λ = 0 these are TauCeti.Wkp.norm_normedBumpL_le_one, lowerOrder_normedBumpL, iteratedGradient_normedBumpL and tendsto_normedBumpL at p = 2)"
+       "statement": "preserves Λ-periodicity; ‖J_εu‖_{Hᵏ} ≤ ‖u‖_{Hᵏ}; symmetric for the L²_Λ pairing; commutes with ∂ᵢ; J_εu → u in Hᵏ_Λ. Owned here for every admissible kernel and every Λ: J_εu = ∫φ(y)τ_{−εy}u dy as a Bochner integral of the translates TauCeti.Wkp.translate (continuous in y by TauCeti.Wkp.continuous_translate, isometric by TauCeti.Wkp.norm_translate / translateLIE); contraction from φ ≥ 0, ∫φ = 1 and MeasureTheory.norm_integral_le_integral_norm, ‖J_εw‖ ≤ ∫φ(y)‖τ_{−εy}w‖dy = ‖w‖, applied to each J_ε∂^αu = ∂^αJ_εu in the multi-index norm (no convolution inequality); commutation from TauCeti.Wkp.lowerOrder_translate and iteratedGradient_translate; strong convergence by dominated convergence of ‖τ_{−εy}u − u‖ ≤ 2‖u‖. For Λ = 0 and a normalised ContDiffBump kernel these are TauCeti.Wkp.norm_normedBumpL_le_one, lowerOrder_normedBumpL, iteratedGradient_normedBumpL and tendsto_normedBumpL at p = 2, which the route recovers"
       },
       {
        "name": "gain_loss",
        "role": "structure",
-       "statement": "for every ε > 0, ‖J_εu‖_{Hᵏ⁺¹} ≤ C(1 + ε^{−1})‖u‖_{Hᵏ}, hence ≤ 2Cε^{−1}‖u‖_{Hᵏ} for 0 < ε ≤ 1; for k ≥ 1 and every ε > 0, ‖J_εu − u‖_{Hᵏ⁻¹} ≤ Cε‖u‖_{Hᵏ}"
+       "statement": "for every ε > 0, ‖J_εu‖_{Hᵏ⁺¹} ≤ C(1 + ε^{−1})‖u‖_{Hᵏ}, hence ≤ 2Cε^{−1}‖u‖_{Hᵏ} for 0 < ε ≤ 1; for k ≥ 1 and every ε > 0, ‖J_εu − u‖_{Hᵏ⁻¹} ≤ Cε‖u‖_{Hᵏ}; the order k + 1 derivatives ∂ᵢJ_ε∂^αu = ∫∂ᵢφ_ε(z)τ_z∂^αu dz by ‖∫k(z)τ_z w dz‖ ≤ ‖k‖_{L¹}‖w‖ with ‖∂ᵢφ_ε‖_{L¹} = ε^{−1}‖∂ᵢφ‖_{L¹}"
       },
       {
        "name": "friedrichs_lemma",
@@ -1116,6 +1100,11 @@
        "name": "nonperiodic_coefficient",
        "kind": "non-example",
        "statement": "Λ = 2πℤ, u = sin x, a = sin(x/2): the commutator ½[(φ̂(3ε/2) − φ̂(ε))sin(3x/2) − (φ̂(ε/2) − φ̂(ε))sin(x/2)] equals μ₂ε²/8 + o(ε²) at x = π and its negative at 3π, so it is not in L²_Λ; a = sin x gives a periodic commutator, constant a gives 0"
+      },
+      {
+       "name": "two_bump_kernel",
+       "kind": "non-example",
+       "statement": "φ(x) = (η(x−2) + η(x+2))/2 with η even, nonnegative, ∫η = 1, supp η ⊆ (−1/4,1/4) is admissible (even, ∫φ = 1) with φ(0) = 0, while every normalised ContDiffBump is positive at 0, so J_ε is not a TauCeti.Wkp.normedBumpL; J_εu = ½(τ_{2ε} + τ_{−2ε})(η_ε ⋆ u) is still a contraction and ∫φ(y)‖τ_{−εy}u − u‖ → 0"
       }
      ]
     }
@@ -1129,10 +1118,12 @@
      "id": "5.1",
      "kind": "definition",
      "name": "SymmetricHyperbolic.LinearOperator",
-     "statement": "A linear symmetric hyperbolic operator LW = A⁰∂_tW + Σᵢ Aⁱ∂ᵢW + BW on [0,T] × E with Λ-periodic coefficients, A^μ C¹ with bounded derivatives and symmetric values, A⁰ ≥ λ₀I (λ₀ > 0), B continuous bounded; its energy E(t) = ∫_F ⟨A⁰W, W⟩.",
+     "statement": "A linear symmetric hyperbolic operator on [0,T] × E: a LinearSystem n N of SymmetricHyperbolicSystems §1.2, LW = A⁰∂_tW + Σᵢ Aⁱ∂ᵢW + BW, with LinearSystem.IsSymmetricHyperbolic for a constant λ₀ > 0 (A⁰, Aⁱ symmetric, A⁰ ≥ λ₀I), Λ-periodic coefficients, and on [0,T] × E: A⁰ bounded, C¹ with bounded first derivatives; Aⁱ bounded, continuous, with bounded continuous spatial derivatives (no time derivative of Aⁱ enters); B continuous bounded; coefficients given on [0,T] × E are extended to all times by their values at t = 0 and t = T, which keeps the predicate; its energy E(t) = ∫_F ⟨A⁰W, W⟩ (finite and comparable to ‖W‖²_{L²_Λ} because A⁰ is bounded).",
      "hypotheses": [
-      "A^μ symmetric, C¹, bounded derivatives",
-      "A⁰ ≥ λ₀I, λ₀ > 0",
+      "LinearSystem.IsSymmetricHyperbolic with constant λ₀ > 0",
+      "coefficients Λ-periodic",
+      "A⁰ bounded, C¹ with bounded first derivatives",
+      "Aⁱ bounded, continuous, with bounded continuous spatial derivatives",
       "B continuous and bounded"
      ],
      "locator": {
@@ -1140,6 +1131,7 @@
       "where": "pp. 345–392; Majda1984 Ch. 2, §2.1"
      },
      "prerequisites": [
+      "roadmap:SymmetricHyperbolicSystems §1.2",
       "target:4.1",
       "mathlib:Matrix.PosDef"
      ],
@@ -1170,6 +1162,11 @@
        "name": "jordan_block",
        "kind": "non-example",
        "statement": "A¹ = [[0,1],[0,0]]: ‖W(t)‖ grows like t‖f′‖, no L² estimate"
+      },
+      {
+       "name": "unbounded_A0",
+       "kind": "non-example",
+       "statement": "n = N = 1, Λ = 0, A⁰ = √(1+x²) (A⁰ ≥ 1, |∂ₓA⁰| ≤ 1), A¹ = B = 0, W = (1+x²)^{−1/2}: LW = 0, ‖W‖² = π, ‖∂ₓW‖² = π/8, but ∫_{−R}^{R}A⁰W² = 2 asinh R → ∞; excluded by the bound on A⁰; with A⁰ = 1, E = π and both sides of the identity are 0"
       }
      ]
     },
@@ -1177,9 +1174,10 @@
      "id": "5.1.1",
      "kind": "theorem",
      "name": "SymmetricHyperbolic.LinearOperator.energy_identity",
-     "statement": "For W ∈ C¹([0,T];L²_Λ) ∩ C([0,T];H¹_Λ): dE/dt = ∫_F⟨(∂_tA⁰ + Σ∂ᵢAⁱ − B − Bᵀ)W,W⟩ + 2∫_F⟨LW,W⟩, and ‖W(t)‖ ≤ Ce^{Ct}(‖W(0)‖ + ∫₀ᵗ‖LW‖).",
+     "statement": "For W ∈ C¹([0,T];L²_Λ) ∩ C([0,T];H¹_Λ): dE/dt = ∫_F⟨(∂_tA⁰ + Σ∂ᵢAⁱ − B − Bᵀ)W,W⟩ + 2∫_F⟨LW,W⟩, and ‖W(t)‖ ≤ Ce^{Ct}(‖W(0)‖ + ∫₀ᵗ‖LW‖) with C depending on λ₀, sup‖A⁰‖, sup|∂_tA⁰|, sup|∂ᵢAⁱ| and sup‖B‖, all finite by the hypotheses of 5.1. Differs from SymmetricHyperbolicSystems §2.1 (pointwise, classical solutions) and §2.3 (integrated identity and L² estimate for classical solutions vanishing outside a bounded set) by the class C¹(L²_Λ) ∩ C(H¹_Λ) and by integration over a fundamental domain of Λ.",
      "hypotheses": [
-      "W ∈ C¹([0,T];L²_Λ) ∩ C([0,T];H¹_Λ)"
+      "W ∈ C¹([0,T];L²_Λ) ∩ C([0,T];H¹_Λ)",
+      "L as in 5.1: A⁰ bounded, C¹ with bounded first derivatives, A⁰ ≥ λ₀I; Aⁱ bounded with bounded spatial derivatives; B continuous and bounded"
      ],
      "locator": {
       "source": "Friedrichs1954",
@@ -1194,7 +1192,7 @@
      "id": "5.2",
      "kind": "theorem",
      "name": "SymmetricHyperbolic.weighted_energy",
-     "statement": "If χ ≥ 0 is Lipschitz and Λ-periodic with {χ > 0} relatively compact modulo Λ in [0,T] × E, W is Λ-periodic and W and the coefficients of L are C¹ on a relatively open set containing the closure of {χ > 0}, ∂_tχA⁰ + Σ∂ᵢχAⁱ ≤ 0 a.e. on {χ > 0} and |LW| ≤ C₁|W| there, then E_χ(t) = ∫_Fχ⟨A⁰W,W⟩ is finite, Lipschitz in t, and E_χ(t) ≤ e^{Ct}E_χ(0).",
+     "statement": "If χ ≥ 0 is Lipschitz and Λ-periodic with {χ > 0} relatively compact modulo Λ in [0,T] × E, W is Λ-periodic and W and the coefficients of L are C¹ on a relatively open set containing the closure of {χ > 0}, ∂_tχA⁰ + Σ∂ᵢχAⁱ ≤ 0 a.e. on {χ > 0} and |LW| ≤ C₁|W| there, then E_χ(t) = ∫_Fχ⟨A⁰W,W⟩ is finite, Lipschitz in t, and E_χ(t) ≤ e^{Ct}E_χ(0). Extends SymmetricHyperbolicSystems §2.2 (Λ = 0, w = 0, a single speed, smoothed weight, LW = 0 on the cone) to Lipschitz characteristic-monotone weights, moving cones (M,w), periodic lifts and |LW| ≤ C₁|W|. Bridge: for c > 0, c is a speed there at a point iff the round cone (c, 0) dominates there.",
      "hypotheses": [
       "χ Lipschitz, nonnegative, Λ-periodic",
       "{χ > 0} relatively compact modulo Λ",
@@ -1210,7 +1208,10 @@
       "target:5.1",
       "target:2.1.1",
       "mathlib:LipschitzOnWith.ae_differentiableWithinAt_of_mem",
-      "tauceti:TauCeti.le_mul_exp_of_le_add_mul_integral"
+      "tauceti:TauCeti.le_mul_exp_of_le_add_mul_integral",
+      "roadmap:SymmetricHyperbolicSystems §2.1",
+      "target:4.1",
+      "mathlib:LipschitzWith.integral_lineDeriv_mul_eq"
      ],
      "tests": [
       {
@@ -1227,6 +1228,11 @@
        "name": "boundary_regularity",
        "kind": "non-example",
        "statement": "Λ = 0, L = ∂_t, χ = (1 − |x|)₊, W = (1 − x)^{−1} on (−1,1): W is C¹ on {χ > 0}, LW = 0, σ(dχ) = 0, but ∫₀¹ χW² = ∫₀¹ (1 − x)^{−1} = ∞; W is not C¹ near the closure, which the hypothesis demands"
+      },
+      {
+       "name": "speed_vs_cone",
+       "kind": "compatibility",
+       "statement": "transport a = 1: least speed |a| = 1 and (c, 0) dominates iff c ≥ 1 (symbol c − 1 at ζ = (c,−1)); c = 1/2 fails both; (1/2, 1) dominates although 1/2 is not a speed, so a speed is not the cone (c, a)"
       }
      ]
     },
@@ -1274,7 +1280,7 @@
      "id": "5.4",
      "kind": "theorem",
      "name": "SymmetricHyperbolic.linear_existence",
-     "statement": "For coefficients with A^μ − Ā^μ, B ∈ C([0,T];Hᵏ_Λ), A⁰ − Ā⁰ ∈ C¹([0,T];Hᵏ⁻¹_Λ) (so ∂_tA⁰ is bounded, 2(k−1) > n), A⁰ ≥ λ₀I, 2k > n + 2, W₀ ∈ Hᵏ_Λ and f ∈ C([0,T];Hᵏ_Λ) there is a unique W ∈ C([0,T];Hᵏ_Λ) ∩ C¹([0,T];Hᵏ⁻¹_Λ) with LW = f, W(0) = W₀, obeying the estimate dE_k/dt ≤ C E_k + C E_k^{1/2}‖f‖_{Hᵏ_Λ} of 5.3 with C depending on n, N, k, Λ, λ₀, the constant matrices Ā⁰, …, Āⁿ (spatial ones included), sup_t ‖∂_tA⁰‖_∞, sup_t ‖A^μ − Ā^μ‖_{Hᵏ_Λ} and sup_t ‖B‖_{Hᵏ_Λ}.",
+     "statement": "For coefficients with A^μ − Ā^μ, B ∈ C([0,T];Hᵏ_Λ), A⁰ − Ā⁰ ∈ C¹([0,T];Hᵏ⁻¹_Λ) (so ∂_tA⁰ is bounded, 2(k−1) > n), A⁰ ≥ λ₀I, 2k > n + 2, W₀ ∈ Hᵏ_Λ and f ∈ C([0,T];Hᵏ_Λ) there is a unique W ∈ C([0,T];Hᵏ_Λ) ∩ C¹([0,T];Hᵏ⁻¹_Λ) with LW = f, W(0) = W₀, obeying the estimate dE_k/dt ≤ C E_k + C E_k^{1/2}‖f‖_{Hᵏ_Λ} of 5.3 with C depending on n, N, k, Λ, λ₀, the constant matrices Ā⁰, …, Āⁿ (spatial ones included), sup_t ‖∂_tA⁰‖_∞, sup_t ‖A^μ − Ā^μ‖_{Hᵏ_Λ} and sup_t ‖B‖_{Hᵏ_Λ}. Differs from SymmetricHyperbolicSystems §7.3 by the class: Hᵏ_Λ data, forcing and coefficients against smooth compactly supported data and C_b^∞ coefficients.",
      "hypotheses": [
       "2k > n + 2",
       "A⁰ ≥ λ₀I",
@@ -1445,7 +1451,7 @@
      "id": "7.1",
      "kind": "theorem",
      "name": "SymmetricHyperbolic.localWellPosedness",
-     "statement": "For a quasilinear symmetric hyperbolic system, Ū ∈ G with F(Ū) = 0, a period group Λ, 2k > n + 2, a compact K ⊆ G and M > 0, there is T(M,K) > 0 such that every U₀ with U₀ − Ū ∈ Hᵏ_Λ, ‖U₀ − Ū‖ ≤ M and U₀(E) ⊆ K has a unique Λ-periodic classical solution U on [0,T] × E with U − Ū ∈ C([0,T];Hᵏ_Λ) ∩ C¹([0,T];Hᵏ⁻¹_Λ); it is unique among classical solutions with bounded cone fields, depends continuously on the data in C([0,T];Hᵏ_Λ), and persists in Hᵏ′_Λ for k′ > k on the same maximal interval.",
+     "statement": "For a quasilinear symmetric hyperbolic system, Ū ∈ G with F(Ū) = 0, a period group Λ, 2k > n + 2, a compact K ⊆ G and M > 0, there are T(M,K) > 0 and R(M,K) such that every U₀ with U₀ − Ū ∈ Hᵏ_Λ, ‖U₀ − Ū‖ ≤ M and U₀(E) ⊆ K has a unique Λ-periodic classical solution U on [0,T] × E with U − Ū ∈ C([0,T];Hᵏ_Λ) ∩ C¹([0,T];Hᵏ⁻¹_Λ) and ‖U(t) − Ū‖_{Hᵏ_Λ} ≤ R on [0,T]; it is unique among classical solutions with bounded cone fields, depends continuously on the data in C([0,T];Hᵏ_Λ), and persists in Hᵏ′_Λ for k′ > k on the same maximal interval.",
      "hypotheses": [
       "F(Ū) = 0",
       "2k > n + 2",
@@ -1541,14 +1547,69 @@
      ]
     },
     {
+     "id": "7.3.1",
+     "kind": "construction",
+     "name": "SymmetricHyperbolic.QuasilinearSystem.sourceSwitched",
+     "statement": "For a quasilinear symmetric hyperbolic system (G, A⁰, …, Aⁿ, F), the source-switched system on G × ℝ with states (U, a), coefficient matrices diag(A⁰(U), 1), diag(Aⁱ(U), 0) and source (aF(U), 0).",
+     "hypotheses": [
+      "(G, A^μ, F) quasilinear symmetric hyperbolic system"
+     ],
+     "locator": {
+      "source": "Kato1975",
+      "where": "Theorem I (the uniformly local existence theorem that 7.3 states); the switching construction is not taken from it"
+     },
+     "prerequisites": [
+      "target:2.1"
+     ],
+     "api": [
+      {
+       "name": "isSymmetricHyperbolic",
+       "role": "structure",
+       "statement": "the switched data form a quasilinear symmetric hyperbolic system of size N + 1, and (Ū, 0) is an equilibrium for every Ū ∈ G, whatever F(Ū) is"
+      },
+      {
+       "name": "stationary_switch",
+       "role": "structure",
+       "statement": "every classical solution (U, a) has ∂_ta = 0, so a(t,x) = a(0,x); on every open set where a = 1, U is a classical solution of the given system"
+      },
+      {
+       "name": "dominates_iff",
+       "role": "characterisation",
+       "statement": "a round cone (c, w) with c ≥ |w| dominates the switched system at (U, a) iff it dominates the given system at U"
+      }
+     ],
+     "tests": [
+      {
+       "name": "constant_source",
+       "kind": "computation",
+       "statement": "N = 1, A⁰ = 1, Aⁱ = 0, F ≡ 1: switched source (a, 0) vanishes at (Ū, 0); on a = 1, ∂_tU = 1 and U = Ū + t"
+      },
+      {
+       "name": "slow_cone",
+       "kind": "non-example",
+       "statement": "transport a = 3: (1,3) dominates the given equation, but at ζ = (−2,1) the cone condition 1 ≥ 1 holds and the added entry ζ₀ = −2 < 0, so it does not dominate the switched system; c ≥ |w| is needed"
+      },
+      {
+       "name": "switch_off",
+       "kind": "degenerate",
+       "statement": "a ≡ 0: the U-equation is the homogeneous system A⁰(U)∂_tU + ΣAⁱ(U)∂ᵢU = 0, of which every constant state is a solution"
+      }
+     ]
+    },
+    {
      "id": "7.3",
      "kind": "theorem",
      "name": "SymmetricHyperbolic.localWellPosedness_uniformlyLocal",
-     "statement": "If G contains the segments [Ū,U] for U ∈ K and sup_y‖χ(·−y)(U₀ − Ū)‖_{Hᵏ(E)} ≤ M with U₀(E) ⊆ K, there are T(M,K) > 0 and a unique classical solution on [0,T] × E with bounded uniformly local Hᵏ norm; it commutes with translations fixing U₀, so periodic data give periodic solutions.",
+     "statement": "Let (G, A^μ, F) be a quasilinear symmetric hyperbolic system with arbitrary smooth F, Ū ∈ G, K ⊆ G compact with [Ū,U] ⊆ G for U ∈ K, 2k > n + 2, M > 0, χ ∈ C_c^∞(E) with 0 ≤ χ ≤ 1 and χ = 1 on the unit ball. There is T > 0 (depending on the system, n, k, χ, Ū, K, M) such that every U₀ : E → K with U₀ − Ū ∈ Hᵏ_loc and sup_y‖χ(·−y)(U₀ − Ū)‖_{Hᵏ(E)} ≤ M has a unique classical solution on [0,T] × E with U(0) = U₀; its values lie in a compact subset of G depending on G, Ū, K, its uniformly local Hᵏ norm is bounded on [0,T], and it commutes with translations fixing U₀, so periodic data give periodic solutions. Route: 7.1 (Λ = 0) for the source-switched system 7.3.1 at the equilibrium (Ū,0) with data (Ū + χ(·−y)(U₀ − Ū), χ(·−y)), a compact neighbourhood K₁ ⊆ G of the segment hull for a uniform short time, cones of speed m = sup_{K₁} of the maximal speed, gluing by 6.2, uniqueness by 6.2 with 3.3.3.",
      "hypotheses": [
+      "quasilinear symmetric hyperbolic system with smooth F (F(Ū) = 0 not assumed)",
+      "Ū ∈ G",
+      "K ⊆ G compact",
       "segments [Ū,U] ⊆ G for U ∈ K",
-      "uniformly local Hᵏ bound M",
-      "2k > n + 2"
+      "2k > n + 2",
+      "M > 0",
+      "χ ∈ C_c^∞(E), 0 ≤ χ ≤ 1, χ = 1 on the unit ball",
+      "U₀(E) ⊆ K, U₀ − Ū ∈ Hᵏ_loc, uniformly local Hᵏ bound M"
      ],
      "locator": {
       "source": "Kato1975",
@@ -1557,13 +1618,37 @@
      "prerequisites": [
       "target:7.1",
       "target:6.2",
-      "target:2.1"
+      "target:2.1",
+      "target:7.3.1",
+      "target:3.3.3",
+      "target:4.2",
+      "target:4.3.1"
      ],
      "tests": [
       {
        "name": "counterflow_data",
        "kind": "computation",
        "statement": "ρ̄ = 1/2, v̄ = 2 on x ≤ −1 and −2 on x ≥ 1 (p = ρ²) is uniformly local but not in Ū + H¹ for any constant Ū"
+      },
+      {
+       "name": "order_needed",
+       "kind": "non-example",
+       "statement": "∂_tu = 0, G = ℝ, K = [0,1], Ū = 0, k = 0: U₀ = 1_{[0,∞)} has sup_y‖χ(·−y)U₀‖_{L²} ≤ ‖χ‖_{L²} but one-sided limits 0 and 1, so no C¹ solution; excluded by 2k > n + 2"
+      },
+      {
+       "name": "compact_K_needed",
+       "kind": "non-example",
+       "statement": "G = (−∞,1), A⁰ = 1, A¹ = 0, F(u) = u/(1−u), Ū = 0, U₀ = 1 − 1/(2 + √(1+x²)) ∈ [2/3,1): finite uniformly local norms, but the ODE reaches u = 1 at −log U₀ − (1 − U₀) ≈ 0.0721, 0.00365, 0.0000484 at x = 0, 10, 100, tending to 0: no uniform time"
+      },
+      {
+       "name": "cutoff_range",
+       "kind": "non-example",
+       "statement": "G = (0,2), Ū = 1, K = {3/2}: a cutoff with value 3 gives 1 + 3/2 = 5/2 ∉ G; with 0 ≤ θ ≤ 1 the value 1 + θ/2 ∈ [1, 3/2]"
+      },
+      {
+       "name": "general_source",
+       "kind": "computation",
+       "statement": "A⁰ = 1, Aⁱ = 0, F ≡ 1: the switched source (a,0) vanishes at (Ū,0); on a = 1, U = Ū + t, with uniformly local norm t‖χ‖_{Hᵏ}"
       }
      ]
     }
@@ -1642,7 +1727,7 @@
       {
        "name": "truncate",
        "role": "constructor",
-       "statement": "a Λ-invariant subdomain D′ with D′ ∩ Σ_{t₀} = {t₀} × S and J⁻_D(q) ⊆ D′ for q ∈ D′ gives a development below (D,U); time truncations are examples"
+       "statement": "a Λ-invariant subdomain D′ with D′ ∩ Σ_{t₀} = {t₀} × S and J⁻_D(q) ⊆ D′ for q ∈ D′ gives a development below (D,U); time truncations D ∩ {t < T} with T > t₀ are examples"
       },
       {
        "name": "empty",
@@ -1675,6 +1760,11 @@
        "name": "expanding",
        "kind": "computation",
        "statement": "{|x| < 2√(1+t) − (1+t)} with the expanding flow (p = ρ²/2, ρ₀ = 1) is a development"
+      },
+      {
+       "name": "truncation_time",
+       "kind": "degenerate",
+       "statement": "t₀ = 0, c₀ = 1, v₀ = 0, constant data on (−1,1): the truncation of {|x| < 1 − t} at T = 1/2 has initial slice {0} × S and is a development; at T = 0 it is empty with initial slice ∅ ≠ {0} × S and is not"
       }
      ]
     },
@@ -1784,6 +1874,11 @@
        "name": "common_part",
        "kind": "computation",
        "statement": "W₁₂ = D₁ ∩ D₂ ∩ {t < 1}"
+      },
+      {
+       "name": "disconnected_overlap",
+       "kind": "computation",
+       "statement": "the slice of D₁ ∩ D₂ at t = 1 is empty, so D₁ ∩ D₂ is disconnected, in line with EperonReallSbierski2019 Corollary 4.68 (line 1338), which is for quasilinear wave equations with connected data and does not apply here"
       }
      ]
     },
@@ -1850,13 +1945,14 @@
      "prerequisites": [
       "target:8.1.1",
       "target:3.1",
-      "target:3.2.2"
+      "target:3.2.2",
+      "roadmap:LorentzianGeometry §12.6"
      ],
      "tests": [
       {
        "name": "truncation_spacelike",
        "kind": "computation",
-       "statement": "D ∩ {t < T}: φ = t − T gives 1 > 0, strict"
+       "statement": "D ∩ {t < T}, T > t₀: φ = t − T gives 1 > 0, strict"
       },
       {
        "name": "timelike_excluded",
@@ -1869,7 +1965,7 @@
      "id": "8.4.1",
      "kind": "theorem",
      "name": "CompressibleEuler.boundary_null_of_maximal",
-     "statement": "If moreover (D,U) is maximal and U extends to a classical solution Ũ on N (periodically on Λ-translates), then ∂_tφ(q) + ṽ(q)·∇φ(q) = c̃(q)|∇φ(q)| and ∇φ(q) ≠ 0: ∂D is null for the acoustical form of Ũ at q.",
+     "statement": "If moreover (D,U) is maximal and U extends to a classical solution Ũ on N (periodically on Λ-translates), then ∂_tφ(q) + ṽ(q)·∇φ(q) = c̃(q)|∇φ(q)| and ∇φ(q) ≠ 0: ∂D is null for the acoustical form of Ũ at q. Route: if strict, with a = ∂_tφ(q) + ṽ(q)·∇φ(q) > c̃(q)|∇φ(q)|, choose M with c̃ + |ṽ − ṽ(q)| < M near q and M|∇φ(q)| < a (no upper bound when ∇φ(q) = 0); the lens {φ ≥ 0} ∩ {ψ > 0} ∩ N₀, ψ the periodised moving cone (ε, x_q, ṽ(q), M), lies in a ball of radius O(ε) about q (its linearisation is {|y| − (M/a)b·y < ε}, bounded iff M|b| < a), and adding it to D contradicts maximality.",
      "hypotheses": [
       "(D,U) maximal",
       "classical extension Ũ on N",
@@ -1895,17 +1991,42 @@
        "name": "expanding_null",
        "kind": "computation",
        "statement": "expanding flow at (1, 2√2 − 2): 1 − 1/√2 + √2 − 1 = 1/√2 = c|∂_xφ|"
+      },
+      {
+       "name": "lens_bound",
+       "kind": "non-example",
+       "statement": "n = 1, c̃ = 1, ṽ = 0, q = 0, φ = t − 0.9x: M = 5 gives (−100,−400) with φ = 260 ≥ 0, ψ = ε + 100 > 0 (unbounded); M = 1.05 gives |x| < ε/0.055 ≈ 18.2ε, |t| < 16.4ε"
       }
      ]
     }
    ]
   }
  ],
- "suppliers": [],
+ "suppliers": [
+  {
+   "roadmap": "LorentzianGeometry",
+   "sections": [
+    "§6.1",
+    "§6.3",
+    "§7.3",
+    "§8.2",
+    "§12.6"
+   ],
+   "what": "The acoustical form on ℝ × Σ (here Σ = E Euclidean: form, inverse, B, causal vectors, Lorentzian character, time orientation [B]) (§7.3), the Minkowski form (§6.1) and the hyperplane trichotomy by the sign of the inverse form (§6.3); locally Lipschitz causal curves, restriction, concatenation and piecewise C¹ curves (§8.2); TimeOrientedLorentzianFieldOn, IsFutureCausalCurveIn, IsPastInextendibleIn and futureDomainOfDependenceIn in a subset, monotonicity, slice identity, reduction to time-parametrised curves, determination for S closed in an open set and covering invariance (§12.6). Its causal vectors are nonzero; the closed cone g(X,X) ≤ 0 of 3.1 adds 0."
+  },
+  {
+   "roadmap": "SymmetricHyperbolicSystems",
+   "sections": [
+    "§1.2",
+    "§2.1"
+   ],
+   "what": "The linear system carrier LinearSystem, LinearSystem.apply and LinearSystem.IsSymmetricHyperbolic (Matrix.IsSymm, equal to Matrix.IsHermitian over ℝ) and its notion of speed (§1.2), the carrier of 5.1; the pointwise energy identity with K = ∂_tA⁰ + Σ∂ⱼAʲ − B − Bᵀ (§2.1), used locally in 5.2. Its §2.2, §2.3 and §7.3 are classical-solution versions that 5.1, 5.2 and 5.4 extend to other classes, not consumed."
+  }
+ ],
  "consumers": [
   {
    "roadmap": "CompressibleEulerEquationsPartII",
-   "what": "characteristic data on null hypersurfaces, acoustical eikonal functions, null-geodesic ruling of the regular boundary (8.4) when C² with C^{1,1} metric; consumes 3.1, 3.3, 6.2, 8.1–8.4"
+   "what": "characteristic data on null hypersurfaces, acoustical eikonal functions, null-geodesic ruling of the regular boundary (8.4) when C² with C^{1,1} metric; consumes 3.1, 3.3, 6.2, 8.1–8.4 and LorentzianGeometry for geodesics and null hypersurfaces"
   },
   {
    "roadmap": "ShockFormation",
@@ -1916,16 +2037,8 @@
    "what": "Luo–Yu: domains of dependence of half-space data and their null boundaries (8.3, 8.4)"
   },
   {
-   "roadmap": "LorentzianGeometry",
-   "what": "§1.9 takes the acoustical form of 3.1 (inverse, determinant, signature, causal and covector classification) as an example and owns its identification with general Lorentzian scalar products, on nonzero vectors (its causal vectors exclude 0; the cone of 3.1 contains 0); §2.5 owns the acoustical metric on manifolds"
-  },
-  {
-   "roadmap": "LorentzianGeometryPartII",
-   "what": "identification of the domain of dependence here with the general low-regularity one"
-  },
-  {
    "roadmap": "RelativisticFluids",
-   "what": "quasilinear symmetric hyperbolic well-posedness (7.1) and domain-of-dependence uniqueness (6.2)"
+   "what": "quasilinear symmetric hyperbolic well-posedness (7.1) and domain-of-dependence uniqueness for quasilinear systems (6.2)"
   }
  ],
  "gaps": []
