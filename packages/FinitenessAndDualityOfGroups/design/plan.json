@@ -1,0 +1,2488 @@
+{
+ "roadmap": "FinitenessAndDualityOfGroups",
+ "title": "Finiteness and duality of groups",
+ "parent": null,
+ "summary": "Homological finiteness and dimension theory of discrete groups over a commutative ring: the finiteness types FP_n, FP_∞, FP, FL with the Bieri–Eckmann–Brown criterion and stability under finite index, extensions, products and splittings; cohomological and homological dimension; signed tensor induction and Serre's theorem; virtual cohomological dimension, virtual types and finite homological type; geometric dimension and the Eilenberg–Ganea theorem; duality and Poincaré duality groups; Hattori–Stallings ranks over group rings and Swan's theorem; Euler characteristics of groups of finite homological type with multiplicativity, the equivariant formula, classical Smith theory and Brown's denominator theorem through Serre's action with finite stabilizers on a finite-dimensional acyclic simplicial set; complete resolutions and Farrell cohomology.",
+ "baseline": {
+  "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+  "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
+ },
+ "layers": [
+  {
+   "key": "1",
+   "title": "Finiteness types of groups",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "theorem",
+     "name": "TauCeti.Huber.isPseudoCoherentOver_iff_ext_colimit",
+     "statement": "For a ring A, a left A-module M in the universe of A and n : ℕ: M is n-pseudocoherent iff for every directed system (N_i) of A-modules the map colim_i Ext^k(M, N_i) → Ext^k(M, colim_i N_i) is bijective for k < n and injective for k = n, iff colim_i Ext^k(M, N_i) = 0 for k ≤ n whenever colim_i N_i = 0; M is finitely generated (finitely presented) iff the degree-0 map is injective (bijective) for every directed system.",
+     "hypotheses": [
+      "A : Type u, [Ring A]",
+      "M : Type u, [AddCommGroup M] [Module A M]",
+      "directed systems indexed by a directed preorder in Type u",
+      "n : ℕ"
+     ],
+     "locator": {
+      "source": "Brown1975",
+      "where": "Theorem 2 (i)-(iii), lines 83-92; Corollary of Theorem 1, lines 78-81; Lemma 1(a), lines 105-114"
+     },
+     "prerequisites": [
+      "tauceti:TauCeti.Huber.IsPseudoCoherentOver",
+      "tauceti:TauCeti.Huber.IsPseudoCoherentOver.zero_iff",
+      "tauceti:TauCeti.Huber.IsPseudoCoherentOver.one_iff",
+      "tauceti:TauCeti.Huber.IsPseudoCoherentOver.succ_iff_ker",
+      "mathlib:CategoryTheory.Abelian.Ext"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "rationals_not_fg",
+       "kind": "non-example",
+       "statement": "A = ℤ, M = ℚ, N_i = ℚ/(1/i!)ℤ: colim N_i = 0 but the projections give a nonzero element of colim Hom(ℚ, N_i)."
+      },
+      {
+       "name": "fg_not_fp",
+       "kind": "non-example",
+       "statement": "A = k[x1, x2, ...], M = k, N_i = A/(x1..xi): every Hom(k, N_i) = 0 while Hom(k, colim N_i) = k; the degree-0 map is injective, not surjective."
+      },
+      {
+       "name": "zero_module",
+       "kind": "degenerate",
+       "statement": "M = 0 satisfies every condition and is ⊤-pseudocoherent."
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "definition",
+     "name": "Group.IsOfTypeFPn",
+     "statement": "G is of type FP_n over R (n : ℕ∞) when the trivial module (Representation.trivial R G R).asModule is n-pseudocoherent over MonoidAlgebra R G; FP_∞ is n = ⊤; type FP when TauCeti.Module.IsFPD (MonoidAlgebra R G) R m for some m : ℕ; type FL when R has a finite resolution 0 → F_m → ... → F_0 → R → 0 by finitely generated free RG-modules.",
+     "hypotheses": [
+      "R G : Type u",
+      "[CommRing R]",
+      "[Group G]",
+      "n : ℕ∞"
+     ],
+     "locator": {
+      "source": "BieriEckmann1973",
+      "where": "§4.1, lines 540-544 (types FP, FF); BieriEckmann1974 §3.3 lines 286-287; Brown1974 §3 lines 345-351"
+     },
+     "prerequisites": [
+      "mathlib:MonoidAlgebra",
+      "mathlib:Representation.trivial",
+      "mathlib:Representation.asModule",
+      "tauceti:TauCeti.Huber.IsPseudoCoherentOver",
+      "tauceti:TauCeti.Module.IsFPD"
+     ],
+     "api": [
+      {
+       "name": "of_mulEquiv",
+       "role": "invariance",
+       "statement": "The types are invariant under isomorphisms of groups."
+      },
+      {
+       "name": "iff_projective_resolution",
+       "role": "characterisation",
+       "statement": "FP_n iff a projective resolution P → R exists with P_0..P_n finitely generated (TauCeti.Huber.IsPseudoCoherentOver.ker_of_projective)."
+      },
+      {
+       "name": "mono, top_iff",
+       "role": "structure",
+       "statement": "FP_n is antitone in n; FP_∞ iff FP_n for all n : ℕ."
+      },
+      {
+       "name": "fp_iff",
+       "role": "compatibility",
+       "statement": "FP iff FP_∞ and R has finite projective dimension over RG (TauCeti.Module.isFPD_iff_hasProjectiveDimensionLE)."
+      },
+      {
+       "name": "fl_iff",
+       "role": "characterisation",
+       "statement": "A group of type FP is of type FL iff the top term of a finite resolution with free lower terms is stably free."
+      }
+     ],
+     "tests": [
+      {
+       "name": "trivial_group_FL",
+       "kind": "computation",
+       "statement": "The trivial group is of type FL over every R via 0 → R → R → 0."
+      },
+      {
+       "name": "int_FL",
+       "kind": "computation",
+       "statement": "ℤ = ⟨t⟩ is of type FL via 0 → R[ℤ] →(t−1) R[ℤ] → R → 0."
+      },
+      {
+       "name": "rat_index",
+       "kind": "non-example",
+       "statement": "Over R ≠ 0 the additive group ℚ is of type FP_0 and not FP_1; over the zero ring every group is FL (degenerate)."
+      },
+      {
+       "name": "finite_group",
+       "kind": "compatibility",
+       "statement": "A nontrivial finite group is FP_∞ over ℤ (ℤG noetherian, TauCeti.Huber.IsPseudoCoherentOver.of_isNoetherianRing) but not FP over ℤ; over a field with |G| invertible it is FP."
+      }
+     ]
+    },
+    {
+     "id": "1.3",
+     "kind": "theorem",
+     "name": "Group.IsOfTypeFPn.baseChange",
+     "statement": "FL ⇒ FP ⇒ FP_∞ ⇒ FP_n ⇒ FP_m for m ≤ n; for a ring map R → R' of commutative rings, FP_n (FP, FL) over R implies the same over R'.",
+     "hypotheses": [
+      "[CommRing R] [CommRing R']",
+      "f : R →+* R'"
+     ],
+     "locator": {
+      "source": "BrownGTM87",
+      "where": "§VIII.5"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "tauceti:TauCeti.Module.IsFPD.isPseudoCoherentOver",
+      "tauceti:TauCeti.Huber.IsPseudoCoherentOver.mono"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "no_descent",
+       "kind": "non-example",
+       "statement": "ℤ/2 is FP over ℚ and not over ℤ."
+      },
+      {
+       "name": "to_Fp",
+       "kind": "computation",
+       "statement": "0 → ℤ[ℤ] → ℤ[ℤ] → ℤ → 0 base-changes to an exact resolution over 𝔽_p."
+      }
+     ]
+    },
+    {
+     "id": "1.4",
+     "kind": "theorem",
+     "name": "Group.isOfTypeFPn_one_iff_fg",
+     "statement": "Every group is FP_0 over R; for R nontrivial, G is FP_1 over R iff G is finitely generated; a finitely presented group is FP_2 over every R.",
+     "hypotheses": [
+      "[Nontrivial R] for the FP_1 clause",
+      "Group.IsFinitelyPresented G for the FP_2 clause"
+     ],
+     "locator": {
+      "source": "Brown1974",
+      "where": "§4, lines 441-447; BieriEckmann1974 line 294; BieriEckmann1973 line 662, sequence (5.1)"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "tauceti:TauCeti.Huber.IsPseudoCoherentOver.one_iff",
+      "tauceti:TauCeti.cellularClassifyingSpaceResolution",
+      "tauceti:TauCeti.cellularChainRepIsoFree",
+      "tauceti:TauCeti.PresentationComplex.cellOneEquiv",
+      "tauceti:TauCeti.PresentationComplex.cellTwoEquiv",
+      "mathlib:Group.IsFinitelyPresented"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "rat_not_FP1",
+       "kind": "non-example",
+       "statement": "ℚ and the free group on an infinite set are not FP_1 over R ≠ 0, but are over the zero ring."
+      },
+      {
+       "name": "free2_resolution",
+       "kind": "computation",
+       "statement": "For the free group G on s, t the resolution of (c) has terms RG, (RG)², 0 in degrees 0, 1, 2 over the augmentation RG → R in degree −1, with boundary (a, b) ↦ a(s − 1) + b(t − 1); over ℤ the degree-0 term ℤG has infinite abelian rank, not rank 1."
+      },
+      {
+       "name": "infinite_index",
+       "kind": "non-example",
+       "statement": "The normal closure of b in FreeGroup {a,b} is free on a^k b a^-k, with abelianization ⊕_ℤ ℤ, so not finitely generated: over every nonzero R it is not FP_1 while FreeGroup {a,b} is FL. Over the zero ring both groups are FL."
+      }
+     ]
+    },
+    {
+     "id": "1.5",
+     "kind": "theorem",
+     "name": "Group.isOfTypeFPn_iff_colimit",
+     "statement": "For n : ℕ TFAE: (a) G of type FP_n over R; (b) colim_i H^k(G, M_i) → H^k(G, colim M_i) bijective for k < n, injective for k = n, for every directed system of representations; (c) colim_i H^k(G, M_i) = 0 for k ≤ n when colim M_i = 0; (d) H_k(G, ∏ N_j) → ∏ H_k(G, N_j) bijective for k < n, surjective for k = n, for every family; (e) the same for products of copies of RG. FP_∞ iff (b) in all degrees.",
+     "hypotheses": [
+      "n : ℕ",
+      "directed systems indexed by a directed preorder in Type u",
+      "families indexed by J : Type u"
+     ],
+     "locator": {
+      "source": "Brown1975",
+      "where": "Theorem 2, lines 83-101; Theorem 3, lines 189-194; BieriEckmann1974 Proposition 1.2, lines 135-137"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.2",
+      "mathlib:groupCohomologyIsoExt",
+      "mathlib:groupHomologyIsoTor",
+      "mathlib:Rep.equivalenceModuleMonoidAlgebra"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "n_zero",
+       "kind": "degenerate",
+       "statement": "For n = 0, (b) is injectivity of colim (M_i)^G → (colim M_i)^G, true for every group."
+      },
+      {
+       "name": "rat_colimit",
+       "kind": "non-example",
+       "statement": "G = ℚ, R ≠ 0, n = 1, M_i = R[ℚ/(1/i!)ℤ]: colim (M_i)^ℚ = 0 but (colim M_i)^ℚ = R, so (b) fails at k = 0. Over the zero ring every module here is 0 and the map is 0 → 0, bijective (ℚ is FP_1 over 0)."
+      },
+      {
+       "name": "rat_product",
+       "kind": "non-example",
+       "statement": "G = ℚ, R ≠ 0: (1 − 1/j!)_j in ∏ Rℚ maps to 0 in ∏ R but is not in I·∏ Rℚ, so (e) fails at k = 0. Over the zero ring both products are 0 and the map is 0 → 0, bijective."
+      }
+     ]
+    },
+    {
+     "id": "1.6",
+     "kind": "theorem",
+     "name": "Group.isOfTypeFPn_subgroup_iff",
+     "statement": "For H ≤ G of finite index, G is FP_n over R iff H is; types FP and FL pass from G to H.",
+     "hypotheses": [
+      "H : Subgroup G",
+      "[H.FiniteIndex]"
+     ],
+     "locator": {
+      "source": "BrownGTM87",
+      "where": "§VIII.5"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "tauceti:TauCeti.Huber.isPseudoCoherentOver_restrictScalars_iff",
+      "mathlib:Subgroup.FiniteIndex"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "Z2_times_Z",
+       "kind": "non-example",
+       "statement": "ℤ/2 × ℤ ⊇ ℤ: H is FL, G is FP_∞ but not FP over ℤ; over ℚ G is FP."
+      },
+      {
+       "name": "identity",
+       "kind": "degenerate",
+       "statement": "H = G gives the identity."
+      }
+     ]
+    },
+    {
+     "id": "1.7",
+     "kind": "theorem",
+     "name": "Group.IsOfTypeFPn.of_extension",
+     "statement": "(a) If N ◁ G and N, G ⧸ N are FP_n over R then G is FP_n; (b) A, B of type FL (FP, FP_n) over R ⇒ A × B of that type.",
+     "hypotheses": [
+      "N : Subgroup G",
+      "[N.Normal]"
+     ],
+     "locator": {
+      "source": "BieriEckmann1974",
+      "where": "Proposition 3.3(a), lines 298-313 (FP_∞ and FP over ℤ); for finite n and arbitrary R the route through 1.5(c) is the proof"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:1.5",
+      "roadmap:CohomologyOfGroups §1.2",
+      "roadmap:CohomologyOfGroups §6.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "Zn_FL",
+       "kind": "computation",
+       "statement": "ℤⁿ is FL over every R as an n-fold product of ℤ."
+      },
+      {
+       "name": "Z2_times_Z_FPinf",
+       "kind": "computation",
+       "statement": "ℤ/2 × ℤ is FP_∞ over ℤ as an extension of ℤ by ℤ/2."
+      },
+      {
+       "name": "lamplighter",
+       "kind": "non-example",
+       "statement": "ℤ/2 ≀ ℤ is two-generated, so FP_1 over every R, with quotient ℤ of type FL; its normal subgroup ⊕_ℤ ℤ/2 is not finitely generated, so not FP_1 over any nonzero R: no converse over nonzero R. Over the zero ring both groups are FL, so this does not distinguish the converse there."
+      }
+     ]
+    },
+    {
+     "id": "1.8",
+     "kind": "theorem",
+     "name": "Group.IsOfTypeFPn.pushoutI",
+     "statement": "A, B of type FP_n and C of type FP_{n−1} (ℕ∞ subtraction) with injective C → A, C → B ⇒ A ∗_C B (Monoid.PushoutI over Bool) of type FP_n; H of type FP_n, A ≤ H of type FP_{n−1} ⇒ HNNExtension H A B φ of type FP_n; FreeGroup S, S finite, is FL with resolution 0 → RF^(S) → RF → R → 0.",
+     "hypotheses": [
+      "injective edge maps",
+      "[Finite S] for the free group"
+     ],
+     "locator": {
+      "source": "BieriEckmann1973",
+      "where": "Proposition 5.1, lines 646-650 (nontrivial finitely generated free groups are of type FF over ℤ); the amalgam and HNN statements are proved by the route through the Bass–Serre tree"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "roadmap:CohomologyOfGroups §3.4",
+      "roadmap:CohomologyOfGroups §3.6",
+      "roadmap:FreeGroupsAndLimitGroups §4.5",
+      "roadmap:FreeGroupsAndLimitGroups §4.7",
+      "tauceti:TauCeti.Huber.IsPseudoCoherentOver.cokernel",
+      "tauceti:TauCeti.Huber.IsPseudoCoherentOver.prod",
+      "mathlib:Monoid.PushoutI",
+      "mathlib:HNNExtension"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "SL2_amalgam",
+       "kind": "computation",
+       "statement": "ℤ/4 ∗_{ℤ/2} ℤ/6 is FP_∞ over ℤ."
+      },
+      {
+       "name": "BS12",
+       "kind": "computation",
+       "statement": "BS(1,2) is FP_∞ over every R."
+      },
+      {
+       "name": "n_one",
+       "kind": "degenerate",
+       "statement": "For n = 1 the edge condition is vacuous: amalgams of f.g. groups are f.g."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "Cohomological and homological dimension",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "definition",
+     "name": "Group.cohomologicalDimensionOver",
+     "statement": "cd_R G = leastENatBound (n ↦ ∀ M : Rep R G, ∀ k > n, IsZero (groupCohomology M k)); hd_R G likewise with groupHomology. cd_R G ≤ n iff HasProjectiveDimensionLE (Rep.trivial R G R) n iff the n-th syzygy of a projective resolution is projective; hd_R G ≤ n iff Tor_k^{RG}(N, R) = 0 for k > n and all right N.",
+     "hypotheses": [
+      "R G : Type u",
+      "[CommRing R] [Group G]"
+     ],
+     "locator": {
+      "source": "Serre1971Bourbaki",
+      "where": "1.1, lines 40-42; Brown1974 §3 lines 345-348; BieriEckmann1973 line 155"
+     },
+     "prerequisites": [
+      "mathlib:groupCohomology",
+      "mathlib:groupHomology",
+      "mathlib:groupCohomologyIsoExt",
+      "mathlib:groupHomologyIsoTor",
+      "mathlib:CategoryTheory.HasProjectiveDimensionLE",
+      "tauceti:TauCeti.leastENatBound",
+      "tauceti:TauCeti.leastENatBound_le_iff"
+     ],
+     "api": [
+      {
+       "name": "le_iff",
+       "role": "characterisation",
+       "statement": "cd_R G ≤ n iff the vanishing predicate holds at n (monotone predicate)."
+      },
+      {
+       "name": "eq_zero_iff",
+       "role": "characterisation",
+       "statement": "cd_R G = 0 iff R is a projective RG-module."
+      },
+      {
+       "name": "le_of_ne_zero",
+       "role": "evaluation",
+       "statement": "H^k(G, M) ≠ 0 implies k ≤ cd_R G; likewise for hd."
+      },
+      {
+       "name": "of_mulEquiv",
+       "role": "invariance",
+       "statement": "Both invariants are invariant under group isomorphism."
+      }
+     ],
+     "tests": [
+      {
+       "name": "trivial_group",
+       "kind": "computation",
+       "statement": "cd_R 1 = hd_R 1 = 0."
+      },
+      {
+       "name": "integers",
+       "kind": "computation",
+       "statement": "For R ≠ 0, cd_R ℤ = hd_R ℤ = 1, with H¹(ℤ, R) = R."
+      },
+      {
+       "name": "zero_ring",
+       "kind": "degenerate",
+       "statement": "Over the zero ring cd = hd = 0 for every group, including ℤ/2, while cd_ℤ(ℤ/2) = ⊤."
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "theorem",
+     "name": "Group.homologicalDimension_le_cohomologicalDimension",
+     "statement": "(a) hd_R G ≤ cd_R G; (b) for n : ℕ, if cd_R G < ⊤ and H^k(G, F) = 0 for every free RG-module F and every k > n, then cd_R G ≤ n; (c) for G of type FP with cd_R G = n and C = H^n(G, RG), some e ∈ H_n(G, C) makes x ↦ x ∩ e an isomorphism H^n(G, A) ≅ C ⊗_{RG} A natural in A; (d) for type FP, cd_R G = hd_R G and, R nontrivial, cd_R G is the largest k with H^k(G, RG) ≠ 0.",
+     "hypotheses": [
+      "n : ℕ and cd_R G < ⊤ for (b)",
+      "type FP over R for (c) and (d)",
+      "[Nontrivial R] for the last clause of (d)"
+     ],
+     "locator": {
+      "source": "BieriEckmann1973",
+      "where": "Proposition 2.1, lines 280-286; Theorem 4.2, lines 566-602; Corollary 4.3, lines 604-607; lines 615-621"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:1.2",
+      "roadmap:CohomologyOfGroups §4.6",
+      "tauceti:TauCeti.Module.isFPD_iff_hasProjectiveDimensionLE"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "Zn_top",
+       "kind": "computation",
+       "statement": "H^n(ℤⁿ, Rℤⁿ) ≅ R and H^k(ℤⁿ, Rℤⁿ) = 0 for k ≠ n."
+      },
+      {
+       "name": "rationals",
+       "kind": "non-example",
+       "statement": "hd_ℤ ℚ = 1 < cd_ℤ ℚ = 2: equality needs type FP."
+      },
+      {
+       "name": "Z2",
+       "kind": "non-example",
+       "statement": "For ℤ/2 over ℤ, hd = cd = ⊤ while H^k(ℤ/2, ℤ[ℤ/2]) = 0 for k > 0."
+      },
+      {
+       "name": "zero_ring",
+       "kind": "degenerate",
+       "statement": "R = 0, G = 1: cd_0 1 = 0 and every H^k(1, F) = 0, so no degree has nonzero cohomology with free coefficients; (b) gives cd ≤ n for every n, true, while a 'largest nonzero degree' has no value; for R ≠ 0, G = ℤ², H²(ℤ², Rℤ²) = R and cd_R ℤ² = 2."
+      }
+     ]
+    },
+    {
+     "id": "2.3",
+     "kind": "theorem",
+     "name": "Group.cohomologicalDimensionOver_subgroup_le",
+     "statement": "For H ≤ G: cd_R H ≤ cd_R G and hd_R H ≤ hd_R G; if H has finite index and cd_R G < ⊤ then cd_R H = cd_R G; if H has finite index with [G : H] a unit of R then cd_R G ≤ cd_R H and hd_R G ≤ hd_R H.",
+     "hypotheses": [
+      "H : Subgroup G",
+      "[H.FiniteIndex] for the last two clauses",
+      "cd_R G < ⊤ for the second",
+      "IsUnit (H.index : R) for the third"
+     ],
+     "locator": {
+      "source": "BieriEckmann1973",
+      "where": "Proposition 2.1, lines 280-286 and line 396; BrownGTM87 §III.10"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.2",
+      "mathlib:groupCohomology.coindIso",
+      "mathlib:groupHomology.indIso",
+      "tauceti:TauCeti.groupCohomology.corestriction",
+      "tauceti:TauCeti.groupCohomology.map_subtype_id_comp_corestriction",
+      "tauceti:TauCeti.groupHomology.transfer"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "needs_finite_cd",
+       "kind": "non-example",
+       "statement": "ℤ/2 × ℤ ⊇ ℤ over ℤ: cd H = 1, cd G = ⊤."
+      },
+      {
+       "name": "invertible_index",
+       "kind": "computation",
+       "statement": "Same pair over ℚ: cd_ℚ G ≤ 1, and = 1."
+      },
+      {
+       "name": "2Z_in_Z",
+       "kind": "computation",
+       "statement": "2ℤ ≤ ℤ: for R ≠ 0 both sides of (b) are 1; over the zero ring both are 0."
+      }
+     ]
+    },
+    {
+     "id": "2.4",
+     "kind": "theorem",
+     "name": "Group.cohomologicalDimensionOver_le_add",
+     "statement": "For N ◁ G: cd_R G ≤ cd_R N + cd_R (G ⧸ N) and hd_R G ≤ hd_R N + hd_R (G ⧸ N) in ℕ∞; cd_R(A × B) ≤ cd_R A + cd_R B; an extension of groups of type FP is of type FP.",
+     "hypotheses": [
+      "[N.Normal]"
+     ],
+     "locator": {
+      "source": "BieriEckmann1973",
+      "where": "lines 479-480; BieriEckmann1974 Proposition 3.3(a), lines 298-313"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:1.7",
+      "roadmap:CohomologyOfGroups §6.2",
+      "roadmap:CohomologyOfGroups §6.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "Zn",
+       "kind": "computation",
+       "statement": "For R ≠ 0, cd_R ℤⁿ = n (bound plus H^n(ℤⁿ, R) ≅ R); over R = 0 it is 0."
+      },
+      {
+       "name": "top_add",
+       "kind": "degenerate",
+       "statement": "ℤ/2 × ℤ over ℤ: ⊤ + 1 = ⊤."
+      },
+      {
+       "name": "klein",
+       "kind": "computation",
+       "statement": "Klein bottle group: cd ≤ 2 with H²(K, 𝔽₂) = 𝔽₂ from the HNN sequence."
+      }
+     ]
+    },
+    {
+     "id": "2.5",
+     "kind": "theorem",
+     "name": "Group.homologicalDimensionOver_iSup",
+     "statement": "If G is the union of a directed family G_i then hd_R G = sup_i hd_R G_i; if G is the union of an increasing sequence G_0 ≤ G_1 ≤ ... then cd_R G ≤ sup_i cd_R G_i + 1.",
+     "hypotheses": [
+      "directed family with union G",
+      "ℕ-indexed increasing sequence for the cd bound"
+     ],
+     "locator": {
+      "source": "BrownGTM87",
+      "where": "§VIII.2; the telescope argument of the route, valid over every R, is the proof"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.3",
+      "roadmap:SchemeKTheoryOperations §6.7",
+      "roadmap:CohomologyOfGroups §1.4",
+      "mathlib:groupCohomologyIsoExt"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "rationals",
+       "kind": "computation",
+       "statement": "hd_ℤ ℚ = 1 and cd_ℤ ℚ = 2: H²(ℚ, ℤ) ⊇ Ext¹(ℚ, ℤ) ≠ 0 by CohomologyOfGroups §5.2."
+      },
+      {
+       "name": "free_infinite",
+       "kind": "computation",
+       "statement": "Free group of countable rank over R ≠ 0: hd_R = 1, bound cd_R ≤ 2, true cd_R = 1 (2.6); over the zero ring both dimensions are 0."
+      },
+      {
+       "name": "S3",
+       "kind": "non-example",
+       "statement": "S₃ as union of its cyclic subgroups (not directed): the colimit identification fails."
+      }
+     ]
+    },
+    {
+     "id": "2.6",
+     "kind": "theorem",
+     "name": "Group.cohomologicalDimensionOver_pushoutI_le",
+     "statement": "cd_R(A ∗_C B) ≤ max(cd_R A, cd_R B, cd_R C + 1); cd_R(HNNExtension H A B φ) ≤ max(cd_R H, cd_R A + 1); same for hd; a free group has cd_R ≤ 1, equal to 1 when nontrivial and R ≠ 0.",
+     "hypotheses": [
+      "injective edge maps",
+      "[Nontrivial R] and F ≠ 1 for equality"
+     ],
+     "locator": {
+      "source": "BrownGTM87",
+      "where": "§VIII.2"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "roadmap:CohomologyOfGroups §3.6"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "free2",
+       "kind": "computation",
+       "statement": "cd_R(ℤ ∗ ℤ) = 1 for R ≠ 0; over R = 0 it is 0."
+      },
+      {
+       "name": "SL2_amalgam_Q",
+       "kind": "computation",
+       "statement": "ℤ/4 ∗_{ℤ/2} ℤ/6 over ℚ: bound 1 = true value; over ℤ the bound is ⊤."
+      },
+      {
+       "name": "BS12",
+       "kind": "computation",
+       "statement": "BS(1,2) = HNNExtension ℤ ℤ (2ℤ) (×2): for R ≠ 0 the bound is max(1, 1 + 1) = 2; over the zero ring it is max(0, 0 + 1) = 1 while cd_0 BS(1,2) = 0."
+      }
+     ]
+    },
+    {
+     "id": "2.7",
+     "kind": "theorem",
+     "name": "Group.cohomologicalDimensionOver_finite",
+     "statement": "For R nontrivial and H finite: cd_R H = 0 if |H| is a unit of R, else ⊤. Hence finite subgroups of groups of finite cd_R have invertible order, groups of finite cd_ℤ are torsion-free, and cd_R G = 0 iff G is finite with |G| a unit of R.",
+     "hypotheses": [
+      "[Nontrivial R]",
+      "[Finite H]"
+     ],
+     "locator": {
+      "source": "Brown1974",
+      "where": "§3, lines 352-358; BieriEckmann1973 line 61"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.3",
+      "mathlib:Rep.FiniteCyclicGroup.groupCohomologyIsoEven"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "unit_vs_nonzero",
+       "kind": "non-example",
+       "statement": "cd_{ℤ/6}(ℤ/2) = ⊤ although 2 ≠ 0 in ℤ/6: H²(ℤ/2, ℤ/6) = ℤ/2."
+      },
+      {
+       "name": "Z_half",
+       "kind": "computation",
+       "statement": "cd_{ℤ[1/2]}(ℤ/2) = 0, cd_{ℤ[1/2]}(ℤ/6) = ⊤."
+      },
+      {
+       "name": "zero_ring",
+       "kind": "degenerate",
+       "statement": "Over the zero ring every scalar is a unit, so every finite group is in the unit-order branch (cd 0, as predicted); nontriviality is used for cd_R G = 0 ⇒ G finite: cd_0 ℤ = 0 although ℤ is infinite."
+      }
+     ]
+    },
+    {
+     "id": "2.8",
+     "kind": "theorem",
+     "name": "Group.cohomologicalDimension_le_cohomologicalDimensionOver",
+     "statement": "For G : Type with the discrete topology, TauCeti.cohomologicalDimension.{0} G ≤ cd_ℤ G.",
+     "hypotheses": [
+      "G : Type",
+      "[TopologicalSpace G] [DiscreteTopology G] [IsTopologicalGroup G]"
+     ],
+     "locator": {
+      "source": "Serre1971Bourbaki",
+      "where": "1.1, lines 40-42 (definition of cd compared)"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "roadmap:CohomologyOfGroups §1.5",
+      "tauceti:TauCeti.cohomologicalDimension"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "Zn",
+       "kind": "computation",
+       "statement": "For ℤⁿ both sides are n."
+      },
+      {
+       "name": "finite",
+       "kind": "computation",
+       "statement": "For a nontrivial finite group both sides are ⊤."
+      },
+      {
+       "name": "trivial",
+       "kind": "degenerate",
+       "statement": "For G = 1 both sides are 0."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "Tensor induction of complexes and Serre's theorem",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "construction",
+     "name": "Subgroup.tensorInducedComplex",
+     "statement": "For H ≤ G of index d with a transversal and a chain complex F of RH-modules indexed by ℕ, the complex F^{⊗_R d} with Koszul-signed differential and the G-action g·(⊗x_i) = ε ⊗_j h_{σ⁻¹ j}(g) x_{σ⁻¹ j}; it is a complex of RG-modules, independent of the transversal up to natural isomorphism, functorial, carries R-linear homotopy equivalences to R-linear homotopy equivalences, sends a resolution of R by R-projective terms to a resolution of R over RG, multiplies length by d, and, for H-free bases, has terms ⊕ Ind_K^G(R_χ) with K finite (K ∩ core H = 1) and χ a sign character.",
+     "hypotheses": [
+      "H : Subgroup G",
+      "[H.FiniteIndex]",
+      "a transversal of G ⧸ H",
+      "F : ChainComplex (ModuleCat (MonoidAlgebra R H)) ℕ"
+     ],
+     "locator": {
+      "source": "Brown1974",
+      "where": "§6, lines 643-651 (Serre's multiplicative induction); Serre1971Prospects n°1.7; BrownGTM87 §VIII.3"
+     },
+     "prerequisites": [
+      "tauceti:Subgroup.tensorInducedRepresentation",
+      "tauceti:Representation.wreathTensor",
+      "mathlib:PiTensorProduct",
+      "mathlib:HomologicalComplex"
+     ],
+     "api": [
+      {
+       "name": "tensorInducedComplex_self",
+       "role": "degenerate",
+       "statement": "Tensor induction from H = G is the identity functor."
+      },
+      {
+       "name": "tensorInducedComplex_trans",
+       "role": "functoriality",
+       "statement": "Transitivity along K ≤ H ≤ G up to natural isomorphism."
+      },
+      {
+       "name": "tensorInducedComplex_degree_zero",
+       "role": "compatibility",
+       "statement": "In degree 0 of a complex in degree 0 it is Subgroup.tensorInducedRepresentation."
+      },
+      {
+       "name": "tensorInducedComplex_resolution",
+       "role": "universal",
+       "statement": "A resolution of R by R-projective RH-modules induces a resolution of R over RG."
+      }
+     ],
+     "tests": [
+      {
+       "name": "koszul_sign",
+       "kind": "computation",
+       "statement": "H = 1, G = ℤ/2 = ⟨s⟩, F = R·x in degree 1: s·(x ⊗ x) = −x ⊗ x. For F = (R·x → R·y), dx = y: the signed action commutes with d, while for the sign-free swap s' one has d s'(x ⊗ x) − s' d(x ⊗ x) = 2(y ⊗ x − x ⊗ y), nonzero when 2 ≠ 0 in R (R = ℤ); over 𝔽₂ the two models coincide."
+      },
+      {
+       "name": "contractible",
+       "kind": "computation",
+       "statement": "H = 1, G = ℤ/2 = ⟨s⟩, F = (R·x →id R·y) in degrees 1, 0: the tensor induction is R·(x ⊗ x) → RG → R of length 2, with a = x ⊗ y, b = y ⊗ x = s·a, s(x ⊗ x) = −x ⊗ x, d(x ⊗ x) = b − a, da = db = y ⊗ y. It is contractible as an R-complex (h(y ⊗ y) = a, h(a) = 0, h(b) = x ⊗ x), and RG-linearly contractible exactly when 2 ∈ Rˣ: an equivariant h(y ⊗ y) = k(a + b) has boundary 2k·(y ⊗ y). Over ℤ or 𝔽₂ none exists, so 3.1(c) concerns R-linear homotopy equivalences only."
+      },
+      {
+       "name": "H_eq_G",
+       "kind": "degenerate",
+       "statement": "For H = G the result is F."
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "theorem",
+     "name": "Group.cohomologicalDimensionOver_int_eq_of_torsionFree",
+     "statement": "If G is torsion-free and H ≤ G has finite index then cd_ℤ G = cd_ℤ H; a torsion-free group with a finite-index subgroup of type FP over ℤ is of type FP over ℤ.",
+     "hypotheses": [
+      "G : Type, [Group G]",
+      "[IsMulTorsionFree G]",
+      "[H.FiniteIndex]"
+     ],
+     "locator": {
+      "source": "Serre1971Prospects",
+      "where": "n°1.7, Théorème 1 (cited at Brown1974 line 354, BieriEckmann1973 line 396); BieriEckmann1974 Proposition 3.3(b), lines 300-313"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:2.3",
+      "target:2.7",
+      "target:1.6",
+      "mathlib:IsMulTorsionFree"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "needs_torsion_free",
+       "kind": "non-example",
+       "statement": "ℤ/2 × ℤ ⊇ ℤ: ⊤ against 1."
+      },
+      {
+       "name": "klein",
+       "kind": "computation",
+       "statement": "Klein bottle group ⊇ ℤ² of index 2: both cd 2."
+      },
+      {
+       "name": "dZ",
+       "kind": "degenerate",
+       "statement": "ℤ ⊇ dℤ: both 1."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "Virtual cohomological dimension and virtual finiteness",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "definition",
+     "name": "Group.virtualCohomologicalDimension",
+     "statement": "vcd G = ⨅ over finite-index subgroups H of cd_ℤ H (in ℕ∞), for G : Type. If some finite-index subgroup has finite cd_ℤ, vcd G = cd_ℤ H for every finite-index H of finite cd and for every torsion-free finite-index H; these two classes coincide.",
+     "hypotheses": [
+      "G : Type",
+      "[Group G]"
+     ],
+     "locator": {
+      "source": "Serre1971Bourbaki",
+      "where": "lines 77-86; Brown1974 §3 lines 352-358"
+     },
+     "prerequisites": [
+      "target:2.3",
+      "target:2.7",
+      "target:3.2"
+     ],
+     "api": [
+      {
+       "name": "eq_zero_iff",
+       "role": "characterisation",
+       "statement": "vcd G = 0 iff G is finite."
+      },
+      {
+       "name": "eq_cd",
+       "role": "compatibility",
+       "statement": "If cd_ℤ G < ⊤ then vcd G = cd_ℤ G."
+      },
+      {
+       "name": "lt_top_iff",
+       "role": "characterisation",
+       "statement": "vcd G < ⊤ iff G has a torsion-free finite-index subgroup of finite cd_ℤ; vcd = ⊤ when no finite-index subgroup is torsion-free."
+      },
+      {
+       "name": "of_mulEquiv",
+       "role": "invariance",
+       "statement": "vcd is invariant under isomorphism."
+      }
+     ],
+     "tests": [
+      {
+       "name": "finite",
+       "kind": "degenerate",
+       "statement": "vcd of a finite group is 0."
+      },
+      {
+       "name": "Z2_times_Zn",
+       "kind": "computation",
+       "statement": "vcd(ℤ/2 × ℤⁿ) = n while cd_ℤ = ⊤."
+      },
+      {
+       "name": "SL2_amalgam",
+       "kind": "computation",
+       "statement": "vcd(ℤ/4 ∗_{ℤ/2} ℤ/6) = 1 via the free kernel of the map to ℤ/12."
+      },
+      {
+       "name": "sum_Z2",
+       "kind": "non-example",
+       "statement": "⊕_ℕ ℤ/2 has no torsion-free finite-index subgroup: vcd = ⊤."
+      }
+     ]
+    },
+    {
+     "id": "4.2",
+     "kind": "theorem",
+     "name": "Group.virtualCohomologicalDimension_le_add",
+     "statement": "vcd H ≤ vcd G for H ≤ G, equality at finite index; for N ◁ G with G virtually torsion-free, vcd G ≤ vcd N + vcd (G ⧸ N).",
+     "hypotheses": [
+      "[N.Normal]",
+      "G virtually torsion-free for the extension bound"
+     ],
+     "locator": {
+      "source": "BrownGTM87",
+      "where": "§VIII.11"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "target:2.3",
+      "target:2.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "Z2_times_Z",
+       "kind": "computation",
+       "statement": "vcd(ℤ/2 × ℤ) = 1 = 0 + 1."
+      },
+      {
+       "name": "torsion_subgroup",
+       "kind": "computation",
+       "statement": "The subgroup ℤ/2 of ℤ/2 × ℤ has vcd 0 < 1 and cd_ℤ ⊤."
+      },
+      {
+       "name": "not_vtf",
+       "kind": "degenerate",
+       "statement": "Without virtual torsion-freeness vcd G = ⊤."
+      }
+     ]
+    },
+    {
+     "id": "4.3",
+     "kind": "theorem",
+     "name": "Group.cohomologicalDimensionOver_le_vcd",
+     "statement": "If vcd G = n < ⊤ and the index of some torsion-free finite-index subgroup is a unit of R (every ℚ-algebra R), then cd_R G ≤ n: H^k(G, M) = 0 for k > vcd G and all M : Rep R G.",
+     "hypotheses": [
+      "G R : Type",
+      "vcd G < ⊤",
+      "IsUnit (H.index : R) for a torsion-free finite-index H"
+     ],
+     "locator": {
+      "source": "BrownGTM87",
+      "where": "§VIII.2"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "target:2.3",
+      "target:1.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "Z2_times_Z_Q",
+       "kind": "computation",
+       "statement": "cd_ℚ(ℤ/2 × ℤ) = 1 = vcd."
+      },
+      {
+       "name": "F2_fails",
+       "kind": "non-example",
+       "statement": "Over 𝔽₂, H^k(ℤ/2 × ℤ, 𝔽₂) ≠ 0 for all k: the index hypothesis is used."
+      },
+      {
+       "name": "finite",
+       "kind": "degenerate",
+       "statement": "Finite groups: cd_ℚ = 0 = vcd."
+      }
+     ]
+    },
+    {
+     "id": "4.4",
+     "kind": "definition",
+     "name": "Group.HasFiniteHomologicalType",
+     "statement": "G is virtually of type FP (FL) when a finite-index subgroup is of type FP (FL) over ℤ; G has finite homological type when vcd G < ⊤ and every torsion-free finite-index subgroup has finitely generated integral homology in every degree. For vcd G < ⊤: virtually FP iff FP_∞ over ℤ, and then every torsion-free finite-index subgroup is FP; virtually FP implies finite homological type; finite homological type passes to and from finite-index subgroups.",
+     "hypotheses": [
+      "G : Type"
+     ],
+     "locator": {
+      "source": "Brown1974",
+      "where": "§3, lines 359-370 (definition), Proposition 1 lines 380-384"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "target:1.6",
+      "target:1.2",
+      "target:2.3",
+      "roadmap:CohomologyOfGroups §6.3"
+     ],
+     "api": [
+      {
+       "name": "of_finiteIndex_iff",
+       "role": "structure",
+       "statement": "Finite homological type and the virtual types pass to and from finite-index subgroups."
+      },
+      {
+       "name": "of_virtuallyFP",
+       "role": "constructor",
+       "statement": "Virtually of type FP implies finite homological type."
+      },
+      {
+       "name": "virtuallyFP_iff",
+       "role": "characterisation",
+       "statement": "For vcd G < ⊤, virtually FP iff FP_∞ over ℤ."
+      },
+      {
+       "name": "of_FP",
+       "role": "compatibility",
+       "statement": "Type FP over ℤ implies torsion-free with finite homological type and vcd = cd_ℤ."
+      }
+     ],
+     "tests": [
+      {
+       "name": "finite",
+       "kind": "computation",
+       "statement": "Finite groups have finite homological type and are virtually FL."
+      },
+      {
+       "name": "SL2_amalgam",
+       "kind": "computation",
+       "statement": "ℤ/4 ∗_{ℤ/2} ℤ/6 is virtually FL through a free subgroup of index 12."
+      },
+      {
+       "name": "Z2_times_Q",
+       "kind": "non-example",
+       "statement": "ℤ/2 × ℚ has vcd 2 but H₁(ℚ, ℤ) = ℚ is not finitely generated: not finite homological type; ℚ is not virtually FP."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "Geometric dimension, the Eilenberg–Ganea theorem and proper actions",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "definition",
+     "name": "Group.geometricDimension",
+     "statement": "gd G = least n ∈ ℕ∞ such that some Hausdorff X : Type u with a CW structure on univ without cells of dimension above n satisfies TauCeti.IsEilenbergMacLaneSpaceOne G X x for some x; ⊤ if none.",
+     "hypotheses": [
+      "G : Type u",
+      "[Group G]"
+     ],
+     "locator": {
+      "source": "BrownGTM87",
+      "where": "§VIII.7"
+     },
+     "prerequisites": [
+      "mathlib:Topology.CWComplex",
+      "tauceti:TauCeti.IsEilenbergMacLaneSpaceOne",
+      "tauceti:TauCeti.leastENatBound",
+      "tauceti:TauCeti.isEilenbergMacLaneSpaceOne_cellularClassifyingSpace",
+      "roadmap:ClassifyingSpaces Stage 2 item 10"
+     ],
+     "api": [
+      {
+       "name": "of_mulEquiv",
+       "role": "invariance",
+       "statement": "gd is invariant under group isomorphism."
+      },
+      {
+       "name": "eq_zero_iff",
+       "role": "characterisation",
+       "statement": "gd G = 0 iff G is trivial."
+      },
+      {
+       "name": "le_iff",
+       "role": "characterisation",
+       "statement": "gd G ≤ n iff a K(G,1) CW complex of dimension ≤ n exists."
+      }
+     ],
+     "tests": [
+      {
+       "name": "free",
+       "kind": "computation",
+       "statement": "gd 1 = 0 and gd(FreeGroup S) = 1 for S nonempty via the wedge of circles."
+      },
+      {
+       "name": "Zn",
+       "kind": "computation",
+       "statement": "gd ℤⁿ = n via the product CW structure on n circles (TauCeti.cwComplexProd) and cd = n."
+      },
+      {
+       "name": "finite",
+       "kind": "non-example",
+       "statement": "gd G = ⊤ for a nontrivial finite group."
+      }
+     ]
+    },
+    {
+     "id": "5.2",
+     "kind": "theorem",
+     "name": "Group.cohomologicalDimensionOver_le_geometricDimension",
+     "statement": "For G R : Type, cd_R G ≤ gd G; a K(G,1) CW complex with finitely many cells makes G of type FL over every R, one with finitely many cells in dimensions ≤ n makes G of type FP_n.",
+     "hypotheses": [
+      "G R : Type",
+      "[CommRing R]"
+     ],
+     "locator": {
+      "source": "Serre1971Bourbaki",
+      "where": "1.2, lines 55-58; Brown1975 §3 lines 216-231; BrownGTM87 §VIII.7"
+     },
+     "prerequisites": [
+      "target:5.1",
+      "target:1.2",
+      "target:2.1",
+      "tauceti:TauCeti.cellularResolutionOfIsAspherical",
+      "tauceti:TauCeti.cellularChainRepIsoFree",
+      "roadmap:ClassifyingSpaces Stage 4 item 16"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "torus",
+       "kind": "computation",
+       "statement": "T²: resolution 0 → Rℤ² → (Rℤ²)² → Rℤ² → R → 0 and cd_R ℤ² ≤ 2."
+      },
+      {
+       "name": "presentation",
+       "kind": "compatibility",
+       "statement": "Finite presentation complex gives FP_2, as 1.4(c)."
+      },
+      {
+       "name": "finite",
+       "kind": "non-example",
+       "statement": "No finite-dimensional K(G,1) CW complex for a nontrivial finite G."
+      }
+     ]
+    },
+    {
+     "id": "5.3",
+     "kind": "theorem",
+     "name": "Group.geometricDimension_le_max_three",
+     "statement": "For G : Type, gd G ≤ max(3, cd_ℤ G); hence gd G = cd_ℤ G whenever cd_ℤ G ≥ 3.",
+     "hypotheses": [
+      "G : Type"
+     ],
+     "locator": {
+      "source": "EilenbergGanea1957",
+      "where": "main theorem; BrownGTM87 §VIII.7"
+     },
+     "prerequisites": [
+      "target:5.1",
+      "target:5.2",
+      "target:2.1",
+      "roadmap:AlgebraicTopology §8.1",
+      "roadmap:AlgebraicTopology §8.3",
+      "roadmap:AlgebraicTopology §8.5",
+      "roadmap:ClassifyingSpaces Stage 4 item 16",
+      "tauceti:TauCeti.cellAttachment",
+      "tauceti:HomotopyGroup.bijective_hurewicz",
+      "tauceti:TauCeti.contractibleSpace_of_subsingleton_homotopyGroup",
+      "tauceti:TauCeti.cwComplexPreimage",
+      "tauceti:TauCeti.isEilenbergMacLaneSpaceOne_cellularClassifyingSpace"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "Z3",
+       "kind": "computation",
+       "statement": "ℤ³: gd ≤ 3 = cd, attained by the 3-torus."
+      },
+      {
+       "name": "Z2_not_sharp",
+       "kind": "computation",
+       "statement": "ℤ²: the theorem gives gd ≤ 3 while gd = 2."
+      },
+      {
+       "name": "finite",
+       "kind": "degenerate",
+       "statement": "Nontrivial finite G: cd = ⊤ and the bound says nothing beyond gd = ⊤."
+      }
+     ]
+    },
+    {
+     "id": "5.4",
+     "kind": "theorem",
+     "name": "Group.exists_acyclic_sSet_finite_stabilizers",
+     "statement": "(a) For Γ : Type with cd_ℤ Γ < ⊤ there is an acyclic simplicial set W with nondegenerate simplices of dimension ≤ max(3, cd_ℤ Γ) and a simplicial Γ-action free on simplices. (b) Serre's construction: for G : Type with a finite-index Γ ≤ G, cd_ℤ Γ < ⊤, the simplicial set Z = Map_Γ(G, W) (k-simplices the f : G → W_k with f(γx) = γ f(x), G acting by (g·f)(x) = f(xg)) is acyclic, of dimension ≤ [G : Γ] · max(3, cd_ℤ Γ), and every simplex stabilizer G_f satisfies G_f ∩ Γ = 1, so |G_f| ≤ [G : Γ]; every torsion-free subgroup Γ' acts freely, and the normalized chains SSet.normalizedChainComplex of Z (free on nondegenerate simplices, zero above the dimension) are a free resolution of ℤ over ℤΓ' of length ≤ [G : Γ] · max(3, cd_ℤ Γ).",
+     "hypotheses": [
+      "G Γ : Type, [Group G]",
+      "Γ ≤ G of finite index",
+      "cd_ℤ Γ < ⊤"
+     ],
+     "locator": {
+      "source": "Brown1974",
+      "where": "§6, Lemma, lines 637-651; Serre1971Prospects n°1.7 as cited there"
+     },
+     "prerequisites": [
+      "target:5.3",
+      "target:4.1",
+      "roadmap:AlgebraicTopology §4.7",
+      "roadmap:AlgebraicTopology §8.11a",
+      "gap:simplicial-replacement-dimension",
+      "roadmap:ClassifyingSpaces Stage 4 item 16",
+      "tauceti:TauCeti.UniversalCover",
+      "tauceti:TauCeti.UniversalCover.isCoveringMap",
+      "tauceti:TauCeti.cellularResolutionOfIsAspherical",
+      "tauceti:TauCeti.cellularChainRepIsoFree",
+      "tauceti:SSet.eilenbergZilberHomotopyEquiv",
+      "mathlib:SSet",
+      "mathlib:SSet.chainComplex",
+      "mathlib:SSet.homology",
+      "mathlib:SSet.normalizedChainComplex",
+      "mathlib:SSet.homotopyEquivNormalizedChainComplex",
+      "mathlib:SSet.normalizedChainComplexMap",
+      "mathlib:SSet.hasDimensionLE_prod",
+      "mathlib:IsCoveringMap.existsUnique_continuousMap_lifts"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "finite_point",
+       "kind": "degenerate",
+       "statement": "G finite, Γ = 1: W and Z are points, the stabilizer is G, of order [G : 1]; the stabilizer bound is attained."
+      },
+      {
+       "name": "Z2_times_Z_plane",
+       "kind": "computation",
+       "statement": "G = ℤ/2 × ℤ, Γ = ℤ, W the line: Z = W × W with t diagonal and s swapping; dimension 2 = [G : Γ] · 1 > vcd = 1; stabilizers ⟨s⟩ on the diagonal, trivial elsewhere."
+      },
+      {
+       "name": "infinite_rank_free_abelian",
+       "kind": "non-example",
+       "statement": "ℤ^(ℕ) is torsion-free with cd_ℤ = ⊤; a finite-dimensional acyclic Z with finite stabilizers would be free and give a finite free resolution, so none exists: vcd < ⊤ is used."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "6",
+   "title": "Duality groups and Poincaré duality groups",
+   "targets": [
+    {
+     "id": "6.1",
+     "kind": "definition",
+     "name": "Group.IsDualityGroup",
+     "statement": "G is a duality group of dimension n : ℕ over R with dualizing module D : Rep R G and fundamental class e ∈ H_n(G, D) when for every M : Rep R G the map x ↦ x ∩ e : H^k(G, M) → H_{n−k}(G, D ⊗_R M) (cap product of CohomologyOfGroups §4.6 for the symmetry M ⊗ D ⟶ D ⊗ M) is bijective for k ≤ n, and H^k(G, M) = 0 for k > n.",
+     "hypotheses": [
+      "R G : Type u",
+      "[CommRing R] [Group G]",
+      "n : ℕ"
+     ],
+     "locator": {
+      "source": "BieriEckmann1973",
+      "where": "Definition 1.1, lines 116-121, conventions lines 122-135; Brown1975 lines 195-199; over R the route is the proof"
+     },
+     "prerequisites": [
+      "roadmap:CohomologyOfGroups §4.6",
+      "mathlib:groupCohomology",
+      "mathlib:groupHomology"
+     ],
+     "api": [
+      {
+       "name": "dualityMap_natural",
+       "role": "functoriality",
+       "statement": "The duality map is natural in M and compatible with connecting maps when D is R-flat."
+      },
+      {
+       "name": "of_iso",
+       "role": "invariance",
+       "statement": "Invariant under isomorphisms of groups, dualizing modules and fundamental classes."
+      },
+      {
+       "name": "unique",
+       "role": "characterisation",
+       "statement": "For R nontrivial, n and D are determined by G (6.2)."
+      }
+     ],
+     "tests": [
+      {
+       "name": "integers",
+       "kind": "computation",
+       "statement": "ℤ is a duality group of dimension 1 with D = R, e = [t]; H¹(ℤ, R) → H₀(ℤ, R) is x ↦ x(t)."
+      },
+      {
+       "name": "finite_invertible",
+       "kind": "computation",
+       "statement": "A finite group with |G| ∈ Rˣ is a duality group of dimension 0, D = R, e = 1: M^G → M_G has inverse [m] ↦ |G|⁻¹ Σ g m."
+      },
+      {
+       "name": "zero_ring",
+       "kind": "degenerate",
+       "statement": "Over the zero ring every group is a duality group of every dimension with D = 0."
+      }
+     ]
+    },
+    {
+     "id": "6.2",
+     "kind": "theorem",
+     "name": "Group.IsDualityGroup.isOfTypeFP",
+     "statement": "For a duality group of dimension n over nontrivial R: H_n(G, D) ≅ R generated by e; H^k(G, RG) = 0 for k ≠ n and D ≅ H^n(G, RG); cd_R G = hd_R G = n; G is of type FP over R and finitely generated; D is R-flat; D has a length-n resolution by finitely generated projective RG-modules.",
+     "hypotheses": [
+      "[Nontrivial R]",
+      "G a duality group of dimension n over R"
+     ],
+     "locator": {
+      "source": "BieriEckmann1973",
+      "where": "Proposition 1.2, lines 139-164; Proposition 1.6, lines 210-220; Theorem 4.6, lines 624-643; Brown1975 Corollaries 1-2 of Theorem 3, lines 195-215; BieriEckmann1974 Proposition 2.1, lines 148-154"
+     },
+     "prerequisites": [
+      "target:6.1",
+      "target:1.5",
+      "target:2.2",
+      "target:2.1",
+      "roadmap:CohomologyOfGroups §4.6"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "integers",
+       "kind": "computation",
+       "statement": "H¹(ℤ, Rℤ) = Rℤ/(t − 1) ≅ R with trivial action; H⁰(ℤ, Rℤ) = 0."
+      },
+      {
+       "name": "free_rank_two",
+       "kind": "computation",
+       "statement": "For F of rank r ≥ 2 on s_1..s_r, D = coker(RF → RF^r, a ↦ ((s_i − 1)a)_i), Hom of the boundary (a_i) ↦ Σ a_i(s_i − 1), right RF-linear; over a field D has infinite dimension: duality, not Poincaré."
+      },
+      {
+       "name": "finite",
+       "kind": "computation",
+       "statement": "Finite G with |G| ∈ Rˣ: H⁰(G, RG) = R·Σg ≅ R trivial."
+      },
+      {
+       "name": "free_cokernel_order",
+       "kind": "non-example",
+       "statement": "F = ⟨s, t⟩, R ≠ 0: under a ↦ (a(s − 1), a(t − 1)) the right translate ((s − 1)t, (t − 1)t) of the image of 1 is not an image (second coordinate forces a = t, then t(s − 1) ≠ (s − 1)t); under a ↦ ((s − 1)a, (t − 1)a) it is the image of t. For F = ℤ both give R."
+      }
+     ]
+    },
+    {
+     "id": "6.3",
+     "kind": "theorem",
+     "name": "Group.isDualityGroup_iff",
+     "statement": "G is a duality group of dimension n over R iff G is of type FP over R, H^k(G, RG) = 0 for k ≠ n and H^n(G, RG) is R-flat; and, without finiteness, iff cd_R G < ⊤, H^k(G, F) = 0 for k ≠ n and free F, C = H^n(G, RG) is R-flat, and some e ∈ H_n(G, C) makes x ↦ x ∩ e : H^n(G, F) → C ⊗_{RG} F bijective for free F.",
+     "hypotheses": [
+      "n : ℕ"
+     ],
+     "locator": {
+      "source": "BieriEckmann1973",
+      "where": "Theorem 4.5, lines 612-621; Theorem 2.3, lines 317-323; Propositions 2.1-2.2, lines 280-298; Lemma 1.3 lines 178-191; over R the route is the proof"
+     },
+     "prerequisites": [
+      "target:6.1",
+      "target:6.2",
+      "target:2.2",
+      "target:1.2",
+      "roadmap:CohomologyOfGroups §4.6",
+      "mathlib:Module.Flat"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "Zn",
+       "kind": "computation",
+       "statement": "ℤⁿ satisfies the criterion over every R."
+      },
+      {
+       "name": "free_product",
+       "kind": "non-example",
+       "statement": "ℤ ∗ ℤ² is FL with cd 2 but H¹(ℤ ∗ ℤ², ℤG) ⊇ ℤG ≠ 0: not a duality group."
+      },
+      {
+       "name": "finite_over_Z",
+       "kind": "non-example",
+       "statement": "A nontrivial finite group over ℤ fails type FP and is not a duality group."
+      }
+     ]
+    },
+    {
+     "id": "6.4",
+     "kind": "definition",
+     "name": "Group.IsPoincareDualityGroup",
+     "statement": "A Poincaré duality group of dimension n over R is a duality group whose dualizing module is free of rank one over R; its orientation character w : G →* Rˣ is the scalar action on D ≅ R; over ℤ, w lands in {±1}, and abstract isomorphisms H^k(G, A) ≅ H_{n−k}(G, ℤ_sgn ⊗ A) for k ≤ n with H^k = 0 for k > n and H_j = 0 for j > n make G a Poincaré duality group with orientation character sgn.",
+     "hypotheses": [
+      "n : ℕ",
+      "for the abstract-isomorphism theorem: R = ℤ, G : Type, sgn : G →* ℤˣ"
+     ],
+     "locator": {
+      "source": "BieriEckmann1974",
+      "where": "§3.1, lines 253-257 (over ℤ, left modules through sgn, lines 261-266); Theorem 3.4, lines 327-334; BieriEckmann1973 Theorem 4.6, lines 625-643"
+     },
+     "prerequisites": [
+      "target:6.1",
+      "target:6.2",
+      "target:6.3",
+      "target:1.5",
+      "target:2.1"
+     ],
+     "api": [
+      {
+       "name": "orientationCharacter",
+       "role": "constructor",
+       "statement": "The orientation character w : G →* Rˣ, independent of the chosen D ≅ R."
+      },
+      {
+       "name": "duality_twisted",
+       "role": "evaluation",
+       "statement": "H^k(G, M) ≅ H_{n−k}(G, R_w ⊗_R M) for k ≤ n."
+      },
+      {
+       "name": "orientationCharacter_int",
+       "role": "structure",
+       "statement": "Over ℤ, w takes values in {±1}."
+      },
+      {
+       "name": "of_abstract_iso",
+       "role": "characterisation",
+       "statement": "BieriEckmann1974 Theorem 3.4 with finite generation from the argument of BieriEckmann1973 Theorem 4.6."
+      }
+     ],
+     "tests": [
+      {
+       "name": "Zn_orientable",
+       "kind": "computation",
+       "statement": "ℤⁿ is orientable PD of dimension n over every R."
+      },
+      {
+       "name": "klein",
+       "kind": "computation",
+       "statement": "Klein bottle group: w(a) = 1, w(t) = −1, H²(K, ℤ) ≅ H₀(K, ℤ_w) = ℤ/2; the orientable model gives ℤ; orientable over 𝔽₂."
+      },
+      {
+       "name": "finite_and_free",
+       "kind": "characterisation",
+       "statement": "Over R ≠ 0: finite G is PD of dimension 0 iff |G| ∈ Rˣ, and free of rank r ≥ 1 is PD iff r = 1. Over the zero ring every group is PD of every dimension (D = 0 is free of rank one over 0)."
+      }
+     ]
+    },
+    {
+     "id": "6.5",
+     "kind": "theorem",
+     "name": "Group.IsDualityGroup.of_finiteIndex",
+     "statement": "A finite-index subgroup S of a duality group of dimension n over R is one, with restricted dualizing module and transfer of the fundamental class; over ℤ a torsion-free group with a finite-index duality subgroup of dimension n is one; an extension of duality groups of dimensions n (kernel) and m (quotient) over R is a duality group of dimension n + m with D_G ≅ D_{G⧸N} ⊗_R D_N.",
+     "hypotheses": [
+      "[S.FiniteIndex]",
+      "torsion-free G for the second clause",
+      "[N.Normal] for the third"
+     ],
+     "locator": {
+      "source": "BieriEckmann1973",
+      "where": "Theorem 3.2 lines 366-386; Theorem 3.3 lines 388-465; Theorem 3.5 and Proposition 1.8, lines 255-272 and 468-516; over R the route is the proof"
+     },
+     "prerequisites": [
+      "target:6.1",
+      "target:6.2",
+      "target:6.3",
+      "target:3.2",
+      "roadmap:CohomologyOfGroups §1.2",
+      "roadmap:CohomologyOfGroups §4.6",
+      "roadmap:CohomologyOfGroups §6.2",
+      "mathlib:groupCohomology.coindIso",
+      "mathlib:groupHomology.indIso"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "Zn_plus_one",
+       "kind": "computation",
+       "statement": "ℤⁿ⁺¹ as extension of ℤ by ℤⁿ: D = R ⊗ R = R."
+      },
+      {
+       "name": "klein_extension",
+       "kind": "computation",
+       "statement": "Klein bottle group: D = R ⊗ H¹(⟨a⟩, R⟨a⟩) with t acting by −1."
+      },
+      {
+       "name": "needs_torsion_free",
+       "kind": "non-example",
+       "statement": "ℤ/2 × ℤ contains ℤ of index 2 and is not a duality group over ℤ."
+      }
+     ]
+    },
+    {
+     "id": "6.6",
+     "kind": "theorem",
+     "name": "Group.isPoincareDualityGroup_fundamentalGroup_of_aspherical",
+     "statement": "If M : Type is a compact connected Hausdorff smooth boundaryless n-manifold modelled on EuclideanSpace ℝ (Fin n) and aspherical, then π₁(M, x) is a Poincaré duality group of dimension n over every R : Type with orientation character the image of the orientation character of M; second countability follows from compactness (ChartedSpace.secondCountable_of_sigmaCompact).",
+     "hypotheses": [
+      "M : Type",
+      "[CompactSpace M] [ConnectedSpace M] [T2Space M]",
+      "smooth manifold structure modelled on EuclideanSpace ℝ (Fin n), no boundary",
+      "TauCeti.IsAspherical M x"
+     ],
+     "locator": {
+      "source": "Serre1971Bourbaki",
+      "where": "1.4, lines 63-67; BieriEckmann1974 §3.2 lines 271-281"
+     },
+     "prerequisites": [
+      "target:6.3",
+      "target:6.4",
+      "target:5.2",
+      "roadmap:AlgebraicTopology §6.3",
+      "roadmap:AlgebraicTopology §6.4",
+      "roadmap:AlgebraicTopology §8.7",
+      "roadmap:ClassifyingSpaces Stage 4 item 17",
+      "mathlib:ChartedSpace.secondCountable_of_sigmaCompact"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "torus",
+       "kind": "compatibility",
+       "statement": "(S¹)ⁿ gives the orientable case of 6.4."
+      },
+      {
+       "name": "klein_bottle",
+       "kind": "compatibility",
+       "statement": "The Klein bottle gives the non-orientable character of 6.4."
+      },
+      {
+       "name": "sphere",
+       "kind": "non-example",
+       "statement": "S² is not aspherical; its trivial fundamental group is PD of dimension 0, not 2."
+      },
+      {
+       "name": "doubled_point_circle",
+       "kind": "non-example",
+       "statement": "The circle with one point doubled is compact, connected, a smooth 1-manifold in Mathlib's sense and weakly equivalent to S¹ ∨ S¹ (aspherical, π₁ = F₂), but not Hausdorff; F₂ is not PD₁: H¹(F₂, ℤ) = ℤ² while H₀(F₂, ℤ_w) is ℤ or ℤ/2."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "7",
+   "title": "Ranks of projective modules over group rings and Swan's theorem",
+   "targets": [
+    {
+     "id": "7.1",
+     "kind": "definition",
+     "name": "MonoidAlgebra.hattoriStallingsRank",
+     "statement": "For a finitely generated projective left RG-module P, r_P : ConjClasses G →₀ R from the Hattori–Stallings trace of EtaleCohomologyFoundations §F.10.3 (on (RG)ᵐᵒᵖ) through RG/[RG, RG] ≅ R^(G/conj); additive, iso-invariant, r_{RG} = δ_[1], compatible with base change, induction and (at the identity) restriction to finite-index subgroups; Σ r_P = trace of R ⊗_{RG} P.",
+     "hypotheses": [
+      "[CommRing R] [Group G]",
+      "[Module.Finite RG P] [Module.Projective RG P]"
+     ],
+     "locator": {
+      "source": "BrownGTM87",
+      "where": "§IX.2"
+     },
+     "prerequisites": [
+      "roadmap:EtaleCohomologyFoundations §F.10.3",
+      "mathlib:MonoidAlgebra",
+      "mathlib:ConjClasses"
+     ],
+     "api": [
+      {
+       "name": "hattoriStallingsRank_add",
+       "role": "structure",
+       "statement": "r_{P ⊕ Q} = r_P + r_Q; invariant under isomorphism."
+      },
+      {
+       "name": "hattoriStallingsRank_free",
+       "role": "evaluation",
+       "statement": "r_{RGⁿ} = n δ_[1]."
+      },
+      {
+       "name": "hattoriStallingsRank_baseChange",
+       "role": "functoriality",
+       "statement": "r_{R' ⊗_R P} is the image of r_P."
+      },
+      {
+       "name": "hattoriStallingsRank_ind",
+       "role": "functoriality",
+       "statement": "Induction from H ≤ G pushes r_P forward along H-classes to G-classes."
+      },
+      {
+       "name": "hattoriStallingsRank_res_one",
+       "role": "functoriality",
+       "statement": "r_{Res P}([1]) = [G : H] r_P([1]) for H of finite index."
+      }
+     ],
+     "tests": [
+      {
+       "name": "regular",
+       "kind": "computation",
+       "statement": "r_{RG} = δ_[1]; induction of R from 1 to ℤ/2 gives RG with rank δ_[1]."
+      },
+      {
+       "name": "trivial_module",
+       "kind": "computation",
+       "statement": "|G| ∈ Rˣ, P = R·e: r_P([g]) = 1/|C_G(g)|; for R ≠ 0 and G ≠ 1 this is not δ_[1] (at g ≠ 1 it is a unit, not 0); for G = 1 or R = 0 the two coincide."
+      },
+      {
+       "name": "restriction",
+       "kind": "compatibility",
+       "statement": "H = 1, P = RG: r_{Res P}([1]) = |G|."
+      }
+     ]
+    },
+    {
+     "id": "7.2",
+     "kind": "theorem",
+     "name": "MonoidAlgebra.trace_eq_card_centralizer_mul_rank",
+     "statement": "For R an arbitrary commutative ring, G finite and P finitely generated projective over RG, the trace of g on P as a finite projective R-module (LinearMap.projectiveTrace, not Mathlib's LinearMap.trace, which vanishes without a finite basis) equals |C_G(g)| · r_P([g⁻¹]).",
+     "hypotheses": [
+      "R : Type u, [CommRing R]",
+      "G : Type u, [Group G] [Finite G]",
+      "P finitely generated projective over MonoidAlgebra R G"
+     ],
+     "locator": {
+      "source": "BrownGTM87",
+      "where": "§IX.2"
+     },
+     "prerequisites": [
+      "target:7.1",
+      "tauceti:LinearMap.projectiveTrace",
+      "tauceti:LinearMap.projectiveTrace_cyclic",
+      "tauceti:LinearMap.projectiveTrace_eq_trace",
+      "mathlib:Representation.ofModule'"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "regular",
+       "kind": "computation",
+       "statement": "P = RG: |G|[g = 1] on both sides."
+      },
+      {
+       "name": "trivial_module",
+       "kind": "computation",
+       "statement": "Trivial module: 1 = |C_G(g)| · 1/|C_G(g⁻¹)|."
+      },
+      {
+       "name": "trivial_group",
+       "kind": "degenerate",
+       "statement": "G trivial: both sides are the projective trace of id_P. R = ℚ × ℚ, P = R·(1, 0) (projective, not free): both sides are (1, 0), while Mathlib's LinearMap.trace of id is 0."
+      },
+      {
+       "name": "inverse_convention",
+       "kind": "convention",
+       "statement": "G = ℤ/3 = ⟨g⟩ over ℂ, ζ(g) = ω, P = ℂG·e with e = (1/3) Σ ζ(h)⁻¹ h: χ_P(g) = ω = 3 · (ω/3) = |C_G(g)| r_P([g⁻¹]); r_P([g]) would give ω⁻¹."
+      }
+     ]
+    },
+    {
+     "id": "7.3",
+     "kind": "theorem",
+     "name": "MonoidAlgebra.swan_rat",
+     "statement": "For G finite and P finitely generated projective over ℤG: r_P([g]) = 0 for g ≠ 1, and ℚ ⊗ P ≅ (ℚG)^m with m = r_P([1]) = rank_ℤ(P)/|G| = rank_ℤ(ℤ ⊗_{ℤG} P).",
+     "hypotheses": [
+      "G : Type",
+      "[Finite G]"
+     ],
+     "locator": {
+      "source": "Brown1974",
+      "where": "§1, lines 168-172 (Swan's theorem)"
+     },
+     "prerequisites": [
+      "target:7.1",
+      "target:7.2",
+      "tauceti:TauCeti.trace_ofModule'_eq_zero_of_dvd_orderOf",
+      "tauceti:FDRep.nonempty_iso_of_character_eq",
+      "mathlib:PadicInt"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "free_two",
+       "kind": "computation",
+       "statement": "P = (ℤG)²: m = 2."
+      },
+      {
+       "name": "needs_projective",
+       "kind": "non-example",
+       "statement": "Trivial ℤ over ℤ/2: character 1 at the generator; ℚ is not free over ℚ[ℤ/2]."
+      },
+      {
+       "name": "trivial_group",
+       "kind": "degenerate",
+       "statement": "G trivial: ℚ ⊗ P ≅ ℚ^m."
+      }
+     ]
+    },
+    {
+     "id": "7.4",
+     "kind": "theorem",
+     "name": "MonoidAlgebra.swan_mod_p",
+     "statement": "For G finite, P finitely generated projective over ℤG and p prime: ℤ_p ⊗ P ≅ (ℤ_p G)^m and 𝔽_p ⊗ P ≅ (𝔽_p G)^m, m as in 7.3.",
+     "hypotheses": [
+      "[Finite G]",
+      "[Fact p.Prime]"
+     ],
+     "locator": {
+      "source": "Brown1974",
+      "where": "Appendix A, lines 1311-1320"
+     },
+     "prerequisites": [
+      "target:7.3",
+      "tauceti:TauCeti.nonempty_linearEquiv_of_projective_of_tensorRat"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "regular",
+       "kind": "degenerate",
+       "statement": "P = ℤG: m = 1."
+      },
+      {
+       "name": "needs_projective",
+       "kind": "non-example",
+       "statement": "Trivial ℤ over ℤ/p reduces to 𝔽_p, not free over 𝔽_p[ℤ/p]."
+      },
+      {
+       "name": "coprime",
+       "kind": "compatibility",
+       "statement": "For p ∤ |G| the first isomorphism is also TauCeti.nonempty_linearEquiv_of_projective_of_tensorRat_of_not_dvd."
+      }
+     ]
+    },
+    {
+     "id": "7.5",
+     "kind": "theorem",
+     "name": "MonoidAlgebra.hom_projective_free",
+     "statement": "For Γ finitely generated, P finitely generated projective over ℤΓ, K a field, V a KΓ-module of finite dimension and Γ' ◁ Γ of finite index, Hom_{ℤΓ'}(P, V) is a free K[Γ/Γ']-module of rank r(P) · dim_K V, r(P) = rank_ℤ(ℤ ⊗_{ℤΓ} P); in particular dim_K Hom_{ℤΓ}(P, V) = r(P) dim_K V.",
+     "hypotheses": [
+      "Γ : Type",
+      "Group.FG Γ",
+      "[Field K]",
+      "[FiniteDimensional K V]",
+      "[Γ'.Normal] [Γ'.FiniteIndex]"
+     ],
+     "locator": {
+      "source": "Brown1974",
+      "where": "Appendix A, Theorem 7, lines 1284-1355"
+     },
+     "prerequisites": [
+      "target:7.3",
+      "target:7.4",
+      "mathlib:IsLocalRing",
+      "mathlib:Module.Projective"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "finite_regular",
+       "kind": "computation",
+       "statement": "Γ finite, Γ' = 1, P = ℤΓ, V = K: Hom_ℤ(ℤΓ, K) ≅ KΓ, rank 1."
+      },
+      {
+       "name": "Z_twisted",
+       "kind": "computation",
+       "statement": "Γ = ℤ, P = ℤΓ, V = K with t ↦ λ: dimension 1 for every λ."
+      },
+      {
+       "name": "needs_projective",
+       "kind": "non-example",
+       "statement": "P = ℤ trivial over ℤ, λ ≠ 1: Hom = V^Γ = 0 but r(ℤ) dim V = 1."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "8",
+   "title": "Euler characteristics",
+   "targets": [
+    {
+     "id": "8.1",
+     "kind": "theorem",
+     "name": "ChainComplex.exists_homotopyEquiv_finite_of_isNoetherianRing",
+     "statement": "For a left noetherian ring A and a chain complex C of projective A-modules indexed by ℕ with finitely generated homology, there is a complex D of finitely generated free modules and a quasi-isomorphism D → C, a homotopy equivalence; if H^i(Hom(C, M)) = 0 for i > n and every finitely generated M, D can be taken with D_i = 0 for i > n and D_n finitely generated projective.",
+     "hypotheses": [
+      "[Ring A] [IsNoetherianRing A]",
+      "each C_i projective",
+      "each H_i(C) finitely generated"
+     ],
+     "locator": {
+      "source": "Brown1974",
+      "where": "§1, Lemma, lines 135-164"
+     },
+     "prerequisites": [
+      "mathlib:HomologicalComplex",
+      "mathlib:QuasiIso",
+      "mathlib:IsNoetherianRing",
+      "mathlib:Module.Projective"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "contractible",
+       "kind": "degenerate",
+       "statement": "C = (F →id F), F = ℤ^(ℕ): D = 0."
+      },
+      {
+       "name": "needs_noetherian",
+       "kind": "non-example",
+       "statement": "Over k[x1, x2, ...], a resolution of k has f.g. homology but no D exists."
+      },
+      {
+       "name": "finite_free",
+       "kind": "compatibility",
+       "statement": "A finitely generated free resolution is returned up to homotopy."
+      }
+     ]
+    },
+    {
+     "id": "8.2",
+     "kind": "theorem",
+     "name": "ChainComplex.euler_eq_card_mul_euler_coinvariants",
+     "statement": "For G finite and a finite-dimensional complex C of projective ℤG-modules with finitely generated homology: C_G has finitely generated homology, χ(C) = |G| χ(C_G), and the Lefschetz number of g ≠ 1 on H_*(C) ⊗ ℚ vanishes.",
+     "hypotheses": [
+      "G : Type",
+      "[Finite G]",
+      "C_i = 0 for large i",
+      "each C_i projective over ℤG"
+     ],
+     "locator": {
+      "source": "Brown1974",
+      "where": "§1, Theorem 1, lines 125-172"
+     },
+     "prerequisites": [
+      "target:8.1",
+      "target:7.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "regular",
+       "kind": "computation",
+       "statement": "G = ℤ/2, C = ℤG: χ(C) = 2 = 2 · 1, Lefschetz number 0."
+      },
+      {
+       "name": "needs_projective",
+       "kind": "non-example",
+       "statement": "Trivial ℤ in degree 0: 1 ≠ 2 · 1."
+      },
+      {
+       "name": "circle",
+       "kind": "computation",
+       "statement": "Circle with free rotation of order 2: 0 = 2 · 0."
+      }
+     ]
+    },
+    {
+     "id": "8.3",
+     "kind": "definition",
+     "name": "Group.rationalEulerChar",
+     "statement": "χ_ℚ(G) = Σ (−1)^i dim_ℚ H_i(G, ℚ) for H_*(G, ℚ) of finite total dimension (Brown1974's naive Euler characteristic); for G of type FP over ℤ and a finite projective resolution P of the trivial ℤG-module, χ̃(G) = Σ (−1)^i r_{P_i}([1]) ∈ ℤ, the alternating sum of the identity-class coefficients of the Hattori–Stallings ranks of 7.1, independent of P (Schanuel and additivity in 7.1), multiplicative on finite-index subgroups; for type FP, χ_ℚ(G) = Σ (−1)^i rank_ℤ(ℤ ⊗_{ℤG} P_i); for type FL, χ_ℚ = χ̃ = Σ (−1)^i rank F_i.",
+     "hypotheses": [
+      "G : Type"
+     ],
+     "locator": {
+      "source": "Brown1974",
+      "where": "§4 lines 386-387 (χ_ℚ, called naive at lines 82-83); lines 402-410; BrownGTM87 §IX.2 for the ranks used in χ̃"
+     },
+     "prerequisites": [
+      "target:7.1",
+      "target:1.2",
+      "tauceti:TauCeti.exists_linearEquiv_comp_fst_eq_comp_snd_comp"
+     ],
+     "api": [
+      {
+       "name": "rationalEulerChar_of_mulEquiv",
+       "role": "invariance",
+       "statement": "χ_ℚ and χ̃ are isomorphism invariants; χ_ℚ(1) = χ̃(1) = 1."
+      },
+      {
+       "name": "rationalEulerChar_cohomology",
+       "role": "compatibility",
+       "statement": "χ_ℚ(G) = Σ (−1)^i dim H^i(G, ℚ) by universal coefficients."
+      },
+      {
+       "name": "identityRankEulerChar_finiteIndex",
+       "role": "structure",
+       "statement": "χ̃(H) = [G : H] χ̃(G)."
+      },
+      {
+       "name": "rationalEulerChar_eq_identityRank_of_FL",
+       "role": "compatibility",
+       "statement": "For type FL, χ_ℚ = χ̃ = Σ (−1)^i rank F_i."
+      }
+     ],
+     "tests": [
+      {
+       "name": "Z_free_Zn",
+       "kind": "computation",
+       "statement": "χ_ℚ(ℤ) = 0, χ_ℚ(F_r) = 1 − r, χ_ℚ(ℤⁿ) = 0 for n ≥ 1."
+      },
+      {
+       "name": "finite",
+       "kind": "non-example",
+       "statement": "χ_ℚ(G) = 1 for every finite G (it does not see the order); for nontrivial finite G, χ̃ is undefined (cd_ℤ G = ⊤): ℤ/2 has χ_ℚ = 1, χ = 1/2, no χ̃; for G = 1, χ̃(1) = χ_ℚ(1) = χ(1) = 1 from the length-0 resolution."
+      },
+      {
+       "name": "rationals",
+       "kind": "degenerate",
+       "statement": "χ_ℚ(ℚ) = 0 although ℚ is not FP_1 over ℤ."
+      }
+     ]
+    },
+    {
+     "id": "8.4",
+     "kind": "definition",
+     "name": "Group.eulerChar",
+     "statement": "(a) cd_ℤ Γ < ⊤ and Γ' ◁ Γ finite index with f.g. integral homology ⇒ χ_ℚ(Γ') = [Γ:Γ'] χ_ℚ(Γ); (b) for G of finite homological type, χ(G) = χ_ℚ(H)/[G:H] is independent of the torsion-free finite-index H; (c) χ(H) = [G:H] χ(G) at finite index, χ = χ_ℚ ∈ ℤ for torsion-free G, χ = χ̃ for type FL; (d) χ is the unique ℚ-valued function on groups virtually FL multiplicative at finite index and given by ranks for FL (Wall, Serre).",
+     "hypotheses": [
+      "G : Type",
+      "finite homological type (4.4)"
+     ],
+     "locator": {
+      "source": "Brown1974",
+      "where": "§4, Theorem 3 lines 388-401; lines 402-424; Serre1971Bourbaki lines 77-86; Wall1961; Serre1971Prospects n°1.8"
+     },
+     "prerequisites": [
+      "target:8.2",
+      "target:8.3",
+      "target:4.1",
+      "target:4.4",
+      "target:2.3"
+     ],
+     "api": [
+      {
+       "name": "eulerChar_finiteIndex",
+       "role": "structure",
+       "statement": "χ(H) = [G : H] χ(G)."
+      },
+      {
+       "name": "eulerChar_finite",
+       "role": "evaluation",
+       "statement": "χ(G) = 1/|G| for G finite."
+      },
+      {
+       "name": "eulerChar_eq_rational",
+       "role": "compatibility",
+       "statement": "χ = χ_ℚ for torsion-free G of finite homological type."
+      },
+      {
+       "name": "eulerChar_unique",
+       "role": "universal",
+       "statement": "Uniqueness among multiplicative functions normalised on type FL."
+      }
+     ],
+     "tests": [
+      {
+       "name": "finite",
+       "kind": "computation",
+       "statement": "χ(G) = 1/|G| against χ_ℚ(G) = 1."
+      },
+      {
+       "name": "Z2_times_Z",
+       "kind": "computation",
+       "statement": "χ(ℤ/2 × ℤ) = 0."
+      },
+      {
+       "name": "SL2_amalgam",
+       "kind": "compatibility",
+       "statement": "χ(ℤ/4 ∗_{ℤ/2} ℤ/6) = χ_ℚ(K)/12 = −1/12 for the free kernel of rank 2, agreeing with 8.7."
+      }
+     ]
+    },
+    {
+     "id": "8.5",
+     "kind": "theorem",
+     "name": "Group.eulerChar_twisted",
+     "statement": "For G of type FP over ℤ, a field K and a finite-dimensional KG-module V, Σ (−1)^i dim_K H^i(G, V) = χ(G) dim_K V; for Γ' ◁ G of finite index the virtual G/Γ'-character on H*(Γ', V) is χ(G) dim_K V times the regular character.",
+     "hypotheses": [
+      "G : Type",
+      "type FP over ℤ",
+      "[Field K]",
+      "[FiniteDimensional K V]"
+     ],
+     "locator": {
+      "source": "Brown1974",
+      "where": "§4, Theorem 4 and Corollary 1, lines 425-451"
+     },
+     "prerequisites": [
+      "target:7.5",
+      "target:8.3",
+      "target:8.4",
+      "target:1.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "Z_twisted",
+       "kind": "computation",
+       "statement": "G = ℤ, t ↦ λ: sum 0 = χ(ℤ) for every λ."
+      },
+      {
+       "name": "F2",
+       "kind": "computation",
+       "statement": "G = F_2, trivial K: 1 − 2 = −1."
+      },
+      {
+       "name": "needs_FP",
+       "kind": "non-example",
+       "statement": "G = ℤ/2, V = ℚ: sum 1 ≠ 1/2."
+      }
+     ]
+    },
+    {
+     "id": "8.6",
+     "kind": "theorem",
+     "name": "Group.eulerChar_extension",
+     "statement": "If N ◁ G, N and G ⧸ N are virtually of type FP and G is virtually torsion-free, then G is virtually of type FP and χ(G) = χ(N) χ(G ⧸ N); the Euler identity of the Hochschild–Serre spectral sequence with ℚ coefficients is imported from SpectralSequencesAndConvergence §5.3.",
+     "hypotheses": [
+      "[N.Normal]",
+      "G virtually torsion-free",
+      "N, G ⧸ N virtually of type FP"
+     ],
+     "locator": {
+      "source": "Brown1974",
+      "where": "§4, Corollary 2, lines 452-463"
+     },
+     "prerequisites": [
+      "target:8.4",
+      "target:8.5",
+      "target:4.4",
+      "target:2.4",
+      "roadmap:CohomologyOfGroups §6.1",
+      "roadmap:CohomologyOfGroups §6.2",
+      "roadmap:SpectralSequencesAndConvergence §5.3"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "Z2_times_Z",
+       "kind": "computation",
+       "statement": "χ(ℤ/2 × ℤ) = (1/2) · 0 = 0."
+      },
+      {
+       "name": "F2_times_F3",
+       "kind": "computation",
+       "statement": "χ(F_2 × F_3) = (−1)(−2) = 2; with N = F_3 the E₂ total-degree dimensions are 1, 5, 6 and the supplied Euler identity gives 1 − 5 + 6 = 2."
+      },
+      {
+       "name": "klein",
+       "kind": "computation",
+       "statement": "Klein bottle group: 0 · 0 = 0."
+      }
+     ]
+    },
+    {
+     "id": "8.7",
+     "kind": "theorem",
+     "name": "Group.eulerChar_eq_sum_of_resolution",
+     "statement": "If G has finite homological type and C is a finite-length resolution of ℤ over ℤG with C_p ≅ ⊕_{σ ∈ Σ_p} Ind_{G_σ}^G(ℤ_σ), Σ_p finite, ℤ_σ from characters G_σ → {±1}, each G_σ of finite homological type, then χ(G) = Σ_p (−1)^p Σ_σ χ(G_σ); in particular for a simplicial action on an acyclic simplicial complex finite modulo G; χ(A ∗_C B) = χ(A) + χ(B) − χ(C) and χ(HNNExtension H A B φ) = χ(H) − χ(A) under finite homological type.",
+     "hypotheses": [
+      "G : Type",
+      "finite homological type of G and of every G_σ"
+     ],
+     "locator": {
+      "source": "Brown1974",
+      "where": "§5, lines 464-479; Proposition 2(i) line 509; Proposition 4 lines 558-582; Serre1971Prospects n°1.8 Proposition 14(b)"
+     },
+     "prerequisites": [
+      "target:8.4",
+      "target:4.4",
+      "roadmap:CohomologyOfGroups §2.3",
+      "roadmap:CohomologyOfGroups §3.2",
+      "roadmap:CohomologyOfGroups §3.4",
+      "roadmap:SpectralSequencesAndConvergence §3.4",
+      "roadmap:SpectralSequencesAndConvergence §5.3",
+      "roadmap:FreeGroupsAndLimitGroups §4.5",
+      "roadmap:FreeGroupsAndLimitGroups §4.7"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "SL2_amalgam",
+       "kind": "computation",
+       "statement": "χ(ℤ/4 ∗_{ℤ/2} ℤ/6) = 1/4 + 1/6 − 1/2 = −1/12; the reversed sign gives 11/12, impossible."
+      },
+      {
+       "name": "PSL2_amalgam",
+       "kind": "compatibility",
+       "statement": "χ(ℤ/2 ∗ ℤ/3) = −1/6, the orbifold value of FuchsianOrbifolds Layer 5 item 6 for PSL(2, ℤ)."
+      },
+      {
+       "name": "free_and_BS",
+       "kind": "computation",
+       "statement": "F_r on its Cayley tree: 1 − r; BS(1,2): 0 − 0 = 0."
+      }
+     ]
+    },
+    {
+     "id": "8.8",
+     "kind": "theorem",
+     "name": "SSet.smith_floyd",
+     "statement": "For a finite group G acting simplicially on a finite-dimensional simplicial set X, with chains the normalized chains SSet.normalizedChainComplex (N(X^H) spanned by the H-fixed nondegenerate simplices, N(X/H) the H-coinvariants of N(X)): (a) G = ℤ/p, Σ dim H_i(X; 𝔽_p) < ∞ ⇒ X^G, X/G have finite total mod-p homology, Σ_{i≥n} dim H_i(X^G) ≤ Σ_{i≥n} dim H_i(X) for every n, and χ_p(X) + (p − 1)χ_p(X^G) = pχ_p(X/G); (b) G a finite p-group and Σ dim H_i(X; 𝔽_p) < ∞ ⇒ every X^H, H ≤ G, has finite total mod-p homology; (c) G a p-group, C a finite-dimensional complex of projective 𝔽_p[G]-modules with finite total homology ⇒ χ(C) = |G| χ(C_G); (d) H_*(X; ℤ) finitely generated and d ≥ 1 dividing the cardinality of every orbit of nondegenerate simplices ⇒ d ∣ χ(X).",
+     "hypotheses": [
+      "G : Type, [Group G] [Finite G]",
+      "X : SSet with a G-action by simplicial automorphisms",
+      "SSet.HasDimensionLE X N for some N",
+      "p prime",
+      "Σ_i dim H_i(X; 𝔽_p) < ∞ for (a) and (b)",
+      "G = ℤ/p for (a); G a finite p-group for (b) and (c)",
+      "H_*(X; ℤ) finitely generated and d ≥ 1 for (d)"
+     ],
+     "locator": {
+      "source": "Floyd1952",
+      "where": "Theorems 2.3-2.4, lines 110-176; facts (3.4)-(3.6), lines 261-267; Theorem 4.2, lines 292-330; Theorem 4.4, lines 333-348; Brown1974 §2 Theorem 2′ and Corollary, lines 243-260, proof lines 261-333 (Theorem 1 applied to the normalized chain complex, line 302); Theorem 1′, lines 174-185"
+     },
+     "prerequisites": [
+      "target:8.1",
+      "mathlib:SSet",
+      "mathlib:SSet.homology",
+      "mathlib:SSet.normalizedChainComplex",
+      "mathlib:SSet.homotopyEquivNormalizedChainComplex",
+      "mathlib:SSet.normalizedChainComplexMap",
+      "mathlib:SSet.isZero_normalizedChainComplex_X_of_hasDimensionLT",
+      "mathlib:SSet.isZero_homology_of_hasDimensionLT",
+      "mathlib:Sylow"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "floyd_reflection",
+       "kind": "computation",
+       "statement": "Circle with edges v₀→v₁, v₂→v₁, v₀→v₃, v₂→v₃, ℤ/2 swapping v₁, v₃: X^G = {v₀, v₂} (χ = 2), X/G a path (χ = 1), 0 + 1·2 = 2·1; without the fixed-point term 0 = 2."
+      },
+      {
+       "name": "free_rotation_and_interval",
+       "kind": "computation",
+       "statement": "Same circle, v₀ ↔ v₂, v₁ ↔ v₃: free, X/G a circle, 0 + 0 = 2·0, 2 ∣ χ = 0; subdivided interval with v₀ ↔ v₁: χ = 1, the fixed vertex c has orbit size 1, X^G = {c} has the homology of a point."
+      },
+      {
+       "name": "infinite_dimensional",
+       "kind": "non-example",
+       "statement": "ℤ/2 acts freely on the contractible E(ℤ/2) (all orbits of size 2) while χ = 1: finite dimension is used."
+      },
+      {
+       "name": "normalized_point",
+       "kind": "non-example",
+       "statement": "X = Δ[0]: SSet.chainComplex is ℤ in every degree with d₁ = 0, d₂ = id; the normalized chains are ℤ in degree 0 and 0 above; both give H₀ = ℤ, H_{>0} = 0; only the normalized complex has finite length."
+      },
+      {
+       "name": "infinite_discrete",
+       "kind": "non-example",
+       "statement": "ℤ/2 acting trivially on the discrete simplicial set ℕ (dimension 0): H₀(X^G; 𝔽₂) = 𝔽₂^(ℕ) is infinite; excluded from (b) since H₀(X; 𝔽₂) is infinite; a point has totals 1 and 1, the circle reflection 2 and 2."
+      }
+     ]
+    },
+    {
+     "id": "8.9",
+     "kind": "theorem",
+     "name": "Group.lcm_mul_eulerChar_isInt",
+     "statement": "If G has finite homological type and m is the least common multiple of the orders of the finite subgroups of G (which divide [G : Γ'] for a torsion-free normal Γ' of finite index), then m · χ(G) ∈ ℤ; equivalently every prime power dividing the denominator of χ(G) is the order of a subgroup of G. For an action on an acyclic complex with finitely many orbits and finite stabilizers, 8.7 gives χ(G) = Σ (−1)^{dim σ}/|G_σ|.",
+     "hypotheses": [
+      "G : Type, [Group G]",
+      "G of finite homological type (4.4)"
+     ],
+     "locator": {
+      "source": "Brown1974",
+      "where": "§6, Corollary 1 of Theorem 5, lines 603-610 (empty family); proof of Theorem 5, lines 652-673; Serre1971Prospects n°1.8 Proposition 13, cited at lines 611-614"
+     },
+     "prerequisites": [
+      "target:8.8",
+      "target:8.4",
+      "target:5.4",
+      "target:4.1",
+      "target:4.4",
+      "mathlib:groupHomologyIsoTor",
+      "mathlib:Sylow"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "SL2_amalgam",
+       "kind": "computation",
+       "statement": "ℤ/4 ∗_{ℤ/2} ℤ/6: finite subgroup orders 1, 2, 3, 4, 6, m = 12, 12 · (−1/12) = −1; subgroups of orders 4 and 3; the largest order 6 would give −1/2 ∉ ℤ."
+      },
+      {
+       "name": "Z2_free_Z3",
+       "kind": "computation",
+       "statement": "ℤ/2 ∗ ℤ/3: m = 6, 6 · (−1/6) = −1; 3 · (−1/6) = −1/2."
+      },
+      {
+       "name": "finite_and_Z2_times_Z",
+       "kind": "degenerate",
+       "statement": "G finite: m = |G|, |G| · 1/|G| = 1; ℤ/2 × ℤ: m = 2, 2 · 0 = 0."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "9",
+   "title": "Complete resolutions and Farrell cohomology",
+   "targets": [
+    {
+     "id": "9.1",
+     "kind": "theorem",
+     "name": "Rep.isGorensteinProjective_of_projective_res",
+     "statement": "For H ≤ G of finite index, every M : Rep R G whose restriction to H is projective is Gorenstein projective in Rep R G.",
+     "hypotheses": [
+      "[H.FiniteIndex]",
+      "Projective (Rep.res H.subtype M)"
+     ],
+     "locator": {
+      "source": "BrownGTM87",
+      "where": "§X.2; Farrell1977"
+     },
+     "prerequisites": [
+      "tauceti:CochainComplex.isTotallyAcyclicProjective_splice",
+      "tauceti:CategoryTheory.isGorensteinProjective",
+      "mathlib:groupCohomology.coindIso",
+      "mathlib:Rep.equivalenceModuleMonoidAlgebra"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "finite_field",
+       "kind": "computation",
+       "statement": "G finite, H = 1, R a field: every RG-module is Gorenstein projective."
+      },
+      {
+       "name": "H_eq_G",
+       "kind": "degenerate",
+       "statement": "H = G: CategoryTheory.isGorensteinProjective_of_projective."
+      },
+      {
+       "name": "integers",
+       "kind": "non-example",
+       "statement": "G = ℤ, R ≠ 0: the trivial R has projective dimension 1 and is not Gorenstein projective (CategoryTheory.isGorensteinProjective.ext_eq_zero); over the zero ring it is 0, projective."
+      }
+     ]
+    },
+    {
+     "id": "9.2",
+     "kind": "definition",
+     "name": "Group.CompleteResolution",
+     "statement": "A complete resolution of R over RG: a ℤ-indexed totally acyclic complex of projectives F with a projective resolution P → R and a chain map F → P that is an isomorphism in degrees ≥ d. If some finite-index H has cd_R H ≤ n, one exists with d = n, and any two are homotopy equivalent compatibly with their maps to P up to homotopy.",
+     "hypotheses": [
+      "H : Subgroup G",
+      "[H.FiniteIndex]",
+      "cd_R H ≤ n"
+     ],
+     "locator": {
+      "source": "Farrell1977",
+      "where": "complete resolutions; BrownGTM87 §X.2"
+     },
+     "prerequisites": [
+      "target:9.1",
+      "target:2.1",
+      "tauceti:CochainComplex.IsTotallyAcyclicProjective",
+      "tauceti:CategoryTheory.GorensteinProjective.exactStructure_isFrobenius",
+      "tauceti:TauCeti.ExactStructure.CompleteResolution.homotopyEquiv",
+      "tauceti:TauCeti.ExactStructure.CompleteResolution.nonempty_homotopy_zero_iff"
+     ],
+     "api": [
+      {
+       "name": "exists",
+       "role": "constructor",
+       "statement": "Existence with d = n."
+      },
+      {
+       "name": "homotopyEquiv",
+       "role": "universal",
+       "statement": "Uniqueness up to homotopy equivalence over P."
+      },
+      {
+       "name": "res",
+       "role": "functoriality",
+       "statement": "Restriction to a finite-index subgroup is a complete resolution."
+      },
+      {
+       "name": "mono_degree",
+       "role": "structure",
+       "statement": "Agreement above d implies agreement above every d' ≥ d."
+      }
+     ],
+     "tests": [
+      {
+       "name": "Z2_periodic",
+       "kind": "computation",
+       "statement": "G = ℤ/2: ⋯ → ℤG →(1−s) ℤG →(1+s) ℤG →(1−s) ⋯ is a complete resolution."
+      },
+      {
+       "name": "finite_cd",
+       "kind": "degenerate",
+       "statement": "cd_R G < ⊤: every complete resolution is contractible."
+      },
+      {
+       "name": "trivial_group",
+       "kind": "degenerate",
+       "statement": "G = 1, n = 0: F contractible."
+      }
+     ]
+    },
+    {
+     "id": "9.3",
+     "kind": "definition",
+     "name": "Group.farrellCohomology",
+     "statement": "Ĥ^k(G, M) = H^k(Hom_{RG}(F, M)) for k ∈ ℤ: independent of F up to canonical isomorphism, functorial in M, long exact sequences, vanishing on projectives, restriction to finite-index subgroups.",
+     "hypotheses": [
+      "as in 9.2",
+      "k : ℤ",
+      "M : Rep R G"
+     ],
+     "locator": {
+      "source": "Farrell1977",
+      "where": "the extended cohomology; BrownGTM87 §X.3"
+     },
+     "prerequisites": [
+      "target:9.2"
+     ],
+     "api": [
+      {
+       "name": "functor",
+       "role": "functoriality",
+       "statement": "Ĥ^k(G, −) : Rep R G ⥤ ModuleCat R additive, natural connecting maps."
+      },
+      {
+       "name": "dimensionShift",
+       "role": "structure",
+       "statement": "Ĥ^k(G, M) ≅ Ĥ^{k+1}(G, M') for 0 → M' → Q → M → 0 with Q projective."
+      },
+      {
+       "name": "res",
+       "role": "functoriality",
+       "statement": "Restriction to finite-index subgroups compatible with the long exact sequences."
+      }
+     ],
+     "tests": [
+      {
+       "name": "Z2_Z",
+       "kind": "computation",
+       "statement": "G = ℤ/2, M = ℤ: Ĥ⁰ = ℤ/2, Ĥ⁻¹ = 0, Ĥ¹ = 0, Ĥ² = ℤ/2; the shifted model gives Ĥ⁰ = 0."
+      },
+      {
+       "name": "projective_coeff",
+       "kind": "degenerate",
+       "statement": "M = RG: Ĥ* = 0."
+      },
+      {
+       "name": "integers",
+       "kind": "degenerate",
+       "statement": "G = ℤ: Ĥ* = 0."
+      }
+     ]
+    },
+    {
+     "id": "9.4",
+     "kind": "theorem",
+     "name": "Group.farrellCohomology_comparison",
+     "statement": "H^k(G, M) → Ĥ^k(G, M) is an isomorphism for k > n and surjective for k = n, naturally and compatibly with long exact sequences; Ĥ*(G, −) = 0 iff cd_R G < ⊤; over ℤ Farrell cohomology vanishes for torsion-free groups of finite vcd.",
+     "hypotheses": [
+      "as in 9.2"
+     ],
+     "locator": {
+      "source": "Farrell1977",
+      "where": "comparison with ordinary cohomology; BrownGTM87 §X.3"
+     },
+     "prerequisites": [
+      "target:9.2",
+      "target:9.3",
+      "target:2.1",
+      "target:3.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "Z2_times_Z",
+       "kind": "computation",
+       "statement": "Ĥ^k(ℤ/2 × ℤ, ℤ) = ℤ/2 for k ≥ 2 from the HNN sequence of CohomologyOfGroups §3.6."
+      },
+      {
+       "name": "SL2_amalgam",
+       "kind": "computation",
+       "statement": "Ĥ^k(ℤ/4 ∗_{ℤ/2} ℤ/6, ℤ) = ℤ/12 for even k ≥ 2, 0 for odd k ≥ 3."
+      },
+      {
+       "name": "not_injective_at_n",
+       "kind": "non-example",
+       "statement": "G = ℤ/2, n = 0: ℤ = H⁰ → Ĥ⁰ = ℤ/2 is onto, not injective."
+      }
+     ]
+    },
+    {
+     "id": "9.5",
+     "kind": "theorem",
+     "name": "Group.farrellCohomologyIsoTate",
+     "statement": "For G finite, Ĥ^k(G, M) ≅ tateCohomology M k for all k ∈ ℤ, naturally, compatibly with long exact sequences and with the identifications with H^k for k ≥ 1.",
+     "hypotheses": [
+      "[Finite G]"
+     ],
+     "locator": {
+      "source": "BrownGTM87",
+      "where": "§VI.3; Farrell1977"
+     },
+     "prerequisites": [
+      "target:9.2",
+      "target:9.3",
+      "target:9.4",
+      "mathlib:tateCohomology",
+      "mathlib:TateCohomology.isoGroupCohomology"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "Z2",
+       "kind": "computation",
+       "statement": "G = ℤ/2, M = ℤ: ℤ/2, 0, ℤ/2, 0 in degrees 0, 1, 2, −1 on both sides."
+      },
+      {
+       "name": "trivial_group",
+       "kind": "degenerate",
+       "statement": "G = 1: both sides vanish."
+      },
+      {
+       "name": "induced",
+       "kind": "degenerate",
+       "statement": "M = RG: both sides vanish."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "CohomologyOfGroups",
+   "sections": [
+    "§1.2",
+    "§1.4",
+    "§1.5",
+    "§2.3",
+    "§3.2",
+    "§3.4",
+    "§3.5",
+    "§3.6",
+    "§4.6",
+    "§5.2",
+    "§6.1",
+    "§6.2",
+    "§6.3"
+   ],
+   "what": "Quotient actions, permutation modules and Shapiro for G-sets, continuous versus discrete cohomology, the two spectral sequences of a complex with degreewise finite filtrations, the orbit spectral sequence of monomial complexes, the exact (split over k, not equivariantly) tree sequence, the amalgam, HNN and free-group sequences, the cap product, universal coefficients (Checks), and the Hochschild–Serre spectral sequences, realised on a filtration of the normalized cochains finite in each degree, with convergence."
+  },
+  {
+   "roadmap": "SpectralSequencesAndConvergence",
+   "sections": [
+    "§3.4",
+    "§5.3"
+   ],
+   "what": "The Euler identity of a spectral sequence converging in every degree with finite filtrations and finitely many nonzero terms of a page in a weak Serre class (§3.4), and its form for the spectral sequence of a complex with a filtration finite in each degree (§5.3); used with finite-dimensional ℚ-vector spaces and dimension in 8.6 and 8.7."
+  },
+  {
+   "roadmap": "FreeGroupsAndLimitGroups",
+   "sections": [
+    "§4.5",
+    "§4.7",
+    "§4.8",
+    "§4.9"
+   ],
+   "what": "One-edge splittings as Mathlib's amalgams and HNN extensions, the Bass–Serre tree, free actions give free groups, finite groups fix a vertex."
+  },
+  {
+   "roadmap": "SchemeKTheoryOperations",
+   "sections": [
+    "§6.7"
+   ],
+   "what": "Homology of a directed union of subgroups is the colimit, over any commutative ring."
+  },
+  {
+   "roadmap": "EtaleCohomologyFoundations",
+   "sections": [
+    "§F.10.3"
+   ],
+   "what": "Hattori–Stallings trace of finite projective modules over any ring with additivity and scalar extension."
+  },
+  {
+   "roadmap": "ClassifyingSpaces",
+   "sections": [
+    "Stage 2 item 10",
+    "Stage 4 item 16",
+    "Stage 4 item 17"
+   ],
+   "what": "K(G,1) CW complexes for every group, cellular chains of the universal cover as a free resolution, (co)homology with local coefficients as group (co)homology."
+  },
+  {
+   "roadmap": "AlgebraicTopology",
+   "sections": [
+    "§4.7",
+    "§6.3",
+    "§6.4",
+    "§8.1",
+    "§8.3",
+    "§8.5",
+    "§8.7",
+    "§8.11a"
+   ],
+   "what": "Realization CW structure of simplicial sets, orientation local system, twisted Poincaré duality of compact Hausdorff manifolds, cellular connectivity, absolute Hurewicz in every universe, Whitehead's theorem, finite CW type of compact Hausdorff second-countable smooth manifolds, simplicial replacement of CW complexes."
+  }
+ ],
+ "consumers": [
+  {
+   "roadmap": "MotivicStructuresInModuliOfCurves",
+   "what": "vcd and its independence of the subgroup (4.1) and vanishing of rational cohomology above vcd (4.3) for mapping class groups (TC.1)."
+  },
+  {
+   "roadmap": "PosetHomotopyAndSubgroupComplexes",
+   "what": "vcd, finite homological type and Euler characteristics (Layers 4 and 8)."
+  }
+ ],
+ "gaps": [
+  {
+   "slug": "simplicial-replacement-dimension",
+   "supplier": "AlgebraicTopology",
+   "section": "§8.11a",
+   "needs": "The abstract simplicial complex replacing a CW complex of dimension at most N up to homotopy equivalence can be chosen of dimension at most N, as the skeletal construction (Hatcher Theorem 2C.5) gives.",
+   "neededBy": [
+    "5.4"
+   ]
+  }
+ ]
+}

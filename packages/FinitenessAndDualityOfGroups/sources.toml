@@ -2,18 +2,6 @@ schema = "tauceti-roadmap-sources/v1"
 roadmap = "FinitenessAndDualityOfGroups"
 
 [[source]]
-id = "Bieri1981"
-authors = "R. Bieri"
-title = "Homological Dimension of Discrete Groups (Queen Mary College Mathematics Notes, 2nd ed.)"
-year = 1981
-locator_scheme = "section"
-locator = "sections on duality groups over a commutative ring, on amalgamated products, and on countable groups (numbers to be read)"
-licence_class = "none"
-status = "waived"
-resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/14492#issuecomment-6873289060"
-cited_for = ["Final targets 1.4(c), 2.2, 2.3, 5.1, 5.3, 5.5 (forms over a commutative ring R)"]
-
-[[source]]
 id = "Serre1971Bourbaki"
 authors = "J.-P. Serre"
 title = "Cohomologie des groupes discrets (Séminaire Bourbaki, exposé 399)"
@@ -28,7 +16,7 @@ sha256 = "35db73823aac5fd9e00c358b1c7a6c61c1c0e1c87b97f164ad4bf21f81e2f80f"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-14"
-cited_for = ["Final targets 2.1", "Final targets 3.2", "Final targets 4.1", "Final targets 5.6", "Final targets 6.4", "Final targets 6.8"]
+cited_for = ["2.1", "2.8", "4.1", "5.2", "6.6", "8.4", "Layer 8 Examples"]
 
 [[source]]
 id = "BieriEckmann1973"
@@ -37,7 +25,7 @@ title = "Groups with homological duality generalizing Poincaré duality"
 year = 1973
 venue = "Inventiones Mathematicae 20 (1973)"
 locator_scheme = "theorem"
-locator = "Definition 1.1; Theorems 2.3, 3.2, 3.3, 3.5, 4.5, 4.6; Corollary 4.3"
+locator = "Definition 1.1; Theorems 2.3, 3.2, 3.3, 3.5, 4.5, 4.6; Corollary 4.3; Proposition 5.1"
 url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0020/LOG_0015.pdf"
 fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0020/LOG_0015.pdf"
 fetched_at = "2026-11-14T07:05:15Z"
@@ -45,7 +33,7 @@ sha256 = "ca2ee8fd4a803359e5e16cb38172473c3369e442ef0a6f5bf05bde00f05369a6"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-14"
-cited_for = ["Final targets 2.2", "Final targets 2.5", "Final targets 5.1-5.5"]
+cited_for = ["1.2", "1.4", "1.8", "2.1", "2.2", "2.3", "2.4", "2.7", "3.2", "6.1", "6.2", "6.3", "6.4", "6.5"]
 
 [[source]]
 id = "BieriEckmann1974"
@@ -62,7 +50,7 @@ sha256 = "735e3f5f7de47022817963f75b47486f1767cce4b91ffcf2d89804f90c175a5c"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-14"
-cited_for = ["Final targets 1.2-1.4", "Final targets 2.2", "Final targets 5.2", "Final targets 5.4"]
+cited_for = ["1.2", "1.4", "1.5", "1.7", "2.4", "3.2", "6.2", "6.4", "6.6"]
 
 [[source]]
 id = "Brown1974"
@@ -71,7 +59,7 @@ title = "Euler characteristics of discrete groups and G-spaces"
 year = 1974
 venue = "Inventiones Mathematicae 27 (1974)"
 locator_scheme = "theorem"
-locator = "§1 Theorem 1 and Swan's theorem; §3 Definition and Proposition 1; §4 Theorem 3, Corollaries 1 and 2; §5 Proposition 2; §6 Theorem 5 and Corollary 1; Appendix A Theorem 7"
+locator = "introduction, lines 82-83 (the naive Euler characteristic, the rational one of §4); §1 Theorem 1, Theorem 1′ and Swan's theorem; §2 Theorem 2′ and its Corollary with proofs (lines 243-333, normalized chain complex at line 302); §3 Definition and Proposition 1; §4 Theorem 3, Corollaries 1 and 2; §5 Proposition 2; §6 Theorem 5, Corollary 1 and the Lemma (Serre's construction, lines 637-651); Appendix A Theorem 7"
 url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0027/LOG_0027.pdf"
 fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0027/LOG_0027.pdf"
 fetched_at = "2026-11-14T07:18:46Z"
@@ -79,7 +67,7 @@ sha256 = "775a0e7a65446f211d49ea405915206c7c86619c066583d55d3aaf5bf9baa64b"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-14"
-cited_for = ["Final targets 2.4", "Final targets 2.5", "Final targets 4.1", "Final targets 4.2", "Final targets 6.2-6.7"]
+cited_for = ["1.2", "1.4", "2.1", "2.7", "3.1", "3.2", "4.1", "4.4", "5.4", "7.3", "7.4", "7.5", "8.1", "8.2", "8.3", "8.4", "8.5", "8.6", "8.7", "8.8", "8.9"]
 
 [[source]]
 id = "Brown1975"
@@ -96,7 +84,7 @@ sha256 = "c972d568b5e73dfacfc1618b992f2f9efd994b300425064c942abc3cdb362594"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-14"
-cited_for = ["Final targets 1.3", "Final targets 5.2"]
+cited_for = ["1.1", "1.5", "5.2", "6.1", "6.2"]
 
 [[source]]
 id = "BrownGTM87"
@@ -111,7 +99,7 @@ url = "https://doi.org/10.1007/978-1-4684-9327-6"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Final targets 1-7 (coverage checklist)"]
+cited_for = ["1.2", "1.3", "1.6", "1.7", "2.3", "2.5", "2.6", "3.1", "3.2", "4.2", "4.3", "5.1", "5.2", "5.3", "7.1", "7.2", "8.3", "9.1", "9.2", "9.3", "9.4", "9.5"]
 
 [[source]]
 id = "Farrell1977"
@@ -126,7 +114,7 @@ url = "https://doi.org/10.1016/0022-4049(77)90018-4"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Final targets 7.1-7.3"]
+cited_for = ["9.1", "9.2", "9.3", "9.4", "9.5"]
 
 [[source]]
 id = "EilenbergGanea1957"
@@ -141,7 +129,7 @@ url = "https://doi.org/10.2307/1970062"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (the DOI resolves to JSTOR); cited by its locator without the text. The sources service filed it as missing because JSTOR is on none of its host lists; the target filed it to be cited by locator."
-cited_for = ["Final targets 3.3"]
+cited_for = ["5.3"]
 
 [[source]]
 id = "Wall1961"
@@ -156,7 +144,7 @@ url = "https://doi.org/10.1017/s030500410003499x"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (the DOI resolves to an abstract page on Cambridge Core); cited by its locator without the text. The sources service filed it as missing because cambridge.org is on none of its host lists; the target filed it to be cited by locator."
-cited_for = ["Final targets 6.4"]
+cited_for = ["8.4"]
 
 [[source]]
 id = "Serre1971Prospects"
@@ -165,8 +153,26 @@ title = "Cohomologie des groupes discrets (Prospects in Mathematics, Annals of M
 year = 1971
 venue = "Prospects in Mathematics, Ann. of Math. Studies 70, Princeton University Press (1971)"
 locator_scheme = "section"
-locator = "n°1.7, Théorème 1; n°1.8, Propositions 13 and 14(b) (as cited at Brown1974 lines 354, 402, 474 and 612)"
+locator = "n°1.7, Théorème 1 and the multiplicative induction; n°1.8, Propositions 13 and 14(b) (as cited at Brown1974 lines 354, 402, 474, 612 and 646-647)"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled book chapter; cited by its locator without the text. The sources service found no legal copy; the target filed it to be cited by locator, and Brown1974 reports the cited statements."
-cited_for = ["Final targets 2.5", "Final targets 6.4", "Final targets 6.6"]
+cited_for = ["3.1", "3.2", "5.4", "8.4", "8.7", "8.9"]
+
+[[source]]
+id = "Floyd1952"
+authors = "E. E. Floyd"
+title = "On periodic maps and the Euler characteristics of associated spaces"
+year = 1952
+venue = "Transactions of the American Mathematical Society 72 (1952), 138-147"
+doi = "10.1090/S0002-9947-1952-0046039-4"
+locator_scheme = "theorem"
+locator = "Theorems 2.3-2.4 (Smith sequences (A), (B), lines 110-176); facts (3.4)-(3.6) (lines 261-267); Theorem 4.2 (lines 292-330); Theorem 4.4 (lines 333-348)"
+url = "https://www.ams.org/journals/tran/1952-072-01/S0002-9947-1952-0046039-4/S0002-9947-1952-0046039-4.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1952-072-01/S0002-9947-1952-0046039-4/S0002-9947-1952-0046039-4.pdf"
+fetched_at = "2026-11-14T09:39:29Z"
+sha256 = "41af468bf1f677c64fc661f40c260430b6d09a30e65c73744d13ca6a34f8ff7e"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-14"
+cited_for = ["8.8"]
