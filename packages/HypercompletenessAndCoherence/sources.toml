@@ -1,0 +1,28 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HypercompletenessAndCoherence"
+
+[[source]]
+id = "HTT"
+locator_scheme = "theorem"
+locator = "Proposition 6.5.2.8"
+url = "https://www.math.ias.edu/~lurie/papers/HTT.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/HTT.pdf"
+fetched_at = "2026-11-14T11:09:15Z"
+sha256 = "58855f3a0ad6d9c470ded74a38938b9468927592e9ae1209bab6a068e67ede6e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-14"
+cited_for = ["1.2"]
+
+[[source]]
+id = "SAG"
+locator_scheme = "theorem"
+locator = "Theorem A.4.0.5"
+url = "https://www.math.ias.edu/~lurie/papers/SAG-rootfile.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/SAG-rootfile.pdf"
+fetched_at = "2026-11-14T11:10:07Z"
+sha256 = "515109098ae5cd73bf266fa97bf498b4e8c7adb6e936be67e6fa9a86bb69020d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-14"
+cited_for = ["1.2"]
