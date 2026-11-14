@@ -2,7 +2,7 @@
  "roadmap": "DynamicalDegreesOfRationalMaps",
  "title": "Dynamical degrees of rational maps",
  "parent": null,
- "summary": "Graphs and topological degrees of dominant rational maps between projective varieties over an arbitrary field; Euler-characteristic intersection numbers; imported nefness and Kleiman nonnegativity read in these numbers, and the positivity package over an arbitrary field (Siu, Hodge inequality on possibly singular surfaces, Khovanskii-Teissier, Siu for products); degrees deg_k(f; L, M) with model independence, positivity, normalization and field-extension invariance, sub-multiplicativity and comparison; dynamical degrees, log-concavity, birational and field-extension invariance, algebraic entropy; projective-space and affine-space examples (forms, morphisms, Cremona, Fibonacci, Frobenius, polynomial maps).",
+ "summary": "Graphs and topological degrees of dominant rational maps between projective varieties over an arbitrary field; Euler-characteristic intersection numbers; imported nefness (line bundles and the full nef cone of N^1(X/K)) and Kleiman nonnegativity read in these numbers, approximation of nef real classes by ample line bundles, and the positivity package over an arbitrary field (Siu, Hodge inequality on possibly singular surfaces, Khovanskii-Teissier, Siu for products); degrees deg_k(f; L, M) with model independence, positivity, normalization and field-extension invariance, sub-multiplicativity and comparison; dynamical degrees, log-concavity, birational and field-extension invariance, algebraic entropy; projective-space and affine-space examples (forms, morphisms, Cremona, Fibonacci, Frobenius, polynomial maps).",
  "baseline": {
   "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
   "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
@@ -270,7 +270,7 @@
      "statement": "Normalization: for ν : X̃ -> X and f̃ = ν^{-1}∘f∘ν, ν×ν maps Γ_{f̃} properly and birationally onto Γ_f, and (f^n)~ = f̃^n. Field extension: (Γ_f)_{K'} is the scheme-theoretic image of γ_f ×_K K'; for X, Y geometrically integral, f_{K'} is dominant, e(f_{K'}) = e(f), (g∘f)_{K'} = g_{K'}∘f_{K'}, Γ_{f_{K'}} = (Γ_f)_{K'}. The degree equality is proved by cases: if dim X = dim Y, a basis of K(X) over f^*K(Y) of e(f) ≥ 1 elements stays a basis after ⊗_K K' and localization; if dim X > dim Y, K(X) is infinite-dimensional over f^*K(Y), no finite basis is used, and invariance of dimension gives e(f_{K'}) = 0 = e(f).",
      "hypotheses": [
       "X projective variety, f dominant self-map for the normalization part",
-      "K'/K any field extension",
+      "K'/K any field extension; Spec K' -> Spec K is flat, and γ_f is quasi-compact with Noetherian source, which is what flat base change of scheme-theoretic images needs",
       "X, Y geometrically integral for the statements on f_{K'}",
       "no equal-dimension hypothesis for e(f_{K'}) = e(f): the case dim X > dim Y is the junk value 0 on both sides"
      ],
@@ -282,6 +282,12 @@
       "mathlib:AlgebraicGeometry.Scheme.PartialIso",
       "mathlib:AlgebraicGeometry.Scheme.PartialIso.symm",
       "mathlib:AlgebraicGeometry.Scheme.Hom.image",
+      "mathlib:AlgebraicGeometry.IsSchemeTheoreticallyDominant.of_isPullback",
+      "mathlib:AlgebraicGeometry.Scheme.Hom.ker_comp",
+      "mathlib:AlgebraicGeometry.Scheme.IdealSheafData.map_bot",
+      "mathlib:AlgebraicGeometry.Scheme.IdealSheafData.ker_fst_of_isClosedImmersion",
+      "tauceti:AlgebraicGeometry.Scheme.Hom.isSchemeTheoreticallyDominant_toImage",
+      "roadmap:AlgebraicModuliForArithmeticGeometry §5.4",
       "target:1.1",
       "target:1.2",
       "roadmap:SchemeAndStackFoundations §0.7",
@@ -311,6 +317,11 @@
        "name": "real_complex_line",
        "kind": "non-example",
        "statement": "P^1_C over R: base change of Γ_id is two diagonals, not a graph of an integral rational map"
+      },
+      {
+       "name": "nonflat_image_control",
+       "kind": "non-example",
+       "statement": "G_m -> A^1 has scheme-theoretic image A^1; after the non-flat base change along the origin Spec K -> A^1 the source and its image are empty, while the inverse image of A^1 is Spec K; field extensions are flat, so §1.4 avoids this"
       },
       {
        "name": "cremona_Q_C",
@@ -418,7 +429,7 @@
      "id": "2.3",
      "kind": "construction",
      "name": "realIntersectionForm",
-     "statement": "The symmetric R-multilinear extension of (L_1,…,L_r) ↦ (L_1⋯L_r)_X to Pic(X) ⊗ R, with linear pullback; projection formula and field-extension invariance extend; nef real classes and real polarizations are defined.",
+     "statement": "The symmetric R-multilinear extension of (L_1,…,L_r) ↦ (L_1⋯L_r)_X to Pic(X) ⊗ R, with linear pullback; projection formula and field-extension invariance extend. A real class ω = Σ t_i L_i (real t_i of any sign) is nef if (ω·C) = Σ t_i (L_i·C) ≥ 0 for every integral closed curve C ⊆ X, equivalently if its image in N^1(X/K) (AlgebraicModuliForArithmeticGeometryPartII §1.1) lies in the nef cone Nef(X/K) (its §1.5); every class of Nef(X/K) comes from a nef real class; a real polarization is a nef real class with (ω^d) > 0.",
      "hypotheses": [
       "X proper over K of dimension ≤ r"
      ],
@@ -428,6 +439,8 @@
      },
      "prerequisites": [
       "roadmap:CyclotomicClassGroupsAndStickelberger §4.3",
+      "roadmap:AlgebraicModuliForArithmeticGeometryPartII §1.1",
+      "roadmap:AlgebraicModuliForArithmeticGeometryPartII §1.5",
       "tauceti:TauCeti.AlgebraicGeometry.LineBundleClass"
      ],
      "api": [
@@ -445,6 +458,11 @@
        "name": "realIntersectionForm_baseChange",
        "role": "compatibility",
        "statement": "invariant under extension of the field"
+      },
+      {
+       "name": "realClass_isNef_iff",
+       "role": "compatibility",
+       "statement": "a real class is nef iff its image in N^1(X/K) lies in Nef(X/K); the curve degree (ω·C) does not depend on the representation of ω"
       }
      ],
      "tests": [
@@ -456,12 +474,17 @@
       {
        "name": "negative_scaling",
        "kind": "degenerate",
-       "statement": "(-O(1)) on P^1 is -1, so negative coefficients leave the nef cone"
+       "statement": "(-O(1)) on P^1 is -1, so -O(1) is not nef"
       },
       {
        "name": "sum_of_nonbig",
        "kind": "computation",
        "statement": "O(1,0) + O(0,1) is a real polarization with square 2 though neither summand is big"
+      },
+      {
+       "name": "representation_independent",
+       "kind": "non-example",
+       "statement": "2·O(1,1) - O(1,0) on P^1×P^1 has a negative coefficient but is the class of O(1,2), degrees 2 and 1 on the rulings, nef and ample; a sign-of-coefficients definition would reject it"
       }
      ]
     },
@@ -519,9 +542,10 @@
      "id": "3.1",
      "kind": "theorem",
      "name": "isNef_iff_intersectionNumber_nonneg / isNef_baseChange_iff",
-     "statement": "Nefness is imported from AlgebraicModuliForArithmeticGeometryPartII §1.5 over the base Spec K (nonnegative degree on every integral curve of a proper K-scheme; sums, positive multiples, pullback, preservation under field extension), with ample implies nef from its §1.7. A nef real class here is a finite positive combination of nef line bundles, a restricted part of that nef cone. This section proves: L is nef iff (L·C) ≥ 0 for every integral closed curve, with the numerical intersection (the coefficient of n in χ(C, nL) is the degree χ(C,L) − χ(C,O_C)); on a projective variety this is ArakelovGeometryAndAbelianHeightsPartII §0.1's nefness; big and nef pulls back to big and nef along generically finite surjective maps of equal dimension with ((p^*L)^d) = deg(p)(L^d); for every projective K-scheme, L nef iff L_{K'} nef (forward direction imported, converse through §2.1 and field-extension compatibility); nefness passes to W of §2.4.",
+     "statement": "Nefness is imported from AlgebraicModuliForArithmeticGeometryPartII §1.5 over the base Spec K (nonnegative degree on every integral curve of a proper K-scheme; sums, positive multiples, pullback, preservation under field extension), with ample implies nef from its §1.7. Nef real classes are those of §2.3 (nonnegative degree on every integral curve, i.e. nef image in N^1(X/K)); they can be strictly more than the positive combinations of nef line bundles. This section proves: L is nef iff (L·C) ≥ 0 for every integral closed curve, with the numerical intersection (the coefficient of n in χ(C, nL) is the degree χ(C,L) − χ(C,O_C)); on a projective variety this is ArakelovGeometryAndAbelianHeightsPartII §0.1's nefness; big and nef pulls back to big and nef along generically finite surjective maps of equal dimension with ((p^*L)^d) = deg(p)(L^d); for every projective K-scheme, L nef iff L_{K'} nef (forward direction imported, converse through §2.1 and field-extension compatibility); nefness passes to W of §2.4; pullbacks of nef real classes along K-morphisms of proper K-schemes are nef, and real polarizations pull back along generically finite surjective maps of equal dimension with ((p^*ω)^d) = deg(p)(ω^d); ample approximation: on a proper K-scheme with an ample H, for nef real classes ω_j = Σ_{i=1}^n t_{ji} L_i, an integer m ≥ 1 with mH ± L_i ample, every rational δ > 0 and rationals t'_{ji} with |t'_{ji} - t_{ji}| ≤ δ/(2mn), Σ_i t'_{ji} L_i + δH = N^{-1}A_j with N ≥ 1 and A_j ample line bundles; hence an inequality P ≤ Q between polynomials in intersection numbers, homogeneous of the same degree in each class on both sides, that holds for ample line bundles holds for all nef real classes.",
      "hypotheses": [
-      "X projective (for the field-extension item) or proper over K"
+      "X projective (for the field-extension item) or proper over K",
+      "X with an ample line bundle H for the ample approximation"
      ],
      "locator": {
       "source": "cutkosky2015",
@@ -560,6 +584,16 @@
        "name": "isNef_reduction",
        "role": "compatibility",
        "statement": "nef on V implies nef pullback to W of §2.4 (pullback, independence of the base field K or K' by the field-tower degree scaling, field extension, closed immersion)"
+      },
+      {
+       "name": "realClass_isNef_pullback",
+       "role": "functoriality",
+       "statement": "the pullback of a nef real class along a K-morphism of proper K-schemes is nef ((p^*ω·C') = deg(C' -> p(C'))(ω·p(C')) or 0); real polarizations pull back to real polarizations along generically finite surjective maps of equal dimension"
+      },
+      {
+       "name": "realClass_ampleApprox",
+       "role": "approximation",
+       "statement": "X proper with ample H, nef real classes ω_j = Σ_{i≤n} t_{ji}L_i, m ≥ 1 with mH ± L_i ample: for rational δ > 0 and rational t'_{ji} within δ/(2mn) of t_{ji}, Σ_i t'_{ji}L_i + δH = N^{-1}A_j with A_j ample line bundles; homogeneous polynomial inequalities in intersection numbers pass from ample line bundles to nef real classes"
       }
      ],
      "tests": [
@@ -587,6 +621,21 @@
        "name": "not_nef",
        "kind": "non-example",
        "statement": "O(1,-1) has degree -1 on {p}×P^1"
+      },
+      {
+       "name": "irrational_boundary",
+       "kind": "non-example",
+       "statement": "E×E, E without CM, xF_1+yF_2+zΔ ↦ [[x+z,-z],[-z,y+z]], intersection = polarization of 2det: A = (1+√2)F_1+(2+√2)F_2-√2Δ ↦ [[1,√2],[√2,2]] is nef with A^2 = 0, A·(F_1+F_2) = 3, degrees 2, 1, 3+2√2 on F_1, F_2, Δ, and is no positive combination of nef line bundles (v = (-√2,1) kills every summand); A+F_1+F_2 = (2-√2)(2F_1+2F_2-Δ)+(√2-1)(3F_1+6F_2-2Δ)+F_1+(5-3√2)F_2 is; F_1-F_2 ↦ diag(1,-1) has degree -1 on F_1, not nef"
+      },
+      {
+       "name": "approximation_needs_ample_term",
+       "kind": "computation",
+       "statement": "E×E, H = F_1+F_2, m = 3 (2H-Δ ↦ [[1,1],[1,1]] is not ample), n = 3, δ = 1/5, tolerance 1/90: rounding A to (2.41, 3.41, -1.42) gives [[0.99,1.42],[1.42,1.99]], det -0.0463, not nef; adding δH gives [[1.19,1.42],[1.42,2.19]], det 0.5897, and N = 100 gives the ample 261F_1+361F_2-142Δ, det 5897"
+      },
+      {
+       "name": "homogeneity_needed",
+       "kind": "non-example",
+       "statement": "on P^2, (A^2) ≥ 1 holds for every ample O(a), a ≥ 1, but fails for the nef real class H/2, of square 1/4"
       }
      ]
     },
@@ -594,10 +643,10 @@
      "id": "3.2",
      "kind": "theorem",
      "name": "intersectionNumber_nonneg_of_isNef",
-     "statement": "X proper over K, Z ⊆ X closed of dimension r, D_1..D_r nef line bundles or nef real classes (positive combinations of nef line bundles): (D_1⋯D_r·Z) ≥ 0 for the numerical intersection. Kleiman's theorem on integral closed subschemes with Chow degrees, and ampleness of nef plus ample over every field, are imported from AlgebraicModuliForArithmeticGeometryPartII §1.7 (ii); this target adds nonintegral Z (through §2.1), the Euler-characteristic numbers (through §2.2) and positive real combinations (multilinear expansion).",
+     "statement": "X proper over K, Z ⊆ X closed of dimension r, D_1..D_r nef line bundles or nef real classes (§2.3, the full nef cone): (D_1⋯D_r·Z) ≥ 0 for the numerical intersection. Kleiman's theorem on integral closed subschemes with Chow degrees, and ampleness of nef plus ample over every field, are imported from AlgebraicModuliForArithmeticGeometryPartII §1.7 (ii); this target adds nonintegral Z (through §2.1), the Euler-characteristic numbers (through §2.2) and nef real classes (Chow's lemma to a projective modification, projection formula of degree one, ample approximation of §3.1 and positivity for ample line bundles).",
      "hypotheses": [
       "X proper over K",
-      "D_i nef line bundles or positive combinations of nef line bundles"
+      "D_i nef line bundles or nef real classes"
      ],
      "locator": {
       "source": "lazarsfeld2004",
@@ -607,8 +656,11 @@
       "target:2.1",
       "target:2.2",
       "target:2.3",
+      "target:3.1",
       "roadmap:AlgebraicModuliForArithmeticGeometryPartII §1.5",
-      "roadmap:AlgebraicModuliForArithmeticGeometryPartII §1.7"
+      "roadmap:AlgebraicModuliForArithmeticGeometryPartII §1.7",
+      "roadmap:CyclotomicClassGroupsAndStickelberger §4.3",
+      "roadmap:SchemeAndStackFoundations §4.12"
      ],
      "api": [],
      "tests": [
@@ -636,6 +688,11 @@
        "name": "blowup",
        "kind": "computation",
        "statement": "on Bl_p P^2: (π^*O(1)·E) = 0 ≥ 0; π^*O(3) - E ample"
+      },
+      {
+       "name": "irrational_nef",
+       "kind": "computation",
+       "statement": "E×E with the boundary class A of §3.1: (A^2) = 0 ≥ 0, (A·(F_1+F_2)) = 3 ≥ 0; F_1-F_2 has square -2 and is not nef"
       }
      ]
     },
@@ -643,10 +700,10 @@
      "id": "3.3",
      "kind": "theorem",
      "name": "siu_inequality",
-     "statement": "V integral projective of dimension r ≥ 1, A, B nef line bundles with (A^r) > 0, C_1..C_{r-1} nef: (A^r)(B·C) ≤ r (A^{r-1}·B)(A·C); a nef A with (A^r) > 0 is big; extends to nef real classes.",
+     "statement": "V integral projective of dimension r ≥ 1, A, B nef line bundles with (A^r) > 0, C_1..C_{r-1} nef: (A^r)(B·C) ≤ r (A^{r-1}·B)(A·C); a nef A with (A^r) > 0 is big; the inequality holds for nef real classes A, B, C_j with (A^r) > 0, by the ample approximation of §3.1 (both sides homogeneous of degree r in A, 1 in B and in each C_j).",
      "hypotheses": [
       "V integral projective over K",
-      "A, B, C_i nef",
+      "A, B, C_i nef line bundles or nef real classes",
       "(A^r) > 0"
      ],
      "locator": {
@@ -656,6 +713,7 @@
      "prerequisites": [
       "target:2.2",
       "target:2.3",
+      "target:3.1",
       "target:3.2",
       "roadmap:ArakelovGeometryAndAbelianHeightsPartII §0.3",
       "roadmap:CyclotomicClassGroupsAndStickelberger §4.3",
@@ -677,6 +735,11 @@
        "name": "nonnef_B",
        "kind": "non-example",
        "statement": "B = O(1,-1), A = O(1,1), C = O(0,1): 2 > 0"
+      },
+      {
+       "name": "real_classes_E2",
+       "kind": "computation",
+       "statement": "E×E: A = A_0+I ([[2,√2],[√2,3]], square 8), B = A_0 (boundary class of §3.1), C = I = F_1+F_2: 8·3 = 24 ≤ 2·3·5 = 30"
       }
      ]
     },
@@ -729,11 +792,12 @@
      "id": "3.5",
      "kind": "theorem",
      "name": "khovanskii_teissier",
-     "statement": "V integral projective of dimension d ≥ 2, A, B, C_1..C_{d-2} nef (line bundles or nef real classes): (A·B·C)^2 ≥ (A^2·C)(B^2·C); hence s_k = (A^k B^{d-k}) satisfies s_k^2 ≥ s_{k-1}s_{k+1}.",
+     "statement": "V integral projective of dimension d ≥ 2, A, B, C_1..C_{d-2} nef line bundles or nef real classes (the full nef cone): (A·B·C)^2 ≥ (A^2·C)(B^2·C); hence s_k = (A^k B^{d-k}) satisfies s_k^2 ≥ s_{k-1}s_{k+1} for 1 ≤ k ≤ d-1. Route: ample approximation of §3.1 (homogeneous of degree 2 in each class), then §2.4, very ample multiples, Bertini cuts and §3.4.",
      "hypotheses": [
       "V integral projective over K",
       "all classes nef",
-      "d ≥ 2"
+      "d ≥ 2",
+      "1 ≤ k ≤ d-1 for the log-concavity of s_k (at k = 0 natural subtraction gives s_0^2 ≥ s_0 s_1, false on P^2 for A = 2H, B = H: 1 ≥ 2)"
      ],
      "locator": {
       "source": "cutkosky2015",
@@ -767,6 +831,11 @@
        "name": "disjoint_planes",
        "kind": "non-example",
        "statement": "P^2 ⊔ P^2 with (O(2),O(1)), (O(1),O(2)): 16 < 25"
+      },
+      {
+       "name": "irrational_boundary",
+       "kind": "computation",
+       "statement": "E×E, A the boundary class of §3.1, I = F_1+F_2: 9 ≥ 0·2; for A+εI the sides are (3+2ε)^2 and 12ε+4ε^2, differing by 9 and tending to 9 and 0"
       }
      ]
     },
@@ -774,7 +843,7 @@
      "id": "3.6",
      "kind": "theorem",
      "name": "siu_inequality_products",
-     "statement": "V integral projective of dimension r ≥ 1, 1 ≤ i ≤ r, nef A_1..A_i, B, C_1..C_{r-i} with (B^r) > 0: (B^r)(A_1⋯A_i·C) ≤ (r-i+1)^i (A_1⋯A_i·B^{r-i})(B^i·C). Consequently nef A, B with positive top powers have all (A^k B^{r-k}) > 0.",
+     "statement": "V integral projective of dimension r ≥ 1, 1 ≤ i ≤ r, nef line bundles or nef real classes A_1..A_i, B, C_1..C_{r-i} with (B^r) > 0: (B^r)(A_1⋯A_i·C) ≤ (r-i+1)^i (A_1⋯A_i·B^{r-i})(B^i·C). Consequently nef A, B with positive top powers have (A^k B^{r-k}) > 0 for every 0 ≤ k ≤ r. Route: ample approximation of §3.1 (homogeneous of degree r in B, 1 in each A_j and C_j), then §2.4, very ample multiples, irreducible generic slices and §3.3.",
      "hypotheses": [
       "V integral projective over K",
       "all classes nef",
@@ -896,10 +965,11 @@
      "id": "4.2",
      "kind": "theorem",
      "name": "mixedDegree_values / mixedDegree_pos",
-     "statement": "deg_0(f; L, M) = (L^d); deg_d(f; L, M) = e(f)(M^d); for a morphism deg_k = (L^{d-k}(f^*M)^k); f^*ω ≅ qω with (ω^d) ≠ 0 gives deg_{k,ω} = q^k(ω^d) and e(f) = q^d; integer for line bundles; nef gives ≥ 0 and monotonicity; big and nef (or real polarizations) give deg_k > 0 for all k.",
+     "statement": "deg_0(f; L, M) = (L^d); deg_d(f; L, M) = e(f)(M^d); for a morphism deg_k = (L^{d-k}(f^*M)^k); f^*ω ≅ qω with (ω^d) ≠ 0 gives deg_{k,ω} = q^k(ω^d) and e(f) = q^d; integer for line bundles; nef gives ≥ 0; monotone: if L, M, L' - L and M' - M are nef real classes then deg_k(f; L, M) ≤ deg_k(f; L', M'); big and nef (or real polarizations) give deg_k > 0 for every 0 ≤ k ≤ d.",
      "hypotheses": [
       "X, Y projective varieties of dimension d ≥ 1",
       "f dominant",
+      "0 ≤ k ≤ d",
       "L, M nef/big as stated"
      ],
      "locator": {
@@ -936,6 +1006,16 @@
        "name": "real_polarization",
        "kind": "computation",
        "statement": "ω = O(1,0)+O(0,1), id: deg_1 = 2"
+      },
+      {
+       "name": "monotone_irrational",
+       "kind": "computation",
+       "statement": "E×E, A the boundary class of §3.1, I = F_1+F_2, f = id: (A^2) = 0 ≤ (A·(A+I)) = 3 ≤ ((A+I)^2) = 8"
+      },
+      {
+       "name": "monotone_needs_nef_difference",
+       "kind": "non-example",
+       "statement": "P^1×P^1, id, k = 1, L = M = O(1,1), L' = M' = 1.5·O(1,0)+0.5·O(0,1) nef: degree drops 2 -> 1.5; L'-L has degree -0.5 on a ruling"
       }
      ]
     },
@@ -947,7 +1027,8 @@
      "hypotheses": [
       "X, Y projective varieties",
       "f dominant",
-      "geometric integrality for f_{K'}"
+      "geometric integrality for f_{K'}",
+      "0 ≤ k ≤ d"
      ],
      "locator": {
       "source": "truong2020",
@@ -984,11 +1065,12 @@
      "id": "4.4",
      "kind": "theorem",
      "name": "mixedDegree_comp_le",
-     "statement": "f_1 : X_1 ⤏ X_2, f_2 : X_2 ⤏ X_3 dominant, equal dimension d ≥ 1, L_j nef with L_2 big and nef (or a real polarization): deg_k(f_2∘f_1; L_1, L_3) ≤ ((d-k+1)^k/(L_2^d)) deg_k(f_1; L_1, L_2) deg_k(f_2; L_2, L_3).",
+     "statement": "f_1 : X_1 ⤏ X_2, f_2 : X_2 ⤏ X_3 dominant, equal dimension d ≥ 1, 0 ≤ k ≤ d, L_j nef with L_2 big and nef (or a real polarization): deg_k(f_2∘f_1; L_1, L_3) ≤ ((d-k+1)^k/(L_2^d)) deg_k(f_1; L_1, L_2) deg_k(f_2; L_2, L_3).",
      "hypotheses": [
       "X_j projective varieties of dimension d ≥ 1",
       "f_j dominant",
-      "L_1, L_3 nef, L_2 big and nef"
+      "0 ≤ k ≤ d",
+      "L_1, L_3 nef line bundles or nef real classes, L_2 big and nef or a real polarization"
      ],
      "locator": {
       "source": "dang2020",
@@ -1023,6 +1105,11 @@
        "name": "top_degree",
        "kind": "degenerate",
        "statement": "k = d equality, e.g. 2p = p·2 for Frobenius then squaring on P^1"
+      },
+      {
+       "name": "irrational_nef_inputs",
+       "kind": "computation",
+       "statement": "E×E, f_1 = f_2 = id, k = 1, L_1 = L_3 = A (boundary class of §3.1), L_2 = I = F_1+F_2: 0 ≤ (2/2)·3·3 = 9"
       }
      ]
     },
@@ -1030,11 +1117,12 @@
      "id": "4.5",
      "kind": "theorem",
      "name": "mixedDegree_comparison / mixedDegree_conj",
-     "statement": "For real polarizations ω, ω' on X there is C ≥ 1 with C^{-1}deg_{k,ω}(f) ≤ deg_{k,ω'}(f) ≤ C deg_{k,ω}(f) for all dominant f; for birational φ : X ⤏ Y the same holds between deg_{k,ω_X}(f) and deg_{k,ω_Y}(φ∘f∘φ^{-1}), and (φ∘f∘φ^{-1})^n = φ∘f^n∘φ^{-1}.",
+     "statement": "For real polarizations ω, ω' on X there is C ≥ 1 with C^{-1}deg_{k,ω}(f) ≤ deg_{k,ω'}(f) ≤ C deg_{k,ω}(f) for all dominant f, namely C = (d-k+1)^{2k} max(c(ω,ω'), c(ω',ω)) with c(ω,ω') = (ω'^{d-k}ω^k)(ω^{d-k}ω'^k)/(ω^d)^2, independent of f (§4.4 applied twice); for birational φ : X ⤏ Y the same holds between deg_{k,ω_X}(f) and deg_{k,ω_Y}(φ∘f∘φ^{-1}), and (φ∘f∘φ^{-1})^n = φ∘f^n∘φ^{-1}.",
      "hypotheses": [
       "X, Y projective varieties of dimension d ≥ 1",
       "ω, ω' real polarizations",
-      "φ birational"
+      "φ birational",
+      "0 ≤ k ≤ d"
      ],
      "locator": {
       "source": "dang2020",
@@ -1043,7 +1131,6 @@
      "prerequisites": [
       "target:1.1",
       "target:2.3",
-      "target:3.2",
       "target:4.2",
       "target:4.4",
       "mathlib:AlgebraicGeometry.Scheme.PartialIso.symm",
@@ -1065,6 +1152,11 @@
        "name": "cremona_conj",
        "kind": "computation",
        "statement": "linear conjugate of Cremona: deg_1 = 2"
+      },
+      {
+       "name": "real_polarizations_E2",
+       "kind": "computation",
+       "statement": "E×E, ω = F_1+F_2, ω' = A+F_1+F_2 (squares 2, 8, product 5): c = 25/4, 25/64, C = 25; swap τ: deg_{1,ω}(τ) = 2, deg_{1,ω'}(τ) = 9"
       }
      ]
     }
@@ -1078,7 +1170,7 @@
      "id": "5.1",
      "kind": "definition",
      "name": "RationalMap.dynamicalDegree",
-     "statement": "λ_k(f) = lim_n deg_{k,ω}(f^n)^{1/n}; the limit exists and equals inf_{n ≥ 1}(C_k(ω) deg_{k,ω}(f^n))^{1/n} with C_k(ω) = (d-k+1)^k/(ω^d).",
+     "statement": "λ_k(f) = lim_n deg_{k,ω}(f^n)^{1/n}; the limit exists and equals inf_{n ≥ 1}(C_k(ω) deg_{k,ω}(f^n))^{1/n} with C_k(ω) = (d-k+1)^k/(ω^d). The lower bound for Fekete's lemma: for a fixed ample line bundle H, §4.5 gives C ≥ 1 independent of n with deg_{k,ω}(f^n) ≥ C^{-1} deg_{k,H}(f^n) ≥ C^{-1}.",
      "hypotheses": [
       "X projective variety of dimension d ≥ 1",
       "f dominant self-map",
@@ -1134,10 +1226,12 @@
      "id": "5.2",
      "kind": "theorem",
      "name": "dynamicalDegree_properties",
-     "statement": "λ_k(f) ∈ [1, ∞); independent of ω; λ_k(f^m) = λ_k(f)^m; λ_0 = 1; λ_d = e(f); λ_k^2 ≥ λ_{k-1}λ_{k+1}; λ_k ≤ λ_1^k.",
+     "statement": "λ_k(f) ∈ [1, ∞); independent of ω; λ_k(f^m) = λ_k(f)^m for m ≥ 1; λ_0 = 1; λ_d = e(f); λ_k^2 ≥ λ_{k-1}λ_{k+1} for 1 ≤ k ≤ d-1; λ_k ≤ λ_1^k.",
      "hypotheses": [
       "X projective variety of dimension d ≥ 1",
-      "f dominant"
+      "f dominant",
+      "0 ≤ k ≤ d",
+      "1 ≤ k ≤ d-1 for log-concavity (at k = 0 natural subtraction gives λ_0^2 ≥ λ_0 λ_1, false for the Fibonacci map: 1 ≥ golden ratio)"
      ],
      "locator": {
       "source": "dang2020",
@@ -1177,7 +1271,8 @@
      "hypotheses": [
       "X projective variety",
       "φ birational to a projective variety",
-      "geometric integrality for f_{K'}"
+      "geometric integrality for f_{K'}",
+      "0 ≤ k ≤ d"
      ],
      "locator": {
       "source": "truong2020",
@@ -1212,7 +1307,7 @@
      "id": "5.4",
      "kind": "definition",
      "name": "RationalMap.algebraicEntropy",
-     "statement": "h_alg(f) = log max_k λ_k(f) ≥ 0; invariant under birational conjugacy, normalization and field extension (geometrically integral); h_alg(f^n) = n h_alg(f); log e(f) ≤ h_alg(f) ≤ d log λ_1(f); the maximizing indices form an interval.",
+     "statement": "h_alg(f) = log max_{0 ≤ k ≤ d} λ_k(f) ≥ 0; invariant under birational conjugacy, normalization and field extension (geometrically integral); h_alg(f^n) = n h_alg(f); log e(f) ≤ h_alg(f) ≤ d log λ_1(f); the maximizing indices form an interval.",
      "hypotheses": [
       "X projective variety of dimension d ≥ 1",
       "f dominant"
@@ -1331,9 +1426,10 @@
      "id": "6.2",
      "kind": "theorem",
      "name": "projectiveSpace_degree_formulas",
-     "statement": "For f given by reduced forms of degree a ≥ 1, dominant: deg_{1,H}(f) = a; deg_{k+1,H} ≤ a·deg_{k,H} so deg_{k,H} ≤ a^k; equality for morphisms; for morphisms deg_{k,H}(f^n) = a^{nk}, λ_k = a^k, e = a^d; λ_1(f) = lim (deg f^n)^{1/n}; deg_{1,H}(g∘f) ≤ deg_{1,H}(f)deg_{1,H}(g).",
+     "statement": "For f given by reduced forms of degree a ≥ 1, dominant: deg_{1,H}(f) = a; deg_{k+1,H} ≤ a·deg_{k,H} for 0 ≤ k ≤ d-1, so deg_{k,H} ≤ a^k for 0 ≤ k ≤ d; equality for morphisms; for morphisms deg_{k,H}(f^n) = a^{nk}, λ_k = a^k, e = a^d; λ_1(f) = lim (deg f^n)^{1/n}; deg_{1,H}(g∘f) ≤ deg_{1,H}(f)deg_{1,H}(g).",
      "hypotheses": [
-      "f dominant self-map of P^d given by reduced forms of degree a ≥ 1"
+      "f dominant self-map of P^d given by reduced forms of degree a ≥ 1",
+      "0 ≤ k ≤ d-1 for the recursion (it compares (A^{d-k-1}B^k·(aA - B)) on Γ_f); 0 ≤ k ≤ d for the bounds"
      ],
      "locator": {
       "source": "russakovskiishiffman1997",
@@ -1379,9 +1475,10 @@
      "id": "6.3",
      "kind": "example",
      "name": "projectiveSpace_standard_examples",
-     "statement": "Cremona σ on P^d, d ≥ 2: σ∘σ = id, deg_{1,H}(σ) = d, deg_{1,H}(σ^2) = 1 < d^2, e = 1, λ_k = 1, h_alg = 0. Fibonacci map [yz : xy : z^2]: f^n = [x^{fib(n-1)}y^{fib n}z^{fib n} : x^{fib n}y^{fib(n+1)} : z^{fib(n+2)}], deg_{1,H}(f^n) = fib(n+2), λ_1 = golden ratio, λ_2 = 1, h_alg = log golden ratio. Frobenius: λ_k = p^k, λ_d = e = p^d.",
+     "statement": "Cremona σ on P^d, d ≥ 2: σ∘σ = id, deg_{1,H}(σ) = d, deg_{1,H}(σ^2) = 1 < d^2, e = 1, λ_k = 1, h_alg = 0. Fibonacci map [yz : xy : z^2]: f^0 = id; for n ≥ 1, f^n = [x^{fib(n-1)}y^{fib n}z^{fib n} : x^{fib n}y^{fib(n+1)} : z^{fib(n+2)}] (reduced forms of degree fib(n+2)); deg_{1,H}(f^n) = fib(n+2) for every n ≥ 0 (n = 0: the identity, degree 1 = fib 2), λ_1 = golden ratio, λ_2 = 1, h_alg = log golden ratio. Frobenius: λ_k = p^k, λ_d = e = p^d.",
      "hypotheses": [
       "d ≥ 2 for the Cremona involution",
+      "n ≥ 1 for the coordinate formula of the Fibonacci iterate f^n (Mathlib's Nat.fib with natural subtraction); f^0 = id separately",
       "characteristic p for Frobenius"
      ],
      "locator": {
@@ -1402,6 +1499,11 @@
      ],
      "api": [],
      "tests": [
+      {
+       "name": "fibonacci_n0",
+       "kind": "degenerate",
+       "statement": "n = 0: f^0 = id = [x : y : z], degree 1 = fib 2; substituting n = 0 in the n ≥ 1 tuple gives fib(0-1) = fib 0 = 0 and the tuple (1, y, z), of coordinate degrees 0, 1, 1, not homogeneous: excluded"
+      },
       {
        "name": "fibonacci_n2",
        "kind": "computation",
@@ -1478,17 +1580,19 @@
    "roadmap": "AlgebraicModuliForArithmeticGeometryPartII",
    "sections": [
     "§0.1",
+    "§1.1",
     "§1.5",
     "§1.7"
    ],
-   "what": "curve degree with the length-weighted component law; nefness over a field (sums, positive scaling, pullback, base change along field extensions); Kleiman nonnegativity on integral closed subschemes and nef plus ample is ample, over every field; ample implies nef"
+   "what": "curve degree with the length-weighted component law; the real numerical space N^1(X/K) = Num(X/K) ⊗ R with its class map from Pic(X); nefness of line bundles and of classes of N^1(X/K) over a field and the nef cone Nef(X/K) (sums, positive scaling, pullback, base change along field extensions); Kleiman nonnegativity on integral closed subschemes, nef plus ample is ample, ample has positive degree on curves and mL + E is ample for ample L and large m, over every field"
   },
   {
    "roadmap": "AlgebraicModuliForArithmeticGeometry",
    "sections": [
-    "§1.4"
+    "§1.4",
+    "§5.4"
    ],
-   "what": "very ampleness; high powers of an ample line bundle are very ample, very ample implies ample"
+   "what": "very ampleness; high powers of an ample line bundle are very ample, very ample implies ample; the scheme case of the schematic image of a quasi-compact morphism (Mathlib's Scheme.Hom.image) and its compatibility with flat base change of locally Noetherian schemes"
   },
   {
    "roadmap": "ArakelovGeometryAndAbelianHeightsPartII",
@@ -1546,7 +1650,7 @@
  "consumers": [
   {
    "roadmap": "DynamicalDegreesOfRationalMaps, Part II",
-   "what": "numerical cycle spaces N^k over an arbitrary field, spectral description of λ_k, relative dynamical degrees and product formula"
+   "what": "numerical cycle spaces N^k of codimension k ≥ 2 over an arbitrary field (N^1 is AlgebraicModuliForArithmeticGeometryPartII §1.1), spectral description of λ_k, relative dynamical degrees and product formula"
   },
   {
    "roadmap": "arithmetic degrees and canonical heights of rational self-maps of P^N (continuing ArithmeticDynamics)",
