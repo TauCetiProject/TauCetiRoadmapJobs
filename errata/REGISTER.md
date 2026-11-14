@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-13157 mistakes recorded on the board: 7525 misprints, 3459 errors, 1705 gaps, 468 unparsed bullets.
+13159 mistakes recorded on the board: 7527 misprints, 3459 errors, 1705 gaps, 468 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -2686,6 +2686,8 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## BieriEckmann1974
 
 - **Misprint** at Theorem 3.4 proof, printed p. 82, line 334: the source says its conclusion follows from Bieri–Eckmann 1973 Theorem 4.6; it should be Theorem 4.5, the duality criterion; affects the proof. Found by FinitenessAndDualityOfGroups (#15109 at 5fca6b3, 2026-11-14, codex gpt-6-astra).
+- **Misprint** at Theorem 3.4 proof, printed p.82 (line 334): the source says its duality conclusion follows from the 1973 paper's Theorem 4.6; it should be Theorem 4.5, the concentration and torsion-freeness criterion; affects the proof; The correction was checked against BieriEckmann1973 lines 612–624: Theorem 4.5 is the criterion, whereas 4.6 asserts finite generation. The following additional numbering slip occurs in the immediately following remark:. Found by FinitenessAndDualityOfGroups (#15109 at e92e74d, 2026-11-14, codex gpt-6-astra).
+- **Misprint** at the remark after Theorem 3.4, printed p.82 (line 337): the source says Theorem 4.3 when contrasting the preceding abstract-isomorphism criterion with the naturality criterion; it should be Theorem 3.4; affects nothing. Found by FinitenessAndDualityOfGroups (#15109 at e92e74d, 2026-11-14, codex gpt-6-astra).
 
 ## Bigelow–Penneys
 
