@@ -2118,7 +2118,7 @@
    "slug": "perfect-homotopy-invariance",
    "title": "Homotopy invariance of K-theory of perfect F_p-algebras",
    "neededBy": [
-    "4.4",
+    "4.3",
     "6.2"
    ],
    "detail": "For every perfect F_p-algebra A, IK(A)->IK(A[T]) is an equivalence (amm-perfectoid Proposition 5.1, through cdh descent for perfect schemes).",

@@ -19,7 +19,8 @@ The following are imported, not planned again.
 - THH of E₁-rings with its Frobenius, symmetric monoidality, TC and its fibre formula, spherical monoid rings with the unstable Frobenius of an unpointed E₁-monoid, parametrized Tate constructions and dualizing spectra, representation-graded TR, relative K and TC with `K^inv`, the Dundas–Goodwillie–McCarthy theorem, henselian rigidity, Goodwillie's rational theorem, truncating excision with the Land–Tamme correction and the KABI consequence, and continuity: RefinedTraceMethods §§1.4, 1.9, 2.3–2.4, 2.6, 2.8–2.10, 2.13, 4.12, 4.17–4.18.
 - Pointed-monoid THH in the classical genuine model and the cell types of `B^cy(Π_e)`, λ-graded TR of regular noetherian 𝔽_p-algebras and the truncated-polynomial K-groups over regular noetherian 𝔽_p-algebras and perfect fields: KTheoryFiniteLocalFields §§5.16, 5.17; the power-series groups `𝕎_N(k)` these are written in are its Conventions. The truncated-polynomial theorem over perfect fields is a Check of Layer 7 here, not a target. K-theory of finite fields, Gabber rigidity and TC of perfect fields come from KTheoryFiniteLocalFields §§1.1–1.6, 2.1 and 5.1.
 - Truncation sets, big Witt rings, F, V and Teichmüller maps, the big Witt power-series comparison and the comparison with p-typical Witt vectors: QWittVectors §§1.1–1.5 (the power-series comparison is §1.4a). p-typical de Rham–Witt complexes: CrystallineCohomology CR.4.
-- Vanishing of NK for regular noetherian rings: SchemeKTheoryOperations §5.2. Relative K-theory as a fibre: GeneralAlgebraicKTheory §8.1.
+- Vanishing of NK and of negative K-groups for regular noetherian rings: SchemeKTheoryOperations §5.2. Relative K-theory as a fibre: GeneralAlgebraicKTheory §8.1.
+- Filtered derived categories, their completion, the Rees description and completed Day convolution: DerivedDeRhamCohomology §§1.14–1.17. Symmetric monoidal ∞-categories, E∞-algebras and their modules: EnhancedDerivedSheaves §§E5:abstract.1–E5:abstract.2.
 - δ-rings, prisms, Breuil–Kisin prisms and prismatic envelopes: PrismaticCohomology §§0.55–0.56, 0.73–0.76, 0.93 and 2.13. Nygaard filtrations, Breuil–Kisin twists, the ideals `I_r` of transversal prisms, Nygaard completion, the Cartier–Witt stack, prismatic crystals and absolute prismatic and Hodge–Tate cohomology: PrismaticCohomologyPartII §§3.6, 3.9–3.10, 3.20 and Layer 4. Syntomic complexes and the motivic filtration on TC: PrismaticCohomologyPartIII §§6.8–6.9, 6.28, 6.31 and 7.0. Perfectoid rings, `A_inf`, Bökstedt periodicity for perfectoid rings and the perfectoid trace coefficients: AInfCohomology AI.0 and §AI.7.2.
 
 What is left out:
@@ -29,6 +30,9 @@ What is left out:
 - K-theory of `O_K` and of local fields, owned by KTheoryFiniteLocalFields Layer 6.
 - Hahn–Levy–Senger's mod (p, v₁) calculation.
 - The F-smooth extension of the truncated-polynomial theorem (riggenbach-trunc Theorem 1.2) and the rational cusp calculation. Both need inputs that no supplier provides: the Nygaard-dimension theory of F-smooth rings, and the cyclic homology of cusp algebras over ℚ-algebras. They lie outside this roadmap, which stops at perfectoid coefficients for truncated polynomials and at perfect 𝔽_p-algebras for cusps.
+- Prismatic cohomology relative to animated δ-rings. Descent for relative syntomic complexes along maps of pairs whose base map A → B is not flat needs it, because the derived Čech nerve of such a base map is not a diagram of δ-rings; akn-delta (lines 165–170) announces this extension without constructing it. Layer 8 proves descent along flat base maps, which is the case Layer 9 uses.
+- The p-completed lax comparison: for bounded-below T with C_p-action and finite pointed C_p-CW Z, the lax structure map `T^{tC_p} ⊗ (Σ^∞Z)^{tC_p} → (T ⊗ Σ^∞Z)^{tC_p}` is an equivalence after p-completion of its source (speirs-axes Lemma 15, line 506, states it without the completion, which is needed). Its proof needs the Segal equivalence `𝕊^{tC_p} ≃ 𝕊^∧_p`, which StableHomotopyKTheoryPartII §2.7 owns. No layer here uses either: §3.6 factors the Frobenius through the fixed-point comparison of §3.1, which holds for every T.
+- The filtered and graded Hodge–Tate comparison of akn-delta Proposition 10.37, a statement about the Hodge–Tate locus of the filtered relative Cartier–Witt stack. No layer here uses it: Layer 9 uses the base-change, envelope and degeneration statements of §8.5 and §8.6.
 
 ## Conventions
 
@@ -42,7 +46,7 @@ Big Witt vectors use QWittVectors' coordinate model on a truncation set S. `W_S(
 
 Prismatic conventions follow PrismaticCohomologyPartII and PrismaticCohomologyPartIII. `Δ_R{i}` is the Breuil–Kisin twisted absolute prismatic cohomology, `N^{≥i}Δ̂_R{i}` its Nygaard filtration, and `ℤ_p(i)(R) = fib(can − φ_i : N^{≥i}Δ̂_R{i} → Δ̂_R{i})`. Cohomological degrees are written `H^j`, with `H^j(C) = π_{−j}(C)`. For a δ-ring A and an A-algebra R, `Δ_{R/A}` is the prismatic package of Layer 8.
 
-A finite chain ring is `R = O_K/ϖ^n` with K/ℚ_p finite, `e = v_K(p)`, residue field `𝔽_q` with q = p^f, and n ≥ 1. Put `j = ⌈n/e⌉` (the exponent of the additive group of R) and `[j]_p = 1 + p + ⋯ + p^{j−1}`. The class `v₁ ∈ H⁰(𝔽_p(p−1)(ℤ_p))` is akn24's; for p odd it is the image of the Adams class.
+A finite chain ring is `R = O_K/ϖ^n` with K/ℚ_p finite, `e = v_K(p)`, residue field `𝔽_q` with q = p^f, and n ≥ 1. Put `j = ⌈n/e⌉`, the least integer with `p^jR = 0`, so that the additive group of R has exponent `p^j`, and `[j]_p = 1 + p + ⋯ + p^{j−1}`. The class `v₁ ∈ H⁰(𝔽_p(p−1)(ℤ_p))` is akn24's; for p odd it is the image of the Adams class.
 
 **Pinned witnesses.**
 
@@ -70,14 +74,14 @@ Mathlib and Tau Ceti have no big Witt vectors, cyclic bar constructions, THH, TC
 
 ### From BordismFormalGroups
 
-- §F6.5: the Borel category `Sp^{BG}` of a finite group G with homotopy orbits, homotopy fixed points, the norm and the Tate cofibre, and the lax monoidal structure of `(−)^{tG}`, used for G = C_p in Layer 3.
+- §F6.5: the Borel category `Sp^{BG}` of a finite group G with homotopy orbits, homotopy fixed points, the norm and the Tate cofibre; the projection formula and the vanishing of `(−)^{tG}` on the tensor ideal generated by induced objects; and the lax symmetric monoidal structure of `(−)^{tG}`, with `can : (−)^{hG} → (−)^{tG}` lax symmetric monoidal and the universal property of `(−)^{tG}` among exact functors under `(−)^{hG}` that vanish on that ideal. Layer 3 uses them for G = C_p.
 
 ### From TauCetiRoadmap.RefinedTraceMethods
 
 - §§1.2–1.3: mixed complexes, the Connes operator and the coherent derived mixed category.
 - §§1.4 and 1.9: cyclic, negative cyclic and periodic cyclic homology, and the smooth HKR comparison.
 - §2.1: spectra with an action of a topological group and the adjunctions between them.
-- §2.3: convergence and vanishing of Tate constructions at C_p, p-completeness of `X^{tC_p}` for bounded-below X, and the Segal statement `𝕊^{tC_p} ≃ 𝕊^∧_p`.
+- §2.3: convergence of `(−)^{hG}`, `(−)_{hG}` and `(−)^{tG}` along Postnikov towers for finite G, the vanishing of `Y^{tC_p}` when p acts invertibly on `π_*Y`, and, for bounded-below X, p-completeness of `X^{tC_p}` with `X^{tC_p} ≃ (X^∧_p)^{tC_p}`.
 - §2.4: the parametrized Tate construction of a Kan complex and its dualizing spectrum (NS Theorem I.4.1), with `D_{BT} = Σ𝕊` and `D_{BC_m} = 𝕊`.
 - §2.5: cyclic realization and edgewise subdivision.
 - §2.6: THH of E₁-rings and its Frobenius `φ_p`, and THH relative to an E∞-ring.
@@ -113,16 +117,17 @@ Mathlib and Tau Ceti have no big Witt vectors, cyclic bar constructions, THH, TC
 
 ### From TauCetiRoadmap.DerivedDeRhamCohomology
 
+- §§1.14–1.17: the filtered derived category `DF(A)` with `gr^i F = cofib(F^{i+1} → F^i)`, completion of filtered objects (which leaves every `gr^i` unchanged and kills constant filtrations), the Rees equivalence of filtered objects with graded `A[t]`-modules (t = 1 gives the underlying object, derived t = 0 the associated graded), and the completed Day-convolution tensor product, whose unit is the step filtration of A. Applied in each grading, they give the complete filtered graded objects of Layer 8 and the Rees algebras of §8.5.
 - Layer 2: ordinary and derived de Rham cohomology with its Hodge filtration.
 - Layer 5: the cotangent complex, Tor-amplitude conditions and the quasisyntomic sites.
 
 ### From TauCetiRoadmap.GeneralAlgebraicKTheory
 
-- §8.1: relative K as a homotopy fibre with its long exact sequence. §10.5: the Fundamental Theorem with Nil terms. §10.13: vanishing of negative K-groups of regular noetherian rings.
+- §8.1: relative K as a homotopy fibre with its long exact sequence. §10.5: the Fundamental Theorem with Nil terms.
 
 ### From TauCetiRoadmap.SchemeKTheoryOperations
 
-- §5.2: `NK_n(X) = 0` for every regular noetherian X and every integer n.
+- §5.2: for every regular noetherian X, `NK_n(X) = 0` for every integer n and `K_n(X) = 0` for every n < 0.
 - What SchemeKTheoryOperations must provide (gap:perfect-homotopy-invariance): for every perfect 𝔽_p-algebra A, the map `IK(A) → IK(A[T])` is an equivalence (amm-perfectoid Proposition 5.1, which proves `K ≃ KH` for smooth algebras over perfect 𝔽_p-algebras through cdh descent for perfect schemes). Layer 6 uses it, and only it, to identify birelative with relative K-theory of cusps over a perfect 𝔽_p-algebra that is not regular noetherian.
 
 ### From TauCetiRoadmap.AInfCohomology
@@ -139,11 +144,11 @@ Mathlib and Tau Ceti have no big Witt vectors, cyclic bar constructions, THH, TC
 ### From StableHomotopyKTheory and EnhancedDerivedSheaves
 
 - StableHomotopyKTheory §§7.9–7.10 and 7.14–7.18: towers, Milnor sequences and p-completion.
-- EnhancedDerivedSheaves E5: stable and presentable ∞-categories, filtered objects and their completions.
+- EnhancedDerivedSheaves §§E5:abstract.1–E5:abstract.2: symmetric monoidal ∞-categories and ∞-operads, E∞-algebras `CAlg(C)` in a symmetric monoidal ∞-category C, and modules over them. §E5:presentability.2: presentable ∞-categories and their limits and colimits.
 
 ## How to read the build
 
-Layer 1 is elementary arithmetic and Witt bookkeeping, close to Mathlib: it fixes every index function that appears in an answer. Layer 2 splits THH of a pointed-monoid algebra as THH of the coefficients tensored with a cyclic bar construction, and computes the circle-equivariant cell types of the three cyclic bar constructions the calculations need. Layer 3 develops the Tate calculus on circle cells over perfectoid coefficients, ending in the staircase lemma that evaluates the TC equalizer on a tower of cells. Layer 4 reduces relative K-theory of a normalization square to birelative TC (p-adically) and to birelative HC (rationally). Layers 5, 6 and 7 assemble the calculations for the coordinate axes, the cusps and the truncated polynomial algebras. Layer 8 builds prismatic cohomology relative to δ-rings and of filtered rings, with crystalline degeneration. Layer 9 applies Layers 3, 7 and 8 to finite chain rings. Layers 5–7 are independent of each other, and Layer 8 depends only on suppliers.
+Layer 1 is elementary arithmetic and Witt bookkeeping, close to Mathlib: it fixes every index function that appears in an answer. Layer 2 splits THH of a pointed-monoid algebra as THH of the coefficients tensored with a cyclic bar construction, and computes the circle-equivariant cell types of the three cyclic bar constructions the calculations need. Layer 3 develops the Tate calculus on circle cells over perfectoid coefficients, ending in the staircase lemma that evaluates the TC equalizer on a tower of cells. Layer 4 forms the birelative terms of the normalization squares of axes and cusps, which excision for `K^inv` (RefinedTraceMethods §4.18) identifies with birelative TC (p-adically) and birelative HC (rationally), and compares relative with birelative K-theory. Layers 5, 6 and 7 assemble the calculations for the coordinate axes, the cusps and the truncated polynomial algebras. Layer 8 builds prismatic cohomology relative to δ-rings and of filtered rings, with crystalline degeneration. Layer 9 applies Layers 3, 7 and 8 to finite chain rings. Layers 5–7 are independent of each other, and Layer 8 depends only on suppliers.
 
 ## Layer 1: Indexing arithmetic and Witt bookkeeping
 
@@ -226,13 +231,14 @@ For a finite chain ring with invariants (p, e, f, n) put `j = ⌈n/e⌉`, `[j]_p
 
 **Checks.**
 
+- The additive exponent of R is `p^j`, not j. Since `p = uϖ^e` with u a unit, `p^jR = 0` exactly when ej ≥ n, so `⌈n/e⌉` is the least such j and the additive exponent is `p^j`. For ℤ/4, j = 2 and 2·1 ≠ 0 = 4·1, so the exponent is 4; for 𝔽_2 (n = 1), j = 1 and the exponent is 2. For `ℤ_2[√2]/(√2)³` (e = 2, n = 3), j = 2: `2 = (√2)²` is nonzero while `4 = (√2)⁴` vanishes, so the exponent is 4 = 2^j, whereas the unramified reading j = n would give 8.
 - For ℤ/4 (p = 2, e = 1, n = 2): j = 2, [2]_2 = 3 and B = 2·(2·3 − 4·0) = 12. The even vanishing theorem therefore applies from i = 13.
 - For 𝔽_2[z]/z³, viewed as `O_K/ϖ³` with e = 3: j = 1 and B = 4·3/3 = 4, so i ≥ 5. As e → ∞ the threshold tends to 0. The weaker bound p²(p^j − 1)/(p − 1)² = 4 does not tend to 0.
 - For i = 2 and n = 2, the indices 1 ≤ j′ ≤ 3 not divisible by 2 are {1,3}, so the count is 2 = 2·1. For n = 1 every j′ is divisible by n and the count is 0 = i·0. This is consistent with `|K_{2i−1}(𝔽_q)|/|K_{2i−2}(𝔽_q)| = q^i − 1` being prime to p.
 
 ### Examples
 
-For (a,b) = (2,3) the truncation sets are S(2,3,0) = {1,2,3,4,6} and S(2,3,1) = {1,…,10,12}, with coprime parts {1} and {1,5,7}. For d = 3 the first word counts are cyc_3(2), …, cyc_3(6) = 3, 2, 3, 6, 9. For ℤ/p^n the exponent is j = n and the threshold is p²(p^n − 1)/(p−1)².
+For (a,b) = (2,3) the truncation sets are S(2,3,0) = {1,2,3,4,6} and S(2,3,1) = {1,…,10,12}, with coprime parts {1} and {1,5,7}. For d = 3 the first word counts are cyc_3(2), …, cyc_3(6) = 3, 2, 3, 6, 9. For ℤ/p^n, j = n, the additive group has exponent p^n, and the threshold is p²(p^n − 1)/(p−1)².
 
 ### Dependencies
 
@@ -279,14 +285,14 @@ For a pointed monoid Π, define the pointed cyclic set `B^cy(Π)[n] = Π^{∧(n+
 
 ### 2.3 The cyclotomic splitting
 
-Prove that for every E₁-ring k and every pointed monoid Π, the E₁-ring `k(Π) := k ⊗ Σ^∞Π` satisfies `THH(k(Π)) ≃ THH(k) ⊗ Σ^∞B^cy(Π)` as cyclotomic spectra. For a discrete ring k this E₁-ring is the Eilenberg–Mac Lane spectrum of the pointed-monoid algebra of 2.1. Under the equivalence the Frobenius is the composite of `φ_p ⊗ Σ^∞ψ_p : THH(k) ⊗ Σ^∞B^cy(Π) → THH(k)^{tC_p} ⊗ Σ^∞B^cy(Π)^{hC_p}` with the lax structure map into `(THH(k) ⊗ Σ^∞B^cy(Π))^{tC_p}` (hn-cusp line 105; speirs-axes Lemma 4, line 272; speirs-trunc lines 319–346). In particular `THH(Σ^∞Π) ≃ Σ^∞B^cy(Π)` with Frobenius Σ^∞ψ_p followed by can.
+Prove that for every E₁-ring k and every pointed monoid Π, the E₁-ring `k(Π) := k ⊗ Σ^∞Π` satisfies `THH(k(Π)) ≃ THH(k) ⊗ Σ^∞B^cy(Π)` as cyclotomic spectra. For a discrete ring k this E₁-ring is the Eilenberg–Mac Lane spectrum of the pointed-monoid algebra of 2.1. Under the equivalence the Frobenius is the composite of `φ_p ⊗ Σ^∞ψ_p : THH(k) ⊗ Σ^∞B^cy(Π) → THH(k)^{tC_p} ⊗ (Σ^∞B^cy(Π))^{hC_p}`, of `id ⊗ can` and of the lax structure map into `(THH(k) ⊗ Σ^∞B^cy(Π))^{tC_p}` (hn-cusp line 105; speirs-axes Lemma 4, line 272; speirs-trunc lines 319–346). In particular `THH(Σ^∞Π) ≃ Σ^∞B^cy(Π)` with Frobenius Σ^∞ψ_p followed by can.
 
 The route: Σ^∞Π is an E₁-ring because Σ^∞ is symmetric monoidal from pointed spaces. RefinedTraceMethods §2.8 makes THH symmetric monoidal into cyclotomic spectra. The cyclic bar construction of Σ^∞Π is Σ^∞ of B^cy(Π)[−] levelwise, and the Tate diagonal of a suspension spectrum is Σ^∞ of the space-level diagonal (RefinedTraceMethods §2.10).
 
 - Naturality in E₁-maps k → k′ and in maps of pointed monoids.
 - Compatibility with weight decompositions: `THH(k(Π)) ≃ ⊕_m THH(k) ⊗ Σ^∞B^cy(Π;m)`, with φ_p carrying weight m into the Tate construction of weight pm.
 - For Π = M_+ the equivalence is RefinedTraceMethods §2.10 tensored with THH(k). It agrees on underlying T-spectra with the classical equivalence of KTheoryFiniteLocalFields §5.16 through the genuine–modern comparison of KTheoryFiniteLocalFields §4.4.
-- If the connectivity of B^cy(Π;m) tends to infinity with m, the sum is also the product, and `(⊕_m X_m)^{tT} ≃ ∏_m X_m^{tT}`. Here X_m = THH(k) ⊗ Σ^∞B^cy(Π;m), whose connectivity also tends to infinity (speirs-axes Lemma 21, line 709).
+- Suppose that THH(k) is bounded below, for instance k connective (in particular a discrete ring), and that the connectivity of B^cy(Π;m) tends to infinity with m. Then X_m = THH(k) ⊗ Σ^∞B^cy(Π;m) has connectivity tending to infinity, so the sum `⊕_m X_m` is also the product, and `(⊕_m X_m)^{tT} ≃ ∏_m X_m^{tT}` (speirs-axes Lemma 21, line 709, for discrete k). Without the bound on THH(k) this fails (Checks).
 
 *Needs:* RefinedTraceMethods §§2.6, 2.8, 2.10; §2.2 here; AInfCohomology §AI.7.2 (circle Tate construction).
 
@@ -295,6 +301,7 @@ The route: Σ^∞Π is an E₁-ring because Σ^∞ is symmetric monoidal from po
 - For Π = Π_0, the statement is the identity `THH(k) ≃ THH(k)`. For k = 𝕊 and Π = ⟨t⟩_+, THH(𝕊[t]) ≃ Σ^∞B^cy(ℕ)_+, whose weight-1 summand is `Σ^∞(T/C_1)_+`. Its π₀ is ℤ, generated by the class of t.
 - For k = 𝔽_p and Π = Π_2 in weight 1, `π_*(THH(𝔽_p) ⊗ Σ^∞T_+) = 𝔽_p[u] ⊗ H_*(T_+;𝔽_p)` has dimension one in every degree n ≥ 0. A splitting with the unreduced B^cy would add a copy of THH(𝔽_p) for the basepoint and double the dimension in even degrees.
 - The Frobenius on weight 1 lands in weight p, so it cannot be the identity on summands. For Π_e with e = p, weight 1 maps to weight p, where e | p and the cofibre term of 2.2 appears.
+- Negative control for the convergence statement: let k = `ℚ[β^{±1}]` with |β| = 2, a rational E∞-ring, and Π = Π_2. For odd m = 2j + 1 the weight-m piece is `S^{λ_j} ∧ (T/C_m)_+`, whose underlying space is `Σ^{2j}(T/C_m)_+`, of connectivity 2j − 1. But k is a retract of THH(k), so `π_0X_m ⊇ π_{−2j}THH(k) ⊇ ℚ·β^{−j}` for every j, and on π_0 the map from the sum to the product contains `⊕_j ℚ → ∏_j ℚ`, which misses (1,1,1,…). For k = 𝔽_p the same pieces have `π_0X_m = 0` for j ≥ 1.
 
 ### 2.4 The linear and rational splittings
 
@@ -332,7 +339,7 @@ For Π_e, import the cofibre sequences `S^{λ_d} ∧ (T/C_{s/e})_+ → S^{λ_d} 
 
 - `B_m ≃ T_+ ∧_{C_m} X(a,b,m)` for a finite pointed C_m-CW complex X(a,b,m), compatibly with the isomorphisms `ρ_s^*(B_m)^{C_s} ≅ B_{m/s}` for s | m (hesselholt-cusp-polytopes Proposition 3.1, line 792). Hence each B_m is a finite pointed T-CW complex.
 - *Mixed complex.* For coprime a, b ≥ 2 and m ≥ 1, `ℤ ⊗ Σ^∞B_m` in `D(ℤ)^{BT}` is the total cofibre of the square of `ℤ ⊗ (T/C_{m/c})_+[2ℓ(a,b,m)]` for c ∈ {ab, a, b, 1}, with maps the canonical projections and with `T/C_{m/c}` empty when c ∤ m (hn-cusp Theorem 1, line 131). The input is the mixed complex of `ℤ[x,y]/(y^a − x^b)` (bach-hypersurfaces; larsen-mixed), translated through the formality of `C_*(T;ℤ)`.
-- The connectivity of B_m tends to infinity with m, so `THH(k) ⊗ Σ^∞B^cy(⟨t⟩,⟨t^a,t^b⟩) ≃ ∏_{m≥1} THH(k) ⊗ Σ^∞B_m` (hn-cusp line 156).
+- The connectivity of B_m tends to infinity with m, so for every ring k, whose THH is connective, `THH(k) ⊗ Σ^∞B^cy(⟨t⟩,⟨t^a,t^b⟩) ≃ ∏_{m≥1} THH(k) ⊗ Σ^∞B_m` by §2.3 (hn-cusp line 156).
 - For p | m, the cofibre of `B_{m/p} →^{ψ_p} (B_m)^{C_p} → B_m` is a finite colimit of free C_p-cells (hn-cusp line 165, from hesselholt-cusp-polytopes §3).
 
 *Needs:* §1.1 (the count ℓ(a,b,m)); §§2.2–2.4; KTheoryFiniteLocalFields §5.16; RefinedTraceMethods §§1.2–1.3 (mixed complexes and the coherent derived mixed category).
@@ -357,17 +364,17 @@ This layer computes `TC^-`, TP and the Frobenius on spectra of the form `THH(R;�
 
 ### 3.1 Tate constructions of finite C_p-complexes
 
-Prove the following for every spectrum T with C_p-action and every finite pointed C_p-CW complex Z (cells `C_p/H_+ ∧ D^n` with H ∈ {e, C_p}). The map `T^{tC_p} ⊗ Σ^∞Z^{C_p} → (T ⊗ Σ^∞Z)^{tC_p}` is an equivalence: it is induced by the inclusion of the C_p-fixed points, with trivial action on `Z^{C_p}`. The route is that `(T ⊗ Σ^∞Z^{C_p})^{tC_p} ≃ T^{tC_p} ⊗ Σ^∞Z^{C_p}` for finite `Z^{C_p}` with trivial action, and that the cofibre `Z/Z^{C_p}` is a finite colimit of free cells, on which `(T ⊗ −)^{tC_p}` vanishes (hn-cusp Lemma 2, line 162; speirs-trunc Lemma 8, line 347).
+Prove the following for every spectrum T with C_p-action and every finite pointed C_p-CW complex Z (cells `C_p/H_+ ∧ D^n` with H ∈ {e, C_p}). The fixed-point map `T^{tC_p} ⊗ Σ^∞Z^{C_p} → (T ⊗ Σ^∞Z)^{tC_p}` is an equivalence. It is the exactness equivalence `T^{tC_p} ⊗ Σ^∞Z^{C_p} ≃ (T ⊗ Σ^∞Z^{C_p})^{tC_p}` for the finite complex `Z^{C_p}` with trivial action, followed by the map induced by the inclusion `Z^{C_p} → Z`. That map is an equivalence because the cofibre `Z/Z^{C_p}` is a finite colimit of free cells, on which `(T ⊗ −)^{tC_p}` vanishes (hn-cusp Lemma 2, line 162; speirs-trunc Lemma 8, line 347).
 
-If T is bounded below, the lax structure map `T^{tC_p} ⊗ (Σ^∞Z)^{tC_p} → (T ⊗ Σ^∞Z)^{tC_p}` is an equivalence after p-completion of its source. It is not an equivalence before p-completion. The proof is speirs-axes Lemma 15 (line 506), whose statement must be read p-adically: the step `T^{tC_p} ⊗ 𝕊^∧_p ≃ T^{tC_p}` holds only after p-completion.
+Prove that the fixed-point map is compatible with the lax structure of `(−)^{tC_p}`. It is homotopic to the composite `T^{tC_p} ⊗ Σ^∞Z^{C_p} → T^{tC_p} ⊗ (Σ^∞Z)^{hC_p} → T^{tC_p} ⊗ (Σ^∞Z)^{tC_p} → (T ⊗ Σ^∞Z)^{tC_p}`, whose first map is induced by `Σ^∞Z^{C_p} → (Σ^∞Z)^{hC_p}` (adjoint to the inclusion of `Z^{C_p}` with trivial action), whose second is `id ⊗ can` and whose third is the lax structure map (speirs-trunc Lemma 7, line 304, and the diagram in the proof of Lemma 8, lines 350–376). The route: both maps are natural in T, and their source and target are exact functors of T that vanish on induced objects. Since `Σ^∞Z^{C_p}` is a finite, hence dualizable, spectrum, the universal property of `(−)^{tC_p}` under `(−)^{hC_p}` shows that such a transformation is determined by its restriction along `can ⊗ id : T^{hC_p} ⊗ Σ^∞Z^{C_p} → T^{tC_p} ⊗ Σ^∞Z^{C_p}`. The two restrictions agree because `can` is lax symmetric monoidal. Neither statement uses p-completion or the Segal equivalence `𝕊^{tC_p} ≃ 𝕊^∧_p`.
 
-*Needs:* RefinedTraceMethods §2.3 (Tate vanishing on induced objects, p-completeness of `T^{tC_p}` for bounded-below T, `𝕊^{tC_p} ≃ 𝕊^∧_p`); BordismFormalGroups §F6.5 (the lax monoidal Tate functor).
+*Needs:* BordismFormalGroups §F6.5 (exactness of `(−)^{tC_p}`, the projection formula and Tate vanishing on induced objects, the lax symmetric monoidal Tate functor with lax monoidal `can`, the universal property of `(−)^{tC_p}` under `(−)^{hC_p}`).
 
 **Checks.**
 
-- For `Z = C_{p+}` both sides of the first map vanish: `Z^{C_p} = pt`, and the Tate construction of an induced object is zero.
-- For Z = S⁰ with trivial action, the first map is the identity of `T^{tC_p}`.
-- Negative control for the unadjusted lax map: for T = 𝕊 and Z = S⁰ the source is `𝕊^∧_p ⊗ 𝕊^∧_p`, whose π₀ is `ℤ_p ⊗ ℤ_p`, uncountable over ℤ_p. The target is 𝕊^∧_p with π₀ = ℤ_p. So the map is a p-adic equivalence and not an equivalence.
+- For `Z = C_{p+}` both sides of the fixed-point map vanish. `Z^{C_p}` is the base point, so the source is 0, and `T ⊗ Σ^∞_+C_p` is induced, so its Tate construction is zero.
+- For Z = S⁰ with trivial action, the fixed-point map is the identity of `T^{tC_p}`. The lax composite is `T^{tC_p}` tensored with the unit `𝕊 → 𝕊^{hC_p} → 𝕊^{tC_p}` of the lax structure, followed by the product, so by unitality it is also the identity. For T = Hℤ with trivial action, π₀ of both maps is the identity of ℤ/p. No identification of `𝕊^{tC_p}` enters.
+- Finiteness of Z is needed. For `Z = S⁰ ∨ EC_{p+}`, with EC_p a free contractible C_p-CW complex, `Z^{C_p} = S⁰`, while `Σ^∞_+EC_p ≃ 𝕊` with trivial action in Borel spectra. So the target is `T^{tC_p} ⊕ T^{tC_p}` and the map is the inclusion of the first summand. For T = Hℤ with trivial action, π₀ of the map is the inclusion `ℤ/p → ℤ/p ⊕ ℤ/p`, not an isomorphism.
 
 ### 3.2 The circle-orbit identity
 
@@ -388,7 +395,7 @@ Prove that for every E∞-ring E with `π_{2r+1}E = 0` for all r, and every T-eq
 - For a perfectoid ring R, `THH(R;ℤ_p)` is even by Bökstedt periodicity (AInfCohomology §AI.7.2), so every T-equivariant `THH(R;ℤ_p)`-module is suspension invariant. For an 𝔽_p-algebra k, `THH(k)` is a T-equivariant `Hℤ`-module through `Hℤ → Hℤ_p ≃ τ_{≥0}TC(𝔽_p) → THH(𝔽_p) → THH(k)` (hn-cusp line 115; KTheoryFiniteLocalFields §5.1), and Hℤ is even.
 - The equivalence is not natural in V: it is a choice, and only its existence is used.
 
-*Needs:* RefinedTraceMethods §2.1; AInfCohomology §AI.7.2 (Bökstedt periodicity for perfectoid rings); KTheoryFiniteLocalFields §5.1 (`τ_{≥0}TC(𝔽_p) ≃ Hℤ_p`); EnhancedDerivedSheaves E5 (modules over E∞-rings).
+*Needs:* RefinedTraceMethods §2.1; AInfCohomology §AI.7.2 (Bökstedt periodicity for perfectoid rings); KTheoryFiniteLocalFields §5.1 (`τ_{≥0}TC(𝔽_p) ≃ Hℤ_p`); EnhancedDerivedSheaves §E5:abstract.2 (modules over E∞-rings).
 
 **Checks.**
 
@@ -430,7 +437,7 @@ Let `(A_v)_{v≥0}` and `(B_v)_{v≥1}` be abelian groups with maps `φ_v : A_v 
 
 ### 3.6 Homotopy of circle cells
 
-For a perfectoid ring R, a complex T-representation λ of complex dimension d, and m = p^n m′ with p ∤ m′, prove `π_j((THH(R;ℤ_p) ⊗ S^λ ∧ (T/C_m)_+)^{hT}) ≅ π_{j−2d−1}(THH(R;ℤ_p)^{hC_{p^n}})` and the same with tT and `tC_{p^n}`. For the Frobenius, consider a finite pointed T-CW complex B of dimension N and a T-map `ψ : B → B′^{C_p}` that is an isomorphism, the restricted Frobenius `THH(R;ℤ_p) ⊗ Σ^∞B → (THH(R;ℤ_p) ⊗ Σ^∞B′)^{tC_p}` is an isomorphism on π_j for j ≥ N, and so is its map of homotopy T-fixed points (speirs-axes Corollary 17, line 603; speirs-trunc Corollary 9, line 377). The inputs are 3.1, 3.2, 3.3 and 3.4. The Frobenius bound uses that φ_p is the connective cover onto `THH(R;ℤ_p)^{tC_p}`, whose `π_{−1}` vanishes.
+For a perfectoid ring R, a complex T-representation λ of complex dimension d, and m = p^n m′ with p ∤ m′, prove `π_j((THH(R;ℤ_p) ⊗ S^λ ∧ (T/C_m)_+)^{hT}) ≅ π_{j−2d−1}(THH(R;ℤ_p)^{hC_{p^n}})` and the same with tT and `tC_{p^n}`. For the Frobenius, let B and B′ be finite pointed T-CW complexes, B of dimension N, and let `ψ : B → B′^{C_p}` be a T-equivariant homeomorphism, where `B′^{C_p}` carries the residual action of T/C_p ≅ T of the Conventions. Then the restricted Frobenius `THH(R;ℤ_p) ⊗ Σ^∞B → (THH(R;ℤ_p) ⊗ Σ^∞B′)^{tC_p}` is an isomorphism on π_j for j ≥ N, and so is its map of homotopy T-fixed points (speirs-axes Corollary 17, line 603; speirs-trunc Lemma 8 and Corollary 9, lines 347 and 377). Here the restricted Frobenius is, as in §2.3, the composite of `φ_p ⊗ Σ^∞ψ` into `THH(R;ℤ_p)^{tC_p} ⊗ (Σ^∞B′)^{hC_p}` (through `Σ^∞B′^{C_p} → (Σ^∞B′)^{hC_p}`), of `id ⊗ can` and of the lax structure map. The route factors it through fixed cells. By the compatibility statement of 3.1 for Z = B′ with the restricted C_p-action, it is homotopic to `φ_p ⊗ id_{Σ^∞B}`, followed by the equivalence `id ⊗ Σ^∞ψ : THH(R;ℤ_p)^{tC_p} ⊗ Σ^∞B → THH(R;ℤ_p)^{tC_p} ⊗ Σ^∞B′^{C_p}` and by the fixed-point map of 3.1, which is an equivalence (speirs-trunc lines 341–376). Finiteness of B′ is what makes 3.1 apply: `B′^{C_p}` is then a finite complex, and `B′/B′^{C_p}` is a finite colimit of free C_p-cells, because a cell T/H with C_p ⊄ H is C_p-free and built from finitely many free C_p-cells. This route uses neither p-completion nor the Segal equivalence; speirs-axes Proposition 16 (line 532) factors the Frobenius instead through the lax structure map on `(Σ^∞B′)^{tC_p}`, which needs both. The inputs are 3.1, 3.2, 3.3 and 3.4. The Frobenius bound uses that φ_p is the connective cover onto `THH(R;ℤ_p)^{tC_p}`, whose `π_{−1}` vanishes. So the fibre of φ_p has homotopy only in degrees ≤ −3, the fibre of `φ_p ⊗ id_{Σ^∞B}` only in degrees ≤ N − 3, and `φ_p ⊗ id_{Σ^∞B}` is an isomorphism on π_j for j ≥ N − 1.
 
 *Needs:* §§3.1–3.4; Layer 2 §2.3 (Frobenius factorization).
 
@@ -439,6 +446,7 @@ For a perfectoid ring R, a complex T-representation λ of complex dimension d, a
 - For R = 𝔽_p, λ = 0 and m = 1: `π_j((THH(𝔽_p) ⊗ T_+)^{hT}) = π_{j−1}THH(𝔽_p)`, which is 𝔽_p for j odd and j ≥ 1. This is the weight-1 summand of TC^-(𝔽_p[t]).
 - For λ = C(1), d = 1 and m = p: π_j of the homotopy fixed points is `π_{j−3}(THH(R;ℤ_p)^{hC_p})`. Forgetting the representation sphere would shift by 1 instead of 3.
 - For `B = S^{λ_1} ∧ T_+` (N = 3), the restricted Frobenius is an isomorphism from π_3 on but not on π_1. In π_1 the source is zero, while the target receives `π_{−2}` of a Tate construction, which is nonzero.
+- Finiteness of B′ is needed. Take R = 𝔽_p, B = S⁰ (N = 0) and `B′ = S⁰ ∨ ET_+` with ET a free contractible T-CW complex, so that `B′^{C_p} = S⁰` and ψ is the identity. In Borel spectra `Σ^∞_+ET ≃ 𝕊`, so the target is `THH(𝔽_p)^{tC_p} ⊕ THH(𝔽_p)^{tC_p}` and π_0 of the map is the inclusion `𝔽_p → 𝔽_p²` of one summand, not an isomorphism. With the finite free complex T in place of ET, `(THH(𝔽_p) ⊗ T_+)^{tC_p} = 0` and π_0 is the identity of 𝔽_p.
 
 ### Examples
 
@@ -446,7 +454,7 @@ For a perfect field k and the weight-p^v summands `THH(k) ⊗ (T/C_{p^v})_+` of 
 
 ### Dependencies
 
-Layer 2 (§2.3). Suppliers: RefinedTraceMethods §§2.1, 2.3–2.4, 2.9; AInfCohomology AI.0, §AI.7.2; KTheoryFiniteLocalFields §5.1; QWittVectors §1.5; EnhancedDerivedSheaves E5.
+Layer 2 (§2.3). Suppliers: BordismFormalGroups §F6.5; RefinedTraceMethods §§2.1, 2.3–2.4, 2.9; AInfCohomology AI.0, §AI.7.2; KTheoryFiniteLocalFields §5.1; QWittVectors §1.5; EnhancedDerivedSheaves §E5:abstract.2.
 
 ## Layer 4: Normalization squares and birelative theory
 
@@ -464,27 +472,16 @@ For a map of rings f : A → B and an ideal I ⊂ A mapped isomorphically onto a
 - For B = A and f the identity, every birelative term vanishes.
 - For A = B × C and the ideal B × 0, the square is a product square and the birelative terms vanish, because K and TC preserve finite products.
 - For the coordinate axes A_2 → k[x] × k[y], `K_1(A_2,B_2,I_2) = 0` and `K_2(A_2,B_2,I_2) ≅ k` for a field k (Dennis–Krusemeyer, hesselholt-axes line 31). A birelative term that ignored the K₂ failure of excision would give zero in degree 2.
+- Non-example: the square of the reduction map f : A = ℤ → B = ℤ/p with I = pℤ and `A/I = B/f(I) = ℤ/p` is not a Milnor square, because f carries I = pℤ to 0 and not isomorphically onto an ideal of B. Its birelative term is the relative term `K(ℤ, pℤ)`, so excision for `K^inv` (RefinedTraceMethods §4.18) says nothing about it, and relative K is not relative TC there (RefinedTraceMethods §4.17 Checks).
 
-### 4.2 The birelative trace theorem
-
-Prove that for every Milnor square of rings the birelative trace `K(A,B,I) → TC(A,B,I)` is an equivalence, and that rationally `K(A,B,I) ⊗ ℚ ≃ ΣHC(A⊗ℚ,B⊗ℚ,I⊗ℚ)`, with HC over ℚ. This is the specialization of the truncating excision theorem of RefinedTraceMethods §4.18 to `K^inv` and to `KQinf`. Prove also nil-invariance of `K^inv`. If A → A′ is a ring map and J ⊂ A, J′ ⊂ A′ are nilpotent ideals such that A → A′ induces an isomorphism A/J ≅ A′/J′, then `K^inv(A) → K^inv(A′)` is an equivalence (hn-cusp line 97; hesselholt-cusp-polytopes Theorem 4.1, line 839).
-
-*Needs:* §4.1 (birelative terms of a Milnor square); RefinedTraceMethods §§4.12, 4.17, 4.18.
-
-**Checks.**
-
-- For k = 𝔽_p and the axes A_2, `K_2(A_2,B_2,I_2) = 𝔽_p` (Layer 5). On the TC side, the lowest birelative THH summand `Σ^{−1}THH(𝔽_p) ⊗ S^{λ_1} ∧ T_+` has bottom cell in degree 1, and after TC it contributes `W_1(𝔽_p)` in degree 2. A trace that missed the `Σ^{−1}` would put the first nonzero group in degree 3.
-- Over ℚ for the coordinate axes A_2: `K_2(A_2,B_2,I_2) ⊗ ℚ ≅ HC_1(A_2,B_2,I_2) = k` (Geller–Reid–Weibel as recalled at hesselholt-axes line 97). A shift by 0 instead of 1 would give `HC_2 = 0` there.
-- Non-example: the square of the reduction map f : A = ℤ → B = ℤ/p with I = pℤ and `A/I = B/f(I) = ℤ/p` is not a Milnor square, because f carries I = pℤ to 0 and not isomorphically onto an ideal of B. Its birelative term is the relative term `K(ℤ, pℤ)`, and the birelative trace theorem says nothing about relative K, which is not relative TC (RefinedTraceMethods §4.17 Checks).
-
-### 4.3 The normalization squares of axes and cusps
+### 4.2 The normalization squares of axes and cusps
 
 Prove the following for every ring k.
 
 - *Axes.* For d ≥ 2, `A_d = k[x_1,…,x_d]/(x_ix_j)_{i≠j} → B_d = ∏_i k[x_i]`, with ideal `I_d = (x_1,…,x_d)` and quotient square `k → k^d` (the diagonal), is a Milnor square (speirs-axes line 110).
-- *Cusps.* For coprime a, b ≥ 2, the inclusion `A = k[t^a,t^b] ⊂ B = k[t]`, with conductor ideal `c = t^{(a−1)(b−1)}k[t] ⊂ A`, is a Milnor square. The quotients `A/c` and `B/c` are finite k-algebras whose augmentation ideals are nilpotent, so `K^inv(A) ≃ K^inv(B)`. Equivalently the square of K(A), TC(A), K(B) and TC(B) is cartesian (hn-cusp line 89; hesselholt-cusp-polytopes Remark 1.5 and Theorem 4.1, lines 373 and 839).
+- *Cusps.* For coprime a, b ≥ 2, the inclusion `A = k[t^a,t^b] ⊂ B = k[t]`, with conductor ideal `c = t^{(a−1)(b−1)}k[t] ⊂ A`, is a Milnor square. The quotients `A/c` and `B/c` are finite k-algebras whose augmentation ideals are nilpotent, so excision and nil-invariance of `K^inv` (RefinedTraceMethods §4.18) give `K^inv(A) ≃ K^inv(B)`. Equivalently the square of K(A), TC(A), K(B) and TC(B) is cartesian (hn-cusp lines 89 and 97; hesselholt-cusp-polytopes Remark 1.5 and Theorem 4.1, lines 373 and 839).
 
-*Needs:* §§1.1, 4.1–4.2; Mathlib `Polynomial`, `Ideal`.
+*Needs:* §§1.1, 4.1; RefinedTraceMethods §4.18 (excision and nil-invariance of truncating invariants, applied to `K^inv`); Mathlib `Polynomial`, `Ideal`.
 
 **Checks.**
 
@@ -492,11 +489,11 @@ Prove the following for every ring k.
 - For d = 2 and k = ℤ the square is `ℤ[x,y]/(xy) → ℤ[x] × ℤ[y]` over `ℤ → ℤ × ℤ`. It is cartesian as a square of rings, and I_2 maps isomorphically onto `xℤ[x] × yℤ[y]`.
 - For the cusp (a,b) = (2,3), `c = t²k[t]` and `A/c = k`, while `B/c = k[t]/t²`. The two quotients are not isomorphic, but both reduce to k modulo a nilpotent ideal. Nil-invariance of `K^inv`, not an isomorphism of the quotients, therefore gives `K^inv(A) ≃ K^inv(B)`.
 
-### 4.4 Relative versus birelative K-theory
+### 4.3 Relative versus birelative K-theory
 
-Prove the following. If `NK_n(k) = 0` for every integer n, then `K(A_d,I_d) ≃ K(A_d,B_d,I_d)`, and for the cusp `K(A,(x,y)) ≃ fib(IK(A) → IK(k[t]))`. Here `A → A/(x,y) = k` and `A_d → k` are split by the inclusion of constants, so `IK_q(A) = IK_q(k) ⊕ K_q(A,(x,y))`. The hypothesis holds for every regular noetherian ring k (SchemeKTheoryOperations §5.2), and for every ind-smooth ℚ-algebra, because NK commutes with filtered colimits. For a perfect 𝔽_p-algebra it is gap `perfect-homotopy-invariance` (amm-perfectoid Proposition 5.1, line 558; hn-cusp line 101; speirs-axes line 128; hesselholt-axes line 55).
+Prove the following. If `NK_n(k) = 0` for every integer n, then `K(A_d,I_d) ≃ K(A_d,B_d,I_d)`, and for the cusp `K(A,(x,y)) ≃ fib(IK(A) → IK(k[t]))`. Here `A → A/(x,y) = k` and `A_d → k` are split by the inclusion of constants, so `IK_q(A) = IK_q(k) ⊕ K_q(A,(x,y))`. The hypothesis holds for every regular noetherian ring k (SchemeKTheoryOperations §5.2), and for every ind-smooth ℚ-algebra, because NK commutes with filtered colimits. For a perfect 𝔽_p-algebra it is gap `perfect-homotopy-invariance` (amm-perfectoid Proposition 5.1, line 558; hn-cusp line 101; riggenbach-cusp line 152; speirs-axes line 128; hesselholt-axes line 55).
 
-*Needs:* §4.1; SchemeKTheoryOperations §5.2; GeneralAlgebraicKTheory §§10.5, 10.13; gap `perfect-homotopy-invariance` (perfect 𝔽_p-algebras that are not regular noetherian).
+*Needs:* §4.1; SchemeKTheoryOperations §5.2; GeneralAlgebraicKTheory §10.5; gap `perfect-homotopy-invariance` (perfect 𝔽_p-algebras that are not regular noetherian).
 
 **Checks.**
 
@@ -508,9 +505,11 @@ Prove the following. If `NK_n(k) = 0` for every integer n, then `K(A_d,I_d) ≃ 
 
 For a field k and d ≥ 2, Milnor's Mayer–Vietoris sequence gives `K_1(A_d) = k^×`, so `K_1(A_d,I_d) = 0`, and `K_0(A_d,I_d) = 0`. These are the degree-1 and degree-0 values that Layer 5 must reproduce. For the cusp (2,3) over a field, `Pic(A) ≅ k`, which is `K_0(A,(x,y))`. Layer 6 must reproduce it at r = 0.
 
+Excision for `K^inv` and its rational form (RefinedTraceMethods §4.18) make the birelative trace `K(A,B,I) → TC(A,B,I)` of every Milnor square an equivalence and give `K(A,B,I) ⊗ ℚ ≃ ΣHC(A⊗ℚ,B⊗ℚ,I⊗ℚ)`. On the axes A_2 over k = 𝔽_p, `K_2(A_2,B_2,I_2) = 𝔽_p` (Layer 5), and on the TC side the lowest birelative THH summand `Σ^{−1}THH(𝔽_p) ⊗ S^{λ_1} ∧ T_+` has bottom cell in degree 1 and contributes `W_1(𝔽_p)` to TC in degree 2; a trace that missed the `Σ^{−1}` would put the first nonzero group in degree 3. Over k = ℚ, `K_2(A_2,B_2,I_2) ⊗ ℚ ≅ HC_1(A_2,B_2,I_2) = ℚ` (Geller–Reid–Weibel as recalled at hesselholt-axes line 97), while `HC_2(A_2,B_2,I_2) = 0`, so a shift by 0 instead of 1 would give the wrong group.
+
 ### Dependencies
 
-Layer 1 (§1.1). Suppliers: RefinedTraceMethods §§4.12, 4.17–4.18; GeneralAlgebraicKTheory §§8.1, 10.5, 10.13; SchemeKTheoryOperations §5.2; gap `perfect-homotopy-invariance`.
+Layer 1 (§1.1). Suppliers: RefinedTraceMethods §§4.12, 4.17–4.18; GeneralAlgebraicKTheory §§8.1, 10.5; SchemeKTheoryOperations §5.2; gap `perfect-homotopy-invariance`.
 
 ## Layer 5: Coordinate axes
 
@@ -522,19 +521,19 @@ Prove that for every 𝔽_p-algebra k, with A = k[x,y]/(xy), B = k[x] × k[y] an
 
 **Checks.**
 
-- For q ≤ 1 every factor vanishes. The reason is that `TR^r_{q−λ}(k;p) = 0` for `q < 2·dim_ℂλ^{C_{p^{r−1}}}`, and `λ_{p^{r−1}d}^{C_{p^{r−1}}}` has complex dimension d ≥ 1. This agrees with `K_q(A,I) = 0` for q ≤ 1 (§§4.4, 5.2).
+- For q ≤ 1 every factor vanishes. The reason is that `TR^r_{q−λ}(k;p) = 0` for `q < 2·dim_ℂλ^{C_{p^{r−1}}}`, and `λ_{p^{r−1}d}^{C_{p^{r−1}}}` has complex dimension d ≥ 1. This agrees with `K_q(A,I) = 0` for q ≤ 1 (§§4.3, 5.2).
 - For q = 2 only d = 1, r = 1 contributes: `TR^1_{2−λ_1}(k;p) = π_0THH(k) = k`. So `TC_2(A,B,I;p) = k`.
-- With λ replaced by 0 the formula would give `∏_d TR_q(k;p)`, which is nonzero in degree 0. This contradicts `K_0(A,I) = 0` (§4.4 Checks).
+- With λ replaced by 0 the formula would give `∏_d TR_q(k;p)`, which is nonzero in degree 0. This contradicts `K_0(A,I) = 0` (§4.3 Checks).
 
 ### 5.2 The axes in the plane over regular noetherian 𝔽_p-algebras
 
-Prove that for every regular noetherian 𝔽_p-algebra k and every integer q, `K_q(k[x,y]/(xy),(x,y)) ≅ ⊕_{m≥1} ⊕_{d∈J_p, d≤m} W_{s(m,d)}Ω^{q−2m}_k`, where `s(m,d)` is the unique s ≥ 1 with `p^{s−1}d ≤ m < p^s d`. This is the p-typical form of `⊕_{m≥1} 𝕎_mΩ^{q−2m}_k` (hesselholt-axes Theorem A and the decomposition at line 36). The route combines §4.4 (NK vanishes for regular noetherian rings), §4.2 (`K(A,B,I) ≃ TC(A,B,I)`, which is p-complete because p = 0 in A), §5.1 and KTheoryFiniteLocalFields §5.17. In that formula, for `λ = λ_{p^{r−1}d}`, one has `ℓ_s = p^{r−1−s}d` for s ≤ r − 1. So the summand `W_tΩ^{q−2m}_k` occurs for `p^{t−1}d ≤ m < p^t d`, that is, for t = s(m,d), and the limit over r stabilizes to `⊕_{m≥d} W_{s(m,d)}Ω^{q−2m}_k`.
+Prove that for every regular noetherian 𝔽_p-algebra k and every integer q, `K_q(k[x,y]/(xy),(x,y)) ≅ ⊕_{m≥1} ⊕_{d∈J_p, d≤m} W_{s(m,d)}Ω^{q−2m}_k`, where `s(m,d)` is the unique s ≥ 1 with `p^{s−1}d ≤ m < p^s d`. This is the p-typical form of `⊕_{m≥1} 𝕎_mΩ^{q−2m}_k` (hesselholt-axes Theorem A and the decomposition at line 36). The route combines §4.3 (NK vanishes for regular noetherian rings), excision for `K^inv` (RefinedTraceMethods §4.18, giving `K(A,B,I) ≃ TC(A,B,I)`, which is p-complete because p = 0 in A), §5.1 and KTheoryFiniteLocalFields §5.17. In that formula, for `λ = λ_{p^{r−1}d}`, one has `ℓ_s = p^{r−1−s}d` for s ≤ r − 1. So the summand `W_tΩ^{q−2m}_k` occurs for `p^{t−1}d ≤ m < p^t d`, that is, for t = s(m,d), and the limit over r stabilizes to `⊕_{m≥d} W_{s(m,d)}Ω^{q−2m}_k`.
 
-*Needs:* §§1.3, 4.2, 4.4, 5.1; KTheoryFiniteLocalFields §5.17; CrystallineCohomology CR.4; SchemeKTheoryOperations §5.2.
+*Needs:* §§1.3, 4.3, 5.1; RefinedTraceMethods §4.18; KTheoryFiniteLocalFields §5.17; CrystallineCohomology CR.4; SchemeKTheoryOperations §5.2.
 
 **Checks.**
 
-- q = 1: every term has q − 2m < 0, so `K_1(A,I) = 0`. This agrees with Milnor's Mayer–Vietoris computation of §4.4.
+- q = 1: every term has q − 2m < 0, so `K_1(A,I) = 0`. This agrees with Milnor's Mayer–Vietoris computation of Layer 4 (Examples).
 - q = 2: only m = d = 1, giving `W_1Ω⁰_k = k`. This is the Dennis–Krusemeyer group. q = 3: `Ω¹_k`, which vanishes for perfect k.
 - q = 4: `Ω²_k ⊕ W_{s(2,1)}(k) ⊕ W_{s(2,2)}(k)`. For p odd, s(2,1) = s(2,2) = 1, giving `Ω²_k ⊕ k ⊕ k`. For p = 2, d = 2 is excluded and s(2,1) = 2, giving `Ω²_k ⊕ W_2(k)`. For k = 𝔽_2 this is ℤ/4, and a formula with big Witt vectors read componentwise would give `𝔽_2²` (hesselholt-axes line 108).
 - Exponent: for `p^{s−1} ≤ n < p^s` and k = 𝔽_p, `K_{2n}(A,I)` has exponent exactly p^s (hesselholt-axes line 110). For n = 2 and p = 2 this is 4.
@@ -554,9 +553,9 @@ Here t_ev = t_ev(p,r,m′) and t_od = t_od(p,r,m′) are as in §1.4, and `W_0 =
 
 The route has three parts. First, `THH(A_d,B_d,I_d)` splits by §2.5 into `THH(k) ⊗ B(m,s)` summands with multiplicity cyc_d(s). Second, Layer 3 computes their TC^- and TP: in the families with m and s of equal parity, the homotopy groups are `W_{v−u+1}(k)` or `W_{v−u}(k)` (speirs-axes Proposition 26, line 857). In the p = 2 family with m even and s odd, they are k in every odd degree, with homotopy fixed points of the v = 0 term equal to k exactly in odd degrees ≥ m′ (speirs-axes Proposition 28). Third, apply the staircase lemma §3.5 with s = t_ev or t_od. In the last family it applies with s = t_od(2,r,m′) and `A_{s−1} = k^{⊕cyc_d(s′)}`, giving one copy for each odd m′ ≤ 2r + 1.
 
-speirs-axes Theorem 2 prints the p = 2 odd-degree formula with the index 0 ≤ v ≤ t_ev, and that version is false; the count above is the correct one. The printed version fails in degree 1: for d = 3 and r = 0 it would give a nonzero group from m′ = 3, while `K_1(A_d,I_d) = 0` by §4.4.
+speirs-axes Theorem 2 prints the p = 2 odd-degree formula with the index 0 ≤ v ≤ t_ev, and that version is false; the count above is the correct one. The printed version fails in degree 1: for d = 3 and r = 0 it would give a nonzero group from m′ = 3, while `K_1(A_d,I_d) = 0` by the Mayer–Vietoris computation of Layer 4 (Examples).
 
-*Needs:* §§1.4, 2.5, 3.1–3.6, 4.2, 4.4; KTheoryFiniteLocalFields §5.1.
+*Needs:* §§1.4, 2.5, 3.1–3.6, 4.3; RefinedTraceMethods §4.18; KTheoryFiniteLocalFields §5.1.
 
 **Checks.**
 
@@ -577,9 +576,9 @@ HC_q((A_d,I_d)/ℚ) ≅ ⊕_{m≥2 even} ⊕_{s|m even} HH_{q+1−m}(k/ℚ)^{⊕
 
 The last summand is the relative HC of the d lines and disappears in the birelative term. Prove further that for every ind-smooth ℚ-algebra k, `K_q(A_d,I_d) ≅ ⊕_{j=0}^{q−2} (Ω^j_{k/ℚ})^{⊕c_{d−1}(q−j)}` (speirs-axes Theorem 31, line 1228).
 
-The route: §2.4 identifies `HH(A_d/ℚ)` with `HH(k/ℚ) ⊗ B^cy(Π_d)`. Over ℚ, the words with s odd and i even have no rational homology (§2.5), and `(HH(k) ⊗ S^{λ_j} ∧ (T/C_i)_+)_{hT}` has homotopy `HH_{q−2j}(k)` because rational group homology of C_i is concentrated in degree 0. Then §4.2 gives `K_q(A_d,B_d,I_d) ≃ HC_{q−1}(A_d,B_d,I_d)`, which is rational because the birelative K-groups are ℚ-vector spaces. §4.4 applies since NK vanishes for ind-smooth ℚ-algebras, and the smooth HKR theorem of RefinedTraceMethods §1.9 identifies `HH_j(k/ℚ) ≅ Ω^j_{k/ℚ}`, extended to filtered colimits.
+The route: §2.4 identifies `HH(A_d/ℚ)` with `HH(k/ℚ) ⊗ B^cy(Π_d)`. Over ℚ, the words with s odd and i even have no rational homology (§2.5), and `(HH(k) ⊗ S^{λ_j} ∧ (T/C_i)_+)_{hT}` has homotopy `HH_{q−2j}(k)` because rational group homology of C_i is concentrated in degree 0. Then the rational form of excision for `K^inv` (RefinedTraceMethods §4.18) gives `K_q(A_d,B_d,I_d) ≃ HC_{q−1}(A_d,B_d,I_d)`, which is rational because the birelative K-groups are ℚ-vector spaces. §4.3 applies since NK vanishes for ind-smooth ℚ-algebras, and the smooth HKR theorem of RefinedTraceMethods §1.9 identifies `HH_j(k/ℚ) ≅ Ω^j_{k/ℚ}`, extended to filtered colimits.
 
-*Needs:* §§1.4, 2.4–2.5, 4.2, 4.4; RefinedTraceMethods §§1.4, 1.9, 4.17–4.18.
+*Needs:* §§1.4, 2.4–2.5, 4.3; RefinedTraceMethods §§1.4, 1.9, 4.17–4.18.
 
 **Checks.**
 
@@ -603,7 +602,7 @@ Prove that for every perfect 𝔽_p-algebra k and coprime a, b ≥ 2, with A = k
 
 The route: by §2.6, `cofib(THH(A) → THH(B)) ≃ ∏_{m≥1} THH(k) ⊗ Σ^∞B_m`, and THH(k) is a T-equivariant Hℤ-module (§3.3). So `THH(k) ⊗ B_m` is the total cofibre of the square of `THH(k) ⊗ (T/C_{m/c})_+[2ℓ(a,b,m)]`. By §3.2 and §3.4 its homotopy fixed points and Tate construction are cofibres of transfer maps `THH(k)^{hC_{p^{v−u}}} → THH(k)^{hC_{p^v}}`, each multiplication by p^u. The Frobenius carries weight m to weight pm and is an isomorphism in the relevant degrees (§3.1, using the free-cell cofibre of §2.6, and §3.6). The staircase lemma (§3.5), applied for each m′ ∈ J_p in each of the three cases (neither a′ nor b divides m′, a′ but not b divides m′, b divides m′), gives `W_h(k)` in degree 2r + 1 of the cofibre, and zero otherwise.
 
-*Needs:* §§1.1, 1.3, 2.6, 3.1–3.6, 4.3; KTheoryFiniteLocalFields §5.1.
+*Needs:* §§1.1, 1.3, 2.6, 3.1–3.6, 4.2; KTheoryFiniteLocalFields §5.1.
 
 **Checks.**
 
@@ -613,9 +612,9 @@ The route: by §2.6, `cofib(THH(A) → THH(B)) ≃ ∏_{m≥1} THH(k) ⊗ Σ^∞
 
 ### 6.2 K-theory of planar cuspidal curves
 
-Prove that for every perfect 𝔽_p-algebra k and coprime a, b ≥ 2, `K_j(k[x,y]/(y^a − x^b),(x,y)) ≅ W_S(k)/(V_aW_{S/a}(k) + V_bW_{S/b}(k))` for j = 2r ≥ 0 with S = S(a,b,r), and that all other relative K-groups vanish (hn-cusp Theorem A, line 27). The isomorphism is canonical, and the right-hand side is identified with `W_{T(a,b,r)}(k)` by §1.2. The route: §4.3 gives `fib(IK(A) → IK(B)) ≃ F`, and §4.4 identifies the left side with `K(A,(x,y))`. For perfect fields, and more generally regular noetherian perfect k, this uses SchemeKTheoryOperations §5.2; for other perfect 𝔽_p-algebras it uses gap `perfect-homotopy-invariance`. Then §6.1 computes F, and §§1.2–1.3 with gap `bigwitt-ptypical-decomposition` identify `∏_{m′} W_h(k) ≅ W_{T(a,b,r)}(k)`.
+Prove that for every perfect 𝔽_p-algebra k and coprime a, b ≥ 2, `K_j(k[x,y]/(y^a − x^b),(x,y)) ≅ W_S(k)/(V_aW_{S/a}(k) + V_bW_{S/b}(k))` for j = 2r ≥ 0 with S = S(a,b,r), and that all other relative K-groups vanish (hn-cusp Theorem A, line 27). The isomorphism is canonical, and the right-hand side is identified with `W_{T(a,b,r)}(k)` by §1.2. The route: §4.2 gives `fib(IK(A) → IK(B)) ≃ F`, and §4.3 identifies the left side with `K(A,(x,y))`. For perfect fields, and more generally regular noetherian perfect k, this uses SchemeKTheoryOperations §5.2; for other perfect 𝔽_p-algebras it uses gap `perfect-homotopy-invariance`. Then §6.1 computes F, and §§1.2–1.3 with gap `bigwitt-ptypical-decomposition` identify `∏_{m′} W_h(k) ≅ W_{T(a,b,r)}(k)`.
 
-*Needs:* §§1.2–1.3, 4.3–4.4, 6.1; SchemeKTheoryOperations §5.2; gaps `perfect-homotopy-invariance` and `bigwitt-ptypical-decomposition`.
+*Needs:* §§1.2–1.3, 4.2–4.3, 6.1; SchemeKTheoryOperations §5.2; gaps `perfect-homotopy-invariance` and `bigwitt-ptypical-decomposition`.
 
 **Checks.**
 
@@ -671,14 +670,14 @@ Layers 1–3. Suppliers: RefinedTraceMethods §4.17; KTheoryFiniteLocalFields §
 
 ## Layer 8: Prismatic and syntomic cohomology relative to δ-rings and of filtered rings
 
-This layer builds the prismatic package of a commutative algebra over an arbitrary δ-ring, its syntomic complexes and its filtered variant, with crystalline degeneration. It generalizes the relative prismatic cohomology over a prism (PrismaticCohomology Layers 1–2) and the absolute theory (PrismaticCohomologyPartII Layer 4), and agrees with both. Locators refer to akn-delta v2. akn24 cites the v1 numbering: its "Theorem 1.1", "Corollary 1.2", "Corollary 10.32", "Proposition 10.41" and "Proposition 10.44, Corollary 10.45" are v2's Theorem 1.2, Corollary 1.3, Corollary 10.34, Proposition 10.43, and Proposition 10.46 with Corollary 10.47.
+This layer builds the prismatic package of a commutative algebra R over a δ-ring A, both with bounded p^∞-torsion, its syntomic complexes and its filtered variant, with crystalline degeneration. It generalizes the relative prismatic cohomology over a prism (PrismaticCohomology Layers 1–2) and the absolute theory (PrismaticCohomologyPartII Layer 4), and agrees with both. Locators refer to akn-delta v2. akn24 cites the v1 numbering: its "Theorem 1.1", "Corollary 1.2", "Corollary 10.32", "Proposition 10.41" and "Proposition 10.44, Corollary 10.45" are v2's Theorem 1.2, Corollary 1.3, Corollary 10.34, Proposition 10.43, and Proposition 10.46 with Corollary 10.47.
 
 ### 8.1 δ-pairs
 
 Define a δ-pair as a δ-ring A with a map of commutative rings A → R. It is bounded if A and R have bounded p^∞-torsion. It is finitely presented free if A is the free δ-ring on finitely many generators and R is a polynomial A-algebra in finitely many variables. It is relatively quasisyntomic if R is derived p-complete and `L_{R/A}` has p-complete Tor-amplitude in [0,1]. It is relatively quasiregular semiperfectoid if, in addition, it admits a pre-prismatic factorization `A → A′ → R` with A → A′ p-completely relatively perfect, `A′ → R` surjective and `L_{R/A′}` of p-complete Tor-amplitude in [1,1] (akn-delta line 121 and Definitions 9.1–9.2, lines 1838–1850). Maps of δ-pairs are commuting squares with a δ-map on the first entry.
 
-- The bounded δ-pairs form a category Pairs_δ, with base change along δ-maps A → A′ and products.
-- Prisms (A,I) with A-algebras R, and the pairs (ℤ_p, R) and (W(k), R) for perfect 𝔽_p-algebras k, are bounded δ-pairs. Relatively qrsp pairs form a basis of the relatively quasisyntomic pairs for the quasisyntomic topology (akn-delta Proposition 9.14, line 1974).
+- The δ-pairs form a category Pairs_δ (akn-delta Definition 2.1, line 296). The bounded δ-pairs form a full subcategory, closed under finite products and under base change `(A,R) ↦ (A′, R ⊗_A A′)` along flat δ-maps A → A′ with A′ bounded: by flatness `(R ⊗_A A′)[p^∞] = R[p^∞] ⊗_R (R ⊗_A A′)`, so a power of p that kills `R[p^∞]` kills it. Infinite products and base change along non-flat δ-maps can leave the bounded δ-pairs (Checks).
+- If A is a δ-ring and R an A-algebra, each with bounded p^∞-torsion, then (A,R) is a bounded δ-pair; boundedness of A alone does not suffice (Checks). Examples: (ℤ_p, R) and (W(k), R) for a perfect 𝔽_p-algebra k and any such R, for instance ℤ/p^n, `O_K/ϖ^n`, a p-torsion-free ring or an 𝔽_p-algebra; and the bounded prismatic δ-pairs (A, R), where (A, I) is a prism, A has bounded p^∞-torsion and R is an A/I-algebra with bounded p^∞-torsion (akn-delta Definitions 2.1–2.2 and Remark 2.14, lines 296–310 and 416). Relatively qrsp pairs form a basis of the relatively quasisyntomic pairs for the quasisyntomic topology (akn-delta Proposition 9.14, line 1974).
 - The sequence `W(k)⟦z_0⟧ → W(k)⟦z_0,z_1⟧ → ⋯`, the p-complete Amitsur complex of `W(k) → W(k)⟨z_0⟩` with each term completed along the augmentation ideal of `z_i ↦ 0`, and with every δ(z_i) = 0, is a cosimplicial δ-ring. It maps to `O_K/ϖ^n` by z_i ↦ ϖ (akn24 lines 501–507).
 
 *Needs:* PrismaticCohomology §§0.55–0.56 (free δ-rings, limits and colimits), §§0.73–0.76 (prisms, Breuil–Kisin prisms); DerivedDeRhamCohomology Layer 5 (cotangent complex and Tor-amplitude conditions, quasisyntomic sites).
@@ -688,35 +687,39 @@ Define a δ-pair as a δ-ring A with a map of commutative rings A → R. It is b
 - `W(k)⟦z⟧` with δ(z) = 0 is a δ-ring, the Breuil–Kisin base. Its map to `O_K` sending z to ϖ makes `(W(k)⟦z⟧, O_K)` a bounded, relatively quasisyntomic δ-pair: `L_{O_K/W(k)⟦z⟧}` is `(E(z))/(E(z))²[1]`.
 - Non-example: 𝔽_p carries no δ-structure. From p = 0 one gets `δ(0) = δ(p) = 1 − p^{p−1} = 1` in 𝔽_p, while δ(0) = 0. So (𝔽_p, 𝔽_p) is not a δ-pair, and characteristic-p rings enter only as the second entry.
 - `(ℤ_p, ℤ/p^n)` is bounded and relatively quasisyntomic: `L_{(ℤ/p^n)/ℤ_p} = (p^n)/(p^{2n})[1]` has Tor-amplitude in [0,1] after p-completion. `(ℤ_p, ℚ_p)` is a δ-pair but not relatively quasisyntomic, because the derived p-completion of ℚ_p is 0 ≠ ℚ_p.
+- Non-example for boundedness: `R = ℤ_p ⊕ M` with `M = ⊕_{n≥1} ℤ/p^n` and `M² = 0` is a ℤ_p-algebra, so `(ℤ_p, R)` is a δ-pair, but the element (0, e_n), with e_n a generator of ℤ/p^n, has exact order p^n for every n, so no power of p kills `R[p^∞]`. For R = ℤ/p^n the exponent p^n works, and ℤ_p has no p-torsion at all.
+- Infinite products and non-flat base change leave the bounded δ-pairs: `∏_n (ℤ_p, ℤ/p^n) = (∏_n ℤ_p, ∏_n ℤ/p^n)` has elements of exact order p^n for every n. For the free δ-ring `A = ℤ_p{y}`, the A-algebra `R = A[z_1, z_2, …]/(y^n z_n : n ≥ 1)` is p-torsion free (as an A-module it is a sum of copies of A and of the `A/y^mA`), but along the δ-map A → ℤ_p with y ↦ p its base change `ℤ_p[z_1, z_2, …]/(p^n z_n : n ≥ 1)` contains z_n of exact order p^n.
 
 ### 8.2 Prismatic packages and their syntomic complexes
 
-For a bounded δ-ring A, define the ∞-category C_A of prismatic packages. Its objects are quadruples (H, N, c, φ): H is a p-complete and complete filtered graded E∞-A-algebra (the Hodge–Tate tower); N is a p-complete and complete filtered graded E∞-A-algebra whose filtration is constant in nonpositive filtration degrees, so that it is indexed by `(ℕ,≥) × ℤ` (the Nygaard-completed Frobenius twist); c is a φ_A-semilinear map `H → sc_p(N)` of `(ℕ,≥) × ℤ`-filtered graded A-modules; and φ is a map of filtered graded algebras from N to the shearing `sh(H)`, which lowers the filtration degree by the grading degree (akn-delta Definition 8.1, line 1701; Definition 1.1, line 89, states c without its filtration). Here `sc_p(N)` is, in each grading, the Day convolution of the rescaled filtration `N^{≥p·⋆}` with the p-adic filtration `p^⋆ℤ` (akn-delta Construction 7.3, line 1557): its m-th piece is assembled from the terms `N^{≥pa} ⊗ p^bℤ` with a + b = m, its 0-th piece is `N^{≥0}`, and modulo p it maps canonically to `N^{≥p·⋆}/p`, the terms with b ≥ 1 going to zero (akn-delta lines 1689–1699). So c restricts to `H^{≥0} → N^{≥0}`, and modulo p it induces `H^{≥m}/p → N^{≥pm}/p` for every m ≥ 0. For i ∈ ℤ, define the syntomic complex `ℤ_p(i)(H,N,c,φ) = fib(can − cφ : N^{≥i}{i} → N^{≥0}{i})`, where cφ is φ into `sh(H)^{≥i}{i} = H^{≥0}{i}` followed by c (akn-delta Definition 8.4, line 1753).
+For a bounded δ-ring A, define first the ∞-category G_A of quadruples (H, N, c, φ) of modules. H is a p-complete and complete `(ℤ,≥) × ℤ`-filtered graded A-module (the Hodge–Tate tower); N is a p-complete and complete filtered graded A-module whose filtration is constant in nonpositive filtration degrees, so that it is indexed by `(ℕ,≥) × ℤ` (the Nygaard-completed Frobenius twist); c is a φ_A-semilinear map `H → sc_p(N)` of `(ℕ,≥) × ℤ`-filtered graded A-modules; and φ is a map of filtered graded A-modules from N to the shearing `sh(H)`, with `sh(H)^{≥m}{i} = H^{≥m−i}{i}`, which lowers the filtration degree by the grading degree (akn-delta Definition 8.1, line 1701; Definition 1.1, line 89, states c without its filtration). G_A is the pullback, along evaluation at the four vertices of two arrows, of the ∞-categories of complete p-complete filtered graded objects of D(A) under the functors H, sh(H), N and `φ_A^*sc_p(N)`. Since sh and sc_p are lax symmetric monoidal for the completed Day convolution, this pullback is an ∞-operad and G_A is symmetric monoidal (akn-delta lines 1680–1713). Define the ∞-category of prismatic packages as `C_A = CAlg(G_A)`, the E∞-algebras in G_A (akn-delta line 1714). Concretely, an object of C_A is a quadruple in which H and N are filtered graded E∞-A-algebras, c is a φ_A-semilinear map of filtered graded E∞-algebras `H → sc_p(N)`, unital and multiplicative up to coherent homotopy, and φ : N → sh(H) is a map of filtered graded E∞-A-algebras; C_A is also the pullback of the ∞-categories of E∞-algebras in the four vertices (akn-delta lines 1714–1717). A quadruple whose c is only a map of modules lies in G_A and need not lie in C_A (Checks). Here `sc_p(N)` is, in each grading, the Day convolution of the rescaled filtration `N^{≥p·⋆}` with the p-adic filtration `p^⋆ℤ` (akn-delta Construction 7.3, line 1557): its m-th piece is assembled from the terms `N^{≥pa} ⊗ p^bℤ` with a + b = m, its 0-th piece is `N^{≥0}`, and modulo p it maps canonically to `N^{≥p·⋆}/p`, the terms with b ≥ 1 going to zero (akn-delta lines 1689–1699). So c restricts to `H^{≥0} → N^{≥0}`, and modulo p it induces `H^{≥m}/p → N^{≥pm}/p` for every m ≥ 0. For i ∈ ℤ, define the syntomic complex `ℤ_p(i)(H,N,c,φ) = fib(can − cφ : N^{≥i}{i} → N^{≥0}{i})`, where cφ is φ into `sh(H)^{≥i}{i} = H^{≥0}{i}` followed by c (akn-delta Definition 8.4, line 1753).
 
-- C_A has all colimits, and taking associated graded pieces preserves them (akn-delta Proposition 8.3, line 1745).
+- G_A and C_A have all colimits, and taking associated graded pieces of H and N preserves them (akn-delta Proposition 8.3, line 1745). Colimits in G_A are computed in the underlying filtered graded objects and then completed.
 - *Finite-stage formula.* Let i ≥ 0 and (p−1)j > pi, equivalently p(j−i) > j. Modulo p, let `cφ : N^{≥j}{i}/p → N^{≥j−i}{i}/p` be φ into `H^{≥j−i}{i}/p`, then the map `H^{≥j−i}{i}/p → N^{≥p(j−i)}{i}/p` induced by c, then can. It exists only modulo p: the axioms give no integral map `N^{≥j} → N^{≥j−i}`, and followed by can into `N^{≥0}{i}/p` it is the reduction of the integral cφ. Then `can − cφ : N^{≥j}{i}/p → N^{≥j−i}{i}/p` factors, canonically and functorially, as an automorphism of `N^{≥j}{i}/p` followed by `can : N^{≥j}{i}/p → N^{≥j−i}{i}/p`. The reason is that cφ lifts through `N^{≥p(j−i)} → N^{≥j}`, and the identity minus a map that raises the complete filtration is invertible (akn-delta Lemma 8.5 and its proof, lines 1759–1769). The map need not be an equivalence: it is zero on the absolute package of 𝔽_2 at i = 1, j = 3. Hence `𝔽_p(i)(H,N,c,φ) ≃ fib(can − cφ : (N^{≥i}{i}/N^{≥j}{i})/p → (N^{≥0}{i}/N^{≥j}{i})/p)`, where the map on the quotients is the one induced by the comparison square below. The route compares the square with top row the automorphism of `N^{≥j}{i}/p`, right column `can : N^{≥j}{i}/p → N^{≥0}{i}/p`, and bottom row `can − cφ` mod p: the top fibre is zero, so passing to vertical cofibres does not change the horizontal fibre. This is akn-delta Proposition 8.6 (line 1770) with the strict bound (p−1)j > pi of Lemma 8.5 in place of its printed bound (p−1)j ≥ i, which fails in the Checks below.
-- Let G_A be the ∞-category of quadruples (H, N, c, φ) as above with H and N only p-complete and complete filtered graded A-modules and φ a map of filtered graded A-modules (akn-delta Definition 8.1, line 1701), so that C_A is the ∞-category of E∞-algebras in G_A (line 1714). The syntomic complexes `ℤ_p(i)` and `𝔽_p(i)`, defined by the same formula on G_A, preserve all limits and all colimits as functors from G_A to `D(ℤ)^∧_p` (akn-delta Corollary 8.7, line 1787). On C_A they preserve all limits and all sifted colimits. The reason is that C_A is the pullback of the ∞-categories of E∞-algebras in the vertices of the pullback defining G_A (akn-delta lines 1714–1717); in each vertex limits and sifted colimits of E∞-algebras are computed underlying (lurie-ha Corollaries 3.2.2.5 and 3.2.3.2), because the completed Day convolution preserves colimits in each variable. They do not preserve all colimits of C_A: its initial object is the unit package (akn-delta Remark 8.2(ii), line 1723), which is not sent to 0. Sifted colimits are what the left Kan extension of §8.4 uses.
+- The syntomic complexes `ℤ_p(i)` and `𝔽_p(i)`, defined by the same formula on G_A, preserve all limits and all colimits as functors from G_A to `D(ℤ)^∧_p` (akn-delta Corollary 8.7, line 1787). On C_A they preserve all limits and all sifted colimits. The reason is that C_A is the pullback of the ∞-categories of E∞-algebras in the vertices of the pullback defining G_A (akn-delta lines 1714–1717); in each vertex limits and sifted colimits of E∞-algebras are computed underlying (lurie-ha Corollaries 3.2.2.5 and 3.2.3.2), because the completed Day convolution preserves colimits in each variable. They do not preserve all colimits of C_A: its initial object is the unit package (akn-delta Remark 8.2(ii), line 1723), which is not sent to 0. Sifted colimits are what the left Kan extension of §8.4 uses.
 
-*Needs:* EnhancedDerivedSheaves E5 (filtered and graded objects, E∞-algebras, completions); PrismaticCohomologyPartII §§3.9–3.10 (Breuil–Kisin twists and divided Frobenius), §3.20 (Nygaard completion).
+*Needs:* DerivedDeRhamCohomology §§1.14–1.17 (filtered objects, their completion and the completed Day convolution); EnhancedDerivedSheaves §§E5:abstract.1–E5:abstract.2 (∞-operads and E∞-algebras); PrismaticCohomologyPartII §§3.9–3.10 (Breuil–Kisin twists and divided Frobenius), §3.20 (Nygaard completion).
 
 **Checks.**
 
-- For A = R = ℤ_p in weight 0: `Δ̂_{ℤ_p} = ℤ_p` with φ = id and `N^{≥0}` everything, so `ℤ_p(0)(ℤ_p) = fib(0 : ℤ_p → ℤ_p) = ℤ_p ⊕ ℤ_p[−1]`. This matches `H^*_ét(Spec ℤ_p; ℤ_p)`. A definition using can alone would give `fib(id) = 0`.
+- For A = ℤ_p and R = 𝔽_p in weight 0: the package is the absolute one of 𝔽_p (§8.3 (3)), with `Δ̂_{𝔽_p} = ℤ_p` in degree 0, `N^{≥0}` everything and φ = id, the Frobenius of `W(𝔽_p) = ℤ_p`, which is an isomorphism (PrismaticCohomologyPartII §§4.18 and 4.31, Checks). So `ℤ_p(0)(𝔽_p) = fib(0 : ℤ_p → ℤ_p) = ℤ_p ⊕ ℤ_p[−1]`. This matches `H^*_ét(Spec 𝔽_p; ℤ_p)`, and `TC_{−1}(𝔽_p) = ℤ_p` (§9.1 Checks) through `gr^0TC = ℤ_p(0)`. A definition using can alone would give `fib(id) = 0`.
+- Negative control: the absolute package of ℤ_p is not of this form. `Δ_{ℤ_p}` is Nygaard-complete, because ℤ_p is p-torsion free and `ℤ_p/p = 𝔽_p` is regular noetherian (PrismaticCohomologyPartII §4.29), and its Frobenius is not an isomorphism: its cofibre is `ℤ_p[−1]` (PrismaticCohomologyPartII §4.31, Checks). A model `Δ̂_{ℤ_p} = ℤ_p` with φ = id has cofibre 0 and is excluded; in particular the unit package of `C_{ℤ_p}` below is not the prismatic package of ℤ_p.
 - For the absolute package of 𝔽_2 (`Δ̂ = ℤ_2`, `N^{≥n} = 2^nℤ_2`, `cφ = φ/2`) and i = 1, the map `can − cφ` sends 2a to a, so `ℤ_2(1)(𝔽_2) = 0`, as it must be since `𝔽_2^×` is trivial. With j = 3 (so (p−1)j = 3 > pi = 2), `can : N^{≥3}/2 → N^{≥2}/2` is zero (`8b ∈ 2·4ℤ_2`). The mod-p cφ factors through `can : N^{≥4}/2 → N^{≥2}/2`, which is also zero, so `can − cφ = 0 = can ∘ id` there. The top row of the comparison square is an automorphism with zero fibre, and the finite-stage formula gives 0 again. The naive reduction of the integral divided Frobenius `8ℤ_2 → 4ℤ_2`, `8b ↦ 4b`, is nonzero in `N^{≥2}/2 = 4ℤ_2/8ℤ_2` for b odd, and no automorphism α makes `can ∘ α = 0` equal to it. So the factorization needs the filtered structure of c, and fails for a package whose c is only a map `H^{≥0} → N^{≥0}`. With j = 1, allowed by the printed bound (p−1)j ≥ i, it gives `fib(0 → (ℤ_2/2ℤ_2) ⊗^L 𝔽_2) = 𝔽_2 ⊕ 𝔽_2[−1] ≠ 0`.
 - For the Breuil–Kisin pair `(ℤ_2⟦z⟧, ℤ_2)` with z ↦ 2, E(z) = z − 2, p = 2 and i = 1, `ℤ_2(1) = fib(E·ℤ_2⟦z⟧ → ℤ_2⟦z⟧, fE ↦ fE − φ(f))` (akn24 line 2337, with p − 1 = 1), which modulo 2 is `fz ↦ fz + f²` on `k⟦z⟧`, k = 𝔽_2. Directly: H⁰ = k (from f = z) and H¹ = k², since the image is cut out by b₀ = b₁ and b₂ = 0. The formula with j = 3 has source `⟨z, z²⟩`, target `k⟦z⟧/z³`, and sends z ↦ 1 + z, z² ↦ 0, so H⁰ = k and H¹ = k², as it must. With j = 2, allowed by the printed bound but not by (p−1)j > pi, the source `⟨z⟩` maps injectively into `k⟦z⟧/z²`, giving H⁰ = 0 and H¹ = k, which is wrong. A target quotient by `N^{≥j−i}` instead of `N^{≥j}` gives, for j = 3, the map `⟨z, z²⟩ → k⟦z⟧/z²` with H⁰ = k and H¹ = k, also wrong.
 - For the zero object of G_A (all objects zero), every syntomic complex is zero, as preservation of the empty colimit requires; the zero package is also the terminal object of C_A, consistent with preservation of the empty limit. The unit package of `C_{ℤ_p}` (the trivial filtration on ℤ_p in weight 0, c the canonical map, φ = id) is initial in `C_{ℤ_p}`, and `ℤ_p(0)` sends it to `fib(id − id = 0 : ℤ_p → ℤ_p) = ℤ_p ⊕ ℤ_p[−1] ≠ 0`. So the syntomic functors do not preserve all colimits on C_A, only the sifted ones.
+- G_A versus C_A: over A = ℤ_p take H = N = ℤ_p in grading 0 with the step filtration at 0, φ = id and c = 2·id. This is an object of `G_{ℤ_p}`, since c is a ℤ_p-linear map of filtered modules into `sc_p(N)`, whose 0-th piece is ℤ_p. It is not an object of `C_{ℤ_p}`, because c(1) = 2 ≠ 1, so c is not unital. Its syntomic complex is `ℤ_p(0) = fib(id − 2·id) = fib(−id) = 0`, whereas the unit package, with c = id, gives `ℤ_p ⊕ ℤ_p[−1]`. A definition of C_A that asked c to be only a map of modules would admit it.
 
 ### 8.3 Prismatic cohomology relative to a δ-ring
 
 Construct, functorially in bounded δ-pairs (A, R), the prismatic package `Δ_{R/A} = (Δ^{[⋆]}_{R/A}{⋆}, N^{≥⋆}Δ̂^{(1)}_{R/A}{⋆}, c, φ) ∈ C_A`, whose c is a natural φ-semilinear multiplicative filtered map `Δ^{[⋆]}_{R/A}{⋆} → sc_p(N^{≥⋆}Δ̂^{(1)}_{R/A}{⋆})`. On transversal oriented prisms it refines the semilinear map to the Nygaard completion, because `φ_A(d) = d^p + pδ(d)` lies in filtration 1 of the target (akn-delta Lemma 7.5, line 1579). Here `Δ^{[n]}_{R/A}{i}` is the global sections over WCart of the prismatic crystal whose value on a transversal prism (B,J) is the derived relative prismatic cohomology `Δ^{rel,[n]}_{R⊗̂B/A⊗̂B}{i}` (akn-delta §1.2, lines 184–197). Prove the properties of akn-delta Theorem 1.2 (line 126):
 
 1. Insensitivity to localization at elements of A invertible in R, and to derived (p,K)-completion of A for a finitely generated K ⊆ ker(A → R) and derived p-completion of R.
-2. If A is a prism, `Δ_{R/A}` is Bhatt–Scholze's derived relative prismatic cohomology.
+2. If (A, I) is a prism with A of bounded p^∞-torsion and R is an A/I-algebra with bounded p^∞-torsion (a bounded prismatic δ-pair, §8.1), then `Δ_{R/A}` agrees naturally with Bhatt–Scholze's derived prismatic cohomology of R relative to (A, I), the (p, I)-completed left Kan extension of PrismaticCohomology §§2.1–2.13; by (1) both depend only on the derived p-completion of R (akn-delta Theorem 1.2(2), where R is an algebra over A/I by the convention of line 54; Remark 2.14, line 416). A prism structure on A alone is not enough: R must be killed by I.
 3. For A = ℤ_p, or A = W(k) with k a perfect 𝔽_p-algebra, it is the absolute prismatic cohomology of PrismaticCohomologyPartII §4.18, and the Frobenius twist is equivalent to `Δ_{R/A}`.
 4. Left Kan extension from finitely presented free δ-pairs.
-5. p-completely quasisyntomic descent in R for fixed A.
-6. p-completely quasismooth descent in A for fixed R.
-7. Base change: for every δ-map A → A′, `Δ_{R/A} ⊗_A A′ → Δ_{R⊗_AA′/A′}` is an equivalence after completing for the Hodge–Tate filtration, and likewise for the Nygaard-completed term.
+5. p-completely quasisyntomic descent in R for fixed A, on the relatively quasisyntomic δ-pairs (A, R) of §8.1 (akn-delta Theorem 1.2(5) and Definition 9.1, lines 144 and 1838).
+6. p-completely quasismooth descent in A for fixed R, on the relatively quasisyntomic δ-pairs (A, R) of §8.1 (akn-delta Theorem 1.2(6), line 146).
+7. Base change: for every δ-map A → A′ to a bounded δ-ring such that `R ⊗^L_A A′` is discrete with bounded p^∞-torsion (for instance A → A′ flat, §8.1), `Δ_{R/A} ⊗_A A′ → Δ_{R⊗_AA′/A′}` is an equivalence after completing the source for the Hodge–Tate filtration, and likewise for the Nygaard-completed term. The condition keeps the base change inside the bounded δ-pairs on which the functor is constructed; akn-delta states (7) for animated R ⊗_A A′ (lines 148 and 473–474).
 8. Invariance under p-adically relatively perfect maps A → A′.
 
 The functor is uniquely determined by (4), (6) and the following agreement property, and alternatively by (4), (5) and it: on relatively quasiregular semiperfectoid pairs (A, R) with a chosen prism `(A′, I)` of a pre-prismatic factorization, `Δ_{R/A}` agrees, naturally in the choice, with Bhatt–Scholze's derived prismatic cohomology `Δ_{R/A′}` (akn-delta line 1991 and Proposition 9.15, line 2010). Prove the δ-conjugate filtration: the Hodge–Tate cohomology `Δ̄_{R/A}{i}` (the weight-zero piece `Δ^{[0]}_{R/A}{i}/Δ^{[1]}_{R/A}{i}` of the Hodge–Tate tower) has an exhaustive increasing filtration with `gr_u ≃ LΩ^u_{R/A} ⊗ fib(i − u : ℤ_p → ℤ_p)[−u]` (akn-delta Proposition 1.6 = Proposition 3.9, line 200). Prove that when `L_{R/A}` has p-complete Tor-amplitude in [0,1], `Δ_{R/A}` is computed by the relative prismatic site (akn-delta Theorem 1.7(1), line 211).
@@ -727,13 +730,14 @@ The functor is uniquely determined by (4), (6) and the following agreement prope
 
 - For A = R = ℤ_p and i = 0, only u = 0 occurs, and `gr_0 = fib(0 : ℤ_p → ℤ_p) = ℤ_p ⊕ ℤ_p[−1]`. This is the absolute Hodge–Tate cohomology of ℤ_p, on which the Sen operator acts by 0 in weight 0. A filtration with graded pieces `LΩ^u[−u]` alone would give ℤ_p, the Hodge–Tate cohomology relative to a prism, not the absolute one.
 - For A = W(k)⟦z⟧ and R = O_K, property (2) applies to the Breuil–Kisin prism `(W(k)⟦z⟧, E(z))`, and `Δ_{O_K/W(k)⟦z⟧} = W(k)⟦z⟧` because O_K is the reduction modulo E(z).
+- Property (2) needs R to be an A/I-algebra. For the prism (ℤ_p, (p)) and R = 𝔽_p it gives the crystalline cohomology `Δ_{𝔽_p/ℤ_p} = ℤ_p`, in agreement with (3), since the absolute prismatic cohomology of 𝔽_p is ℤ_p. For R = ℤ_p, p maps to p ≠ 0, so R is not a ℤ_p/(p)-algebra and (2) says nothing; (3) applies instead and gives the absolute prismatic cohomology of ℤ_p, whose Hodge–Tate cohomology in weight 0 is `ℤ_p ⊕ ℤ_p[−1]` (first Check), not the ℤ_p of a theory relative to a prism.
 - Property (8): `ℤ_p → W(𝔽_q)` is relatively perfect, so `Δ_{R/ℤ_p} ≃ Δ_{R/W(𝔽_q)}` for every `W(𝔽_q)`-algebra R. This is the identification `Δ_{R/ℤ_p} ≃ Δ_{R/W(k)}` used for `O_K/ϖ^n` (akn24 line 498).
 
 ### 8.4 Relative syntomic complexes
 
 Define the relative syntomic complexes `ℤ_p(i)(R/A) = fib(can − cφ : N^{≥i}Δ̂^{(1)}_{R/A}{i} → Δ̂^{(1)}_{R/A}{i})` for i ∈ ℤ (akn-delta Definition 7.8, line 1599). Prove the following.
 
-- They satisfy descent along maps of pairs `(A,R) → (B,S)` with R → S of universal descent, with no condition on A → B (akn-delta Corollary 1.3 = Corollary 7.10, line 1607).
+- They satisfy descent along maps of bounded δ-pairs `(A,R) → (B,S)` with A → B flat and R → S faithfully flat: the map from `ℤ_p(i)(R/A)` to the totalization over the Čech nerve `(B^{⊗_A(•+1)}, S^{⊗_R(•+1)})`, a cosimplicial diagram of bounded δ-pairs, is an equivalence (akn-delta Corollary 1.3 = Corollary 7.10, line 1607, in the form of lines 165–170). The flatness of A → B keeps the Čech nerve of the base among δ-rings; akn-delta's version with only R → S of universal descent and no condition on A → B passes through prismatic cohomology relative to animated δ-rings, which is not constructed here (Scope).
 - They are left Kan extended from finitely presented free δ-pairs (akn-delta Corollary 1.4 = Corollary 8.9, line 1812).
 - They vanish for i < 0 (akn-delta Corollary 8.10, line 1824).
 - For A = ℤ_p they are the syntomic complexes of PrismaticCohomologyPartIII §6.8 (akn-delta Remark 7.9, line 1604).
@@ -744,17 +748,17 @@ Define the relative syntomic complexes `ℤ_p(i)(R/A) = fib(can − cφ : N^{≥
 
 - `ℤ_p(1)(R/ℤ_p)` is the derived p-completion of `G_m(R)[−1]` for local R. For R = ℤ/4 its H¹ is `(ℤ/4)^× = ℤ/2`.
 - For i = −1 the complex vanishes, while the Breuil–Kisin twisted prismatic cohomology `Δ_R{−1}` does not. The vanishing comes from the Nygaard condition, not from the twist.
+- The flatness condition is used. For A = ℤ_p⟦x⟧ with δ(x) = 0, B = ℤ_p via x ↦ 0 (a δ-map, since δ(0) = 0) and R = S = 𝔽_p, the map R → S is the identity, but A → B is not flat: the Koszul resolution `A →^x A` of B gives `Tor_1^A(B,B) = ℤ_p`, so the derived Čech nerve of A → B has `π_1(B ⊗^L_A B) = ℤ_p` and is not a diagram of δ-rings, while the ordinary tensor product `B ⊗_A B = ℤ_p` loses this class. The descent used in Layer 9, along `(W(k), R) → (W(k)⟦z_0⟧, R)` with R → R the identity, has W(k) → W(k)⟦z_0⟧ flat, and after the completion allowed by §8.3 (1) its Čech nerve is the Amitsur complex `A^•` of §8.1.
 - For A = W(k)⟦z_0⟧ and R = O_K, `ℤ_p(p−1)(O_K/A)` is `fib(W(k)⟦z_0⟧·d^{p−1} → W(k)⟦z_0⟧)`, with `f·d^{p−1} ↦ f d^{p−1} − φ(f)` for d = E(z_0) (akn24 Proposition 4.24, line 1399, and line 2337). The map is not zero, so a version using can alone would give the wrong H⁰.
 
 ### 8.5 Filtered prismatic cohomology
 
 Define the following (akn-delta Definitions 10.2–10.10, lines 2105–2136). A filtered abelian group is strict if each `F^mM → F^{m_0}M` is injective. A filtered δ-ring is a strict filtered commutative ring F^⋆A with a δ-structure on A = F^0A, compatible with the filtration in the sense that δ carries `F^m` into `F^{pm}`. A filtered prism is a filtered δ-ring F^⋆A with a prism structure (A, I) on A = F^0A such that each graded piece `gr^iA` is `I ⊗_A gr^0A`-torsion free and `I ⊗_A gr^0A`-complete; then `(gr^0A, I ⊗_A gr^0A)` is a prism. For a filtered δ-ring with a prism structure this holds if and only if the flat filtration `A/I ⊗_A F^⋆A` on A/I (akn-delta Definition 10.8) is strict (akn-delta Definition 10.6 and Remark 10.9, lines 2116–2135). A filtered δ-pair is a filtered δ-ring with a map of filtered rings to F^⋆R. Construct the filtered prismatic package `F^⋆Δ_{R/A}` by descent along `Spf Rees(F^⋆A) → F Spf A`, and the filtered syntomic complexes `F^{≥⋆}ℤ_p(i)(R/A)` (akn-delta Definition 10.29 and Construction 10.44, lines 2301 and 2530). Prove the following.
 
-- For relatively quasisyntomic filtered δ-pairs, base change gives `F^⋆Δ_{R/A}` at the generic fibre and the graded package `Δ_{gr R/gr A}` at the special fibre. Hence `gr^⋆ℤ_p(i)(F^⋆R/F^⋆A) ≃ gr^⋆ℤ_p(i)(gr^⋆R/gr^⋆A)` and `F^0ℤ_p(i)(F^⋆R/F^⋆A) ≃ ℤ_p(i)(F^0R/F^0A)` (akn-delta Proposition 10.46 and Corollary 10.47, lines 2583–2591).
-- The filtered Hodge–Tate comparison (akn-delta Proposition 10.37, line 2415) and the filtered base-change square (akn-delta Proposition 10.31 and Corollary 10.34, lines 2309 and 2386).
+- *Base change to the fibres.* Call a filtered δ-pair F^⋆A → F^⋆R relatively quasisyntomic if both filtrations are strict and the p-completed Rees algebras form a relatively quasisyntomic δ-pair `(Rees(F^⋆A)^∧_p, Rees(F^⋆R)^∧_p)` in the sense of §8.1; equivalently, A → R and `(⊕_m gr^mA)^∧_p → (⊕_m gr^mR)^∧_p` are relatively quasisyntomic (akn-delta Definition 10.32 and Remark 10.33, lines 2381–2385). For such a pair there are natural equivalences: at the generic fibre, the underlying object `F^{−∞}Δ_{F^⋆R/F^⋆A}` of the filtration is `Δ_{R/A}`, with no completion; at the special fibre, `gr^⋆Δ_{F^⋆R/F^⋆A} ≃ Δ_{gr^⋆R/gr^⋆A}`, the prismatic package of the graded δ-pair gr^⋆A → gr^⋆R; and the Rees module `Rees(F^⋆Δ_{F^⋆R/F^⋆A})`, completed along the Hodge–Tate tower, is `Δ_{Rees(F^⋆R)/Rees(F^⋆A)}` (akn-delta Corollary 10.34 and Proposition 10.46, lines 2386–2394 and 2583–2587). Hence `gr^⋆ℤ_p(i)(F^⋆R/F^⋆A) ≃ gr^⋆ℤ_p(i)(gr^⋆R/gr^⋆A)` and `F^0ℤ_p(i)(F^⋆R/F^⋆A) ≃ ℤ_p(i)(F^0R/F^0A)` for every i (akn-delta Corollary 10.47, line 2588). The route: `F^⋆Δ_{R/A}` is formed by descent along the Čech nerve of `Spf Rees(F^⋆A) → F Spf A`, and its fibres are computed by base change for the prismatic package (§8.3 (7)) along the δ-maps `Rees(F^⋆A) → A` (t ↦ 1) and `Rees(F^⋆A) → gr^⋆A` (t ↦ 0), where t is the Rees parameter. By strictness, t and t − 1 are nonzerodivisors on `Rees(F^⋆R)`, so both derived base changes are discrete, equal to R and gr^⋆R. The Hodge–Tate completion is needed on the Rees side only, because the p-completed Rees construction need not be complete for the Hodge–Tate filtration (akn-delta Remark 10.36, line 2401).
 - *Filtered envelopes.* For an oriented filtered prism (F^⋆A,(d)) and a filtered Koszul-regular sequence (d, x_1, …, x_c), the filtered prismatic envelope `F^⋆A{x_1/d, …, x_c/d}^∧` is a filtered prism representing the final object of the filtered relative prismatic site, and `F^⋆Δ_{R/A}` is equivalent to it (akn-delta Proposition 10.43, line 2489). In particular it is discrete.
 
-*Needs:* §§8.1–8.4; PrismaticCohomology §0.93 and §2.13 (envelopes over orientable prisms); EnhancedDerivedSheaves E5 (filtered objects and Rees constructions).
+*Needs:* §§8.1–8.4, in particular §8.3 (7); PrismaticCohomology §0.93 and §2.13 (envelopes over orientable prisms); DerivedDeRhamCohomology §§1.14–1.17 (filtered objects, their completion and the Rees description).
 
 **Checks.**
 
@@ -762,6 +766,7 @@ Define the following (akn-delta Definitions 10.2–10.10, lines 2105–2136). A 
 - For F^⋆ the z-adic filtration on `W(k)⟦z⟧` and R = k⟦z⟧, the associated graded pair is `(W(k)[z], k[z])`, graded with z of weight 1. Corollary 10.47 identifies `gr ℤ_p(i)` with the graded syntomic complexes of `k[z]` over `W(k)[z]`.
 - The filtered Breuil–Kisin prism: `W(k)⟦z⟧` with the z-adic filtration and I = (E(z)) has `gr^uA ≅ W(k)·z^u` for u ≥ 0 and `I ⊗_A gr^0A = (p) ⊆ W(k)`; each `W(k)` is p-torsion free and p-complete, so it is a filtered prism (akn-delta Example 10.7, lines 2121–2124). For the trivial filtration on a prism (A, I) the condition reduces to A being I-torsion free and I-complete, which is part of being a prism, so the graded conditions carry content only in positive weights; there, by Remark 10.9, they amount to strictness of the flat filtration on A/I, which a filtered δ-ring with a prism structure need not have.
 - A filtered δ-ring must have `δ(F^m) ⊆ F^{pm}`, not merely F^m. For z of weight 1, `δ(z) = 0` is allowed, while `δ(z) = 1` is not, since 1 has weight 0 < p.
+- Base change on the filtered Breuil–Kisin pair: `F^⋆A = W(k)⟦z⟧` with the z-adic filtration and `F^⋆R = O_K` with the ϖ-adic filtration, z ↦ ϖ. Both filtrations are strict, `L_{O_K/W(k)⟦z⟧} = (E)/(E²)[1]` and, on associated gradeds, `L_{k[z]/W(k)[z]} = (p)/(p²)[1]`, so the pair is relatively quasisyntomic. The special fibre gives `gr^⋆Δ_{O_K/W(k)⟦z⟧} ≃ Δ_{k[z]/W(k)[z]}`. Both sides are `W(k)·z^u` in weight u: on the left, the z-adic graded pieces of `Δ_{O_K/W(k)⟦z⟧} = W(k)⟦z⟧` (§8.3 (2)); on the right, the z-graded pieces of `Δ_{k[z]/W(k)[z]} = W(k)[z]^∧_p`, by §8.3 (1)–(2) for the crystalline prism `(W(k)[z]^∧_p, (p))`. The generic fibre gives back `W(k)⟦z⟧`.
 
 ### 8.6 Crystalline degeneration and completeness
 
@@ -781,11 +786,11 @@ Prove the comparison of completions (akn24 Theorem 2.20, line 457). For a filter
 
 ### Examples
 
-For R = ℤ/p^n over the Breuil–Kisin pair (ℤ_p⟦z⟧, z ↦ p), the relative prismatic cohomology `Δ_{R/ℤ_p⟦z⟧}` is the prismatic envelope `ℤ_p⟦z⟧{z^n/E(z)}^∧` with E(z) = z − p. Its filtered version is discrete with an explicit W(k)-basis (Layer 9, §9.5).
+For R = ℤ/p^n over the Breuil–Kisin pair (ℤ_p⟦z⟧, z ↦ p), the relative prismatic cohomology `Δ_{R/ℤ_p⟦z⟧}` is the prismatic envelope `ℤ_p⟦z⟧{z^n/E(z)}^∧` with E(z) = z − p. Its filtered version is discrete with an explicit W(k)-basis (§9.4).
 
 ### Dependencies
 
-Suppliers only: PrismaticCohomology §§0.55–0.56, 0.73–0.76, 0.93, 1.2–1.4, 2.1–2.13; PrismaticCohomologyPartII §§3.9–3.10, 3.20, 4.4–4.10, 4.17–4.19, 4.22, 4.25, 4.29, 4.31; PrismaticCohomologyPartIII §§6.8–6.9, 6.31; DerivedDeRhamCohomology Layers 2 and 5; EnhancedDerivedSheaves E5.
+Suppliers only: PrismaticCohomology §§0.55–0.56, 0.73–0.76, 0.93, 1.2–1.4, 2.1–2.13; PrismaticCohomologyPartII §§3.9–3.10, 3.20, 4.4–4.10, 4.17–4.19, 4.22, 4.25, 4.29, 4.31; PrismaticCohomologyPartIII §§6.8–6.9, 6.31; DerivedDeRhamCohomology §§1.14–1.17 and Layers 2 and 5; EnhancedDerivedSheaves §§E5:abstract.1–E5:abstract.2.
 
 ## Layer 9: K-theory of finite chain rings
 
@@ -840,8 +845,11 @@ Prove that for i ≥ 1, `|H¹(ℤ_p(i)(R))| / |H²(ℤ_p(i)(R))| = q^{i(n−1)}`
 
 Let `A^• = W(k)⟦z_0⟧ ⇉ W(k)⟦z_0,z_1⟧ ⋯` be the completed Amitsur complex of §8.1, filtered with every z_i of weight 1 and δ(z_i) = 0, mapping to R by z_i ↦ ϖ. Prove the following.
 
-- *Descent.* The maps `F^{≥⋆}Δ_{R/W(k)}{i} → Tot F^{≥⋆}Δ_{R/A^•}{i}`, the analogous map for `F^{≥⋆}N^{≥j}Δ̂^{(1)}{i}`, and `F^{[a,b]}ℤ_p(i)(R) → Tot F^{[a,b]}ℤ_p(i)(R/A^•)` (for i ≥ 1) are equivalences (akn24 Theorem 2.22, line 515).
-- *Discreteness and bases.* Each `F^{≥⋆}Δ_{R/A^s}`, `F^{≥⋆}N^{≥i}Δ̂^{(1)}_{R/A^s}` and `F^{≥⋆}Δ̂^{(1)}_{R/A^s}` is discrete (akn24 Proposition 2.23, line 532). For [a,b] ⊂ ℤ the pieces `F^{[a,b]}` are finite free W(k)-modules. Explicit monomial bases in the δ-powers δ^u(a) and δ^u(b_v), resp. the classes `d̃^j z_0^k ∏ f_u^{e_u} ∏ g_{u,v}^{e_{u,v}}`, have exponents below p and the stated weight constraints (akn24 Propositions 2.24, 3.33 and 3.34, lines 537, 1037 and 1070). The input is the presentation of the δ-ideal `(da − r)_δ` by `da − r` and `δ^u(a)^p − (−p + d^{p^{u+1}}λ_u)δ^{u+1}(a) − R_u`, with units λ_u (akn24 Lemma 3.6, line 670), and its Nygaard-graded analogue (akn24 Proposition 3.30 and Corollary 3.31, lines 984 and 1008).
+- *Descent.* The maps `F^{≥⋆}Δ_{R/W(k)}{i} → Tot F^{≥⋆}Δ_{R/A^•}{i}`, the analogous map for `F^{≥⋆}N^{≥j}Δ̂^{(1)}{i}`, and `F^{[m_1,m_2]}ℤ_p(i)(R) → Tot F^{[m_1,m_2]}ℤ_p(i)(R/A^•)` for i ≥ 1 and every interval [m_1, m_2] ⊂ ℤ are equivalences (akn24 Theorem 2.22, line 515). On F^0 this is the descent of §8.4 along the flat map W(k) → A^0.
+- *Discreteness and bases.* Each `F^{≥⋆}Δ_{R/A^s}`, `F^{≥⋆}N^{≥i}Δ̂^{(1)}_{R/A^s}` and `F^{≥⋆}Δ̂^{(1)}_{R/A^s}` is discrete (akn24 Proposition 2.23, line 532), and for every interval [m_1, m_2] ⊂ ℤ the pieces `F^{[m_1,m_2]}` are finite free W(k)-modules with the following bases (akn24 Propositions 2.24, 3.33 and 3.34, lines 537, 1037 and 1070). Put d = E(z_0) ∈ A^s. By §8.3 (2) and PrismaticCohomology §2.13, `Δ_{R/A^s}` is the prismatic envelope `A^s{a, b_1, …, b_s}^∧` with `d·a = z_0^n` and `d·b_v = z_v − z_0` for 1 ≤ v ≤ s. In the F-filtration a has weight n and b_v weight 1, so `δ^u(a)` has weight np^u and `δ^u(b_v)` weight p^u.
+  - A W(k)-basis of `F^{[m_1,m_2]}Δ_{R/A^s}` consists of the monomials `z_0^k ∏_{u≥0} δ^u(a)^{e_u} ∏_{u≥0, 1≤v≤s} δ^u(b_v)^{e_{u,v}}` with `0 ≤ k < n`, finitely many nonzero exponents, `0 ≤ e_u < p` and `0 ≤ e_{u,v} < p` for all u and v, and F-weight `k + nΣ_u p^u e_u + Σ_{u,v} p^u e_{u,v}` in [m_1, m_2].
+  - Let `d_N ∈ N^{≥1}Δ̂^{(1)}_{R/A^s}` be d placed in Nygaard filtration 1 (akn24's d̃, not the element φ(d) of §3.4). Let `f_u ∈ F^{≥np^u}N^{≥p^u}Δ̂^{(1)}_{R/A^s}` and `g_{u,v} ∈ F^{≥p^u}N^{≥p^u}Δ̂^{(1)}_{R/A^s}` be the Nygaard generators attached to the relations z_0^n and z_v − z_0, characterized by `φ_{p^u}(f_u) = δ^u(a)` and `φ_{p^u}(g_{u,v}) = δ^u(b_v)` for the divided Frobenius `φ_{p^u} : N^{≥p^u}Δ̂^{(1)}_{R/A^s} → Δ_{R/A^s}` (akn24 Construction 3.21 and Corollary 3.23, lines 883 and 906). A W(k)-basis of `F^{[m_1,m_2]}N^{≥i}Δ̂^{(1)}_{R/A^s}` consists of the elements `d_N^w z_0^k ∏_u f_u^{e_u} ∏_{u,v} g_{u,v}^{e_{u,v}}` with the same conditions on k, `e_u` and `e_{u,v}`, the same F-weight condition, and `w = max(0, i − Σ_u p^u e_u − Σ_{u,v} p^u e_{u,v})`.
+  - The input is a presentation of δ-ideals in an oriented prism (B, d). For x, r ∈ B put `λ_0 = −1/δ(d)`, `R_0 = δ(r)/δ(d)`, `λ_{u+1} = λ_u^p/(1 − δ(d^{p^{u+1}}λ_u))` and `R_{u+1} = (δ(R_u) + w_1(d^{p^{u+1}}λ_uδ^{u+1}(x), R_u))/(1 − δ(d^{p^{u+1}}λ_u))`, where `w_1(y, y′) = (y^p + y′^p − (y + y′)^p)/p`, so that `δ(y + y′) = δ(y) + δ(y′) + w_1(y, y′)`. Then every λ_u is a unit, R_u is a polynomial in x, δ(x), …, δ^u(x) in which δ^u(x) occurs with exponent < p, and the δ-ideal generated by dx − r is generated as an ideal by dx − r and the elements `δ^u(x)^p − (−p + d^{p^{u+1}}λ_u)δ^{u+1}(x) − R_u` for u ≥ 0 (akn24 Lemma 3.6, line 670). In the Nygaard filtration the same recursion gives `f_u^p = (−p + λ_u d^{p^{u+1}}) f_{u+1} + d_N^{p^{u+1}} R′_u` in `N^{≥p^{u+1}}Δ̂^{(1)}_{R/A^s}`, with `R′_u = 0` for the relation z_0^n because δ(z_0^n) = 0, and likewise for the `g_{u,v}` (akn24 Lemma 3.24, Remark 3.29, Proposition 3.30 and Corollary 3.31, lines 914, 983, 984 and 1008).
 - *Breuil–Kisin orientations.* A prism is orientable if and only if it admits a Breuil–Kisin orientation `s : B → B{1}`. Crystalline prisms have a crystalline orientation, and complete filtered-crystalline prisms are orientable (akn24 Lemmas 4.6, 4.7, 4.10 and 4.13–4.15, lines 1204–1306). With an orientation, the relative syntomic complexes of R over A^s are computed with trivialized twists (akn24 Proposition 4.24, line 1399).
 - *Finite model.* For i ≥ 1, `ℤ_p(i)(R)` is the total fibre of the square formed by `can − φ` on `F^{[1,in−1]}N^{≥i}Δ̂^{(1)}_{R/A^0}{i}` and on the kernel of `d_0 − d_1 + d_2` on the level-1 term (akn24 Theorem 2.27, line 576). Equivalently, by the connection `∇` of the Hopf algebroid `(Δ̂_{R/A^0}, Δ̂_{R/A^1})`, it is the total fibre of `can − φ` and `can − φ^∇` between `∇`-sources and `∇`-targets (akn24 Lemma 4.43 and Corollary 4.44, lines 1644 and 1664). Consequently `ℤ_p(i)(R)` is quasi-isomorphic to a three-term complex `ℤ_p^{f(in−1)} → ℤ_p^{2f(in−1)} → ℤ_p^{f(in−1)}` of finite free ℤ_p-modules in cohomological degrees 0, 1, 2, with injective first differential (akn24 Theorem 1.1, line 108, structurally).
 
@@ -851,13 +859,14 @@ Let `A^• = W(k)⟦z_0⟧ ⇉ W(k)⟦z_0,z_1⟧ ⋯` be the completed Amitsur c
 
 - n = 1 (R = 𝔽_q), i = 1: f(in − 1) = 0, so the model is zero, matching ℤ_p(1)(𝔽_q) = 0.
 - ℤ/4, i = 1: f(in − 1) = 1, so the model is `ℤ_2 → ℤ_2² → ℤ_2` with injective first map. Its H¹ ⊕ H² has total order 2, consistent with H¹ = ℤ/2, H² = 0 and Angeltveit's quotient `2 = 2^{1·1}`.
-- The basis condition "exponents < p" is essential. At p = 2, `δ(a)` already satisfies `a² = (−2 + d²λ_0)δ(a) + R_0`, so allowing a² as a basis element would double-count weight 2.
+- The digit bound e_u < p is essential. At p = 2 the relation for u = 0 reads `a² = (−2 + d²λ_0)δ(a) + R_0` with R_0 = 0, so a² is a multiple of δ(a), both of F-weight 2n, and a basis allowing e_0 = 2 would count that weight twice.
+- The bound k < n is a different condition from the digit bound. For p = 2, n = 3, s = 0 and the interval [2,2], the unique basis vector of `F^{[2,2]}Δ_{R/A^0}` is z_0², which a bound k < p would exclude, giving rank 0 instead of 1. For the interval [3,3] and i = 1, the unique basis vector of `F^{[3,3]}N^{≥1}Δ̂^{(1)}_{R/A^0}` is f_0 (k = 0, e_0 = 1, w = 0); dropping k < n would add `d_N z_0³` (k = 3, w = 1) and give rank 2 instead of 1.
 
 ### 9.5 The even vanishing theorem
 
 Prove that if i ≥ 2 and `i − 1 ≥ B(p,e,n)`, with B the threshold of §1.5, then `K_{2i−2}(R) = 0` (integrally) and `K_{2i−1}(R)` has order `(q^i − 1)·q^{i(n−1)}` (akn24 Theorem 5.2, Corollary 5.6 and Theorem 1.4, lines 2074, 2091 and 156). The route is as follows.
 
-1. Nilpotency modulo p in the relative envelope over `W(k)⟦z_0⟧`: certain `d̃`-powers and `f_u` become nilpotent mod p in prescribed Nygaard levels, and for u ≥ j, `f_u^p` agrees with `p f_{u+1}` up to a unit (akn24 Lemmas 5.7–5.9 and Corollary 5.10, lines 2105–2157).
+1. Nilpotence modulo p in the Frobenius-twisted envelope over A^0 = W(k)⟦z⟧, with z = z_0, d = E(z), and d_N and f_u as in §9.4 (akn24 Lemmas 5.7–5.9 and Corollary 5.10, lines 2105–2163). For n ≥ 2 and j = ⌈n/e⌉: (a) `z^{p[j]_p e − p^j(je − n)} = 0` in `Δ̂^{(1)}_{R/A^0}/p`, while `z^{p[j]_p e − p^j(je − n) − 1} ≠ 0` there; (b) for every i ≥ p^j − 1, `z^{[j]_p e − p^{j−1}(je − n)}·d_N^i = 0` in `N^{≥i}Δ̂^{(1)}_{R/A^0}/p`, while `z^{[j]_p e − p^{j−1}(je − n) − 1}·d_N^i ≠ 0` there. For every u ≥ j, `f_u^p = μ_u·p·f_{u+1}` in `N^{≥p^{u+1}}Δ̂^{(1)}_{R/A^0}` for a unit μ_u. The route iterates the relation `f_u^p = (−p + λ_u d^{p^{u+1}}) f_{u+1}` of §9.4 with d ≡ z^e up to a unit modulo p, and detects the nonvanishing on the bases of §9.4.
 2. A prismatic Cartier isomorphism: the Frobenius twist identifies the ∇-rows of the descent model (akn24 Theorem 5.12, Lemma 5.15, lines 2169 and 2197).
 3. Divisibility of can by p under the threshold, so that can − φ is surjective in cohomological degree 2 (akn24 Lemma 5.16, line 2219).
 
@@ -868,6 +877,7 @@ The integral statement uses §9.1 for the prime-to-p part, and the order stateme
 **Checks.**
 
 - n ≤ e (so R ≅ 𝔽_q[z]/z^n): j = 1 and B = p²n/((p−1)e). Since `𝔽_q[z]/z^n = O_K/ϖ^n` for K with arbitrarily large e, the theorem gives `K_{2i−2}(𝔽_q[z]/z^n) = 0` for every i ≥ 2 (akn24 Corollary 5.5, line 2084). This agrees with KTheoryFiniteLocalFields §5.17 and §7.2 here, where the even relative groups vanish.
+- Step 1 for ℤ/4 (p = 2, e = 1, n = 2, so j = 2 and [2]_2 = 3): the exponent in (a) is 2·3·1 − 4·(2 − 2) = 6, so z⁶ = 0 and z⁵ ≠ 0 modulo 2; the exponent in (b) is 3 − 2·0 = 3, so `z³d_N^i = 0` and `z²d_N^i ≠ 0` modulo 2 for every i ≥ 3. For n ≤ e (j = 1) the exponent in (a) is pe − p(e − n) = pn.
 - ℤ/4: B = 12, so `K_{2i−2}(ℤ/4) = 0` for i ≥ 13, and `|K_{2i−1}(ℤ/4)| = (2^i − 1)2^i` there. The table shows the stronger fact that `K_2(ℤ/4) = ℤ/2` is the only nonzero even group, and `|K_5(ℤ/4)| = 56 = 7·8` (akn24 Example 1.7, line 172).
 - The weaker bound `p²(p^j − 1)/(p−1)²` of akn24 Remark 5.4 does not give the characteristic-p case: for j = 1 it is p²/(p−1) ≥ 4 independently of e, so it never covers i = 2. The exact threshold is therefore part of the statement.
 
