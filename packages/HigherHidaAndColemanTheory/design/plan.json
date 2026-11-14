@@ -5361,7 +5361,7 @@
       "slug": "projective-banach-cohomology",
       "supplier": "AdicSpacesPartIII",
       "section": "§§R3.4, R3.6",
-      "needs": "Extend coherent quasi-Stein cohomology to locally projective Banach coefficients on finite quasi-Stein covers, with compact restrictions, the finite-dimensional projected-lattice lemma and bounded-p-torsion integral Čech comparison of BP-Coleman §§2.4–2.6 and Lemma 5.9.10.",
+      "needs": "Extend coherent quasi-Stein cohomology to locally projective Banach coefficients on finite quasi-Stein covers, represented by countable projective systems of bounded projective Banach Čech complexes over affinoid exhaustions (BP-Coleman Lemma 2.5.19), with compact restrictions, the finite-dimensional projected-lattice lemma and bounded-p-torsion integral Čech comparison of BP-Coleman §§2.4–2.6 and Lemma 5.9.10.",
       "neededBy": [
         "HigherHidaAndColemanTheory:C4/allowed-support",
         "HigherHidaAndColemanTheory:C4/analytic-continuation",
@@ -5387,8 +5387,8 @@
       "id": "gap:coherent-correspondences",
       "slug": "coherent-correspondences",
       "supplier": "AutomorphicBundlesPartII",
-      "section": "§§3.10–3.12 on the solid enhancement of §3.0a",
-      "needs": "Supply the two partial-support objects K+−(F)=RΓ(Xbar,j+_*j−_!F) and K−+(F)=RΓ(Xbar,i−_!i+_*F) of BP-Hida Definition 2.2.4 for closed D+,D− in a proper Xbar, their support-change maps of Lemma-construction 2.2.6, the comparison map K−+→K+−, the action of a cohomological correspondence with expanded D+ and contracted D− on both, and the Rlim/colim twist formulas of Corollary 2.3.11 for a coherent extension with locally principal D±.",
+      "section": "§§3.3, 3.6 and 3.10–3.12 on the solid enhancement of §3.0a",
+      "needs": "Supply the two partial-support objects K+−(F)=RΓ(Xbar,j+_*j−_!F) and K−+(F)=RΓ(Xbar,i−_!i+_*F) of BP-Hida Definition 2.2.4 for closed D+,D− in a proper Xbar, their support-change maps of Lemma-construction 2.2.6, the comparison map K−+→K+−, the action of a cohomological correspondence with expanded D+ and contracted D− on both, compatible with composition and Tor-independent base change of correspondences and with the support-change maps, and the Rlim/colim twist formulas of Corollary 2.3.11 for a coherent extension with locally principal D±.",
       "neededBy": [
         "HigherHidaAndColemanTheory:D1/ordinary-localization",
         "HigherHidaAndColemanTheory:D1/discrete-base-change",
@@ -5412,11 +5412,21 @@
       "id": "gap:abelian-subcanonical-vanishing",
       "slug": "abelian-subcanonical-vanishing",
       "supplier": "AutomorphicBundlesPartII",
-      "section": "§IC.5, relative-subcanonical-vanishing (abelian-type extension)",
+      "section": "§5.2 (abelian-type extension)",
       "needs": "Extend the PEL formally subcanonical vanishing to abelian-type toroidal-to-minimal maps and the locally trivialized projective Banach coefficient situation of BP-Coleman Theorem 4.1.7 and Lemma 6.6.2 with its bounded-torsion reductions.",
       "neededBy": [
         "HigherHidaAndColemanTheory:C4/geometric-vanishing",
         "HigherHidaAndColemanTheory:F5/family-vanishing-duality"
+      ]
+    },
+    {
+      "id": "gap:klingen-lci-model",
+      "slug": "klingen-lci-model",
+      "supplier": "ShimuraCompactifications",
+      "section": "§7.19 (Klingen-level moduli extension)",
+      "needs": "Supply the toroidal compactification of the moduli scheme over ℤ_p of the Siegel threefold with a subgroup H⊂G[p] of order p, normal and a local complete intersection over ℤ_p, carrying the integral isogeny chain G→G/H→G/H^⊥→G and the extension of the forgetful map to the hyperspecial toroidal model (Pilloni-Singular Proposition 6.1.4.1 and Theorem 6.1.5.1).",
+      "neededBy": [
+        "HigherHidaAndColemanTheory:X8/klingen-control"
       ]
     }
   ],

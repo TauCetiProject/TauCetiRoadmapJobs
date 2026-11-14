@@ -16,7 +16,7 @@ carriers are available. None of the following headlines is statable at these pin
 * Integral amplitude in genera one and two (§4.9) and rational amplitude in every
   genus (§8.4) lack the same universal Iwasawa complexes, and the second also the
   analytic overconvergent Siegel families compared with them.
-* Regular and singular geometric classicality (§5.10) lacks abelian-type Shimura
+* Regular and singular geometric classicality (§5.8) lacks abelian-type Shimura
   varieties, their Hodge–Tate period maps and Bruhat tubes, and finite-slope supported
   coherent cohomology with its Bruhat Cousin spectral sequence.
 * The cohomological eigenvariety (§7.1) and the equidimensionality and deformation of
