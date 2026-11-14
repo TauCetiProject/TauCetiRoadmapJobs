@@ -157,7 +157,11 @@ characteristics beyond type `FL` (the Bass conjecture). The dimension theory of 
   finitely supported function on conjugacy classes of `G` whose value at `[g]` is the coefficient of
   `[g]` in the Hattori–Stallings trace of `P` in `RG/[RG, RG] ≅ R^{(G/conj)}`. Witness: for `G`
   finite with `|G|` invertible in `R` and `P = R·e`, `e = |G|⁻¹ Σ_g g`, `r_P([g]) = |[g]|/|G| =
-  1/|C_G(g)|`, so `r_P` is not `δ_{[1]}` although `P ≅ R` is cyclic.
+  1/|C_G(g)|`. For `R ≠ 0` and `G ≠ 1` this is not `δ_{[1]}`, although `P ≅ R` is cyclic: at
+  `g ≠ 1` the value `1/|C_G(g)|` is a unit, hence nonzero (for `G = ℤ/2` over `ℚ`, `r_P = (1/2, 1/2)`
+  against `δ_{[1]} = (1, 0)`). The difference lies at the nonidentity classes, since the identity
+  coefficients can agree (for `G = ℤ/4` over `𝔽₃`, `1/4 = 1`). For `G = 1` or `R = 0` the two
+  functions coincide.
 - **Euler characteristics.** Two invariants are kept apart. For a group with `H_*(G, ℚ)`
   finite-dimensional, `χ_ℚ(G) = Σᵢ (−1)ⁱ dim_ℚ Hᵢ(G, ℚ) ∈ ℤ`; for a group of finite homological type
   (4.4), the Euler characteristic `χ(G) ∈ ℚ` is `χ_ℚ(H)/[G : H]` for a torsion-free finite-index `H`
@@ -868,7 +872,10 @@ the augmentation is an invariant element of `RG` of augmentation `1`, which forc
 - `cd_{ℤ[1/2]} (ℤ/2) = 0` and `cd_{ℤ/6} (ℤ/2) = ⊤`: in `ℤ/6`, `2 ≠ 0` but `2` is not a unit, and
   `H²(ℤ/2, ℤ/6) = ℤ/2`. A model asking `|H| ≠ 0` in `R` instead of `|H|` a unit gives `0` here.
 - `cd_{ℤ[1/2]} (ℤ/6) = ⊤`, since `3` is not a unit of `ℤ[1/2]`.
-- Over the zero ring the dichotomy fails (`cd = 0` for every group), so nontriviality is used.
+- Over the zero ring every scalar is a unit, so every finite group falls in the unit-order branch,
+  with `cd_0 H = 0` as predicted; the nontriviality of `R` is used for the implication from
+  `cd_R G = 0` to finiteness of `G`, which fails over the zero ring: `cd_0 ℤ = 0` although `ℤ` is
+  infinite.
 
 ### 2.8 Comparison with the profinite invariant
 

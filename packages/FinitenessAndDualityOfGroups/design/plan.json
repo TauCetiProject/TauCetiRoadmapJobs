@@ -651,7 +651,7 @@
       {
        "name": "zero_ring",
        "kind": "degenerate",
-       "statement": "Over the zero ring every group has cd 0: nontriviality is used."
+       "statement": "Over the zero ring every scalar is a unit, so every finite group is in the unit-order branch (cd 0, as predicted); nontriviality is used for cd_R G = 0 ⇒ G finite: cd_0 ℤ = 0 although ℤ is infinite."
       }
      ]
     },
