@@ -194,7 +194,7 @@
       {
        "name": "infinite_index",
        "kind": "non-example",
-       "statement": "The normal closure of b in FreeGroup {a,b} is free on a^k b a^-k and not FP_1."
+       "statement": "The normal closure of b in FreeGroup {a,b} is free on a^k b a^-k, with abelianization ⊕_ℤ ℤ, so not finitely generated: over every nonzero R it is not FP_1 while FreeGroup {a,b} is FL. Over the zero ring both groups are FL."
       }
      ]
     },
@@ -304,7 +304,7 @@
       {
        "name": "lamplighter",
        "kind": "non-example",
-       "statement": "ℤ/2 ≀ ℤ is FP_1 while its normal subgroup ⊕ℤ/2 is not: no converse."
+       "statement": "ℤ/2 ≀ ℤ is two-generated, so FP_1 over every R, with quotient ℤ of type FL; its normal subgroup ⊕_ℤ ℤ/2 is not finitely generated, so not FP_1 over any nonzero R: no converse over nonzero R. Over the zero ring both groups are FL, so this does not distinguish the converse there."
       }
      ]
     },
@@ -573,7 +573,7 @@
       {
        "name": "free_infinite",
        "kind": "computation",
-       "statement": "Free group of countable rank: hd = 1, bound cd ≤ 2, true cd = 1 (2.6)."
+       "statement": "Free group of countable rank over R ≠ 0: hd_R = 1, bound cd_R ≤ 2, true cd_R = 1 (2.6); over the zero ring both dimensions are 0."
       },
       {
        "name": "S3",
@@ -1864,7 +1864,7 @@
       {
        "name": "rationals",
        "kind": "degenerate",
-       "statement": "χ_ℚ(ℚ) = 0 although ℚ is not FP_1."
+       "statement": "χ_ℚ(ℚ) = 0 although ℚ is not FP_1 over ℤ."
       }
      ]
     },
