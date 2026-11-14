@@ -1,0 +1,56 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "InductionRestrictionPartII"
+
+[[source]]
+id = "wood2019"
+authors = "Melanie Matchett Wood, Philip Matchett Wood"
+title = "Nonabelian Cohen-Lenstra Moments"
+year = 2017
+venue = "Duke Math. J. 168, no. 3 (2019), 377-427"
+doi = "10.1215/00127094-2018-0037"
+arxiv = "1702.04644v2"
+locator_scheme = "section"
+locator = "§8.2, Table 2"
+url = "https://arxiv.org/abs/1702.04644v2"
+fetched_from = "https://arxiv.org/pdf/1702.04644v2"
+fetched_at = "2026-11-14T14:03:10Z"
+sha256 = "2eacf07f9c79a08a65bbfa332b964f0f9bd4ab5abb93e5db8be72e43669be1bd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-14"
+version_note = "arXiv v2"
+cited_for = ["RS.6.9", "RS.6.10", "RS.6.8"]
+
+[[source]]
+id = "loeh2019"
+authors = "Clara Löh"
+title = "Group Cohomology"
+year = 2019
+locator_scheme = "theorem"
+locator = "Corollary 3.2.23"
+url = "https://loeh.app.uni-regensburg.de/teaching/grouphom_ss19/lecture_notes.pdf"
+fetched_from = "https://loeh.app.uni-regensburg.de/teaching/grouphom_ss19/lecture_notes.pdf"
+fetched_at = "2026-11-14T14:12:37Z"
+sha256 = "d4f2d819bfa85c57277db74bf749d05f03e85833c76e89eab99127f077d2cd76"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-14"
+version_note = "lecture notes, version of 30 July 2019"
+cited_for = ["RS.6.8", "RS.0.2"]
+
+[[source]]
+id = "wood2021"
+authors = "Melanie Matchett Wood"
+title = "An algebraic lifting invariant of Ellenberg, Venkatesh, and Westerland"
+year = 2021
+venue = "Research in the Mathematical Sciences 8 (2021), Article 21"
+locator_scheme = "section"
+locator = "§2.1"
+url = "https://people.math.harvard.edu/~mmwood/Publications/lifting.pdf"
+fetched_from = "https://people.math.harvard.edu/~mmwood/Publications/lifting.pdf"
+fetched_at = "2026-11-14T14:13:04Z"
+sha256 = "9628210e96313805ceac89594c64e2eceb3aaebf044f617cee4d7f25ee7ef673"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-14"
+cited_for = ["RS.3.2", "IG supplier contracts"]
