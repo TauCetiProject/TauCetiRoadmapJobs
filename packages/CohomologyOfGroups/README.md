@@ -1506,7 +1506,10 @@ Prove:
 - **(a) Tate.** For `[Fintype G]` and `p, q ≥ 1`, the isomorphisms
   `TateCohomology.isoGroupCohomology` carry the cup product of 4.1 for `𝟙 : M ⊗ N ⟶ M ⊗ N` to
   `TauCeti.TateCohomology.cup M N p q (p + q)`; in degree `0` the quotient `H⁰ → Ĥ⁰` intertwines
-  them. Route: both satisfy the axioms of 4.2 in positive degrees.
+  them. Route: both satisfy the axioms of 4.2 in positive degrees, and the uniqueness argument
+  of MilneCFT Ch. II Prop. 1.38, p. 73, MilneCFT line 3459–3484 (dimension shifting along the
+  coinduction sequences), applies with its degree `(0, 0)` normalization read through the
+  quotient `H⁰ → Ĥ⁰`.
 - **(b) Discrete groups.** For `G` with the discrete topology and discrete coefficients, the
   isomorphisms `Θ` of 1.5 carry `TauCeti.TopPairing.cup` of a pairing to the cup product of 4.1
   of the same pairing.
@@ -1516,6 +1519,9 @@ Prove:
   products of 4.1 on the groups `G ⧸ U` with coefficients `M^U, N^U`.
 
 The abstract group cohomology of a profinite group is not compared with its continuous cohomology.
+The three statements compare the pinned `TauCeti.TateCohomology.cup` and `TauCeti.TopPairing.cup`
+with the cup product of 4.1; they are fixed by those definitions and are taken from no source,
+which supplies only the uniqueness used in the route of (a).
 *Needs:* 1.5, 4.2, 4.3; Tau Ceti `TauCeti.TateCohomology.cup`, `TauCeti.TopPairing.cup`,
 `TauCeti.ContCohomology.continuousFiniteQuotientColimit`; Mathlib `TateCohomology.isoGroupCohomology`;
 ProfiniteCohomology §10.1 and Layer 12.
@@ -1646,7 +1652,12 @@ action, natural short exact sequences, split but not naturally,
 `0 → Hₙ(G, k) ⊗_k A → Hₙ(G, A) → Tor₁^k(Hₙ₋₁(G, k), A) → 0` and
 `0 → Ext¹_k(Hₙ₋₁(G, k), A) → Hⁿ(G, A) → Hom_k(Hₙ(G, k), A) → 0`, the second map being the
 evaluation of 4.6, which is Tau Ceti's `TauCeti.ChainComplex.kronecker` for the chains `C(G; k)`
-(Loh19 Cor. 3.2.21, p. 135, and Outlook 3.2.26, p. 138). Route: the chains with trivial
+(Loh19 Cor. 3.2.20, p. 133, Loh19 line 5762–5771, proves the homological sequence, natural and
+split but not naturally, for a complex of free modules over a principal ideal domain; Loh19
+Cor. 3.2.21, p. 135, Loh19 line 5841–5843, applies it to group homology over `ℤ` and records only
+the resulting direct-sum decomposition; Loh19 Outlook 3.2.26, p. 138, Loh19 line 5985–5990,
+mentions the cohomological sequence without stating it; the generality here, `k` of global
+dimension at most one and both sequences, is that of the route). Route: the chains with trivial
 coefficients are free `k`-modules, `C(G; A) = C(G; k) ⊗_k A` and
 `C(G; A)^* = Hom_k(C(G; k), A)` (Tau Ceti's `HomologicalComplex.coinvariantsTensorObjLinearYonedaObjIso`
 for the trivial representation `k`, with `Hom_k(k, A) = A`); apply Tau Ceti's Künneth sequence

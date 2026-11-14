@@ -25,7 +25,7 @@ authors = "Clara Löh"
 title = "Group Cohomology (lecture notes, Universität Regensburg, summer semester 2019)"
 year = 2019
 locator_scheme = "theorem"
-locator = "Prop. 1.6.11 and Remark 1.6.12 (p. 48); Cor. 1.6.18, Cor. 1.6.19 (p. 53) and Outlook 1.6.20 (p. 54); Thm. 1.5.1 (p. 30); Thm. 3.2.12 and Prop. 3.2.13 (pp. 123–124); Remark 3.2.14 (p. 125); Thm. 3.2.18 and its proof (pp. 129–131); Cor. 3.2.21, Thm. 3.2.22 and Cor. 3.2.23 (pp. 135–136); Example 3.2.25 (p. 137); Outlook 3.2.26 (p. 138); Outlook 3.2.28 (p. 139); Thm. 4.3.7 and §4.3.2 (pp. 165–168)"
+locator = "Prop. 1.6.11 and Remark 1.6.12 (p. 48); Cor. 1.6.18, Cor. 1.6.19 (p. 53) and Outlook 1.6.20 (p. 54); Thm. 1.5.1 (p. 30); Thm. 3.2.12 and Prop. 3.2.13 (pp. 123–124); Remark 3.2.14 (p. 125); Thm. 3.2.18 and its proof (pp. 129–131); Cor. 3.2.20 (p. 133); Cor. 3.2.21, Thm. 3.2.22 and Cor. 3.2.23 (pp. 135–136); Example 3.2.25 (p. 137); Outlook 3.2.26 (p. 138); Outlook 3.2.28 (p. 139); Thm. 4.3.7 and §4.3.2 (pp. 165–168)"
 url = "https://loeh.app.uni-regensburg.de/teaching/grouphom_ss19/lecture_notes.pdf"
 fetched_from = "https://loeh.app.uni-regensburg.de/teaching/grouphom_ss19/lecture_notes.pdf"
 fetched_at = "2026-11-13T13:10:15Z"
@@ -51,7 +51,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-13"
 version_note = "Version 4.03 (August 2020); page numbers are printed pages (PDF page minus 9)."
-cited_for = ["Conventions", "Target 4.1", "Target 4.2", "Target 4.3", "Target 4.5", "Target 7.2", "Target 8.4"]
+cited_for = ["Conventions", "Target 4.1", "Target 4.2", "Target 4.3", "Target 4.5", "Target 4.7", "Target 7.2", "Target 8.4"]
 
 [[source]]
 id = "SerreArbres"
