@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-InductionRestrictionPartII~5",
+  "head": "a3cedf1ee0fd10e7290851adbffc3fa9ab6e3e1f",
+  "pr": 1154,
+  "folder": "InductionRestrictionPartII",
+  "date": "2026-11-14",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 127 changed lines since f4c995b. Previous R02, R03, R04 repaired; R01 deferred (D01, stands: settled only in ArithmeticStatisticsPartVIII §5.21). The diff changes no statement (five theorems moved under RS.0/RS.4/RS.6 layer headings, module title and one docstring line, one Downstream-consumers sentence). Adversarial table: nine rows with computed values for the moved statements and the cited RS.4.4-RS.4.5, RS.4.18. Part VIII §5.21, IG.3.4, IG.3.5, IG.5.6 resolved at their open heads; pull request text agrees with the head. Gate passes (all scanners zero), depcheck 0 problems, no UPWARD or CYCLE; direct elaboration succeeds with eight sorry warnings only; no file changed outside the folder. Source sample: RS.4.18 locator rechecked (wood2019 lines 777, 796); other sampled targets outside the changed passages.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "Two roadmaps own the involution-fiber reduction and parity series",
+    "where": "ArithmeticStatisticsPartVIII §5.21 and its supplier contracts",
+    "raised": "PRREVIEW-InductionRestrictionPartII~4"
+   }
+  ]
+ }
+}
