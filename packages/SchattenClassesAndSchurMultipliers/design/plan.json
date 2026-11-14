@@ -82,7 +82,7 @@
       {
        "name": "identity_not_compact",
        "kind": "non-example",
-       "statement": "identity of l2(N): ||1||_p = infinity for every p including p = infinity (not compact), whereas the OperatorIdeals p = infinity family gives 1; on C^d, ||1||_p = d^(1/p), ||1||_infinity = 1"
+       "statement": "identity of l2(N): ||1||_p = infinity for every p including p = infinity (not compact), whereas the OperatorIdeals p = infinity family gives 1; on C^d with d >= 1, ||1||_p = d^(1/p), ||1||_infinity = 1 (on C^0 every gauge of the zero identity is 0)"
       },
       {
        "name": "rank_one_projection",
@@ -92,7 +92,7 @@
       {
        "name": "compression_endpoint",
        "kind": "non-example",
-       "statement": "identity of l2(N) with the coordinate projections P_alpha: ||P_alpha 1 P_alpha||_infinity = 1 for every alpha while ||1||_infinity = infinity, so the compression bound fails at p = infinity; for p < infinity ||P_alpha||_p = alpha^(1/p) -> infinity = ||1||_p"
+       "statement": "identity of l2(N) with the coordinate projections P_alpha: ||P_alpha 1 P_alpha||_infinity = 1 for every alpha >= 1 (0 for P_0 = 0) while ||1||_infinity = infinity, so the compression bound fails at p = infinity; for p < infinity ||P_alpha||_p = alpha^(1/p) -> infinity = ||1||_p"
       },
       {
        "name": "zero_space",
@@ -105,21 +105,22 @@
      "id": "1.2",
      "kind": "theorem",
      "name": "SchattenClasses.schattenGauge_eq_iSup_trace",
-     "statement": "For every bounded X on H and 1 <= p < infinity, ||X||_p = sup { |Tr(X B)| : B finite rank, ||B||_{p'} <= 1 } in [0, infinity] (for p = 1 the condition is ||B|| <= 1); and ||X|| = sup { |Tr(X B)| : B finite rank, ||B||_1 <= 1 }. In particular a bounded operator with bounded pairings lies in S_p.",
+     "statement": "For every bounded X on H and 1 <= p < infinity, ||X||_p = sup { |Tr(X B)| : B finite rank, ||B||_{p'} <= 1 } in [0, infinity] (for p = 1 the condition is ||B|| <= 1); and ||X|| = sup { |Tr(X B)| : B finite rank, ||B||_1 <= 1 }. In particular a bounded operator with bounded pairings lies in S_p. Norming tests: for X != 0 mapping a finite-dimensional F into itself and vanishing on F-perp, with X = u|X| from an eigenbasis of X*X on F, the finite-rank Y = |X|^(p-1) u* / ||X||_p^(p-1) (Y = u* at p = 1; the factors in this order, u*|X|^(p-1) does not norm: X = E12 gives u*|X| = 0) has ||Y||_{p'} = 1 and Tr(X Y) = ||X||_p; a general bounded X uses the norming elements of its compressions P_alpha X P_alpha and the compression bound of 1.1.",
      "hypotheses": [
       "H complex Hilbert space",
       "X bounded"
      ],
      "locator": {
       "source": "caspers-delasalle-2015",
-      "where": "lines 638-642 (the bilinear trace duality <A,B> = Tr(AB) between S_p and S_p'); the case X in S_p is NoncommutativeIntegration §2.1 (Lp-Lq duality with the norming element) read through its §1.5, restricted to the dense finite-rank operators of target 1.1; the case X not in S_p (both sides infinite) is this roadmap's, by compressions and the compression bound of 1.1, valid since p < infinity; lafforgue-delasalle-2011 line 400, estimate (9) in the proof of Lemma 1.11, is the form used by 3.3 and 5.2"
+      "where": "lines 638-642 (the bilinear trace duality <A,B> = Tr(AB) between S_p and S_p'); for X in S_p and 1 < p < infinity the formula is NoncommutativeIntegration §2.1 (Lp-Lq duality, with the exponent p' < infinity) read through its §1.5, restricted to the finite-rank operators, dense in S_p'; at p = 1 and for X not in S_p (both sides infinite) it is this roadmap's, by the norming elements |X_alpha|^(p-1) u_alpha* / ||X_alpha||_p^(p-1) of the finite-rank compressions X_alpha = P_alpha X P_alpha and the compression bound of 1.1, valid since p < infinity; lafforgue-delasalle-2011 line 400, estimate (9) in the proof of Lemma 1.11, is the form used by 3.3 and 5.2"
      },
      "prerequisites": [
       "target:1.1",
       "roadmap:VonNeumannAlgebras V4.Core",
       "roadmap:NoncommutativeIntegration §1.4",
       "roadmap:NoncommutativeIntegration §1.5",
-      "roadmap:NoncommutativeIntegration §2.1"
+      "roadmap:NoncommutativeIntegration §2.1",
+      "mathlib:LinearMap.IsSymmetric.eigenvectorBasis"
      ],
      "api": [],
      "tests": []
@@ -221,7 +222,7 @@
       {
        "name": "unitary_conjugation",
        "kind": "compatibility",
-       "statement": "A -> U A U* has cb norm 1 for every p"
+       "statement": "A -> U A U* by a unitary of H != 0 has cb norm 1 for every p; on H = 0 it is the zero map, norm 0"
       },
       {
        "name": "diagonal_projection",
@@ -256,6 +257,7 @@
      "prerequisites": [
       "gap:sigma-finite-hilbert-schmidt-kernels",
       "roadmap:AutomorphicSpectralTheory §0.8",
+      "roadmap:AutomorphicSpectralTheory §0.9",
       "roadmap:OperatorIdeals OI-B32",
       "roadmap:OperatorIdeals OI-B36",
       "roadmap:OperatorIdeals OI-B41",
@@ -273,7 +275,7 @@
       {
        "name": "kernel_isometry",
        "role": "isometry",
-       "statement": "A -> k_A is linear with ||k_A||_{L2} = ||A||_2 and <k_A, k_B> = Tr(A* B)"
+       "statement": "A -> k_A is linear with ||k_A||_{L2} = ||A||_2 and, for A, B in S_2(L2(nu), L2(mu)), <k_A, k_B>_{L2(mu x nu)} = Tr(A* B): polarise ||k_A||_2^2 = ||A||_2^2 = sum_j ||A e_j||^2 (OperatorIdeals OI-B32-OI-B35) and use the basis formula Tr(A* B) = sum_j <A e_j, B e_j> (AutomorphicSpectralTheory §0.9)"
       },
       {
        "name": "kernel_finite",
@@ -313,7 +315,7 @@
      "id": "2.2",
      "kind": "theorem",
      "name": "SchattenClasses.kernel_calculus",
-     "statement": "For A in S_2(L2(nu), L2(mu)), B in S_2(L2(lambda), L2(nu)), u in L2(mu), v in L2(nu), f in Linf(mu), g in Linf(nu): k_{u (x) v*}(x,y) = u(x) conj v(y); k_{A*}(y,x) = conj k_A(x,y); AB in S_1 with k_{AB}(x,z) = int k_A(x,y) k_B(y,z) dnu(y) a.e.; k_{D_f A D_g}(x,y) = f(x) k_A(x,y) g(y); and Tr(A C) = int int k_A(x,y) k_C(y,x) for C in S_2(L2(mu), L2(nu)), obtained from the one-space formula of the gap on the disjoint union of (Omega, mu) and (Omega', nu) applied to the extensions of A and C by zero.",
+     "statement": "For A in S_2(L2(nu), L2(mu)), B in S_2(L2(lambda), L2(nu)), u in L2(mu), v in L2(nu), f in Linf(mu), g in Linf(nu): k_{u (x) v*}(x,y) = u(x) conj v(y); k_{A*}(y,x) = conj k_A(x,y); AB in S_1 with k_{AB}(x,z) = int k_A(x,y) k_B(y,z) dnu(y) a.e.; k_{D_f A D_g}(x,y) = f(x) k_A(x,y) g(y); and, for C in S_2(L2(mu), L2(nu)), Tr(A C) = int int k_A(x,y) k_C(y,x) dmu(x) dnu(y) with integrable integrand and |Tr(AC)| <= ||A||_2 ||C||_2, obtained from Tr(AC) = <k_{A*}, k_C>_{L2(nu x mu)} (the polarised kernel isometry of target 2.1 for the pair (A*, C)) and the adjoint kernel.",
      "hypotheses": [
       "sigma-finite measure spaces"
      ],
@@ -324,8 +326,8 @@
      "prerequisites": [
       "target:2.1",
       "gap:sigma-finite-hilbert-schmidt-kernels",
+      "roadmap:AutomorphicSpectralTheory §0.8",
       "roadmap:AutomorphicSpectralTheory §0.9",
-      "roadmap:AutomorphicSpectralTheory §0.10",
       "roadmap:VonNeumannAlgebras V4.Core",
       "mathlib:MeasureTheory.integral_prod"
      ],
@@ -400,7 +402,7 @@
      "id": "2.4",
      "kind": "theorem",
      "name": "SchattenClasses.kernel_change",
-     "statement": "Change of measure: for sigma-finite nu << mu with h = dnu/dmu, U g = sqrt h g is an isometry L2(nu) -> L2(mu) with U* f = f / sqrt h, k^mu_{U A U*}(x,y) = sqrt h(x) k^nu_A(x,y) sqrt h(y), and A -> U A U* is a complete isometry on every S_p. Isomorphisms: for a measure-preserving measurable bijection phi with measurable inverse, k_{C_phi A C_phi*}(x,y) = k_A(phi x, phi y). Sub-sigma-algebras: for A in B with mu sigma-finite on A, V : L2(A) -> L2(B) is an isometry with adjoint the conditional expectation, iota(A) = V A V* and P(B) = V* B V are complete contractions, iota completely isometric, P o iota = id, k_{iota A} = k_A, k_{P B} = E[k_B | A x A]. The same on Omega x Fin m.",
+     "statement": "Change of measure: for sigma-finite nu << mu with h = dnu/dmu, U g = sqrt h g is an isometry L2(nu) -> L2(mu) with U* f = f / sqrt h, k^mu_{U A U*}(x,y) = sqrt h(x) k^nu_A(x,y) sqrt h(y), and A -> U A U* is a complete isometry on every S_p. Isomorphisms: for a measure-preserving measurable bijection phi with measurable inverse, k_{C_phi A C_phi*}(x,y) = k_A(phi x, phi y). Sub-sigma-algebras: for A in B with mu sigma-finite on A, V : L2(A) -> L2(B) is an isometry with adjoint the orthogonal projection Q = condExpL2, iota(A) = V A V* and P(B) = V* B V are complete contractions, iota completely isometric, P o iota = id, k_{iota A} = k_A, and k_{P B} is the orthogonal projection of k_B onto the A x A-measurable classes of L2(mu x mu) (condExpL2 for A x A in B x B, equal to Q (x) Q), not MeasureTheory.condExp, which is 0 on non-integrable kernels (on N with counting measure and A = B, k(i,j) = u_i u_j with u_j = 1/(j+1) has ||k||_2 = pi^2/6 and infinite l1 norm: condExpL2 returns k, condExp returns 0). mu x mu is sigma-finite on A x A, where it is the product of the restrictions of mu to A, so L2(A x A) = L2(A) (x) L2(A). The same on Omega x Fin m.",
      "hypotheses": [
       "sigma-finite measures; for sub-sigma-algebras, mu sigma-finite on the smaller one"
      ],
@@ -413,14 +415,79 @@
       "target:2.1",
       "target:2.2",
       "gap:sigma-finite-hilbert-schmidt-kernels",
+      "roadmap:VonNeumannAlgebras V2.RectangularL2",
       "mathlib:MeasureTheory.Measure.rnDeriv",
       "mathlib:MeasureTheory.MeasurePreserving",
       "mathlib:MeasureTheory.lpMeas",
-      "mathlib:MeasureTheory.condExpL2",
-      "mathlib:MeasureTheory.condExp"
+      "mathlib:MeasureTheory.condExpL2"
      ],
      "api": [],
      "tests": []
+    },
+    {
+     "id": "2.5",
+     "kind": "definition",
+     "name": "SchattenClasses.condExpBounded",
+     "statement": "For sigma-algebras A in B on Omega and a measure mu on B that is sigma-finite on A: choose an A-measurable w : Omega -> (0, infinity) with int w dmu < infinity (exists_pos_lintegral_lt_of_sigmaFinite for mu.trim, lintegral_trim); for phi in Linf(Omega, B, mu), E[phi | A] is the class of MeasureTheory.condExp A (w . mu) phi, defined because phi is integrable for the finite measure w . mu (withDensity), which has the null sets of mu.",
+     "hypotheses": [
+      "A subset B sigma-algebras on Omega",
+      "mu a measure on B, sigma-finite on A (SigmaFinite (mu.trim h))",
+      "phi in Linf(Omega, B, mu)"
+     ],
+     "locator": {
+      "source": "lafforgue-delasalle-2011",
+      "where": "lines 356-359 (setting (6) and the Linf conditional expectation it allows); lines 422-424 (reduction to a finite measure by an A-measurable positive density)"
+     },
+     "prerequisites": [
+      "target:2.4",
+      "mathlib:MeasureTheory.condExp",
+      "mathlib:MeasureTheory.setIntegral_condExp",
+      "mathlib:MeasureTheory.ae_eq_condExp_of_forall_setIntegral_eq",
+      "mathlib:MeasureTheory.condExp_condExp_of_le",
+      "mathlib:MeasureTheory.condExpL2",
+      "mathlib:MeasureTheory.Measure.withDensity",
+      "mathlib:MeasureTheory.exists_pos_lintegral_lt_of_sigmaFinite",
+      "mathlib:MeasureTheory.lintegral_trim"
+     ],
+     "api": [
+      {
+       "name": "condExpBounded_unique",
+       "role": "characterisation",
+       "statement": "E[phi | A] is the unique A-measurable class in Linf(mu) with int E[phi | A] g dmu = int phi g dmu for every A-measurable g in L1(mu) (defining property of condExp for w . mu applied to g/w; uniqueness by g = 1_S conj psi on sets S in A of finite measure); hence it does not depend on w, is unchanged when mu is replaced by rho . mu for A-measurable rho > 0, and equals MeasureTheory.condExp A mu phi when phi is also mu-integrable, in particular for every bounded phi when mu is finite"
+      },
+      {
+       "name": "condExpBounded_contraction",
+       "role": "order and norm",
+       "statement": "linear, positive, commutes with complex conjugation, ||E[phi | A]||_inf <= ||phi||_inf, fixes the A-measurable classes; tower property E[E[phi | A] | A'] = E[phi | A'] for A' in A with mu sigma-finite on A' (condExp_condExp_of_le with an A'-measurable w)"
+      },
+      {
+       "name": "condExpBounded_module",
+       "role": "L2 module property",
+       "statement": "for A-measurable k in L2(mu): condExpL2 (phi k) = E[phi | A] k (for A-measurable g in L2, conj g . k is A-measurable and integrable)"
+      }
+     ],
+     "tests": [
+      {
+       "name": "condExpBounded_counting",
+       "kind": "non-example",
+       "statement": "counting measure on N, A = B the power set, phi = 1: E[1 | A] = 1, while MeasureTheory.condExp A mu 1 = 0 because 1 is not integrable; for the symbol 1 on N x N this separates the identity multiplier (norm 1) from the zero multiplier"
+      },
+      {
+       "name": "condExpBounded_unit_intervals",
+       "kind": "computation",
+       "statement": "Lebesgue measure on R, A generated by the intervals [k, k+1): for the 1-periodic phi equal to 1 on [0, 1/2) and 0 on [1/2, 1), E[phi | A] = 1/2 everywhere, while MeasureTheory.condExp gives 0"
+      },
+      {
+       "name": "condExpBounded_needs_sigma_finite",
+       "kind": "non-example",
+       "statement": "Lebesgue measure on R and A = {empty, R}: the A-measurable integrable functions are 0 only, so every constant satisfies the characterising identity for phi = 1 and nothing is determined"
+      },
+      {
+       "name": "condExpBounded_finite",
+       "kind": "computation",
+       "statement": "on {1, 2} with masses 1 and 3 and A trivial: E[(a, b) | A] = (a + 3b)/4, for every constant density w"
+      }
+     ]
     }
    ]
   },
@@ -611,7 +678,7 @@
       {
        "name": "cb_identity",
        "kind": "compatibility",
-       "statement": "M = 1: S_{M_m} is the identity of S_2(H^m); the alternative M(x,y) delta_ij gives the block-diagonal pinching, not the amplification of the identity"
+       "statement": "M = 1: S_{M_m} is the identity of S_2(H^m), cb norm 1 when mu != 0 (0 when mu = 0); the alternative M(x,y) delta_ij gives the block-diagonal pinching, which for m >= 2 and mu != 0 is not the amplification of the identity (it kills a single nonzero off-diagonal block)"
       },
       {
        "name": "cb_twobytwo",
@@ -629,9 +696,10 @@
      "id": "3.6",
      "kind": "theorem",
      "name": "SchattenClasses.schurMultiplier_stabilisation",
-     "statement": "With M_inf(x,i,y,j) = M(x,y) on Omega x N: ||S_M||_{cb,p} = ||S_{M_inf}||_{cb,p} = ||S_{M_inf}||_p. For sigma-finite (Omega', nu) and M'(x,w,y,w') = M(x,y): ||S_{M'}||_{cb,p} = ||S_M||_{cb,p}, ||S_{M'}||_p = ||S_M||_{cb,p} when L2(nu) is infinite-dimensional and = ||S_{M_d}||_p when it has dimension d. At p = infinity, when ||S_M||_infinity < infinity, the extension of S_M to K(H) is completely bounded in the sense of CStarAlgebras C3.2 exactly when ||S_M||_{cb,infinity} < infinity, with C3.2 cb norm ||S_M||_{cb,infinity}.",
+     "statement": "With M_inf(x,i,y,j) = M(x,y) on Omega x N: ||S_M||_{cb,p} = ||S_{M_inf}||_{cb,p} = ||S_{M_inf}||_p. For sigma-finite (Omega', nu) with nu != 0 (equivalently L2(nu) != 0) and M'(x,w,y,w') = M(x,y): ||S_{M'}||_{cb,p} = ||S_M||_{cb,p}, ||S_{M'}||_p = ||S_M||_{cb,p} when L2(nu) is infinite-dimensional and = ||S_{M_d}||_p when it has finite dimension d >= 1; for nu = 0, L2(mu x nu) = 0 and every norm of S_{M'} is 0 (one-point Omega of mass 1, M = 1: cb norm 1, stabilised norm 1 for a one-point probability Omega', 0 for nu = 0). At p = infinity, when ||S_M||_infinity < infinity, the extension of S_M to K(H) is completely bounded in the sense of CStarAlgebras C3.2 exactly when ||S_M||_{cb,infinity} < infinity, with C3.2 cb norm ||S_M||_{cb,infinity}.",
      "hypotheses": [
-      "(Omega, mu), (Omega', nu) sigma-finite"
+      "(Omega, mu), (Omega', nu) sigma-finite",
+      "nu != 0 for the comparison with (Omega', nu)"
      ],
      "locator": {
       "source": "lafforgue-delasalle-2011",
@@ -750,7 +818,7 @@
      "id": "5.1",
      "kind": "theorem",
      "name": "SchattenClasses.schurMultiplier_condExp_le",
-     "statement": "For sigma-algebras A in B on Omega with mu sigma-finite on A and phi in Linf(B x B): ||E[phi | A x A]||_{S_p(L2(A))} <= ||phi||_{S_p(L2(B))} and the same for cb norms; and Tr(S_phi(iota A) iota B) = Tr(S_{E[phi|A x A]}(A) B) for A, B in S_2(L2(A)).",
+     "statement": "For sigma-algebras A in B on Omega with mu sigma-finite on A, phi in Linf(B x B) and E[phi | A x A] the conditional expectation of target 2.5 for mu x mu (not MeasureTheory.condExp, which is 0 on non-integrable symbols): ||E[phi | A x A]||_{S_p(L2(A))} <= ||phi||_{S_p(L2(B))} and the same for cb norms; and Tr(S_phi(iota A) iota B) = Tr(S_{E[phi|A x A]}(A) B) for A, B in S_2(L2(A)). Route: S_{E[phi|A x A]} = P o S_phi o iota with the module property condExpL2(phi k) = E[phi | A x A] k of 2.5. Check: on N with counting measure, A = B and phi = 1, both norms are 1 and the pairing identity for A = B = E_00 reads 1 = 1 (with condExp it would read 1 = 0).",
      "hypotheses": [
       "A subset B sigma-algebras",
       "mu sigma-finite on A",
@@ -761,10 +829,11 @@
       "where": "Lemma 1.10, line 363; proof lines 366-381; lines 404-413"
      },
      "prerequisites": [
+      "target:2.2",
       "target:2.4",
+      "target:2.5",
       "target:3.3",
-      "target:3.5",
-      "mathlib:MeasureTheory.condExp"
+      "target:3.5"
      ],
      "api": [],
      "tests": []
@@ -773,9 +842,9 @@
      "id": "5.2",
      "kind": "theorem",
      "name": "SchattenClasses.schurMultiplier_martingale",
-     "statement": "For a directed family (B_alpha) of sub-sigma-algebras, mu sigma-finite on each, generating B, and f in Linf(B x B) with f_alpha = E[f | B_alpha x B_alpha]: ||f||_{S_p(L2(B))} = sup_alpha ||f_alpha||_{S_p(L2(B_alpha))}, the net nondecreasing; the same for cb norms.",
+     "statement": "For a nonempty directed family (B_alpha) of sub-sigma-algebras, mu sigma-finite on each, generating B, and f in Linf(B x B) with f_alpha = E[f | B_alpha x B_alpha] (target 2.5): ||f||_{S_p(L2(B))} = sup_alpha ||f_alpha||_{S_p(L2(B_alpha))}, the net nondecreasing; the same for cb norms.",
      "hypotheses": [
-      "directed family generating B",
+      "nonempty directed family generating B",
       "mu sigma-finite on each B_alpha"
      ],
      "locator": {
@@ -783,8 +852,9 @@
       "where": "Lemma 1.11, line 383; Remark 1.12, line 393"
      },
      "prerequisites": [
+      "target:2.5",
       "target:3.3",
-      "target:3.5",
+      "target:3.6",
       "target:5.1",
       "mathlib:MeasureTheory.lpMeas",
       "mathlib:MeasureTheory.condExpL2"
@@ -806,8 +876,9 @@
       "where": "Lemma 1.13, line 415; proof lines 419-439"
      },
      "prerequisites": [
+      "target:2.5",
       "target:3.3",
-      "target:3.5",
+      "target:3.6",
       "target:3.7",
       "target:5.1",
       "mathlib:MeasureTheory.Integrable.tendsto_ae_condExp",
@@ -1137,8 +1208,8 @@
      "prerequisites": [
       "target:3.1",
       "target:3.3",
+      "target:3.5",
       "target:3.7",
-      "target:6.4",
       "mathlib:MeasureTheory.MeasurePreserving"
      ],
      "api": [
@@ -1167,7 +1238,7 @@
       {
        "name": "toeplitz_cos",
        "kind": "computation",
-       "statement": "m = cos(2 pi <a,.>): xi(x) = eta(x) = (e_a(x), e_{-a}(x))/sqrt 2 gives <xi(x),eta(y)> = cos(2 pi <a, x - y>), so ||S_{M_m}||_infinity = 1"
+       "statement": "m = cos(2 pi <a,.>): M_m = (M_{e_a} + M_{e_{-a}})/2, each S_{M_{e_{+-a}}} a conjugation by the diagonal unitary D_{e_{+-a}} with norm and cb norm at most 1, so ||S_{M_m}||_p <= ||S_{M_m}||_{cb,p} <= (1 + 1)/2 = 1 for every p; equality for every p, since for u the normalised indicator of a small ball about 0, S_{M_m}(u (x) u*) = (cu) (x) (cu)* + (su) (x) (su)* (c = cos, s = sin of 2 pi <a,.>) is positive with operator norm >= ||cu||^2 -> 1 while ||u (x) u*||_p = 1"
       },
       {
        "name": "toeplitz_null",
@@ -1247,7 +1318,7 @@
      "id": "9.3",
      "kind": "construction",
      "name": "SchattenClasses.folnerCompression",
-     "statement": "For g in L2(R^n; F_k) and bounded measurable F of positive measure, Lambda_F(g) is the Hilbert-Schmidt operator on L2(F) (x) C^k with kernel 1_F(s) (F^{-1} g)(s - t) 1_F(t). Then ||Lambda_F(g)||_p <= |F|^(1/p) ||g||_{Lp(S_p^k)} for g in L1 cap Linf; |Q_R|^{-1} Tr(Lambda_{Q_R}(g) Lambda_{Q_R}(h)) -> int tr(g h); ||g||_{Lp(S_p^k)} <= liminf |Q_R|^{-1/p} ||Lambda_{Q_R}(g)||_p for g in L2, with equality and a limit for g in L1 cap Linf; and Lambda_F(F(m F^{-1} g)) = S_{M_m}(Lambda_F(g)).",
+     "statement": "For g in L2(R^n; F_k) and bounded measurable F of positive measure, Lambda_F(g) is the Hilbert-Schmidt operator on L2(F) (x) C^k with kernel 1_F(s) (F^{-1} g)(s - t) 1_F(t). Then ||Lambda_F(g)||_p <= |F|^(1/p) ||g||_{Lp(S_p^k)} for g in L2 cap Lp(R^n; S_p^k) (L2 cap Linf at p = infinity), first for g in L1 cap Linf by the endpoints and noncommutative Riesz-Thorin, then by the truncations g_j = g 1_{||g|| <= j} 1_{|xi| <= j}, ||Lambda_F(h)||_2 <= |F|^(1/2) ||h||_2 and lower semicontinuity of the gauge; |Q_R|^{-1} Tr(Lambda_{Q_R}(g) Lambda_{Q_R}(h)) -> int tr(g h); ||g||_{Lp(S_p^k)} <= liminf |Q_R|^{-1/p} ||Lambda_{Q_R}(g)||_p for g in L2, with equality and a limit when also g in Lp(R^n; S_p^k); and Lambda_F(F(m F^{-1} g)) = S_{M_m}(Lambda_F(g)).",
      "hypotheses": [
       "n >= 1",
       "Q_R = [-R, R]^n",
@@ -1258,6 +1329,7 @@
       "where": "Theorem 5.1, line 529; Theorem 5.2, line 543"
      },
      "prerequisites": [
+      "target:1.1",
       "target:3.5",
       "target:4.1",
       "target:9.1",
@@ -1270,7 +1342,7 @@
       {
        "name": "folner_upper",
        "role": "upper bound",
-       "statement": "||Lambda_F(g)||_p <= |F|^(1/p) ||g||_p"
+       "statement": "||Lambda_F(g)||_p <= |F|^(1/p) ||g||_p for g in L2 cap Lp(R^n; S_p^k) (L2 cap Linf at p = infinity)"
       },
       {
        "name": "folner_pairing",
@@ -1280,7 +1352,7 @@
       {
        "name": "folner_lower",
        "role": "asymptotic isometry",
-       "statement": "||g||_p <= liminf |Q_R|^{-1/p} ||Lambda_{Q_R}(g)||_p"
+       "statement": "||g||_p <= liminf |Q_R|^{-1/p} ||Lambda_{Q_R}(g)||_p for g in L2, with equality and a limit when also g in Lp"
       },
       {
        "name": "folner_intertwine",
@@ -1423,7 +1495,7 @@
       {
        "name": "bmo_constant",
        "kind": "degenerate",
-       "statement": "constants have seminorm 0; z -> U_z has column seminorm <= 1"
+       "statement": "constants have seminorm 0; for a rank-one projection e, f(z) = e^{2 pi i z} e on T has ||f(z)||_2 = 1, avg_Q |f - f_Q|^2 = (1 - |avg_Q e^{2 pi i z}|^2) e, equal to e at Q = T, so ||f||_{BMO^c} = 1; z -> U_z on L2(R^n) is not S_2-valued (all singular values 1, ||U_z||_2 = infinity)"
       }
      ]
     },
@@ -1486,6 +1558,11 @@
        "name": "matrixBMO_wrong_model",
        "kind": "non-example",
        "statement": "pi'(A)(z) = U_z A has column seminorm ||A|| for every A, so it reproduces the operator norm"
+      },
+      {
+       "name": "matrixBMO_dimension_zero",
+       "kind": "non-example",
+       "statement": "n = 0 is excluded: L2(R^0) = C and U_z = 1, so pi(A) is constant and ||A||_BMO = 0 for every A while A = 1 has ||A||_2 = 1; every J_k is 0, and for p = 4 and Psi(z) = e^{-Rz} target 10.4 would assert e^{-R/2} <= 4 C_n e^{-R} for every R > 0"
       }
      ]
     },
@@ -1553,10 +1630,11 @@
      "id": "10.4",
      "kind": "theorem",
      "name": "SchattenClasses.matrixBMO_interpolation",
-     "statement": "There is C_n such that for 2 <= p < infinity and Psi(z) = sum_j e^{delta z^2 + lambda_j z} A_j (finitely many A_j in S_2(L2(R^n)), delta >= 0, lambda_j real): ||Psi(2/p)||_p <= C_n p max(sup_t ||Psi(it)||_BMO, sup_t ||Psi(1+it)||_2). Operator form: if T : S_2 -> S_2 with ||T A||_2 <= C_2 ||A||_2 and ||T A||_BMO <= C_inf ||A|| for finite-rank A, then ||T A||_p <= C_n p C_inf^(1-2/p) C_2^(2/p) ||A||_p.",
+     "statement": "There is C_n such that for 2 <= p < infinity and Psi(z) = sum_j e^{delta z^2 + lambda_j z} A_j (finitely many A_j in S_2(L2(R^n)), delta >= 0, lambda_j real): ||Psi(2/p)||_p <= C_n p max(sup_t ||Psi(it)||_BMO, sup_t ||Psi(1+it)||_2). Operator form: if T : S_2 -> S_2 is linear and there are finite constants C_2, C_inf >= 0 with ||T A||_2 <= C_2 ||A||_2 and ||T A||_BMO <= C_inf ||A|| for finite-rank A, then ||T A||_p <= C_n p C_inf^(1-2/p) C_2^(2/p) ||A||_p (C_inf^0 = 1 at p = 2). For positive constants and A = U|A| != 0 with ||A||_p = 1 apply the inequality to Psi(z) = C_inf^(z-1) C_2^(-z) T(U |A|^(pz/2)); for a zero constant use C_j + epsilon and let epsilon -> 0 (Psi is not defined at a zero constant); A = 0 is trivial.",
      "hypotheses": [
       "n >= 1",
-      "2 <= p < infinity"
+      "2 <= p < infinity",
+      "C_2, C_inf finite and >= 0"
      ],
      "locator": {
       "source": "cgpt-2023",
@@ -1600,7 +1678,12 @@
       {
        "name": "hms_sup",
        "role": "bound",
-       "statement": "||M||_inf <= |||M|||/2; M defines a class in Linf"
+       "statement": "ess sup |M| <= |||M|||/2 in [0, infinity]; when |||M||| < infinity, M defines a class in Linf and so a multiplier S_M; a symbol of infinite gauge need not be bounded and then defines no multiplier"
+      },
+      {
+       "name": "hms_parts",
+       "role": "column and row parts",
+       "statement": "|||M|||_c = sum_{k <= sigma_n} ess sup |x - y|^k ||D_y^k M|| and |||M|||_r (with D_x) satisfy max(|||M|||_c, |||M|||_r) <= |||M||| <= |||M|||_c + |||M|||_r; each contains ess sup |M| (k = 0), so either being finite makes M bounded"
       },
       {
        "name": "hms_symmetry",
@@ -1638,17 +1721,44 @@
        "name": "hms_order",
        "kind": "computation",
        "statement": "sigma_1 = 1, sigma_2 = 2, sigma_3 = 2, sigma_4 = 3"
+      },
+      {
+       "name": "hms_unbounded",
+       "kind": "non-example",
+       "statement": "n = 1, M(x,y) = x: smooth, |||M||| = infinity and ess sup |M| = infinity; u = 1_[1,inf)(x)/x, v = 1_[0,1] give u (x) v* of HS norm 1 while M(x,y) u(x) v(y) = 1_[1,inf)(x) 1_[0,1](y) is not square-integrable, so M defines no multiplier"
       }
      ]
     },
     {
      "id": "11.2",
-     "kind": "construction",
-     "name": "SchattenClasses.twistedFourierMultiplier",
-     "statement": "For bounded measurable N, the column-twisted multiplier on L2(R^n; S_2(L2(R^n))) is the Fourier multiplier in z with symbol N(x, xi) on the entry (x,y), and the row-twisted one has symbol N(xi, y); M_c(x,xi) = M(x, x - xi), M_r(xi,y) = M(y - xi, y). Norm <= ||N||_inf; right (left) module map with the column (row) L2 bound; localised intertwining: T^c_{M_c}(pi(A) 1_{Q_R}) - avg_Q -> pi(S_M A) - avg_Q in L2(Q; S_2) as R -> infinity, and the row analogue.",
+     "kind": "theorem",
+     "name": "SchattenClasses.littlewoodPaley_uniform",
+     "statement": "With psi_j(xi) = phi(2^{-j} xi) - phi(2^{1-j} xi), N(x,.) of class C^{sigma_n} off 0 with B = sup_x sum_{k <= sigma_n} sup_xi |xi|^k ||D^k_xi N(x,xi)|| finite and k_j(x,.) = F^{-1}(psi_j N(x,.)): int |s|^{2 sigma_n} |k_j(x,s)|^2 ds <= C_n B^2 2^{j(n - 2 sigma_n)}, int |grad k_j|^2 <= C_n ||N||_inf^2 2^{j(n+2)}, int |s|^{2 sigma_n} |grad k_j|^2 <= C_n B^2 2^{j(n + 2 - 2 sigma_n)}.",
      "hypotheses": [
       "n >= 1",
-      "N bounded measurable; M as in 11.1 for the intertwining"
+      "N as stated"
+     ],
+     "locator": {
+      "source": "cgpt-2023",
+      "where": "(2.12) line 770; (2.13) line 793; lines 866-894, 967-972, 995-1015"
+     },
+     "prerequisites": [
+      "mathlib:MeasureTheory.Lp.fourierTransformₗᵢ",
+      "mathlib:iteratedFDeriv",
+      "tauceti:ContDiffBump.exists_norm_iteratedFDeriv_littlewoodPaleyPiece_le"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "11.3",
+     "kind": "construction",
+     "name": "SchattenClasses.twistedFourierMultiplier",
+     "statement": "For bounded measurable N, the column-twisted multiplier on L2(R^n; S_2(L2(R^n))) is the Fourier multiplier in z with symbol N(x, xi) on the entry (x,y), and the row-twisted one has symbol N(xi, y); M_c(x,xi) = M(x, x - xi), M_r(xi,y) = M(y - xi, y). Norm <= ||N||_inf; right (left) module map with the column (row) L2 bound; localised intertwining, for M of class C^{sigma_n} off the diagonal with finite column part |||M|||_c of 11.1 (so M and M_c are bounded): T^c_{M_c}(pi(A) 1_{Q_R}) - avg_Q -> pi(S_M A) - avg_Q in L2(Q; S_2) as R -> infinity, and the row analogue with a finite row part |||M|||_r; smoothness alone does not suffice (M = x, n = 1, has no multiplier).",
+     "hypotheses": [
+      "n >= 1",
+      "N bounded measurable",
+      "for the column intertwining, M of class C^{sigma_n} off the diagonal with finite column part |||M|||_c; for the row intertwining, finite row part |||M|||_r"
      ],
      "locator": {
       "source": "cgpt-2023",
@@ -1657,7 +1767,7 @@
      "prerequisites": [
       "target:2.1",
       "target:10.2",
-      "target:11.3",
+      "target:11.2",
       "mathlib:MeasureTheory.Lp.fourierTransformₗᵢ"
      ],
      "api": [
@@ -1674,7 +1784,7 @@
       {
        "name": "twisted_intertwine",
        "role": "intertwining",
-       "statement": "localised T^c_{M_c}(pi(A)) = pi(S_M A) modulo constants on every cube"
+       "statement": "for M with finite column part (row part for rows): localised T^c_{M_c}(pi(A)) = pi(S_M A) modulo constants on every cube, through the kernel estimates of 11.2"
       }
      ],
      "tests": [
@@ -1696,34 +1806,13 @@
      ]
     },
     {
-     "id": "11.3",
-     "kind": "theorem",
-     "name": "SchattenClasses.littlewoodPaley_uniform",
-     "statement": "With psi_j(xi) = phi(2^{-j} xi) - phi(2^{1-j} xi), N(x,.) of class C^{sigma_n} off 0 with B = sup_x sum_{k <= sigma_n} sup_xi |xi|^k ||D^k_xi N(x,xi)|| finite and k_j(x,.) = F^{-1}(psi_j N(x,.)): int |s|^{2 sigma_n} |k_j(x,s)|^2 ds <= C_n B^2 2^{j(n - 2 sigma_n)}, int |grad k_j|^2 <= C_n ||N||_inf^2 2^{j(n+2)}, int |s|^{2 sigma_n} |grad k_j|^2 <= C_n B^2 2^{j(n + 2 - 2 sigma_n)}.",
-     "hypotheses": [
-      "n >= 1",
-      "N as stated"
-     ],
-     "locator": {
-      "source": "cgpt-2023",
-      "where": "(2.12) line 770; (2.13) line 793; lines 866-894, 967-972, 995-1015"
-     },
-     "prerequisites": [
-      "mathlib:MeasureTheory.Lp.fourierTransformₗᵢ",
-      "mathlib:iteratedFDeriv",
-      "tauceti:ContDiffBump.exists_norm_iteratedFDeriv_littlewoodPaleyPiece_le"
-     ],
-     "api": [],
-     "tests": []
-    },
-    {
      "id": "11.4",
      "kind": "theorem",
      "name": "SchattenClasses.schurMultiplier_bmo_endpoint",
-     "statement": "For M as in 11.1 and A in S_2(L2(R^n)): ||S_M A||_{BMO_c} <= C_n (sum_{k <= sigma_n} ess sup |x - y|^k ||D_y^k M||) ||A|| and ||S_M A||_{BMO_r} <= C_n (sum ess sup |x - y|^k ||D_x^k M||) ||A||; hence ||S_M A||_BMO <= C_n |||M|||_HMS ||A||.",
+     "statement": "For M of class C^{sigma_n} on {x != y} with ||M||_inf < infinity (so S_M is defined) and A in S_2(L2(R^n)), in [0, infinity]: ||S_M A||_{BMO_c} <= C_n |||M|||_c ||A|| and ||S_M A||_{BMO_r} <= C_n |||M|||_r ||A|| with the column part |||M|||_c = sum_{k <= sigma_n} ess sup |x - y|^k ||D_y^k M|| and the row part |||M|||_r (D_x) of 11.1; hence ||S_M A||_BMO <= C_n |||M|||_HMS ||A||. Each bound is trivial when its right side is infinite; the column argument uses a finite column part, the row argument a finite row part.",
      "hypotheses": [
       "n >= 1",
-      "|||M||| finite"
+      "M of class C^{sigma_n} off the diagonal with ||M||_inf < infinity"
      ],
      "locator": {
       "source": "cgpt-2023",
@@ -1842,10 +1931,9 @@
    "roadmap": "AutomorphicSpectralTheory",
    "sections": [
     "§0.8",
-    "§0.9",
-    "§0.10"
+    "§0.9"
    ],
-   "what": "The L2 kernel operator with kernel_apply, kernel_unique, kernel_norm; the complex trace; kernel_trace_diagonal; requested at the generality of arbitrary sigma-finite measure spaces (gap sigma-finite-hilbert-schmidt-kernels)."
+   "what": "The L2 kernel operator with kernel_apply, kernel_unique, kernel_norm (§0.8), requested at the generality of arbitrary sigma-finite measure spaces (gap sigma-finite-hilbert-schmidt-kernels); the complex trace with its basis formula Tr(BC) = sum_j <B* e_j, C e_j> for Hilbert-Schmidt B, C (§0.9). The trace formula is derived in target 2.2."
   },
   {
    "roadmap": "CStarAlgebras",
@@ -1890,10 +1978,10 @@
     "2.2",
     "2.4"
    ],
-   "detail": "AutomorphicSpectralTheory §0.8 states the kernel operator T_K, kernel_apply, kernel_unique and kernel_norm on sigma-finite standard Borel spaces with separable L2, and §0.10 the trace formula Tr(T_1 T_2) = int int K_1(x,y) K_2(y,x). Layers 2, 5 and 7 need them for arbitrary sigma-finite measure spaces, including sub-sigma-algebras of a standard Borel space, which are not standard Borel. A route without countable orthonormal bases: VonNeumannAlgebras V2.RectangularL2 composed with the unitary S_2(L2(nu), L2(mu)) = L2(mu) (x) conj(L2(nu)) of V4.Core, identified with the integral formula on rank-one kernels and extended by continuity.",
-   "needs": "For arbitrary sigma-finite measure spaces (X, mu) and (Y, nu), with no standard Borel or separability hypothesis: the kernel operator T_K : L2(Y, nu) -> L2(X, mu), T_K f(x) = int K(x, y) f(y) dnu(y) for almost every x, of every K in L2(mu x nu), with K -> T_K a linear embedding of L2(mu x nu) into the bounded operators, isometric for the Hilbert-Schmidt norm: ||T_K||_HS = ||K||_2 (§0.8: kernel_apply, kernel_unique, kernel_norm), and Tr(T_1 T_2) = int int K_1(x, y) K_2(y, x) dmu(x) dmu(y) for K_1, K_2 in L2(mu x mu) (§0.10, first assertion).",
+   "detail": "AutomorphicSpectralTheory §0.8 states the kernel operator T_K, kernel_apply, kernel_unique and kernel_norm on sigma-finite standard Borel spaces with separable L2. Layers 2, 5 and 7 need it for arbitrary sigma-finite measure spaces, including sub-sigma-algebras of a standard Borel space, which are not standard Borel. The trace formula Tr(AC) = int int k_A(x,y) k_C(y,x) is not requested: target 2.2 derives it from the polarised kernel isometry of target 2.1 applied to (A*, C) and the adjoint kernel. A route without countable orthonormal bases: VonNeumannAlgebras V2.RectangularL2 composed with the unitary S_2(L2(nu), L2(mu)) = L2(mu) (x) conj(L2(nu)) of V4.Core, identified with the integral formula on rank-one kernels and extended by continuity.",
+   "needs": "For arbitrary sigma-finite measure spaces (X, mu) and (Y, nu), with no standard Borel or separability hypothesis: the kernel operator T_K : L2(Y, nu) -> L2(X, mu), T_K f(x) = int K(x, y) f(y) dnu(y) for almost every x, of every K in L2(mu x nu), with K -> T_K a linear embedding of L2(mu x nu) into the bounded operators, isometric for the Hilbert-Schmidt norm: ||T_K||_HS = ||K||_2 (§0.8: kernel_apply, kernel_unique, kernel_norm).",
    "supplier": "AutomorphicSpectralTheory",
-   "section": "§0.8 (and §0.10)"
+   "section": "§0.8"
   },
   {
    "slug": "semifinite-martingale-bmo-interpolation",
