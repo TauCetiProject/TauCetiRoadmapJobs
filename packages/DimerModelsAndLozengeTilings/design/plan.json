@@ -800,45 +800,6 @@
     {
      "id": "3.3",
      "kind": "theorem",
-     "name": "sum_perm_fixing_eq_det_mul_det_inv",
-     "statement": "For invertible square A over a field with rows I and columns J identified by a bijection, distinct rows i_l and columns j_l: Σ_{σ(i_l)=j_l} sgn(σ)∏_{i∉{i_l}} A(i,σi) = det A · det[(A⁻¹)(j_l,i_m)].",
-     "hypotheses": [
-      "A invertible",
-      "i_l pairwise distinct",
-      "j_l pairwise distinct"
-     ],
-     "locator": {
-      "source": "gorin2021",
-      "where": "proof of Theorem 3.5, lines 1339–1349"
-     },
-     "prerequisites": [
-      "roadmap:PadicMeasuresIwasawaAlgebras §6.4",
-      "mathlib:Matrix.det_apply",
-      "mathlib:Matrix.inv",
-      "mathlib:Matrix.adjugate_apply"
-     ],
-     "api": [],
-     "tests": [
-      {
-       "name": "k_one",
-       "kind": "compatibility",
-       "statement": "k=1: Mathlib's adjugate entry det A·(A⁻¹)(j,i)."
-      },
-      {
-       "name": "two_by_two",
-       "kind": "computation",
-       "statement": "A=[[a,b],[c,d]], (i)=(1,2), (j)=(2,1): both sides equal −1."
-      },
-      {
-       "name": "repeated_row",
-       "kind": "degenerate",
-       "statement": "i₁=i₂: empty sum versus two equal columns; both 0."
-      }
-     ]
-    },
-    {
-     "id": "3.4",
-     "kind": "theorem",
      "name": "lozenge_correlation_eq_det",
      "statement": "For finite simply connected R with positive partition function, positive w and pairwise distinct pairs (f_i,g_i) of white and black faces: the Boltzmann probability that each f_i is matched to g_i is ∏K(f_i,g_i)·det[K⁻¹(g_i,f_j)].",
      "hypotheses": [
@@ -849,11 +810,14 @@
      ],
      "locator": {
       "source": "gorin2021",
-      "where": "Theorem 3.5, lines 1281–1288"
+      "where": "Theorem 3.5, lines 1281–1288, and its proof, lines 1294–1352"
      },
      "prerequisites": [
       "target:3.2",
-      "target:3.3"
+      "tauceti:Matrix.det_submatrix_comp_inr_eq_sign_mul_det_mul_det_submatrix_comp_inl_nonsing_inv",
+      "mathlib:Matrix.det_apply",
+      "mathlib:Matrix.inv",
+      "mathlib:Equiv.Perm.sign"
      ],
      "api": [],
      "tests": [
@@ -871,6 +835,11 @@
        "name": "shared_face",
        "kind": "non-example",
        "statement": "Pairs sharing B(0): equal rows, probability 0."
+      },
+      {
+       "name": "hexagon_normalisation",
+       "kind": "computation",
+       "statement": "Unit hexagon, pairs W(0)–B(0), W(−e₁)–B(−e₃), β listing columns against rows: the only admissible bijection also sends W(−e₃) to B(−e₂), sign +1, so the restricted Leibniz sum is 1 = det K·det[[1/2,1/2],[−1/2,1/2]] = 2·1/2; without the factor det K one gets 1/2; the event's weight 1 over ε det K = 2 is the probability 1/2."
       }
      ]
     }
@@ -1012,10 +981,10 @@
      "id": "4.4",
      "kind": "theorem",
      "name": "tendsto_iff_cylinder_tendsto",
-     "statement": "For finite S and closed Γ-invariant X⊆Ω: X is compact metrisable, cylinder events are clopen, ProbabilityMeasure X is compact, Γ acts by affine homeomorphisms, μ_n→μ iff μ_n(C)→μ(C) for all cylinder events C; for S=Bool correlation functions determine μ and their convergence is weak convergence.",
+     "statement": "For finite S with the discrete topology and the discrete σ-algebra, and closed Γ-invariant X⊆Ω with the subspace topology and the trace σ-algebra: X is a compact metrisable Borel space, the traces on X of cylinder events are clopen and measurable, ProbabilityMeasure X is compact, Γ acts by affine homeomorphisms, μ_n→μ iff μ_n(C)→μ(C) for all cylinder events C; for S=Bool correlation functions determine μ and their convergence is weak convergence.",
      "hypotheses": [
-      "S finite",
-      "X closed and Γ-invariant"
+      "S finite with the discrete topology and the discrete σ-algebra (DiscreteMeasurableSpace), hence a Borel space (DiscreteMeasurableSpace.toBorelSpace)",
+      "X⊆Ω closed and Γ-invariant, with the subspace topology and the trace σ-algebra, a Borel space (Pi.borelSpace, Subtype.borelSpace)"
      ],
      "locator": {
       "source": "gorin2021",
@@ -1024,7 +993,9 @@
      "prerequisites": [
       "target:4.1",
       "mathlib:Function.compactSpace",
+      "mathlib:DiscreteMeasurableSpace.toBorelSpace",
       "mathlib:Pi.borelSpace",
+      "mathlib:Subtype.borelSpace",
       "mathlib:MeasureTheory.ProbabilityMeasure",
       "mathlib:MeasureTheory.ProbabilityMeasure.tendsto_measure_of_isClopen_of_tendsto",
       "mathlib:IsPiSystem.tendsto_probabilityMeasure_of_tendsto_of_mem"
@@ -1045,6 +1016,11 @@
        "name": "not_closed",
        "kind": "non-example",
        "statement": "Finitely supported configurations are not closed: point masses at 1_{[0,n]} converge to that at 1_{[0,∞)}."
+      },
+      {
+       "name": "discrete_sigma_algebra_needed",
+       "kind": "non-example",
+       "statement": "Γ=I=ℤ with the shift, S={0,1} with the discrete topology but the trivial σ-algebra, X={0̄,1̄}: the trace σ-algebra on X has 2 sets and the Borel σ-algebra 4; the clopen {1̄} is not measurable, Pi.borelSpace and the OpensMeasurableSpace hypothesis of the weak topology fail, and δ_{0̄}=δ_{1̄}. With the discrete σ-algebra both have 4 sets and (δ_{0̄}+δ_{1̄})/2 gives {1̄} mass 1/2."
       }
      ]
     },
@@ -1053,7 +1029,10 @@
      "kind": "definition",
      "name": "Specification",
      "statement": "A specification on X: Markov kernels γ_Λ (Λ⊆I finite) from X to X, measurable for the trace of 𝓕_{Λᶜ} on X, proper (γ_Λ(B∩C|ω)=1_B(ω)γ_Λ(C|ω) for B∈𝓕_{Λᶜ}) and consistent (γ_Δγ_Λ=γ_Δ for Λ⊆Δ); μ is Gibbs if μγ_Λ=μ for all Λ; Γ-equivariance and quasilocality.",
-     "hypotheses": [],
+     "hypotheses": [
+      "S finite with the discrete topology and the discrete σ-algebra (DiscreteMeasurableSpace), hence a Borel space (DiscreteMeasurableSpace.toBorelSpace)",
+      "X⊆Ω closed and Γ-invariant, with the subspace topology and the trace σ-algebra, a Borel space (Pi.borelSpace, Subtype.borelSpace)"
+     ],
      "locator": {
       "source": "sheffield2005",
       "where": "Section 1.1.2, lines 303–342"
@@ -1083,7 +1062,7 @@
       {
        "name": "identity_spec_constants",
        "kind": "degenerate",
-       "statement": "On the closed shift-invariant subshift X₀={0̄,1̄} of constant configurations of {0,1}^ℤ, each trace of 𝓕_{Λᶜ} is the full σ-algebra, so γ_Λ(·|ω)=δ_ω is a specification and every probability measure on X₀ is Gibbs."
+       "statement": "On the closed shift-invariant subshift X₀={0̄,1̄} of constant configurations of {0,1}^ℤ, {0,1} with its discrete σ-algebra, each trace of 𝓕_{Λᶜ} is the full σ-algebra, so γ_Λ(·|ω)=δ_ω is a specification and every probability measure on X₀ is Gibbs."
       },
       {
        "name": "identity_full_product",
@@ -1109,8 +1088,10 @@
      "statement": "(a) Gibbs measures are stable under tail-measurable probability densities; (b) for Γ-equivariant γ, 𝒢_inv is a face of 𝔓_inv, so μ∈𝒢_inv is extreme in 𝒢_inv iff extreme in 𝔓_inv iff ErgodicSMul, and conditioning on invariant events of positive measure stays in 𝒢_inv; (c) for quasilocal γ, 𝒢, 𝔓_inv and 𝒢_inv are weakly closed and compact.",
      "hypotheses": [
       "Γ countable infinite, proper action",
+      "S finite with the discrete topology and the discrete σ-algebra (DiscreteMeasurableSpace), hence a Borel space (DiscreteMeasurableSpace.toBorelSpace)",
+      "X⊆Ω closed and Γ-invariant, with the subspace topology and the trace σ-algebra, a Borel space (Pi.borelSpace, Subtype.borelSpace)",
       "γ Γ-equivariant for (b)",
-      "γ quasilocal and S finite for (c)"
+      "γ quasilocal for (c)"
      ],
      "locator": {
       "source": "sheffield2005",
@@ -1778,7 +1759,7 @@
      "id": "8.4",
      "kind": "theorem",
      "name": "torus_correlation_eq",
-     "statement": "For pairwise distinct torus lozenges ℓ_i joining W(u_i) to B(v_i), with signed weights κ_{ab}(ℓ_i): P(all ℓ_i ∈ M) = (2Z)⁻¹ Σ ε_{ab} ∏κ_{ab}(ℓ_i)·c_{ab}, where c_{ab}=0 if two ℓ_i share a white or a black face and otherwise c_{ab} is the signed complementary minor of K_{ab} (sum over bijections σ with σ(u_i)=v_i of sgn σ ∏_{u∉{u_i}} K_{ab}(u,σu)); when det K_{ab}≠0, c_{ab}=det K_{ab}·det[K_{ab}⁻¹(v_i,u_j)] with this convention; the coefficients ε_{ab}det K_{ab}/(2Z) lie in [−1/2,1/2] and sum to 1.",
+     "statement": "For pairwise distinct torus lozenges ℓ_i joining W(u_i) to B(v_i), with signed weights κ_{ab}(ℓ_i): P(all ℓ_i ∈ M) = (2Z)⁻¹ Σ ε_{ab} ∏κ_{ab}(ℓ_i)·c_{ab}, where c_{ab}=0 if two ℓ_i share a white or a black face and otherwise c_{ab} is the restricted Leibniz sum of K_{ab}, its signed complementary minor (sum over bijections σ with σ(u_i)=v_i of sgn σ ∏_{u∉{u_i}} K_{ab}(u,σu), σ read as a permutation of the fundamental domain); when det K_{ab}≠0, c_{ab}=det K_{ab}·det[K_{ab}⁻¹(v_i,u_j)] with this convention; the coefficients ε_{ab}det K_{ab}/(2Z) lie in [−1/2,1/2] and sum to 1.",
      "hypotheses": [
       "lozenges pairwise distinct (as L-orbits of typed edges)",
       "n₁,n₂ ≥ 1"
@@ -1788,9 +1769,12 @@
       "where": "Theorem 4.10, lines 1847–1850"
      },
      "prerequisites": [
-      "target:3.3",
       "target:8.1",
-      "target:8.3"
+      "target:8.3",
+      "tauceti:Matrix.det_submatrix_comp_inr_eq_sign_mul_det_mul_det_submatrix_comp_inl_nonsing_inv",
+      "mathlib:Matrix.det_apply",
+      "mathlib:Matrix.inv",
+      "mathlib:Equiv.Perm.sign"
      ],
      "api": [],
      "tests": [
@@ -1808,6 +1792,11 @@
        "name": "shared_faces",
        "kind": "degenerate",
        "statement": "1×1 torus, lozenges of types 1 and 3 (same W(0) and B(0)): c_{ab}=0 and the probability is 0; without the convention the complementary sum is 1 and the formula gives w₁w₃/(w₁+w₂+w₃)."
+      },
+      {
+       "name": "two_by_two_singular_twist",
+       "kind": "non-example",
+       "statement": "2×2 torus, type-3 lozenge at W(0): unit weights give (c₀₀,c₀₁,c₁₀,c₁₁)=(−1,1,1,3)=det K_{ab}·K_{ab}⁻¹(B(0),W(0)) and probability 1/3; type weights (2,3,5) give det K₀₀=0 but c₀₀=60, (c₀₁,c₁₀,c₁₁)=(100,150,190), Z=1444 and probability 25/38, while reading c₀₀ through Mathlib's zero inverse gives 275/361."
       }
      ]
     },
@@ -2279,15 +2268,7 @@
    ]
   }
  ],
- "suppliers": [
-  {
-   "roadmap": "PadicMeasuresIwasawaAlgebras",
-   "sections": [
-    "§6.4"
-   ],
-   "what": "Matrix.compound, Matrix.compound_mul (Cauchy–Binet), the unit rule C_r(1)=1, Matrix.higherAdjugate and Matrix.compound_mul_higherAdjugate, from which 3.3 derives Jacobi's complementary-minor identity."
-  }
- ],
+ "suppliers": [],
  "consumers": [
   {
    "roadmap": "DimerModelsAndLozengeTilingsPartII",

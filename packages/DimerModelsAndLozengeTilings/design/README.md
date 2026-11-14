@@ -17,7 +17,7 @@ the four-determinant Kasteleyn formula on the torus; and the explicit determinan
 ergodic Gibbs measure of every interior slope, identified with Okounkov–Reshetikhin's incomplete
 beta kernel and, along a row, with the discrete sine kernel. The end theorems are: tilings are
 perfect matchings of the dual graph (1.5); plane tilings are height functions (2.5); Thurston's
-criterion (2.9); Kasteleyn's theorem and the local statistics formula (3.2, 3.4); the face and
+criterion (2.9); Kasteleyn's theorem and the local statistics formula (3.2, 3.3); the face and
 ergodicity theorem for translation-invariant Gibbs measures (4.6, 5.3); every torus limit is a
 translation-invariant Gibbs measure of the prescribed slope (7.3); the classification on the
 edges of the slope triangle, with two distinct ergodic Gibbs measures of every edge slope (6.3);
@@ -69,7 +69,7 @@ It does not own, and does not restate:
   product topologies and σ-algebras, `MeasureTheory.ProbabilityMeasure` with its weak topology,
   compactness of probability measures on a compact space, the portmanteau implications and the
   π-system convergence criterion; Kolmogorov's zero-one law; `ErgodicSMul`; conditional
-  expectation; determinants, adjugates and inverses; the lifting criterion through covering maps;
+  expectation; determinants and inverses; the lifting criterion through covering maps;
   the Riemann–Lebesgue lemma — all in Mathlib (exact names under the supplier contracts);
 - the characterisation of ergodic invariant probability measures of a countable group action as
   extreme points of the invariant probability measures, `ErgodicSMul.iff_mem_extremePoints`,
@@ -82,9 +82,11 @@ It does not own, and does not restate:
   4.1 differs in being indexed by an arbitrary countable set carrying a proper action of a
   countable group, under which it is equivariant, and for an infinite index set it equals
   `tailProcess` of the coordinate process along any enumeration;
-- compound matrices, higher adjugates, the generalised Laplace expansion and Cauchy–Binet, which
-  PadicMeasuresIwasawaAlgebras §6.4 owns; the generalised cofactor identity of 3.3 is derived
-  here from them;
+- Jacobi's complementary-minor identity, which expresses a minor of a square matrix with unit
+  determinant through the complementary minor of its inverse,
+  `Matrix.det_submatrix_comp_inr_eq_sign_mul_det_mul_det_submatrix_comp_inl_nonsing_inv` —
+  already in Tau Ceti; 3.3 and 8.4 apply it to the restricted Leibniz sums of Kasteleyn
+  matrices (Conventions);
 - the finite triangular array `Δₙ = {(x,y,z) ∈ ℕ³ : x+y+z = n}` with its unit rhombi and hives,
   which TensorProductCombinatorics §1.1 owns for tensor-product multiplicities: it is a finite
   barycentric carrier for concave functions, not the infinite lattice with its dual graph used
@@ -156,6 +158,23 @@ All conventions below are fixed.
   the black faces of `R`, entry `w(e)` when the two faces share the edge `e` and `0` otherwise. A
   determinant is taken after composing with a bijection from black to white faces; its absolute
   value and the inverse `K_R⁻¹` (rows black, columns white) do not depend on the bijection.
+- **Restricted Leibniz sums.** Let `A` be a square matrix over a commutative ring whose rows `I`
+  and columns `J` are finite types, with a fixed bijection `β : J → I` (for a Kasteleyn matrix the
+  bijection of the previous item; for the twisted matrices `K_{ab}` the common indexing of white
+  and black faces by the fundamental domain). A bijection `σ : I → J` has sign `sgn(β ∘ σ)`, and
+  `det A` is the determinant of the square matrix `(i,i') ↦ A(i, β⁻¹ i')`. For distinct rows
+  `i₁, …, i_k` and distinct columns `j₁, …, j_k` the restricted Leibniz sum is
+  `Λ_A(i;j) = Σ_{σ(i_l) = j_l} sgn(σ) ∏_{i ∉ {i_l}} A(i, σ i)`: the terms of the Leibniz expansion
+  of `det A` that send every `i_l` to `j_l`, each without its factors `A(i_l, j_l)`. Fixing one
+  such `σ₀` and writing `σ = σ₀ ∘ ρ`, with `ρ` a permutation of the rows outside `{i_l}`, shows
+  that `Λ_A(i;j)` is `sgn(σ₀)` times the determinant of the complementary minor
+  `(i,i') ↦ A(i, σ₀ i')`, `i, i' ∉ {i_l}`. For `k = 0`, `Λ_A = det A`; changing `β` multiplies
+  `det A` and every `Λ_A(i;j)` by the same sign. Witness: `A = [[1,2,0],[0,1,3],[4,0,1]]` indexed
+  by `{0,1,2}`, `β` the identity, `(i₁,i₂) = (0,2)`, `(j₁,j₂) = (1,0)`: the only admissible `σ` is
+  the 3-cycle `0 ↦ 1 ↦ 2 ↦ 0`, of sign `+1`, so `Λ_A = A(1,2) = 3`; the complementary minor is the
+  same `1 × 1` matrix `[3]`. With `det A = 25` and `25 A⁻¹ = [[1,−2,6],[12,1,−3],[−4,8,1]]`,
+  `det[(A⁻¹)(j_l, i_m)] = det[[12,−3],[1,6]]/625 = 3/25`, so `det A · 3/25 = 3 = Λ_A`, the form in
+  which 3.3 and 8.4 use Tau Ceti's complementary-minor identity.
 - **Torus.** For `n₁, n₂ ≥ 1` the torus tilings are the plane tilings invariant under
   `n₁ℤ × n₂ℤ`. The height change is `(h₁,h₂)` with `H_M(v + (n₁,0)) − H_M(v) = h₁` and
   `H_M(v + (0,n₂)) − H_M(v) = h₂`. A torus lozenge is an `L`-orbit of plane edges, so it keeps its
@@ -203,20 +222,32 @@ At the Mathlib revision pinned in `lake-manifest.json`.
   `SimpleGraph.Subgraph.IsMatching`, `SimpleGraph.Subgraph.IsPerfectMatching` and
   `SimpleGraph.Subgraph.isPerfectMatching_iff` (`Mathlib/Combinatorics/SimpleGraph/Matching.lean`:
   a perfect matching is a spanning subgraph in which every vertex has exactly one neighbour).
-- `Pi.topologicalSpace`, `Function.compactSpace` and `Pi.compactSpace`
-  (`Mathlib/Topology/Compactness/Compact.lean`); `MeasurableSpace.pi`
-  (`Mathlib/MeasureTheory/MeasurableSpace/Constructions.lean`); `Pi.borelSpace`
-  (`Mathlib/MeasureTheory/Constructions/BorelSpace/Basic.lean`: countable index, second-countable
-  factors); `MeasureTheory.Measure.infinitePi` (`Mathlib/Probability/ProductMeasure.lean`).
+- `Pi.topologicalSpace` (`Mathlib/Topology/Constructions.lean`), `Function.compactSpace` and
+  `Pi.compactSpace` (`Mathlib/Topology/Compactness/Compact.lean`); `MeasurableSpace.pi`
+  (`Mathlib/MeasureTheory/MeasurableSpace/Constructions.lean`); `MeasureTheory.Measure.infinitePi`
+  (`Mathlib/Probability/ProductMeasure.lean`).
+- `Pi.borelSpace` (`Mathlib/MeasureTheory/Constructions/BorelSpace/Basic.lean`, line 645: for a
+  countable index type and factors that are second-countable Borel spaces, the product σ-algebra
+  is the Borel σ-algebra of the product topology; a factor whose σ-algebra is not its Borel
+  σ-algebra is not covered); `DiscreteMeasurableSpace`
+  (`Mathlib/MeasureTheory/MeasurableSpace/Defs.lean`: every subset is measurable) and
+  `DiscreteMeasurableSpace.toBorelSpace` (the same Borel file: a space with the discrete topology
+  and the discrete σ-algebra is a Borel space); `Subtype.borelSpace` (the same Borel file: a subset
+  of a Borel space, with the subspace topology and the trace σ-algebra, is a Borel space);
+  `Bool.instMeasurableSpace` (defined as `⊤`,
+  `Mathlib/MeasureTheory/MeasurableSpace/Instances.lean`) and `Bool.borelSpace`. These are the
+  Borel structures of 4.4–4.6 and Layers 5–10.
 - `MeasureTheory.ProbabilityMeasure` and its weak topology
-  (`Mathlib/MeasureTheory/Measure/ProbabilityMeasure.lean`); the instance
-  `CompactSpace (ProbabilityMeasure E)` for a compact Hausdorff Borel space `E`
-  (`Mathlib/MeasureTheory/Measure/Prokhorov.lean`, line 176);
+  (`Mathlib/MeasureTheory/Measure/ProbabilityMeasure.lean`: the topology instance is stated for an
+  `OpensMeasurableSpace`); the instance `CompactSpace (ProbabilityMeasure E)` for a compact
+  Hausdorff Borel space `E` (`Mathlib/MeasureTheory/Measure/Prokhorov.lean`, line 176);
   `MeasureTheory.ProbabilityMeasure.tendsto_measure_of_isClopen_of_tendsto` and
   `IsPiSystem.tendsto_probabilityMeasure_of_tendsto_of_mem`
-  (`Mathlib/MeasureTheory/Measure/Portmanteau.lean`: the second needs second countability, a
-  π-system of measurable sets containing arbitrarily small neighbourhoods of every point, and a
-  countably generated filter).
+  (`Mathlib/MeasureTheory/Measure/Portmanteau.lean`: the first needs `OpensMeasurableSpace` and
+  `HasOuterApproxClosed`, which Mathlib provides for every pseudo-metrisable space in
+  `Mathlib/MeasureTheory/Measure/HasOuterApproxClosed.lean`; the second needs
+  `OpensMeasurableSpace`, second countability, a π-system of measurable sets containing
+  arbitrarily small neighbourhoods of every point, and a countably generated filter).
 - `MeasureTheory.exists_measure_symmDiff_lt_of_generateFrom_isSetRing`
   (`Mathlib/MeasureTheory/Measure/MeasuredSets.lean`: approximation of measurable sets by a
   generating ring of sets, for a finite measure).
@@ -231,8 +262,8 @@ At the Mathlib revision pinned in `lake-manifest.json`.
   (`Mathlib/Analysis/Convex/Extreme.lean`).
 - `MeasureTheory.condExp` (`Mathlib/MeasureTheory/Function/ConditionalExpectation/Basic.lean`).
 - `Matrix.det`, `Matrix.det_apply` (`Mathlib/LinearAlgebra/Matrix/Determinant/Basic.lean`: the
-  Leibniz expansion), `Matrix.adjugate_apply` (`Mathlib/LinearAlgebra/Matrix/Adjugate.lean`),
-  `Matrix.inv` (`Mathlib/LinearAlgebra/Matrix/NonsingularInverse.lean`), `Equiv.Perm.sign`
+  Leibniz expansion), `Matrix.inv` (`Mathlib/LinearAlgebra/Matrix/NonsingularInverse.lean`:
+  the inverse of a matrix whose determinant is not a unit is `0`), `Equiv.Perm.sign`
   (`Mathlib/GroupTheory/Perm/Sign.lean`).
 - `IsSimplyConnected` and `SimplyConnectedSpace`
   (`Mathlib/AlgebraicTopology/FundamentalGroupoid/SimplyConnected.lean`: a set is simply connected
@@ -279,6 +310,19 @@ At the Tau Ceti revision pinned in `lake-manifest.json`.
   coordinate process along an enumeration of the index set. The `ℕ × ℕ`-indexed variant
   `TauCeti.Probability.arrayTail` (`TauCeti/Probability/Process/Array/Tail/Basic.lean`,
   line 43) is not used.
+- `Matrix.det_submatrix_comp_inr_eq_sign_mul_det_mul_det_submatrix_comp_inl_nonsing_inv`
+  (`TauCeti/LinearAlgebra/Matrix/Determinant/ComplementaryMinor.lean`, line 160), Jacobi's
+  complementary-minor identity: for a square matrix `A` over a commutative ring, indexed by a
+  finite type `n` with decidable equality, with `IsUnit A.det`, a splitting `e : m ⊕ p ≃ n` of the
+  index type into finite types and permutations `σ`, `τ` of `n`, the minor of `A` on the rows
+  `τ(e(inr ·))` and the columns `σ(e(inr ·))` equals `sgn σ · sgn τ · det A` times the minor of
+  `A⁻¹` on the rows `σ(e(inl ·))` and the columns `τ(e(inl ·))`. Over `ℝ` the hypothesis is
+  `det A ≠ 0`. 3.3 and 8.4 use it with `m` indexing the selected rows, `τ` the identity and `σ`
+  sending each selected row to its selected column (read through `β`), so that the left side is
+  the complementary minor of a restricted Leibniz sum (Conventions) and the two factors `sgn σ`
+  cancel. The adjugate form `Matrix.det_mul_det_submatrix_adjugate`
+  (`TauCeti/LinearAlgebra/Matrix/Determinant/Jacobi.lean`, line 54), stated for `Fin n` with
+  increasing enumerations, is not used.
 
 Tau Ceti has, at that pin, the invariant σ-algebra and mean ergodic projection for one map
 (`TauCeti/Probability/Ergodic/`) and one-sided shift ergodicity of i.i.d. laws
@@ -287,32 +331,23 @@ Tau Ceti has, at that pin, the invariant σ-algebra and mean ergodic projection 
 proper-action statements of Layer 4 are proved directly. Its tail σ-algebras are indexed by `ℕ`
 or `ℕ × ℕ` and carry no group action. It has no dimers, height functions or Gibbs measures.
 
-### From TauCetiRoadmap.PadicMeasuresIwasawaAlgebras
-
-§6.4: `Matrix.compound` (the `r`-th compound matrix of `r × r` minors on increasing rows and
-columns, for linearly ordered index types), `Matrix.compound_mul` (Cauchy–Binet), the unit rule
-`C_r(1) = 1`, `Matrix.higherAdjugate` (for square matrices indexed by `Fin m`, entries
-`(−1)^{ΣS+ΣT} det A[Sᶜ,Tᶜ]`) and `Matrix.compound_mul_higherAdjugate`
-(`C_r(A) adj_r(A) = det(A) I`), over a commutative ring. Target 3.3 uses them for an invertible
-matrix over a field; indexing by other finite types goes through an order isomorphism with `Fin m`.
-
 ## How to read the build
 
-Layer 1 fixes the lattice, the dual graph, regions and tilings, and proves that tilings are
-perfect matchings. Layer 2 builds edge cochains, simple connectivity and height functions, and
-from them the lattice of height functions, flips and Thurston's criterion. Layer 3 proves
-Kasteleyn's theorem on finite simply connected regions from flip connectivity, and the local
-statistics formula from the generalised cofactor identity. Layer 4 is abstract: product spaces
-with a proper action, tail events, Bernoulli measures, the weak topology, specifications and the
-face property. Layer 5 instantiates Layer 4 for perfect matchings of periodic graphs and for
-lozenge tilings. Layer 6 introduces slopes and settles the boundary of the slope triangle by
-hand. Layer 7 builds torus tilings and shows that torus limits are translation-invariant Gibbs
-measures of the prescribed slope. Layer 8 is Kasteleyn theory on the torus. Layer 9 passes to the
-limit on good tori, obtains the determinantal ergodic Gibbs measure of every interior slope and
-identifies its kernel with the incomplete beta kernel. Layer 10 defines local-statistics
-convergence for tilings of growing regions and proves that limits of uniform measures are Gibbs.
-Layer 4 depends on no earlier layer, and Layer 5 uses Layers 1–2 only in its lozenge instance
-5.4, so Layers 1–3 and Layers 4–5.3 may be built in parallel.
+Layer 1 fixes the lattice, the dual graph, regions and tilings, and proves that tilings are perfect
+matchings. Layer 2 builds edge cochains, simple connectivity and height functions, and from them the
+lattice of height functions, flips and Thurston's criterion. Layer 3 proves Kasteleyn's theorem on
+finite simply connected regions from flip connectivity, and the local statistics formula from it and
+Tau Ceti's complementary-minor identity. Layer 4 is abstract: product spaces with a proper action,
+tail events, Bernoulli measures, the weak topology, specifications and the face property. Layer 5
+instantiates Layer 4 for perfect matchings of periodic graphs and for lozenge tilings. Layer 6
+introduces slopes and settles the boundary of the slope triangle by hand. Layer 7 builds torus
+tilings and shows that torus limits are translation-invariant Gibbs measures of the prescribed
+slope. Layer 8 is Kasteleyn theory on the torus. Layer 9 passes to the limit on good tori, obtains
+the determinantal ergodic Gibbs measure of every interior slope and identifies its kernel with the
+incomplete beta kernel. Layer 10 defines local-statistics convergence for tilings of growing regions
+and proves that limits of uniform measures are Gibbs. Layer 4 depends on no earlier layer, and Layer
+5 uses Layers 1–2 only in its lozenge instance 5.4, so Layers 1–3 and Layers 4–5.3 may be built in
+parallel.
 
 ## Layer 1: the triangular lattice and lozenge tilings
 
@@ -770,35 +805,25 @@ even, and multiplies the term by a positive factor; flips connect all tilings (2
   bijections differ by a 6-cycle (odd), so with unit weights the determinant is `0` while the
   partition function is `2`.
 
-### 3.3 The generalised cofactor identity
+### 3.3 Local statistics on finite regions
 
-Let `A` be an invertible square matrix over a field with rows `I` and columns `J`, both finite
-types identified by a bijection, and let `i₁, …, i_k` be distinct rows and `j₁, …, j_k` distinct
-columns. The signed sum, over bijections `σ : I → J` with `σ(i_l) = j_l`, of
-`sgn(σ) ∏_{i ∉ {i_l}} A(i, σ i)` equals `det A · det[(A⁻¹)(j_l, i_m)]_{l,m}` (gorin2021 lines
-1339–1349; kenyon2009 lines 564–565; kenyon1997 Theorem 6, lines
-362–373). Route: the case `I = J = Fin m` is the entrywise reading of
-`adj_r(A) = det(A) C_r(A⁻¹)`, which follows from `Matrix.compound_mul_higherAdjugate`,
-`Matrix.compound_mul` and `C_r(1) = 1`; the general case transports along order isomorphisms.
-*Needs:* PadicMeasuresIwasawaAlgebras §6.4; Mathlib `Matrix.det_apply`, `Matrix.inv`.
-
-**Checks.**
-
-- `k = 1`: the cofactor of `(i,j)` is `det A · (A⁻¹)(j,i)`, Mathlib's `Matrix.adjugate_apply`.
-- `k = n = 2`, `A = [[a,b],[c,d]]`, `(i₁,i₂) = (1,2)`, `(j₁,j₂) = (2,1)`: the left side is the sign
-  `−1` of the transposition, and the right side is `det A · (−det A⁻¹) = −1`.
-- With `i₁ = i₂` the left side is an empty sum and the right side has two equal columns: both are
-  `0`.
-
-### 3.4 Local statistics on finite regions
-
-For a finite simply connected region `R` with positive partition function, a positive weight `w`
-and pairwise distinct pairs `(f_i, g_i)` of a white and a black face of `R`, the Boltzmann
-probability that every `f_i` is matched to `g_i` is `∏ K(f_i, g_i) · det[K⁻¹(g_i, f_j)]_{i,j}`,
-without absolute value (`lozenge_correlation_eq_det`; gorin2021 Theorem 3.5, lines 1281–1288, and
-its proof, lines 1294–1352; kenyon2009 Corollary 3, lines 557–563; kenyon1997 Theorem 6, lines
-366–373). Route: the event's weight is the sum of the terms of 3.2 with `σ(f_i) = g_i`, all of the
-common sign of `det K`, and 3.3 evaluates it. *Needs:* 3.2, 3.3.
+For a finite simply connected region `R` with positive partition function, a positive weight `w` and
+pairwise distinct pairs `(f_i, g_i)` of a white and a black face of `R`, the Boltzmann probability
+that every `f_i` is matched to `g_i` is `∏ K(f_i, g_i) · det[K⁻¹(g_i, f_j)]_{i,j}`, without absolute
+value (`lozenge_correlation_eq_det`; gorin2021 Theorem 3.5, lines 1281–1288, and its proof, lines
+1294–1352; kenyon2009 Corollary 3, lines 557–565; kenyon1997 Theorem 6, lines 362–373). Route: `R`
+is tileable, so `K = K_R` is square (3.1); by 3.2 all nonzero terms of its Leibniz expansion have
+the sign `ε` of `det K`, and `ε det K = partitionFunction R w > 0`. The tilings in the event are the
+bijections `σ` with nonzero term and `σ(f_i) = g_i`, so the event's weight is
+`ε ∏ K(f_i, g_i) · Λ_K(f;g)`, with `Λ_K` the restricted Leibniz sum of the Conventions. If a white or
+a black face repeats among the pairs, the event is empty and `[K⁻¹(g_i, f_j)]` has two equal columns or rows. Otherwise Tau
+Ceti's `Matrix.det_submatrix_comp_inr_eq_sign_mul_det_mul_det_submatrix_comp_inl_nonsing_inv`,
+applied to the square matrix `(f,f') ↦ K(f, β⁻¹ f')` with the splitting that lists `f₁, …, f_k`
+first, `τ` the identity and `σ = β ∘ σ₀` for a bijection `σ₀` with `σ₀(f_i) = g_i`, evaluates the
+complementary minor of `Λ_K(f;g)` and gives `Λ_K(f;g) = det K · det[K⁻¹(g_i, f_j)]`; dividing the
+event's weight by `ε det K` gives the formula. *Needs:* 3.2; Tau Ceti
+`Matrix.det_submatrix_comp_inr_eq_sign_mul_det_mul_det_submatrix_comp_inl_nonsing_inv`; Mathlib
+`Matrix.det_apply`, `Matrix.inv`, `Equiv.Perm.sign`.
 
 **Checks.**
 
@@ -810,6 +835,11 @@ common sign of `det K`, and 3.3 evaluates it. *Needs:* 3.2, 3.3.
   probability is `0`.
 - With type weights `(a,b,c)` on the hexagon both tilings have weight `abc` and the probability of
   `W(0)–B(0)` stays `c · K⁻¹(B(0),W(0)) = c · (ab)/(2abc) = 1/2`.
+- Normalisation of the route on the unit hexagon, `β` sending the listed columns to the listed
+  rows in order: for the pairs `W(0)–B(0)` and `W(−e₁)–B(−e₃)` the only admissible bijection also
+  sends `W(−e₃)` to `B(−e₂)`, with sign `+1`, so `Λ_K = K(W(−e₃),B(−e₂)) = 1`, and
+  `det K · det[[1/2,1/2],[−1/2,1/2]] = 2 · 1/2 = 1` agrees; dropping the factor `det K` would give
+  `1/2 ≠ 1`, and the event's weight `ε · 1 · Λ_K = 1` over `ε det K = 2` is the probability `1/2`.
 
 ### Examples
 
@@ -818,14 +848,22 @@ negative control for simple connectivity).
 
 ### Dependencies
 
-Layers 1–2; PadicMeasuresIwasawaAlgebras §6.4; Mathlib determinants and inverses.
+Layers 1–2; Tau Ceti's complementary-minor identity; Mathlib determinants and inverses.
 
 ## Layer 4: Gibbs specifications on configuration spaces
 
 Throughout this layer `Γ` is a countable infinite group acting on a countable set `I`, and the
 action is proper: for finite `F, F' ⊆ I` only finitely many `γ ∈ Γ` have `γF ∩ F' ≠ ∅`. `S` is a
-measurable space (for 4.4–4.6 a finite set with the discrete topology), `Ω = I → S` carries the
-product σ-algebra and topology, and `Γ` acts on `Ω` by `(γω)(i) = ω(γ⁻¹i)`.
+measurable space, `Ω = I → S` carries the product σ-algebra, and `Γ` acts on `Ω` by
+`(γω)(i) = ω(γ⁻¹i)`. For 4.4–4.6 `S` is moreover finite and carries both the discrete topology and
+the discrete σ-algebra (every subset measurable, Mathlib `DiscreteMeasurableSpace`); `Ω` carries
+the product topology, and a subset `X ⊆ Ω` carries the subspace topology and the trace σ-algebra.
+Then `S` is a Borel space (`DiscreteMeasurableSpace.toBorelSpace`), so is `Ω` (`Pi.borelSpace`:
+`I` is countable and the finite discrete `S` is second-countable), and so is `X`
+(`Subtype.borelSpace`): the product σ-algebra of `Ω` and its trace on `X` are the Borel
+σ-algebras. The discrete topology alone does not force this; with the trivial σ-algebra on
+`{0,1}` the product σ-algebra is trivial (4.4, Checks). `Bool`, the alphabet of Layers 5–10,
+carries both discrete structures natively (`Bool.instMeasurableSpace` is `⊤`; `Bool.borelSpace`).
 
 ### 4.1 Outside and tail σ-algebras
 
@@ -894,13 +932,16 @@ independent with law `ν`, and apply the sequential zero-one law to `𝓣 = tail
 
 ### 4.4 The weak topology on a finite-alphabet subshift
 
-Let `S` be finite and `X ⊆ Ω` closed and `Γ`-invariant. Then `X` is compact and metrisable,
-cylinder events are clopen, `𝔓(X)` (Mathlib `ProbabilityMeasure X`) is compact, `Γ` acts on
-`𝔓(X)` by affine homeomorphisms, and `μ_n → μ` iff `μ_n(C) → μ(C)` for every cylinder event `C`.
+Let `S` be finite with the discrete topology and the discrete σ-algebra, and `X ⊆ Ω` closed and
+`Γ`-invariant, with the subspace topology and the trace σ-algebra. Then `X` is a compact
+metrisable Borel space, the traces on `X` of cylinder events are clopen and measurable, `𝔓(X)`
+(Mathlib `ProbabilityMeasure X`) is compact, `Γ` acts on `𝔓(X)` by affine homeomorphisms, and
+`μ_n → μ` iff `μ_n(C) → μ(C)` for every cylinder event `C`.
 For `S = Bool` the correlation functions `ρ_F(μ) = μ{ω : ω = 1 on F}`, `F ⊆ I` finite, determine
 `μ`, and convergence of all of them is weak convergence (gorin2021 Definition 13.1 and Lemma 13.2,
 lines 4509–4519; aggarwal2023 lines 412–418). *Needs:* 4.1; Mathlib `Function.compactSpace`,
-`Pi.borelSpace`, the compact-space instance of `ProbabilityMeasure`,
+`DiscreteMeasurableSpace.toBorelSpace`, `Pi.borelSpace`, `Subtype.borelSpace`, the compact-space
+instance of `ProbabilityMeasure`,
 `ProbabilityMeasure.tendsto_measure_of_isClopen_of_tendsto`,
 `IsPiSystem.tendsto_probabilityMeasure_of_tendsto_of_mem`.
 
@@ -914,6 +955,15 @@ lines 4509–4519; aggarwal2023 lines 412–418). *Needs:* 4.1; Mathlib `Functio
 - The set of finitely supported configurations is not closed, and the point masses at the
   indicators of `[0,n]` converge to the point mass at the indicator of `[0,∞)`: closedness of `X`
   is needed for the limit to stay in `𝔓(X)`.
+- The discrete σ-algebra on `S` is needed, not only the discrete topology: take `Γ = I = ℤ` with
+  the shift, `S = {0,1}` with the discrete topology but the trivial σ-algebra `{∅, S}`, and
+  `X = {0̄, 1̄}`. The product σ-algebra of `Ω` is `{∅, Ω}`, so its trace on `X` has 2 sets while
+  the Borel σ-algebra of the discrete two-point space `X` has 4; the clopen set
+  `{1̄} = X ∩ {ω(0) = 1}` is not measurable, the Borel-factor hypothesis of `Pi.borelSpace` and the
+  `OpensMeasurableSpace` hypothesis of the weak topology fail, and the only probability measure on
+  `X` gives `X` mass 1, so `δ_{0̄} = δ_{1̄}`. With the discrete σ-algebra the trace and the Borel
+  σ-algebra both have the 4 sets `∅, {0̄}, {1̄}, X`, and `(δ_{0̄} + δ_{1̄})/2` gives `{1̄}` mass
+  `1/2`.
 
 ### 4.5 Specifications and Gibbs measures
 
@@ -936,9 +986,10 @@ API:
 **Checks.**
 
 - On the closed shift-invariant subshift `X₀ = {0̄, 1̄}` of the two constant configurations of
-  `{0,1}^ℤ`, any coordinate outside a finite `Λ` determines the configuration, so the trace of
-  `𝓕_{Λᶜ}` on `X₀` is the full σ-algebra; the identity specification `γ_Λ(·|ω) = δ_ω` is then
-  measurable, proper and consistent, and every probability measure on `X₀` is Gibbs for it.
+  `{0,1}^ℤ`, `{0,1}` with its discrete σ-algebra, any coordinate outside a finite `Λ` determines
+  the configuration, so the trace of `𝓕_{Λᶜ}` on `X₀` is the full σ-algebra; the identity
+  specification `γ_Λ(·|ω) = δ_ω` is then measurable, proper and consistent, and every probability
+  measure on `X₀` is Gibbs for it.
 - The identity kernels on all of `{0,1}^ℤ` are not a specification: for `Λ = {0}` and
   `C = {ω(0) = 1}`, two configurations differing only at `0` have the same exterior but
   `γ_Λ(C|·)` takes the values `0` and `1`, so the measurability clause fails (under `Bern(1/2)^{⊗ℤ}`
@@ -984,7 +1035,8 @@ configurations and the independent specification (4.5).
 
 ### Dependencies
 
-Mathlib product spaces, weak topology, portmanteau, zero-one law, conditional expectation; Tau Ceti
+Mathlib product spaces, the Borel structure of a discrete finite alphabet and its products and
+subspaces, weak topology, portmanteau, zero-one law, conditional expectation; Tau Ceti
 `TauCeti.Probability.tailProcess`, `ErgodicSMul.iff_mem_extremePoints`,
 `TauCeti.MeasureTheory.ergodicSMul_iff_forall_smul_invariant`. No earlier layer.
 
@@ -1370,15 +1422,23 @@ context, lines 657–666). Route: by 8.2, for every height change the four signs
 For pairwise distinct torus lozenges `ℓ₁, …, ℓ_k`, with `ℓ_i` joining `W(u_i)` to `B(v_i)` and of
 signed weight `κ_{ab}(ℓ_i)` (8.1), the Boltzmann probability that all occur is
 `(2Z)⁻¹ Σ_{ab} ε_{ab} ∏_i κ_{ab}(ℓ_i) · c_{ab}`. Here `c_{ab} = 0` when two of the `ℓ_i` share a
-white or a black face; otherwise `c_{ab}` is the signed complementary minor of `K_{ab}`, the sum over
-bijections `σ` from the white to the black faces of the fundamental domain with `σ(u_i) = v_i` of
-`sgn(σ) ∏_{u ∉ {u_i}} K_{ab}(u, σu)` (sign as in 3.3). When `det K_{ab} ≠ 0`,
-`c_{ab} = det K_{ab} · det[K_{ab}⁻¹(v_i, u_j)]` with this convention, the determinant having two
-equal rows or columns when a face repeats (gorin2021 Theorem 4.10, lines 1847–1850; kos2006
-Theorem 4.2, lines 658–666; kenyon1997 Lemma 8, lines 401–406). The coefficients
-`ε_{ab} det K_{ab}/(2Z)` have absolute value at most `1/2` and sum to `1`. Route: expanding the
-entries into edge contributions, the tilings containing all `ℓ_i` contribute `∏_i κ_{ab}(ℓ_i) · c_{ab}`
-to `det K_{ab}`, and the sign identity of 8.3 holds tiling by tiling. *Needs:* 3.3, 8.1, 8.3.
+white or a black face; otherwise `c_{ab} = Λ_{K_{ab}}(u;v)` is the restricted Leibniz sum of the
+Conventions, the signed complementary minor of `K_{ab}`: the sum over bijections `σ` from the white
+to the black faces of the fundamental domain with `σ(u_i) = v_i` of
+`sgn(σ) ∏_{u ∉ {u_i}} K_{ab}(u, σu)`, where `sgn(σ)` is the sign of `σ` read as a permutation of
+`[0,n₁) × [0,n₂)`. When `det K_{ab} ≠ 0`, `c_{ab} = det K_{ab} · det[K_{ab}⁻¹(v_i, u_j)]` with this
+convention, the determinant having two equal rows or columns when a face repeats (gorin2021
+Theorem 4.10, lines 1847–1850; kos2006 Theorem 4.2, lines 658–666; kenyon1997 Lemma 8, lines
+401–406). The coefficients `ε_{ab} det K_{ab}/(2Z)` have absolute value at most `1/2` and sum to
+`1`. Route: expanding the entries into edge contributions, the tilings containing all `ℓ_i`
+contribute `∏_i κ_{ab}(ℓ_i) · c_{ab}` to `det K_{ab}`, and the sign identity of 8.3 holds tiling by
+tiling. When `det K_{ab} ≠ 0` and the faces are distinct, Tau Ceti's
+`Matrix.det_submatrix_comp_inr_eq_sign_mul_det_mul_det_submatrix_comp_inl_nonsing_inv`, applied to
+`K_{ab}` with the splitting that lists `u₁, …, u_k` first, `τ` the identity and `σ` a permutation
+with `σ(u_i) = v_i`, evaluates the complementary minor of `Λ_{K_{ab}}(u;v)` and gives the inverse
+form. *Needs:* 8.1, 8.3; Tau Ceti
+`Matrix.det_submatrix_comp_inr_eq_sign_mul_det_mul_det_submatrix_comp_inl_nonsing_inv`; Mathlib
+`Matrix.det_apply`, `Matrix.inv`, `Equiv.Perm.sign`.
 
 **Checks.**
 
@@ -1390,6 +1450,14 @@ to `det K_{ab}`, and the sign identity of 8.3 holds tiling by tiling. *Needs:* 3
 - On the 1 × 1 torus the lozenges of types 1 and 3 share both `W(0)` and `B(0)`: `c_{ab} = 0` and the
   probability is `0`. Without the convention the complementary sum would be `1` and the formula
   would give `w₁w₃(1 − 1 + 1 + 1)/(2Z) = w₁w₃/(w₁ + w₂ + w₃)`, `1/3` at unit weights.
+- `n₁ = n₂ = 2`, the type-3 lozenge at `W(0)`: at unit weights `(c₀₀, c₀₁, c₁₀, c₁₁) = (−1, 1, 1, 3)`,
+  each equal to `det K_{ab} · K_{ab}⁻¹(B(0),W(0))` with determinants `−3, 5, 5, 5`, and
+  `(−(−1) + 1 + 1 + 3)/18 = 1/3`, the type-3 density. At type weights `(w₁,w₂,w₃) = (2,3,5)`:
+  `det K₀₀ = 0` (the eigenvalue `5 − 3 − 2` of 8.5) while `c₀₀ = 60`, and
+  `(c₀₁, c₁₀, c₁₁) = (100, 150, 190)` with determinants `544, 1044, 1300`, so `Z = 1444` and the
+  probability is `5(−60 + 100 + 150 + 190)/2888 = 25/38`, the share of the nine tilings' weight
+  carried by those containing that lozenge; reading `c₀₀` through Mathlib's inverse, which is `0`
+  for a singular matrix, would give `5(100 + 150 + 190)/2888 = 275/361`.
 
 ### 8.5 Fourier diagonalisation
 
@@ -1416,7 +1484,7 @@ The 1 × 1 and 2 × 2 tori with all four determinants.
 
 ### Dependencies
 
-Layers 3 and 7.
+Layer 7; Tau Ceti's complementary-minor identity; Mathlib determinants and inverses.
 
 ## Layer 9: the explicit kernel and ergodic Gibbs measures of interior slopes
 
@@ -1692,7 +1760,7 @@ Layers 4, 5, 9 (for 10.3), and 2.
   measure of each interior slope and the convergence `μ^{s,t}_n → μ_{ξ(s,t)}`; the surface tension
   and the variational principle; limit shapes; the statement and proof of Aggarwal's universality
   theorem; general periodic weights and amoebae. It consumes Layers 2, 5–7, 9 and 10 verbatim.
-- A roadmap on discrete determinantal point processes takes 3.4, 9.3 and 9.7 as its first examples
+- A roadmap on discrete determinantal point processes takes 3.3, 9.3 and 9.7 as its first examples
   of determinantal laws on countable sets.
 - Lattice spin systems with a finite single-site space (Ising-type models) consume Layer 4: the
   tail lemma, Bernoulli ergodicity, specifications, the face property and closedness.
