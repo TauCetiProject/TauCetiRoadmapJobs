@@ -82,7 +82,7 @@ year = 1997
 venue = "Annals of Probability 25 (1997), no. 1, 206–214"
 doi = "10.1214/aop/1024404285"
 locator_scheme = "theorem"
-locator = "Theorem 1.1"
+locator = "Corollary 1, inequality (10), p.209; the approximation argument after Corollary 2, p.210"
 url = "https://www-users.cse.umn.edu/~bobko001/papers/1997_AOP.pdf"
 fetched_from = "https://www-users.cse.umn.edu/~bobko001/papers/1997_AOP.pdf"
 fetched_at = "2026-11-04T19:42:47Z"
@@ -90,7 +90,7 @@ sha256 = "b3856d4b3051edaa984977323cb1f60a289c596b6153ec79023bae83be42ad77"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-04"
-version_note = "author-page PDF fetched, but its text layer is glyph names and the OCR output is unusable; the functional inequality is quoted from Ledoux1999, Section 1.2, inequality (1.11), and Bobkov is cited by locator"
+version_note = "author-page PDF of the published article (printed pp.206–214 = PDF pp.1–9); the OCR extraction is unusable, so the statements were read from the PDF itself: the numbered results are Propositions 1–2, Lemmas 1–3 and Corollaries 1–2 (there is no Theorem 1.1); Corollary 1, inequality (10), p.209 (page marker line 72) is the Gaussian functional inequality for locally Lipschitz f into [0,1], and the approximation by max(1 − dist(A,x)/h, 0) after Corollary 2, p.210 (page marker line 98), gives the content inequality (11); Ledoux1999 inequality (1.11) corroborates"
 cited_for = ["8.3"]
 
 [[source]]
