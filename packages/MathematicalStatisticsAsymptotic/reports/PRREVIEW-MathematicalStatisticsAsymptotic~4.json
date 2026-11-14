@@ -1,0 +1,13 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-MathematicalStatisticsAsymptotic~4",
+    "head": "dbee9ff7b2d3505a3cd64c32adc4243a9113b5e5",
+    "pr": 2320,
+    "folder": "MathematicalStatisticsAsymptotic",
+    "date": "2026-11-14",
+    "findings": 14,
+    "blocking": 6,
+    "notes": "Full review of all layers and 124 declarations; nine prior findings reconciled; all 15 seeded targets tested mathematically, two source samples certified from readable text and the rest recorded as uncited/uncertified; worker gate passes; independent depcheck and direct elaboration pass; 84 one-tactic probes; source, overlap and supplier audits recorded."
+  }
+}
