@@ -27,7 +27,8 @@
      "prerequisites": [
       "mathlib:ProbabilityTheory.integrableExpSet",
       "mathlib:MeasureTheory.Measure.IsNegInvariant",
-      "mathlib:MeasureTheory.Measure.pi"
+      "mathlib:MeasureTheory.Measure.pi",
+      "mathlib:MeasureTheory.Integrable.mono'"
      ],
      "api": [
       {
@@ -38,7 +39,7 @@
       {
        "name": "integrable_exp_quadratic",
        "role": "lemma",
-       "statement": "Admissible rho integrates exp(c phi^2 + h phi) for all real c, h, hence every polynomial."
+       "statement": "Admissible rho integrates exp(c phi^2 + h phi) for all real c, h, hence every polynomial; every rho-a.e. measurable F : R -> R with |F(phi)| <= C exp(c phi^2) for rho-a.e. phi, for some C >= 0 and real c, is rho-integrable (domination alone does not give measurability)."
       },
       {
        "name": "closure",
@@ -86,6 +87,11 @@
        "name": "biased_ising_not_even",
        "kind": "non-example",
        "statement": "(2 delta_{-1} + delta_1)/3 is admissible but not even (mean -1/3)."
+      },
+      {
+       "name": "measurability_needed",
+       "kind": "non-example",
+       "statement": "rho uniform on [0,1] (admissible): F = indicator of [0,1/2] has |F| <= 1 and integral 1/2; the indicator of a Vitali subset of [0,1] has the same bound but is not rho-a.e. measurable, hence not integrable."
       }
      ]
     },
@@ -216,7 +222,7 @@
      "id": "1.1",
      "kind": "definition",
      "name": "gibbsMeasure",
-     "statement": "For a finite type V, a symmetric J : V -> V -> R and a probability measure rho on R, H_{V,J}(phi) = -(1/2) sum_{x != y} J_{xy} phi_x phi_y, Z_{V,J}(rho) = integral of exp(-H) d rho^{tensor V} in (0, infinity], the triple is stable if Z < infinity, and mu_{V,J,rho} = Z^{-1} exp(-H) rho^{tensor V}.",
+     "statement": "For a finite type V, a symmetric J : V -> V -> R and a probability measure rho on R, H_{V,J}(phi) = -sum over unordered pairs {x,y} of distinct sites of J_{xy} phi_x phi_y = -(1/2) sum_{x != y} J_{xy} phi_x phi_y, Z_{V,J}(rho) = integral of exp(-H) d rho^{tensor V} in (0, infinity], the triple is stable if Z < infinity, and mu_{V,J,rho} = Z^{-1} exp(-H) rho^{tensor V}.",
      "hypotheses": [
       "V finite",
       "J symmetric (diagonal ignored)",
@@ -267,7 +273,7 @@
       {
        "name": "two_site_ising",
        "kind": "computation",
-       "statement": "Two Ising sites: Z = cosh J and <sigma_x sigma_y> = tanh J (ordered-pair convention would give tanh 2J)."
+       "statement": "Two Ising sites: H(1,1) = -J, Z = cosh J and <sigma_x sigma_y> = tanh J (2/sqrt 3 and 1/2 at J = (log 3)/2); omitting the factor 1/2 from the ordered-pair sum would give cosh 2J and tanh 2J (4/5)."
       },
       {
        "name": "three_site_ising",
@@ -497,9 +503,14 @@
        "statement": "N = 2, q = (1/2,1/2), K12 = (ln 2)/2 gives the uniform measure on {-1,0,1}."
       },
       {
+       "name": "mixed_signs_K0",
+       "kind": "degenerate",
+       "statement": "q = (1,-1), K = 0: eps = 1/2, law delta_0/2 + (delta_2 + delta_{-2})/4, equal to the nonnegative-weight block q = (1,1), K = 0, hence in the class; for 0 <= K <= (ln 2)/2, eps >= 1/3 and the Lebowitz test excludes nothing. A mixed-sign representation alone does not exclude membership."
+      },
+      {
        "name": "mixed_signs",
        "kind": "non-example",
-       "statement": "q = (1,-1), coupling K: law (1-eps) delta_0 + (eps/2)(delta_2 + delta_{-2}) with eps = 1/(1+e^{2K}); for K > (ln 2)/2, eps < 1/3 and the single-site Lebowitz inequality fails."
+       "statement": "q = (1,-1), ferromagnetic coupling K >= 0: law (1-eps) delta_0 + (eps/2)(delta_2 + delta_{-2}) with eps = 1/(1+e^{2K}) in (0,1/2]; for K > (ln 2)/2, 0 < eps < 1/3 and the single-site Lebowitz inequality fails (K = (ln 3)/2: eps = 1/4, 4 > 3)."
       },
       {
        "name": "block_two_site",
@@ -561,7 +572,7 @@
       {
        "name": "lebowitz_test",
        "kind": "non-example",
-       "statement": "(1-eps) delta_0 + (eps/2)(delta_1 + delta_{-1}) with eps < 1/3 is even admissible but not in the class (fails integral phi^4 <= 3 (integral phi^2)^2)."
+       "statement": "(1-eps) delta_0 + (eps/2)(delta_1 + delta_{-1}) with 0 < eps < 1/3 is even admissible but not in the class (fails integral phi^4 <= 3 (integral phi^2)^2: eps > 3 eps^2; at eps = 1/4, 1/4 > 3/16). At eps = 0 it is delta_0, a member (0 = 0); at eps = 1/3 both sides are 1/3 and the test decides nothing."
       },
       {
        "name": "phi4_member",
@@ -635,7 +646,7 @@
      ],
      "locator": {
       "source": "peled-spinka-2017",
-      "where": "Theorems 2.1 and 2.3, lines 334 and 515; Lemma 2.4, line 535; sokal-1982 (2.20)-(2.21) lines 414-415; glimm-jaffe-1987 Ch. 4"
+      "where": "Theorems 2.1 and 2.3, lines 334 and 515; Lemma 2.4, line 535; sokal-1982 (2.19)-(2.20), p. 327, lines 414-415; glimm-jaffe-1987 Ch. 4"
      },
      "prerequisites": [
       "target:0.1",
@@ -708,7 +719,7 @@
      "id": "3.3",
      "kind": "theorem",
      "name": "fkg_gibbs",
-     "statement": "For finite V, ferromagnetic J, admissible rho and bounded measurable coordinatewise non-decreasing F, G: <FG> >= <F><G>; also for polynomially bounded non-decreasing F, G.",
+     "statement": "For finite V, ferromagnetic J, admissible rho and bounded measurable coordinatewise non-decreasing F, G: <FG> >= <F><G>; also for measurable polynomially bounded non-decreasing F, G.",
      "hypotheses": [
       "J >= 0",
       "rho admissible"
@@ -909,9 +920,10 @@
      "id": "3.7",
      "kind": "theorem",
      "name": "phi4_ibp_and_uniform_bounds",
-     "statement": "(a) For lambda > 0, b real, finite V, coupling J, x in V: 4 lambda <phi_x^4> = 1 + 2b <phi_x^2> + sum_{y != x} J_xy <phi_x phi_y> under mu_{V,J,rho_{lambda,b}}, and <d_x F> = <F (4 lambda phi_x^3 - 2b phi_x - sum_y J_xy phi_y)>. (b) max_x <phi_x^2> <= M = [(2b_+ + ||J||) + sqrt((2b_+ + ||J||)^2 + 16 lambda)]/(8 lambda), uniformly in V. (c) For rho in the Griffiths-Simon class, ferromagnetic J and t >= 0: <exp(sum t_x phi_x)> <= exp(<(sum t_x phi_x)^2>/2), and <exp(a|phi_x|)> <= 2 exp(a^2 <phi_x^2>/2).",
+     "statement": "(a) For lambda > 0, b real, finite V, coupling J, x in V: 4 lambda <phi_x^4> = 1 + 2b <phi_x^2> + sum_{y != x} J_xy <phi_x phi_y> under mu_{V,J,rho_{lambda,b}}, and, for every continuously differentiable F : R^V -> R with |F(phi)| + |d_x F(phi)| <= C (1 + sum_y phi_y^2)^k for some C, k, <d_x F> = <F (4 lambda phi_x^3 - 2b phi_x - sum_{y != x} J_xy phi_y)>; the diagonal J_xx does not enter. (b) max_x <phi_x^2> <= M = [(2b_+ + ||J||) + sqrt((2b_+ + ||J||)^2 + 16 lambda)]/(8 lambda), uniformly in V. (c) For rho in the Griffiths-Simon class, ferromagnetic J and t >= 0: <exp(sum t_x phi_x)> <= exp(<(sum t_x phi_x)^2>/2), and <exp(a|phi_x|)> <= 2 exp(a^2 <phi_x^2>/2).",
      "hypotheses": [
-      "lambda > 0 for (a)-(b)",
+      "lambda > 0, b real, J any symmetric coupling (diagonal arbitrary and ignored) for (a)-(b)",
+      "for the general identity in (a): F continuously differentiable with F and d_x F bounded by C (1 + sum_y phi_y^2)^k",
       "rho in the Griffiths-Simon class and J >= 0 for (c)"
      ],
      "locator": {
@@ -931,6 +943,16 @@
        "name": "single_site_ibp",
        "kind": "computation",
        "statement": "One site, J = 0, b = 0: <phi^4> = 1/(4 lambda), matching 0.2."
+      },
+      {
+       "name": "ibp_diagonal_ignored",
+       "kind": "non-example",
+       "statement": "One site, lambda = 1, b = 0, J_xx = 1, F = phi: the sum over y != x is empty and both sides equal 1 = 4<phi^4>; a sum including the diagonal would give 4<phi^4> - <phi^2> = 1 - Gamma(3/4)/Gamma(1/4) = 0.66201."
+      },
+      {
+       "name": "ibp_derivative_growth_needed",
+       "kind": "non-example",
+       "statement": "One site, lambda = 1, b = 0, J = 0, F(phi) = phi + sin(exp(phi^4)): F is smooth and polynomially bounded, but |d F| times the density has infinite integral (substitute t = exp(phi^4): integral of |cos t|/t over [1, infinity)), so <dF> is not a Lebesgue expectation, while the right side is 4<phi^4> + 4<phi^3 sin(exp(phi^4))> = 1 + 0; the derivative-growth hypothesis excludes F."
       },
       {
        "name": "bound_value",
@@ -1130,7 +1152,12 @@
       {
        "name": "high_temperature",
        "kind": "computation",
-       "statement": "Ising Z^d: Simon-Lieb with Lambda = {0} gives chi <= 1/(1 - 2dJ), so beta_c >= 1/(2dJ)."
+       "statement": "Ising Z^d, nearest-neighbour coupling J with 0 <= 2dJ < 1: Simon-Lieb with Lambda = {0}, applied in V_R to max_v sum_y <s_v s_y>_{V_R}, gives chi(rho_I, J) <= 1/(1 - 2dJ); at d = 1, J = 1/4 this reads e^{1/2} = 1.6487 <= 2. For J > 0, applying the estimate to beta J with 2d beta J < 1 gives beta_c(rho_I, J) >= 1/(2dJ); for J = 0, beta_c = infinity."
+      },
+      {
+       "name": "high_temperature_domain",
+       "kind": "non-example",
+       "statement": "d = 1, J = 1: chi(rho_I, 1) = e^2 = 7.389 while 1/(1 - 2dJ) = -1, and at J = 1/2 the denominator vanishes; the susceptibility estimate is asserted only for 2dJ < 1, while beta_c(rho_I, J) >= 1/(2dJ) holds for every J > 0."
       }
      ]
     },
@@ -1645,7 +1672,12 @@
       {
        "name": "independent_spins",
        "kind": "computation",
-       "statement": "J = 0, Ising: Sigma = (2L+1)^d and <T_f^2> -> 2^{-d} integral f^2."
+       "statement": "J = 0, Ising, f in C_c(R^d): Sigma = (2L+1)^d and <T_f^2>_{V_R} = sum_{x in V_R} f(x/L)^2/(2L+1)^d -> 2^{-d} integral f^2 as L -> infinity with R = R(L) >= L such that V_{R(L)} eventually contains every x with x/L in supp f (e.g. R(L)/L -> infinity); the volume-first limit of 7.2 gives the same value."
+      },
+      {
+       "name": "independent_spins_volume_needed",
+       "kind": "non-example",
+       "statement": "d = 1, J = 0, Ising, R = L, f(u) = max(0, 1 - |u - 3|): every sampled f(x/L) with |x| <= L is 0, so <T_f^2> = 0 for every L, whereas (1/2) integral f^2 = 1/3; with R = 4L the normalised second moment is (2L^2+1)/(3L(2L+1)) -> 1/3."
       },
       {
        "name": "chain_block_variance",

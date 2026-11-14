@@ -22,7 +22,7 @@ Left to other roadmaps:
 
 **Lattice and boxes.** d ≥ 1 is the dimension. Points of ℤ^d are functions `Fin d → ℤ`, embedded in ℝ^d = `EuclideanSpace ℝ (Fin d)` coordinatewise. For x ∈ ℤ^d, `‖x‖₁ = Σ_j |x_j|`, `‖x‖∞ = max_j |x_j|` and |x| is the Euclidean norm. For R ∈ ℕ the box is `V_R = [−R, R]^d ∩ ℤ^d`, with `(2R + 1)^d` points; the block of side L is `Λ_L = V_L` (Aizenman–Duminil-Copin (1.8) and (1.15)). Q denotes the closed cube `[−1, 1]^d ⊂ ℝ^d` and `1_Q` its indicator. The hyperoctahedral group W_d of signed permutation matrices acts on ℤ^d and on ℝ^d; it preserves every V_R.
 
-**Couplings and the Hamiltonian.** A coupling on a finite set V is a symmetric function `J : V → V → ℝ`; it is ferromagnetic if J ≥ 0. Its diagonal plays no role. The Hamiltonian of a configuration φ ∈ ℝ^V is `H_{V,J}(φ) = −½ Σ_{x≠y} J_{xy} φ_x φ_y`, the sum over unordered pairs of distinct sites, as in Aizenman–Duminil-Copin (1.12) and (1.16); the inverse temperature is absorbed into J. Witness: for V = {x, y}, `J_{xy} = J` and the Ising measure, `⟨σ_x σ_y⟩ = tanh J`; summing over ordered pairs would give `tanh 2J`. The nearest-neighbour coupling of strength J ≥ 0 on a subset of ℤ^d is `J_{xy} = J · 1[‖x − y‖₁ = 1]`, and `|J| = Σ_y J_{0y} = 2dJ`. The row norm of a coupling is `‖J‖ = max_x Σ_y |J_{xy}|`.
+**Couplings and the Hamiltonian.** A coupling on a finite set V is a symmetric function `J : V → V → ℝ`; it is ferromagnetic if J ≥ 0. Its diagonal plays no role. The Hamiltonian of a configuration φ ∈ ℝ^V is minus the sum over unordered pairs {x, y} of distinct sites, `H_{V,J}(φ) = −Σ_{{x,y}} J_{xy} φ_x φ_y`, as in Aizenman–Duminil-Copin (1.12) and (1.16); equivalently, it is minus one half of the sum over ordered pairs, `H_{V,J}(φ) = −½ Σ_{x≠y} J_{xy} φ_x φ_y`. The inverse temperature is absorbed into J. Witness: for V = {x, y}, `J_{xy} = J` and the Ising measure, both forms give `H(1, 1) = −J`, `Z = cosh J` and `⟨σ_x σ_y⟩ = tanh J` (for `J = (log 3)/2`: `Z = 2/√3` and `⟨σ_x σ_y⟩ = 1/2`); omitting the factor ½ from the ordered sum doubles the coupling and gives `tanh 2J` (4/5 at `J = (log 3)/2`), and halving the unordered sum gives `tanh(J/2)` (`2 − √3`). The nearest-neighbour coupling of strength J ≥ 0 on a subset of ℤ^d is `J_{xy} = J · 1[‖x − y‖₁ = 1]`, and `|J| = Σ_y J_{0y} = 2dJ`. The row norm of a coupling is `‖J‖ = max_x Σ_y |J_{xy}|`.
 
 **Single-site measures.** Single-site measures are Borel probability measures ρ on ℝ. The φ⁴ measure is `ρ_{λ,b}(dφ) = z⁻¹ exp(−λφ⁴ + bφ²) dφ` for λ > 0 and b ∈ ℝ, the sign of b as in Aizenman–Duminil-Copin (1.12); Simon's Twelve Tales (line 1021) writes `exp(−aφ⁴ − bφ²)` with the opposite sign. For b < 0, `γ_b = ρ_{0,b}` is the centred Gaussian of variance `1/(2|b|)`. Witness: `γ_{−1/2}` is the standard normal law `ProbabilityTheory.gaussianReal 0 1`; under the opposite sign convention it would be b = +½. The Ising measure is `ρ_I = ½(δ₋₁ + δ₁)`.
 
@@ -42,6 +42,7 @@ The pin is 1b1ccf4b088b32fa3f23f2de1127433254a81e1e. The following declarations 
 
 - `MeasureTheory.Measure.IsNegInvariant` (Mathlib/MeasureTheory/Group/Measure.lean:310): invariance of a measure under negation, `μ.neg = μ`; it is the evenness of single-site measures and of Gibbs measures throughout.
 - `ProbabilityTheory.integrableExpSet` (Mathlib/Probability/Moments/IntegrableExpMul.lean:112): the set of t for which `exp(tX)` is integrable; admissibility of ρ is `integrableExpSet (fun φ ↦ φ²) ρ = Set.univ`.
+- `MeasureTheory.Integrable` and `MeasureTheory.Integrable.mono'` (Mathlib/MeasureTheory/Function/L1Space/Integrable.lean:58 and 104): integrability is a.e. strong measurability together with a finite integral of the norm, and an a.e. strongly measurable function dominated almost everywhere by an integrable one is integrable. Domination does not supply measurability; used in the integrability API of 0.1.
 - `MeasureTheory.Measure.pi` (Mathlib/MeasureTheory/Constructions/Pi.lean:211), `MeasureTheory.Measure.withDensity` (Mathlib/MeasureTheory/Measure/WithDensity.lean:39) and `MeasureTheory.Measure.map` (Mathlib/MeasureTheory/Measure/Map.lean:96): the Gibbs measure of Layer 1 is `(ρ^{⊗V}).withDensity (e^{−H}/Z)`. `MeasureTheory.Measure.infinitePi` (Mathlib/Probability/ProductMeasure.lean:354) is the J = 0 infinite-volume state.
 - `MeasureTheory.IsProjectiveMeasureFamily`, `MeasureTheory.IsProjectiveLimit` and `MeasureTheory.IsProjectiveLimit.unique` (Mathlib/MeasureTheory/Constructions/Projective.lean:45, 115 and 150): the language of the Kolmogorov extension in Layers 4 and 6. Mathlib itself contains no existence theorem for projective limits; its Brownian motion file says so explicitly.
 - `ProbabilityTheory.map_eq_iff_forall_finset_map_restrict_eq` (Mathlib/Probability/Process/FiniteDimensionalLaws.lean:61): equality of laws of processes is equality of all finite-dimensional laws; this is equality up to finite-dimensional distributions in Layer 6.
@@ -89,14 +90,14 @@ Define a single-site measure ρ (a Borel probability measure on ℝ) to be admis
 The API consists of the following facts.
 
 - Agreement with the library: ρ is admissible iff `ProbabilityTheory.integrableExpSet (fun φ ↦ φ²) ρ` is all of ℝ.
-- An admissible ρ integrates `exp(cφ² + hφ)` for all real c and h, hence every polynomial and every function bounded by `C e^{cφ²}`.
+- An admissible ρ integrates `exp(cφ² + hφ)` for all real c and h, hence every polynomial; and every ρ-a.e. measurable F : ℝ → ℝ with `|F(φ)| ≤ C e^{cφ²}` for ρ-almost every φ, for some C ≥ 0 and real c, is ρ-integrable (domination alone does not give measurability, which Mathlib's `MeasureTheory.Integrable` requires).
 - Admissibility is preserved by the images under φ ↦ sφ (s ∈ ℝ), by finite convex combinations, and by tilting: for real a, h the measure `exp(aφ² + hφ) ρ / ∫ exp(aφ² + hφ) dρ` is an admissible probability measure.
 - For admissible ρ, every finite set V and every real c, `∫ exp(c Σ_{x∈V} φ_x²) d ρ^{⊗V} = (∫ exp(cφ²) dρ)^{|V|}` is finite.
 - A probability measure with bounded support is admissible; so is one with a density bounded by `C exp(−ψ(φ))` where `ψ(φ)/φ² → ∞` as |φ| → ∞.
 - If ∫ exp(|φ|^α) dρ < ∞ for some α > 2 then ρ is admissible, because `cφ² ≤ |φ|^α + C_{c,α}`.
 - An even measure with a finite n-th absolute moment has vanishing n-th moment for n odd, and ρ is even iff its characteristic function is real.
 
-*Needs:* Mathlib `MeasureTheory.Measure.pi`, `MeasureTheory.Measure.map`, `MeasureTheory.Measure.IsNegInvariant`, `ProbabilityTheory.integrableExpSet`.
+*Needs:* Mathlib `MeasureTheory.Measure.pi`, `MeasureTheory.Measure.map`, `MeasureTheory.Measure.IsNegInvariant`, `ProbabilityTheory.integrableExpSet`, `MeasureTheory.Integrable.mono'`.
 
 **Checks.**
 
@@ -104,6 +105,7 @@ The API consists of the following facts.
 - The standard normal law is not admissible: `∫ e^{φ²/2} dN(0,1) = ∞`. Weakening "every c" to "some c > 0" would admit it, and then for two sites with `J_{xy} = J ≥ 1` the partition function `∫∫ e^{Jφ_xφ_y} dN(0,1)⊗N(0,1)` is infinite (the quadratic form `½(φ_x² + φ_y²) − Jφ_xφ_y` is not positive definite), so no Gibbs measure exists.
 - The Cauchy law is not admissible (it has no second moment).
 - `(2δ₋₁ + δ₁)/3` is admissible but not even: its mean is −1/3.
+- Measurability is needed in the domination statement: for ρ the uniform law on [0, 1] (admissible, bounded support), `F = 1_{[0,1/2]}` satisfies `|F| ≤ 1` (C = 1, c = 0) and has integral ½, while the indicator of a Vitali subset of [0, 1] satisfies the same bound but is not ρ-a.e. measurable (it agrees with no Borel function outside a Lebesgue-null set), so it is not ρ-integrable.
 
 ### 0.2 The φ⁴, Gaussian and Ising single-site measures
 
@@ -152,7 +154,7 @@ The API consists of the following facts.
 
 **Checks.**
 
-- Two sites, Ising: `Z = cosh J` and `⟨σ_x σ_y⟩ = tanh J`; a Hamiltonian over ordered pairs would give `cosh 2J` and `tanh 2J`.
+- Two sites, Ising: `Z = cosh J` and `⟨σ_x σ_y⟩ = tanh J`; omitting the factor ½ from the ordered-pair sum (equivalently, doubling the unordered-pair sum) would give `cosh 2J` and `tanh 2J`.
 - Three sites, all pairs coupled with J, Ising: `Z = (e^{3J} + 3e^{−J})/4` and `⟨σ_1σ_2⟩ = (e^{3J} − e^{−J})/(e^{3J} + 3e^{−J})`, which is negative for J < 0 (frustration); the definition does not require J ≥ 0.
 - Two sites with single-site measure N(0,1) and `J_{xy} = 1` give Z = ∞: the triple is unstable, so stability cannot be dropped from the probability statement.
 
@@ -230,7 +232,8 @@ The API consists of the following facts.
 **Checks.**
 
 - Griffiths' trick: N = 2, q = (½, ½), `K_{12} = (ln 2)/2` gives the uniform measure on {−1, 0, 1}, since the unnormalised weights of t = (σ₁ + σ₂)/2 are `¼e^{K}` at t = ±1 and `½e^{−K}` at t = 0 (Simon, Twelve Tales, lines 1011–1018).
-- With mixed signs q = (1, −1) and coupling K on the pair, the law of σ₁ − σ₂ is `(1 − ε)δ₀ + ½ε(δ₂ + δ₋₂)` with `ε = 1/(1 + e^{2K})`; for K > (ln 2)/2, ε < 1/3 and `∫φ⁴ = 16ε > 48ε² = 3(∫φ²)²`, violating the single-site Lebowitz inequality of 3.5. This is why the weights are nonnegative.
+- With mixed signs q = (1, −1) and a ferromagnetic coupling K ≥ 0 on the pair, the law of σ₁ − σ₂ is `(1 − ε)δ₀ + ½ε(δ₂ + δ₋₂)` with `ε = 1/(1 + e^{2K}) ∈ (0, ½]`; for K > (ln 2)/2, 0 < ε < 1/3 and `∫φ⁴ = 16ε > 48ε² = 3(∫φ²)²` (at K = (ln 3)/2, ε = ¼ and 4 > 3), violating the single-site Lebowitz inequality of 3.5. This is why the weights are nonnegative.
+- A mixed-sign representation alone does not exclude a measure: at K = 0 the same construction gives ε = ½, the law `½δ₀ + ¼(δ₂ + δ₋₂)`, which is also the nonnegative-weight block q = (1, 1), K = 0, and so lies in the class of 2.2; for 0 ≤ K ≤ (ln 2)/2 one has ε ≥ 1/3, and the Lebowitz test excludes nothing.
 - For V = {x, y}, `J_{xy} = J`, N = 1, q = (s): the block-spin representation gives `⟨φ_xφ_y⟩ = s² tanh(Js²)`, which is also the direct computation with single-site measure `½(δ_{−s} + δ_s)`.
 
 ### 2.2 The Griffiths–Simon class
@@ -249,7 +252,7 @@ The API consists of the following facts.
 **Checks.**
 
 - The standard normal law is a weak limit of Ising-block measures (independent spins, K = 0, q_n = N^{−1/2}, by the central limit theorem) but is not in the class: `∫ exp(|φ|^α) dN(0,1) = ∞` for α > 2. The growth condition is what excludes it.
-- `(1 − ε)δ₀ + ½ε(δ₁ + δ₋₁)` with ε < 1/3 is even and admissible but is not in the class, because it violates the single-site Lebowitz inequality `∫φ⁴ ≤ 3(∫φ²)²` (ε > 3ε²), which every member satisfies by 3.5.
+- `(1 − ε)δ₀ + ½ε(δ₁ + δ₋₁)` with 0 < ε < 1/3 is even and admissible but is not in the class, because it violates the single-site Lebowitz inequality `∫φ⁴ ≤ 3(∫φ²)²`, which every member satisfies by 3.5: both moments equal ε, and `ε > 3ε²` exactly when 0 < ε < 1/3 (at ε = ¼, ¼ > 3/16). The endpoints are not excluded by this test: at ε = 0 the measure is δ₀, a member, and both sides are 0; at ε = 1/3 both sides equal 1/3, and the test decides nothing.
 - Every φ⁴ measure is in the class (2.3), while the Gaussian measures γ_b are not.
 - Independent blocks `X_N = Σ_{i=1}^N σ_i/(√N log N)`, N ≥ 3, have variance `(log N)⁻² → 0`, hence converge to δ₀, whose exponential α-moment is 1. For every α > 2 their exponential α-moments are at least `2^{1−N} exp(N^{α/2}/(log N)^α) → ∞`. The constant δ₀ block approximation instead has moment 1 at every stage: transfer must allow a suitable choice of approximants.
 - Simultaneous transfer on one and two sites gives the one-site second moment s² and `⟨φ_xφ_y⟩ = s² tanh(Js²)` for `ρ = ½(δ_{−s} + δ_s)`; at s = 0 it is 0 and the zeroth moment is 1. For the Curie–Weiss approximation of 2.3, the established uniform tails let 1.4 supply convergence of every finite-volume polynomial moment.
@@ -268,7 +271,7 @@ Prove that for λ > 0 and b ∈ ℝ the φ⁴ measure `ρ_{λ,b}` belongs to the
 
 ### Examples
 
-ρ_I, the uniform measure on {−1, 0, 1}, `½(δ_{−s} + δ_s)` and every φ⁴ measure are in the Griffiths–Simon class; γ_b, `(1 − ε)δ₀ + ½ε(δ₁ + δ₋₁)` with ε < 1/3, and the Ising-type measures with mixed-sign block weights of 2.1 are not.
+ρ_I, δ₀ (the case ε = 0 below), the uniform measure on {−1, 0, 1}, `½(δ_{−s} + δ_s)`, the law `½δ₀ + ¼(δ₂ + δ₋₂)` (the mixed-sign block of 2.1 at K = 0, equal to a nonnegative-weight block) and every φ⁴ measure are in the Griffiths–Simon class; γ_b, `(1 − ε)δ₀ + ½ε(δ₁ + δ₋₁)` with 0 < ε < 1/3, and the law of σ₁ − σ₂ under a pair coupling K > (ln 2)/2 (the mixed-sign block q = (1, −1) of 2.1) are not.
 
 ### Dependencies
 
@@ -278,7 +281,7 @@ Layers 0 and 1. No other roadmap; Griffiths–Simon 1973 is cited by locator.
 
 ### 3.1 Griffiths' first and second inequalities
 
-Prove that for a finite set V, a ferromagnetic coupling J and an even admissible ρ, every multi-index A satisfies `⟨φ_A⟩_{V,J,ρ} ≥ 0` (Griffiths I) and every pair of multi-indices satisfies `⟨φ_A φ_B⟩ ≥ ⟨φ_A⟩⟨φ_B⟩` (Griffiths II) (Peled–Spinka, Theorems 2.1 and 2.3, lines 334 and 515, for Ising spins; Sokal (2.20)–(2.21), lines 414–415, for φ⁴; Simon, Twelve Tales, lines 977–984; Glimm–Jaffe, Chapter 4; Friedli–Velenik, Section 3.6). A proof route: for Griffiths I, expand `e^{−H}` as a power series with nonnegative coefficients in the monomials `φ_xφ_y` and use that every moment of an even measure is nonnegative; for Griffiths II, Ginibre's duplication: with an independent copy φ′, put `s = φ + φ′` and `t = φ − φ′`; then `H(φ) + H(φ′)` is `−¼Σ_{x≠y} J_{xy}(s_xs_y + t_xt_y)`, `φ_A − φ′_A` and `φ_B − φ′_B` are polynomials in (s, t) with nonnegative coefficients, and Ginibre's lemma gives the nonnegativity of every monomial.
+Prove that for a finite set V, a ferromagnetic coupling J and an even admissible ρ, every multi-index A satisfies `⟨φ_A⟩_{V,J,ρ} ≥ 0` (Griffiths I) and every pair of multi-indices satisfies `⟨φ_A φ_B⟩ ≥ ⟨φ_A⟩⟨φ_B⟩` (Griffiths II) (Peled–Spinka, Theorems 2.1 and 2.3, lines 334 and 515, for Ising spins; Sokal (2.19)–(2.20), p. 327, lines 414–415, for φ⁴; Simon, Twelve Tales, lines 977–984; Glimm–Jaffe, Chapter 4; Friedli–Velenik, Section 3.6). A proof route: for Griffiths I, expand `e^{−H}` as a power series with nonnegative coefficients in the monomials `φ_xφ_y` and use that every moment of an even measure is nonnegative; for Griffiths II, Ginibre's duplication: with an independent copy φ′, put `s = φ + φ′` and `t = φ − φ′`; then `H(φ) + H(φ′)` is `−¼Σ_{x≠y} J_{xy}(s_xs_y + t_xt_y)`, `φ_A − φ′_A` and `φ_B − φ′_B` are polynomials in (s, t) with nonnegative coefficients, and Ginibre's lemma gives the nonnegativity of every monomial.
 
 The API consists of the following facts.
 
@@ -307,7 +310,7 @@ Prove that for an even admissible ρ and multi-indices A: if J ≤ J′ are ferr
 
 ### 3.3 The FKG inequality
 
-Prove that for a finite set V, a ferromagnetic coupling J, an admissible ρ (not necessarily even) and bounded measurable F, G : ℝ^V → ℝ non-decreasing in each coordinate, `⟨FG⟩_{V,J,ρ} ≥ ⟨F⟩⟨G⟩`; the same holds for non-decreasing F, G bounded by a polynomial, in particular `⟨φ_x φ_y⟩ ≥ ⟨φ_x⟩⟨φ_y⟩` for all x, y ∈ V (Sokal (2.25), line 423; Glimm–Jaffe, Chapter 4; Friedli–Velenik, Section 3.6). A proof route: `e^{−H}` is log-supermodular on ℝ^V because `∂²(−H)/∂φ_x∂φ_y = J_{xy} ≥ 0`; restrict ρ to finite sets of values (finite chains), apply Mathlib's `fkg` on the finite distributive lattice of configurations, and pass to the limit; alternatively, induct on |V| with Chebyshev's inequality on ℝ and Holley's monotone coupling.
+Prove that for a finite set V, a ferromagnetic coupling J, an admissible ρ (not necessarily even) and bounded measurable F, G : ℝ^V → ℝ non-decreasing in each coordinate, `⟨FG⟩_{V,J,ρ} ≥ ⟨F⟩⟨G⟩`; the same holds for measurable non-decreasing F, G bounded by a polynomial, in particular `⟨φ_x φ_y⟩ ≥ ⟨φ_x⟩⟨φ_y⟩` for all x, y ∈ V (Sokal (2.25), line 423; Glimm–Jaffe, Chapter 4; Friedli–Velenik, Section 3.6). A proof route: `e^{−H}` is log-supermodular on ℝ^V because `∂²(−H)/∂φ_x∂φ_y = J_{xy} ≥ 0`; restrict ρ to finite sets of values (finite chains), apply Mathlib's `fkg` on the finite distributive lattice of configurations, and pass to the limit; alternatively, induct on |V| with Chebyshev's inequality on ℝ and Holley's monotone coupling.
 
 *Needs:* 0.1; 1.1; 1.2; Mathlib `fkg`.
 
@@ -369,15 +372,17 @@ Prove that the hypotheses hold for the nearest-neighbour coupling on every finit
 
 ### 3.7 Uniform moment bounds
 
-Prove the integration-by-parts identity for φ⁴ measures: for λ > 0, b ∈ ℝ, a finite set V, any coupling J and x ∈ V, `4λ⟨φ_x⁴⟩ = 1 + 2b⟨φ_x²⟩ + Σ_{y≠x} J_{xy}⟨φ_xφ_y⟩` under `μ_{V,J,ρ_{λ,b}}`, and more generally `⟨∂_xF⟩ = ⟨F · (4λφ_x³ − 2bφ_x − Σ_{y≠x}J_{xy}φ_y)⟩` for continuously differentiable F of polynomial growth with polynomially growing derivative (Sokal, Section 3.1, lines 846–853). Prove the uniform bound `max_{x∈V} ⟨φ_x²⟩ ≤ M(λ, b, ‖J‖) = [(2b₊ + ‖J‖) + √((2b₊ + ‖J‖)² + 16λ)]/(8λ)`, independent of V, from the identity, Jensen's inequality `⟨φ_x⁴⟩ ≥ ⟨φ_x²⟩²` and the Cauchy–Schwarz inequality, evaluated at a site where `⟨φ_x²⟩` is maximal. Prove Newman's exponential bound: for ρ in the Griffiths–Simon class, a ferromagnetic J and t ∈ [0, ∞)^V, `⟨exp(Σ_x t_xφ_x)⟩ ≤ exp(½⟨(Σ_x t_xφ_x)²⟩)`, hence `⟨e^{a|φ_x|}⟩ ≤ 2e^{a²⟨φ_x²⟩/2}` for real a (Sokal, item (j), lines 434–435), by summing the Gaussian inequality of 3.5 against `1/(2n)!`.
+Prove the integration-by-parts identity for φ⁴ measures: for λ > 0, b ∈ ℝ, a finite set V, any coupling J and x ∈ V, `4λ⟨φ_x⁴⟩ = 1 + 2b⟨φ_x²⟩ + Σ_{y≠x} J_{xy}⟨φ_xφ_y⟩` under `μ_{V,J,ρ_{λ,b}}`, and more generally `⟨∂_xF⟩ = ⟨F · (4λφ_x³ − 2bφ_x − Σ_{y≠x}J_{xy}φ_y)⟩` for every continuously differentiable F : ℝ^V → ℝ with `|F(φ)| + |∂_xF(φ)| ≤ C(1 + Σ_y φ_y²)^k` for some C and k; the diagonal entry `J_{xx}` enters neither side (Sokal, Section 3.1, lines 846–853). Prove the uniform bound `max_{x∈V} ⟨φ_x²⟩ ≤ M(λ, b, ‖J‖) = [(2b₊ + ‖J‖) + √((2b₊ + ‖J‖)² + 16λ)]/(8λ)`, independent of V, from the identity, Jensen's inequality `⟨φ_x⁴⟩ ≥ ⟨φ_x²⟩²` and the Cauchy–Schwarz inequality, evaluated at a site where `⟨φ_x²⟩` is maximal. Prove Newman's exponential bound: for ρ in the Griffiths–Simon class, a ferromagnetic J and t ∈ [0, ∞)^V, `⟨exp(Σ_x t_xφ_x)⟩ ≤ exp(½⟨(Σ_x t_xφ_x)²⟩)`, hence `⟨e^{a|φ_x|}⟩ ≤ 2e^{a²⟨φ_x²⟩/2}` for real a (Sokal, item (j), lines 434–435), by summing the Gaussian inequality of 3.5 against `1/(2n)!`.
 
 *Needs:* 0.2; 1.1; 1.2; 2.3; 3.5.
 
 **Checks.**
 
 - One site, J = 0, b = 0: the identity gives `⟨φ⁴⟩ = 1/(4λ)`, matching the Gamma-function value of 0.2.
+- The diagonal is excluded from the general identity: one site, λ = 1, b = 0, `J_{xx} = 1` and F = φ give `⟨∂F⟩ = 1` and, since the sum over y ≠ x is empty, right side `4⟨φ⁴⟩ = 1`; a sum over all y would give `4⟨φ⁴⟩ − ⟨φ²⟩ = 1 − Γ(3/4)/Γ(1/4) ≈ 0.662`.
+- The growth bound on `∂_xF` is needed: one site, λ = 1, b = 0, J = 0 and `F(φ) = φ + sin(exp(φ⁴))`, which is smooth and bounded by 1 + |φ|. The right side is `4⟨φ⁴⟩ + 4⟨φ³ sin(exp(φ⁴))⟩ = 1 + 0` (odd integrand), but `|F′|` times the density has infinite integral (substituting `t = exp(φ⁴)` turns the oscillating part into `∫_1^∞ |cos t|/t dt = ∞`), so `⟨∂F⟩` is not a Lebesgue expectation.
 - The bound gives `M(λ, 0, 0) = 1/(2√λ)`, above the exact `Γ(3/4)/(Γ(1/4)√λ) ≈ 0.338/√λ`.
-- For ρ_I, Newman's bound reads `cosh a ≤ e^{a²/2}`, true. For the non-member `(1 − ε)δ₀ + ½ε(δ₁ + δ₋₁)` with ε = ¼ it fails for every small a > 0, because the coefficients of a⁴ are ε/24 on the left and ε²/8 on the right and ε/24 > ε²/8 for ε < 1/3; numerically, at a = 2 the left side is 1.691 and the right side `e^{1/2}` is 1.649.
+- For ρ_I, Newman's bound reads `cosh a ≤ e^{a²/2}`, true. For the non-member `(1 − ε)δ₀ + ½ε(δ₁ + δ₋₁)` with ε = ¼ it fails for every small a > 0, because the coefficients of a⁴ are ε/24 on the left and ε²/8 on the right and ε/24 > ε²/8 for 0 < ε < 1/3; numerically, at a = 2 the left side is 1.691 and the right side `e^{1/2}` is 1.649.
 
 ### Examples
 
@@ -446,7 +451,8 @@ The API consists of the following facts.
 
 - d = 1, nearest-neighbour Ising with t = tanh J: `χ = (1 + t)/(1 − t) < ∞` for all J, so `β_c = ∞`.
 - For ρ = δ₀, S ≡ 0, χ = 0 and β_c = ∞; for J = 0, χ = ∫φ²dρ.
-- Ising on ℤ^d with nearest-neighbour coupling J: Simon–Lieb with Λ = {0}, applied in the boxes V_R to `max_v Σ_{y∈V_R} ⟨σ_vσ_y⟩_{V_R}`, gives `χ ≤ 1/(1 − 2dJ)` for 2dJ < 1, so `β_c(ρ_I, J) ≥ 1/(2dJ)`.
+- Ising on ℤ^d with nearest-neighbour coupling J, 0 ≤ 2dJ < 1: Simon–Lieb with Λ = {0}, applied in the boxes V_R to `max_v Σ_{y∈V_R} ⟨σ_vσ_y⟩_{V_R}`, gives `χ(ρ_I, J) ≤ 1/(1 − 2dJ)`; at d = 1, J = ¼ this reads `e^{1/2} ≈ 1.649 ≤ 2`. For J > 0, applying the estimate to βJ with 2dβJ < 1 gives `β_c(ρ_I, J) ≥ 1/(2dJ)`; for J = 0, β_c = ∞.
+- The susceptibility estimate is not asserted outside 2dJ < 1: at d = 1, J = 1, `χ(ρ_I, 1) = e² ≈ 7.389` while `1/(1 − 2dJ) = −1`, and at J = ½ the denominator vanishes; the bound `β_c ≥ 1/(2dJ)` still holds there.
 
 ### 4.4 Axis monotonicity of the two-point function
 
@@ -641,7 +647,8 @@ The API consists of the following facts.
 
 **Checks.**
 
-- J = 0, ρ = ρ_I: `Σ^{(R)}_L = (2L + 1)^d` and `⟨T_{f,L}²⟩ = Σ_x f(x/L)²/(2L + 1)^d → 2^{−d} ∫ f²`, the white-noise normalisation.
+- J = 0, ρ = ρ_I, f ∈ C_c(ℝ^d): `Σ^{(R)}_L = (2L + 1)^d` and `⟨T_{f,L}²⟩_{V_R} = Σ_{x∈V_R} f(x/L)²/(2L + 1)^d`. As L → ∞ with R = R(L) ≥ L chosen so that V_{R(L)} eventually contains every x ∈ ℤ^d with x/L ∈ supp f (for instance R(L)/L → ∞), this tends to `2^{−d} ∫ f²`, the white-noise normalisation; the volume-first limit of 7.2 gives the same value.
+- The volume condition is needed: d = 1, R = L and the tent `f(u) = max(0, 1 − |u − 3|)` sample only x/L ∈ [−1, 1], where f vanishes, so the second moment is 0 for every L, whereas `½∫f² = 1/3`. With R = 4L the sampled sum is `(2L² + 1)/(3L)` and the normalised second moment `(2L² + 1)/(3L(2L + 1)) → 1/3`.
 - d = 1, L = R = 1, nearest-neighbour Ising with t = tanh J: `Σ^{(1)}_1 = 3 + 4t + 2t²` (open chain of three sites).
 - ρ = δ₀: Σ = 0 and T ≡ 0 by the junk convention of the Conventions.
 - The direction of the W_d action: d = 2, L = 1, Σ = 1, `V = {0, ±e₁, ±e₂}`, g the rotation `(x₁, x₂) ↦ (−x₂, x₁)` (of order 4, so g ≠ g⁻¹) and `f = 1_{e₁}` on V. Then `T_{f∘g}(φ) = φ_{g⁻¹e₁} = φ_{−e₂}`, which agrees with `T_f(φ ∘ g⁻¹) = φ_{−e₂}`; the identity with g on both sides would give `T_f(φ ∘ g) = φ_{ge₁} = φ_{e₂}`, which differs for `φ = 1_{e₂}`. The two identities cannot be separated when g² = id; the quarter-turn and the selected f and φ separate them. For the half-turn g = −I, f = 1_{e₁} and φ = 1_{−e₁}, both candidate right sides and the left side are 1.
