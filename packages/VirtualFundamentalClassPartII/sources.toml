@@ -9,7 +9,7 @@ year = 1989
 venue = "Inventiones Mathematicae 97, 613–670"
 doi = "10.1007/BF01388892"
 locator_scheme = "theorem"
-locator = "(1.1), (1.5)–(1.7), (1.10)–(1.17), (1.19)–(1.20), (2.1), (2.4)–(2.6), (3.1)–(3.13), Lemma 3.16, (5.1)–(5.6), (6.1), (6.7), (7.14)"
+locator = "(1.5)–(1.7), Lemma 1.10, (1.11)–(1.20), (2.1)–(2.5), (3.1)–(3.13), Lemmas 3.16, 3.19, 3.20, 4.6, (5.1)–(5.6), (6.1), (7.11), (7.14)"
 url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0097/LOG_0033.pdf"
 fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0097/LOG_0033.pdf"
 fetched_at = "2026-11-11T13:39:18Z"
@@ -18,7 +18,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-11"
 version_note = "image-only scan read through OCR; paragraph numbers are reliable, line citations should be checked against the page images"
-cited_for = ["Conventions (7.14) stacks with quasi-compact separated diagonal; (1.19) local immersions", "T1 proper covers (1.10)–(1.11) and integral Chow groups (3.1)–(3.5), standing proper-cover hypothesis of §3", "T3 degrees (1.14)–(1.17)", "T4 integral operations (3.6)–(3.13)", "T5 rational pushforward, bivariant action and orientations (3.6)(iii), Lemmas 3.8–3.9, (5.1)–(5.5)", "T6 intersection product and Poincaré duality, §5 and Proposition 5.6", "T7 moduli spaces (2.1), (2.4)–(2.5), (6.1)", "T9 degree of a point (1.15)–(1.17)", "T13–T14 Lemma 3.16 (reduced equidimensional ambient)"]
+cited_for = ["Conventions: stacks with diagonal representable by schemes, quasi-compact and separated ((7.11), (7.14), lines 2064–2066, 2109–2112); local embeddings ((1.19)–(1.20), lines 485–505); proper covers as standing hypothesis (lines 887–890)", "gap closed-substacks-of-stacks: substacks via presentations, integral substacks, images ((1.5)–(1.7), lines 232–269)", "gap normal-cones-of-local-immersions: the normal cone and normal bundle of a local embedding by descent from charts, and its closed embedding under base change (Lemma 1.19, (1.20), lines 485–535)", "1.1 proper covers and coverings (Lemma 1.10, (1.11), lines 299–328; lines 582–584, 1610–1613)", "1.2 function fields, inertia and generic stabiliser ((1.13)–(1.14), lines 337–353; lines 419–425)", "1.3 degrees ((1.15)–(1.17), lines 356–452)", "2.1–2.2 cycles, rational equivalence, Chow groups, cycle of a closed substack ((3.1)–(3.5), lines 891–971; Lemma 3.3)", "3.1–3.5 flat pullback, representable pushforward, push–pull, exterior products, Gysin maps ((3.6)–(3.13), lines 974–1123; Lemmas 3.9, 3.16, 3.19; Lemma 3.20, lines 1206–1207; lines 1706–1708)", "4.1–4.3 rational pushforward, Gysin maps on stacks, homotopy invariance, Chern classes ((3.6)(iii), Lemma 3.8, (5.1)–(5.5), lines 985–1048, 1550–1704; lines 96–99)", "5.1 intersection products and Poincaré duality (lines 506–507, 1705–1750)", "5.2 moduli spaces ((2.1)–(2.5), lines 542–579; (6.1), lines 1758–1776)", "5.4 degrees of points ((1.17), lines 372–376, 426–452)", "8.1 the canonical rational equivalence on a reduced equidimensional scheme, by normalising a blow-up (Lemma 3.16, lines 1172–1174; Lemma 4.6, lines 1451–1470)"]
 
 [[source]]
 id = "behrend-fantechi1997"
@@ -29,7 +29,7 @@ venue = "Inventiones Mathematicae 128 (1997), 45–88"
 doi = "10.1007/s002220050136"
 arxiv = "alg-geom/9601010v1"
 locator_scheme = "theorem"
-locator = "Theorem 4.5; Definitions 4.4, 5.1–5.2; Propositions 3.3–3.5, 5.3, 5.10, 6.2, 7.1–7.5; Lemma 5.9; §7 setting"
+locator = "Definition 3.7; Lemma 3.2; Propositions 3.3–3.5, 3.14; Theorem 4.5; Definitions 5.1–5.2; Propositions 5.3, 5.5–5.6, 5.10; Lemma 5.9; Proposition 6.2; §7 setting; Propositions 7.2, 7.3, 7.5"
 url = "https://arxiv.org/abs/alg-geom/9601010v1"
 fetched_from = "https://arxiv.org/pdf/alg-geom/9601010v1"
 fetched_at = "2026-11-11T13:39:52Z"
@@ -38,7 +38,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-11"
 version_note = "arXiv v1; the roadmap cites the v1 numbering and line numbers, as VirtualFundamentalClass does"
-cited_for = ["T10 Proposition 5.3 and its proof; the condition of Vistoli in place of separatedness", "T11 Theorem 4.5 and its relative form in §7", "T12 Proposition 7.3 over a base of pure dimension", "T13 Propositions 3.3–3.5 (3.5 is in error)", "T14 Propositions 7.2 and 7.5, Lemma 5.9", "T16 Proposition 6.2"]
+cited_for = ["Convention 2 local embeddings (Definition 3.7, lines 906–915)", "Convention 3 the condition of Vistoli in place of separatedness (lines 1261–1262); Convention 7 relative setting (lines 1645–1651)", "3.5 Gysin theorems for regular local immersions of algebraic stacks (lines 1617–1643)", "6.1–6.2 the virtual class and its independence (Definition 5.2, Proposition 5.3, lines 1282–1320; lines 1664–1667)", "6.3 relative formulas over a pure-dimensional base, with exponent the rank of the obstruction sheaf (Proposition 7.3, lines 1702–1711, line 1710; Propositions 5.5–5.6, lines 1353–1365)", "7.1–7.2 the obstruction class and Theorem 4.5 with its relative form (lines 1067–1078, 1162–1201, 1657–1663); the implication (3) ⇒ (1) through affine square-zero extensions only (lines 1175–1201)", "8.1 Vistoli's rational equivalence, smooth base change and factorisations, the erroneous Proposition 3.5 (lines 781–897)", "8.1 smooth factorisations for Vistoli's construction on a smooth ambient (Proposition 3.4, lines 884–888)", "8.2–8.3 regular pullback and functoriality (Propositions 7.2, 7.5, Lemma 5.9 with the cone comparison at lines 1416–1421, Proposition 5.10, lines 1397–1428, 1668–1739; the exact sequence of vector-bundle stacks of a compatibility datum, lines 1389–1392; the smooth case of the cone sequence, Proposition 3.14, lines 1040–1044, and lines 1456–1460)", "9.3 the obstruction theory of spaces of morphisms (lines 1583–1614; line 1609)"]
 
 [[source]]
 id = "kresch1999b"
@@ -48,7 +48,7 @@ year = 1997
 venue = "Inventiones Mathematicae 136 (1999), 483–496"
 arxiv = "alg-geom/9710011v2"
 locator_scheme = "theorem"
-locator = "Theorem 3.1; Proposition 2.3; the remarks on Behrend–Fantechi Proposition 3.5"
+locator = "Corollary 1.10; Propositions 2.1, 2.3; Lemma 2.2 and the terminology of local immersions; Remarks 2.5–2.6; Theorem 3.1 and its proof; the remarks on Behrend–Fantechi Proposition 3.5"
 url = "https://arxiv.org/abs/alg-geom/9710011v2"
 fetched_from = "https://arxiv.org/pdf/alg-geom/9710011v2"
 fetched_at = "2026-11-11T13:39:57Z"
@@ -57,7 +57,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-11"
 version_note = "arXiv v2"
-cited_for = ["T13 the absolute restricted invariance (Theorem 3.1) that the relative statement generalises, and the error in Behrend–Fantechi Proposition 3.5"]
+cited_for = ["Convention 2 local immersions (lines 232–234)", "8.1 the absolute restricted invariance (Theorem 3.1, lines 334–343) and its proof (lines 390–405); the error in Behrend–Fantechi Proposition 3.5 (lines 41–47, 340–343)", "8.1 the canonical rational equivalence for arbitrary local immersions of Artin stacks (Proposition 2.3, lines 242–243, construction lines 259–304, boundary line 304; Corollary 1.10, lines 182–190, stated for a variety and applied to each irreducible component with multiplicities), its compatibility with smooth pullback (Proposition 2.1, lines 202–207), cycles on stacks locally of finite type (Remark 2.5, lines 250–256)", "1.1 finite parametrisations of Deligne–Mumford stacks of finite type (Remark 2.6, lines 307–315)", "gap normal-cones-of-local-immersions: charts of unramified representable morphisms of Artin stacks and the patched normal cone, a bundle for regular local immersions (Lemma 2.2 and the paragraph after it, lines 218–237)"]
 
 [[source]]
 id = "behrend1997"
@@ -68,7 +68,7 @@ venue = "Inventiones Mathematicae 127 (1997), 601–617"
 doi = "10.1007/s002220050132"
 arxiv = "alg-geom/9601011v1"
 locator_scheme = "theorem"
-locator = "Propositions 2, 4, 5; the relative obstruction theory and the dimension count of the section on virtual fundamental classes"
+locator = "Propositions 4 and 5; the relative obstruction theory and the dimension count of the section on virtual fundamental classes"
 url = "https://arxiv.org/abs/alg-geom/9601011v1"
 fetched_from = "https://arxiv.org/pdf/alg-geom/9601011v1"
 fetched_at = "2026-11-11T13:40:03Z"
@@ -77,7 +77,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-11"
 version_note = "arXiv v1"
-cited_for = ["T16 relative obstruction theory of spaces of maps, global resolutions (Proposition 5), virtual dimension"]
+cited_for = ["9.1 the stable-map stack as an open substack of a stack of morphisms (Proposition 4, lines 139–141)", "9.3 the relative obstruction theory (lines 148–153)", "9.4 global resolutions (Proposition 5, lines 165–187)", "9.5 rank and virtual dimension (lines 157–161, 193–197)"]
 
 [[source]]
 id = "li-tian1998"
@@ -87,7 +87,7 @@ year = 1996
 venue = "Journal of the American Mathematical Society 11 (1998), 119–174"
 arxiv = "alg-geom/9602007v6"
 locator_scheme = "theorem"
-locator = "Theorem 4.2 and its proof; Theorem 4.3 (1)"
+locator = "Theorem 4.2 and its proof; the proof of Theorem 4.2′; Theorem 4.3 (1)"
 url = "https://arxiv.org/abs/alg-geom/9602007v6"
 fetched_from = "https://arxiv.org/pdf/alg-geom/9602007v6"
 fetched_at = "2026-11-11T13:40:10Z"
@@ -96,7 +96,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-11"
 version_note = "arXiv v6"
-cited_for = ["T15 deformation invariance (Theorem 4.2, conservation of number in its proof)", "T16 virtual dimension (Theorem 4.3 (1))"]
+cited_for = ["8.4 deformation invariance (Theorem 4.2, lines 1472–1474; its proof, lines 1486–1552, with the reduction by conservation of number at lines 1501–1503; lines 1565–1566, in the proof of Theorem 4.2′, which draw the fibrewise identity from that proof)", "9.5 virtual dimension (Theorem 4.3 (1), lines 1585–1586)"]
 
 [[source]]
 id = "keel-mori1997"
@@ -106,7 +106,7 @@ year = 1995
 venue = "Annals of Mathematics 145 (1997), 193–213"
 arxiv = "alg-geom/9508012v1"
 locator_scheme = "theorem"
-locator = "Theorem 1.1, Corollary 1.3"
+locator = "Corollary 1.3"
 url = "https://arxiv.org/abs/alg-geom/9508012v1"
 fetched_from = "https://arxiv.org/pdf/alg-geom/9508012v1"
 fetched_at = "2026-11-11T13:40:15Z"
@@ -115,7 +115,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-11"
 version_note = "arXiv v1"
-cited_for = ["T7 coarse moduli spaces of separated Deligne–Mumford stacks are moduli spaces in Vistoli's sense"]
+cited_for = ["5.2 coarse spaces of separated stacks are separated algebraic spaces (Corollary 1.3, line 28)"]
 
 [[source]]
 id = "edidin-graham1998"
@@ -125,7 +125,7 @@ year = 1996
 venue = "Inventiones Mathematicae 131 (1998), 595–634"
 arxiv = "alg-geom/9603008v3"
 locator_scheme = "theorem"
-locator = "Propositions 10 and 11; the remarks before Proposition 10 on the homotopy property"
+locator = "Proposition 11; the remarks before Proposition 10"
 url = "https://arxiv.org/abs/alg-geom/9603008v3"
 fetched_from = "https://arxiv.org/pdf/alg-geom/9603008v3"
 fetched_at = "2026-11-11T13:40:22Z"
@@ -134,7 +134,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-11"
 version_note = "arXiv v3"
-cited_for = ["T8 comparison of rational equivariant Chow groups with Chow groups of a Deligne–Mumford quotient stack, and of products"]
+cited_for = ["5.3 products on Deligne–Mumford quotient stacks (Proposition 11, lines 790–798; lines 758–759)"]
 
 [[source]]
 id = "kresch1999"
@@ -145,7 +145,7 @@ venue = "Inventiones Mathematicae 138 (1999), 495–536"
 doi = "10.1007/s002220050351"
 arxiv = "math/9810166v1"
 locator_scheme = "theorem"
-locator = "Theorem 2.1.12 (ii)–(iii); Theorem 6.2.1"
+locator = "Theorem 6.2.1"
 url = "https://arxiv.org/abs/math/9810166v1"
 fetched_from = "https://arxiv.org/pdf/math/9810166v1"
 fetched_at = "2026-11-11T13:40:28Z"
@@ -154,7 +154,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-11"
 version_note = "arXiv v1"
-cited_for = ["Scope boundary: Chow groups of Artin stacks and the virtual class without a global resolution (Theorem 6.2.1) are not planned here", "T8 the published unconditional comparison (Theorem 2.1.12 (ii)–(iii)), recorded as a Check"]
+cited_for = ["Scope boundary: the virtual class without a global resolution (Theorem 6.2.1, lines 1632–1636) is not part of this roadmap"]
 
 [[source]]
 id = "stacks-chow"
@@ -162,7 +162,7 @@ authors = "The Stacks Project Authors"
 title = "Chow Homology and Chern Classes (The Stacks Project, Tag 02P3)"
 year = 2026
 locator_scheme = "tag"
-locator = "Situation 7.1 (02QL), Example 7.2 (02QM), Definition 19.1 (02RW)"
+locator = "Definition 19.1 (02RW)"
 url = "https://stacks.math.columbia.edu/download/chow.pdf"
 fetched_from = "https://stacks.math.columbia.edu/download/chow.pdf"
 fetched_at = "2026-11-11T13:40:36Z"
@@ -170,7 +170,7 @@ sha256 = "28aaf3c7a76d359c3be56f1c86167ab42fcb40bc35b1ae6ef3b47cb41f9a41f5"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-11"
-cited_for = ["T2 the scheme case of the integral comparison"]
+cited_for = ["2.3 the scheme case of the integral comparison (Definition 19.1, line 1356)"]
 
 [[source]]
 id = "stacks-chow-spaces"
@@ -178,7 +178,7 @@ authors = "The Stacks Project Authors"
 title = "Chow Groups of Spaces (The Stacks Project, Tag 0EDQ)"
 year = 2026
 locator_scheme = "tag"
-locator = "Situation 2.1 (0EDT), Definition 3.1 (0EDZ), Definition 15.1 (0EQ6)"
+locator = "Situation 2.1 (0EDT), Definitions 3.1 (0EDZ), 15.1 (0EQ6), 32.1 (0ESG), Lemmas 4.3 (0EE3), 10.3 (0EPY), 13.2 (0EQ2), 15.2 (0EQ7), 27.3 (0ERW)"
 url = "https://stacks.math.columbia.edu/download/spaces-chow.pdf"
 fetched_from = "https://stacks.math.columbia.edu/download/spaces-chow.pdf"
 fetched_at = "2026-11-11T13:40:38Z"
@@ -186,7 +186,7 @@ sha256 = "221ed10e07b99e8260625a16f2a884bc5b130ac176657212c974a06c2e9abfc3"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-11"
-cited_for = ["T2 the integral comparison for algebraic spaces", "T7 Chow groups of the moduli space"]
+cited_for = ["2.1–2.2 étale invariance of lengths and orders (Lemmas 4.3, 10.3, 13.2, lines 169, 516, 667)", "2.3 the integral comparison for algebraic spaces (Situation 2.1, lines 57–61; Definitions 3.1, 15.1, lines 126–133, 797–810)", "3.3 localisation (Lemma 15.2, lines 813–818); 3.5 homotopy invariance on algebraic spaces (Lemma 27.3, lines 1986–1990)", "5.4 degrees of zero-cycles on proper algebraic spaces (Definition 32.1, line 2224)"]
 
 [[source]]
 id = "deligne-mumford1969"
@@ -204,7 +204,7 @@ sha256 = "79316edb045ef5540367e9beaa4c057ac954a887eabb8c42a8208304dd8f60c5"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-11"
-cited_for = ["T1 proper covers of stacks with a separated finite type morphism to a scheme"]
+cited_for = ["1.1 proper covers of stacks with a separated finite-type morphism to a Noetherian scheme (Theorem 4.12, lines 1012–1019)"]
 
 [[source]]
 id = "gillet1984"
@@ -219,7 +219,7 @@ url = "https://doi.org/10.1016/0022-4049(84)90036-7"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["T1 the definition of cycles and rational equivalence on stacks, which Vistoli (3.1)–(3.4) attributes to it"]
+cited_for = ["2.1–2.2 cycles and rational equivalence on stacks, which vistoli1989 (3.1)–(3.4) attributes to it"]
 
 [[source]]
 id = "fulton1998"
@@ -229,9 +229,29 @@ year = 1998
 venue = "Springer, 2nd edition"
 doi = "10.1007/978-1-4612-1700-8"
 locator_scheme = "chapter"
-locator = "§1.8, §1.10, Theorem 3.3, Chapter 6, Proposition 8.1.1, Proposition 10.2"
+locator = "§1.8, §1.10, Chapter 3, Corollary 6.3, Proposition 8.1.1, Proposition 10.2"
 url = "https://doi.org/10.1007/978-1-4612-1700-8"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["T4 localisation (§1.8) and exterior products (§1.10) on schemes", "T5 homotopy invariance (Theorem 3.3)", "T6 the formal properties of intersection products (Proposition 8.1.1)", "T15 conservation of number (Proposition 10.2)"]
+cited_for = ["3.3 localisation on schemes (Proposition 1.8)", "3.4 exterior products (§1.10)", "4.3 Chern classes and the self-intersection formula (Chapter 3, Corollary 6.3)", "5.1 formal properties of intersection products, including the projection formula (Proposition 8.1.1)", "8.4 conservation of number (Proposition 10.2)"]
+
+[[source]]
+id = "rydh2015"
+authors = "David Rydh"
+title = "Noetherian approximation of algebraic spaces and stacks"
+year = 2009
+venue = "J. Algebra 422 (2015), 105-147"
+doi = "10.1016/j.jalgebra.2014.09.012"
+arxiv = "0904.0227v4"
+locator_scheme = "theorem"
+locator = "Theorem B"
+url = "https://arxiv.org/abs/0904.0227v4"
+fetched_from = "https://arxiv.org/pdf/0904.0227v4"
+fetched_at = "2026-11-11T15:35:25Z"
+sha256 = "6f78233beec951c4d2c8b7ca03823a1bbe182b93eff4691c3775cd10b999675e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-11"
+version_note = "arXiv v4"
+cited_for = ["Convention 3 and 1.1: every quasi-compact Deligne–Mumford stack with quasi-compact separated diagonal has a finite, finitely presented surjective morphism from a scheme, étale over a dense open (Theorem B, lines 81–85; attribution to Laumon–Moret-Bailly, lines 86–87)"]
