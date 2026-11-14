@@ -40,7 +40,7 @@ locator = "Ch. 1, §§1.1, 1.4; Ch. 2, §§2.1–2.2; Ch. 4, §4.2; Ch. 8, §8.1
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6024#issuecomment-6712166115"
-cited_for = ["1.1: Out(π₁) as the target of the mapping class group", "2.1: isotopy and paths of homeomorphisms", "2.2, 2.6: punctures versus marked points", "2.4: surface groups", "2.5: Birman exact sequence", "3.1–3.4: the outer action and Dehn–Nielsen–Baer"]
+cited_for = ["1.1: Out(π₁) as the target of the mapping class group", "2.1: isotopy and paths of homeomorphisms", "2.2, 2.6: punctures versus marked points", "2.4: surface groups and the classification of closed surfaces (Ch. 1, §1.1, Theorem 1.1)", "2.5: Birman exact sequence", "3.1–3.4: the outer action and Dehn–Nielsen–Baer"]
 
 [[source]]
 id = "Knapp2002"
