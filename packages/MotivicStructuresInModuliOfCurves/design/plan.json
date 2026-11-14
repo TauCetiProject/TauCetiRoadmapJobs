@@ -5799,7 +5799,7 @@
       "slug": "pointed-coarse-projectivity",
       "needs": "For every stable pair (g,n), projectivity over ℤ of the coarse space of M̄_{g,n} together with a rational combination of tautological divisor classes that is the pullback of an ample class on the coarse space.",
       "supplier": "StableReductionPartII",
-      "section": "MC.4",
+      "section": "§§4.1 and 4.14",
       "neededBy": [
         "MotivicStructuresInModuliOfCurves §4.12",
         "MotivicStructuresInModuliOfCurves §12.1",
@@ -5815,7 +5815,8 @@
       "neededBy": [
         "MotivicStructuresInModuliOfCurves §0.4",
         "MotivicStructuresInModuliOfCurves §2.3",
-        "MotivicStructuresInModuliOfCurves §5.4"
+        "MotivicStructuresInModuliOfCurves §5.4",
+        "MotivicStructuresInModuliOfCurves §12.7"
       ]
     },
     {
@@ -5834,7 +5835,7 @@
       "slug": "dm-stack-mixed-hodge",
       "needs": "For separated finite-type Deligne–Mumford stacks over ℂ, functorial graded-polarizable mixed Hodge structures on H^* and H_c^* with Künneth, finite-quotient invariants, Poincaré duality for smooth stacks, purity for smooth proper stacks, the weight spectral sequence of a normal crossings compactification with orientation characters, and hard Lefschetz for smooth proper stacks with projective coarse space.",
       "supplier": "MixedHodgeModulesAndIrregularHodgeTheory",
-      "section": "H.1/operations and H.0/projective-direct-image",
+      "section": "§§5.1 and 4.5",
       "neededBy": [
         "MotivicStructuresInModuliOfCurves §0.4",
         "MotivicStructuresInModuliOfCurves §0.5",
@@ -5847,14 +5848,17 @@
         "MotivicStructuresInModuliOfCurves §9.7",
         "MotivicStructuresInModuliOfCurves §12.1",
         "MotivicStructuresInModuliOfCurves §12.4",
-        "MotivicStructuresInModuliOfCurves §12.6"
+        "MotivicStructuresInModuliOfCurves §12.6",
+        "MotivicStructuresInModuliOfCurves §5.4",
+        "MotivicStructuresInModuliOfCurves §10.7",
+        "MotivicStructuresInModuliOfCurves §12.7"
       ]
     },
     {
       "slug": "dm-stack-cycle-class",
       "needs": "For smooth separated finite-type Deligne–Mumford stacks over ℂ and over finitely generated fields of characteristic zero, the cycle class map A^c(X) → W_{2c}H^{2c}(X)(c) in rational Betti and ℚ_ℓ-étale cohomology, compatible with exterior products, proper pushforward, Gysin maps, pullback and the Betti–étale comparison.",
       "supplier": "MotivesAndAlgebraicCycles",
-      "section": "Layer 2 (MC.2), §§2.4–2.7",
+      "section": "Layer 2, §§2.4–2.7",
       "neededBy": [
         "MotivicStructuresInModuliOfCurves §0.1",
         "MotivicStructuresInModuliOfCurves §5.3",
@@ -5873,7 +5877,7 @@
     },
     {
       "slug": "complete-adams-series",
-      "needs": "The plethystic exponential and logarithm, as inverse bijections, over augmentation-complete series in a complete filtered rational special λ-algebra with continuous Adams operations on every coefficient and grading variable, extending the calculus of §5.1.",
+      "needs": "For a commutative ℚ-algebra with a special λ-structure, complete and separated for a decreasing multiplicative filtration F^•, whose Adams operations ψ_r are commuting continuous ring endomorphisms with ψ_r(F^a) ⊂ F^{ra} for all a ≥ 1 and r ≥ 1, the plethystic exponential Exp(x) = exp(Σ_{r≥1} ψ_r(x)/r) and logarithm Log(1 + y) = Σ_{r≥1} (μ(r)/r) ψ_r(log(1 + y)) as mutually inverse bijections F^1 → 1 + F^1 with Exp(x + y) = Exp(x)Exp(y), extending the augmentation-complete calculus of §5.1 with ψ_r(t_i) = t_i^r on augmentation variables; continuity alone does not make Σ ψ_r(x)/r converge (identity Adams operations on ℚ[[t]]).",
       "supplier": "HabiroNahmSeries",
       "section": "§5.1",
       "neededBy": [

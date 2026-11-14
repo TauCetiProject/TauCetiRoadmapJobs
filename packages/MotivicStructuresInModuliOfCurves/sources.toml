@@ -119,7 +119,7 @@ venue = "Forum Math. Sigma 11 (2023), Paper No. e62"
 doi = "10.1017/fms.2023.59"
 arxiv = "2209.03113v2"
 locator_scheme = "theorem"
-locator = "Theorem 1.1"
+locator = "Theorem 1.1; Lemmas 2.1, 2.2, 3.4; Proposition 2.3; Corollaries 2.4, 2.5; §§4.1–4.3"
 url = "https://arxiv.org/abs/2209.03113v2"
 fetched_from = "https://arxiv.org/pdf/2209.03113v2"
 fetched_at = "2026-10-26T17:02:50Z"
@@ -128,7 +128,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v2"
-cited_for = ["4.7", "12.10"]
+cited_for = ["4.7", "10.7", "10.8", "10.9", "12.10"]
 
 [[source]]
 id = "keel"
@@ -450,7 +450,7 @@ title = "Tautological classes with twisted coefficients"
 year = 2021
 arxiv = "1705.08875v2"
 locator_scheme = "section"
-locator = "§§3.2, 5.1, 5.2.2"
+locator = "§§3.2, 5.1, 5.2.2; Remark 3.6"
 url = "https://arxiv.org/abs/1705.08875v2"
 fetched_from = "https://arxiv.org/pdf/1705.08875v2"
 fetched_at = "2026-10-26T17:19:04Z"
