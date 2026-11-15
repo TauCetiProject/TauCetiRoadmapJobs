@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FreeGroupsAndLimitGroups~10",
+  "head": "283843376dcf58fac60d055d9712c58e93b0672b",
+  "pr": 2221,
+  "folder": "FreeGroupsAndLimitGroups",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 2838433. This round checked the pull request's title and description against the head: summary block, stacking paragraph, items 1-14, the corrections not made and the Checks, each compared with README.md or Suggested.lean (12 theorems, 14 definitions; diff against d31b59b is rank_coprod alone; pins 1b1ccf4 and 2fd255d); none contradicted, no unstated change. Six IFT locators of the description checked against the text. Adversarial table: six rows with computed values for statements the description cites. Gate rerun: every check 0, OK; depcheck 0 problems; lake env lean: 12 sorry warnings only. No seeded-sample target falls in a changed passage. Not verified: the description's claims about open Tau Ceti pull requests.",
+  "text": "07333e35b52b85a6"
+ }
+}
