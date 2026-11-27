@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-QuasiMonteCarloSparseGridsAndTractability~1",
+  "head": "d3661d17439252798cb2e0d53250141c968e0e9f",
+  "pr": 3238,
+  "folder": "QuasiMonteCarloSparseGridsAndTractability",
+  "date": "2026-11-27",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 5,
+  "format_notes": 6,
+  "notes": "Full review. Adversarial pass computed for every section (24 table rows; all numerical Checks of 2.3, 3.2, 3.3, 3.4, 6.2, 6.3 recomputed). Three P2 findings, each a false sentence beside the theorems: the negative control of 4.3, the interpolation Check of 6.2, the bridge sentence of 4.4 from the multi-index count to the operator tensor product. No stated theorem was refuted. Sources: none of DKS, Caf, BG, NW could be read from a legal place, so 0 of 72 locators were checked against the text and wording/arrangement were not compared; listed under Not verifiable and for the human reviewers. Library: Tau Ceti approximation numbers, min-max formula, kernel mean embedding and compact spectral theorem opened at the pin. Dependency check: 0 problems. Elaboration: exit 0, 41 sorry warnings only; one-tactic probe closed none of the 41. Automatic checks: the TeX-syntax hits and the declaration-less section comment are real and are format notes; none set aside.",
+  "text": "2e20f0f55887e7e9"
+ }
+}
