@@ -4072,7 +4072,20 @@
    ]
   }
  ],
- "gaps": [],
+ "gaps": [
+  {
+   "slug": "complete-almost-nakayama",
+   "needs": "For a basic setup (V, m), an ideal I ⊆ V and a morphism f : M → N of I-adically complete almost V-modules (M → lim_n M/IⁿM and N → lim_n N/IⁿN isomorphisms), if f ⊗_V V/I : M/IM → N/IN is an epimorphism then f is an epimorphism.",
+   "supplier": "PerfectoidSpaces",
+   "section": "P0.26"
+  },
+  {
+   "slug": "principal-almost-flatness",
+   "needs": "For a basic setup (V, m), an almost V-algebra C, an almost element f ∈ C_* and a C-module M such that multiplication by f is a monomorphism on C and on M, if M/fM is flat over C/fC and M[1/f] is flat over C[1/f], then M is flat over C (the case A = C of Gabber–Ramero, Lemma 5.2.1).",
+   "supplier": "PerfectoidSpaces",
+   "section": "P0.11"
+  }
+ ],
  "sourceIssues": [
   {
    "id": "PerfectoidSpacesPartII/E1",
