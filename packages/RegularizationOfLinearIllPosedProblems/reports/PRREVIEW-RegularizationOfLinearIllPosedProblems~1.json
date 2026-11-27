@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RegularizationOfLinearIllPosedProblems~1",
+  "head": "c508ef92e691905b94e0a17980bf8b502cf7cdb5",
+  "pr": 3239,
+  "folder": "RegularizationOfLinearIllPosedProblems",
+  "date": "2026-11-27",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 4,
+  "notes": "Full review. Adversarial pass computed on all 14 sampled sections and every Suggested.lean statement (degenerate cases, both directions of each iff, numerical Checks of 3.1, 4.2, 5.1, 5.2 recomputed); no false statement found. One P2: 1.1's singular system of a compact operator and s_n = a_n duplicate BanachSpaceTheory 4.5 on main. Sources: 12 Benning-Burger locators confirmed by content in arXiv 1801.09922v1; Kress, Engl-Hanke-Neubauer and Hansen not readable legally (76 locators unverified). Library declarations opened at the pins; cross-roadmap citations resolved on main; dependency check 0 problems; Suggested.lean elaborates with 42 sorry warnings only; one-tactic probe closed none; automatic checks: one real form failure (a pull-request number in the README).",
+  "text": "6c9d63663df9b3bb"
+ }
+}
