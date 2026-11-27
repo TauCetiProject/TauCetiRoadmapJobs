@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RungeKuttaOrderTheoryAndBSeries~1",
+  "head": "bb8d5e65448048d994d2b129dd83703b12b4e8f6",
+  "pr": 3240,
+  "folder": "RungeKuttaOrderTheoryAndBSeries",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full review. All 43 theorems and every Check recomputed by hand on degenerate cases (adversarial table in the report). Sample of 15 targets: mathematics verified, source locators not verifiable (none of the five cited books readable legally; requests recorded). Suggested.lean elaborates with sorry as the only warning; one-tactic probe closed 0 of 43; dependency check 0 problems; automatic checks all passed; supplier sections of OneStepMethodsForODEs read on main; overlap check against seven neighbouring roadmaps found nothing shared.",
+  "text": "c9169211f8243d38"
+ }
+}
