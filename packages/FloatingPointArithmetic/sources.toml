@@ -1,0 +1,29 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "FloatingPointArithmetic"
+
+[[source]]
+id = "M"
+authors = "Jean-Michel Muller, Nicolas Brunie, Florent de Dinechin, Claude-Pierre Jeannerod, Mioara Joldes, Vincent Lefèvre, Guillaume Melquiond, Nathalie Revol, Serge Torres"
+title = "Handbook of Floating-Point Arithmetic"
+year = 2018
+doi = "10.1007/978-3-319-76526-6"
+locator_scheme = "theorem"
+locator = "Theorem 4.3, p. 104"
+url = "https://doi.org/10.1007/978-3-319-76526-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.2"]
+
+[[source]]
+id = "R"
+locator_scheme = "equation"
+locator = "(2.3), p. 302"
+url = "https://www.tuhh.de/ti3/paper/rump/Ru10.pdf"
+fetched_from = "https://www.tuhh.de/ti3/paper/rump/Ru10.pdf"
+fetched_at = "2026-11-27T19:53:23Z"
+sha256 = "6d4d2eaa2dd40389fa75fbdc26f4e37f863806d734a6bbbf02005271cc08fea2"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-27"
+cited_for = ["3.1"]

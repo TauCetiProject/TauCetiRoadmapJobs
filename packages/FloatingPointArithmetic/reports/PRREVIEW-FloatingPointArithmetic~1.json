@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FloatingPointArithmetic~1",
+  "head": "5ed7262b6853b1397ecd80e532058dcbc83a3e7f",
+  "pr": 3233,
+  "folder": "FloatingPointArithmetic",
+  "date": "2026-11-27",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Full review. Sources: every locator into Rump's survey (16 locators, printed pp. 302-306) read against the text; the Handbook (paywalled) and Higham's book (no legal copy found) could not be read, so the sampled targets 1.1, 1.2 and 6.2 and all locators into those two books are not verified. Adversarial pass computed: exhaustive checks of Hauser, Sterbenz, the errors of sums and products, Fast2Sum and 2Sum on six small formats in radices 2, 3, 4, 5, 10 under six tie rules; searches of Kahan's, cascaded, Priest's and tree summation in radices 2 to 16; exact rational checks of the Layer 5 rules. Automatic checks: dependency check clean (0 problems), Suggested.lean elaborates with 36 sorry warnings and nothing else, one-tactic probe closes none of the 36; the only failed check (pull-request numbers in the README) is a format note. No duplication found in the pinned Mathlib or Tau Ceti or in other roadmaps.",
+  "text": "279efe400281bd2a"
+ }
+}
